@@ -1,0 +1,264 @@
+\ifVersionAvecExemplesSepares
+   \chapter{Calcul des efforts équivalents pour une poutre}
+   \begin{abstract}
+   Dans ce chapitre, nous présentons un petit calcul typique de l'approche mécanicienne.
+
+   Il s'agit d'un cas simple et classique, mais qui est traité, pour une fois, sous sa forme la
+   plus générale.
+   \end{abstract}
+\else
+   \section{Exemple: calcul des efforts équivalents pour une poutre}
+
+   Dans ce paragraphe, et pour poursuivre notre illustration des différentes modélisation d'un même problème, nous présentons 
+   un petit calcul de RdM traité selon l'approche mécanicienne.
+
+   Il permet de montrer comment sont calculés les efforts équivalents, dans un cas général, sur une poutre, mais le
+   même type de calcul resterait valable pour tout type d'élément.
+\fi
+
+\medskip
+\ifVersionAvecExemplesSepares
+   \section{Problème}
+\else
+   \subsection{Problème}
+\fi
+
+\medskip
+Considérons une poutre définie dans son système de coordonnées locales comme montré à la figure 
+ci-dessous:
+%Let us consider a member defined in its local coordinates system, as shown
+%above in \fig{beam1}.
+%
+%
+%\begin{figure}[ht]
+  \begin{center}
+  \begin{picture}(250,60)(-10,-35)
+  %F,F1,F2
+    \thicklines
+    \put(100,25){P(x)}
+    \put(0,25){\vector(0,-1){25}}
+    \put(200,25){\vector(0,-1){25}}
+    \put(-15,25){F}
+    \put(-8,20){1}
+    \put(205,25){F}
+    \put(212,20){2}
+
+  %C1,C2
+    \put(0,0){\oval(20,20)[lt]}
+    \put(0,0){\oval(20,20)[rt]}
+    \put(0,0){\oval(20,20)[rb]}
+    \put(0,-10){\vector(-1,0){6}}
+    \put(10,-15){C}
+    \put(17,-20){1}
+    \put(200,0){\oval(20,20)[lt]}
+    \put(200,0){\oval(20,20)[rt]}
+    \put(200,0){\oval(20,20)[rb]}
+    \put(200,-10){\vector(-1,0){6}}
+    \put(180,-15){C}
+    \put(187,-20){2}
+
+  %axes
+    \thinlines
+    \put(0,-15){\line(0,1){30}}
+    \put(0,0){\vector(0,-1){35}}
+    \put(-10,-35){y}
+    \put(0,0){\vector(1,0){235}}
+    \put(230,-10){x}
+
+  %Load
+    \bezier{180}(0,10)(30,25)(60,15)
+    \bezier{240}(60,15)(100,5)(140,20)
+    \bezier{180}(140,20)(170,23)(200,18)
+
+  %encastrement
+    \multiput(-4,-20)(0,8){5}{/}
+    \multiput(200,-20)(0,8){5}{/}
+    \put(200,-22){\line(0,1){40}}
+
+  %beam
+    \linethickness{3pt}
+    \put(0,0){\line(1,0){200}}
+  \end{picture}
+  \end{center}
+%  \label{beam1}
+%  \caption{Considered beam and its local coordinates system}
+%\end{figure}
+
+La première extrémité est $\left( 0,0,0\right) $ et la seconde $\left( l,0,0\right) $, 
+où $l$ est la longueur de la poutre.
+
+Nous supposerons la poutre encastrées aux deux bouts, et soumise à une charge
+distribuée définie par la fonction $P(x)$.
+
+Le problème est plan de sorte que $\overrightarrow{P(x)}
+=P(x)\overrightarrow{y}$
+
+Nous souhaitons déterminer les forces et moments équivalents $F_1$, $F_2$ et
+$C_1$, $C_2$ aux deux extrémités également appelées nœuds 1 et 2.
+
+\medskip
+Une analyse statique conduit à:
+
+\begin{quotation}
+\begin{equation}
+   \label{staticF}
+   F_1+F_2+\int_0^l P(x)dx=0 
+\end{equation}
+
+\begin{equation}
+   \label{staticC}
+   C_1+C_2+F_2l+\dint_0^l x P(x)dx=0 
+\end{equation}
+\end{quotation}
+
+
+\medskip
+Le moment de flexion s'exprime:
+
+\begin{quotation}
+$M_z(x)=C_1-F_1x-\dint_0^x x P(x)dx$, ou
+
+$M_z(x)=-C_2-F_2(l-x)-\dint_x^l(v-x) P(x)dv$
+\end{quotation}
+
+\medskip
+L'énergie interne de la poutre s'esprime:
+%The beam's internal energy can be explained as follows~:
+
+%\begin{quote}
+\[
+\delta J=\frac 12\dint_0^l\dfrac{M_z^2(x)}{EI}dx
+\]
+%\end{quote}
+
+\medskip
+\ifVersionAvecExemplesSepares
+   \section{Théorème de Menabrea}\index[aut]{Menabrea (Luigi Federico; général comte -; premier marquis de Valdora), 1867-1869, Italien}\index{Théorème!de Menabrea}
+\else
+   \subsection{Théorème de Menabrea}\index[aut]{Menabrea (Luigi Federico; général comte -; premier marquis de Valdora), 1867-1869, Italien}\index{Théorème!de Menabrea}
+\fi
+
+Le théorème de Menabrea permet d'écrire:
+
+\begin{quotation}
+   $\dfrac{\partial \delta J}{\partial C_1} =
+    \dfrac{\partial \delta J}{\partial C_2} =
+    \dfrac{\partial \delta J}{\partial F_1} =
+    \dfrac{\partial \delta J}{\partial F_2} = 0$
+\end{quotation}
+
+Ces calculs seront faits après avoir introduit les notations suivantes:
+\begin{quotation}\colorblue
+   $I_0(a,b)=\dint_a^b P(x)dx$
+
+   $I_1(a,b)=\dint_a^b x P(x)dx$
+\end{quotation}\colorblack
+
+
+$\dfrac{\partial \delta J}{\partial C_1}=0$~:
+
+\begin{quotation}
+$\qquad \dint_0^lM_z(x)dx=0$
+
+$\qquad \dint_0^lC_1-F_1x-I_1(0,x)dx=0$
+\end{quotation}
+
+\begin{equation}
+   \label{MenaC}
+   C_1l-\frac 12F_1l^2-\int_0^lI_1(0,x)dx=0
+\end{equation}
+
+$\dfrac{\partial \delta J}{\partial F_1}=0$~:
+
+\begin{quotation}
+$\qquad \dint_0^lxM_z(x)dx=0$
+
+$\qquad \dint_0^lC_1-F_1x-I_1(0,x)dx=0$
+\end{quotation}
+
+\begin{equation}
+   \label{MenaF}
+   C_1l-\frac 12F_1l^2-\int_0^lI_1(0,x)dx=0
+\end{equation}
+
+Nous utilisons les propriétés des intégrales précédemment définies:
+
+\begin{quotation}
+$I(a,b)=I(a,c)+I(c,b)$
+
+$I(b,a)=-I(a,b)$
+\end{quotation}
+
+for both $I_0$ and $I_1$.
+
+
+\medskip
+\ifVersionAvecExemplesSepares
+   \section{Résolution des équations}
+\else
+   \subsection{Résolution des équations}
+\fi
+
+En utilisant ($\ref{MenaC}$) et ($\ref{MenaF}$), on trouve $F_1$ and $C_1$,
+Puis, en utilisant ($\ref{staticF}$) et ($\ref{staticC}$) on obtient $F_2$ and $C_2$.
+
+Les efforts sont:
+
+\begin{quotation}
+$F_1=\dfrac 6{l^2}\left( \dint_0^lI_1(0,x)dx-\frac
+2l\dint_0^lxI_1(0,x)dx\right) $
+
+$F_2=-I_0(0,l)-F_1$
+
+$C_1=\dfrac 2l\left( 2\dint_0^lI_1(0,x)dx-\dfrac
+3l\dint_0^lxI_1(0,x)dx\right) $
+
+$C_2=\dfrac 2l\left( \dint_0^lI_1(0,x)dx-\dfrac
+3l\dint_0^lxI_1(0,x)dx\right) +lI_0(0,l)-I_1(0,l)$
+\end{quotation}
+
+\medskip
+\ifVersionAvecExemplesSepares
+   \section{Conclusion}
+\else
+   \subsection{Conclusion}
+\fi
+
+Ces forces et moments correspondent à des efforts de réactions.
+Les forces équivalentes utilisées en MEF correspondent aux efforts internes
+développés dans la poutre. Ce sont:
+
+\begin{tabbing}
+   at node iiiiii\=Forceqqq\=  \kill
+             \>Force \>Moment\\
+   Au nœud 1 \> ~$-F1$ \> ~$-C1$\\
+   Au nœud 2 \> ~$-F2$ \> ~$-C2$\\
+\end{tabbing}
+
+Analytiquement:
+
+\begin{equation}\colorblue
+\label{Feq}\left\{
+\begin{array}{l}
+   F_1=-\dfrac 6{l^2}\PP{\dint_0^lI_1(0,x)dx-\dfrac 2l\dint_0^lxI_1(0,x)dx} \\
+   F_2=I_0(0,l)-F_1 \\
+   C_1=-\dfrac 2l\PP{2\dint_0^lI_1(0,x)dx-\dfrac3l\dint_0^lxI_1(0,x)dx} \\
+   C_2=-\dfrac 2l\PP{\dint_0^lI_1(0,x)dx-\dfrac3l\dint_0^lxI_1(0,x)dx}
+   -lI_0(0,l)+I_1(0,l)
+\end{array}
+\right.
+\end{equation}\colorblack
+et sous forme vectorielle:
+
+\begin{quotation}
+$\left\{
+\begin{array}{l}
+   \overrightarrow{F_1}=F_1\overrightarrow{y} \\
+   \overrightarrow{F_2}=F_2\overrightarrow{y} \\
+   \overrightarrow{C_1}=C_1\overrightarrow{z} \\
+   \overrightarrow{C_2}=C_2\overrightarrow{z}
+\end{array}
+\right. $
+\end{quotation}
+
+

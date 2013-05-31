@@ -1,0 +1,112 @@
+\chapter*{Introduction}
+En introduction à cette partie, il nous semblait important d'en exposer sa structure, car
+elle peut sembler un peu décousue à la simple lecture de la table des matières.
+
+\medskip
+Après les pré-requis exposés dans les deux premières parties, la partie III va s'ouvrir
+<<~tout naturellement~>> sur une présentation générale de la méthode des éléments finis au chapitre~\ref{Ch-MEF}.
+
+\medskip
+Immédiatement après, compte tenu du public visé, le chapitre~\ref{Ch-Model} essayera
+de mettre en avant les spécificités et surtout la complexité de la mécanique comme champ
+d'application de la méthode des éléments finis.
+
+Cette mise en garde, au regard de l'expérience, nous semble importante:
+on a tendance souvent à considérer que la mécanique est quelque chose de très bien
+maîtrisé, et ce n'est pas le cas. Bien des sujets restent pointus, voire ouverts. Il convient
+donc de rester prudent, surtout pour ceux ayant une expérience de calcul importante qui les
+porte parfois à sous estimer les difficultés.
+
+\medskip
+Le chapitre~\ref{Ch-Elts}, qui fait suite logiquement en terme de présentation de la méthode des éléments finis, au
+chapitre~\ref{Ch-MEF}, est souvent le mieux maîtrisé par le public d'ingénieurs, au moins
+concernant les éléments de Lagrange.
+
+Nous l'avons complété de remarques sur les modèles à plusieurs champs (qui peut faire pour
+partie écho au chapitre~\ref{Ch-Model}).
+
+Encore une fois, pour le public visé, c'est surtout le paragraphe~\ref{Sec-ValidEF} sur
+la validation pratique des éléments finis qui aura sans doute le plus de valeur ajoutée. Le contenu
+de ce paragraphe fait souvent partie des choses oubliées.
+
+\medskip
+Comme nous en serons sur des choses un peu oubliées, nous en profiterons au chapitre~\ref{Ch-Amelio}
+pour continuer dans le même sillon et rappeler quelques méthodes d'amélioration de la
+performance du calcul. Nous y présentons des choses qui sont utilisées plus ou moins
+fréquemment par notre public.
+
+Seuls les paragraphes~\ref{Sec-PInv} et~\ref{Sec-Deriv} (sur les méthodes de réanalyse et aux dérivées
+d'ordre élevé) sont généralement moins bien connus. Nous avons voulu les introduire ici plutôt qu'au
+chapitre~\ref{Ch-XFEM} car ils sont vraiment en lien avec les préoccupations directes de notre
+public.
+
+\medskip
+Pour continuer sur les choses pouvant avoir un réel intérêt pratique pour le public d'ingénieurs
+mécaniciens (ou acousticiens), nous aborderons au chapitre suivant~\ref{Ch-Homog} les
+méthodes d'homogénéisation.
+
+Si les méthodes les plus <<~physiques~>> sont bien connues,
+l'approche mathématique (généralisante) est bien souvent quasi totalement inconnue.
+
+\medskip
+À ce niveau du document, il nous semble que nous aurons parcouru bon nombre des applications
+typiques de la méthode des éléments finis, surtout dans le cadre de la mécanique... mais uniquement sous l'angle
+statique !
+
+Il sera donc temps d'aborder <<~le temps~>>, i.e. les problèmes non stationnaires, au
+chapitre~\ref{Ch-temps}.
+La propagation des ondes, quant à elle, ne sera traitée qu'au chapitre~\ref{Ch-ondes}.
+C'est d'ailleurs dans ce chapitre que seront abordés également les modes propres, dont
+nous n'aurons pas parlé jusqu'alors (à quelques exception près lors de remarques diverses
+et variées... mais rien de sérieux).
+
+\medskip
+Dès lors, on pourra considérer qu'une présentation assez complète de la méthode des éléments finis a été faite.
+Toutefois, ce qui était encore de l'ordre de la recherche il y a une décennie fait aujourd'hui
+partie des phénomènes que notre public doit prendre en compte de plus en plus souvent.
+Ces phénomènes, un peu plus complexes, un peu plus exotiques, sont souvent liés à
+ce que l'on appelle la ou plutôt les non linéarités. C'est ce qui sera abordé au chapitre
+\ref{Ch-NL}.
+
+Parmi toutes les non linéarités, c'est celle des lois de comportement qu'il nous est demandé
+d'exposer en priorité. Les problèmes de contact ou de grands déplacements, qui seront
+abordés dans ce chapitre, nous sont bien moins demandés car souvent traités par des
+personnes très au fait des méthodes et même souvent en lien avec la recherche dans
+le domaine.
+
+\medskip
+Enfin, un chapitre sera dédié au traitement de la modélisation de la rupture en mécanique
+au chapitre~\ref{Ch-rupt}.
+Il s'agit néanmoins d'une affaire de spécialistes, et nous ne ferons qu'aborder le sujet.
+
+\medskip
+Le chapitre~\ref{Ch-XFEM} permet de mettre l'accents sur le fait que même si la méthode des éléments finis
+est une méthode extrêmement générale, performante et répandue, elle n'est qu'une
+méthode numérique parmi une multitude d'autres méthodes.
+
+Ce chapitre n'a pas vocation bien évidemment à approfondir aucune des méthodes
+abordées, mais uniquement à fournir un petit complément culturel qui nous semblait
+indispensable dans le monde actuel.
+
+\medskip
+Le chapitre~\ref{Ch-Singul} clôt cette partie sur un petit rappel lié aux singularités,
+juste comme une petite piqûre de rappel sur des problèmes dont les ingénieurs pratiquant
+le calcul numérique restent assez conscients. Il nous a semblé que passer les singularités
+sous silence pouvait laisser à penser que ce problème n'était peut-être pas si
+important, ce qui n'est pas le cas bien évidemment.
+
+
+\medskip
+Enfin, à notre grand regret (mais ce document est déjà suffisamment, voire même trop,
+volumineux) certaines méthodes n'ont pas été abordées et feront l'objet de fascicules
+séparés.
+
+Nous pensons par exemple en acoustique aux méthodes de tir de rayons, les méthodes
+énergétiques simplifiées, les <<~Wave based methods~>>... i.e. les méthodes aussi bien
+temporelles que spectrales.
+
+En mécanique, nous pensons notamment à toutes les méthodes probabilistes de la
+<<~mécanique aléatoire~>>, incluant l'approche spectrale et reliées au calcul des
+l'indice de fiabilité d'une structure.
+
+

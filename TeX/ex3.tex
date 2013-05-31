@@ -1,0 +1,248 @@
+\ifVersionAvecExemplesSepares
+   \chapter{[\castem] Un calcul de poutre vu au chapitre \ref{Ch-Model}}
+
+   Nous allons reprendre pour partie l'exemple de la poutre encastrée traitée au chapitre \ref{Ch-Model} sous \castem..
+\else
+   \section{Exemple: retour sur le calcul de poutre du paragraphe \ref{Sec-champs} avec \castem}
+
+   Nous allons reprendre pour partie l'exemple de la poutre encastrée traitée au paragraphe précédent et présenter
+   le listing \castem correspondant.
+\fi
+
+
+
+\medskip
+\ifVersionAvecExemplesSepares
+   \section{Modélisation 2D}
+\else
+   \subsection{Modélisation 2D}
+\fi
+
+Nous commençons par définir les données du problème: longueur, largeur, épaisseur, nombre d'éléments
+selon chacune de ces directions, et force appliquée:
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt]
+* DONNEES
+* geometrie
+long1=22.0;
+larg1=8.;
+ep1=4;
+* maillage
+nlong1=22;
+nlarg1=8;
+* effort
+Forc1=-41.;
+\end{Verbatim}
+\colorblack
+
+\medskip
+Puis nous définissons la dimension du problème (modèle tridimensionnel), et le type de découpage:
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+OPTION DIME 3 ELEM QUA4;
+\end{Verbatim}
+\colorblack
+
+\medskip
+Nous définissons les points $k_i$ (dénommés ainsi pour rappel de la syntaxe Ansys des keypoints \verb|k,i,...|), puis les
+lignes $L_i$, et la surface $S_1$.
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+k1 = 0. 0. 0.;
+k2 = long1 0. 0.;
+k3 = long1 larg1 0.;
+k4 = 0. larg1 0.;
+*
+L1 = DROI nlong1 k1 k2;
+L2 = DROI nlarg1 k2 k3;
+L3 = DROI nlong1 k3 k4;
+L4 = DROI nlarg1 k4 k1;
+*
+S1 = DALLER L1 L2 L3 L4;
+\end{Verbatim}
+\colorblack
+
+\medskip
+Le modèle est un modèle de mécanique élastique isotrope utilisant lélément de coque COQ4 pour le maillage $S_1$:
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+Model1 = MODL S1 MECANIQUE ELASTIQUE ISOTROPE COQ4;
+\end{Verbatim}
+\colorblack
+
+\medskip
+Enfin on résoud le problème après avoir fourni les données matérielles et les conditions aux limites:
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+Mater1 = MATERIAU Model1 YOUNG 70000.0 NU 0.33 RHO 2700.0;
+Car1 = CARAC Model1 EPAI ep1;
+Mater1 = Mater1 ET Car1;
+MR1 = RIGIDITE Model1 Mater1;
+CL1 = BLOQ DEPL L4;
+CL2 = BLOQ ROTA L4;
+FOR1 = FORCE(0. 0. Forc1) k3;
+MTOT1 = MR1 ET CL1 ET CL2;
+Depl1 = RESOUD MTOT1 FOR1 ;
+\end{Verbatim}
+\colorblack
+
+\medskip
+On peut post-traiter les résultats et les afficher.
+
+Les composantes de $Sig_1$ dans le repère LOCAL sont:
+\begin{itemize}
+   \item les efforts normaux : N11, N22;
+   \item l'effort de cisaillement plan: N12; 
+   \item les moments de flexion : M11, M22;
+   \item le moment de cisaillement plan : M12;
+   \item les efforts tranchants V1, V2.
+\end{itemize}
+
+Les composantes de $Eps_1$ dans le repère LOCAL sont:
+\begin{itemize}
+   \item les élongations normales dans le plan: EPSS, EPTT;
+   \item les cissions dans le plan et transverses: GAST, GASN, GATN;
+   \item les courbures: RTSS, RTTT, RTST.
+\end{itemize}
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+* DEPLACEMENTS
+UZ1 = EXCO 'UZ' depl1;
+*TRAC UZ1 S1;
+*
+* DEFORMEE
+def0 = DEFO S1 Depl1 0.0 BLEU;
+def1 = DEFO S1 Depl1;
+*TRAC (def0 ET def1);
+*
+* CONTRAINTES: 
+Sig1 = SIGM Model1 Mater1 Depl1;
+Siigg1 = EXCO M11 Sig1;
+TRAC Siigg1 Model1 def1;
+
+* DEFORMATIONS
+Eps1 = EPSI Model1 Mater1 Depl1;
+Eppss1 = EXCO RTSS Eps1;
+*TRAC Eppss1 Model1;
+
+fin;
+\end{Verbatim}
+\colorblack
+
+
+\medskip
+\ifVersionAvecExemplesSepares
+   \section{Modèle 3D}
+\else
+   \subsection{Modèle 3D}
+\fi
+
+Nous allons maintenant construire le modèle tridimensionnel.
+
+Comme nous voulons travailler à l'économie, nous repartons du fichier précédent que nous adaptons.
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt]
+* DONNEES
+* geometrie
+long1=22.0;
+larg1=8.;
+ep1=2;
+* maillage
+nlong1=22;
+nlarg1=8;
+nep1=3;
+* effort
+Forc1=-41.;
+\end{Verbatim}
+\colorblack
+
+\medskip
+Cette fois, nous nous servons de CUB8 au lieu de QUA4.
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+OPTION DIME 3 ELEM CUB8;
+*
+k1 = 0. 0. 0.;
+k2 = long1 0. 0.;
+k3 = long1 larg1 0.;
+k4 = 0. larg1 0.;
+*
+L1 = DROI nlong1 k1 k2;
+L2 = DROI nlarg1 k2 k3;
+L3 = DROI nlong1 k3 k4;
+L4 = DROI nlarg1 k4 k1;
+*
+S1 = DALLER L1 L2 L3 L4;
+\end{Verbatim}
+\colorblack
+
+\medskip
+À partir de la surface $S_1$, qui est la même que précédemment, nous allons créer le volume $V_1$ par translation
+selon le vecteur $Vect_1$.
+
+Nous en profitons également pour créer $Face_1$ sur laquelle porterons les conditions aux limites.
+Notons par exemple que la ligne $L_4$ appartient bien au maillage $V_1$, puisque ce dernier est construit dessus.
+Par contre, la surface $face_1$ n'appartient pas à $V_1$, il est donc nécessaire de la lier à $V_1$ en utilisant
+la commande ELIM.
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+Vec1=0. 0. (-1.0*ep1);
+V1=S1 VOLU nep1 TRAN Vec1;
+Face1 = L4 TRAN nep1 Vec1;
+ELIM 0.0000001 V1 Face1;
+\end{Verbatim}
+\colorblack
+
+\medskip
+Cette fois, le modèle correspond au maillage $V_1$ et utilise l'élément CUB8.
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+Model1 = MODL V1 MECANIQUE ELASTIQUE ISOTROPE CUB8;
+\end{Verbatim}
+\colorblack
+
+\medskip
+On résoud, puis on post-traite.
+
+\colorgris
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+Mater1 = MATERIAU Model1 YOUNG 70000.0 NU 0.33 RHO 2700.0;
+MR1 = RIGIDITE Model1 Mater1;
+CL1 = BLOQ DEPL Face1;
+CL2 = BLOQ ROTA Face1;
+FOR1 = FORCE(0. 0. Forc1) k3;
+MR1 = MR1 ET CL1 ET CL2;
+Depl1 = RESOUD MR1 FOR1 ;
+*
+* DEPLACEMENTS
+UZ1 = EXCO 'UZ' depl1;
+*TRAC CACH UZ1 V1;
+* DEFORMEE
+def0 = DEFO V1 Depl1 0.0 BLEU;
+def1 = DEFO V1 Depl1;
+*TRAC CACH (def0 ET def1);
+*
+* CONTRAINTES: 
+Sig1 = SIGM Model1 Mater1 Depl1;
+* Les composantes de Sig1 sont: VONMISES, SMXX, SMYY, SMZZ, SMXY, SMXZ, SMYZ
+Siigg1 = EXCO SMXX Sig1;
+* on trace sur la geometrie deformee, c'est plus beau
+TRAC CACH Siigg1 Model1 def1;
+*
+* DEFORMATIONS
+*Eps1 = EPSI Model1 Mater1 Depl1;
+*TRAC CACH Eps1 Model1;
+
+fin;
+\end{Verbatim}
+\colorblack

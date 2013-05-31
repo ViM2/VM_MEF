@@ -1,0 +1,447 @@
+\newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
+%%%%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
+\newif\ifVersionDuCompilateurEstVincent% par défaut vaut false, donc compilation avec les packages de Mathias
+%\VersionDuCompilateurEstVincenttrue% à commenter pour compileur de Mathias
+\newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
+\VersionDuDocEstPourHALtrue%
+\newif\ifVersionAvecExemplesSepares% par defaut false, donc exemples dans les chapitres
+%\VersionAvecExemplesSeparestrue% à dé commenter pour partie IV
+
+%
+\ifVersionDuDocEstVincent
+   \documentclass[11pt,pdflatex]{book}
+\else
+   \documentclass[fleqn,11pt,pdflatex]{book}
+\fi
+%
+% packages communs
+   \usepackage[utf8]{inputenc}
+   \usepackage[T1]{fontenc}
+   \usepackage{fancyhdr}
+   \usepackage{graphicx,color,epstopdf,rotating}
+   \usepackage{amsmath,amsfonts,amssymb,bm,mathrsfs,amsthm,amstext,mathtools}
+   \usepackage{hyperref,multirow,multicol,xspace}
+   \usepackage{cutwin,fancyvrb,titletoc}
+   \usepackage[framemethod=tikz]{mdframed}
+   \usepackage[frenchb]{babel}
+   \frenchbsetup{IndentFirst=false}
+%
+\ifVersionDuDocEstVincent
+%   \usepackage{times}% si on veut...
+%   \usepackage{mathptmx}% Use Times as de­fault text font, and pro­vide maths sup­port
+%   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
+%   \usepackage[top=3.25cm,bottom=3.25cm,left=3cm,right=3cm,a4paper,headsep=15Pt]{geometry}
+%   \usepackage{enumitem}
+   \usepackage{a4}
+   \usepackage{makeidx,index}
+   \usepackage{frbib,bibtopic}
+%
+% Le A4 est "un peu court":
+   \addtolength{\textheight}{1.5cm}
+   \addtolength{\voffset}{-1.5cm}
+   \addtolength{\textwidth}{4cm}
+   \addtolength{\hoffset}{-1.5cm}
+%
+   \pagestyle{fancy}
+   \date{\emph{version du \today}}
+   \makeindex
+   \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
+\else
+   \usepackage{microtype}
+   \usepackage{times}
+   \ifVersionDuCompilateurEstVincent% Poor's man version
+      \usepackage{mathptmx,amssymb} % police ouverte (il peut y avoir des messages d'erreur à la compilation)
+      \providecommand\mathscr{\mathcal} % à commenter lors de l'utilisation de mtpro2
+   \else
+      \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2} % police propriétaire
+   \fi
+   \usepackage{subfig}
+   \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
+   \usepackage{enumitem}
+   \setlist{nolistsep} 
+   \usepackage{url}
+   \usepackage{eso-pic}
+   \pagestyle{fancy}
+   \usepackage[xindy]{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
+   \makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
+   \makeindex[columns=2,name=aut,title=Index des noms propres]
+   \usepackage{csquotes}           % utilisé par biblatex
+   \usepackage[                    % bibliographie (avec le moteur biber au lieu de bibtex)
+    style=alphabetic,              % citations comme [Fa91] pour Faltings, 91
+     style=numeric-comp,
+     sorting=nyt,                  % classement par nom, année, titre
+     sortcites=true,               % classer les citations multiples
+     autopunct=true,               % gérer automatiquement les ponctuations
+     babel=hyphen,                 % ajuster les césure pour chaque entrée
+     hyperref=true,                % les liens hypertexte, c'est le Bien
+     abbreviate=false,             % pas d'abréviation
+     backref=true,
+     backend=biber]{biblatex}      % pas de réfs. aux pages où l'entrée est citée
+   \bibliography{VM}               % utiliser these.bib (format bibtex normal)
+   \defbibheading{bibempty}{}      % voir ci-dessous
+   \usepackage[numbered,level=-1]{bookmark}
+   \renewcommand{\leq}{\leqslant}
+   \renewcommand{\geq}{\geqslant}
+\fi
+
+\selectlanguage{francais}
+
+\graphicspath{{./photos/}{./eps/}}
+
+\include{./tex/macros}% macros
+
+\includeonly{./tex/model,./tex/Elts,./tex/Amelio}% pour la relecture par chapitre
+\begin{document}
+
+% Recto de la page de titre
+\ifVersionDuDocEstVincent
+%
+\title{\colorblue\textbf{La Méthode des éléments Finis}\\[+5mm]
+   \emph{\colorgris Vulgarisation des aspects mathématiques}\\
+   \emph{\colorgris Illustration des capacités de la méthode}\\[+5mm]
+   \includegraphics[height=100mm]{couteau-suisse}}
+   \author{Vincent \textsc{Manet}}%\\[+2mm]
+%   \textcolorgreen{\emph{manet.vim2\symbol{64}laposte.net}}}
+   \maketitle
+\else
+   \thispagestyle{empty}\mbox{}%
+   \AddToShipoutPicture*{\includegraphics{Front}}%
+%
+   \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
+   \setlength{\belowdisplayskip}{\abovedisplayskip}
+   \setlength{\abovecaptionskip}{3pt}
+   \setlength{\belowcaptionskip}{0pt}
+   \title
+\fi
+% Verso de la page de titre
+\newpage\mbox{}\thispagestyle{empty}%
+\vspace*{2cm}
+
+\vfill\normalsize\selectfont
+\ifVersionDuDocEstVincent Ceci est la version<<~cours~>>{} de ce document.
+\else
+\noindent Vincent Manet --- 2013 (Ceci est la version <<~livre~>> {} de ce document)\\
+Ce document est sous licence Creative Commons 3.0 France:
+\begin{itemize}
+\item paternité;
+\item pas d'utilisation commerciale;
+\item partage des conditions initiales à l'identique;
+\end{itemize}
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr}\\[8pt]
+\includegraphics[width=5cm]{IconTog.eps}
+\fi
+\newpage%  
+
+
+
+\chapter*{Introduction}
+%\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Introduction}{}
+
+Dans ce (de moins en moins court) document, plutôt à destination d'ingénieurs
+mécaniciens  connaissant déjà la méthode des éléments finis,
+nous allons essayer de faire une présentation un peu plus théorique que ce qui 
+leur est généralement proposé (et qui est quand même souvent de type 
+<<~preuve par les mains~>>, ce qui occulte trop de points).
+
+Nous ne ferons appel qu'à des notions mathématiques de bases généralement 
+déjà vues pour la plupart en taupe (ou en tout début de cycle d'ingé)... bien
+que des compléments que l'on peut qualifier d'élémentaires nous aient été
+demandés et aient été inclus.
+
+Nous espérons, grâce à cette présentation théorique
+montrer toute la souplesse et la puissance de la méthode, afin
+de permettre au lecteur d'envisager d'autres simulations que celles
+qu'il a pu déjà réaliser par le passé.
+
+
+
+
+
+\bigskip
+\section*{But du document}
+\markboth{But du document}{}
+\addcontentsline{toc}{section}{But du document}
+
+Le but initial était de \emph{présenter brièvement la théorie mathématique} derrière
+les éléments finis afin que les ingénieurs utilisant cette méthode puisse en envisager
+toutes les applications, ainsi que de \emph{couvrir les aspects qui}, selon nous, \emph{devraient être
+connus de tout ingénieur mécanicien impliqué ou intéressé par le calcul numérique}.
+
+Toutefois, il s'envisage comme \textcolorblue{support de référence à plusieurs cours}, 
+cours qui ne portent pas sur tous les aspects traités dans ce document, et pendant lesquels les aspects 
+pratiques sont plus développés (avec mise en situation sur machine).
+
+\medskip
+Même si nous avons voulu rester le plus succinct possible, l'introduction de
+notions de proche en proche à conduit à un document fait aujourd'hui une
+certaine taille (par exemple, nous avons besoins des espaces de Sobolev, mais
+comment les introduire sans parler des espaces de Lebesgue, mais comment
+les introduire sans parler...).
+
+Aussi le document a-t-il finalement été découpé en plusieurs parties:
+un survol des notions mathématiques, puis le traitement du problème
+continu constituent l'ossature théorique nécessaire à assoir la MEF
+sur un socle solide. La discrétisation par éléments finis à proprement parler
+n'est aborder qu'ensuite, et d'ailleurs un seul chapitre suffirait à en faire
+le tour... sauf à entrer plus dans le détail concernant <<~ce qui fâche~>>:
+homogénéisation, non linéarité, dynamique, ce qui est fait dans des
+chapitres séparés.
+
+\medskip
+Enfin, d'autres méthodes sont abordées car également très
+employées aujourd'hui. Aussi est-il indispensable selon nous d'en avoir 
+entendu parlé et d'en connaître les principales notions (BEM, FEEC...).
+
+\medskip
+En annexes, se trouve un petit fourre-tout comprenant des choses censées être 
+maîtrisées depuis la taupe (mais qui parfois nous sont demandées) et les
+compléments qui alourdiraient encore les propos précédents.
+
+\medskip
+Certaines notions (essentiellement de topologie) ne sont pas présentées dans ce 
+document.
+Il nous a semblé que le lecteur devait avoir quelques souvenirs de ce qu'est un
+ouvert, un fermé, l'adhérence, la densité...
+Par ailleurs, leur nom peut être suffisamment évocateur pour se passer d'une
+définition formelle dans le contexte de ce document.
+
+\bigskip
+Attention, \textcolorred{ce document n'est pas un document de mathématiques}, il ne contient
+d'ailleurs aucune preuve.
+C'est, dans ces deux premières parties, un \textcolorblue{document de vulgarisation} de 
+notions mathématiques nécessaires à une bonne compréhension de la méthode des éléments finis.
+
+%\medskip
+Nous avons voulu réaliser un survol des notions importantes, mais malgré tout, afin de ne
+pas être parfois trop laconique, nous avons un peu débordé. \ifVersionDuDocEstVincent\textcolorgris{Dans ce cas, 
+les passages considérés comme moins importants ont été mis en gris.}\fi
+
+\medskip
+\ifVersionDuDocEstVincent
+D'ailleurs un certain <<~code couleur~>> sera plus ou moins respecté dans ce document.
+En \textcolorblue{bleu, les termes importants}, en \textcolorred{rouge, les points importants},
+en \textcolorgris{gris, les choses moins importantes} dont la lecture peut être
+oubliée et enfin en
+\textcolorgreen{vert, des remarques <<~de bon sens~>>} sur ce qui est exposé.
+%\else
+\fi
+
+\medskip
+En fin de document, un petit index des noms propres permettra au lecteur
+de replacer les divers développements mentionnés dans l'histoire...
+Il se peut qu'il subsistent quelques erreurs, notamment au niveau des
+nationalités mentionnées, car il n'est pas toujours aisé de déterminer rapidement cette 
+information (et nous ne connaissons pas toutes les biographies des personnes citées).
+
+\medskip
+\emph{Ce document a été réalisé très rapidement, et de manière extrêmement hachée.
+Il comporte forcément encore beaucoup de fautes: merci de m'en faire part.}
+
+
+
+
+\bigskip
+\section*{Démarche de l'ingénieur numéricien}
+\markboth{Preface}{Démarche de l'ingénieur numéricien}
+\addcontentsline{toc}{section}{Démarche de l'ingénieur numéricien}
+
+En préambule à ce document, nous tenions à synthétiser \textcolorblue{la
+démarche complète de l'ingénieur numéricien}:
+\begin{itemize}
+   \item Modélisation / mise en équations -- Construction du problème continu (système d'EDP).
+   \item Analyse mathématique du problème posé -- Existence, unicité, propriétés des solutions.
+   \item Conception d'une méthode numérique -- Construction d'un problème discrétisé.
+   \item Analyse numérique -- Questions de stabilité, convergence, précision.
+   \item Algorithmique -- Choix de méthodes de résolution en dimension finie.
+   \item Mise en œuvre sur ordinateur -- Programmation.
+   \item Pre et Post Traitement (maillages / visualisation) -- Interpolation, extrapolation, outils de la CAO.
+\end{itemize}
+
+\medskip
+Tous ces points ne seront évidemment pas abordés dans ce document!
+\vfill
+\noindent
+\textcolorred{\textbf{Remerciements:}}
+
+Nous n'avions pas prévu de réaliser une deuxième version aussi rapidement.
+Celle-ci existe suite aux sollicitations de Mathias Legrand\index[aut]{Legrand (Mathias), ?- , Français}.
+C'est lui  qui a développé les macros nécessaires à l'amélioration très très nette de la 
+qualité typographique (environnements pour les notes historiques, les théorèmes, lemmes...).
+
+C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du même code source):
+l'un que nous appelons <<~version cours~>> (plus en accord avec ce que nous proposons en cours),
+et l'autre <<~version livre~>>, plus proche d'un ouvrage.
+
+
+
+\colorblack
+\medskip
+\colorgris
+\tableofcontents%\markboth{Table des matières}{}
+\colorblack
+
+\part{Survol mathématique}
+\include{./tex/espaces}
+\include{./tex/Operat}
+\include{./tex/continu}
+\include{./tex/Lp}
+\include{./tex/Sobolev}
+\include{./tex/Resume1}
+
+\part{Problème continu}
+\include{./tex/phy-edp}
+\include{./tex/FFaible}
+ \include{./tex/phy-ffble}%\include{./tex/phy-varia}% inclus dans mhy-ffble
+ \ifVersionAvecExemplesSepares\else
+    \include{./tex/ex1}% exemple formulation math
+ \fi
+%
+ \part{éléments finis}
+ \include{./tex/MEFintro}
+ \include{./tex/MEF}
+ \include{./tex/model}
+ \include{./tex/Elts}
+ \include{./tex/Amelio}
+ \include{./tex/Homog}
+ \include{./tex/temps}% ajouter dynamique rapide ?
+ \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?
+ \include{./tex/non-lin}
+ \include{./tex/rupture}
+ \include{./tex/xfem}% ajouter \section{L'utilisation de plusieurs maillages} => stochastique => dans les méthodes dérivées ? (xfem.tex)
+%%GFREM (Global FEM), IFEM (Integrated FEM/BEM)
+ \include{./tex/singul}
+ \include{./tex/ccl}
+
+ \ifVersionAvecExemplesSepares
+%%%%\part{Pratique des éléments finis}
+    \part{Quelques exemples}
+    \include{./tex/ex1}% exemple formulation math
+    \include{./tex/ex2}% élts 1D
+    \include{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
+    \include{./tex/ex5}% efforts équivalents sur un poutre
+    \include{./tex/ex3}% poutre Ch 10 sous Cast3M
+    \include{./tex/ex4}% macro Ansys et poutre en U
+    \include{./tex/ex6}% propagation freefem++
+    \include{./tex/ex7}% contact Cast3M
+ \fi
+%
+ \appendix
+ \part{Annexes}
+ \include{./tex/interp}
+ \include{./tex/intnum}
+ \include{./tex/ed}%\include{./tex/newmark}% inclus dans ED
+%%%%\include{./tex/discretis}% ??? je ne sais plus ce que je voulais faire
+%%%%\include{./tex/cvnum}% supprimé, trop loin de nos préoccupations
+%%%%\include{./tex/matrices}% supprimé, trop loin de nos préoccupations
+ \include{./tex/new-raph}
+%%%%\include{./tex/essais}% pas en rapport avec ce document
+
+
+
+\ifVersionDuDocEstVincent
+   \chapter*{Bibliographie}
+   \markboth{Bibliographie}{}
+%   \addcontentsline{toc}{chapter}{Bibliographie}
+%    BIBTOPIC crée pour chaque appel à BtSect un fichier .aux
+%    on aura donc VM_MEF1.aux... VM_MEF5.aux (correspondant
+%    aux fihicers VM_MEF0, ..., VM_MEF3, VM_MEFA.bib)
+%    il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
+%    pour créer les fichiers .bbl nécessaires.
+
+Le présent document est essentiellement une composition faite à partir de textes
+trouvés sur le net, qui ont été <<mis bout à bout>> afin de réduire l'effort
+de rédaction (le document ayant été réalisé à ressources minimales ).
+
+
+Les principales  ressources bibliographiques utilisées pour la rédaction de ce document
+sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur
+désireux d'approfondir certains thèmes (Google est ton ami).
+
+
+De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas
+mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est
+ouvert...
+
+
+\bibliographystyle{frunsrt}
+
+\begin{btSect}{VM_MEF0}
+\section*{Références générales}\markboth{Références générales}{}\index[aut]{Joly (Patrick), ?- , Français}
+Dans tout le document, nous nous servons intensivement de Wikipédia.
+\btPrintAll
+\end{btSect} 
+
+\begin{btSect}{VM_MEF1}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}
+\section*{Références de la partie 1}\markboth{Preface}{Références de la partie 1}
+\btPrintAll
+\end{btSect} 
+
+\begin{btSect}{VM_MEF2}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}
+\section*{Références de la partie 2}\markboth{Références de la partie 2}{}
+\btPrintAll
+\end{btSect} 
+
+\begin{btSect}{VM_MEF3}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}
+\section*{Références de la partie 3}\markboth{Références de la partie 3}{}
+\btPrintAll
+\end{btSect} 
+
+\begin{btSect}{VM_MEFA}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+\section*{Références des annexes}\markboth{Références des annexes}{}
+\btPrintAll
+\end{btSect} 
+
+
+\cleardoublepage
+\renewcommand{\indexname}{Index}
+\markboth{Index}{}
+%\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\cleardoublepage
+\makeatletter
+\renewenvironment{theindex}
+               {\if@twocolumn
+                  \@restonecoltrue\onecolumn
+                \else
+                  \@restonecolfalse
+                \fi
+                \thispagestyle{fancy}\parindent\z@
+                \parskip\z@ \@plus .3\p@\relax
+                \columnseprule \z@
+                \columnsep 35\p@
+                \let\item\@idxitem}
+               {\if@restonecol\twocolumn\fi}
+\makeatother
+\markboth{Index des Noms Propres}{}
+%\addcontentsline{toc}{chapter}{Index des Noms Propres}
+
+~\vspace{9mm}\\
+
+\noindent{\Huge \textbf{Index des Noms Propres}}\\[+2mm]
+
+%~\\
+
+
+\bigskip
+
+%il faut MakeIndexer le fichier "VM_MEF.aut.idx"
+   \renewcommand{\indexname}{Index des Noms Propres}
+   \printindex[aut]
+
+   \cleardoublepage
+   \include{./tex/galerie}
+%%%%%%%%%%
+\else
+   \printindex[aut]
+   \printindex
+
+   \cite{*}
+   \chapter*{Références bibliographiques}
+\index[aut]{Joly (Patrick), ?- , Français}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+
+   \printbibliography[heading=bibempty]
+\fi
+
+\end{document}

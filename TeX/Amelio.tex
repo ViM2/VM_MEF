@@ -1,0 +1,859 @@
+\chapter{Le calcul efficient: qualité des résultats et efforts de calcul}\label{Ch-Amelio}
+
+
+\medskip
+\section{Amélioration d'un modèle: méthodes r, h et p}\label{Sec-rhp}
+
+Les indicateurs d'erreur ont pour but de nous indiquer si <<nous sommes loin de 
+la solution>>, afin de pouvoir modifier le modèle si besoin.
+Ainsi, par itérations successives, on pourra tendre vers une solution
+de plus en plus proche de la solution exacte.
+
+Les indicateurs locaux nous permettent notamment de faire des modifications uniquement
+locales du modèles, i.e. uniquement là où il y en a besoin, par exemple en
+raffinant le maillage.
+
+\medskip
+Globalement, il existe trois stratégies pour améliorer la précision de la
+solution obtenue:
+\begin{itemize}
+   \item la \textcolorblue{méthode -r-}\index{Méthode r} pour \textcolorblue{relocalisation des nœuds}.
+
+	Pour un maillage et un type d'élément donné, il s'agit de déplacer les nœuds,
+	en fonctions des indicateurs d'erreur, et donc sans impacter le nombre de ddl du système.
+	Ainsi, la taille des éléments peut augmenter (maillage plus lâche) dans les
+	zones les moins sollicitées et diminuer (maillage plus fin) dans les zones les plus
+	sollicitées.
+	On voit que la restriction de la méthode est qu'elle ne joue pas sur le nombre
+	de nœuds, et que par conséquent, sans violer les contraintes de distorsion,
+	elle est limitée.
+   \item la \textcolorblue{méthode -h-}\index{Méthode h} où $h$ est la taille d'un élément.
+
+	En conservant le même type d'élément, on les subdivise dans les zones 
+	les plus sollicitées (selon le ou les indicateurs d'erreur choisis).
+	Dans cette méthode, on augmente le nombre de nœuds afin de contrôler
+	les erreurs et la précision du modèle.
+	Il est nécessaire de se fixer une limite dans la précision recherchée afin
+	de ne pas trop raffiner le maillage.
+   \item la \textcolorblue{méthode -p-}\index{Méthode p} pour \textcolorblue{polynômes}.
+
+	À nombre d'éléments constant, dans les zones les plus 	sollicitées, 
+	on va modifier les éléments en introduisant des fonctions de formes polynomiales
+	d'ordre plus élevé (dite hiérarchiques).
+	La complexité du système est cette fois encore accrue.
+\end{itemize}
+
+\medskip
+Évidemment, ces méthodes peuvent être combinées.
+La \textcolorblue{méthode -hp-}\index{Méthode hp} propose de modifier à la fois le maillage et
+les fonctions d'interpolation. Elle semble aujourd'hui être la méthode optimale en terme 
+d'efficacité et de vitesse de convergence.
+
+Notons que les méthodes -r- et -h- dépendent des capacités du mailleur automatique
+implémenté.
+De nombreux travaux existent sur le maillage automatique, nous n'entrerons pas dans
+ce détail.
+
+
+
+
+
+\medskip
+\section{Le Post-traitement}\index{Post-traitement}\label{Sec-PT}
+
+Une manière d'améliorer les résultats est de recourir à des méthodes dites
+de post-traitement, i.e. des méthodes qui, à partir des données issues de la
+résolution du système matriciel correspondant au problème, fournissent
+des données complémentaires ou améliorent toute ou partie des données
+déjà disponibles.
+
+En fonction des problèmes (donc des données disponibles et des données
+souhaitées) de nombreuses méthodes existent. Elles sont généralement
+dédiées à un problème donné. 
+
+\medskip
+Un exemple déjà abordé dans ce document est celui où, à partir des déplacement 
+nodaux obtenus par un calcul EF d'une structure mécanique composée de deux matériaux
+différents dans une discrétisation classique <<en déplacements>>, on souhaite remonter
+aux contraintes à l'interface entre lesdits matériaux.
+
+Une méthode déjà mentionnée est la méthode dite de <<Reissner local>>\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} 
+qui consiste à intégrer les équations d'équlibre sous la forme mixte de Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} 
+mais uniquement sur des paires d'éléments ayant des propriété matérielles différentes
+et possédant une face commune.
+
+On obtient alors un champ de contrainte complètement continu dont on ne retient que
+les composantes correspondant à la trace\index{Trace} des contraintes, les autres étant calculées
+comme dans la méthode classique. On montre que l'on améliore grandement la qualité
+de l'approximation des contraintes aux interfaces, mêmes avec un maillage grossier.
+
+\medskip
+Un autre exemple serait, disposant d'un point de pression constant par élément, de
+calculer la pression en un point quelconque comme interpolation (linéaire ou non) à 
+partir des points disponibles.
+
+\medskip
+Un troisième exemple serait à partir des données nodales dans un modèle 1D
+(poutre ou barre selon le cas), de remonter à la répartition des contraintes en un
+points quelconque de la structure (donc via les hypothèses faites dans le modèle
+sur la répartition des contraintes dans une section + via un interpolation lorsque l'on se 
+trouve dans une section ne passant pas par un nœud)...
+
+\ifVersionAvecExemplesSepares\else
+   \input{./tex/ex4}% macro Ansys et poutre en U
+\fi
+
+
+
+
+
+
+\medskip
+\section{La sous-structuration et la simulation multi-échelles}\label{Sec-ssstruc}\index{Sous-structuration}\index{Multi-échelles}
+
+Le fonctionnement des produits industriels met en jeu des phénomènes physiques à des
+échelles très différentes. 
+La prise en compte de tous ces phénomènes dans les simulations numériques demanderait 
+d'utiliser des modèles extrêmement détaillés, entraînant des coûts d'identification 
+et/ou de calcul prohibitifs. 
+La simulation multi-échelles\index{Multi-échelles} est une réponse à cette problématique. 
+Elle consiste à simuler chaque phénomène à l'échelle la plus pertinente, 
+i.e. en utilisant plusieurs modèles de tailles et de finesses différentes; cela permet, 
+grâce à des solveurs adaptés, de réaliser des simulations qui seraient inaccessibles 
+par des approches plus directes.
+
+\medskip
+Imaginons que nous souhaitions calculer un avion, mais que, pour des raisons
+évidente de sécurité nous ayons besoin d'obtenir une precision <<boulon par boulon>>.
+On se doute bien que l'on ne peut mailler tout l'avion avec un tel niveau de détail...
+On recourt alors à une cascade de modèles de dimensions et de finesses différentes, 
+allant de l'avion tout entier (mais modélisé relativement grossièrement) à
+des détails structuraux modélisés très finement (mais limités à de petites zones), comme
+montré sur la \fig{Fig-avion}.
+\begin{figure}[htb]
+\centerline{\includegraphics[height=60mm]{avion.eps}}
+\caption{Sous-structuration en aéronautique}\label{Fig-avion}
+\end{figure}
+
+La simulation est donc décomposée en différents niveaux, chacun représentant une échelle
+différente. Pour coordonner ces niveaux entre eux, on utilise généralement une
+\textcolorblue{approche} dite \textcolorblue{descendante}:\index{Approche descendante} 
+on commence par simuler  le comportement global de l'avion, puis les résultats sont utilisés pour 
+déterminer les conditions aux limites appliquées sur les niveaux inférieurs. 
+Toutesfois, il est parfois également nécessaire de combiner ces approches descendantes
+à des \textcolorblue{approches ascendantes}:\index{Approche ascendante} 
+les résultats des simulations fines sont utilisés pour construire des modèles de comportements 
+plus grossiers.
+
+\medskip
+De très nombreuses méthodologies multi-échelles existent et reposent
+toutes sur le fait de simuler chaque phénomène à l'échelle la plus
+pertinente. 
+Pour cela, il est nécessaire:
+\begin{enumerate}
+   \item de \textcolorred{distinguer différentes échelles} dans la modélisation et dans la simulation; 
+   \item de \textcolorred{modéliser les relations existant} entre ces différentes échelles.
+\end{enumerate}
+
+\medskip
+Considérons un problème comportant deux échelles.
+Le point 1 évoqué ci-dessus se traduit par le fait de disposer de deux modèles
+distincts:
+\begin{itemize}
+   \item \textcolorblue{Un modèle macroscopique}\index{Modèle macroscopique}
+
+	Il représente le produit et son environnement extérieur et est constitué
+	d'une géométrie et d'un modèle de comportement relativement grossiers
+	(puisque n'ayant pas vocation à représenter les phénomènes microscopiques);
+   \item \textcolorblue{Un modèle microcopique}\index{Modèle microscopique}
+
+	Il possède une description géométrique et un maillage suffisamment fins ainsi qu'un 
+	modèle de comportement détaillé. Il ne comprend qu'une ou quelques
+	<<cellules types>> de petites dimensions.
+
+	Il est souvent possible, pour les matériaux notamment, de disposer d'hypothèses
+	simplificatrices (telles que l'élasticité linéaire) permettant de se restreindre à une
+	seule cellule type.
+	Pour le cas des matériaux anisotropes constitués de plusieurs autres matériaux tels
+	que les matériaux composites et fibreux, on se reportera au chapitre suivant sur l'homogénéisation.
+
+	Toutefois, certaines fois on ne dispose pas de telles hypothèses et il faut multiplier le nombre
+	de cellules (jusqu'à parfois couvrir tout le modèle macro !)
+\end{itemize}
+
+\medskip
+Le point 2 consiste donc à relier les deux échelles de modélisation.
+
+En effet, les modèles macro et micro ne sont pas indépendants puisqu'ils
+modélisent la même physique à des échelles différentes.
+Il est donc nécessaire qu'ils soient cohérents l'un vis-à-vis de l'autre, en tout point et à 
+chaque instant de la simulation. 
+Pour cette raison, les modélisations multi-échelles\index{Multi-échelles} comportent des couplages, i.e. des 
+modèles d'interactions, entre les échelles.
+
+Dans le cadre de la mécanique des solides déformables, on procède
+géralement comme suit:
+\begin{itemize}
+   \item Le modèle de comportement macroscopique:\index{Modèle macroscopique}
+	qui modélise des phénomènes se produisant <<au cœur du matériau>>, 
+	doit correspondre à la relation contraintes/déformations observée sur la cellule micro ;
+
+   \item Le modèle de comportement microcopique:\index{Modèle microscopique}
+	qui traduisent la façon dont la cellule est sollicitée par son environnement
+ 	extérieur, doivent correspondre à l'état de contraintes ou de déformations macro.
+\end{itemize}
+
+Le modèle macro ayant une résolution beaucoup plus grossière, la cohérence des deux 
+modèles ne peut donc pas se traduire par une correspondance exacte, point par point, des 
+conditions aux limites ou du comportement. Pour cette raison, la plupart des approches 
+multi-échelles postulent que les quantités macroscopiques doivent correspondre à des 
+<<moyennes>> des quantités micro correspondantes,  la définition mathématique exacte de 
+cette moyenne variant fortement d'une approche à l'autre. 
+
+\medskip
+\colorgreen On peut donc dire que:
+\begin{itemize}
+   \item Le modèle de comportement macroscopique\index{Modèle macroscopique} d'un élément de volume est choisi 
+	égal au comportement moyen de la cellule micro correspondante, calculé en utilisant 
+	une technique d'homogénéisation;\index{Homogénéisation}
+
+   \item Les conditions aux limites micro sont appliquées en moyenne, car les champs de
+	contraintes ou de déplacements macro sont beaucoup trop grossiers.
+\end{itemize}\colorblack
+
+\medskip
+Le problème est donc \textcolorred{d'échanger des données pertinentes entre les 
+différentes échelles}, compte tenu des différentes résolutions des modèles. 
+
+\medskip
+\textcolorred{Dans le sens micro vers macro, on utilisera les techniques d'homogénéisation} \index{Homogénéisation}
+dont il sera l'objet au chapitre suivant.
+
+\medskip
+\textcolorred{Dans le sens macro vers micro, il s'agit donc de spécifier des conditions aux limites 
+à appliquer sur le bord des cellules micro, à partir d'une solution macro.}
+
+\textcolorgris{%
+Les méthodes les plus simples se contentent d'imposer directement le champ de déplacements (ou
+de contraintes) macro comme condition aux limites. Le modèle macro ayant par définition une 
+résolution beaucoup plus grossière que le modèle micro, il  est incapable de capturer l'allure 
+microscopique des déplacements ou des contraintes. Ces CL sont donc souvent trop imprécises 
+par rapport aux finalités du modèle micro. Cela peut dégrader fortement la qualité des 
+résultats et donc restreindre le domaine de validité de ces approches.%
+}
+
+Pour palier ce problème, on écrit les CL micro de manière plus subtile en les décomposant
+en la somme d'un terme moyen et d'un terme de moyenne nulle. Ainsi, le champ micro $u^m$
+sera écrit $u^m=u^M +v^m$ où $u^M$ est le champ macro (i.e. la moyenne  du champ micro),
+et $v^m$ est le reste (à moyenne nulle).
+Notre problème devient donc de \textcolorred{déterminer le reste $v^m$}, et c'est là
+que les méthodes divergent le plus. On distingue néanmoins deux grosses familles:
+\begin{itemize}
+   \item \textcolorblue{Condition de périodicité}\index{Condition de périodicité}
+
+	On postule que l'on connaît l'allure du reste. On peut alors enchainer un calcul macro
+	avec un solveur spécifique pui un calcul micro avec un solveur classique;
+   \item \textcolorblue{Couplage des cellules micro}\index{Couplage des cellules micro}
+
+	Lorsqu'il n'est pas si simple de <<séparer>> les échelles, alors il faut résoudre
+	en même temps les deux problèmes micro et macro avec échange de données.
+\end{itemize}
+Ces deux approches vont être un peu plus détaillées maintenant.
+
+
+
+
+\medskip
+\subsection{Condition de périodicité -- méthodes multi-niveaux}\index{Condition de périodicité}\index{Multi-niveaux}
+
+Souvent, les méthodes multi-niveaux sont basées sur des conditions de périodicité 
+inspirées de l'homogénéisation périodique.\index{Homogénéisation} 
+Ces conditions supposent que la partie micro du champ de déplacement, $v^m$, est périodique, 
+i.e. est égale sur chaque paire de faces opposées de la cellule type considérée. 
+La même hypothèse est formulée sur les contraintes. 
+On obtient ainsi un ensemble de CL permettant de déterminer entièrement la solution micro à
+partir d'une déformation (ou d'une contrainte) macro imposée.
+
+Le résultat micro ainsi obtenu est pertinent à deux conditions: 
+1) il faut que la microstructure soit effectivement périodique, et 2) que le principe de
+Saint-Venant\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{Principe de Saint-Venant} 
+s'applique, i.e. que l'on se trouve suffisamment loin de la surface de la pièce 
+(y compris des détails géométriques tels que des trous, des fissures...). 
+Dans le cas contraire, des effets de bord peuvent affecter l'allure de la solution, qui n'est 
+alors plus périodique: il faut donc recourir à d'autres modélisations.
+
+\medskip
+La simulation multi-niveaux\index{Multi-niveaux} fait appel à deux types de modèles, chacun équipé de son solveur:
+\begin{itemize}
+   \item un modèle macro\index{Modèle macroscopique} ne possédant pas de relation de comportement du matériau
+	prédéfinie, équipé d'un solveur EF modifié;
+   \item un ensemble de modèles micro\index{Modèle microscopique} ne possédant pas de CL prédéfinies,
+	équipés de solveurs EF classiques.
+\end{itemize}
+
+En fait, le solveur EF modifié est un solveur EF classique avec une petite différence:
+à chaque fois que le solveur macro a besoin du comportement d'un élément de volume 
+quelconque, il envoie l'état de déformation macro de cet élément au solveur micro. 
+Ce dernier a alors toutes les données nécessaires pour simuler numériquement son comportement 
+à l'échelle microscopique. Il renvoie alors l'état de contraintes macro, selon la décomposition
+menstionnée ci-dessus.
+\textcolorgreen{Les cellules micro étant pour ainsi dire <<indépendantes>>, il est possible de 
+recourir à des calculatreur parallèles.}
+
+Le domaine de validité de ces méthodes est bon dès que l'on sait faire des hypothèses
+réalistes sur l'allure de la solution micro. Ce n'est pas toujours le cas: par exemple, la fissuration,
+lorsqu'elle sort d'un cadre microcopique pour atteindre un cadre macroscopique, se prête
+très mal à cet excercice.
+Le cas de la fissuration sera traitée dans un chapitre ultérieur de ce document.
+
+\medskip\colorgreen
+\textbf{En résumé:}
+
+Les méthodes multi-niveaux abordent la simulation à l'échelle macro\index{Modèle macroscopique} 
+et se <<nourrissent>>  du comportement simulé à l'échelle microscopique.\index{Modèle microscopique}
+
+Dans les méthodes multi-niveaux,\index{Multi-niveaux} l'emploi d'hypothèses de périodicité se traduit par 
+des <<sauts>> de contraintes et de déplacements d'une cellule à l'autre; si les échelles sont 
+mal séparées, ces sauts sont non négligeables. Ne correspondant à priori pas à la physique, 
+ils traduisent un écart avec la réalité.
+\colorblack
+
+
+
+\medskip
+\subsection{Couplage des cellules micro -- méthodes de décomposition de domaine}\index{Couplage des cellules micro}\index{Décomposition de domaine}\label{Sec-dec}
+
+Les méthodes multi-niveaux présentées au paragraphe précédent sont mises à mal
+lorsque le comportement micro <<déborde>> un peu sur le comportement macro, i.e.
+lorsque les échelles ne sont pas suffisament bien séparées.
+On recourt alors aux méthodes de décomposition de domaines,\index{Décomposition de domaine} 
+dont la validité est plus large, mais qui sont plus complexes.
+
+\medskip
+Puisque nous ne pouvons plus supposer une allure de la solution micro,\index{Modèle microscopique} 
+nous n'allons utiliser que les seules connaissance disponibles à priori: la continuté du champ de déplacements
+ainsi que la vérification par les contraintes du principe d'action-réaction. Il <<suffit>> donc
+d'écrire qu'à l'interface entre deux cellules micro, il y a égalité des déplacements et
+nullité de la somme des traces\index{Trace} des contraintes (on retrouve ce que nous avons déjà
+plusieurs fois évoqué avec l'état des contrainte à l'interface entre deux matériaux
+différents).
+
+\medskip
+La présence de couplages entre les cellules micro\index{Couplage des cellules micro} 
+(qui en quelque sorte correspond à une généralisation de la condition de périodicité 
+du paragraphe précédent) change complètement le déroulement de la simulation par 
+rapport aux méthodes  multi-niveaux vues au paragraphe précédent. 
+En effet, la prise en compte de ces couplages implique d'échanger directement des données 
+entre les différents solveurs micro, qui ne sont plus <<indépendants>>. 
+En contrepartie, cela permet de propager une information fine sur l'ensemble de la pièce et, 
+ainsi, de se passer de l'hypothèse de séparation des échelles: il n'est plus nécessaire de 
+modéliser séparément les phénomènes micro et macro.
+
+\medskip
+Concrètement, les méthodes de décomposition de domaine\index{Décomposition de domaine} 
+sont des solveurs, qui ont généralement un fonctionnement multi-échelles.\index{Multi-échelles} 
+Elles partent d'un modèle micro\index{Modèle microscopique} du produit
+décomposé en sous-structures, et consistent à coupler les sous-structures en échangeant des
+contraintes et des déplacements sur les interfaces.
+Des versions plus ou moins simples existent. Notons bien qu'il n'y a pas de modèle macro
+dans une telle approche.
+
+\medskip\colorgreen
+\textbf{En résumé:}
+
+Dans la décomposition de domaine,\index{Décomposition de domaine} la simulation est abordée 
+à l'échelle la plus fine: la sous-structuration et le problème grossier ne sont utilisés que pour 
+améliorer l'efficacité de la résolution.
+
+Une simulation par décomposition de domaine\index{Décomposition de domaine} conduit toujours 
+à un champ de déplacement micro continu sur toute la structure, et un champ de contraintes micro
+équilibré (au sens des EF) sur toute la structure.
+\colorblack
+
+\medskip
+\textcolorgris{Actuellement, la simulation multi-échelles\index{Multi-échelles} est encore 
+relativement peu répandue dans le monde de l'ingénierie. Elle représente en effet un changement 
+considérable par rapport aux pratiques usuelles de simulation; de plus, la plupart des logiciels de 
+calcul multi-échelles\index{Multi-échelles} sont des outils développés par des chercheurs, qui 
+n'ont pas encore l'ergonomie et la robustesse des solveurs utilisés dans l'industrie. Les industriels 
+attendent donc l'apparition d'outils mieux adaptés à leurs problématiques avant d'envisager 
+une utilisation plus fréquente de ces méthodes.}
+
+\textcolorgris{Cependant, à plus long terme, la simulation multi-échelles\index{Multi-échelles} 
+suscite un intérêt considérable dans l'industrie: en rendant accessibles à la simulation 
+des phénomènes qui ne peuvent actuellement être étudiés qu'expérimentalement, 
+elle constitue un pas important en direction du <<virtual testing>>. 
+Pour cette raison, elle fait toujours l'ojet de nombreux projets de recherche. 
+Ceux-ci concernent aussi bien la modélisation, avec notamment la mise au point de 
+<<matériaux virtuels>> (qui ne sont rien d'autre que des modèles multi-échelles, notamment 
+pour les matériaux composites), que les solveurs qui sont en constante évolution.}
+
+
+
+
+
+
+\medskip
+\section{Les Super-Élements}\index{Super-élément}
+
+Dans ce paragraphe, nous allons parler du concept de super-élément, qui n'est qu'une
+application de ce qui a été présenté au paragraphe précédent.
+
+\medskip
+Un super-élément\index{Super-élément} est un groupement d'éléments qui, après 
+assemblage, peuvent être vus comme un élément individuel du point de vue du calcul. 
+Cet assemblage peut être requis pour des raisons de modélisation ou de calcul.
+
+Pour constituer un super-éléments,\index{Super-élément} les éléments groupés ne peuvent être
+pris au hasard. Ils doivent au moins constituer une <<structure>> en eux-même, mais
+d'autres conditions sont nécessaires qui seront détaillées plus loin.
+
+Comme nous l'avons dit au paragraphe précédent, il y a deux voies duales pour considérer
+ce processus.
+
+L'approche descendante consiste à considérer un super-élément comme constitué
+d'un sensemble d'éléments. On parle alors de macro-élément.\index{Macro-élément}
+L'approche ascendante consiste à considérer un super-élément comme un sous-ensemble
+d'une structure complète. On parle alors de sous-structure.\index{Sous-structure}\index{Sous-structuration}
+
+Mézalor, quand parle-t-on de sous-structure ou de macro-élément?\index{Macro-élément}\index{Sous-structure}\index{Sous-structuration}
+En fait, il n'y a pas de règle, et le terme générique de super-élément couvre tout le
+spectre depuis l'élément individuel jusqu'à la structure complète.
+
+\medskip
+\begin{histoire}
+Originellement introduit dans l'aéronautique dans les années 60 (d'où le schéma
+au paragraphe précédent), le concept de sous-structuration\index{Sous-structuration} 
+répondait à trois motivations:
+\begin{itemize}
+   \item facilier la division du travail: 
+	des sous-structures\index{Sous-structure} avec des fonctions différentes (fuselage, ailes, train d'atterrissage...)
+	pouvaient être traitées par des groupes d'experts différents. Chaque groupe pouvait
+	à loisir améliorer, raffiner... sa partie tant que l'interface avec les autres parties
+	restait inchangée.
+   \item profiter de la répétition:
+	en remarquant qu'une même structure peut contenir plusieurs sous-structures identiques,
+	il est possible de diminuer le temps d'étude (par exemple symétrie des ailes...)
+   \item contourner les limitations des ordinateurs:
+	les ordinateurs de l'époque atteignaient vite leurs limites (par exemple en terme
+	de taille mémoire). Diviser une structure complexe, que l'on était incapable de
+	calculer en une seule fois, permettait de sauvegarder des résultats sous-structure 
+	par sous-structure puis d'effectuer <<l'assemblage>> des résultats.
+\end{itemize}
+Si les deux premiers points sont toujours d'actualité, le troisième l'est moins, surtout
+depuis le recourt aux algorithmes parallèles.
+
+C'est d'ailleurs le développement  de procédures pour le calcul parallèle qui a conduit
+les mathématiciens appliqués au concept de sous-domaines, alors qu'ils devaient grouper
+des éléments pour des raisons de calcul.
+\end{histoire}
+\colorblack
+
+\medskip
+\subsection{Condensation statique}\index{Condensation statique}\label{Sec-condens}
+
+En tant qu'assemblage de plusieurs éléments, un super-élément\index{Super-élément} possède:
+\begin{itemize}
+   \item des degrés de liberté internes:
+	qui ne sont pas connectés à des éléments n'appartenant pas au super-élément considéré.
+	Les nœuds ayant des ddl internes sont dits nœuds internes.
+   \item des degrés de liberté aux frontières:
+	qui sont connectés à au moins une entité (élément, super-élément)
+	n'appartenant pas au super-élément considéré.
+\end{itemize}
+
+L'opération consistant à éliminer tous les ddl internes est appelée 
+\textcolorblue{condensation statique} ou \textcolorblue{condensation}.\index{Condensation statique}
+
+\medskip
+Regardons ce qui se passe d'un point de vue matriciel.
+Pour cela, considérons que nous ayons à résoudre le système:
+\begin{equation}  \MM{K} \VV{q}=\VV{F}\end{equation}
+
+Le vecteur $\VV{q}$ se compose des composantes internes $\VV{q_i}$ et des composantes
+de frontière $\VV{q_b}$, de sorte que le système, une fois réordonné s'écrit:
+\begin{equation}
+\MMM{
+\begin{array}{cc}
+K_{bb} & K_{bi}\\
+K_{ib} & K_{ii}
+\end{array}
+}
+\VVV{
+\begin{array}{c}
+q_b\\q_i
+\end{array}
+}
+=
+\VVV{
+\begin{array}{c}
+f_b\\f_i
+\end{array}
+}
+\end{equation}
+
+Si la matrice $\MM{K_{ii}}$ n'est pas singulière, alors la seconde équation peut être
+résolue en terme de variables internes en:
+\begin{equation}
+\VV{q_i} = \MMI{K_{ii}}\left(\VV{f_i}-\MM{K_{ib}}\VV{q_b}\right)
+\end{equation}
+
+En reportant cela dans la première équation, on obtient le système avec \textcolorblue{matrice 
+de rigidité condensée}:\index{Condensation statique}
+\begin{equation}
+\MM{\tilde{K_{bb}}}\VV{q_b} = \VV{\tilde{f_b}}
+\end{equation}
+avec:
+\begin{equation}
+\MM{\tilde{K_{bb}}}=\MM{K_{bb}} - \MM{K_{bi}}\MMI{K_{ii}}\MM{K_{ib}} 
+\quad \text{ et }\quad 
+\VV{\tilde{f_b}}=\VV{f_b} - \MM{K_{bi}}\MMI{K_{ii}}\VV{f_i}
+\end{equation}
+
+Après condensation, on peut donc bien considérer le super-élément, d'un point de vue calculatoire,
+comme un élément individuel.
+
+\medskip
+Notons que la matrice $\MM{K_{ii}}$ n'est pas singulière si elle possède la \textcolorblue{condition 
+de rang suffisant}, i.e. si elle ne contient que des modes à énergie nulle correspondant aux 
+modes rigides (cette condition a déjà évoquée à propos de la validation des éléments).
+Si cela n'est pas le cas, le super-élément\index{Super-élément} est dit \textcolorblue{flottant}, et
+peut quand même être traité (en utilisant les projecteurs et inverses généralisés,
+mais c'est un peu plus compliqué).
+
+La condensation statique\index{Condensation statique} est une opération matricielle 
+appelée \textcolorblue{inversion partielle} ou \textcolorblue{élimination partielle} ou 
+\textcolorblue{pseudo-inversion}.\index{Pseudo-inversion}
+
+\medskip
+\subsection{Remonter aux ddl internes}
+
+Une fois le système condensé résolu, on obtient les valeurs aux nœuds
+internes en réutilisant la formule:
+\begin{equation}
+\VV{q_i} = \MMI{K_{ii}}\left(\VV{f_i}-\MM{K_{ib}}\VV{q_b}\right)
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\medskip
+\section{Pseudo-inversion et réanalyse}\index{Pseudo-inversion}\label{Sec-PInv}
+
+\textcolorgreen{On peut être amené, notamment lors de phases de conceptions, à devoir considérer plusieurs 
+problèmes \og relativement proches\fg{} les uns des autres (i.e. tester plusieurs configurations).
+On est alors tenté d'utiliser tout ou partie de la première modélisation afin de
+réaliser les suivantes.}
+
+\medskip
+L'idée de la méthode de réanalyse est d'analyser le comportement d'une structure
+élastique par EF \textcolorblue{sans particulariser} le système d'équations final par la prise en
+compte de conditions cinématiques.
+
+On obtient alors une solution générale de ce système faisant intervenir une
+\textcolorblue{matrice de rigidité régularisée}. La nature de cette matrice (somme
+d'une matrice bande et d'une matrice pleine) ne permet pas d'utiliser les méthodes
+les plus classiques et optimales de résolution, mais il est possible d'en développer d'autres 
+permettant d'accéder à \textcolorblue{la quasi-inverse d'une matrice singulière semi-définie 
+positive} (tout en profitant de son caractère bande).\index{Pseudo-inversion}
+
+Il est alors possible, tout en modifiant les conditions cinématiques et les chargements appliqués,
+de procéder à des réanalyses qui consistent alors simplement à résoudre des systèmes
+dits secondaires de tailles très inférieures au système global (mais un surcoût a été
+\og payé\fg{} initialement pour calculer la pseudo-inverse).
+
+Des problèmes de contact avec ou sans frotement entre solides élastiques peuvent
+bénéficier de cette méthode, ainsi que la modélisation du comportement élastique
+incompressible.
+
+\medskip
+\textcolorred{Dans ce paragraphe sur la réanalyse, nous n'utiliserons pas la notation avec les
+crochets et les accolades pour les matrices et les vecteurs afin d'alléger l'écriture}.
+
+
+\medskip
+\subsection{Modification du chargement uniquement}
+
+Restons sur le problème structurel correspondant au système matriciel:
+%une structure, de matrice de rigidité $\MM{K}$, alors les déplacements de ses
+%nœuds $q$, lorsque cette structure est soumise au chargement $F$ sont donnés par
+%le système:
+\begin{equation}
+\MM{K} \VV{q} = \VV{F}
+\end{equation}
+où $\MM{K}$ est de dimension $n\times n$.%, et $\VV{q}$ et $\VV{F}$ sont des vecteurs \textcolorgris{(on ne
+%note plus $[K]\{q\}=\{F\}$ dans ce paragraphe)}.
+
+\medskip
+Si l'on souhaite considérer plusieurs cas de chargement $\VV{F_1}$, ... $\VV{F_k}$, on peut soit résoudre
+$k$ fois le système précédent, soit résoudre le système:
+\begin{equation}
+\MM{K} \MM{\overline{q}} =\MM{\overline{F}}
+\end{equation}
+où $\MM{\overline{F}}$ est la matrice $n\times k$ des $k$ vecteurs de chargement, et $\MM{\overline{q}}$ est la 
+matrice $n\times k$ des $k$ vecteurs solutions correspondants.
+
+\medskip
+Cette méthode, la plus simple des méthodes de réanalyse, permet malgré tout
+d'économiser des opérations.
+
+
+\medskip
+\subsection{Modification de la matrice}
+
+Considérons maintenant le cas où ce n'est plus le chargement $\VV{F}$ qui peut varier d'une analyse
+à l'autre, mais la matrice $\MM{K}$.
+
+On est amené à chercher une solution du système:
+\begin{equation}
+\left(\MM{K}+\MM{\Delta K}\right)\VV{q}=\VV{F}
+\end{equation}
+en fonction de la solution du système non perturbé, i.e. à calculer $\left(\MM{K}+\MM{\Delta K}\right)^{-1}$
+en fonction des autres matrices. On rappelle que $\MM{\Delta K}$ est appelé \textcolorblue{perturbation}
+\index{Perturbation} de la matrice $\MM{K}$.
+
+Certaines formules existent pour des modification mineures de la matrice $\MM{K}$, mais nous ne les
+présenterons pas.
+
+\medskip
+\subsection{Modification des conditions cinématiques}
+
+Nous ne considérons ici que des modifications des conditions cinématiques.
+
+Généralement, les conditions cinématiques sont prises en compte en supprimant ou en
+modifiant les équations de l'équilibre avant résolution, ce qui rend le système régulier.
+
+Nous avons vu que le système à résoudre (incluant les conditions cinématiques) revient
+à chercher le minimum de la forme quadratique: $M=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F}$.
+
+Notons que l'on peut écrire les $p$ conditions cinématiques sous la forme:
+$\MM{C}\VV{q} = \VV{\delta}$
+avec $\MM{C}$ une matrice $p\times n$, et $\VV{q}$ et $\VV{\delta}$ des vecteurs.
+
+Nous avons également déjà vu que ces conditions peuvent être prises en compte
+par l'intermédiaire de $p$ multiplicateurs de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} $\VV{\lambda}$ dans la fonctionnelle précédente
+qui devient alors:
+\begin{equation}
+M^*=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F} - \LL{\lambda}(\MM{C}\VV{q} - \VV{\delta})
+\end{equation}
+
+Le système à résoudre est symétrique, régulier, mais non défini-positif.
+
+
+\medskip
+Pour pallier la lenteur des algorithmes disponibles pour la résolution numérique d'un tel
+système (méthode de Gauss ou de décomposition avec pivotage), il est préferrable
+de \textcolorblue{régulariser} le système.
+
+Pour cela, on s'appuie sur la connaisance de la matrice $\MM{K}$: celle-ci est singulière d'ordre
+$r$, où $r$ correspond aux mouvements de corps rigide, ou modes rigides. Cela veut
+également dire qu'elle possède $(n-r)$ valeurs propres strictement positives (et $r$ valeurs 
+propres nulles).
+
+\textcolorred{Il est évident qu'il faut au moins disposer de $p\ge n$ conditions aux limites cinématiques
+pour que le système puisse admettre une solution.} C'est évidemment l'hypothèse que
+nous ferons (sinon le problème est mal posé).
+
+\medskip
+Nous considérons la matrice $\MM{R}$ de dimension $n\times r$ des $r$ vecteurs propres de $\MM{K}$
+correspondant à la valeur propre nulle. Quitte à construire ces vecteurs (qui sont orthogonaux),
+nous les choisirons normés. On a alors:
+\begin{equation}
+\left\{
+\begin{array}{l}
+\MM{K}\MM{R}=\MM{0}\\
+\MMT{R}\MM{R}=\MM{I_r}
+\end{array}
+\right.
+\end{equation}
+
+On introduit la matrice:
+\begin{equation} \MM{K_\alpha} = \MM{K}+\alpha \MM{R}\MMT{R} \end{equation}
+qui, pour $\alpha>0$ est régulière car symétrique et définie-positive.
+Les colonnes de $\MM{R}$ sont vecteurs propres de $\MM{K_\alpha}$ pour la valeur propre $\alpha$.
+
+Dans le système $\MM{K}\VV{q}=\VV{F}$, on remplace $\MM{K}$ par $\MM{K_\alpha}-\MM{R}\MMT{R}$, et en introduisant le
+fait que $\MM{K_\alpha}\MM{R}\MMT{R}=\alpha \MM{R}\MMT{R}$, on obtient finalement:
+\begin{equation}
+\MM{K_\alpha} \left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}=\VV{F}
+\end{equation}
+
+Si l'on change de variable en posant $\VV{v}=\left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}$ ($\VV{v}$ est la projection de 
+$\VV{q}$ sur l'orthogonal du noyau de $\MM{K}$), \textcolorblue{$\VV{v}$ devient l'inconnue du système régularisé}:
+\begin{equation}
+\MM{K_\alpha}\VV{v}=\VV{F}
+\end{equation}
+et l'on retrouvera la solution du système initial $\VV{q}$ par:
+\begin{equation}\VV{q}=\VV{v}+\MM{R}\MMT{R}\VV{q} = \MMI{K_\alpha}\VV{F}+\MM{R}\MMT{R}\VV{q}\end{equation}
+
+\medskip
+On peut remarquer que $\MMI{K_\alpha}$, que l'on note $\MM{S_\alpha}$ possède les mêmes
+valeurs propres que $\MM{K_\alpha}$ (et donc les mêmes que $\MM{K}$ et $\MM{R}\MMT{R}$). On est donc
+naturellement amené à décomposer $\MM{S_\alpha}$ comme:
+\begin{equation} \MM{S_\alpha}=\MM{S}+\frac1\alpha \MM{R}\MMT{R}\end{equation}
+avec $\MM{S}\MM{R}=0$ et $\MMT{R}\MM{S}=0$.
+
+C'est cette matrice $\MM{S}$ que l'on appelle \textcolorblue{quasi-inverse}\index{Pseudo-inversion} de $\MM{K}$, car:
+\begin{equation} \MM{S}\MM{K} = \MM{K}\MM{S} = \MM{I} -\MM{R}\MMT{R}\end{equation}
+Elle est de dimension $n\times n$, symétrique, semi-définie positive (ses valeurs propres
+sont de même signe), admet les mêmes valeurs propres que $\MM{K}$ et en partoiculier ceux
+de la valeur propore nulle dont $R$ est une base, mais \textcolorred{elle ne possède pas
+de caractère bande}.
+
+\bigskip
+\textcolorgreen{Voici brossé, en quelques lignes, les idées principales de la méthode. Nous
+n'irons pas plus loin dans sa présentation.}
+
+\medskip
+On rappelle que l'intérêt de la méthode est qu'une fois une première étape consistant
+à intégrer les données relatives à la structure (géométrie, discrétisation, matériaux)
+réalisée, on peut alors effectuer autant de fois que nécessaire la seconde étape qui porte
+sur la prise en compte des chargements et conditions aux limites.
+
+Notons qu'il est possible de modifier un peu la forme du système secondaire afin de pouvoir prendre 
+en compte, lors de la seconde étape, des conditions plus complexes, comme des conditions mixtes
+par exemple...
+
+
+
+
+
+
+
+
+
+
+\medskip
+\section{Dérivées d'ordre supérieur}\index{Dérivée!d'ordre supérieur}\label{Sec-Deriv}
+
+Au paragraphe précédent, nous avons vu comment, sur une structure donnée, il était
+possible de prendre en compte plusieurs chargements et conditions aux limites cinématiques
+sans avoir à refaire tout le calcul.
+
+\textcolorgreen{Dans le même état d'esprit, nous allons voir maintenant comment optimiser 
+la forme d'une structure, sans refaire tous les calculs.}
+
+\medskip
+Considérons le cas d'une conception ayant pour but de déterminer la forme la plus
+adaptée selon certains critères (rigidité, déformée, contraintes, énergie
+transmise...).
+Chaque évaluation d'une fonction coût conduit à une analyse par EF.
+L'utilisation de \textcolorblue{dérivées} par rapport à la géométrie, ou plus
+généralement par rapport à la fonction coût, permet de réduire ce nombre 
+d'analyse.
+
+En fait, peut-être contrairement à l'intuition, le calcul de ces dérivées est relativement
+peu coûteux; il n'est pas difficile et peut être fait automatiquement. Les dérivées
+d'ordre supérieur\index{Dérivée!d'ordre supérieur} d'une fonction coût peuvent en fait 
+être calculées avec autant de précision que la fonction elle-même. Ainsi, en un seul calcul, 
+il est possible d'obtenir un développement de Taylor de la fonction coût, et donc d'éviter de 
+nombreuses analyses.
+
+\medskip
+\subsection{Dérivées par rapport à la géométrie}\index{Dérivée!par rapport à la géométrie}
+
+En plus de considérer un domaine borné $\Omega$ de $\RR^n$, nous allons considérer
+une \textcolorblue{perturbation}\index{Perturbation} $V$ de $\Omega$, et nous noterons:
+\begin{equation} \Omega + V = (I+V)(\Omega); V\in W^{1,\infty}(\Omega;\RR^n) \end{equation}
+
+\medskip
+Nous considérons la \textcolorblue{fonction coût} ${\mathbf J}(\Omega, u_\Omega)$ choisie
+pour décrire le problème d'optimisation. Cette fonction dépend donc naturellement
+du domaine $\Omega$ et de la solution du problème sur ce domaine $u_\Omega$.
+
+Nous allons donner un sens à la \textcolorblue{dérivée de la fonction coût par
+rapport aux variations du domaine}.
+
+\medskip
+Si l'on considère le cas simple ${\mathbf J}(\Omega,u)=\dint_\Omega u$, alors il vient:
+\begin{equation}
+\dfrac{d{\mathbf J}}{d\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega V.n + \dint_\Omega u'_{\Omega;v} 
+\end{equation}
+avec une fois encore $n$ la normale extérieure de $\Gamma=\partial\Omega$, et:
+\begin{equation}
+u'_{\Omega;V}=\lim_{t\rightarrow0} \dfrac{u_{\Omega+tV}(x)-u_\Omega(x)}t, \forall x\in\Omega
+\end{equation}
+
+La méthode de dérivation par transport conduit à:
+\begin{equation}
+\dfrac{d{\mathbf J}}{d\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega div V + \dint_\Omega \dot{u}_{\Omega;v} 
+\quad \text{ avec }
+\dot{u}_{\Omega;V}=\lim_{t\rightarrow0} \dfrac{u_{\Omega+tV}\circ (I+tV)(x)-u_\Omega(x)}t, \forall x\in\Omega
+\end{equation}
+
+On définit alors la \textcolorblue{dérivée de la fonction coût par rapport aux variations du domaine}
+par:
+\begin{equation}
+\dfrac{\partial{\mathbf J}}{\partial\Omega}(\Omega, u,V) = \dint_\Gamma u V.n
+\end{equation}
+
+
+La difficulté tient à ce que l'ensemble des domaines $\Omega$ ne consitue pas un espace vectoriel
+(les perturbations ne s'ajoutent pas, ou au moins ne sont pas associatives: 
+$(\Omega+V)+W\ne(\Omega+W)+V$).
+
+\medskip
+\textcolorred{Toutefois, si l'on utilise un \textcolorblue{paramétrage} du domaine, il est alors possible
+d'utiliser les outils classiques du calcul différentiel dans les espaces normés.}
+On introduit alors le paramètre $F$ par:
+\begin{equation}
+J(F,u)={\mathbf J}(F(\Omega),u\circ F^{-1}), F\in W^{1,\infty}(\Omega;\RR^n)
+\end{equation}
+et l'on a alors $(F+V)+W=(F+W)+V)$.
+
+La dérivée partielle de $J$ par rapport au paramètre $F$ est définie sans ambiguité.
+Dans notre exemple, cette dérivée, prise au point $F=I$ est:
+\begin{equation}
+\dfrac{\partial J}{\partial F}(I,u).V = \dint_\Omega u div V
+\end{equation}
+
+On pourra alors nous faire remarquer que:
+\begin{equation}
+\dfrac{\partial{\mathbf J}}{\partial\Omega}(\Omega, u,V)
+\ne
+\dfrac{\partial J}{\partial F}(I,u).V
+\end{equation}
+ce à quoi nous répondrons que c'est le prix à payer pour se ramener à un espace
+vectoriel.
+
+Cette démarche peut alors être généralisée aux ordres supérieurs.
+
+
+\medskip
+\subsection{Calcul des dérivées}
+
+Nous n'entrons pas dans le détail, mais en cours de calcul se pose la question intéressante:
+obtient-on le même résultat si l'on discrétise d'abord et dérive ensuite ?
+
+En fait, la réponse est oui, sous certaines conditions de régularité que nous ne mentionnerons
+pas dans le cadre de ce document.
+
+\medskip
+\textcolorgreen{Encore une fois, nous n'avons fait qu'effleurer le problème, juste pour \og faire 
+connaître \fg{} la méthode. Il nous semblait intéressant de présenter la notion de dérivée
+par rapport à la géométrie.}
+
+De telles méthodes sont d'ores et déjà implémentées dans certains codes de calculs.
+Leur intérêt devrait apparaître clairement au lecteur (nous l'espérons).
+
+
+
+
