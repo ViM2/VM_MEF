@@ -8,6 +8,8 @@
 *.bcf
 *.toc
 *.xml
+eps/*.pdf
+VM_MEFold.tex
 
 
 #################
