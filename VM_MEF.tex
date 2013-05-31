@@ -1,7 +1,7 @@
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
 %%%%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
 \newif\ifVersionDuCompilateurEstVincent% par défaut vaut false, donc compilation avec les packages de Mathias
-%\VersionDuCompilateurEstVincenttrue% à commenter pour compileur de Mathias
+\VersionDuCompilateurEstVincenttrue% à commenter pour compileur de Mathias
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
 \VersionDuDocEstPourHALtrue%
 \newif\ifVersionAvecExemplesSepares% par defaut false, donc exemples dans les chapitres
@@ -84,13 +84,13 @@
    \renewcommand{\geq}{\geqslant}
 \fi
 
-\selectlanguage{francais}
+%\selectlanguage{francais}
 
+%\graphicspath{{./graphes/}{./photos/}{./eps/}}
 \graphicspath{{./photos/}{./eps/}}
 
 \include{./tex/macros}% macros
 
-\includeonly{./tex/model,./tex/Elts,./tex/Amelio}% pour la relecture par chapitre
 \begin{document}
 
 % Recto de la page de titre
@@ -273,175 +273,197 @@ C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du m
 l'un que nous appelons <<~version cours~>> (plus en accord avec ce que nous proposons en cours),
 et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 
+%\vfill
+%
+%\bigskip\colorgris
+%\section*{Dans la même collection}
+%
+%Sont (ou seront) également disponibles les cours suivants:
+%\begin{itemize}
+%   \item calcul en fatigue des matériaux composites;
+%   \item composites: lois de comportements, rupture, essais (et dynamique)
+%   \item les structures algébriques;
+%   \item l'acoustique numérique;
+%   \item la mécanique stochastique;
+%   \item le traitement du signal;
+%   \item ...
+%\end{itemize}
 
 
-\colorblack
-\medskip
-\colorgris
+%\colorblack
+%\medskip
+%\colorgris
 \tableofcontents%\markboth{Table des matières}{}
-\colorblack
-
-\part{Survol mathématique}
-\include{./tex/espaces}
-\include{./tex/Operat}
-\include{./tex/continu}
-\include{./tex/Lp}
-\include{./tex/Sobolev}
-\include{./tex/Resume1}
-
-\part{Problème continu}
-\include{./tex/phy-edp}
-\include{./tex/FFaible}
- \include{./tex/phy-ffble}%\include{./tex/phy-varia}% inclus dans mhy-ffble
- \ifVersionAvecExemplesSepares\else
-    \include{./tex/ex1}% exemple formulation math
- \fi
-%
- \part{éléments finis}
- \include{./tex/MEFintro}
- \include{./tex/MEF}
- \include{./tex/model}
- \include{./tex/Elts}
- \include{./tex/Amelio}
- \include{./tex/Homog}
- \include{./tex/temps}% ajouter dynamique rapide ?
- \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?
- \include{./tex/non-lin}
- \include{./tex/rupture}
- \include{./tex/xfem}% ajouter \section{L'utilisation de plusieurs maillages} => stochastique => dans les méthodes dérivées ? (xfem.tex)
-%%GFREM (Global FEM), IFEM (Integrated FEM/BEM)
- \include{./tex/singul}
- \include{./tex/ccl}
-
- \ifVersionAvecExemplesSepares
-%%%%\part{Pratique des éléments finis}
-    \part{Quelques exemples}
-    \include{./tex/ex1}% exemple formulation math
-    \include{./tex/ex2}% élts 1D
-    \include{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
-    \include{./tex/ex5}% efforts équivalents sur un poutre
-    \include{./tex/ex3}% poutre Ch 10 sous Cast3M
-    \include{./tex/ex4}% macro Ansys et poutre en U
-    \include{./tex/ex6}% propagation freefem++
-    \include{./tex/ex7}% contact Cast3M
- \fi
-%
- \appendix
- \part{Annexes}
- \include{./tex/interp}
- \include{./tex/intnum}
- \include{./tex/ed}%\include{./tex/newmark}% inclus dans ED
-%%%%\include{./tex/discretis}% ??? je ne sais plus ce que je voulais faire
-%%%%\include{./tex/cvnum}% supprimé, trop loin de nos préoccupations
-%%%%\include{./tex/matrices}% supprimé, trop loin de nos préoccupations
- \include{./tex/new-raph}
-%%%%\include{./tex/essais}% pas en rapport avec ce document
+%\colorblack
 
 
-
-\ifVersionDuDocEstVincent
-   \chapter*{Bibliographie}
-   \markboth{Bibliographie}{}
-%   \addcontentsline{toc}{chapter}{Bibliographie}
-%    BIBTOPIC crée pour chaque appel à BtSect un fichier .aux
-%    on aura donc VM_MEF1.aux... VM_MEF5.aux (correspondant
-%    aux fihicers VM_MEF0, ..., VM_MEF3, VM_MEFA.bib)
-%    il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
-%    pour créer les fichiers .bbl nécessaires.
-
-Le présent document est essentiellement une composition faite à partir de textes
-trouvés sur le net, qui ont été <<mis bout à bout>> afin de réduire l'effort
-de rédaction (le document ayant été réalisé à ressources minimales ).
+%\bigskip
+%\bibliographystyle{frunsrt}
+%\bibliography{VM_MEF}
+%\nocite{*}
 
 
-Les principales  ressources bibliographiques utilisées pour la rédaction de ce document
-sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur
-désireux d'approfondir certains thèmes (Google est ton ami).
+% RIFF
+% Lattice-Boltzmann
+
+% \part{Survol mathématique}
+% \include{./tex/espaces}
+% \include{./tex/Operat}
+% \include{./tex/continu}
+% \include{./tex/Lp}
+% \include{./tex/Sobolev}
+% \include{./tex/Resume1}
+
+% \part{Problème continu}
+% \include{./tex/phy-edp}
+% \include{./tex/FFaible}
+%\include{./tex/phy-ffble}%\include{./tex/phy-varia}% inclus dans mhy-ffble
+%\ifVersionAvecExemplesSepares\else
+%   \include{./tex/ex1}% exemple formulation math
+%\fi
+
+\part{Éléments finis}
+\include{./tex/MEFintro}
+\include{./tex/MEF}
+\include{./tex/model}
+% \include{./tex/Elts}
+% \include{./tex/Amelio}
+% \include{./tex/Homog}
+% \include{./tex/temps}% ajouter dynamique rapide ?
+% \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?
+% \include{./tex/non-lin}
+% \include{./tex/rupture}
+% \include{./tex/xfem}% ajouter \section{L'utilisation de plusieurs maillages} => stochastique => dans les méthodes dérivées ? (xfem.tex)
+%%%GFREM (Global FEM), IFEM (Integrated FEM/BEM)
+% \include{./tex/singul}
+% \include{./tex/ccl}
+
+% \ifVersionAvecExemplesSepares
+%%%%%\part{Pratique des éléments finis}
+   % \part{Quelques exemples}
+   % \include{./tex/ex1}% exemple formulation math
+   % \include{./tex/ex2}% élts 1D
+   % \include{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
+   % \include{./tex/ex5}% efforts équivalents sur un poutre
+   % \include{./tex/ex3}% poutre Ch 10 sous Cast3M
+   % \include{./tex/ex4}% macro Ansys et poutre en U
+   % \include{./tex/ex6}% propagation freefem++
+   % \include{./tex/ex7}% contact Cast3M
+% \fi
+
+% \appendix
+% \part{Annexes}
+% \include{./tex/interp}
+% \include{./tex/intnum}
+% \include{./tex/ed}%\include{./tex/newmark}% inclus dans ED
+%%%%%\include{./tex/discretis}% ??? je ne sais plus ce que je voulais faire
+%%%%%\include{./tex/cvnum}% supprimé, trop loin de nos préoccupations
+%%%%%\include{./tex/matrices}% supprimé, trop loin de nos préoccupations
+% \include{./tex/new-raph}
+%%%%%\include{./tex/essais}% pas en rapport avec ce document
 
 
-De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas
-mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est
-ouvert...
+
+% \ifVersionDuDocEstVincent
+   % \chapter*{Bibliographie}
+% \markboth{Bibliographie}{}
+  %%%%%%%\addcontentsline{toc}{chapter}{Bibliographie}
+   % BIBTOPIC crée pour chaque appel à BtSect un fichier .aux
+   % on aura donc VM_MEF1.aux... VM_MEF5.aux (correspondant
+   % aux fihicers VM_MEF0, ..., VM_MEF3, VM_MEFA.bib)
+   % il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
+   % pour créer les fichiers .bbl nécessaires.
+
+% Le présent document est essentiellement une composition faite à partir de textes
+% trouvés sur le net, qui ont été <<~mis bout à bout~>> afin de réduire l'effort
+% de rédaction (le document ayant été réalisé à ressources minimales ).
 
 
-\bibliographystyle{frunsrt}
-
-\begin{btSect}{VM_MEF0}
-\section*{Références générales}\markboth{Références générales}{}\index[aut]{Joly (Patrick), ?- , Français}
-Dans tout le document, nous nous servons intensivement de Wikipédia.
-\btPrintAll
-\end{btSect} 
-
-\begin{btSect}{VM_MEF1}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}
-\section*{Références de la partie 1}\markboth{Preface}{Références de la partie 1}
-\btPrintAll
-\end{btSect} 
-
-\begin{btSect}{VM_MEF2}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}
-\section*{Références de la partie 2}\markboth{Références de la partie 2}{}
-\btPrintAll
-\end{btSect} 
-
-\begin{btSect}{VM_MEF3}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}
-\section*{Références de la partie 3}\markboth{Références de la partie 3}{}
-\btPrintAll
-\end{btSect} 
-
-\begin{btSect}{VM_MEFA}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
-\section*{Références des annexes}\markboth{Références des annexes}{}
-\btPrintAll
-\end{btSect} 
+% Les principales  ressources bibliographiques utilisées pour la rédaction de ce document
+% sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur
+% désireux d'approfondir certains thèmes (Google est ton ami).
 
 
-\cleardoublepage
-\renewcommand{\indexname}{Index}
-\markboth{Index}{}
-%\addcontentsline{toc}{chapter}{Index}
-\printindex
-
-\cleardoublepage
-\makeatletter
-\renewenvironment{theindex}
-               {\if@twocolumn
-                  \@restonecoltrue\onecolumn
-                \else
-                  \@restonecolfalse
-                \fi
-                \thispagestyle{fancy}\parindent\z@
-                \parskip\z@ \@plus .3\p@\relax
-                \columnseprule \z@
-                \columnsep 35\p@
-                \let\item\@idxitem}
-               {\if@restonecol\twocolumn\fi}
-\makeatother
-\markboth{Index des Noms Propres}{}
-%\addcontentsline{toc}{chapter}{Index des Noms Propres}
-
-~\vspace{9mm}\\
-
-\noindent{\Huge \textbf{Index des Noms Propres}}\\[+2mm]
-
-%~\\
+% De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas
+% mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est
+% ouvert...
 
 
-\bigskip
+% \bibliographystyle{frunsrt}
 
-%il faut MakeIndexer le fichier "VM_MEF.aut.idx"
-   \renewcommand{\indexname}{Index des Noms Propres}
-   \printindex[aut]
+% \begin{btSect}{VM_MEF0}
+% \section*{Références générales}\markboth{Références générales}{}\index[aut]{Joly (Patrick), ?- , Français}
+% Dans tout le document, nous nous servons intensivement de Wikipédia.
+% \btPrintAll
+% \end{btSect} 
 
-   \cleardoublepage
-   \include{./tex/galerie}
-%%%%%%%%%%
-\else
-   \printindex[aut]
-   \printindex
+% \begin{btSect}{VM_MEF1}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}
+% \section*{Références de la partie 1}\markboth{Preface}{Références de la partie 1}
+% \btPrintAll
+% \end{btSect} 
 
-   \cite{*}
-   \chapter*{Références bibliographiques}
-\index[aut]{Joly (Patrick), ?- , Français}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+% \begin{btSect}{VM_MEF2}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}
+% \section*{Références de la partie 2}\markboth{Références de la partie 2}{}
+% \btPrintAll
+% \end{btSect} 
 
-   \printbibliography[heading=bibempty]
-\fi
+%%%%%%\begin{btSect}{VM_MEF3}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}
+% \section*{Références de la partie 3}\markboth{Références de la partie 3}{}
+% \btPrintAll
+% \end{btSect} 
+
+% \begin{btSect}{VM_MEFA}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+% \section*{Références des annexes}\markboth{Références des annexes}{}
+% \btPrintAll
+% \end{btSect} 
+
+
+% \cleardoublepage
+% \renewcommand{\indexname}{Index}
+% \markboth{Index}{}
+%%%%%\addcontentsline{toc}{chapter}{Index}
+% \printindex
+
+% \cleardoublepage
+% \makeatletter
+% \renewenvironment{theindex}
+               % {\if@twocolumn
+                  % \@restonecoltrue\onecolumn
+                % \else
+                  % \@restonecolfalse
+                % \fi
+                % \thispagestyle{fancy}\parindent\z@
+                % \parskip\z@ \@plus .3\p@\relax
+                % \columnseprule \z@
+                % \columnsep 35\p@
+                % \let\item\@idxitem}
+               % {\if@restonecol\twocolumn\fi}
+% \makeatother
+% \markboth{Index des Noms Propres}{}
+%%%%%%\addcontentsline{toc}{chapter}{Index des Noms Propres}
+
+% ~\vspace{9mm}\\
+
+% \noindent{\Huge \textbf{Index des Noms Propres}}\\[+2mm]
+
+% \bigskip
+
+%%%%%il faut MakeIndexer le fichier "VM_MEF.aut.idx"
+   % \renewcommand{\indexname}{Index des Noms Propres}
+   % \printindex[aut]
+
+   % \cleardoublepage
+   % \include{./tex/galerie}
+%%%%%%%%%
+% \else
+   % \printindex[aut]
+   % \printindex
+
+   % \cite{*}
+   % \chapter*{Références bibliographiques}
+%%%%%%\index[aut]{Joly (Patrick), ?- , Français}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+
+   % \printbibliography[heading=bibempty]
+% \fi
 
 \end{document}
