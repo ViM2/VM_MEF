@@ -1,7 +1,6 @@
 \chapter{Formulation pratique d'éléments finis \pln}\label{Ch-Elts}
 \begin{abstract}
-L'intégralité de la méthode des éléments finis a été présentée au chapitre
-\ref{Ch-MEF}.
+L'intégralité de la méthode des éléments finis a été présentée au chapitre~\ref{Ch-MEF}.
 
 Dans ce chapitre et dans les suivants, nous allons détailler certains aspects.
 Nous proposons dans ce chapitre d'exposer un peu plus complètement les notions
@@ -12,30 +11,30 @@ d'interpolation sur un élément, ainsi que le lien entre approximation locale
 
 Nous avons dit vouloir interpoler le problème sur chaque élément.
 Pour ce faire, il faut prendre une \textcolorblue{base} sur chaque élément.
-Plusieurs choix sont possibles, mais en général, les fonctions de base utilisées pour les 
-éléments finis sont dites \textcolorblue{interpolantes}, c'est-à-dire que les 
+Plusieurs choix sont possibles, mais en général, les fonctions de base utilisées pour les
+éléments finis sont dites \textcolorblue{interpolantes}, c'est-à-dire que les
 \textcolorblue{valeurs nodales} sont les valeurs des grandeurs inconnues aux nœuds,
 et que c'est à partir de ces valeurs que l'on effectue l'interpolation.
 
 \medskip
-La méthode la plus simple consiste à utiliser les polynômes de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} 
-Dans cette méthode les fonctions de base valent 1 à un nœud du maillage et 0 à tous les autres. 
-La fonction de base $i$ est alors la fonction valant 1 au nœud $i$ et 0 sur les autres nœuds 
-et qui est polynomiale sur chaque élément. 
+La méthode la plus simple consiste à utiliser les polynômes de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+Dans cette méthode les fonctions de base valent 1 à un nœud du maillage et 0 à tous les autres.
+La fonction de base $i$ est alors la fonction valant 1 au nœud $i$ et 0 sur les autres nœuds
+et qui est polynomiale sur chaque élément.
 Il y a autant de fonctions de base par élément que de nombre de nœuds.
 
-On appelle \textcolorblue{élément} la donnée d'une \textcolorblue{géométrie} 
-(souvent polygonale en 2D, polyédrique en 3D) et de \textcolorblue{fonctions de base associées 
+On appelle \textcolorblue{élément} la donnée d'une \textcolorblue{géométrie}
+(souvent polygonale en 2D, polyédrique en 3D) et de \textcolorblue{fonctions de base associées
 à cette géométrie}.
 
 \medskip
-D'autres solutions peuvent exister pour les fonctions de base. 
-Par exemple, les éléments finis d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} 
-ont la particularité d'avoir deux fonctions de base associées à chaque nœud. 
-La valeur de la solution est alors ajustée avec la première fonction alors que la deuxième 
-permet d'ajuster la valeur de la dérivée. 
+D'autres solutions peuvent exister pour les fonctions de base.
+Par exemple, les éléments finis d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français}
+ont la particularité d'avoir deux fonctions de base associées à chaque nœud.
+La valeur de la solution est alors ajustée avec la première fonction alors que la deuxième
+permet d'ajuster la valeur de la dérivée.
 Ce type de fonctions de base peut avoir un intérêt pour la résolution de certaines EDP
-(telle que l'équation des plaques en MMC), même si elle nécessite d'avoir deux fois plus 
+(telle que l'équation des plaques en MMC), même si elle nécessite d'avoir deux fois plus
 de fonctions pour un maillage donné.
 
 
@@ -48,30 +47,30 @@ de fonctions pour un maillage donné.
 \medskip
 \section{Éléments de Lagrange}\index{EF de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
-Les éléments de Lagrange sont les plus simples des EF.
+Les éléments de Lagrange sont les éléments finis les plus simples.
 
 \medskip
 \subsection{Unisolvance}\index{Unisolvance}\label{Sec-unisolvance}
 
 \begin{definition}[Unisolvance]
-Soit $\Sigma=\{a_1, ..., a_N\}$ un ensemble de $N$ points distincts de $\RR^n$.
+Soit $\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de $N$ points distincts de $\RR^n$.
 Soit $P$ un espace vectoriel de dimension finie de fonctions de $\RR^n$ à valeurs dans $\RR$.
-On dit que $\Sigma$ est \textcolorblue{$P$-unisolvant} ssi pour tous réels $\alpha_1$, ..., $\alpha_N$, 
-il existe un unique élément $p$ de $P$ tel que $\forall ii=1,..., N, p(a_i) = \alpha_i$.
+On dit que $\Sigma$ est \textcolorblue{$P$-unisolvant} ssi pour tous réels $\alpha_1$,\ldots, $\alpha_N$,
+il existe un unique élément $p$ de $P$ tel que $\forall i=1,\ldots, N$, $p(a_i) = \alpha_i$.
 (ce qui revient à dire que la fonction de $P$ dans $\RR^N$ qui à $p$ fait correspondre
-$(p(a_i),..., p(a_N))=(\alpha_1,..., \alpha_N)$ est bijective).
+$(p(a_i),\ldots, p(a_N))=(\alpha_1,\ldots, \alpha_N)$ est bijective).
 \end{definition}
 
 \medskip
-\subsection{EF de Lagrange}\index{EF de Lagrange}
+\subsection{Éléments finis de Lagrange}\index{EF de Lagrange}
 
-\begin{definition}[EF de Lagrange]
+\begin{definition}[Éléments finis de Lagrange]
 Un \textcolorblue{élément fini de Lagrange} est un triplet $(K, \Sigma, P)$ tel que:
 \begin{itemize}
-   \item $K$ est un élément géométrique de $\RR^n$, compact, connexe, et d'intérieur
+\item $K$ est un élément géométrique de $\RR^n$, compact, connexe, et d'intérieur
 	non vide;
-   \item $\Sigma=\{a_1, ..., a_N\}$ un ensemble de $N$ points distincts de $\RR^n$;
-   \item $P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur $K$, et tel
+\item $\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de $N$ points distincts de $\RR^n$;
+\item $P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur $K$, et tel
 	que $\Sigma$ soit $P$-unisolvant (donc $\dim P = N$).
 \end{itemize}
 \end{definition}
@@ -81,11 +80,11 @@ Les \textcolorblue{fonctions de bases locales} de l'élément fini de Lagrange $
 sont les $N$ fonctions de $P$ telles que $p_i(a_j)=\delta_{ij}$ pour $1\le i,j\le N$.
 
 \medskip
-Remarque: $(p_1,..., p_N)$ est une base de $P$.
+\paragraph{Remarque} $(p_1,\ldots, p_N)$ est une base de $P$.
 
 \medskip
-\begin{definition}[Opérateur de P-interpolation]
-Un \textcolorblue{opérateur de P-interpolation sur $\Sigma$} est un opérateur $\pi_K$
+\begin{definition}[Opérateur de $P$-interpolation]
+Un \textcolorblue{opérateur de $P$-interpolation sur $\Sigma$} est un opérateur $\pi_K$
 qui à toute fonction $v$ définie sur $K$ associe la fonction $\pi_Kv$ de $P$ définie par:
 $\pi_Kv=\dsum_{i=1}^N v(a_i)p_i$.
 \end{definition}
@@ -98,45 +97,44 @@ points de $\Sigma$.
 \medskip
 On notera \textcolorblue{$P_k$ l'espace vectoriel des polynômes de degré total inférieur ou égal à $k$.}
 \begin{itemize}
-   \item sur $\RR$, $P_k=Vect\{1, X, ..., X^k\}$ et $\dim P_k=k+1$;
-   \item sur $\RR^2$, $P_k=Vect\{X^iY^j, 0\le i+j\le k\}$ et $\dim P_k=\frac{(k+1)(k+2)}2$;
-   \item sur $\RR^3$, $P_k=Vect\{X^iY^jZ^l, 0\le i+j+l\le k\}$ et $\dim P_k=\frac{(k+1)(k+2)(k+3)}6$.
+\item sur $\RR$, $P_k=Vect\{1, X,\ldots, X^k\}$ et $\dim P_k=k+1$;
+\item sur $\RR^2$, $P_k=Vect\{X^iY^j, 0\le i+j\le k\}$ et $\dim P_k=\frac{(k+1)(k+2)}2$;
+\item sur $\RR^3$, $P_k=Vect\{X^iY^jZ^l, 0\le i+j+l\le k\}$ et $\dim P_k=\frac{(k+1)(k+2)(k+3)}6$.
 \end{itemize}
-
 \medskip
-On notera \textcolorblue{$Q_k$ l'espace vectoriel des polynômes de degré inférieur ou égal à $k$ par rapport 
+On notera \textcolorblue{$Q_k$ l'espace vectoriel des polynômes de degré inférieur ou égal à $k$ par rapport
 à chaque variable.}
 \begin{itemize}
-   \item sur $\RR$, $Q_k=P_k$;
-   \item sur $\RR^2$, $Q_k=Vect\{X^iY^j, 0\le i,j\le k\}$ et $\dim Q_k=(k+1)^2$;
-   \item sur $\RR^3$, $Q_k=Vect\{X^iY^jZ^l, 0\le i,j,l\le k\}$ et $\dim Q_k=(k+1)^3$.
+\item sur $\RR$, $Q_k=P_k$;
+\item sur $\RR^2$, $Q_k=Vect\{X^iY^j, 0\le i,j\le k\}$ et $\dim Q_k=(k+1)^2$;
+\item sur $\RR^3$, $Q_k=Vect\{X^iY^jZ^l, 0\le i,j,l\le k\}$ et $\dim Q_k=(k+1)^3$.
 \end{itemize}
 
 
 
 \medskip
-\subsection*{EF 1D}
+\subsection*{Éléments finis unidimensionnels}
 
 On discrétise le segment $[a,b]$ avec des polynômes de degrés $1$ à $m$.
 On obtient les éléments suivants:
-\begin{center}
+
 \begin{tabular}{c|cccc}
 Élément & $P_1$ & $P_2$ & ... & $P_m$\\
 \hline
 $K$	      & $[a,b]$ &  $[a,b]$ & ... & $[a,b]$\\
-$\Sigma$   & $\{a,b\}$ & $\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0, ..., m\}$\\
+$\Sigma$   & $\{a,b\}$ & $\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0,\ldots, m\}$\\
 $P$            & $P_1$ & $P_2$ & ... & $P_m$\\
 \hline
 \end{tabular}
-\end{center}
+
 
 \medskip
-\subsection*{EF 2D triangulaire}
+\subsection*{Éléments finis bidimensionnels triangulaires}
 
 On discrétise le triangle de sommets $\{a_1, a_2, a_3\}$ avec, le long de chaque
-arête une interpolation polynômiale de degré $1$ à $m$.
+arête une interpolation polynomiale de degré $1$ à $m$.
 On obtient les éléments suivants:
-\begin{center}
+
 \begin{tabular}{c|cc}
 Élément & $P_1$ & $P_2$ \\
 \hline
@@ -145,17 +143,15 @@ $\Sigma$   & $\{a_1, a_2, a_3\}$ & $\{a_{ij}=\frac{a_i+a_j}2, 1\le i,j\le 3\}$ \
 $P$            & $P_1$ & $P_2$ \\
 \hline
 \end{tabular}
-\end{center}
 
-Rq: Les fonctions de base pour lélément $P_1$ sont définies par $p_i(a_j) = \delta_{ij}$. 
-Ce sont les coordonnées barycentriques: $p_i = \lambda_i$.
+
+\paragraph{Remarque}Les fonctions de base pour l'élément $P_1$ sont définies par $p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques: $p_i = \lambda_i$.
 
 \medskip
-\subsection*{EF 2D rectangulaire}
-
+\subsection*{Éléments finis bidimensionnels rectangulaires}
 On discrétise le rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés
 parallèles aux axes.
-\begin{center}
+
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
 \hline
@@ -164,20 +160,18 @@ $\Sigma$ & $\{a_1, a_2, a_3, a_4\}$\\
 $P$ & $Q_1$\\
 \hline
 \end{tabular}
-\end{center}
+
 
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[height=30mm]{Lagrange2D.eps}
-\end{center}
-\caption{\label{Lagrange2D} Éléments finis de Lagrange 2D: triangulaire $P_1$, triangulaire $P_2$ et rectangulaire $Q_1$.}
+\caption{\label{Lagrange2D} Éléments finis de Lagrange 2D: triangulaire $P_1$, triangulaire $P_2$ et rectangulaire $Q_1$}
 \end{figure}
 
 \medskip
-\subsection*{EF 3D}
-
+\subsection*{Éléments finis tridimensionnels}
 Éléments tétraédriques:
-\begin{center}
+
 \begin{tabular}{c|cc}
 Élément & $P_1$ & $P_2$ \\
 \hline
@@ -186,37 +180,35 @@ $\Sigma$   & $\{a_1, a_2, a_3, a_4\}$ & $\{a_i\}_{1\le i\le4}\cup\{a_{ij}\}_{1\l
 $P$            & $P_1$ & $P_2$ \\
 \hline
 \end{tabular}
-\end{center}
+
 
 Élément parallélépipédique:
-\begin{center}
+
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
 \hline
-$K$ & parallélépipède de sommets $\{a_1,..., a_8\}$ de côtés parallèles aux axes.\\
+$K$ & parallélépipède de sommets $\{a_1,\ldots, a_8\}$ de côtés parallèles aux axes.\\
 $\Sigma$ & $\{a_i\}_{1\le i\le8}$\\
 $P$ & $Q_1$\\
 \hline
 \end{tabular}
-\end{center}
+
 
 Élément prismatique:
-\begin{center}
+
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
 \hline
-$K$ & prisme droit de sommets $\{a_1,..., a_6\}$\\
+$K$ & prisme droit de sommets $\{a_1,\ldots, a_6\}$\\
 $\Sigma$ & $\{a_i\}_{1\le i\le6}$\\
 $P$ & $\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 \hline
 \end{tabular}
-\end{center}
+
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[width=\textwidth]{Lagrange3D.eps}
-\end{center}
-\caption{\label{Lagrange3D} Éléments finis de Lagrange 3D:
-tétraédriques $P_1$ et $P_2$, parallélépipédique $Q_1$ et prismatique.}
+\caption{Éléments finis de Lagrange 3D: tétraédriques $P_1$ et $P_2$, parallélépipédique $Q_1$ et prismatique}\label{Lagrange3D}
 \end{figure}
 
 
@@ -229,15 +221,15 @@ $\mathcal{T}_h$ et un élément de référence a déjà été utilisée en
 calcul de majoration d'erreur, mais la transformation elle-même n'a pas été
 détaillée.
 
-\medskip\colorgris\scriptsize
+\medskip\colorgris
 Deux éléments finis $(\hat{K}, \hat{\Sigma}, \hat{P})$ et $(K, \Sigma, P)$ sont
 affine-équivalents ssi il existe une fonction affine $F$ inversible telle que
-$K=F(\hat{K})$, $a_i=F(\hat{a_i})$, i=1, ..., N, et $P=\{\hat{p}\circ F^{-1}, \hat{p}\in\hat{P}\}$.
+$K=F(\hat{K})$, $a_i=F(\hat{a_i})$, i=1,\ldots, N, et $P=\{\hat{p}\circ F^{-1}, \hat{p}\in\hat{P}\}$.
 \colorblack\normalsize
 
 \medskip
-\begin{definition}[famille affine d'EF]
-On appelle \textcolorblue{famille affine d'éléments finis} une famille d'EF
+\begin{definition}[famille affine d'éléments finis]
+On appelle \textcolorblue{famille affine d'éléments finis} une famille d'éléments finis
 tous affine-équivalents à un même EF appelé \textcolorblue{élément
 de référence}.
 \end{definition}
@@ -247,21 +239,20 @@ de référence}.
 de ramener tous les calculs d'intégrales à des calculs sur l'élément de référence.}
 Voir figure \ref{trsfaffine} pour une illustration d'une transformation affine.
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[height=45mm]{trsfaffine.eps}
 \caption{\label{trsfaffine} Transformation affine sur un triangle}
-\end{center}
 \end{figure}
 
 \medskip
 Les EF de références sont ceux obtenus, dans les cas présentés ci-dessus avec:
 \begin{itemize}
-   \item le segment $[0,1]$ en 1D; 
-   \item le triangle unité de sommets $(0,0)$, $(0,1)$, $(1,0)$, 
-   \item et le carré unité $[0,1]\times[0,1]$ en 2D; 
-   \item le tétraèdre unité de sommets $(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$, 
-   \item le cube unité $[0,1]\times[0,1]\times[0,1]$, 
-   \item le prisme unité de sommets $(0,0,0)$, $(0,1,0)$, $(1,0,0)$, $(0,0,1)$, $(0,1,1)$, $(1,0,1)$.
+\item le segment $[0,1]$ en 1D;
+\item le triangle unité de sommets $(0,0)$, $(0,1)$, $(1,0)$,
+\item et le carré unité $[0,1]\times[0,1]$ en 2D;
+\item le tétraèdre unité de sommets $(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$,
+\item le cube unité $[0,1]\times[0,1]\times[0,1]$,
+\item le prisme unité de sommets $(0,0,0)$, $(0,1,0)$, $(1,0,0)$, $(0,0,1)$, $(0,1,1)$, $(1,0,1)$.
 \end{itemize}
 
 
@@ -271,58 +262,45 @@ Les EF de références sont ceux obtenus, dans les cas présentés ci-dessus ave
 
 Revenons à notre problème décrit par une EDP sous forme faible dans un domaine
 $\Omega$ sur lequel on réalise un maillage $\mathcal{T}_h$ à partir d'une famille affine
-de $N_e$ éléments finis $(K_i, \Sigma_i, P_i)_{i=1,...,N_e}$.
+de $N_e$ éléments finis $(K_i, \Sigma_i, P_i)_{i=1,\ldots,N_e}$.
 
 \medskip
 Par unisolvance, la solution approchée $u_h$ sera entièrement définie sur chaque EF
-par ses valeurs sur les points de $\Sigma_i$, nommés \textcolorblue{nœuds} du maillage. 
-Notons $(a_1, ..., a_{N_h})$ les nœuds du maillage ($N_h<N_e . Card\Sigma_i$). 
-Le problème approché revient à déterminer les valeurs de $u_h$ aux points $a_i$: 
+par ses valeurs sur les points de $\Sigma_i$, nommés \textcolorblue{nœuds} du maillage.
+Notons $(a_1,\ldots, a_{N_h})$ les nœuds du maillage ($N_h<N_e . Card\Sigma_i$).
+Le problème approché revient à déterminer les valeurs de $u_h$ aux points $a_i$:
 ce sont les \textcolorblue{degrés de liberté} du problème approché.
 
 \medskip
-On va construire une base de $V_h$ en associant à chaque ddl $a_i$ un vecteur de la base. 
-On définit ainsi les fonctions de base globales $\varphi_i$ $(i = 1, ..., N_h)$ par:
-\begin{equation}\varphi_i|_{K_j} \in P_j, j = 1, ..., N_e \quad \text{ et }\quad \varphi_i(a_j) = \delta_{ij}, 1\le i,j\le N_h\end{equation}
-et l'espace d'approximation interne est: $V_h=Vect\{\varphi_1, ..., \varphi_{N_h}\}$.
+On va construire une base de $V_h$ en associant à chaque ddl $a_i$ un vecteur de la base.
+On définit ainsi les fonctions de base globales $\varphi_i$ $(i = 1,\ldots, N_h)$ par:
+\begin{equation}\varphi_i|_{K_j} \in P_j, j = 1,\ldots, N_e \quad \text{ et }\quad \varphi_i(a_j) = \delta_{ij}, 1\le i,j\le N_h\end{equation}
+et l'espace d'approximation interne est: $V_h=Vect\{\varphi_1,\ldots, \varphi_{N_h}\}$.
 
 On remarquera qu'une telle fonction $\varphi_i$ est nulle partout sauf sur les éléments
 dont $a_i$ est un nœud.
 \begin{figure}[ht]
- \begin{center}
-  \includegraphics[height=40mm]{phi1}~\includegraphics[height=40mm]{phi2.eps}
- \end{center}
-\caption{\label{BaseVh} Base de $V_h$: exemple de fonction de base globale $\varphi_i$ 
- sur un maillage avec des éléments triangulaires $P_1$.}
+\centering
+\includegraphics[height=40mm]{phi1}~\includegraphics[height=40mm]{phi2.eps}
+\caption{\label{BaseVh} Base de $V_h$: exemple de fonction de base globale $\varphi_i$ sur un maillage avec des éléments triangulaires $P_1$.}
 \end{figure}
 
 \medskip
-De plus, sur un élément $K$ dont $a_i$ est un nœud, $\varphi_i$ vaut $1$ en $a_i$ et 
-$0$ aux autres nœuds de K. Donc $\varphi_i|_K$ est une fonction de base locale de $K$. 
-On voit donc que la fonction de base globale $\varphi_i$ est construite comme réunion des 
+De plus, sur un élément $K$ dont $a_i$ est un nœud, $\varphi_i$ vaut $1$ en $a_i$ et
+$0$ aux autres nœuds de K. Donc $\varphi_i|_K$ est une fonction de base locale de $K$.
+On voit donc que la fonction de base globale $\varphi_i$ est construite comme réunion des
 fonctions de base locales sur les éléments du maillage dont $a_i$ est un nœud.
 
 \medskip
 Remarque: ce qui précède est vrai dans le cas d'un maillage conforme, i.e si
 l'intersection entre deux éléments est soit vide, soit réduite à un
-sommet ou une arête en dimension 2, ou à un sommet, une arête ou une face 
+sommet ou une arête en dimension 2, ou à un sommet, une arête ou une face
 en dimension 3.
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[height=25mm]{MaillageNC.eps}
-\caption{\label{maillageNC} Maillage non conforme: situations interdites.}
-\end{center}
+\caption{\label{maillageNC} Maillage non conforme: situations interdites}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
 
 \medskip
 \section{Éléments d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
@@ -330,12 +308,12 @@ en dimension 3.
 \medskip
 \subsection{Classe d'un EF}\index{Classe d'un EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
-Une question naturelle est de savoir quelle est la régularité de la solution approchée 
+Une question naturelle est de savoir quelle est la régularité de la solution approchée
 $u_h$. En particulier, $u_h$ est-elle continue? dérivable?
 
-$u_h$ est obtenue par combinaison linéaire des fonctions de base globales 
+$u_h$ est obtenue par combinaison linéaire des fonctions de base globales
 $\varphi$, la question revient donc à déterminer la régularité de celles-ci.
-Par construction, on voit que la régularité de $\varphi_i$ sera donnée par sa 
+Par construction, on voit que la régularité de $\varphi_i$ sera donnée par sa
 régularité au niveau des interfaces entre les éléments adjacents formant
 son support.
 
@@ -347,14 +325,14 @@ nous allons introduire maintenant.
 \subsection{EF d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
 \begin{definition}[EF d'Hermite]
-Un \textcolorblue{élément fini d'Hermite ou élément fini général} est un 
+Un \textcolorblue{élément fini d'Hermite ou élément fini général} est un
 triplet $(K, \Sigma, P)$ tel que:
 \begin{itemize}
-   \item $K$ est un élément géométrique de $\RR^n$, compact, connexe, et d'intérieur
+\item $K$ est un élément géométrique de $\RR^n$, compact, connexe, et d'intérieur
 	non vide;
-   \item $\Sigma=\{\sigma_1, ..., \sigma_N\}$ un ensemble de $N$ \textcolorred{formes linéaires}
+\item $\Sigma=\{\sigma_1,\ldots, \sigma_N\}$ un ensemble de $N$ \textcolorred{formes linéaires}
 	sur l'espace des fonctions définies sur $K$, ou sur un sous-espace plus régulier contenant $P$;
-   \item $P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur $K$, et tel
+\item $P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur $K$, et tel
 	que $\Sigma$ soit $P$-unisolvant.
 \end{itemize}
 \end{definition}
@@ -371,17 +349,17 @@ $\pi_kv$ est l'unique élément de $P$ qui prend les mêmes valeurs que $v$ sur 
 points de $\Sigma$.
 
 \medskip
-On remarque immédiatement que si $\sigma_i(p) = p(ai), i=1, ..., N$, on retrouve les EF
+On remarque immédiatement que si $\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les EF
 de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{EF de Lagrange}
 
 Cette généralisation permet d'introduire des opérations de dérivation dans $\Sigma$,
 et donc d'améliorer la régularité des fonctions de $V_h$.
 
 \medskip
-Les \textcolorblue{fonctions de base globales} $\varphi_i$, $(i=1, ..., N_h)$ sont 
+Les \textcolorblue{fonctions de base globales} $\varphi_i$, $(i=1,\ldots, N_h)$ sont
 définies par :
 \begin{equation}
-\varphi_i|_{K_j} \in P_j, j=1, ..., N_e \quad \text{ et } \quad \colorred
+\varphi_i|_{K_j} \in P_j, j=1,\ldots, N_e \quad \text{ et } \quad \colorred
 \sigma_j(\varphi_i)=\delta_{ij}, 1\le i,j\le N_h
 \end{equation}
 
@@ -392,7 +370,6 @@ ou même plus, et il en sera donc de même pour la solution approchée $u_h$.
 \medskip
 \subsection*{EF 1D}
 
-\begin{center}
 \begin{tabular}{c|cc}
 Élément d'Hermite & cubique & quintique\\
 \hline
@@ -402,29 +379,29 @@ $P$            & $P_3$ & $P_3$\\
 Régularité & $C^1$ et $H^2$ & $C^2$ et $H^3$\\
 \hline
 \end{tabular}
-\end{center}
+
 
 \medskip
 \subsection*{EF 2D triangulaire}
 
 \begin{itemize}
-   \item Élément d'Hermite cubique:
+\item Élément d'Hermite cubique:
 	\begin{itemize}
-	   \item $K=$ triangle de sommets $\{a_1, a_2, a_3\}$;
-	   \item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), i=1, 2, 3\right\}
+	\item $K=$ triangle de sommets $\{a_1, a_2, a_3\}$;
+	\item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), i=1, 2, 3\right\}
 		\cup\left\{p(a_0)\right\}$;
-	   \item $P=P_3$;
-	   \item élément $C^0$, mais pas $C^1$.
+	\item $P=P_3$;
+	\item élément $C^0$, mais pas $C^1$.
 	\end{itemize}
-   \item Élément d'Argyris:
+\item Élément d'Argyris:
 	\begin{itemize}
-	   \item $K=$ triangle de sommets $\{a_1, a_2, a_3\}$;
-	   \item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
+	\item $K=$ triangle de sommets $\{a_1, a_2, a_3\}$;
+	\item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
 		\frac{\partial^2 p}{\partial x^2}(a_i), \frac{\partial^2 p}{\partial y^2}(a_i),
 		\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1, 2, 3\right\}
 		\cup\left\{\frac{\partial p}{\partial n}(a_{ij}), 1\le i<j\le3\right\}$;
-	   \item $P=P_5$
-	   \item élément $C^1$
+	\item $P=P_5$
+	\item élément $C^1$
 	\end{itemize}
 \end{itemize}
 
@@ -433,27 +410,17 @@ Régularité & $C^1$ et $H^2$ & $C^2$ et $H^3$\\
 
 Élément $Q_3$:
 \begin{itemize}
-   \item $K=$ rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes;
-   \item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
-	\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1,..., 4\right\}$;
-   \item $P=P_3$;
-   \item élément $C^1$.
+\item $K=$ rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes;
+\item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
+	\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1,\ldots, 4\right\}$;
+\item $P=P_3$;
+\item élément $C^1$.
 \end{itemize}
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[width=\textwidth]{Hermite2D.eps}
-\end{center}
-\caption{\label{Hermite2D} Éléments finis d'Hermite triangulaire cubique, élément d'Argyris 
-et élément rectangulaire $Q_3$.}
+\caption{\label{Hermite2D} Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire $Q_3$}
 \end{figure}
-
-
-
-
-
-
-
-
 
 
 \medskip
@@ -468,7 +435,7 @@ problèmes ayant plusieurs champs inconnus (cela à déjà été abordé,
 et certaines stratégies on déjà été présentées: formulation mixte (Brezzi),\index[aut]{Brezzi (Franco), 1945-, Italien}
 utilisation de multiplicateurs de Lagrange).\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{Multiplicateurs de Lagrange}
 
-On pourrait imaginer, si ces champs sont <<dissociés>> (sans lien les uns avec les
+On pourrait imaginer, si ces champs sont <<~dissociés~>> (sans lien les uns avec les
 autres), de modéliser chaque champ séparément, i.e. de traiter un
 problème par champ (avec pour chaque champ un choix de maillage et
 d'élément qui lui est propre).
@@ -480,23 +447,22 @@ entre ces champs, qui doivent elles-aussi être satisfaites.
 
 \medskip
 Nous avons exposé au chapitre précédent pourquoi la mécanique reste un cas
-compliqué. Cela provient de ce que les champs inconnus sont les déplacements, 
-déformations et contraintes. 
+compliqué. Cela provient de ce que les champs inconnus sont les déplacements,
+déformations et contraintes.
 De plus, le chapitre précédent a permis une illustration du choix d'un modèle,
 même lorsque l'on ne recourt qu'à une théorie à un champ (déplacements).
 
 \medskip
 Nous ne construirons pas ici un élément à plusieurs champs, mais nous
-allons donner une motivation pour le faire: celui du calcul des contraintes à 
-l'interface entre deux matériaux différents que nous supposerons parfaitement 
+allons donner une motivation pour le faire: celui du calcul des contraintes à
+l'interface entre deux matériaux différents que nous supposerons parfaitement
 collés.
 
 Considérons donc le problème décrit à la figure \ref{interf}.
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[height=50mm]{interface.eps}
-\end{center}
-\caption{\label{interf} Interface et continuités.}
+\caption{\label{interf} Interface et continuités}
 \end{figure}
 Deux domaines $\Omega_1$ et $\Omega_2$, consittués chacun de leur
 propre loi de comportement, ont une interface commune $\Gamma_I$.
@@ -505,7 +471,7 @@ La continuité de la composante normale du déplacement à l'interface traduit l
 fait qu'il n'y a pas décollement entre les deux domaines; celle de la composante
 tangentielle qu'il n'y a pas glissement entre eux.
 
-On peut donc dire qu'en tout point de $\Gamma_I$ le déplacement est 
+On peut donc dire qu'en tout point de $\Gamma_I$ le déplacement est
 continu, ce que l'on peut noter $u_i^1=u_i^2$.
 
 \medskip
@@ -518,23 +484,23 @@ discontinues.
 
 \bigskip
 Plusieurs stratégies sont envisageables:
-\begin{itemize}
-   \item \textcolorblue{Post-traitement}\index{Post-traitement}
+\begin{description}
+\item[Post-traitement]\index{Post-traitement}
 
 	Dans cette méthode, on effectue le calcul en déplacements, de manière classique.
 	On obtient les contraintes de manière toute aussi classique, mais celles-ci
 	n'ont évidemment pas les continuités et discontinuités souhaitées.
 
 	On utilise une méthode de post-traitement qui va modifier le calcul des contraintes
-	sur les éléments situés de part et d'autre de l'interface, par exemple 
+	sur les éléments situés de part et d'autre de l'interface, par exemple
 	en imposant la vérification des équations d'équilibre (voir par exemple
 	la méthode de Reissner locale, qui applique la fonctionnelle de Reissner uniquement
 	le long de l'interface).\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
-   \item \textcolorblue{Élément mixte}
+\item[Élément mixte]
 
 	La fonctionnelle d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger} possède les champs de déplacement et de
 	contrainte comme inconnues. Elle conduit à un système de type mixte
-	(équation \ref{Eq:SysMixte}) avec une matrice qui n'est plus définie-positive.
+	(équation \eqref{Eq:SysMixte}) avec une matrice qui n'est plus définie-positive.
 
 	Il s'en suit que ces deux champs sont continus, et notamment que toutes les
 	composantes des contraintes le sont, ce qui ne satisfait pas les conditions
@@ -543,13 +509,13 @@ Plusieurs stratégies sont envisageables:
 	Si l'on souhaite utiliser ce type d'élément, il faudra par exemple, faire une
 	condensation statique des composantes devant être discontinues, ou
 	utiliser une méthode de post-traitement.
-   \item \textcolorblue{Élément hybride}
+\item[Élément hybride]
 
-	La fonctionnelle de Pian et Tong (mixte hybride)\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois} 
+	La fonctionnelle de Pian et Tong (mixte hybride)\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois}
 	présentée précédemment
 	a l'avantage de ne pas faire intervenir de dérivée. Elle conduit elle-aussi
 	à un système de type mixte, mais la matrice de rigidité n'est même
-	plus symétrique (dans une discrétisation <<brutale>>). On sait la retraiter.
+	plus symétrique (dans une discrétisation <<~brutale~>>). On sait la retraiter.
 
 	Toutes les composantes des contraintes sont là aussi continues, et il faudra appliquer les
 	mêmes remèdes que ci-dessus.
@@ -557,11 +523,11 @@ Plusieurs stratégies sont envisageables:
 	Notons qu'un avantage de cette formulation c'est qu'elle nécessite la matrice
 	de souplesse $[S]$ au lieu de la matrice de Hooke $[H]$, ce qui permet de
 	traiter le cas des matériaux incompressibles.\index{Loi de comportement!Hooke}\index{Loi de comportement!incompressible}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
-   \item \textcolorblue{Multiplicateurs de Lagrange}\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+\item[Multiplicateurs de Lagrange]\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 	
-	D'une manière évidente, la continuité{} du champ de dé{}placements
-	à{} l'interface $\li$ entre deux é{}lé{}ments $~^1$ et $~^2$ peut ê{}tre
-	imposé{}e par l'ajout à al fonctionnelle de la condition:
+	D'une manière évidente, la continuité du champ de déplacements
+	à l'interface $\li$ entre deux éléments $~^1$ et $~^2$ peut être
+	imposée par l'ajout à al fonctionnelle de la condition:
 	\begin{equation}   -\dint_{\li} \lambda_i(U_i^1-U_i^2)\ \dd\Gamma \end{equation}
 
 	Cette condition est facile à écrire et facile à implémenter (mais on perd la
@@ -569,8 +535,7 @@ Plusieurs stratégies sont envisageables:
 	
 	De plus, l'interprétation physique de ces multiplicateurs de Lagrange montre
 	que ceux-ci sont égaux aux composantes normales des contraintes.
-\end{itemize}
-
+\end{description}
 \medskip
 Voilà quelques stratégies. D'autres peuvent exister, surtout si en plus on veut passer
 sur des modèles poutre ou plaque.
@@ -586,24 +551,6 @@ Elles ont en outre l'avantage d'être parfois plus faciles à implémenter dans 
 codes industriels que de nouveaux éléments.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \medskip
 \section{Validation pratique d'un EF, indicateurs d'erreur}\label{Sec-ValidEF}
 
@@ -615,12 +562,12 @@ de la bonne programmation.
 
 \medskip
 Plusieurs types de tests peuvent et doivent être faits, sur plusieurs problèmes
-types. Ces tests concernent aussi bien un seul élément, que plusieurs 
+types. Ces tests concernent aussi bien un seul élément, que plusieurs
 (\textcolorblue{patch-test}),\index{Patch-Test} et même différents maillages.
 
 \medskip
-En mécanique, on distingue les cas suivants:\\
-\noindent
+En mécanique, on distingue les cas suivants:
+\begin{table}\centering\small
 \begin{tabular}{p{3cm}|p{25mm}|p{5cm}|p{5cm}}
 \hline
 Problème / solution de référence & Maillage & Vérification & Importance \\
@@ -635,14 +582,13 @@ ou mécanique & base complète, conformité, indépendance par rapport au mailla
 de l'assemblage), absence de modes parasites & \\
 \hline
 Champ de déformations générales & différents maillages & précision et influence de la
-distorsion sur les déplacements et la contrante & qualité de l'élément par raport à d'autres
+distorsion sur les déplacements et la contrainte & qualité de l'élément par rapport à d'autres
 éléments existants.\\
 \hline
 \end{tabular}
-
+\end{table}
 \medskip
 \subsection{Modes rigides et parasites}
-
 Le problème consiste à savoir si un élément fini, que l'on définira ici par sa matrice
 $\MM{k}$, peut présenter l'état de déformation nulle ou d'énergie interne nulle (mode ou
 mouvement de corps rigide).
@@ -657,7 +603,7 @@ S'il y a plus de valeurs propres nulles que de modes rigides, alors c'est qu'il 
 Ces modes parasites doivent disparaître après assemblage de plusieurs éléments
 afin d'éviter que la matrice de rigidité soit singulière (d'où le test sur plusieurs éléments).
 
-Le schéma d'intégration choisi pour la définition de l'élément (par exemple intégration 
+Le schéma d'intégration choisi pour la définition de l'élément (par exemple intégration
 complète, réduite ou sélective) peut influer sur les modes parasites.
 C'est pourquoi, il n'est pas toujours aussi simple de déterminer mathématiquement
 ce facteur.
@@ -667,8 +613,8 @@ Dans ce cas, il est possible d'introduire un champ de déplacement représentant
 mouvement rigide.
 
 Pour chaque mode rigide $i$, le vecteur $\VV{u^i_n}$ associé à la matrice $\MM{k}$ doit
-vérifier: $\MM{k}\VV{u^i_n}=\VV{0}$.
-
+vérifier:
+\begin{equation}\MM{k}\VV{u^i_n}=\VV{0}\end{equation}
 Un mode rigide quelconque étant une combinaison linéaire des modes $\VV{u^i_n}$,
 on construit un problème EF dans lequel on impose $m_r$ valeurs du vecteur $\VV{u^i_n}$
 et on détermine numériquement les $n-m_r$ composantes (non imposées) de $\VV{u^i_n}$.
@@ -677,16 +623,15 @@ rigide $i$. Si ce n'est pas le cas, c'est qu'il existe des modes rigides.
 
 \medskip
 \subsection{Modes associés aux déformations constantes}
-
 Pour converger correctement l'élément doit également représenter
 exactement l'état de déformations ou contraintes constantes (ou plus
-généralement la représentation <<constante>> de tous les termes de la
+généralement la représentation <<~constante~>> de tous les termes de la
 forme variationnelle).
 
 Dans un premier temps, on calcule les efforts nodaux correspondant à une contrainte fixée.
 
-Dans un second temps, on introduit les efforts nodaux comme CL dans le modèle
-EF et on vérifie si l'on retrouve bien l'état de contrainte initialement choisi.
+Dans un second temps, on introduit les efforts nodaux comme condition aux limites dans le modèle
+élément fini et on vérifie si l'on retrouve bien l'état de contrainte initialement choisi.
 
 \medskip
 \subsection{Patch-tests}\index{Patch-Test}
@@ -694,7 +639,7 @@ EF et on vérifie si l'on retrouve bien l'état de contrainte initialement chois
 Le domaine choisi doit posséder au moins un nœud à l'intérieur du domaine.
 
 On définit un champ de déplacement conduisant à un état de déformation
-désiré (constant ou non), que l'on introduit comme CL dans le modèle EF.
+désiré (constant ou non), que l'on introduit comme condition aux limites dans le modèle élément fini.
 
 On vérifie qu'au point intérieur, l'état de déformation obtenu est bien celui
 désiré.
@@ -702,23 +647,21 @@ désiré.
 \medskip
 \subsection{Test de précision d'un élément}
 
-On confronte le modèle EF à un ou des cas tests représentatifs de ce pour
+On confronte le modèle élément fini à un ou des cas tests représentatifs de ce pour
 quoi l'élément à été développé (élasticité tridimensionnelle,
-bidimensionnelle, problème de torsion, problème avec concentrations locales de 
+bidimensionnelle, problème de torsion, problème avec concentrations locales de
 déformations ou de contraintes, prise en compte des frontières courbes...).
 
-Sur les composantes d'<<intérêt>>, on regardera s'il y a bien convergence
+Sur les composantes d'<<~intérêt~>>, on regardera s'il y a bien convergence
 du modèle et sa vitesse de convergence en fonction du nombre d'éléments,
 de la distorsion de ceux-ci...
 
 \medskip
-La <<mesure>> de l'écart peut demander une <<jauge>> particulière.
+La <<~mesure~>> de l'écart peut demander une <<~jauge~>> particulière.
 C'est ce que l'on appelle un \textcolorblue{estimateur d'erreur}.
-
 Nous n'avons abordé jusqu'à présent que la mesure de l'erreur due à la
 MEF elle-même, mais chaque problème particulier peut demander un
 estimateur particulier.
-
 Pour la mécanique, les estimateurs sont souvent liés à la qualité des
 contraintes ou à des estimateurs d'énergie.
 
@@ -730,10 +673,10 @@ que certaines contraintes doivent être nulles sur les frontières libres.
 
 On trouve par exemple l'écart sur les contraintes équivalentes (selon un
 sens à définir en fonction du type de matériau: par exemple von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}
-pour un matériau isotrope, Hill,\index[aut]{Hill (Rodney), 1921-2011, Anglais} 
-Tsaï-Hill,\index[aut]{Tsaï (Stephen W), ?-, Américain} 
-Tsaï-Wu...\index[aut]{Wu (Edward Ming-Chi), 1938-2009, Américain} 
-pour les matériaux anisotropes, les mousses, les os, les composites...); 
+pour un matériau isotrope, Hill,\index[aut]{Hill (Rodney), 1921-2011, Anglais}
+Tsaï-Hill,\index[aut]{Tsaï (Stephen W), ?-, Américain}
+Tsaï-Wu...\index[aut]{Wu (Edward Ming-Chi), 1938-2009, Américain}
+pour les matériaux anisotropes, les mousses, les os, les composites...);
 l'écart sur la contrainte moyenne...
 
 On peut également utiliser la densité d'énergie interne de
