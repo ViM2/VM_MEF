@@ -1,16 +1,16 @@
-\chapter{L'homogénéisation \pln}\label{Ch-Homog}\index{Homogénéisation}
+\chapter{Homogénéisation}\label{Ch-Homog}\index{Homogénéisation}
 \begin{abstract}
 L'idée bien connue de l'homogénéisation\index{Homogénéisation} est de remplacer un milieu
-<<compliqué>> par un milieu équivalent simple afin de simplifier le modèle
+<<~compliqué~>> par un milieu équivalent simple afin de simplifier le modèle
 numérique à résoudre.
 L'intérêt de ces techniques est donc évident.
 
 Par exemple, un matériau composite composé de plusieurs plis (couches)
-constituées chacune de fibres noyées dans une matrice et dont l'orientation 
+constituées chacune de fibres noyées dans une matrice et dont l'orientation
 diffère d'une couche à l'autre peut être représenté avantageusement par
-un matériau <<homogénéisé>> ou <<équivalent>>.%, ou encore <<effectif>>.
+un matériau <<~homogénéisé~>> ou <<~équivalent~>>.%, ou encore <<~effectif~>>.
 
-%Néanmoins, si le calcul s'en trouve simplifié, le <<retour en arrière>> n'est
+%Néanmoins, si le calcul s'en trouve simplifié, le <<~retour en arrière~>> n'est
 %que rarement possible (sous certaines hypothèses de comportement).
 %Ainsi, ce que l'on gagne d'un côté est reperdu de l'autre, puisque l'on ne peut
 %plus accéder alors au comportement microscopique (ce qui somme toute est normal...),
@@ -22,7 +22,7 @@ en mécanique et acoustique, mais également en modélisation.
 
 \medskip
 \begin{histoire}%
-Les \emph{théories des milieux effectifs}\index{Effectif} visent à estimer les propriétés \emph{effectives}\index{Effectif} (i.e. macroscopiques)\index{Modèle macroscopique} d'un 
+Les \emph{théories des milieux effectifs}\index{Effectif} visent à estimer les propriétés \emph{effectives}\index{Effectif} (i.e. macroscopiques)\index{Modèle macroscopique} d'un
 milieu en fonction des propriétés locales de chacun des constituants ainsi
 que d'un certain nombre d'informations sur la microstructure.\index{Modèle microscopique}
 
@@ -36,33 +36,33 @@ Mossotti&Maxwell&Poisson&Lorentz%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Les premières théories remontent au XIXe siècle et sont dues à Mossotti,\index[aut]{Mossotti (Ottaviano-Fabrizio), 1791-1863, Italien} 
-Maxwell,\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais} 
+Les premières théories remontent au XIXe siècle et sont dues à Mossotti,\index[aut]{Mossotti (Ottaviano-Fabrizio), 1791-1863, Italien}
+Maxwell,\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais}
 Poisson\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
 ou encore Lorentz.\index[aut]{Lorentz (Hendrik Antoon), 1853-1928, Néerlandais}
-Le but de ces modèles est de fournir soit des bornes pour le comportement effectif, soit des 
-approximations du comportement effectif. 
-Les bornes sont optimales lorsqu'il existe une microstructure particulière qui réalise exactement 
-le modèle physique. On évalue les <<bonnes>> propriétés de ces théories en les confrontant 
+Le but de ces modèles est de fournir soit des bornes pour le comportement effectif, soit des
+approximations du comportement effectif.
+Les bornes sont optimales lorsqu'il existe une microstructure particulière qui réalise exactement
+le modèle physique. On évalue les <<~bonnes~>> propriétés de ces théories en les confrontant
 à d'autres résultats théoriques, calculs analytiques et numériques...
 }
 
 \medskip
-Ces théories sont utilisées pour les problèmes de conductivité (milieux diélectriques), 
-en mécanique, magnétique, thermique... lorsque l'on a des phases de conductivité, 
-d'élasticité, des coefficients thermiques... variables. 
+Ces théories sont utilisées pour les problèmes de conductivité (milieux diélectriques),
+en mécanique, magnétique, thermique... lorsque l'on a des phases de conductivité,
+d'élasticité, des coefficients thermiques... variables.
 Ces problèmes sont en général très difficiles à résoudre (non-linéaires et anisotropes)
-alors qu'en même temps, du point de vue des applications pratiques, il n'est pas forcément 
-nécessaire de tenir compte de l'ensemble des degrés de liberté de ces systèmes. 
+alors qu'en même temps, du point de vue des applications pratiques, il n'est pas forcément
+nécessaire de tenir compte de l'ensemble des degrés de liberté de ces systèmes.
 
 \medskip
-L'existence d'un \emph{comportement effectif}\index{Effectif} n'est nullement assurée. 
-On montre que, sous certaines hypothèses (en particulier l'existence d'un \emph{volume 
-élémentaire représentatif}),\index{Volume élémentaire représentatif} on peut effectivement 
+L'existence d'un \emph{comportement effectif}\index{Effectif} n'est nullement assurée.
+On montre que, sous certaines hypothèses (en particulier l'existence d'un \emph{volume
+élémentaire représentatif}),\index{Volume élémentaire représentatif} on peut effectivement
 remplacer un matériau hétérogène par un milieu homogène équivalent.
 
 Enfin, d'un point de vue purement numérique, ces méthodes peuvent être
-utilisées pour <<simplifier>> un système à résoudre, que cela ait un sens
+utilisées pour <<~simplifier~>> un système à résoudre, que cela ait un sens
 physique ou non.
 \end{histoire}
 
@@ -76,14 +76,14 @@ Le meilleur exemple en est la pression.
 Bien qu'en un point donné d'un gaz on voit passer des particules allant en
 tous sens, on constate également, à une échelle plus macroscopique,
 un schéma d'ensemble qui permet de définir par exemple la pression
-qu'exerce ledit gaz sur une paroi... pourtant rien de <<cohérent>>
+qu'exerce ledit gaz sur une paroi... pourtant rien de <<~cohérent~>>
 ne se dégage à l'échelle microscopique.
 \colorblack
 
 \medskip
 Le but de ce chapitre est donc d'effectuer le passage du niveau microscopique au
 niveau macroscopique (historiquement les premières homogénéisations,
-appelées alors moyénisations, utilisaient les moyennes arithmétique
+appelées alors moyennisations, utilisaient les moyennes arithmétique
 et harmonique) en fournissant la justification de ce passage (existence et unicité)
 ainsi que la formule (l'algorithme) de calcul des coefficients efficaces.
 
@@ -99,66 +99,50 @@ Enfin, nous mentionnerons une application de ces méthodes pour \textcolorblue{r
 de certains problèmes.
 
 
-
-
-
-
-
-
-
-
-
-
-
 \medskip
 \section{Méthodes d'homogénéisation}\index{Homogénéisation}
-
-Nous allons considérer le problème de conductivité linéaire donné par 
-l'équation de Poisson\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson} 
-avec condition de Dirichlet.\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{Conditions aux limites!de Dirichlet} 
+Nous allons considérer le problème de conductivité linéaire donné par
+l'équation de Poisson\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}
+avec condition de Dirichlet.\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{Conditions aux limites!de Dirichlet}
 Nous rappelons qu'il s'agit du problème:
 \begin{equation}
 \left\{
-\begin{array}{ll}
-div(A(x)\nabla u) = f(x)&\text{ pour } x\in\Omega\\
-u=0 &\text{ sur } \Gamma=\partial\Omega
-\end{array}
+\begin{aligned}
+&\dive(A(x)\nabla u) = f(x)&&\text{pour } x\in\Omega\\
+&u=0 &&\text{sur } \Gamma=\partial\Omega
+\end{aligned}
 \right.
 \end{equation}
-
 On rappelle également que si $\Omega$ est un ouvert connexe borné de $\RR^n$, et
 $H_0^1(\Omega)$ l'espace de Sobolev des fonctions qui s'annulent sur $\Gamma$, alors la solution
 $u\in H_0^1(\Omega)$ du problème précédent est également la solution du problème
 faible:
 \begin{equation}
-\forall v\in H_0^1(\Omega), -\dint_\Omega A(x)\nabla u.\nabla v = \dint_\Omega f(x)v
+\forall v\in H_0^1(\Omega),\quad -\dint_\Omega A(x)\nabla u\cdot\nabla v = \dint_\Omega f(x)v
 \end{equation}
 où $f\in L^2(\Omega)$.
-
 Pour que ces deux formulation soient équivalentes, on a supposé que $A(x)$ est
 régulière: i.e. que pour chaque $x$ de $\Omega$, $A(x)$ est une matrice $n\times n$,
-dont les éléments sont mesurables et qui est symétrique, définie-positive, bornée, i.e. qu'il existe 
-deux constantes $K_1$ et $K_2$ $>0$ tq:
-\begin{equation}\forall v\in\RR^n, K_1 v.v \le A(x) v.v \le K_2 v.v\end{equation}
-
+dont les éléments sont mesurables et qui est symétrique, définie-positive, bornée, i.e. qu'il existe
+deux constantes $K_1$ et $K_2$ $>0$ telles que:
+\begin{equation}\forall v\in\RR^n,\quad K_1 v\cdot v \le A(x) v\cdot v \le K_2 v\cdot v\end{equation}
 Mentionnons le cas particulier où $A(x)$ est régulier dans $\Omega$ mais
 pas sur $\Gamma$, alors on a deux conditions d'interface:
 \begin{equation}
-[u]=0 \quad\text{ et }\quad [n.A(x)\nabla u]=0
+[u]=0 \quad\text{ et }\quad [n\cdot A(x)\nabla u]=0
 \end{equation}
-
 Nous savons également que la solution existe et est unique (d'après le théorème de Lax-Milgram,\index[aut]{Lax (Peter), 1926-, Américain}
 \index{Théorème!de Lax-Milgram}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
- i.e. d'après le théorème de Riesz-Fréchet\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index{Théorème!de représentation de Riesz-Fréchet}\index[aut]{Fréchet (Maurice René), 1878-1973, Français} 
+ i.e. d'après le théorème de Riesz-Fréchet\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index{Théorème!de représentation de Riesz-Fréchet}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
 en remarquant le produit scalaire qui va bien...)
 
 \medskip
 Intéressons nous maintenant d'un peu plus près à $A(x)$.
 Supposons que $A(x)$ possède une certaine périodicité $\varepsilon$,
 par exemple, que le matériau constituant le domaine soit constitué de couches successives
-de deux matériaux différents, mais avec une périodicité, comme illustré à la \fig{Fig-Ax}.
-\begin{figure}[htb]
-\centerline{\includegraphics[height=35mm]{Ax.eps}}
+de deux matériaux différents, mais avec une périodicité, comme illustré sur la~\fig{Fig-Ax}.
+\begin{figure}[ht]
+\centering\includegraphics[height=35mm]{Ax.eps}
 \caption{Matériau périodique}\label{Fig-Ax}
 \end{figure}
 Dans un tel cas, nous dirons que les coefficients $A$ dépendent de $x/\varepsilon$.
@@ -167,13 +151,12 @@ Cette écriture sous forme normalisée permet de dire que $A$ est périodique de
 Dans le cas unidimensionnel, le problème devient:
 \begin{equation}
 \left\{
-\begin{array}{ll}
-\dfrac d{dx}\left(A(\frac x\varepsilon)\right) \dfrac{du}{dx} = f(x)& \text{ pour } x\in[0,l]\\
-u=0 &\text{ pour } x=0 \text{ et } x=l
-\end{array}
+\begin{aligned}
+&\dfrac d{dx}\left(A(\frac x\varepsilon)\right) \dfrac{du}{dx} = f(x)&& \text{ pour } x\in[0,l]\\
+&u=0 &&\text{ pour } x=0 \text{ et } x=l
+\end{aligned}
 \right.
 \end{equation}
-
 $A$ est une fonction de $\RR$ dans $\RR$ de période 1, et nous la supposerons régulière
 par morceaux et telle qu'il existe $K_1$ et $K_2$ $>0$ telles que $K_1\le A(v)\le K_2$.
 
@@ -181,14 +164,14 @@ La solution du problème est alors:
 \begin{equation}
 u(x)=\dint_0^x A^{-1}(y/\varepsilon) \left(\dint_0^y f(v)dv + c_1 \right) dy + c_2
 \end{equation}
-avec $c_2=0$ et 
+avec $c_2=0$ et
 \begin{equation} c_1 = \dfrac{\dint_0^l A^{-1}(y/\varepsilon)\dint_0^y f(v)dv dy}{\dint_0^l a^{-1}(y/\varepsilon)dy} \end{equation}
 Le nombre d'intervalles pour le calcul approché de $c_1$ est très grand (i.e. très supérieur
 à $l/\varepsilon$).
 
 Exprimé autrement, ce résultat devient:
-\textcolorblue{le coefficient homogénéisé est $\dfrac1{\langle\frac1A\rangle}$} et non pas $\langle A\rangle$ 
-(où $\langle.\rangle$ désigne la moyenne).
+\textcolorblue{le coefficient homogénéisé est $\dfrac1{\langle\frac1A\rangle}$} et non pas $\langle A\rangle$
+(où $\langle\cdot\rangle$ désigne la moyenne).
 
 
 \medskip
@@ -216,23 +199,20 @@ Pour le calcul on procède donc comme suit:
 
 \medskip
 \subsection{Méthode de la couche limite}\index{Méthode de la couche limite}
-
 Considérons le problème unidimensionnel:
 \begin{equation}
 \left\{
-\begin{array}{l}
-\varepsilon^2u''-p(x)u= f(x) \text{ pour } x\in[0,1]\\
-u(0)=A \text{ et } u(1)=B
-\end{array}
+\begin{aligned}
+&\varepsilon^2u''-p(x)u= f(x) &&\text{ pour } x\in[0,1]\\
+&u(0)=A \text{ et } u(1)=B
+\end{aligned}
 \right.
 \end{equation}
 où $p\in C([0,1])$; $p(x)\ge0, x\in[0,1]$; $f\in C([0,1])$; $A\in\RR$, $B\in\RR$ et
 $\varepsilon>0$ le petit paramètre.
-
 En négligeant le terme $\varepsilon^2 u''$, nous arrivons à l'équation $-p(x)u_r=f(x)$.
-
-\begin{figure}[htb]
-\centerline{\includegraphics[height=50mm]{clim.eps}}
+\begin{figure}[ht]
+\centering\includegraphics[height=50mm]{clim.eps}
 \caption{Méthode de la couche limite}\label{Fig-clim}
 \end{figure}
 En d'autres termes, et comme montré sur la \fig{Fig-clim}, nous disposons de la
@@ -248,7 +228,7 @@ Cherchons une solution asymptotique sous la forme de l'ansatz:\index{Ansatz}
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i\left( u_i^r(x) + u_i^0(x/\varepsilon)
 +u_i^1((x-1)/\varepsilon) \right)
 \end{equation}
-où les $u_i^r(x)$ sont les \textcolorblue{termes réguliers}, et $u_i^0(x/\varepsilon)$ et 
+où les $u_i^r(x)$ sont les \textcolorblue{termes réguliers}, et $u_i^0(x/\varepsilon)$ et
 $u_i^1((x-1)/\varepsilon)$ les \textcolorblue{termes de couche limite} correspondant aux
 extrémités $x=0$ et $x=l$.
 
@@ -264,7 +244,6 @@ Pour le calcul on procède donc comme suit:
 
 \medskip
 \subsection{Méthode de développement asymptotique infini}\index{Méthode de développement asymptotique infini}
-
 À ce niveau du texte, on a dû s'apercevoir que la démarche était la même
 pour les deux méthodes précédentes, sauf évidemment la forme de l'ansatz.\index{Ansatz}
 
@@ -280,15 +259,12 @@ u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i N_i(x/\varepsilon)v_\varepsil
 \end{equation}
 et où les $N_i(x/\varepsilon)$ sont 1-périodiques et $N_0=1$.
 
-
-
 \medskip
 \subsection{Cas des coefficients discontinus}
-
 Il est possible d'appliquer la même approche que lorsque les coefficients sont continus
-avec quelques modifications: il \og suffit \fg{} d'ajouter les conditions d'interfaces présentées 
+avec quelques modifications: il <<~suffit~>> d'ajouter les conditions d'interfaces présentées
 en début de paragraphe et rappelées ci-dessous:
-\begin{equation} [u]=0 \quad \text{ et } \quad [n.A(x/\varepsilon)\nabla u] = 0\end{equation}
+\begin{equation} [u]=0 \quad \text{ et } \quad [n\cdot A(x/\varepsilon)\nabla u] = 0\end{equation}
 partout où cela est nécessaire.
 
 On retrouve les mêmes conditions d'existence de la solution que dans le cas
@@ -296,18 +272,11 @@ continu et la périodicité de la solution homogénéisée reste inchangée.
 
 
 
-
-
-
-
-
-
-
 \medskip
-\section{Homogénisation simplifiée pour les matériaux composites}\index{Homogénéisation}
+\section{Homogénéisation simplifiée pour les matériaux composites}\index{Homogénéisation}
 
-Après ce petit tour \og mathématique \fg{} des méthodes d'homogénéisation,
-nous proposons un petit complément très mécanique, et très \og pratique \fg{}.
+Après ce petit tour <<~mathématique~>> des méthodes d'homogénéisation,
+nous proposons un petit complément très mécanique, et très <<~pratique~>>.
 
 \medskip
 Pour information, la modélisation du muscle cardiaque s'inspire des techniques d'homogénéisation
@@ -317,19 +286,19 @@ des matériaux composites.
 \medskip
 \subsection{Introduction}
 
-D'une manère générale, tous les matériaux, mêmes isotropes, sont hétérogènes
+D'une manière générale, tous les matériaux, mêmes isotropes, sont hétérogènes
 en dessous d'une certaine échelle.
 Il peut sembler naturel d'utiliser des propriétés homogènes équivalentes correspondant
 à des propriétés mécaniques effectives.
-Toutefois, comme nous l'avons déjà vu, ces propriétés effectives\index{Effectif} ne s'obtiennent pas par 
-une simple moyenne des propriétés des constituants, mêmes  pondérées par les fractions 
+Toutefois, comme nous l'avons déjà vu, ces propriétés effectives\index{Effectif} ne s'obtiennent pas par
+une simple moyenne des propriétés des constituants, mêmes  pondérées par les fractions
 volumiques.
 
 \medskip
 Les propriétés effectives du milieu homogène équivalent cherché peuvent être obtenues
-en résolvant un problème aux limites sur un \textcolorblue{volume élémentaire} $dV$, à condition 
+en résolvant un problème aux limites sur un \textcolorblue{volume élémentaire} $dV$, à condition
 que celui-ci soit \textcolorblue{suffisamment grand pour être représentatif de la microstructure du matériau hétérogène.}\index{Volume élémentaire représentatif}
-Dans le cas où les constituants présentent une structure périodique, le volume $dV$ peut se 
+Dans le cas où les constituants présentent une structure périodique, le volume $dV$ peut se
 réduire à un \textcolorblue{volume élémentaire}.
 
 \medskip
@@ -350,7 +319,7 @@ Principalement pour les composites stratifiés ou sandwichs, il y a 2 niveaux d'
 		 une étape d'homogénéisation locale.
 	\item du niveau mésoscopique au niveau macroscopique:
 		Les hétérogénéités de base sont les différentes couches du stratifié.
-		 Ces couches sont considérées comme \og homogènes\fg{} (étape précédente).
+		 Ces couches sont considérées comme <<~homogènes~>> (étape précédente).
 		 Cette fois, il s'agit d'une homogénéisation dans l'épaisseur du stratifié.
 \end{itemize}
 
@@ -361,23 +330,20 @@ Principalement pour les composites stratifiés ou sandwichs, il y a 2 niveaux d'
 \medskip
 \subsection{Loi des mélanges, bornes de Voigt et de Reuss}\index{Loi des mélanges}\index{Borne de Voigt}\index{Borne de Reuss}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 
-On considère un composite UD de repère d'orthotropie $(l,t)$, constitué de fibres noyées dans 
-une matrice polymère. Soit une cellule élémentaire de fraction volumique $V = 1$ constituée de 
+On considère un composite UD de repère d'orthotropie $(l,t)$, constitué de fibres noyées dans
+une matrice polymère. Soit une cellule élémentaire de fraction volumique $V = 1$ constituée de
 fibres et de matrice. On note
-$V_m$ la fraction volumique de matrice, 
+$V_m$ la fraction volumique de matrice,
 $V_f$ la fraction volumique de fibre, et on a :
 \begin{equation} V = V_m + V_f =1 \end{equation}
-
 \medskip
 À l'échelle locale, on fait les hypothèses suivantes:
 \begin{itemize}
    \item Fibres: comportement élastique linéaire fragile isotrope de coefficients $E_f$ et $\nu_f$;
    \item Matrice: comportement élastique non-linéaire, isotrope de coefficients $E_m$ et $\nu_m$.
 \end{itemize}
-
 \medskip
-On souhaite déterminer les relations existant entre $E_l$ , $E_t$ , $E_f$ , $E_m$ , $V_m$ et $V_f$ .
-
+On souhaite déterminer les relations existant entre $E_l$, $E_t$, $E_f$, $E_m$, $V_m$ et $V_f$.
 \medskip
 Pour cela, on fait également les hypothèses suivantes :
 \begin{itemize}
@@ -396,41 +362,40 @@ Loi des mélanges (ou modèles à bornes ou de Reuss et de Voigt) :
 	\item 2ème essai : Il s'effectue dans la direction perpendiculaire aux fibres (compression transversale)
 		\begin{equation}\dfrac1{E_{transverse}}=\dfrac1{E_t} = \dfrac{V_f}{E_f}+\dfrac{V_m}{E_m}\end{equation}
 		C'est la loi des mélanges en souplesse.
-		Cette relation n'est pas très bien vérifiée transversalement mais donne une 
+		Cette relation n'est pas très bien vérifiée transversalement mais donne une
 		indication sur la borne inférieure, dit de Reuss (1929).\index{Loi des mélanges}\index{Borne de Reuss}
 	\item Module de cisaillement et coefficient de Poisson\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
 		\index{Coefficients de Poisson}d'un UD par la loi des mélanges :\index{Loi des mélanges}
-		\begin{equation}\nu_{lt}=\nu_fV_f+\nu_mV_m\end{equation}
-		\begin{equation}\dfrac1{G_{lt}} = \dfrac{V_f}{G_f}+\dfrac{V_m}{G_m}\end{equation}
+		\begin{equation}\nu_{lt}=\nu_fV_f+\nu_mV_m\quad\text{et}\quad\dfrac1{G_{lt}} = \dfrac{V_f}{G_f}+\dfrac{V_m}{G_m}\end{equation}
 \end{itemize}
 
 \medskip
-Les modèles à bornes fournissent un encadrement du comportement mécanique du matériau composite 
-par des comportements mécaniques limites (bornes). 
+Les modèles à bornes fournissent un encadrement du comportement mécanique du matériau composite
+par des comportements mécaniques limites (bornes).
 Ils sont obtenus par la résolution du problème de l'élasticité linéaire sous forme faible.
 La minimisation de l'énergie potentielle conduit à la borne supérieure de Voigt.\index{Borne de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 la résolution en contrainte conduit à la borne inférieure de Reuss.\index{Borne de Reuss}
 
 \medskip
 Pour gagner un peu en généralité, on peut remplacer les termes fibres et matrice par des phases,
-car ces modèles sont applicables à des mélanges de polymères (matériaux composés) 
-et à des composites chargés par des particules diverses. 
+car ces modèles sont applicables à des mélanges de polymères (matériaux composés)
+et à des composites chargés par des particules diverses.
 
-Les bornes correspondent aux associations série des deux phases (borne inférieure de Reuss,\index{Borne de Reuss} 
-équivalent au modèle  du module transverse équivalent de la loi des mélanges) et parallèle 
-(borne supérieure de Voigt,\index{Loi des mélanges}\index{Borne de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand} équivalent au modèle  du module longitudinal équivalent de la loi des mélanges). 
+Les bornes correspondent aux associations série des deux phases (borne inférieure de Reuss,\index{Borne de Reuss}
+équivalent au modèle  du module transverse équivalent de la loi des mélanges) et parallèle
+(borne supérieure de Voigt,\index{Loi des mélanges}\index{Borne de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand} équivalent au modèle  du module longitudinal équivalent de la loi des mélanges).
 
-Aucune hypothèse n'est faite sur la morphologie du matériau. 
-Il est simplement admis que pour le modèle de Reuss, la contrainte est homogène dans les deux 
-phases (continuité de la contrainte) et, pour le modèle de Voigt,\index[aut]{Voigt (Woldemar), 1850-1919, Allemand} 
-la déformation est constante  (continuité de la déformation) dans tout le composite. 
+Aucune hypothèse n'est faite sur la morphologie du matériau.
+Il est simplement admis que pour le modèle de Reuss, la contrainte est homogène dans les deux
+phases (continuité de la contrainte) et, pour le modèle de Voigt,\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
+la déformation est constante  (continuité de la déformation) dans tout le composite.
 
 \textcolorred{L'intérêt est limité dès que l'écart des caractéristiques des deux phases est important.}
 
 \medskip
 Évidemment, d'autres modèles existent:
 \begin{itemize}
-	\item Hashin et Shtrikman (1963) : ressère les bornes de Reuss et Voigt
+	\item Hashin et Shtrikman (1963) : resserre les bornes de Reuss et Voigt
 	\item Takayanagi (combinaison de Reuss et Voigt)
 	\item Halpin - Tsaï : pour le renforcement par des fibres courtes alignées
 	\item Tsaï - Pagano : fibres courtes
@@ -439,40 +404,26 @@ la déformation est constante  (continuité de la déformation) dans tout le com
 
 
 
-
-
-
-
-
-
-
-
-
-
 \medskip
 \section{Homogénéisation des matériaux poreux}
-
 Considérons à nouveau notre problème de Poisson avec conditions de Dirichlet pour un milieu
-poreux.\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{Conditions aux limites!de Dirichlet} 
-$\Omega$ est le domaine (borné) de $\RR^n$ qui contient $\Omega_\varepsilon$ l'ensemble des trous 
+poreux.\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{Conditions aux limites!de Dirichlet}
+$\Omega$ est le domaine (borné) de $\RR^n$ qui contient $\Omega_\varepsilon$ l'ensemble des trous
 périodiques.
 Nous avons donc:
 \begin{equation}
 \left\{
-\begin{array}{ll}
-div(A(x)\nabla u) = f(x) &\text{ pour } x\in\Omega\backslash\Omega_\varepsilon\\
-u=0 & \text{ sur le contour extérieur } \Gamma=\partial\Omega\\
-\end{array}
+\begin{aligned}
+&\dive(A(x)\nabla u) = f(x) &&\text{ pour } x\in\Omega\backslash\Omega_\varepsilon\\
+&u=0 && \text{ sur le contour extérieur } \Gamma=\partial\Omega\\
+\end{aligned}
 \right.
 \end{equation}
-
 Sur le bord des trous, on peut imposer, soit des conditions de Dirichlet:
 \begin{equation}u=0 \text{ sur le bord des trous} \end{equation}
 soit des conditions de Neumann:\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Conditions aux limites!de Neumann}
-\begin{equation}n.A(x/\varepsilon)\nabla u=0 \text{ sur le bord des trous}\end{equation}
-
+\begin{equation}n\cdot A(x/\varepsilon)\nabla u=0 \text{ sur le bord des trous}\end{equation}
 On supposera encore que les coefficient sont 1-périodiques.
-
 \medskip
 \textcolorblue{Cherchons des solutions dans le cas où l'on a des conditions de Neumann sur le bords des trous.}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Conditions aux limites!de Neumann}
 
@@ -482,27 +433,25 @@ où les $u_i(x,x/\varepsilon)$ sont 1-périodiques en $x/\varepsilon$ qui sera n
 
 On obtient un système du type:
 \begin{equation}\left\{
-\begin{array}{ll}
-L_{\xi\xi} u_0 &=0\\
-L_{\xi\xi}u_1+L_{\xi x}u_0+L_{x\xi}u_0 &=0\\
-L_{\xi\xi}u_2+L_{\xi x}u_1+L_{x\xi}u_1 +L_{xx}u_0 &=f(x)
-\end{array}
+\begin{aligned}
+&L_{\xi\xi} u_0 &&=0\\
+&L_{\xi\xi}u_1+L_{\xi x}u_0+L_{x\xi}u_0 &&=0\\
+&L_{\xi\xi}u_2+L_{\xi x}u_1+L_{x\xi}u_1 +L_{xx}u_0 &&=f(x)
+\end{aligned}
 \right. \end{equation}
 et les conditions de Neumann:\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Conditions aux limites!de Neumann}
-\begin{equation} n.A(\xi)\left[ \varepsilon^{-1}\nabla_\xi u_0 + \varepsilon^0 (\nabla_\xi u_1+\nabla_x u_0) +
+\begin{equation} n\cdot A(\xi)\left[ \varepsilon^{-1}\nabla_\xi u_0 + \varepsilon^0 (\nabla_\xi u_1+\nabla_x u_0) +
 \varepsilon(\nabla_\xi u_2+\nabla_x u_1)+\varepsilon^2\nabla_x u_2
 \right]=0 \end{equation}
 d'où:
 \begin{equation}\left\{
-\begin{array}{ll}
-n.A(\xi)\nabla_\xi u_0 &=0\\
-n.A(\xi) (\nabla_\xi u_1+\nabla_x u_0) &=0\\
-n.A(\xi)(\nabla_\xi u_2+\nabla_x u_1) &=0
-\end{array}
+\begin{aligned}
+&n\cdot A(\xi)\nabla_\xi u_0 &&=0\\
+&n\cdot A(\xi) (\nabla_\xi u_1+\nabla_x u_0) &&=0\\
+&n\cdot A(\xi)(\nabla_\xi u_2+\nabla_x u_1) &&=0
+\end{aligned}
 \right. \end{equation}
-
 On peut prouver que si $v_0$ est solution du problème, alors $v_0+cte$ aussi.
-
 \medskip
 Des conditions d'existence de la solution il vient, tous calculs faits, la matrice des
 coefficients homogénéisés $\hat{A}$:
@@ -513,20 +462,13 @@ coefficients homogénéisés $\hat{A}$:
 \right) d\xi
 \end{equation}
 où $G_0$ est un trou de la cellule élémentaire $Q$.
-
-
 \medskip
 Le même type de calcul pourrait être mené avec les conditions de Dirichlet sur le bord
 des trous.
-
 \medskip
 Cette homogénéisation des milieux poreux est valable pour l'acoustique comme pour la mécanique.
-
-
-
 \medskip
 \section{Homogénéisation des problèmes non stationnaires}
-
 Nous n'avons pas encore abordé de manière pratique les problèmes non stationnaires
 dans ce document, puisqu'ils se trouvent au chapitre \ref{Ch-temps}.
 
@@ -546,17 +488,13 @@ avec $u_i(x,\xi,t)$ 1-périodique en $\xi$.
 
 \medskip
 \section{Changement de dimension, raccord de maillage}
-
 \textcolorgreen{Les méthodes d'homogénéisation peuvent également être utilisées pour
-\og changer (réduire) \fg{} la dimension d'un problème.}
+<<~changer (réduire)~>> la dimension d'un problème.}
 
 \medskip
-Considérons un problème qui se pose dans un domaine plan de longueur $1$ et de largeur
-$\pm\varepsilon/2$.
-
+Considérons un problème qui se pose dans un domaine plan de longueur $1$ et de largeur $\pm\varepsilon/2$.
 Alors, on peut considérer le comportement asymptotique de la solution lorsque $\varepsilon \longrightarrow 0$.
-
-Une fois cette soluton asymptotique trouvée, le problème initial posé sur le pavé 
+Une fois cette solution asymptotique trouvée, le problème initial posé sur le pavé
 $[0,1]\times[-\varepsilon/2,+\varepsilon/2]$ est remplacé par le problème homogénéisé
 posé sur le segment $[0,1]$.
 
@@ -572,16 +510,12 @@ là où ils peuvent l'être.
 
 \medskip
 En mécanique, de nombreuses théories de plaques ou poutres existent (voir la paragraphe \ref{Sec-PlusModel}).
-Elles sont généralement présentées de manières \og physique\fg{}, mais ne sont rien d'autre que des 
+Elles sont généralement présentées de manières <<~physique~>>, mais ne sont rien d'autre que des
 méthodes d'homogénéisation.
 
 Libre à chacun de préférer une présentation plutôt mécanicienne ou plutôt mathématicienne,
 le résultat est finalement le même. Mais il nous semble, et c'est la motivation même à l'origine de
 ce document, que le fait de connaître les deux aide à mieux cerner à la fois les \textcolorblue{hypothèses}
-sur lequelles ces développements sont faits (et que l'on oublie parfois, ayant pour conséquence
-des résultats que l'on peut qualifier de surprenants) ainsi que les \textcolorblue{potentialités} qui s'offrent 
-à nous.
-
-
-
-
+sur lesquelles ces développements sont faits (et que l'on oublie parfois, ayant pour conséquence
+des résultats que l'on peut qualifier de surprenants) ainsi que les \textcolorblue{potentialités} qui s'offrent
+à nous. 
