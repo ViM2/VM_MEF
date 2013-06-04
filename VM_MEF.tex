@@ -50,6 +50,7 @@
 \else
    \usepackage{microtype}
    \usepackage{times}
+   \gdef\ttdefault{cmtt}%
    \ifVersionDuCompilateurEstVincent% Poor's man version
       \usepackage{mathptmx,amssymb} % police ouverte (il peut y avoir des messages d'erreur à la compilation)
       \providecommand\mathscr{\mathcal} % à commenter lors de l'utilisation de mtpro2
@@ -327,8 +328,8 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 % \include{./tex/MEFintro}
 % \include{./tex/MEF}
 % \include{./tex/model}
-\include{./tex/Elts}
-% \include{./tex/Amelio}
+% \include{./tex/Elts}
+\include{./tex/Amelio}
 % \include{./tex/Homog}
 % \include{./tex/temps}% ajouter dynamique rapide ?
 % \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?

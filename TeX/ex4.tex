@@ -30,8 +30,8 @@ Si un code ne dispose pas de la méthode que l'on souhaite utiliser, il est touj
 résultats... toutefois, selon les codes, il est plus ou moins aisé d'implémenter des fonctions dans ledit code.
 
 \medskip
-\ansys est souvent qualifié de \og code industriel\fg{}, ce qui pourrait laisser supposer qu'il n'a pas la même capacité
-à résoudre les problèmes que des codes dits \og de recherche\fg{} ou \og spécialisés\fg{}.
+\ansys est souvent qualifié de <<~code industriel~>>, ce qui pourrait laisser supposer qu'il n'a pas la même capacité
+à résoudre les problèmes que des codes dits <<~de recherche~>> ou <<~spécialisés~>>.
 Or il n'en est rien (même si en toute rigueur, il y a une quinzaine d'années il était plus faible que d'autres sur
 les non linéarités, ce qui n'est plus vrai depuis longtemps).
 
@@ -52,7 +52,7 @@ Pour implémenter une nouvelle fonction dans \ansys, plusieurs méthodes s'offre
 	il faut décortiquer les formats d'écriture desdits fichiers, les relire, réécrire dans le même format...
 	et c'est donc beaucoup de travail (purement informatique);
    \item programmer la fonction directement sous \ansys (\ansys possède un langage assez riche et puissant);
-   \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en \og coopération\fg{} avec un
+   \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en <<~coopération~>> avec un
 	petit programme extérieur.
 \end{itemize}
 
@@ -318,7 +318,7 @@ dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soien
    \includegraphics[height=80mm]{U-mesh1.eps}\hfill 
    \includegraphics[height=80mm]{U-mesh2.eps}
    \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le calcul (test de la méthode Reissner local,
-c) maillage permettant d'obtenir la \og solution de référence\fg{} puisqu'il n'y a pas de solution analytique}
+c) maillage permettant d'obtenir la <<~solution de référence~>> puisqu'il n'y a pas de solution analytique}
 \end{figure}
 
 Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en $U$.
@@ -583,13 +583,13 @@ Dans les listings ci-dessus, nous n'avons pas exposé comme atteindre les contra
 
 Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour la déformée et les déplacements selon $x$ et $y$,
 et à la \fig{Fig-poutU-eps} pour les déformations.
-\begin{figure}[htb]
+\begin{figure}[ht]
    \includegraphics[height=80mm]{U-def.eps} \hfill 
    \includegraphics[height=80mm]{U-ux.eps}\hfill 
    \includegraphics[height=80mm]{U-uy.eps}
    \caption{\label{Fig-poutU-disp} Déformée et déplacements}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[ht]
    \includegraphics[height=80mm]{U-epsXX.eps} \hfill 
    \includegraphics[height=80mm]{U-epsYY.eps}\hfill 
    \includegraphics[height=80mm]{U-epsXY.eps}
@@ -631,8 +631,7 @@ résultats par rapport à \ansys.
 
 \bigskip
 \begin{table}[hb]
-   \caption{\label{Tab:pt-A} Résultats au point $A$}
-   \begin{center}
+\centering\small
    \begin{tabular}{|l||r|r|r|r|r|}
       \hline
       \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
@@ -676,40 +675,38 @@ résultats par rapport à \ansys.
       \ansys&1 &25,876  &4,0707  &9,6345  & 0,0005231   \\
       \hline
    \end{tabular}
-   \end{center}
+\caption{\label{Tab:pt-A} Résultats au point $A$}
 \end{table}
 
 
 
 
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/a-sxxc.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/a-sxxc.2012.txt}
+%
 %   \caption{\label{Fig:asxxc} $\sigma_{xx}$ dans l'âme en $A$}
 %\end{figure}
 %
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/a-sxxs.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/a-sxxs.2012.txt}
+%
 %   \caption{\label{Fig:asxxs} $\sigma_{xx}$ dans la peau en $A$}
 %\end{figure}
 
 
-\begin{figure}
-   \begin{center}
-      \input{tex/a-syy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:asyy} $\sigma_{yy}$ en $A$}
+\begin{figure}[ht]
+\centering
+\input{tex/a-syy.2012.txt}
+\caption{\label{Fig:asyy} $\sigma_{yy}$ en $A$}
 \end{figure}
 
 
-\begin{figure}
-   \begin{center}
-      \input{tex/a-sxy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:asxy} $\sigma_{xy}$ en $A$}
+\begin{figure}[ht]
+\centering
+\input{tex/a-sxy.2012.txt}
+\caption{\label{Fig:asxy} $\sigma_{xy}$ en $A$}
 \end{figure}
 
 %\clearpage
@@ -721,8 +718,7 @@ résultats par rapport à \ansys.
 
 
 \begin{table}
-   \caption{\label{Tab:pt-B} Résultats au point $B$}
-   \begin{center}
+\centering\small
    \begin{tabular}{|l||r|c|c|c|c|}
       \hline
       \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
@@ -766,49 +762,41 @@ résultats par rapport à \ansys.
       \ansys&1 & -52,777 & -1,2391 & 4,3710 & -0,0174200 \\
       \hline
    \end{tabular}
-   \end{center}
+   \caption{\label{Tab:pt-B} Résultats au point $B$}
 \end{table}
 
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/b-sxxc.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/b-sxxc.2012.txt}
+%
 %   \caption{\label{Fig:bsxxc} $\sigma_{xx}$ dans l'âme en $B$}
 %\end{figure}
 %
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/b-sxxs.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/b-sxxs.2012.txt}
+%
 %   \caption{\label{Fig:bsxxs} $\sigma_{xx}$ dans la peau en $B$}
 %\end{figure}
 %
 %\clearpage
 
-\begin{figure}
-   \begin{center}
-      \input{tex/b-syy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:bsyy} $\sigma_{yy}$ en $B$}
+\begin{figure}[ht]
+\centering
+\input{tex/b-syy.2012.txt}
+\caption{\label{Fig:bsyy} $\sigma_{yy}$ en $B$}
 \end{figure}
 %\clearpage
 
-\begin{figure}
-   \begin{center}
-      \input{tex/b-sxy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:bsxy} $\sigma_{xy}$ en $B$}
+\begin{figure}[ht]
+\centering
+\input{tex/b-sxy.2012.txt}
+\caption{\label{Fig:bsxy} $\sigma_{xy}$ en $B$}
 \end{figure}
 
 
-
-
-
-
-
-\begin{table}
-   \caption{\label{Tab:pt-E} Résultats au point $E$}
-   \begin{center}
+\begin{table}[ht]
+\centering\small
    \begin{tabular}{|l||r|c|c|c|c|}
       \hline
       \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
@@ -852,48 +840,40 @@ résultats par rapport à \ansys.
       \ansys&1 &40,1735 &3,143850 &3,04360 &3,15350 \\
       \hline
    \end{tabular}
-   \end{center}
+   \caption{\label{Tab:pt-E} Résultats au point $E$}
 \end{table}
 
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/e-sxxc.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/e-sxxc.2012.txt}
+%
 %   \caption{\label{Fig:esxxc} $\sigma_{yy}$ dans l'âme en $E$}
 %\end{figure}
 %
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/e-sxxs.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/e-sxxs.2012.txt}
+%
 %   \caption{\label{Fig:esxxs} $\sigma_{yy}$ dans la peau en $E$}
 %\end{figure}
 %
 %\clearpage
 
-\begin{figure}
-   \begin{center}
-      \input{tex/e-syy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:esyy} $\sigma_{xx}$ en $E$}
+\begin{figure}[ht]
+\centering
+\input{tex/e-syy.2012.txt}
+\caption{\label{Fig:esyy} $\sigma_{xx}$ en $E$}
 \end{figure}
 %\clearpage
 
-\begin{figure}
-   \begin{center}
-      \input{tex/e-sxy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:esxy} $\sigma_{xy}$ en $E$}
+\begin{figure}[ht]
+\centering
+\input{tex/e-sxy.2012.txt}
+\caption{\label{Fig:esxy} $\sigma_{xy}$ en $E$}
 \end{figure}
 
-
-
-
-
-
-\begin{table}
-   \caption{\label{Tab:pt-F} Résultats au point $F$}
-   \begin{center}
+\begin{table}[ht]
+\centering\small
    \begin{tabular}{|l||r|c|c|c|c|}
       \hline
       \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
@@ -937,35 +917,33 @@ résultats par rapport à \ansys.
       \ansys&1 & -45,4620 &-1,62185 &1,52280 &-1,03400 \\
       \hline
    \end{tabular}
-   \end{center}
+\caption{\label{Tab:pt-F} Résultats au point $F$}
 \end{table}
 
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/f-sxxc.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/f-sxxc.2012.txt}
+%
 %   \caption{\label{Fig:fsxxc} $\sigma_{yy}$ dans l'âme en $F$}
 %\end{figure}
 %
 %\clearpage
 %
 %\begin{figure}
-%   \begin{center}
-%      \input{tex/f-sxxs.2012.txt}
-%   \end{center}
+%\centering
+%\input{tex/f-sxxs.2012.txt}
+%
 %   \caption{\label{Fig:fsxxs} $\sigma_{yy}$ dans la peau en $F$}
 %\end{figure}
 
-\begin{figure}
-   \begin{center}
-      \input{tex/f-syy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:fsyy} $\sigma_{xx}$ en $F$}
+\begin{figure}[ht]
+\centering
+\input{tex/f-syy.2012.txt}
+\caption{\label{Fig:fsyy} $\sigma_{xx}$ en $F$}
 \end{figure}
 
-\begin{figure}
-   \begin{center}
-      \input{tex/f-sxy.2012.txt}
-   \end{center}
-   \caption{\label{Fig:fsxy} $\sigma_{xy}$ en $F$}
+\begin{figure}[ht]
+\centering
+\input{tex/f-sxy.2012.txt}
+\caption{\label{Fig:fsxy} $\sigma_{xy}$ en $F$}
 \end{figure}
