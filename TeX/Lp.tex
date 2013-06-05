@@ -33,7 +33,7 @@ un échantillonnage).
 Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
 conduit son calcul selon une voie nouvelle: en multipliant l'expression précédente
 par $\sin kx$ et en intégrant terme à terme la série, mais sans justification, il obtient:
-\begin{equation}a_k=\frac2{\pi}\dint_0^{\pi} f(x)\sin kx \mathrm dx\end{equation}
+\begin{equation}a_k=\frac2{\pi}\dint_0^{\pi} f(x)\sin kx \dd x\end{equation}
 Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
 observe que dans tous les cas envisagés, ces intégrales ont un sens et en conclut
 que toute fonction d'une variable peut-être représentée par une série trigonométrique.
@@ -59,7 +59,7 @@ où $0\le \delta_i\le 1$.
 Si la somme $S$ <<~a la propriété, de quelque manière que les $\delta$ et les
 $\varepsilon$ puissent être choisis, de s'approcher indéfiniment d'une limite fixe $A$,
 quand les $\delta$ tendent vers zéro, cette limite s'appelle la valeur de l'intégrale
-définie $\int_a^b f(x)\mathrm dx$.
+définie $\int_a^b f(x)\dd x$.
 \end{definition}
 En termes modernes, on dira que pour qu'une fonction bornée soit Riemann-intégrable,\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 il faut et il suffit que l'ensemble des points de discontinuité de $f$ soit de mesure nulle.
@@ -191,7 +191,7 @@ Soient $p$ et $q\in [1,+\infty]$. On dit que $p$ et $q$ sont des exposants conju
 Soient $p$ et $q$ des exposants conjugués, alors il existe une \textcolorblue{dualité} entre les espaces d'exposants $p$ et $q$.
 \end{theoreme}
 \colorgris
-Il suffit en effet de considérer, à $g\in L^q$ fixé (de mesure $\mu$), l'application $\Phi_g: f\mapsto \int fgd\mu$. Cette dernière
+Il suffit en effet de considérer, à $g\in L^q$ fixé (de mesure $\mu$), l'application $\Phi_g: f\mapsto \int fg\dd\mu$. Cette dernière
 définie une forme linéaire continue sur $L^p$.
 \colorblack
 
@@ -220,9 +220,9 @@ Pour $p<\infty$, on appelle \textcolorblue{norme $L^p$} et on note $\|.\|_p$,
 l'application définie par $\|f\|_p=\left(\dint_\Omega |f|^p\right)^{1/p}$.
 \end{definition}
 
-Sur $\RR$, cela donne: $\|f\|_p=\left(\dint_a^b |f(t)|^pdt\right)^{1/p}$.
+Sur $\RR$, cela donne: $\|f\|_p=\left(\dint_a^b |f(t)|^p\dd t\right)^{1/p}$.
 
-Sur un espace mesuré $(X,A,\mu)$ et à valeurs réelles ou complexes: $\|f\|_p=\left(\dint_X |f|^pd\mu\right)^{1/p}$.
+Sur un espace mesuré $(X,A,\mu)$ et à valeurs réelles ou complexes: $\|f\|_p=\left(\dint_X |f|^p\dd\mu\right)^{1/p}$.
 
 \medskip
 \section{Espace $L^0$}
@@ -232,7 +232,7 @@ $L^0$ est l'espace obtenu en quotientant $L^0$ par les fonctions nulles.
 \medskip
 Soit $\varphi$ une fonction mesurable strictement positive et $\mu$-intégrable, alors:
 \begin{equation}
-\rho(f,g)=\dint \frac{\|f-g\|}{1+\|f-g\|} \varphi \mathrm d\mu
+\rho(f,g)=\dint \frac{\|f-g\|}{1+\|f-g\|} \varphi \dd\mu
 \end{equation}
 définit une distance sur $L^0$ qui redonne la topologie de la convergence en mesure.
 
@@ -265,7 +265,7 @@ fonctions (réelles ou complexes) qui sont  de carré intégrable au sens de l'i
 
 \medskip
 \textcolorred{C'est un espace de Hilbert lorsqu'il est muni du produit scalaire:
-\begin{equation}(f,g) = \dint_{\Omega} f \bar g \,\mathrm d\mu\end{equation}}\index{Produit scalaire!de $L^2$}
+\begin{equation}(f,g) = \dint_{\Omega} f \bar g \,\dd\mu\end{equation}}\index{Produit scalaire!de $L^2$}
 
 \medskip
 La formule des exposants conjugués conduit dans le cas $p=2$, à $q=2$, i.e.

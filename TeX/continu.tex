@@ -15,10 +15,10 @@ terribles affrontements entre nos glorieux anciens.
 
 
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Continuité et classe $C^0$}\index{Continuité!$C^0$}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{histoire}%
 Dans le manuscrit de 1673 \emph{la Méthode inverse des tangentes ou à
 propos des fonctions}, Leibniz\index[aut]{Leibniz (Gottfried Wilhelm), 1646-1716, Allemand} dit:
@@ -43,7 +43,7 @@ fini de discontinuités.
 \includegraphics[height=\the\HauteurDesPhotos]{Heine}\\%
 Euler &Bolzano&Heine%
 \end{tabular}}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \ImageADroite{%
 Dans son \emph{Introductio in analysin infinitorum} de 1748, Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
 définit une fonction d'une quantité variable comme <<~une
@@ -62,7 +62,7 @@ Dans ce même ouvrage, Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse
 dit qu'une fonction est continue si elle est définie par une seule expression anlytique
 (finie ou infinie) et mixte ou discontinue si elle possède plusieurs expression analytiques
 suivant ses intervalles de définition.
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 La définition actuelle est celle due à Bernard Bolzano\index[aut]{Bolzano (Bernard Placidus Johann Nepomuk), 1781-1848, Allemand}
  dans sa théorie des
 fonctions en 1816: <<~ La fonction $f(x)$ varie suivant la loi de continuité pour la valeur $x$
@@ -74,10 +74,10 @@ et fixée par Heinrich Eduard Heine\index[aut]{Heine (Eduard), 1821-1881, Allema
 %\colorblack
 
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 La continuité est une propriété topologique (donc indépendante de la métrique).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Continuité d'une fonction en un point (version topologique)]
 Soit $f$ une application d'un espace topologique $E$ dans un espace topologique
 $F$.
@@ -94,11 +94,11 @@ i.e. que l'image réciproque de tout voisinage de $f(a)$ est un voisinage de $a$
 rappelé la notion de voisinage dans ce document. Cela n'a pas d'importance
 dans ce contexte puisque nous travaillerons sur des cas moins généraux.}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Évidemment, une  application de $E$ dans $F$ est \textcolorblue{continue} si
 elle est continue en tout point de $E$.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Ramenons nous à des choses plus connues et plus en lien avec ce document.
 Dans le cas des espaces métriques, la continuité se définit comme suit.
 
@@ -112,7 +112,7 @@ Ainsi $f$ est continue en $a$ si et seulement si la limite de $f$ en $a$ existe
 (elle vaut alors nécessairement $f(a)$).
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Considérons la fonction $f$ définie sur $\RR^2$ par :
 \begin{equation}
     f(x,y)=\left\{\begin{aligned}&\frac{xy}{x^2+y^2}&&\text{si $(x,y)\neq(0,0)$} \\
@@ -130,13 +130,13 @@ l'origine; or $\frac{m}{1+m^2}\ne0$ dès que $m\ne0$, et par conséquent elle
 ne tend pas vers $0$ lorsque $(x,y)$ tend vers l'origine.\colorblack
 \normalsize
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \textcolorred{Pour une fonction réelle, on peut définir une fonction continue
 comme une fonction dont on peut tracer le graphe sans lever le crayon}.
 Si l'on exclut certains fonctions très particulières (comme les fractales), alors l'idée générale
 de la continuité est bien traduite par cette phrase (la fonction ne présente pas de <<~saut~>>).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 %Définie de cette manière simple, une fonction $f : I\subset\RR  \to \RR$ sera dite \textcolorblue{continue
 %au point $a\in I$} si:
 \begin{definition}[Continuité d'une fonction réelle en un point]
@@ -147,17 +147,17 @@ au point $a\in I$} si:
 \end{equation}
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \textcolorblue{La classe des fonctions continues} est notée $C^0$.
 Elle inclut par exemple les fonctions continues par morceaux ainsi que les constantes (dont
 la fonction nulle).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Attention à ne pas confondre la classe des fonctions continues $C^0$ avec
 $C_0$ l'ensemble des fonctions continues qui s'annulent à l'infini (sous-espace de l'espace
 des fonctions continues).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Continuité de Hölder et Lipschitz}\index{Continuité!Hölder}\index{Continuité!Lipschitz}%
 \index[aut]{Hoelder@Hölder (Otto Ludwig), 1859-1937, Allemand}\index[aut]{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand}
 
@@ -186,14 +186,14 @@ lorsque ce fameux $\varepsilon$ n'est plus lié à la position sur la courbe, ma
 pour la fonction entière.\colorblack
 }
 \colorblack
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 La \textcolorblue{continuité höldérienne} ou \textcolorblue{condition de Hölder}
 est une condition suffisante (mais non nécessaire) pour qu'une application définie entre
 deux espaces \textcolorred{métriques} soit continue.
 
 La définition s'applique en particulier pour les fonctions d'une variable réelle.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Fonction $a$-höldérienne]
 Si $(E, d)$ et $(F, d')$ sont deux espaces métriques, une fonction $f : E \rightarrow F$ est dite
 $a$-höldérienne s'il existe une constante $C > 0$ telle que :
@@ -201,15 +201,15 @@ $a$-höldérienne s'il existe une constante $C > 0$ telle que :
     \forall (x, y) \in E^2,\quad d'\left(f(x), f(y)\right) \le C\,d\left(x,y\right)^a
 \end{equation}
 \end{definition}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 La continuité höldérienne d'une fonction dépend donc d'un paramètre réel
 strictement positif $a \in ]0, 1]$, et prend en compte toutes les variations de la valeur de
 la fonction sur son ensemble de définition.
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Si $0 < a \leq1$ est fixé, l'ensemble des fonctions réelles $a$-höldériennes est un
 espace vectoriel, conventionnellement noté $\mathcal{C}^{0, a}(E,\RR)$.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{theoreme}
 Toute application $f$ qui est $a$-höldérienne est continue. Mieux, elle est
 \textcolorblue{uniformément continue}, dans le sens suivant:
@@ -225,14 +225,14 @@ Lorsque $a = 1$, l'application est dit \textcolorblue{lipschitzienne}.
 Une application lipschitzienne est plus <<~régulière~>> qu'une fonction
 simplement continue.
 \end{definition}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Toute fonction lipschitzienne (en tant que fonction höldérienne) est uniformément continue.
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Toute fonction réelle lipschitzienne est (absolument continue donc à variation bornée donc)
 dérivable presque partout pour la mesure de Lebesgue et sa dérivée est essentiellement bornée.
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Dérivée}\index{Dérivée!Classique}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Dérivée d'une fonction]
 Soit $f$ une application d'un ouvert $\Omega$ du corps des scalaires $\KK$ (resp. un invervalle
 de $\RR$) dans un espace affine normé $F$ (resp. $\RR$), alors on peut donner un sens,
@@ -256,7 +256,7 @@ abordant les notions de dérivation, intégration et équations différentielles
 \includegraphics[height=\the\HauteurDesPhotos]{Leibniz}\\%
 Newton &Leibniz%
 \end{tabular}}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \ImageADroite{%
 Les échanges, les conceptions et la compréhension des infinitésimaux ont animé le monde scientifique
 pendant bien longtemps, la discussion était tout autant philosophique que mathématique, ce
@@ -278,7 +278,7 @@ scientifique. Au début du XIXe siècle, avec la diffusion des notations symboli
 du calcul infinitésimal, un petit groupe de mathématicien de Cambridge se mettront
 à réfléchir sur le rôle et l'importance de la symbolique.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 L'opinion générale est aujourd'hui que Leibniz s'est presque
 certainement inspiré de certaines des idées de Newton (dont les travaux sont antérieurs, mais non publiés au moment
 où Leibniz publie), mais que sa contribution reste suffisamment importante pour que le
@@ -297,7 +297,7 @@ introduit la notation $dy/dx$ encore utilisée.
 \includegraphics[height=\the\HauteurDesPhotos]{Oresme}\\%
 Archimède&Oresme%
 \end{tabular}}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \ImageAGauche{%
 Pourtant, si on regarde un peu plus dans l'Histoire, on peut dire que la méthode d'exhaustion,
 telle qu'elle a été développée et utilisée par Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec}
@@ -319,7 +319,7 @@ Ils s'appliquent d'abord à imiter le modèle archimédien, puis s'émancipent e
 de trouver des substituts pour la méthode d'exhaustion, jugée trop lourde.
 }
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 En 1748, Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
  définit les deux nouvelles opérations que sont la différentiation et l'intégration
 dans \emph{Introductio in analysin infinitorum}, puis dans \emph{Calculi differentialis} (1755) et
@@ -328,15 +328,15 @@ infiniment petits et développe des méthodes d'intégration et de résolution d
 \end{histoire}
 \colorblack
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 La dérivabilité est elle-aussi une notion topologique et non métrique (même si on sait
 l'écrire en termes métrique comme ci-dessus), elle ne dépend donc pas
 de la norme choisie (du moment que celle-ci est compatible avec la topologie choisie...).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Fonctions de classe $C^k$}\index{Continuité!$C^k$}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Il est évident que si la dérivée (telle que définie au dessus) existe partout dans
 $\Omega$, alors on peut à nouveau considérer sa dérivée... et ainsi de suite.
 
@@ -344,7 +344,7 @@ On définit donc les \textcolorblue{classes $C^1$, $C^2$, ... $C^k$, ... $C^\inf
 de fonctions 1 fois, 2 fois, ..., $k$ fois continûment dérivables ou même indéfiniment
 dérivables.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Pour $k=0$, on retombe sur la définition de l'ensemble des fonctions
 continues.
 
@@ -354,22 +354,22 @@ toutes ses dérivées jusqu'à l'ordre $k$ sont continues dans $\Omega$}.
 Toutes les fonctions polynomiales sont $C^\infty$, car à partir d'un certain rang
 leur dérivée est identiquement nulle.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Dérivées partielles}\index{Dérivée!Partielle}
 Nous allons maintenant étendre la dérivation au cas où une fonction dépend
 de plusieurs variables.
 Évidemment, il faudra que dans le cas où la fonction ne dépend que d'une seule
 variable, les deux notions coïncident.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \textcolorblue{La dérivée partielle d'une fonction de plusieurs variables est la dérivée par rapport
 à l'une de ses variables, les autres étant gardées constantes.}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 La dérivée partielle de la fonction $f$ par rapport à la variable $x$ est notée
 $\frac{ \partial f }{ \partial x }$ ou $\partial_x f$ ou encore $f'_x$.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 De la même manière, on peut noter des dérivés secondes,... $k$-èmes par
 rapport à différentes variables.
 Par exemple: $\frac{ \partial^2 f}{ \partial x^2} = f_{xx}' = \partial_{xx} f = \partial^2_x f$,
@@ -377,7 +377,7 @@ mais également $\frac{ \partial^2 f}{\partial x\,\partial y} = f_{yx}' = \parti
 $\frac{ \partial^2 f}{\partial y\,\partial x} = f_{xy}' = \partial_{xy} f $, mais également
 $\frac{ \partial^{i+j+k} f}{ \partial x^i\, \partial y^j\, \partial z^k } = f_{kz jy ix}' = \partial_{kz jy ix} f $.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Dérivée partielle d'ordre 1 en un point]
 %La définition se fait de manière analogue au cas de la dérivée <<~classique~>>.
 %
@@ -394,7 +394,7 @@ par rapport à la $i$-ème variable $x_i$} par:
 \end{equation}
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \textcolorred{Attention :}
 Même si toutes les dérivées partielles $\frac{ \partial f}{\partial x_1}(\mathbf{a}),\, \dots,\, \frac{ \partial f}{\partial x_n }(\mathbf{a})$
 existent en un point  $\mathbf{a}$, la fonction peut ne pas être continue en ce point.
@@ -407,7 +407,7 @@ on voit qu'elle vérifie $\frac{\partial f}{\partial x} (0,0)= \frac{\partial f}
 mais elle n'a pas de limite en $(0,0)$ comme nous l'avons vu avant.
 
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Si \textcolorred{toutes} les dérivées partielles (d'ordre 1) existent et sont \textcolorred{continues} dans
 un voisinage de $\mathbf{a}$, alors $f$ est différentiable dans ce voisinage et la différentielle
 est continue. Dans ce cas, on dit que $f$ est une fonction de \textcolorblue{classe $C^1$} sur ce
@@ -437,12 +437,12 @@ Si $f\in C^2(\Omega)$, alors:
 \begin{definition}[Différentielle totale]
 On appelle \textcolorblue{différentielle totale} de $f$ l'expression:
 \begin{equation}
-    \mathrm{d}f=\frac{\partial f}{\partial x_1}\,\mathrm{d}x_1+\cdots+\frac{\partial f}{\partial x_n}\,\mathrm{d}x_n
-=   \dsum_i \frac{\partial f}{\partial x_i}\,\mathrm{d}x_i
+    \dd f=\frac{\partial f}{\partial x_1}\,\dd x_1+\cdots+\frac{\partial f}{\partial x_n}\,\dd x_n
+=   \dsum_i \frac{\partial f}{\partial x_i}\,\dd x_i
 \end{equation}
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Retour sur les classes $C^k$ pour une fonction de plusieurs variables}
 
 Ce paragraphe met l'accent sur le cas multi-dimensionnel des classes $C^k$
@@ -450,7 +450,7 @@ Ce paragraphe met l'accent sur le cas multi-dimensionnel des classes $C^k$
 Nous en profitons également pour introduire des notations et notions dont nous
 nous servirons plus loin.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Fonctions $k$ fois différentiables]
 Si $\Omega$ est un ouvert de $\RR^n$, on définit l'ensemble des
 fonctions $k$ fois différentiables dans $\Omega$, à valeurs
@@ -462,7 +462,7 @@ i=1, ..., n\right\}, k\ge 1
 \end{equation}
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Multi-indice]
 On appelle \textcolorblue{multi-indice} $\alpha$ un $n$-uplet d'entiers
 $\alpha=(\alpha_1, ..., \alpha_n)$, $\alpha_j\in\NN$.
@@ -471,7 +471,7 @@ et on note \textcolorblue{$\partial^\alpha$} la quantité (l'opération)
 \begin{equation}\partial^\alpha=\left(\dfrac{\partial}{\partial x_1}\right)^{\alpha_1}...\left(\dfrac{\partial}{\partial x_n}\right)^{\alpha_n}\end{equation}
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi\colorgris
+\medskip\colorgris
 $C^k(\Omega)$ est l'espace vectoriel des fonctions $f: \Omega \to \RR$ telles que
 $\forall \alpha$, $|\alpha|\le k$, $x\mapsto \partial^\alpha f(x)$ existe et appartient
 à $C^0(\Omega)$.
@@ -497,19 +497,19 @@ On définit alors:
 qui est une norme sur $C^k_b(\Omega)$ et en fait un espace de Banach (i.e. normé
 complet pour cette norme).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 On définit, pour $k\in\NN\cup\{\infty\}$, l'ensemble $C_c^k(\Omega)$ par:
 $f\in C_c^k(\Omega)$ si $f\in C^k(\Omega)$ et si $f$ est de support compact inclus dans $\Omega$.
 
-\ifVersionDuDocEstVincent\medskip\fi
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
+\medskip
 Pour tout ouvert $\Omega$ de $R^n$, et pour tout $k\in\NN\cup\{\infty\}$:
 \begin{itemize}
    \item $C_c^k(\Omega)$ est dense dans $C^k(\Omega)$
    \item $C_c^\infty(\Omega)$ est dense dans $C^k(\Omega)$
 \end{itemize}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Nabla et comparses}
 \subsection{Champs de vecteurs et de scalaires}
 \begin{definition}[Champ de vecteurs]
@@ -522,14 +522,14 @@ définie par ses $n$ fonctions composantes:
 \end{equation}
 C'est donc une fonction qui à un vecteur fait correspondre un vecteur.
 \end{definition}
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Champ de scalaires]
 Un \textcolorblue{champ de scalaires} sur $\Omega$ est une application $f$ de $\Omega$ dans $\RR$ ou $\CC$,
 i.e. une fonction qui à un vecteur fait correspondre un scalaire.
 \end{definition}
 La dérivée d'un champ scalaire est un champ vectoriel appelé \textcolorblue{gradient} (voir plus bas).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \colorblue Nabla, noté $\nabla$, est un pseudo-vecteur \colorblack servant à noter un opérateur
 différentiel:
 \begin{equation}
@@ -541,7 +541,7 @@ différentiel:
 \end{array}}_{\text{sphériques}}
 \end{equation}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \subsection{Gradient, divergence, rotationnel, Laplacien et D'Alembertien}\index{Gradient}\index{Divergence}\index{Rotationnel}\index{Laplacien}\index{D'Alembertien}
 Les quantités présentées ci-après apparaîtront constamment dans les
 problèmes physiques.%\footnote{
@@ -557,7 +557,7 @@ problèmes physiques.%\footnote{
 
 
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Soient $\mathbf{A} $ un champ de vecteur et $f$ un champ scalaire, on définit:
 \begin{itemize}
 \item Le \textcolorblue{gradient}:
@@ -582,7 +582,7 @@ En coordonnées cartésiennes, $\Box$ s'écrit:
 \end{itemize}
 où $c$ est la vitesse de la propagation considérée (ou la vitesse de la lumière).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 En coordonnées cartésiennes, il vient explicitement:
 \begin{itemize}
    \item gradient: $ \gradb  f=
@@ -601,7 +601,7 @@ En coordonnées cartésiennes, il vient explicitement:
 	\end{array}}$
 \end{itemize}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 De plus:
 \begin{align}
 &\dive \gradb f = \nabla \cdot (\nabla f) = \nabla^2 f = \Delta f\\
@@ -612,7 +612,7 @@ De plus:
 &\Delta f g = f \Delta g + 2 \nabla f \cdot \nabla g + g \Delta f
 \end{align}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \subsection{Normale et dérivée normale}\index{Dérivée!Normale}\index{Normale}
 
 \begin{definition}[Normale]
@@ -622,11 +622,11 @@ $x\in\Gamma$ où le bord est régulier, $n(x)$ soit orthogonal au bord
 et de norme $1$.
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 On appelle \textcolorblue{normale extérieure} une normale qui pointe vers
 l'extérieur du domaine en tout point.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \begin{definition}[Dérivée normale]
 On appelle \textcolorblue{dérivée normale} d'une fonction régulière $u$
 sur $\Gamma$, la fonction définie sur les points réguliers de $\Gamma$ par:
@@ -634,7 +634,7 @@ sur $\Gamma$, la fonction définie sur les points réguliers de $\Gamma$ par:
 scalaire car $\nabla u$ est un vecteur, tout comme $n(x)$.
 \end{definition}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \subsection{Potentiel d'un champ vectoriel}
 
 Le \textcolorblue{potentiel d'un champ vectoriel} est une fonction scalaire ou vectorielle qui,
@@ -648,12 +648,12 @@ Ainsi :
 Dans les deux cas, on dit que le champ d'origine \textcolorblue{dérive d'un potentiel}
 (allusion entre une fonction et sa primitive).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Ces potentiels permettent non seulement d'appréhender certains champs vectoriels sous un angle
 complémentaire (pour un traitement parfois plus aisé), mais ils légitiment des abstractions essentielles
 comme, par exemple en physique, l'énergie potentielle associée à un champ de forces conservatives.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Un champ de vecteurs $\mathbf{A} $ continu et irrotationnel dérive d'un potentiel scalaire $U$:
 \begin{equation}
  \mathbf{A} = -\gradb U
@@ -663,7 +663,7 @@ décroisse <<~assez~>> rapidement.
 
 Le potentiel scalaire n'est pas unique, il est défini à une constante près.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Un champ de vecteurs $\mathbf{A} $ régulier et de divergence nulle dérive d'un potentiel vectoriel
 $\mathbf{B} $:
 \begin{equation}
@@ -676,7 +676,7 @@ Le potentiel vecteur n'est pas unique, il est défini à un <<~gradient~>> près
 $ \mathbf{B} ' =  \mathbf{B}  + \gradb  f$ convient
 également).
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \subsection{Signification <<~physique~>>}
 
 Un \textcolorgreen{champ de scalaires}, c'est un <<~truc~>>, une application, qui à un vecteur
@@ -689,7 +689,7 @@ associe un autre vecteur. Typiquement, on peut penser à la \textcolorgreen{vite
 Une application $\mathbf{V}(x,y,z)$ qui à chaque point de l'espace de coordonnées $(x,y,z)$
 associe son vecteur vitesse $\mathbf{V}$ est un champ de vecteurs.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Si $f$ est une fonction de classe $C^1$, alors le \textcolorgreen{gradient} de $f$ au point $\mathbf{a}$,
 quand il est non nul, s'interprète comme la direction selon laquelle $f$ varie le plus vite,
 i.e. la ligne de plus grande pente.
@@ -720,7 +720,7 @@ sur l'imagination du lecteur). \textcolorgris{On rappelle que les lignes de cham
 lignes qui, en première approche, représente le chemin que l'on suivrait en partant d'un point.
 Ce sont en fait les lignes orthogonales aux équipotentielles, ou surfaces de niveau, du champ.}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Concernant le \textcolorgreen{Laplacien scalaire}, la quantité $\Delta f$ est une mesure de la
 différence entre la valeur de $f$ en un point quelconque $P$ et la valeur moyenne $\overline{f}$
 au voisinage du point $P$.
@@ -740,28 +740,14 @@ potentiel (on dit alors que les vitesses dérivent d'un potentiel).
 Si le fluide peut être considéré comme incompressible, la divergence de ce vecteur s'annule.
 Le laplacien du potentiel est donc nul : il s'agit d'un potentiel harmonique qui satisfait l'équation de Laplace.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \section{Quelques théorèmes sur les intégrales}
 
 Les relations ci-après permettent de passer d'intégales sur un domaine à des
-intégrales sur le bord de ce domaine.%\footnote{
-%\begin{tabular}{ccc}
-%\includegraphics[height=32mm]{Green}&
-%%\raisebox{10mm}{\emph{pas de photo}}&
-%\includegraphics[height=32mm]{Riemann}&
-%\includegraphics[height=32mm]{Ostrogradsky}\\
-%George Green &
-%Georg Friedrich Bernhard Riemann &
-%Mikhaïl Vassilievitch Ostrogradsky\\
-%1793-1841&
-%1826-1866&
-%1801-1862\\
-%\end{tabular}
-%}
+intégrales sur le bord de ce domaine.
 
 
-\ifVersionDuDocEstVincent\medskip\fi
-%\subsection*{Théorème du gradient}\index{Gradient}\index{Théorème!du gradient}
+\medskip
 \begin{theoreme}[Théorème du gradient]\index{Gradient}\index{Théorème!du gradient}
 
 Ce théorème met en relation l'intégrale de volume du gradient d'un champ scalaire et l'intégrale
@@ -772,8 +758,7 @@ de surface de ce même champ:
 où $\Gamma$ est le bord du domaine $\Omega$ et $f$ un champ scalaire (i.e. une fonction régulière).
 \end{theoreme}
 
-\ifVersionDuDocEstVincent\medskip\fi
-%\subsection*{Théorème du rotationel}\index{Rotationnel}\index{Théorème!du rotationnel}
+\medskip
 \begin{theoreme}[Théorème du rotationnel]\index{Rotationnel}\index{Théorème!du rotationnel}
 
 Ce théorème met en relation l'intégrale de volume du rotationnel d'un champ vectoriel et l'intégrale
@@ -786,62 +771,61 @@ où $\Gamma$ est la frontière de $\Omega$, $\wedge$ est le produit vectoriel et
 la normale dirigé vers l'extérieur.
 \end{theoreme}
 
-\ifVersionDuDocEstVincent\medskip\fi\colorgris
+\medskip\colorgris
 Une autre identité remarquable met en relation l'intégrale de surface du rotationnel d'un champ vectoriel
 et l'intégrale curviligne (ou circulation) du même champ sur la frontière.
 Elle découle du théorème de Green qui, pour une surface $S$ (généralement non fermée) de
 frontière $C$, implique:
 \begin{equation}
-\iint_S \rotb  {\mathbf{A}} \cdot \mathrm d\mathbf{s} = \oint_C {\mathbf{A}} \cdot \mathrm d \mathbf{l}
+\iint_S \rotb  {\mathbf{A}} \cdot \dd\mathbf{s} = \oint_C {\mathbf{A}} \cdot \dd\mathbf{l}
 \end{equation}
 
 Si $S$ est fermée, $C$ est vide (ou réduit à un point) et le membre de droite est nul.
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 L'orientation de la surface et celle de la courbe frontière sont liées puisque le changement
 d'une orientation modifie le signe de l'intégrale correspondante.
 En fait, la relation est satisfaite lorsque ces orientations sont telles que, sur un point frontère,
-le vecteur tangent à la surface $\mathrm d \vec s \wedge \mathrm d \vec l$ est orienté
+le vecteur tangent à la surface $\dd \vec s \wedge \dd \vec l$ est orienté
 en direction de la surface.
 \colorblack
 
 
-\ifVersionDuDocEstVincent\medskip\fi
-%\subsection*{Théorème de Green (-Riemann)}\index{Théorème!de Green(-Riemann)}%
+\medskip
 \begin{theoreme}[Théorème de Green (-Riemann)]\index{Théorème!de Green(-Riemann)}%
 \index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 
 Ce théorème donne la relation entre une intégrale curviligne autour d'une courbe simple fermée $C$ et l'intégrale double sur la région du plan $S$ délimitée par $C$.
 
-Soit $C$, une courbe plane simple, positivement orientée et $C^1$ par morceaux, $S$ le domaine compact lisse du plan délimité par $C$ et $P\mathrm d x + Q\mathrm d y$ une 1-forme différentielle sur $\RR^2$. Si $P$ et $Q$ ont des dérivées partielles continues sur une région ouverte incluant $S$, alors :
+Soit $C$, une courbe plane simple, positivement orientée et $C^1$ par morceaux, $S$ le domaine compact lisse du plan délimité par $C$ et 
+$P\dd x + Q\dd y$ une 1-forme différentielle sur $\RR^2$. Si $P$ et $Q$ ont des dérivées partielles continues sur une région ouverte incluant $S$, alors :
 \begin{equation}
-\int_C P\,\mathrm dx + Q\,\mathrm dy = \iint_S \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\ \right) \mathrm dx\mathrm dy
+\int_C P\,\dd x + Q\,\dd y = \iint_S \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\ \right) \dd x\dd y
 \end{equation}
 \end{theoreme}
 
-\ifVersionDuDocEstVincent\medskip\fi\colorgris
+\medskip\colorgris
 Il existe une autre façon de noter ce théorème.
 On se place sur un domaine compact lisse du plan $\Omega$, de bord $\partial\Omega$,
 en notant la forme différentielle $\omega$.
 Alors la dérivée extérieure de $\omega$ s'écrit :
 \begin{equation}
-\mathrm d\omega = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathrm dx \wedge \mathrm dy
+\dd \omega = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \dd x \wedge \dd y
 \end{equation}
 
 On peut alors résumer le théorème de Green par la formule :
 \begin{equation}
-\oint_{\partial \Omega} \omega = \iint_{\Omega} \mathrm d\omega
+\oint_{\partial \Omega} \omega = \iint_{\Omega} \dd\omega
 \end{equation}
 (Le cercle sur l'intégrale précise que le bord décrit une courbe fermée).
 \colorblack
 
-\ifVersionDuDocEstVincent\medskip\fi
-%\subsection*{Théorème de Green-Ostrogradsky (flux-divergence)}\index[aut]{Green (George), 1793-1841, Anglais}%
+\medskip
 \begin{theoreme}[Théorème de Green-Ostrogradsky (flux-divergence)]\index[aut]{Green (George), 1793-1841, Anglais}%
 \index[aut]{Ostrogradsky (Mikhaïl Vassilievitch), 1801-1862, Ukainien}\index{Théorème!de Green-Ostrogradsky}%
 \index{Théorème!du flux-divergence}
 (<<~Ostrogradsky~>> peut s'écrire avec un <<~y~>> ou un <<~i~>> à la fin.)
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 \index{Divergence}
 
 Soit $\Omega$ un domaine de $\RR^2$ ou $\RR^3$ de frontière $\Gamma$
@@ -851,7 +835,7 @@ et ${\mathbf{A} }$ un champ de vecteurs:
 \end{equation}
 \end{theoreme}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 Ce théorème prend aussi le nom de théorème du flux-divergence ou plus simplement formule de la
 divergence.
 
@@ -864,7 +848,7 @@ et $u$ et $v$ deux fonctions régulières:
 \end{equation}
 \end{theoreme}
 
-\ifVersionDuDocEstVincent\medskip\fi
+\medskip
 On en déduit certaines formules utiles du calcul vectoriel.
 Soit $\Omega$ un domaine de $\RR^2$ ou $\RR^3$ de frontière $\Gamma$,
 ${\mathbf{A} }$ et ${\mathbf{B} }$ des champ de vecteurs, $f$ et $g$ des

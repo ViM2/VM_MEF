@@ -99,7 +99,7 @@ c'est la distribution de Dirac : $\langle\delta,\varphi\rangle=\varphi(0)$.\inde
 Une propriété fondamentales est que \textcolorblue{toute fonction localement intégrable $f$ représente aussi
 une distribution $T_f$ définie par la forme intégrale suivante} :
 \begin{equation}
-    \langle T_f,\phi\rangle=\int_{\mathbb{R}}f(x)\phi(x)\,\mathrm \mathrm dx \, \quad \forall \phi\in\mathcal{D}(\Omega).
+    \langle T_f,\phi\rangle=\int_{\mathbb{R}}f(x)\phi(x)\,\dd x \, \quad \forall \phi\in\mathcal{D}(\Omega).
 \end{equation}
 
 
@@ -116,7 +116,7 @@ et intégrable $f:\mathbb{R}\rightarrow\mathbb{R}$.
 Soit $\varphi$ une fonction test, supposée régulière et à support compact.
 Une intégration par parties permet d'écrire :
 \begin{equation}
-    \int_\RR f'(x) \varphi(x)\,\mathrm \mathrm dx = -\int_\RR f(x)\varphi'(x)\,\mathrm \mathrm dx \qquad\mathrm{soit}\qquad I_{f'}(\varphi)=I_{-f}(\varphi').
+    \int_\RR f'(x) \varphi(x)\,\dd x = -\int_\RR f(x)\varphi'(x)\,\dd x \qquad\text{soit}\qquad I_{f'}(\varphi)=I_{-f}(\varphi').
 \end{equation}
 En effet, puisque la fonction $\varphi$ est nulle en dehors d'un ensemble borné (elle est à support
 compact), les termes de bords s'annulent.
@@ -139,8 +139,8 @@ Cette notion peut aussi se définir comme la dérivée du produit de dualité $\
 On note $\varphi_h:x\rightarrow\varphi(x-h)$ la translatée de $\varphi$ par la valeur $h\in{\mathbb R}$,
 alors, en utilisant la linéarité et la continuité par rapport au deuxième terme:
 \begin{equation}
-\langle\frac{dS}{\mathrm dx},\varphi\rangle= \lim_{h\rightarrow 0}\frac{ \langle S,\varphi_h\rangle- \langle S,\varphi\rangle}{h}
-= \langle S,\lim_{h\rightarrow 0} \frac{\varphi_h-\varphi}{h} \rangle= -\langle S,\frac{d\varphi}{\mathrm dx}\rangle
+\langle\frac{\dd S}{\dd x},\varphi\rangle= \lim_{h\rightarrow 0}\frac{ \langle S,\varphi_h\rangle- \langle S,\varphi\rangle}{h}
+= \langle S,\lim_{h\rightarrow 0} \frac{\varphi_h-\varphi}{h} \rangle= -\langle S,\frac{\dd\varphi}{\dd x}\rangle
 \end{equation}
 
 Lorsque la distribution $S$ modélise un phénomène physique, la fonction test $\varphi$ peut
@@ -224,7 +224,7 @@ où $D^\alpha u$ est une dérivée partielle de $u$ au sens classique ($u \in C^
 Les espaces de Sobolev $H^m$ ont un intérêt particulier car il s'agit alors d'\textcolorred{espaces de Hilbert.}\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 Leur norme est induite par le produit intérieur suivant:\index{Produit scalaire!de $H^m(\Omega)$}
 \begin{equation}\left( u , v \right)_{m} =\sum \limits _{0 \leqslant \vert \alpha\vert\leqslant m} \left( D^{\alpha} u, D^{\alpha} v\right)
-\text{ où } \left( u , v \right) = \int_{\Omega} u(x) \overline{v(x)} \mathrm dx \text{ est le produit intérieur dans } L^{2} \left( \Omega \right)
+\text{ où } \left( u , v \right) = \int_{\Omega} u(x) \overline{v(x)} \dd x \text{ est le produit intérieur dans } L^{2} \left( \Omega \right)
 \end{equation}
 (produit scalaire dans le cas réel, hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} dans le cas complexe).
 \end{theoreme}
@@ -240,14 +240,14 @@ l'espace $H^k(\Omega)$ peut être défini de façon naturelle à partir de la tr
 
 Par exemple si $\Omega = \RR^{n}$, si $\widehat{u}$ est la transformée de Fourier de $u$ :
 
-$H^{m}\left( \RR ^{n}\right)=\lbrace u \in L^{2}\left( \RR^{n}\right);\; \int_{\RR^{n}}\vert\hat{u}\left( \xi\right) \xi^{\alpha}\vert ^{2}d\xi \;<\infty\ $; pour\; $\vert\alpha\vert \leqslant m \rbrace$
+$H^{m}\left( \RR ^{n}\right)=\lbrace u \in L^{2}\left( \RR^{n}\right);\; \int_{\RR^{n}}\vert\hat{u}\left( \xi\right) \xi^{\alpha}\vert ^{2}\dd\xi \;<\infty\ $; pour\; $\vert\alpha\vert \leqslant m \rbrace$
 ou ce qui est équivalent :
 
-$H^{m}\left( \RR ^{n}\right)=\left\lbrace u \in L^{2}\left( \RR^{n}\right);\; \int_{\RR^{n}}\vert\hat{u}\left( \xi\right) \vert ^{2}\left( 1+\xi^{2}\right)^{m} d\xi \;<\infty \right\rbrace$
+$H^{m}\left( \RR ^{n}\right)=\left\lbrace u \in L^{2}\left( \RR^{n}\right);\; \int_{\RR^{n}}\vert\hat{u}\left( \xi\right) \vert ^{2}\left( 1+\xi^{2}\right)^{m} \dd\xi \;<\infty \right\rbrace$
 
 et que :
 
-$\left( u,v \right)_{m}=\int_{\RR^{n}}\hat{u}\left(\xi \right) \overline{\hat{v}\left(\xi \right)} \left(1 + \xi^{2} \right) ^{m} d\xi$ est un produit hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} équivalent à celui défini plus haut.
+$\left( u,v \right)_{m}=\int_{\RR^{n}}\hat{u}\left(\xi \right) \overline{\hat{v}\left(\xi \right)} \left(1 + \xi^{2} \right) ^{m} \dd\xi$ est un produit hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} équivalent à celui défini plus haut.
 
 Ou encore si $\Omega =\left]0,1\right[$, on vérifie que :
 
@@ -322,7 +322,7 @@ Ainsi défini, l'espace $H^{-m}(\Omega)$ est un espace de Hilbert isomorphe au d
 topologique de $H^m_0(\Omega)$, et le crochet de dualité s'écrit:\index{Espace!dual topologique d'un espace vectoriel}
 \begin{equation}
 \langle f,u\rangle_{H^{-m},H_0^m} = \dsum_{|\alpha\le m} (-1)^\alpha \dint_\Omega
-f_\alpha \partial^\alpha u d x,
+f_\alpha \partial^\alpha u \dd x,
 \quad \forall f\in H^{-m}(\Omega), \forall u\in H^m_0(\Omega)
 \end{equation}
 (cette formule ne dépend pas de la décomposition de $f$ en somme des $\partial^\alpha f_\alpha$)
@@ -404,10 +404,10 @@ dans le cas non-entier, on utilisera la lettre $s$, et donc les espaces seront n
 Dans ce cas, l'espace de Sobolev $H^{s}(\RR^n)$, $s\geqslant 0$, peut être défini grâce
 à la transformée de Fourier :
 \begin{equation}
-H^{s} (\RR^n) = \left\{ u \in L^{2}(\RR^n) \colon \int_{\RR^n} ( 1 + | \xi |^{2 } )^{s} | \hat{u} (\xi) |^{2} \, \mathrm{d} \xi < + \infty \right\}.
+H^{s} (\RR^n) = \left\{ u \in L^{2}(\RR^n) \colon \int_{\RR^n} ( 1 + | \xi |^{2 } )^{s} | \hat{u} (\xi) |^{2} \, \dd\xi < + \infty \right\}.
 \end{equation}
 $H^{s}(\RR^n)$ est un espace de Hilbert muni de la norme:
-\begin{equation}\| u \|_{H^{s}}^{2} = \int_{\RR^n} ( 1 + | \xi |^{2 } )^{s} | \hat{u} (\xi) |^{2} \, \mathrm{d} \xi \end{equation}
+\begin{equation}\| u \|_{H^{s}}^{2} = \int_{\RR^n} ( 1 + | \xi |^{2 } )^{s} | \hat{u} (\xi) |^{2} \, \dd\xi \end{equation}
 \colorblack
 
 \medskip
@@ -415,7 +415,7 @@ $H^{s}(\RR^n)$ est un espace de Hilbert muni de la norme:
 On peut alors caractériser les espaces de Sobolev d'ordre fractionnaire $H^s(\Omega)$
 grâce au produit intérieur donné par :
 \begin{equation}
-(u, v)_{H^{s} (\Omega)} = (u,v)_{H^{k} (\Omega)} + \sum_{| \alpha | = k} \int_{\Omega } \int_{\Omega } \frac{( D^{\alpha }u (x) - D^{\alpha }u (y) ) (D^{\alpha }v (x) - D^{\alpha }v (y) )}{| x - y |^{n + 2 t}} \, \mathrm{d} x \mathrm{d} y
+(u, v)_{H^{s} (\Omega)} = (u,v)_{H^{k} (\Omega)} + \sum_{| \alpha | = k} \int_{\Omega } \int_{\Omega } \frac{( D^{\alpha }u (x) - D^{\alpha }u (y) ) (D^{\alpha }v (x) - D^{\alpha }v (y) )}{| x - y |^{n + 2 t}} \, \dd x \dd y
 \end{equation}
 où $s = k + T$, $k$ est un entier tel que $0 < T < 1$ et $n$ est la dimension du domaine
 $\Omega \subset \RR^{n}$.
@@ -601,7 +601,7 @@ H(\dive,\Omega)=\left\{ f\in L^2(\Omega)^n,\quad \dive  f\in L^2(\Omega)\right\}
 %où $\dive  f$ est la divergence faible, que nous ne définissons pas dans ce document.
 C'est un espace de Hilbert, muni du produit scalaire:\index{Produit scalaire!de $H(\dive)$}\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 \begin{equation}
-\langle f,g \rangle = \dint_\Omega \left( f(x)\cdot g(x)+\dive  f(x) \dive  g(x) \right) \mathrm dx
+\langle f,g \rangle = \dint_\Omega \left( f(x)\cdot g(x)+\dive  f(x) \dive  g(x) \right) \dd x
 \end{equation}
 et de la norme $\|f\|_{H(\dive,\Omega)}=\sqrt{\langle f,f\rangle}$.
 \medskip
@@ -612,7 +612,7 @@ En effet, si $f\in H(\dive,\Omega)$, on ne <<~contrôle~>> qu'une seule combinai
 dérivées partielles, et non pas toutes comme dans $H^1(\Omega)$, mais on peut quand
 même donner un sens à la trace normale $f\cdot n$ sur $\partial\Omega$.}
 
-%%%#\bigskip
+\medskip
 %\section{Espace }
 L'\textcolorblue{espace $H(\rot,\Omega)$} est défini par:\index{Espace!de Sobolev $H(\rot)$}
 \begin{equation}
@@ -630,7 +630,7 @@ On peut introduire l'espace $H_0(\rot,\Omega)$ des fonctions de $H(\rot,\Omega)$
 \textcolorgreen{Cet espace peut être utiliser pour la modélisation de phénomènes électromagnétiques
 par les équations de Maxwell.}
 
-%%%#\bigskip
+\medskip
 En fait, il est possible de définir de nombreux espaces de Sobolev en fonction du problème considéré et c'est tout l'intérêt.
 
 \medskip
@@ -702,7 +702,7 @@ pour toute fonction $u\in W^{1,p}(\Omega)$, on ait:
 \begin{equation}
 \|u-u_\Omega\|_{L^p(\Omega)} \le C \|\nabla u\|_{L^p(\Omega)}
 \end{equation}
-où $u_\Omega=\frac1{|\Omega|}\dint_\Omega u(y)dy$ est la valeur
+où $u_\Omega=\frac1{|\Omega|}\dint_\Omega u(y)\dd y$ est la valeur
 moyenne de $u$ sur $\Omega$, $|\Omega|$ désignant la mesure de Lebesgue
 du domaine $\Omega$.
 \end{theoreme}
