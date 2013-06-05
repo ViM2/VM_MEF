@@ -726,7 +726,7 @@ le second \textcolorblue{erreur de consistence}.
 
 
 \medskip
-\section{Convergence de la méthode des éléments finis en approximation conforme ou non lorsque $V_h\subset V$}\index{Approximation non conforme}\index{Approximation conforme}
+\section[Convergence de la méthode des éléments finis en approximation conforme]{Convergence de la méthode des éléments finis en approximation conforme lorsque $V_h\subset V$}\index{Approximation non conforme}\index{Approximation conforme}
 
 Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine
 de $\RR^n$, et notre problème que nous résolvons de manière approchée
@@ -821,10 +821,9 @@ On a le théorème suivant:
 \begin{theoreme}
 soient $l$ et $k$ deux entiers tels que $0\le l\le k+1$.
 Si $\hat{pi}\in\mathcal{L}(H^{k+1}(\hat{K}),J^l(\hat{K}))$ laisse
-$P_k(\hat{K})$ invariant, i.e.  si $\forall \hat{p}\in P_k(\hat{K}), \hat{\pi}\hat{p}=\hat{p}$,
-alors:
+$P_k(\hat{K})$ invariant, i.e.  si $\forall \hat{p}\in P_k(\hat{K})$, $\hat{\pi}\hat{p}=\hat{p}$ alors:
 \begin{equation}
-\exists C(\hat{K},\hat{\pi}), \forall \hat{v}\in H^{k+1}(\hat{K}), |\hat{v}-\hat{\pi}\hat{v}|_{j,\hat{K}}
+\exists C(\hat{K},\hat{\pi}),\quad \forall \hat{v}\in H^{k+1}(\hat{K}),\quad |\hat{v}-\hat{\pi}\hat{v}|_{j,\hat{K}}
 \le C |\hat{v}|_{k+1,\hat{K}}
 \end{equation}
 \end{theoreme}

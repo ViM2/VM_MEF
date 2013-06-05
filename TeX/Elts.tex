@@ -90,8 +90,8 @@ $\pi_Kv=\dsum_{i=1}^N v(a_i)p_i$.
 \end{definition}
 
 \begin{theoreme}
-$\pi_kv$ est l'unique élément de $P$ qui prend les mêmes valeurs que $v$ sur les
-points de $\Sigma$.
+$\pi_kv$ est l'unique élément de~$P$ qui prend les mêmes valeurs que~$v$ sur les
+points de~$\Sigma$.
 \end{theoreme}
 
 \medskip
@@ -116,8 +116,8 @@ On notera \textcolorblue{$Q_k$ l'espace vectoriel des polynômes de degré infé
 \subsection*{Éléments finis unidimensionnels}
 
 On discrétise le segment $[a,b]$ avec des polynômes de degrés $1$ à $m$.
-On obtient les éléments suivants:
-
+On obtient les éléments du tableau~\ref{tab:Elem:uni}.
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|cccc}
 Élément & $P_1$ & $P_2$ & ... & $P_m$\\
 \hline
@@ -126,15 +126,15 @@ $\Sigma$   & $\{a,b\}$ & $\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0,\ld
 $P$            & $P_1$ & $P_2$ & ... & $P_m$\\
 \hline
 \end{tabular}
-
+\caption{}\label{tab:Elem:uni}
+\end{table}
 
 \medskip
 \subsection*{Éléments finis bidimensionnels triangulaires}
-
 On discrétise le triangle de sommets $\{a_1, a_2, a_3\}$ avec, le long de chaque
 arête une interpolation polynomiale de degré $1$ à $m$.
-On obtient les éléments suivants:
-
+On obtient les éléments du tableau~\ref{tab:Elem:bi}.
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|cc}
 Élément & $P_1$ & $P_2$ \\
 \hline
@@ -143,15 +143,16 @@ $\Sigma$   & $\{a_1, a_2, a_3\}$ & $\{a_{ij}=\frac{a_i+a_j}2, 1\le i,j\le 3\}$ \
 $P$            & $P_1$ & $P_2$ \\
 \hline
 \end{tabular}
-
+\caption{}\label{tab:Elem:bi}
+\end{table}
 
 \paragraph{Remarque}Les fonctions de base pour l'élément $P_1$ sont définies par $p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques: $p_i = \lambda_i$.
 
 \medskip
 \subsection*{Éléments finis bidimensionnels rectangulaires}
 On discrétise le rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés
-parallèles aux axes.
-
+parallèles aux axes. La formulation est décrite dans le tableau~\ref{tab:Elem:bibi}.
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
 \hline
@@ -160,7 +161,8 @@ $\Sigma$ & $\{a_1, a_2, a_3, a_4\}$\\
 $P$ & $Q_1$\\
 \hline
 \end{tabular}
-
+\caption{}\label{tab:Elem:bibi}
+\end{table}
 
 \begin{figure}[ht]
 \centering
@@ -170,8 +172,8 @@ $P$ & $Q_1$\\
 
 \medskip
 \subsection*{Éléments finis tridimensionnels}
-Éléments tétraédriques:
-
+Les éléments tétraédriques sont définis dans le tableau~\ref{tab:Elem:tri}.
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|cc}
 Élément & $P_1$ & $P_2$ \\
 \hline
@@ -180,10 +182,11 @@ $\Sigma$   & $\{a_1, a_2, a_3, a_4\}$ & $\{a_i\}_{1\le i\le4}\cup\{a_{ij}\}_{1\l
 $P$            & $P_1$ & $P_2$ \\
 \hline
 \end{tabular}
+\caption{}\label{tab:Elem:tri}
+\end{table}
 
-
-Élément parallélépipédique:
-
+Élément parallélépipédique [tableau~\ref{tab:Elem:para}].
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
 \hline
@@ -192,10 +195,11 @@ $\Sigma$ & $\{a_i\}_{1\le i\le8}$\\
 $P$ & $Q_1$\\
 \hline
 \end{tabular}
+\caption{}\label{tab:Elem:para}
+\end{table}
 
-
-Élément prismatique:
-
+Élément prismatique [tableau~\ref{tab:Elem:pri}].
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
 \hline
@@ -204,7 +208,8 @@ $\Sigma$ & $\{a_i\}_{1\le i\le6}$\\
 $P$ & $\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 \hline
 \end{tabular}
-
+\caption{}\label{tab:Elem:pri}
+\end{table}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{Lagrange3D.eps}
@@ -550,43 +555,31 @@ sont très riches et permettent de faire beaucoup de choses.
 Elles ont en outre l'avantage d'être parfois plus faciles à implémenter dans des
 codes industriels que de nouveaux éléments.
 
-
 \medskip
-\section{Validation pratique d'un EF, indicateurs d'erreur}\label{Sec-ValidEF}
-
+\section{Validation pratique et indicateurs d'erreur}\label{Sec-ValidEF}
 Les tests numériques des éléments et au delà des codes de calcul sont indispensables.
 Non seulement ils permettent de vérifier la satisfaction de critères de convergence
 et d'évaluer la précision des éléments finis développés, ce qui peut être
 réalisé par une analyse mathématique, mais ils permettent également de s'assurer
 de la bonne programmation.
-
 \medskip
 Plusieurs types de tests peuvent et doivent être faits, sur plusieurs problèmes
 types. Ces tests concernent aussi bien un seul élément, que plusieurs
 (\textcolorblue{patch-test}),\index{Patch-Test} et même différents maillages.
-
 \medskip
-En mécanique, on distingue les cas suivants:
-\begin{table}\centering\small
-\begin{tabular}{p{3cm}|p{25mm}|p{5cm}|p{5cm}}
+En mécanique, on distingue les cas listés dans le tableau~\ref{tab:Elem:test}.
+\begin{table}[ht]\centering\footnotesize
+\begin{tabular}{>{\raggedright\arraybackslash}p{25mm}|>{\raggedright\arraybackslash}p{25mm}|>{\raggedright\arraybackslash}p{35mm}|>{\raggedright\arraybackslash}p{35mm}}
 \hline
-Problème / solution de référence & Maillage & Vérification & Importance \\
+Problème / solution de référence & Maillage & Vérification & Importance \\ \hline
+Mouvement rigide et déformations constantes & 1 élément & base polynomiale complète / modes parasites & \multirow{2}{35mm}{convergence du modèle élément fini vers la solution théorique lorsque le nombre d'élément tend vers l'infini. Test particulièrement pour les non standard ou non conformes.} \\ \cline{1-3}
+Mouvement rigide et déformations constantes & plusieurs éléments: patch-test cinématique\index{patch-test} ou mécanique & base complète, conformité, indépendance par rapport au maillage (vérification
+de l'assemblage), absence de modes parasites & \\ \hline
+Champ de déformations générales & différents maillages & précision et influence de la distorsion sur les déplacements et la contrante & qualité de l'élément par raport à d'autres éléments existants.\\
 \hline
-Mouvement rigide et déformations constantes & 1 élément & base polynomiale complète / modes
-parasites & \multirow{2}{5cm}{convergence du modèle EF vers la solution théorique lorsque
-le nombre d'élément tend vers l'infini. Test particulièrement pour les non standard ou non
-conformes.} \\
-\cline{1-3}
-Mouvement rigide et déformations constantes & plusieurs éléments: patch-test cinématique\index{Patch-Test}
-ou mécanique & base complète, conformité, indépendance par rapport au maillage (vérification
-de l'assemblage), absence de modes parasites & \\
-\hline
-Champ de déformations générales & différents maillages & précision et influence de la
-distorsion sur les déplacements et la contrainte & qualité de l'élément par rapport à d'autres
-éléments existants.\\
-\hline
-\end{tabular}
+\end{tabular}\caption{Test de validation}\label{tab:Elem:test}
 \end{table}
+
 \medskip
 \subsection{Modes rigides et parasites}
 Le problème consiste à savoir si un élément fini, que l'on définira ici par sa matrice
@@ -597,12 +590,10 @@ mouvement de corps rigide).
 Une méthode consiste à déterminer le nombre de valeurs propres \textcolorred{nulles} de $\MM{k}$.
 Ce nombre doit être égal au nombre de modes rigides: soit 3 en 2D (2 translations, 1 rotation),
 6 en 3D, 1 en axisymétrique. On notera $m_r$ le nombre de modes rigides.
-
 S'il y a plus de valeurs propres nulles que de modes rigides, alors c'est qu'il y a des
 \textcolorblue{modes parasites} (à énergie nulle).
 Ces modes parasites doivent disparaître après assemblage de plusieurs éléments
 afin d'éviter que la matrice de rigidité soit singulière (d'où le test sur plusieurs éléments).
-
 Le schéma d'intégration choisi pour la définition de l'élément (par exemple intégration
 complète, réduite ou sélective) peut influer sur les modes parasites.
 C'est pourquoi, il n'est pas toujours aussi simple de déterminer mathématiquement
@@ -611,7 +602,6 @@ ce facteur.
 \medskip
 Dans ce cas, il est possible d'introduire un champ de déplacement représentant le
 mouvement rigide.
-
 Pour chaque mode rigide $i$, le vecteur $\VV{u^i_n}$ associé à la matrice $\MM{k}$ doit
 vérifier:
 \begin{equation}\MM{k}\VV{u^i_n}=\VV{0}\end{equation}
@@ -620,7 +610,6 @@ on construit un problème EF dans lequel on impose $m_r$ valeurs du vecteur $\VV
 et on détermine numériquement les $n-m_r$ composantes (non imposées) de $\VV{u^i_n}$.
 Celles-ci doivent être identiques aux valeurs théoriques associées au mode
 rigide $i$. Si ce n'est pas le cas, c'est qu'il existe des modes rigides.
-
 \medskip
 \subsection{Modes associés aux déformations constantes}
 Pour converger correctement l'élément doit également représenter
