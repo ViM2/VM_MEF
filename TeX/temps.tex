@@ -1,31 +1,28 @@
-\chapter{Les problèmes non stationnaires}\label{Ch-temps}
+\chapter{Problèmes non stationnaires}\label{Ch-temps}
 \begin{abstract}
 Dans ce chapitre, nous nous intéresserons (brièvement) au cas non stationnaire.
 Toutefois, nous n'aborderons pas les EF espace-temps, car il s'agit d'une formulation
 gourmande en ressources, d'où sa très faible utilisation (bien que la méthode
 soit en elle-même intéressante).
 
-Dans ce chapitre, nous aurons besoin de \og dériver numériquement\fg{}, i.e. de
-construire des schémas numériques approximant des dérivées. 
-Le chapitre \ref{Ch-ED} en annexe permettra à certains de se rafraichir la mémoire
+Dans ce chapitre, nous aurons besoin de <<~dériver numériquement~>>, i.e. de
+construire des schémas numériques approchant des dérivées.
+Le chapitre \ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire
 en regardant comment on résoud les ED et EDP directement... puis numériquement.
 Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
  décrite au paragraphe \ref{Sec-Newmark}.
 \end{abstract}
 
-
-
 \medskip
 \section{Équation non stationnaire de la dynamique}\index{ED-EDP!relation fondamentale de la dynamique}
-
 Considérons l'équation de la dynamique, sous forme non stationnaire (i.e. dépendant du temps):
 \begin{equation} M \ddot u(t) + C \dot u(t) + K u(t)= F(t) \end{equation}
-qui sous forme discrétisée par EF sera réécrite:
-\begin{equation}\colorblue \MM{M}\VV{\ddot q(t)} +  \MM{C}\VV{\dot q(t)} + \MM{K}\VV{q(t)}= \VV{F(t)} \end{equation}
-avec les conditions initiales: $\VV{q(t=0)}=\VV{q_0}$ et $\VV{\dot q(t=0)}=\VV{\dot q_0}$.
+qui sous forme discrétisée par éléments finis sera réécrite:
+\begin{equation}\colorblue \MM{M}\VV{\ddot q}(t) +  \MM{C}\VV{\dot q}(t) + \MM{K}\VV{q}(t)= \VV{F}(t) \end{equation}
+avec les conditions initiales $\VV{q}(t=0)=\VV{q}_0$ et $\VV{\dot q}(t=0)=\VV{\dot q}_0$.
 
 \medskip
-Ce que l'on cherche ici, c'est à obtenir la discrétisation $\VV{q}$ du champ $u$ et ses dérivées
+On cherche à obtenir la discrétisation $\VV{q}$ du champ $u$ et ses dérivées
 temporelles $\VV{\dot q}$ et $\VV{\ddot q}$ à différents instants $t$ et vérifiant l'équation de la dynamique.
 
 \medskip
@@ -34,24 +31,21 @@ temporelle} qui pourra être explicite ou implicite.
 
 \medskip
 Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
-(qui est présenté dans le cas de la résolution des ED au paragraphe \ref{Sec-Newmark}, 
+(qui est présenté dans le cas de la résolution des ED au paragraphe \ref{Sec-Newmark},
 ce complément nous ayant été demandé).
 Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
 \begin{equation}\colorblue
-\left\{
-\begin{array}{l}\displaystyle
-\VV{q_{t+\Delta_t}} = \VV{q_t} + \Delta t \VV{\dot q_t} + \frac{\Delta_t^2}2\left((1-2\beta)\VV{\ddot q_t}
-+2\beta\VV{\ddot q_{t+\Delta_t}}\right) \\[+2mm] 
-\displaystyle
-\VV{\dot q_{t+\Delta_t}} = \VV{\dot q_t}+\Delta_t\left((1-\gamma)\VV{\ddot q_t} + \gamma\VV{\ddot q_{t+\Delta_t}}
+\begin{aligned}
+&\VV{q}_{t+\Delta_t} = \VV{q}_t + \Delta t \VV{\dot q}_t + \frac{\Delta_t^2}2\left((1-2\beta)\VV{\ddot q}_t
++2\beta\VV{\ddot q}_{t+\Delta_t}\right) \\
+&\VV{\dot q}_{t+\Delta_t} = \VV{\dot q}_t+\Delta_t\left((1-\gamma)\VV{\ddot q}_t+\gamma\VV{\ddot q}_{t+\Delta_t}
 \right)
-\end{array}
-\right.
+\end{aligned}
 \end{equation}
 que nous avons écrit sous la forme discrétisée, mais qui serait valable pour l'approximation
 continue (comme présenté au chapitre au paragraphe \ref{Sec-Newmark}).
 
-Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} 
+Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 correspondent à des valeurs particulières de $\beta$ et $\gamma$.
 
 
@@ -64,16 +58,14 @@ finies centrées}.
 
 Dans ce cas, on obtient:
 \begin{equation}\colorgreen
-\left\{
-\begin{array}{l}\displaystyle
-\VV{\ddot q_t} = \frac1{\Delta_t^2} \left( \VV{q_{t+\Delta_t}} - 2\VV{q_t} + \VV{q_{t-\Delta_t}}\right)\\[+4mm] \displaystyle
-\VV{\dot q_t} =  \frac1{2\Delta_t}\left( \VV{q_{t+\Delta_t}} - \VV{q_{t-\Delta_t}}\right)
-\end{array}
-\right.
+\begin{aligned}
+&\VV{\ddot q}_t = \frac1{\Delta_t^2} \left( \VV{q}_{t+\Delta_t} - 2\VV{q}_t + \VV{q}_{t-\Delta_t}\right)\\
+&\VV{\dot q}_t =  \frac1{2\Delta_t}\left( \VV{q}_{t+\Delta_t} - \VV{q}_{t-\Delta_t}\right)
+\end{aligned}
 \end{equation}
 et l'équation de la dynamique discrétisée s'écrit sous la forme d'une équation modifiée:
 \begin{equation}\colorblue
-\MM{\overline{K}} \VV{q_{t+\Delta_t}} = \VV{R}
+\MM{\overline{K}} \VV{q}_{t+\Delta_t} = \VV{R}
 \end{equation}
 avec:
 \begin{equation}\colorgreen
@@ -82,39 +74,37 @@ avec:
 %\quad \text{ et } \quad
 et:
 \begin{equation}\colorgreen
-\VV{R} = \VV{F_t} -\MM{K}\VV{q_t} + \frac1{\Delta_t^2}\MM{M}\left( 2\VV{q_t} -\VV{q_{t-\Delta_t}}\right)
-+\frac1{2\Delta_t}\MM{C}\VV{q_{t-\Delta_t}}
+\VV{R} = \VV{F}_t -\MM{K}\VV{q}_t + \frac1{\Delta_t^2}\MM{M}\left( 2\VV{q}_t -\VV{q}_{t-\Delta_t}\right)
++\frac1{2\Delta_t}\MM{C}\VV{q}_{t-\Delta_t}
 \end{equation}
 qui ne dépendent bien que de données disponibles.
-
 \bigskip
 Le calcul se déroule donc comme suit:
 \begin{itemize}
    \item Solution initiale à $t=0$:
 	\begin{itemize}
-	\item connaissant $\VV{q_0}$ et $\VV{\dot q_0}$, on calcule $\VV{\ddot q_0}$ en résolvant
-	l'équation \og classique\fg{} de la dynamique;
-	\item on calcule ensuite $\VV{q_{-\Delta_t}} = \VV{q_0} -\Delta_t \VV{\dot q_0} + \frac{\Delta_t^2}2
-	\VV{\ddot q_0}$.
+	\item connaissant $\VV{q}_0$ et $\VV{\dot q}_0$, on calcule $\VV{\ddot q}_0$ en résolvant
+	l'équation <<~classique~>> de la dynamique;
+	\item on calcule ensuite $\VV{q}_{-\Delta_t} = \VV{q}_0 -\Delta_t \VV{\dot q}_0 + \frac{\Delta_t^2}2
+	\VV{\ddot q}_0$.
 	\end{itemize}
    \item On dispose alors de tous les éléments pour, à chaque pas de temps
 	$t+\Delta_t$:
 	\begin{itemize}
-	\item résoudre l'équation modifiée, qui nous fournit $\VV{q_{t+\Delta t}}$;
-	\item puis obtenir $\VV{\dot q_t}$ et $\VV{\ddot q_t}$ par le schéma de Newmark adopté,
+	\item résoudre l'équation modifiée, qui nous fournit $\VV{q}_{t+\Delta t}$;
+	\item puis obtenir $\VV{\dot q}_t$ et $\VV{\ddot q}_t$ par le schéma de Newmark adopté,
 	ici celui des différences finies centrées.\index{Schéma! des différences finies centrées}
 	\end{itemize}
 \end{itemize}
-
 \bigskip
 On peut faire les remarques suivantes sur ce type de calcul:
 \begin{itemize}
-   \item Pour un pas de temps donné, $\VV{q_t}$ ne dépend que des données du temps passé,
+   \item Pour un pas de temps donné, $\VV{q}_t$ ne dépend que des données du temps passé,
 	on a donc une résolution vectorielle rapide.
    \item Si les matrices $\MM{M}$ et $\MM{C}$ sont diagonales, alors cette méthode est très efficace
 	même pour les problèmes de grande taille.
-   \item Ce schéma est \textcolorblue{inconditionnellement stable si $\Delta_t\le T_{min}/\pi$},
-	avec $T_{min}$ la plus petite période du système correspondant à l'équation
+   \item Ce schéma est \textcolorblue{inconditionnellement stable si $\Delta_t\le T_{\min}/\pi$},
+	avec $T_{\min}$ la plus petite période du système correspondant à l'équation
 	de la dynamique (classique).
    \item la précision est de l'ordre de $\Delta_t^2$.
    \item L'amortissement numérique est nul.
@@ -123,30 +113,24 @@ On peut faire les remarques suivantes sur ce type de calcul:
 	Il n'y a pas automatiquement stabilité du schéma, celle-ci est à calculer pour chaque
 	schéma.
 \end{itemize}
-
-
-
 \bigskip
 \section{Schéma implicite: schéma de Newmark classique}\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 
 Dans le cas \textcolorred{$\beta=1/4$ et $\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite
-de Newmark},\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} 
+de Newmark},\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
 
 Dans ce cas, on obtient:
 \begin{equation}\colorgreen
-\left\{
-\begin{array}{l}\displaystyle
-\VV{\ddot q_{t+\Delta_t}} = \frac4{\Delta_t^2} \left( \VV{q_{t+\Delta_t}} -\VV{q_t}\right) 
--\frac4{\Delta_t}\left( \VV{\dot q_t} - \VV{\ddot q_t}\right)\\[+2mm] 
-\displaystyle
-\VV{\dot q_{t+\Delta_t}} = \VV{\dot q_t} + \frac{\Delta_t}2\left( \VV{\ddot q_{t+\Delta_t}} + \VV{\ddot q_t}\right)
-\end{array}
-\right.
+\begin{aligned}
+&\VV{\ddot q}_{t+\Delta_t} = \frac4{\Delta_t^2} \left( \VV{q}_{t+\Delta_t} -\VV{q}_t\right)
+-\frac4{\Delta_t}\left( \VV{\dot q}_t - \VV{\ddot q}_t\right)\\
+&\VV{\dot q}_{t+\Delta_t} = \VV{\dot q}_t + \frac{\Delta_t}2\left( \VV{\ddot q}_{t+\Delta_t} + \VV{\ddot q}_t\right)
+\end{aligned}
 \end{equation}
 et l'équation de la dynamique discrétisée s'écrit encore sous la forme d'une équation modifiée:
 \begin{equation}\colorblue
-\MM{\overline{K}} \VV{q_{t+\Delta_t}} = \VV{R}
+\MM{\overline{K}} \VV{q}_{t+\Delta_t} = \VV{R}
 \end{equation}
 mais cette fois avec:
 \begin{equation}\colorgreen
@@ -155,19 +139,18 @@ mais cette fois avec:
 %\quad \text{ et } \quad
 et:
 \begin{equation}\colorgreen
-\VV{R} = \VV{F_{t+\Delta_t}} + \MM{M}\left(\frac4{\Delta_t^2}\VV{q_t} + \frac4{\Delta_t}\VV{\dot q_t} 
-+ \VV{\ddot q_t}\right)
-+\MM{C}\left( \frac2{\Delta_t}\VV{q_t} + \VV{\dot q_t}\right)
+\VV{R} = \VV{F}_{t+\Delta_t} + \MM{M}\left(\frac4{\Delta_t^2}\VV{q}_t + \frac4{\Delta_t}\VV{\dot q}_t
++ \VV{\ddot q}_t\right)
++\MM{C}\left( \frac2{\Delta_t}\VV{q}_t + \VV{\dot q}_t\right)
 \end{equation}
 qui dépendent également des données au même pas de temps.
-
 \medskip
 Le calcul se déroule donc comme suit:
 \begin{itemize}
    \item Solution initiale à $t=0$:
 	\begin{itemize}
-	\item connaissant $\VV{q_0}$ et $\VV{\dot q_0}$, on calcule $\VV{\ddot q_0}$ en résolvant
-	l'équation \og classique\fg{} de la dynamique;
+	\item connaissant $\VV{q}_0$ et $\VV{\dot q}_0$, on calcule $\VV{\ddot q}_0$ en résolvant
+	l'équation <<~classique~>> de la dynamique;
 	\item on construit $\MM{\overline{K}}$ et, si $\MM{M}$, $\MM{C}$, $\MM{K}$ et $\Delta_t$ sont constants
 	(ce qui est généralement le cas), la triangulariser.
 	\end{itemize}
@@ -175,18 +158,17 @@ Le calcul se déroule donc comme suit:
 	\begin{itemize}
 	\item calculer $\VV{R}$ (que l'on appelle le \textcolorblue{résidu}, d'où le choix de la notation);
 	\item calculer $\MM{\overline{K}}$ et triangulariser si nécessaire;
-	\item résoudre l'équation modifiée, qui nous fournit $\VV{q_{t+\Delta t}}$;
-	\item puis obtenir $\VV{\dot q_t}$ et $\VV{\ddot q_t}$ par le schéma de Newmark adopté,
+	\item résoudre l'équation modifiée, qui nous fournit $\VV{q}_{t+\Delta t}$;
+	\item puis obtenir $\VV{\dot q}_t$ et $\VV{\ddot q}_t$ par le schéma de Newmark adopté,
 	ici celui de Newmark implicite.
 	\end{itemize}
 \end{itemize}
-
 \medskip
 On peut faire les remarques suivantes sur ce type de calcul:
 \begin{itemize}
-   \item Pour un pas de temps donné, $\VV{q_t}$ dépend également des données du même pas de temps,
+   \item Pour un pas de temps donné, $\VV{q}_t$ dépend également des données du même pas de temps,
 	on a donc une résolution matricielle coûteuse.
-   \item Ce schéma est \textcolorblue{inconditionnellement stable}, \textcolorgreen{et donc comme on 
+   \item Ce schéma est \textcolorblue{inconditionnellement stable}, \textcolorgreen{et donc comme on
 	peut utiliser de plus grands pas de temps, on réduit le coût mentionné à la ligne précédente.}
    \item la précision est de l'ordre de $\Delta_t^2$, \textcolorgreen{et donc comme on ne
 	peut pas utiliser de trop grands pas de temps sans réduire la précision...}
@@ -203,32 +185,26 @@ On peut faire les remarques suivantes sur ce type de calcul:
 \section{Comparaison des méthodes explicite et implicite}\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{Schéma! des différences finies centrées}
 
 \medskip
-Concernant la méthode implicite:
-\begin{itemize}
-   \item On retiendra d'abord que cette méthode nécessite moins de mémoire, est donc plus
-	rapide et amieux daptée aux \textcolorblue{problèmes de grandes tailles}.
-   \item Comme cette méthode nécessite moins de mémoire et des petits pas de temps (pour la stabilité), 
+Concernant la méthode implicite, on retiendra d'abord que cette méthode nécessite moins de mémoire, est donc plus
+	rapide et mieux adaptée aux \textcolorblue{problèmes de grandes tailles}.
+Comme cette méthode nécessite moins de mémoire et des petits pas de temps (pour la stabilité),
 	elle est bien adaptée au cas des \textcolorblue{chocs}.
-   \item Comme elle n'est que conditionnellement stable, elle est plutôt adaptée à la résolution élément 
+Comme elle n'est que conditionnellement stable, elle est plutôt adaptée à la résolution élément
 	par élément, donc au \textcolorblue{traitement local}.
-   \item Enfin, cette méthode est très robuste numériquement et permet de traiter le cas de 
-	\textcolorblue{non linéarités couplées}.
-\end{itemize}
+Enfin, cette méthode est très robuste numériquement et permet de traiter le cas de \textcolorblue{non linéarités couplées}.
+
 
 \medskip
-Alors que pour la méthode implicite, on retiendra que:
-\begin{itemize}
-   \item Comme cette méthode est inconditionnellement stable, elle est bien adaptée à la résolution 
+Concernant la méthode implicite, on retiendra que puisque cette méthode est inconditionnellement stable, elle est bien adaptée à la résolution
 	de \textcolorblue{problèmes globaux} (qui nécessitent qu'il y ait convergence).
-   \item De plus, cette méthode est bien moins robuste numériquement que la précédente (pivots nuls,
+De plus, cette méthode est bien moins robuste numériquement que la précédente (pivots nuls,
 	divergence)...
-   \item Enfin et surtout, on se souviendra que c'est une méthode \textcolorblue{coûteuse} en
+Enfin et surtout, on se souviendra que c'est une méthode \textcolorblue{coûteuse} en
 	mémoire et en temps...
-\end{itemize}
 
 \medskip
-\begin{figure}[htb]
-\centerline{\includegraphics[height=80mm]{Im-Ex-plicite.eps}}
+\begin{figure}[ht]
+\centering\includegraphics[height=80mm]{Im-Ex-plicite.eps}
 \caption{Domaines d'utilisation des méthodes implicite et explicite}\label{Fig-Im-Ex-plicite}
 \end{figure}
 La \fig{Fig-Im-Ex-plicite} donne, de manière imagée, les domaines d'utilisation des méthodes implicite et explicite.
@@ -246,15 +222,15 @@ il n'a pas encore été question de projection sur les modes propres.
 
 \medskip
 On peut montrer que les modes de vibration de la structure forment une base. Il peut
-paraître intéressant de chercher la solution en temps du problème sous forme d'une 
+paraître intéressant de chercher la solution en temps du problème sous forme d'une
 approximation par projection sur la base des quelques $N$ premiers modes propres, i.e.
 de rechercher $N$ fonctions scalaires du temps.
 
-Lorsque l'on dispose déjà des $N$ premiers modes et lorsque le nombre $n$ de ddl est important, 
+Lorsque l'on dispose déjà des $N$ premiers modes et lorsque le nombre $n$ de ddl est important,
 cette approche peut s'avérer particulièrement efficace.
 Par ailleurs, lorsque les modes sont associés à des mouvements simples de la structure, il
-peut être facile pour un ingénieur un peu expérimenté d'imaginer le nombre de modes à 
-utiliser pour représenter le phénomène. 
+peut être facile pour un ingénieur un peu expérimenté d'imaginer le nombre de modes à
+utiliser pour représenter le phénomène.
 
 \medskip
 La méthode de la décomposition modale sera exposée au paragraphe \ref{Sec-RT}, lorsque
