@@ -236,7 +236,7 @@ pour un produit scalaire\index{Produit scalaire} de fonctions donné.
 Le produit scalaire\index{Produit scalaire} de fonctions le plus simple est l'intégrale du produit de ces fonctions
 sur un intervalle borné:
 \begin{equation}
-    \langle f,g \rangle=\int_a^b f(x)g(x)~\mathrm dx
+    \langle f,g \rangle=\int_a^b f(x)g(x)~\dd x
 \end{equation}
 
 \medskip
@@ -248,7 +248,7 @@ doit être finie (voir espaces $L^p$).
 Par contre, les bornes $a$ et $b$ peuvent être infinies.
 Il vient alors:
 \begin{equation}
-    \langle f,g \rangle=\int_a^b f(x)g(x)\varpi(x)~\mathrm dx
+    \langle f,g \rangle=\int_a^b f(x)g(x)\varpi(x)~\dd x
 \end{equation}
 
 La norme associée est définie par $||f||=\sqrt{\langle f,f \rangle}$.
@@ -304,11 +304,11 @@ recherchée par construction.
 Les \textcolorblue{polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} 
 sont définis comme suit :\index{Polynôme! d'Hermite}
 \begin{equation}
-    H_n(x)=(-1)^n e^{x^2/2}\frac{\mathrm{d}^n}{\mathrm{d}x^n}e^{-x^2/2} \quad \text{(forme dite probabiliste)}
+    H_n(x)=(-1)^n e^{x^2/2}\frac{\dd^n}{\dd x^n}e^{-x^2/2} \quad \text{(forme dite probabiliste)}
 \end{equation}
 ou,
 \begin{equation}
-    \widehat{H}_n(x)=(-1)^n e^{x^2}\frac{\mathrm{d}^n}{\mathrm{d}x^n}e^{-x^2} \quad \text{(forme dite physique)}
+    \widehat{H}_n(x)=(-1)^n e^{x^2}\frac{\dd^n}{\dd x^n}e^{-x^2} \quad \text{(forme dite physique)}
 \end{equation}
 
 Les deux définitions sont liées par la propriété d'échelle suivante: 
@@ -342,12 +342,12 @@ Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Fran�
 $H_n$ est un polynôme de degré $n$. 
 Ces polynômes sont orthogonaux pour la mesure $\mu$ de densité:
 \begin{equation}
-    \frac{\mathrm{d}\mu(x)}{\mathrm{d}x} = \frac{e^{-x^2/2}}{\sqrt{2\pi}}.
+    \frac{\dd\mu(x)}{\dd x} = \frac{e^{-x^2/2}}{\sqrt{2\pi}}.
 \end{equation}
 
 Ils vérifient :
 \begin{equation}
-    \int_{-\infty}^{+\infty} H_n(x)H_m(x)\,e^{-x^2/2}\,\mathrm{d}x=n!2^n\sqrt{2\pi}~\delta_{nm}
+    \int_{-\infty}^{+\infty} H_n(x)H_m(x)\,e^{-x^2/2}\,\dd x=n!2^n\sqrt{2\pi}~\delta_{nm}
 \end{equation}
 où $\delta_{n,m}$ est le symbole de Kronecker.\index[aut]{Kronecker (Leopold), 1823-1891, Allemand}
 
@@ -358,11 +358,11 @@ on utilise alors la jolie expression de \textcolorblue{base de chaos polynomial}
 Ces polynômes forment donc une base orthogonale de l'espace de Hilbert\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{Produit scalaire!de $L^2$}\index{Espace!de Lebesgue} 
 $L^2(\CC,\mu)$ des fonctions boréliennes telles que:
 \begin{equation}
-    \int_{-\infty}^{+\infty}|f(x)|^2\,\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,\mathrm{d}x< +\infty,
+    \int_{-\infty}^{+\infty}|f(x)|^2\,\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,\dd x< +\infty,
 \end{equation}
 dans lequel le produit scalaire est donné par l'intégrale:\index{Produit scalaire}\index{Polynôme! orthogonalité}
 \begin{equation}
-    \langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\,\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,\mathrm{d}x.
+    \langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\,\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,\dd x.
 \end{equation}
 
 Des propriétés analogues sont vérifiées par les polynômes de Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} 
@@ -433,16 +433,16 @@ pour lesquels  l'intervalle d'orthogonalité est $[-1, 1]$ et la fonction poids 
 constante de valeur $1$: 
 ces polynômes sont orthogonaux par rapport au produit scalaire défini sur $\RR[X]$ par:\index{Produit scalaire}\index{Polynôme! orthogonalité}
 \begin{equation}
-    \langle P,Q\rangle= \int_{-1}^{+1} P(x) Q(x)\, \mathrm{d}x
+    \langle P,Q\rangle= \int_{-1}^{+1} P(x) Q(x)\, \dd x
    \quad \text{ soit } \quad 
-    \langle P_m,P_n\rangle= \int_{-1}^{1} P_m(x)P_n(x)\,\mathrm{d}x = 0\quad \mathrm{pour } m \ne n 
+    \langle P_m,P_n\rangle= \int_{-1}^{1} P_m(x)P_n(x)\,\dd x = 0\quad \text{ pour } m \ne n 
 \end{equation}
 
 \medskip
 De plus, comme $(P_n)_{n\leq N}$ est une base de $\RR_N[X]$, 
 on a $P_{N+1} \in (\RR_N[X])^\bot$, i.e.:
 \begin{equation}
-    \forall Q \in \RR_N[X], \int_{-1}^{1} P_{N+1}(x)Q(x)\,\mathrm{d}x = 0
+    \forall Q \in \RR_N[X], \int_{-1}^{1} P_{N+1}(x)Q(x)\,\dd x = 0
 \end{equation}
 
 \medskip
@@ -505,7 +505,7 @@ par rapport à un produit scalaire de fonctions assorti d'une pondération spéc
 Les $T_n$ sont orthogonaux pour le produit scalaire sur l'intervalle $]-1,1[$ avec la 
 pondération $\frac1{\sqrt{1-x^2}}$, i.e.:\index{Produit scalaire}\index{Polynôme! orthogonalité}
 \begin{equation}
-    \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}\,\mathrm{d}x= \begin{cases} 0&\text{si}~n\ne m\\ \pi&\text{si}~n=m=0\\ \pi/2&\text{si}~n=m\ne 0~. \end{cases} 
+    \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}\,\dd x= \begin{cases} 0&\text{si}~n\ne m\\ \pi&\text{si}~n=m=0\\ \pi/2&\text{si}~n=m\ne 0~. \end{cases} 
 \end{equation}
 
 \begin{equation}
@@ -545,7 +545,7 @@ Les premiers polynômes de Tchebychev de première espèce sont :\index[aut]{Tch
  Les $U_n$ sont orthogonaux\index{Polynôme! orthogonalité} pour le produit scalaire\index{Produit scalaire} 
 sur l'intervalle $[-1,1]$ avec la pondération $\sqrt{1-x^2}$, i.e.:
 \begin{equation}
-    \int_{-1}^1 U_n(x)U_m(x)\sqrt{1-x^2}\,\mathrm{d}x = \begin{cases} 0&\text{si}~n\ne m\\ \pi/2 &\text{si}~n=m~. \end{cases} 
+    \int_{-1}^1 U_n(x)U_m(x)\sqrt{1-x^2}\,\dd x = \begin{cases} 0&\text{si}~n\ne m\\ \pi/2 &\text{si}~n=m~. \end{cases} 
 \end{equation}
 
 \begin{equation}\forall n,\quad 
@@ -884,7 +884,7 @@ Le nombre de points composant ce polygone est égal à $m-n$.
 \medskip
 Les $m-n$ fonctions B-splines de degré $n$ sont définies par récurrence sur le degré inférieur :
 \begin{equation}
-    b_{j, 0}(t) := \left\{ \begin{matrix} 1 & \mathrm{si} \quad t_j \leqslant t < t_{j + 1} \\ 0 & \text{ sinon} \end{matrix} \right. 
+    b_{j, 0}(t) := \left\{ \begin{matrix} 1 & \text{ si } \quad t_j \leqslant t < t_{j + 1} \\ 0 & \text{ sinon} \end{matrix} \right. 
 \end{equation}
 \begin{equation}
     b_{j, n}(t) := \frac{t - t_j}{t_{j + n} - t_j} b_{j, n - 1}(t) + \frac{t_{j + n + 1} - t}{t_{j + n + 1} - t_{j + 1}} b_{j + 1, n - 1}(t).
@@ -912,7 +912,7 @@ La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle.
 
 Une B-spline de degré $n$, $b_{i,n}(t)$ est non nulle dans l'intervalle $[t_i, t_{i+n+1}]$:
 \begin{equation}
-    b_{i,n}(t) = \left\{\begin{matrix} >0 & \mathrm{si} \quad t_{i} \leqslant t < t_{i+n+1} \\ 0 & \mathrm{sinon} \end{matrix} \right. 
+    b_{i,n}(t) = \left\{\begin{matrix} >0 & \text{ si } \quad t_{i} \leqslant t < t_{i+n+1} \\ 0 & \text{ sinon } \end{matrix} \right. 
 \end{equation}
 En d'autres termes, \textcolorblue{déplacer un point de contrôle ne modifie que localement 
 l'allure de la courbe.}

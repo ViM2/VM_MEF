@@ -480,7 +480,7 @@ Considérons un solide linéaire élastique homogène 2D sur lequel agissent des
 
 Les efforts de traction s'écrivent: $T_i=\sigma_{ij}n_j$ (où $n$ est la normale sortante à $\Gamma$).
 
-La densité d'énergie interne élastique est $\omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}d\varepsilon_{ij}$. 
+La densité d'énergie interne élastique est $\omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}\dd\varepsilon_{ij}$. 
 
 On travaille en l'absence de forces de volumes: $\sigma_{ij,i}=0$
 
@@ -488,20 +488,20 @@ et sous hypothèse de petites déformations: $\varepsilon_{ij}=(u_{i,j}+u_{j,i})
 \end{tabular}
 
 Alors les intégrales curvilignes suivantes:
-$ Q_j =\dint_\Gamma \left(\omega n_j- T_k u_{k,j}\right)d\Gamma$ pour $j, k=1,2,3$
+$ Q_j =\dint_\Gamma \left(\omega n_j- T_k u_{k,j}\right)\dd\Gamma$ pour $j, k=1,2,3$
 peuvent s'écrire:
-$ Q_j =\dint_\Gamma \left(\omega n_j- \sigma_{lk}n_l u_{k,j}\right)d\Gamma 
-=\int_\Gamma \left(\omega \delta_{jl}- \sigma_{lk} u_{k,j}\right)n_l d\Gamma $
+$ Q_j =\dint_\Gamma \left(\omega n_j- \sigma_{lk}n_l u_{k,j}\right)\dd\Gamma 
+=\int_\Gamma \left(\omega \delta_{jl}- \sigma_{lk} u_{k,j}\right)n_l \dd\Gamma $
 
 Le théorème de divergence puis quelques manipulations de l'opérande permettent d'arriver au résultat
 suivant:
 \textcolorblue{$ Q_j = 0$}.
 De là, on en tire que la densité dénergie interne élastique
-$\omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}d\varepsilon_{ij} $
+$\omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}\dd\varepsilon_{ij} $
 est indépendante du chemin dans l'espace des déformations.
 
 Le même type de calcul permet de montrer que la densité d'énergie complémentaire
-$ \Omega = \dint_0^{\sigma_{kl}} \varepsilon_{ij}d\sigma_{ij} $
+$ \Omega = \dint_0^{\sigma_{kl}} \varepsilon_{ij}\dd\sigma_{ij} $
 est indépendante du chemin dans l'espace ds contraintes.
 
 \medskip
@@ -509,7 +509,7 @@ On considère toujours notre solide linéaire élastique homogène 2D sur lequel
 force $T_k$.
 
 On définit \textcolorblue{l'intégrale $J$} comme:
-\begin{equation} J = Q_1 =\dint_\Gamma \left(\omega n_1- T_k u_{k,1}\right)d\Gamma \end{equation}
+\begin{equation} J = Q_1 =\dint_\Gamma \left(\omega n_1- T_k u_{k,1}\right)\dd\Gamma \end{equation}
 
 D'après ce qui précède, \textcolorblue{$J=0$}, et donc
 $J_1=\dint_{\Gamma_1} ... = J_2=\dint_{\Gamma_2} ...$.

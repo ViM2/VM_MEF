@@ -126,7 +126,7 @@ $\Sigma$   & $\{a,b\}$ & $\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0,\ld
 $P$            & $P_1$ & $P_2$ & ... & $P_m$\\
 \hline
 \end{tabular}
-\caption{}\label{tab:Elem:uni}
+\caption{Éléments de Lagrange unidimensionnels de degrés 1 à $m$}\label{tab:Elem:uni}
 \end{table}
 
 \medskip
@@ -143,7 +143,7 @@ $\Sigma$   & $\{a_1, a_2, a_3\}$ & $\{a_{ij}=\frac{a_i+a_j}2, 1\le i,j\le 3\}$ \
 $P$            & $P_1$ & $P_2$ \\
 \hline
 \end{tabular}
-\caption{}\label{tab:Elem:bi}
+\caption{Éléments de Lagrange bidimensionnels triangulaires de degrés 1 et 2}\label{tab:Elem:bi}
 \end{table}
 
 \paragraph{Remarque}Les fonctions de base pour l'élément $P_1$ sont définies par $p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques: $p_i = \lambda_i$.
@@ -161,7 +161,7 @@ $\Sigma$ & $\{a_1, a_2, a_3, a_4\}$\\
 $P$ & $Q_1$\\
 \hline
 \end{tabular}
-\caption{}\label{tab:Elem:bibi}
+\caption{Élément de Lagrange bidimensionnel rectangulaire de degré 1}\label{tab:Elem:bibi}
 \end{table}
 
 \begin{figure}[ht]
@@ -172,7 +172,15 @@ $P$ & $Q_1$\\
 
 \medskip
 \subsection*{Éléments finis tridimensionnels}
-Les éléments tétraédriques sont définis dans le tableau~\ref{tab:Elem:tri}.
+
+On distingue les éléments finis tridimensionnels suivants, qui seront illustrés à la figure \ref{Lagrange3D}:
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{Lagrange3D.eps}
+\caption{Éléments finis de Lagrange 3D: tétraédriques $P_1$ et $P_2$, parallélépipédique $Q_1$ et prismatique}\label{Lagrange3D}
+\end{figure}
+\begin{itemize}
+   \item les éléments tétraédriques, définis dans le tableau~\ref{tab:Elem:tri};
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|cc}
 Élément & $P_1$ & $P_2$ \\
@@ -182,10 +190,10 @@ $\Sigma$   & $\{a_1, a_2, a_3, a_4\}$ & $\{a_i\}_{1\le i\le4}\cup\{a_{ij}\}_{1\l
 $P$            & $P_1$ & $P_2$ \\
 \hline
 \end{tabular}
-\caption{}\label{tab:Elem:tri}
+\caption{Éléments de Lagrange tridimensionnels tétrahédriques de degrés 1 et 2}\label{tab:Elem:tri}
 \end{table}
 
-Élément parallélépipédique [tableau~\ref{tab:Elem:para}].
+\item les élément parallélépipédique, définis au tableau~\ref{tab:Elem:para};
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
@@ -195,10 +203,10 @@ $\Sigma$ & $\{a_i\}_{1\le i\le8}$\\
 $P$ & $Q_1$\\
 \hline
 \end{tabular}
-\caption{}\label{tab:Elem:para}
+\caption{Élément de Lagrange tridimensionnel parallélépipédique de degré 1}\label{tab:Elem:para}
 \end{table}
 
-Élément prismatique [tableau~\ref{tab:Elem:pri}].
+\item et les élément prismatique, définis selon le tableau~\ref{tab:Elem:pri}.
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
 Élément & $Q_1$\\
@@ -208,14 +216,9 @@ $\Sigma$ & $\{a_i\}_{1\le i\le6}$\\
 $P$ & $\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 \hline
 \end{tabular}
-\caption{}\label{tab:Elem:pri}
+\caption{Élément de Lagrange tridimensionnel prismatique}\label{tab:Elem:pri}
 \end{table}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\textwidth]{Lagrange3D.eps}
-\caption{Éléments finis de Lagrange 3D: tétraédriques $P_1$ et $P_2$, parallélépipédique $Q_1$ et prismatique}\label{Lagrange3D}
-\end{figure}
-
+\end{itemize}
 
 
 \medskip
@@ -250,7 +253,7 @@ Voir figure \ref{trsfaffine} pour une illustration d'une transformation affine.
 \end{figure}
 
 \medskip
-Les EF de références sont ceux obtenus, dans les cas présentés ci-dessus avec:
+Les éléments finis de références sont ceux obtenus, dans les cas présentés ci-dessus avec:
 \begin{itemize}
 \item le segment $[0,1]$ en 1D;
 \item le triangle unité de sommets $(0,0)$, $(0,1)$, $(1,0)$,
@@ -270,7 +273,7 @@ $\Omega$ sur lequel on réalise un maillage $\mathcal{T}_h$ à partir d'une fami
 de $N_e$ éléments finis $(K_i, \Sigma_i, P_i)_{i=1,\ldots,N_e}$.
 
 \medskip
-Par unisolvance, la solution approchée $u_h$ sera entièrement définie sur chaque EF
+Par unisolvance, la solution approchée $u_h$ sera entièrement définie sur chaque élément fini
 par ses valeurs sur les points de $\Sigma_i$, nommés \textcolorblue{nœuds} du maillage.
 Notons $(a_1,\ldots, a_{N_h})$ les nœuds du maillage ($N_h<N_e . Card\Sigma_i$).
 Le problème approché revient à déterminer les valeurs de $u_h$ aux points $a_i$:
@@ -311,7 +314,7 @@ en dimension 3.
 \section{Éléments d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
 \medskip
-\subsection{Classe d'un EF}\index{Classe d'un EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
+\subsection{Classe d'un éléments finis}\index{Classe d'un EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
 Une question naturelle est de savoir quelle est la régularité de la solution approchée
 $u_h$. En particulier, $u_h$ est-elle continue? dérivable?
@@ -322,14 +325,15 @@ Par construction, on voit que la régularité de $\varphi_i$ sera donnée par sa
 régularité au niveau des interfaces entre les éléments adjacents formant
 son support.
 
-Dans les EF de Lagrange, $\varphi_i$ est construite pour être continue
+Dans les éléments finis de Lagrange, $\varphi_i$ est construite pour être continue
 d'un élément à l'autre, mais pas sa dérivée... c'est cette contrainte que
 nous allons introduire maintenant.
 
-\medskip
-\subsection{EF d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
-\begin{definition}[EF d'Hermite]
+\medskip
+\subsection{Éléments finis d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
+
+\begin{definition}[Élément fini d'Hermite]
 Un \textcolorblue{élément fini d'Hermite ou élément fini général} est un
 triplet $(K, \Sigma, P)$ tel que:
 \begin{itemize}
@@ -354,7 +358,7 @@ $\pi_kv$ est l'unique élément de $P$ qui prend les mêmes valeurs que $v$ sur 
 points de $\Sigma$.
 
 \medskip
-On remarque immédiatement que si $\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les EF
+On remarque immédiatement que si $\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les éléments finis
 de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{EF de Lagrange}
 
 Cette généralisation permet d'introduire des opérations de dérivation dans $\Sigma$,
@@ -373,8 +377,19 @@ ou même plus, et il en sera donc de même pour la solution approchée $u_h$.
 
 
 \medskip
-\subsection*{EF 1D}
+\subsection{Éléments uni- et bidimensionnels}
+%\subsection*{Éléments finis unidimensionnels}
 
+Nous présentons quelques éléments finis d'Hermite utilisés classiquement, dont certains seront illustrés
+à la figure~\ref{Hermite2D}:
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{Hermite2D.eps}
+\caption{\label{Hermite2D} Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire $Q_3$}
+\end{figure}
+\begin{itemize}
+\item les \textcolorblue{éléments finis unidimensionnels cubiques et quintiques} sont définis au tableau~\ref{tab:ElemH:uni};
+\begin{table}[ht]\centering\small
 \begin{tabular}{c|cc}
 Élément d'Hermite & cubique & quintique\\
 \hline
@@ -384,48 +399,55 @@ $P$            & $P_3$ & $P_3$\\
 Régularité & $C^1$ et $H^2$ & $C^2$ et $H^3$\\
 \hline
 \end{tabular}
+\caption{Éléments d'Hermite unidimensionnels de degrés 3 et 5}\label{tab:ElemH:uni}
+\end{table}
 
+\item les \textcolorblue{éléments finis bidimensionnels triangulaires}:
+	on distingue l'élément  \textcolorblue{cubique d'Hermite}, qui est $C^0$, et
+        l'éléments \textcolorblue{d'Argyris}, qui est $C^1$.
+	Ils sont présentés au tableau~\ref{tab:ElemH:bi};
+\begin{table}[ht]\centering\small
+\begin{tabular}{c|c}
+Élément & d'Hermite\\
+\hline
+$K$	      & triangle de sommets $\{a_1, a_2, a_3\}$\\
+$\Sigma$   & $\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), i=1, 2, 3\right\} \cup\left\{p(a_0)\right\}$\\
+$P$            & $P_3$\\
+Régularité & $C^0$, mais pas $C^1$\\
+\hline
+\end{tabular}
 
-\medskip
-\subsection*{EF 2D triangulaire}
-
-\begin{itemize}
-\item Élément d'Hermite cubique:
-	\begin{itemize}
-	\item $K=$ triangle de sommets $\{a_1, a_2, a_3\}$;
-	\item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), i=1, 2, 3\right\}
-		\cup\left\{p(a_0)\right\}$;
-	\item $P=P_3$;
-	\item élément $C^0$, mais pas $C^1$.
-	\end{itemize}
-\item Élément d'Argyris:
-	\begin{itemize}
-	\item $K=$ triangle de sommets $\{a_1, a_2, a_3\}$;
-	\item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
+\begin{tabular}{c|cc}
+Élément & d'Argyris\\
+\hline
+$K$	      & triangle de sommets $\{a_1, a_2, a_3\}$ \\
+$\Sigma$   & $\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
 		\frac{\partial^2 p}{\partial x^2}(a_i), \frac{\partial^2 p}{\partial y^2}(a_i),
 		\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1, 2, 3\right\}
-		\cup\left\{\frac{\partial p}{\partial n}(a_{ij}), 1\le i<j\le3\right\}$;
-	\item $P=P_5$
-	\item élément $C^1$
-	\end{itemize}
-\end{itemize}
+		\cup\left\{\frac{\partial p}{\partial n}(a_{ij}), 1\le i<j\le3\right\}$\\
+$P$            & $P_5$\\
+Régularité & $C^1$\\
+\hline
+\end{tabular}
 
-\medskip
-\subsection*{EF 2D rectangulaire}
+\caption{Éléments bidimensionnels triangulaires d'Hermite et d'Argyris}\label{tab:ElemH:bi}
+\end{table}
 
-Élément $Q_3$:
-\begin{itemize}
-\item $K=$ rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes;
-\item $\Sigma=\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
-	\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1,\ldots, 4\right\}$;
-\item $P=P_3$;
-\item élément $C^1$.
+\item l'\textcolorblue{élément fini bidimensionnel rectangulaire} défini au tableau~\ref{tab:ElemH:bibi};
+\begin{table}[ht]\centering\small
+\begin{tabular}{c|c}
+Élément d'Hermite & $Q_3$ \\
+\hline
+$K$	      & rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes\\
+$\Sigma$   & $\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
+	\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1,\ldots, 4\right\}$\\
+$P$            & $P_3$ \\
+Régularité & $C^1$\\
+\hline
+\end{tabular}
+\caption{Élément bidimensionnel rectangulaire d'Hermite $Q_3$}\label{tab:ElemH:bibi}
+\end{table}
 \end{itemize}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\textwidth]{Hermite2D.eps}
-\caption{\label{Hermite2D} Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire $Q_3$}
-\end{figure}
 
 
 \medskip
@@ -490,7 +512,7 @@ discontinues.
 \bigskip
 Plusieurs stratégies sont envisageables:
 \begin{description}
-\item[Post-traitement]\index{Post-traitement}
+\item[\textcolorblue{Post-traitement:}]\index{Post-traitement}
 
 	Dans cette méthode, on effectue le calcul en déplacements, de manière classique.
 	On obtient les contraintes de manière toute aussi classique, mais celles-ci
@@ -501,7 +523,7 @@ Plusieurs stratégies sont envisageables:
 	en imposant la vérification des équations d'équilibre (voir par exemple
 	la méthode de Reissner locale, qui applique la fonctionnelle de Reissner uniquement
 	le long de l'interface).\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
-\item[Élément mixte]
+\item[\textcolorblue{Élément mixte:}]
 
 	La fonctionnelle d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger} possède les champs de déplacement et de
 	contrainte comme inconnues. Elle conduit à un système de type mixte
@@ -514,7 +536,7 @@ Plusieurs stratégies sont envisageables:
 	Si l'on souhaite utiliser ce type d'élément, il faudra par exemple, faire une
 	condensation statique des composantes devant être discontinues, ou
 	utiliser une méthode de post-traitement.
-\item[Élément hybride]
+\item[\textcolorblue{Élément hybride:}]
 
 	La fonctionnelle de Pian et Tong (mixte hybride)\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois}
 	présentée précédemment
@@ -528,7 +550,7 @@ Plusieurs stratégies sont envisageables:
 	Notons qu'un avantage de cette formulation c'est qu'elle nécessite la matrice
 	de souplesse $[S]$ au lieu de la matrice de Hooke $[H]$, ce qui permet de
 	traiter le cas des matériaux incompressibles.\index{Loi de comportement!Hooke}\index{Loi de comportement!incompressible}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
-\item[Multiplicateurs de Lagrange]\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+\item[\textcolorblue{Multiplicateurs de Lagrange:}]\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 	
 	D'une manière évidente, la continuité du champ de déplacements
 	à l'interface $\li$ entre deux éléments $~^1$ et $~^2$ peut être

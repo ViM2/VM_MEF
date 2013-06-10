@@ -74,8 +74,8 @@ On réécrit l'équation homogène :
 \end{equation}
 sur un intervalle $I$ où $a(x)$ ne s'annule pas.
 
-Ensuite, en notant $A(x)$, une primitive de la fonction $\frac{b(x)}{a(x)}$ (i.e on a 
-$A'(x) = \frac{b(x)}{a(x)}$), il vient:
+Ensuite, en notant $A(x)$, une primitive de la fonction $\frac{b(x)}{a(x)}$, \textcolorgris{i.e on a 
+$A'(x) = \frac{b(x)}{a(x)}$}, il vient:
 \begin{equation}
     y' + A'(x) \cdot y =0 
 \text{, puis }
@@ -85,7 +85,7 @@ $A'(x) = \frac{b(x)}{a(x)}$), il vient:
 \end{equation}
 qui est de la forme $u' \cdot v + u \cdot v'$ et vaut $ (u \cdot v)'$, d'où:
 \begin{equation}
-    \frac{\mathrm d}{\mathrm dx}(y \cdot e^{A(x)})=0
+    \frac{\dd}{\dd x}(y \cdot e^{A(x)})=0
 \text{, soit }
     y \cdot e^{A(x)} = C
 \end{equation}
@@ -155,7 +155,7 @@ et la solution générale s'écrit alors sous la forme:
 \end{equation}
 Soit finalement:
 \begin{equation}
-    f = \exp\left( -\int\frac{b(x)}{a(x)}\mathrm dx \right) \left\{ C + \int \frac{c(x)}{a(x)} \exp\left(\int \frac{b(x)}{a(x)}\mathrm dx\right)\mathrm dx \right\}
+    f = \exp\left( -\int\frac{b(x)}{a(x)}\dd x \right) \left\{ C + \int \frac{c(x)}{a(x)} \exp\left(\int \frac{b(x)}{a(x)}\dd x\right)\dd x \right\}
 \end{equation}
 
 On peut évidemment être confroté à un calcul d'intégral qui n'est pas simple
@@ -182,11 +182,11 @@ Comme $g(y)\ne0$, on peut écrire l'équation sous la forme:
 \end{equation}
 par rapport à la variable $x$, ce qui conduit à:
 \begin{equation}
-    \int_{x_0}^x \frac{1}{g(y(u))}y'(u) \, du = \int_{x_0}^x f(u) \, du 
+    \int_{x_0}^x \frac{1}{g(y(u))}y'(u) \, \dd u = \int_{x_0}^x f(u) \, \dd u 
 \end{equation}
 et qui après changement de variable, est de la forme:
 \begin{equation}
-    \int_{y_0}^y \frac{1}{g(v)} \, dv = \int_{x_0}^x f(u) \, du 
+    \int_{y_0}^y \frac{1}{g(v)} \, \dd v = \int_{x_0}^x f(u) \, \dd u 
 \end{equation}
 
 \medskip

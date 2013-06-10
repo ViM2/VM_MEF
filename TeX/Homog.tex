@@ -34,6 +34,7 @@ que d'un certain nombre d'informations sur la microstructure.\index{Modèle micr
 \includegraphics[height=\the\HauteurDesPhotos]{Lorentz}\\
 Mossotti&Maxwell&Poisson&Lorentz%
 \end{tabular}}
+
 \medskip
 \ImageADroite{%
 Les premières théories remontent au XIXe siècle et sont dues à Mossotti,\index[aut]{Mossotti (Ottaviano-Fabrizio), 1791-1863, Italien}
@@ -148,11 +149,12 @@ de deux matériaux différents, mais avec une périodicité, comme illustré sur
 Dans un tel cas, nous dirons que les coefficients $A$ dépendent de $x/\varepsilon$.
 Cette écriture sous forme normalisée permet de dire que $A$ est périodique de période 1.
 
+\medskip
 Dans le cas unidimensionnel, le problème devient:
 \begin{equation}
 \left\{
 \begin{aligned}
-&\dfrac d{dx}\left(A(\frac x\varepsilon)\right) \dfrac{du}{dx} = f(x)&& \text{ pour } x\in[0,l]\\
+&\dfrac \dd{\dd x}\left(A\left(\frac x\varepsilon\right)\right) \dfrac{\dd u}{\dd x} = f(x)&& \text{ pour } x\in[0,l]\\
 &u=0 &&\text{ pour } x=0 \text{ et } x=l
 \end{aligned}
 \right.
@@ -160,12 +162,13 @@ Dans le cas unidimensionnel, le problème devient:
 $A$ est une fonction de $\RR$ dans $\RR$ de période 1, et nous la supposerons régulière
 par morceaux et telle qu'il existe $K_1$ et $K_2$ $>0$ telles que $K_1\le A(v)\le K_2$.
 
+\medskip
 La solution du problème est alors:
 \begin{equation}
-u(x)=\dint_0^x A^{-1}(y/\varepsilon) \left(\dint_0^y f(v)dv + c_1 \right) dy + c_2
+u(x)=\dint_0^x A^{-1}(y/\varepsilon) \left(\dint_0^y f(v)\dd v + c_1 \right) \dd y + c_2
 \end{equation}
 avec $c_2=0$ et
-\begin{equation} c_1 = \dfrac{\dint_0^l A^{-1}(y/\varepsilon)\dint_0^y f(v)dv dy}{\dint_0^l a^{-1}(y/\varepsilon)dy} \end{equation}
+\begin{equation} c_1 = \dfrac{\dint_0^l A^{-1}(y/\varepsilon)\dint_0^y f(v)\dd v \dd y}{\dint_0^l a^{-1}(y/\varepsilon)\dd y} \end{equation}
 Le nombre d'intervalles pour le calcul approché de $c_1$ est très grand (i.e. très supérieur
 à $l/\varepsilon$).
 
@@ -325,8 +328,6 @@ Principalement pour les composites stratifiés ou sandwichs, il y a 2 niveaux d'
 
 
 
-
-
 \medskip
 \subsection{Loi des mélanges, bornes de Voigt et de Reuss}\index{Loi des mélanges}\index{Borne de Voigt}\index{Borne de Reuss}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 
@@ -336,14 +337,17 @@ fibres et de matrice. On note
 $V_m$ la fraction volumique de matrice,
 $V_f$ la fraction volumique de fibre, et on a :
 \begin{equation} V = V_m + V_f =1 \end{equation}
+
 \medskip
 À l'échelle locale, on fait les hypothèses suivantes:
 \begin{itemize}
    \item Fibres: comportement élastique linéaire fragile isotrope de coefficients $E_f$ et $\nu_f$;
    \item Matrice: comportement élastique non-linéaire, isotrope de coefficients $E_m$ et $\nu_m$.
 \end{itemize}
+
 \medskip
 On souhaite déterminer les relations existant entre $E_l$, $E_t$, $E_f$, $E_m$, $V_m$ et $V_f$.
+
 \medskip
 Pour cela, on fait également les hypothèses suivantes :
 \begin{itemize}
@@ -390,6 +394,7 @@ Il est simplement admis que pour le modèle de Reuss, la contrainte est homogèn
 phases (continuité de la contrainte) et, pour le modèle de Voigt,\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 la déformation est constante  (continuité de la déformation) dans tout le composite.
 \textcolorred{L'intérêt est limité dès que l'écart des caractéristiques des deux phases est important.}
+
 \medskip
 Évidemment, d'autres modèles existent:
 \begin{itemize}
@@ -420,6 +425,7 @@ Sur le bord des trous, on peut imposer, soit des conditions de Dirichlet:
 soit des conditions de Neumann:\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Conditions aux limites!de Neumann}
 \begin{equation}n\cdot A(x/\varepsilon)\nabla u=0 \end{equation}
 On supposera encore que les coefficient sont 1-périodiques.
+
 \medskip
 \textcolorblue{Cherchons des solutions dans le cas où l'on a des conditions de Neumann sur le bords des trous.}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Conditions aux limites!de Neumann}
 
@@ -448,6 +454,7 @@ d'où:
 \end{aligned}
 \right. \end{equation}
 On peut prouver que si $v_0$ est solution du problème, alors $v_0+cte$ aussi.
+
 \medskip
 Des conditions d'existence de la solution il vient, tous calculs faits, la matrice des
 coefficients homogénéisés $\hat{A}$:
@@ -455,14 +462,17 @@ coefficients homogénéisés $\hat{A}$:
 \quad \text{ avec }
 \quad
 \hat{a}_{i,j}=\dint_{Q\backslash G_0} \dsum_{k=1}^n \left(a_{ik} \frac{\partial N_j}{\partial\xi_k} + a_{ij}
-\right) d\xi
+\right) \dd\xi
 \end{equation}
 où $G_0$ est un trou de la cellule élémentaire $Q$.
+
 \medskip
 Le même type de calcul pourrait être mené avec les conditions de Dirichlet sur le bord
 des trous.
+
 \medskip
 Cette homogénéisation des milieux poreux est valable pour l'acoustique comme pour la mécanique.
+
 \medskip
 \section{Homogénéisation des problèmes non stationnaires}
 Nous n'avons pas encore abordé de manière pratique les problèmes non stationnaires
@@ -484,6 +494,7 @@ avec $u_i(x,\xi,t)$ 1-périodique en $\xi$.
 
 \medskip
 \section{Changement de dimension, raccord de maillage}
+
 \textcolorgreen{Les méthodes d'homogénéisation peuvent également être utilisées pour
 <<~changer (réduire)~>> la dimension d'un problème.}
 

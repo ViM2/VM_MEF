@@ -118,7 +118,7 @@ Le jacobien\index{Jacobien} de la réciproque d'une fonction est l'inverse du ja
 Cette dernière propriété est liée au théorème d'inversion locale (qui peut être vu entre autre
 comme une extension du théorème des fonctions implicite en dimension supérieure à 1 dans le cas réel).
 
-
+\medskip
 Une fonction $F$ de classe $C^1$ est inversible au voisinage de $M$ avec une réciproque $F^{-1}$ 
 de classe $C^1$ si et seulement si son jacobien en $M$ est non nul (théorème d'inversion locale). 
 De plus, la matrice jacobienne de $F^{-1}$ se déduit de l'inverse de la matrice jacobienne de $F$ 
@@ -147,7 +147,8 @@ Soient $U$ un ouvert de $\RR^n$, $F$ une injection de classe $C^1$ de $U$ dans $
 
 Si $g$ est une fonction mesurable de $V$ dans $[0,+\infty[$, on a égalité des intégrales pour la mesure 
 de Lebesgue sur $\RR^n$:
-\begin{equation}   \int_V g(y_1,\ldots,y_n)~\mathrm dy_1\ldots\mathrm dy_n = \int_U g\left(F\left(x_1,\ldots,x_n\right)\right) \left|\det J_F(x_1,\ldots,x_n)\right|~\mathrm dx_1\ldots\mathrm dx_n.
+\begin{equation}   \int_V g(y_1,\ldots,y_n)~\dd y_1\ldots\dd y_n = \int_U g\left(F\left(x_1,\ldots,x_n\right)\right) 
+\left|\det J_F(x_1,\ldots,x_n)\right|~\dd x_1\ldots\dd x_n.
 \end{equation}
 \end{theoreme}
 
@@ -217,7 +218,7 @@ ou des éléments 2D par exemple.
 Nous allons toujours avoir une interpolation de la fonction solution sous la forme:
 \begin{equation} u =\frac{1-\xi}2 u_1 + \frac{1+\xi}2 u_2\end{equation}
 car concrêtement $u_2$ est connu (et fini): c'est le \og lieu\fg{} où l'on situe l'infini dans le
-modèle EF.
+modèle éléments finis.
 
 \medskip
 Par contre, l'interpolation du point courant sera donnée par:
@@ -250,7 +251,7 @@ tel que présenté au paragraphe \ref{Sec-Elt1D2}.
 \medskip
 La forme variationelle de ce problème d'élasticité linéaire 1D (théorie des poutres) est:
 \begin{equation}
-W=\dint_0^L EA v_{,x}u_{,x} dx - \dint_0^L \rho g A v = 0, \quad \forall v
+W=\dint_0^L EA v_{,x}u_{,x} \dd x - \dint_0^L \rho g A v = 0, \quad \forall v
 \end{equation}
 avec les CL: $u(0)=0$ (et $v(0)=0$).
 
@@ -349,7 +350,7 @@ La matrice $\MM{K}$ obtenue sur cet exemple a un \textcolorblue{caractère bande
 vide en dehors d'une zone centrée sur la diagonale). Ceci est dû à la numérotation des nœuds. 
 Une autre numérotation pourrait faire perdre ce caractère important (stockage et résolution).
 
-C'est pourquoi dans les programmes EF une étape de renumémoration automatique des nœuds
+C'est pourquoi dans les programmes éléments finis une étape de renumémoration automatique des nœuds
 est généralement faite.
 
 
@@ -441,7 +442,7 @@ Pour la contrainte, nous avons:
 La formulation variationelle mixte de l'élasticité linéaire 1D est (voir fonctionnelle
 d'Hellinger-Reissner sous sa deuxième forme ou fonctionnelle mixte):\index{Fonctionnelle!mixte}\index[aut]{Hellinger}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 \begin{equation}
-W=\dint_0^L A\left(-\sigma_x^*\frac1H\sigma_x+\sigma_x^*u_{,x}+v_{,x}\sigma_x\right) dx
+W=\dint_0^L A\left(-\sigma_x^*\frac1H\sigma_x+\sigma_x^*u_{,x}+v_{,x}\sigma_x\right) \dd x
 -\dint_0^L Avf_x dx - (v f_S)_{S_f} = 0\qquad \forall v,\sigma^*
 \end{equation}
 avec les CL $u=\overline{u}$ et $u^*=0$ sur $S_u$.
@@ -458,7 +459,7 @@ avec:
 \begin{equation}
 \VV{b}=\dint_0^L \frac{A}L \VVV{\begin{array}{c} -1\\1\end{array}}; \qquad
 a=\dint_0^L \frac{A}H dx; \qquad
-\VV{f_n} = \dint_{-1}^{+1} A \VVV{\begin{array}{c} N_1\\N_2 \end{array}} \frac{L}2 f_x d\xi =
+\VV{f_n} = \dint_{-1}^{+1} A \VVV{\begin{array}{c} N_1\\N_2 \end{array}} \frac{L}2 f_x \dd\xi =
  A f_x \frac{L}2  \VVV{\begin{array}{c} 1\\1 \end{array}}
 \end{equation}
 

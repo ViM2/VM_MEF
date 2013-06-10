@@ -1,6 +1,6 @@
 \chapter{L'intégration numérique}\label{chap-quadrature}
 
-La MEF discrétisant une formulation faible,  la construction des matrices 
+La méthode des éléments finis discrétisant une formulation faible,  la construction des matrices 
 constitutives du système à  résoudre comportent dont des intégrations.
 
 Dans certains cas particuliers, ou en utilisant des codes de calcul formel, ces intégrations
@@ -179,7 +179,7 @@ qui peut assurer l'intégrabilité de $f$.
 Les $\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature (ou poids)}.
 Les $x_i$ sont réels, distincts, uniques et sont les racines de polynêmes orthogonaux 
 (et non plus uniquement de Lagrange) pour le produit scalaire 
-$\left\langle f,g \right\rangle = \int_a^b f(x)g(x) \varpi(x) \,\mathrm{d}x$. 
+$\left\langle f,g \right\rangle = \int_a^b f(x)g(x) \varpi(x) \,\dd x$. 
 Ils sont appelés  \textcolorblue{points ou nœuds de Gauss}.
 Les poids et les nœuds sont choisis de façon à obtenir des degrés d'exactitude les plus 
 grands possibles.
@@ -197,8 +197,8 @@ $[-1,1]$ & $1$ & Legendre\\
 $]-1,1[$ & $(1-x)^\alpha (1+x)^\beta \ , \ \alpha, \beta > -1$ & Jacobi\\
 $]-1,1[$ & $\frac{1}{\sqrt{1-x^2}}$ &Tchebychev (premier type)\\
 $]-1,1[$ & $\sqrt{1-x^2}$ & Tchebychev (second type)\\
-$\RR^+$ & $\mathrm{e}^{-x}$ & Laguerre\\
-$\RR$ & $\mathrm{e}^{-x^2}$ & Hermite\\
+$\RR^+$ & $e^{-x}$ & Laguerre\\
+$\RR$ & $e^{-x^2}$ & Hermite\\
 \end{tabular}
 \end{center}
 
@@ -240,10 +240,10 @@ les trouver...)}.
 
 Sur les carrés et les cubes (qui correspondent à ce qui nous intéresse en terme
 d'\{eléments de référence), on obtient les formules suivantes:
-\begin{equation} \int_{-1}^{-1}\int_{-1}^{-1} f(x,y)dxdy \approx
+\begin{equation} \int_{-1}^{-1}\int_{-1}^{-1} f(x,y)\dd x\dd y \approx
 \dsum_{i=1}^{n_x}\dsum_{j=1}^{n_y} \varpi_i\varpi_j f(x_i,x_j)\end{equation}
 
-\begin{equation} \int_{-1}^{-1}\int_{-1}^{-1}\int_{-1}^{-1} f(x,y,z)dxdydz \approx
+\begin{equation} \int_{-1}^{-1}\int_{-1}^{-1}\int_{-1}^{-1} f(x,y,z)\dd x\dd y\dd z \approx
 \dsum_{i=1}^{n_x}\dsum_{j=1}^{n_y}\dsum_{k=1}^{n_z} \varpi_i\varpi_j\varpi_k f(x_i,x_j,x_k)\end{equation}
 où $n_x$, $n_y$ et $n_z$ sont les nombres de points de Gauss utilisés dans
 les directions $x$, $y$ et $z$.
