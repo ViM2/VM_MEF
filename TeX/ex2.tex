@@ -28,15 +28,19 @@ position s'exprime par $\LL{x}=\LL{x(\xi), y(\xi), z(\xi)}$.
 Élément de référence & Segment réel (3D)
 \end{tabular}
 \end{table}
-\medskip
+\ifVersionDuDocEstVincent
+
+\medskip\fi
 Cet élément (segment) est défini par ses seules extrémités. Nous avons donc deux
-nœuds de coordonnées $(x_1, y_1, z_1)$ et $(x_2, y_2, z_2)$.
+nœuds de coordonnées $\LLP{x_1, y_1, z_1}$ et $\LLP{x_2, y_2, z_2}$.\ifVersionDuDocEstVincent\par\fi
 Un point courant de cet élément sera obtenu par interpolation linéaire entre les deux nœuds,
 paramétrée par $\xi$. On Cherche cette interpolation sous la forme $x(\xi)=\LL{N(\xi)}\VV{x_n}$, $y(\xi)=\LL{N(\xi)}\VV{y_n}$ et $z(\xi)=\LL{N(\xi)}\VV{z_n}$, avec
 $\LL{N(\xi)}=\LLL{N_1(\xi), N_2(\xi)}$ et $N_1(\xi)=\frac12 (1-\xi)$, $N_2(\xi)=\frac12(1+\xi)$.
 De manière plus <<~compacte~>>, on peut écrire:
 \begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et } \xi\in[-1,1]) \end{equation}
-\medskip
+\ifVersionDuDocEstVincent
+
+\medskip\fi
 Dans cette interpolation (comme dans toutes interpolation), on a une relation entre $\dd\VV{x}$ et
 $ \dd \xi$. Notons $\dd\VV{x} = \VV{a}  \dd \xi$. Alors:
 \begin{equation} \LL{a} = \LLL{x_{,\xi}, y_{,\xi}, z_{,\xi}} = \frac12 \LLL{x_{21}, y_{21}, z_{21}}\end{equation}
@@ -65,7 +69,9 @@ Par ailleurs, on a la relation:
 
 Nous considérons une transformation de $\RR^n$ dans $\RR^m$ donnée par la fonction $f$: 
 $\left(x_1, \ldots, x_n \right) \mapsto \left(f_{y_1}, \ldots, f_{y_m} \right)$.
-\medskip
+\ifVersionDuDocEstVincent
+
+\medskip\fi
 La \textcolorblue{matrice jacobienne}\index{Jacobienne} (d'après Carl Jacobi)\index[aut]{Jacobi (Carl Gustav Jakob), 1804-1851, Allemand} 
 associée à $f$ est définie par:
 \begin{equation}
@@ -75,14 +81,24 @@ i.e., sous forme complètement développée la jacobienne de $f$ s'écrit :
 \begin{equation}
 J_f = \MMM{\begin{array}{ccc} \frac{\partial f_{y_1}}{\partial x_1} & \cdots & \frac{\partial f_{y_1}}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{y_m}}{\partial x_1} & \cdots & \frac{\partial f_{y_m}}{\partial x_n} \end{array}}
 \end{equation}
-\medskip
+\ifVersionDuDocEstVincent
+
+\medskip\fi
 Au voisinage d'un point $M$, l'approximation linéaire de la fonction $f$ est donnée par:
+\ifVersionDuDocEstVincent
+\begin{equation} f\left(X\right) \approx f\left(M\right) + J_f\left(M\right) \overrightarrow{MX}\end{equation}
+\else
 \begin{equation} f\left(X\right) \approx f\left(M\right) + J_f\left(M\right) \mathbf{MX}\end{equation}
-\medskip
+\fi
+\ifVersionDuDocEstVincent
+
+\medskip\fi
 La composée $f\circ g$ de fonctions différentiables est différentiable, et sa matrice jacobienne 
 s'obtient par la formule :
 \begin{equation} J_{f \circ g}= \bigl( J_f \circ g \bigr) \cdot J_g\end{equation}
-\bigskip
+\ifVersionDuDocEstVincent
+
+\medskip\fi
 Dans le cas où \textcolorred{$m = n$}, on appelle $j_f$ le \textcolorblue{jacobien}\index{Jacobien} de $f$, 
 défini comme le déterminant de sa matrice jacobienne: \index{Jacobien}\index{Jacobienne}
 \begin{equation} j_f = \det\, \left(J_f \right) \end{equation}
@@ -139,8 +155,8 @@ de Lebesgue sur $\RR^n$:
 \end{theoreme}
 
 \medskip
-Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction $f$ 
-sera celui du domaine de départ multiplié par la valeur absolue du jacobien.\index{Jacobien}
+\textcolorgreen{Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction $f$ 
+sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{Jacobien}
 
 
 
