@@ -527,8 +527,6 @@
    \newcommand{\colorgris}{\color{gris}}
    \renewcommand{\theFancyVerbLine}{\textcolor{green50}{\scriptsize\arabic{FancyVerbLine}}}
    \newcommand{\textbff}[1]{\textbf{#1}}
-   \newcommand{\medskipvm}{\medskip}% !!!??? pourquoi alors que \medskip={} en version MLg ?
-   \newcommand{\bigskipvm}{\bigskip}% !!!??? pourquoi alors que \bigskip={} en version MLg ?
 \else
    \newcommand{\textcolorblack}[1]{{\#1}}
    %\newcommand{\textcolorgreen}[1]{\emph{#1}}
@@ -557,3 +555,10 @@
 \DeclareMathOperator{\rotb}{\mathbf{rot}}
 \DeclareMathOperator{\rot}{rot}
 \DeclareMathOperator{\vectt}{vect}
+%
+\newcommand{\medskipvm}{\ifVersionDuDocEstVincent
+
+\medskip\fi}
+\newcommand{\bigskipvm}{\ifVersionDuDocEstVincent
+ 
+\bigskip\fi}
