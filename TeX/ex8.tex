@@ -14,17 +14,17 @@
 Nous repartons de l'élément de barre 1D défini au paragraphe \ref{Sec-barre1D}.
 
 Rappelons que la matrice de rigidité élémentaire et le vecteur des forces nodales élémentaires sont:
-\begin{equation} \MM{k} = \frac{2EA}L \MMM{ \begin{array}{cc} 1 & -1\\ -1& 1 \end{array}} %\end{equation}
+\begin{equation} \MM{K} = \frac{2EA}L \begin{bmatrix} 1 & -1\\ -1& 1 \end{bmatrix} %\end{equation}
 %et le vecteur des forces nodales élémentaires:
 %\begin{equation}  
 \qquad \text{ et } \qquad
-\VV{f} = \rho g A \frac{L}4 \VVV{ \begin{array}{c} 1 \\1 \end{array}} \end{equation}
-
-\medskip
-L'assemblage de 3 éléments, décrit au pagraphe \ref{Sec-ass}, conduit à:
-\begin{equation} \MM{K}=\MM{k_1}+\MM{k_2}+\MM{k_3} \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
-
-\medskip
+\VV{f} = \rho g A \frac{L}4 \begin{pmatrix} 1 \\1 \end{pmatrix} \end{equation}
+%%%%%%%%%%%%
+\medskipvm
+L'assemblage de trois éléments, décrit au pagraphe \ref{Sec-ass}, conduit à:
+\begin{equation} \MM{K}=\MM{K_1}+\MM{K_2}+\MM{K_3} \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
+%%%%%%%%%%%%
+\medskipvm
 On traitera le cas où les trois éléments ont la même longueurs ($L_1=L_2=L_3=L$) et où seul le nœud 4 est
 soumis à une force.
 %\medskip
@@ -47,40 +47,32 @@ soumis à une force.
 %On s'intéresse à la résolution du système $[K]\{q\}=\{F\}$ avec les CL $u_1=0$.
 %Explicitement, on s'intéresse donc à la résolution du système:
 %\medskip
-On obtient alors un système de type $\MM{K}\VV{q}=\VV{F}$ à résoudre, avec la CL $u_1=0$, qui s'écrit
-explicitement dans ce cas:
+On obtient alors un système de type $\MM{K}\VV{q}=\VV{F}$ à résoudre, avec la condition aux limites $u_1=0$, qui s'écrit explicitement dans ce cas:
 \begin{equation}
-\MMM{ \begin{array}{cccc} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
-\end{array} }
-\VVV{ \begin{array}{c} u_1\\u_2\\u_3\\u_4 \end{array}}
+\begin{bmatrix} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4 \end{pmatrix}
 =
-\VVV{ \begin{array}{c} 0\\0\\0\\F' \end{array}}
+\begin{pmatrix} 0\\0\\0\\F' \end{pmatrix}
 \end{equation}
 (avec $F'=\rho g L^2/(8E)$).
 
-
-
-
-
-
-\medskip
+\medskipvm
 \ifVersionAvecExemplesSepares
    \section{Retour sur la résolution de systèmes linéaires}
 \else
    \subsection{Retour sur la résolution de systèmes linéaires}
 \fi
-
 Soit à résoudre un système linéaire de type:
 \begin{equation}\label{Eq-lin} \MM{A}\VV{x}=\VV{b} \end{equation}
-
 Ce système peut être réécrit par blocs sous la forme:
 \begin{equation} 
-\MMM{\begin{array}{cc} A_{11} & A_{12}\\ A_{21} & A_{22} \end{array}}
-\VVV{\begin{array}{c} x_1 \\ x_2 \end{array}} =
-\VVV{\begin{array}{c} b_1\\ b_2 \end{array}} 
+\begin{bmatrix} A_{11} & A_{12}\\ A_{21} & A_{22} \end{bmatrix}
+\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} =
+\begin{pmatrix} b_1\\ b_2 \end{pmatrix} 
 \end{equation}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Si $A_{11}$ est inversible, alors on peut écrire la première ligne:
 \begin{equation}
 x_1 = A_{11}^{-1}\left( b_1-A_{12}x_2 \right)
@@ -91,29 +83,27 @@ A_{22} - A_{21}A_{11}^{-1}A_{12}x_2 = b_2 - A_{21}A_{11}^{-1}b_1
 \quad \text{ que l'on note: }
 S x_2=c
 \end{equation}
-
 \textcolorblue{La matrice $S$ est appelée complément de Schur}\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
 (présenté au paragraphe \ref{Sec-Schur}), ou matrice condensée sur les degrés de liberté $x_2$.
 Ce calcul est également identique à celui présenté à propos de la condensation statique au paragraphe \ref{Sec-condens}.
 Dans ce cas, la matrice $S$ est la matrice de rigidité du super-élément considéré.
 
-\medskip
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Le système initial (\ref{Eq-lin}) est équivalent à:
 \begin{equation}\label{Eq-Sch1}
-\MMM{\begin{array}{cc} A_{11} & A_{12}\\ \mO & S \end{array}}
-\VVV{\begin{array}{c} x_1\\ x_2 \end{array}} =
-\VVV{\begin{array}{c} b_1\\ c \end{array}} 
+\begin{bmatrix} A_{11} & A_{12}\\ \mO & S \end{bmatrix}
+\begin{pmatrix}x_1\\ x_2 \end{pmatrix} =
+\begin{pmatrix} b_1\\ c \end{pmatrix}
 \end{equation}
 qui peut être réécrit:
 \begin{equation}
-\MMM{\begin{array}{cc} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{array}}
-\MMM{\begin{array}{cc} A_{11} & A_{12}\\ \mO{} & S \end{array}}
-\VVV{\begin{array}{c} x_1\\ x_2 \end{array}} =
-\MMM{\begin{array}{cc} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{array}}
-\VVV{\begin{array}{c} b_1\\ c \end{array}}
+\begin{bmatrix} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{bmatrix}
+\begin{bmatrix} A_{11} & A_{12}\\ \mO{} & S \end{bmatrix}
+\begin{pmatrix} x_1\\ x_2 \end{pmatrix} =
+\begin{bmatrix} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{bmatrix}
+\begin{pmatrix} b_1\\ c \end{pmatrix}
 \end{equation}
-
-
 
 \medskip
 \ifVersionAvecExemplesSepares
@@ -121,8 +111,8 @@ qui peut être réécrit:
 \else
    \subsection{Complément de Schur et déplacements imposés}\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
 \fi
-
-Nous cherchons toujours à résoudre notre système: $\MM{K}\VV{q}=\VV{F}$.
+Nous cherchons toujours à résoudre notre système:
+\begin{equation}\MM{K}\VV{q}=\VV{f}\end{equation}
 
 \medskip
 Considérons la matrice $\MM{D}$, \textcolorblue{matrice booléenne}, permettant d'extraire de l'ensemble des inconnues
@@ -138,8 +128,8 @@ forme triangulaire d'où l'on tire le sous-système correspondant aux déplaceme
 \begin{equation}
 \MM{K_{11}}\VV{q_1} = \VV{f_1} - \MM{K_{12}}\VV{u_d}
 \end{equation}
-
-\medskip
+%%%%%%%%%%%%%%%
+\medskipvm
 Ce système est \textcolorblue{réduit}, i.e. possède moins d'inconnues que le problème initial, mais il est nécessaire de
 modifier le chargement extérieur.
 
@@ -149,8 +139,6 @@ est grand.
 
 C'est ainsi que procède le code \abaqus pour imposer les déplacements.
 
-
-
 \medskip
 \ifVersionAvecExemplesSepares
    \section{Multiplicateurs de Lagrange et déplacements imposés}\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
@@ -158,29 +146,25 @@ C'est ainsi que procède le code \abaqus pour imposer les déplacements.
    \subsection{Multiplicateurs de Lagrange et déplacements imposés}\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
 \fi
 
-Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
-les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
+Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
 
-Dans ce cas, il n'est plus nécessaire de séparer explicitement les ddl, mais \textcolorred{la taille du problème
-augmente} puisqu'il faut lui adjoindre les multiplicateurs.
+Dans ce cas, il n'est plus nécessaire de séparer explicitement les ddl, mais \textcolorred{la taille du problème augmente} puisqu'il faut lui adjoindre les multiplicateurs.
 
 Le système à résoudre s'écrit très simplement:
 \begin{equation}\label{Eq-Lag1}
-\MMM{\begin{array}{cc} K & -D^T\\ -D & \mO{} \end{array}}
-\VVV{\begin{array}{c} q\\ \lambda \end{array}} =
+\begin{bmatrix} \MM{K} & -\MM{D}^T\\ -\MM{D} & \mO{} \end{bmatrix}
+\begin{pmatrix} q\\ \lambda \end{pmatrix} =
 \MM{A}
-\VVV{\begin{array}{c} q\\ \lambda \end{array}} =
-\VVV{\begin{array}{c} F\\ -u_d \end{array}} 
+\begin{pmatrix} q\\ \lambda \end{pmatrix} =
+\begin{pmatrix} F\\ -u_d \end{pmatrix}
 \end{equation}
+Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
-Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs
-de Lagrange sont bien les réactions aux appuis}.\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
-
-Par contre, la matrice du système (\ref{Eq-Lag1}), $\MM{A}$, si elle reste bien symétrique, \textcolorred{n'est plus
-définie positive}. Elle possède des valeurs propres négatives.
-
-\medskip
+Par contre, la matrice du système (\ref{Eq-Lag1}), $\MM{A}$, si elle reste bien symétrique, \textcolorred{n'est plus définie positive}. Elle possède des valeurs propres négatives.
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Toutefois, on dispose du résultat suivant:
+
 \begin{theoreme}
 si $\MM{K}$ est symétrique définie positive, alors:
 \begin{equation}
@@ -189,22 +173,19 @@ si $\MM{K}$ est symétrique définie positive, alors:
 \end{theoreme}
 ce qui correspond aux cas où toutes les liaisons sont indépendantes.
 
-\bigskip
+%%%%%%%%%%%%%%%%%
+\bigskipvm
 Afin de ne pas détruire la structure bande de $\MM{K}$ (ce que ferait une factorisation de Gauss),\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand} 
-et d'éviter des pivotages (que ferait une factorisation de Crout, i.e. $LDL^T$), on peut développer une autre technique, dite \textcolorblue{technique
+et d'éviter des pivotages (que ferait une factorisation de Crout, i.e. $\MM{LDL}^T$), on peut développer une autre technique, dite \textcolorblue{technique
 de double multiplicateur}, qui est celle employée dans \castem:\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \begin{equation}
-\left\{\begin{array}{l}
-\MM{K}\VV{q} = \VV{F} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
-\VV{\lambda_1} = \VV{\lambda_2} \\ 
-\MM{D}\VV{q} = \VV{u_d}
-\end{array}\right.
+\left\{\begin{aligned}
+&\MM{K}\VV{q} = \VV{F} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
+&\VV{\lambda_1} = \VV{\lambda_2} \\ 
+&\MM{D}\VV{q} = \VV{u_d}
+\end{aligned}\right.
 \end{equation}
-
 \textcolorred{L'inconvénient reste l'augmentation de la taille du système lorsque l'on a de nombreux blocages.}
-
-
-
 
 \medskip
 \ifVersionAvecExemplesSepares
@@ -229,127 +210,114 @@ déplacements et au vecteur des forces généralisées sur les efforts duaux.
 \textcolorred{Le problème réside dans le choix de la valeur de $k$}: trop petite, la condition est mal imposée; 
 trop grande, le système devient très mal conditionné, voire numériquement singulier.
 
-
-
-
-
 \medskip
 \ifVersionAvecExemplesSepares
    \section{Retour sur notre exemple}
 \else
    \subsection{Retour sur notre exemple}
 \fi
-
 Nous devons toujours résoudre:
 \begin{equation}
-\MMM{\begin{array}{cccc} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
-\end{array}}
-\VVV{ \begin{array}{c} u_1\\u_2\\u_3\\u_4 \end{array}}
+\begin{bmatrix} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4 \end{pmatrix}
 =
-\VVV{ \begin{array}{c} 0\\0\\0\\F' \end{array}}
+\begin{pmatrix} 0\\0\\0\\F' \end{pmatrix}
 \end{equation}
-avec la CL $u_1=0$.
-
-
-\medskip
-Tout d'abord, on pourra essayer de résoudre sans introduire de CL afin de voir que le système est alors
-singulier. On obtient $u_1=u_2=u_3=u_4$ et $F'=0$.
-
-
-
-\medskip
-La méthode la plus rudimentaire consiste à prendre en compte directement et explicitement la CL.
+avec la condition aux limites $u_1=0$.
+%%%%%%%%%%%%%%
+\medskipvm
+Tout d'abord, on pourra essayer de résoudre sans introduire de conditions aux limites afin de voir que le système est alors singulier. On obtient $u_1=u_2=u_3=u_4$ et $F'=0$.
+%%%%%%%%%%%%%%
+\medskipvm
+La méthode la plus rudimentaire consiste à prendre en compte directement et explicitement la condition aux limites.
 On supprime donc du système matriciel la ligne et la colonne correspondant à $u_1$, et on résoud:
 \begin{equation}\label{Eq-Base}
 u_1=0 \text{ et }
-\MMM{\begin{array}{ccc} 2 & -1 & 0 \\ -1 & 2 & -1\\ 0&-1&1 \end{array}}
-\VVV{ \begin{array}{c} u_2\\u_3\\u_4 \end{array}}
+\begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1\\ 0&-1&1 \end{bmatrix}
+\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}
 =
-\VVV{ \begin{array}{c} 0\\0\\F' \end{array}}
+\begin{pmatrix} 0\\0\\F' \end{pmatrix}
 \qquad \text{ d'où: } 
-\left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \end{array}\right.
+\left\{\begin{aligned} &u_1=0 \\ &u_2=F' \\ &u_3=2F' \\ &u_4=3F' \end{aligned}\right.
 \end{equation}
-
-
-
-\medskip
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Séparons maintenant les déplacements imposés des autres ddl, par une matrice booléenne $\MM{D}$:
 $\MM{D}$ est une matrice $1\times 4$, et seul le terme $D_{11}=1$ est non nul: $\VV{q_2}=\MM{D}\VV{q}=\VV{u_1}$,
 et le déplacement imposé est $\VV{u_d}=\VV{0}$.
 
-Le système s'écrit
-$\MMM{\begin{array}{cc} K_{11} & K_{12}\\ K_{21} & K_{22} \end{array}}
-\VVV{\begin{array}{c} q_1\\ q_2 \end{array}} =
-\VVV{\begin{array}{c} f_1\\ f_2 \end{array}} 
-$, avec:
+Le système s'écrit:
 \begin{equation}
+\begin{bmatrix} K_{11} & K_{12}\\ K_{21} & K_{22} \end{bmatrix}
+\begin{pmatrix} q_1\\ q_2 \end{pmatrix} =
+\begin{pmatrix} f_1\\ f_2 \end{pmatrix} 
+\end{equation}
+avec:
+\begin{equation*}
 %\left[\begin{array}{cc} K_{11} & K_{12}\\ K_{21} & K_{22} \end{array} \right]
 %\left\{\begin{array}{c} q_1\\ q_2 \end{array} \right\} =
 %\left\{\begin{array}{c} f_1\\ f_2 \end{array} \right\} 
 %\text{ i.e. }
-\MMM{\begin{array}{cc} 
-  K_{11}=\MMM{\begin{array}{ccc} 2 & -1 & 0 \\ -1 & 2 & -1\\ 0 & -1 & 1 \end{array}} &
-  K_{12}= \MMM{\begin{array}{c} -1 \\ 0\\ 0 \end{array}}\\
-  K_{21} =\MMM{\begin{array}{ccc} -1 & 0 & 0 \end{array}} &
+\begin{bmatrix}
+\MM{K}_{11}=\begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1\\ 0 & -1 & 1 \end{bmatrix} &
+\MM{K}_{12}=\begin{bmatrix}-1 \\ 0\\ 0 \end{bmatrix}\\
+\MM{K}_{21}=\begin{bmatrix} -1 & 0 & 0 \end{bmatrix} &
 %  \left[ \begin{array}{c} 1 \end{array}  \right]
-  K_{22} =\MMM{1}
-\end{array}}
-\VVV{\begin{array}{c} q_1=\VVV{\begin{array}{c} u_2\\u_3\\u_4 \end{array}} \\
-q_2 =\VVV{\begin{array}{c} u_1 \end{array}}\end{array}}
+\MM{K}_{22} =[1]
+\end{bmatrix}
+\begin{pmatrix} \VV{q}_1=\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}\\
+\VV{q}_2 =\begin{pmatrix} u_1 \end{pmatrix}\end{pmatrix}
 =
-\VVV{ \begin{array}{c} f_1 =\VVV{\begin{array}{c} 0\\0\\F' \end{array}}\\ 
-f_2=\VVV{\begin{array}{c} u_d=0 \end{array}}\end{array}}
-\end{equation}
-
-\medskip
+\begin{pmatrix} \VV{f}_1 =\begin{pmatrix} 0\\0\\F' \end{pmatrix}\\ 
+\VV{f}_2=\begin{pmatrix} u_d=0 \end{pmatrix}\end{pmatrix}
+\end{equation*}
+%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Par la méthode du complément de Schur, on est encore ramené à la résolution du système (\ref{Eq-Base}).
-On pourra s'amuser à calculer $\MMM{K_{11}}^{-1}$, $\MMM{S}$...
+On pourra s'amuser à calculer $\MM{K}_{11}^{-1}$, $\MMM{S}$...
 %$[K_{11}]^{-1} = \left[\begin{array}{ccc} 1&1&1 \\ 1&2&2\\ 1&2&3 \end{array} \right]$
-
-\medskip
+%%%%%%%%%%%%%%%%%
+\medskipvm
 Par la méthode des multiplicateurs de Lagrange, on obtient le système:
 \begin{equation}
-\MMM{\begin{array}{ccccc} 1 & -1 & 0 & 0 & -1 \\ -1 & 2 & -1 & 0 & 0 \\ 0 & -1 & 2 & -1 & 0\\ 0&0&-1&1& 0 \\ -1&0&0&0&0
-\end{array}}
-\VVV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ \lambda \end{array}}
+\begin{bmatrix} 1 & -1 & 0 & 0 & -1 \\ -1 & 2 & -1 & 0 & 0 \\ 0 & -1 & 2 & -1 & 0\\ 0&0&-1&1& 0 \\ -1&0&0&0&0
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ \lambda \end{pmatrix}
 =
-\VVV{\begin{array}{c} 0\\0\\0\\F' \\ u_d=0\end{array}}
+\begin{pmatrix} 0\\0\\0\\F' \\ u_d=0\end{pmatrix}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda = -F' \end{array}\right.
 \end{equation}
-
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Par la technique du double multiplicateur, on obtient le système:
 \begin{equation}
-\MMM{\begin{array}{cccccc} 1 & -1 & 0 & 0 & 1&-1 \\ -1 & 2 & -1 & 0 & 0&0 \\ 0 & -1 & 2 & -1 & 0&0\\ 0&0&-1&1& 0&0 \\ 1&0&0&0&0&0
-\end{array}}
-\VVV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ \lambda_1 \\ \lambda_2 \end{array}}
+\begin{bmatrix} 1 & -1 & 0 & 0 & 1&-1 \\ -1 & 2 & -1 & 0 & 0&0 \\ 0 & -1 & 2 & -1 & 0&0\\ 0&0&-1&1& 0&0 \\ 1&0&0&0&0&0
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ \lambda_1 \\ \lambda_2 \end{pmatrix}
 =
-\VVV{\begin{array}{c} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{array}}
+\begin{pmatrix} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{pmatrix}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
-
-
-
-\medskip
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 En considérant une action extérieure, on obtient le système:
 \begin{equation}
-\MMM{\begin{array}{cccc} 1+k & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
-\end{array}}
-\VVV{\begin{array}{c} u_1\\u_2\\u_3\\u_4 \end{array}}
+\begin{bmatrix} 1+k & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4 \end{pmatrix}
 =
-\VVV{\begin{array}{c} 0+k.u_d = 0\\0\\0\\F' \end{array}}
+\begin{pmatrix} 0+k\cdot u_d = 0\\0\\0\\F' \end{pmatrix}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \end{array}\right.
 \end{equation}
 
 
 \medskip
-Dans tous les exemples présentés, nous avons résolu les systèmes à la main, ce qui masque les éventuels
+Dans tous les exemples présentés, nous avons résolu les systèmes à la main, ce qui masque d'éventuels
 problèmes numériques (notamment dans le dernier cas).
-
 
 \medskip
 \ifVersionAvecExemplesSepares
@@ -357,46 +325,39 @@ problèmes numériques (notamment dans le dernier cas).
 \else
    \subsection{Relations linéaires entre ddl}
 \fi
-
-Cette situation se présente par exemple lors de la prise en compte de conditions de symétrie, de CL périodiques...
-Il s'agit à chaque fois de conditions de type:
+Cette situation se présente par exemple lors de la prise en compte de conditions de symétrie, de conditions aux limites périodiques... Il s'agit à chaque fois de conditions de type:
 \begin{equation}
 \MM{D}\VV{q} = \VV{u_d}
 \end{equation}
 où $\MM{D}$ n'est plus forcément booléenne.
 
 \medskip
-Nous alons l'appliquer ici, à titre d'exemple simple, au cas où la poutre considérée est maintenant constituée de 2
-poutres, que l'on va <<coller>> par une telle relation:\\
-
-\centerline{\includegraphics[width=60mm]{Elt1D-ass2.eps}}
-
-La poutre précédemment considérée est consituée de la poutre $1-2$ et de la poutre $3-4-5$, les points $2$ et $3$
-étant astreints à rester collés ensembles.
-
-\medskip
-En ajoutant la relation $u_2=u_3$ par l'intermédiaire d'un multiplicateur de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
- (i.e. en ajoutant $\lambda_1(u_2-u_3$), on obtient le système:
+Nous alons l'appliquer ici, à titre d'exemple simple, au cas où la poutre considérée est maintenant constituée de deux poutres, que l'on va <<~coller~>> par une telle relation.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=60mm]{Elt1D-ass2.eps}
+\end{figure}
+La poutre est consituée de la poutre $1-2$ et de la poutre $3-4-5$, les points $2$ et $3$ étant astreints à rester collés ensembles.
+%%%%%%%%%%%%%%%%%
+\medskipvm
+En ajoutant la relation $u_2=u_3$ par l'intermédiaire d'un multiplicateur de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}, c'est-à-dire en ajoutant le terme $\lambda_1(u_2-u_3$), on obtient le système:
 \begin{equation}
-\MMM{\begin{array}{cccccc} 1&-1&0&0&0&0 \\ -1&1&0&0&0&1 \\ 0&0&1&-1&0&-1\\ 0&0&-1&2&-1&0\\ 0&0&0&-1&1&0 \\ 0&1&-1&0&0&0
-\end{array}}
-\VVV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \end{array}}
+\begin{bmatrix}1&-1&0&0&0&0 \\ -1&1&0&0&0&1 \\ 0&0&1&-1&0&-1\\ 0&0&-1&2&-1&0\\ 0&0&0&-1&1&0 \\ 0&1&-1&0&0&0
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \end{pmatrix}
 =
-\VVV{\begin{array}{c} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{array}}
+\begin{pmatrix} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{pmatrix}
 \end{equation}
-auquel il faut également ajouter les CL $u_1$=0.
+auquel il faut également ajouter la condition aux limites $u_1$=0.
 
-Si cette CL est imposée par un multiplicateur de Lagrange $\lambda_2$, alors finalement, il nous faut
-résoudre:
+Si cette condition aux limites est imposée par un multiplicateur de Lagrange $\lambda_2$, alors finalement, il faut résoudre:
 \begin{equation}
-\MMM{\begin{array}{ccccccc} 1&-1&0&0&0&0&-1 \\ -1&1&0&0&0&1&0 \\ 0&0&1&-1&0&-1&0\\ 
+\begin{bmatrix} 1&-1&0&0&0&0&-1 \\ -1&1&0&0&0&1&0 \\ 0&0&1&-1&0&-1&0\\ 
 0&0&-1&2&-1&0&0\\ 0&0&0&-1&1&0&0 \\ 0&1&-1&0&0&0&0 \\ 1&0&0&0&0&0&0
-\end{array}}
-\VVV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \\ \lambda_2 \end{array}}
+\end{bmatrix}
+\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \\ \lambda_2 \end{pmatrix}
 =
-\VVV{\begin{array}{c} 0\\0\\0\\F' \\ 0 \\ 0 \\ 0\end{array}}
+\begin{pmatrix} 0\\0\\0\\F' \\ 0 \\ 0 \\ 0\end{pmatrix}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=F' \\ u_4=2F' \\ u_5=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
-
-
