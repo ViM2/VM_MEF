@@ -165,21 +165,70 @@ L'intégrale de Lebesgue peut alors être introduite comme un cas particulier de
 \medskip
 \section{Présentation des espaces de Lebesgue $L^p$}\index{Espace!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
+\begin{definition}[Ensemble des fonctions mesurables]
+Soit $(E,\mathcal{A},\mu)$ un espace mesur\'e.
+Si $\colorred p\in[1,\infty[$, on note $\colorblue \mathcal{L}^p=\mathcal{L}^p(E,\mathcal{A},\mu)$ l'ensemble de toutes
+les fonctions mesurables sur $(E,\mathcal{A})$, à valeurs dans $\RR$, telles que la fonction
+$|f|^p$ soit $\mu$-intégrable.
+
+Si $f\in\mathcal{L}^p$, on pose:
+\begin{equation}\|f\|_p=\left(|f|^p\dd\mu\right)^{1/p} \end{equation}
+\end{definition}
+
+\begin{theoreme}
+Chaque espace $\mathcal{L}^p$ est un espace vectoriel.
+\end{theoreme}
+
+\begin{definition}[Espace $L^p$]
+Soit $(E,\mathcal{A},\mu)$ un espace mesur\'e.
+Si $\colorred p\in[1,\infty[$, on note $\colorblue L^p=L^p(E,\mathcal{A},\mu)$ l'ensemble des
+classes d'équivalence des fonctions de $\mathcal{L}^p$ pour la relation d'équivalence
+<<~égualité $\mu$-presque partout~>>.
+
+Si $f\in L^p$, on note $\|f\|_p$ la valeur commune des $\| g\| _p$ pour toutes les fonctions $g$
+appartenant à la classe de $f$.
+\end{definition}
+
+De manière équivalente, on peut également définir $L^p$ comme étant le quotient
+de $\mathcal{L}^p$ par la relation d'équivalence <<~égalité $\mu$-presque partout~>>.
+
+\medskip
+Il est clair que chaque espace $L^p$ est plus exactement une classe d'équivalence obtenu en
+identifiant les fonctions qui ne diffèrent que sur un ensemble négligeable.
+Ainsi, si $f\in L^p$, on appelle <<~représentant~>> de $f$, toute fonction mesurable $g\in\mathcal{L}^p$
+qui appartient à la classe d'équivalence de $f$.
+
+Comme, par construction, deux représentant d'une même classe auront la même intégrale, on
+appelle (abusivement, mais sans confusion) tout $f\in L^p$ une fonction de $L^p$ et non pas une classe 
+d'équivalence ou un représentant de la classe d'équivalence.
+En d'autres termes, on identifie une classe à l'un quelconque de ses représentants.
+
+\medskip
+\textcolorgris{En toute généralité, on aura bien remarqué que les définitions précédentes sont liées à la mesure
+$\mu$ utilisée.
+Si l'on considère simultanément deux mesures $\mu$ et $\nu$, les classes d'équivalences ne sont pas les mêmes
+respectivement à chacune de ces mesures, et l'identification d'une classe à l'un quelconque de ses représentant 
+ne peut plus se faire.}
+
+
+\begin{theoreme}
+Chaque espace $L^p$ est un espace vectoriel.
+\end{theoreme}
+
 Un espace $L^p$ est un espace vectoriel (des classes) de fonctions dont la puissance d'exposant $p$ est
-intégrable au sens de Lebesgue, où $p$ est un nombre réel strictement positif (ce qui suppose que
-l'on a un espace mesuré, donc une mesure et une tribu).
+intégrable au sens de Lebesgue, où $p$ est un nombre réel strictement positif.
 Le passage à la limite de l'exposant aboutit à la construction des espaces $L^\infty$ des fonctions
 bornées.
 
 \medskip
-En fait, chaque espace $L^p$ est plus exactement une classe d'équivalence obtenu en
-identifiant les fonctions qui ne diffèrent que sur un ensemble négligeable
-
-\medskip
+\begin{theoreme}
 Chaque espace $L^p$ est un espace de Banach lorsque son exposant $p$ est $\ge 1$.
+\end{theoreme}
 
-\medskip
+\begin{theoreme}
 Lorsque $0 < p < 1$, l'intégrale définit une quasi-norme qui en fait un espace complet.
+\end{theoreme}
+
 
 \medskip
 \begin{definition}[Exposants conjugués]\index{Exposant conjugué!de Lebesgue}
@@ -274,14 +323,27 @@ que \textcolorred{$L^2$ s'identifie à son dual.}
 \medskip
 \section{Complément et exemples}
 
-\textcolorblue{Si $f\in L^p$ et $f\in L^q$, alors $f\in L^r$, $p\le r\le q$.}
-
-\bigskip
-La fonction $1/\sqrt{x}$ est $L^1$ mais pas $L^2$.
+\indent La fonction $1/\sqrt{x}$ est $L^1$ mais pas $L^2$.
 
 La fonction $1/|x|$ est $L^2$ mais pas $L^1$.
 
 La fonction $e^{-|x|}/\sqrt{|x|}$ est $L^1$ mais pas $L^2$
+
+\medskip
+\begin{theoreme}
+Si $\mu$ est une mesure finie et si $1\le p\le q\le \infty$, on a:
+\begin{equation}L^q\subset L^p\end{equation}
+\end{theoreme}
+
+\begin{theoreme}[Inégalité de Hölder]\index[aut]{Hoelder@Hölder (Otto Ludwig), 1859-1937, Allemand}
+Soient $p$, $q$ et $r$ des nombres de $[1,\infty]$ vérifiant
+$\dfrac1p+\dfrac1q=\dfrac1r$ (avec la convention $1/\infty=0$).
+Si $f\in L^p$ et $g\in L^q$, alors le produit $fg\in L^r$, et on a:
+\begin{equation}\|fg\|_r\le\|f\|_p\|g\|_q\end{equation}
+\end{theoreme}
+
+%Si $f\in L^p$ et $f\in L^q$, alors $f\in L^r$, $p\le r\le q$.
+
 
 \medskip
 \section{Mais où se situent nos fonctions $C^k$?}

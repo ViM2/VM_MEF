@@ -513,17 +513,65 @@ En complément à l'aspect métrique (Fréchet 1906), nous
 allons maintenant aborder l'aspect mesure.
 
 \medskip
+Le but, à travers la notion de mesure, est d'étendre la notion usuelle de longueur pour les ensembles
+de $\RR$, ou de volume pour ceux de $\RR^n$, et ceci de deux manières:
+\begin{itemize}
+\item on veut d'une part pouvoir considérer des espaces de base plus généraux (plus <<~abstraits~>>:
+espaces de dimension infinie, espaces sur lesquels on définit les probabilités...); 
+\item et
+d'autre part on veut englober dans le même cadre mathématique les notions de longueurs, 
+surface, volume, mais aussi de masses ou charges ponctuelles issues de la mécanique, de
+l'électricité... car toutes ces quantités possèdent une même propriété évidente: l'\textcolorblue{additivité}
+(i.e. si l'on désigne par $\mu(A)$ le volume, la masse, la charge électrique... d'une partie <<~raisonnable~>> $A$,
+alors $\mu(A\cap B)=\mu(A)+\mu(B)$ dès que $A$ et $B$ sont disjoints).
+\end{itemize}
+
+\medskip
+Afin de réaliser cela, il faut en passer par quelques complications mathématiques, et cela essentiellement
+pour deux raisons.
+Il nous faut tout d'abord définir ce qu'est une partie <<~raisonnable~>> d'un ensemble $E$ (s'il est
+aisé de définir le volume d'un polyèdre par exemple, il existe des parties dont la <<~frontière~>> est
+si complexe qu'elles ne possèdent pas de notion de volume).
+Ensuite, la propriété d'additivité si dessus est un peu trop naïve et se révèle insuffisante pour avoir de bonnes 
+propriétés pour les mesures.
+
+En effet, la classe des mesures additives a une structure mathématique extrêmement pauvre, ne permettant pas, 
+en particulier, de définir une notion satisfaisante d'intégrale par rapport à ces mesures additives.
+On est donc conduit à utiliser les mesures possédant la propriété de $\sigma$-additivité (voir définition
+d'une mesure ci-dessous), ce qui nous oblige à  considérer comme classe d'ensembles <<~mesurables~>> une 
+tribu (voir définition de tribu ci-dessous) au lieu de la notion plus simple d'algèbre.
+
+\medskip
+\begin{definition}[Algèbre]
+Une \textcolorblue{algèbre (de Boole) $\mathcal{E}$} sur un ensemble $X$ est un \textcolorred{ensemble}
+non vide de parties de $X$,  stable par passage au complémentaire et par union finie
+(donc aussi par intersection finie), i.e.:
+\begin{enumerate}
+ \item $\mathcal{E} \not=\varnothing$
+ \item $\forall A \in \mathcal{E}$, ${}^c A \in\mathcal{E}$, où ${}^cA$ désigne le complémentaire de $A$ dans $X$.
+	(donc $X\in \mathcal{A}$)
+\item si $A_1$, ..., $A_n$ $\in\mathcal{E}$ alors $A_1\cup ...\cup A_n \in\mathcal{E}$
+\end{enumerate}
+\end{definition}
+
+\medskip
 \begin{definition}[Tribu]
 Une \textcolorblue{tribu $\mathcal{A}$}\index{Tribu} sur un ensemble $X$ est un \textcolorred{ensemble}
 non vide de parties de $X$,  stable par passage au complémentaire et par union dénombrable
 (donc aussi par intersection  dénombrable), i.e.:
 \begin{enumerate}
  \item $\mathcal{A} \not=\varnothing$
- \item $\forall A \in \mathcal{A}$, ${}^c A \in\mathcal{A}$, où ${}^cA$ désigne le complémentaire de $A$ dans $X$.
-	(donc $X\in \mathcal{A}$)
+ \item $\forall A \in \mathcal{A}$, ${}^c A \in\mathcal{A}$%, où ${}^cA$ désigne le complémentaire de $A$ dans $X$. (donc $X\in \mathcal{A}$)
 \item si $\forall n \in \mathbb{N}$, $A_n \in\mathcal{A}$ alors $\bigcup_{n\in\mathbb{N} } A_n \in\mathcal{A}$
 \end{enumerate}
 \end{definition}
+
+Ces deux dernières définitions étant placées l'une sous l'autre, leur différence doit apparaître clairement:
+dans le cas d'une algèbre, on a à faire à un nombre fini d'intersection ou de réunions, dans celui
+d'une tribu, on prend en compte un ensemble dénombrable (donc fini ou non).
+
+\medskip
+Il est donc évident que toute tribu est une algèbre, la réciproque étant fausse.
 
 %\medskip
 \begin{definition}[Espace mesurable]
@@ -533,6 +581,7 @@ Sur les espaces mesurables on définit des mesures (voir ci-après); sur les esp
 appelle ces mesures des probabilités.
 \end{definition}
 
+\medskip
 \begin{histoire}
 La théorie de la mesure s'occupe de regarder un peu plus en détail ce qui se
 passe à l'intérieur des espaces dits mesurés (définis plus bas): il s'agit
@@ -630,6 +679,19 @@ toute la théorie de l'intégration qui est à la base de l'analyse numérique (
 tu nous tiens) ainsi notamment que pour le théorème  de représentation de Riesz fondamental en
 éléments finis.
 
+\medskip
+Notons que tout intervalle ouvert, fermé ou semi-ouvert appartient à la tribu borélienne de $\RR$.
+Il en est de même de toute réunion finie ou dénombrable de ces intervalles.
+
+\medskip
+Il n'est pas possible de donner une description plus concrète de la tribu
+borélienne de $\RR$ que ce qui a été fait. Toutes les réunions finies ou dénombrables d'intervalles 
+sont des boréliens, mais certains boréliens ne sont pas de cette forme. 
+\textcolorgreen{En fait, toutes les parties de $\RR$ que l'on rencontre dans la pratique sont des 
+boréliens. Il existe des parties de $\RR$ qui ne sont pas boréliennes, mais il faut un peu de sueur pour
+les construire.}
+
+
 %\bigskip
 
 La \textcolorblue{mesure de Dirac%\footnotemark
@@ -667,7 +729,7 @@ lorsque tout ensemble négligeable pour $\mu$ appartient à la tribu $\mathcal{A
 \end{equation}
 \end{definition}
 
-%\bigskip
+\medskip
 La \textcolorblue{mesure de Lebesgue}\index{Mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 a permis de bâtir une théorie de
 l'intégration palliant les insuffisances de l'intégrale de Riemann (il suffit de vouloir
