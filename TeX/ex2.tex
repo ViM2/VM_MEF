@@ -245,11 +245,11 @@ La représentation de la fonction solution, est:
 \medskipvm
 Nous obtenons la matrice de rigidité élémentaire:
 \begin{equation} 
-\MM{K} = \frac{2EA}L \begin{bmatrix} 1 & -1\\ -1& 1 \end{bmatrix}
+\MM{K} = \frac{2EA}L \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
 \end{equation}
 et le vecteur des forces nodales élémentaires:
 \begin{equation}  
-\VV{f} = \rho g A \frac{L}4 \begin{pmatrix} 1 \\1 \end{pmatrix}
+\VV{f} = \rho g A \frac{L}4 \VV{\begin{array}{c} 1 \\1 \end{array}}
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -281,27 +281,27 @@ de la barre à l'aide de trois éléments:
 Chaque élément $e$ (de longueur $L_e$) possède une matrice de rigidité élémentaire $\MM{k_e}$ 
 et un vecteur des forces nodales élémentaires $\VV{f_e}$ définis par:
 \begin{equation}
-\MM{K_e} = \frac{2EA}{L_e} \begin{bmatrix} 1 & -1\\ -1& 1 \end{bmatrix}
+\MM{K_e} = \frac{2EA}{L_e} \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
 \qquad \text{ et } \qquad
-\VV{f_e} = \rho g A \frac{L_e}4 \begin{pmatrix} 1 \\1 \end{pmatrix}
+\VV{f_e} = \rho g A \frac{L_e}4 \VV{\begin{array}{c} 1 \\1 \end{array}}
 \end{equation}
 \medskipvm
 Les variables nodales sont $\LL{q}=\LL{u_1, u_2, u_3, u_4}$, et, les matrices élémentaires
 redonnées ci-dessus s'écrivent, en fonction de ces variables nodales:
 \begin{equation*}
-\MM{K}_1 = \frac{2EA}{L_1} \begin{bmatrix} 1 & -1 & 0 & 0\\ -1& 1 & 0 & 0\\ 0&0&0&0\\0&0&0&0 \end{bmatrix}
+\MM{K}_1 = \frac{2EA}{L_1} \MM{\begin{array}{cccc} 1 & -1 & 0 & 0\\ -1& 1 & 0 & 0\\ 0&0&0&0\\0&0&0&0 \end{array}}
 \quad
-\MM{K}_2 = \frac{2EA}{L_2} \begin{bmatrix}0&0&0&0\\ 0& 1 & -1 & 0\\ 0 & -1& 1& 0\\0&0&0&0 \end{bmatrix}
+\MM{K}_2 = \frac{2EA}{L_2} \MM{\begin{array}{cccc}0&0&0&0\\ 0& 1 & -1 & 0\\ 0 & -1& 1& 0\\0&0&0&0 \end{array}}
 \quad
-\MM{K}_3 = \frac{2EA}{L_3} \begin{bmatrix}0&0&0&0\\0&0&0&0\\0& 0& 1 & -1\\ 0&0 & -1& 1\end{bmatrix}
+\MM{K}_3 = \frac{2EA}{L_3} \MM{\begin{array}{cccc}0&0&0&0\\0&0&0&0\\0& 0& 1 & -1\\ 0&0 & -1& 1\end{array}}
 \end{equation*}
 et les forces nodales:
 \begin{equation*}
-\VV{f_1} = \rho g A \frac{L_1}4 \begin{pmatrix} 1 \\1\\0\\0 \end{pmatrix}
+\VV{f_1} = \rho g A \frac{L_1}4 \VV{\begin{array}{c} 1 \\1\\0\\0 \end{array}}
 \quad
-\VV{f_2} = \rho g A \frac{L_2}4 \begin{pmatrix} 0\\1 \\1\\0 \end{pmatrix}
+\VV{f_2} = \rho g A \frac{L_2}4 \VV{\begin{array}{c} 0\\1 \\1\\0 \end{array}}
 \quad
-\VV{f_3} = \rho g A \frac{L_3}4 \begin{pmatrix} 0\\0\\1 \\1 \end{pmatrix}
+\VV{f_3} = \rho g A \frac{L_3}4 \VV{\begin{array}{c} 0\\0\\1 \\1 \end{array}}
 \end{equation*}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -409,16 +409,16 @@ avec les conditions aux limites $u=\overline{u}$ et $u^*=0$ sur $S_u$.
 De manière discrétisée, il vient:
 \begin{equation}
 W = \LLL{v_1, v_2, \sigma_1^*}\left(
-\begin{bmatrix} \mO & \VV{b}\\ ~\\ \LL{b} & -a \end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\ \sigma_1 \end{pmatrix}
-- \begin{pmatrix} \VV{f_n}\\~\\ \sigma_1 \end{pmatrix}
+\MM{\begin{array}{cc} \mO & \VV{b}\\ ~\\ \LL{b} & -a \end{array}}
+\VV{\begin{array}{c} u_1\\u_2\\ \sigma_1 \end{array}}
+- \VV{\begin{array}{c} \VV{f_n}\\~\\ \sigma_1 \end{array}}
 \right)\end{equation}
 avec:
 \begin{equation}
-\VV{b}=\dint_0^L \frac{A}L \begin{pmatrix} -1\\1\end{pmatrix}; \qquad
+\VV{b}=\dint_0^L \frac{A}L \VV{\begin{array}{c} -1\\1\end{array}}; \qquad
 a=\dint_0^L \frac{A}H \dd x; \qquad
-\VV{f_n} = \dint_{-1}^{+1} A \begin{pmatrix} N_1\\N_2 \end{pmatrix} \frac{L}2 f_x \d \dd \xi =
- A f_x \frac{L}2 \begin{pmatrix} 1\\1 \end{pmatrix}
+\VV{f_n} = \dint_{-1}^{+1} A \VV{\begin{array}{c} N_1\\N_2 \end{array}} \frac{L}2 f_x \dd\xi =
+ A f_x \frac{L}2 \VV{\begin{array}{c} 1\\1 \end{array}}
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm

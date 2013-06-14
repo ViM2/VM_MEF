@@ -14,11 +14,11 @@
 Nous repartons de l'élément de barre 1D défini au paragraphe \ref{Sec-barre1D}.
 
 Rappelons que la matrice de rigidité élémentaire et le vecteur des forces nodales élémentaires sont:
-\begin{equation} \MM{K} = \frac{2EA}L \begin{bmatrix} 1 & -1\\ -1& 1 \end{bmatrix} %\end{equation}
+\begin{equation} \MM{K} = \frac{2EA}L \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}} %\end{equation}
 %et le vecteur des forces nodales élémentaires:
 %\begin{equation}  
 \qquad \text{ et } \qquad
-\VV{f} = \rho g A \frac{L}4 \begin{pmatrix} 1 \\1 \end{pmatrix} \end{equation}
+\VV{f} = \rho g A \frac{L}4 \VV{\begin{array}{c} 1 \\1 \end{array}} \end{equation}
 %%%%%%%%%%%%
 \medskipvm
 L'assemblage de trois éléments, décrit au pagraphe \ref{Sec-ass}, conduit à:
@@ -49,11 +49,11 @@ soumis à une force.
 %\medskip
 On obtient alors un système de type $\MM{K}\VV{q}=\VV{F}$ à résoudre, avec la condition aux limites $u_1=0$, qui s'écrit explicitement dans ce cas:
 \begin{equation}
-\begin{bmatrix} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
-\end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4 \end{pmatrix}
+\MM{\begin{array}{cccc} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
+\end{array}}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4 \end{array}}
 =
-\begin{pmatrix} 0\\0\\0\\F' \end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\0\\F' \end{array}}
 \end{equation}
 (avec $F'=\rho g L^2/(8E)$).
 
@@ -67,9 +67,9 @@ Soit à résoudre un système linéaire de type:
 \begin{equation}\label{Eq-lin} \MM{A}\VV{x}=\VV{b} \end{equation}
 Ce système peut être réécrit par blocs sous la forme:
 \begin{equation} 
-\begin{bmatrix} A_{11} & A_{12}\\ A_{21} & A_{22} \end{bmatrix}
-\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} =
-\begin{pmatrix} b_1\\ b_2 \end{pmatrix} 
+\MM{\begin{array}{cc} A_{11} & A_{12}\\ A_{21} & A_{22} \end{array}}
+\VV{\begin{array}{c} x_1 \\ x_2 \end{array}} =
+\VV{\begin{array}{c} b_1\\ b_2 \end{array}}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -92,17 +92,17 @@ Dans ce cas, la matrice $S$ est la matrice de rigidité du super-élément consi
 \medskipvm
 Le système initial (\ref{Eq-lin}) est équivalent à:
 \begin{equation}\label{Eq-Sch1}
-\begin{bmatrix} A_{11} & A_{12}\\ \mO & S \end{bmatrix}
-\begin{pmatrix}x_1\\ x_2 \end{pmatrix} =
-\begin{pmatrix} b_1\\ c \end{pmatrix}
+\MM{\begin{array}{cc} A_{11} & A_{12}\\ \mO & S \end{array}}
+\VV{\begin{array}{c}x_1\\ x_2 \end{array}} =
+\VV{\begin{array}{c} b_1\\ c \end{array}}
 \end{equation}
 qui peut être réécrit:
 \begin{equation}
-\begin{bmatrix} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{bmatrix}
-\begin{bmatrix} A_{11} & A_{12}\\ \mO{} & S \end{bmatrix}
-\begin{pmatrix} x_1\\ x_2 \end{pmatrix} =
-\begin{bmatrix} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{bmatrix}
-\begin{pmatrix} b_1\\ c \end{pmatrix}
+\MM{\begin{array}{cc} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{array}}
+\MM{\begin{array}{cc} A_{11} & A_{12}\\ \mO{} & S \end{array}}
+\VV{\begin{array}{c} x_1\\ x_2 \end{array}} =
+\MM{\begin{array}{cc} I & \mO{} \\ A_{21}A_{11}^{-1} & I \end{array}}
+\VV{\begin{array}{c} b_1\\ c \end{array}}
 \end{equation}
 
 \medskip
@@ -152,11 +152,11 @@ Dans ce cas, il n'est plus nécessaire de séparer explicitement les ddl, mais \
 
 Le système à résoudre s'écrit très simplement:
 \begin{equation}\label{Eq-Lag1}
-\begin{bmatrix} \MM{K} & -\MM{D}^T\\ -\MM{D} & \mO{} \end{bmatrix}
-\begin{pmatrix} q\\ \lambda \end{pmatrix} =
+\MM{\begin{array}{cc} \MM{K} & -\MM{D}^T\\ -\MM{D} & \mO{} \end{array}}
+\VV{\begin{array}{c} q\\ \lambda \end{array}} =
 \MM{A}
-\begin{pmatrix} q\\ \lambda \end{pmatrix} =
-\begin{pmatrix} F\\ -u_d \end{pmatrix}
+\VV{\begin{array}{c} q\\ \lambda \end{array}} =
+\VV{\begin{array}{c} F\\ -u_d \end{array}}
 \end{equation}
 Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
@@ -218,11 +218,11 @@ trop grande, le système devient très mal conditionné, voire numériquement si
 \fi
 Nous devons toujours résoudre:
 \begin{equation}
-\begin{bmatrix} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
-\end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4 \end{pmatrix}
+\MM{\begin{array}{cccc} 1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
+\end{array}}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4 \end{array}}
 =
-\begin{pmatrix} 0\\0\\0\\F' \end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\0\\F' \end{array}}
 \end{equation}
 avec la condition aux limites $u_1=0$.
 %%%%%%%%%%%%%%
@@ -234,10 +234,10 @@ La méthode la plus rudimentaire consiste à prendre en compte directement et ex
 On supprime donc du système matriciel la ligne et la colonne correspondant à $u_1$, et on résoud:
 \begin{equation}\label{Eq-Base}
 u_1=0 \text{ et }
-\begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1\\ 0&-1&1 \end{bmatrix}
-\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}
+\MM{\begin{array}{ccc} 2 & -1 & 0 \\ -1 & 2 & -1\\ 0&-1&1 \end{array}}
+\VV{\begin{array}{c} u_2\\u_3\\u_4 \end{array}}
 =
-\begin{pmatrix} 0\\0\\F' \end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\F' \end{array}}
 \qquad \text{ d'où: } 
 \left\{\begin{aligned} &u_1=0 \\ &u_2=F' \\ &u_3=2F' \\ &u_4=3F' \end{aligned}\right.
 \end{equation}
@@ -249,9 +249,9 @@ et le déplacement imposé est $\VV{u_d}=\VV{0}$.
 
 Le système s'écrit:
 \begin{equation}
-\begin{bmatrix} K_{11} & K_{12}\\ K_{21} & K_{22} \end{bmatrix}
-\begin{pmatrix} q_1\\ q_2 \end{pmatrix} =
-\begin{pmatrix} f_1\\ f_2 \end{pmatrix} 
+\MM{\begin{array}{cc} K_{11} & K_{12}\\ K_{21} & K_{22} \end{array}}
+\VV{\begin{array}{c} q_1\\ q_2 \end{array}} =
+\VV{\begin{array}{c} f_1\\ f_2 \end{array}}
 \end{equation}
 avec:
 \begin{equation*}
@@ -266,11 +266,11 @@ avec:
 %  \left[ \begin{array}{c} 1 \end{array}  \right]
 \MM{K}_{22} =[1]
 \end{bmatrix}
-\begin{pmatrix} \VV{q}_1=\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}\\
-\VV{q}_2 =\begin{pmatrix} u_1 \end{pmatrix}\end{pmatrix}
+\VV{\begin{array}{c} \VV{q}_1=\VV{\begin{array}{c} u_2\\u_3\\u_4 \end{array}}\\
+\VV{q}_2 =\VV{\begin{array}{c} u_1 \end{array}}\end{array}}
 =
-\begin{pmatrix} \VV{f}_1 =\begin{pmatrix} 0\\0\\F' \end{pmatrix}\\ 
-\VV{f}_2=\begin{pmatrix} u_d=0 \end{pmatrix}\end{pmatrix}
+\VV{\begin{array}{c} \VV{f}_1 =\VV{\begin{array}{c} 0\\0\\F' \end{array}}\\ 
+\VV{f}_2=\VV{\begin{array}{c} u_d=0 \end{array}}\end{array}}
 \end{equation*}
 %%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -283,9 +283,9 @@ Par la méthode des multiplicateurs de Lagrange, on obtient le système:
 \begin{equation}
 \begin{bmatrix} 1 & -1 & 0 & 0 & -1 \\ -1 & 2 & -1 & 0 & 0 \\ 0 & -1 & 2 & -1 & 0\\ 0&0&-1&1& 0 \\ -1&0&0&0&0
 \end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ \lambda \end{pmatrix}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ \lambda \end{array}}
 =
-\begin{pmatrix} 0\\0\\0\\F' \\ u_d=0\end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\0\\F' \\ u_d=0\end{array}}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda = -F' \end{array}\right.
 \end{equation}
@@ -295,9 +295,9 @@ Par la technique du double multiplicateur, on obtient le système:
 \begin{equation}
 \begin{bmatrix} 1 & -1 & 0 & 0 & 1&-1 \\ -1 & 2 & -1 & 0 & 0&0 \\ 0 & -1 & 2 & -1 & 0&0\\ 0&0&-1&1& 0&0 \\ 1&0&0&0&0&0
 \end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ \lambda_1 \\ \lambda_2 \end{pmatrix}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ \lambda_1 \\ \lambda_2 \end{array}}
 =
-\begin{pmatrix} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{array}}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
@@ -307,9 +307,9 @@ En considérant une action extérieure, on obtient le système:
 \begin{equation}
 \begin{bmatrix} 1+k & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1
 \end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4 \end{pmatrix}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4 \end{array}}
 =
-\begin{pmatrix} 0+k\cdot u_d = 0\\0\\0\\F' \end{pmatrix}
+\VV{\begin{array}{c} 0+k\cdot u_d = 0\\0\\0\\F' \end{array}}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \end{array}\right.
 \end{equation}
@@ -344,9 +344,9 @@ En ajoutant la relation $u_2=u_3$ par l'intermédiaire d'un multiplicateur de La
 \begin{equation}
 \begin{bmatrix}1&-1&0&0&0&0 \\ -1&1&0&0&0&1 \\ 0&0&1&-1&0&-1\\ 0&0&-1&2&-1&0\\ 0&0&0&-1&1&0 \\ 0&1&-1&0&0&0
 \end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \end{pmatrix}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \end{array}}
 =
-\begin{pmatrix} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\0\\F' \\ 0 \\ u_d=0\end{array}}
 \end{equation}
 auquel il faut également ajouter la condition aux limites $u_1$=0.
 
@@ -355,9 +355,9 @@ Si cette condition aux limites est imposée par un multiplicateur de Lagrange $\
 \begin{bmatrix} 1&-1&0&0&0&0&-1 \\ -1&1&0&0&0&1&0 \\ 0&0&1&-1&0&-1&0\\ 
 0&0&-1&2&-1&0&0\\ 0&0&0&-1&1&0&0 \\ 0&1&-1&0&0&0&0 \\ 1&0&0&0&0&0&0
 \end{bmatrix}
-\begin{pmatrix} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \\ \lambda_2 \end{pmatrix}
+\VV{\begin{array}{c} u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \\ \lambda_2 \end{array}}
 =
-\begin{pmatrix} 0\\0\\0\\F' \\ 0 \\ 0 \\ 0\end{pmatrix}
+\VV{\begin{array}{c} 0\\0\\0\\F' \\ 0 \\ 0 \\ 0\end{array}}
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=F' \\ u_4=2F' \\ u_5=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
