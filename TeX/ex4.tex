@@ -11,7 +11,7 @@ Il s'agit de calculer les contraintes à l'interface entre deux matériaux en ut
 donnée à l'équation (\ref{Eq-HR2}).
 
 \medskip
-Le but est de montrer que même sur un maillage grossier, il est possible de correctement estimer les contraintes 
+Le but est de montrer que même sur un maillage grossier, il est possible de correctement estimer les contraintes
 aux interfaces, pour peu que l'on dispose d'une méthode appropriée. Nous espérons qu'au passage, nous
 démontrerons également qu'il est assez simple d'implémenter des fonctions dans un code existant.
 
@@ -174,11 +174,11 @@ nall
 !
 ! lire les valeurs dans temp.sij
 ! ces fichiers contiennent: sxx, syy, sxy
-! ce sont toutes les composantes continues. 
+! ce sont toutes les composantes continues.
 ! Elles n'ont pas toutes un sens:
-! Sxx discontinu, mais dans le repere 
-! local, donc on la laisse pour qu'ANSYS 
-! puisse faire la ! rotation de repere 
+! Sxx discontinu, mais dans le repere
+! local, donc on la laisse pour qu'ANSYS
+! puisse faire la ! rotation de repere
 ! si necessaire.
 *vread,CoordX(1),temp,sxx,,
 (E13.7)
@@ -275,13 +275,13 @@ C---- Last line of VM2
 \color{black}\normalsize
 
 \medskip
-La routine READANS permet de lire les données. Celles-ci sont stockées dans les matrices 
+La routine READANS permet de lire les données. Celles-ci sont stockées dans les matrices
 COORD(NODMAX,3), DISP(NODMAX,2), XMAT(MATMAX,3) et NLT(NELTMAX,9).
 
 \medskip
 la routine CHELT détecte les interfaces, i.e. les faces dont les nœuds appartiennent à des éléments dont les propriétés
 matérielles sont différentes.
-Le vecteur NADJ(NODMAX,8) contient les numéros des deux éléments adjacents (posistions 1 et 2) ainsi que les 
+Le vecteur NADJ(NODMAX,8) contient les numéros des deux éléments adjacents (posistions 1 et 2) ainsi que les
 numéros des nœuds de l'interface (position 3, 4 et 5).
 
 \medskip
@@ -294,7 +294,7 @@ La routine LOCREISS calcule les contraintes nodales le long de chaque face.
 \medskip
 Les contraintes ayant été calculées pour les nœuds de chacune des faces de l'interface, on moyenne les résultats
 pour un nœud appartenant à plusieurs faces. C'est ce que fait la routine AVERAGE. À ce stade, nous disposons donc
-des contraintes nodales, calculées par la fonctionnelle mixte d'Helliner-Reissner, le long de toutes les interfaces présentes
+des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner, le long de toutes les interfaces présentes
 dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soient relus par la macros \ansys.
 
 
@@ -314,8 +314,8 @@ dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soien
 \fi
 
 \begin{figure}[ht]
-   \includegraphics[height=80mm]{U-geo.eps} \hfill 
-   \includegraphics[height=80mm]{U-mesh1.eps}\hfill 
+   \includegraphics[height=80mm]{U-geo.eps} \hfill
+   \includegraphics[height=80mm]{U-mesh1.eps}\hfill
    \includegraphics[height=80mm]{U-mesh2.eps}
    \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le calcul (test de la méthode Reissner local,
 c) maillage permettant d'obtenir la <<~solution de référence~>> puisqu'il n'y a pas de solution analytique}
@@ -323,7 +323,7 @@ c) maillage permettant d'obtenir la <<~solution de référence~>> puisqu'il n'y 
 
 Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en $U$.
 
-Il s'agit d'une poutre sandwich dont les peaux sont en aluminium et l'âme en résinde époxy.
+Il s'agit d'une poutre sandwich dont les peaux sont en aluminium et l'âme en résine époxy.
 Par symétrie, seule une demi-poutre est modélisée. Elle est soumise à une force unitaire
 sur chaque montant.
 
@@ -358,19 +358,19 @@ NCORE=16
 NSKIN=2
 Forc=1
 !*
-/PREP7  
-!*  
+/PREP7
+!*
 ET,1,PLANE82
-!*  
-UIMP,1,EX, , ,70000,   
-UIMP,1,NUXY, , ,0.3,  
-UIMP,1,EMIS, , ,1,  
-!*  
-!*  
-UIMP,2,EX, , ,3400,     
-UIMP,2,NUXY, , ,0.34,  
-UIMP,2,EMIS, , ,1,    
-!*  
+!*
+UIMP,1,EX, , ,70000,
+UIMP,1,NUXY, , ,0.3,
+UIMP,1,EMIS, , ,1,
+!*
+!*
+UIMP,2,EX, , ,3400,
+UIMP,2,NUXY, , ,0.34,
+UIMP,2,EMIS, , ,1,
+!*
 k,1,0,-Rh3
 k,2,Rh3,0
 k,3,Rh2,0
@@ -395,7 +395,7 @@ larc,5,6,13,Rh1,NRCUTS
 l,5,8,NSKIN
 larc,8,7,13,Rint,NRCUTS
 l,6,7,NSKIN
-!*  
+!*
 l,2,9,NCUTS
 l,9,10,NSKIN
 l,10,3,NCUTS
@@ -429,12 +429,12 @@ dk,8,uy,0
 !*
 fk,9,fx,Forc
 !*
-FINISH  
-/SOLU   
-/STAT,SOLU  
-SOLVE   
-FINISH  
-/POST1  
+FINISH
+/SOLU
+/STAT,SOLU
+SOLVE
+FINISH
+/POST1
 pldisp,1
 *USE,INTERF
 ...
@@ -443,8 +443,7 @@ pldisp,1
 \color{black}\normalsize
 
 On utilise la macro en tapant \verb|*USE,INTERF|, et les contraintes sont directement
-modifées dans \ansys.
-On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les
+modifiées dans \ansys. On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les
 différentes composantes des contraintes.
 
 
@@ -584,14 +583,14 @@ Dans les listings ci-dessus, nous n'avons pas exposé comme atteindre les contra
 Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour la déformée et les déplacements selon $x$ et $y$,
 et à la \fig{Fig-poutU-eps} pour les déformations.
 \begin{figure}[ht]
-   \includegraphics[height=80mm]{U-def.eps} \hfill 
-   \includegraphics[height=80mm]{U-ux.eps}\hfill 
+   \includegraphics[height=80mm]{U-def.eps} \hfill
+   \includegraphics[height=80mm]{U-ux.eps}\hfill
    \includegraphics[height=80mm]{U-uy.eps}
    \caption{\label{Fig-poutU-disp} Déformée et déplacements}
 \end{figure}
 \begin{figure}[ht]
-   \includegraphics[height=80mm]{U-epsXX.eps} \hfill 
-   \includegraphics[height=80mm]{U-epsYY.eps}\hfill 
+   \includegraphics[height=80mm]{U-epsXX.eps} \hfill
+   \includegraphics[height=80mm]{U-epsYY.eps}\hfill
    \includegraphics[height=80mm]{U-epsXY.eps}
    \caption{\label{Fig-poutU-eps} Déformations}
 \end{figure}
@@ -601,8 +600,8 @@ et à la \fig{Fig-poutU-eps} pour les déformations.
 \medskip
 Néanmoins nous présentons quelques résultats issus de l'analyse des contraintes aux interfaces avec ou sans
 utilisation de la méthode de Reissner local.
-Nous nous concentrerons sur les résultats numériques et graphiques permettant d'apprécier la précision de la 
-méthode de Reissner local par rapport aux résultats d'\ansys aux points $A$, $B$, $E$ et $F$ ainsi que d'étudier 
+Nous nous concentrerons sur les résultats numériques et graphiques permettant d'apprécier la précision de la
+méthode de Reissner local par rapport aux résultats d'\ansys aux points $A$, $B$, $E$ et $F$ ainsi que d'étudier
 l'influence de la valeur du rayon $R$.
 
 \medskip
@@ -610,17 +609,17 @@ Une première remarque s'impose: plus la valeur du rayon est faible, plus les r�
 méthode employée (et vous devez savoir pourquoi à ce niveau du document).
 
 \medskip
-Au point $A$, l'influence des conditions aux limites est encore sensible: en plus de la condition de symétrie de la structure, 
+Au point $A$, l'influence des conditions aux limites est encore sensible: en plus de la condition de symétrie de la structure,
 le blocage du déplacement vertical induit une légère détérioration des résultats numériques. L'influence
 de cette condition aux limites n'est plus visible au point $B$.
 
 \medskip
-En $A$ et $B$, la composante discontinue est $\sigma_{xx}$, les composantes $\sigma_{yy}$ et $\sigma_{xy}$ sont 
-continues. Par contre, aux points $E$ et $F$, c'est $\sigma_{yy}$ la composante discontinue et $\sigma_{xx}$ et 
+En $A$ et $B$, la composante discontinue est $\sigma_{xx}$, les composantes $\sigma_{yy}$ et $\sigma_{xy}$ sont
+continues. Par contre, aux points $E$ et $F$, c'est $\sigma_{yy}$ la composante discontinue et $\sigma_{xx}$ et
 $\sigma_{xy}$ les composantes continues.
 
 \medskip
-D'après les résultats présentés ci-après, il est visible que la méthode de Reissner local permet d'améliorer les 
+D'après les résultats présentés ci-après, il est visible que la méthode de Reissner local permet d'améliorer les
 résultats par rapport à \ansys.
 
 

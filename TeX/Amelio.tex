@@ -2,7 +2,7 @@
 
 
 \medskip
-\section{Amélioration d'un modèle: méthodes r, h et p}\label{Sec-rhp}
+\section{Amélioration d'un modèle: méthodes $r$, $h$ et $p$}\label{Sec-rhp}
 
 Les indicateurs d'erreur ont pour but de nous indiquer si <<~nous sommes loin de
 la solution~>>, afin de pouvoir modifier le modèle si besoin.
@@ -24,22 +24,14 @@ solution obtenue:
 
 \medskip
 Évidemment, ces méthodes peuvent être combinées.
-La \textcolorblue{méthode -hp-}\index{Méthode hp} propose de modifier à la fois le maillage et
+La \textcolorblue{méthode -$hp$-}\index{Méthode hp} propose de modifier à la fois le maillage et
 les fonctions d'interpolation. Elle semble aujourd'hui être la méthode optimale en terme
 d'efficacité et de vitesse de convergence.
 
-Notons que les méthodes -r- et -h- dépendent des capacités du mailleur automatique
-implémenté.
-De nombreux travaux existent sur le maillage automatique, nous n'entrerons pas dans
-ce détail.
-
-
-
-
+Notons que les méthodes -$r$- et -$h$- dépendent des capacités du mailleur automatique implémenté. De nombreux travaux existent sur le maillage automatique, nous n'entrerons pas dans ce détail.
 
 \medskip
 \section{Post-traitement}\index{Post-traitement}\label{Sec-PT}
-
 Une manière d'améliorer les résultats est de recourir à des méthodes dites
 de post-traitement, i.e. des méthodes qui, à partir des données issues de la
 résolution du système matriciel correspondant au problème, fournissent
@@ -81,10 +73,6 @@ trouve dans une section ne passant pas par un nœud)...
 \ifVersionAvecExemplesSepares\else
    \input{./tex/ex4}% macro Ansys et poutre en U
 \fi
-
-
-
-
 
 
 \medskip
@@ -441,7 +429,7 @@ L'opération consistant à éliminer tous les ddl internes est appelée
 \medskip
 Regardons ce qui se passe d'un point de vue matriciel.
 Pour cela, considérons que nous ayons à résoudre le système:
-\begin{equation}  \MM{K} \VV{q}=\VV{F}\end{equation}
+\begin{equation}  \MM{K} \VV{q}=\VV{f}\end{equation}
 Le vecteur $\VV{q}$ se compose des composantes internes $\VV{q_i}$ et des composantes
 de frontière $\VV{q_b}$, de sorte que le système, une fois réordonné s'écrit:
 \begin{equation}
@@ -536,9 +524,9 @@ Restons sur le problème structurel correspondant au système matriciel:
 %nœuds $q$, lorsque cette structure est soumise au chargement $F$ sont donnés par
 %le système:
 \begin{equation}
-\MM{K} \VV{q} = \VV{F}
+\MM{K} \VV{q} = \VV{f}
 \end{equation}
-où $\MM{K}$ est de dimension $n\times n$.%, et $\VV{q}$ et $\VV{F}$ sont des vecteurs \textcolorgris{(on ne
+où $\MM{K}$ est de dimension $n\times n$.%, et $\VV{q}$ et $\VV{f}$ sont des vecteurs \textcolorgris{(on ne
 %note plus $[K]\{q\}=\{F\}$ dans ce paragraphe)}.
 
 \medskip
@@ -557,12 +545,12 @@ d'économiser des opérations.
 
 \medskip
 \subsection{Modification de la matrice}
-Considérons maintenant le cas où ce n'est plus le chargement $\VV{F}$ qui peut varier d'une analyse
+Considérons maintenant le cas où ce n'est plus le chargement $\VV{f}$ qui peut varier d'une analyse
 à l'autre, mais la matrice $\MM{K}$.
 
 On est amené à chercher une solution du système:
 \begin{equation}
-\left(\MM{K}+\Delta\MM{ K}\right)\VV{q}=\VV{F}
+\left(\MM{K}+\Delta\MM{ K}\right)\VV{q}=\VV{f}
 \end{equation}
 en fonction de la solution du système non perturbé, i.e. à calculer $\left(\MM{K}+\Delta\MM{K}\right)^{-1}$
 en fonction des autres matrices. On rappelle que $\Delta\MM{ K}$ est appelé \textcolorblue{perturbation}
@@ -578,7 +566,7 @@ Généralement, les conditions cinématiques sont prises en compte en supprimant
 modifiant les équations de l'équilibre avant résolution, ce qui rend le système régulier.
 Nous avons vu que le système à résoudre (incluant les conditions cinématiques) revient
 à chercher le minimum de la forme quadratique:
-\begin{equation}M=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F}\end{equation}
+\begin{equation}M=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{f}\end{equation}
 Notons que l'on peut écrire les $p$ conditions cinématiques sous la forme:
 $\MM{C}\VV{q} = \VV{\delta}$
 avec $\MM{C}$ une matrice $p\times n$, et $\VV{q}$ et $\VV{\delta}$ des vecteurs.
@@ -587,7 +575,7 @@ Nous avons également déjà vu que ces conditions peuvent être prises en compt
 par l'intermédiaire de $p$ multiplicateurs de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} $\VV{\lambda}$ dans la fonctionnelle précédente
 qui devient alors:
 \begin{equation}
-M^*=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F} - \LL{\lambda}(\MM{C}\VV{q} - \VV{\delta})
+M^*=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{f} - \LL{\lambda}(\MM{C}\VV{q} - \VV{\delta})
 \end{equation}
 Le système à résoudre est symétrique, régulier, mais non défini-positif.
 
@@ -622,18 +610,18 @@ On introduit la matrice:
 qui, pour $\alpha>0$ est régulière car symétrique et définie-positive.
 Les colonnes de $\MM{R}$ sont vecteurs propres de $\MM{K_\alpha}$ pour la valeur propre $\alpha$.
 
-Dans le système $\MM{K}\VV{q}=\VV{F}$, on remplace $\MM{K}$ par $\MM{K_\alpha}-\MM{R}\MMT{R}$, et en introduisant le
+Dans le système $\MM{K}\VV{q}=\VV{f}$, on remplace $\MM{K}$ par $\MM{K_\alpha}-\MM{R}\MMT{R}$, et en introduisant le
 fait que $\MM{K_\alpha}\MM{R}\MMT{R}=\alpha \MM{R}\MMT{R}$, on obtient finalement:
 \begin{equation}
-\MM{K_\alpha} \left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}=\VV{F}
+\MM{K_\alpha} \left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}=\VV{f}
 \end{equation}
 Si l'on change de variable en posant $\VV{v}=\left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}$ ($\VV{v}$ est la projection de
 $\VV{q}$ sur l'orthogonal du noyau de $\MM{K}$), \textcolorblue{$\VV{v}$ devient l'inconnue du système régularisé}:
 \begin{equation}
-\MM{K_\alpha}\VV{v}=\VV{F}
+\MM{K_\alpha}\VV{v}=\VV{f}
 \end{equation}
 et l'on retrouvera la solution du système initial $\VV{q}$ par:
-\begin{equation}\VV{q}=\VV{v}+\MM{R}\MMT{R}\VV{q} = \MMI{K_\alpha}\VV{F}+\MM{R}\MMT{R}\VV{q}\end{equation}
+\begin{equation}\VV{q}=\VV{v}+\MM{R}\MMT{R}\VV{q} = \MMI{K_\alpha}\VV{f}+\MM{R}\MMT{R}\VV{q}\end{equation}
 \medskip
 On peut remarquer que $\MMI{K_\alpha}$, que l'on note $\MM{S_\alpha}$ possède les mêmes
 valeurs propres que $\MM{K_\alpha}$ (et donc les mêmes que $\MM{K}$ et $\MM{R}\MMT{R}$). On est donc
@@ -693,8 +681,8 @@ nombreuses analyses.
 En plus de considérer un domaine borné $\Omega$ de $\RR^n$, nous allons considérer
 une \textcolorblue{perturbation}\index{Perturbation} $V$ de $\Omega$, et nous noterons:
 \begin{equation} \Omega + V = (I+V)(\Omega);\quad V\in W^{1,\infty}(\Omega;\RR^n) \end{equation}
-
-\medskip
+%%%%%%%%%%%%%%%%%
+\medskipvm
 Nous considérons la \textcolorblue{fonction coût} ${\mathbf J}(\Omega, u_\Omega)$ choisie
 pour décrire le problème d'optimisation. Cette fonction dépend donc naturellement
 du domaine $\Omega$ et de la solution du problème sur ce domaine $u_\Omega$.
@@ -704,7 +692,7 @@ rapport aux variations du domaine}.
 \medskip
 Si l'on considère le cas simple ${\mathbf J}(\Omega,u)=\int_\Omega u$, alors il vient:
 \begin{equation}
-\dfrac{d{\mathbf J}}{d\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega V\cdot n + \dint_\Omega u'_{\Omega;v}
+\dfrac{\dd{\mathbf J}}{\dd\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega V\cdot n + \dint_\Omega u'_{\Omega;v}
 \end{equation}
 avec une fois encore $n$ la normale extérieure de $\Gamma=\partial\Omega$, et:
 \begin{equation}
@@ -712,8 +700,10 @@ u'_{\Omega;V}=\lim_{t\rightarrow0} \dfrac{u_{\Omega+tV}(x)-u_\Omega(x)}t, \quad\
 \end{equation}
 La méthode de dérivation par transport conduit à:
 \begin{equation}
-\dfrac{d{\mathbf J}}{d\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega \dive V + \dint_\Omega \dot{u}_{\Omega;v}
-\quad \text{ avec }
+\dfrac{\dd{\mathbf J}}{\dd\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega \dive V + \dint_\Omega \dot{u}_{\Omega;v}
+\end{equation}
+avec:
+\begin{equation}
 \dot{u}_{\Omega;V}=\lim_{t\rightarrow0} \dfrac{u_{\Omega+tV}\circ (I+tV)(x)-u_\Omega(x)}t,\quad \forall x\in\Omega
 \end{equation}
 On définit alors la \textcolorblue{dérivée de la fonction coût par rapport aux variations du domaine}

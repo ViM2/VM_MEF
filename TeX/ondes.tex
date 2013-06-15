@@ -1,20 +1,14 @@
 \chapter{Les ondes}\label{Ch-ondes}
 \begin{abstract}
 Jusqu'ici, nous n'avons quasiment pas parlé de mode propre cela est plus ou moins évoqué à travers,
-par exemple, \og la plus petite période du système\fg{} au chapitre précédent... mais cela a été fait
+par exemple, <<~la plus petite période du système~>> au chapitre précédent... mais cela a été fait
 à dessein.
 
-En effet, nous avons voulu, dans ce chapitre, regrouper les approches modales, car
-cela nous a semblé plus en cohérence.
+En effet, nous avons voulu, dans ce chapitre, regrouper les approches modales, car cela nous a semblé plus en cohérence.
 \end{abstract}
-
-
-
-
 
 \medskip
 \section{Introduction}
-
 Dans la mesure où se document s'adresse à des ingénieurs en mécanique (ou en acoustique),
 la notion de mode propre est une notion relativement maîtrisée.
 
@@ -59,7 +53,7 @@ l'énergie de chaque poussée s'ajoute à l'énergie totale, à condition de pou
 
 Le phénomène de \textcolorblue{résonance}\index{Résonance} n'est rien d'autre que cet effet 
 d'accumulation de l'énergie en injectant celle-ci au moment où elle peut s'ajouter à l'énergie déjà 
-accumulée, i.e. \og en phase\fg{} avec cette dernière.
+accumulée, i.e. <<~en phase~>> avec cette dernière.
 
 \medskip
 Quand l'excitation aura cessé, le système résonant sera le siège d'\textcolorblue{oscillations amorties}: 
@@ -140,21 +134,20 @@ exemples de ce phénomène dans la nature:%\footnote{%
 	
    \item On retrouve la synchronisation dans de nombreux phénomènes naturels : vols d'oiseau, 
 	clignotement des lucioles...
-\end{itemize}\
-
-\medskip
+\end{itemize}
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 En mathématiques, le concept de vecteur propre\index{Vecteur propre} est une notion portant sur une 
 application linéaire d'un espace dans lui-même. Il correspond à l'étude des axes privilégiés, selon 
 lesquels l'application se comporte comme une dilatation, multipliant les vecteurs par une même constante. 
 Ce rapport de dilatation est appelé valeur propre;\index{Valeur propre} les vecteurs auxquels il s'applique s'appellent 
 vecteurs propres, réunis en un espace propre.\index{Espace!propre}
 
-
 \medskip
 \begin{histoire}%
 Bien qu'existant sous une forme non formalisée depuis longtemps, il aura fallu attendre l'invention 
 des structures algébriques nécessaires pour vraiment pouvoir parler des valeurs propres\index{Valeur propre} 
-(issues par exemple de la cloture algébrique de $\CC$ démontrée par Gau\ss).\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}
+(issues par exemple de la cloture algébrique de $\CC$ démontrée par Gauß).\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand}
 
 \medskip
 L'exemple immédiat qui vient à l'esprit est le traitement de l'équation de la chaleur\index{ED-EDP!de la chaleur} par
@@ -188,72 +181,63 @@ L'analyse fonctionnelle naît dans la foulée, et elle est l'objet de la premiè
 \end{histoire}
 \colorblack
 
-
-
-
-
-
-
-
+\medskip
+\section{Notions de valeur, vecteur, mode et fréquence propres}\index{Valeur propre}\index{Vecteur propre}\index{Mode propre}\index{Fréquence propre}
 
 \medskip
-\section{Notions de valeur, vecteur, mode, fréquence propres}\index{Valeur propre}\index{Vecteur propre}\index{Mode propre}\index{Fréquence propre}
-
-\medskip
-Étant donné une matrice carrée $A$ d'ordre $n$ \textcolorgris{(à coefficients dans un anneau commutatif)}, 
-on cherche un polynôme dont les racines sont précisément les valeurs propres de $A$.
+Étant donné une matrice carrée $\MM{A}$ d'ordre $n$ \textcolorgris{(à coefficients dans un anneau commutatif)}, 
+on cherche un polynôme dont les racines sont précisément les valeurs propres de $\MM{A}$.
 Ce polynôme est appelé \textcolorblue{polynôme caractéristique}\index{Polynôme! caractéristique} 
-de $A$ et est défini par:
-\begin{equation} p_A(X):=\det(XI_n-A)\end{equation}
-avec $X$ l'indéterminée du polynôme et $I_n$ la matrice identité d'ordre $n$.
-
-
-\medskip
-Si $\lambda$ est une \textcolorblue{valeur propre}\index{Valeur propre} de $A$, alors il existe un 
-\textcolorblue{vecteur propre}\index{Vecteur propre} $V$ non nul tel que $AV = \lambda V$, i.e. 
-tel que l'on ait $(\lambda I_n-A)V = 0$.
-
-Puisque $V$ est non nul, cela implique que la matrice $\lambda I_n-A$ est singulière, donc de déterminant nul. 
-
-Cela montre que les valeurs propres de $A$ sont des zéros de la fonction $\lambda\mapsto \det(\lambda I_n - A)$
-i.e. des racines du polynôme $\det(XI_n-A)$.
-
-\medskip
+de $\MM{A}$ et est défini par:
+\begin{equation} p_A(X):=\det(X\MM{I}_n-\MM{A})\end{equation}
+avec $X$ l'indéterminée du polynôme et $\MM{I}_n$ la matrice identité d'ordre $n$.
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
+Si $\lambda$ est une \textcolorblue{valeur propre}\index{Valeur propre} de $\MM{A}$, alors il existe un 
+\textcolorblue{vecteur propre}\index{Vecteur propre} $\VV{V}$ non nul tel que $\MM{A}V = \lambda V$, i.e. 
+tel que l'on ait $(\lambda \MM{I}_n-\MM{A})V = 0$.
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
+Puisque $V$ est non nul, cela implique que la matrice $\lambda \MM{I}_n-A$ est singulière, donc de déterminant nul. 
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
+Cela montre que les valeurs propres de $\MM{A}$ sont des zéros de la fonction $\lambda\mapsto \det(\lambda \MM{I}_n - \MM{A})$
+i.e. des racines du polynôme $\det(X\MM{I}_n-\MM{A})$.
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 La propriété la plus importante des polynômes caractéristiques\index{Polynôme! caractéristique} est que 
-les valeurs propres\index{Valeur propre} de $A$ sont exactement les racines du polynôme $p_A(X)$. 
+les valeurs propres\index{Valeur propre} de $\MM{A}$ sont exactement les racines du polynôme $p_A(X)$. 
 
 \medskip
 Quelques propriétés importantes:
 \begin{itemize}
-   \item $p_A(X)$ est un polynôme unitaire (son coefficient dominant est égal à 1) et son degré 
+   \item $p_A(X)$ est un polynôme unitaire (coefficient dominant égal à 1) et son degré 
 	est égale à $n$.
-   \item $A$ et sa transposée ont le même polynôme caractéristique.
-   \item Deux matrices semblables ont le même polynôme caractéristique. ($A$ et $B$ sont semblables s'il 
-	existe une matrice inversible $P$ telle que $A = PBP^{-1}$).
+   \item $\MM{A}$ et sa transposée ont le même polynôme caractéristique.
+   \item Deux matrices semblables ont le même polynôme caractéristique. ($\MM{A}$ et $\MM{B}$ sont semblables s'il 
+	existe une matrice inversible $\MM{P}$ telle que $\MM{A} = \MM{PBP}^{-1}$).
 	Attention, la réciproque n'est pas vraie en général.
-   \item Si $p_A(X)$ peut être décomposé en produit de facteurs de degré 1, alors $A$ est semblable
+   \item Si $p_A(X)$ peut être décomposé en produit de facteurs de degré 1, alors $\MM{A}$ est semblable
 	à une matrice triangulaire (et même à une matrice de Jordan).
 \end{itemize}
 
-
 \medskip
 \colorgris
-\textbf{Pour aller un peu plus loin:}
-
+\paragraph{Pour aller un peu plus loin}
 Le \textcolorblue{théorème de Cayley-Hamilton}\index[aut]{Cayley (Arthur), 1821-1895, Anglais}\index[aut]{Hamilton (William Rowan, Sir -), 1805-1865, Irlandais}\index{Théorème!de Cayley-Hamilton} 
 (dont la première démonstration est due à Frobenius)\index[aut]{Frobenius (Ferdinand Georg), 1849-1917, Allemand}
 affirme que tout endomorphisme d'un espace vectoriel de dimension finie $n$ sur un corps commutatif quelconque 
 annule son propre polynôme caractéristique.
 
-En termes de matrice, cela signifie que : si $A$ est une matrice carrée d'ordre $n$ et si 
+En termes de matrice, cela signifie que : si $\MM{A}$ est une matrice carrée d'ordre $n$ et si 
 $p_A(X)$ est son polynôme caractéristique, alors en remplaçant formellement 
-$X$ par la matrice $A$ dans le polynôme, le résultat est la matrice nulle, i.e.:
-\begin{equation}p_A(A)= A^n + p_{n-1}A^{n-1} + \ldots + p_1 A + p_0 I_n = 0_n \end{equation}
+$X$ par la matrice $\MM{A}$ dans le polynôme, le résultat est la matrice nulle, i.e.:
+\begin{equation}p_A(A)= A^n + p_{n-1}A^{n-1} + \ldots + p_1 A + p_0 \MM{I}_n = 0_n \end{equation}
 
 Cela signifie que le polynôme caractéristique\index{Polynôme! caractéristique} est un 
-polynôme annulateur de $A$.
+polynôme annulateur de $\MM{A}$.
 Les applications sont importantes car le polynôme minimal (qui est l'unique polynôme unitaire qui
-engendre l'idéal annulateur de l'ensemble des polynômes qui annulent l'endomorphisme dont $A$
+engendre l'idéal annulateur de l'ensemble des polynômes qui annulent l'endomorphisme dont $\MM{A}$
 est la représentation) cache une décomposition en somme  directe de sous-espaces stables. 
 \colorblack
 
@@ -312,20 +296,22 @@ il est possible d'utiliser la notion de mode, qui n'avait pas été abordée dan
 En l'absence de sollicitation et d'amortissement, l'équation de la dynamique devient:\index{ED-EDP!relation fondamentale de la dynamique}
 \begin{equation} \MM{M}\VV{\ddot{q}}+\MM{K}\VV{q}=\VV{0} \end{equation}
 dont la solution générale est harmonique et s'écrit:
-\begin{equation} \VV{q}=\VV{\overline{q}}e^{i\omega t} \end{equation}
+\begin{equation} \VV{q}=\VV{\overline{q}}\mathrm{e}^{i\omega t} \end{equation}
 
 En injectant la forme de la solution générale dans l'équation de la dynamique, on voit que la
 pulsation $\omega$ est solution du problème de valeurs propres suivant:
 \begin{equation} \MM{K}\VV{\overline{q}}=\omega^2\MM{M}\VV{\overline{q}} \end{equation}
 ce qui conduit à:
-\begin{equation} det\left(\MM{K}-\omega^2\MM{M}\right)=0\end{equation}
-
+\begin{equation} \det\left(\MM{K}-\omega^2\MM{M}\right)=0\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 On obtient ainsi les \textcolorblue{$n$ valeurs propres}\index{Valeur propre} 
 $\omega_1$, ..., $\omega_n$, où $n$ est la taille du système (i.e. les matrice $\MM{M}$ et $\MM{K}$ sont $n\times n$).
-
-On trouve également les $n$ vecteurs $\VV{\overline{q_i}}$ appelés \textcolorblue{modes propres 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
+On trouve également les $n$ vecteurs $\VV{\overline{q}}_i$ appelés \textcolorblue{modes propres 
 du système}\index{Mode propre} et que l'on \textcolorred{norme par rapport à la masse}, i.e. tels que:
-\begin{equation} \LL{\overline{q_i}}\MM{M}\VV{\overline{q_i}}=1 \qquad  (\forall i\in[1,n]) \end{equation}
+\begin{equation} \LL{\overline{q}}_i\MM{M}\VV{\overline{q}}_i=1 \qquad  (\forall i\in[1,n]) \end{equation}
 
 \medskip
 \textcolorgreen{La détermination des valeurs propres $\omega_i$ se fait rarement en cherchant 
@@ -336,9 +322,8 @@ De toutes façons, ce sont les premières fréquences qui déterminent le compor
 
 \medskip
 \colormagenta
-\textbf{Rappel du cas unidimensionnel:}
-
-L'équation différentielle à résoudre est: $M\ddot{u}+Ku=0$,
+\paragraph{Rappel du cas unidimensionnel}
+L'équation différentielle à résoudre est $M\ddot{u}+Ku=0$,
 dont la solution s'écrit: \begin{equation} u=A\sin (\omega_0 t)+B\cos(\omega_0 t) \end{equation}
 
 La \textcolorblue{pulsation propre} du système $\omega_0$, sa \textcolorblue{fréquence propre} $f_0$
@@ -346,10 +331,8 @@ et sa \textcolorblue{période propre} $T_0$ sont définies et reliées par les r
 \begin{equation}
 \omega_0=\sqrt{\dfrac{K}M} \qquad\qquad f_0=\dfrac{\omega_0}{2\pi} \qquad\qquad T_0=\dfrac1{f_0}
 \end{equation}
-
 Les constantes d'intégration sont déterminées à l'aide des CL sur le déplacement $u_0$ et la
 vitesse $\dot{u}_0$. Il vient: \begin{equation} A=\frac{\dot{u}_0}{\omega_0} \quad\text{ et }\quad B=u_0\end{equation}
-
 
 \medskip\colorblack
 Des méthodes permettant de trouver les premiers zéros d'un polynôme de degré $n$ ont donc été 
@@ -357,10 +340,12 @@ mises au point.
 La majeure partie de ces méthodes consiste à écrire la relation du déterminant sous la forme suivante:
 \begin{equation} \MM{H}\VV{X}=\lambda\VV{X} \end{equation}
 où $\MM{H}$ est une matrice définie positive.
-
+%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 On se sert pour cela de la décomposition de Cholesky\index[aut]{Cholesky (André-Louis), 1875-1918, Français} 
-de $\MM{K}$, i.e. en l'écrivant à partir d'une matrice triangulaire inférieure $\MM{L}$ sous la forme: $\MM{K}=\MMT{L}\MM{L}$.
-
+de $\MM{K}$, i.e. en l'écrivant à partir d'une matrice triangulaire inférieure $\MM{L}$ sous la forme $\MM{K}=\MMT{L}\MM{L}$.
+%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 L'équation du déterminant conduit alors à:
 \begin{equation} \MMI{L}\MM{M}\MMIT{L}\MMT{L}\VV{\overline{q}}=\frac1{\omega^2}\MMT{L}\VV{\overline{q}} \end{equation}
 et l'on obtient la forme cherchée en posant $\lambda=\omega^{-2}$, $\VV{X}=\MMT{L}\VV{\overline{q}}$
@@ -379,19 +364,14 @@ même ordre de grandeur que $\omega^2$. On doit alors résoudre:
 La nouvelle matrice $\MM{K}+\alpha \MM{M}$ est alors inversible et la solution cherchée est $\omega^2+\alpha$.
 \colorblack
 
-
-
 \medskip
 \subsection{Vibrations libres amorties}\index{Vibration! libre}
-
-\medskip
 \subsubsection{Problèmes du premier ordre}
-
 Si $\MM{M}=\MM{0}$, l'équation de la dynamique\index{ED-EDP!relation fondamentale de la dynamique} se 
 transforme en celle de la chaleur:\index{ED-EDP!de la chaleur}
 \begin{equation} \MM{C}\VV{\dot{q}}+\MM{K}\VV{q}=\VV{0} \end{equation}
 dont on cherche une solution générale sous la forme:
-\begin{equation} \VV{q}=\VV{\overline{q}}e^{-\omega t} \end{equation}
+\begin{equation} \VV{q}=\VV{\overline{q}}\mathrm{e}^{-\omega t} \end{equation}
 ce qui conduit au problème de valeurs propres:\index{Valeur propre}
 \begin{equation} \left(\MM{K}-\omega\MM{C}\right)\VV{\overline{q}}=0\end{equation}
 
@@ -403,12 +383,11 @@ La solution présente un terme de décroissance exponentielle qui ne correspond 
 
 \medskip
 \subsubsection{Problèmes du second ordre}
-
 Dans le cas général ($\MM{M}\ne\MM{0}$), on doit donc résoudre l'équation de la dynamique\index{ED-EDP!relation fondamentale de la dynamique} 
 sans sollicitation:
 \begin{equation} \MM{M}\VV{\ddot{q}}+\MM{C}\VV{\dot{q}}+\MM{K}\VV{q}=\VV{0} \end{equation}
 dont on cherche une solution générale sous la forme:
-\begin{equation} \VV{q}=\VV{\overline{q}}e^{-\alpha t} \end{equation}
+\begin{equation} \VV{q}=\VV{\overline{q}}\mathrm{e}^{-\alpha t} \end{equation}
 avec $\alpha\in\CC$.
 Cela conduit au problème de valeurs propres:\index{Valeur propre}
 \begin{equation} \left(\alpha^2\MM{M}+\alpha\MM{C}+\MM{K}\right)\VV{\overline{q}}=0\end{equation}
@@ -420,13 +399,12 @@ explicite est peu courante.
 
 \medskip
 \colormagenta
-\textbf{Rappel du cas unidimensionnel:}
-
+\paragraph{Rappel du cas unidimensionnel}
 L'équation différentielle à résoudre est: $M\ddot{u}+C\dot{u}+Ku=0$, que l'on
 réécrit, en introduisant le coefficient d'amortissement $\xi$: 
 \begin{equation}\ddot{u}+2\xi\omega_0\dot{u}+\omega^2_0 u=0\end{equation}
 
-La solution s'écrit: \begin{equation} u=\left[A\sin (\omega_D t)+B\cos(\omega_D t)\right] e^{-\xi\omega_0t} \end{equation}
+La solution s'écrit: \begin{equation} u=\left[A\sin (\omega_D t)+B\cos(\omega_D t)\right] \mathrm{e}^{-\xi\omega_0t} \end{equation}
 où $\omega_D$, la \textcolorblue{pseudo-pulsation}, est definie par:
 \begin{equation}\omega_D=\omega_0\sqrt{1-\xi^2}\end{equation}
 On remarquera que $\omega_D$ n'est défini que pour $\xi<e1$, i.e.
@@ -442,7 +420,7 @@ exponentielle (en atteignant une amplitude nulle mais pour un temps infini).
 
 \medskip
 Dans le cas d'un \textcolorblue{système sur-amorti} ($\xi>1$), alors, en posant $\omega'_D=\sqrt{\xi^2-1}$, la solution est du type:
-\begin{equation} u=\left[Ae^{\omega'_D t}+Be^{-\omega'_D t}\right] e^{-\xi\omega_0t} \end{equation}
+\begin{equation} u=\left[A\mathrm{e}^{\omega'_D t}+B\mathrm{e}^{-\omega'_D t}\right] \mathrm{e}^{-\xi\omega_0t} \end{equation}
 avec les constantes d'intégration: 
 \begin{equation}A=\dfrac{\dot{u}_0+(\omega'_D+\xi\omega_0)u_0}{2\omega'_D} \quad \text{ et }\quad
 B=\dfrac{-\dot{u}_0+(\omega'_D-\xi\omega_0)u_0}{2\omega'_D} \end{equation}
@@ -451,7 +429,7 @@ Un système sur-amorti n'est pas un oscillateur...
 \medskip
 Dans le cas d'un \textcolorblue{système critique} ($\xi=1$), alors la solution s'écrit:
 \begin{equation}
-u = (u_0+\omega_0u_0t+\dot{u}_0t)e^{-\omega_0 t}
+u = (u_0+\omega_0u_0t+\dot{u}_0t)\mathrm{e}^{-\omega_0 t}
 \end{equation}
 Ce système n'est pas lui non plus un oscillateur...
 
@@ -462,11 +440,11 @@ Ce système n'est pas lui non plus un oscillateur...
 \subsection{Vibrations périodiques forcées}\index{Vibration! périodique}
 
 Il s'agit du cas où la sollicitation est périodique. Nous l'écrirons sous la forme:
-\begin{equation} \VV{F}=\VV{\overline{F}}e^{\alpha t} \end{equation}
+\begin{equation} \VV{F}=\VV{\overline{F}}\mathrm{e}^{\alpha t} \end{equation}
 avec $\alpha=\alpha_1+i\alpha_2\in\CC$.
 
 La solution générale s'écrit:
-\begin{equation} \VV{q}=\VV{\overline{q}}e^{\alpha t} \end{equation}
+\begin{equation} \VV{q}=\VV{\overline{q}}\mathrm{e}^{\alpha t} \end{equation}
 
 En substituant cette forme de solution dans l'équation de la dynamique, il vient:\index{ED-EDP!relation fondamentale de la dynamique}
 \begin{equation} \left(\alpha^2\MM{M}+\alpha\MM{C}+\MM{K}\right)\VV{\overline{q}}=\MM{D}\VV{\overline{q}}=-\VV{\overline{F}} \end{equation}
@@ -475,8 +453,8 @@ comme un problème statique, i.e. en inversant la matrice $\MM{D}$. Attention, l
 
 \medskip
 On sépare alors les parties réelle et imaginaire en notant:
-$e^{\alpha t}=e^{\alpha_1 t}(\cos(\alpha_2 t)+i\sin(\alpha_2 t)$, $\VV{\overline{F}}=\VV{\overline{F_1}}
-+i\VV{\overline{F_2}}$ et $\VV{\overline{q}}=\VV{\overline{q_1}}+i\VV{\overline{q_2}}$.
+$\mathrm{e}^{\alpha t}=\mathrm{e}^{\alpha_1 t}(\cos(\alpha_2 t)+i\sin(\alpha_2 t)$, $\VV{\overline{F}}=\VV{\overline{F}}_1
++i\VV{\overline{F}}_2$ et $\VV{\overline{q}}=\VV{\overline{q}}_1+i\VV{\overline{q}}_2$.
 
 On obtient alors le système suivant:
 \begin{equation}
@@ -485,11 +463,11 @@ On obtient alors le système suivant:
 2\alpha_1\alpha_2\MM{M}+\alpha_2\MM{C} & (\alpha_1^2-\alpha_2^2)\MM{M}+\alpha_1\MM{C}+\MM{K}
 \end{array}}
 \VVV{\begin{array}{c}
-\VV{\overline{q_1}}\\ \VV{\overline{q_2}}
+\VV{\overline{q}}_1\\ \VV{\overline{q}}_2
 \end{array}}
 =
 -\VVV{\begin{array}{c}
-\VV{\overline{F_1}}\\ \VV{\overline{F_2}}
+\VV{\overline{F}}_1\\ \VV{\overline{F}}_2
 \end{array}}
 \end{equation}
 dans lequel toutes les quantités sont réelles. 
@@ -505,8 +483,7 @@ de conduction de chaleur.}
 
 \medskip
 \colormagenta
-\textbf{Rappel du cas unidimensionnel:}
-
+\paragraph{Rappel du cas unidimensionnel}
 L'équation différentielle à résoudre est: $M\ddot{u}+C\dot{u}+Ku=F(t)$, que l'on
 réécrit: \begin{equation} \ddot{u}+2\xi\omega_0\dot{u}+\omega^2_0 u=F_0/M \cos(\omega t)\end{equation}
 en supposant que $F(t)$ est un chargement monofréquentiel. 
@@ -516,14 +493,14 @@ combinaison linéaire de l'équation sans second membre, dit régime transitoire
 
 On voit alors, de manière intuitive, que:
 \begin{itemize}%\colorgreen
-   \item La fréquence du régime permanent (ou forcé) est celle de la fréquence d'excitation (qui <<force>> le système);
+   \item La fréquence du régime permanent (ou forcé) est celle de la fréquence d'excitation (qui <<~force~>> le système);
    \item La fréquence du régime transitoire est la fréquence propre du système (puisqu'il n'y a pas de second membre).
 \end{itemize}
 
 La solution s'écrit:
 \begin{equation}
 u = \dfrac{F_0}M\dfrac{\cos(\omega t-\theta)}{\sqrt{\left(1-\frac{\omega^2}{\omega_0^2}\right)^2+\left(2\xi\frac{\omega}{\omega_0}\right)^2}}
-+\left[A\sin (\omega_D t)+B\cos(\omega_D t)\right] e^{-\xi\omega_0 t}
++\left[A\sin (\omega_D t)+B\cos(\omega_D t)\right] \mathrm{e}^{-\xi\omega_0 t}
 \end{equation}
 
 \medskip
@@ -554,42 +531,41 @@ Nous allons maintenant présenter cette dernière méthode.
 
 \medskip
 \subsubsection{Décomposition modale}\index{Décomposition modale}
-
 La méthode de décomposition modale est sans doute l'une des plus importantes et des plus
 employées.
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Nous partons toujours de notre équation de la dynamique sous la forme:\index{ED-EDP!relation fondamentale de la dynamique}
 \begin{equation} \MM{M}\VV{\ddot{q}}+\MM{C}\VV{\dot{q}}+\MM{K}\VV{q}+\VV{F} = \VV{0} \end{equation}
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Nous avons vu qu'en réponse libre ($\VV{F}=\{0\}$), la solution s'écrit:
-\begin{equation} \VV{q} = \VV{\overline{q}} e^{-\alpha t} = \dsum_{i=1}^n \VV{\overline{q_i}} e^{-\alpha_i t} \end{equation}
-où $\alpha_i$ sont les valeurs propres et $\VV{\overline{q_i}}$ les vecteurs propres.
-
-\medskip
+\begin{equation} \VV{q} = \VV{\overline{q}} \mathrm{e}^{-\alpha t} = \dsum_{i=1}^n \VV{\overline{q}}_i \mathrm{e}^{-\alpha_i t} \end{equation}
+où $\alpha_i$ sont les valeurs propres et $\VV{\overline{q}}_i$ les vecteurs propres.
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Pour la réponse forcée, l'idée consiste à \textcolorblue{chercher la solution sous la forme 
 d'une combinaison linéaire des modes propres}, i.e. sous la forme:
-\begin{equation} \VV{q} = \dsum_{i=1}^n \VV{\overline{q_i}} y_i(t) \end{equation}
+\begin{equation} \VV{q} = \dsum_{i=1}^n \VV{\overline{q}}_i y_i(t) \end{equation}
 où la quantité $y_i(t)$ représente la contribution de chaque mode. 
-
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 En injectant cette forme de solution dans l'équation de la dynamique (puis en composant à gauche par 
-$\LL{\overline{q_i}}$), on obtient un \textcolorblue{ensemble d'équations scalaires indépendantes}:
-\begin{equation} m_i\ddot{y_i}+c_i\dot{u_i}+k_iy_i+F_i = 0 \end{equation}
-dont les paramètres sont, grâce \ a l'orthogonalité des modes:\index{Propriété d'orthogonalité}
+$\LL{\overline{q}}_i$), on obtient un \textcolorblue{ensemble d'équations scalaires indépendantes}:
+\begin{equation} m_i\ddot{y}_i+c_i\dot{u}_i+k_iy_i+F_i = 0 \end{equation}
+dont les paramètres sont, grâce à l'orthogonalité des modes:\index{Propriété d'orthogonalité}
 \begin{equation}\left\{
-\begin{array}{rcl}
-	m_i &=& \LL{\overline{q_i}}\MM{M}\VV{\overline{q_i}}\\
-	c_i &=& \LL{\overline{q_i}}\MM{C}\VV{\overline{q_i}}\\
-	k_i &=& \LL{\overline{q_i}}\MM{K}\VV{\overline{q_i}}\\
-	F_i &=& \LL{\overline{q_i}}\VV{F}
-\end{array}
+\begin{aligned}
+	m_i &= \LL{\overline{q}}_i\MM{M}\VV{\overline{q}}_i\\
+	c_i &= \LL{\overline{q}}_i\MM{C}\VV{\overline{q}}_i\\
+	k_i &= \LL{\overline{q}}_i\MM{K}\VV{\overline{q}}_i\\
+	F_i &= \LL{\overline{q}}_i\VV{F}
+\end{aligned}
 \right.\end{equation}
-
 Les équations scalaires se résolvent ensuite par des méthodes élémentaires indépendamment
 les unes des autres. Le vecteur total est ensuite obtenu par superposition.
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Toutefois, pour effectuer cette superposition, il n'aura pas échappé au lecteur qu'il faut
 avoir résolu le problèmes des valeurs propres.\index{Valeur propre}
 Dans le cas général, le calcul des valeurs et des vecteurs propres \textcolorred{complexes} est loin 
@@ -597,36 +573,38 @@ d'être facile.
 La méthode habituelle consiste à déterminer les valeurs propres \textcolorblue{réelles} du 
 problème vu précédemment:
 \begin{equation} \omega^2\MM{M}\VV{\overline{q}}=\MM{K}\VV{\overline{q}} \end{equation}
-
 On montre que le problème est découplé en $y$ seulement si on a la \textcolorblue{propriété 
-d'ortogonalité de $\MM{C}$}: \begin{equation}\LL{\overline{q_i}}\MM{C}\VV{\overline{q_i}}=0\end{equation}
-
+d'ortogonalité de $\MM{C}$}: \begin{equation}\LL{\overline{q}}_i\MM{C}\VV{\overline{q}}_i=0\end{equation}
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorred{Or ceci n'est pas vrai en général} car les vecteurs propres assurent uniquement 
 l'orthogonalité de $\MM{M}$ et $\MM{K}$.\index{Propriété d'orthogonalité} 
-
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 En revanche, si la matrice d'amortissement $\MM{C}$ est une combinaison linéaire des matrices $\MM{M}$ et 
 $\MM{K}$, la propriété d'orthogonalité est alors évidemment satisfaite.\index{Propriété d'orthogonalité}
 C'est l'\textcolorblue{hypothèse de Basile}.
 
 \textcolorblue{Dans la suite on suppose que la propriété d'orthogonalité de $\MM{C}$ est satisfaite}.\index{Propriété d'orthogonalité}
 L'équation sur $\omega$ devient alors:
-\begin{equation} \omega_i^2\MM{M}\VV{\overline{q_i}} =\MM{K}\VV{\overline{q_i}} \end{equation}
+\begin{equation} \omega_i^2\MM{M}\VV{\overline{q}}_i =\MM{K}\VV{\overline{q}}_i \end{equation}
 et par suite:
 \begin{equation} \omega_i^2m_i = k_i\end{equation}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorblue{En supposant que les modes sont normalisés} de telle sorte que $m_i=1$ et en 
 posant $c_i = 2\omega_i^2c'_i$ (où \textcolorgreen{$c'_i$ correspond au pourcentage d'amortissement 
 par rapport à sa valeur critique}), on montre que les équations scalaires se mettent sous forme d'une ED
 du second ordre :
 \begin{equation} \ddot{y_i}+2\omega_i^2c'_i \dot{y_i} + \omega_i^2y_i + F_i = 0 \end{equation}
 dont la solution générale est:
-\begin{equation} y_i = \dint_0^t F_i e^{-c'_i\omega_i(t-\tau)}\sin \omega_i (t-\tau) d\tau \end{equation}
-
+\begin{equation} y_i = \dint_0^t F_i \mathrm{e}^{-c'_i\omega_i(t-\tau)}\sin \omega_i (t-\tau) d\tau \end{equation}
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Une intégration numérique permet de déterminer une réponse, puis la superposition de ces termes
 donne la réponse transitoire totale (en principe !).
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorgreen{On rappelle que la méthode de décomposition modale\index{Décomposition modale} 
 nécessiterait la détermination  de l'ensemble des valeurs et modes propres,\index{Valeur propre}\index{Mode propre} 
 ce qui représenterait des calculs considérables. 
@@ -635,16 +613,8 @@ les réponses à des fréquences élevées sont souvent très amorties et prenne
 des valeurs négligeables. Par ailleurs le problème des hautes fréquences n'est souvent abordé
 que de manière statistique.}
 
-
-
-
-
-
-
-
 \medskip
 \subsection{Calcul des modes propres et méthodes de réduction modale}
-
 Les \textcolorblue{méthodes de réduction modale}, ont pour but d'effectuer un
 changement de base dans l'étude d'une structure: on souhaite remplacer l'espace vectoriel initial, dont la dimension 
 est égale au nombre de ddl, par un autre, dont la taille sera inférieure.
@@ -658,95 +628,83 @@ Il existe deux principaux types de méthodes:
    \item les méthodes à interfaces libres (Craig...);\index[aut]{Craig (R. R. Jr), ?, Américain}
    \item et les méthodes à interfaces fixes (Craig-Bampton).\index[aut]{Bampton (M. C. C.), ?, Américain}\index[aut]{Craig (R. R. Jr), ?, Américain}
 \end{itemize}
-
 Dans ce document, nous ne présenterons que cette dernière, qui, de plus, 
 est particulièrement adaptée au cas de sous-structuration, i.e. lorsque le système considéré est scindé en 
 sous-structures.
-
-\medskip
+%%%%%%%%%%%%%%%%
+\medskipvm
 Mais tout d'abord, commençons par présenter succintement quelques méthodes de calcul des modes propres, ce qui n'est 
 pas si aisé que cela, et peut  s'avérer coûteux selon les méthodes et le nombre de modes calculés.
-
-
-
 
 \medskip
 \subsubsection{Quotient de Rayleigh}\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}\index{Quotient de Rayleigh}
 
 \begin{definition}[Matrice hermitienne]
-Une matrice hermitienne, ou auto-adjointe, est une matrice $A$ carrée à éléments complexes  telle que 
+Une matrice hermitienne, ou auto-adjointe, est une matrice $\MM{A}$ carrée à éléments complexes  telle que 
 cette matrice est égale à la transposée de sa conjuguée, i.e.:
 \begin{equation}
-A = \overline{A}^T
+\MM{A} = \overline{\MM{A}}^T
 \end{equation}
 \end{definition}
-
 En particulier, une matrice à éléments réels est hermitienne si et seulement si elle est symétrique. 
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Une matrice hermitienne est orthogonalement diagonalisable et toutes ses valeurs propres sont 
 réelles. Ses sous-espaces propres sont deux à deux orthogonaux.
 
-\medskip
 \begin{definition}[Quotient de Rayleigh]\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}\index{Quotient de Rayleigh}
-Soit $A$ matrice hermitienne et $x$ un vecteur non nul, on appelle quotient de Rayleigh $R(A, x)$ le scalaire :
+Soit $\MM{A}$ matrice hermitienne et $\VV{x}$ un vecteur non nul, on appelle quotient de Rayleigh $R(\MM{A},\VV{x})$ le scalaire :
 \begin{equation}
-    R(A,x) = \frac{x^{*} A x}{x^{*} x}.
+    R(\MM{A},\VV{x}) = \frac{\VV{x}^{*} \MM{A} \VV{x}}{\VV{x}^{*}\VV{x}}.
 \end{equation}
-où $x^{*}$ désigne le vecteur adjoint de $x$, c'est-à-dire le conjugué du vecteur transposé.
+où $\VV{x}^{*}$ désigne le vecteur adjoint de $\VV{x}$, c'est-à-dire le conjugué du vecteur transposé.
 \end{definition}
 
-Dans le cas où $A$ et $x$ sont à coefficients réels, alors $x^{*}$ se réduit au vecteur transposé de $x$.
-
+Dans le cas où $\MM{A}$ et $\VV{x}$ sont à coefficients réels, alors $\VV{x}^{*}$ se réduit au vecteur transposé de $\VV{x}$.
 %Notons que pour tout nombre réel $c$, $R(A, c x) = R(A,x)$.
-
-\medskip
-Le quotient de Rayleigh atteint un minimum $\lambda_{\text{min}}$ (qui n'est autre que la plus petite valeur propre de $A$) 
-lorsque $x$ est un vecteur propre $v_{\text{min}}$ associé à cette valeur.
-
-\medskip
-De plus, $\forall x, \quad R(A, x) \leq \lambda_{\text{max}}$ (où $\lambda_{\text{max}}$ est la plus grande
-valeur propre de $A$ de vecteur propre associé $v_{\text{max}}$) et $R(A, v_{\text{max}}) = \lambda_{\text{max}}$. 
+%%%%%%%%%%%%%%%%%%
+\medskipvm
+Le quotient de Rayleigh atteint un minimum $\lambda_{\min}$ (qui n'est autre que la plus petite valeur propre de $\MM{A}$) 
+lorsque $\VV{x}$ est un vecteur propre $\VV{v}_{\min}$ associé à cette valeur.
+%%%%%%%%%%%%%%%%%
+\medskipvm
+De plus, $\forall \VV{x}$, $R(\MM{A}, \VV{x}) \leq \lambda_{\max}$ (où $\lambda_{\max}$ est la plus grande
+valeur propre de $\MM{A}$ de vecteur propre associé $\VV{v}_{\max}$) et $R(\MM{A}, \VV{v}_{\max}) = \lambda_{\max}$. 
 Ainsi, le quotient de Rayleigh, combiné au théorème du minimax de von Neumann,\index[aut]{Neumann (John, von -), 1903-1957, Hongrois} 
 permet de déterminer une à une toutes les valeurs propres d'une matrice. 
 
 On peut également l'employer pour calculer une valeur approchée d'une valeur propre à partir d'une approximation 
 d'un vecteur propre. 
-
 Ces idées forment d'ailleurs la base de l’algorithme d’itération de Rayleigh.
-
 
 \medskip
 \subsubsection{Méthode itérative de Rayleigh}\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}
 
 On utilise l'algorithme suivant:
 \begin{enumerate}
-   \item choix d'un vecteur initial $\VV{x_i}$;
-   \item résolution de $\MM{K}\VV{x_{i+1}} = \MM{M} \VV{x_i}$;
+   \item choix d'un vecteur initial $\VV{x}_i$;
+   \item résolution de $\MM{K}\VV{x}_{i+1} = \MM{M} \VV{x}_i$;
    \item test de convergence:
 	\begin{itemize}
-	   \item si $|\VV{x_{i+1}}-\VV{x_i}|<\varepsilon$, alors aller au point 4;
+	   \item si $|\VV{x}_{i+1}-\VV{x}_i|<\varepsilon$, alors aller au point 4;
 	   \item sinon retourner au point 1 pour choisir un nouveau vecteur;
 	\end{itemize}
-   \item $\VV{\varphi}=\VV{x_{i+1}}$ et $\omega^2=\dfrac{\langle \VV{\Phi}, \MM{K}\VV{\Phi}\rangle}{\langle \VV{\Phi}, \MM{M}\VV{\Phi}\rangle}$
+   \item $\VV{\varphi}=\VV{x}_{i+1}$ et $\omega^2=\dfrac{\langle \VV{\Phi}, \MM{K}\VV{\Phi}\rangle}{\langle \VV{\Phi}, \MM{M}\VV{\Phi}\rangle}$
 \end{enumerate}
 \textcolorblue{Ce processus converge vers le mode propre fondamental.}
-
-\medskip
+%%%%%%%%%%%%%%%%%
+\medskipvm
 Lorsque l'on veut déterminer le mode le plus proche d'une pulsation donnée $\varpi$, il suffit de remplacer
-la matrice de rigidité par: $\MM{\tilde{K}}=\MM{K} - \varpi^2 \MM{M}$.
-
+la matrice de rigidité par $\MM{\tilde{K}}=\MM{K} - \varpi^2 \MM{M}$.
+%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorblue{Le processus converge alors vers le mode de pulsation $\tilde{\omega}^2=\omega^2-\varpi^2$.}
-
-
 
 \medskip
 \subsubsection{Itérations des sous-espaces}
-
 La méthode précédente peut être étendue en prenant plusieurs vecteurs initiaux et en se plaçant dans
 le sous-espace qu'ils définissent. Les pulsations propres doivent alors être calculées à chaque itération 
 en calculant tous les modes propres du système réduit au sous-espace étudié.
-
 
 \medskip
 \subsubsection{Sous-structuration: méthode de Craig et Bampton}\index[aut]{Bampton (M. C. C.), ?, Américain}\index[aut]{Craig (R. R. Jr), ?, Américain}
@@ -755,26 +713,26 @@ Considérons une structure comportant $n$ ddl et ayant une matrice masse $\MM{M}
 L'utilisation de la méthode de Craig-Bampton\index[aut]{Bampton (M. C. C.), ?, Américain}\index[aut]{Craig (R. R. Jr), ?, Américain} 
 impose de décomposer les ddl de la structure en deux parties :
 \begin{itemize}
-   \item les \textcolorblue{ddl <<frontière>>}: on considère que ces ddl sont ceux pouvant potentiellement être chargés au cours du temps 
+   \item les \textcolorblue{ddl <<~frontière~>>}: on considère que ces ddl sont ceux pouvant potentiellement être chargés au cours du temps 
 	et ceux sur lesquels s'appliquent des conditions limites (encastrement, appui simple...). Les chargements volumiques 
 	(tel le poids) n'influent pas sur la détermination des degrés de liberté frontière, sans quoi cette décomposition n'aurait 
-	pas de sens, ces ddl $\VV{q_L}$ (L comme liaison).
+	pas de sens, ces ddl $\VV{q}_L$ (L comme liaison).
 
 	Dans le cas de la sous-strcturation, les ddl frontières correspondent trivialement aux ddl aux interfaces entre
 	les différentes sous-structures.
-   \item les \textcolorblue{ddl <<intérieurs>>}: il s'agit de tous les autres degrés de liberté (un chargement volumique peut éventuellement 
-	s'appliquer sur ces ddl), ces degrés de liberté seront notés $\VV{q_I}$.
+   \item les \textcolorblue{ddl <<~intérieurs~>>}: il s'agit de tous les autres degrés de liberté (un chargement volumique peut éventuellement 
+	s'appliquer sur ces ddl), ces degrés de liberté seront notés $\VV{q}_I$.
 \end{itemize}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 La base de réduction se compose de deux types de modes.
 \begin{itemize}
    \item Les \textcolorblue{modes encastrés}: il s'agit des modes propres de la structure calculés en considérant les ddl frontière encastrés.
    \item Les \textcolorblue{modes statiques}: ces modes sont obtenus en calculant la déformée statique de la structure lorsqu'un ddl frontière 
 	est imposé à 1, tous les autres étant imposés à 0.
 \end{itemize}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorgreen{Avantages de la méthode:}
 \begin{itemize}
    \item elle est facile à programmer
@@ -783,26 +741,14 @@ La base de réduction se compose de deux types de modes.
    \item elle permet d'obtenir les ddl frontière dans le vecteur réduit ce qui peut s'avérer très utile dans le cas de problèmes de contacts 
 	par exemple.
 \end{itemize}
-
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorred{Inconvénients de la méthode:}
 \begin{itemize}
    \item cette méthode n'est pas celle qui permet d'obtenir la meilleure réduction du système et peut donc s'avérer coûteuse en temps de calcul. 
    \item sans amortissement structural, la méthode peut diverger au voisinage des fréquences propres de la structure (à cause du gain infini à 
 	la résonance sans amortissement).
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 %\medskip
@@ -822,19 +768,12 @@ La base de réduction se compose de deux types de modes.
 %\section{Présentation des méthodes sur le cas des chocs large bande}% à mettre en complément à la fin du chapitre
 
 
-
-
-
-
-
-
-
 %VM index fait à partir de là
 \medskip
 \section{Pour aller plus loin: présentation des méthodes sur le cas des chocs large bande}
 
 \textcolorgreen{On s'intéresse au cas des chocs, car il constituent un cas plus compliqué que 
-de la \og dynamique lente\fg{}, sans rien enlever en généralité aux méthodes.}
+de la <<~dynamique lente~>>, sans rien enlever en généralité aux méthodes.}
 
 \medskip
 \textcolorred{En dynamique transitoire, lorsque le contenu fréquentiel de la sollicitation est large, 
@@ -854,14 +793,14 @@ Les deux domaines fréquentiels ayant des propriétés différentes, on recourt 
 de résolution différents.}
 
 \medskip
-Dans le domaine des \textbf{BF}, les phénomènes vibratoires générés par l'excitation ont une longeur
+Dans le domaine des \textbf{basses fréquences}, les phénomènes vibratoires générés par l'excitation ont une longeur
 d'onde grande face à la strucutre donc uniquement quelques oscillations sont observables. De plus
 la structure présente un comportement modal (modes bien distincts les uns des autres).
 La modélisation est maîtrisée : \textcolorblue{EF} sur base modale, complété si besoin de modes
 statiques.
 
 \medskip
-Pour les \textbf{HF}, les longueurs d'ondes sont petites et une centaine d'oscillations est présente sur une 
+Pour les \textbf{hautes fréquences}, les longueurs d'ondes sont petites et une centaine d'oscillations est présente sur une 
 dimension de la structure. Il n'est pas approprié de regarder les grandeurs locales, mais plutôt les 
 grandeurs moyennées en espace et en fréquence. On utilise généralement la \textcolorblue{SEA} \index{SEA}
 qui donne un niveau énergétique vibratoire moyen par sous-strucure. Cette méthode ne permet 
@@ -869,7 +808,7 @@ pas d'obtenir une solution prédictive car elle requiert la connaissance à prio
 couplages mesurés.
 
 \medskip
-En \textbf{MF}, plusieurs dizaines d'oscillations apparaissent sur une dimension de la structure, et la
+En \textbf{moyennes fréquences}, plusieurs dizaines d'oscillations apparaissent sur une dimension de la structure, et la
 déformée est très sensible aux conditions aux limites et aux paramètres matériaux
 de la structure. Si un comportement modal est encore visible, les modes sont moins bien
 séparés (par exemple plusieurs modes présents par Hertz, ces modes étant couplés
@@ -893,7 +832,7 @@ Ces rayons sont à deux échelles: une lente et une rapide.
 L'échelle rapide est traitée analytiquement (sinon coût numérique élevé), et l'échelle
 lente numériquement, car elle conduit à un problème à faible nombre d'inconnues.
 
-On profitera de la rapide dispersion des modes MF dans les milieux dispersifs amortis
+On profitera de la rapide dispersion des modes moyennes fréquences dans les milieux dispersifs amortis
 ainsi que de la version large bande de la TVRC développée en 2004 et 2005 par 
 Chevreuil et al.\index[aut]{Chevreuil (Mathilde), ?- , Française}
 
@@ -932,15 +871,15 @@ de façon itérative, ce qui évite la contruction explicite du complément
 de Schur\footnote{%
 En algèbre linéaire et plus précisément en théorie des matrices, le complément de 
 Schur\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe} est défini comme suit. Soit :
-\begin{equation}    M=\MMM{\begin{matrix} A & B \\ C & D \end{matrix}} \end{equation}
-une matrice de dimension $(p+q)\times(p+q)$, où les blocs $A$, $B$, $C$, $D$ sont des matrices 
-de dimensions respectives $p\times p$, $p\times q$, $q\times p$ et $q\times q$, avec $D$ inversible. 
-Alors, le complément de Schur du bloc $D$ de la matrice $M$ est constitué par la matrice 
+\begin{equation} \MM{M}=\MMM{\begin{matrix} \MM{A} & \MM{B} \\ \MM{C} & \MM{D} \end{matrix}} \end{equation}
+une matrice de dimension $(p+q)\times(p+q)$, où les blocs $\MM{A}$, $\MM{B}$, $\MM{C}$, $\MM{D}$ sont des matrices 
+de dimensions respectives $p\times p$, $p\times q$, $q\times p$ et $q\times q$, avec $\MM{D}$ inversible. 
+Alors, le complément de Schur du bloc $\MM{D}$ de la matrice $\MM{M}$ est constitué par la matrice 
 de dimension $p\times p$ suivante :
-\begin{equation} A - B.D^{-1}.C\end{equation}
+\begin{equation} \MM{A} - \MM{B}\cdot \MM{D}^{-1}\cdot \MM{C}\end{equation}
 
-Lorsque $B$ est la transposée de $C$, la matrice $M$ est symétrique définie-positive
-si et seulement si $D$ et son complément de Schur dans $M$ le sont.
+Lorsque $\MM{B}$ est la transposée de $\MM{C}$, la matrice $\MM{M}$ est symétrique définie-positive
+si et seulement si $\MM{D}$ et son complément de Schur dans $\MM{M}$ le sont.
 }, mais nécessite un taux de convergence élevé pour être
 efficace.
 
@@ -1012,7 +951,7 @@ Il faut alors calculer des fonctions de réponse en fréquence (FRF)\index{FRF} 
 de fréquences.
 
 \medskip
-\subsubsection{Cas des BF}
+\subsubsection{Cas des basses fréquences}
 
 Compte tenu de la grande taille des longueurs d'ondes et du fait que l'on a peu de modes, bien séparés,
 les méthodes utilisées sont basées sur les \textcolorblue{éléments finis}.
@@ -1035,9 +974,9 @@ La solution approchée est alors projetée sur les sous-espaces propres\index{Es
 On résoud alors un système diagonale de petite taille.
 
 \medskip
-\subsubsection{Cas des MF}
+\subsubsection{Cas des moyennes fréquences}
 
-En MF, l'approche précédente (EF) nécessiterait d'utiliser une grande quantité de polynômes 
+En moyennes fréquences, l'approche précédente (EF) nécessiterait d'utiliser une grande quantité de polynômes 
 à cause du caractère très osscillant, ou à augmenter le degré d'interpolation. De plus, il faut
 prendre en compte plus de modes, qui sont de moins en moins bien séparés.
 
@@ -1068,7 +1007,7 @@ modes propres\index{Mode propre} de chaque sous-structures  servent de base pour
 de la structure entière.
 
 \bigskip
-Une \og deuxième \fg{} approche consiste à utiliser des \textcolorblue{éléments enrichis}\index{Elément enrichi}
+Une <<~deuxième~>> approche consiste à utiliser des \textcolorblue{éléments enrichis}\index{Elément enrichi}
 (voir encore une fois le chapitre \ref{Ch-XFEM}).
 Ces éléments sont développés pour pouvoir prendre en compte le caractère
 oscillant de la solution  en enrichissant les fonctions de base utilisées afin de pouvoir
@@ -1100,7 +1039,7 @@ dédiée aux application de forts gradients ou oscillations rapides.
 
 \bigskip
 La \textcolorblue{BEM}\index{BEM}\index{Méthode des éléments finis frontière} 
-(voir paragraphe \ref{Sec-BEM}) est encore une \og troisième\fg{} approche.
+(voir paragraphe \ref{Sec-BEM}) est encore une <<~troisième~>> approche.
 Seuls les bords sont maillés afin de réduire le nombre de ddl.
 La formulation intégrale de la frontière établit un lien entre les champs intérieurs
 et les quantités sur les bords.
@@ -1121,7 +1060,7 @@ Les \textcolorblue{méthodes des éléments discontinus}:\index{Méthodes des é
 Pour des géométries simples (utilisation en construction navale), on utilise des solutions
 analytiques ou semi-analytiques sur des sous-domaines simples (poutres, plaques rectangulaires...)
 pour construire la structure complète.
-Lorsque cette méthode est applicable \textcolorblue{elle donne de bon résultats aussi bien en BF, en MF et en HF}.
+Lorsque cette méthode est applicable \textcolorblue{elle donne de bon résultats aussi bien en basses fréquences, en moyennes fréquences et en hautes fréquences}.
 
 \bigskip
 Les \textcolorblue{méthodes de Trefftz}:\index{Méthode de Trefftz}\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} 
@@ -1140,16 +1079,16 @@ la structure n'est pas discrétisée comme pour les T-éléments mais est décom
 éléments de grande taille par rapport à la dimension de la structure. les fonctions de base
 particulières utilisées améliorent le conditionnement des matrices, ce qui conduit à des
 matrices de petite taille pleines et non symétriques. L'intégration sur les bords coûte cher
-en MF et le conditionnement de la matrice en HF se dégrade du fait de la discrétisation des amplitudes 
+en moyennes fréquences et le conditionnement de la matrice en hautes fréquences se dégrade du fait de la discrétisation des amplitudes 
 (seules certaines directions de propagation sont prises en compte).
 
 \medskip
-\subsubsection{Cas de HF}
+\subsubsection{Cas de hautes fréquences}
 Comme dit précédemment, on ne représente pas la solution localement mais on ne
 s'intéresse qu'à des grandeurs moyennées.
 
 \bigskip
-La \textcolorblue{SEA\index{SEA} (Statistical Energy Analysis) est la méthode de référence pour les HF}.
+La \textcolorblue{SEA\index{SEA} (Statistical Energy Analysis) est la méthode de référence pour les hautes fréquences}.
 La structure est découpée en sous-structures.
 Ensuite des regroupements de modes sont construits tels que statistiquement le niveau
 de chacun des groupes de modes soit semblable : la méthode repose donc sur l'hypothèse
@@ -1166,8 +1105,8 @@ de couplage.
 deux sous-structures qui est supposée proportionnelle à la différence de leurs énergies par mode,\index{Mode propre} 
 le facteur de proportionnalité étant le coefficient de couplage.}
 
-La SEA\index{SEA} est parfaitement adaptée aux HF, mais trop globale et trop imprécise pour
-décrire finement le comportement en MF.
+La SEA\index{SEA} est parfaitement adaptée aux hautes fréquences, mais trop globale et trop imprécise pour
+décrire finement le comportement en moyennes fréquences.
 
 De plus les coefficients de couplages ne sont connus explicitement à priori que pour
 des géométries très particulières et nécessitent donc en général de recourir
@@ -1224,7 +1163,7 @@ et donc sur l'énergie cinétique qui sert pour restaurer la réponse
 temporelle. Cette fréquence doit être au moins égale à $1/T$ où
 $T$ est la durée du choc d'entrée (si T=1ms, alors MF/HF = 2000Hz mini).
 
-la MEF utilisée en BF doit utiliser les $n$ premiers modes pour la base réduite
+la MEF utilisée en basses fréquences doit utiliser les $n$ premiers modes pour la base réduite
 avec $n$ tel que la fréquence de ce mode soit de $2\times$ la fréquence BF/MF.
 On utilisera également la règle classique d'\textcolorblue{au moins 10 éléments linéaires
 par longueur d'onde pour le maillage}.

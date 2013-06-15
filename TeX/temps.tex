@@ -18,7 +18,7 @@ Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mort
 Considérons l'équation de la dynamique, sous forme non stationnaire (i.e. dépendant du temps):
 \begin{equation} M \ddot u(t) + C \dot u(t) + K u(t)= F(t) \end{equation}
 qui sous forme discrétisée par éléments finis sera réécrite:
-\begin{equation}\colorblue \MM{M}\VV{\ddot q}(t) +  \MM{C}\VV{\dot q}(t) + \MM{K}\VV{q}(t)= \VV{F}(t) \end{equation}
+\begin{equation}\colorblue \MM{M}\VV{\ddot q}(t) +  \MM{C}\VV{\dot q}(t) + \MM{K}\VV{q}(t)= \VV{f}(t) \end{equation}
 avec les conditions initiales $\VV{q}(t=0)=\VV{q}_0$ et $\VV{\dot q}(t=0)=\VV{\dot q}_0$.
 
 \medskip
@@ -74,7 +74,7 @@ avec:
 %\quad \text{ et } \quad
 et:
 \begin{equation}\colorgreen
-\VV{R} = \VV{F}_t -\MM{K}\VV{q}_t + \frac1{\Delta_t^2}\MM{M}\left( 2\VV{q}_t -\VV{q}_{t-\Delta_t}\right)
+\VV{R} = \VV{f}_t -\MM{K}\VV{q}_t + \frac1{\Delta_t^2}\MM{M}\left( 2\VV{q}_t -\VV{q}_{t-\Delta_t}\right)
 +\frac1{2\Delta_t}\MM{C}\VV{q}_{t-\Delta_t}
 \end{equation}
 qui ne dépendent bien que de données disponibles.
@@ -139,7 +139,7 @@ mais cette fois avec:
 %\quad \text{ et } \quad
 et:
 \begin{equation}\colorgreen
-\VV{R} = \VV{F}_{t+\Delta_t} + \MM{M}\left(\frac4{\Delta_t^2}\VV{q}_t + \frac4{\Delta_t}\VV{\dot q}_t
+\VV{R} = \VV{f}_{t+\Delta_t} + \MM{M}\left(\frac4{\Delta_t^2}\VV{q}_t + \frac4{\Delta_t}\VV{\dot q}_t
 + \VV{\ddot q}_t\right)
 +\MM{C}\left( \frac2{\Delta_t}\VV{q}_t + \VV{\dot q}_t\right)
 \end{equation}

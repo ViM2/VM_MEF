@@ -173,7 +173,7 @@ Le nombre d'intervalles pour le calcul approché de $c_1$ est très grand (i.e. 
 à $l/\varepsilon$).
 
 Exprimé autrement, ce résultat devient:
-\textcolorblue{le coefficient homogénéisé est $\dfrac1{\langle\frac1A\rangle}$} et non pas $\langle A\rangle$
+\textcolorblue{le coefficient homogénéisé est $1/\langle\frac1A\rangle$} et non pas $\langle A\rangle$
 (où $\langle\cdot\rangle$ désigne la moyenne).
 
 
@@ -337,34 +337,34 @@ fibres et de matrice. On note
 $V_m$ la fraction volumique de matrice,
 $V_f$ la fraction volumique de fibre, et on a :
 \begin{equation} V = V_m + V_f =1 \end{equation}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 À l'échelle locale, on fait les hypothèses suivantes:
 \begin{itemize}
    \item Fibres: comportement élastique linéaire fragile isotrope de coefficients $E_f$ et $\nu_f$;
    \item Matrice: comportement élastique non-linéaire, isotrope de coefficients $E_m$ et $\nu_m$.
 \end{itemize}
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 On souhaite déterminer les relations existant entre $E_l$, $E_t$, $E_f$, $E_m$, $V_m$ et $V_f$.
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Pour cela, on fait également les hypothèses suivantes :
 \begin{itemize}
    \item On travaille en élasticité linéaire.
    \item La liaison fibres/matrice est parfaite.
    \item Localement, on a : $\sigma_f = E_f \varepsilon_f$  et $\sigma_m = E_m \varepsilon_m$.
 \end{itemize}
-
-\medskip
+%%%%%%%%%%%%%%%%%
+\medskipvm
 Loi des mélanges (ou modèles à bornes ou de Reuss et de Voigt) :
 \begin{itemize}
-	\item 1er essai : Il s'effectue dans la direction parallèle aux fibres (compression longitudinale)
-		\begin{equation} E_{longitudinal}=E_l=E_fV_f+E_mV_m \end{equation}
+	\item premier essai --- Il s'effectue dans la direction parallèle aux fibres (compression longitudinale)
+		\begin{equation} E_{\text{longitudinal}}=E_l=E_fV_f+E_mV_m \end{equation}
 		C'est la loi des mélanges, qui est bien vérifiée dans la direction des fibres.
 		Il s'agit de la borne supérieure de Voigt (1887).\index{Loi des mélanges}\index{Borne de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
-	\item 2ème essai : Il s'effectue dans la direction perpendiculaire aux fibres (compression transversale)
-		\begin{equation}\dfrac1{E_{transverse}}=\dfrac1{E_t} = \dfrac{V_f}{E_f}+\dfrac{V_m}{E_m}\end{equation}
+	\item deuxième essai --- Il s'effectue dans la direction perpendiculaire aux fibres (compression transversale)
+		\begin{equation}\dfrac1{E_{\text{transverse}}}=\dfrac1{E_t} = \dfrac{V_f}{E_f}+\dfrac{V_m}{E_m}\end{equation}
 		C'est la loi des mélanges en souplesse.
 		Cette relation n'est pas très bien vérifiée transversalement mais donne une
 		indication sur la borne inférieure, dit de Reuss (1929).\index{Loi des mélanges}\index{Borne de Reuss}
@@ -372,15 +372,15 @@ Loi des mélanges (ou modèles à bornes ou de Reuss et de Voigt) :
 		\index{Coefficients de Poisson}d'un UD par la loi des mélanges :\index{Loi des mélanges}
 		\begin{equation}\nu_{lt}=\nu_fV_f+\nu_mV_m\quad\text{et}\quad\dfrac1{G_{lt}} = \dfrac{V_f}{G_f}+\dfrac{V_m}{G_m}\end{equation}
 \end{itemize}
-
-\medskip
+%%%%%%%%%%%%%%%
+\medskipvm
 Les modèles à bornes fournissent un encadrement du comportement mécanique du matériau composite
 par des comportements mécaniques limites (bornes).
 Ils sont obtenus par la résolution du problème de l'élasticité linéaire sous forme faible.
 La minimisation de l'énergie potentielle conduit à la borne supérieure de Voigt.\index{Borne de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 la résolution en contrainte conduit à la borne inférieure de Reuss.\index{Borne de Reuss}
-
-\medskip
+%%%%%%%%%%%%%%
+\medskipvm
 Pour gagner un peu en généralité, on peut remplacer les termes fibres et matrice par des phases,
 car ces modèles sont applicables à des mélanges de polymères (matériaux composés)
 et à des composites chargés par des particules diverses.
@@ -394,8 +394,8 @@ Il est simplement admis que pour le modèle de Reuss, la contrainte est homogèn
 phases (continuité de la contrainte) et, pour le modèle de Voigt,\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 la déformation est constante  (continuité de la déformation) dans tout le composite.
 \textcolorred{L'intérêt est limité dès que l'écart des caractéristiques des deux phases est important.}
-
-\medskip
+%%%%%%%%%%%%%%%%%%
+\medskipvm
 Évidemment, d'autres modèles existent:
 \begin{itemize}
 	\item Hashin et Shtrikman (1963) : resserre les bornes de Reuss et Voigt
@@ -453,9 +453,9 @@ d'où:
 &n\cdot A(\xi)(\nabla_\xi u_2+\nabla_x u_1) &&=0
 \end{aligned}
 \right. \end{equation}
-On peut prouver que si $v_0$ est solution du problème, alors $v_0+cte$ aussi.
-
-\medskip
+On peut prouver que si $v_0$ est solution du problème, alors $v_0+\text{cte}$ aussi.
+%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Des conditions d'existence de la solution il vient, tous calculs faits, la matrice des
 coefficients homogénéisés $\hat{A}$:
 \begin{equation} \hat{A} = [\hat{a}_{i,j} ]
@@ -465,36 +465,27 @@ coefficients homogénéisés $\hat{A}$:
 \right) \dd\xi
 \end{equation}
 où $G_0$ est un trou de la cellule élémentaire $Q$.
-
-\medskip
-Le même type de calcul pourrait être mené avec les conditions de Dirichlet sur le bord
-des trous.
-
-\medskip
+%%%%%%%%%%%%%%%%%
+\medskipvm
+Le même type de calcul pourrait être mené avec les conditions de Dirichlet sur le bord des trous.
+%%%%%%%%%%%%%%%%%
+\medskipvm
 Cette homogénéisation des milieux poreux est valable pour l'acoustique comme pour la mécanique.
 
 \medskip
 \section{Homogénéisation des problèmes non stationnaires}
-Nous n'avons pas encore abordé de manière pratique les problèmes non stationnaires
-dans ce document, puisqu'ils se trouvent au chapitre \ref{Ch-temps}.
+Nous n'avons pas encore abordé de manière pratique les problèmes non stationnaires dans ce document, puisqu'ils se trouvent au chapitre~\ref{Ch-temps}.
 
 Il est tout à fait possible d'utiliser les méthodes présentées dans ce chapitre
 aux problèmes dépendant du temps.
-
-Il n'y a pas vraiment de précautions supplémentaires à prendre, mais il faut adapter
-la forme de l'ansatz.\index{Ansatz}
+Il n'y a pas vraiment de précautions supplémentaires à prendre, mais il faut adapter la forme de l'ansatz.\index{Ansatz}
 Par exemple, l'ansatz\index{Ansatz} du paragraphe précédent, pour le même type de problème
 non stationnaire serait:
 \begin{equation}u^{(2)} = u_0(x,\xi,t)+\varepsilon u_1(x,\xi,t) + \varepsilon^2 u_2(x,\xi,t)\end{equation}
 avec $u_i(x,\xi,t)$ 1-périodique en $\xi$.
 
-
-
-
-
 \medskip
-\section{Changement de dimension, raccord de maillage}
-
+\section{Changement de dimension et raccord de maillage}
 \textcolorgreen{Les méthodes d'homogénéisation peuvent également être utilisées pour
 <<~changer (réduire)~>> la dimension d'un problème.}
 
@@ -502,27 +493,14 @@ avec $u_i(x,\xi,t)$ 1-périodique en $\xi$.
 Considérons un problème qui se pose dans un domaine plan de longueur $1$ et de largeur $\pm\varepsilon/2$.
 Alors, on peut considérer le comportement asymptotique de la solution lorsque $\varepsilon \longrightarrow 0$.
 Une fois cette solution asymptotique trouvée, le problème initial posé sur le pavé
-$[0,1]\times[-\varepsilon/2,+\varepsilon/2]$ est remplacé par le problème homogénéisé
-posé sur le segment $[0,1]$.
-
-On a donc bien réduit la dimension du problème.
+$[0,1]\times[-\varepsilon/2,+\varepsilon/2]$ est remplacé par le problème homogénéisé posé sur le segment $[0,1]$. On a donc bien réduit la dimension du problème.
 
 \medskip
-Ce genre de chose correspond typiquement à un modèle plaque ou coque (2D) utilisé à la place
-d'un modèle tridimensionnel (3D), ou encore mieux à un modèle barre ou poutre (1D).
+Ce genre de chose correspond typiquement à un modèle plaque ou coque (2D) utilisé à la place d'un modèle tridimensionnel (3D), ou encore mieux à un modèle barre ou poutre (1D).
 
-Cela permet également de développer des éléments finis permettant de raccorder
-des maillages 3D à des maillages 2D ou à des maillages 1D, afin d'alléger les modèles numériques
-là où ils peuvent l'être.
+Cela permet également de développer des éléments finis permettant de raccorder des maillages 3D à des maillages 2D ou à des maillages 1D, afin d'alléger les modèles numériques là où ils peuvent l'être.
 
 \medskip
-En mécanique, de nombreuses théories de plaques ou poutres existent (voir la paragraphe \ref{Sec-PlusModel}).
-Elles sont généralement présentées de manières <<~physique~>>, mais ne sont rien d'autre que des
-méthodes d'homogénéisation.
+En mécanique, de nombreuses théories de plaques ou poutres existent (voir la paragraphe~\ref{Sec-PlusModel}). Elles sont généralement présentées de manières <<~physique~>>, mais ne sont rien d'autre que des méthodes d'homogénéisation.
 
-Libre à chacun de préférer une présentation plutôt mécanicienne ou plutôt mathématicienne,
-le résultat est finalement le même. Mais il nous semble, et c'est la motivation même à l'origine de
-ce document, que le fait de connaître les deux aide à mieux cerner à la fois les \textcolorblue{hypothèses}
-sur lesquelles ces développements sont faits (et que l'on oublie parfois, ayant pour conséquence
-des résultats que l'on peut qualifier de surprenants) ainsi que les \textcolorblue{potentialités} qui s'offrent
-à nous. 
+Libre à chacun de préférer une présentation plutôt mécanicienne ou plutôt mathématicienne, le résultat est finalement le même. Mais il nous semble, et c'est la motivation même à l'origine de ce document, que le fait de connaître les deux aide à mieux cerner à la fois les \textcolorblue{hypothèses} sur lesquelles ces développements sont faits (et que l'on oublie parfois, ayant pour conséquence des résultats que l'on peut qualifier de surprenants) ainsi que les \textcolorblue{potentialités} qui s'offrent à nous. 
