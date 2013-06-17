@@ -421,25 +421,25 @@ soit, en exploitant les linéarités de $a_h(\cdot,\cdot)$ et $f_h(\cdot)$ et en
 \medskip
 Il s'agit donc de résoudre le système linéaire:
 \begin{equation}
-\MMM{\begin{array}{ccc}
+\MM*{%
 a_h(e_1,e_1) & \dots & a_h(e_{N_h},e_1)\\
-$\vdots$ & & $\vdots$ \\
-a_h(e_1,e_{N_h}) & \dots & a_h(e_{N_h},e_{N_h})\\
-\end{array}}
-\VVV{\begin{array}{c}
+\vdots & & \vdots \\
+a_h(e_1,e_{N_h}) & \dots & a_h(e_{N_h},e_{N_h})
+}
+\VV*{%
 q_1\\
-$\vdots$\\
-q_{N_h}\\
-\end{array}}
+\vdots\\
+q_{N_h}
+}
 =
-\VVV{\begin{array}{c}
+\VV*{%
 f_h(e_1)\\
 $\vdots$\\
-f_h(e_{N_h})\\
-\end{array}}
+f_h(e_{N_h})
+}
 \end{equation}
 que l'on note (dans la tradition mécanicienne):
-\begin{equation}\mathbf{Kq=F} \quad \text{ ou encore } \quad \MMM{K}\VVV{q}=\VVV{F}
+\begin{equation}\mathbf{Kq=F} \quad \text{ ou encore } \quad \MM*{K}\VV*{q}=\VV*{F}
 \end{equation}
 \medskip
 Telle que formulée, la matrice $\MM{K}$ semble pleine à priori.
