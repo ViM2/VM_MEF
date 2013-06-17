@@ -518,7 +518,7 @@ de dimension $n$ et $\Omega$ un ouvert de E.
 Un \textcolorblue{champ de vecteurs} sur $\Omega$ est une application $F$ de $\Omega$ dans $E$,
 définie par ses $n$ fonctions composantes:
 \begin{equation}
-    F : \VVV{\begin{array}{c}x_1\\\vdots\\x_n\end{array}} \longmapsto \VVV{\begin{array}{c} F_1(x_1,\dots,x_n)\\ \vdots\\ F_n(x_1,\dots,x_n)\end{array}}
+    F : \VV*{x_1\\\vdots\\x_n} \longmapsto \VV*{F_1(x_1,\dots,x_n)\\ \vdots\\ F_n(x_1,\dots,x_n)}
 \end{equation}
 C'est donc une fonction qui à un vecteur fait correspondre un vecteur.
 \end{definition}
@@ -533,12 +533,9 @@ La dérivée d'un champ scalaire est un champ vectoriel appelé \textcolorblue{g
 \colorblue Nabla, noté $\nabla$, est un pseudo-vecteur \colorblack servant à noter un opérateur
 différentiel:
 \begin{equation}
-\nabla  = \VVV{\begin{array}{c} {\dfrac\partial{\partial x}}\\ \dfrac\partial{\partial y}\\ \dfrac\partial{\partial z}
-\end{array}}_{\text{cartésiennes}}
-= \VVV{\begin{array}{c} \dfrac\partial{\partial \rho}\\ \dfrac1\rho \dfrac\partial{\partial \varphi}\\ \dfrac\partial{\partial z}
-\end{array}}_{\text{polaires}}
-= \VVV{\begin{array}{c} \dfrac\partial{\partial r}\\ \dfrac1r \dfrac\partial{\partial \theta}\\\dfrac1{r\sin\theta} \dfrac\partial{\partial \varphi}
-\end{array}}_{\text{sphériques}}
+\nabla  = \VV*{{\dfrac\partial{\partial x}}\\ \dfrac\partial{\partial y}\\ \dfrac\partial{\partial z}}_{\text{cartésiennes}}
+= \VV*{\dfrac\partial{\partial \rho}\\ \dfrac1\rho \dfrac\partial{\partial \varphi}\\ \dfrac\partial{\partial z}}_{\text{polaires}}
+= \VV*{\dfrac\partial{\partial r}\\ \dfrac1r \dfrac\partial{\partial \theta}\\\dfrac1{r\sin\theta} \dfrac\partial{\partial \varphi}}_{\text{sphériques}}
 \end{equation}
 
 \medskip
@@ -586,19 +583,16 @@ où $c$ est la vitesse de la propagation considérée (ou la vitesse de la lumi�
 En coordonnées cartésiennes, il vient explicitement:
 \begin{itemize}
    \item gradient: $ \gradb  f=
-	\VVV{\begin{array}{c} {\partial f \over \partial x}\\ {\partial f \over \partial y}\\ {\partial f \over \partial z}
-	\end{array}}$
+	\VV*{{\partial f \over \partial x}\\ {\partial f \over \partial y}\\ {\partial f \over \partial z}}$
    \item divergence: $ \mathrm{div} \mathbf{A}  =
 	{\partial A_x \over \partial x} + {\partial A_y \over \partial y} + {\partial A_z \over \partial z}$
    \item rotationnel: $ \rotb  {\mathbf{A} } =
-	\VVV{\begin{array}{c} {\partial A_z \over \partial y} - {\partial A_y \over \partial z} \\
+	\VV*{{\partial A_z \over \partial y} - {\partial A_y \over \partial z} \\
 	{\partial A_x \over \partial z} - {\partial A_z \over \partial x} \\
-	{\partial A_y \over \partial x} - {\partial A_x \over \partial y}
-	\end{array}}$
+	{\partial A_y \over \partial x} - {\partial A_x \over \partial y}}$
    \item Laplacien scalaire: $\Delta f  ={\partial^2 f \over \partial x^2} + {\partial^2 f \over \partial y^2} + {\partial^2 f \over \partial z^2}$
    \item Laplacien vectoriel: $\Delta \mathbf{A}  =
-	\VVV{\begin{array}{c} \Delta A_x \\ \Delta A_y \\ \Delta A_z
-	\end{array}}$
+	\VV*{\Delta A_x \\ \Delta A_y \\ \Delta A_z}$
 \end{itemize}
 
 \medskip
