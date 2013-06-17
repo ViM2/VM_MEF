@@ -458,17 +458,11 @@ $\mathrm{e}^{\alpha t}=\mathrm{e}^{\alpha_1 t}(\cos(\alpha_2 t)+i\sin(\alpha_2 t
 
 On obtient alors le système suivant:
 \begin{equation}
-\MMM{\begin{array}{cc}
-(\alpha_1^2-\alpha_2^2)\MM{M}+\alpha_1\MM{C}+\MM{K} & -2\alpha_1\alpha_2\MM{M}-\alpha_2\MM{C}\\
-2\alpha_1\alpha_2\MM{M}+\alpha_2\MM{C} & (\alpha_1^2-\alpha_2^2)\MM{M}+\alpha_1\MM{C}+\MM{K}
-\end{array}}
-\VVV{\begin{array}{c}
-\VV{\overline{q}}_1\\ \VV{\overline{q}}_2
-\end{array}}
+\MM*{(\alpha_1^2-\alpha_2^2)\MM{M}+\alpha_1\MM{C}+\MM{K} & -2\alpha_1\alpha_2\MM{M}-\alpha_2\MM{C}\\
+2\alpha_1\alpha_2\MM{M}+\alpha_2\MM{C} & (\alpha_1^2-\alpha_2^2)\MM{M}+\alpha_1\MM{C}+\MM{K}}
+\VV*{\VV{\overline{q}}_1\\ \VV{\overline{q}}_2}
 =
--\VVV{\begin{array}{c}
-\VV{\overline{F}}_1\\ \VV{\overline{F}}_2
-\end{array}}
+-\VV*{\VV{\overline{F}}_1\\ \VV{\overline{F}}_2}
 \end{equation}
 dans lequel toutes les quantités sont réelles. 
 
@@ -871,12 +865,12 @@ de façon itérative, ce qui évite la contruction explicite du complément
 de Schur\footnote{%
 En algèbre linéaire et plus précisément en théorie des matrices, le complément de 
 Schur\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe} est défini comme suit. Soit :
-\begin{equation} \MM{M}=\MMM{\begin{matrix} \MM{A} & \MM{B} \\ \MM{C} & \MM{D} \end{matrix}} \end{equation}
+\begin{equation} \MM{M}=\MM*{\MM{A} & \MM{B} \\ \MM{C} & \MM{D}} \end{equation}
 une matrice de dimension $(p+q)\times(p+q)$, où les blocs $\MM{A}$, $\MM{B}$, $\MM{C}$, $\MM{D}$ sont des matrices 
 de dimensions respectives $p\times p$, $p\times q$, $q\times p$ et $q\times q$, avec $\MM{D}$ inversible. 
 Alors, le complément de Schur du bloc $\MM{D}$ de la matrice $\MM{M}$ est constitué par la matrice 
 de dimension $p\times p$ suivante :
-\begin{equation} \MM{A} - \MM{B}\cdot \MM{D}^{-1}\cdot \MM{C}\end{equation}
+\begin{equation} \MM{A} - \MM{B}\cdot \MMI{D}\cdot \MM{C}\end{equation}
 
 Lorsque $\MM{B}$ est la transposée de $\MM{C}$, la matrice $\MM{M}$ est symétrique définie-positive
 si et seulement si $\MM{D}$ et son complément de Schur dans $\MM{M}$ le sont.
