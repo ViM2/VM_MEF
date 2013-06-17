@@ -433,11 +433,11 @@ Pour cela, considérons que nous ayons à résoudre le système:
 Le vecteur $\VV{q}$ se compose des composantes internes $\VV{q_i}$ et des composantes
 de frontière $\VV{q_b}$, de sorte que le système, une fois réordonné s'écrit:
 \begin{equation}
-\MM*{\mathbf{K_{bb}} & \mathbf{K_{bi}}\\
-\mathbf{K_{ib}} & \mathbf{K_{ii}}}
-\VV*{\mathbf{q_b}\\\mathbf{q_i}}
+\MM*{\MM{K_{bb}} & \MM{K_{bi}}\\
+\MM{K_{ib}} & \MM{K_{ii}}}
+\VV*{\VV{q_b}\\\VV{q_i}}
 =
-\VV*{\mathbf{f_b}\\\mathbf{f_i}}
+\VV*{\VV{f_b}\\\VV{f_i}}
 \end{equation}
 Si la matrice $\MM{K}_{ii}$ n'est pas singulière, alors la seconde équation peut être
 résolue en terme de variables internes en:

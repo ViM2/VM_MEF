@@ -214,7 +214,7 @@ On aura donc:\index[aut]{Hooke (Robert), 1635-1703, Anglais}
                       &\text{approximation en contraintes}
    \end{array}
 \end{equation}
-et, de fa\c{c}on inverse:\index[aut]{Hooke (Robert), 1635-1703, Anglais}
+et, de façon inverse:\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 \begin{equation}
    \begin{array}{rcll}
    \sigma &=& \MM{N_\sigma}\VV{\tau}
@@ -231,17 +231,14 @@ et, de fa\c{c}on inverse:\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 \end{equation}
 avec, en petites déformations:
 \begin{equation}
-   \MM{\cL} = \MMM{
-                 \begin{array}{cc}
+   \MM{\cL} = \MM*{
                     \tfrac{\partial}{\partial x} & 0\\
                     0 & \tfrac{\partial}{\partial y}\\
                     \tfrac{\partial}{\partial y} &
                     \tfrac{\partial}{\partial x}
-                 \end{array}
               }
    \text{ en 2D, et }
-   \MM{\cL} = \MMM{
-                 \begin{array}{ccc}
+   \MM{\cL} = \MM*{
                     \tfrac{\partial}{\partial x} & 0 & 0\\
                     0 & \tfrac{\partial}{\partial y} & 0\\
                     0 & 0 & \tfrac{\partial}{\partial z}\\
@@ -251,7 +248,6 @@ avec, en petites déformations:
                     \tfrac{\partial}{\partial x} \\
                     \tfrac{\partial}{\partial y} &
                     \tfrac{\partial}{\partial x} &0\\
-                 \end{array}
               }
    \text{ en 3D}
 \end{equation}
@@ -309,12 +305,10 @@ suit que toutes les composantes de ces champs sont continues.
 Elle conduit à la résolution d'un système du type mixte (Brezzi):\index[aut]{Brezzi (Franco), 1945-, Italien}
 \begin{equation}
    \label{Eq:SysMixte}
-   \MMM{\begin{array}{cc}
-      -\MM{A} & \MM{B}\\
-      \MM{B}^\TR &\mO
-   \end{array}}
-   \VVV{\begin{array}{c} \VV{\tau}\\\VV{q}\end{array}} =
-   \VVV{\begin{array}{c} \mO\\\VV{F}\end{array}}
+   \MM*{-\MM{A} & \MM{B}\\
+      \MM{B}^\TR &\mO}
+   \VV*{\VV{\tau}\\\VV{q}} =
+   \VV*{\mO\\\VV{F}}
 \end{equation}
 où la matrice de rigidité est symétrique et non définie-positive, et:
 \begin{equation}
@@ -392,19 +386,15 @@ $\MM{M}$ étant la matrice des cosinus directeurs donnée
 par les relations:
 \begin{equation}
 %   \label{Eq:MatriceCosinusii}
-   \MM{M}=\MMM{\begin{array}{ccc}
-                  n_1&  0&n_2\\
-                    0&n_2&n_1
-                \end{array}}
+   \MM{M}=\MM*{n_1&  0&n_2\\
+                    0&n_2&n_1}
 %\end{equation}
 \text{ dans le plan, et }%\\[-1.5ex]
 %\begin{equation}
 %   \label{Eq:MatriceCosinusiii}
-   \MM{M}=\MMM{\begin{array}{cccccc}
-                  n_1&  0&  0&  0&n_3&n_2\\
+   \MM{M}=\MM*{n_1&  0&  0&  0&n_3&n_2\\
                     0&n_2&  0&n_3&  0&n_1\\
-                    0&  0&n_3&n_2&n_1&  0
-                \end{array}}
+                    0&  0&n_3&n_2&n_1&  0}
 \text{ dans l'espace.}
 \end{equation}
 

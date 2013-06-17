@@ -121,9 +121,9 @@ il s'agit du tenseur des contraintes de Cauchy.\index{Tenseur! des contraintes d
 De manière encore plus explicite, on écrit:
 \begin{equation}
 \vect{T}(M,\vect{n}) =
-\MMM{\begin{array}{ccc} \sigma_{11}&\sigma_{12}&\sigma_{13}\\ \sigma_{21}&\sigma_{22}&\sigma_{23}\\
-\sigma_{31}&\sigma_{32}&\sigma_{33}\end{array}}
-\VVV{\begin{array}{c} n_1\\n_2\\n_3\end{array}}
+\MM*{\sigma_{11}&\sigma_{12}&\sigma_{13}\\ \sigma_{21}&\sigma_{22}&\sigma_{23}\\
+\sigma_{31}&\sigma_{32}&\sigma_{33}}
+\VV*{n_1\\n_2\\n_3}
 = \sigma n
 \end{equation}
 
@@ -177,12 +177,12 @@ encore) de décomposer le tenseur des contraintes en partie sphérique et dévia
 \begin{equation} \sigma_{ij} = \frac13\sigma_I\delta_{ij}+s_{ij} 
 \quad \text{ ou encore } \quad
 \sigma =
-\MMM{\begin{array}{ccc} \sigma_{11}&\sigma_{12}&\sigma_{13}\\ \sigma_{21}&\sigma_{22}&\sigma_{23}\\
-\sigma_{31}&\sigma_{32}&\sigma_{33}\end{array}}
+\MM*{\sigma_{11}&\sigma_{12}&\sigma_{13}\\ \sigma_{21}&\sigma_{22}&\sigma_{23}\\
+\sigma_{31}&\sigma_{32}&\sigma_{33}}
 =
-\MMM{\begin{array}{ccc} s_{11}&s_{12}&s_{13}\\ s_{12}&s_{22}&s_{23}\\
-s_{13}&s_{23}&s_{33}\end{array}}
-+\MMM{\begin{array}{ccc} p&0&0\\0&p&0\\0&0&p\end{array}}
+\MM*{s_{11}&s_{12}&s_{13}\\ s_{12}&s_{22}&s_{23}\\
+s_{13}&s_{23}&s_{33}}
++\MM*{p&0&0\\0&p&0\\0&0&p}
 \end{equation}
 où $p=\frac13\sigma_I\delta_{ij}$ est la partie sphérique (et $\sigma_I=\sigma_{kk}$)
 et $s_{ij}$ la partie déviatorique.
@@ -200,7 +200,7 @@ Le déviateur est un tenseur de trace nulle, i.e. $s_{ii}=0$.
 \medskip
 \textcolorblue{Le déviateur a les mêmes directions principales que le tenseur des contraintes}, 
 on a alors dans le repère principal:
-\begin{equation}    s_{ij} = \MMM{\begin{array}{ccc} s_{1} & 0 & 0 \\ 0 & s_{2} & 0 \\ 0 & 0 & s_{3} \\ \end{array}} \end{equation}
+\begin{equation}    s_{ij} = \MM*{s_{1} & 0 & 0 \\ 0 & s_{2} & 0 \\ 0 & 0 & s_{3}} \end{equation}
 
 On peut définir les \textcolorblue{invariants du déviateur des contraintes de Cauchy}:
 \begin{equation}  
@@ -383,7 +383,7 @@ isochore} (sans variation de volume).
 
 \medskip
 Il existe une base orthonormée dans laquelle le tenseur des déformation est diagonal:
-\begin{equation} \varepsilon = \MMM{\begin{array}{ccc} \varepsilon_I &0&0\\ 0&\varepsilon_{II}&0\\ 0&0&\varepsilon_{III}\end{array}} \end{equation}
+\begin{equation} \varepsilon = \MM*{\varepsilon_I &0&0\\ 0&\varepsilon_{II}&0\\ 0&0&\varepsilon_{III}} \end{equation}
 Les directions propres sont appelées \textcolorblue{directions principales} de déformation,
 et les déformations $\varepsilon_I$, $\varepsilon_{II}$ et $\varepsilon_{III}$ les \textcolorblue{déformations 
 principales}.
