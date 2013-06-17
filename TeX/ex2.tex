@@ -245,11 +245,11 @@ La représentation de la fonction solution, est:
 \medskipvm
 Nous obtenons la matrice de rigidité élémentaire:
 \begin{equation} 
-\MM{K} = \frac{2EA}L \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
+\MM{K} = \frac{2EA}L \MM*{1 & -1\\ -1& 1}
 \end{equation}
 et le vecteur des forces nodales élémentaires:
 \begin{equation}  
-\VV{f} = \rho g A \frac{L}4 \VV{\begin{array}{c} 1 \\1 \end{array}}
+\VV{f} = \rho g A \frac{L}4 \VV*{1 \\1}
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -289,19 +289,19 @@ et un vecteur des forces nodales élémentaires $\VV{f_e}$ définis par:
 Les variables nodales sont $\LL{q}=\LL{u_1, u_2, u_3, u_4}$, et, les matrices élémentaires
 redonnées ci-dessus s'écrivent, en fonction de ces variables nodales:
 \begin{equation*}
-\MM{K}_1 = \frac{2EA}{L_1} \MM{\begin{array}{cccc} 1 & -1 & 0 & 0\\ -1& 1 & 0 & 0\\ 0&0&0&0\\0&0&0&0 \end{array}}
+\MM{K}_1 = \frac{2EA}{L_1} \MM*{1 & -1 & 0 & 0\\ -1& 1 & 0 & 0\\ 0&0&0&0\\0&0&0&0}
 \quad
-\MM{K}_2 = \frac{2EA}{L_2} \MM{\begin{array}{cccc}0&0&0&0\\ 0& 1 & -1 & 0\\ 0 & -1& 1& 0\\0&0&0&0 \end{array}}
+\MM{K}_2 = \frac{2EA}{L_2} \MM*{0&0&0&0\\ 0& 1 & -1 & 0\\ 0 & -1& 1& 0\\0&0&0&0}
 \quad
-\MM{K}_3 = \frac{2EA}{L_3} \MM{\begin{array}{cccc}0&0&0&0\\0&0&0&0\\0& 0& 1 & -1\\ 0&0 & -1& 1\end{array}}
+\MM{K}_3 = \frac{2EA}{L_3} \MM*{0&0&0&0\\0&0&0&0\\0& 0& 1 & -1\\ 0&0 & -1& 1}
 \end{equation*}
 et les forces nodales:
 \begin{equation*}
-\VV{f_1} = \rho g A \frac{L_1}4 \VV{\begin{array}{c} 1 \\1\\0\\0 \end{array}}
+\VV{f_1} = \rho g A \frac{L_1}4 \VV*{1 \\1\\0\\0}
 \quad
-\VV{f_2} = \rho g A \frac{L_2}4 \VV{\begin{array}{c} 0\\1 \\1\\0 \end{array}}
+\VV{f_2} = \rho g A \frac{L_2}4 \VV*{0\\1 \\1\\0}
 \quad
-\VV{f_3} = \rho g A \frac{L_3}4 \VV{\begin{array}{c} 0\\0\\1 \\1 \end{array}}
+\VV{f_3} = \rho g A \frac{L_3}4 \VV*{0\\0\\1 \\1}
 \end{equation*}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -409,16 +409,16 @@ avec les conditions aux limites $u=\overline{u}$ et $u^*=0$ sur $S_u$.
 De manière discrétisée, il vient:
 \begin{equation}
 W = \LLL{v_1, v_2, \sigma_1^*}\left(
-\MM{\begin{array}{cc} \mO & \VV{b}\\ ~\\ \LL{b} & -a \end{array}}
-\VV{\begin{array}{c} u_1\\u_2\\ \sigma_1 \end{array}}
-- \VV{\begin{array}{c} \VV{f_n}\\~\\ \sigma_1 \end{array}}
+\MM*{\mO & \VV{b}\\ ~\\ \LL{b} & -a}
+\VV*{u_1\\u_2\\ \sigma_1}
+- \VV*{\VV{f_n}\\~\\ \sigma_1}
 \right)\end{equation}
 avec:
 \begin{equation}
-\VV{b}=\dint_0^L \frac{A}L \VV{\begin{array}{c} -1\\1\end{array}}; \qquad
+\VV{b}=\dint_0^L \frac{A}L \VV*{-1\\1}; \qquad
 a=\dint_0^L \frac{A}H \dd x; \qquad
-\VV{f_n} = \dint_{-1}^{+1} A \VV{\begin{array}{c} N_1\\N_2 \end{array}} \frac{L}2 f_x \dd\xi =
- A f_x \frac{L}2 \VV{\begin{array}{c} 1\\1 \end{array}}
+\VV{f_n} = \dint_{-1}^{+1} A \VV*{N_1\\N_2} \frac{L}2 f_x \dd\xi =
+ A f_x \frac{L}2 \VV*{1\\1}
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
