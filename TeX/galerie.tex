@@ -2,11 +2,12 @@
 %\addcontentsline{toc}{chapter}{Galerie}
 \markboth{Galerie}{}
 
-\newcommand{\VMport}[2]{%
-\begin{tabular}{p{40mm}}
+\newcommand{\VMport}[2]{{\small
+\begin{tabular}{p{33mm}}
+%   \,\hfill\includegraphics[height=32mm]{#1}\hfill\,\\
    \includegraphics[height=32mm]{#1}\\
   #2
-\end{tabular}
+\end{tabular}}
 \hfill
 }
 
