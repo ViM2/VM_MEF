@@ -606,7 +606,7 @@ En 1894, Émile Borel\index[aut]{Borel (Félix Édouard Justin Émile), 1871-195
 En 1897, il définit les ensembles mesurables.
 En 1901, Henri-Léon Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
  introduit la notion de mesure.
-La théorie se développe jusque dans les années 1950.
+La théorie se développe jusque dans les années 1950.\\\indent
 Andreï Kolmogorov\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe}
  proposera une axiomatisation du calcul des probabilités basée notamment
 sur l'intégrale définie à partir d'une mesure.
@@ -691,20 +691,21 @@ sont des boréliens, mais certains boréliens ne sont pas de cette forme.
 boréliens. Il existe des parties de $\RR$ qui ne sont pas boréliennes, mais il faut un peu de sueur pour
 les construire.}
 
+\medskip
+Les tribus sont des familles de parties qui sont destinées à être mesurées. Pour pouvoir
+mesurer des parties suffisamment compliquées comme celles qui ne peuvent être définies
+que par des passages à la limite (comme l'ensemble triadique de Cantor),\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand}  
+les tribus doivent être assez fines pour être stables par des opérations relativement générales comme
+le passage au complémentaire, les réunions et intersections dénombrables. Néanmoins,
+elles ne doivent pas être trop fines afin de ne pas contenir de parties non mesurables.
 
-%\bigskip
-
-La \textcolorblue{mesure de Dirac%\footnotemark
-}\index{Mesure!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
-ou masse de Dirac est une mesure supportée par un singleton
-et de masse totale 1.
-%\footnotetext{
-%\begin{tabular}{c}
-%\includegraphics[height=32mm]{Dirac}\\
-%Paul Adrien Maurice Dirac \\
-%1902-1984 \\
-%\end{tabular}
-%}
+\medskip
+Rappelons également deux mesures simples et importantes:
+\begin{itemize}
+   \item la \textcolorblue{mesure de comptage}, qui donne le nombre d'éléments d'un ensemble.
+   \item la \textcolorblue{mesure de Dirac}\index{Mesure!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
+	ou masse de Dirac est une mesure supportée par un singleton et de masse totale 1.
+\end{itemize}
 
 \begin{definition}[Mesure de Dirac]
 Pour un espace mesurable $(X,\mathcal{A})$ et un point $a$ de $X$, on appelle mesure de Dirac au
@@ -733,7 +734,7 @@ lorsque tout ensemble négligeable pour $\mu$ appartient à la tribu $\mathcal{A
 La \textcolorblue{mesure de Lebesgue}\index{Mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 a permis de bâtir une théorie de
 l'intégration palliant les insuffisances de l'intégrale de Riemann (il suffit de vouloir
-intégrer $0+1_{\QQ}$ sur $[0,1]$ avec Riemann pour être dans l'impasse).
+intégrer $\mathbbmss{1}_{\QQ}$ sur $[0,1]$ avec Riemann pour être dans l'impasse).
 Nous détaillerons cela un peu plus au chapitre sur les espaces de Lebesgue.\label{Sec-impasse}
 
 %\medskip
@@ -753,7 +754,7 @@ sont dits Lebesgue-mesurables).
 %\medskip
 Cette restriction aux boréliens de la mesure de Lebesgue est parfois dénommée mesure de Borel-Lebesgue.
 
-%\bigskip
+\medskip
 Si pour la mesure de Lebesgue $\lambda$ sur $\RR$, la notion de <<~presque partout~>> correspond bien
 à l'intuition, ce n'est pas vrai en général.
 Par exemple, pour $\mu=\delta_a$ sur la tribu de l'ensemble des parties de $X$, une propriété
@@ -761,11 +762,17 @@ est vraie $\mu$-pp simplement si elle est vérifiée en $a$.
 
 Si la mesure $\mu$ est nulle, toute propriété est vérifiée pp (ainsi que sa négation).
 
+\medskip
+\colorgris
+<<~Construire une mesure~>>, c'est montrer qu'il existe une unique mesure qui vérifie certaines propriétés. 
+Pour cela, on utilise le théorème (ou lemme) de la classe monotone (dû à Wacław Sierpiński\index[aut]{Sierpiński (Wacław Franciszek), 1882-1969, Polonais} 
+et popularisé par Dynkin\index[aut]{Dynkin (Eugène Borisovitch), 1924-, Russe}) pour montrer l'unicité et le 
+théorème de Caratheodory\index[aut]{Carathéodory (Constantin), 1873-1950, Grec} pour montrer l'existence.
+\colorblack
+
 %\medskip
 \section{Propriétés de la mesure de Lebesgue}\index{Mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
-
-%\bigskip
 On appelle \textcolorblue{mesure de Lebesgue sur un espace euclidien $E$}\index[aut]{Euclide, -325-- -265, Grec}
 la mesure image de la mesure de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 sur $\RR^n$ par n'importe quelle isométrie de $\RR^n$ dans $E$.
@@ -773,9 +780,15 @@ sur $\RR^n$ par n'importe quelle isométrie de $\RR^n$ dans $E$.
 Soit $A$ une partie Lebesgue-mesurable d'un espace euclidien $E$.
 On appelle \textcolorblue{mesure de Lebesgue sur $A$} la restriction à $A$ de la mesure de Lebesgue de $E$.
 
-%\bigskip
+\begin{theoreme}
 \textcolorblue{La mesure de Lebesgue est invariante sous toutes les isométries.}
-Elle est en particulier invariante sous les translations: c'est une mesure de Haar du groupe topologique $\RR^n$.
+Elle est en particulier invariante sous les translations: c'est une mesure de Haar\index[aut]{Haar (Alfréd), 1885-1933, Hongrois} 
+du groupe topologique $\RR^n$.
+\end{theoreme}
+
+\textcolorgris{Oui, la mesure de Lebesgue peut être vue comme une mesure de Haar. Mais, historiquement, la mesure
+de Haar est définie plus tard (on parle souvent de \emph{la} mesure de Haar, alors que l'on devrait parler d'\emph{une}
+mesure de Haar). Elle généralise celle de Lebesgue.}
 
 %\bigskip
 \begin{definition}[Mesure régulière]
@@ -789,8 +802,10 @@ topologique $X$ est dite \textcolorblue{régulière}\index{Mesure!régulière} l
 \end{definition}
 
 %\medskip
-\textcolorblue{La mesure de Lebesgue est finie sur tout compact, chaque compact, qui est borné,
-pouvant être enfermé dans un cube.}
+\begin{theoreme}
+La mesure de Lebesgue est finie sur tout compact; chaque compact, qui est borné,
+pouvant être enfermé dans un cube.
+\end{theoreme}
 
 Elle est par voie de conséquence régulière, $\RR^n$ étant métrisable, localement compact et séparable.
 \begin{itemize}
