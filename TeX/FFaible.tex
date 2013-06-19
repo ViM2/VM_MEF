@@ -627,15 +627,23 @@ formulations. C'est ce que l'on se propose de réaliser à l'aide des multiplica
 de Lagrange.
 
 \medskip
-Soient $H$ et $M$ deux Hilbert, $a(\cdot,\cdot): H\times H\rightarrow\RR$ une forme bilinéaire
-\textcolorred{symétrique et continue}, $b(\cdot,\cdot): H\times M\rightarrow\RR$ une forme bilinéaire
-\textcolorred{continue}, $f\in H'$ et $g\in M'$ deux formes linéaires. On notera
+\begin{definition}[Formulation comme problème de minimisation sous contrainte]
+Soient $H$ et $M$ deux espaces de Hilbert.
+Soient  $a(\cdot,\cdot): H\times H\rightarrow\RR$ une forme bilinéaire \textcolorred{symétrique et continue}
+et  $b(\cdot,\cdot): H\times M\rightarrow\RR$ une forme bilinéaire \textcolorred{continue}.
+Soient enfin $f\in H'$ et $g\in M'$ deux formes linéaires. On notera
 $\langle\cdot,\cdot\rangle_H$ et $\langle\cdot,\cdot\rangle_M$ les produits de dualité entre $H$ et $H'$
 et entre $M$ et $M'$ respectivement.
 
+\medskip
 On considère le problème suivant:
-Trouver $u\in H$ tel que $a(u,v)=f(v)$, $\forall v\in H$ \textcolorred{et} vérifiant les
-\textcolorblue{contraintes} supplémentaires $b(v,\mu)=g(\mu)$, $\forall \mu\in M$.
+\begin{equation}
+\begin{array}{c}
+\text{Trouver } u\in H \text{ tel que } a(u,v)=f(v), \forall v\in H \\
+\text{ \textcolorred{et} vérifiant les
+\textcolorblue{contraintes} supplémentaires: } b(v,\mu)=g(\mu), \forall \mu\in M.
+\end{array}
+\end{equation}
 
 \medskip
 Ce problème est équivalent à:
@@ -649,7 +657,7 @@ J(v)=\frac12 a(v,v)-\langle f,v\rangle_H
 \end{equation}
 %On notera ce problème (Pmin), et
 On parle de \textcolorblue{problème de minimisation  sous contrainte}.
-
+\end{definition}
 
 \medskip
 
@@ -661,7 +669,7 @@ $\mathscr{L}(v,\mu) = J(v)+b(v,\mu) - \langle g,\mu\rangle_M$.
 L'idée est de considérer $\min_{v\in H} \mathscr{L}(v,.)$.
 La question devient alors: \textcolorblue{existe-t-il un multiplicateur particulier $\lambda\in M$ tel que
  $\min_{v\in H} \mathscr{L}(v,\lambda)$ soit égale à $u\in H$ solution de (\ref{Eq-Pmin})?}
-$\lambda$ est parfois également appelé pénalité ou fonction de pénalisation.
+\textcolorgreen{$\lambda$ est parfois également appelé pénalité ou fonction de pénalisation.}
 
 
 \medskip
@@ -680,14 +688,9 @@ Alors $(u,\lambda) \in H\times M$ est solution du problème mixte (\ref{Eq-PM}):
 b(u,\mu) &=& \langle g,\mu\rangle \quad \forall \mu \in M.
 \end{array}\right.
 \end{equation}
-
-et on se retrouve dans le cadre du théorème de Brezzi au paragraphe précédent \ref{Sec-ThBrezzi}.
+et \textcolorred{on se retrouve dans le cadre du théorème de Brezzi} au paragraphe~\ref{Sec-ThBrezzi}.
 
 \medskip
-
-et on se retrouve dans le cadre du théorème de Brezzi au paragraphe~\ref{Sec-ThBrezzi}.
-
-
 De plus, si $a(v,v)\ge 0$, $\forall v\in H$, alors $(u,\lambda)$ est
 solution de (\ref{Eq-PM}) correspond à $(u,\lambda)$ est un \textcolorblue{point-selle}
 de $\mathscr{L}$, i.e.:
@@ -698,14 +701,11 @@ de $\mathscr{L}$, i.e.:
 
 
 \medskip
-
-
-
 Remarquons enfin que si l'on note:
 \begin{align}&A((u,\lambda),(v,\mu))=a(u,v)+b(v,\lambda)+b(u,\mu)\\
 &L((v,\mu))=f(v)+g(\mu)\end{align}
 et que l'on pose les nouvelles variables $\mathscr{U}=(u,\lambda)$ et $\mathscr{V}=(v,\mu)$,
-alors on revient à un problème de type Lax-Milgram: trouver $\mathscr{U}\in H\times M$
+alors \textcolorred{on revient à un problème de type Lax-Milgram}: trouver $\mathscr{U}\in H\times M$
 tel que pour tout $\mathscr{V}\in H\times M$, $A(\mathscr{V},\mathscr{U})=L(\mathscr{V})$.
 
 \begin{histoire}%
@@ -717,7 +717,7 @@ est le fondateur du calcul des variations avec Euler.\index[aut]{Euler (Leonhard
 \includegraphics[height=32mm]{Lagrange4}\\%
 Lagrange%
 \end{tabular}}
-%%%#\bigskip
+\medskip
 \ImageADroite{%
 Il est également le fondateur de la théorie des formes quadratiques,
 et démontre le théorème de Wilson\index[aut]{Wilson (John), 1741-1793, Anglais}
