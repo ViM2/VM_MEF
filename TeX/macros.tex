@@ -416,7 +416,7 @@
 \newsavebox\MaBoiteAvecPhotos
 %
 \newcommand{\ImageADroite}[1]{%
-\renewcommand\windowpagestuff{\flushright\vskip5pt\framebox{\usebox{\MaBoiteAvecPhotos}}}
+\renewcommand\windowpagestuff{\flushright\vskip5pt\makebox{\usebox{\MaBoiteAvecPhotos}}}
 \setlength{\HauteurDeLaBoite}{\ht\MaBoiteAvecPhotos}%
 \settowidth{\LargeurDeLaBoite}{\usebox{\MaBoiteAvecPhotos}}%
 \addtolength{\HauteurDeLaBoite}{4\baselineskip}%
@@ -493,20 +493,10 @@
    \newcommand\VV@star[1]{\begin{Bmatrix}#1\end{Bmatrix}}
    \newcommand\VV@nostar[1]{\left\{#1\right\}}
    \newcommand\VV{\@ifstar{\VV@star}{\VV@nostar}}
-%   \newcommand\PP@star[1]{\begin{pmatrix}#1\end{pmatrix}}
-%   \newcommand\PP@nostar[1]{\left(#1\right)}
-%   \newcommand\PP{\@ifstar{\PP@star}{\PP@nostar}}
-%   \newcommand\NN@star[1]{\begin{Vmatrix}#1\end{Vmatrix}}
-%   \newcommand\NN@nostar[1]{\left|#1\right|}
-%   \newcommand\NN{\@ifstar{\NN@star}{\NN@nostar}}
    \makeatother
-%   \providecommand{\MMT}[1]{\left[ #1\right]^T}% Matrix []^T
-%   \providecommand{\MMT}[1]{\MM{#1}^T}% Matrix []^T
-%   \providecommand{\MMI}[1]{\left[ #1\right]^{-1}}% Matrix []^{-1}
    \providecommand{\MMIT}[1]{\left[ #1\right]^{-T}}% Matrix []^{-T}
    \providecommand{\LL}[1]{\langle #1\rangle}%   Angle bracket <>
    \providecommand{\LLL}[1]{\langle #1\rangle}%   Angle bracket <>
-%   \newcommand{\fig}[1]{Fig.(\ref{#1})}
    \newcommand{\fig}[1]{figure \ref{#1}}
    \newcommand{\vect}[1]{\overrightarrow{#1}}%
    \providecommand{\LLP}[1]{\langle #1\rangle}%   Angle bracket <>
