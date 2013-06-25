@@ -420,9 +420,10 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 
 
 % \cleardoublepage
+% \phantomsection  
 % \renewcommand{\indexname}{Index}
 % \markboth{Index}{}
-%%%%%\addcontentsline{toc}{chapter}{Index}
+% \addcontentsline{toc}{chapter}{\indexname}
 % \printindex
 
 % \cleardoublepage
@@ -440,8 +441,9 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
                 % \let\item\@idxitem}
                % {\if@restonecol\twocolumn\fi}
 % \makeatother
+% \phantomsection  
 % \markboth{Index des Noms Propres}{}
-%%%%%%\addcontentsline{toc}{chapter}{Index des Noms Propres}
+% \addcontentsline{toc}{chapter}{Index des Noms Propres}
 
 % ~\vspace{9mm}\\
 
