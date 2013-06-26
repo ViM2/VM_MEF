@@ -241,7 +241,7 @@ est la représentation) cache une décomposition en somme  directe de sous-espac
 
 
 
-%VM: INDEX fait jusque là
+
 \medskip
 \section{Vibration des structures}
 Revenons sur l'équation de la dynamique sous forme matricielle:
@@ -733,7 +733,76 @@ La base de réduction se compose de deux types de modes.
 %\section{Présentation des méthodes sur le cas des chocs large bande}% à mettre en complément à la fin du chapitre
 
 
-%VM index fait à partir de là
+\medskip
+\section{Remarques sur l'amortissement}
+
+Vous avez peut-être déjà rencontré des cas pour lesquels ont été développés des modèles vibratoires adaptés au problème à traiter.
+En voici quelques exemples:
+\begin{itemize}
+   \item vibration transversale des cordes;
+   \item vibration longitudinale dans les barres;
+   \item vibration de torsion dans les barres;
+   \item vibration de flexion dans les poutres;
+   \item vibration des membranes;
+   \item vibration des plaques;
+   \item propagation des ondes quasi-longitudinales dans les barres;
+   \item propagation des ondes de flexion dans les poutres...
+\end{itemize}
+
+\begin{histoire}
+Il ne faut pas négliger ces modèles simplifiés. Ne serait-ce que c'est eux qui ont vu le jour en premier...
+
+\medskip
+C'est en 1787 à Leipzig que Chladni\index[aut]{Chladni (Ernst Florens Friedrich), 1756-1827, Allemand} 
+met en évidence expérimentalement la formation de lignes nodales sur une plaque libre avec du sable.
+Wheatstone\index[aut]{Wheatstone (Charles), 1802-1875, Anglais} 
+et Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais} 
+respectivement en 1833 et 1873, utiliseront des modes de poutre libre pour essayer
+de comprendre et d'expliquer les figures de Chladni.
+
+En 1909, Ritz,\index[aut]{Ritz}{Ritz (Walther), 1878-1909, Suisse} toujours sur ce problème de la plaque libre, utilisera pour 
+la première fois la méthode qui porte son nom.
+Les premiers résultats concernant la plaque encastré ne viendront qu'en 1931, et sont dus à Sezawa.\index[aut]{Sezawa (Katsutada), ?, Japonais}
+
+En 1939, Igushi développe une méthode pour obtenir certains résultats analytiques, mais les premières
+synthèses complètes sur les méthodes utilisables pour calculer les fréquences naturelles et les déformées
+modales de plaques ne viendront qu'en 1954 par Warburton,\index[aut]{Warburton (Geoffrey Barratt), 1924-2009, Anglais} et 1969 par 
+Leissa.\index[aut]{Leissa (Arthur W.), 1932-, Américain}
+\end{histoire}
+
+\medskip
+La méthodologie est toujours la même et se base sur la \textcolorblue{technique de séparation des variables} qui
+permet de dire que les variables d'espace et de temps peuvent être séparées.
+On écrira donc un déplacement transversal $w(x,y)$ comme produit d'une fonction dépendant de l'espace $X(x)$ et
+d'une fonction dépendant du temps $T(t)$: $w(x,t)=X(x)T(t)$.
+Ainsi, il sera <<~aisé~>> de résoudre le problème (en ayant pris en compte les conditions aux limites évidemment).
+
+\medskip
+Généralement, dans un premier temps, lors du développement de ces modèles de cordes, barres, poutres, membranes
+et plaques, l'amortissement n'est pas pris en compte.
+Les solutions obtenues pour les réponses libres ne présentent donc pas de décroissance de l'amplitude des mouvements
+dans le temps.
+Il est possible d'intégrer cet amortissement de plusieurs façons:
+\begin{itemize}
+   \item \textcolorblue{Facteur d'amortissement modal:} il s'agit de la manière la plus simple d'introduire l'amortissement en
+	incluant un terme dissipatif correspondant à un modèle d'amortissement visqueux sur la fonction dépendant du temps 
+	uniquement. \textcolorgris{Dans ce cas, la fonction de dépendance temporelle $T(t)$, qui avait pour équation différentielle
+	$\ddot{T}_n(t)+\omega^2_nT_n(t)=0$, pour les modes $n\ge1$, devra désormais répondre à l'équation
+	$\ddot{T}_n(t)+2\xi_n\omega_n\dot{T}_n(t)+\omega^2_nT_n(t)=0$, où $\xi_n$ est le facteur d'amortissement modal};	
+   \item \textcolorblue{Coefficient d'amortissement dans l'équation d'onde:}
+	un terme dissipatif est introduit directement dans l'équation des ondes. Celui-ci peut être proportionnel au milieu externe dans lequel
+	se produit le phénomène \textcolorgris{(par exemple proportionnel à la vitesse de déformation hors plan d'une membrane 
+	vibrant dans un fluide, comme l'air)}, ou proportionnel au milieu interne considéré \textcolorgris{(par exemple proportionnel à
+	la vitesse de fluctuation des contraintes dans une poutre: modèle de Kelvin-Voigt)};
+   \item \textcolorblue{Dissipation aux limites:} l'amortissement peut également être introduit dans la définition des conditions
+	aux limites, par exemple pour prendre en compte le mode de fixation de la structure. \textcolorgris{(Par exemple,
+	dans le cas des ondes longitudinales dans une barre, on introduit un ressort et un amortisseur à chaque bout de
+	la barre).}
+\end{itemize}
+
+Ces remarques, bien que générales, nécessitent d'être correctement prises en compte pour ces modèles simplifiés.
+
+
 \medskip
 \section{Pour aller plus loin: cas des chocs large bande}
 
@@ -1125,3 +1194,4 @@ La FFT\index{Transformée de Fourier}\index{FFT} requiert par ailleurs que le ch
 
 \medskip
 Le choix judicieux de $T_0$ influe directement sur la reconstruction temporelle de la réponse. Pour les structures peu amorties ou pour des chargements longs, $T_0$ est grand, et donc la FFT\index{Transformée de Fourier}\index{FFT} coûteuse. Dans ces cas, des méthodes ont été développées : les fonctions de Green;\index[aut]{Green (George), 1793-1841, Anglais} la Implicit Fourier Transform; et l'amortissement artificiel.
+
