@@ -371,19 +371,17 @@ On a $(K^\bot)^\bot = K$.
 \end{theoreme}
 
 \medskip
-\section{Complément et exemples}
+\section{Compléments}
 
-\indent La fonction $1/\sqrt{x}$ est $L^1$ mais pas $L^2$.
-
-La fonction $1/|x|$ est $L^2$ mais pas $L^1$.
-
-La fonction $e^{-|x|}/\sqrt{|x|}$ est $L^1$ mais pas $L^2$
+Commençons par quelques exemples ultra classiques:
+\begin{itemize}
+   \item La fonction $1/\sqrt{x}$ est $L^1$ mais pas $L^2$.
+   \item La fonction $1/|x|$ est $L^2$ mais pas $L^1$.
+   \item La fonction $e^{-|x|}/\sqrt{|x|}$ est $L^1$ mais pas $L^2$
+\end{itemize}
 
 \medskip
-\begin{theoreme}
-Si $\mu$ est une mesure finie et si $1\le p\le q\le \infty$, on a:
-\begin{equation}L^q\subset L^p\end{equation}
-\end{theoreme}
+Poursuivons par quelques inégalités bien utiles.
 
 \begin{theoreme}[Inégalité de Minkowski]\index[aut]{Minkowski (Hermann), 1864-1909, Allemand}
 Soient $p\in[1,\infty]$, et $f$ et $g$ dans $L^p$, alors on a:
@@ -397,23 +395,36 @@ Si $f\in L^p$ et $g\in L^q$, alors le produit $fg\in L^r$, et on a:
 \begin{equation}\|fg\|_r\le\|f\|_p\|g\|_q\end{equation}
 \end{theoreme}
 
-%Si $f\in L^p$ et $f\in L^q$, alors $f\in L^r$, $p\le r\le q$.
-
-
-\medskip
-\section{Mais où se situent nos fonctions $C^k$?}
-
-Soit $\Omega$ une partie mesurable de $\RR^n$.
-
-L'espace $C_c^0(\Omega)$ est dense dans $L^1(\Omega)$, i.e.:
-\begin{equation}
-\forall f\in L^1(\Omega), \forall\varepsilon>0, \exists g\in C_ c^0(\Omega), \text{ tel que }
-\|f-g\|_{L^1(\Omega)}\le\varepsilon
-\end{equation}
+L'inégalité de Hölder conduit au théorème suivant:
+\begin{theoreme}
+Si $\mu$ est une mesure finie et si $1\le p\le q\le \infty$, on a:
+\begin{equation}L^q\subset L^p\end{equation}
+\end{theoreme}
 
 \medskip
-Pour tout ouvert $\Omega$ de $R^n$, et pour tout $k\in\NN\cup\{\infty\}$:
+Terminons en revenons un peu à nos fonctions continues $C^k$, et plus précisément sur les fonctions continues à support compact
+dans un ouvert $\Omega$ mesurable de $\RR^n$ (voir la définition \ref{Def-Cc} page \pageref{Def-Cc}).
+On dispose des résultats de \textcolorblue{densité} suivants:
+\begin{itemize}
+   \item L'espace $C_c^0(\Omega)$ des fonctions continues à support compact est dense dans $L^p(\Omega)$ pour $1\le p<\infty$
+	(mais n'est pas dense dans $L^\infty(\Omega)$)
 
-$C_c^\infty(\Omega)$ est dense dans $L^p(\Omega)$ pour $1\le p<\infty$.
+	\colorgris Dans le cas $p=1$, cela se traduit par: 	$  \forall f\in L^1(\Omega), \forall\varepsilon>0, \exists g\in C_ c^0(\Omega), \text{ tel que }
+	   \|f-g\|_{L^1(\Omega)}\le\varepsilon$ \colorblack
 
-MAIS attention, $C_c^\infty(\Omega)$ N'est PAS dense dans $L^\infty(\Omega)$
+   \item L'espace $C_c^\infty(\Omega)$ des fonctions infiniment dérivables à support compact est dense dans $L^p(\Omega)$ pour $1\le p<\infty$
+	(mais n'est pas dense dans $L^\infty(\Omega)$)
+   \item L'espace $C_c^\infty(\Omega)$ est dense dans le sous espace de $L^\infty(\Omega)$ des fonctions bornées qui tendent vers 0 en l'infini.
+   \item L'ensemble des fonctions continues à support compact de $L^p(\RR^n)$ est dense dans $L^p(\RR^n)$, pour $ p\neq \infty$. 
+\end{itemize}
+
+\textcolorgreen{Les arguments de densité ont une importance pratique dans certaines démonstrations:}
+si l'on doit démontrer qu'une propriété est vérifiée sur $L^p(\Omega)$, alors on peut commencer par montrer que cette propriété est 
+vraie sur $C_c^\infty(\Omega)$, avant de passer à la limite en utilisant  l'argument de densité:
+<<~$C_c^\infty(\Omega)$ est dense dans $L^p(\Omega)$~>>.
+
+\medskip
+L'espace $C_c^{\infty}(\Omega)$ est parfois également noté $\mathcal{D}(\Omega)$. 
+En fait, les distributions (qui sont les éléments de l'espace $\mathcal{D}(\Omega)$) sont définies comme étant les éléments du 
+dual topologique de $C_c^{\infty}(\Omega)$, muni d'une topologie adéquate.
+Nous allons les aborder dès a présent, au chapitre \ref{Ch-Sobo}.
