@@ -19,15 +19,15 @@
 \titlecontents{chapter}[1.2cm]
 {\addvspace{10pt}\large\sffamily\bfseries}%\llap{\chaptername\ }
 {\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.2cm}\color{ocre}}
-{}  
-{\color{ocre!60}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage}%  
-  
+{}
+{\color{ocre!60}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage}%
+
 \titlecontents{section}[1.2cm]
   {\addvspace{3pt}\bfseries}
   {\contentslabel[\thecontentslabel]{1.2cm}}
   {}
   {\hfill\color{black}\thecontentspage}
-  
+
 \titlecontents{subsection}[1.2cm]
   {\addvspace{0pt}\small}
   {\contentslabel[\thecontentslabel]{1.2cm}}
@@ -121,8 +121,8 @@
 %
 \makeatletter
 \newtheoremstyle{plain}
-{7pt}     %Space above
-{7pt}     %Space below
+{1pt}     %Space above
+{1pt}     %Space below
 {\normalfont}%Body font
 {}         %Indent amount
 {\bfseries}      %Theorem head font
@@ -303,7 +303,7 @@
 \fancypagestyle{plain}{%
 \fancyhead{}%
 \renewcommand{\headrulewidth}{0pt}}%
-							  
+							
 % enlève l'entête des pages de fin de chapitre si nombre de pages impair
 \makeatletter
 \renewcommand{\cleardoublepage}{%
@@ -468,7 +468,7 @@
 \newcommand{\grisi}{\color{grisi}}%   Plane 82   ou nskin=1
 \newcommand{\grisii}{\color{grisii}}%   Solid 46   ou nskin=2
 \newcommand{\grisiii}{\color{grisiii}}% Shell 91   ou nskin=3
-\newcommand{\grisiv}{\color{grisiv}}%   Plane 82/2 ou nskin=4 
+\newcommand{\grisiv}{\color{grisiv}}%   Plane 82/2 ou nskin=4
 \newcommand{\grisv}{\color{grisv}}%    Local Reissner
 \newcommand{\gris}{\color{gris}}
 %
@@ -571,10 +571,11 @@
 \DeclareMathOperator{\rotb}{\mathbf{rot}}
 \DeclareMathOperator{\rot}{rot}
 \DeclareMathOperator{\vectt}{vect}
+\DeclareMathOperator{\trace}{tr}
 %
 \newcommand{\medskipvm}{\ifVersionDuDocEstVincent
 
 \medskip\fi}
 \newcommand{\bigskipvm}{\ifVersionDuDocEstVincent
- 
+
 \bigskip\fi}
