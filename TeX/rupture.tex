@@ -527,9 +527,9 @@ cette zone peut être plus ou moins grande.
 
 \medskip
 Par exemple, pour un matériau isotrope et un critère de von Mises, la zone plastique en
-contraintes planes est 9 fois plus grande que celle en déformations planes.
-
-\medskip
+contraintes planes est neuf fois plus grande que celle en déformations planes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Les chemins de propagation de la plasticité suivant l'épaisseur sont, dans ces deux cas,
 illustrés sur la figure~\ref{fig:propagation}.
 
@@ -602,15 +602,15 @@ Cette singularité peut être obtenue en utilisant des éléments quadratiques e
 les nœuds des milieux de coté de $1/4$.
 
 \medskip
-Considérons l'élément de référence 2D carré quadratique à 8 nœuds (souvent appelé Q8).
+Considérons l'élément de référence 2D carré quadratique à huit nœuds (souvent appelé Q8).
 Ses fonctions de forme $N_i$ sont:
-\begin{equation} \begin{array}{ll}
-N_i = &\left[ (1+\xi\xi_i)(1+\eta\eta_i)-(1-\xi^2)(1+\eta\eta_i)-(1-\eta^2)(1+\xi\xi_i)\right]
+\begin{equation} \begin{aligned}
+N_i &=\left[ (1+\xi\xi_i)(1+\eta\eta_i)-(1-\xi^2)(1+\eta\eta_i)-(1-\eta^2)(1+\xi\xi_i)\right]
 \dfrac{\xi_i^2\eta_i^2}4 \\
 & +
 (1-\xi^2)(1+\eta\eta_i)(1-\xi_i^2)\dfrac{\eta_i^2}2  +
 (1-\eta^2)(1+\xi\xi_i)(1-\eta_i^2)\dfrac{\xi_i^2}4
-\end{array}\end{equation}
+\end{aligned}\end{equation}
 
 Supposons maintenant que les nœuds 5 et 8 soient déplacés de 1/4 vers le nœud 1 (qui est l'origine
 du repère), comme illustré à la figure \ref{fig-EltSing}.
@@ -625,7 +625,7 @@ et le calcul de $x(\xi,\eta)$ donne:
 \includegraphics[height=45mm]{EltSing.eps}
 \caption{Position des nœuds de l'élément singulier de type Q8}\label{fig-EltSing}
 \end{figure}
-soit pour $x_1=0$, $x_2=L$ et $x_5=L4$:
+soit pour $x_1=0$, $x_2=L$ et $x_5=L/4$:
 \begin{equation} x = \frac12\xi(1+\xi)L + (1-\xi^2)\frac{L}4 \quad \text{ et par suite: }
 \xi=-1+2\sqrt{\frac{x}L} \end{equation}
 \textcolorblue{Le terme du jacobien est $\frac{\partial x}{\partial\xi}=\frac{L}2(1+\xi)=\sqrt{xL}$
@@ -707,16 +707,10 @@ paragraphe \ref{Sec-XFEM}.
 \medskip
 Les éléments finis classiques ayant du mal avec les fortes discontinuités, on procède
 à une enrichissement des éléments, dans les zones de discontinuités.
-
 L'enrichissement peut être interne (ou intrinsèque) ou externe (ou extrinsèque).
-
 Le principe consiste à augmenter la qualité de l'approximation des fonctions en ajoutant
 à l'approximation déjà présente des informations sur la solution exacte (et donc sur
 l'approximation du problème spécifique que l'on souhaite résoudre).
-
-
-
-
 
 
 
@@ -754,13 +748,13 @@ ou courbe S-N (pour Stress vs Number of cycles) de beaucoup de CFRP et
 GFRP peut être décrite (entre $10^3$ et $10^6$ cycles) par une équation de la forme:
 \begin{equation}    \dfrac{\sigma_a}{\sigma_u}=1-b\log N \end{equation}
 où $\sigma_a$ et $\sigma_u$ sont la contrainte appliquée et la
-résistance ultime, $N$ le nombre de cycle et $b$ une constante.
+résistance ultime, $N$, le nombre de cycle et $b$, une constante.
 
 \medskip
 La plupart des données disponibles en fatigue montrent une dispersion
 élevée pour les courbes S-N. L'analyse statistique est alors inévitable.
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 D'après Talreja, il existe une limite de déformation en fatigue
 des composites, décrite comme la déformation minimale requise pour
 initier un mécanisme d'endommagement de faible énergie.
@@ -780,10 +774,10 @@ Dans le cas général, il y a plusieurs événements endommageants, qui diffère
 des autres par la grandeur des contraintes subies et par d'autres paramètres. Miner a proposé
 deux principes qui permettent de cumuler les dommages:
 \begin{itemize}
-    \item Le dommage causé par une occurrence d'un événement est mesuré par l'inverse
+    \item le dommage causé par une occurrence d'un événement est mesuré par l'inverse
 	$1/N$ du nombre $N$ de fois qu'il faut répéter cet événement pour mener la pièce de
-	l'état neuf jusqu'à la défaillance.
-    \item Le dommage causé par une succession d'événements est la somme des dommages
+	l'état neuf jusqu'à la défaillance;
+    \item le dommage causé par une succession d'événements est la somme des dommages
 	causés par chacun d'eux.
 \end{itemize}
 
@@ -796,16 +790,15 @@ Si $1 / N_A$ est le dommage de l'événement A et si $n_A$ est le nombre d'occur
 événement au cours d'un essai ou d'une utilisation du système alors le dommage total $D$
 causé par tous les événements A, relativement à une défaillance, est défini par l'équation
 de Miner:\index[aut]{Miner}
-\begin{equation}  D = n_A / N_A  \end{equation}
-
-\medskip
+\begin{equation}  D = \frac{n_A}{N_A}  \end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 \textcolorblue{Avec cette définition, le dommage cumulé est égal à 1 au moment où la pièce se rompt.}
-
 Il faut nuancer cette affirmation : des pièces apparemment identiques soumises aux mêmes
 sollicitations se rompent en général au bout de nombres de cycles différents.
 \textcolorred{La dispersion des durées de vie peut être très importante.}
 
- On trouve par expérience que les durées de vie
+On trouve par expérience que les durées de vie
 peuvent varier d'un facteur 5 ou 10 pour des pièces issues d'un même lot de production.
 Il faut donc préciser davantage la formulation de la règle de Miner:\index[aut]{Miner}
 s'il faut en moyenne $N_A$  répétitions de l'événement A pour qu'une défaillance survienne
@@ -814,7 +807,6 @@ alors le dommage causé par une occurrence de A est mesuré par $1 / N_A$.
 \medskip
 Les principes de Miner\index[aut]{Miner} permettent de définir le dommage causé par un événement
 et affirment  que pour cumuler les dommages, il suffit de les additionner.
-
 Ils imposent en outre le choix de l'unité
 de dommage. Remarquons qu'il est toujours possible de changer d'unité. Par exemple, lorsqu'il y a
 un seul événement endommageant, il est naturel de choisir comme unité de dommage le dommage
@@ -834,17 +826,15 @@ un essai aussi court que possible.
 
 \medskip
 Pour une singularité caractérisée par sa dimension $a$ et sa forme, on étudie les courbes
-$da/dN - \Delta K$ (où $N$ est le nombre de cycles et $\Delta K$ la variation du facteur
+\begin{equation}\frac{\dd a}{\dd N - \Delta K}\end{equation} (où $N$ est le nombre de cycles et $\Delta K$ la variation du facteur
 d'intensité de contrainte sur un cycle).
 
 \medskip
-\textcolorblue{Ces courbes, dont la partie centrale est linéaire, présentent deux asymptotes pour $da/dN$ et $\Delta K$
-faibles et pour $da/dN$ et $\Delta K$ grands.}
-
-la valeur mini vers laquelle tend la courbe est $\Delta K_S$, la valeur maxi $\Delta K_{Ic}$.
+\textcolorblue{Ces courbes, dont la partie centrale est linéaire, présentent deux asymptotes pour $\dd a/\dd N$ et $\Delta K$
+faibles et pour $\dd a/\dd N$ et $\Delta K$ grands.}
+La valeur minimale vers laquelle tend la courbe est $\Delta K_S$, la valeur maximale $\Delta K_{Ic}$.
 $K_{Ic}$ est la valeur critique qui correspond à une rupture instantanée par dépassement de la
 valeur critique de $K$ sous chargement monotone.
-
 $K_S$ est la valeur en dessous de laquelle il n'y à pas de propagation de fissure, c'est un
 facteur d'intensité de contrainte seuil.
 
@@ -853,7 +843,7 @@ facteur d'intensité de contrainte seuil.
 modéliser par la loi de Paris (la plus simple des lois de propagation) qui définit la vitesse de
 propagation par cycle comme une fonction puissance de l'amplitude du facteur d'intensité de
 contrainte :
-\begin{equation} \dfrac{da}{dN} = C.\Delta K^m \end{equation}
+\begin{equation} \dfrac{\dd a}{\dd N} = C\,\Delta K^m \end{equation}
 où $C$ et $m$ sont des coefficients dépendant du matériau.
 
 La dimension critique de la singularité  $a_c$  est liée à la caractéristique du matériau $K_{IC}$,
@@ -871,19 +861,19 @@ facteur de forme.
 Une fois un \textcolorred{indicateur d'endommagement choisi} (généralement la rigidité ou la
 résistance résiduelle, la première pouvant être mesurée de manière non
 destructive), on utilise :
-\begin{itemize}
-   \item \textcolorblue{\em théories empiriques:} les courbes S-N\index{Courbe de Wöhler (ou S-N)} sont utilisées
+\begin{description}
+   \item[\textcolorblue{\em Théories empiriques}] Les courbes S-N\index{Courbe de Wöhler (ou S-N)} sont utilisées
          pour caractériser le comportement en fatigue du composite.
          Un nombre important d'essais est nécessaire pour chaque
          configuration spécifique;
 
-   \item \textcolorblue{\em théories de dégradation de résistance résiduelle:}
-         elles sont basées sur l'hypothèse qu'un changement de la
+   \item[\textcolorblue{\em Théories de dégradation de résistance résiduelle}]
+         Elles sont basées sur l'hypothèse qu'un changement de la
          résistance résiduelle $\sigma_r$ en fonction du nombre de
          cycles $n$ est lié à la contrainte maximale appliquée $\sigma_a$.
          On a généralement une relation de la forme:
          \begin{equation}
-            \dfrac{d \sigma_r}{d n} = -\dfrac1\gamma f\sigma_a^y
+            \dfrac{\dd \sigma_r}{\dd n} = -\dfrac1\gamma f\sigma_a^y
             \sigma_r^{1-\gamma}
          \end{equation}
          où $\gamma$ et $f$ sont des paramètres indépendants des
@@ -925,7 +915,7 @@ afin d'adapter :
    2. le planning d'entretien}%
 de la résistance des composites. La rupture par fatigue survient lorsque la résistance résiduelle du composite est atteinte par la contrainte appliquée.
 
-   \item \textcolorblue{\em théories de perte de rigidité:} ce sont des généralisations
+   \item[\textcolorblue{\em Théories de perte de rigidité}] Ce sont des généralisations
          du cas précédent.
 
          Les plis les plus désorientés par rapport au chargement
@@ -940,13 +930,13 @@ de la résistance des composites. La rupture par fatigue survient lorsque la ré
          contribuent à la définition de la résistance résiduelle
          et donc à la durée de vie.
 
-   \item \textcolorblue{\em théories d'endommagement cumulatif:} elle sont basées
+   \item[\textcolorblue{\em Théories d'endommagement cumulatif}] Elles sont basées
          sur une observation expérimentale soigneuse et sur une
          simulation de l'accumulation de l'endommagement du
          sous-lamina.
          Il manque toutefois un critère de rupture des laminés sous
          chargement de fatigue tension-tension pour ces théories.
-   \item \textcolorblue{\em théories d'endommagement continu:} l'endommagement
+   \item[\textcolorblue{\em Théories d'endommagement continu}] L'endommagement
          est pris en compte par un paramètre $D$ sous la forme:
          \begin{equation}
             \widehat{\sigma}=\dfrac{\sigma}{1-D}
@@ -956,10 +946,8 @@ de la résistance des composites. La rupture par fatigue survient lorsque la ré
          L'avantage de cette approche est d'éviter la prise en
          compte de l'endommagement microstructural parfois difficile
          à modéliser et mesurer.
-\end{itemize}
-
-
-\medskip
+\end{description}
+\medskipvm
 Notons également que \textcolorred{pour obtenir les informations nécessaires, de nombreux essais doivent être
 menés}, surtout parce que de nombreux facteurs conditionnement la fatigue des FRP:
 \begin{itemize}
@@ -980,16 +968,13 @@ menés}, surtout parce que de nombreux facteurs conditionnement la fatigue des F
 	\item ...
 \end{itemize}
 \textcolorred{C'est un problème de structure car il y a couplage entre les modes d'endommagement à différentes échelles.}
-
-\medskip
+\medskipvm
 Dans ces cas simples, on peut utiliser un critère cumulatif de Miner ou des lois d'équivalence (par
 exemple entre temps, fréquence, température...)
 
 
-
 \medskip
 \subsection{Sur la fatigue des composites}
-
 Les remarques suivantes peuvent être faites, quant à la poursuite de
 travaux de recherche sur le sujet:
 \begin{itemize}
