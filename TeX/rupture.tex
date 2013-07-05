@@ -167,9 +167,9 @@ Le \textcolorblue{facteur de concentration de contraintes $k_f$} est défini com
    \item si $a\gg b$, alors $\sigma_A=2\sigma \sqrt{\frac{a}{\rho}}$.
 \end{itemize}
 \begin{figure}[ht]\centering
-\subfloat[titre ?]{\includegraphics[height=45mm]{fissure.eps}\label{fig:fissure}}\qquad\qquad
-\subfloat[titre ?]{\includegraphics[height=45mm]{fissure2.eps}\label{fig:fissure2}}
-\caption{Titre ?}
+\subfloat[Cas plan]{\includegraphics[height=45mm]{fissure.eps}\label{fig:fissure}}\hspace{7em}
+\subfloat[Cas d'une plaque mince]{\includegraphics[height=45mm]{fissure2.eps}\label{fig:fissure2}}
+\caption{Concentration de contraintes autour d'une fissure}
 \end{figure}
 \subsection{Équilibre énergétique}
 \begin{histoire}%
@@ -334,29 +334,30 @@ C'est le  facteur d'intensité de contrainte.\index{Facteur d'intensité de cont
 \colorblack
 
 \begin{figure}[ht]\centering
-\subfloat[titre ?]{\includegraphics[height=45mm]{fissIrwin.eps}}\qquad\qquad
-\subfloat[titre ?]{\includegraphics[height=45mm]{fisspol.eps}}
-\caption{Titre?}
+\subfloat[Fissure sollicitée en traction]{\includegraphics[height=50mm]{fissIrwin.eps}\label{fig-fissIrwin}}\hspace{6em}
+\subfloat[Contraintes au voisinage du fond de fissure]{\includegraphics[height=50mm]{fisspol.eps}\label{fig-fisspol}}
+\caption{Calcul du facteur d'intensité de contrainte}
 \end{figure}
-Pour certaines configurations de structures soumises à un chargement, on peut démontrer que:
+Dans le cas de structures où une fissure se retrouve sollicitée en traction, tel que cela est illustré à la figure \ref{fig-fissIrwin},
+on peut montrer que:
 \begin{equation} \sigma_{ij} = \frac{k}{\sqrt{r}} f_{ij}(\theta) + \dsum_{m=0}^\infty A_m r^{m/2} g_{ij}(\theta) \end{equation}
 où $f_{ij}(\theta)$ est une fonction adimensionnelle, et $(r, \theta)$ les coordonnées polaires en fond
 de fissure.
 En posant:
 \begin{equation} K = k\sqrt{2\pi} \end{equation}
 Irwin\index[aut]{Irwin (George Rankine), 1907-1998, Américain} montre en 1957 qu'au voisinage du fond de
-fissure, on a:
+fissure l'état de contraintes décrit à la figure \ref{fig-fisspol} conduit a:
 \begin{align}
 &\lim_{r\rightarrow0} \sigma_{ij}^{(I)} = \frac{K_I}{\sqrt{2\pi r}} f_{ij}^{(I)}(\theta) \\
 &\lim_{r\rightarrow0} \sigma_{ij}^{(II)} = \frac{K_II}{\sqrt{2\pi r}} f_{ij}^{(II)}(\theta) \\
 &\lim_{r\rightarrow0} \sigma_{ij}^{(III)} = \frac{K_III}{\sqrt{2\pi r}} f_{ij}^{(III)}(\theta)
 \end{align}
-trois modes de chargements pouvant s'appliquer à une fissure. Ces trois modes sont donnés à la~\fig{Fig-modesR}.
+trois modes de chargements pouvant s'appliquer à une fissure. Ces trois modes sont donnés à la~\fig{fig-modesR}.
 Pour un mode mixte général il vient:
 \begin{equation} \sigma_{ij}^{(total)} = \sigma_{ij}^{(I)} + \sigma_{ij}^{(II)} + \sigma_{ij}^{(III)} \end{equation}
 \begin{figure}[htb]
 \centering\includegraphics[height=55mm]{modesR.eps}
-\caption{Modes de chargement d'une fissure}\label{Fig-modesR}
+\caption{Modes de chargement d'une fissure}\label{fig-modesR}
 \end{figure}
 
 
@@ -433,8 +434,9 @@ Cela est vrai, dans des conditions quasi-statiques, tant pour les matériaux lin
 pour les échantillons expérimentés à petite échelle en passe de céder en front de fissure.
 \end{histoire}
 
-Considérons un solide linéaire élastique homogène 2D sur lequel agissent des force $T_k$.
-Les efforts de traction s'écrivent $T_i=\sigma_{ij}n_j$ (où $n$ est la normale sortante à $\Gamma$).
+Considérons un solide linéaire élastique homogène 2D $\Omega$ sur lequel agissent des force $T_k$, comme
+illustré à la figure \ref{fig-j1}.
+Les efforts de traction s'écrivent $T_i=\sigma_{ij}n_j$ (où $n$ est la normale sortante à $\Gamma=\partial\Omega$).
 La densité d'énergie interne élastique est:
 \begin{equation}
 \omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}\dd\varepsilon_{ij}
@@ -442,9 +444,9 @@ La densité d'énergie interne élastique est:
 On travaille en l'absence de forces de volumes, d'où $\sigma_{ij,i}=0$, et sous hypothèse de petites déformations, soit $\varepsilon_{ij}=(u_{i,j}+u_{j,i})/2$.
 \begin{figure}[ht]
 \centering
-\subfloat[titre ?]{\includegraphics[height=55mm]{j1.eps}}
-\subfloat[titre ?]{\includegraphics[height=55mm]{j3.eps}}
-\caption{Titre ?}
+\subfloat[Solide soumis aux forces $T_k$]{\includegraphics[height=55mm]{j1.eps}\label{fig-j1}}\hspace{5em}
+\subfloat[Chemin d'intégration]{\includegraphics[height=45mm]{j3.eps}\label{fig-j3}}
+\caption{Calcul de l'intégrale $J$}
 \end{figure}
 Les intégrales curvilignes:
 \begin{equation}
@@ -470,9 +472,10 @@ force~$T_k$. On définit \textcolorblue{l'intégrale $J$} comme:
 D'après ce qui précède, \textcolorblue{$J=0$}, et donc
 \begin{equation}J_1=\dint_{\Gamma_1} ... = J_2=\dint_{\Gamma_2} ...\end{equation}
 
-
+\medskipvm
 Considérons maintenant une entaille (fissure) dans une pièce.
-Alors, on a vu que l'intégrale $J$\index{Intégrale $J$} est nulle le long du chemin fermé $AB\Gamma_1CD\Gamma_2A$.
+Alors, on a vu que l'intégrale $J$\index{Intégrale $J$} est nulle le long du chemin fermé $AB\Gamma_1CD\Gamma_2A$ décrit
+à la figure \ref{fig-j3}.
 Si sur $AB$ et $CD$: $dy=0$, $T_k=0$, alors $J_{AB}=J_{CD}=0$
 et il vient: $J_{\Gamma_1} = J_{\Gamma_2}$
 
@@ -515,8 +518,9 @@ Si $R$ n'est pas petit devant $D$, alors il faut tenir compte de la plastificati
 L'idée générale est de déterminer le lieu géométrique des points où le
 champ de contraintes atteint la limite élastique du matériau.
 \begin{figure}[ht]\centering
-\includegraphics[height=50mm]{plast.eps}
-\caption{Titre ?}\label{fig:propagation}
+\subfloat[Contraintes planes]{\includegraphics[height=55mm]{plast-sig.eps}}\hspace{9em}
+\subfloat[Déformations planes]{\includegraphics[height=55mm]{plast-eps.eps}}
+\caption{Zones de plastification d'une éprouvette entaillée en traction}\label{fig:propagation}
 \end{figure}
 Évidemment, en fonction du type de matériau, des hypothèses cinématiques...
 cette zone peut être plus ou moins grande.
@@ -609,8 +613,8 @@ N_i = &\left[ (1+\xi\xi_i)(1+\eta\eta_i)-(1-\xi^2)(1+\eta\eta_i)-(1-\eta^2)(1+\x
 \end{array}\end{equation}
 
 Supposons maintenant que les nœuds 5 et 8 soient déplacés de 1/4 vers le nœud 1 (qui est l'origine
-du repère).
-Les fonctions de forme des nœuds 1, 2 et 5, obtenus pour $\eta=-1$ sont:
+du repère), comme illustré à la figure \ref{fig-EltSing}.
+Les fonctions de forme des nœuds 1, 2 et 5, obtenues pour $\eta=-1$ sont:
 \begin{equation} N_1= -\frac12\xi(1-\xi) \quad
   N_2 = \frac12\xi(1+\xi) \quad
   N_5 = (1-\xi^2)
@@ -619,13 +623,13 @@ et le calcul de $x(\xi,\eta)$ donne:
 \begin{equation} x = -\frac12\xi(1-\xi)x_1 + \frac12\xi(1+\xi)x_2 + (1-\xi^2)x_5 \end{equation}
 \begin{figure}[ht]\centering
 \includegraphics[height=45mm]{EltSing.eps}
-\caption{Titre ?}
+\caption{Position des nœuds de l'élément singulier de type Q8}\label{fig-EltSing}
 \end{figure}
 soit pour $x_1=0$, $x_2=L$ et $x_5=L4$:
 \begin{equation} x = \frac12\xi(1+\xi)L + (1-\xi^2)\frac{L}4 \quad \text{ et par suite: }
 \xi=-1+2\sqrt{\frac{x}L} \end{equation}
-Le terme du jacobien est $\frac{\partial x}{\partial\xi}=\frac{L}2(1+\xi)=\sqrt{xL}$
-qui s'annule pour $x=0$ conduisant à une singularité des déformations.
+\textcolorblue{Le terme du jacobien est $\frac{\partial x}{\partial\xi}=\frac{L}2(1+\xi)=\sqrt{xL}$
+qui s'annule pour $x=0$ conduisant à une singularité des déformations.}
 
 Si l'on calcule  la déformation $\varepsilon_x$ le long du côté $1-2$, on trouve:
 \begin{equation} \varepsilon_x = \dfrac{\partial u}{\partial x} =
