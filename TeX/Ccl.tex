@@ -16,14 +16,14 @@ La fiabilité d'un résultat dépend de celle de toute la chaîne d'approximatio
 du phénomènes physique jusqu'à l'obtention des résultats numériques fournis par le programme de calcul.
 Nombre de ces problèmes ont été mentionnés au cours de ce document. Rappelons les ici:
 \begin{itemize}
-   \item \textcolorblue{erreurs de modélisation}: aussi bien au niveau du choix des équations mathématiques décrivant le phénomène, 
+   \item \textcolorblue{erreurs de modélisation}: aussi bien au niveau du choix des équations mathématiques décrivant le phénomène,
 	que de la représentativité des conditions aux limites choisies;
-   \item \textcolorblue{erreurs de discrétisation}: elles sont liées aux choix des méthodes numériques (MEF ou autre), aux problèmes
+   \item \textcolorblue{erreurs de discrétisation}: elles sont liées aux choix des méthodes numériques (méthode des éléments finis ou autre), aux problèmes
 	d'intégration, de représentation du domaine...
    \item \textcolorblue{erreurs de verrouillage numérique}: elles concernent des problèmes survenant lors du traitement de paramètres
 	introduits dans le calcul tels que les pas de temps, des modes parasites, des instabilités numériques...
    \item \textcolorblue{incertitudes des données}: connaissance approximative des lois de comportement, des efforts,
-	des liaisons... Il faut alors procéder à une approche fiabiliste qui n'a pas été présentée dans ce document.
+	des liaisons... Il faut alors procéder à une approche fiabiliste qui n'a pas été présentée dans ce document;
    \item \textcolorblue{erreurs d'arrondis}: la manière dont un ordinateur traite un nombre est soumise à des contraintes
 	(représentation en base 2 par exemple, approximation à $n$ décimales...). Ces erreurs, mêmes infimes, peuvent
 	dans certains cas se cumuler pour aboutir à un résultat faux.
@@ -38,19 +38,17 @@ Lorsque cela est possible, on n'hésitera donc pas a effectuer des comparaison a
 \section*{Quelques perspectives}
 \addcontentsline{toc}{section}{Quelques perspectives}
 
-Le calcul scientifique d'une manière générale, et la MEF en particulier, sont utilisés de manière intensive dans
+Le calcul scientifique d'une manière générale, et la méthode des éléments finis en particulier, sont utilisés de manière intensive dans
 tous les secteurs.
-
-\medskip
+\medskipvm
 Toute amélioration de la performance des méthodes numériques est donc un enjeu majeur: rapidité,
 précision, fiabilité...
 
-On pourra citer le développement de codes de calculs parallèles, ou l'amélioration des techniques d'optimisation 
+On pourra citer le développement de codes de calculs parallèles, ou l'amélioration des techniques d'optimisation
 par les algorithmes génétiques.
-
-\medskip
-Nous avons parlé des modèles multi-échelle essentiellement pour les matériaux, mais le développement de modèles 
-pour les structures minces (plaues, coques) rentre dans cette catégorie... et si les théories de plaques sont aujourd'hui
+\medskipvm
+Nous avons parlé des modèles multi-échelle essentiellement pour les matériaux, mais le développement de modèles
+pour les structures minces (plaques, coques) rentre dans cette catégorie... et si les théories de plaques sont aujourd'hui
 assez bien maîtrisées (d'un point de vue théorique et dans les codes), il reste des problèmes ouverts concernant
 les coques minces.
 
