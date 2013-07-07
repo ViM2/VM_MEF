@@ -16,7 +16,7 @@ d'intégration numérique et de formules de quadrature.
 
 
 \medskip
-\section{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{Méthode de Newton-Cotes}
+\section{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 
 Soit à calculer l'intégrale suivante:
 \begin{equation}I=\int_a^b f(x)dx\end{equation}
@@ -27,12 +27,12 @@ L'idée consiste à construire un polynôme pour interpoler $f(x)$, et
 
 \medskip
 Plusieurs types de polynômes peuvent être utilisés pour cette interpolation.
-Les principales méthodes d'interpolations sont détaillées au chapitre \ref{chap-interpolation}.
+Les principales méthodes d'interpolations sont détaillées au chapitre~\ref{chap-interpolation}.
 
 
 
 \medskip
-\subsection*{Méthode des rectangles}\index{Méthode des rectangles}
+\subsection*{Méthode des rectangles}\index{méthode des rectangles}
 
 La \textcolorblue{méthode des rectangles} consiste à interpoler $f(x)$ par un
 polynôme de degré $0$, i.e. par la constante valant, selon les variantes de la
@@ -52,7 +52,7 @@ point courant.
 
 
 \medskip
-\subsection*{Méthode des trapèzes}\index{Méthode des trapèzes}
+\subsection*{Méthode des trapèzes}\index{méthode des trapèzes}
 
 La \textcolorblue{méthode des trapèzes} consiste à interpoler $f(x)$ par un polynôme 
 de degré $1$, i.e. par la droite passant par les points $(a,f(a))$ et $(b,f(b))$.
@@ -82,11 +82,11 @@ point courant et l'erreur commise vaut $-\frac{h^3}{12n^2} f''(w)$ pour un certa
 \item la \textcolorblue{méthode de Romberg}\index[aut]{Romberg (Werner), 1909–2003, Allemand}, publiée en 1955,
 (elle même basée sur le procédé d'extropolation de Richardson)\index[aut]{Richardson (Lewis Fry), 1881-1953, Anglais}
 permet d'accélérer la convergence de la méthode des trapèze (Wiki est ton ami).
-\item La méthode des trapèzes est un cas particulier de celle de Newton-Cotes pour $n=1$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{Méthode de Newton-Cotes}
+\item La méthode des trapèzes est un cas particulier de celle de Newton-Cotes pour $n=1$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 \end{itemize}
 
 \medskip
-\subsection*{Méthode de Simpson}\index{Méthode de Simpson}\index[aut]{Simpson (Thomas), 1710-1761, Anglais}
+\subsection*{Méthode de Simpson}\index{méthode de Simpson}\index[aut]{Simpson (Thomas), 1710-1761, Anglais}
 
 La \textcolorblue{méthode de Simpson}  consiste à interpoler $f(x)$ par un polynôme 
 de degré $2$, i.e. par la parabole passant par les points extrêmes $(a,f(a))$ et $(b,f(b))$ 
@@ -116,12 +116,12 @@ point courant et l'erreur commise vaut $-\frac{nh^5}{180} f^{(4)}(w)$ pour un ce
 \begin{itemize}
 \item La parabole interpolant $f$ est trouvée en utilisant l'interpolation de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \item La méthode de Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} est un cas particulier de 
-	celle de Newton-Cotes pour $n=2$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{Méthode de Newton-Cotes}
+	celle de Newton-Cotes pour $n=2$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 \end{itemize}
 
 
 \medskip
-\subsection*{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{Méthode de Newton-Cotes}
+\subsection*{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 
 Les \textcolorblue{formules de Newton-Cotes} se proposent également d'approximer
 l'intégrale $I$ et découpant l'intervalle $[a,b]$ en $n$ intervalles identiques.
@@ -168,7 +168,7 @@ par morceaux), et donc augmenter le nombre de morceaux et non le degré des poly
 
 
 \medskip
-\section{Méthodes de quadrature de Gauss}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}\index{Méthode de quadrature de Gau\ss{}}
+\section{Méthodes de quadrature de Gauss}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}\index{méthode de quadrature de Gau\ss{}}
 
 Le principe de la méthode reste le même que pour la méthode de Newton-Cotes, mais
 on va essayer d'améliorer un peu encore la qualité du résultat.
@@ -186,7 +186,7 @@ grands possibles.
 Cette fois-ci \textcolorred{$(a,b)$ peut être n'importe quel type d'intervalle (fermé, ouvert, fini ou non).}
 
 \medskip
-\subsection*{Intégration sur un intervalle type}\index{Polynôme! orthogonalité}\index{Polynôme! de Legendre}\index{Polynôme! de Tchebychev}\index{Polynôme! d'Hermite}\index{Polynôme! de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Hermite (Charles), 1822-1901, Français}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}
+\subsection*{Intégration sur un intervalle type}\index{polynôme! orthogonalité}\index{polynôme! de Legendre}\index{polynôme! de Tchebychev}\index{polynôme! d'Hermite}\index{polynôme! de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Hermite (Charles), 1822-1901, Français}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}
 
 
 \begin{center}
@@ -207,7 +207,7 @@ polynôme orthogonal associé à la formule de quadrature.
 
 \medskip
 \textcolorblue{Les méthodes de quadrature de Gauss intègrent exactement un polynôme de degré $2n-1$ 
-avec $n$ points.}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}\index{Méthode de quadrature de Gau\ss{}}
+avec $n$ points.}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}\index{méthode de quadrature de Gau\ss{}}
 
 \medskip
 \subsection*{Changement d'intervalle d'intégration}

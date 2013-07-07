@@ -83,7 +83,7 @@ L'approximation étant l'utilisation de méthodes permettant d'approcher une fon
 par une suite de fonctions qui convergent dans un  certain espace fonctionnel, on voit donc que ce qui 
 a été fait dans la deuxième partie ressort bien de cela:
 on cherche une fonction (généralement notée $u$) qui n'est pas connue explicitement, mais est donnée 
-comme solution d'une ED ou d'une EDP, et l'on cherche à construire une suite de problèmes plus simples, 
+comme solution d'une ED ou d'une équation aux dérivées partielles, et l'on cherche à construire une suite de problèmes plus simples, 
 que l'on sait résoudre à chaque étape, et telle que la suite des solutions correspondantes converge 
 vers la solution cherchée.
 
@@ -91,7 +91,7 @@ Mais l'approximation peut servir aussi dans le cas où la fonction considérée 
 on cherche alors à la remplacer par une fonction plus simple, plus régulière, ou ayant de meilleures 
 propriétés. 
 Nous avons déjà mentionné l'intégration numérique à plusieurs reprises dans le document, et 
-celle-ci sera détaillée un peu plus au chapitre \ref{chap-quadrature}. Ce sont les méthodes d'approximation
+celle-ci sera détaillée un peu plus au chapitre~\ref{chap-quadrature}. Ce sont les méthodes d'approximation
 numériques qui sont utilisées.
 
 \medskip
@@ -161,7 +161,7 @@ Mais est-ce possible ?
 \medskip
 Et bien, notre intuition ne nous trompe pas: c'est possible, et c'est démontré.
 
-Les \textcolorblue{théorèmes de Taylor (1715)}\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index{Théorème!de Taylor}
+Les \textcolorblue{théorèmes de Taylor (1715)}\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index{théorème!de Taylor}
 montre qu'une fonction plusieurs fois dérivable au voisinage d'un point peut être approximée 
 par une fonction polynôme dont les coefficients dépendent uniquement des dérivées de la fonction 
 en ce point.
@@ -187,11 +187,11 @@ Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Cauchy\index[aut]{Cauchy (
 Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} avec reste intégral.
 
 \medskip
-Le \textcolorblue{théorème d'approximation de Weierstrass}\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}\index{Théorème!de Weierstrass} 
+Le \textcolorblue{théorème d'approximation de Weierstrass}\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}\index{théorème!de Weierstrass} 
 (en analyse réelle) dit que toute fonction continue définie sur un segment peut être approchée 
 uniformément par des fonctions polynômes.
 
-\textcolorgris{Le théorème de Stone-Weierstrass\index[aut]{Stone (Marshall Harvey), 1903-1989, Américain}\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}\index{Théorème!de Stone-Weierstrass} 
+\textcolorgris{Le théorème de Stone-Weierstrass\index[aut]{Stone (Marshall Harvey), 1903-1989, Américain}\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}\index{théorème!de Stone-Weierstrass} 
 généralise ce résultat aux fonctions continues 
 définies sur un espace compact et à valeurs réelles, en remplaçant l'algèbre des polynômes par 
 une algèbre de fonctions qui sépare les points et contient au moins une fonction constante non nulle.}
@@ -227,7 +227,7 @@ Mais avant cela, rappelons quelques \og bases polynomiales\fg{} connues.%\footno
 \medskip
 \subsection{Orthogonalité}
 
-Une \textcolorblue{suite de polynômes orthogonaux}\index{Polynôme! orthogonalité} est 
+Une \textcolorblue{suite de polynômes orthogonaux}\index{polynôme! orthogonalité} est 
 une suite infinie de polynômes  $P_0(x)$, $P_1(x)$, ... à coefficients réels, dans laquelle chaque 
 $P_n(x)$ est de degré $n$, et telle que les polynômes de la suite sont orthogonaux deux à deux 
 pour un produit scalaire\index{Produit scalaire} de fonctions donné.
@@ -253,7 +253,7 @@ Il vient alors:
 
 La norme associée est définie par $||f||=\sqrt{\langle f,f \rangle}$.
 Le produit scalaire\index{Produit scalaire} fait de l'ensemble de toutes les fonctions de norme finie un 
-espace de Hilbert.\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
+espace de Hilbert.\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 
 L'intervalle d'intégration est appelé \textcolorblue{intervalle d'orthogonalité}.
 
@@ -269,14 +269,14 @@ polynômes échelonnés.
 
 
 \medskip
-\subsection{Polynômes de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{Polynôme! de Lagrange}
+\subsection{Polynômes de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme! de Lagrange}
 
 Connaissant $n + 1$ points $(x_0, y_0),\dots,(x_n, y_n)$ \textcolorred{distincts}, le 
 \textcolorblue{polynôme de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} 
 est l'unique polynôme de degré $n$
-passant tous les points.\index{Polynôme! de Lagrange}
+passant tous les points.\index{polynôme! de Lagrange}
 
-Ce polynôme est trivialement défini par:\index{Polynôme! de Lagrange}
+Ce polynôme est trivialement défini par:\index{polynôme! de Lagrange}
 \begin{equation}
 L(X) = \sum_{j=0}^{n} y_j \left( \prod_{i=0, i\neq j}^{n} \frac{X-x_i}{x_j-x_i} \right) 
 \end{equation}
@@ -299,10 +299,10 @@ recherchée par construction.
 
 
 \medskip
-\subsection{Polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{Polynôme! d'Hermite}
+\subsection{Polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite}
 
 Les \textcolorblue{polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} 
-sont définis comme suit :\index{Polynôme! d'Hermite}
+sont définis comme suit :\index{polynôme! d'Hermite}
 \begin{equation}
     H_n(x)=(-1)^n e^{x^2/2}\frac{\dd^n}{\dd x^n}e^{-x^2/2} \quad \text{(forme dite probabiliste)}
 \end{equation}
@@ -316,7 +316,7 @@ $\widehat{H}_n(x) = 2^{n/2}H_n \left(x\,\sqrt{2} \right)\,\!.$
 
 \medskip
 \colorgris
-Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sont les suivants :\index{Polynôme! d'Hermite}
+Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sont les suivants :\index{polynôme! d'Hermite}
 \begin{multicols}{2}
 \noindent%
    $H_0=1~$,\\
@@ -355,12 +355,12 @@ C'est pour ces intéressantes propriétés que cette base a été choisie en mé
 on utilise alors la jolie expression de \textcolorblue{base de chaos polynomial}.
 
 \medskip
-Ces polynômes forment donc une base orthogonale de l'espace de Hilbert\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{Produit scalaire!de $L^2$}\index{Espace!de Lebesgue} 
+Ces polynômes forment donc une base orthogonale de l'espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{Produit scalaire!de $L^2$}\index{espace!de Lebesgue} 
 $L^2(\CC,\mu)$ des fonctions boréliennes telles que:
 \begin{equation}
     \int_{-\infty}^{+\infty}|f(x)|^2\,\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,\dd x< +\infty,
 \end{equation}
-dans lequel le produit scalaire est donné par l'intégrale:\index{Produit scalaire}\index{Polynôme! orthogonalité}
+dans lequel le produit scalaire est donné par l'intégrale:\index{Produit scalaire}\index{polynôme! orthogonalité}
 \begin{equation}
     \langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\,\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,\dd x.
 \end{equation}
@@ -373,12 +373,12 @@ sous leur forme physique.
 
 
 \medskip
-\subsection{Polynômes de Legendre}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{Polynôme! de Legendre}
+\subsection{Polynômes de Legendre}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre}
 
 On appelle équation de Legendre l'équation:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{ED-EDP!de Legendre}
 \begin{equation}\frac{\textrm{d}}{\textrm{d}x}[(1-x^{2})\frac{\textrm{d}y}{\textrm{d}x}]+n(n+1)y=0\end{equation}
 
-On définit le \textcolorblue{polynôme de Legendre} $P_n$ par:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{Polynôme! de Legendre}
+On définit le \textcolorblue{polynôme de Legendre} $P_n$ par:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre}
 \begin{equation}
 \frac{\textrm{d}}{\textrm{d}x}[(1-x^{2})\frac{\textrm{d}P_n(x)}{\textrm{d}x}]+n(n+1)P_n(x)=0,\qquad P_n(1)=1.
 \end{equation}
@@ -398,7 +398,7 @@ P_1(x)=x\\
 
 \medskip
 \colorgris
-Les premiers polynômes de Legendre sont:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{Polynôme! de Legendre}
+Les premiers polynômes de Legendre sont:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre}
 
 \noindent
     $P_{0}(x)=1\,$,\\
@@ -428,10 +428,10 @@ On remarquera la propriété suivante :
 qui donne en particulier $P_n( - 1) = ( - 1)^n$ et $P_{2n + 1}(0) = 0)$.
 
 \medskip
-Les polynômes orthogonaux les plus simples sont les polynômes de Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{Polynôme! de Legendre}\index{Polynôme! orthogonalité} 
+Les polynômes orthogonaux les plus simples sont les polynômes de Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre}\index{polynôme! orthogonalité} 
 pour lesquels  l'intervalle d'orthogonalité est $[-1, 1]$ et la fonction poids est simplement la fonction 
 constante de valeur $1$: 
-ces polynômes sont orthogonaux par rapport au produit scalaire défini sur $\RR[X]$ par:\index{Produit scalaire}\index{Polynôme! orthogonalité}
+ces polynômes sont orthogonaux par rapport au produit scalaire défini sur $\RR[X]$ par:\index{Produit scalaire}\index{polynôme! orthogonalité}
 \begin{equation}
     \langle P,Q\rangle= \int_{-1}^{+1} P(x) Q(x)\, \dd x
    \quad \text{ soit } \quad 
@@ -446,7 +446,7 @@ on a $P_{N+1} \in (\RR_N[X])^\bot$, i.e.:
 \end{equation}
 
 \medskip
-Le carré de la norme, dans $L^2([-1,1])$, est:\index{Produit scalaire!de $L^2$}\index{Norme!induite par un produit scalaire}
+Le carré de la norme, dans $L^2([-1,1])$, est:\index{Produit scalaire!de $L^2$}\index{norme!induite par un produit scalaire}
 \begin{equation}
     \|P_n\|^2=\frac{2}{2n+1}. 
 \end{equation}
@@ -455,20 +455,20 @@ Le carré de la norme, dans $L^2([-1,1])$, est:\index{Produit scalaire!de $L^2$}
 \medskip
 Ces polynômes peuvent servir à décomposer une fonction holomorphe,
 une fonction lipschitzienne ou à retrouver l'intégration numérique d'une fonction par
-la méthode de quadrature de Gauss-Legendre (voir chapitre \ref{chap-quadrature}).\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}
+la méthode de quadrature de Gauss-Legendre (voir chapitre~\ref{chap-quadrature}).\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}
 
 
 
 
 \medskip
-\subsection{Polynômes de Tchebychev}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{Polynôme! de Tchebychev}
+\subsection{Polynômes de Tchebychev}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
 
 Les \textcolorblue{polynômes de Tchebychev} servent pour la convergence des interpolations de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}
 
 Ils sont également utilisés dans le calcul de filtres en électronique analogique (filtres de Tchebychev).\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}
 
 \medskip
-Les polynômes de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{Polynôme! de Tchebychev} 
+Les polynômes de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} 
 constituent deux familles de polynômes (notés $T_n$ 
 pour la première espèce et $U_n$ pour la seconde) définis sur l'intervalle $[-1,\, 1]$ par 
 les relations trigonométriques :
@@ -491,11 +491,11 @@ et les deux premiers termes :
     U_0=1,~U_1=2X \quad \text{pour la suite } U.
 \end{equation}
 
-Chacune de ces deux familles est une suite de polynômes orthogonaux\index{Polynôme! orthogonalité} 
+Chacune de ces deux familles est une suite de polynômes orthogonaux\index{polynôme! orthogonalité} 
 par rapport à un produit scalaire de fonctions assorti d'une pondération spécifique.\index{Produit scalaire}
 
 \medskip
-\textbf{Propriétés des polynômes de Tchebychev de 1ère espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{Polynôme! de Tchebychev}
+\textbf{Propriétés des polynômes de Tchebychev de 1ère espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
 
 \begin{equation}
 \forall n>0, \quad
@@ -503,7 +503,7 @@ par rapport à un produit scalaire de fonctions assorti d'une pondération spéc
 \end{equation}
 
 Les $T_n$ sont orthogonaux pour le produit scalaire sur l'intervalle $]-1,1[$ avec la 
-pondération $\frac1{\sqrt{1-x^2}}$, i.e.:\index{Produit scalaire}\index{Polynôme! orthogonalité}
+pondération $\frac1{\sqrt{1-x^2}}$, i.e.:\index{Produit scalaire}\index{polynôme! orthogonalité}
 \begin{equation}
     \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}\,\dd x= \begin{cases} 0&\text{si}~n\ne m\\ \pi&\text{si}~n=m=0\\ \pi/2&\text{si}~n=m\ne 0~. \end{cases} 
 \end{equation}
@@ -520,7 +520,7 @@ pondération $\frac1{\sqrt{1-x^2}}$, i.e.:\index{Produit scalaire}\index{Polynô
 
 \medskip
 \colorgris
-Les premiers polynômes de Tchebychev de première espèce sont :\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{Polynôme! de Tchebychev}
+Les premiers polynômes de Tchebychev de première espèce sont :\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
 
 \noindent
     $T_0 = 1 \,$,\\
@@ -536,13 +536,13 @@ Les premiers polynômes de Tchebychev de première espèce sont :\index[aut]{Tch
 \colorblack
 
 \medskip
-\textbf{Propriétés des polynômes de Tchebychev de 2ème espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{Polynôme! de Tchebychev}
+\textbf{Propriétés des polynômes de Tchebychev de 2ème espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
 
 \begin{equation}\forall n\ge 0, \quad
     U_n(x)=\sum_{k=0}^{\left\lfloor \frac n2\right \rfloor}(-1)^k \binom{n-k}k~(2x)^{n-2k}
 \end{equation}
 
- Les $U_n$ sont orthogonaux\index{Polynôme! orthogonalité} pour le produit scalaire\index{Produit scalaire} 
+ Les $U_n$ sont orthogonaux\index{polynôme! orthogonalité} pour le produit scalaire\index{Produit scalaire} 
 sur l'intervalle $[-1,1]$ avec la pondération $\sqrt{1-x^2}$, i.e.:
 \begin{equation}
     \int_{-1}^1 U_n(x)U_m(x)\sqrt{1-x^2}\,\dd x = \begin{cases} 0&\text{si}~n\ne m\\ \pi/2 &\text{si}~n=m~. \end{cases} 
@@ -554,7 +554,7 @@ sur l'intervalle $[-1,1]$ avec la pondération $\sqrt{1-x^2}$, i.e.:
 
 \medskip
 \colorgris
-Les premiers polynômes de Tchebychev de deuxième espèce sont :\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{Polynôme! de Tchebychev}
+Les premiers polynômes de Tchebychev de deuxième espèce sont :\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
 
 \noindent
     $U_0 = 1 \,$,\\
@@ -572,14 +572,14 @@ Les premiers polynômes de Tchebychev de deuxième espèce sont :\index[aut]{Tch
 
 
 \medskip
-\subsection{Polynômes de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{Polynôme! de Laguerre}
+\subsection{Polynômes de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre}
 
 Les \textcolorblue{polynômes de Laguerre} apparaissent en mécanique quantique dans la partie radiale 
 de la solution de l'équation de Schrödinger\index[aut]{Schrödinger (Erwin Rudolf Josef Alexander), 1887-1961, Autrichien} 
 pour un atome à un électron.
 
 \medskip
-Ces polynômes sont les solutions de l'équation de Laguerre:\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{Polynôme! de Laguerre}\index{ED-EDP!de Laguerre}
+Ces polynômes sont les solutions de l'équation de Laguerre:\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre}\index{ED-EDP!de Laguerre}
 \begin{equation}
     x\,y'' + (1 - x)\,y' + n\,y = 0\,
 \end{equation}
@@ -594,7 +594,7 @@ polynômes qui peut être définie par la formule de Rodrigues:\index[aut]{Rodri
 \end{equation}
 
 \medskip
-Ils sont orthogonaux\index{Polynôme! orthogonalité} les uns par rapport aux autres pour le produit 
+Ils sont orthogonaux\index{polynôme! orthogonalité} les uns par rapport aux autres pour le produit 
 scalaire\index{Produit scalaire} défini par:
 \begin{equation}
     \langle f,g \rangle = \int_0^\infty f(x) g(x) e^{-x}\,dx.
@@ -614,7 +614,7 @@ alors :
 
 \medskip
 \colorgris
-les premiers polynômes de Laguerre sont:\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{Polynôme! de Laguerre}
+les premiers polynômes de Laguerre sont:\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre}
 
 \noindent
 $L_0 =	1\,$,\\
@@ -631,13 +631,13 @@ Il existe des polynômes de Laguerre\index[aut]{Laguerre (Edmond Nicolas), 1834-
 généralisés, que nous ne présentons pas,
 et dont l'orthogonalité peut être liée à une densité de probabilité faisant intervenir
 la fonction Gamma. Ils apparaissent dans le traitement de l'oscillateur harmonique quantique.
-Ils peuvent être exprimés en fonction des polynômes d'Hermite.\index[aut]{Hermite (Charles), 1822-1901, Français}\index{Polynôme! d'Hermite}
+Ils peuvent être exprimés en fonction des polynômes d'Hermite.\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite}
 
 
 
 
 \medskip
-\subsection{Polynômes de Bernstein}\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{Polynôme! de Bernstein}
+\subsection{Polynômes de Bernstein}\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{polynôme! de Bernstein}
 
 Les \textcolorblue{polynômes de Bernstein} permettent de donner une démonstration constructive du 
 théorème de Stone-Weierstrass. 
@@ -646,7 +646,7 @@ générale des courbes de Bézier.\index[aut]{Bezier@Bézier (Pierre), 1910-1999
 
 \medskip
 Pour un degré $n$, il y a $n+1$ polynômes de Bernstein $B^n_0, \dots, B^n_n$ définis, sur l'intervalle 
-$[0,1]$ par:\index{Polynôme! de Bernstein}
+$[0,1]$ par:\index{polynôme! de Bernstein}
 \begin{equation}
     B_i^n(u) = \begin{pmatrix} n \\ i \end{pmatrix} u^i \left( 1-u \right)^{n-i}
 \end{equation}
@@ -670,7 +670,7 @@ Ces polynômes présentent quatre propriétés importantes :
 \section{Interpolation polynomiale}
 
 Les paragraphes relatifs aux interpolations de Lagrange et Hermite viennent en complément / rappel 
-de ce qui a été vu au chapitre \ref{Ch-Elts}.
+de ce qui a été vu au chapitre~\ref{Ch-Elts}.
 
 \medskip
 \subsection{Interpolation de Lagrange}
@@ -678,8 +678,8 @@ de ce qui a été vu au chapitre \ref{Ch-Elts}.
 Dans la version la plus simple (\textcolorblue{interpolation lagrangienne}), on impose simplement que le 
 polynôme passe par tous les points donnés. 
 On obtient les polynômes de Lagrange tels que présentés juste avant.
-\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{Polynôme! de Lagrange}
-Le théorème de l'unisolvance (voir paragraphe \ref{Sec-unisolvance}) précise qu'il n'existe qu'un seul 
+\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme! de Lagrange}
+Le théorème de l'unisolvance (voir paragraphe~\ref{Sec-unisolvance}) précise qu'il n'existe qu'un seul 
 polynôme de degré $n$ au plus défini par un ensemble de $n+1$ points.
 
 \medskip
@@ -753,11 +753,11 @@ alors la spline est $C^n$
 \subsection{Interpolation d'Hermite}
 
 L'\textcolorblue{interpolation d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} consiste à chercher 
-un polynôme\index{Polynôme! d'Hermite} qui non seulement prend les valeurs  fixées en les 
+un polynôme\index{polynôme! d'Hermite} qui non seulement prend les valeurs  fixées en les 
 abscisses données, mais dont également la dérivée, donc la pente de la courbe, 
 prend une valeur imposée en chacun de ces points. 
 Naturellement, il faut pour cela un polynôme de degré supérieur au polynôme de Lagrange.
-\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{Polynôme! de Lagrange} 
+\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme! de Lagrange} 
 
 On peut aussi imposer encore la valeur des dérivées secondes, troisièmes, etc. en chaque point. 
 La démarche de l'interpolation newtonienne\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} 
@@ -842,14 +842,14 @@ contrôle de Bézier}.
 
 \medskip
 Chaque point de la courbe peut être vu alors comme un barycentre des $n+1$ points de contrôle
-pondérés d'un poids égal au polynôme de Bernstein.\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{Polynôme! de Bernstein} 
+pondérés d'un poids égal au polynôme de Bernstein.\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{polynôme! de Bernstein} 
 
 \medskip
 Propriété:
 \begin{itemize}
    \item La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle.\index[aut]{Bezier@Bézier (Pierre), 1910-1999, Français}
    \item La courbe commence par le point $\mathbf{P}_0$ et se termine par le point $\mathbf{P}_n$, 
-	mais ne passe pas à priori par les autres points de contrôle.
+	mais ne passe pas \emph{a priori} par les autres points de contrôle.
    \item $\overrightarrow{P_0P_1}$ est le vecteur tangent à la courbe en $\mathbf{P}_0$ et
 	$\overrightarrow{P_{n-1}P_n}$ au point $\mathbf{P}_n$.
    \item Une courbe de Bézier est $C^{\infty}$.

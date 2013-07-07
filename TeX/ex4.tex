@@ -5,9 +5,9 @@
 \fi
 
 Dans ce chapitre, nous présentons un manière d'implémenter la méthode de Reiss local mentionnée aux
-paragraphes \ref{Sec-PT} et \ref{Sec-interf}.
+paragraphes~\ref{Sec-PT} et~\ref{Sec-interf}.
 
-Il s'agit de calculer les contraintes à l'interface entre deux matériaux en utilisant la fonctionnelle mixte d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{Fonctionnelle!d'Hellinger-Reissner}\index{Fonctionnelle!mixte}
+Il s'agit de calculer les contraintes à l'interface entre deux matériaux en utilisant la fonctionnelle mixte d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte}
 donnée à l'équation (\ref{Eq-HR2}).
 
 \medskip
@@ -294,7 +294,7 @@ La routine LOCREISS calcule les contraintes nodales le long de chaque face.
 \medskip
 Les contraintes ayant été calculées pour les nœuds de chacune des faces de l'interface, on moyenne les résultats
 pour un nœud appartenant à plusieurs faces. C'est ce que fait la routine AVERAGE. À ce stade, nous disposons donc
-des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{Fonctionnelle!d'Hellinger-Reissner}\index{Fonctionnelle!mixte}
+des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte}
 le long de toutes les interfaces présentes dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soient relus par la 
 macros \ansys.
 

@@ -12,7 +12,7 @@ compact avec conditions aux bords et/ou dans l'intérieur du compact.
 Il s'agit donc de répondre aux questions d'existence et d'unicité de la solution,
 de stabilité, convergence des méthodes numériques, ainsi que d'apprécier
 l'erreur entre la solution exacte et la solution approchée (indicateurs et estimateurs
-d'erreur, à priori et à posteriori).
+d'erreur, \emph{a priori} et à posteriori).
 \end{abstract}
 
 \medskip
@@ -355,12 +355,12 @@ La discrétisation intervient à plusieurs niveaux:
 De manière classique, on notera $\mathcal{T}_h$ le maillage de $\Omega$ considéré.
 
 Il est caractérisé par les dimensions géométriques représentatives que sont
-le \textcolorblue{diamètre maximum des éléments, $h$}\index{Diamètre d'un EF}
-et le \textcolorblue{facteur de forme du maillage,\index{Facteur de forme du maillage}
+le \textcolorblue{diamètre maximum des éléments, $h$}\index{diamètre d'un élément fini}
+et le \textcolorblue{facteur de forme du maillage,\index{facteur de forme du maillage}
 $\sigma$} (qui caractérise l'applatissement du maillage).
 
 Le maillage est constitué d'éléments, généralement notés $K$.
-On note $h_K$ le \textcolorblue{diamètre de l'élément $K$},\index{Diamètre d'un EF}
+On note $h_K$ le \textcolorblue{diamètre de l'élément $K$},\index{diamètre d'un élément fini}
  i.e. le maximum des distances (euclidiennes)\index[aut]{Euclide, -325-- -265, Grec}
 entre deux points de $K$, et $\rho_K$ la \textcolorblue{rondeur de l'élément $K$},\index{Rondeur d'un EF}
 i.e. le diamètre maximum des sphères incluses dans $K$.
@@ -383,7 +383,7 @@ ce <<~chapeau~>> $\hat{~}$ sur toute quantité relative à un élément de réf�
 
 \medskip
 Les types d'approximation du problème (\ref{Eq-P}), qui seront détaillés un peu plus loin,
-sont:\index{Approximation conforme}\index{Approximation non conforme}
+sont:\index{approximation! conforme}\index{approximation! non conforme}
 \begin{table}[!ht]\centering\small
 \begin{tabular}{cccl}
    type d'approximation & espaces & formes & problème $(P) \Rightarrow$ problème approché $(P_h)$\\
@@ -499,7 +499,7 @@ où la matrice $L$ est une matrice triangulaire inférieure.
 
 \medskip
 \section{Approximation conforme et lemme de Céa}
-\index[aut]{Cea@Céa (Jean), ?- , Français}\index{Approximation conforme}\index{Lemme de Céa}
+\index[aut]{Cea@Céa (Jean), ?- , Français}\index{approximation! conforme}\index{lemme de! Céa}
 
 Dans le cas d'une \textcolorblue{approximation conforme (dite aussi approximation
 interne)}, on se propose de construire un espace $V_h$, de dimension $N_h$, comme
@@ -509,7 +509,7 @@ interne)}, on se propose de construire un espace $V_h$, de dimension $N_h$, comm
 \medskip
 %\subsection{Principe général}
 \subsection{Cas Lax-Milgram}
-\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index[aut]{Cea@Céa (Jean), ?- , Français}\index{Théorème!de Lax-Milgram}\index{Lemme de Céa}
+\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index[aut]{Cea@Céa (Jean), ?- , Français}\index{théorème!de Lax-Milgram}\index{lemme de! Céa}
 
 On se place dans la cas d'une formulation relevant du théorème de Lax-Milgram.
 
@@ -564,8 +564,8 @@ d'approximation} $\|u-u_h\|$ à celle de l'\textcolorblue{erreur d'interpolation
 
 \medskip
 \subsection{Cas Babuška}
-\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}\index[aut]{Cea@Céa (Jean), ?- , Français}\index{Lemme de Céa}
-\index{Théorème!de Babuška}
+\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}\index[aut]{Cea@Céa (Jean), ?- , Français}\index{lemme de! Céa}
+\index{théorème!de Babuška}
 On se place cette fois dans le cas d'un problème relevant du théorème de Babuška.
 Le problème est ($v$ est dans $M$ et non plus $V$):
 \begin{equation}\label{Eq-Pp}
@@ -577,7 +577,7 @@ L'approximation conforme du problème (\ref{Eq-Pp}) est le problème approché:
 \end{equation}
 où $V_h\subset V$ et $M_h\subset M$.
 \medskip
-\textcolorred{Attention : rien ne garantit à priori que la condition inf-sup discrète
+\textcolorred{Attention : rien ne garantit \emph{a priori} que la condition inf-sup discrète
 sera vérifiée, même si la condition inf-sup est vérifiée.}
 $V_h$ et $M_h$ étant de dimension finie, il faut nécessairement que $\dim V_h=\dim M_h$.
 \medskip
@@ -606,7 +606,7 @@ On dispose de plus de la majoration d'erreur suivante:
 \end{equation}
 \medskip
 \subsection{Cas Brezzi}
-\index[aut]{Brezzi (Franco), 1945-, Italien}\index[aut]{Cea@Céa (Jean), ?- , Français}\index{Théorème!de Brezzi}\index{Lemme de Céa}
+\index[aut]{Brezzi (Franco), 1945-, Italien}\index[aut]{Cea@Céa (Jean), ?- , Français}\index{théorème!de Brezzi}\index{lemme de! Céa}
 On se place cette fois dans le cas d'un problème relevant du théorème de Brezzi
 (problème mixte).
 Le problème est de trouver ($u, \lambda)$ dans $H\times M$ tels que:
@@ -638,7 +638,7 @@ $\beta^*$.
 
 \medskip
 \section{Approximations non conformes et lemmes de Strang}
-\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{Approximation non conforme}\index{Lemme de Strang}
+\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 
 Lorsque les formes linéaires et linéaires définissant le problèmes doivent
 être approchées, on se trouve alors en présence d'une \textcolorblue{approximation
@@ -646,7 +646,7 @@ non conforme}.
 Comme mentionné, il existe deux types d'approximations non conformes selon que
 $V_h\subset V$ ou $V_h\not\subset V$.
 \medskip
-\subsection{Cas $V_h\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{Approximation non conforme}\index{Lemme de Strang}
+\subsection{Cas $V_h\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 
 Le problème est donc:
 \begin{equation}
@@ -681,7 +681,7 @@ le reste \textcolorblue{erreur de consistence}.
 \end{lemme}
 
 \medskip
-\subsection{Cas $V_h\not\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{Approximation non conforme}\index{Lemme de Strang}
+\subsection{Cas $V_h\not\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 Le problème est encore:
 \begin{equation}
 \text{ Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
@@ -726,7 +726,7 @@ le second \textcolorblue{erreur de consistence}.
 
 
 \medskip
-\section[Convergence de la méthode des éléments finis en approximation conforme]{Convergence de la méthode des éléments finis en approximation conforme lorsque $V_h\subset V$}\index{Approximation non conforme}\index{Approximation conforme}
+\section[Convergence de la méthode des éléments finis en approximation conforme]{Convergence de la méthode des éléments finis en approximation conforme lorsque $V_h\subset V$}\index{approximation! non conforme}\index{approximation! conforme}
 
 Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine
 de $\RR^n$, et notre problème que nous résolvons de manière approchée

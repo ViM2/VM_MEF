@@ -1,7 +1,7 @@
 \ifVersionAvecExemplesSepares
-   \chapter{Sur le chapitre \ref{Ch-Elts}: quelques variations sur le thème des éléments unidimensionnels}
+   \chapter{Sur le chapitre~\ref{Ch-Elts}: quelques variations sur le thème des éléments unidimensionnels}
    \begin{abstract}
-   Dans ce chapitre, nous reprenons les explications du chapitre \ref{Ch-Elts} pour les appliquer
+   Dans ce chapitre, nous reprenons les explications du chapitre~\ref{Ch-Elts} pour les appliquer
    sur quelques cas simples, de façon très explicite.
    \end{abstract}
 \else
@@ -120,7 +120,7 @@ De plus, la matrice jacobienne de $F^{-1}$ se déduit de l'inverse de la matrice
 au moyen de la formule:\index{Jacobien}\index{Jacobienne}
 \begin{equation}J_{F^{-1}} = \bigl( J_F \circ F^{-1} \bigr)^{-1}\end{equation}
 
-\begin{theoreme}[Théorème d'inversion locale]\index{Théorème!d'inversion locale}
+\begin{theoreme}[Théorème d'inversion locale]\index{théorème!d'inversion locale}
 Soit $f$ une application de $U$ dans $F$, où $U$ est un ouvert d'un espace de Banach réel et 
 $F$ un espace de Banach et soit $x$ un point de $U$.
 Si $f$ est de classe $C^p$, avec $p$ un entier strictement positif et si la différentielle de $f$ au point 
@@ -135,7 +135,7 @@ classe $C^p$.
 changement de  variables dans le calculs des intégrales.}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\begin{theoreme}[Théorème de changement de variables dans les intégrales multiples]\index{Théorème!de changement de variables dans les intégrales multiples}
+\begin{theoreme}[Théorème de changement de variables dans les intégrales multiples]\index{théorème!de changement de variables dans les intégrales multiples}
 
 Soient $U$ un ouvert de $\RR^n$, $F$ une injection de classe $C^1$ de $U$ dans $\RR^n$ et $V=F(U)$.
 
@@ -225,7 +225,7 @@ $E$ et densité $\rho$ et soumise uniquement à son poids propre.\\
 \includegraphics[width=40mm]{Elt1D-barre.eps}
 \end{figure}
 On souhaite discrétiser ce problème à l'aide d'un éléments unidimensionnels linéaires
-tel que présenté au paragraphe \ref{Sec-Elt1D2}.
+tel que présenté au paragraphe~\ref{Sec-Elt1D2}.
 \medskipvm
 La forme variationelle de ce problème d'élasticité linéaire unidimensionnel (théorie des poutres) est:
 \begin{equation}
@@ -322,9 +322,9 @@ est généralement faite.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{EF d'Hermite}
+   \section{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini d'Hermite}
 \else
-   \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{EF d'Hermite}
+   \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini d'Hermite}
 \fi
 En restant encore sur notre élément linéaire unidimensionnel, nous allons voir comment ajouter des
 contraintes sur les dérivées aux nœuds:
@@ -398,7 +398,7 @@ Pour la contrainte, nous avons:
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 La formulation variationelle mixte de l'élasticité linéaire unidimensionnel est (voir fonctionnelle
-d'Hellinger-Reissner sous sa deuxième forme ou fonctionnelle mixte):\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{Fonctionnelle!d'Hellinger-Reissner}\index{Fonctionnelle!mixte}
+d'Hellinger-Reissner sous sa deuxième forme ou fonctionnelle mixte):\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte}
 \begin{equation}
 W=\dint_0^L A\left(-\sigma_x^*\frac1H\sigma_x+\sigma_x^*u_{,x}+v_{,x}\sigma_x\right) \dd x
 -\dint_0^L Avf_x \dd x - (v f_S)_{S_f} = 0\qquad \forall v,\sigma^*
@@ -436,4 +436,4 @@ Et le système devient alors:
 \LL{v_n} \left( \MM{K}\VV{u_n}-\VV{f_n}\right) \end{equation}
 avec:
 \begin{equation} \MM{K}=\VV{b}\frac1a\LL{b} \end{equation}
-Dans le cas où $H$ est constant, la matrice de rigidité obtenue est identique à celle du modèle en déplacements du paragraphe \ref{Sec-barre1D}.
+Dans le cas où $H$ est constant, la matrice de rigidité obtenue est identique à celle du modèle en déplacements du paragraphe~\ref{Sec-barre1D}.

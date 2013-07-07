@@ -15,8 +15,8 @@ la formulation faible.
 
 
 \medskip
-\section{Principe des formulations faible et variationnelle}\index{Formulation faible!principe}
-Quand on cherche la solution d'une EDP, on peut être confronté aux problèmes suivants:
+\section{Principe des formulations faible et variationnelle}\index{formulation faible}
+Quand on cherche la solution d'une équation aux dérivées partielles, on peut être confronté aux problèmes suivants:
 \begin{itemize}
    \item La solution ou les coefficients de l'EDP peuvent ne pas être assez réguliers pour donner
 	un sens classique à l'équation;
@@ -30,7 +30,7 @@ Quand on cherche la solution d'une EDP, on peut être confronté aux problèmes 
 
 
 On va donc essayer de donner un sens plus faible à la notion de solution, sans perdre de vue si
-possible les notions les plus naturelles. Donner un sens faible à une EDP signifie:
+possible les notions les plus naturelles. Donner un sens faible à une équation aux dérivées partielles signifie:
 \begin{enumerate}
    \item Chercher une solution dans un espace de régularité plus faible que souhaité;
    \item Établir, en général à l'aide de fonction tests et d'intégrations par parties <<~formelles~>>,
@@ -49,7 +49,7 @@ Les difficultés d'une telle approche sont nombreuses:
 \begin{itemize}
    \item Le choix de l'espace fonctionnel dans lequel on va chercher la solution est crucial,
 	pas toujours unique et parfois non trivial.
-   \item Si l'on affaiblit trop la notion de solution, il sera a priori plus facile de démontrer l'existence
+   \item Si l'on affaiblit trop la notion de solution, il sera \emph{a priori} plus facile de démontrer l'existence
 	mais les propriétés d'unicité seront plus difficiles à obtenir.
    \item Si l'on n'affaiblit pas suffisamment l'équation, l'existence sera ardue à prouver mais
 	l'unicité sera plus simple.
@@ -145,7 +145,7 @@ leur démonstration se fait uniquement <<~par les mains~>>, ce qui peut être
 frustrant.
 
 \medskip
-\paragraph{Principe des puissances virtuelles}\index{Principe des puissances virtuelles}\index{Principe des travaux virtuels}
+\paragraph{Principe des puissances virtuelles}\index{principe!des puissances virtuelles}\index{principe!des travaux virtuels}
 Le PTV est un principe fondamental en mécanique, qui postule un équilibre de puissance dans un
 mouvement virtuel, il s'agit d'une formulation duale du principe fondamental de la dynamique.
 On raisonne comme suit: si un solide est à l'équilibre (statique du solide), la somme des efforts
@@ -181,7 +181,7 @@ J. Bernoulli  &D'Alembert&Lagrange% & Galerkine%
 Ce principe a été par la suite généralisé
 par D'Alembert\index[aut]{d'Alembert (Jean le Rond), 1717-1783, Français}
 et Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
-en ce qui est connu actuellement sous le nom de principe de D'Alembert (1743).\index{Principe de d'Alembert}
+en ce qui est connu actuellement sous le nom de principe de D'Alembert (1743).\index{principe! de d'Alembert}
 
 Le principe des puissances virtuelles est une synthèse de ces principes, ancrée dans un cadre
 beaucoup plus rigoureux et mathématique (on parle alors de <<~dualisation~>> et non plus de
@@ -205,7 +205,7 @@ La différence entre les énergies potentielles associées à deux points de l'e
 quel que soit le chemin utilisé.
 
 \medskip
-\paragraph{Méthode des résidus pondérés}\index{Méthode des résidus pondérés}\label{Sec-ResPond}
+\paragraph{Méthode des résidus pondérés}\index{méthode des résidus pondérés}\label{Sec-ResPond}
 Si l'on considère l'équation $A(u)=f, \forall x\in\Omega$ sur $\Omega$, on appelle résidu
 des équations d'équilibre la quantité $R(x)=A(u)-f$. Aux bords, on a les conditions
 $B(u)=h, \forall x\in\Gamma=\partial\Omega$, et on appelle résidu des équations de bords
@@ -255,7 +255,7 @@ Les conditions aux limites types ont été présentées au chapitre précédent
 sur les ED(P).
 
 \medskip
-\section{Théorème de représentation de Riesz-Fréchet}\index{Théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
+\section{Théorème de représentation de Riesz-Fréchet}\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
 Le théorème le plus fondamental sera le théorème de Lax-Milgram, toutefois,
 nous aurons besoin du théorème de représentation de Riesz-Fréchet pour sa démonstration.
 %\footnotetext{
@@ -305,7 +305,7 @@ De plus, $A$ est linéaire et continue, de norme égale à celle de $a$.
 \colorblack
 
 \medskip
-\section{Théorème de Lax-Milgram}\index{Théorème!de Lax-Milgram}\label{Sec-ThLaxMilgram}\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\label{Sec:LaxMil}
+\section{Théorème de Lax-Milgram}\index{théorème!de Lax-Milgram}\label{Sec-ThLaxMilgram}\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\label{Sec:LaxMil}
 
 \medskip
 \begin{definition}[Continuité d'une forme linéaire]
@@ -403,7 +403,7 @@ Pour les problèmes issus de la mécanique des solides déformables, la quantit�
 
 
 \medskip
-\section{Théorème de Babuška et condition inf-sup}\index{Théorème!de Babuška}\label{Sec-ThBabuska}
+\section{Théorème de Babuška et condition inf-sup}\index{théorème!de Babuška}\label{Sec-ThBabuska}
 \index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}
 \textcolorgreen{Il s'agit d'une situation introduite en 1971/72 par Babuška.}
 
@@ -461,7 +461,7 @@ Alors que le seconde s'écrit:
 à la forme bilinéaire $a$ est un homéomorphisme.}
 
 
-\section{Théorèmes de Brezzi et condition BBL}\index{Théorème!de Brezzi}\index{Condition BBL}\label{Sec-ThBrezzi}
+\section{Théorèmes de Brezzi et condition BBL}\index{théorème!de Brezzi}\index{Condition BBL}\label{Sec-ThBrezzi}
 
 \index[aut]{Brezzi (Franco), 1945-, Italien}\label{Sec:Brezzi}
 \textcolorgreen{Il s'agit d'étendre le théorème de Lax-Milgram au cas où, cette fois, le problème n'est plus
@@ -565,7 +565,7 @@ de Babuška.
 
 \medskip
 \begin{theoreme}[Théorème généralisé de Brezzi]
-\index{Théorème!de Brezzi généralisé}\index[aut]{Brezzi (Franco), 1945-, Italien}
+\index{théorème!de Brezzi généralisé}\index[aut]{Brezzi (Franco), 1945-, Italien}
 %\colorblue
 Considérons le problème variationnel mixte suivant:
 Trouver ($u, \lambda)$ dans $H\times M$ tels que:
@@ -615,9 +615,9 @@ Nous avons déjà présenté les multiplicateurs de Lagrange d'un point de
 vue pratique au chapitre précédent.
 Regardons maintenant l'aspect mathématique.
 
-Dans les paragraphes \ref{Sec-ThLaxMilgram} et \ref{Sec-ThBabuska} sur les théorèmes de Lax-Milgram et
+Dans les paragraphes~\ref{Sec-ThLaxMilgram} et~\ref{Sec-ThBabuska} sur les théorèmes de Lax-Milgram et
 de Babuška, nous avons traité le cas d'un problème décrit par un seul champ inconnu.
-Dans le paragraphe \ref{Sec-ThBrezzi} sur le théorème de Brezzi, nous avons traité le cas d'un problème formulé
+Dans le paragraphe~\ref{Sec-ThBrezzi} sur le théorème de Brezzi, nous avons traité le cas d'un problème formulé
 avec deux champs inconnus (mais on pourrait l'étendre à autant de champs
 que nécessaire).
 Dans ce paragraphe, nous allons traiter un cas un peu <<~au milieu~>>: par exemple

@@ -12,9 +12,9 @@ explications doivent suffire.
 %\section{Les volumes finis}
 
 \medskip
-\section{Méthode des Éléments Frontière}\label{Sec-BEM}\index{Méthode des éléments finis frontière}\index{BEM}
+\section{Méthode des Éléments Frontière}\label{Sec-BEM}\index{méthode des éléments finis frontière}\index{BEM}
 
-La MEF et la \textcolorblue{Méthode des éléments frontière (BEM)}\index{Méthode des éléments finis frontière}\index{BEM} 
+La MEF et la \textcolorblue{Méthode des éléments frontière (BEM)}\index{méthode des éléments finis frontière}\index{BEM} 
 peuvent être
 considérées comme issues des méthodes de Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse} 
 et de Trefftz\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} respectivement.
@@ -44,7 +44,7 @@ On obtient encore un système de type $\MM{K}\VV{q}=\VV{F}$, mais les intégrale
 sur $\Gamma$.
 
 \medskip
-La MEF et la BEM\index{Méthode des éléments finis frontière}\index{BEM} 
+La MEF et la BEM\index{méthode des éléments finis frontière}\index{BEM} 
 sont toutes deux des méthodes très robustes pour de nombreuses 
 applications industrielles, ce qui en fait des outils de choix pour les simulations numériques. 
 
@@ -56,7 +56,7 @@ Une des motivations qui sous-tendent les méthodes sans maillage est de s'affran
 
 
 \medskip
-\section{Méthodes sans maillage (Meshless)}\label{Sec-meshless}\index{Méthode sans maillage}
+\section{Méthodes sans maillage (Meshless)}\label{Sec-meshless}\index{méthode sans maillage}
 
 Depuis le début des années 90, de nombreuses méthodes sont apparues où la discrétisation ne
 repose plus sur un maillage, mais sur un ensemble de points \textcolorblue{(méthode des éléments diffus,
@@ -92,7 +92,7 @@ et est modélisée par enrichissement (fonctions $F(x)$ discontinues sur la fiss
 singularité en fond de fissure).
 
 \medskip
-Les \textcolorblue{méthodes sans maillage (Meshless Methods)}\index{Méthode sans maillage} 
+Les \textcolorblue{méthodes sans maillage (Meshless Methods)}\index{méthode sans maillage} 
 sont flexibles dans le choix de  l'approximation et de l'enrichissement. 
 En revanche, le choix du nombre de points d'intégration et de la taille du
 domaine d'influence dans un nuage arbitraire de points d'approximation n'est pas trivial:
@@ -105,7 +105,7 @@ De plus, les conditions aux limites de type Dirichlet sont délicates à imposer
 
 
 \medskip
-\section{Partition de l'Unité}\label{Sec-partition}\index{Méthode de partition de l'unité}
+\section{Partition de l'Unité}\label{Sec-partition}\index{partition de l'unité}
 
 \textcolorred{La base EF classique peut elle-aussi être enrichie} (afin de ne pas recourir aux méthodes 
 sans maillage) de manière à représenter une fonction donnée sur un domaine donné. 
@@ -135,12 +135,12 @@ u(x) = \dsum_{i\in N_n(x)}\dsum_{\alpha} a_i^\alpha \phi_i^\alpha(x) +
 
 
 \medskip
-\section{Méthode des Éléments Finis étendue (X-FEM)}\label{Sec-XFEM}\index{Méthode des éléments finis étendue}\index{X-FEM}
+\section{Méthode des Éléments Finis étendue (X-FEM)}\label{Sec-XFEM}\index{méthode des éléments finis étendue}\index{X-FEM}
 
-Dans le cas particuler où la méthode PU\index{Méthode de partition de l'unité} 
+Dans le cas particuler où la méthode PU\index{partition de l'unité} 
 est appliquée à la modélisation de
 discontinuités ou de vides au sein même des éléments, on obtient alors la
-\textcolorblue{méthode des EF étendue (X-FEM)}:\index{Méthode des éléments finis étendue}\index{X-FEM}
+\textcolorblue{méthode des EF étendue (X-FEM)}:\index{méthode des éléments finis étendue}\index{X-FEM}
 \begin{equation}
 u(x) = \dsum_{i\in I}u_i\phi_i(x) 
 + \dsum_{i\in L} a_i\phi_i(x) H(x)
@@ -152,7 +152,7 @@ enrichis pour modéliser la fissure coupant de part en part un élément,
 $K_1$ et $K_2$ les nœuds enrichis pour modéliser le fond de fissure.
 
 \medskip
-L'avantage en X-FEM\index{Méthode des éléments finis étendue} \index{X-FEM}
+L'avantage en X-FEM\index{méthode des éléments finis étendue} \index{X-FEM}
 est qu'il n'est plus demandé au maillage de se conformer à des surfaces
 (qu'elles soient intérieures ou extérieures), et qu'il peut alors être conservé lors de leur évolution.
 Les surfaces ne sont plus maillées et sont localisées sur le maillage grâce à la notion de 
@@ -162,7 +162,7 @@ Cette fonction <<distance>> peut être interpolée sur chaque élément avec les
 EF classique de premier ordre. Les surfaces sont ainsi stockées par un champ EF défini
 au voisinage de la surface qui participe au calcul au même titre que les autres champs physiques.
 
-En particulier, la X-FEM\index{Méthode des éléments finis étendue}\index{X-FEM} 
+En particulier, la X-FEM\index{méthode des éléments finis étendue}\index{X-FEM} 
 permet la modélisation des trous, sans avoir à forcer le maillage à se conformer
 à ceux-ci. Un nœud dont le support est complètement à l'intérieur du trou ne donne pas
 lieu à la création de ddl (nœud éliminé, comme par condensation). 
@@ -174,7 +174,7 @@ multipliée par une fonction valant 1 dans la matière et 0 dans le trou.
 
 
 \medskip
-\section{Méthodes particulaires (Particle-Based Methods)}\label{Sec-PBM}\index{Méthodes particulaires}
+\section{Méthodes particulaires (Particle-Based Methods)}\label{Sec-PBM}\index{méthodes particulaires}
 
 La dénomination <<Particle-Based Methods>> recouvre deux types différents de modèles
 pour la mécanique du solide et pour celle des fluides.
@@ -183,7 +183,7 @@ D'un côté on trouve des concepts de discrétisation dans lequel la réponse d'
 est projetée sur les <<particules>> véhiculant l'information mécanique au cours de leurs déformations:
 ce sont typiquement les \textcolorblue{méthodes sans maillage, 
 Smoothed Particles Hydrodynamics (SPH), Moving Particle Simulation (MPS), Particle Finite Element Method (PFEM), 
-Material Point Method (MPM) et Lattice-Boltzmann-Method (LBM).}\index{Méthodes de Lattice-Boltzmann}\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien}
+Material Point Method (MPM) et Lattice-Boltzmann-Method (LBM).}\index{méthodes de Lattice-Boltzmann}\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien}
 %Lissé Hydrodynamique Particules (SPH), Simulation particule en mouvement (MPS), méthode des éléments finis de particules (PFEM), Méthode point matériel (MPM) et le Réseau-Boltzmann-Méthode (LBM).
 
 De l'autre côté, cette notion exprime la représentation de calcul de particules physiques existantes 
@@ -200,7 +200,7 @@ de Lattice-Bolzmann,\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien}
 notamment parce qu'elle est utilisée en acoustique.
 
 \medskip
-\subsection{Méthodes de treilli de Bolzmann}\index{Méthodes de Lattice-Boltzmann}\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien}
+\subsection{Méthodes de treilli de Bolzmann}\index{méthodes de Lattice-Boltzmann}\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien}
 
 Dans les \textcolorblue{méthodes de treilli de Boltzmann} (lattice Boltzmann Methods = LBM), on ne cherche 
 plus à simuler un problème de dynamique des fluides par les équations de 
@@ -214,7 +214,7 @@ L'idée est de simuler l'écoulement ainsi que les processus de collision entre 
 particules. Les interactions entre particules conduisent à un comportement de l'écoulement 
 visqueux applicables à une échelle plus grande. 
 On peut donc les voir également comme des méthodes de décomposition de domaine ou
-d'homogénéisation déjà présentées au paragraphe \ref{Sec-dec} et au chapitre \ref{Ch-Homog}
+d'homogénéisation déjà présentées au paragraphe~\ref{Sec-dec} et au chapitre~\ref{Ch-Homog}
 respectivement.
 
 %Nous verrons d'ailleurs dans ce paragraphe que leur formulation peut être reliée aux équations

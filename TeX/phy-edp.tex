@@ -164,7 +164,7 @@ avec ($c>0$) ou sans ($c=0$) frottement.\index{ED-EDP!oscillation d'une masse su
 
 \medskip
 Comme on le voit sur les exemples ci-dessus, et comme on s'en souvient sans doute,
-il est nécessaire, pour déterminer complètement la solution d'une ED (ou d'une EDP),
+il est nécessaire, pour déterminer complètement la solution d'une ED (ou d'une équation aux dérivées partielles),
 de disposer de valeurs de la solution en certains points.
 On appelle ces <<~contraintes~>>, des \textcolorblue{conditions aux limites}.
 
@@ -225,7 +225,7 @@ existent qui sont listées ci-après.
 \medskip
 \subsection{Dirichlet -- valeurs aux bords}\index{Conditions aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
 
-On parle de \textcolorblue{condition de Dirichlet} imposée à une ED ou une EDP,
+On parle de \textcolorblue{condition de Dirichlet} imposée à une ED ou une équation aux dérivées partielles,
 lorsque l'on spécifie les \textcolorred{valeurs} que la solution doit vérifier sur toute ou partie de
 la frontière du domaine.
 
@@ -236,7 +236,7 @@ d'une structure (points d'appuis rigides).
 \medskip
 \subsection{Neumann -- gradients aux bords}\index{Conditions aux limites!de Neumann}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
 
-On parle de \textcolorblue{condition de Neumann} imposée à une ED ou une EDP,
+On parle de \textcolorblue{condition de Neumann} imposée à une ED ou une équation aux dérivées partielles,
 lorsque l'on spécifie les \textcolorred{valeurs des dérivées} que la solution doit vérifier sur la frontière du 
 domaine (flux, contraintes...)
 
@@ -244,7 +244,7 @@ domaine (flux, contraintes...)
 \subsection{Robin -- relation gradient/valeurs sur le bord}\index{Conditions aux limites!de Robin}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
 
 On parle de \textcolorblue{condition de Robin} ou \textcolorblue{condition de Fourier} 
-ou \textcolorblue{condition d'impédance} imposée à une ED ou une EDP,
+ou \textcolorblue{condition d'impédance} imposée à une ED ou une équation aux dérivées partielles,
 lorsque l'on spécifie une \textcolorred{relation linéaire} entre les valeurs de la fonction et les
 valeurs de la dérivée de la fonction qui est solution du problème sur toute ou partie de
 la frontière du domaine.
@@ -254,7 +254,7 @@ C'est donc une pondérations de conditions de Dirichlet et de Neumann.
 \medskip
 \subsection{Condition aux limites dynamique}\index{Conditions aux limites!dynamique}
 
-On parle de \textcolorblue{condition aux limites dynamique} imposée à une ED ou une EDP,
+On parle de \textcolorblue{condition aux limites dynamique} imposée à une ED ou une équation aux dérivées partielles,
 lorsque l'on spécifie une \textcolorred{combinaison linéaire} entre la dérivée temporelle et 
 la dérivée normale que la solution doit vérifier sur toute ou partie la frontière du 
 domaine.
@@ -274,7 +274,7 @@ domaine.
 \medskip
 \section{Types d'équations aux dérivées partielles}
 
-La forme générale d'une EDP linéaire, scalaire, d'ordre 2 est:
+La forme générale d'une équation aux dérivées partielles linéaire, scalaire, d'ordre 2 est:
 \begin{equation}
 au + c \nabla u + \dive (A\nabla u) = f
 \end{equation}
@@ -467,7 +467,7 @@ En dimension 1, cette équation s'appelle l'\textcolorblue{équation des cordes 
 \medskip
 \subsection{Équation de la chaleur}
 
-L'\textcolorblue{équation de la chaleur} est une EDP parabolique, introduite initialement en 1811 par Fourier 
+L'\textcolorblue{équation de la chaleur} est une équation aux dérivées partielles parabolique, introduite initialement en 1811 par Fourier 
 pour décrire le phénomène physique de conduction thermique.\index{ED-EDP!de la chaleur}\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
 
 \medskip
@@ -839,7 +839,7 @@ ouvert $\Omega\subset\RR^2$, une \textcolorblue{EDP elliptique linéaire} se met
 \begin{equation}a(x, y)u_{xx}(x, y) + b(x, y)u_{yy}(x, y) + c(x, y)u_x(x, y) + d(x, y)u_y(x, y) + eu(x, y) = f(x, y)\end{equation}
 avec $a(x, y)b(x, y) > 0$.
 
-Dans le cas où la fonction $u$ est définie sur $\Omega\subset\RR^n$, une EDP elliptique 
+Dans le cas où la fonction $u$ est définie sur $\Omega\subset\RR^n$, une équation aux dérivées partielles elliptique 
 linéaire est définie par:
 \begin{equation} \mathcal{L}u(x) = f(x),\quad \forall x\in\Omega \end{equation}
 où l'opérateur différentiel $\mathcal{L}$ est défini par :
@@ -1053,13 +1053,13 @@ de contraintes nominales et de contraintes de Piola-Kirchhoff de seconde espèce
 de contrainte corotationnelle pour les poutres ou les coques).
 Pour les déformations, on remarque qu'elles sont le produit d'une rotation pure
 par une déformation pure...\colorblack 
-Ces tenseurs sont présentés au paragraphe \ref{Sec-TensS}, quant
-aux grandes déformation, elles sont exposées au paragraphe \ref{Sec-NLg}.
+Ces tenseurs sont présentés au paragraphe~\ref{Sec-TensS}, quant
+aux grandes déformation, elles sont exposées au paragraphe~\ref{Sec-NLg}.
 
 \medskip
 \subsection{Loi de comportement}\label{Sec-Loi}
 La loi de comportement, reliant contrainte et déformation, peut être relativement compliquée 
-selon les cas, et varie en fonction du niveau de chargement. On se reportera alors au paragraphe \ref{Sec-NLMat}.
+selon les cas, et varie en fonction du niveau de chargement. On se reportera alors au paragraphe~\ref{Sec-NLMat}.
 Si elle est linéaire, on parle alors d'\textcolorblue{élasticité linéaire}.
 %Voici quelques illustrations de lois de compotement très classiques:\\
 %\begin{center}
@@ -1160,7 +1160,7 @@ relation contrainte/dé\-pla\-ce\-ment:
 \end{equation}
 
 \medskip
-Nous reviendrons plus tard sur ces aspects non linéaires au chapitre \ref{Ch-NL}.
+Nous reviendrons plus tard sur ces aspects non linéaires au chapitre~\ref{Ch-NL}.
 
 
 \medskip
@@ -1227,7 +1227,7 @@ Ensuite on se sert des relations entre déformation et contraintes, mais encore
 faut-il être capable de mesurer ces grandeurs... et même si l'on sait le faire,
 que se passe-t-il à l'interface entre deux matériaux distincts, comme par exemple
 entre l'une des peaux et l'âme d'un matériau sandwich? (sur le sujet, abordé en
-plusieurs fois dans ce document, voir synthèse au paragraphe \ref{Sec-interf})
+plusieurs fois dans ce document, voir synthèse au paragraphe~\ref{Sec-interf})
 
 \medskip
 Le cas du calcul des contraintes à l'interface entre deux matériaux est un exemple
@@ -1259,7 +1259,7 @@ une zone de maillage raffiné (avec raffinnement automatique en plus si l'on veu
 zone de maillage plus léger...
 
 Une illustration de leur utilisation pour imposer des conditions aux limites en déplacement
-est donnée en \ref{Ch-DispLag}.
+est donnée en~\ref{Ch-DispLag}.
 
 \medskip
 \textcolorgreen{%

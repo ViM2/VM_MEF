@@ -1,4 +1,4 @@
-\chapter{Méthode de Newton Raphson}\label{Ch_NewRaph}\index{Méthode de Newton-Raphson}
+\chapter{Méthode de Newton Raphson}\label{Ch_NewRaph}\index{méthode de Newton-Raphson}
 \begin{abstract}
 La méthode de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
 est, dans son application la plus simple, un algorithme efficace 
@@ -19,7 +19,7 @@ Newton&Jones&Colson%
 \end{tabular}}
 ~
 \ImageADroite{%
-La méthode\index{Méthode de Newton-Raphson} de Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} 
+La méthode\index{méthode de Newton-Raphson} de Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} 
 fut décrite par Newton dans \emph{De analysi per aequationes numero 
 terminorum infinitas}, écrit en 1669 et publié en 1711 par William Jones.\index[aut]{Jones (William, Sir -), 1675-1749, Gallois} 
 Elle fut à nouveau décrite dans \emph{De metodis fluxionum et serierum infinitarum} 
@@ -63,13 +63,13 @@ Simpson&Cayley%
 C'est Thomas Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} qui généralisa cette méthode 
 au calcul itératif des solutions d'une équation non linéaire, en utilisant les dérivées (qu'il appelait fluxions, 
 comme Newton).\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} 
-Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} appliqua la méthode\index{Méthode de Newton-Raphson} 
+Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} appliqua la méthode\index{méthode de Newton-Raphson} 
 de Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} à des systèmes de deux équations non 
 linéaires à deux inconnues, en suivant l'approche utilisée aujourd'hui pour des systèmes ayant plus de 
 2 équations, et à des problèmes d'optimisation sans contrainte en cherchant un zéro du gradient. \\
 \indent
 Arthur Cayley\index[aut]{Cayley (Arthur), 1821-1895, Anglais} fut le premier à noter la difficulté de 
-généraliser la méthode\index{Méthode de Newton-Raphson} de 
+généraliser la méthode\index{méthode de Newton-Raphson} de 
 Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} aux variables complexes en 1879, 
 par exemple aux polynômes de degré supérieur à 3.
 }
@@ -90,7 +90,7 @@ proche d'un zéro régulier de la fonction} (i.e. en lequel la dérivée de la f
 convergence du processus soit assurée.
 
 \medskip
-L'intérêt principal de l'algorithme\index{Méthode de Newton-Raphson} de 
+L'intérêt principal de l'algorithme\index{méthode de Newton-Raphson} de 
 Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
 est sa \textcolorblue{convergence quadratique locale}. 
 En termes imagés mais peu précis, cela signifie que le nombre de chiffres significatifs corrects des 
@@ -103,7 +103,7 @@ générée par l'algorithme a un comportement erratique, dont la convergence év
 être que le fruit du hasard (i.e. si l'un des itérés est par chance proche d'un zéro).
 
 \medskip
-L'importance de l'algorithme\index{Méthode de Newton-Raphson} de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais}  
+L'importance de l'algorithme\index{méthode de Newton-Raphson} de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais}  
 a incité les numériciens à étendre son application et à proposer 
 des remèdes à ses défauts. 
 
@@ -136,7 +136,7 @@ sans ou avec contraintes.
 
 
 \medskip
-\section{Algorithme}\index{Méthode de Newton-Raphson}
+\section{Algorithme}\index{méthode de Newton-Raphson}
 
 Soit $f: \RR\rightarrow\RR$ la fonction dont on cherche à construire une bonne approximation d'un zéro.
 pour cela, on se base sur son développement de Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} au 
@@ -166,13 +166,13 @@ Formellement, on construit donc la suite:
 \medskip
 Bien que la méthode soit très efficace, certains aspects pratiques doivent être pris en compte: 
 \begin{itemize}
-   \item Avant tout, la méthode\index{Méthode de Newton-Raphson} de 
+   \item Avant tout, la méthode\index{méthode de Newton-Raphson} de 
 	Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
  	nécessite que la dérivée soit effectivement calculée. 
 	Dans les cas où la dérivée est seulement estimée en prenant la pente entre deux points de la fonction, 
 	la méthode prend le nom de \textcolorblue{méthode de la sécante}, moins efficace.
 
-   \item Par ailleurs, si la valeur de départ est trop éloignée du vrai zéro, la la méthode\index{Méthode de Newton-Raphson} 
+   \item Par ailleurs, si la valeur de départ est trop éloignée du vrai zéro, la la méthode\index{méthode de Newton-Raphson} 
 	de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
 	peut entrer en boucle infinie sans produire d'approximation améliorée. 
 	À cause de cela, toute mise en œuvre de la méthode de Newton-Raphson doit inclure un code de 

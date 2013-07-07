@@ -80,8 +80,8 @@ L'espace $V$ est un espace de Hilbert\index[aut]{Hilbert (David), 1862-1943, All
 normé par $\|\cdot\|_{H^1(\Omega)}$.
 \begin{itemize}
 \item $v\in V \Rightarrow v\in H^1(\Omega)$ tel que $\int_\Omega v=0$ et l'application $v\in H^1(\Omega) \mapsto \int_\Omega v$ est continue sur $H^1(\Omega)$, donc $V$ est un sous-espace fermé de $H^1$, donc est un Hilbert. \textcolorgreen{Et donc
-	maintenant que l'on sait que $V$ est un Hilbert, on aimerait bien appliquer Lax-Milgram\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index{Théorème!de Lax-Milgram}
-	(voir \ref{Sec:LaxMil}),
+	maintenant que l'on sait que $V$ est un Hilbert, on aimerait bien appliquer Lax-Milgram\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index{théorème!de Lax-Milgram}
+	(voir~\ref{Sec:LaxMil}),
 	c'est pourquoi il faut s'intéresser à la forme bilinéaire définissant le problème. C'est ce
 	qui suit.}
    \item Si l'on considère la \textcolorblue{forme bilinéaire}: \begin{equation} a(u_0, v_0) = \int_\Omega \nabla u_0\cdot\nabla v_0\end{equation}
@@ -92,7 +92,7 @@ normé par $\|\cdot\|_{H^1(\Omega)}$.
 	Cela conduit à: \begin{equation}\dfrac{|v_0|^2_1}{|v_0|^2_1+|v_0|^2_0} \ge \dfrac1{1+c^2(\Omega)},\quad 
 	\forall v\in V\end{equation} Donc $a$ est \textbf{V-elliptique}.
 \end{itemize}
-\textcolorblue{Le théorème de Lax-Milgram\index{Théorème!de Lax-Milgram}\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
+\textcolorblue{Le théorème de Lax-Milgram\index{théorème!de Lax-Milgram}\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
 permet donc de conclure à l'existence et à l'unicité
 de la solution $u_0\in V$}.
 
@@ -129,20 +129,20 @@ Par contre, on a un terme $p\cdot n=0$.
 Et il serait bien de disposer de son <<~symétrique~>>, i.e. d'un terme $q.n=0$ qui serait imposé
 par le choix de l'espace dans lequel vivrait $u$.
 \textcolorgreen{Ce que l'on a en tête c'est bien sûr de pouvoir utiliser le théorème
-de Brezzi.}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{Théorème!de Brezzi}
+de Brezzi.}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{théorème!de Brezzi}
 
 \medskip
-En correspondance avec les notations du paragraphe \ref{Sec:Brezzi}, on choisit alors les espaces:
+En correspondance avec les notations du paragraphe~\ref{Sec:Brezzi}, on choisit alors les espaces:
 \textcolorblue{$H=\{ q\in H(\dive;\Omega); q\cdot n_{|\Gamma}=0\}$}
 et $M=L^2(\Omega)$.
-Le problème est donné, dans la formulation de Brezzi,\index{Théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
+Le problème est donné, dans la formulation de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 par les deux formes bilinéaires
 \begin{equation}a(p,q)=\dint_\Omega p\cdot q\quad\text{ et }\quad b(v,q)=\dint_\Omega v\dive q\end{equation}
 Quant aux formes linéaires définissant le problème, la première est nulle et la
 seconde vaut:\begin{equation}-\dint_\Omega fv\end{equation}
 
 \medskip
-Maintenant que nous nous sommes rapprochés du cadre du théorème de Brezzi,\index{Théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
+Maintenant que nous nous sommes rapprochés du cadre du théorème de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 il va nous falloir vérifier si toutes les conditions sont vérifiées.
 \textcolorgreen{Toutefois, d'après ce qui a été vu dans les paragraphes précédents,
 il semble naturel de se demander s'il faudra bien conserver $L^2(\Omega)$, ou s'il faudra passer
@@ -171,7 +171,7 @@ implique que:
 Donc le choix \textcolorblue{$M=L^2_0(\Omega)$} semble un choix convenable à priori.
 
 \medskip
-Il reste alors maintenant à \textbf{vérifier que toutes les conditions du théorème de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{Théorème!de Brezzi}
+Il reste alors maintenant à \textbf{vérifier que toutes les conditions du théorème de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{théorème!de Brezzi}
 sont bien satisfaites pour pouvoir conclure à l'existence et à l'unicité de la solution.
 Ces conditions sont:
 \begin{itemize}
@@ -258,7 +258,7 @@ d'où:
 
 \medskip
 \textcolorblue{On peut donc appliquer le théorème de
-Brezzi\index{Théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
+Brezzi\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 et conclure à l'existence et à l'unicité de la solution.}
 
 

@@ -537,8 +537,8 @@ dire que l'inconnue est bien $u$, ce qui évite d'alourdir l'écriture.}
 
 \medskip
 Cette formulation <<~en déplacement~>> correspond au problème de minimisation
-de la \textcolorblue{fonctionnelle de l'énergie potentielle totale}\index{Fonctionnelle!de l'énergie potentielle totale}
-que l'on appelle également \textcolorblue{fonctionnelle primale}\index{Fonctionnelle!primale}:
+de la \textcolorblue{fonctionnelle de l'énergie potentielle totale}\index{fonctionnelle!de l'énergie potentielle totale}
+que l'on appelle également \textcolorblue{fonctionnelle primale}\index{fonctionnelle!primale}:
 \begin{equation}
 J(u)=
 \frac12 \dint_\Omega \varepsilon(v):\sigma(u)  - \dint_\Omega fv -
@@ -584,7 +584,7 @@ fonctionnelle, dont on sait trouver la signification physique.
 La formulation la plus générale est celle comportant les trois champs de déplacements
 $u$, de déformations $\varepsilon$, et de contraintes $\sigma$ comme inconnues.
 Cette formulation mixte est connue sous le nom de \textcolorblue{principe de Hu-Washizu} (1975).\index[aut]{Hu (Haichang), 1928-2011, Chinois}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}
-Sous forme variationnelle, elle s'écrit:\index{Fonctionnelle!de Hu-Washizu}
+Sous forme variationnelle, elle s'écrit:\index{fonctionnelle!de Hu-Washizu}
 \begin{equation}
 J(u,\varepsilon,\sigma) =
 \frac12 \dint_\Omega \varepsilon :\sigma
@@ -598,7 +598,7 @@ la formulation).
 
 \medskip
 Il est possible d'obtenir une formulation n'ayant que le champ de contraintes
-comme inconnue. Il s'agit de la \textcolorblue{fonctionnelle duale}:\index{Fonctionnelle!duale}
+comme inconnue. Il s'agit de la \textcolorblue{fonctionnelle duale}:\index{fonctionnelle!duale}
 \begin{equation}
 J(\sigma) =
 -\frac12 \dint_\Omega \sigma S \sigma
@@ -612,7 +612,7 @@ souplesse, i.e. $S=H^{-1}$).
 
 \medskip
 L'utilisation de multiplicateurs de Lagrange permet de construire des fonctionnelles multi-champs.
-La \textcolorblue{fonctionnelle de l'énergie complémentaire}\index{Fonctionnelle!de l'énergie complémentaire} est la suivante:
+La \textcolorblue{fonctionnelle de l'énergie complémentaire}\index{fonctionnelle!de l'énergie complémentaire} est la suivante:
 \begin{equation}
 J(\sigma,\lambda,\mu) =
 -\frac12\dint_\Omega \sigma S \sigma
@@ -626,7 +626,7 @@ Les multiplicateurs de Lagrange présentés ci-dessus ont une signification phys
 (que l'on trouve en écrivant la stationnarité de la fonctionnelle).
 En remplaçant les multiplicateurs par les quantités qu'ils représentent, i.e. en remplaçant
 $\lambda$ par $u$ dans $\Omega$ et $\mu$ par $u$ sur $\Gamma_N$, on obtient la
-\textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{Fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
+\textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 sous sa première forme:
 \begin{equation}
 J(u,\sigma) =
@@ -644,7 +644,7 @@ alors, le première fonctionnelle de Reissner se met sous la forme:
 \begin{equation} J(\sigma,u) = \frac12a(\sigma,\sigma)+b(\sigma_u)-L(u)\end{equation}
 \medskip
 En effectuant une intégration par parties du terme mixte $b(\sigma,u)$, on obtient la
-\textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{Fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
+\textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 sous sa deuxième forme:
 \begin{equation}
 \label{Eq-HR2}
@@ -657,16 +657,16 @@ J(u,\sigma) =
 où le champ de déplacement doit vérifier $v=\overline{u}$ sur $\Gamma_D$,
 et où la relation entre déformations et déplacement est supposée vérifiée dans $\Omega$.
 
-Cette fonctionnelle d'Hellinger-Reissner est également appelée \textcolorblue{fonctionnelle mixte}.\index{Fonctionnelle!mixte}
+Cette fonctionnelle d'Hellinger-Reissner est également appelée \textcolorblue{fonctionnelle mixte}.\index{fonctionnelle!mixte}
 \medskip
 L'adjectif \textcolorblue{hybride} peut être adjoint à l'une quelconque des formulations
 précédentes si le ou les champs sont interpolés d'une part sur tout le domaine $\Omega$
 et d'autre part sur tout ou partie du contour $\Gamma$ de façon indépendante.
 
 Il est possible de modifier la fonctionnelle de l'énergie complémentaire de plusieurs manière.
-Nous ne présentons que celle conduisant à ce que l'on appelle souvent \textcolorblue{fonctionnelle hybride}\index{Fonctionnelle!hybride} et
+Nous ne présentons que celle conduisant à ce que l'on appelle souvent \textcolorblue{fonctionnelle hybride}\index{fonctionnelle!hybride} et
 qui est la \textcolorblue{fonctionnelle de Pian et
-Tong}\index{Fonctionnelle!de Pian et Tong}\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois}
+Tong}\index{fonctionnelle!de Pian et Tong}\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois}
 (1978):
 \begin{equation}
 J(u,\varepsilon) =
@@ -685,7 +685,7 @@ Sa variation :
 a l'avantage de ne pas comporter de dérivée.
 
 \medskip
-Au paragraphe \ref{Sec-champs}, nous reprendrons ces formulations pour les exprimer,
+Au paragraphe~\ref{Sec-champs}, nous reprendrons ces formulations pour les exprimer,
 peut-être de manière plus <<~explicite~>> pour le lecteur sous forme matricielle.
 
 \medskip

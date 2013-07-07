@@ -7,10 +7,10 @@ soit en elle-même intéressante).
 
 Dans ce chapitre, nous aurons besoin de <<~dériver numériquement~>>, i.e. de
 construire des schémas numériques approchant des dérivées.
-Le chapitre \ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire
+Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire
 en regardant comment on résoud les ED et EDP directement... puis numériquement.
 Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
- décrite au paragraphe \ref{Sec-Newmark}.
+ décrite au paragraphe~\ref{Sec-Newmark}.
 \end{abstract}
 
 \medskip
@@ -31,7 +31,7 @@ temporelle} qui pourra être explicite ou implicite.
 
 \medskip
 Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
-(qui est présenté dans le cas de la résolution des ED au paragraphe \ref{Sec-Newmark},
+(qui est présenté dans le cas de la résolution des ED au paragraphe~\ref{Sec-Newmark},
 ce complément nous ayant été demandé).
 Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
 \begin{equation}\colorblue
@@ -43,7 +43,7 @@ Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
 \end{aligned}
 \end{equation}
 que nous avons écrit sous la forme discrétisée, mais qui serait valable pour l'approximation
-continue (comme présenté au chapitre au paragraphe \ref{Sec-Newmark}).
+continue (comme présenté au chapitre au paragraphe~\ref{Sec-Newmark}).
 
 Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 correspondent à des valeurs particulières de $\beta$ et $\gamma$.
@@ -51,7 +51,7 @@ correspondent à des valeurs particulières de $\beta$ et $\gamma$.
 
 
 \bigskip
-\section{Schéma explicite: différences finies centrées}\index{Schéma! des différences finies centrées}
+\section{Schéma explicite: différences finies centrées}\index{schéma! des différences finies centrées}
 
 Dans le cas \textcolorred{$\beta=0$ et $\gamma=1/2$}, on retombe sur le schéma des \textcolorblue{différences
 finies centrées}.
@@ -93,7 +93,7 @@ Le calcul se déroule donc comme suit:
 	\begin{itemize}
 	\item résoudre l'équation modifiée, qui nous fournit $\VV{q}_{t+\Delta t}$;
 	\item puis obtenir $\VV{\dot q}_t$ et $\VV{\ddot q}_t$ par le schéma de Newmark adopté,
-	ici celui des différences finies centrées.\index{Schéma! des différences finies centrées}
+	ici celui des différences finies centrées.\index{schéma! des différences finies centrées}
 	\end{itemize}
 \end{itemize}
 \bigskip
@@ -114,10 +114,10 @@ On peut faire les remarques suivantes sur ce type de calcul:
 	schéma.
 \end{itemize}
 \bigskip
-\section{Schéma implicite: schéma de Newmark classique}\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
+\section{Schéma implicite: schéma de Newmark classique}\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 
 Dans le cas \textcolorred{$\beta=1/4$ et $\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite
-de Newmark},\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
+de Newmark},\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
 
 Dans ce cas, on obtient:
@@ -182,7 +182,7 @@ On peut faire les remarques suivantes sur ce type de calcul:
 
 
 \bigskip
-\section{Comparaison des méthodes explicite et implicite}\index{Schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{Schéma! des différences finies centrées}
+\section{Comparaison des méthodes explicite et implicite}\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{schéma! des différences finies centrées}
 
 \medskip
 Concernant la méthode implicite, on retiendra d'abord que cette méthode nécessite moins de mémoire, est donc plus
@@ -215,7 +215,7 @@ La \fig{Fig-Im-Ex-plicite} donne, de manière imagée, les domaines d'utilisatio
 \fi
 
 \bigskip
-\section{Décomposition modale}\index{Décomposition modale}
+\section{Décomposition modale}\index{décomposition modale}
 
 Pour le public visé, le lecteur devrait, à ce moment du document, se demander pourquoi
 il n'a pas encore été question de projection sur les modes propres.
@@ -233,7 +233,7 @@ peut être facile pour un ingénieur un peu expérimenté d'imaginer le nombre d
 utiliser pour représenter le phénomène.
 
 \medskip
-La méthode de la décomposition modale sera exposée au paragraphe \ref{Sec-RT}, lorsque
+La méthode de la décomposition modale sera exposée au paragraphe~\ref{Sec-RT}, lorsque
 nous aurons fait quelques rappels sur les modes propres.
 
 

@@ -24,7 +24,7 @@ solution obtenue:
 
 \medskip
 Évidemment, ces méthodes peuvent être combinées.
-La \textcolorblue{méthode -$hp$-}\index{Méthode hp} propose de modifier à la fois le maillage et
+La \textcolorblue{méthode -$hp$-}\index{méthode $hp$} propose de modifier à la fois le maillage et
 les fonctions d'interpolation. Elle semble aujourd'hui être la méthode optimale en terme
 d'efficacité et de vitesse de convergence.
 
@@ -104,11 +104,11 @@ montré sur la \fig{Fig-avion}.
 
 La simulation est donc décomposée en différents niveaux, chacun représentant une échelle
 différente. Pour coordonner ces niveaux entre eux, on utilise généralement une
-\textcolorblue{approche} dite \textcolorblue{descendante}:\index{Approche descendante}
+\textcolorblue{approche} dite \textcolorblue{descendante}:\index{approche descendante}
 on commence par simuler  le comportement global de l'avion, puis les résultats sont utilisés pour
 déterminer les conditions aux limites appliquées sur les niveaux inférieurs.
 Toutefois, il est parfois également nécessaire de combiner ces approches descendantes
-à des \textcolorblue{approches ascendantes}:\index{Approche ascendante}
+à des \textcolorblue{approches ascendantes}:\index{approche ascendante}
 les résultats des simulations fines sont utilisés pour construire des modèles de comportements
 plus grossiers.
 
@@ -243,7 +243,7 @@ partir d'une déformation (ou d'une contrainte) macro imposée.
 
 Le résultat micro ainsi obtenu est pertinent à deux conditions:
 1) il faut que la microstructure soit effectivement périodique, et 2) que le principe de
-Saint-Venant\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{Principe de Saint-Venant}
+Saint-Venant\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{principe! de Saint-Venant}
 s'applique, i.e. que l'on se trouve suffisamment loin de la surface de la pièce
 (y compris des détails géométriques tels que des trous, des fissures...).
 Dans le cas contraire, des effets de bord peuvent affecter l'allure de la solution, qui n'est
@@ -281,19 +281,19 @@ et se <<~nourrissent~>>  du comportement simulé à l'échelle microscopique.\in
 
 Dans les méthodes multi-niveaux,\index{Multi-niveaux} l'emploi d'hypothèses de périodicité se traduit par
 des <<~sauts~>> de contraintes et de déplacements d'une cellule à l'autre; si les échelles sont
-mal séparées, ces sauts sont non négligeables. Ne correspondant à priori pas à la physique,
+mal séparées, ces sauts sont non négligeables. Ne correspondant \emph{a priori} pas à la physique,
 ils traduisent un écart avec la réalité.
 \colorblack
 
 
 
 \medskip
-\subsection{Couplage des cellules micro -- méthodes de décomposition de domaine}\index{Couplage des cellules micro}\index{Décomposition de domaine}\label{Sec-dec}
+\subsection{Couplage des cellules micro -- méthodes de décomposition de domaine}\index{Couplage des cellules micro}\index{décomposition de domaine}\label{Sec-dec}
 
 Les méthodes multi-niveaux présentées au paragraphe précédent sont mises à mal
 lorsque le comportement micro <<~déborde~>> un peu sur le comportement macro, i.e.
 lorsque les échelles ne sont pas suffisamment bien séparées.
-On recourt alors aux méthodes de décomposition de domaines,\index{Décomposition de domaine}
+On recourt alors aux méthodes de décomposition de domaines,\index{décomposition de domaine}
 dont la validité est plus large, mais qui sont plus complexes.
 
 \medskip
@@ -317,7 +317,7 @@ ainsi, de se passer de l'hypothèse de séparation des échelles: il n'est plus 
 modéliser séparément les phénomènes micro et macro.
 
 \medskip
-Concrètement, les méthodes de décomposition de domaine\index{Décomposition de domaine}
+Concrètement, les méthodes de décomposition de domaine\index{décomposition de domaine}
 sont des solveurs, qui ont généralement un fonctionnement multi-échelles.\index{Multi-échelles}
 Elles partent d'un modèle micro\index{Modèle microscopique} du produit
 décomposé en sous-structures, et consistent à coupler les sous-structures en échangeant des
@@ -328,11 +328,11 @@ dans une telle approche.
 \medskip\colorgreen
 \textbf{En résumé:}
 
-Dans la décomposition de domaine,\index{Décomposition de domaine} la simulation est abordée
+Dans la décomposition de domaine,\index{décomposition de domaine} la simulation est abordée
 à l'échelle la plus fine: la sous-structuration et le problème grossier ne sont utilisés que pour
 améliorer l'efficacité de la résolution.
 
-Une simulation par décomposition de domaine\index{Décomposition de domaine} conduit toujours
+Une simulation par décomposition de domaine\index{décomposition de domaine} conduit toujours
 à un champ de déplacement micro continu sur toute la structure, et un champ de contraintes micro
 équilibré (au sens des EF) sur toute la structure.
 \colorblack
@@ -646,7 +646,7 @@ par exemple...
 
 
 \medskip
-\section{Dérivées d'ordre supérieur}\index{Dérivée!d'ordre supérieur}\label{Sec-Deriv}
+\section{Dérivées d'ordre supérieur}\index{dérivée!d'ordre supérieur}\label{Sec-Deriv}
 Au paragraphe précédent, nous avons vu comment, sur une structure donnée, il était
 possible de prendre en compte plusieurs chargements et conditions aux limites cinématiques
 sans avoir à refaire tout le calcul.
@@ -665,13 +665,13 @@ d'analyse.
 
 En fait, peut-être contrairement à l'intuition, le calcul de ces dérivées est relativement
 peu coûteux; il n'est pas difficile et peut être fait automatiquement. Les dérivées
-d'ordre supérieur\index{Dérivée!d'ordre supérieur} d'une fonction coût peuvent en fait
+d'ordre supérieur\index{dérivée!d'ordre supérieur} d'une fonction coût peuvent en fait
 être calculées avec autant de précision que la fonction elle-même. Ainsi, en un seul calcul,
 il est possible d'obtenir un développement de Taylor de la fonction coût, et donc d'éviter de
 nombreuses analyses.
 
 \medskip
-\subsection{Dérivées par rapport à la géométrie}\index{Dérivée!par rapport à la géométrie}
+\subsection{Dérivées par rapport à la géométrie}\index{dérivée!par rapport à la géométrie}
 En plus de considérer un domaine borné $\Omega$ de $\RR^n$, nous allons considérer
 une \textcolorblue{perturbation}\index{Perturbation} $V$ de $\Omega$, et nous noterons:
 \begin{equation} \Omega + V = (I+V)(\Omega);\quad V\in W^{1,\infty}(\Omega;\RR^n) \end{equation}

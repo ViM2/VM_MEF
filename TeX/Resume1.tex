@@ -6,14 +6,14 @@
 Soit $E$ un \textcolorblue{espace vectoriel}.
 
 \medskip
-$\|.\|: E\rightarrow \RR_+$ est une \textcolorblue{norme}\index{Norme} sur $E$ ssi elle vérifie:
+$\|.\|: E\rightarrow \RR_+$ est une \textcolorblue{norme}\index{norme} sur $E$ ssi elle vérifie:
 \begin{enumerate}
    \item $(\|x\|=0) \Longrightarrow (x=0)$;
    \item $\forall\lambda\in\RR, \forall x\in E, \|\lambda x\|=|\lambda|\| x\|, \lambda\in\KK$;
    \item $\forall x,y\in E, \|x+y\|\le\|x\|+\|y\|$ (inégalité triangulaire).
 \end{enumerate}
 
-La \textcolorblue{distance issue de la norme} est la distance définie par $d(x,y)=\|x-y\|$.\index{Distance!issue d'une norme}
+La \textcolorblue{distance issue de la norme} est la distance définie par $d(x,y)=\|x-y\|$.\index{distance!issue d'une norme}
 
 \medskip
 Toute forme bilinéaire symétrique définie positive\index{Forme!bilinéaire} 
@@ -27,13 +27,13 @@ Elle vérifie les propriétés:
    \item définie: $\forall x \in E \quad \big(\ \langle x\, , \, x \rangle = 0 \; \Rightarrow x = 0\ \big)$.
 \end{enumerate}
 
-La \textcolorblue{norme induite} par le produit scalaire est $\|x\|=\sqrt{\langle x,x\rangle}$.\index{Norme!induite par un produit scalaire}
+La \textcolorblue{norme induite} par le produit scalaire est $\|x\|=\sqrt{\langle x,x\rangle}$.\index{norme!induite par un produit scalaire}
 
-L'inégalité triangulaire donne alors l'inégalité de Cauchy-Schwarz: $|\langle x,y\rangle|\le\|x\| \|y\|$.\index{Inégalité!de Cauchy-Schwarz}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}\index[aut]{Schwarz (Hermann Amandus), 1843-1921, Allemand}
+L'inégalité triangulaire donne alors l'inégalité de Cauchy-Schwarz: $|\langle x,y\rangle|\le\|x\| \|y\|$.\index{inégalité!de Cauchy-Schwarz}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}\index[aut]{Schwarz (Hermann Amandus), 1843-1921, Allemand}
 
-Un espace vectoriel muni d'une norme est appelé \textcolorblue{espace normé}.\index{Espace!vectoriel normé}
+Un espace vectoriel muni d'une norme est appelé \textcolorblue{espace normé}.\index{espace!vectoriel normé}
 
-Un espace vectoriel muni d'un produit scalaire est appelé \textcolorblue{espace préhilbertien}, \index{Espace!préhilbertien}
+Un espace vectoriel muni d'un produit scalaire est appelé \textcolorblue{espace préhilbertien}, \index{espace!préhilbertien}
 qui est donc également un espace normé pour la norme induite.
 
 \medskip
@@ -55,14 +55,14 @@ $\forall\varepsilon>0, \exists N, \forall p> N, \forall q> N : \|x_p-x_q\|>\vare
 
 Toute suite convergente est de Cauchy. La réciproque est fausse.
 
-Un espace vectoriel est \textcolorblue{complet} ssi toute suite de Cauchy y est convergente.\index{Espace!métrique complet}
+Un espace vectoriel est \textcolorblue{complet} ssi toute suite de Cauchy y est convergente.\index{espace!métrique complet}
 
-Un \textcolorblue{espace de Banach} est un espace normé complet.\index{Espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}
+Un \textcolorblue{espace de Banach} est un espace normé complet.\index{espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}
 
-Un \textcolorblue{espace de Hilbert} est un espace préhilbertien complet.\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
+Un \textcolorblue{espace de Hilbert} est un espace préhilbertien complet.\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 
 Un \textcolorblue{espace euclidien}\index[aut]{Euclide, -325-- -265, Grec} est un espace de Hilbert 
-de dimension finie.\index{Espace!euclidien}
+de dimension finie.\index{espace!euclidien}
 
 
 
@@ -80,7 +80,7 @@ valeurs dans $\RR$ ou $\RR^p$.
 
 Un fonction $u$ est \textcolorblue{mesurable} ssi $\{x/ |u(x)|<r\}$ est mesurable $\forall r>0$.
 
-On définit les espaces $\mathscr{L}^p(\Omega)$, pour $1\le p<\infty$ par:\index{Espace!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
+On définit les espaces $\mathscr{L}^p(\Omega)$, pour $1\le p<\infty$ par:\index{espace!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 \[
 \mathscr{L}^p(\Omega)=\left\{u:\Omega\rightarrow\RR, \text{ mesurable, et telle que }
 \dint_\Omega|u|^p<\infty\right\}
@@ -101,7 +101,7 @@ ne sont pas des normes sur $\mathscr{L}^P(\Omega)$
 (en effet, $\|u\|_{L^p}=0$ implique que $u$ est nulle presque partout dans $\mathscr{L}^p(\Omega)$
 et non pas $u = 0$, d'où la définition des espaces $L^p(\Omega)$.
 
-Ces formes sont des normes sur $L^p(\Omega)$ et en font des espaces de Banach (i.e. complets).\index{Norme}\index{Espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}
+Ces formes sont des normes sur $L^p(\Omega)$ et en font des espaces de Banach (i.e. complets).\index{norme}\index{espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}
 
 \medskip
 Dans le cas particulier $p=2$, on ontient l'espace $L^2(\Omega)$ des fonctions de carré 
@@ -114,7 +114,7 @@ l'espace $L^2(\Omega)$ un espace de Hilbert.\index{Produit scalaire!de $L^2$}
 
 
 \medskip
-\section*{Dérivée généralisée}\index{Dérivée!généralisée}
+\section*{Dérivée généralisée}\index{dérivée!généralisée}
 
 Les éléments des espaces $L^p$ ne sont pas nécessairement des fonctions très régulières.
 Leurs dérivées partielles ne sont donc pas forcément définies partout.
@@ -174,7 +174,7 @@ est égale à la dérivée classique.
 \section*{Espaces de Sobolev}
 
 \medskip
-\subsection*{Espaces $H^m$}\index{Espace!de Sobolev $H^m(\Omega)$}
+\subsection*{Espaces $H^m$}\index{espace!de Sobolev $H^m(\Omega)$}
 
 L'\textcolorblue{espace de Sobolev d'ordre $m$} est défini par:
 \[
@@ -186,7 +186,7 @@ H^m(\Omega)=\left\{u\in L^2(\Omega)/ \partial^\alpha u\in L^2(\Omega),
 On voit que $H^0(\Omega)=L^2(\Omega)$.
 
 \medskip
-$H^m(\Omega)$ est un espace de Hilbert avec le produit scalaire et la norme induite:\index{Norme!sur $H^m(\Omega)$}\index{Norme!induite par un produit scalaire}\index{Produit scalaire!de $H^m(\Omega)$}
+$H^m(\Omega)$ est un espace de Hilbert avec le produit scalaire et la norme induite:\index{norme!sur $H^m(\Omega)$}\index{norme!induite par un produit scalaire}\index{Produit scalaire!de $H^m(\Omega)$}
 \[
 (u,v)_m=\dsum_{|\alpha|\le m}(\partial^\alpha u,\partial^\alpha v)_0 
 \quad \text{ et } \quad
@@ -198,7 +198,7 @@ régulière>>, alors on  a l'inclusion: $H^m(\Omega)\subset C^k(\overline{\Omega
 pour $k<m-\frac{n}2$.
 
 \medskip
-\subsection*{Trace}\index{Espace!trace}
+\subsection*{Trace}\index{espace!trace}
 
 Dans les problèmes physiques que nous rencontrerons (voir partie 2), nous devrons
 pouvoir imposer des conditions aux limites.
@@ -214,7 +214,7 @@ aux limites de type Neumann par exemple.
 
 
 \medskip
-\subsection*{Espace $H^1_0(\Omega)$}\index{Espace!trace}\index{Espace!de Sobolev $H_0^1(\Omega)$}
+\subsection*{Espace $H^1_0(\Omega)$}\index{espace!trace}\index{espace!de Sobolev $H_0^1(\Omega)$}
 
 Soit $\Omega$ ouvert de $\RR^n$. 
 L'espace $H^1_0(\Omega)$ est défini comme l'adhérence de $\mathcal{D}(\Omega)$
@@ -237,7 +237,7 @@ Pour toute fonction $u$ de $H^1(\Omega)$, on peut définir :
 \]
 
 \medskip
-Inégalité de Poincaré:\index{Inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
+Inégalité de Poincaré:\index{inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
 Si $\Omega$ est borné dans au moins une direction, alors il
 existe une constante $C(\Omega)$ telle que $\forall u\in H^1_0(\Omega)$; 
 $\|u\|_0 \le C(\Omega) |u|_1$.

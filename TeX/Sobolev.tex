@@ -57,7 +57,7 @@ propriétés géométriques du domaine.
 \colorblack
 
 \medskip
-\section{Distributions}\index{Distribution}
+\section{Distributions}\index{distribution}
 Une distribution (également appelée fonction généralisée) est un objet qui généralise
 la notion de fonction et de mesure.
 La théorie des distributions étend la notion de dérivée à toutes les fonctions localement
@@ -84,7 +84,7 @@ Muni de cette topologie, $\mathcal{D}(\Omega)$ est un espace vectoriel topologiq
 sur $\mathcal{D}(\Omega)$.
 \end{definition}
 
-L'ensemble des distributions est donc le dual topologique de $\mathcal{D}(\Omega)$ et est donc noté $\mathcal{D}'(\Omega)$.\index{Espace!dual topologique d'un espace vectoriel}
+L'ensemble des distributions est donc le dual topologique de $\mathcal{D}(\Omega)$ et est donc noté $\mathcal{D}'(\Omega)$.\index{espace!dual topologique d'un espace vectoriel}
 
 \medskip
 Toujours aussi classiquement, si $T$ est une distribution et $\varphi$ une fonction test de
@@ -93,7 +93,7 @@ $\langle ., . \rangle$ désigne comme d'habitude le crochet de dualité).
 
 \medskip
 Dans $\mathcal{D}'(\mathbb{R})$, l'application qui à $\varphi$ associe $\varphi(0)$ est une distribution, et
-c'est la distribution de Dirac : $\langle\delta,\varphi\rangle=\varphi(0)$.\index{Distribution!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
+c'est la distribution de Dirac : $\langle\delta,\varphi\rangle=\varphi(0)$.\index{distribution!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
 
 \medskip
 Une propriété fondamentales est que \textcolorblue{toute fonction localement intégrable $f$ représente aussi
@@ -106,7 +106,7 @@ une distribution $T_f$ définie par la forme intégrale suivante} :
 
 
 \medskip
-\section{Dérivées au sens des distributions}\index{Dérivée!au sens des distributions}
+\section{Dérivées au sens des distributions}\index{dérivée!au sens des distributions}
 
 %C'est vraiment une notion fondamentale...
 
@@ -159,7 +159,7 @@ analyse de Fourier ainsi que les espaces de Schwartz.}
 
 
 \medskip
-\section{Espaces $W^{m,p}(\Omega)$}\index{Espace!de Sobolev $W^{m,p}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espaces $W^{m,p}(\Omega)$}\index{espace!de Sobolev $W^{m,p}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \begin{definition}[Espace $W^{m,p}(\Omega)$]
 Soient $\Omega \subset \RR^n$ un ouvert quelconque, $p$ un réel tel que $1\leqslant p\leqslant \infty$
@@ -173,13 +173,13 @@ dérivée partielle de $u$ au sens faible (i.e. au sens des distributions) et $L
 \end{definition}
 
 \medskip
-La norme sur $W^{m,p}(\Omega)$ est:\index{Norme!sur $W^{m,p}(\Omega)$}
+La norme sur $W^{m,p}(\Omega)$ est:\index{norme!sur $W^{m,p}(\Omega)$}
 \begin{equation}
 \| u \|_{W^{m, p}} = \begin{cases} \left( \sum \limits_{0\leqslant | \alpha | \leqslant m} \| D^{\alpha} u \|_{L^{p}}^{p} \right)^{1/p}, & 1 \leqslant p < + \infty; \\ \max\limits _{0\leqslant | \alpha | \leqslant m} \| D^{\alpha} u \|_{L^{\infty}}, & p = + \infty; \end{cases}
 \end{equation}
 où $\|\cdot\|_{L^{p}}$ désigne la norme des espaces de Lebesgue.
 
-Muni de cette norme $W^{m,p}(\Omega)$ est un espace de Banach.\index{Espace!de Banach}
+Muni de cette norme $W^{m,p}(\Omega)$ est un espace de Banach.\index{espace!de Banach}
 Dans le cas où $p<\infty$, c'est aussi un espace séparable.
 
 \medskip
@@ -213,7 +213,7 @@ où $D^\alpha u$ est une dérivée partielle de $u$ au sens classique ($u \in C^
 
 
 \medskip
-\section{Espaces $H^m(\Omega)$}\index{Espace!de Sobolev $H^m(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espaces $H^m(\Omega)$}\index{espace!de Sobolev $H^m(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \begin{definition}[Espace $H^m(\Omega)$]
 \textcolorblue{Dans le cas $p=2$, on note $H^m(\Omega)$ l'espace $W^{m,2}(\Omega)$, défini par la relation (\ref{Eq-SoboW}).}
@@ -221,7 +221,7 @@ où $D^\alpha u$ est une dérivée partielle de $u$ au sens classique ($u \in C^
 
 \medskip
 \begin{theoreme}
-Les espaces de Sobolev $H^m$ ont un intérêt particulier car il s'agit alors d'\textcolorred{espaces de Hilbert.}\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
+Les espaces de Sobolev $H^m$ ont un intérêt particulier car il s'agit alors d'\textcolorred{espaces de Hilbert.}\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 Leur norme est induite par le produit intérieur suivant:\index{Produit scalaire!de $H^m(\Omega)$}
 \begin{equation}\left( u , v \right)_{m} =\sum \limits _{0 \leqslant \vert \alpha\vert\leqslant m} \left( D^{\alpha} u, D^{\alpha} v\right)
 \text{ où } \left( u , v \right) = \int_{\Omega} u(x) \overline{v(x)} \dd x \text{ est le produit intérieur dans } L^{2} \left( \Omega \right)
@@ -261,7 +261,7 @@ On peut aussi utiliser la norme équivalente : $\|u\|^2=\sum\limits_{n=-\infty}^
 
 
 \medskip
-\section{Espaces $H^m_0(\Omega)$}\index{Espace!de Sobolev $H_0^m(\Omega$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espaces $H^m_0(\Omega)$}\index{espace!de Sobolev $H_0^m(\Omega$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \begin{definition}[Espace $H^m_0(\Omega)$]
 On définit \textcolorblue{$H^m_0(\Omega)$} comme l'adhérence dans $H^m(\Omega)$
@@ -283,9 +283,9 @@ soit $0$ !}
 
 \textcolorgreen{Ainsi, <<~physiquement~>> les espaces $H^m_0(\Omega)$ sont les fonctions
 de $H^m(\Omega)$ qui sont nulles sur $\Gamma=\partial\Omega$, ainsi que leurs dérivées <<~normales~>>
-jusqu'à l'ordre $m-1$.}\index{Dérivée!Normale}
+jusqu'à l'ordre $m-1$.}\index{dérivée!normale}
 Plus mathématiquement, on dit que ces fonctions sont de trace nulle sur la frontière.
-Les espaces trace sont définis plus loin.\index{Espace!trace}
+Les espaces trace sont définis plus loin.\index{espace!trace}
 
 Par exemple :
 \begin{equation}
@@ -294,14 +294,14 @@ Par exemple :
 \end{equation}
 
 \medskip
-\textcolorred{Les espaces $H^m_0(\Omega)$ sont des espaces de Hilbert.}\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
+\textcolorred{Les espaces $H^m_0(\Omega)$ sont des espaces de Hilbert.}\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 
 
 \medskip
-\section{Espaces $H^{-m}(\Omega)$}\index{Espace!de Sobolev $H^{-m}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espaces $H^{-m}(\Omega)$}\index{espace!de Sobolev $H^{-m}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \colorgris
-Il est possible de caractériser le dual topologique de $H^m_0(\Omega)$ de la façon suivante.\index{Espace!vectoriel (topologique)}
+Il est possible de caractériser le dual topologique de $H^m_0(\Omega)$ de la façon suivante.\index{espace!vectoriel (topologique)}
 
 $\forall m\ge 1$, on définit l'espace des distributions suivant:
 \begin{equation}
@@ -310,7 +310,7 @@ f\in \mathcal{D}'(\Omega), f=\dsum_{|\alpha|\le m} \partial^\alpha f_\alpha,
 \text{ avec } f_\alpha\in L^2(\Omega)
 \right\}
 \end{equation}
-muni de la norme:\index{Norme!sur $H^{-m}(\Omega)$}
+muni de la norme:\index{norme!sur $H^{-m}(\Omega)$}
 \begin{equation}
 \|f\|_{H^{-m}} = inf \left( \dsum_{|\alpha|\le m} \|f_\alpha\|^2_{L^2} \right)^{1\over2}
 \end{equation}
@@ -319,7 +319,7 @@ dans la définition de $H^{-m}$.
 
 \medskip
 Ainsi défini, l'espace $H^{-m}(\Omega)$ est un espace de Hilbert isomorphe au dual
-topologique de $H^m_0(\Omega)$, et le crochet de dualité s'écrit:\index{Espace!dual topologique d'un espace vectoriel}
+topologique de $H^m_0(\Omega)$, et le crochet de dualité s'écrit:\index{espace!dual topologique d'un espace vectoriel}
 \begin{equation}
 \langle f,u\rangle_{H^{-m},H_0^m} = \dsum_{|\alpha\le m} (-1)^\alpha \dint_\Omega
 f_\alpha \partial^\alpha u \dd x,
@@ -333,7 +333,7 @@ donc pas de caractérisation aussi simple.
 \colorblack
 
 \medskip
-\section{Trace}\index{Espace!trace}
+\section{Trace}\index{espace!trace}
 
 Dans ce paragraphe, nous essayons de présenter la notion de trace de manière simple et intuitive.
 
@@ -387,7 +387,7 @@ et $\gamma_1(u)$ lui est évidemment égal.
 \textcolorred{C'est pourquoi on note souvent, par abus, $\partial_n u$ plutôt que $\gamma_1(u)$.}
 
 \medskip
-\section{Espace trace}\index{Espace!trace}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espace trace}\index{espace!trace}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \textcolorgreen{Compte tenu du paragraphe précédent qui exposait la notion
 de trace, cette section n'a plus vraiment d'intérêt si l'on ne souhaite pas entrer trop
@@ -460,7 +460,7 @@ la trace d'une fonction de $H^s(\Omega)$.
 \textcolorgreen{Nous nous servirons de ces espaces dans le cas des éléments finis pour un problème
 de continuité des contraintes à une interface entre deux milieux solides ayant des propriété
 matérielles différentes. Ce problème sera abordé plusieurs fois dans ce document, et le
-paragraphe \ref{Sec-interf} fera une synthèse des stratégies possibles pour le résoudre.}
+paragraphe~\ref{Sec-interf} fera une synthèse des stratégies possibles pour le résoudre.}
 
 \medskip
 \subsection{Cas général des espaces $W^{s,p}$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
@@ -479,23 +479,23 @@ la trace d'une fonction de $W^{s,p}(\Omega)$.
 
 
 \medskip
-\section{Espaces $H^1(\Omega)$, $H^1_0(\Omega)$ et $H^{-1}(\Omega)$}\index{Espace!de Sobolev $H_0^1(\Omega)$}
-\index{Espace!de Sobolev $H^1(\Omega)$}\index{Espace!de Sobolev $H^{-1}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espaces $H^1(\Omega)$, $H^1_0(\Omega)$ et $H^{-1}(\Omega)$}\index{espace!de Sobolev $H_0^1(\Omega)$}
+\index{espace!de Sobolev $H^1(\Omega)$}\index{espace!de Sobolev $H^{-1}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 Par définition:
 \begin{equation}
 H^1(\Omega)=\left\lbrace u\in L^2(\Omega);\; \forall i =1,\ldots,n,\; \frac{\partial u}{\partial x_i}\in L^2(\Omega) \right\rbrace
 \end{equation}
 Muni du produit scalaire:
-\begin{equation}(u,v)_1 = \dint_{\Omega} \left(uv + \sum_{i=1}^N \frac{\partial u}{\partial x_i} \frac{\partial v}{\partial x_i} \right )\end{equation} $H^1(\Omega)$ est un espace de Hilbert.\index{Produit scalaire!de $H^1(\Omega)$}\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
+\begin{equation}(u,v)_1 = \dint_{\Omega} \left(uv + \sum_{i=1}^N \frac{\partial u}{\partial x_i} \frac{\partial v}{\partial x_i} \right )\end{equation} $H^1(\Omega)$ est un espace de Hilbert.\index{Produit scalaire!de $H^1(\Omega)$}\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 
 \textcolorgreen{%
 En physique et en mécanique, l'espace $H^1(\Omega)$ est également appelé <<~espace
-d'énergie~>> au sens où il est constitué des fonctions d'énergie finie (i.e. de norme finie).}\index{Espace!d'énergie}
+d'énergie~>> au sens où il est constitué des fonctions d'énergie finie (i.e. de norme finie).}\index{espace!d'énergie}
 
 
 \medskip
-\begin{theoreme}[Théorème de densité]\index{Théorème!de densité}
+\begin{theoreme}[Théorème de densité]\index{théorème!de densité}
 Si $\Omega$ est un borné régulier de classe $C^1$, ou si $\Omega=\RR^n_+$, ou encore si
 $\Omega=\RR^n$, alors $C_c^\infty(\overline{\Omega})$ est dense dans $H^1(\Omega)$.
 \end{theoreme}
@@ -594,12 +594,12 @@ partielles, le cadre de domaines bornés nous suffira.
 \medskip
 \section{Espaces $H(\dive)$ et $H(\rot)$ }\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 Nous introduisons un espace, intermédiaire entre $L^2(\Omega)$ et
-$H^1(\Omega)$, l'\textcolorblue{espace $H(\dive,\Omega)$} défini par:\index{Espace!de Sobolev $H(\dive)$}
+$H^1(\Omega)$, l'\textcolorblue{espace $H(\dive,\Omega)$} défini par:\index{espace!de Sobolev $H(\dive)$}
 \begin{equation}
 H(\dive,\Omega)=\left\{ f\in L^2(\Omega)^n,\quad \dive  f\in L^2(\Omega)\right\}
 \end{equation}
 %où $\dive  f$ est la divergence faible, que nous ne définissons pas dans ce document.
-C'est un espace de Hilbert, muni du produit scalaire:\index{Produit scalaire!de $H(\dive)$}\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
+C'est un espace de Hilbert, muni du produit scalaire:\index{Produit scalaire!de $H(\dive)$}\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 \begin{equation}
 \langle f,g \rangle = \dint_\Omega \left( f(x)\cdot g(x)+\dive  f(x) \dive  g(x) \right) \dd x
 \end{equation}
@@ -614,11 +614,11 @@ même donner un sens à la trace normale $f\cdot n$ sur $\partial\Omega$.}
 
 \medskip
 %\section{Espace }
-L'\textcolorblue{espace $H(\rot,\Omega)$} est défini par:\index{Espace!de Sobolev $H(\rot)$}
+L'\textcolorblue{espace $H(\rot,\Omega)$} est défini par:\index{espace!de Sobolev $H(\rot)$}
 \begin{equation}
 H(\rot,\Omega) = \left\{ f\in (L^2(\Omega))^2; \rot(f) \in L^2(\Omega)\right\}
 \end{equation}
-$H(\rot,\Omega)$ est un espace de Hilbert muni de la norme:\index{Espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{Norme!sur $H(rot)$}
+$H(\rot,\Omega)$ est un espace de Hilbert muni de la norme:\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{norme!sur $H(rot)$}
 \begin{equation}
 \|f\|_{H(\rot,\Omega)} = \left( \|f\|^2_{L^2(\Omega)} + \|\rot(f)\|^2_{L^2(\Omega)}\right)^{1/2}
 \end{equation}
@@ -649,7 +649,7 @@ On appelle conjugué de Sobolev du nombre $p$, le nombre $p^*$, défini par la r
     \frac{1}{p^*} = \frac{1}{p} - \frac{m}{n}
 \end{equation}
 \end{definition}
-\begin{theoreme}[Injections continues de Sobolev]\index{Théorème!d'injections continues de Sobolev}
+\begin{theoreme}[Injections continues de Sobolev]\index{théorème!d'injections continues de Sobolev}
 Soit $\Omega$ un  ouvert de $\RR^n$. Si $\Omega$ est borné et a une frontière Lipschitz-continue,
 alors, pour tout entier $m\ge 0$ et pour tout $p\in[1,+\infty[$, on dispose des inclusions avec injections continues
 suivantes:
@@ -665,7 +665,7 @@ suivantes:
 
 \medskip
 
-\begin{theoreme}[Inégalité de Poincaré]\index{Inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
+\begin{theoreme}[Inégalité de Poincaré]\index{inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
 Soit $p$, tel que $1 \le p <\infty$, et $\Omega$ un ouvert de largeur finie
 (i.e. borné dans une direction).
 Alors il existe une constante $C$, dépendant uniquement de $\Omega$ et $p$, telle que,
@@ -677,7 +677,7 @@ pour toute fonction $u\in W_0^{1,p}(\Omega)$, on ait:
 
 \medskip
 
-\begin{theoreme}[Inégalité de Poincaré-Friedrichs]\index{Inégalité!de Poincaré-Friedrichs}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand}
+\begin{theoreme}[Inégalité de Poincaré-Friedrichs]\index{inégalité!de Poincaré-Friedrichs}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand}
 Si $\Omega$ est borné de diamètre $d$, alors la constante de Poincaré
 précédente s'exprime en fonction de ce diamètre. On a,
 pour toute fonction $u\in W_0^{k,p}(\Omega)$
@@ -693,7 +693,7 @@ En particulier pour $p=2$:
 
 \medskip
 
-\begin{theoreme}[Inégalité de Poincaré-Wirtinger]\index{Inégalité!de Poincaré-Wirtinger}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Wirtinger (Wilhelm), 1865-1945, Autrichien}
+\begin{theoreme}[Inégalité de Poincaré-Wirtinger]\index{inégalité!de Poincaré-Wirtinger}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Wirtinger (Wilhelm), 1865-1945, Autrichien}
 Soit $p$, tel que $1 \le p <\infty$ et $\Omega$ un domaine (i.e. un ouvert  connexe) lipschitzien
 (i.e. borné et <<~à frontière lipschitzienne~>>) de l'espace euclidien\index[aut]{Euclide, -325-- -265, Grec}
 $\RR^n$.
@@ -709,7 +709,7 @@ du domaine $\Omega$.
 
 
 \bigskip
-\begin{theoreme}[Inégalité de Korn]\index{Inégalité!de Korn}\index[aut]{Korn (Arthur), 1870-1945, Allemand}
+\begin{theoreme}[Inégalité de Korn]\index{inégalité!de Korn}\index[aut]{Korn (Arthur), 1870-1945, Allemand}
 Soit $\Omega$ un ouvert borné de $\RR^n$ de la frontière est <<~suffisamment~>> régulière
 (par exemple $C^1$ par morceaux).
 Notons $\varepsilon(v)=\frac{1}{2}\left(\nabla v + (\nabla v)^T \right)$ le linéarisé du

@@ -66,7 +66,7 @@ Le déviateur est un tenseur de trace nulle.
 \subsection{Tenseur des contraintes}\label{Sec-TensS}
 
 \begin{histoire}%
-Le \textcolorblue{tenseur des contraintes}, ou \textcolorblue{tenseur de Cauchy},\index{Tenseur! des contraintes de Cauchy}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}
+Le \textcolorblue{tenseur des contraintes}, ou \textcolorblue{tenseur de Cauchy},\index{tenseur! des contraintes de Cauchy}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}
 n'est pas forcément introduit par la loi de Hooke généralisée qui le lie au tenseur des
 déformations ($\sigma=H\varepsilon$).\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 
@@ -85,7 +85,7 @@ En tout point $M$ il existe une infinité de facettes d'orientation différentes
 à partir de la connaissance de l'état de contrainte selon trois directions différentes.
 L'énoncé de ce théorème est le suivant:
 
-\begin{theoreme}[Théorème de Cauchy] \colorblack [un des nombreux -]:\index{Théorème!de Cauchy}
+\begin{theoreme}[Théorème de Cauchy] \colorblack [un des nombreux -]:\index{théorème!de Cauchy}
 Les composantes du vecteur contrainte en un point $M$ sur une facette de normale $\vect{n}$ dépendent
 linéairement des composantes de cette normale. Les coefficients linéaires sont les composantes du
 tenseur des contraintes.
@@ -107,7 +107,7 @@ soit au final:
 \end{equation}
 
 Les coefficients linéaires $\sigma_{ij}$ apparaissent donc comme les éléments d'un tenseur de rang 2:
-il s'agit du tenseur des contraintes de Cauchy.\index{Tenseur! des contraintes de Cauchy}
+il s'agit du tenseur des contraintes de Cauchy.\index{tenseur! des contraintes de Cauchy}
 \end{histoire}
 \colorblack
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,7 +121,7 @@ De manière encore plus explicite, on écrit:
 = \sigma n
 \end{equation}
 \textcolorgreen{D'un point de vue pratique, chacun des éléments $\sigma_{ij}$ du tenseur des
-contraintes de Cauchy\index{Tenseur! des contraintes de Cauchy} rend compte d'une contribution clairement identifiable:
+contraintes de Cauchy\index{tenseur! des contraintes de Cauchy} rend compte d'une contribution clairement identifiable:
 le premier indice $i$ est l'indice de projection (direction selon laquelle s'exerce la contribution);
 le second indice $j$ repère l'orientation de la surface sur laquelle s'exerce la contribution.
 Par exemple $\sigma_{12}$ correspond à la composante  suivant $\vect{e}_1$ de la contrainte qui
@@ -228,7 +228,7 @@ le cisaillement pur ($\eta= 0$), ou la traction uniaxiale ($\eta = 1/3$).
 Lorsque l'on parle de contraintes, on se réfère toujours au tenseur de Cauchy.
 Toutefois, plusieurs autres mesures des contraintes ont été développées:
 \begin{itemize}
-   \item Les tenseurs des contraintes de Piola-Kirchhoff:\index{Tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+   \item Les tenseurs des contraintes de Piola-Kirchhoff:\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	ils permettent d'exprimer les contraintes par rapport à une configuration de référence
 	(alors que le le tenseur des contraintes de Cauchy les exprime relativement à la configuration
 	actuelle).
@@ -238,7 +238,7 @@ Toutefois, plusieurs autres mesures des contraintes ont été développées:
 	On voit alors que, si le domaine étudié venait à varier, ces tenseurs seraient bien
 	appropriés (voir paragraphe~\ref{Sec-NLg} par exemple)
 
-   \item Le \textcolorblue{premier tenseur des contraintes de Piola-Kirchhoff $P$}\index{Tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+   \item Le \textcolorblue{premier tenseur des contraintes de Piola-Kirchhoff $P$}\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	relie les forces dans la configuration actuelle au domaine (aires) dans une
 	configuration de référence.
 	Pour l'exprimer, nous aurons donc besoin du tenseur gradient de déformation $F$ et de son
@@ -246,13 +246,13 @@ Toutefois, plusieurs autres mesures des contraintes ont été développées:
 	\begin{equation}P=J\sigma F^T \quad \text{ de coordonnées } \quad
 	P_{ij}= J \sigma_{ik}\frac{\partial u_j}{\partial x_k}\end{equation}
 
-   \item Le \textcolorblue{second tenseur des contraintes de Piola-Kirchhoff $S$},\index{Tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+   \item Le \textcolorblue{second tenseur des contraintes de Piola-Kirchhoff $S$},\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	de manière duale, relie les forces de la configuration de référence avec le domaine actuel.
 	Avec les mêmes notations qu'au dessus, on a:
 	\begin{equation} S=J F^{-1}\sigma F^{-T}  \quad \text{ de coordonnées } \quad
 	S_{ij} = J \frac{\partial u_i}{\partial x_k}\frac{\partial u_j}{\partial x_m}\sigma_{km}\end{equation}
 
-   \item Le \textcolorblue{tenseur de contraintes de Kirchhoff}\index{Tenseur! des contraintes de Kirchhoff}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+   \item Le \textcolorblue{tenseur de contraintes de Kirchhoff}\index{tenseur! des contraintes de Kirchhoff}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	$\tau = J\sigma$: il est utilisé dans des 	algorithmes numériques en plasticité des métaux
 	(où il n'y a pas de changement de volume pendant la déformation plastique).
 
@@ -260,9 +260,9 @@ Toutefois, plusieurs autres mesures des contraintes ont été développées:
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
-Pour exprimer les tenseurs de Piola-Kirchhoff\index{Tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+Pour exprimer les tenseurs de Piola-Kirchhoff\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 nous avons eu besoin du \textcolorblue{tenseur gradient de déformation
-$F$}.\index{Tenseur! gradient de déformation} Ce dernier est défini comme suit:
+$F$}.\index{tenseur! gradient de déformation} Ce dernier est défini comme suit:
 \begin{equation} F_{ij}(X,t) = \dfrac{\partial x_i}{\partial X_j} = \delta_{ij} + \frac{\partial u_i}{\partial X_j}
 \quad \text{ ou } \quad F = I + \nabla u\end{equation}
 où $X$ est la position de référence à l'instant $t_0$ (configuration $\Omega_0$) et $x$, la position
@@ -306,7 +306,7 @@ paragraphe.
 \medskip
 \subsection{Tenseur des déformations}\label{Sec-TensE}
 Le \textcolorblue{tenseur des déformations}, ou \textcolorblue{tenseur de
-Green-Lagrange},\index{Tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+Green-Lagrange},\index{tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 est obtenu directement à partir des déplacements par la relation:
 \begin{equation}\varepsilon=\frac12\left(\nabla u+(\nabla u)^T\right)%\end{equation}
 \text{ soit pour chaque composante: }
@@ -330,7 +330,7 @@ souvent $\gamma_{ij}$ au lieu de $G_{ij}$).
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Lorsque l'on parle de tenseur des déformations, on fait souvent référence au \textcolorblue{tenseur
-linéarisé des déformations},\index{Tenseur! linéarisé des déformations} obtenu en négligeant
+linéarisé des déformations},\index{tenseur! linéarisé des déformations} obtenu en négligeant
 les termes d'ordre 2 du tenseur de Green-Lagrange, ou encore \textcolorblue{tenseur des déformations
 dans le cas des petits déplacements}:
 \begin{equation}
@@ -434,8 +434,8 @@ une inconnue dans le problème.
 
 Si l'on se place dans le cas de grands déplacements, mais en conservant l'hypothèse de petites
 déformations, on est amené à effectuer la formulation variationnelle sur un domaine inconnu
-$\Omega_0$ par l'introduction des tenseurs non linéaires de Piola-Kirchhoff\index{Tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
-(contraintes) et de Green-Lagrange\index{Tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+$\Omega_0$ par l'introduction des tenseurs non linéaires de Piola-Kirchhoff\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+(contraintes) et de Green-Lagrange\index{tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 (déformations) tels que :
 \begin{equation}
 \dint_\Omega \delta\varepsilon:\sigma = \dint_{\Omega_0} \delta\varepsilon_{GL}:\sigma_{PK}
@@ -450,9 +450,9 @@ avec $\Gamma_0=\delta\Omega_0$
 \medskip
 Au niveau discret, le système non linéaire nécessite alors de recourir à une technique de linéarisation,
 comme la méthode de Newton-Raphson, permettant de manière itérative, d'obtenir une solution convergée.
-La méthode\index{Méthode de Newton-Raphson} de
+La méthode\index{méthode de Newton-Raphson} de
 Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais}
-est présentée en annexe au chapitre \ref{Ch_NewRaph}.
+est présentée en annexe au chapitre~\ref{Ch_NewRaph}.
 
 
 
@@ -777,7 +777,7 @@ critères de plasticité.
 Cette contrainte est comparée à la limite d'élasticité ou encore la contrainte de rupture obtenue par essai de traction.
 
 \medskip
-Le critère dit de von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{Critère de plasticité!von Mises}
+Le critère dit de von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{critère de plasticité!von Mises}
 a été formulé initialement par Maxwell en 1865.\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais}
 En 1904, Huber\index[aut]{Huber (Tytus Maksymilian), 1872-1950, Polonais} le développa partiellement dans un
 article en polonais.
@@ -820,7 +820,7 @@ La direction d'écoulement est donnée par le déviateur du tenseur des contrain
 
 \medskip
 \subsubsection{Critère de Tresca}
-Le \textcolorblue{critère de Tresca},\index[aut]{Tresca (Henri Édouard), 1814-1885, Français} \index{Critère de plasticité!Tresca}
+Le \textcolorblue{critère de Tresca},\index[aut]{Tresca (Henri Édouard), 1814-1885, Français} \index{critère de plasticité!Tresca}
 ou critère de Tresca-Guest,\index[aut]{Guest} ou critère de la contrainte de
 cisaillement maximal, s'exprime en fonction des cisaillements maxima dans chaque plan principal, représentés
 par les quantités $(\sigma_i-\sigma_j)$ (et non plus à l'énergie élastique de cisaillement).
@@ -847,10 +847,10 @@ augmentation de volume quel que soit le chargement appliqué.
 
 De manière générale, tout critère qui fait apparaître la pression isostatique
 produit un terme de changement de volume accompagnant la déformation plastique (mais
-pas forcément positif, comme dans le cas du modèle de Drucker-Prager\index{Critère de plasticité!Drucker-Prager}\index[aut]{Drucker (Daniel Charles), 1918-2001, Américain}\index[aut]{Prager (William), 1903-1980, Américain}
+pas forcément positif, comme dans le cas du modèle de Drucker-Prager\index{critère de plasticité!Drucker-Prager}\index[aut]{Drucker (Daniel Charles), 1918-2001, Américain}\index[aut]{Prager (William), 1903-1980, Américain}
 qui comporte donc un défaut).
 
-On l'écrit aussi sous une forme où il est plus facile de le voir comme une extension du critère de von Mises:\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{Critère de plasticité!von Mises}
+On l'écrit aussi sous une forme où il est plus facile de le voir comme une extension du critère de von Mises:\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{critère de plasticité!von Mises}
 \begin{equation} f(\sigma) = J(\sigma) - \dfrac{\sigma_y-\alpha I_1}{1-\alpha} \end{equation}
 où le coefficient $\alpha$ dépend du matériau et est compris entre 0 et $1/2$. Pour
 $\alpha=0$, on retrouve le critère de von Mises.
@@ -858,8 +858,8 @@ $\alpha=0$, on retrouve le critère de von Mises.
 \medskip
 \subsubsection{Critère de Mohr-Coulomb}
 
-Ce critère\index{Critère de plasticité!Mohr-Coulomb}\index[aut]{Mohr (Christian Otto), 1835-1918, Allemand}\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français}
-est apparenté à celui de Tresca,\index{Critère de plasticité!Tresca}\index[aut]{Tresca (Henri Édouard), 1814-1885, Français}
+Ce critère\index{critère de plasticité!Mohr-Coulomb}\index[aut]{Mohr (Christian Otto), 1835-1918, Allemand}\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français}
+est apparenté à celui de Tresca,\index{critère de plasticité!Tresca}\index[aut]{Tresca (Henri Édouard), 1814-1885, Français}
 car il fait intervenir comme lui le cisaillement maximum, mais, contrairement à lui, il ajoute en même temps
 la contrainte <<~moyenne~>>, représentée par le centre du cercle de Mohr correspondant au cisaillement
 maximum, soit:
@@ -879,12 +879,12 @@ Une solution couramment adoptée généralise le critère de von Mises, en utili
 l'expression : $J_H(\sigma) = \sqrt{\sigma : H : \sigma}$.
 
 \medskip
-Le \textcolorblue{critère de Hill}\index[aut]{Hill (Rodney), 1921-2011, Anglais}\index{Critère de plasticité!Hill}
+Le \textcolorblue{critère de Hill}\index[aut]{Hill (Rodney), 1921-2011, Anglais}\index{critère de plasticité!Hill}
 correspond à une anisotropie particulière qui conserve trois plans de  symétrie dans l'état d'écrouissage du
 matériau.
 
 \medskip
-Le \textcolorblue{critère de Tsaï}\index{Critère de plasticité!Tsaï}\index[aut]{Tsaï (Stephen W), ?-, Américain}
+Le \textcolorblue{critère de Tsaï}\index{critère de plasticité!Tsaï}\index[aut]{Tsaï (Stephen W), ?-, Américain}
 est obtenu à partir de celui de Hill afin de représenter la dissymétrie entre traction et compression.
 
 
@@ -1180,7 +1180,7 @@ On pourra avoir des stratifiés de \textcolorblue{type}:
 L'ingénieur mécanicien est souvent bien au fait des diverses approximations possibles d'un
 matériau composite. Nous serons par conséquent assez brefs sur le sujet.
 
-Par ailleurs le chapitre \ref{Ch-Homog} sur l'homogénéisation permet, dans certains cas, de remplacer
+Par ailleurs le chapitre~\ref{Ch-Homog} sur l'homogénéisation permet, dans certains cas, de remplacer
 un matériau composite compliqué par un matériau homogénéisé plus simple.
 
 \medskip
@@ -1473,7 +1473,7 @@ des inconnues nodales de la structure $\VV{q}$.
 
 \medskip
 Pour résoudre ce système d'équations non linéaires, on utilise une méthode itérative
-de type Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais}\index{Méthode de Newton-Raphson}
+de type Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais}\index{méthode de Newton-Raphson}
 qui consiste à linéariser le système précédent en:
 \begin{align}
 &\MM{K_T}^i \VV{d}^{i+1} = -\VV{F_{int}}^i + \VV{F_{ext}}^i+\VV{F_{reac}}^i\\

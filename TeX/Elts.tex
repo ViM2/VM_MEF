@@ -44,7 +44,7 @@ de fonctions pour un maillage donné.
 
 
 \medskip
-\section{Éléments de Lagrange}\index{EF de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+\section{Éléments de Lagrange}\index{élément fini de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
 Les éléments de Lagrange sont les éléments finis les plus simples.
 
@@ -61,7 +61,7 @@ $(p(a_i),\ldots, p(a_N))=(\alpha_1,\ldots, \alpha_N)$ est bijective).
 \end{definition}
 
 \medskip
-\subsection{Éléments finis de Lagrange}\index{EF de Lagrange}
+\subsection{Éléments finis de Lagrange}\index{élément fini de Lagrange}
 
 \begin{definition}[Éléments finis de Lagrange]
 Un \textcolorblue{élément fini de Lagrange} est un triplet $(K, \Sigma, P)$ tel que:
@@ -213,7 +213,7 @@ $P$ & $\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 
 
 \medskip
-\subsection{Famille affine d'éléments finis et élément de référence}\index{Elément de référence}\index{Famille affine d'EF}
+\subsection{Famille affine d'éléments finis et élément de référence}\index{élément de référence}\index{Famille affine d'EF}
 En fait, la notion de transformation affine entre un élément $K$ d'un maillage
 $\mathcal{T}_h$ et un élément de référence a déjà été utilisée en
 calcul de majoration d'erreur, mais la transformation elle-même n'a pas été
@@ -253,7 +253,7 @@ Les éléments finis de références sont ceux obtenus, dans les cas présentés
 
 \medskip
 \subsection{Construction de la base globale}
-Revenons à notre problème décrit par une EDP sous forme faible dans un domaine
+Revenons à notre problème décrit par une équation aux dérivées partielles sous forme faible dans un domaine
 $\Omega$ sur lequel on réalise un maillage $\mathcal{T}_h$ à partir d'une famille affine
 de $N_e$ éléments finis $(K_i, \Sigma_i, P_i)_{i=1,\ldots,N_e}$.
 \medskip
@@ -293,10 +293,10 @@ en dimension 3.
 \end{figure}
 
 \medskip
-\section{Éléments d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
+\section{Éléments d'Hermite}\index{élément fini d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
 \medskip
-\subsection{Classe d'un éléments finis}\index{Classe d'un EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
+\subsection{Classe d'un éléments finis}\index{classe d'un élément fini d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
 Une question naturelle est de savoir quelle est la régularité de la solution approchée
 $u_h$. En particulier, $u_h$ est-elle continue? dérivable?
@@ -313,7 +313,7 @@ nous allons introduire maintenant.
 
 
 \medskip
-\subsection{Éléments finis d'Hermite}\index{EF d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
+\subsection{Éléments finis d'Hermite}\index{élément fini d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
 \begin{definition}[Élément fini d'Hermite]
 Un \textcolorblue{élément fini d'Hermite ou élément fini général} est un
@@ -339,7 +339,7 @@ $\pi_kv$ est l'unique élément de $P$ qui prend les mêmes valeurs que $v$ sur 
 points de $\Sigma$.
 \medskip
 On remarque immédiatement que si $\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les éléments finis
-de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{EF de Lagrange}
+de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{élément fini de Lagrange}
 Cette généralisation permet d'introduire des opérations de dérivation dans $\Sigma$,
 et donc d'améliorer la régularité des fonctions de $V_h$.
 \medskip
@@ -460,7 +460,7 @@ allons donner une motivation pour le faire: celui du calcul des contraintes à
 l'interface entre deux matériaux différents que nous supposerons parfaitement
 collés.
 
-Considérons donc le problème décrit à la figure \ref{interf}.
+Considérons donc le problème décrit à la figure~\ref{interf}.
 \begin{figure}[ht]
 \centering
 \includegraphics[height=50mm]{interface.eps}
@@ -500,7 +500,7 @@ Plusieurs stratégies sont envisageables:
 	le long de l'interface).\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 \item[\textcolorblue{Élément mixte:}]
 
-	La fonctionnelle d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{Fonctionnelle!d'Hellinger-Reissner}
+	La fonctionnelle d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}
 	possède les champs de déplacement et de
 	contrainte comme inconnues. Elle conduit à un système de type mixte
 	(équation \eqref{Eq:SysMixte}) avec une matrice qui n'est plus définie-positive.
@@ -563,7 +563,7 @@ de la bonne programmation.
 \medskip
 Plusieurs types de tests peuvent et doivent être faits, sur plusieurs problèmes
 types. Ces tests concernent aussi bien un seul élément, que plusieurs
-(\textcolorblue{patch-test}),\index{Patch-Test} et même différents maillages.
+(\textcolorblue{patch-test}),\index{patch-test} et même différents maillages.
 \medskip
 En mécanique, on distingue les cas listés dans le tableau~\ref{tab:Elem:test}.
 \begin{table}[ht]\centering\footnotesize
@@ -620,7 +620,7 @@ Dans un second temps, on introduit les efforts nodaux comme condition aux limite
 élément fini et on vérifie si l'on retrouve bien l'état de contrainte initialement choisi.
 
 \medskip
-\subsection{Patch-tests}\index{Patch-Test}
+\subsection{Patch-tests}\index{patch-test}
 Le domaine choisi doit posséder au moins un nœud à l'intérieur du domaine.
 On définit un champ de déplacement conduisant à un état de déformation
 désiré (constant ou non), que l'on introduit comme condition aux limites dans le modèle élément fini.
@@ -672,10 +672,10 @@ la valeur de l'énergie potentielle totale. Plus sa valeur sera petite, meilleur
 sera le modèle.
 
 \medskip
-On peut également vérifier que certaines équations d'équilibre sont vérifiées
+On peut également s'assurer que certaines équations d'équilibre sont vérifiées
 à l'intérieur d'un élément ou le long d'une frontière entre éléments (par
 exemple à l'interface entre deux domaines, un problème évoqué un peu avant
-au paragraphe \ref{Sec-interf})...
+au paragraphe~\ref{Sec-interf})...
 
 
 \ifVersionAvecExemplesSepares\else
