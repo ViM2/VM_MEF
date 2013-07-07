@@ -1,7 +1,7 @@
 \ifVersionAvecExemplesSepares
-   \chapter{[\ansys] Implémentation d'un post-traitement}
+  \chapter{[\ansys] Implémentation d'un post-traitement}
 \else
-   \section{Exemple d'implémentation d'un post-traitement dans \ansys}
+  \section{Exemple d'implémentation d'un post-traitement dans \ansys}
 \fi
 
 Dans ce chapitre, nous présentons un manière d'implémenter la méthode de Reiss local mentionnée aux
@@ -21,9 +21,9 @@ démontrerons également qu'il est assez simple d'implémenter des fonctions dan
 
 \medskip
 \ifVersionAvecExemplesSepares
-   \section{Macro dans \ansys}
+  \section{Macro dans \ansys}
 \else
-   \subsection{Macro dans \ansys}
+  \subsection{Macro dans \ansys}
 \fi
 
 Si un code ne dispose pas de la méthode que l'on souhaite utiliser, il est toujours possible de retraiter les
@@ -46,13 +46,13 @@ présenter l'implémentation d'une macro dans ce code.
 \medskip
 Pour implémenter une nouvelle fonction dans \ansys, plusieurs méthodes s'offrent à nous. Nous citerons:
 \begin{itemize}
-   \item écrire le bout de programme et recompiler le noyau: c'est faisable en théorie, mais personnellement je n'ai
+  \item écrire le bout de programme et recompiler le noyau: c'est faisable en théorie, mais personnellement je n'ai
 	jamais réussi...
-   \item partir des fichiers de résultats binaires pour les retravailler: c'est également théoriquement faisable, mais
+  \item partir des fichiers de résultats binaires pour les retravailler: c'est également théoriquement faisable, mais
 	il faut décortiquer les formats d'écriture desdits fichiers, les relire, réécrire dans le même format...
 	et c'est donc beaucoup de travail (purement informatique);
-   \item programmer la fonction directement sous \ansys (\ansys possède un langage assez riche et puissant);
-   \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en <<~coopération~>> avec un
+  \item programmer la fonction directement sous \ansys (\ansys possède un langage assez riche et puissant);
+  \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en <<~coopération~>> avec un
 	petit programme extérieur.
 \end{itemize}
 
@@ -60,9 +60,9 @@ Pour implémenter une nouvelle fonction dans \ansys, plusieurs méthodes s'offre
 La structure de la macro \ansys que nous proposons (et qui peut être également incluse dans les menus d'\ansys, mais
 nous n'entrons pas dans ce niveau de détail d'interfaçage) est très simple:
 \begin{itemize}
-   \item on récupère les données dont nous avons besoin et on les stocke dans des fichiers externes (simples);
-   \item on lance un programme externe (dont la structure sera exposée plus bas);
-   \item on réintègre les résultats dans \ansys.
+  \item on récupère les données dont nous avons besoin et on les stocke dans des fichiers externes (simples);
+  \item on lance un programme externe (dont la structure sera exposée plus bas);
+  \item on réintègre les résultats dans \ansys.
 \end{itemize}
 On peut alors se servir de toutes les fonctions de visualisation disponibles dans \ansys avec les résulats modifiés...
 
@@ -93,9 +93,9 @@ nall
 *cfopen,temp,mat
 *dim,Mater,,Nmater,3
 *do,I,1,Nmater
-   *get,Mater(I,1),Ex,I
-   *get,Mater(I,2),Ey,I
-   *get,Mater(I,3),Nuxy,I
+  *get,Mater(I,1),Ex,I
+  *get,Mater(I,2),Ey,I
+  *get,Mater(I,3),Nuxy,I
 *enddo
 *vwrite,Mater(1,1),Mater(1,2),Mater(1,3)
 (3(E13.7,' '))
@@ -109,7 +109,7 @@ nall
 *vget,CoordY(1),node,,loc,y
 *cfopen,temp,coo
 *vwrite,CoordX(1),CoordY(1)
-(2(E13.7,'  '))
+(2(E13.7,' '))
 *cfclose
 !
 ! Elements + numero du materiau
@@ -125,8 +125,8 @@ nall
 *vget,E1(1,9),elem,1,attr,mat
 *cfopen,temp,elt
 *vwrite,E1(1,1),E1(1,2),E1(1,3),E1(1,4),E1(1,5),E1(1,6),
-               E1(1,7),E1(1,8),E1(1,9)
-(9(E13.7,'  '))
+        E1(1,7),E1(1,8),E1(1,9)
+(9(E13.7,' '))
 *cfclose
 !
 ! Resultats
@@ -134,7 +134,7 @@ nall
 *vget,CoordY(1),node,1,U,y
 *cfopen,temp,res
 *vwrite,CoordX(1),CoordY(1)
-(2(E13.7,'  '))
+(2(E13.7,' '))
 *cfclose
 !
 ! Contraintes
@@ -143,25 +143,25 @@ nall
 *vget,CoordZ(1),node,1,S,xy
 *cfopen,temp,str
 *vwrite,CoordX(1),CoordY(1),CoordZ(1)
-(3(E13.7,'  '))
+(3(E13.7,' '))
 *cfclose
 !
 ! run locreiss.exe
 /sys,'locreiss.exe'
 !
 ! Effacer les fichiers
-!  generes par ANSYS :
-!     - temp.par : parametres
-!     - temp.coo : coordonnees nodales
-!     - temp.elt : incidences
-!     - temp.mat : proprietes materielles
-!     - temp.res : deplacements nodaux
-!     - temp.str : contraintes nodales
-!  generes par locreiss.exe :
-!     - temp.dum
-!     - temp.tmp
+! generes par ANSYS:
+!   - temp.par: parametres
+!   - temp.coo: coordonnees nodales
+!   - temp.elt: incidences
+!   - temp.mat: proprietes materielles
+!   - temp.res: deplacements nodaux
+!   - temp.str: contraintes nodales
+! generes par locreiss.exe:
+!   - temp.dum
+!   - temp.tmp
 ! Il reste les fichiers
-!     - temp.sij : contraintes nodales modifiees
+!   - temp.sij: contraintes nodales modifiees
 !
 !/sys,'rm ./temp.par'
 !/sys,'rm ./temp.coo'
@@ -209,68 +209,68 @@ Le programme extérieur \verb|locreiss.exe|, est structuré comme suit:
 
 \color{gris}\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt]
-      PROGRAM VM2
+   PROGRAM VM2
 C
-      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
-      IMPLICIT INTEGER (I-N)
+   IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+   IMPLICIT INTEGER (I-N)
 C
 C--------------------------------------------------------------------------
 C
-C   But:
-C     1. on relit les fichiers d'ANSYS generes avec la macro INTERF
-C     2. on determine les noeuds de post-traitement
-C     3. on effectue un Reissner local aux interfaces
+C  But:
+C   1. on relit les fichiers d'ANSYS generes avec la macro INTERF
+C   2. on determine les noeuds de post-traitement
+C   3. on effectue un Reissner local aux interfaces
 C
-C   WARNING:
-C     On ne traite que le cas de PLANE 82 avec une geometrie definie
-C     dans le plan (X,Y)
+C  WARNING:
+C   On ne traite que le cas de PLANE 82 avec une geometrie definie
+C   dans le plan (X,Y)
 C
-C   MAIN of : VM
+C  MAIN of: VM
 C
-C   Written by : Vincent MANET
-C                EMSE, 98
+C  Written by: Vincent MANET
+C        EMSE, 98
 C
 C----------------------------------------------------------------------------
 C
-      PARAMETER(NODMAX=1000,NELTMAX=300,MATMAX=4)
+   PARAMETER(NODMAX=1000,NELTMAX=300,MATMAX=4)
 C
-      COMMON /VMCTS/ COMPI,ZERO,ONE,IINP,IOUT,ICON,MONI
-      COMMON /NPB/ NNOD,NELT,NMAT,NCAL
+   COMMON /VMCTS/ COMPI,ZERO,ONE,IINP,IOUT,ICON,MONI
+   COMMON /NPB/ NNOD,NELT,NMAT,NCAL
 C
 C
-      DIMENSION COORD(NODMAX,3),DISP(NODMAX,2)
-      DIMENSION XMAT(MATMAX,3),NLT(NELTMAX,9)
-      DIMENSION NCALC(NODMAX,5),NADJ(NODMAX,8),NDT(NODMAX,8)
-      DIMENSION D1(3,3),D2(3,3)
+   DIMENSION COORD(NODMAX,3),DISP(NODMAX,2)
+   DIMENSION XMAT(MATMAX,3),NLT(NELTMAX,9)
+   DIMENSION NCALC(NODMAX,5),NADJ(NODMAX,8),NDT(NODMAX,8)
+   DIMENSION D1(3,3),D2(3,3)
 C
 C---- Presetings
-      MONI=0            ! monitoring level (debug)
-      ICON=6            ! standard output = screen
-      IINP=10           ! input file
-      IOUT=20           ! output file
-      ZERO=0.0D0        ! zero
-      ONE=1.0D0         ! one
-      COMPI=DACOS(-ONE) ! pi
+   MONI=0      ! monitoring level (debug)
+   ICON=6      ! standard output = screen
+   IINP=10      ! input file
+   IOUT=20      ! output file
+   ZERO=0.0D0    ! zero
+   ONE=1.0D0     ! one
+   COMPI=DACOS(-ONE) ! pi
 C
 C
 C---- Read input files
-      CALL READANS(NODMAX,NELTMAX,MATMAX,COORD,XMAT,NLT,DISP)
+   CALL READANS(NODMAX,NELTMAX,MATMAX,COORD,XMAT,NLT,DISP)
 C
 C---- Find Adjacent elements
-      CALL CHELT(NODMAX,NELTMAX,NLT,NCALC,NADJ,NDT)
+   CALL CHELT(NODMAX,NELTMAX,NLT,NCALC,NADJ,NDT)
 C
 C---- Material properties
-      CALL MATER(MATMAX,XMAT,D1,D2,D3,D4,NODMAX,NADJ,NELTMAX,NLT)
+   CALL MATER(MATMAX,XMAT,D1,D2,D3,D4,NODMAX,NADJ,NELTMAX,NLT)
 C
 C---- Computation: Local Reissner
-      CALL LOCREISS(NODMAX,NELTMAX,D1,D2,D3,D4,
-     x              COORD,NLT,NADJ,DISP)
+   CALL LOCREISS(NODMAX,NELTMAX,D1,D2,D3,D4,
+   x       COORD,NLT,NADJ,DISP)
 C
 C---- Average multi-computed nodes
-      CALL AVERAGE(NODMAX,MULTI)
+   CALL AVERAGE(NODMAX,MULTI)
 C
 C---- Last line of VM2
-      END
+   END
 \end{Verbatim}
 \color{black}\normalsize
 
@@ -309,20 +309,20 @@ macros \ansys.
 
 \medskip
 \ifVersionAvecExemplesSepares
-   \section{Poutre en U}
+  \section{Poutre en U}
 \else
-   \subsection{Poutre en U}
+  \subsection{Poutre en U}
 \fi
 
 \begin{figure}[ht]
-   \includegraphics[height=80mm]{U-geo.eps} \hfill
-   \includegraphics[height=80mm]{U-mesh1.eps}\hfill
-   \includegraphics[height=80mm]{U-mesh2.eps}
-   \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le calcul (test de la méthode Reissner local,
+  \includegraphics[height=80mm]{U-geo.eps} \hfill
+  \includegraphics[height=80mm]{U-mesh1.eps}\hfill
+  \includegraphics[height=80mm]{U-mesh2.eps}
+  \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le calcul (test de la méthode Reissner local,
 c) maillage permettant d'obtenir la <<~solution de référence~>> puisqu'il n'y a pas de solution analytique}
 \end{figure}
 
-Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en $U$.
+Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en~$U$.
 
 Il s'agit d'une poutre sandwich dont les peaux sont en aluminium et l'âme en résine époxy.
 Par symétrie, seule une demi-poutre est modélisée. Elle est soumise à une force unitaire
@@ -518,7 +518,7 @@ PEAUEXT = SURF1 ET SURF2;
 * ELIMINE PEAUEXT;
 SURF1 = DALLER L3 L6 L7 L5;
 SURF2 = DALLER L6 L13 L14 L15;
-AME =  SURF1 ET SURF2;
+AME = SURF1 ET SURF2;
 * ELIMINE AME;
 SURF1 = DALLER L8 L7 L10 L9;
 SURF2 = DALLER L10 L15 L16 L17;
@@ -573,27 +573,27 @@ et voir ce qui se passe aux interfaces...
 
 \medskip
 \ifVersionAvecExemplesSepares
-   \section{Résultats}
+  \section{Résultats}
 \else
-   \subsection{Résultats}
+  \subsection{Résultats}
 \fi
 
 
 Dans les listings ci-dessus, nous n'avons pas exposé comme atteindre les contraintes, car cela sera fait en TP.
 
-Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour la déformée et les déplacements selon $x$ et $y$,
+Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour la déformée et les déplacements selon~$x$ et~$y$,
 et à la \fig{Fig-poutU-eps} pour les déformations.
 \begin{figure}[ht]
-   \includegraphics[height=80mm]{U-def.eps} \hfill
-   \includegraphics[height=80mm]{U-ux.eps}\hfill
-   \includegraphics[height=80mm]{U-uy.eps}
-   \caption{\label{Fig-poutU-disp} Déformée et déplacements}
+  \includegraphics[height=80mm]{U-def.eps} \hfill
+  \includegraphics[height=80mm]{U-ux.eps}\hfill
+  \includegraphics[height=80mm]{U-uy.eps}
+  \caption{\label{Fig-poutU-disp} Déformée et déplacements}
 \end{figure}
 \begin{figure}[ht]
-   \includegraphics[height=80mm]{U-epsXX.eps} \hfill
-   \includegraphics[height=80mm]{U-epsYY.eps}\hfill
-   \includegraphics[height=80mm]{U-epsXY.eps}
-   \caption{\label{Fig-poutU-eps} Déformations}
+  \includegraphics[height=80mm]{U-epsXX.eps} \hfill
+  \includegraphics[height=80mm]{U-epsYY.eps}\hfill
+  \includegraphics[height=80mm]{U-epsXY.eps}
+  \caption{\label{Fig-poutU-eps} Déformations}
 \end{figure}
 
 
@@ -602,21 +602,21 @@ et à la \fig{Fig-poutU-eps} pour les déformations.
 Néanmoins nous présentons quelques résultats issus de l'analyse des contraintes aux interfaces avec ou sans
 utilisation de la méthode de Reissner local.
 Nous nous concentrerons sur les résultats numériques et graphiques permettant d'apprécier la précision de la
-méthode de Reissner local par rapport aux résultats d'\ansys aux points $A$, $B$, $E$ et $F$ ainsi que d'étudier
-l'influence de la valeur du rayon $R$.
+méthode de Reissner local par rapport aux résultats d'\ansys aux points~$A$, $B$, $E$ et~$F$ ainsi que d'étudier
+l'influence de la valeur du rayon~$R$.
 
 \medskip
 Une première remarque s'impose: plus la valeur du rayon est faible, plus les résultats sont mauvais, quelle que soit la
 méthode employée (et vous devez savoir pourquoi à ce niveau du document).
 
 \medskip
-Au point $A$, l'influence des conditions aux limites est encore sensible: en plus de la condition de symétrie de la structure,
+Au point~$A$, l'influence des conditions aux limites est encore sensible: en plus de la condition de symétrie de la structure,
 le blocage du déplacement vertical induit une légère détérioration des résultats numériques. L'influence
-de cette condition aux limites n'est plus visible au point $B$.
+de cette condition aux limites n'est plus visible au point~$B$.
 
 \medskip
-En $A$ et $B$, la composante discontinue est $\sigma_{xx}$, les composantes $\sigma_{yy}$ et $\sigma_{xy}$ sont
-continues. Par contre, aux points $E$ et $F$, c'est $\sigma_{yy}$ la composante discontinue et $\sigma_{xx}$ et
+En~$A$ et~$B$, la composante discontinue est~$\sigma_{xx}$, les composantes~$\sigma_{yy}$ et~$\sigma_{xy}$ sont
+continues. Par contre, aux points~$E$ et~$F$, c'est~$\sigma_{yy}$ la composante discontinue et~$\sigma_{xx}$ et
 $\sigma_{xy}$ les composantes continues.
 
 \medskip
@@ -632,50 +632,50 @@ résultats par rapport à \ansys.
 \bigskip
 \begin{table}[hb]
 \centering\small
-   \begin{tabular}{|l||r|r|r|r|r|}
-      \hline
-      \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
-      \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
-      \multicolumn{1}{|c}{$\sigma_{xx}$}&
-      \multicolumn{1}{|c}{$\sigma_{xx}$}&
-      \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{yy}$}}&
-      \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
-      &&
-      \multicolumn{1}{|c}{peau}&
-      \multicolumn{1}{|c|}{âme}&&\\
-      &(mm)&
-      \multicolumn{1}{|c}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}\\
-      \hline
-      \hline
-      Ref  &10 &72,085  &4,0121  &1,5883  &-0,0023339   \\
-      Reiss&10 &71,957  &3,9670  &1,5987  &-0,0155720   \\
-      \ansys&10&71,957  &3,9670  & 1,5116 & 0,0086231   \\
-      \hline
-      Ref  &8  &66,500  &3,8400  &1,8556  &-0,0022273   \\
-      Reiss&8  &66,665  &3,7863  &1,8888  &-0,0118667   \\
-      \ansys&8 &66,665  &3,7863  & 1,7943 & 0,0111910   \\
-      \hline
-      Ref  &5  &57,289  &3,6598  &2,6317  &-0,0018770   \\
-      Reiss&5  &57,727  &3,5771  &2,6979  &-0,0071024   \\
-      \ansys&5 &57,727  &3,5771  & 2,6066 & 0,0128210   \\
-      \hline
-      Ref  &3  &49,551  &3,6827  &3,9304  &-0,0014368   \\
-      Reiss&3  &49,454  &3,5552  &4,0110  &-0,0046055   \\
-      \ansys&3 &49,454  &3,5552  & 3,9621 & 0,0106410   \\
-      \hline
-      Ref  &2  &42,699  &3,8289  &5,4227  &-0,0009727   \\
-      Reiss&2  &42,362  &3,6593  &5,4785  &-0,0037443   \\
-      \ansys&2 &42,362  &3,6593  & 5,5264 & 0,0059470   \\
-      \hline
-      Ref  &1  &27,171  &4,3142  &9,2850  &-0,0004173   \\
-      Reiss&1  &25,876  &4,0707  &9,1122  &-0,0021565   \\
-      \ansys&1 &25,876  &4,0707  &9,6345  & 0,0005231   \\
-      \hline
-   \end{tabular}
-\caption{\label{Tab:pt-A} Résultats au point $A$}
+  \begin{tabular}{|l||r|r|r|r|r|}
+   \hline
+   \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
+   \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
+   \multicolumn{1}{|c}{$\sigma_{xx}$}&
+   \multicolumn{1}{|c}{$\sigma_{xx}$}&
+   \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{yy}$}}&
+   \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
+   &&
+   \multicolumn{1}{|c}{peau}&
+   \multicolumn{1}{|c|}{âme}&&\\
+   &(mm)&
+   \multicolumn{1}{|c}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}\\
+   \hline
+   \hline
+   Ref &10 &72,085 &4,0121 &1,5883 &-0,0023339  \\
+   Reiss&10 &71,957 &3,9670 &1,5987 &-0,0155720  \\
+   \ansys&10&71,957 &3,9670 & 1,5116 & 0,0086231  \\
+   \hline
+   Ref &8 &66,500 &3,8400 &1,8556 &-0,0022273  \\
+   Reiss&8 &66,665 &3,7863 &1,8888 &-0,0118667  \\
+   \ansys&8 &66,665 &3,7863 & 1,7943 & 0,0111910  \\
+   \hline
+   Ref &5 &57,289 &3,6598 &2,6317 &-0,0018770  \\
+   Reiss&5 &57,727 &3,5771 &2,6979 &-0,0071024  \\
+   \ansys&5 &57,727 &3,5771 & 2,6066 & 0,0128210  \\
+   \hline
+   Ref &3 &49,551 &3,6827 &3,9304 &-0,0014368  \\
+   Reiss&3 &49,454 &3,5552 &4,0110 &-0,0046055  \\
+   \ansys&3 &49,454 &3,5552 & 3,9621 & 0,0106410  \\
+   \hline
+   Ref &2 &42,699 &3,8289 &5,4227 &-0,0009727  \\
+   Reiss&2 &42,362 &3,6593 &5,4785 &-0,0037443  \\
+   \ansys&2 &42,362 &3,6593 & 5,5264 & 0,0059470  \\
+   \hline
+   Ref &1 &27,171 &4,3142 &9,2850 &-0,0004173  \\
+   Reiss&1 &25,876 &4,0707 &9,1122 &-0,0021565  \\
+   \ansys&1 &25,876 &4,0707 &9,6345 & 0,0005231  \\
+   \hline
+  \end{tabular}
+\caption{\label{Tab:pt-A} Résultats au point~$A$}
 \end{table}
 
 
@@ -685,28 +685,28 @@ résultats par rapport à \ansys.
 %\centering
 %\input{tex/a-sxxc.2012.txt}
 %
-%   \caption{\label{Fig:asxxc} $\sigma_{xx}$ dans l'âme en $A$}
+%  \caption{\label{Fig:asxxc}~$\sigma_{xx}$ dans l'âme en~$A$}
 %\end{figure}
 %
 %\begin{figure}
 %\centering
 %\input{tex/a-sxxs.2012.txt}
 %
-%   \caption{\label{Fig:asxxs} $\sigma_{xx}$ dans la peau en $A$}
+%  \caption{\label{Fig:asxxs}~$\sigma_{xx}$ dans la peau en~$A$}
 %\end{figure}
 
 
 \begin{figure}[ht]
 \centering
 \input{tex/a-syy.2012.txt}
-\caption{\label{Fig:asyy} $\sigma_{yy}$ en $A$}
+\caption{\label{Fig:asyy}~$\sigma_{yy}$ en~$A$}
 \end{figure}
 
 
 \begin{figure}[ht]
 \centering
 \input{tex/a-sxy.2012.txt}
-\caption{\label{Fig:asxy} $\sigma_{xy}$ en $A$}
+\caption{\label{Fig:asxy}~$\sigma_{xy}$ en~$A$}
 \end{figure}
 
 %\clearpage
@@ -719,64 +719,64 @@ résultats par rapport à \ansys.
 
 \begin{table}
 \centering\small
-   \begin{tabular}{|l||r|c|c|c|c|}
-      \hline
-      \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
-      \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
-      \multicolumn{1}{|c}{$\sigma_{xx}$}&
-      \multicolumn{1}{|c}{$\sigma_{xx}$}&
-      \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{yy}$}}&
-      \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
-      &&
-      \multicolumn{1}{|c}{peau}&
-      \multicolumn{1}{|c|}{âme}&&\\
-      &(mm)&
-      \multicolumn{1}{|c}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}\\
-      \hline
-      \hline
-      Ref&  10 & -72,248 & -3,0668 & 1,4080 & -0,0023570 \\
-      Reiss&10 & -72,542 & -3,1193 & 1,2573 & -0,0138800 \\
-      \ansys&10& -72,542 & -3,1193 & 1,5464 & -0,0198700 \\
-      \hline
-      Ref&  8  & -67,723 & -2,7905 & 1,5799 & -0,0026011 \\
-      Reiss&8  & -68,001 & -2,8457 & 1,4570 & -0,0107700 \\
-      \ansys&8 & -68,001 & -2,8457 & 1,7111 & -0,0197300 \\
-      \hline
-      Ref&  5  & -61,079 & -2,3199 & 2,0320 & -0,0024099 \\
-      Reiss&5  & -61,335 & -2,3813 & 1,9460 & -0,0067001 \\
-      \ansys&5 & -61,335 & -2,3813 & 2,1535 & -0,0186210 \\
-      \hline
-      Ref&  3  & -56,823 & -1,9080 & 2,6611 & -0,0022154 \\
-      Reiss&3  & -57,072 & -1,9756 & 2,5888 & -0,0045050 \\
-      \ansys&3 & -57,072 & -1,9756 & 2,7738 & -0,0176540 \\
-      \hline
-      Ref&  2  & -54,772 & -1,6200 & 3,2396 & -0,0021234 \\
-      Reiss&2  & -55,026 & -1,6902 & 3,1612 & -0,0036124 \\
-      \ansys&2 & -55,026 & -1,6902 & 3,3438 & -0,0172760 \\
-      \hline
-      Ref&  1  & -52,491 & -1,1687 & 4,2871 & -0,0020797 \\
-      Reiss&1  & -52,777 & -1,2391 & 4,1625 & -0,0031088 \\
-      \ansys&1 & -52,777 & -1,2391 & 4,3710 & -0,0174200 \\
-      \hline
-   \end{tabular}
-   \caption{\label{Tab:pt-B} Résultats au point $B$}
+  \begin{tabular}{|l||r|c|c|c|c|}
+   \hline
+   \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
+   \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
+   \multicolumn{1}{|c}{$\sigma_{xx}$}&
+   \multicolumn{1}{|c}{$\sigma_{xx}$}&
+   \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{yy}$}}&
+   \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
+   &&
+   \multicolumn{1}{|c}{peau}&
+   \multicolumn{1}{|c|}{âme}&&\\
+   &(mm)&
+   \multicolumn{1}{|c}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}\\
+   \hline
+   \hline
+   Ref& 10 & -72,248 & -3,0668 & 1,4080 & -0,0023570 \\
+   Reiss&10 & -72,542 & -3,1193 & 1,2573 & -0,0138800 \\
+   \ansys&10& -72,542 & -3,1193 & 1,5464 & -0,0198700 \\
+   \hline
+   Ref& 8 & -67,723 & -2,7905 & 1,5799 & -0,0026011 \\
+   Reiss&8 & -68,001 & -2,8457 & 1,4570 & -0,0107700 \\
+   \ansys&8 & -68,001 & -2,8457 & 1,7111 & -0,0197300 \\
+   \hline
+   Ref& 5 & -61,079 & -2,3199 & 2,0320 & -0,0024099 \\
+   Reiss&5 & -61,335 & -2,3813 & 1,9460 & -0,0067001 \\
+   \ansys&5 & -61,335 & -2,3813 & 2,1535 & -0,0186210 \\
+   \hline
+   Ref& 3 & -56,823 & -1,9080 & 2,6611 & -0,0022154 \\
+   Reiss&3 & -57,072 & -1,9756 & 2,5888 & -0,0045050 \\
+   \ansys&3 & -57,072 & -1,9756 & 2,7738 & -0,0176540 \\
+   \hline
+   Ref& 2 & -54,772 & -1,6200 & 3,2396 & -0,0021234 \\
+   Reiss&2 & -55,026 & -1,6902 & 3,1612 & -0,0036124 \\
+   \ansys&2 & -55,026 & -1,6902 & 3,3438 & -0,0172760 \\
+   \hline
+   Ref& 1 & -52,491 & -1,1687 & 4,2871 & -0,0020797 \\
+   Reiss&1 & -52,777 & -1,2391 & 4,1625 & -0,0031088 \\
+   \ansys&1 & -52,777 & -1,2391 & 4,3710 & -0,0174200 \\
+   \hline
+  \end{tabular}
+  \caption{\label{Tab:pt-B} Résultats au point~$B$}
 \end{table}
 
 %\begin{figure}
 %\centering
 %\input{tex/b-sxxc.2012.txt}
 %
-%   \caption{\label{Fig:bsxxc} $\sigma_{xx}$ dans l'âme en $B$}
+%  \caption{\label{Fig:bsxxc}~$\sigma_{xx}$ dans l'âme en~$B$}
 %\end{figure}
 %
 %\begin{figure}
 %\centering
 %\input{tex/b-sxxs.2012.txt}
 %
-%   \caption{\label{Fig:bsxxs} $\sigma_{xx}$ dans la peau en $B$}
+%  \caption{\label{Fig:bsxxs}~$\sigma_{xx}$ dans la peau en~$B$}
 %\end{figure}
 %
 %\clearpage
@@ -784,77 +784,77 @@ résultats par rapport à \ansys.
 \begin{figure}[ht]
 \centering
 \input{tex/b-syy.2012.txt}
-\caption{\label{Fig:bsyy} $\sigma_{yy}$ en $B$}
+\caption{\label{Fig:bsyy}~$\sigma_{yy}$ en~$B$}
 \end{figure}
 %\clearpage
 
 \begin{figure}[ht]
 \centering
 \input{tex/b-sxy.2012.txt}
-\caption{\label{Fig:bsxy} $\sigma_{xy}$ en $B$}
+\caption{\label{Fig:bsxy}~$\sigma_{xy}$ en~$B$}
 \end{figure}
 
 
 \begin{table}[ht]
 \centering\small
-   \begin{tabular}{|l||r|c|c|c|c|}
-      \hline
-      \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
-      \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
-      \multicolumn{1}{|c}{$\sigma_{yy}$}&
-      \multicolumn{1}{|c}{$\sigma_{yy}$}&
-      \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{xx}$}}&
-      \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
-      &&
-      \multicolumn{1}{|c}{peau}&
-      \multicolumn{1}{|c|}{âme}&&\\
-      &(mm)&
-      \multicolumn{1}{|c}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}\\
-      \hline
-      \hline
-      ref& 10  &46,0340 &2,410200 &0,57548 &0,77518 \\
-      Reiss&10 &46,0265 &2,397450 &0,48986 &0,71342 \\
-      \ansys&10&46,0265 &2,397450 &0,62529 &0,80572 \\
-      \hline
-      ref& 8   &45,8625 &2,443000 &0,68465 &0,83563 \\
-      Reiss&8  &45,8505 &2,421450 &0,62992 &0,76781 \\
-      \ansys&8 &45,8505 &2,421450 &0,71910 &0,90760 \\
-      \hline
-      ref& 5   &45,4490 &2,539450 &1,00620 &1,00390 \\
-      Reiss&5  &45,5025 &2,499550 &1,00810 &0,91559 \\
-      \ansys&5 &45,5025 &2,499550 &0,94099 &1,19800 \\
-      \hline
-      ref& 3   &44,5760 &2,694400 &1,56820 &1,25790 \\
-      Reiss&3  &45,0015 &2,644550 &1,62260 &1,10690 \\
-      \ansys&3 &45,0015 &2,644550 &1,30760 &1,64980 \\
-      \hline
-      ref& 2   &43,1510 &2,856600 &2,23920 &1,50420 \\
-      Reiss&2  &44,1375 &2,805000 &2,32600 &1,25870 \\
-      \ansys&2 &44,1375 &2,805000 &1,77080 &2,12250 \\
-      \hline
-      ref& 1   &37,6330 &3,184100 &4,02110 &1,90380 \\
-      Reiss&1  &40,1735 &3,143850 &4,04390 &1,41220 \\
-      \ansys&1 &40,1735 &3,143850 &3,04360 &3,15350 \\
-      \hline
-   \end{tabular}
-   \caption{\label{Tab:pt-E} Résultats au point $E$}
+  \begin{tabular}{|l||r|c|c|c|c|}
+   \hline
+   \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
+   \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
+   \multicolumn{1}{|c}{$\sigma_{yy}$}&
+   \multicolumn{1}{|c}{$\sigma_{yy}$}&
+   \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{xx}$}}&
+   \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
+   &&
+   \multicolumn{1}{|c}{peau}&
+   \multicolumn{1}{|c|}{âme}&&\\
+   &(mm)&
+   \multicolumn{1}{|c}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}\\
+   \hline
+   \hline
+   ref& 10 &46,0340 &2,410200 &0,57548 &0,77518 \\
+   Reiss&10 &46,0265 &2,397450 &0,48986 &0,71342 \\
+   \ansys&10&46,0265 &2,397450 &0,62529 &0,80572 \\
+   \hline
+   ref& 8  &45,8625 &2,443000 &0,68465 &0,83563 \\
+   Reiss&8 &45,8505 &2,421450 &0,62992 &0,76781 \\
+   \ansys&8 &45,8505 &2,421450 &0,71910 &0,90760 \\
+   \hline
+   ref& 5  &45,4490 &2,539450 &1,00620 &1,00390 \\
+   Reiss&5 &45,5025 &2,499550 &1,00810 &0,91559 \\
+   \ansys&5 &45,5025 &2,499550 &0,94099 &1,19800 \\
+   \hline
+   ref& 3  &44,5760 &2,694400 &1,56820 &1,25790 \\
+   Reiss&3 &45,0015 &2,644550 &1,62260 &1,10690 \\
+   \ansys&3 &45,0015 &2,644550 &1,30760 &1,64980 \\
+   \hline
+   ref& 2  &43,1510 &2,856600 &2,23920 &1,50420 \\
+   Reiss&2 &44,1375 &2,805000 &2,32600 &1,25870 \\
+   \ansys&2 &44,1375 &2,805000 &1,77080 &2,12250 \\
+   \hline
+   ref& 1  &37,6330 &3,184100 &4,02110 &1,90380 \\
+   Reiss&1 &40,1735 &3,143850 &4,04390 &1,41220 \\
+   \ansys&1 &40,1735 &3,143850 &3,04360 &3,15350 \\
+   \hline
+  \end{tabular}
+  \caption{\label{Tab:pt-E} Résultats au point~$E$}
 \end{table}
 
 %\begin{figure}
 %\centering
 %\input{tex/e-sxxc.2012.txt}
 %
-%   \caption{\label{Fig:esxxc} $\sigma_{yy}$ dans l'âme en $E$}
+%  \caption{\label{Fig:esxxc}~$\sigma_{yy}$ dans l'âme en~$E$}
 %\end{figure}
 %
 %\begin{figure}
 %\centering
 %\input{tex/e-sxxs.2012.txt}
 %
-%   \caption{\label{Fig:esxxs} $\sigma_{yy}$ dans la peau en $E$}
+%  \caption{\label{Fig:esxxs}~$\sigma_{yy}$ dans la peau en~$E$}
 %\end{figure}
 %
 %\clearpage
@@ -862,69 +862,69 @@ résultats par rapport à \ansys.
 \begin{figure}[ht]
 \centering
 \input{tex/e-syy.2012.txt}
-\caption{\label{Fig:esyy} $\sigma_{xx}$ en $E$}
+\caption{\label{Fig:esyy}~$\sigma_{xx}$ en~$E$}
 \end{figure}
 %\clearpage
 
 \begin{figure}[ht]
 \centering
 \input{tex/e-sxy.2012.txt}
-\caption{\label{Fig:esxy} $\sigma_{xy}$ en $E$}
+\caption{\label{Fig:esxy}~$\sigma_{xy}$ en~$E$}
 \end{figure}
 
 \begin{table}[ht]
 \centering\small
-   \begin{tabular}{|l||r|c|c|c|c|}
-      \hline
-      \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
-      \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
-      \multicolumn{1}{|c}{$\sigma_{yy}$}&
-      \multicolumn{1}{|c}{$\sigma_{yy}$}&
-      \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{xx}$}}&
-      \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
-      &&
-      \multicolumn{1}{|c}{peau}&
-      \multicolumn{1}{|c|}{âme}&&\\
-      &(mm)&
-      \multicolumn{1}{|c}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}&
-      \multicolumn{1}{|c|}{(MPa)}\\
-      \hline
-      \hline
-      ref & 10 & -47,438  &-2,1425  &0,54431 & 0,30073 \\
-      Reiss&10 & -47,510  &-2,1533  &0,39416 & 0.38936 \\
-      \ansys&10& -47,510  &-2,1533  &0,65814 & 0,30000 \\
-      \hline
-      ref & 8  & -47,4555 &-2,11415 &0,62480 & 0,24743 \\
-      Reiss&8  & -47,5605 &-2,12825 &0,50447 & 0.33138 \\
-      \ansys&8 & -47,5605 &-2,12825 &0,72921 & 0,21663 \\
-      \hline
-      ref & 5  & -47,415  &-2,03645 &0,83167 & 0,10558 \\
-      Reiss&5  & -47,5335 &-2,05940 &0,76054 & 0,18360 \\
-      \ansys&5 & -47,5335 &-2,05940 &0,87666 & 0,00251 \\
-      \hline
-      ref & 3  & -47,223  &-1,92305 &1,11940 &-0,10042 \\
-      Reiss&3  & -47,1885 &-1,95170 &1,07760 &-0,01314 \\
-      \ansys&3 & -47,1885 &-1,95170 &1,05090 &-0,28747 \\
-      \hline
-      ref & 2  & -46,940  &-1,81445 &1,38480 &-0,29901 \\
-      Reiss&2  & -46,6760 &-1,84130 &1,35230 &-0,18934 \\
-      \ansys&2 & -46,6760 &-1,84130 &1,21420 &-0,55238 \\
-      \hline
-      ref & 1  & -46,1935 &-1,61030 &1,85860 &-0,67358 \\
-      Reiss&1  & -45,4620 &-1,62185 &1,81270 &-0,50497 \\
-      \ansys&1 & -45,4620 &-1,62185 &1,52280 &-1,03400 \\
-      \hline
-   \end{tabular}
-\caption{\label{Tab:pt-F} Résultats au point $F$}
+  \begin{tabular}{|l||r|c|c|c|c|}
+   \hline
+   \multicolumn{1}{|c||}{\raisebox{-2.5mm}{Méthode}}&
+   \multicolumn{1}{c}{\raisebox{-2.5mm}{$R$}}&
+   \multicolumn{1}{|c}{$\sigma_{yy}$}&
+   \multicolumn{1}{|c}{$\sigma_{yy}$}&
+   \multicolumn{1}{|c}{\raisebox{-2.5mm}{$\sigma_{xx}$}}&
+   \multicolumn{1}{|c|}{\raisebox{-2.5mm}{$\sigma_{xy}$}}\\[-3mm]
+   &&
+   \multicolumn{1}{|c}{peau}&
+   \multicolumn{1}{|c|}{âme}&&\\
+   &(mm)&
+   \multicolumn{1}{|c}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}&
+   \multicolumn{1}{|c|}{(MPa)}\\
+   \hline
+   \hline
+   ref & 10 & -47,438 &-2,1425 &0,54431 & 0,30073 \\
+   Reiss&10 & -47,510 &-2,1533 &0,39416 & 0.38936 \\
+   \ansys&10& -47,510 &-2,1533 &0,65814 & 0,30000 \\
+   \hline
+   ref & 8 & -47,4555 &-2,11415 &0,62480 & 0,24743 \\
+   Reiss&8 & -47,5605 &-2,12825 &0,50447 & 0.33138 \\
+   \ansys&8 & -47,5605 &-2,12825 &0,72921 & 0,21663 \\
+   \hline
+   ref & 5 & -47,415 &-2,03645 &0,83167 & 0,10558 \\
+   Reiss&5 & -47,5335 &-2,05940 &0,76054 & 0,18360 \\
+   \ansys&5 & -47,5335 &-2,05940 &0,87666 & 0,00251 \\
+   \hline
+   ref & 3 & -47,223 &-1,92305 &1,11940 &-0,10042 \\
+   Reiss&3 & -47,1885 &-1,95170 &1,07760 &-0,01314 \\
+   \ansys&3 & -47,1885 &-1,95170 &1,05090 &-0,28747 \\
+   \hline
+   ref & 2 & -46,940 &-1,81445 &1,38480 &-0,29901 \\
+   Reiss&2 & -46,6760 &-1,84130 &1,35230 &-0,18934 \\
+   \ansys&2 & -46,6760 &-1,84130 &1,21420 &-0,55238 \\
+   \hline
+   ref & 1 & -46,1935 &-1,61030 &1,85860 &-0,67358 \\
+   Reiss&1 & -45,4620 &-1,62185 &1,81270 &-0,50497 \\
+   \ansys&1 & -45,4620 &-1,62185 &1,52280 &-1,03400 \\
+   \hline
+  \end{tabular}
+\caption{\label{Tab:pt-F} Résultats au point~$F$}
 \end{table}
 
 %\begin{figure}
 %\centering
 %\input{tex/f-sxxc.2012.txt}
 %
-%   \caption{\label{Fig:fsxxc} $\sigma_{yy}$ dans l'âme en $F$}
+%  \caption{\label{Fig:fsxxc}~$\sigma_{yy}$ dans l'âme en~$F$}
 %\end{figure}
 %
 %\clearpage
@@ -933,17 +933,17 @@ résultats par rapport à \ansys.
 %\centering
 %\input{tex/f-sxxs.2012.txt}
 %
-%   \caption{\label{Fig:fsxxs} $\sigma_{yy}$ dans la peau en $F$}
+%  \caption{\label{Fig:fsxxs}~$\sigma_{yy}$ dans la peau en~$F$}
 %\end{figure}
 
 \begin{figure}[ht]
 \centering
 \input{tex/f-syy.2012.txt}
-\caption{\label{Fig:fsyy} $\sigma_{xx}$ en $F$}
+\caption{\label{Fig:fsyy}~$\sigma_{xx}$ en~$F$}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \input{tex/f-sxy.2012.txt}
-\caption{\label{Fig:fsxy} $\sigma_{xy}$ en $F$}
+\caption{\label{Fig:fsxy}~$\sigma_{xy}$ en~$F$}
 \end{figure}

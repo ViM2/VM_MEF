@@ -109,28 +109,28 @@ Nous rappelons qu'il s'agit du problème:
 \begin{equation}
 \left\{
 \begin{aligned}
-&\dive(A(x)\nabla u) = f(x)&&\text{pour } x\in\Omega\\
-&u=0 &&\text{sur } \Gamma=\partial\Omega
+&\dive(A(x)\nabla u) = f(x)&&\text{pour} x\in\Omega\\
+&u=0 &&\text{sur} \Gamma=\partial\Omega
 \end{aligned}
 \right.
 \end{equation}
-On rappelle également que si $\Omega$ est un ouvert connexe borné de $\RR^n$, et
-$H_0^1(\Omega)$ l'espace de Sobolev des fonctions qui s'annulent sur $\Gamma$, alors la solution
+On rappelle également que si~$\Omega$ est un ouvert connexe borné de~$\RR^n$, et
+$H_0^1(\Omega)$ l'espace de Sobolev des fonctions qui s'annulent sur~$\Gamma$, alors la solution
 $u\in H_0^1(\Omega)$ du problème précédent est également la solution du problème
 faible:
 \begin{equation}
 \forall v\in H_0^1(\Omega),\quad -\dint_\Omega A(x)\nabla u\cdot\nabla v = \dint_\Omega f(x)v
 \end{equation}
-où $f\in L^2(\Omega)$.
-Pour que ces deux formulation soient équivalentes, on a supposé que $A(x)$ est
-régulière: i.e. que pour chaque $x$ de $\Omega$, $A(x)$ est une matrice $n\times n$,
+où~$f\in L^2(\Omega)$.
+Pour que ces deux formulation soient équivalentes, on a supposé que~$A(x)$ est
+régulière: i.e. que pour chaque~$x$ de~$\Omega$, $A(x)$ est une matrice~$n\times n$,
 dont les éléments sont mesurables et qui est symétrique, définie-positive, bornée, i.e. qu'il existe
-deux constantes $K_1$ et $K_2$ $>0$ telles que:
+deux constantes~$K_1$ et~$K_2$~$>0$ telles que:
 \begin{equation}\forall v\in\RR^n,\quad K_1 v\cdot v \le A(x) v\cdot v \le K_2 v\cdot v\end{equation}
-Mentionnons le cas particulier où $A(x)$ est régulier dans $\Omega$ mais
-pas sur $\Gamma$, alors on a deux conditions d'interface:
+Mentionnons le cas particulier où~$A(x)$ est régulier dans~$\Omega$ mais
+pas sur~$\Gamma$, alors on a deux conditions d'interface:
 \begin{equation}
-[u]=0 \quad\text{ et }\quad [n\cdot A(x)\nabla u]=0
+[u]=0 \quad\text{ et}\quad [n\cdot A(x)\nabla u]=0
 \end{equation}
 Nous savons également que la solution existe et est unique (d'après le théorème de Lax-Milgram,\index[aut]{Lax (Peter), 1926-, Américain}
 \index{théorème!de Lax-Milgram}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
@@ -138,65 +138,65 @@ Nous savons également que la solution existe et est unique (d'après le théor�
 en remarquant le produit scalaire qui va bien...)
 
 \medskip
-Intéressons nous maintenant d'un peu plus près à $A(x)$.
-Supposons que $A(x)$ possède une certaine périodicité $\varepsilon$,
+Intéressons nous maintenant d'un peu plus près à~$A(x)$.
+Supposons que~$A(x)$ possède une certaine périodicité~$\varepsilon$,
 par exemple, que le matériau constituant le domaine soit constitué de couches successives
 de deux matériaux différents, mais avec une périodicité, comme illustré sur la~\fig{Fig-Ax}.
 \begin{figure}[ht]
 \centering\includegraphics[height=35mm]{Ax.eps}
 \caption{Matériau périodique}\label{Fig-Ax}
 \end{figure}
-Dans un tel cas, nous dirons que les coefficients $A$ dépendent de $x/\varepsilon$.
-Cette écriture sous forme normalisée permet de dire que $A$ est périodique de période 1.
+Dans un tel cas, nous dirons que les coefficients~$A$ dépendent de~$x/\varepsilon$.
+Cette écriture sous forme normalisée permet de dire que~$A$ est périodique de période 1.
 
 \medskip
 Dans le cas unidimensionnel, le problème devient:
 \begin{equation}
 \left\{
 \begin{aligned}
-&\dfrac \dd{\dd x}\left(A\left(\frac x\varepsilon\right)\right) \dfrac{\dd u}{\dd x} = f(x)&& \text{ pour } x\in[0,l]\\
-&u=0 &&\text{ pour } x=0 \text{ et } x=l
+&\dfrac \dd{\dd x}\left(A\left(\frac x\varepsilon\right)\right) \dfrac{\dd u}{\dd x} = f(x)&& \text{ pour} x\in[0,l]\\
+&u=0 &&\text{ pour} x=0 \text{ et} x=l
 \end{aligned}
 \right.
 \end{equation}
-$A$ est une fonction de $\RR$ dans $\RR$ de période 1, et nous la supposerons régulière
-par morceaux et telle qu'il existe $K_1$ et $K_2$ $>0$ telles que $K_1\le A(v)\le K_2$.
+$A$ est une fonction de~$\RR$ dans~$\RR$ de période 1, et nous la supposerons régulière
+par morceaux et telle qu'il existe~$K_1$ et~$K_2$~$>0$ telles que~$K_1\le A(v)\le K_2$.
 
 \medskip
 La solution du problème est alors:
 \begin{equation}
 u(x)=\dint_0^x A^{-1}(y/\varepsilon) \left(\dint_0^y f(v)\dd v + c_1 \right) \dd y + c_2
 \end{equation}
-avec $c_2=0$ et
+avec~$c_2=0$ et
 \begin{equation} c_1 = \dfrac{\dint_0^l A^{-1}(y/\varepsilon)\dint_0^y f(v)\dd v \dd y}{\dint_0^l a^{-1}(y/\varepsilon)\dd y} \end{equation}
-Le nombre d'intervalles pour le calcul approché de $c_1$ est très grand (i.e. très supérieur
-à $l/\varepsilon$).
+Le nombre d'intervalles pour le calcul approché de~$c_1$ est très grand (i.e. très supérieur
+à~$l/\varepsilon$).
 
 Exprimé autrement, ce résultat devient:
-\textcolorblue{le coefficient homogénéisé est $1/\langle\frac1A\rangle$} et non pas $\langle A\rangle$
-(où $\langle\cdot\rangle$ désigne la moyenne).
+\textcolorblue{le coefficient homogénéisé est~$1/\langle\frac1A\rangle$} et non pas~$\langle A\rangle$
+(où~$\langle\cdot\rangle$ désigne la moyenne).
 
 
 \medskip
 \subsection{Méthode de développement régulier}\index{méthode de développement régulier}
 
 Dans la \textcolorblue{méthode de développement régulier}, on se propose de chercher la
-solution asymptotique $u^{(\infty)}$ sous la forme:\index{méthode de développement régulier}
+solution asymptotique~$u^{(\infty)}$ sous la forme:\index{méthode de développement régulier}
 \begin{equation}
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^iu_i(x)
 \end{equation}
-\textcolorred{où $u_i(x)$ ne dépend pas de $\varepsilon$.}
+\textcolorred{où~$u_i(x)$ ne dépend pas de~$\varepsilon$.}
 
 \medskip
-La solution asymptotique $u^{(\infty)}$ est bien de la forme précédente si en injectant
+La solution asymptotique~$u^{(\infty)}$ est bien de la forme précédente si en injectant
 cette expression dans celle du problème alors on obtient une petite erreur au second membre.
 
 \medskip
 Pour le calcul on procède donc comme suit:
 \begin{itemize}
-   \item on injecte la forme souhaitée (cette forme s'appelle \textcolorblue{l'ansatz});\index{Ansatz}
-   \item pour avoir un second membre avec un terme d'erreur petit, on obtient la forme des $u_i(x)$;
-   \item on vérifie que les $u_i(x)$ trouvés conviennent bien.
+  \item on injecte la forme souhaitée (cette forme s'appelle \textcolorblue{l'ansatz});\index{Ansatz}
+  \item pour avoir un second membre avec un terme d'erreur petit, on obtient la forme des~$u_i(x)$;
+  \item on vérifie que les~$u_i(x)$ trouvés conviennent bien.
 \end{itemize}
 
 
@@ -206,24 +206,24 @@ Considérons le problème unidimensionnel:
 \begin{equation}
 \left\{
 \begin{aligned}
-&\varepsilon^2u''-p(x)u= f(x) &&\text{ pour } x\in[0,1]\\
-&u(0)=A \text{ et } u(1)=B
+&\varepsilon^2u''-p(x)u= f(x) &&\text{ pour} x\in\intff{0}{1}\\
+&u(0)=A \text{ et} u(1)=B
 \end{aligned}
 \right.
 \end{equation}
-où $p\in C([0,1])$; $p(x)\ge0, x\in[0,1]$; $f\in C([0,1])$; $A\in\RR$, $B\in\RR$ et
+où~$p\in C(\intff{0}{1})$;~$p(x)\ge0, x\in\intff{0}{1}$;~$f\in C(\intff{0}{1})$;~$A\in\RR$, $B\in\RR$ et
 $\varepsilon>0$ le petit paramètre.
-En négligeant le terme $\varepsilon^2 u''$, nous arrivons à l'équation $-p(x)u_r=f(x)$.
+En négligeant le terme~$\varepsilon^2 u''$, nous arrivons à l'équation~$-p(x)u_r=f(x)$.
 \begin{figure}[ht]
 \centering\includegraphics[height=50mm]{clim.eps}
 \caption{Méthode de la couche limite}\label{Fig-clim}
 \end{figure}
 En d'autres termes, et comme montré sur la \fig{Fig-clim}, nous disposons de la
-courbe correspondant à $y=u_r=-f(x)/p(x)$ (en noir) qui approche la solution du problème donnée par la courbe rouge.
-%La courbe noire correspond à $y=u_r=-f(x)/p(x)$, et la courbe rouge à la solution du problème.
+courbe correspondant à~$y=u_r=-f(x)/p(x)$ (en noir) qui approche la solution du problème donnée par la courbe rouge.
+%La courbe noire correspond à~$y=u_r=-f(x)/p(x)$, et la courbe rouge à la solution du problème.
 
-La solution exacte se confond avec $u_r$ sur la plus grande partie de l'intervalle $[0,1]$,
-mais $u$ et $u_r$ sont fortement différents dans un voisinage des extrémités.
+La solution exacte se confond avec~$u_r$ sur la plus grande partie de l'intervalle~$\intff{0}{1}$,
+mais~$u$ et~$u_r$ sont fortement différents dans un voisinage des extrémités.
 
 \medskip
 Cherchons une solution asymptotique sous la forme de l'ansatz:\index{Ansatz}
@@ -231,17 +231,17 @@ Cherchons une solution asymptotique sous la forme de l'ansatz:\index{Ansatz}
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i\left( u_i^r(x) + u_i^0(x/\varepsilon)
 +u_i^1((x-1)/\varepsilon) \right)
 \end{equation}
-où les $u_i^r(x)$ sont les \textcolorblue{termes réguliers}, et $u_i^0(x/\varepsilon)$ et
+où les~$u_i^r(x)$ sont les \textcolorblue{termes réguliers}, et~$u_i^0(x/\varepsilon)$ et
 $u_i^1((x-1)/\varepsilon)$ les \textcolorblue{termes de couche limite} correspondant aux
-extrémités $x=0$ et $x=l$.
+extrémités~$x=0$ et~$x=l$.
 
 \medskip
 Pour le calcul on procède donc comme suit:
 \begin{itemize}
-   \item on injecte les termes réguliers de l'ansatz\index{Ansatz} dans la formulation du problème;
-   \item on traite les extrémités pour vérifier les conditions aux limites, ce qui donne les termes de couche
+  \item on injecte les termes réguliers de l'ansatz\index{Ansatz} dans la formulation du problème;
+  \item on traite les extrémités pour vérifier les conditions aux limites, ce qui donne les termes de couche
 	limite;
-   \item on vérifie que la solution trouvés conviennent bien (i.e. que l'erreur commise est négligeable).
+  \item on vérifie que la solution trouvés conviennent bien (i.e. que l'erreur commise est négligeable).
 \end{itemize}
 
 
@@ -255,19 +255,19 @@ de la même manière, mais on cherchera une solution sous la forme d'ansatz:\ind
 \begin{equation}
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i u_i(x,x\varepsilon)
 \end{equation}
-où chaque $u_i(x,x/\varepsilon)$ est de la forme $u_i(x,x/\varepsilon)=N_i(x/\varepsilon)v_\varepsilon^{(i)}(x),
-\forall i>0$ et $u_0(x,x/\varepsilon)=v_\varepsilon(x)$, i.e.:
+où chaque~$u_i(x,x/\varepsilon)$ est de la forme~$u_i(x,x/\varepsilon)=N_i(x/\varepsilon)v_\varepsilon^{(i)}(x),
+\forall i>0$ et~$u_0(x,x/\varepsilon)=v_\varepsilon(x)$, i.e.:
 \begin{equation}
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i N_i(x/\varepsilon)v_\varepsilon^{(i)}(x)
 \end{equation}
-et où les $N_i(x/\varepsilon)$ sont 1-périodiques et $N_0=1$.
+et où les~$N_i(x/\varepsilon)$ sont 1-périodiques et~$N_0=1$.
 
 \medskip
 \subsection{Cas des coefficients discontinus}
 Il est possible d'appliquer la même approche que lorsque les coefficients sont continus
 avec quelques modifications: il <<~suffit~>> d'ajouter les conditions d'interfaces présentées
 en début de paragraphe et rappelées ci-dessous:
-\begin{equation} [u]=0 \quad \text{ et } \quad [n\cdot A(x/\varepsilon)\nabla u] = 0\end{equation}
+\begin{equation} [u]=0 \quad \text{ et} \quad [n\cdot A(x/\varepsilon)\nabla u] = 0\end{equation}
 partout où cela est nécessaire.
 
 On retrouve les mêmes conditions d'existence de la solution que dans le cas
@@ -294,14 +294,14 @@ en dessous d'une certaine échelle.
 Il peut sembler naturel d'utiliser des propriétés homogènes équivalentes correspondant
 à des propriétés mécaniques effectives.
 Toutefois, comme nous l'avons déjà vu, ces propriétés effectives\index{Effectif} ne s'obtiennent pas par
-une simple moyenne des propriétés des constituants, mêmes  pondérées par les fractions
+une simple moyenne des propriétés des constituants, mêmes pondérées par les fractions
 volumiques.
 
 \medskip
 Les propriétés effectives du milieu homogène équivalent cherché peuvent être obtenues
-en résolvant un problème aux limites sur un \textcolorblue{volume élémentaire} $dV$, à condition
+en résolvant un problème aux limites sur un \textcolorblue{volume élémentaire}~$dV$, à condition
 que celui-ci soit \textcolorblue{suffisamment grand pour être représentatif de la microstructure du matériau hétérogène.}\index{Volume élémentaire représentatif}
-Dans le cas où les constituants présentent une structure périodique, le volume $dV$ peut se
+Dans le cas où les constituants présentent une structure périodique, le volume~$dV$ peut se
 réduire à un \textcolorblue{volume élémentaire}.
 
 \medskip
@@ -331,33 +331,33 @@ Principalement pour les composites stratifiés ou sandwichs, il y a deux niveaux
 \medskip
 \subsection{Loi des mélanges, bornes de Voigt et de Reuss}\index{loi!des mélanges}\index{borne!de Voigt}\index{borne!de Reuss}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 
-On considère un composite UD de repère d'orthotropie $(l,t)$, constitué de fibres noyées dans
-une matrice polymère. Soit une cellule élémentaire de fraction volumique $V = 1$ constituée de
+On considère un composite UD de repère d'orthotropie~$(l,t)$, constitué de fibres noyées dans
+une matrice polymère. Soit une cellule élémentaire de fraction volumique~$V = 1$ constituée de
 fibres et de matrice. On note
 $V_m$ la fraction volumique de matrice,
-$V_f$ la fraction volumique de fibre, et on a :
+$V_f$ la fraction volumique de fibre, et on a:
 \begin{equation} V = V_m + V_f =1 \end{equation}
 %%%%%%%%%%%%%%%%%%%%
 \medskipvm
 À l'échelle locale, on fait les hypothèses suivantes:
 \begin{itemize}
-   \item Fibres: comportement élastique linéaire fragile isotrope de coefficients $E_f$ et $\nu_f$;
-   \item Matrice: comportement élastique non-linéaire, isotrope de coefficients $E_m$ et $\nu_m$.
+  \item Fibres: comportement élastique linéaire fragile isotrope de coefficients~$E_f$ et~$\nu_f$;
+  \item Matrice: comportement élastique non-linéaire, isotrope de coefficients~$E_m$ et~$\nu_m$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-On souhaite déterminer les relations existant entre $E_l$, $E_t$, $E_f$, $E_m$, $V_m$ et $V_f$.
+On souhaite déterminer les relations existant entre~$E_l$, $E_t$, $E_f$, $E_m$, $V_m$ et~$V_f$.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Pour cela, on fait également les hypothèses suivantes :
+Pour cela, on fait également les hypothèses suivantes:
 \begin{itemize}
-   \item On travaille en élasticité linéaire.
-   \item La liaison fibres/matrice est parfaite.
-   \item Localement, on a : $\sigma_f = E_f \varepsilon_f$  et $\sigma_m = E_m \varepsilon_m$.
+  \item On travaille en élasticité linéaire.
+  \item La liaison fibres/matrice est parfaite.
+  \item Localement, on a:~$\sigma_f = E_f \varepsilon_f$ et~$\sigma_m = E_m \varepsilon_m$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%
 \medskipvm
-Loi des mélanges (ou modèles à bornes ou de Reuss et de Voigt) :
+Loi des mélanges (ou modèles à bornes ou de Reuss et de Voigt):
 \begin{itemize}
 	\item premier essai --- Il s'effectue dans la direction parallèle aux fibres (compression longitudinale)
 		\begin{equation} E_{\text{longitudinal}}=E_l=E_fV_f+E_mV_m \end{equation}
@@ -369,7 +369,7 @@ Loi des mélanges (ou modèles à bornes ou de Reuss et de Voigt) :
 		Cette relation n'est pas très bien vérifiée transversalement mais donne une
 		indication sur la borne inférieure, dit de Reuss (1929).\index{loi!des mélanges}\index{borne!de Reuss}
 	\item Module de cisaillement et coefficient de Poisson\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
-		\index{Coefficients de Poisson}d'un UD par la loi des mélanges :\index{loi!des mélanges}
+		\index{Coefficients de Poisson}d'un UD par la loi des mélanges:\index{loi!des mélanges}
 		\begin{equation}\nu_{lt}=\nu_fV_f+\nu_mV_m\quad\text{et}\quad\dfrac1{G_{lt}} = \dfrac{V_f}{G_f}+\dfrac{V_m}{G_m}\end{equation}
 \end{itemize}
 %%%%%%%%%%%%%%%
@@ -386,37 +386,37 @@ car ces modèles sont applicables à des mélanges de polymères (matériaux com
 et à des composites chargés par des particules diverses.
 
 Les bornes correspondent aux associations série des deux phases (borne inférieure de Reuss,\index{borne!de Reuss}
-équivalent au modèle  du module transverse équivalent de la loi des mélanges) et parallèle
-(borne supérieure de Voigt,\index{loi!des mélanges}\index{borne!de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand} équivalent au modèle  du module longitudinal équivalent de la loi des mélanges).
+équivalent au modèle du module transverse équivalent de la loi des mélanges) et parallèle
+(borne supérieure de Voigt,\index{loi!des mélanges}\index{borne!de Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand} équivalent au modèle du module longitudinal équivalent de la loi des mélanges).
 
 Aucune hypothèse n'est faite sur la morphologie du matériau.
 Il est simplement admis que pour le modèle de Reuss, la contrainte est homogène dans les deux
 phases (continuité de la contrainte) et, pour le modèle de Voigt,\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
-la déformation est constante  (continuité de la déformation) dans tout le composite.
+la déformation est constante (continuité de la déformation) dans tout le composite.
 \textcolorred{L'intérêt est limité dès que l'écart des caractéristiques des deux phases est important.}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 Évidemment, d'autres modèles existent:
 \begin{itemize}
-	\item Hashin et Shtrikman (1963) : resserre les bornes de Reuss et Voigt
+	\item Hashin et Shtrikman (1963): resserre les bornes de Reuss et Voigt
 	\item Takayanagi (combinaison de Reuss et Voigt)
-	\item Halpin - Tsaï : pour le renforcement par des fibres courtes alignées
-	\item Tsaï - Pagano : fibres courtes
-	\item Halpin - Kardos : extension de la précédente
+	\item Halpin - Tsaï: pour le renforcement par des fibres courtes alignées
+	\item Tsaï - Pagano: fibres courtes
+	\item Halpin - Kardos: extension de la précédente
 \end{itemize}
 
 \medskip
 \section{Homogénéisation des matériaux poreux}
 Considérons à nouveau notre problème de Poisson avec conditions de Dirichlet pour un milieu
 poreux.\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{Conditions aux limites!de Dirichlet}
-$\Omega$ est le domaine (borné) de $\RR^n$ qui contient $\Omega_\varepsilon$ l'ensemble des trous
+$\Omega$ est le domaine (borné) de~$\RR^n$ qui contient~$\Omega_\varepsilon$ l'ensemble des trous
 périodiques.
 Nous avons donc:
 \begin{equation}
 \left\{
 \begin{aligned}
-&\dive(A(x)\nabla u) = f(x) &&\text{ pour } x\in\Omega\backslash\Omega_\varepsilon\\
-&u=0 && \text{ sur le contour extérieur } \Gamma=\partial\Omega\\
+&\dive(A(x)\nabla u) = f(x) &&\text{ pour} x\in\Omega\backslash\Omega_\varepsilon\\
+&u=0 && \text{ sur le contour extérieur} \Gamma=\partial\Omega\\
 \end{aligned}
 \right.
 \end{equation}
@@ -431,7 +431,7 @@ On supposera encore que les coefficient sont 1-périodiques.
 
 La forme choisie pour l'ansatz\index{Ansatz} est le développement au second ordre suivant:
 \begin{equation}u^{(2)} = u_0(x,x/\varepsilon)+\varepsilon u_1(x,x/\varepsilon) + \varepsilon^2 u_2(x,x/\varepsilon)\end{equation}
-où les $u_i(x,x/\varepsilon)$ sont 1-périodiques en $x/\varepsilon$ qui sera noté $\xi$.
+où les~$u_i(x,x/\varepsilon)$ sont 1-périodiques en~$x/\varepsilon$ qui sera noté~$\xi$.
 
 On obtient un système du type:
 \begin{equation}\left\{
@@ -453,18 +453,18 @@ d'où:
 &n\cdot A(\xi)(\nabla_\xi u_2+\nabla_x u_1) &&=0
 \end{aligned}
 \right. \end{equation}
-On peut prouver que si $v_0$ est solution du problème, alors $v_0+\text{cte}$ aussi.
+On peut prouver que si~$v_0$ est solution du problème, alors~$v_0+\text{cte}$ aussi.
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
 Des conditions d'existence de la solution il vient, tous calculs faits, la matrice des
-coefficients homogénéisés $\hat{A}$:
+coefficients homogénéisés~$\hat{A}$:
 \begin{equation} \hat{A} = [\hat{a}_{i,j} ]
-\quad \text{ avec }
+\quad \text{ avec}
 \quad
 \hat{a}_{i,j}=\dint_{Q\backslash G_0} \dsum_{k=1}^n \left(a_{ik} \frac{\partial N_j}{\partial\xi_k} + a_{ij}
 \right) \dd\xi
 \end{equation}
-où $G_0$ est un trou de la cellule élémentaire $Q$.
+où~$G_0$ est un trou de la cellule élémentaire~$Q$.
 %%%%%%%%%%%%%%%%%
 \medskipvm
 Le même type de calcul pourrait être mené avec les conditions de Dirichlet sur le bord des trous.
@@ -482,7 +482,7 @@ Il n'y a pas vraiment de précautions supplémentaires à prendre, mais il faut 
 Par exemple, l'ansatz\index{Ansatz} du paragraphe précédent, pour le même type de problème
 non stationnaire serait:
 \begin{equation}u^{(2)} = u_0(x,\xi,t)+\varepsilon u_1(x,\xi,t) + \varepsilon^2 u_2(x,\xi,t)\end{equation}
-avec $u_i(x,\xi,t)$ 1-périodique en $\xi$.
+avec~$u_i(x,\xi,t)$ 1-périodique en~$\xi$.
 
 \medskip
 \section{Changement de dimension et raccord de maillage}
@@ -490,10 +490,10 @@ avec $u_i(x,\xi,t)$ 1-périodique en $\xi$.
 <<~changer (réduire)~>> la dimension d'un problème.}
 
 \medskip
-Considérons un problème qui se pose dans un domaine plan de longueur $1$ et de largeur $\pm\varepsilon/2$.
-Alors, on peut considérer le comportement asymptotique de la solution lorsque $\varepsilon \longrightarrow 0$.
+Considérons un problème qui se pose dans un domaine plan de longueur~$1$ et de largeur~$\pm\varepsilon/2$.
+Alors, on peut considérer le comportement asymptotique de la solution lorsque~$\varepsilon \longrightarrow 0$.
 Une fois cette solution asymptotique trouvée, le problème initial posé sur le pavé
-$[0,1]\times[-\varepsilon/2,+\varepsilon/2]$ est remplacé par le problème homogénéisé posé sur le segment $[0,1]$. On a donc bien réduit la dimension du problème.
+$\intff{0}{1}\times[-\varepsilon/2,+\varepsilon/2]$ est remplacé par le problème homogénéisé posé sur le segment~$\intff{0}{1}$. On a donc bien réduit la dimension du problème.
 
 \medskip
 Ce genre de chose correspond typiquement à un modèle plaque ou coque (2D) utilisé à la place d'un modèle tridimensionnel (3D), ou encore mieux à un modèle barre ou poutre (1D).

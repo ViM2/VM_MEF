@@ -1,26 +1,26 @@
 \ifVersionAvecExemplesSepares
-   \chapter{Sur le chapitre~\ref{Ch-Elts}: quelques variations sur le thème des éléments unidimensionnels}
-   \begin{abstract}
-   Dans ce chapitre, nous reprenons les explications du chapitre~\ref{Ch-Elts} pour les appliquer
-   sur quelques cas simples, de façon très explicite.
-   \end{abstract}
+  \chapter{Sur le chapitre~\ref{Ch-Elts}: quelques variations sur le thème des éléments unidimensionnels}
+  \begin{abstract}
+  Dans ce chapitre, nous reprenons les explications du chapitre~\ref{Ch-Elts} pour les appliquer
+  sur quelques cas simples, de façon très explicite.
+  \end{abstract}
 \else
-   \section{Exemple: quelques variations sur le thème des éléments unidimensionnels}
+  \section{Exemple: quelques variations sur le thème des éléments unidimensionnels}
 
-   Dans ce paragraphe, nous appliquons ce que nous venons de voir sur quelques cas simples d'éléments unidimensionnels.
+  Dans ce paragraphe, nous appliquons ce que nous venons de voir sur quelques cas simples d'éléments unidimensionnels.
 \fi
 
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
+  \section{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
 \else
-   \subsection{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
+  \subsection{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
 \fi
 
 Considérons un segment reliant deux points dans l'espace.
-Ce segment est défini par un point courant dont les coordonnées sont le vecteur $\VV{x}$.
-On peut paramétrer ce segment par le paramètre $\xi \in [-1,1]$, et le vecteur
-position s'exprime par $\LL{x}=\LL{x(\xi), y(\xi), z(\xi)}$.
+Ce segment est défini par un point courant dont les coordonnées sont le vecteur~$\VV{x}$.
+On peut paramétrer ce segment par le paramètre~$\xi \in [-1,1]$, et le vecteur
+position s'exprime par~$\LL{x}=\LL{x(\xi), y(\xi), z(\xi)}$.
 \begin{table}[ht]\centering\small
 \begin{tabular}{cc}
 \includegraphics[width=60mm]{Elt1D-ref.eps} &
@@ -32,74 +32,74 @@ position s'exprime par $\LL{x}=\LL{x(\xi), y(\xi), z(\xi)}$.
 
 \medskipvm\fi
 Cet élément (segment) est défini par ses seules extrémités. Nous avons donc deux
-nœuds de coordonnées $\LLP{x_1, y_1, z_1}$ et $\LLP{x_2, y_2, z_2}$.\ifVersionDuDocEstVincent\par\fi
+nœuds de coordonnées~$\LLP{x_1, y_1, z_1}$ et~$\LLP{x_2, y_2, z_2}$.\ifVersionDuDocEstVincent\par\fi
 Un point courant de cet élément sera obtenu par interpolation linéaire entre les deux nœuds,
-paramétrée par $\xi$. On Cherche cette interpolation sous la forme $x(\xi)=\LL{N(\xi)}\VV{x_n}$, $y(\xi)=\LL{N(\xi)}\VV{y_n}$ et $z(\xi)=\LL{N(\xi)}\VV{z_n}$, avec
-$\LL{N(\xi)}=\LLL{N_1(\xi), N_2(\xi)}$ et $N_1(\xi)=\frac12 (1-\xi)$, $N_2(\xi)=\frac12(1+\xi)$.
+paramétrée par~$\xi$. On Cherche cette interpolation sous la forme~$x(\xi)=\LL{N(\xi)}\VV{x_n}$, $y(\xi)=\LL{N(\xi)}\VV{y_n}$ et~$z(\xi)=\LL{N(\xi)}\VV{z_n}$, avec
+$\LL{N(\xi)}=\LLL{N_1(\xi), N_2(\xi)}$ et~$N_1(\xi)=\frac12 (1-\xi)$, $N_2(\xi)=\frac12(1+\xi)$.
 De manière plus <<~compacte~>>, on peut écrire:
-\begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et } \xi\in[-1,1]) \end{equation}
+\begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et} \xi\in[-1,1]) \end{equation}
 \ifVersionDuDocEstVincent
 
 \medskipvm\fi
-Dans cette interpolation (comme dans toutes interpolation), on a une relation entre $\dd\VV{x}$ et
-$ \dd \xi$. Notons $\dd\VV{x} = \VV{a}  \dd \xi$. Alors:
+Dans cette interpolation (comme dans toutes interpolation), on a une relation entre~$\dd\VV{x}$ et
+$ \dd \xi$. Notons~$\dd\VV{x} = \VV{a} \dd \xi$. Alors:
 \begin{equation} \LL{a} = \LLL{x_{,\xi}, y_{,\xi}, z_{,\xi}} = \frac12 \LLL{x_{21}, y_{21}, z_{21}}\end{equation}
-avec ici $x_{21}=x_2-x_1$, $y_{21}=y_2-y_1$ et $z_{21}=z_2-z_1$.
+avec ici~$x_{21}=x_2-x_1$, $y_{21}=y_2-y_1$ et~$z_{21}=z_2-z_1$.
 On voit ainsi comment passer d'une intégrale sur le segment réel à une intégrale
 sur l'élément de référence.
-%On rappelle que $\{a\}$ est appelée la \textcolorblue{matrice jacobienne} de la transformation.
+%On rappelle que~$\{a\}$ est appelée la \textcolorblue{matrice jacobienne} de la transformation.
 
 \medskipvm
-De même, on peut chercher la relation entre $\dd s=\dd\VV{x}\cdot\dd\VV{x}$. Nous notons
-$\dd s=m  \dd \xi$. On a alors: 
+De même, on peut chercher la relation entre~$\dd s=\dd\VV{x}\cdot\dd\VV{x}$. Nous notons
+$\dd s=m \dd \xi$. On a alors: 
 \begin{equation}m=|\VV{a}| = \frac12 \sqrt{x_{21}^2+y_{21}^2+z_{21}^2} = \frac{L_e}2 \end{equation}
 On voit alors l'égalité des intégrations:
 \begin{equation}\int_{L_e} \ldots \dd s = \int_{-1}^{+1}\ldots m \dd \xi\end{equation}
-%On rappelle que $m$ est appelé le \textcolorblue{jacobien} de la transformation.
+%On rappelle que~$m$ est appelé le \textcolorblue{jacobien} de la transformation.
 
 \medskipvm
 Par ailleurs, on a la relation:
 \begin{equation} \frac{\dd}{ \dd \xi} = \frac{\dd s}{ \dd \xi}\frac{\dd}{\dd s}=m\frac{\dd}{\dd s}\end{equation}
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Rappels sur la jacobienne et le jacobien d'une transformation}\index{Jacobien}\index{Jacobienne}
+  \section{Rappels sur la jacobienne et le jacobien d'une transformation}\index{Jacobien}\index{Jacobienne}
 \else
-   \subsection{Rappels sur la jacobienne et le jacobien d'une transformation}\index{Jacobien}\index{Jacobienne}
+  \subsection{Rappels sur la jacobienne et le jacobien d'une transformation}\index{Jacobien}\index{Jacobienne}
 \fi
 
-Nous considérons une transformation de $\RR^n$ dans $\RR^m$ donnée par la fonction $f$: 
+Nous considérons une transformation de~$\RR^n$ dans~$\RR^m$ donnée par la fonction~$f$: 
 $\left(x_1, \ldots, x_n \right) \mapsto \left(f_{y_1}, \ldots, f_{y_m} \right)$.
 \ifVersionDuDocEstVincent
 
 \medskipvm\fi
 La \textcolorblue{matrice jacobienne}\index{Jacobienne} (d'après Carl Jacobi)\index[aut]{Jacobi (Carl Gustav Jakob), 1804-1851, Allemand} 
-associée à $f$ est définie par:
+associée à~$f$ est définie par:
 \begin{equation}
 J_f = \MM*{\LL{\nabla f_{y_1}} \\ \vdots \\ \LL{\nabla f_{y_m}}}
 \end{equation}
-i.e., sous forme complètement développée la jacobienne de $f$ s'écrit :
+i.e., sous forme complètement développée la jacobienne de~$f$ s'écrit:
 \begin{equation}
-J_f = \MM*{\frac{\partial f_{y_1}}{\partial x_1} & \cdots & \frac{\partial f_{y_1}}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{y_m}}{\partial x_1} & \cdots & \frac{\partial f_{y_m}}{\partial x_n} }
+J_f = \MM*{\frac{\partial f_{y_1}}{\partial x_1} & \cdots & \frac{\partial f_{y_1}}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{y_m}}{\partial x_1} & \cdots & \frac{\partial f_{y_m}}{\partial x_n}}
 \end{equation}
 \medskipvm
-Au voisinage d'un point $M$, l'approximation linéaire de la fonction $f$ est donnée par:
+Au voisinage d'un point~$M$, l'approximation linéaire de la fonction~$f$ est donnée par:
 \ifVersionDuDocEstVincent
 \begin{equation} f\left(X\right) \approx f\left(M\right) + J_f\left(M\right) \overrightarrow{MX}\end{equation}
 \else
 \begin{equation} f\left(X\right) \approx f\left(M\right) + J_f\left(M\right) \mathbf{MX}\end{equation}
 \fi
 \medskipvm
-La composée $f\circ g$ de fonctions différentiables est différentiable, et sa matrice jacobienne 
-s'obtient par la formule :
+La composée~$f\circ g$ de fonctions différentiables est différentiable, et sa matrice jacobienne 
+s'obtient par la formule:
 \begin{equation} J_{f \circ g}= \bigl( J_f \circ g \bigr) \cdot J_g\end{equation}
 \medskipvm
-Dans le cas où \textcolorred{$m = n$}, on appelle $j_f$ le \textcolorblue{jacobien}\index{Jacobien} de $f$, 
+Dans le cas où \textcolorred{$m = n$}, on appelle~$j_f$ le \textcolorblue{jacobien}\index{Jacobien} de~$f$, 
 défini comme le déterminant de sa matrice jacobienne: \index{Jacobien}\index{Jacobienne}
 \begin{equation} j_f = \det\, \left(J_f \right) \end{equation}
 Dire que le jacobien est non nul revient donc à dire que la matrice jacobienne est inversible.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Si le jacobien\index{Jacobien} est positif au point $M$, l'orientation de l'espace est conservée au voisinage de ce point. 
+Si le jacobien\index{Jacobien} est positif au point~$M$, l'orientation de l'espace est conservée au voisinage de ce point. 
 À l'inverse, l'orientation est inversée si le jacobien est négatif.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -114,56 +114,56 @@ Cette dernière propriété est liée au théorème d'inversion locale (qui peut
 comme une extension du théorème des fonctions implicite en dimension supérieure à 1 dans le cas réel).
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Une fonction $F$ de classe $C^1$ est inversible au voisinage de $M$ avec une réciproque $F^{-1}$ 
-de classe $C^1$ si et seulement si son jacobien en $M$ est non nul (théorème d'inversion locale). 
-De plus, la matrice jacobienne de $F^{-1}$ se déduit de l'inverse de la matrice jacobienne de $F$ 
+Une fonction~$F$ de classe~$C^1$ est inversible au voisinage de~$M$ avec une réciproque~$F^{-1}$ 
+de classe~$C^1$ si et seulement si son jacobien en~$M$ est non nul (théorème d'inversion locale). 
+De plus, la matrice jacobienne de~$F^{-1}$ se déduit de l'inverse de la matrice jacobienne de~$F$ 
 au moyen de la formule:\index{Jacobien}\index{Jacobienne}
 \begin{equation}J_{F^{-1}} = \bigl( J_F \circ F^{-1} \bigr)^{-1}\end{equation}
 
 \begin{theoreme}[Théorème d'inversion locale]\index{théorème!d'inversion locale}
-Soit $f$ une application de $U$ dans $F$, où $U$ est un ouvert d'un espace de Banach réel et 
-$F$ un espace de Banach et soit $x$ un point de $U$.
-Si $f$ est de classe $C^p$, avec $p$ un entier strictement positif et si la différentielle de $f$ au point 
-$x$ est un isomorphisme bicontinu, alors il existe un voisinage ouvert $V$ de $x$ et un voisinage ouvert 
-$W$ de $f(x)$ tels que $f$ se restreigne en une bijection de $V$ dans $W$ dont la réciproque est de 
-classe $C^p$.
+Soit~$f$ une application de~$U$ dans~$F$, où~$U$ est un ouvert d'un espace de Banach réel et 
+$F$ un espace de Banach et soit~$x$ un point de~$U$.
+Si~$f$ est de classe~$C^p$, avec~$p$ un entier strictement positif et si la différentielle de~$f$ au point 
+$x$ est un isomorphisme bicontinu, alors il existe un voisinage ouvert~$V$ de~$x$ et un voisinage ouvert 
+$W$ de~$f(x)$ tels que~$f$ se restreigne en une bijection de~$V$ dans~$W$ dont la réciproque est de 
+classe~$C^p$.
 \end{theoreme}
 \colorblack
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \textcolorgreen{Comme illustré au paragraphe précédent, le jacobien sert surtout pour effectuer des 
-changement de  variables dans le calculs des intégrales.}
+changement de variables dans le calculs des intégrales.}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \begin{theoreme}[Théorème de changement de variables dans les intégrales multiples]\index{théorème!de changement de variables dans les intégrales multiples}
 
-Soient $U$ un ouvert de $\RR^n$, $F$ une injection de classe $C^1$ de $U$ dans $\RR^n$ et $V=F(U)$.
+Soient~$U$ un ouvert de~$\RR^n$, $F$ une injection de classe~$C^1$ de~$U$ dans~$\RR^n$ et~$V=F(U)$.
 
-Si $g$ est une fonction mesurable de $V$ dans $[0,+\infty[$, on a égalité des intégrales pour la mesure 
-de Lebesgue sur $\RR^n$:
-\begin{equation}   \int_V g(y_1,\ldots,y_n)~\dd y_1\ldots\dd y_n = \int_U g\left(F\left(x_1,\ldots,x_n\right)\right) 
+Si~$g$ est une fonction mesurable de~$V$ dans~$\intfo{0}{+\infty}$, on a égalité des intégrales pour la mesure 
+de Lebesgue sur~$\RR^n$:
+\begin{equation}  \int_V g(y_1,\ldots,y_n)~\dd y_1\ldots\dd y_n = \int_U g\left(F\left(x_1,\ldots,x_n\right)\right) 
 \left|\det J_F(x_1,\ldots,x_n)\right|~\dd x_1\ldots\dd x_n.
 \end{equation}
 \end{theoreme}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\textcolorgreen{Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction $f$ sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{Jacobien}
+\textcolorgreen{Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction~$f$ sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{Jacobien}
 
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Éléments de référence unidimensionnels linéaires à $n$ nœuds}
+  \section{Éléments de référence unidimensionnels linéaires à~$n$ nœuds}
 \else
-   \subsection{Éléments de référence unidimensionnels linéaires à $n$ nœuds}
+  \subsection{Éléments de référence unidimensionnels linéaires à~$n$ nœuds}
 \fi
 
 Il est possible de généraliser en considérant un segment ayant plusieurs nœuds 
 intermédiaires comme indiqué sur la figure~\ref{fig:ex2:noeudint}.
 \begin{figure}[ht]\centering
 \includegraphics[width=140mm]{Elt1D-ex.eps}
-\caption{Nœuds  intermédiaires}\label{fig:ex2:noeudint}
+\caption{Nœuds intermédiaires}\label{fig:ex2:noeudint}
 \end{figure}
 \medskipvm
-Si l'on considère le cas général à $n$ nœuds de la figure~\ref{fig:ex2:casgen}
+Si l'on considère le cas général à~$n$ nœuds de la figure~\ref{fig:ex2:casgen}
 \begin{figure}[ht]\centering
 \includegraphics[width=60mm]{Elt1D-n.eps}
 \caption{Cas général}\label{fig:ex2:casgen}
@@ -171,15 +171,15 @@ Si l'on considère le cas général à $n$ nœuds de la figure~\ref{fig:ex2:casg
 alors il vient:
 \begin{equation} N_i(\xi) = \prod_{r=1\atop r\ne i}^n \dfrac{\xi_r-\xi}{\xi_r-\xi_i} \end{equation}
 \medskipvm
-Si de plus, les $n$ nœuds sont régulièrement espacés:
+Si de plus, les~$n$ nœuds sont régulièrement espacés:
 \begin{equation}\xi_i = -1+2\frac{i-1}{n-1} \qquad
 N_i(\xi) = \prod_{r=1\atop r\ne i}^n \dfrac{(2r-n-1)-\xi(n-1)}{2(r-i)} \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Élément de référence unidimensionnel infini}
+  \section{Élément de référence unidimensionnel infini}
 \else
-   \subsection{Élément de référence unidimensionnel infini}
+  \subsection{Élément de référence unidimensionnel infini}
 \fi
 Dans certains cas, il peut être nécessaire de prendre en compte des conditions aux limites situées à
 l'infini: problèmes de fondations, d'acoustique, de couplage fluide-dtructure.
@@ -195,31 +195,31 @@ entre un élément de référence de longeur 2 et un élément réel infini, tra
 \end{figure}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Nous ne considèrerons que le cas de l'élément unidimensionnel linéaire à 2 nœuds dans ce paragraphe, mais on pourrait étudier le cas de l'élément linéaire unidimensionnel à $n$ nœuds, ou des éléments bidimensionnels par exemple.
+Nous ne considèrerons que le cas de l'élément unidimensionnel linéaire à 2 nœuds dans ce paragraphe, mais on pourrait étudier le cas de l'élément linéaire unidimensionnel à~$n$ nœuds, ou des éléments bidimensionnels par exemple.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 Nous allons toujours avoir une interpolation de la fonction solution sous la forme:
 \begin{equation} u =\frac{1-\xi}2 u_1 + \frac{1+\xi}2 u_2\end{equation}
-car concrêtement $u_2$ est connu (et fini): c'est le <<~lieu~>> où l'on situe l'infini dans le
+car concrêtement~$u_2$ est connu (et fini): c'est le <<~lieu~>> où l'on situe l'infini dans le
 modèle éléments finis.
 \medskipvm
 Par contre, l'interpolation du point courant sera donnée par:
 \begin{equation}
 x=x_1+\frac{1+\xi}{1-\xi}\alpha
 \end{equation}
-où $\alpha$ est une constante.
+où~$\alpha$ est une constante.
 \medskipvm
 On aura également:
 \begin{equation} u_{,x} = \frac{u_2-u_1}{4\alpha} (1-\xi)^2 \end{equation}
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
+  \section{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
 \else
-   \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
+  \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
 \fi
-On considère la barre donnée ci-dessous, de section $A$, de longueur $L$, et constituée 
+On considère la barre donnée ci-dessous, de section~$A$, de longueur~$L$, et constituée 
 d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{Module d'Young} 
-$E$ et densité $\rho$ et soumise uniquement à son poids propre.\\
+$E$ et densité~$\rho$ et soumise uniquement à son poids propre.\\
 \begin{figure}[ht]
 \centering
 \includegraphics[width=40mm]{Elt1D-barre.eps}
@@ -231,7 +231,7 @@ La forme variationelle de ce problème d'élasticité linéaire unidimensionnel 
 \begin{equation}
 W=\dint_0^L EA v_{,x}u_{,x} \dd x - \dint_0^L \rho g A v = 0, \quad \forall v
 \end{equation}
-avec les conditions aux limites $u(0)=0$ et $v(0)=0$.
+avec les conditions aux limites~$u(0)=0$ et~$v(0)=0$.
 Cette forme variationelle, s'écrit pour l'élement (ou pour chaque élément si on en avait plusieurs):
 \begin{equation}
 W = \LL{v} \left( \MM{K}\VV{u} - \VV{f} \right)
@@ -248,28 +248,28 @@ Nous obtenons la matrice de rigidité élémentaire:
 \MM{K} = \frac{2EA}L \MM*{1 & -1\\ -1& 1}
 \end{equation}
 et le vecteur des forces nodales élémentaires:
-\begin{equation}  
+\begin{equation} 
 \VV{f} = \rho g A \frac{L}4 \VV*{1 \\1}
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-En prenant en compte les conditions aux limites $u_1=0$ et $v_1=0$, l'expression $W=0$ donne:
+En prenant en compte les conditions aux limites~$u_1=0$ et~$v_1=0$, l'expression~$W=0$ donne:
 \begin{equation} u_2 = \frac{\rho g L^2}{8 E} \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-La déformation est donnée par $\varepsilon=u_{,x}=\LL{B}\VV{u_n}$ avec $\LL{B}=\frac1L \LLL{-1, 1}$.
+La déformation est donnée par~$\varepsilon=u_{,x}=\LL{B}\VV{u_n}$ avec~$\LL{B}=\frac1L \LLL{-1, 1}$.
 On obtient:
 \begin{equation}
 \varepsilon=\frac{\rho g L}{8 E}
 \end{equation} 
-Elle est constante sur l'élément. Quant à la contrainte, elle est obtenue par $\sigma=E\varepsilon$, soit:
+Elle est constante sur l'élément. Quant à la contrainte, elle est obtenue par~$\sigma=E\varepsilon$, soit:
 \begin{equation}\sigma=\frac{\rho g L}8\end{equation} Elle est également constante sur l'élément.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
+  \section{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
 \else
-   \subsection{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
+  \subsection{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
 \fi
 Poursuivons le cas de la poutre du paragraphe précédent, mais considérons une discrétisation
 de la barre à l'aide de trois éléments:
@@ -278,15 +278,15 @@ de la barre à l'aide de trois éléments:
 \end{figure}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Chaque élément $e$ (de longueur $L_e$) possède une matrice de rigidité élémentaire $\MM{k_e}$ 
-et un vecteur des forces nodales élémentaires $\VV{f_e}$ définis par:
+Chaque élément~$e$ (de longueur~$L_e$) possède une matrice de rigidité élémentaire~$\MM{k_e}$ 
+et un vecteur des forces nodales élémentaires~$\VV{f_e}$ définis par:
 \begin{equation}
 \MM{K_e} = \frac{2EA}{L_e} \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
-\qquad \text{ et } \qquad
+\qquad \text{ et} \qquad
 \VV{f_e} = \rho g A \frac{L_e}4 \VV{\begin{array}{c} 1 \\1 \end{array}}
 \end{equation}
 \medskipvm
-Les variables nodales sont $\LL{q}=\LL{u_1, u_2, u_3, u_4}$, et, les matrices élémentaires
+Les variables nodales sont~$\LL{q}=\LL{u_1, u_2, u_3, u_4}$, et, les matrices élémentaires
 redonnées ci-dessus s'écrivent, en fonction de ces variables nodales:
 \begin{equation*}
 \MM{K}_1 = \frac{2EA}{L_1} \MM*{1 & -1 & 0 & 0\\ -1& 1 & 0 & 0\\ 0&0&0&0\\0&0&0&0}
@@ -306,14 +306,14 @@ et les forces nodales:
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 L'\textcolorblue{assemblage} permettant de constituer le système complet est simplement obtenu par:
-\begin{equation} \MM{K}=\MM{K}_1+\MM{K}_2+\MM{K}_3 \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
+\begin{equation} \MM{K}=\MM{K}_1+\MM{K}_2+\MM{K}_3 \qquad \text{ et} \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-On résoud alors $\MM{K}\VV{q}=\VV{f}$ avec la condition aux limites $u_1=0$.
+On résoud alors~$\MM{K}\VV{q}=\VV{f}$ avec la condition aux limites~$u_1=0$.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \paragraph{Remarque}
-La matrice $\MM{K}$ obtenue sur cet exemple a un \textcolorblue{caractère bande} (la matrice est 
+La matrice~$\MM{K}$ obtenue sur cet exemple a un \textcolorblue{caractère bande} (la matrice est 
 vide en dehors d'une zone centrée sur la diagonale). Ceci est dû à la numérotation des nœuds. 
 Une autre numérotation pourrait faire perdre ce caractère important (stockage et résolution).
 
@@ -322,9 +322,9 @@ est généralement faite.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini d'Hermite}
+  \section{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini d'Hermite}
 \else
-   \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini d'Hermite}
+  \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini d'Hermite}
 \fi
 En restant encore sur notre élément linéaire unidimensionnel, nous allons voir comment ajouter des
 contraintes sur les dérivées aux nœuds:
@@ -341,13 +341,13 @@ La géométrie est encore une fois approximée par:
 \medskipvm
 Mais cette fois, l'approximation de la foction solution est voulue sous la forme:
 \begin{equation}
-u = \LLL{N_1, N_2, N_3, N_4}\VV{u_n} \qquad \text{ avec les ddl } \qquad
+u = \LLL{N_1, N_2, N_3, N_4}\VV{u_n} \qquad \text{ avec les ddl} \qquad
 \LL{u_n}=\LLL{u_1, u_{,x_1}, u_2, u_{,x_2}} 
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Les fonctions $N_i$ choisies sont des fonctions cubiques de type Hermite assurant une continuité
-de $u$ et $u_{,x}$ aux nœuds 1 et 2. On a:
+Les fonctions~$N_i$ choisies sont des fonctions cubiques de type Hermite assurant une continuité
+de~$u$ et~$u_{,x}$ aux nœuds 1 et 2. On a:
 \begin{equation}
 N_1=\frac14(1-\xi)^2(2+\xi); \qquad
 N_2=\frac{L}8(\xi^2-1)(1-\xi); \qquad
@@ -356,24 +356,24 @@ N_2=\frac{L}8(\xi^2-1)(1+\xi)
 \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Le champ $u_{,x}$, qui est la déformation $\varepsilon$ est donné par: $\varepsilon=\LL{B}\{u_n\}$ avec:
+Le champ~$u_{,x}$, qui est la déformation~$\varepsilon$ est donné par:~$\varepsilon=\LL{B}\{u_n\}$ avec:
 \begin{equation} \LL{B}=\LLL{\frac3{2L}(\xi^2-1), \quad \frac14(3\xi^2-2\xi-1), \quad \frac3{2L}(1-\xi^2), \quad
 \frac14(3\xi^2+2\xi-1)}\end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-La contrainte, dans le cas où le coefficient d'élasticité $H$ est constant est
+La contrainte, dans le cas où le coefficient d'élasticité~$H$ est constant est
 donnée par:
 \begin{equation}\sigma_x=H \LL{B}\VV{u_n}\end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \ifVersionAvecExemplesSepares
-   \section{Élément mixte unidimensionnel}
+  \section{Élément mixte unidimensionnel}
 \else
-   \subsection{Élément mixte unidimensionnel}
+  \subsection{Élément mixte unidimensionnel}
 \fi
 Continuons avec notre élément de référence linéaire unidimensionnel. Cette fois-ci nous souhaitons
 le mettre en relation avec un segment réel dont les inconnues nodales sont les déplacements
-$u_1$ et $u_2$, mais qui possède en plus une approximation constante de la contrainte
+$u_1$ et~$u_2$, mais qui possède en plus une approximation constante de la contrainte
 par élément:
 \begin{table}[ht]
 \centering
@@ -385,7 +385,7 @@ par élément:
 \end{table}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Nous cherchons donc une approximation $C^0$ du déplacement et $C^{-1}$ de la
+Nous cherchons donc une approximation~$C^0$ du déplacement et~$C^{-1}$ de la
 contrainte.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -403,7 +403,7 @@ d'Hellinger-Reissner sous sa deuxième forme ou fonctionnelle mixte):\index[aut]
 W=\dint_0^L A\left(-\sigma_x^*\frac1H\sigma_x+\sigma_x^*u_{,x}+v_{,x}\sigma_x\right) \dd x
 -\dint_0^L Avf_x \dd x - (v f_S)_{S_f} = 0\qquad \forall v,\sigma^*
 \end{equation}
-avec les conditions aux limites $u=\overline{u}$ et $u^*=0$ sur $S_u$.
+avec les conditions aux limites~$u=\overline{u}$ et~$u^*=0$ sur~$S_u$.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 De manière discrétisée, il vient:
@@ -424,7 +424,7 @@ a=\dint_0^L \frac{A}H \dd x; \qquad
 \medskipvm
 On pourrait s'arrêter là avec le système précédent à résoudre.
 Toutefois, $\sigma_1$ est une variable locale sans couplage avec les autres éléments.
-On peut donc l'exprimer en fonction des autres ddl de l'élément $u_1$ et $u_2$.
+On peut donc l'exprimer en fonction des autres ddl de l'élément~$u_1$ et~$u_2$.
 La dernière ligne du système donne:
 $\sigma_1^*=\left(\LL{b}\VV{u_n}-a\sigma_1\right)=0$, $\forall \sigma_1^*$,
 d'où:
@@ -436,4 +436,4 @@ Et le système devient alors:
 \LL{v_n} \left( \MM{K}\VV{u_n}-\VV{f_n}\right) \end{equation}
 avec:
 \begin{equation} \MM{K}=\VV{b}\frac1a\LL{b} \end{equation}
-Dans le cas où $H$ est constant, la matrice de rigidité obtenue est identique à celle du modèle en déplacements du paragraphe~\ref{Sec-barre1D}.
+Dans le cas où~$H$ est constant, la matrice de rigidité obtenue est identique à celle du modèle en déplacements du paragraphe~\ref{Sec-barre1D}.

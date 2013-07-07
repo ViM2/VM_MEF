@@ -1,3 +1,4 @@
+% pdflatex -shell-escape VM_MEF
 % un pull puis un push, pour essai
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
 %%%%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
@@ -10,80 +11,80 @@
 
 %
 \ifVersionDuDocEstVincent
-   \documentclass[11pt,pdflatex]{book}
+  \documentclass[11pt,pdflatex]{book}
 \else
-   \documentclass[fleqn,11pt,pdflatex]{book}
+  \documentclass[fleqn,11pt,pdflatex]{book}
 \fi
 %
 % packages communs
-   \usepackage[utf8]{inputenc}
-   \usepackage[T1]{fontenc}
-   \usepackage{fancyhdr}
-   \usepackage{array,subfig}
-   \usepackage{graphicx,color,epstopdf,rotating}
-   \usepackage{amsmath,amsfonts,amssymb,bm,mathrsfs,amsthm,amstext,mathtools,bbm}
-   \usepackage{hyperref,multirow,multicol,xspace}
-   \usepackage{cutwin,fancyvrb,titletoc}
-   \usepackage[framemethod=tikz]{mdframed}
-   \usepackage[frenchb]{babel}
-   \frenchbsetup{IndentFirst=false}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{fancyhdr}
+  \usepackage{array,subfig}
+  \usepackage{graphicx,color,epstopdf,rotating}
+  \usepackage{amsmath,amsfonts,amssymb,bm,mathrsfs,amsthm,amstext,mathtools,bbm}
+  \usepackage{hyperref,multirow,multicol,xspace}
+  \usepackage{cutwin,fancyvrb,titletoc}
+  \usepackage[framemethod=tikz]{mdframed}
+  \usepackage[frenchb]{babel}
+  \frenchbsetup{IndentFirst=false}
 %
 \ifVersionDuDocEstVincent
-%   \usepackage{times}% si on veut...
-%   \usepackage{mathptmx}% Use Times as de­fault text font, and pro­vide maths sup­port
-%   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
-%   \usepackage[top=3.25cm,bottom=3.25cm,left=3cm,right=3cm,a4paper,headsep=15Pt]{geometry}
-%   \usepackage{enumitem}
-   \usepackage{a4}
-   \usepackage{makeidx,index}
-   \usepackage{frbib,bibtopic}
+%  \usepackage{times}% si on veut...
+%  \usepackage{mathptmx}% Use Times as de­fault text font, and pro­vide maths sup­port
+%  \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
+%  \usepackage[top=3.25cm,bottom=3.25cm,left=3cm,right=3cm,a4paper,headsep=15Pt]{geometry}
+%  \usepackage{enumitem}
+  \usepackage{a4}
+  \usepackage{makeidx,index}
+  \usepackage{frbib,bibtopic}
 %
 % Le A4 est "un peu court":
-   \addtolength{\textheight}{1.5cm}
-   \addtolength{\voffset}{-1.5cm}
-   \addtolength{\textwidth}{4cm}
-   \addtolength{\hoffset}{-1.5cm}
+  \addtolength{\textheight}{1.5cm}
+  \addtolength{\voffset}{-1.5cm}
+  \addtolength{\textwidth}{4cm}
+  \addtolength{\hoffset}{-1.5cm}
 %
-   \pagestyle{fancy}
-   \date{\emph{version du \today}}
-   \makeindex
-   \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
+  \pagestyle{fancy}
+  \date{\emph{version du \today}}
+  \makeindex
+  \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
 \else
-   \usepackage{microtype}
-   \usepackage{times}
-   \gdef\ttdefault{cmtt}%
-   \ifVersionDuCompilateurEstVincent% Poor's man version
-      \usepackage{mathptmx,amssymb} % police ouverte (il peut y avoir des messages d'erreur à la compilation)
-      \providecommand\mathscr{\mathcal} % à commenter lors de l'utilisation de mtpro2
-   \else
-      \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2} % police propriétaire
-   \fi
-   \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
-   \usepackage{enumitem}
-   \setlist{nolistsep} 
-   \usepackage{url}
-   \usepackage{eso-pic}
-   \pagestyle{fancy}
-   \usepackage{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
-   \makeindex[program=texindy,columns=2,title=Index des concepts,options=-L french -M mystyle.xdy]
-   \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres,options=-L french -M mystyle.xdy]
-   \usepackage{csquotes}           % utilisé par biblatex
-   \usepackage[                    % bibliographie (avec le moteur biber au lieu de bibtex)
-    style=alphabetic,              % citations comme [Fa91] pour Faltings, 91
-     style=numeric-comp,
-     sorting=nyt,                  % classement par nom, année, titre
-     sortcites=true,               % classer les citations multiples
-     autopunct=true,               % gérer automatiquement les ponctuations
-     babel=hyphen,                 % ajuster les césure pour chaque entrée
-     hyperref=true,                % les liens hypertexte, c'est le Bien
-     abbreviate=false,             % pas d'abréviation
-     backref=true,
-     backend=biber]{biblatex}      % pas de réfs. aux pages où l'entrée est citée
-   \bibliography{VM}               % utiliser these.bib (format bibtex normal)
-   \defbibheading{bibempty}{}      % voir ci-dessous
-   \usepackage[numbered,level=-1]{bookmark}
-   \renewcommand{\leq}{\leqslant}
-   \renewcommand{\geq}{\geqslant}
+  \usepackage{microtype}
+  \usepackage{times}
+  \gdef\ttdefault{cmtt}%
+  \ifVersionDuCompilateurEstVincent% Poor's man version
+   \usepackage{mathptmx,amssymb} % police ouverte (il peut y avoir des messages d'erreur à la compilation)
+   \providecommand\mathscr{\mathcal} % à commenter lors de l'utilisation de mtpro2
+  \else
+   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2} % police propriétaire
+  \fi
+  \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
+  \usepackage{enumitem}
+  \setlist{nolistsep} 
+  \usepackage{url}
+  \usepackage{eso-pic}
+  \pagestyle{fancy}
+  \usepackage{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
+  \makeindex[program=texindy,columns=2,title=Index des concepts,options=-L french -M mystyle.xdy]
+  \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres,options=-L french -M mystyle.xdy]
+  \usepackage{csquotes}      % utilisé par biblatex
+  \usepackage[          % bibliographie (avec le moteur biber au lieu de bibtex)
+  style=alphabetic,       % citations comme [Fa91] pour Faltings, 91
+   style=numeric-comp,
+   sorting=nyt,         % classement par nom, année, titre
+   sortcites=true,        % classer les citations multiples
+   autopunct=true,        % gérer automatiquement les ponctuations
+   babel=hyphen,         % ajuster les césure pour chaque entrée
+   hyperref=true,        % les liens hypertexte, c'est le Bien
+   abbreviate=false,       % pas d'abréviation
+   backref=true,
+   backend=biber]{biblatex}   % pas de réfs. aux pages où l'entrée est citée
+  \bibliography{VM}        % utiliser these.bib (format bibtex normal)
+  \defbibheading{bibempty}{}   % voir ci-dessous
+  \usepackage[numbered,level=-1]{bookmark}
+  \renewcommand{\leq}{\leqslant}
+  \renewcommand{\geq}{\geqslant}
 \fi
 
 %\selectlanguage{francais}
@@ -97,21 +98,21 @@
 \ifVersionDuDocEstVincent
 %
 \title{\colorblue\textbf{La Méthode des éléments Finis}\\[+5mm]
-   \emph{\colorgris Vulgarisation des aspects mathématiques}\\
-   \emph{\colorgris Illustration des capacités de la méthode}\\[+5mm]
-   \includegraphics[height=100mm]{couteau-suisse}}
-   \author{Vincent \textsc{Manet}}%\\[+2mm]
-%   \textcolorgreen{\emph{manet.vim2\symbol{64}laposte.net}}}
-   \maketitle
+  \emph{\colorgris Vulgarisation des aspects mathématiques}\\
+  \emph{\colorgris Illustration des capacités de la méthode}\\[+5mm]
+  \includegraphics[height=100mm]{couteau-suisse}}
+  \author{Vincent \textsc{Manet}}%\\[+2mm]
+%  \textcolorgreen{\emph{manet.vim2\symbol{64}laposte.net}}}
+  \maketitle
 \else
-   \thispagestyle{empty}\mbox{}%
-   \AddToShipoutPicture*{\includegraphics{Front}}%
+  \thispagestyle{empty}\mbox{}%
+  \AddToShipoutPicture*{\includegraphics{Front}}%
 %
-   \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
-   \setlength{\belowdisplayskip}{\abovedisplayskip}
-   \setlength{\abovecaptionskip}{3pt}
-   \setlength{\belowcaptionskip}{0pt}
-   \title
+  \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
+  \setlength{\belowdisplayskip}{\abovedisplayskip}
+  \setlength{\abovecaptionskip}{3pt}
+  \setlength{\belowcaptionskip}{0pt}
+  \title
 \fi
 % Verso de la page de titre
 \newpage\mbox{}\thispagestyle{empty}%
@@ -130,7 +131,7 @@ Ce document est sous licence Creative Commons 3.0 France:
 \url{http://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr}\\[8pt]
 \includegraphics[width=5cm]{IconTog.eps}
 \fi
-\newpage%  
+\newpage% 
 
 
 
@@ -139,7 +140,7 @@ Ce document est sous licence Creative Commons 3.0 France:
 \markboth{Introduction}{}
 
 Dans ce (de moins en moins court) document, plutôt à destination d'ingénieurs
-mécaniciens  connaissant déjà la méthode des éléments finis,
+mécaniciens connaissant déjà la méthode des éléments finis,
 nous allons essayer de faire une présentation un peu plus théorique que ce qui 
 leur est généralement proposé (et qui est quand même souvent de type 
 <<~preuve par les mains~>>, ce qui occulte trop de points).
@@ -181,7 +182,7 @@ les introduire sans parler...).
 
 Aussi le document a-t-il finalement été découpé en plusieurs parties:
 un survol des notions mathématiques, puis le traitement du problème
-continu constituent l'ossature théorique nécessaire à assoir la MEF
+continu constituent l'ossature théorique nécessaire à assoir la méthode des éléments finis
 sur un socle solide. La discrétisation par éléments finis à proprement parler
 n'est aborder qu'ensuite, et d'ailleurs un seul chapitre suffirait à en faire
 le tour... sauf à entrer plus dans le détail concernant <<~ce qui fâche~>>:
@@ -249,13 +250,13 @@ Il comporte forcément encore beaucoup de fautes: merci de m'en faire part.}
 En préambule à ce document, nous tenions à synthétiser \textcolorblue{la
 démarche complète de l'ingénieur numéricien}:
 \begin{itemize}
-   \item Modélisation / mise en équations -- Construction du problème continu (système d'EDP).
-   \item Analyse mathématique du problème posé -- Existence, unicité, propriétés des solutions.
-   \item Conception d'une méthode numérique -- Construction d'un problème discrétisé.
-   \item Analyse numérique -- Questions de stabilité, convergence, précision.
-   \item Algorithmique -- Choix de méthodes de résolution en dimension finie.
-   \item Mise en œuvre sur ordinateur -- Programmation.
-   \item Pre et Post Traitement (maillages / visualisation) -- Interpolation, extrapolation, outils de la CAO.
+  \item Modélisation / mise en équations -- Construction du problème continu (système d'EDP).
+  \item Analyse mathématique du problème posé -- Existence, unicité, propriétés des solutions.
+  \item Conception d'une méthode numérique -- Construction d'un problème discrétisé.
+  \item Analyse numérique -- Questions de stabilité, convergence, précision.
+  \item Algorithmique -- Choix de méthodes de résolution en dimension finie.
+  \item Mise en œuvre sur ordinateur -- Programmation.
+  \item Pre et Post Traitement (maillages / visualisation) -- Interpolation, extrapolation, outils de la CAO.
 \end{itemize}
 
 \medskip
@@ -266,7 +267,7 @@ Tous ces points ne seront évidemment pas abordés dans ce document!
 
 Nous n'avions pas prévu de réaliser une deuxième version aussi rapidement.
 Celle-ci existe suite aux sollicitations de Mathias Legrand\index[aut]{Legrand (Mathias), ?- , Français}.
-C'est lui  qui a développé les macros nécessaires à l'amélioration très très nette de la 
+C'est lui qui a développé les macros nécessaires à l'amélioration très très nette de la 
 qualité typographique (environnements pour les notes historiques, les théorèmes, lemmes...).
 
 C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du même code source):
@@ -280,13 +281,13 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 %
 %Sont (ou seront) également disponibles les cours suivants:
 %\begin{itemize}
-%   \item calcul en fatigue des matériaux composites;
-%   \item composites: lois de comportements, rupture, essais (et dynamique)
-%   \item les structures algébriques;
-%   \item l'acoustique numérique;
-%   \item la mécanique stochastique;
-%   \item le traitement du signal;
-%   \item ...
+%  \item calcul en fatigue des matériaux composites;
+%  \item composites: lois de comportements, rupture, essais (et dynamique)
+%  \item les structures algébriques;
+%  \item l'acoustique numérique;
+%  \item la mécanique stochastique;
+%  \item le traitement du signal;
+%  \item ...
 %\end{itemize}
 
 
@@ -319,7 +320,7 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 \include{./tex/FFaible}
 \include{./tex/phy-ffble}
 \ifVersionAvecExemplesSepares\else
-  \include{./tex/ex1}% exemple formulation math
+ \include{./tex/ex1}% exemple formulation math
 \fi
 
 \part{Éléments finis}
@@ -339,15 +340,15 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 
 % \ifVersionAvecExemplesSepares
 %%%%%\part{Pratique des éléments finis}
-   % \part{Quelques exemples}
-   % \include{./tex/ex1}% exemple formulation math
-   % \include{./tex/ex2}% élts 1D
-   % \include{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
-   % \include{./tex/ex5}% efforts équivalents sur un poutre
-   % \include{./tex/ex3}% poutre Ch 10 sous Cast3M
-   % \include{./tex/ex4}% macro Ansys et poutre en U
-   % \include{./tex/ex6}% propagation freefem++
-   % \include{./tex/ex7}% contact Cast3M
+  % \part{Quelques exemples}
+  % \include{./tex/ex1}% exemple formulation math
+  % \include{./tex/ex2}% élts 1D
+  % \include{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
+  % \include{./tex/ex5}% efforts équivalents sur un poutre
+  % \include{./tex/ex3}% poutre Ch 10 sous Cast3M
+  % \include{./tex/ex4}% macro Ansys et poutre en U
+  % \include{./tex/ex6}% propagation freefem++
+  % \include{./tex/ex7}% contact Cast3M
 % \fi
 
 \appendix
@@ -359,21 +360,21 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 
 
 % \ifVersionDuDocEstVincent
-   % \chapter*{Bibliographie}
+  % \chapter*{Bibliographie}
 % \markboth{Bibliographie}{}
-  %%%%%%%\addcontentsline{toc}{chapter}{Bibliographie}
-   % BIBTOPIC crée pour chaque appel à BtSect un fichier .aux
-   % on aura donc VM_MEF1.aux... VM_MEF5.aux (correspondant
-   % aux fihicers VM_MEF0, ..., VM_MEF3, VM_MEFA.bib)
-   % il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
-   % pour créer les fichiers .bbl nécessaires.
+ %%%%%%%\addcontentsline{toc}{chapter}{Bibliographie}
+  % BIBTOPIC crée pour chaque appel à BtSect un fichier .aux
+  % on aura donc VM_MEF1.aux... VM_MEF5.aux (correspondant
+  % aux fihicers VM_MEF0, ..., VM_MEF3, VM_MEFA.bib)
+  % il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
+  % pour créer les fichiers .bbl nécessaires.
 
 % Le présent document est essentiellement une composition faite à partir de textes
 % trouvés sur le net, qui ont été <<~mis bout à bout~>> afin de réduire l'effort
 % de rédaction (le document ayant été réalisé à ressources minimales ).
 
 
-% Les principales  ressources bibliographiques utilisées pour la rédaction de ce document
+% Les principales ressources bibliographiques utilisées pour la rédaction de ce document
 % sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur
 % désireux d'approfondir certains thèmes (Google est ton ami).
 
@@ -406,14 +407,14 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 % \btPrintAll
 % \end{btSect} 
 
-% \begin{btSect}{VM_MEFA}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+% \begin{btSect}{VM_MEFA}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
 % \section*{Références des annexes}\markboth{Références des annexes}{}
 % \btPrintAll
 % \end{btSect} 
 
 
 % \cleardoublepage
-% \phantomsection  
+% \phantomsection 
 % \renewcommand{\indexname}{Index}
 % \markboth{Index}{}
 % \addcontentsline{toc}{chapter}{\indexname}
@@ -422,19 +423,19 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 % \cleardoublepage
 % \makeatletter
 % \renewenvironment{theindex}
-               % {\if@twocolumn
-                  % \@restonecoltrue\onecolumn
-                % \else
-                  % \@restonecolfalse
-                % \fi
-                % \thispagestyle{fancy}\parindent\z@
-                % \parskip\z@ \@plus .3\p@\relax
-                % \columnseprule \z@
-                % \columnsep 35\p@
-                % \let\item\@idxitem}
-               % {\if@restonecol\twocolumn\fi}
+        % {\if@twocolumn
+         % \@restonecoltrue\onecolumn
+        % \else
+         % \@restonecolfalse
+        % \fi
+        % \thispagestyle{fancy}\parindent\z@
+        % \parskip\z@ \@plus .3\p@\relax
+        % \columnseprule \z@
+        % \columnsep 35\p@
+        % \let\item\@idxitem}
+        % {\if@restonecol\twocolumn\fi}
 % \makeatother
-% \phantomsection  
+% \phantomsection 
 % \markboth{Index des Noms Propres}{}
 % \addcontentsline{toc}{chapter}{Index des Noms Propres}
 
@@ -445,22 +446,22 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 % \bigskip
 
 %%%%%il faut MakeIndexer le fichier "VM_MEF.aut.idx"
-   % \renewcommand{\indexname}{Index des Noms Propres}
-   % \printindex[aut]
+  % \renewcommand{\indexname}{Index des Noms Propres}
+  % \printindex[aut]
 
-   % \cleardoublepage
-   % \include{./tex/galerie}
+  % \cleardoublepage
+  % \include{./tex/galerie}
 %%%%%%%%%
 % \else
 \begingroup\small
-    \printindex[aut]
-    \printindex
+  \printindex[aut]
+  \printindex
 \endgroup
-   % \cite{*}
-   % \chapter*{Références bibliographiques}
-%%%%%%\index[aut]{Joly (Patrick), ?- , Français}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+  % \cite{*}
+  % \chapter*{Références bibliographiques}
+%%%%%%\index[aut]{Joly (Patrick), ?- , Français}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
 
-   % \printbibliography[heading=bibempty]
+  % \printbibliography[heading=bibempty]
 % \fi
 
 \end{document}

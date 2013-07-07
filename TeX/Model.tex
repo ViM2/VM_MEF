@@ -160,96 +160,96 @@ utilisés par exemple pour la modélisation des solides incompressibles (nous av
 
 
 \bigskip
-\textcolorred{Ce document s'adressant à des personnes connaissant déjà la MEF, nous allons
+\textcolorred{Ce document s'adressant à des personnes connaissant déjà la méthode des éléments finis, nous allons
 présenter très brièvement, sous forme d'a parte, la discrétisation multi-champs, de
 manière un peu découplée du reste du document, juste pour fixer les idées.}
 
 \medskip
-Si l'on note $u$ le champ de déplacements, il peut être approché à partir
-des déplacements nodaux (sous forme de vecteur) $\VV{q}$ par l'intermédiaire
-de fonctions de formes rangées dans la matrice $\MM{N_u}$.
+Si l'on note~$u$ le champ de déplacements, il peut être approché à partir
+des déplacements nodaux (sous forme de vecteur)~$\VV{q}$ par l'intermédiaire
+de fonctions de formes rangées dans la matrice~$\MM{N_u}$.
 
 Compte tenu des notations utilisées, les interpolations des différents
 champs se font, sur chaque élément, de la manière suivante:
 \begin{equation}
-   u=\MM{N_u}\VV{q}
+  u=\MM{N_u}\VV{q}
 \end{equation}
 
-De la même manière, si les déformations $\varepsilon$ sont choisies comme champ inconnu,
+De la même manière, si les déformations~$\varepsilon$ sont choisies comme champ inconnu,
 elles seront approchées à partir des déformations nodales (sous forme de vecteur avec
-la convention de l'ingénieur) $\VV{\gamma}$ par l'intermédiaire de fonctions de formes rangées
-dans la matrice $\MM{N_\varepsilon}$.
+la convention de l'ingénieur)~$\VV{\gamma}$ par l'intermédiaire de fonctions de formes rangées
+dans la matrice~$\MM{N_\varepsilon}$.
 \begin{equation}
-   \varepsilon = \MM{N_\varepsilon}\VV{\gamma}
+  \varepsilon = \MM{N_\varepsilon}\VV{\gamma}
 \end{equation}
 
-Cela vaut également pour les contraintes $\sigma$ qui, si elles sont choisies comme champ
+Cela vaut également pour les contraintes~$\sigma$ qui, si elles sont choisies comme champ
 inconnu, seront approchées à partir des contraintes nodales (sous forme de vecteur avec
-la convention de l'ingénieur) $\VV{\tau}$ par l'intermédiaire de fonctions de formes rangées
-dans la matrice $\MM{N_\sigma}$.
+la convention de l'ingénieur)~$\VV{\tau}$ par l'intermédiaire de fonctions de formes rangées
+dans la matrice~$\MM{N_\sigma}$.
 \begin{equation}
-   \sigma = \MM{N_\sigma}\VV{\tau}
+  \sigma = \MM{N_\sigma}\VV{\tau}
 \end{equation}
 Notons que dans la pratique, rien n'empêche de prendre les mêmes fonctions
 de forme pour les différents champs.
 \medskip
-De manière analogue, le vecteur $\VV{\lambda}$ de multiplicateurs
-de Lagrange sera interpolé de la fa\c{c}on suivante:
+De manière analogue, le vecteur~$\VV{\lambda}$ de multiplicateurs
+de Lagrange sera interpolé de la façon suivante:
 \begin{equation}
-   \VV{\lambda}=\MM{N_\lambda}\VV{L}
+  \VV{\lambda}=\MM{N_\lambda}\VV{L}
 \end{equation}
 \medskip
 On aura donc:\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 \begin{equation}
-   \begin{array}{rcll}
-   \varepsilon &=& \MM{N_\varepsilon}\VV{\gamma}
-                      &\text{approximation en déformations}\\
-                    &=& \MM{\cL}u
-                      &\text{relation déformations déplacements}\\
-                    &=& \MM{\cL}\MM{N_u}\VV{q}
-                      &\text{approximation en déplacements}\\
-                    &=& \MM{S}\sigma
-                      &\text{loi de Hooke inverse}\\
-                    &=& \MM{S}\MM{N_\sigma}\VV{\tau}
-                      &\text{approximation en contraintes}
-   \end{array}
+  \begin{array}{rcll}
+  \varepsilon &=& \MM{N_\varepsilon}\VV{\gamma}
+           &\text{approximation en déformations}\\
+          &=& \MM{\cL}u
+           &\text{relation déformations déplacements}\\
+          &=& \MM{\cL}\MM{N_u}\VV{q}
+           &\text{approximation en déplacements}\\
+          &=& \MM{S}\sigma
+           &\text{loi de Hooke inverse}\\
+          &=& \MM{S}\MM{N_\sigma}\VV{\tau}
+           &\text{approximation en contraintes}
+  \end{array}
 \end{equation}
 et, de façon inverse:\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 \begin{equation}
-   \begin{array}{rcll}
-   \sigma &=& \MM{N_\sigma}\VV{\tau}
-                      &\text{approximation en contraintes}\\
-                    &=& \MM{H}\varepsilon
-                      &\text{loi de Hooke généralisée}\\
-                    &=& \MM{H}\MM{N_\varepsilon}\VV{\gamma}
-                      &\text{approximation en déformations}\\
-                    &=& \MM{H}\MM{\cL}u
-                      &\text{loi de Hooke en élasticité linéaire}\\
-                    &=& \MM{H}\MM{\cL}\MM{N_u}\VV{q}
-                      &\text{approximation en déplacements}
-   \end{array}
+  \begin{array}{rcll}
+  \sigma &=& \MM{N_\sigma}\VV{\tau}
+           &\text{approximation en contraintes}\\
+          &=& \MM{H}\varepsilon
+           &\text{loi de Hooke généralisée}\\
+          &=& \MM{H}\MM{N_\varepsilon}\VV{\gamma}
+           &\text{approximation en déformations}\\
+          &=& \MM{H}\MM{\cL}u
+           &\text{loi de Hooke en élasticité linéaire}\\
+          &=& \MM{H}\MM{\cL}\MM{N_u}\VV{q}
+           &\text{approximation en déplacements}
+  \end{array}
 \end{equation}
 avec, en petites déformations:
 \begin{equation}
-   \MM{\cL} = \MM*{
-                    \tfrac{\partial}{\partial x} & 0\\
-                    0 & \tfrac{\partial}{\partial y}\\
-                    \tfrac{\partial}{\partial y} &
-                    \tfrac{\partial}{\partial x}
-              }
-   \text{ en 2D, et }
-   \MM{\cL} = \MM*{
-                    \tfrac{\partial}{\partial x} & 0 & 0\\
-                    0 & \tfrac{\partial}{\partial y} & 0\\
-                    0 & 0 & \tfrac{\partial}{\partial z}\\
-                    0 & \tfrac{\partial}{\partial z} &
-                    \tfrac{\partial}{\partial y}\\
-                    \tfrac{\partial}{\partial z} & 0&
-                    \tfrac{\partial}{\partial x} \\
-                    \tfrac{\partial}{\partial y} &
-                    \tfrac{\partial}{\partial x} &0\\
-              }
-   \text{ en 3D}
+  \MM{\cL} = \MM*{
+          \tfrac{\partial}{\partial x} & 0\\
+          0 & \tfrac{\partial}{\partial y}\\
+          \tfrac{\partial}{\partial y} &
+          \tfrac{\partial}{\partial x}
+      }
+  \text{ en 2D, et}
+  \MM{\cL} = \MM*{
+          \tfrac{\partial}{\partial x} & 0 & 0\\
+          0 & \tfrac{\partial}{\partial y} & 0\\
+          0 & 0 & \tfrac{\partial}{\partial z}\\
+          0 & \tfrac{\partial}{\partial z} &
+          \tfrac{\partial}{\partial y}\\
+          \tfrac{\partial}{\partial z} & 0&
+          \tfrac{\partial}{\partial x} \\
+          \tfrac{\partial}{\partial y} &
+          \tfrac{\partial}{\partial x} &0\\
+      }
+  \text{ en 3D}
 \end{equation}
 
 \medskip
@@ -257,22 +257,22 @@ La méthode des éléments finis \emph{classique}, ou \emph{en
 déplacements}, n'utilise que le champ de déplacements comme
 variable. Elle est basée sur le \textcolorblue{principe du travail virtuel}:
 \begin{equation}
-   \label{Eq:deltaPiTV}
-   \delta\Pi_{TV} = \dint_{\Omega} \delta\varepsilon(u)H\varepsilon(u)
-           - \delta u\fbar \ \dd\Omega
-           -\dint_{\ls} \delta u\Tbar \ \dd\Gamma
+  \label{Eq:deltaPiTV}
+  \delta\Pi_{TV} = \dint_{\Omega} \delta\varepsilon(u)H\varepsilon(u)
+      - \delta u\fbar \ \dd\Omega
+      -\dint_{\ls} \delta u\Tbar \ \dd\Gamma
 \end{equation}
-avec $\fbar$ les forces imposées dans $\Omega$ et $\Tbar$ les forces imposées
-sur $\ls$, où $\ls$ et $\lu$ forment une partition de
+avec~$\fbar$ les forces imposées dans~$\Omega$ et~$\Tbar$ les forces imposées
+sur~$\ls$, où~$\ls$ et~$\lu$ forment une partition de
 $\Gamma=\partial\Omega$.
 \medskip
 Ce principe est obtenu comme variation de la fonctionnelle de
 l'\textcolorblue{énergie potentielle totale} exprimée en déplacements:
 \begin{equation}
-   \label{Eq:PiTV}
-   \Pi_{TV} = \dint_{\Omega} \tfrac12 \LL{\varepsilon(u)}\MM{H}\VV{\varepsilon(u)}
-           - \LL{q}\VV{\fbar} \ \dd\Omega
-           -\dint_{\ls} \LL{q}\VV{\Tbar} \ \dd\Gamma
+  \label{Eq:PiTV}
+  \Pi_{TV} = \dint_{\Omega} \tfrac12 \LL{\varepsilon(u)}\MM{H}\VV{\varepsilon(u)}
+      - \LL{q}\VV{\fbar} \ \dd\Omega
+      -\dint_{\ls} \LL{q}\VV{\Tbar} \ \dd\Gamma
 \end{equation}
 où les conditions subsidiaires sur les déplacements sont prises en compte
 directement par l'espace dans lequel les déplacements sont recherchés.
@@ -283,11 +283,11 @@ est sans doute la plus connue des fonctionnelles mixtes. Elle utilise les champs
 déplacements et de contraintes comme variables indépendantes.
 Son expression est la suivante, $\Ubar$ désignant les déplacement imposés:
 \begin{equation}
-   \label{Eq:PiHR}
-   \Pi_{HR}= \dint_\Omega -\tfrac12\sigma S\sigma
-         - \sigma_{ij,j}u+ \fbar u\ \dd\Omega
-        -\dint_{\ls} \left(\Tbar-T\right)u\ \dd\Gamma
-         -\dint_{\lu} \Ubar T\ \dd\Gamma
+  \label{Eq:PiHR}
+  \Pi_{HR}= \dint_\Omega -\tfrac12\sigma S\sigma
+     - \sigma_{ij,j}u+ \fbar u\ \dd\Omega
+    -\dint_{\ls} \left(\Tbar-T\right)u\ \dd\Gamma
+     -\dint_{\lu} \Ubar T\ \dd\Gamma
 \end{equation}
 bien que l'on puisse la trouver sous une autre forme, obtenue par
 intégration par parties de celle-ci. Elle n'a à satisfaire
@@ -303,19 +303,19 @@ déplacements et de contraintes comme inconnues nodales. Il s'en
 suit que toutes les composantes de ces champs sont continues.
 Elle conduit à la résolution d'un système du type mixte (Brezzi):\index[aut]{Brezzi (Franco), 1945-, Italien}
 \begin{equation}
-   \label{Eq:SysMixte}
-   \MM*{-\MM{A} & \MM{B}\\
-      \MM{B}^\TR &\mO}
-   \VV*{\VV{\tau}\\\VV{q}} =
-   \VV*{\mO\\\VV{F}}
+  \label{Eq:SysMixte}
+  \MM*{-\MM{A} & \MM{B}\\
+   \MM{B}^\TR &\mO}
+  \VV*{\VV{\tau}\\\VV{q}} =
+  \VV*{\mO\\\VV{F}}
 \end{equation}
 où la matrice de rigidité est symétrique et non définie-positive, et:
 \begin{equation}
-   \MM{A}=+\dint_\Omega \MMT{N_\sigma}\MM{S}\MM{N_\sigma}\ \dd\Omega
-   \qquad
-   \MM{B}=+\dint_\Omega \MMT{N_\sigma}\MM{\cL}\MM{N_u}\ \dd\Omega
-   \qquad
-   \VV{F}=+\dint_\Omega \MMT{N_u}\VV{\fbar}\ \dd\Omega
+  \MM{A}=+\dint_\Omega \MMT{N_\sigma}\MM{S}\MM{N_\sigma}\ \dd\Omega
+  \qquad
+  \MM{B}=+\dint_\Omega \MMT{N_\sigma}\MM{\cL}\MM{N_u}\ \dd\Omega
+  \qquad
+  \VV{F}=+\dint_\Omega \MMT{N_u}\VV{\fbar}\ \dd\Omega
 \end{equation}
 
 \medskip
@@ -332,92 +332,92 @@ de l'adjectif \textcolorblue{hybride},\index{fonctionnelle!hybride} même si, en
 une méthode mixte (deux champs) hybride (différents domaines
 d'interpolation):
 \begin{equation}
-   \label{Eq:PiPT}
-   \Pi_{PT} = -\tfrac12\dint_\Omega \sigma S\sigma\ \dd\Omega
-         +\dint_{\Gamma} T u\ \dd\Gamma\\
-         -\dint_{\ls} \Tbar u\ \dd\Gamma
+  \label{Eq:PiPT}
+  \Pi_{PT} = -\tfrac12\dint_\Omega \sigma S\sigma\ \dd\Omega
+     +\dint_{\Gamma} T u\ \dd\Gamma\\
+     -\dint_{\ls} \Tbar u\ \dd\Gamma
 \end{equation}
 
 \medskip
 Sa variation est:
 \begin{equation}
-   \label{Eq:deltaPiPT}
-   \delta\Pi_{PT} =
-        -\dint_{\Omega} \sigma S\sigma\ \dd\Omega
-        +\dint_{\Gamma} \delta Tu+\delta uT\ \dd\Gamma
-        -\dint_{\ls} \delta u \Tbar\ \dd\ls
+  \label{Eq:deltaPiPT}
+  \delta\Pi_{PT} =
+    -\dint_{\Omega} \sigma S\sigma\ \dd\Omega
+    +\dint_{\Gamma} \delta Tu+\delta uT\ \dd\Gamma
+    -\dint_{\ls} \delta u \Tbar\ \dd\ls
 \end{equation}
 \textcolorgreen{dont l'avantage principal est de ne pas comporter de dérivée.}
 
 \medskip
 Cette variation peut être transformée en:
 \[
-   \dint_\Omega \delta \sigma (\varepsilon- S\sigma) \ \dd\Omega
-   +\dint_{\Gamma} \delta uT\ \dd\Gamma
-   -\dint_{\ls} \delta u\Tbar\ \dd\Gamma
+  \dint_\Omega \delta \sigma (\varepsilon- S\sigma) \ \dd\Omega
+  +\dint_{\Gamma} \delta uT\ \dd\Gamma
+  -\dint_{\ls} \delta u\Tbar\ \dd\Gamma
 \]
 %ou encore:
 %\[
-%   \dint_\Omega \delta \sigma (\varepsilon-[S]\sigma) \ \dd\Omega
-%   +\dint_{\ls} \delta u(T-\Tbar)\ \dd\Gamma\\
-%   +\dint_{\li} \delta u(T^1+T^2)\ \dd\Gamma
+%  \dint_\Omega \delta \sigma (\varepsilon-[S]\sigma) \ \dd\Omega
+%  +\dint_{\ls} \delta u(T-\Tbar)\ \dd\Gamma\\
+%  +\dint_{\li} \delta u(T^1+T^2)\ \dd\Gamma
 %\]
 %où les champs seront différenciés par leur indice supérieur ~$^1$ et
-%~$^2$ de chaque c\oté de l'interface $\li$.
+%~$^2$ de chaque c\oté de l'interface~$\li$.
 
 \medskip
 La stationnarité de cette fonctionnelle conduit à la loi de
 comportement, et aux conditions aux limites en contraintes.
 Les conditions aux limites en déplacements seront imposées par l'espace
-dans lequel on cherche $u$.
+dans lequel on cherche~$u$.
 
 \medskip
 Le système à résoudre est de la forme mixte donné précédemment à la relation (\ref{Eq:SysMixte})
 avec:
 \begin{equation}
-   \MM{A} = +\dint_{\Omega} \MMT{N_\sigma}\MM{S}\MM{N_\sigma}\ \dd\Omega
+  \MM{A} = +\dint_{\Omega} \MMT{N_\sigma}\MM{S}\MM{N_\sigma}\ \dd\Omega
 \qquad
-   \MM{B} = +\dint_{\Gamma} \MMT{N_\sigma}\MMT{M}\MM{N_u}\ \dd\Gamma
+  \MM{B} = +\dint_{\Gamma} \MMT{N_\sigma}\MMT{M}\MM{N_u}\ \dd\Gamma
 \qquad
-   \VV{F} = +\dint_{\ls} \MMT{N_u}\VV{\Tbar} \ \dd\Gamma
+  \VV{F} = +\dint_{\ls} \MMT{N_u}\VV{\Tbar} \ \dd\Gamma
 \end{equation}
 $\MM{M}$ étant la matrice des cosinus directeurs donnée
 par les relations:
 \begin{equation}
-%   \label{Eq:MatriceCosinusii}
-   \MM{M}=\MM*{n_1&  0&n_2\\
-                    0&n_2&n_1}
+%  \label{Eq:MatriceCosinusii}
+  \MM{M}=\MM*{n_1& 0&n_2\\
+          0&n_2&n_1}
 %\end{equation}
-\text{ dans le plan, et }%\\[-1.5ex]
+\text{ dans le plan, et}%\\[-1.5ex]
 %\begin{equation}
-%   \label{Eq:MatriceCosinusiii}
-   \MM{M}=\MM*{n_1&  0&  0&  0&n_3&n_2\\
-                    0&n_2&  0&n_3&  0&n_1\\
-                    0&  0&n_3&n_2&n_1&  0}
+%  \label{Eq:MatriceCosinusiii}
+  \MM{M}=\MM*{n_1& 0& 0& 0&n_3&n_2\\
+          0&n_2& 0&n_3& 0&n_1\\
+          0& 0&n_3&n_2&n_1& 0}
 \text{ dans l'espace.}
 \end{equation}
 
 \bigskip
-Toutefois, le champ de contraintes n'étant défini que dans $\Omega$,
+Toutefois, le champ de contraintes n'étant défini que dans~$\Omega$,
 il est possible d'effectuer une \textcolorblue{condensation statique} du
 champ de contraintes, i.e. de transformer le système
 (\ref{Eq:SysMixte}) en écrivant:
 \begin{equation}
-   \label{Eq:TauQ}
-      \VV{\tau} = \MMI{A}\MM{B}\VV{q}
+  \label{Eq:TauQ}
+   \VV{\tau} = \MMI{A}\MM{B}\VV{q}
 \end{equation}
 et le champ de déplacements est solution d'un système de type
-classique $\MM{K}\VV{q}=\VV{F}$, où la matrice de rigidité $\MM{K}$ est remplacée
+classique~$\MM{K}\VV{q}=\VV{F}$, où la matrice de rigidité~$\MM{K}$ est remplacée
 par la matrice de rigidité équivalente suivante:
 \begin{equation}
-%   \label{Eq:Keq}
-   \MM{K_{eq}} = \MMT{B}\MMI{A}\MM{B}
+%  \label{Eq:Keq}
+  \MM{K_{eq}} = \MMT{B}\MMI{A}\MM{B}
 \end{equation}
 
 
 \medskip
 Sur le plan du déroulement du calcul, on commence par résoudre une <<~ forme classique~>>
-mais en utilisant la matrice de rigidité équivalente $\MM{K_{eq}}$, puis le
+mais en utilisant la matrice de rigidité équivalente~$\MM{K_{eq}}$, puis le
 calcul des contraintes dans chaque élément se fait par la relation (\ref{Eq:TauQ}).
 
 
@@ -425,23 +425,23 @@ calcul des contraintes dans chaque élément se fait par la relation (\ref{Eq:Ta
 Les multiplicateurs de Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 peuvent être utilisés pour introduire
 des conditions supplémentaires directement à la fonctionnelle.
-Ces conditions sont généralement imposées sur $\Gamma_X$, tout ou
-partie de $\Gamma$, contour de $\Omega$.
-Pour ce faire, il suffit d'ajouter à la fonctionnelle $\Pi$
+Ces conditions sont généralement imposées sur~$\Gamma_X$, tout ou
+partie de~$\Gamma$, contour de~$\Omega$.
+Pour ce faire, il suffit d'ajouter à la fonctionnelle~$\Pi$
 du problème le terme:
 \begin{equation}
-   \pm\dint_{\Gamma_X} \LL{\lambda}\VV{\text{condition}}
+  \pm\dint_{\Gamma_X} \LL{\lambda}\VV{\text{condition}}
 \end{equation}
-où les $\lambda_i$ sont les multiplicateurs de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+où les~$\lambda_i$ sont les multiplicateurs de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
 \medskip
 Les multiplicateurs de Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 sont généralement utilisés pour:
 \begin{itemize}
-   \item introduire des variables physiques additionnelles comme
-         inconnues;
-   \item obtenir des conditions de dérivabilité ou des conditions aux
-         limites moins sévères sur les inconnues.
+  \item introduire des variables physiques additionnelles comme
+     inconnues;
+  \item obtenir des conditions de dérivabilité ou des conditions aux
+     limites moins sévères sur les inconnues.
 \end{itemize}
 
 \medskip
@@ -517,8 +517,8 @@ et les grandes roues, que l'on démontra la validité de la théorie à grande �
 La théorie des poutres est une simplification unidimensionnelle.
 On distingue:
 \begin{itemize}
-   \item la théorie d'Euler-Bernoulli, qui néglige l'influence du cisaillement;
-   \item la théorie de Timoshenko\index[aut]{Timoshenko (Stephen), 1878-1972, Russe} qui prend en compte l'effet du cisaillement.
+  \item la théorie d'Euler-Bernoulli, qui néglige l'influence du cisaillement;
+  \item la théorie de Timoshenko\index[aut]{Timoshenko (Stephen), 1878-1972, Russe} qui prend en compte l'effet du cisaillement.
 \end{itemize}
 
 
@@ -545,15 +545,15 @@ et Uflyand (1948).\index[aut]{Uflyand (Yakov Solomonovic), ,Russe}
 \medskip
 La théorie des plaques minces, ou théorie de Love-Kirchhoff, suppose que:\index[aut]{Love (Augustus Edward Hough), 1863-1940, Anglais}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 \begin{itemize}
-   \item le plan moyen (équivalent de la courbe moyenne des poutres) est initialement plan ;
-   \item le feuillet moyen (équivalent de la fibre neutre des poutres) ne subit pas de déformation
-	dans son plan; on ne considère que le déplacement transversal $w$ des points du feuillet moyen ;
-   \item modèle de Kirchhoff:\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+  \item le plan moyen (équivalent de la courbe moyenne des poutres) est initialement plan ;
+  \item le feuillet moyen (équivalent de la fibre neutre des poutres) ne subit pas de déformation
+	dans son plan; on ne considère que le déplacement transversal~$w$ des points du feuillet moyen ;
+  \item modèle de Kirchhoff:\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	les sections normales au feuillet moyen restent normales lors de la
 	déformation ; en conséquence, on peut négliger le cisaillement ;
-   \item l'épaisseur est faible; en conséquence, les contraintes dans le sens de l'épaisseur sont
+  \item l'épaisseur est faible; en conséquence, les contraintes dans le sens de l'épaisseur sont
 	supposées nulles ;
-   \item on reste en petites déformations.
+  \item on reste en petites déformations.
 \end{itemize}
 Notons que cette théorie permet de déterminer la propagation des ondes dans les plaques,
 ainsi que l'étude des ondes stationnaires et des modes vibratoires.
@@ -573,7 +573,7 @@ On ne peut donc plus négliger le cisaillement.
 \footnotetext{%\colormagenta
 Robert Hooke, qui désirait obtenir une théorie des ressorts en soumettant ces derniers à des forces
 croissantes successives, énonça en 1978, à partir d'expériences datant de 1675,
-la loi  de comportement suivante:
+la loi de comportement suivante:
 <<~ut tensio sic vis~>>
 ce qui signifie <<~telle extension, telle force~>>, ou bien en termes modernes <<~l'allongement est
 proportionnel à la force~>>.\colorblack}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
@@ -596,7 +596,7 @@ une plaque, ou peut-on se contenter d'un modèle de poutre?
 \end{figure}
 
 \medskip
-L'étude de la contrainte axiale $\sigma_{xx}$ est donnée à la figure~\ref{Pout1-sigxx}.
+L'étude de la contrainte axiale~$\sigma_{xx}$ est donnée à la figure~\ref{Pout1-sigxx}.
 \begin{figure}[ht]
 \centering
 \includegraphics[height=45mm]{pout1-sigxx.eps}
@@ -621,7 +621,7 @@ en un point quelconque de la poutre, pourvu que ce point soit suffisamment éloi
 d'applications des forces et des liaisons, est indépendant de la façon dont sont appliquées
 les forces et de la façon dont sont physiquement réalisées les liaisons; le comportement
 dépend alors uniquement du torseur des forces internes en ce point.}\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{principe! de Saint-Venant}
-Les différences proviennent des effets de bord, i.e. des variations
+Les différences proviennent des éléments finisfets de bord, i.e. des variations
 locales des contraintes et déformations au voisinage des conditions aux limites.
 
 Une comparaison plus fine des trois modélisations concernant cette même contrainte normale
@@ -668,12 +668,12 @@ afin de pouvoir respecter le premier principe de la thermodynamique dont l'écri
 de calculer le travail de tous les efforts permis par la théorie).
 Les \textcolorblue{composantes accessibles} sont:
 \begin{itemize}
-   \item la \textbf{théorie des poutres} ne permet pas de calculer les contraintes dans le plan
-	transversal ($\sigma_{yy}$, $\sigma_{zz}$ et $\sigma_{yz}$) du fait de l'indéformabilité
+  \item la \textbf{théorie des poutres} ne permet pas de calculer les contraintes dans le plan
+	transversal ($\sigma_{yy}$, $\sigma_{zz}$ et~$\sigma_{yz}$) du fait de l'indéformabilité
 	des sections droites.;
-   \item la \textbf{théorie des plaques} ne permet pas de calculer la contrainte normale au plan de la plaque
+  \item la \textbf{théorie des plaques} ne permet pas de calculer la contrainte normale au plan de la plaque
 	$\sigma_{zz}$, du fait de l'indéformabilité des segments perpendiculaires à ce plan ;
-   \item enfin, la \textbf{théorie 3D} permet de calculer les six composantes du tenseur des contraintes.
+  \item enfin, la \textbf{théorie 3D} permet de calculer les six composantes du tenseur des contraintes.
 \end{itemize}
 
 \medskip
@@ -690,8 +690,8 @@ ou de permettre d'accéder à certaines composantes (sous certaines hypothèses)
 doit être pris en compte.
 
 \ifVersionAvecExemplesSepares\else
-   \input{./tex/ex3}% poutre Ch 10 sous Cast3M
-%   \input{./tex/ex5}% efforts équivalents sur une poutre
+  \input{./tex/ex3}% poutre Ch 10 sous Cast3M
+%  \input{./tex/ex5}% efforts équivalents sur une poutre
 \fi
 
 \medskip

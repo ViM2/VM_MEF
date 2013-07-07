@@ -3,33 +3,33 @@
 
 \section*{Norme, produit scalaire, espaces}
 
-Soit $E$ un \textcolorblue{espace vectoriel}.
+Soit~$E$ un \textcolorblue{espace vectoriel}.
 
 \medskip
-$\|.\|: E\rightarrow \RR_+$ est une \textcolorblue{norme}\index{norme} sur $E$ ssi elle vérifie:
+$\|\cdot\|: E\rightarrow \RR_+$ est une \textcolorblue{norme}\index{norme} sur~$E$ ssi elle vérifie:
 \begin{enumerate}
-   \item $(\|x\|=0) \Longrightarrow (x=0)$;
-   \item $\forall\lambda\in\RR, \forall x\in E, \|\lambda x\|=|\lambda|\| x\|, \lambda\in\KK$;
-   \item $\forall x,y\in E, \|x+y\|\le\|x\|+\|y\|$ (inégalité triangulaire).
+  \item~$(\|x\|=0) \Longrightarrow (x=0)$;
+  \item~$\forall\lambda\in\RR, \forall x\in E, \|\lambda x\|=|\lambda|\| x\|, \lambda\in\KK$;
+  \item~$\forall x,y\in E, \|x+y\|\le\|x\|+\|y\|$ (inégalité triangulaire).
 \end{enumerate}
 
-La \textcolorblue{distance issue de la norme} est la distance définie par $d(x,y)=\|x-y\|$.\index{distance!issue d'une norme}
+La \textcolorblue{distance issue de la norme} est la distance définie par~$d(x,y)=\|x-y\|$.\index{distance!issue d'une norme}
 
 \medskip
 Toute forme bilinéaire symétrique définie positive\index{Forme!bilinéaire} 
-$\langle.,.\rangle: E\times E\rightarrow\RR$ est un  \textcolorblue{produit scalaire} sur $E$.\index{Produit scalaire}
+$\langle.,.\rangle: E\times E\rightarrow\RR$ est un \textcolorblue{produit scalaire} sur~$E$.\index{Produit scalaire}
 Elle vérifie les propriétés:
 \begin{enumerate}
-   \item bilinéarité: $\forall x,y,z\in E, \forall\lambda,\mu\in\RR, \langle x,\lambda y+\mu z\rangle
+  \item bilinéarité:~$\forall x,y,z\in E, \forall\lambda,\mu\in\RR, \langle x,\lambda y+\mu z\rangle
 =\lambda\langle x,y\rangle+\mu\langle x,z\rangle$;
-   \item symétrie: $\forall x,y \in E \quad \langle x\, , \, y \rangle = \langle y\, , \, x\rangle$;
-   \item positivité: $\forall x \in E \quad \langle x\, , \, x \rangle \; \ge \; 0$;
-   \item définie: $\forall x \in E \quad \big(\ \langle x\, , \, x \rangle = 0 \; \Rightarrow x = 0\ \big)$.
+  \item symétrie:~$\forall x,y \in E \quad \langle x\, , \, y \rangle = \langle y\, , \, x\rangle$;
+  \item positivité:~$\forall x \in E \quad \langle x\, , \, x \rangle \; \ge \; 0$;
+  \item définie:~$\forall x \in E \quad \big(\ \langle x\, , \, x \rangle = 0 \; \Rightarrow x = 0\ \big)$.
 \end{enumerate}
 
-La \textcolorblue{norme induite} par le produit scalaire est $\|x\|=\sqrt{\langle x,x\rangle}$.\index{norme!induite par un produit scalaire}
+La \textcolorblue{norme induite} par le produit scalaire est~$\|x\|=\sqrt{\langle x,x\rangle}$.\index{norme!induite par un produit scalaire}
 
-L'inégalité triangulaire donne alors l'inégalité de Cauchy-Schwarz: $|\langle x,y\rangle|\le\|x\| \|y\|$.\index{inégalité!de Cauchy-Schwarz}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}\index[aut]{Schwarz (Hermann Amandus), 1843-1921, Allemand}
+L'inégalité triangulaire donne alors l'inégalité de Cauchy-Schwarz:~$|\langle x,y\rangle|\le\|x\| \|y\|$.\index{inégalité!de Cauchy-Schwarz}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}\index[aut]{Schwarz (Hermann Amandus), 1843-1921, Allemand}
 
 Un espace vectoriel muni d'une norme est appelé \textcolorblue{espace normé}.\index{espace!vectoriel normé}
 
@@ -38,20 +38,20 @@ qui est donc également un espace normé pour la norme induite.
 
 \medskip
 Exemple:
-Pour $E = \RR^n$ et $x = (x_1, ..., x_n)\in\RR^n$, on a les normes:
+Pour~$E = \RR^n$ et~$x = (x_1, ..., x_n)\in\RR^n$, on a les normes:
 \[
 \|x\|_1=\dsum_{i=1}^n|x_i| \qquad
 \|x\|_2= \sqrt{\dsum_{i=1}^nx_i^2} \qquad
 \|x\|_\infty=\sup_i|x_i|
 \]
 
-Le produit scalaire défini par $\langle x,y\rangle=\dsum_{i=1}^nx_iy_i$ a pour norme induite
-la norme $\|.\|_2$.
+Le produit scalaire défini par~$\langle x,y\rangle=\dsum_{i=1}^nx_iy_i$ a pour norme induite
+la norme~$\|\cdot\|_2$.
 
 \medskip
-Soit $E$ un espace vectoriel et $(x_n)_n$ une suite de $E$. 
+Soit~$E$ un espace vectoriel et~$(x_n)_n$ une suite de~$E$. 
 $(x_n)_n$ est une \textcolorblue{suite de Cauchy} ssi 
-$\forall\varepsilon>0, \exists N, \forall p> N, \forall q> N : \|x_p-x_q\|>\varepsilon$.
+$\forall\varepsilon>0, \exists N, \forall p> N, \forall q> N: \|x_p-x_q\|>\varepsilon$.
 
 Toute suite convergente est de Cauchy. La réciproque est fausse.
 
@@ -75,39 +75,39 @@ de dimension finie.\index{espace!euclidien}
 Un \textcolorblue{espace fonctionnel} est un espace vectoriel dont les éléments sont des
 fonctions.
 
-Dans la suite, nous considérons les fonctions définies sur un ouvert $\Omega\subset\RR^n$ et à
-valeurs dans $\RR$ ou $\RR^p$.
+Dans la suite, nous considérons les fonctions définies sur un ouvert~$\Omega\subset\RR^n$ et à
+valeurs dans~$\RR$ ou~$\RR^p$.
 
-Un fonction $u$ est \textcolorblue{mesurable} ssi $\{x/ |u(x)|<r\}$ est mesurable $\forall r>0$.
+Un fonction~$u$ est \textcolorblue{mesurable} ssi~$\{x/ |u(x)|<r\}$ est mesurable~$\forall r>0$.
 
-On définit les espaces $\mathscr{L}^p(\Omega)$, pour $1\le p<\infty$ par:\index{espace!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
+On définit les espaces~$\mathscr{L}^p(\Omega)$, pour~$1\le p<\infty$ par:\index{espace!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 \[
-\mathscr{L}^p(\Omega)=\left\{u:\Omega\rightarrow\RR, \text{ mesurable, et telle que }
+\mathscr{L}^p(\Omega)=\left\{u:\Omega\rightarrow\RR, \text{ mesurable, et telle que}
 \dint_\Omega|u|^p<\infty\right\}
 \]
 
 \medskip
-$L^p(\Omega)$ est la classe d'équivalence des fonctions de $\mathscr{L}^ p(\Omega)$ 
+$L^p(\Omega)$ est la classe d'équivalence des fonctions de~$\mathscr{L}^ p(\Omega)$ 
 pour la relation d'équivalence <<égalité presque partout>>: on confondra deux fonctions 
 dès qu'elles sont égales presque partout, i.e. lorsqu'elles ne différent que sur un ensemble
 de mesure nulle.
 
 Les formes:
 \[
-\|u\|_{L^p}=\left(\dint_\Omega |u|^p\right)^{1/p}, 1\le p<\infty \qquad \text{ et }
+\|u\|_{L^p}=\left(\dint_\Omega |u|^p\right)^{1/p}, 1\le p<\infty \qquad \text{ et}
 \qquad \|u\|_{L^\infty}=\sup_\Omega |u|
 \]
-ne sont pas des normes sur $\mathscr{L}^P(\Omega)$
-(en effet, $\|u\|_{L^p}=0$ implique que $u$ est nulle presque partout dans $\mathscr{L}^p(\Omega)$
-et non pas $u = 0$, d'où la définition des espaces $L^p(\Omega)$.
+ne sont pas des normes sur~$\mathscr{L}^P(\Omega)$
+(en effet, $\|u\|_{L^p}=0$ implique que~$u$ est nulle presque partout dans~$\mathscr{L}^p(\Omega)$
+et non pas~$u = 0$, d'où la définition des espaces~$L^p(\Omega)$.
 
-Ces formes sont des normes sur $L^p(\Omega)$ et en font des espaces de Banach (i.e. complets).\index{norme}\index{espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}
+Ces formes sont des normes sur~$L^p(\Omega)$ et en font des espaces de Banach (i.e. complets).\index{norme}\index{espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}
 
 \medskip
-Dans le cas particulier $p=2$, on ontient l'espace $L^2(\Omega)$ des fonctions de carré 
-sommable pp. sur $\Omega$. On remarque que le norme $\|u\|_{L^2}=\sqrt{\int_\Omega u^2}$
-est induite par le produit scalaire $(u,v)_{L^2}=\int_\Omega uv$, ce qui fait de
-l'espace $L^2(\Omega)$ un espace de Hilbert.\index{Produit scalaire!de $L^2$}
+Dans le cas particulier~$p=2$, on ontient l'espace~$L^2(\Omega)$ des fonctions de carré 
+sommable pp. sur~$\Omega$. On remarque que le norme~$\|u\|_{L^2}=\sqrt{\int_\Omega u^2}$
+est induite par le produit scalaire~$(u,v)_{L^2}=\int_\Omega uv$, ce qui fait de
+l'espace~$L^2(\Omega)$ un espace de Hilbert.\index{Produit scalaire!de~$L^2$}
 
 
 
@@ -116,19 +116,19 @@ l'espace $L^2(\Omega)$ un espace de Hilbert.\index{Produit scalaire!de $L^2$}
 \medskip
 \section*{Dérivée généralisée}\index{dérivée!généralisée}
 
-Les éléments des espaces $L^p$ ne sont pas nécessairement des fonctions très régulières.
+Les éléments des espaces~$L^p$ ne sont pas nécessairement des fonctions très régulières.
 Leurs dérivées partielles ne sont donc pas forcément définies partout.
 C'est pourquoi on va étendre la notion de dérivation. 
 Le véritable outil à introduire pour cela est la notion de distribution.
-Une idée simplifiée en est la notion de dérivée généralisée (certes  plus limitée que
+Une idée simplifiée en est la notion de dérivée généralisée (certes plus limitée que
 les distributions, mais permettant de sentir les aspects nécessaires pour aboutir aux formulations
 variationnelles).
 
 \medskip
 \subsection*{Fonctions tests}\index{Fonction!test}
 
-On note $\mathcal{D}(\Omega)$ l'espace des fonctions de $\Omega$ vers $\RR$, de
-classe $C^\infty$, et à support compact inclus dans $\Omega$.
+On note~$\mathcal{D}(\Omega)$ l'espace des fonctions de~$\Omega$ vers~$\RR$, de
+classe~$C^\infty$, et à support compact inclus dans~$\Omega$.
 $\mathcal{D}(\Omega)$ est parfois appelé espace des fonctions-tests.
 
 Théorème: \textcolorred{$\overline{\mathcal{D}(\Omega)}=L^2(\Omega)$}
@@ -136,35 +136,35 @@ Théorème: \textcolorred{$\overline{\mathcal{D}(\Omega)}=L^2(\Omega)$}
 \medskip
 \subsection*{Dérivée généralisée}
 
-Soit $u\in C^1(\Omega)$ et $v\in\mathcal{D}(\Omega)$. 
+Soit~$u\in C^1(\Omega)$ et~$v\in\mathcal{D}(\Omega)$. 
 Par intégration par parties (ou Green) on a l'égalité:
 \[
 \dint_\Omega \partial_iu \varphi = -\dint_\Omega u \partial_i\varphi
 +\dint_{\partial\Omega} u\varphi n
 = -\dint_\Omega u \partial_i\varphi
 \]
-(car $\varphi$ est à support compact donc nulle sur $\partial\Omega$).
+(car~$\varphi$ est à support compact donc nulle sur~$\partial\Omega$).
 
-Le terme $\int_\Omega u \partial_i\varphi$ a un sens dès que $u\in L^2(\Omega)$,
-donc $\int_\Omega \partial_iu \varphi$ aussi, sans que $u$ ait besoin d'être $C^1$.
-Il est donc possible de définir $\partial_i u$ même dans ce cas.
+Le terme~$\int_\Omega u \partial_i\varphi$ a un sens dès que~$u\in L^2(\Omega)$,
+donc~$\int_\Omega \partial_iu \varphi$ aussi, sans que~$u$ ait besoin d'être~$C^1$.
+Il est donc possible de définir~$\partial_i u$ même dans ce cas.
 
 \medskip
-Cas $n=1$: Soit $I$ un intervalle de $\RR$, pas forcément borné. 
-On dit que $u\in L^2(I)$ admet une dérivée généralisée dans $L^2(I)$ 
-ssi $\exists u_1\in L^2(I)$ telle que $\forall\varphi\in\mathcal{D}(I)$,
+Cas~$n=1$: Soit~$I$ un intervalle de~$\RR$, pas forcément borné. 
+On dit que~$u\in L^2(I)$ admet une dérivée généralisée dans~$L^2(I)$ 
+ssi~$\exists u_1\in L^2(I)$ telle que~$\forall\varphi\in\mathcal{D}(I)$,
 $\int_I u_1\varphi = \int_I u\varphi'$.
 
-Par itération, on dit que $u$ admet une \textcolorblue{dérivée généralisée
-d'ordre $k$} dans $L^2(I)$, notée $u_k$, ssi: $\forall\varphi\in\mathcal{D}(I)$,
+Par itération, on dit que~$u$ admet une \textcolorblue{dérivée généralisée
+d'ordre~$k$} dans~$L^2(I)$, notée~$u_k$, ssi:~$\forall\varphi\in\mathcal{D}(I)$,
 $\dint_I u_k\varphi = (-1)^k\dint_I u\varphi^{(k)}$.
 
-Ces définitions s'étendent au cas où $n>1$.
+Ces définitions s'étendent au cas où~$n>1$.
 
 \medskip
 Théorème: Quand elle existe, la dérivée généralisée est unique.
 
-Théorème: Quand $u$ est de classe $C^1(\overline{\Omega})$ la dérivée généralisée 
+Théorème: Quand~$u$ est de classe~$C^1(\overline{\Omega})$ la dérivée généralisée 
 est égale à la dérivée classique.
 
 
@@ -174,28 +174,28 @@ est égale à la dérivée classique.
 \section*{Espaces de Sobolev}
 
 \medskip
-\subsection*{Espaces $H^m$}\index{espace!de Sobolev $H^m(\Omega)$}
+\subsection*{Espaces~$H^m$}\index{espace!de Sobolev~$H^m(\Omega)$}
 
-L'\textcolorblue{espace de Sobolev d'ordre $m$} est défini par:
+L'\textcolorblue{espace de Sobolev d'ordre~$m$} est défini par:
 \[
 H^m(\Omega)=\left\{u\in L^2(\Omega)/ \partial^\alpha u\in L^2(\Omega),
-\forall\alpha=(\alpha_1, ..., \alpha_n)\in\NN^n \text{ tel que }|\alpha|=\alpha_1+...+\alpha_n\le m
+\forall\alpha=(\alpha_1, ..., \alpha_n)\in\NN^n \text{ tel que}|\alpha|=\alpha_1+...+\alpha_n\le m
 \right\}
 \]
 
-On voit que $H^0(\Omega)=L^2(\Omega)$.
+On voit que~$H^0(\Omega)=L^2(\Omega)$.
 
 \medskip
-$H^m(\Omega)$ est un espace de Hilbert avec le produit scalaire et la norme induite:\index{norme!sur $H^m(\Omega)$}\index{norme!induite par un produit scalaire}\index{Produit scalaire!de $H^m(\Omega)$}
+$H^m(\Omega)$ est un espace de Hilbert avec le produit scalaire et la norme induite:\index{norme!sur~$H^m(\Omega)$}\index{norme!induite par un produit scalaire}\index{Produit scalaire!de~$H^m(\Omega)$}
 \[
 (u,v)_m=\dsum_{|\alpha|\le m}(\partial^\alpha u,\partial^\alpha v)_0 
-\quad \text{ et } \quad
+\quad \text{ et} \quad
 \|u\|_m=\sqrt{(u,u)_m}
 \]
 
-Théorème: Si $\Omega$ est un ouvert de $\RR^n$ de frontière <<suffisament
-régulière>>, alors on  a l'inclusion: $H^m(\Omega)\subset C^k(\overline{\Omega})$
-pour $k<m-\frac{n}2$.
+Théorème: Si~$\Omega$ est un ouvert de~$\RR^n$ de frontière <<suffisament
+régulière>>, alors on a l'inclusion:~$H^m(\Omega)\subset C^k(\overline{\Omega})$
+pour~$k<m-\frac{n}2$.
 
 \medskip
 \subsection*{Trace}\index{espace!trace}
@@ -206,31 +206,31 @@ Ceci est vrai, que l'on s'intéresse aux formulations forte ou faible.
 
 Pour cela, il faut que la valeur d'une fonction sur la frontière soit définie.
 C'est justement ce que l'on apelle sa trace. 
-La trace est le prolongement d'une fonction sur le bord de l'ouvert $\Omega$.
+La trace est le prolongement d'une fonction sur le bord de l'ouvert~$\Omega$.
 
 De manière analogue, il est possible de prolonger la définition de la dérivée normale
-sur le contour de $\Omega$, ce qui permet de prendre en compte des conditions
+sur le contour de~$\Omega$, ce qui permet de prendre en compte des conditions
 aux limites de type Neumann par exemple.
 
 
 \medskip
-\subsection*{Espace $H^1_0(\Omega)$}\index{espace!trace}\index{espace!de Sobolev $H_0^1(\Omega)$}
+\subsection*{Espace~$H^1_0(\Omega)$}\index{espace!trace}\index{espace!de Sobolev~$H_0^1(\Omega)$}
 
-Soit $\Omega$ ouvert de $\RR^n$. 
-L'espace $H^1_0(\Omega)$ est défini comme l'adhérence de $\mathcal{D}(\Omega)$
-pour la norme $\|.\|_ 1$ de $H^1(\Omega)$.
-
-\medskip
-Théorème : Par construction $H^1_0(\Omega)$ est un espace complet. 
-C'est un espace de Hilbert pour la norme $\|.\|_ 1$.
+Soit~$\Omega$ ouvert de~$\RR^n$. 
+L'espace~$H^1_0(\Omega)$ est défini comme l'adhérence de~$\mathcal{D}(\Omega)$
+pour la norme~$\|\cdot\|_ 1$ de~$H^1(\Omega)$.
 
 \medskip
-$H^1_0(\Omega)$ est le sous-espace des fonctions de $H^1(\Omega)$ de trace nulle 
-sur la frontière $\partial\Omega$ (on a : $H^1_0(\Omega)=\ker\gamma_0$ où $\gamma_0$
+Théorème: Par construction~$H^1_0(\Omega)$ est un espace complet. 
+C'est un espace de Hilbert pour la norme~$\|\cdot\|_ 1$.
+
+\medskip
+$H^1_0(\Omega)$ est le sous-espace des fonctions de~$H^1(\Omega)$ de trace nulle 
+sur la frontière~$\partial\Omega$ (on a:~$H^1_0(\Omega)=\ker\gamma_0$ où~$\gamma_0$
 est l'application trace).
 
 \medskip
-Pour toute fonction $u$ de $H^1(\Omega)$, on peut définir :
+Pour toute fonction~$u$ de~$H^1(\Omega)$, on peut définir:
 \[
 |u|_1=\sqrt{\dsum_{i=1}^n\|\partial_i u\|_ 0^2} =
 \sqrt{\dint_\Omega\dsum_{i=1}^n (\partial_i u)^2}
@@ -238,22 +238,22 @@ Pour toute fonction $u$ de $H^1(\Omega)$, on peut définir :
 
 \medskip
 Inégalité de Poincaré:\index{inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
-Si $\Omega$ est borné dans au moins une direction, alors il
-existe une constante $C(\Omega)$ telle que $\forall u\in H^1_0(\Omega)$; 
+Si~$\Omega$ est borné dans au moins une direction, alors il
+existe une constante~$C(\Omega)$ telle que~$\forall u\in H^1_0(\Omega)$; 
 $\|u\|_0 \le C(\Omega) |u|_1$.
-On en déduit que $|.|_1$ est une norme sur $H^1_0(\Omega)$, équivalente à 
-la norme $\|.\|_1$.
+On en déduit que~$|.|_1$ est une norme sur~$H^1_0(\Omega)$, équivalente à 
+la norme~$\|\cdot\|_1$.
 
 \medskip
-Corollaire : 
+Corollaire: 
 Le résultat précédent s'étend au cas où l'on a une condition de Dirichlet nulle
-seulement sur une partie de $\partial\Omega$, si $\Omega$ est connexe.
+seulement sur une partie de~$\partial\Omega$, si~$\Omega$ est connexe.
 
-\textcolorgris{On suppose que $\Omega$ est un ouvert borné connexe, de frontière $C^1$ 
-par morceaux. Soit $V = \{v\in H^1(\Omega); v = 0 \text{ sur } \Gamma_0\}$
-où $\Gamma_0$ est une partie de $\partial\Omega$ de mesure non nulle. 
-Alors il existe une constante $C(\Omega)$ telle que $\forall u\in V$; $\|u\|_{0,V} \le
-C(\Omega) |u|_{1,V}$, où $\|.\|_{0,V}$ et $|.|_{1,V}$ sont les norme et semi-norme induites 
-sur $V$.
-On en déduit que $|.|_{1,V}$ est une norme sur $V$ équivalente à la norme $\|.\|_{1,V}$.}
+\textcolorgris{On suppose que~$\Omega$ est un ouvert borné connexe, de frontière~$C^1$ 
+par morceaux. Soit~$V = \{v\in H^1(\Omega); v = 0 \text{ sur} \Gamma_0\}$
+où~$\Gamma_0$ est une partie de~$\partial\Omega$ de mesure non nulle. 
+Alors il existe une constante~$C(\Omega)$ telle que~$\forall u\in V$;~$\|u\|_{0,V} \le
+C(\Omega) |u|_{1,V}$, où~$\|\cdot\|_{0,V}$ et~$|.|_{1,V}$ sont les norme et semi-norme induites 
+sur~$V$.
+On en déduit que~$|.|_{1,V}$ est une norme sur~$V$ équivalente à la norme~$\|\cdot\|_{1,V}$.}
 

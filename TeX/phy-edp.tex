@@ -1,4 +1,4 @@
-\chapter{Problèmes physiques : équations différentielles et aux dérivées partielles}
+\chapter{Problèmes physiques: équations différentielles et aux dérivées partielles}
 \begin{abstract}
 La première partie était uniquement des <<~rappels~>> de notions
 mathématiques nécessaires pour disposer d'un certains nombre d'outils.
@@ -17,19 +17,19 @@ variationnelle; la théorie de la formulation faible étant exposée entre temps
 
 Une \textcolorblue{équation différentielle} est une relation entre une ou plusieurs fonctions inconnues et 
 leurs dérivées. 
-\textcolorblue{L'ordre d'une ED} correspond au degré maximal de dérivation auquel l'une des fonctions inconnues 
+\textcolorblue{L'ordre d'une équation différentielle} correspond au degré maximal de dérivation auquel l'une des fonctions inconnues 
 a été soumise.
 
-Pour les méthodes explicites de résolution des ED, on ira voir en annexes.
+Pour les méthodes explicites de résolution des équations différentielles, on ira voir en annexes.
 
 
 \medskip
 \begin{histoire}%
-Les problèmes posés ou menant à des ED sont aussi vieux que l'analyse elle-même (XVIIe-XVIIIe,
+Les problèmes posés ou menant à des équations différentielles sont aussi vieux que l'analyse elle-même (XVIIe-XVIIIe,
 voir notes précédentes sur les fonctions et sur la continuité et la dérivabilité). 
-Avant même qu'on ait complètement élucidé la question des infiniment petits  
+Avant même qu'on ait complètement élucidé la question des infiniment petits 
 l'on se préoccupe déjà de résoudre des problèmes de tangente, qui mènent 
-invariablement à une ED. 
+invariablement à une équation différentielle. 
 Dès les débuts de la mécanique classique, dite newtonienne, on est confronté
 à l'intégration de systèmes d'ED du second ordre (voir exemples ci-dessous).
 
@@ -47,23 +47,23 @@ Riccati &Clairaut &D'Alembert&Euler%
 \end{tabular}}
 \bigskip
 \ImageADroite{%
-On résoud les ED par la méthode des séries entières sans s'encombrer des notions
+On résoud les équations différentielles par la méthode des séries entières sans s'encombrer des notions
 de convergence, bien que l'on entrevoit parfois certaines difficultés dues justement
 à ces problèmes de convergence... et on en arrive presque aux séries asymptotiques 
 qui ne seront conceptualisées qu'au XIXe.\\
 \indent
 Un autre problème reste d'écrire, à l'aide de fonctions simples, les solutions
-des ED.
-La liste des ED que l'on sait résoudre de cette manière est plutôt maigre:
+des équations différentielles.
+La liste des équations différentielles que l'on sait résoudre de cette manière est plutôt maigre:
 Leibniz\index[aut]{Leibniz (Gottfried Wilhelm), 1646-1716, Allemand}
  et sa méthode de décomposition en éléments simples, les Bernouilli et
-les ED linéaires du premier ordre, puis Riccati...\index[aut]{Riccati (Jacopo Francesco), 1676-1754, Italien}%
+les équations différentielles linéaires du premier ordre, puis Riccati...\index[aut]{Riccati (Jacopo Francesco), 1676-1754, Italien}%
 }
 
 \medskip
 La découverte par Clairaut\index[aut]{Clairaut (Alexis Claude), 1713-1765, Français}
  en 1734 de l'existence d'une solution singulière
-à l'équation $y - xy' + f(y') = 0$ (à la famille de droites $y = Cx + f(C)$ qui est l'expression 
+à l'équation~$y - xy' + f(y') = 0$ (à la famille de droites~$y = Cx + f(C)$ qui est l'expression 
 générale des courbes intégrales, il faut adjoindre l'enveloppe de cette famille pour avoir toutes 
 les solutions analytiques de l'équation) relance la dynamique.
 D'Alembert,\index[aut]{d'Alembert (Jean le Rond), 1717-1783, Français} 
@@ -74,9 +74,9 @@ qui élucident ce qui se passe en général en exhibant la courbe
 qui est le lieu des points singuliers.
 
 \medskip
-Si l'on sait, dès la fin du XVIIe siècle intégrer les ED linéaires du premier et du second ordre 
+Si l'on sait, dès la fin du XVIIe siècle intégrer les équations différentielles linéaires du premier et du second ordre 
 à coefficients constants par des sommes d'exponentielles, il faut attendre 1760 pour que la 
-théorie vienne à bout des ED linéaires à coefficients constants d'ordre quelconque. 
+théorie vienne à bout des équations différentielles linéaires à coefficients constants d'ordre quelconque. 
 En 1739, Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} 
 rencontre une équation différentielle linéaire à coefficients constants du 4e ordre 
 sur un problème de vibration des tiges qu'il ne sait pas intégrer. 
@@ -94,7 +94,7 @@ Lagrange &Laplace &Sturm&Liouville%
 \medskip
 \ImageADroite{%
 D'Alembert\index[aut]{d'Alembert (Jean le Rond), 1717-1783, Français} 
-remarque que pour les ED non homogènes, l'adjonction d'une solution particulière 
+remarque que pour les équations différentielles non homogènes, l'adjonction d'une solution particulière 
 à la solution générale de l'équation homogène donne la solution générale de l'équation homogène.
 Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} 
 introduit la méthode de variation des constantes pour résoudre par quadratures l'équation 
@@ -103,7 +103,7 @@ linéaire non homogène lorsque l'on connaît la solution générale de l'équat
 
 \medskip
 Clairaut, D'Alembert, Euler, Lagrange et Laplace consacrent de nombreux mémoires au problème
-des $n$ corps.
+des~$n$ corps.
 Le premier exemple du problème de Sturm-Liouville\index[aut]{Sturm (Jacques Charles François), 1803-1855, Français}\index[aut]{Liouville (Joseph), 1809-1882, Français}
  est donné par D'Alembert\index[aut]{d'Alembert (Jean le Rond), 1717-1783, Français} 
 à propos de la vibration d'une corde non homogène.
@@ -114,39 +114,39 @@ Les mathématiciens du XVIIIe siècle admettent sans discussion l'existence de s
 ED et EDP sans chercher le domaine d'existence de ces solutions.
 Il faut attendre Cauchy,\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} 
 vers 1820, pour que soit abordée l'existence d'une solution à 
-l'ED $y' = f(x,y)$, où $f$ est supposée continument différentiable en chaque variable.
+l'ED~$y' = f(x,y)$, où~$f$ est supposée continument différentiable en chaque variable.
 Sans connaître les travaux de Cauchy, Lipschitz,\index[aut]{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand} 
 en 1868, retrouve le résultat de Cauchy mais, s'affranchit de l'hypothèse de différentiabilité 
-de $f$ au profit de la condition dite aujourd'hui de Lipschitz.
+de~$f$ au profit de la condition dite aujourd'hui de Lipschitz.
 En 1837, Liouville\index[aut]{Liouville (Joseph), 1809-1882, Français} 
 utilise, pour le cas particulier d'une équation linéaire du second ordre une 
-méthode d'approximation successive : on construit une suite de fonctions convergeant
+méthode d'approximation successive: on construit une suite de fonctions convergeant
 vers la solution.
 \colorblack
 
 
 \medskip
-Si l'on considère une fonction $f$, sa dérivée $f'$ exprime sa variation: 
-positive $f$ est croissante (et plus sa value est grande, plus la croissance est rapide), 
-négative $f$ est décroissante...
+Si l'on considère une fonction~$f$, sa dérivée~$f'$ exprime sa variation: 
+positive~$f$ est croissante (et plus sa value est grande, plus la croissance est rapide), 
+négative~$f$ est décroissante...
 
 À partir de là on peut considérer une population de personnes. Le nombre de total
-de personnes à un instant $t$ est donné par $f(t)$.
+de personnes à un instant~$t$ est donné par~$f(t)$.
 Plus la population est nombreuse, plus elle se reproduit: en d'autres termes, la
 vitesse de croissance de la population est proportionnelle à la taille de la population.
 On peut donc écrire: \begin{equation} %$\colorgreen
 f'(t)=k\,f(t)\end{equation}%$.
-C'est une ED très simple, mais qui modélise le problème dit de dynamique de population.\index{ED-EDP!dynamique de population}
+C'est une équation différentielle très simple, mais qui modélise le problème dit de dynamique de population.\index{ED-EDP!dynamique de population}
 
 \medskip
 Un autre problème simple, toujours en dynamique des populations, est celui de deux
-populations interdépendantes: les proies $g(t)$ et le prédateurs $m(t)$.
+populations interdépendantes: les proies~$g(t)$ et le prédateurs~$m(t)$.
 Les proies se reproduisent et sont mangées par les prédateurs, alors que
 les prédateurs meurent sauf s'ils peuvent manger des proies.
 
 Cela conduit au système de Lotka-Volterra:\index{ED-EDP!Lotka-Volterra}\index{ED-EDP!système proie-prédateur}\index[aut]{Volterra (Vito), 1860-1940, Italien}\index[aut]{Lotka (Alfred James), 1880-1949, Américain}
 \begin{equation}%$\colorgreen
-    \begin{cases} g'(t)&=A\,g(t)-B\,g(t)\,m(t) \\ m'(t)&=-C\,m(t)+D\,g(t)\,m(t) \end{cases} 
+  \begin{cases} g'(t)&=A\,g(t)-B\,g(t)\,m(t) \\ m'(t)&=-C\,m(t)+D\,g(t)\,m(t) \end{cases} 
 \end{equation}
 où il est nécessaire de résoudre les équations simultanément (on dit que les équations
 sont couplées)
@@ -158,13 +158,13 @@ m\ddot{x}=f(x)\end{equation}%$
 est une d'ED du second ordre.\index{ED-EDP!relation fondamentale de la dynamique}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}
 
 On pourrait multiplier les exemples comme l'équation de l'oscillation d'une masse
-suspendue à un ressort: \begin{equation}% $\colorgreen
+suspendue à un ressort: \begin{equation}%~$\colorgreen
 \ddot{x} = - c \dot{x} - \omega^2x \end{equation}%$
 avec ($c>0$) ou sans ($c=0$) frottement.\index{ED-EDP!oscillation d'une masse suspendue à un ressort}
 
 \medskip
 Comme on le voit sur les exemples ci-dessus, et comme on s'en souvient sans doute,
-il est nécessaire, pour déterminer complètement la solution d'une ED (ou d'une équation aux dérivées partielles),
+il est nécessaire, pour déterminer complètement la solution d'une équation différentielle (ou d'une équation aux dérivées partielles),
 de disposer de valeurs de la solution en certains points.
 On appelle ces <<~contraintes~>>, des \textcolorblue{conditions aux limites}.
 
@@ -173,7 +173,7 @@ Les conditions aux limites types sont présentées au paragraphe suivant.
 
 \medskip
 \begin{histoire}%
-Concernant les EDP, elles sont initialement résolues par des méthodes ad-hoc, le plus souvent 
+Concernant les équations différentiellesP, elles sont initialement résolues par des méthodes ad-hoc, le plus souvent 
 géométriques. 
 On n'écrit pas l'EDP. On ne s'étonnera donc pas que la première équation aux dérivées partielles 
 n'apparaisse qu'assez tard.
@@ -188,9 +188,9 @@ Cauchy&Lipschitz&Dirichlet&Neumann%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-La théorie de l'intégration des EDP du premier ordre ne date que de 1734. 
+La théorie de l'intégration des équations différentiellesP du premier ordre ne date que de 1734. 
 L'idée d'Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} 
-est de ramener ladite intégration à celle des ED ordinaires. 
+est de ramener ladite intégration à celle des équations différentielles ordinaires. 
 Euler montre qu'une famille de fonctions dépendant de deux paramètres vérifie une 
 EDP du premier ordre en éliminant ces paramètres entre les dérivées partielles. 
 Inversement, une telle équation admet une solution dépendant d'une fonction arbitraire. 
@@ -204,7 +204,7 @@ Il ne sait intégrer que onze types d'équations aux dérivées partielles du pr
 
 \medskip
 La solution de l'intégration de ces équations allait venir d'un mathématicien peu connu, 
-mort en 1784, Paul Charpit.\index[aut]{Charpit  de Villecourt (Paul), ?-1784, Français}
+mort en 1784, Paul Charpit.\index[aut]{Charpit de Villecourt (Paul), ?-1784, Français}
 Son mémoire, présenté en 1784 à l'académie des sciences n'a 
 jamais été publié et est resté longtemps une énigme. Une copie de ce mémoire a été
 trouvée en 1928.
@@ -216,8 +216,8 @@ trouvée en 1928.
 
 Comme nous venons de le dire, les \textcolorblue{conditions aux limites} sont des
 contraintes (des valeurs) que l'on impose à la fonction solution (ou à certaines de
-ces dérivées) sur tout ou partie du domaine $\Omega$, et/ou sur toute ou partie 
-de sa frontière $\Gamma=\partial\Omega$.
+ces dérivées) sur tout ou partie du domaine~$\Omega$, et/ou sur toute ou partie 
+de sa frontière~$\Gamma=\partial\Omega$.
 
 D'un point de vue <<~vocabulaire~>>, certains types de conditions aux limites standard
 existent qui sont listées ci-après.
@@ -225,7 +225,7 @@ existent qui sont listées ci-après.
 \medskip
 \subsection{Dirichlet -- valeurs aux bords}\index{Conditions aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
 
-On parle de \textcolorblue{condition de Dirichlet} imposée à une ED ou une équation aux dérivées partielles,
+On parle de \textcolorblue{condition de Dirichlet} imposée à une équation différentielle ou une équation aux dérivées partielles,
 lorsque l'on spécifie les \textcolorred{valeurs} que la solution doit vérifier sur toute ou partie de
 la frontière du domaine.
 
@@ -236,7 +236,7 @@ d'une structure (points d'appuis rigides).
 \medskip
 \subsection{Neumann -- gradients aux bords}\index{Conditions aux limites!de Neumann}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
 
-On parle de \textcolorblue{condition de Neumann} imposée à une ED ou une équation aux dérivées partielles,
+On parle de \textcolorblue{condition de Neumann} imposée à une équation différentielle ou une équation aux dérivées partielles,
 lorsque l'on spécifie les \textcolorred{valeurs des dérivées} que la solution doit vérifier sur la frontière du 
 domaine (flux, contraintes...)
 
@@ -244,7 +244,7 @@ domaine (flux, contraintes...)
 \subsection{Robin -- relation gradient/valeurs sur le bord}\index{Conditions aux limites!de Robin}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
 
 On parle de \textcolorblue{condition de Robin} ou \textcolorblue{condition de Fourier} 
-ou \textcolorblue{condition d'impédance} imposée à une ED ou une équation aux dérivées partielles,
+ou \textcolorblue{condition d'impédance} imposée à une équation différentielle ou une équation aux dérivées partielles,
 lorsque l'on spécifie une \textcolorred{relation linéaire} entre les valeurs de la fonction et les
 valeurs de la dérivée de la fonction qui est solution du problème sur toute ou partie de
 la frontière du domaine.
@@ -254,7 +254,7 @@ C'est donc une pondérations de conditions de Dirichlet et de Neumann.
 \medskip
 \subsection{Condition aux limites dynamique}\index{Conditions aux limites!dynamique}
 
-On parle de \textcolorblue{condition aux limites dynamique} imposée à une ED ou une équation aux dérivées partielles,
+On parle de \textcolorblue{condition aux limites dynamique} imposée à une équation différentielle ou une équation aux dérivées partielles,
 lorsque l'on spécifie une \textcolorred{combinaison linéaire} entre la dérivée temporelle et 
 la dérivée normale que la solution doit vérifier sur toute ou partie la frontière du 
 domaine.
@@ -278,33 +278,33 @@ La forme générale d'une équation aux dérivées partielles linéaire, scalair
 \begin{equation}
 au + c \nabla u + \dive (A\nabla u) = f
 \end{equation}
-où $a : \Omega\rightarrow\RR$, $c : \Omega\rightarrow\RR^n$, 
-$A : \Omega\rightarrow\RR^{n\times n}$ et $f : \Omega\rightarrow\RR$ sont
+où~$a: \Omega\rightarrow\RR$, $c: \Omega\rightarrow\RR^n$, 
+$A: \Omega\rightarrow\RR^{n\times n}$ et~$f: \Omega\rightarrow\RR$ sont
 les coefficients de l'EDP.
 
 \medskip
-Dans le cas où $u$ est scalaire ($n = 1$) et les coefficients sont constants, on obtient :
+Dans le cas où~$u$ est scalaire ($n = 1$) et les coefficients sont constants, on obtient:
 \begin{equation}
 \alpha\dfrac{\partial^2 u}{\partial x^2}+\beta\dfrac{\partial^2 u}{\partial x\partial y}
 +\gamma \dfrac{\partial^2 u}{\partial y^2} + \delta \dfrac{\partial u}{\partial x}
 + \epsilon \dfrac{\partial u}{\partial y} +\gamma u = f
 \end{equation}
-où $\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$, $\gamma$ sont des scalaires.
+où~$\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$, $\gamma$ sont des scalaires.
 
 Cette équation est dite:
 \begin{itemize}
-   \item \textcolorblue{elliptique} si $\beta^2-4\alpha\gamma>0$;
-   \item \textcolorblue{parabolique} si $\beta^2-4\alpha\gamma=0$;
-   \item \textcolorblue{hyperbolique} si $\beta^2-4\alpha\gamma<0$.
+  \item \textcolorblue{elliptique} si~$\beta^2-4\alpha\gamma>0$;
+  \item \textcolorblue{parabolique} si~$\beta^2-4\alpha\gamma=0$;
+  \item \textcolorblue{hyperbolique} si~$\beta^2-4\alpha\gamma<0$.
 \end{itemize}
 
 \medskip
 \colorgreen
 On peut dire que:
 \begin{itemize}
-   \item les problèmes elliptiques vont concerner les problèmes de la mécanique;
-   \item les problèmes paraboliques ceux de type équation de la chaleur;
-   \item les problèmes hyperboliques ceux de la propagation des ondes.
+  \item les problèmes elliptiques vont concerner les problèmes de la mécanique;
+  \item les problèmes paraboliques ceux de type équation de la chaleur;
+  \item les problèmes hyperboliques ceux de la propagation des ondes.
 \end{itemize}
 \colorblack
 
@@ -397,16 +397,16 @@ Toute fonction holomorphe est harmonique.
 \medskip
 L\textcolorblue{'équation de Poisson} est l'équation:\index{ED-EDP!de Poisson}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
 \begin{equation}\Delta \varphi=f\end{equation}
-où $f$ est une fonction donnée. Elle est elliptique.
+où~$f$ est une fonction donnée. Elle est elliptique.
 
 \medskip
-Par exemple, en électrostatique, on exprime le potentiel électrique $V$ associé à une distribution 
-connue de charges $\rho$ (dans le vide) par la relation:
+Par exemple, en électrostatique, on exprime le potentiel électrique~$V$ associé à une distribution 
+connue de charges~$\rho$ (dans le vide) par la relation:
 \begin{equation}
-    \Delta V = - \dfrac{\rho}{\epsilon_0}
+  \Delta V = - \dfrac{\rho}{\epsilon_0}
 \end{equation}
 
-En gravitation universelle, le potentiel gravitationnel $\Phi$ est relié à la masse volumique 
+En gravitation universelle, le potentiel gravitationnel~$\Phi$ est relié à la masse volumique 
 $\mu$ par la relation:
 \begin{equation}
 \Delta \Phi = 4 \pi \, G \, \mu 
@@ -422,23 +422,23 @@ L'\textcolorblue{équation d'onde} est l'équation générale qui décrit la pro
 qui peut être représentée par une grandeur scalaire ou vectorielle.
 
 
-Dans le cas vectoriel, en espace libre, dans un milieu homogène, linéaire et isotrope, l'équation d'onde s'écrit :\index{ED-EDP!des ondes}
+Dans le cas vectoriel, en espace libre, dans un milieu homogène, linéaire et isotrope, l'équation d'onde s'écrit:\index{ED-EDP!des ondes}
 \begin{equation}
-    \Delta u \ = - \frac1{c^2} \dfrac{\partial^2 u}{\partial t^2} \quad \text{ ou } \quad \square u =0
+  \Delta u \ = - \frac1{c^2} \dfrac{\partial^2 u}{\partial t^2} \quad \text{ ou} \quad \square u =0
 \end{equation}
-où la fonction d'onde inconnue est notée $u(x,y,z,t)$, $t$ représente le temps, et 
-le nombre $c$ représente la célérité ou vitesse de propagation de l'onde $u$ 
-(rappel : $\square$ est le d'Alembertien). Elle est hyperbolique.
+où la fonction d'onde inconnue est notée~$u(x,y,z,t)$, $t$ représente le temps, et 
+le nombre~$c$ représente la célérité ou vitesse de propagation de l'onde~$u$ 
+(rappel:~$\square$ est le d'Alembertien). Elle est hyperbolique.
 
 \medskip
 Dans le cas de \textcolorblue{l'acoustique}, alors cette équation est obtenue à partir des 
 équations de la mécanique ainsi que de l'hypothèse de fluide parfait:
 \begin{itemize}
-   \item conservation de la masse: $\dot{\rho}+\dive(\rho u)=0$ avec
-	$\rho$ la masse volumique du milieux et $u$ sa vitesse;
-   \item conservation de la quantité de mouvement: $\dive(\sigma)=\rho\dot{u}$, avec
+  \item conservation de la masse:~$\dot{\rho}+\dive(\rho u)=0$ avec
+	$\rho$ la masse volumique du milieux et~$u$ sa vitesse;
+  \item conservation de la quantité de mouvement:~$\dive(\sigma)=\rho\dot{u}$, avec
 	$\sigma$ le tenseur des contraintes
-   \item le fluide est parfait, et sa relation de comportement est donc: $\sigma=-p'I$ avec
+  \item le fluide est parfait, et sa relation de comportement est donc:~$\sigma=-p'I$ avec
 	$p'$ la pression dans le fluide.
 \end{itemize}
 
@@ -446,16 +446,16 @@ Dans le cas de \textcolorblue{l'acoustique}, alors cette équation est obtenue �
 \begin{equation}
 \Delta p' - \dfrac1{c^2} \ddot{p}' = 0
 \end{equation}
-avec $c$ la célérité de l'onde acoustique dans le milieu (vitesse du son).
+avec~$c$ la célérité de l'onde acoustique dans le milieu (vitesse du son).
 
 \medskip
 L'équation des ondes permet également de modéliser le problème de l'évolution 
 de la déformation d'une membrane tendue (peau de tambour).\index{ED-EDP!de la déformation d'une membrane}
 Dans ce cas là, on note plutôt:
 \begin{equation}
- \sigma \Delta u = \rho\ddot{u} \text{ dans }\Omega
+ \sigma \Delta u = \rho\ddot{u} \text{ dans}\Omega
 \end{equation}
-où $\Omega$ est notre domaine qui est une surface, donc $\Omega\subset\RR^2$.
+où~$\Omega$ est notre domaine qui est une surface, donc~$\Omega\subset\RR^2$.
 
 \textcolorblue{La même équation en dimension deux ou trois modélise la plupart des phénomènes 
 vibratoires.}
@@ -511,24 +511,24 @@ en 2001).
 \colorblack
 
 \medskip
-Soit $\Omega$ un domaine de $\RR^3$ de frontière $\Gamma=\partial \Omega$ et $T(x,t)$ 
+Soit~$\Omega$ un domaine de~$\RR^3$ de frontière~$\Gamma=\partial \Omega$ et~$T(x,t)$ 
 un champ de température sur ce domaine (champ de scalaires). 
 En présence d'une source thermique dans le domaine, et en l'absence de convection, i.e.
 de transport de chaleur (i.e. on s'intéresse à la propagation de la température au sein d'un 
 milieu <<~stable~>>, \textcolorgreen{i.e. qui ne bouge pas; on ne s'intéresse pas à la propagation de chaleur
 due par exemple à l'existence d'un courant d'air, d'un courant de convection. La convection
 est plutôt un problème de mécanique des fluides.)}, 
-l'équation de la chaleur s'écrit :
+l'équation de la chaleur s'écrit:
 \begin{equation}
 \forall x \in\Omega, \quad \frac{\partial T (x,t)}{\partial t} = D \, \Delta T(x,t) + \frac{f}{\rho c}
 \end{equation}
 où:
 \begin{itemize}
-   \item $\Delta$ est l'opérateur Laplacien;
-   \item $D$ est le coefficient de diffusivité thermique (en $m^2/s$);
-   \item $f$ une éventuelle production volumique de chaleur (en $W/m^3$);
-   \item $\rho$ est la masse volumique du matériau (en $kg/m^3$);
-   \item $c$ la chaleur spécifique massique du matériau (en $J/kg·K$).
+  \item~$\Delta$ est l'opérateur Laplacien;
+  \item~$D$ est le coefficient de diffusivité thermique (en~$m^2/s$);
+  \item~$f$ une éventuelle production volumique de chaleur (en~$W/m^3$);
+  \item~$\rho$ est la masse volumique du matériau (en~$kg/m^3$);
+  \item~$c$ la chaleur spécifique massique du matériau (en~$J/kg·K$).
 \end{itemize}
 
 \medskip\colorgris
@@ -539,15 +539,15 @@ L'équation de la chaleur est donc une équation de la forme:
 Elle est parabolique.\colorblack
 
 \medskip
-Pour que le problème soit bien posé, il faut spécifier :
+Pour que le problème soit bien posé, il faut spécifier:
 \begin{itemize}
-   \item une condition initiale : $\forall x\in\Omega, \quad T (x,0) = T_0(x)  $;
-   \item une condition aux limites sur le bord du domaine, par exemple :
+  \item une condition initiale:~$\forall x\in\Omega, \quad T (x,0) = T_0(x)~$;
+  \item une condition aux limites sur le bord du domaine, par exemple:
 
-        de Dirichlet : $\forall x\in\partial \Omega, \quad T (x,t) = 0  $;
+    de Dirichlet:~$\forall x\in\partial \Omega, \quad T (x,t) = 0~$;
 
-        ou de Neumann : $\forall x\in\partial \Omega, \quad \frac{\partial T (x,t)}{\partial n} \ 
-	= n(x) \cdot \nabla T(x,t) = 0$, où $n(x)$ est le vecteur normal unitaire au point $x$.
+    ou de Neumann:~$\forall x\in\partial \Omega, \quad \frac{\partial T (x,t)}{\partial n} \ 
+	= n(x) \cdot \nabla T(x,t) = 0$, où~$n(x)$ est le vecteur normal unitaire au point~$x$.
 \end{itemize}
 
 \medskip
@@ -563,7 +563,7 @@ D'un point de vue phénoménologique, et au premier ordre, ce phénomène est r�
 de la peau).\index[aut]{Fick (Adolf Eugene), 1829-1901, Allemand}
 Dans l'équation précédente, $T$ représente alors la répartition de la grandeur
 considérée (eau dans un composite, concentration d'un constituant chimique...) et 
-le terme source dans $\Omega$ est souvent nul (i.e. $f=0$).
+le terme source dans~$\Omega$ est souvent nul (i.e.~$f=0$).
 
 
 
@@ -584,7 +584,7 @@ l'autre composante étant la mécanique des solides qui sera traitée un peu plu
 \begin{histoire}%
 Des 23 problèmes de Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand} 
 énoncés en 1900, la moitié est aujourd'hui complètement
-résolue, l'un a été démontré  indécidable, cinq ne le sont pas du tout, les autres 
+résolue, l'un a été démontré indécidable, cinq ne le sont pas du tout, les autres 
 étant partiellement traités.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -603,7 +603,7 @@ a été démontrée en 2003 par Grigori Perelman\index[aut]{Perelman (Grigori Ia
 (qui a refusé le prix, ainsi que la médaille Field. D'ailleurs il n'a pas publié son
 travail dans un journal, mais l'a rendu publique et gratuit sur internet...).
 Notons au passage que Grigori Perelman\index[aut]{Perelman (Grigori Iakovlevitch), 1966- , Russe} 
-est analyste, i.e. un spécialiste des EDP, un sujet que beaucoup de topologues avaient 
+est analyste, i.e. un spécialiste des équations différentiellesP, un sujet que beaucoup de topologues avaient 
 l'habitude de regarder de loin. Ils ont changé d'avis depuis! 
 }
 
@@ -700,7 +700,7 @@ recherche sur le sujet.
 
 
 \medskip
-Les équations de Navier-Stokes sont des EDP non linéaires qui décrivent le mouvement 
+Les équations de Navier-Stokes sont des équations différentiellesP non linéaires qui décrivent le mouvement 
 des fluides newtoniens (visqueux) dans l'approximation des milieux continus. 
 Elles modélisent par exemple les mouvements de l'air de l'atmosphère, les courants océaniques, 
 l'écoulement de l'eau dans un tuyau, et de nombreux autres phénomènes d'écoulement de fluides.
@@ -709,22 +709,22 @@ l'écoulement de l'eau dans un tuyau, et de nombreux autres phénomènes d'écou
 Nous considérons l'équation de Navier-Stokes sous la forme:\index{ED-EDP!de Navier-Stokes}\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
 \begin{equation}
 \rho \dot{u} + \rho (u\cdot\nabla)u - \eta \Delta u
-- \left( \zeta + \frac{\eta}{3} \right) \overrightarrow{\mathrm{grad}} (\dive u)
+- \left( \zeta + \frac{\eta}{3} \right) \gradb (\dive u)
 = \rho f - \nabla p
 \end{equation}
-où :
+où:
 \begin{itemize}
-   \item $u$ est la vitesse du fluide ;
-   \item $p$ est la pression dans le fluide ;
-   \item $\rho$ est la masse volumique du fluide;
-   \item $\eta$ est la viscosité dynamique en cisaillement du fluide;
-   \item $\zeta$ est la viscosité dynamique en compression du fluide;
-   \item $f$ est une force massique s'exerçant dans le fluide (par exemple : pesanteur).
+  \item~$u$ est la vitesse du fluide ;
+  \item~$p$ est la pression dans le fluide ;
+  \item~$\rho$ est la masse volumique du fluide;
+  \item~$\eta$ est la viscosité dynamique en cisaillement du fluide;
+  \item~$\zeta$ est la viscosité dynamique en compression du fluide;
+  \item~$f$ est une force massique s'exerçant dans le fluide (par exemple: pesanteur).
 \end{itemize}
 
 \medskip
-Si de plus le fluide est incompressible (bonne approximation pour les liquides), alors $\dive u = 0$ 
-et l'équation se simplifie :
+Si de plus le fluide est incompressible (bonne approximation pour les liquides), alors~$\dive u = 0$ 
+et l'équation se simplifie:
 \begin{equation}
 \rho \dot{u} + \rho (u\cdot\nabla)u - \eta \Delta u
 = \rho f - \nabla p
@@ -742,39 +742,39 @@ les effets visqueux dominent sur les effets inertiels.
 Son écoulement est alors appelé écoulement de Stokes.
 On parle aussi d'écoulement à faible nombre de Reynolds (le nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} 
 mesure le poids relatif des termes visqueux et inertiel dans l'équation de Navier-Stokes). Ce nombre
-de Reynolds est alors beaucoup plus petit que $1$.
+de Reynolds est alors beaucoup plus petit que~$1$.
 
 \medskip
 L'équation de Stokes, qui décrit l'écoulement d'un fluide newtonien incompressible en régime 
 permanent et à faible nombre de Reynolds,\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} 
-s'écrit dans $\Omega$ :\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
+s'écrit dans~$\Omega$:\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
 \begin{equation}
 -\eta \Delta u + \nabla p = \rho f
 \end{equation}
 
 On rappelle que si de plus le fluide est incompressible, alors on a également 
-$\dive u = 0$ dans $\Omega$.
+$\dive u = 0$ dans~$\Omega$.
 
 
 \medskip
 Contrairement à l'équation de Navier-Stokes, l'équation de Stokes est linéaire.
-Les écoulements solutions de cette équation possèdent par conséquent des propriétés bien particulières :
+Les écoulements solutions de cette équation possèdent par conséquent des propriétés bien particulières:
 \begin{itemize}
-   \item \textbf{unicité}: 
+  \item \textbf{unicité}: 
 	pour des conditions aux limites données (valeur de la vitesse au niveau des parois et/ou à l'infini), 
 	il existe un et un seul écoulement vérifiant l'équation de Stokes;
-   \item \textbf{additivité}: 
+  \item \textbf{additivité}: 
 	les solutions de l'équation de Stokes vérifient le principe de superposition: 
-	si $u_1$ et $u_2$ sont solutions, alors toute combinaison linéaire $\lambda_1 u_1 
+	si~$u_1$ et~$u_2$ sont solutions, alors toute combinaison linéaire~$\lambda_1 u_1 
 	+ \lambda_2 u_2$ le sera aussi (ceci n'est pas incompatible avec la propriété d'unicité: seul 
 	l'écoulement vérifiant les bonnes conditions aux limites sera observé);
-   \item \textbf{réversibilité}: 
-	si un champ de vitesse $u$ est solution de l'équation, alors $-u$ 
+  \item \textbf{réversibilité}: 
+	si un champ de vitesse~$u$ est solution de l'équation, alors~$-u$ 
 	l'est aussi, à condition de changer le signe des gradients de pression, ainsi que des vitesses aux 
 	parois et à l'infini; cette propriété est contraire à l'intuition, fondée sur notre expérience 
-	des écoulements macroscopiques: la réversibilité des écoulements à bas nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais}  
+	des écoulements macroscopiques: la réversibilité des écoulements à bas nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} 
 	a ainsi poussé les êtres vivants de très petite taille à développer des moyens de propulsion originaux.
-   \item \textbf{paradoxe de Stokes}: 
+  \item \textbf{paradoxe de Stokes}: 
 	il faut prendre garde au fait que les solutions mathématiques de l'équation de Stokes, 
 	dans un cas donné ou dans certaines régions du domaine de solution, peuvent être 
 	physiquement fausses. Ceci est dû au <<~paradoxe de Stokes~>> à savoir que les 
@@ -801,21 +801,21 @@ se placer dans l'hypothèse de vitesses faibles).
 Il s'agit d'un cas particulier de l'équation de Navier-Stokes.
 
 \medskip
-Toujours avec les mêmes notations, elle s'écrit dans $\Omega\times\RR^+$:\index{ED-EDP!d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
+Toujours avec les mêmes notations, elle s'écrit dans~$\Omega\times\RR^+$:\index{ED-EDP!d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
 \begin{equation}
 \rho \dot{u} + \nabla p = \rho f
 \end{equation}
 
 Et, si de plus le fluide est incompressible, alors on a également 
-$\dive u = 0$ dans $\Omega$.
+$\dive u = 0$ dans~$\Omega$.
 
 \medskip\colorgris
 Dans le cas où la description du problème est une description eulérienne (i.e. le champ de
-vitesse est associé à chaque point et est considéré de manière instantanée), on peut alors écrire :
+vitesse est associé à chaque point et est considéré de manière instantanée), on peut alors écrire:
 \begin{equation}
-    \rho f - \nabla p  = \rho \dot{u} =
+  \rho f - \nabla p = \rho \dot{u} =
 	\rho \left(\dot{u} + (u\cdot\nabla)u \right)=
-	\rho \left( \dot{u} + \frac12 \nabla u^2 +  (\nabla\wedge u)\wedge u \right)
+	\rho \left( \dot{u} + \frac12 \nabla u^2 + (\nabla\wedge u)\wedge u \right)
 \end{equation}\colorblack
 
 \medskip
@@ -834,70 +834,70 @@ c'est dans cette section que se trouve du <<~matériel~>> qui aurait pu être pr
 
 \medskip
 \subsubsection{Équation aux dérivées partielles elliptique linéaire}
-Si l'on considère le cas scalaire, i.e. celui d'une fonction inconnue $u$ définie sur un domaine 
-ouvert $\Omega\subset\RR^2$, une \textcolorblue{EDP elliptique linéaire} se met sous la forme:
+Si l'on considère le cas scalaire, i.e. celui d'une fonction inconnue~$u$ définie sur un domaine 
+ouvert~$\Omega\subset\RR^2$, une \textcolorblue{EDP elliptique linéaire} se met sous la forme:
 \begin{equation}a(x, y)u_{xx}(x, y) + b(x, y)u_{yy}(x, y) + c(x, y)u_x(x, y) + d(x, y)u_y(x, y) + eu(x, y) = f(x, y)\end{equation}
-avec $a(x, y)b(x, y) > 0$.
+avec~$a(x, y)b(x, y) > 0$.
 
-Dans le cas où la fonction $u$ est définie sur $\Omega\subset\RR^n$, une équation aux dérivées partielles elliptique 
+Dans le cas où la fonction~$u$ est définie sur~$\Omega\subset\RR^n$, une équation aux dérivées partielles elliptique 
 linéaire est définie par:
 \begin{equation} \mathcal{L}u(x) = f(x),\quad \forall x\in\Omega \end{equation}
-où l'opérateur différentiel $\mathcal{L}$ est défini par :
+où l'opérateur différentiel~$\mathcal{L}$ est défini par:
 \begin{equation}
 \mathcal{L}u = \sum_{i=1, j=1}^n a_{ij}(x)u_{x_ix_j} (x) +
 \sum_{i=1}^n b_i(x)u_{x_i}(x) + c(x)u(x)
 \end{equation}
-avec les valeurs propres de la matrice $A = a_{ij}$ qui sont toutes non nulles et de même signe. 
-On rappelle que le matrice $A$ peut toujours être choisie symétrique du fait de la symétrie 
+avec les valeurs propres de la matrice~$A = a_{ij}$ qui sont toutes non nulles et de même signe. 
+On rappelle que le matrice~$A$ peut toujours être choisie symétrique du fait de la symétrie 
 $u_{x_ix_j} = u_{x_jx_i}$ et donc que les valeurs sont réelles.
 
 D'ailleurs, en dimension finie, le fait que toutes les valeurs propres sont strictement positives
-est équivalent au fait que la matrice $A$ est définie positive.
+est équivalent au fait que la matrice~$A$ est définie positive.
 
 \medskip
 \subsubsection{Flux conservatif}
-Les EDP elliptiques conduisent à la notion physique de  flux conservatif donné
-par un gradient. Considérons le cas scalaire. On associe à la fonction $u(x)$ un \textcolorblue{flux}
+les équations différentiellesP elliptiques conduisent à la notion physique de flux conservatif donné
+par un gradient. Considérons le cas scalaire. On associe à la fonction~$u(x)$ un \textcolorblue{flux}
 $q(x)$ qui est nul vers l'extérieur:
-\begin{equation}\dint_{\delta\omega} q(x)\cdot n_x ds=0,\quad\forall\text{ volume }\omega\subset\Omega\end{equation}
-En utilisant la formule de divergence-flux, il vient: $\int_\omega \dive_xq(x)\mathrm dx=0$, et
-en supposant la fonction $q(x)$ suffisament régulière on en déduit
+\begin{equation}\dint_{\delta\omega} q(x)\cdot n_x ds=0,\quad\forall\text{ volume}\omega\subset\Omega\end{equation}
+En utilisant la formule de divergence-flux, il vient:~$\int_\omega \dive_xq(x)\mathrm dx=0$, et
+en supposant la fonction~$q(x)$ suffisament régulière on en déduit
 $\dive_xq(x)=0$, $\forall x\in\Omega$.
 
-En supposant que ce flux est une fonction linéaire du gradient $\nabla u$, et qu'il est orienté 
+En supposant que ce flux est une fonction linéaire du gradient~$\nabla u$, et qu'il est orienté 
 dans la direction opposée (physiquement, les flux se font souvent de façon opposée au gradient 
-d'une grandeur), on écrit $q(x) = -a(x)\nabla u$ et on obtient une \textcolorblue{loi de conservation 
-à l'équilibre} du type :
+d'une grandeur), on écrit~$q(x) = -a(x)\nabla u$ et on obtient une \textcolorblue{loi de conservation 
+à l'équilibre} du type:
 \begin{equation}\dive(a(x)\nabla u(x)) = 0\end{equation}
 
-Pour $a(x) \equiv 1$, on retrouve la plus simple des équations elliptiques, l'équation de Laplace :
+Pour~$a(x) \equiv 1$, on retrouve la plus simple des équations elliptiques, l'équation de Laplace:
 \begin{equation}\dive\nabla u(x) = \Delta u(x) = 0\end{equation}
 
 \medskip
 \subsubsection{Équilibre des lois de conservation en comportement linéaire}
 Le raisonnement précédent peut être mené en considérant les lois de conservations 
 dans les milieux continus. Les ingrédients principaux qui vont nous conduire à une grande famille 
-d'équations elliptiques sont les suivants :
+d'équations elliptiques sont les suivants:
 \begin{itemize}
-   \item Conservation d'une grandeur;
-   \item Milieu immobile et régime stationnaire;
-   \item Loi de comportement linéaire entre le flux de cette grandeur et le gradient.
+  \item Conservation d'une grandeur;
+  \item Milieu immobile et régime stationnaire;
+  \item Loi de comportement linéaire entre le flux de cette grandeur et le gradient.
 \end{itemize}
 Les deux premières notions sont souvent associées à l'équilibre d'un système.
 
 \medskip
 \paragraph{Lois de conservation}
-Soit $\Omega\subset\RR^n$, $n=1, 2$ ou $3$.
-Pour tout sous-domaine $\omega(t)\subset\Omega$, on définit, d'une manière 
-générale, une grandeur $\mathcal{U}(t)$ à partir de sa densité spécifique
-$u(x,t)$ à l'aide de la masse volumique du milieu $\rho$ par:
+Soit~$\Omega\subset\RR^n$, $n=1, 2$ ou~$3$.
+Pour tout sous-domaine~$\omega(t)\subset\Omega$, on définit, d'une manière 
+générale, une grandeur~$\mathcal{U}(t)$ à partir de sa densité spécifique
+$u(x,t)$ à l'aide de la masse volumique du milieu~$\rho$ par:
 \begin{equation}\mathcal{U}(t)=\dint_{\omega(t)} \rho(x,t)u(x,t)dx\end{equation}
-On suppose que la variation de cette grandeur $\mathcal{U}(t)$ ne peut se faire
-que par un apport extérieur volumique noté $\int_{\omega(t)} \varphi u dv$
-et/ou un apport extérieur surfacique $\int_{\partial\omega(t)} J_{\mathcal{U}} \mathrm ds$.
+On suppose que la variation de cette grandeur~$\mathcal{U}(t)$ ne peut se faire
+que par un apport extérieur volumique noté~$\int_{\omega(t)} \varphi u dv$
+et/ou un apport extérieur surfacique~$\int_{\partial\omega(t)} J_{\mathcal{U}} \mathrm ds$.
 
-Le Lemme de Cauchy affirme alors l'existence d'un tenseur $j_{\mathcal{U}}$ tel que 
-$J_{\mathcal{U}} = j_{\mathcal{U}}\cdot n$ et que l'on a la loi de conservation locale :
+Le Lemme de Cauchy affirme alors l'existence d'un tenseur~$j_{\mathcal{U}}$ tel que 
+$J_{\mathcal{U}} = j_{\mathcal{U}}\cdot n$ et que l'on a la loi de conservation locale:
 \begin{equation}\dfrac\partial{\partial t}(\rho u) + \dive (\rho uv) = \varphi u-\dive j_{\mathcal{U}}\end{equation}
 Cette équation de conservation local peut, en utilisant la conservation de la masse,
 se mettre sous la forme:
@@ -914,7 +914,7 @@ L'équation de conservation précédente devient alors:
 \begin{equation}
 \rho \dfrac{\partial u}{\partial t} = \varphi u-\dive j_{\mathcal{U}}
 \end{equation}
-Si de plus, on est en régime stationnaire, i.e. $\rho \dfrac{\partial u}{\partial t} =0$, alors:
+Si de plus, on est en régime stationnaire, i.e.~$\rho \dfrac{\partial u}{\partial t} =0$, alors:
 \begin{equation}
 \varphi u-\dive j_{\mathcal{U}} =0
 \end{equation}
@@ -927,69 +927,69 @@ Le choix le plus simple est celui liant de manière linéaire le flux et le grad
 \begin{equation}
 j_{\mathcal{U}}(x,t)=A(x,t)\nabla u(x,t)
 \end{equation}
-En reportant cette loi dans l'équation de conservation, il vient $\dive A(x,t)\nabla u(x,t)=\varphi u$,
+En reportant cette loi dans l'équation de conservation, il vient~$\dive A(x,t)\nabla u(x,t)=\varphi u$,
 soit:
 \begin{equation}
 A \Delta u + \nabla A \nabla u = \varphi u
 \end{equation}
-Cette équation est de type elliptique dès que l'opérateur $A(x)$ possède de
+Cette équation est de type elliptique dès que l'opérateur~$A(x)$ possède de
 bonnes propriétés de positivité.
 
 \medskip
 \subsubsection{Équilibre général}
 Pour résumer, les modèles elliptiques se mettent sous la forme:
 \begin{itemize}
-   \item Équation de flux (ou loi de comportement dans le cas vectoriel):
+  \item Équation de flux (ou loi de comportement dans le cas vectoriel):
 	\begin{equation}j = -A(x)\nabla u\end{equation}
-   \item Équation d'équilibre ou de conservation:
+  \item Équation d'équilibre ou de conservation:
 	\begin{equation}\dive j=f-c(x)u\end{equation}
 \end{itemize}
 où:
 \begin{itemize}
-   \item la fonction scalaire inconnue $u: \Omega\in\RR^n\rightarrow\RR$ est appelée un potentiel;
-   \item la fonction vectorielle inconnue $j: \Omega\in\RR^n\rightarrow\RR^n$ est appelée un flux;
-   \item la fonction scalaire connue $f: \Omega\in\RR^n\rightarrow\RR$ correspond au termes
+  \item la fonction scalaire inconnue~$u: \Omega\in\RR^n\rightarrow\RR$ est appelée un potentiel;
+  \item la fonction vectorielle inconnue~$j: \Omega\in\RR^n\rightarrow\RR^n$ est appelée un flux;
+  \item la fonction scalaire connue~$f: \Omega\in\RR^n\rightarrow\RR$ correspond au termes
 	sources du potentiel;
-   \item les fonctions scalaires connues $A(x)$ et $c(x)$ sont les données du problème.
+  \item les fonctions scalaires connues~$A(x)$ et~$c(x)$ sont les données du problème.
 \end{itemize}
 Dans le cas vectoriel:
 \begin{itemize}
-   \item $u$ devient une fonction vectorielle $\Omega\in\RR^n\rightarrow\RR^n$;
-   \item $j$ un tenseur d'ordre 2;
-   \item $A(x)$ un tenseur d'ordre 4;
-   \item et $c(x)$ une fonction vectorielle.
+  \item~$u$ devient une fonction vectorielle~$\Omega\in\RR^n\rightarrow\RR^n$;
+  \item~$j$ un tenseur d'ordre 2;
+  \item~$A(x)$ un tenseur d'ordre 4;
+  \item et~$c(x)$ une fonction vectorielle.
 \end{itemize}
 
 \medskip
 \subsubsection{Retour sur les exemples précédents}
-Si $u \longrightarrow T$ est la température, $j \longrightarrow q$ le flux de
+Si~$u \longrightarrow T$ est la température, $j \longrightarrow q$ le flux de
 chaleur, $f$ la source de chaleur, $A(x) \longrightarrow \kappa(x)$ la conductivité
-du matériaux et $c(x)\equiv0$, on retrouve l'équation de la chaleur.\index{ED-EDP!de la chaleur}
+du matériaux et~$c(x)\equiv0$, on retrouve l'équation de la chaleur.\index{ED-EDP!de la chaleur}
 
 \medskip
-Si $u\longrightarrow V$ est le potentiel électrostatique, $\nabla u\longrightarrow E$
+Si~$u\longrightarrow V$ est le potentiel électrostatique, $\nabla u\longrightarrow E$
 le champ électrostatique, $j\longrightarrow D$ le déplacement électrique ou
 flux de densité de courant, $f\longrightarrow\rho$ la densité de charge,
-$A(x)\longrightarrow\epsilon(x)$ le tenseur diélectrique et $c(x)\equiv0$, on
+$A(x)\longrightarrow\epsilon(x)$ le tenseur diélectrique et~$c(x)\equiv0$, on
 retrouve la loi de Faraday.\index{ED-EDP!de Faraday}
 
 \medskip
-Si $u\longrightarrow V$ est le potentiel électrique, $\nabla u\longrightarrow E$ le champ
+Si~$u\longrightarrow V$ est le potentiel électrique, $\nabla u\longrightarrow E$ le champ
 électrique, $j\longrightarrow J$ la densité de courant, $f\equiv 0$, $A(x)
-\longrightarrow\sigma(x)$ le tenseur de conductivité et $c(x)\equiv 0$, on
+\longrightarrow\sigma(x)$ le tenseur de conductivité et~$c(x)\equiv 0$, on
 retrouve la loi d'Ohm.\index{ED-EDP!d'Ohm}
 
 \medskip
-Si $u\longrightarrow C$ est la concentration, $j$ le flux molaire,
+Si~$u\longrightarrow C$ est la concentration, $j$ le flux molaire,
 $f\longrightarrow\rho$ le taux d'absorption ou le taux de réaction, $A(x)\longrightarrow
-D(x)$ la constante de diffusion et $c(x)$ la coefficient de réaction, alors on retrouve 
+D(x)$ la constante de diffusion et~$c(x)$ la coefficient de réaction, alors on retrouve 
 le cas de la diffusion moléculaire.\index{ED-EDP!de la diffusion moléculaire}
 
 \medskip
-Si $u$ est le déplacement orthogonal, $\nabla u\longrightarrow\varepsilon$
+Si~$u$ est le déplacement orthogonal, $\nabla u\longrightarrow\varepsilon$
 la déformation, $j\longrightarrow\sigma$ la contrainte dans le plan, $f$
 la force volumique extérieure, $A(x)\longrightarrow H(x)$ le tenseur des
-rigidités et $c(x)=0$, on se retrouve dans le cas de l'élasticité plane ($n=2$)
+rigidités et~$c(x)=0$, on se retrouve dans le cas de l'élasticité plane ($n=2$)
 linéaire.\index{ED-EDP!de l'élasticité plane}
 \colorblack
 
@@ -1001,17 +1001,17 @@ de dissipation visqueuse, on écrira le problème général sous la forme:
 \begin{equation}
 \left\{
 \begin{array}{llr}
-\dive\sigma + f = \rho \ddot{u} + \mu \dot{u} & \text{ dans } \Omega & \text{ équation de la dynamique}\\
-\sigma=H(\varepsilon-\varepsilon_{th}) & \text{ dans } \Omega & \text{ loi de comportement}\\
+\dive\sigma + f = \rho \ddot{u} + \mu \dot{u} & \text{ dans} \Omega & \text{ équation de la dynamique}\\
+\sigma=H(\varepsilon-\varepsilon_{th}) & \text{ dans} \Omega & \text{ loi de comportement}\\
 \end{array}
 \right.
 \end{equation}\index{ED-EDP!relation fondamentale de la dynamique}\index{Loi de comportement}
-où $f$ est une force de volume, $\rho$ la masse volumique, $\mu$ est un facteur
+où~$f$ est une force de volume, $\rho$ la masse volumique, $\mu$ est un facteur
 traduisant l'amortissement visqueux, $\varepsilon_{th}$ est la déformation d'origine
-thermique et $H$ traduit la \textcolorblue{relation de Hooke},\index{Loi de comportement!Hooke}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
+thermique et~$H$ traduit la \textcolorblue{relation de Hooke},\index{Loi de comportement!Hooke}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 i.e. la loi de comportement.
-\textcolorgreen{Les inconnues sont donc les déplacements $u$, les déformations $\varepsilon$
-et les contraintes $\sigma$.}
+\textcolorgreen{Les inconnues sont donc les déplacements~$u$, les déformations~$\varepsilon$
+et les contraintes~$\sigma$.}
 
 
 \medskip
@@ -1022,16 +1022,16 @@ notamment des simplifications correspondant à certains cas courant d'étude.
 \subsection{Dynamique / statique}
 La formulation générale est celle de la dynamique avec amortissement.
 
-Une structure est sans amortissement si $\mu=0$.
+Une structure est sans amortissement si~$\mu=0$.
 
 Le problème est \textcolorblue{statique} s'il ne dépend pas du temps,
-i.e. s'il n'y a plus les termes $\ddot{u}$ et $\dot{u}$.
+i.e. s'il n'y a plus les termes~$\ddot{u}$ et~$\dot{u}$.
 
 \medskip
 \subsection{Grands / petits déplacements}
 La relation entre déformation et déplacement est donnée par:
 \begin{equation}\varepsilon=\frac12\left(\nabla u+(\nabla u)^T\right)%\end{equation}
-\text{ soit pour chaque composante: }
+\text{ soit pour chaque composante:}
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}
 +\frac{\partial u_k}{\partial x_i}\frac{\partial u_k}{\partial x_j}
 \right)\end{equation}
@@ -1040,7 +1040,7 @@ La relation entre déformation et déplacement est donnée par:
 Dans le cas des petits déplacements (termes d'ordre 2 négligés), elle devient:
 \begin{equation}
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)
-\text{ que l'on note }
+\text{ que l'on note}
 \varepsilon_{ij}=\frac12(u_{i,j}+u_{j,i})
 \end{equation}
 
@@ -1073,14 +1073,14 @@ Si elle est linéaire, on parle alors d'\textcolorblue{élasticité linéaire}.
 %\end{center}
 La \fig{Fig-sig-eps} présente quelques lois types de comportement pour différents matériaux.
 \begin{figure}[ht]
-   \centerline{\includegraphics[height=5cm]{sig-eps.eps}}
-   \caption{\label{Fig-sig-eps} Quelques lois types de comportement pour différents matériaux.}
+  \centerline{\includegraphics[height=5cm]{sig-eps.eps}}
+  \caption{\label{Fig-sig-eps} Quelques lois types de comportement pour différents matériaux.}
 \end{figure}
 
 \medskip
 Dans le cas de matériaux \textcolorblue{isotropes} (i.e. possédant les mêmes
 propriétés matérielles quelque soit l'orientation), les relations constitutives s'écrivent
-à l'aide des coefficients de Lamé $\lambda$ et $\mu$:\index{Coefficients de Lamé}\index[aut]{Lame@Lamé (Gabriel), 1795-1870, Français}
+à l'aide des coefficients de Lamé~$\lambda$ et~$\mu$:\index{Coefficients de Lamé}\index[aut]{Lame@Lamé (Gabriel), 1795-1870, Français}
 %\footnote{%
 %\begin{tabular}{ccc}
 %\includegraphics[height=32mm]{Lame}&
@@ -1094,19 +1094,19 @@ propriétés matérielles quelque soit l'orientation), les relations constitutiv
 % 1773-1829\\
 %\end{tabular}}
 \begin{equation}\sigma = 2\mu\varepsilon+\lambda Tr(\varepsilon)I\end{equation}
-i.e. $\sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\varepsilon_{kk}\delta_{ij}$.
+i.e.~$\sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\varepsilon_{kk}\delta_{ij}$.
 On rappelle également que:
-\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et } \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)}
+\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et} \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)}
 \end{equation}
-avec $E$ le module d'Young et $\nu$ le coefficient de Poisson, que l'on exprime, inversement:\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{Coefficients de Poisson}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{Module d'Young}
+avec~$E$ le module d'Young et~$\nu$ le coefficient de Poisson, que l'on exprime, inversement:\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{Coefficients de Poisson}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{Module d'Young}
 \begin{equation}
 E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et}\quad
 \nu=\dfrac{\lambda}{2(\lambda+\mu)}
 \end{equation}
-Pour assurer que la matrice $H$ est définie positive, il faut que $0<\nu<0,5$.
+Pour assurer que la matrice~$H$ est définie positive, il faut que~$0<\nu<0,5$.
 
 \medskip
-Le cas $\nu=0,5$ correspond au cas d'un matériau \textcolorred{incompressible}, comme par
+Le cas~$\nu=0,5$ correspond au cas d'un matériau \textcolorred{incompressible}, comme par
 exemple le caoutchouc.\index{Loi de comportement!incompressible}
 Nous verrons que selon les formulations il est plus ou moins aisé de prendre en compte
 ces matériaux. De plus, la littérature ne manque pas sur le sujet.
@@ -1118,11 +1118,11 @@ La signification physique du coefficent de Poisson est simple:
 $2\nu$ traduit le pourcentage de déformation dans le sens transverse
 à l'effort. En restant dans le cas plan, quand on fait subit à une pièce un effort de 
 compression telle qu'elle subit une déformation (de compression) de 1, alors elle 
-s'élargit de $2\nu$ dans la direction transverse ($\nu$ de chaque côté par symétrie).\\
+s'élargit de~$2\nu$ dans la direction transverse ($\nu$ de chaque côté par symétrie).\\
 \raisebox{-16mm}{\includegraphics[width=3cm]{mtx_incompressible}} &
 Ainsi, il devient évident qu'un matériau incompressible\index{Loi de comportement!incompressible}
-est caractérisé par $2\nu=1$,
-i.e. lorsqu'il perd un volume $1$ selon une direction, il reprend un volume $1$ dans
+est caractérisé par~$2\nu=1$,
+i.e. lorsqu'il perd un volume~$1$ selon une direction, il reprend un volume~$1$ dans
 la direction transverse: en d'autres termes, il ne varie pas de volume, il est donc
 incompressible [ce qui ne veut pas dire <<~incomprimable~>> !].
 \end{tabular}
@@ -1153,7 +1153,7 @@ On parle alors d'un matériau auxétique.\index{Loi de comportement!auxétique}
 \colorblack
 
 \medskip
-Notons  également que si $\mu\ne0$ et $3\lambda+2\mu\ne0$, alors on peut inverser la
+Notons également que si~$\mu\ne0$ et~$3\lambda+2\mu\ne0$, alors on peut inverser la
 relation contrainte/dé\-pla\-ce\-ment:
 \begin{equation}
 \varepsilon_{ij}=\dfrac1{2\mu}\left(\sigma_{ij}-\dfrac\lambda{3\lambda+2\mu}Tr(\sigma)\delta_{ij}\right)
@@ -1172,8 +1172,8 @@ Elle fait appel aux phénomènes ondulatoires et à la mécanique vibratoire.
 d'énergies très différentes.}
 Considérons l'étude vibro-acoustique d'un véhicule.
 Alors, on doit aussi bien prendre en compte les effets mécaniques ayant une forte
-énergie (la rotation du moteur fait bouger tout le véhicule), qu'à des effets ayant
-une  énergie comparativement très faible: la composante aérienne du bruit.
+énergie (la rotation du moteur fait bouger tout le véhicule), qu'à des éléments finisfets ayant
+une énergie comparativement très faible: la composante aérienne du bruit.
 \textcolorgreen{Dans le premier cas, vous êtes face à quelque chose capable de faire <<~sauter~>> 
 une voiture sur place, alors que dans le second vous êtes face au déplacement d'une 
 feuille de papier lorsque vous criez devant elle !}
@@ -1185,12 +1185,12 @@ Il est clair qu'il sera nécessaire d'étudier chaque aspect:
 	dans le cas d'une sollicitation qui dépend du temps. Celle-ci est d'ailleurs généralement
 	périodique, d'où l'utilisation d'outils appropriés (en fréquence). On est dans
 	le cas de propagation solidienne d'onde;
-   \item \textcolorblue{aérien/aérien:} il s'agit de la propagation d'une onde acoustique de sa source
+  \item \textcolorblue{aérien/aérien:} il s'agit de la propagation d'une onde acoustique de sa source
 	jusqu'au récepteur. On est en présence d'un modèle purement de propagation
 	d'onde;
-   \item \textcolorblue{solidien/aérien:} il s'agit du cas du rayonnement. Une vibration mécanique fait
+  \item \textcolorblue{solidien/aérien:} il s'agit du cas du rayonnement. Une vibration mécanique fait
 	vibrer un élément qui se met à émettre une onde dans l'air;
-   \item \textcolorblue{aérien/solidien:} dans le cas de sources acoustiques très puissantes, l'onde
+  \item \textcolorblue{aérien/solidien:} dans le cas de sources acoustiques très puissantes, l'onde
 	acoustique se propageant dans l'air peut arriver à déformer et à faire 
 	vibrer une surface physique (par exemple un tablier de voiture).
 \end{itemize}
@@ -1235,7 +1235,7 @@ typique d'application des multiplicateurs de Lagrange.
 Si l'on considère chacun des deux matériaux comme indépendant, alors au sein
 de chaque matériau, les relations fonctionnent.
 Si l'on impose maintenant la \textcolorblue{continuité des déplacements à l'interface} 
-entre les deux matériaux (en écrivant que $\lambda$ (qui représente les multiplicateurs de Lagrange)
+entre les deux matériaux (en écrivant que~$\lambda$ (qui représente les multiplicateurs de Lagrange)
 multiplié par la différence entre les déplacements de part et d'autre de l'interface est nul: analogie
 immédiate avec les résidus pondérés -- voir chapitre suivant), 
 alors on s'aperçoit (ce sera détaillé dans le chapitre sur les 

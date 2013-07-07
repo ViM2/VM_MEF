@@ -2,7 +2,7 @@
 
 
 \medskip
-\section{Amélioration d'un modèle: méthodes $r$, $h$ et $p$}\label{Sec-rhp}
+\section{Amélioration d'un modèle: méthodes~$r$, $h$ et~$p$}\label{Sec-rhp}
 
 Les indicateurs d'erreur ont pour but de nous indiquer si <<~nous sommes loin de
 la solution~>>, afin de pouvoir modifier le modèle si besoin.
@@ -17,14 +17,14 @@ raffinant le maillage.
 Globalement, il existe trois stratégies pour améliorer la précision de la
 solution obtenue:
 \begin{description}
-\item[\textcolorblue{Méthode $r$:}]\index{méthode $r$} Pour un maillage et un type d'élément donné, il s'agit de déplacer les nœuds, en fonctions des indicateurs d'erreur, et donc sans impacter le nombre de ddl du système. Ainsi, la taille des éléments peut augmenter (maillage plus grossier) dans les zones les moins sollicitées et diminuer (maillage plus fin) dans les zones les plus sollicitées. On voit que la restriction de la méthode est qu'elle ne joue pas sur le nombre de nœuds, et que par conséquent, sans violer les contraintes de distorsion, elle est limitée.
-\item[\textcolorblue{Méthode $h$:}]\index{méthode $h$} En conservant le même type d'élément, on les subdivise dans les zones les plus sollicitées selon le ou les indicateurs d'erreur choisis. Dans cette méthode, on augmente le nombre de nœuds afin de contrôler les erreurs et la précision du modèle. Il est nécessaire de se fixer une limite dans la précision recherchée afin de ne pas trop raffiner le maillage.
-\item[\textcolorblue{Méthode $p$:}]\index{méthode $p$} À nombre d'éléments constant, dans les zones les plus sollicitées, on va modifier les éléments en introduisant des fonctions de formes polynomiales d'ordre plus élevé, dites hiérarchiques. La complexité du système est cette fois encore accrue.
+\item[\textcolorblue{Méthode~$r$:}]\index{méthode~$r$} Pour un maillage et un type d'élément donné, il s'agit de déplacer les nœuds, en fonctions des indicateurs d'erreur, et donc sans impacter le nombre de ddl du système. Ainsi, la taille des éléments peut augmenter (maillage plus grossier) dans les zones les moins sollicitées et diminuer (maillage plus fin) dans les zones les plus sollicitées. On voit que la restriction de la méthode est qu'elle ne joue pas sur le nombre de nœuds, et que par conséquent, sans violer les contraintes de distorsion, elle est limitée.
+\item[\textcolorblue{Méthode~$h$:}]\index{méthode~$h$} En conservant le même type d'élément, on les subdivise dans les zones les plus sollicitées selon le ou les indicateurs d'erreur choisis. Dans cette méthode, on augmente le nombre de nœuds afin de contrôler les erreurs et la précision du modèle. Il est nécessaire de se fixer une limite dans la précision recherchée afin de ne pas trop raffiner le maillage.
+\item[\textcolorblue{Méthode~$p$:}]\index{méthode~$p$} À nombre d'éléments constant, dans les zones les plus sollicitées, on va modifier les éléments en introduisant des fonctions de formes polynomiales d'ordre plus élevé, dites hiérarchiques. La complexité du système est cette fois encore accrue.
 \end{description}
 
 \medskip
 Évidemment, ces méthodes peuvent être combinées.
-La \textcolorblue{méthode -$hp$-}\index{méthode $hp$} propose de modifier à la fois le maillage et
+La \textcolorblue{méthode -$hp$-}\index{méthode~$hp$} propose de modifier à la fois le maillage et
 les fonctions d'interpolation. Elle semble aujourd'hui être la méthode optimale en terme
 d'efficacité et de vitesse de convergence.
 
@@ -71,7 +71,7 @@ sur la répartition des contraintes dans une section + via un interpolation lors
 trouve dans une section ne passant pas par un nœud)...
 
 \ifVersionAvecExemplesSepares\else
-   \input{./tex/ex4}% macro Ansys et poutre en U
+  \input{./tex/ex4}% macro Ansys et poutre en U
 \fi
 
 
@@ -105,7 +105,7 @@ montré sur la \fig{Fig-avion}.
 La simulation est donc décomposée en différents niveaux, chacun représentant une échelle
 différente. Pour coordonner ces niveaux entre eux, on utilise généralement une
 \textcolorblue{approche} dite \textcolorblue{descendante}:\index{approche descendante}
-on commence par simuler  le comportement global de l'avion, puis les résultats sont utilisés pour
+on commence par simuler le comportement global de l'avion, puis les résultats sont utilisés pour
 déterminer les conditions aux limites appliquées sur les niveaux inférieurs.
 Toutefois, il est parfois également nécessaire de combiner ces approches descendantes
 à des \textcolorblue{approches ascendantes}:\index{approche ascendante}
@@ -118,8 +118,8 @@ toutes sur le fait de simuler chaque phénomène à l'échelle la plus
 pertinente.
 Pour cela, il est nécessaire:
 \begin{enumerate}
-   \item de \textcolorred{distinguer différentes échelles} dans la modélisation et dans la simulation;
-   \item de \textcolorred{modéliser les relations existant} entre ces différentes échelles.
+  \item de \textcolorred{distinguer différentes échelles} dans la modélisation et dans la simulation;
+  \item de \textcolorred{modéliser les relations existant} entre ces différentes échelles.
 \end{enumerate}
 
 \medskip
@@ -127,12 +127,12 @@ Considérons un problème comportant deux échelles.
 Le point 1 évoqué ci-dessus se traduit par le fait de disposer de deux modèles
 distincts:
 \begin{itemize}
-   \item \textcolorblue{Un modèle macroscopique}\index{Modèle macroscopique}
+  \item \textcolorblue{Un modèle macroscopique}\index{Modèle macroscopique}
 
 	Il représente le produit et son environnement extérieur et est constitué
 	d'une géométrie et d'un modèle de comportement relativement grossiers
 	(puisque n'ayant pas vocation à représenter les phénomènes microscopiques);
-   \item \textcolorblue{Un modèle microscopique}\index{Modèle microscopique}
+  \item \textcolorblue{Un modèle microscopique}\index{Modèle microscopique}
 
 	Il possède une description géométrique et un maillage suffisamment fins ainsi qu'un
 	modèle de comportement détaillé. Il ne comprend qu'une ou quelques
@@ -161,11 +161,11 @@ modèles d'interactions, entre les échelles.
 Dans le cadre de la mécanique des solides déformables, on procède
 généralement comme suit:
 \begin{itemize}
-   \item Le modèle de comportement macroscopique:\index{Modèle macroscopique}
+  \item Le modèle de comportement macroscopique:\index{Modèle macroscopique}
 	qui modélise des phénomènes se produisant <<~au cœur du matériau~>>,
 	doit correspondre à la relation contraintes/déformations observée sur la cellule micro ;
 
-   \item Le modèle de comportement microscopique:\index{Modèle microscopique}
+  \item Le modèle de comportement microscopique:\index{Modèle microscopique}
 	qui traduisent la façon dont la cellule est sollicitée par son environnement
  	extérieur, doivent correspondre à l'état de contraintes ou de déformations macro.
 \end{itemize}
@@ -174,17 +174,17 @@ Le modèle macro ayant une résolution beaucoup plus grossière, la cohérence d
 modèles ne peut donc pas se traduire par une correspondance exacte, point par point, des
 conditions aux limites ou du comportement. Pour cette raison, la plupart des approches
 multi-échelles postulent que les quantités macroscopiques doivent correspondre à des
-<<~moyennes~>> des quantités micro correspondantes,  la définition mathématique exacte de
+<<~moyennes~>> des quantités micro correspondantes, la définition mathématique exacte de
 cette moyenne variant fortement d'une approche à l'autre.
 
 \medskip
 \colorgreen On peut donc dire que:
 \begin{itemize}
-   \item Le modèle de comportement macroscopique\index{Modèle macroscopique} d'un élément de volume est choisi
+  \item Le modèle de comportement macroscopique\index{Modèle macroscopique} d'un élément de volume est choisi
 	égal au comportement moyen de la cellule micro correspondante, calculé en utilisant
 	une technique d'homogénéisation;\index{Homogénéisation}
 
-   \item Les conditions aux limites micro sont appliquées en moyenne, car les champs de
+  \item Les conditions aux limites micro sont appliquées en moyenne, car les champs de
 	contraintes ou de déplacements macro sont beaucoup trop grossiers.
 \end{itemize}\colorblack
 
@@ -203,24 +203,24 @@ dont il sera l'objet au chapitre suivant.
 \textcolorgris{%
 Les méthodes les plus simples se contentent d'imposer directement le champ de déplacements (ou
 de contraintes) macro comme condition aux limites. Le modèle macro ayant par définition une
-résolution beaucoup plus grossière que le modèle micro, il  est incapable de capturer l'allure
+résolution beaucoup plus grossière que le modèle micro, il est incapable de capturer l'allure
 microscopique des déplacements ou des contraintes. Ces CL sont donc souvent trop imprécises
 par rapport aux finalités du modèle micro. Cela peut dégrader fortement la qualité des
 résultats et donc restreindre le domaine de validité de ces approches.%
 }
 
 Pour palier ce problème, on écrit les CL micro de manière plus subtile en les décomposant
-en la somme d'un terme moyen et d'un terme de moyenne nulle. Ainsi, le champ micro $u^m$
-sera écrit $u^m=u^M +v^m$ où $u^M$ est le champ macro (i.e. la moyenne  du champ micro),
-et $v^m$ est le reste (à moyenne nulle).
-Notre problème devient donc de \textcolorred{déterminer le reste $v^m$}, et c'est là
+en la somme d'un terme moyen et d'un terme de moyenne nulle. Ainsi, le champ micro~$u^m$
+sera écrit~$u^m=u^M +v^m$ où~$u^M$ est le champ macro (i.e. la moyenne du champ micro),
+et~$v^m$ est le reste (à moyenne nulle).
+Notre problème devient donc de \textcolorred{déterminer le reste~$v^m$}, et c'est là
 que les méthodes divergent le plus. On distingue néanmoins deux grosses familles:
 \begin{itemize}
-   \item \textcolorblue{Condition de périodicité}\index{Condition de périodicité}
+  \item \textcolorblue{Condition de périodicité}\index{Condition de périodicité}
 
 	On postule que l'on connaît l'allure du reste. On peut alors enchaîner un calcul macro
 	avec un solveur spécifique puis un calcul micro avec un solveur classique;
-   \item \textcolorblue{Couplage des cellules micro}\index{Couplage des cellules micro}
+  \item \textcolorblue{Couplage des cellules micro}\index{Couplage des cellules micro}
 
 	Lorsqu'il n'est pas si simple de <<~séparer~>> les échelles, alors il faut résoudre
 	en même temps les deux problèmes micro et macro avec échange de données.
@@ -246,15 +246,15 @@ Le résultat micro ainsi obtenu est pertinent à deux conditions:
 Saint-Venant\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{principe! de Saint-Venant}
 s'applique, i.e. que l'on se trouve suffisamment loin de la surface de la pièce
 (y compris des détails géométriques tels que des trous, des fissures...).
-Dans le cas contraire, des effets de bord peuvent affecter l'allure de la solution, qui n'est
+Dans le cas contraire, des éléments finisfets de bord peuvent affecter l'allure de la solution, qui n'est
 alors plus périodique: il faut donc recourir à d'autres modélisations.
 
 \medskip
 La simulation multi-niveaux\index{Multi-niveaux} fait appel à deux types de modèles, chacun équipé de son solveur:
 \begin{itemize}
-   \item un modèle macro\index{Modèle macroscopique} ne possédant pas de relation de comportement du matériau
+  \item un modèle macro\index{Modèle macroscopique} ne possédant pas de relation de comportement du matériau
 	prédéfinie, équipé d'un solveur EF modifié;
-   \item un ensemble de modèles micro\index{Modèle microscopique} ne possédant pas de CL prédéfinies,
+  \item un ensemble de modèles micro\index{Modèle microscopique} ne possédant pas de CL prédéfinies,
 	équipés de solveurs EF classiques.
 \end{itemize}
 
@@ -277,7 +277,7 @@ Le cas de la fissuration sera traitée dans un chapitre ultérieur de ce documen
 \textbf{En résumé:}
 
 Les méthodes multi-niveaux abordent la simulation à l'échelle macro\index{Modèle macroscopique}
-et se <<~nourrissent~>>  du comportement simulé à l'échelle microscopique.\index{Modèle microscopique}
+et se <<~nourrissent~>> du comportement simulé à l'échelle microscopique.\index{Modèle microscopique}
 
 Dans les méthodes multi-niveaux,\index{Multi-niveaux} l'emploi d'hypothèses de périodicité se traduit par
 des <<~sauts~>> de contraintes et de déplacements d'une cellule à l'autre; si les échelles sont
@@ -309,7 +309,7 @@ différents).
 La présence de couplages entre les cellules micro\index{Couplage des cellules micro}
 (qui en quelque sorte correspond à une généralisation de la condition de périodicité
 du paragraphe précédent) change complètement le déroulement de la simulation par
-rapport aux méthodes  multi-niveaux vues au paragraphe précédent.
+rapport aux méthodes multi-niveaux vues au paragraphe précédent.
 En effet, la prise en compte de ces couplages implique d'échanger directement des données
 entre les différents solveurs micro, qui ne sont plus <<~indépendants~>>.
 En contrepartie, cela permet de propager une information fine sur l'ensemble de la pièce et,
@@ -334,7 +334,7 @@ améliorer l'efficacité de la résolution.
 
 Une simulation par décomposition de domaine\index{décomposition de domaine} conduit toujours
 à un champ de déplacement micro continu sur toute la structure, et un champ de contraintes micro
-équilibré (au sens des EF) sur toute la structure.
+équilibré (au sens des éléments finis) sur toute la structure.
 \colorblack
 
 \medskip
@@ -388,15 +388,15 @@ Originellement introduit dans l'aéronautique dans les années 60 (d'où le sch�
 au paragraphe précédent), le concept de sous-structuration\index{Sous-structuration}
 répondait à trois motivations:
 \begin{itemize}
-   \item faciliter la division du travail:
+  \item faciliter la division du travail:
 	des sous-structures\index{Sous-structure} avec des fonctions différentes (fuselage, ailes, train d'atterrissage...)
 	pouvaient être traitées par des groupes d'experts différents. Chaque groupe pouvait
 	à loisir améliorer, raffiner... sa partie tant que l'interface avec les autres parties
 	restait inchangée.
-   \item profiter de la répétition:
+  \item profiter de la répétition:
 	en remarquant qu'une même structure peut contenir plusieurs sous-structures identiques,
 	il est possible de diminuer le temps d'étude (par exemple symétrie des ailes...)
-   \item contourner les limitations des ordinateurs:
+  \item contourner les limitations des ordinateurs:
 	les ordinateurs de l'époque atteignaient vite leurs limites (par exemple en terme
 	de taille mémoire). Diviser une structure complexe, que l'on était incapable de
 	calculer en une seule fois, permettait de sauvegarder des résultats sous-structure
@@ -405,7 +405,7 @@ répondait à trois motivations:
 Si les deux premiers points sont toujours d'actualité, le troisième l'est moins, surtout
 depuis le recourt aux algorithmes parallèles.
 
-C'est d'ailleurs le développement  de procédures pour le calcul parallèle qui a conduit
+C'est d'ailleurs le développement de procédures pour le calcul parallèle qui a conduit
 les mathématiciens appliqués au concept de sous-domaines, alors qu'ils devaient grouper
 des éléments pour des raisons de calcul.
 \end{histoire}
@@ -416,10 +416,10 @@ des éléments pour des raisons de calcul.
 
 En tant qu'assemblage de plusieurs éléments, un super-élément\index{Super-élément} possède:
 \begin{itemize}
-   \item des degrés de liberté internes:
+  \item des degrés de liberté internes:
 	qui ne sont pas connectés à des éléments n'appartenant pas au super-élément considéré.
 	Les nœuds ayant des ddl internes sont dits nœuds internes.
-   \item des degrés de liberté aux frontières:
+  \item des degrés de liberté aux frontières:
 	qui sont connectés à au moins une entité (élément, super-élément)
 	n'appartenant pas au super-élément considéré.
 \end{itemize}
@@ -429,9 +429,9 @@ L'opération consistant à éliminer tous les ddl internes est appelée
 \medskip
 Regardons ce qui se passe d'un point de vue matriciel.
 Pour cela, considérons que nous ayons à résoudre le système:
-\begin{equation}  \MM{K} \VV{q}=\VV{f}\end{equation}
-Le vecteur $\VV{q}$ se compose des composantes internes $\VV{q_i}$ et des composantes
-de frontière $\VV{q_b}$, de sorte que le système, une fois réordonné s'écrit:
+\begin{equation} \MM{K} \VV{q}=\VV{f}\end{equation}
+Le vecteur~$\VV{q}$ se compose des composantes internes~$\VV{q_i}$ et des composantes
+de frontière~$\VV{q_b}$, de sorte que le système, une fois réordonné s'écrit:
 \begin{equation}
 \MM*{\MM{K_{bb}} & \MM{K_{bi}}\\
 \MM{K_{ib}} & \MM{K_{ii}}}
@@ -439,7 +439,7 @@ de frontière $\VV{q_b}$, de sorte que le système, une fois réordonné s'écri
 =
 \VV*{\VV{f_b}\\\VV{f_i}}
 \end{equation}
-Si la matrice $\MM{K}_{ii}$ n'est pas singulière, alors la seconde équation peut être
+Si la matrice~$\MM{K}_{ii}$ n'est pas singulière, alors la seconde équation peut être
 résolue en terme de variables internes en:
 \begin{equation}
 \VV{q_i} = \MMI{K_{ii}}\left(\VV{f_i}-\MM{K_{ib}}\VV{q_b}\right)
@@ -452,14 +452,14 @@ de rigidité condensée}:\index{Condensation statique}
 avec:
 \begin{equation}
 \MM{\tilde{K}_{bb}}=\MM{K_{bb}} - \MM{K_{bi}}\MMI{K_{ii}}\MM{K_{ib}}
-\quad \text{ et }\quad
+\quad \text{ et}\quad
 \VV{\tilde{f}_b}=\VV{f_b} - \MM{K_{bi}}\MMI{K_{ii}}\VV{f_i}
 \end{equation}
 Après condensation, on peut donc bien considérer le super-élément, d'un point de vue calculatoire,
 comme un élément individuel.
 
 \medskip
-Notons que la matrice $\MM{K_{ii}}$ n'est pas singulière si elle possède la \textcolorblue{condition
+Notons que la matrice~$\MM{K_{ii}}$ n'est pas singulière si elle possède la \textcolorblue{condition
 de rang suffisant}, i.e. si elle ne contient que des modes à énergie nulle correspondant aux
 modes rigides (cette condition a déjà évoquée à propos de la validation des éléments).
 Si cela n'est pas le cas, le super-élément\index{Super-élément} est dit \textcolorblue{flottant}, et
@@ -514,23 +514,23 @@ crochets et les accolades pour les matrices et les vecteurs afin d'alléger l'é
 \medskip
 \subsection{Modification du chargement uniquement}
 Restons sur le problème structurel correspondant au système matriciel:
-%une structure, de matrice de rigidité $\MM{K}$, alors les déplacements de ses
-%nœuds $q$, lorsque cette structure est soumise au chargement $F$ sont donnés par
+%une structure, de matrice de rigidité~$\MM{K}$, alors les déplacements de ses
+%nœuds~$q$, lorsque cette structure est soumise au chargement~$F$ sont donnés par
 %le système:
 \begin{equation}
 \MM{K} \VV{q} = \VV{f}
 \end{equation}
-où $\MM{K}$ est de dimension $n\times n$.%, et $\VV{q}$ et $\VV{f}$ sont des vecteurs \textcolorgris{(on ne
-%note plus $[K]\{q\}=\{F\}$ dans ce paragraphe)}.
+où~$\MM{K}$ est de dimension~$n\times n$.%, et~$\VV{q}$ et~$\VV{f}$ sont des vecteurs \textcolorgris{(on ne
+%note plus~$[K]\{q\}=\{F\}$ dans ce paragraphe)}.
 
 \medskip
-Si l'on souhaite considérer plusieurs cas de chargement $\VV{F_1},\ldots,\VV{F_k}$, on peut soit résoudre
+Si l'on souhaite considérer plusieurs cas de chargement~$\VV{F_1},\ldots,\VV{F_k}$, on peut soit résoudre
 $k$ fois le système précédent, soit résoudre le système:
 \begin{equation}
 \MM{K} \MM{\overline{q}} =\MM{\overline{F}}
 \end{equation}
-où $\MM{\overline{F}}$ est la matrice $n\times k$ des $k$ vecteurs de chargement, et $\MM{\overline{q}}$ est la
-matrice $n\times k$ des $k$ vecteurs solutions correspondants.
+où~$\MM{\overline{F}}$ est la matrice~$n\times k$ des~$k$ vecteurs de chargement, et~$\MM{\overline{q}}$ est la
+matrice~$n\times k$ des~$k$ vecteurs solutions correspondants.
 
 \medskip
 Cette méthode, la plus simple des méthodes de réanalyse, permet malgré tout
@@ -539,18 +539,18 @@ d'économiser des opérations.
 
 \medskip
 \subsection{Modification de la matrice}
-Considérons maintenant le cas où ce n'est plus le chargement $\VV{f}$ qui peut varier d'une analyse
-à l'autre, mais la matrice $\MM{K}$.
+Considérons maintenant le cas où ce n'est plus le chargement~$\VV{f}$ qui peut varier d'une analyse
+à l'autre, mais la matrice~$\MM{K}$.
 
 On est amené à chercher une solution du système:
 \begin{equation}
 \left(\MM{K}+\Delta\MM{ K}\right)\VV{q}=\VV{f}
 \end{equation}
-en fonction de la solution du système non perturbé, i.e. à calculer $\left(\MM{K}+\Delta\MM{K}\right)^{-1}$
-en fonction des autres matrices. On rappelle que $\Delta\MM{ K}$ est appelé \textcolorblue{perturbation}
-\index{Perturbation} de la matrice $\MM{K}$.
+en fonction de la solution du système non perturbé, i.e. à calculer~$\left(\MM{K}+\Delta\MM{K}\right)^{-1}$
+en fonction des autres matrices. On rappelle que~$\Delta\MM{ K}$ est appelé \textcolorblue{perturbation}
+\index{Perturbation} de la matrice~$\MM{K}$.
 
-Certaines formules existent pour des modification mineures de la matrice $\MM{K}$, mais nous ne les
+Certaines formules existent pour des modification mineures de la matrice~$\MM{K}$, mais nous ne les
 présenterons pas.
 
 \medskip
@@ -561,12 +561,12 @@ modifiant les équations de l'équilibre avant résolution, ce qui rend le syst�
 Nous avons vu que le système à résoudre (incluant les conditions cinématiques) revient
 à chercher le minimum de la forme quadratique:
 \begin{equation}M=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{f}\end{equation}
-Notons que l'on peut écrire les $p$ conditions cinématiques sous la forme:
+Notons que l'on peut écrire les~$p$ conditions cinématiques sous la forme:
 $\MM{C}\VV{q} = \VV{\delta}$
-avec $\MM{C}$ une matrice $p\times n$, et $\VV{q}$ et $\VV{\delta}$ des vecteurs.
+avec~$\MM{C}$ une matrice~$p\times n$, et~$\VV{q}$ et~$\VV{\delta}$ des vecteurs.
 
 Nous avons également déjà vu que ces conditions peuvent être prises en compte
-par l'intermédiaire de $p$ multiplicateurs de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} $\VV{\lambda}$ dans la fonctionnelle précédente
+par l'intermédiaire de~$p$ multiplicateurs de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}~$\VV{\lambda}$ dans la fonctionnelle précédente
 qui devient alors:
 \begin{equation}
 M^*=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{f} - \LL{\lambda}(\MM{C}\VV{q} - \VV{\delta})
@@ -578,17 +578,17 @@ Pour pallier la lenteur des algorithmes disponibles pour la résolution numériq
 système (méthode de Gauss ou de décomposition avec pivotage), il est préférable
 de \textcolorblue{régulariser} le système.
 
-Pour cela, on s'appuie sur la connaissance de la matrice $\MM{K}$: celle-ci est singulière d'ordre
-$r$, où $r$ correspond aux mouvements de corps rigide, ou modes rigides. Cela veut
-également dire qu'elle possède $(n-r)$ valeurs propres strictement positives (et $r$ valeurs
+Pour cela, on s'appuie sur la connaissance de la matrice~$\MM{K}$: celle-ci est singulière d'ordre
+$r$, où~$r$ correspond aux mouvements de corps rigide, ou modes rigides. Cela veut
+également dire qu'elle possède~$(n-r)$ valeurs propres strictement positives (et~$r$ valeurs
 propres nulles).
 
-\textcolorred{Il est évident qu'il faut au moins disposer de $p\ge n$ conditions aux limites cinématiques
+\textcolorred{Il est évident qu'il faut au moins disposer de~$p\ge n$ conditions aux limites cinématiques
 pour que le système puisse admettre une solution.} C'est évidemment l'hypothèse que
 nous ferons (sinon le problème est mal posé).
 
 \medskip
-Nous considérons la matrice $\MM{R}$ de dimension $n\times r$ des $r$ vecteurs propres de $\MM{K}$
+Nous considérons la matrice~$\MM{R}$ de dimension~$n\times r$ des~$r$ vecteurs propres de~$\MM{K}$
 correspondant à la valeur propre nulle. Quitte à construire ces vecteurs (qui sont orthogonaux),
 nous les choisirons normés. On a alors:
 \begin{equation}
@@ -601,33 +601,33 @@ nous les choisirons normés. On a alors:
 \end{equation}
 On introduit la matrice:
 \begin{equation} \MM{K_\alpha} = \MM{K}+\alpha \MM{R}\MMT{R} \end{equation}
-qui, pour $\alpha>0$ est régulière car symétrique et définie-positive.
-Les colonnes de $\MM{R}$ sont vecteurs propres de $\MM{K_\alpha}$ pour la valeur propre $\alpha$.
+qui, pour~$\alpha>0$ est régulière car symétrique et définie-positive.
+Les colonnes de~$\MM{R}$ sont vecteurs propres de~$\MM{K_\alpha}$ pour la valeur propre~$\alpha$.
 
-Dans le système $\MM{K}\VV{q}=\VV{f}$, on remplace $\MM{K}$ par $\MM{K_\alpha}-\MM{R}\MMT{R}$, et en introduisant le
-fait que $\MM{K_\alpha}\MM{R}\MMT{R}=\alpha \MM{R}\MMT{R}$, on obtient finalement:
+Dans le système~$\MM{K}\VV{q}=\VV{f}$, on remplace~$\MM{K}$ par~$\MM{K_\alpha}-\MM{R}\MMT{R}$, et en introduisant le
+fait que~$\MM{K_\alpha}\MM{R}\MMT{R}=\alpha \MM{R}\MMT{R}$, on obtient finalement:
 \begin{equation}
 \MM{K_\alpha} \left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}=\VV{f}
 \end{equation}
-Si l'on change de variable en posant $\VV{v}=\left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}$ ($\VV{v}$ est la projection de
-$\VV{q}$ sur l'orthogonal du noyau de $\MM{K}$), \textcolorblue{$\VV{v}$ devient l'inconnue du système régularisé}:
+Si l'on change de variable en posant~$\VV{v}=\left(\MM{I_n}-\MM{R}\MMT{R}\right)\VV{q}$ ($\VV{v}$ est la projection de
+$\VV{q}$ sur l'orthogonal du noyau de~$\MM{K}$), \textcolorblue{$\VV{v}$ devient l'inconnue du système régularisé}:
 \begin{equation}
 \MM{K_\alpha}\VV{v}=\VV{f}
 \end{equation}
-et l'on retrouvera la solution du système initial $\VV{q}$ par:
+et l'on retrouvera la solution du système initial~$\VV{q}$ par:
 \begin{equation}\VV{q}=\VV{v}+\MM{R}\MMT{R}\VV{q} = \MMI{K_\alpha}\VV{f}+\MM{R}\MMT{R}\VV{q}\end{equation}
 \medskip
-On peut remarquer que $\MMI{K_\alpha}$, que l'on note $\MM{S_\alpha}$ possède les mêmes
-valeurs propres que $\MM{K_\alpha}$ (et donc les mêmes que $\MM{K}$ et $\MM{R}\MMT{R}$). On est donc
-naturellement amené à décomposer $\MM{S_\alpha}$ comme:
+On peut remarquer que~$\MMI{K_\alpha}$, que l'on note~$\MM{S_\alpha}$ possède les mêmes
+valeurs propres que~$\MM{K_\alpha}$ (et donc les mêmes que~$\MM{K}$ et~$\MM{R}\MMT{R}$). On est donc
+naturellement amené à décomposer~$\MM{S_\alpha}$ comme:
 \begin{equation} \MM{S_\alpha}=\MM{S}+\frac1\alpha \MM{R}\MMT{R}\end{equation}
-avec $\MM{S}\MM{R}=0$ et $\MMT{R}\MM{S}=0$.
+avec~$\MM{S}\MM{R}=0$ et~$\MMT{R}\MM{S}=0$.
 
-C'est cette matrice $\MM{S}$ que l'on appelle \textcolorblue{quasi-inverse}\index{Pseudo-inversion} de $\MM{K}$, car:
+C'est cette matrice~$\MM{S}$ que l'on appelle \textcolorblue{quasi-inverse}\index{Pseudo-inversion} de~$\MM{K}$, car:
 \begin{equation} \MM{S}\MM{K} = \MM{K}\MM{S} = \MM{I} -\MM{R}\MMT{R}\end{equation}
-Elle est de dimension $n\times n$, symétrique, semi-définie positive (ses valeurs propres
-sont de même signe), admet les mêmes valeurs propres que $\MM{K}$ et en particulier ceux
-de la valeur propre nulle dont $R$ est une base, mais \textcolorred{elle ne possède pas
+Elle est de dimension~$n\times n$, symétrique, semi-définie positive (ses valeurs propres
+sont de même signe), admet les mêmes valeurs propres que~$\MM{K}$ et en particulier ceux
+de la valeur propre nulle dont~$R$ est une base, mais \textcolorred{elle ne possède pas
 de caractère bande}.
 
 \bigskip
@@ -672,23 +672,23 @@ nombreuses analyses.
 
 \medskip
 \subsection{Dérivées par rapport à la géométrie}\index{dérivée!par rapport à la géométrie}
-En plus de considérer un domaine borné $\Omega$ de $\RR^n$, nous allons considérer
-une \textcolorblue{perturbation}\index{Perturbation} $V$ de $\Omega$, et nous noterons:
+En plus de considérer un domaine borné~$\Omega$ de~$\RR^n$, nous allons considérer
+une \textcolorblue{perturbation}\index{Perturbation}~$V$ de~$\Omega$, et nous noterons:
 \begin{equation} \Omega + V = (I+V)(\Omega);\quad V\in W^{1,\infty}(\Omega;\RR^n) \end{equation}
 %%%%%%%%%%%%%%%%%
 \medskipvm
-Nous considérons la \textcolorblue{fonction coût} ${\mathbf J}(\Omega, u_\Omega)$ choisie
+Nous considérons la \textcolorblue{fonction coût}~${\mathbf J}(\Omega, u_\Omega)$ choisie
 pour décrire le problème d'optimisation. Cette fonction dépend donc naturellement
-du domaine $\Omega$ et de la solution du problème sur ce domaine $u_\Omega$.
+du domaine~$\Omega$ et de la solution du problème sur ce domaine~$u_\Omega$.
 Nous allons donner un sens à la \textcolorblue{dérivée de la fonction coût par
 rapport aux variations du domaine}.
 
 \medskip
-Si l'on considère le cas simple ${\mathbf J}(\Omega,u)=\int_\Omega u$, alors il vient:
+Si l'on considère le cas simple~${\mathbf J}(\Omega,u)=\int_\Omega u$, alors il vient:
 \begin{equation}
 \dfrac{\dd{\mathbf J}}{\dd\Omega}(\Omega, u_v,V)=\dint_\Gamma u_\Omega V\cdot n + \dint_\Omega u'_{\Omega;v}
 \end{equation}
-avec une fois encore $n$ la normale extérieure de $\Gamma=\partial\Omega$, et:
+avec une fois encore~$n$ la normale extérieure de~$\Gamma=\partial\Omega$, et:
 \begin{equation}
 u'_{\Omega;V}=\lim_{t\rightarrow0} \dfrac{u_{\Omega+tV}(x)-u_\Omega(x)}t, \quad\forall x\in\Omega
 \end{equation}
@@ -705,21 +705,21 @@ par:
 \begin{equation}
 \dfrac{\partial{\mathbf J}}{\partial\Omega}(\Omega, u,V) = \dint_\Gamma u V\cdot n
 \end{equation}
-La difficulté tient à ce que l'ensemble des domaines $\Omega$ ne consitue pas un espace vectoriel
+La difficulté tient à ce que l'ensemble des domaines~$\Omega$ ne consitue pas un espace vectoriel
 (les perturbations ne s'ajoutent pas, ou au moins ne sont pas associatives:
 $(\Omega+V)+W\ne(\Omega+W)+V$).
 
 \medskip
 \textcolorred{Toutefois, si l'on utilise un \textcolorblue{paramétrage} du domaine, il est alors possible
 d'utiliser les outils classiques du calcul différentiel dans les espaces normés.}
-On introduit alors le paramètre $F$ par:
+On introduit alors le paramètre~$F$ par:
 \begin{equation}
 J(F,u)={\mathbf J}(F(\Omega),u\circ F^{-1}),\quad F\in W^{1,\infty}(\Omega;\RR^n)
 \end{equation}
-et l'on a alors $(F+V)+W=(F+W)+V)$.
+et l'on a alors~$(F+V)+W=(F+W)+V)$.
 
-La dérivée partielle de $J$ par rapport au paramètre $F$ est définie sans ambiguïté.
-Dans notre exemple, cette dérivée, prise au point $F=I$ est:
+La dérivée partielle de~$J$ par rapport au paramètre~$F$ est définie sans ambiguïté.
+Dans notre exemple, cette dérivée, prise au point~$F=I$ est:
 \begin{equation}
 \dfrac{\partial J}{\partial F}(I,u)\cdot V = \dint_\Omega u \dive V
 \end{equation}

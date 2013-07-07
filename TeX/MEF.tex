@@ -12,7 +12,7 @@ compact avec conditions aux bords et/ou dans l'intérieur du compact.
 Il s'agit donc de répondre aux questions d'existence et d'unicité de la solution,
 de stabilité, convergence des méthodes numériques, ainsi que d'apprécier
 l'erreur entre la solution exacte et la solution approchée (indicateurs et estimateurs
-d'erreur, \emph{a priori} et à posteriori).
+d'erreur, \emph{a priori} et \emph{a posteriori}).
 \end{abstract}
 
 \medskip
@@ -22,7 +22,7 @@ un problème physique à partir d'EDP, mais à aucun moment nous n'avons encore
 parlé de la manière de résoudre ces équations (que ce soit la formulation forte ou la faible).
 
 Ce sera le but de ce chapitre, dans lequel la mise en œuvre de la méthode
-des éléments finis  va être exposée.
+des éléments finis va être exposée.
 
 \medskip
 Nous avons vu dans la partie précédente, comment passer d'une formulation
@@ -79,7 +79,7 @@ Clough&Courant&Zienkiewicz%
 Si on veut replacer très brièvement cela dans un contexte plus global, on peut dire que l'analyse
 des structures est née vers 1850.\\
 \indent
-La RdM, recourant au calcul manuel,  était développée par Maxwell,\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais}
+La RdM, recourant au calcul manuel, était développée par Maxwell,\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais}
 Castigliano,\index[aut]{Castigliano (Carlo Alberto), 1847-1884, Italien}
 Mohr.\index[aut]{Mohr (Christian Otto), 1835-1918, Allemand}\\
 \indent
@@ -118,7 +118,7 @@ Dans ses travaux, Hrennikoff discrétise le domaine en utilisant une analogie av
 l'approche de Courant divise le domaine en sous-régions finies triangulaires pour résoudre les
 EDP elliptiques du second ordre issues du problème de la torsion d'un cylindre.
 On peut dire que la contribution de Courant était une évolution s'appuyant sur un vaste corpus de
-résultats antérieurs pour les EDP développés par Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}
+résultats antérieurs pour les équations différentiellesP développés par Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}
 Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse} et Galerkin.\index[aut]{Galerkine (Boris), 1871-1945, Russe}
 }
 
@@ -163,10 +163,10 @@ différences finis en temps.
 
 Pour des problèmes avec des ordres de dérivations supérieurs \textcolorgris{(des
 techniques dites d'ordres élevés existent)}, comme par exemple en statique des poutres
-où l'on  a une dérivation partielle d'ordre 4, on introduit des variables supplémentaires
+où l'on a une dérivation partielle d'ordre 4, on introduit des variables supplémentaires
 afin de diminuer les ordres des dérivées (déformations, contraintes... \textcolorgreen{cela
 a été évoqué en parlant du <<~choix des variables~>> en mécanique, nous
-détaillerons un peu plus loin la formulation EF de ces formulations mixtes}).
+détaillerons un peu plus loin la formulation éléments finis de ces formulations mixtes}).
 
 
 \medskip
@@ -198,7 +198,7 @@ chapitres ultérieurs (mais pas tous).
 Jusqu'à présent, nous avons supposé que le domaine $\Omega$ dans lequel le problème
 était considéré était fixe.
 Or, dans de nombreux problèmes ce \textcolorred{domaine est variable}, on parle de
-\textcolorblue{problèmes  à surface libre}, dont voici quelques exemples:
+\textcolorblue{problèmes à surface libre}, dont voici quelques exemples:
 \begin{itemize}
 \item Le problème le plus évident pour le lecteur, et qui a déjà été évoqué, est celui de la \textcolorblue{grande déformation} d'un solide.
 \item L'étude des mouvements d'un liquide, notamment les vagues ou le mouvement de l'eau
@@ -209,7 +209,7 @@ Or, dans de nombreux problèmes ce \textcolorred{domaine est variable}, on parle
 	plus complexe que l'équation initiale mais sur un domaine fixe.
 	Mais, parfois, le domaine peut être amené à se fragmenter comme dans le cas de la
 	formation de gouttes...
-   \item La fusion de la glace dans l'eau : la frontière entre la glace et l'eau est alors une inconnue
+  \item La fusion de la glace dans l'eau: la frontière entre la glace et l'eau est alors une inconnue
 	du problème.
 \end{itemize}
 
@@ -221,13 +221,13 @@ Mais il se peut également que différentes échelles interagissent...
 
 Quelques problèmes classiques d'échelle sont:
 \begin{itemize}
-   \item Nous avons déjà évoqué un peu cela en mécanique des fluides:
+  \item Nous avons déjà évoqué un peu cela en mécanique des fluides:
 	dans l'écoulement d'un fluide la \textcolorblue{turbulence} est un phénomène qui fait apparaître
 	des mouvements à très petite échelle. La complexité de ces mouvements rend nécessaire,
 	dans un calcul numérique, le remplacement des valeurs exactes des champs inconnus par leur
 	moyenne, en un sens à préciser. Cela conduit à des modèles de turbulence qui se
 	différencient par les hypothèses supplémentaires qui sont faites.
-   \item Dans un champ plus proche des considérations du lecteur, on pensera évidemment
+  \item Dans un champ plus proche des considérations du lecteur, on pensera évidemment
 	aux ondes.
 	Une \textcolorblue{excitation à très haute fréquence} crée une onde de longueur très petite.
 	Or une longueur d'onde très petite ne peut pas être prise en compte dans un calcul
@@ -240,8 +240,8 @@ Quelques problèmes classiques d'échelle sont:
 	du bord du domaine d'étude il faut revenir à l'équation des ondes pour étudier
 	l'effet de ces variations géométriques. On peut donc être amener à coupler
 	l'optique géométrique et une étude directe de l'équation des ondes.
-   \item Un autre champ lui-aussi déjà mentionné est celui des \textcolorblue{hétérogénéités
-	d'un milieu continu}, qui,  quand elles sont à très petite échelle, peuvent empêcher
+  \item Un autre champ lui-aussi déjà mentionné est celui des \textcolorblue{hétérogénéités
+	d'un milieu continu}, qui, quand elles sont à très petite échelle, peuvent empêcher
 	la prise en compte exacte de celles-ci, au moins dans une approximation numérique.
 
 	C'est le cas des solides formés de matériaux composites, des fluides comme l'air
@@ -267,7 +267,7 @@ considéré.
 C'est le cas de l'\textcolorblue{interaction d'un fluide et d'une structure}
 (l'écoulement d'un fluide par exemple peut faire vibrer une structure qui en retour fait vibrer le fluide).
 Une des difficultés vient de ce que les inconnues utilisées dans la modélisation de chacun
-des milieux sont de natures différentes : les déplacements dans le solide et les vitesses dans le fluide.
+des milieux sont de natures différentes: les déplacements dans le solide et les vitesses dans le fluide.
 
 Comme illustration de ce couplage, nous proposons le cas d'un poisson, issu de l'intéressante étude de
 San Mart\'in et al.\index[aut]{San Mart\'in (Jorge), ?- , Chilien}
@@ -276,11 +276,11 @@ de l'interaction entre la déformation propre du poisson (donnée à la \fig{Fig
 et le fluide.
 \begin{figure}[htb]
 \begin{center}
-  \begin{tabular}{cc}
-   \includegraphics[height=32mm]{fish1.eps} &% ~~~
-   \includegraphics[height=32mm]{fish0.eps}\\
-   a) poisson et son environnement & b) déformation
-  \end{tabular}
+ \begin{tabular}{cc}
+  \includegraphics[height=32mm]{fish1.eps} &% ~~~
+  \includegraphics[height=32mm]{fish0.eps}\\
+  a) poisson et son environnement & b) déformation
+ \end{tabular}
 \end{center}
 \caption{Interaction fluide/structure: déplacement d'un poisson}
 \label{Fig-fish}
@@ -321,7 +321,7 @@ EDP munie de conditions aux limites.
 \medskip
 Ce problème, mis sous forme variationnelle, est:
 \begin{equation}\label{Eq-P}
-\text{ Trouver } u\in  V \text{ tel que } a(u,v) = f(v),\quad \forall v\in V
+\text{ Trouver} u\in V \text{ tel que} a(u,v) = f(v),\quad \forall v\in V
 \end{equation}
 où $V$ est un espace de Hilbert.
 On supposera également que l'équation de départ a de bonnes propriétés,
@@ -332,18 +332,18 @@ que le problème admet une solution unique $u$.
 La méthode des éléments finis se propose de \textcolorblue{discrétiser} le problème considéré.
 La discrétisation intervient à plusieurs niveaux:
 \begin{itemize}
-   \item \textcolorblue{discrétisation}:
+  \item \textcolorblue{discrétisation}:
 	il est nécessaire de disposer d'une description du domaine $\Omega$ sur lequel
 	on souhaite travailler. Cette description va se faire en l'approchant par
 	un \textcolorblue{maillage}, qui sera constitué d'\textcolorblue{éléments}.
-   \item \textcolorblue{interpolation}:
+  \item \textcolorblue{interpolation}:
 	il est ensuite nécessaire de disposer d'une manière de représenter le ou
-	les champs inconnus. Ce que se proposer de faire la MEF, c'est d'approcher
+	les champs inconnus. Ce que se proposer de faire la méthode des éléments finis, c'est d'approcher
 	ces champs par des fonctions plus simples (disons polynomiales de
 	degré un ou deux) définies sur chacun des éléments du maillage
 	(le champ est approché par des bouts de fonctions qui, elles, ne sont définies
 	chacune que sur un seul élément).
-   \item \textcolorblue{approximation}:
+  \item \textcolorblue{approximation}:
 	selon le type d'approximation, on remplace non seulement l'espace $V$
 	(qui correspond, selon les notations utilisées au chapitre sur la formulation faible, aux espaces
 	$H$, $V$, $M$ ou même $H\times M$), de dimension infinie, par des approximations $V_h$
@@ -379,19 +379,19 @@ et $\frac{h_K}{\rho_K}\le\sigma, \forall K\in\mathcal{T}_h$.
 On notera $\hat{K}$ l'\textcolorblue{élément de référence} correspondant à
 l'élément $K$ du maillage $\mathcal{T}_h$, et d'une manière générale on ajoutera
 ce <<~chapeau~>> $\hat{~}$ sur toute quantité relative à un élément de référence
-(voir plus loin le chapitre sur la formulation pratique des EF).
+(voir plus loin le chapitre sur la formulation pratique des éléments finis).
 
 \medskip
 Les types d'approximation du problème (\ref{Eq-P}), qui seront détaillés un peu plus loin,
 sont:\index{approximation! conforme}\index{approximation! non conforme}
 \begin{table}[!ht]\centering\small
 \begin{tabular}{cccl}
-   type d'approximation & espaces & formes & problème $(P) \Rightarrow$ problème approché $(P_h)$\\
-   \hline
-   conforme 	  & $V_h\subset V$ & inchangées & Trouver $u_h\in V_h$ tq $a(u_h,v_h) = b(v_h), \forall v_h\in V_h$\\
-   non conforme & $V_h\subset V$ & approchées & Trouver $u_h\in V_h$ tq $a_h(u_h,v_h) = b_h(v_h), \forall v_h\in V_h$\\
-   non conforme & $V_h\not\subset V$ & approchées & Trouver $u_h\in V_h$ tq $a_h(u_h,v_h) = b_h(v_h), \forall v_h\in V_h$\\
-   \hline
+  type d'approximation & espaces & formes & problème $(P) \Rightarrow$ problème approché $(P_h)$\\
+  \hline
+  conforme 	 & $V_h\subset V$ & inchangées & Trouver $u_h\in V_h$ tq $a(u_h,v_h) = b(v_h), \forall v_h\in V_h$\\
+  non conforme & $V_h\subset V$ & approchées & Trouver $u_h\in V_h$ tq $a_h(u_h,v_h) = b_h(v_h), \forall v_h\in V_h$\\
+  non conforme & $V_h\not\subset V$ & approchées & Trouver $u_h\in V_h$ tq $a_h(u_h,v_h) = b_h(v_h), \forall v_h\in V_h$\\
+  \hline
 \end{tabular}
 \caption{Relations approximation et espaces}
 \end{table}
@@ -410,12 +410,12 @@ u_h=\dsum_{i=1}^{N_h} q_i e_i
 \medskip
 Le problème de la méthode des éléments finis devient donc:
 \begin{equation}
-\text{ Trouver } q_1,\ldots, q_{N_h} \text{ tels que }
+\text{ Trouver} q_1,\ldots, q_{N_h} \text{ tels que}
 \dsum_{i=1}^{N_h} q_i a_h(e_i,v_h) = f_h(v_h) \quad , \forall v_h\in V_h
 \end{equation}
 soit, en exploitant les linéarités de $a_h(\cdot,\cdot)$ et $f_h(\cdot)$ et en décomposant $v_h$:
 \begin{equation}\label{Eq-Ph}
-\text{ Trouver } q_1,\ldots, q_{N_h} \text{ tels que }
+\text{ Trouver} q_1,\ldots, q_{N_h} \text{ tels que}
 \dsum_{i=1}^{N_h} q_i a_h(e_i,e_j) = f_h(e_j) \quad ,\forall j=1,\ldots, N_h
 \end{equation}
 \medskip
@@ -439,7 +439,7 @@ f_h(e_{N_h})
 }
 \end{equation}
 que l'on note (dans la tradition mécanicienne):
-\begin{equation}\mathbf{Kq=F} \quad \text{ ou encore } \quad \MM*{K}\VV*{q}=\VV*{F}
+\begin{equation}\mathbf{Kq=F} \quad \text{ ou encore} \quad \MM*{K}\VV*{q}=\VV*{F}
 \end{equation}
 \medskip
 Telle que formulée, la matrice $\MM{K}$ semble pleine à priori.
@@ -457,7 +457,7 @@ Les difficultés majeures en pratique sont de trouver les $e_i$ et de les manipu
 pour les calculs d'intégrales nécessaires à la construction de $\MM{K}$.
 Indiquons d'ores et déjà que la plupart de ces difficultés seront levées
 grâce à trois idées principales qui seront détaillées au chapitre sur
-la formulation pratique des EF:
+la formulation pratique des éléments finis:
 \begin{description}
  \item[Principe d'unisolvance]
 
@@ -466,7 +466,7 @@ la formulation pratique des EF:
 	toute fonction de $V_h$.
 	Il pourra s'agir par exemple des valeurs de la fonction en quelques points.
 	Déterminer une fonction reviendra alors à déterminer ses valeurs sur ces ddl.
-   \item[Définition des $e_i$]
+  \item[Définition des $e_i$]
 
 	On définira les fonctions de base par $e_i = 1$ sur le $i$ème ddl, et
 	$e_i = 0$ sur les autres ddl.
@@ -551,7 +551,7 @@ $a(\cdot,\cdot)$ étant continue (de constante de majoration $M$) et coercitive
 de l'erreur appelée \textcolorblue{lemme de Céa:}
 \begin{equation}
 \|u-u_h\|\le\dfrac{M}{\alpha}\|u-v_h\|, \forall v_h\in V_h
-\quad \text{ c'est-à-dire } \quad
+\quad \text{ c'est-à-dire} \quad
 \|u-u_h\|\le\dfrac{M}{\alpha}d(u,V_h)
 \end{equation}
 où $d$ est la distance induite par la norme $\|\cdot\|$.
@@ -569,35 +569,35 @@ d'approximation} $\|u-u_h\|$ à celle de l'\textcolorblue{erreur d'interpolation
 On se place cette fois dans le cas d'un problème relevant du théorème de Babuška.
 Le problème est ($v$ est dans $M$ et non plus $V$):
 \begin{equation}\label{Eq-Pp}
-\text{ Trouver } u\in  V \text{ tel que } a(u,v) = f(v), \forall v\in M
+\text{ Trouver} u\in V \text{ tel que} a(u,v) = f(v), \forall v\in M
 \end{equation}
 L'approximation conforme du problème (\ref{Eq-Pp}) est le problème approché:
 \begin{equation}\label{Eq-Pph}
-\text{ Trouver } u_h\in V_h \text{ tel que } a(u_h,v_h) = f(v_h), \forall v_h\in M_h
+\text{ Trouver} u_h\in V_h \text{ tel que} a(u_h,v_h) = f(v_h), \forall v_h\in M_h
 \end{equation}
 où $V_h\subset V$ et $M_h\subset M$.
 \medskip
-\textcolorred{Attention : rien ne garantit \emph{a priori} que la condition inf-sup discrète
+\textcolorred{Attention: rien ne garantit \emph{a priori} que la condition inf-sup discrète
 sera vérifiée, même si la condition inf-sup est vérifiée.}
 $V_h$ et $M_h$ étant de dimension finie, il faut nécessairement que $\dim V_h=\dim M_h$.
 \medskip
 Le problème (\ref{Eq-Pph}) est bien posé, i.e. admet une unique solution, si:
 \begin{equation}\left\{
 \begin{aligned}
-&\displaystyle\exists\alpha_h>0 \text{ tel que } \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
+&\displaystyle\exists\alpha_h>0 \text{ tel que} \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
 &\forall w_h\in M_h,\quad \left(a(v_h,w_h)=0\right)\Rightarrow(w_h=0)
 \end{aligned}
 \right.\end{equation}
 ce qui est équivalent aux conditions:
 \begin{equation}\left\{
 \begin{aligned}
-&\displaystyle\exists\alpha_h>0 \text{ tel que } \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
+&\displaystyle\exists\alpha_h>0 \text{ tel que} \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
 &\dim V_h=\dim M_h
 \end{aligned}
 \right.\end{equation}
 Le première relation est appelée \textcolorblue{condition inf-sup discrète}.
 
-\textcolorred{Attention : ces propriétés doivent être démontrées.}
+\textcolorred{Attention: ces propriétés doivent être démontrées.}
 
 \medskip
 On dispose de plus de la majoration d'erreur suivante:
@@ -650,7 +650,7 @@ $V_h\subset V$ ou $V_h\not\subset V$.
 
 Le problème est donc:
 \begin{equation}
-\text{ Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h), \forall v_h\in V_h
+\text{ Trouver} u_h\in V_h \text{ tel que} a_h(u_h,v_h) = f_h(v_h), \forall v_h\in V_h
 \end{equation}
 où $V_h\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
 de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ resp.
@@ -684,7 +684,7 @@ le reste \textcolorblue{erreur de consistence}.
 \subsection{Cas $V_h\not\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 Le problème est encore:
 \begin{equation}
-\text{ Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
+\text{ Trouver} u_h\in V_h \text{ tel que} a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
 \end{equation}
 mais $V_h\not\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
 de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ resp.
@@ -730,7 +730,7 @@ le second \textcolorblue{erreur de consistence}.
 
 Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine
 de $\RR^n$, et notre problème que nous résolvons de manière approchée
-par la MEF.
+par la méthode des éléments finis.
 Il s'agit maintenant de fournir une estimation de l'erreur $\|u-u_h\|_m$ dans $H^m$
 (souvent $m = 0$, $1$ ou $2$).
 La régularité de $u$ et de $u_h$ (et donc les valeurs possibles pour $m$) dépendent
@@ -750,15 +750,15 @@ par le maillage et le domaine réel.
 
 Les étapes du calcul de la majoration de l'erreur sont les suivantes:
 \begin{itemize}
-   \item $\|u-u_h\|_m\le C\|u-\pi_hu\|_m$: l'erreur d'approximation est bornée par l'erreur
+  \item $\|u-u_h\|_m\le C\|u-\pi_hu\|_m$: l'erreur d'approximation est bornée par l'erreur
 	d'interpolation;
-   \item $\|u-\pi_hu\|^2_m=\dsum_{K\in\mathcal{T}_h}\|u-\pi_hu\|^2_{m,K}$:
+  \item $\|u-\pi_hu\|^2_m=\dsum_{K\in\mathcal{T}_h}\|u-\pi_hu\|^2_{m,K}$:
 	décomposition en majorations locales sur chaque élément;
-   \item $\|u-\pi_hu\|_{m,K}\le C(K)\|\hat{u}-\hat{\pi}\hat{u}\|_{m,\hat{K}}$:
+  \item $\|u-\pi_hu\|_{m,K}\le C(K)\|\hat{u}-\hat{\pi}\hat{u}\|_{m,\hat{K}}$:
 	passage à l'élément de référence;
-   \item $\|\hat{u}-\hat{\pi}\hat{u}\|_{m,\hat{K}}\le \hat{C}|\hat{u}|_{k+1,\hat{K}}$:
+  \item $\|\hat{u}-\hat{\pi}\hat{u}\|_{m,\hat{K}}\le \hat{C}|\hat{u}|_{k+1,\hat{K}}$:
 	majoration sur l'élément de référence;
-   \item $\|u-\pi_hu\|_m\le C'h^{k+1-m}|u|_{k+1}$:
+  \item $\|u-\pi_hu\|_m\le C'h^{k+1-m}|u|_{k+1}$:
 	assemblage des majorations locales.
 \end{itemize}
 
@@ -788,7 +788,7 @@ On se sert du théorème suivant:
 \begin{theoreme}
 Soit $K$ un élément quelconque de $\mathcal{T}_h$, et $\hat{K}$ l'élément de
 référence. Soit $F$ la transformation affine de$\hat{K}$ vers $K$:
-$F(\hat{x}) = B\hat{x} + b$, avec $B$ inversible. On a :
+$F(\hat{x}) = B\hat{x} + b$, avec $B$ inversible. On a:
 \begin{equation}
 \forall v\in H^l(K), \quad
 |\hat{v}|_{l,K} \le C(l,n) \|B\|_2^l |\det B|^{-1/2} |v|_{l,K}
@@ -810,7 +810,7 @@ On a même:
 %Alors, on a:
 Et avec les données géométriques de l'élément:
 \begin{equation}
-\|B\|\le\dfrac{h_K}{\hat{\rho}} \quad\text{ et }\quad
+\|B\|\le\dfrac{h_K}{\hat{\rho}} \quad\text{ et}\quad
 \|B^{-1}\|\le\dfrac{\hat{h}}{\rho_K}
 \end{equation}
 
@@ -821,7 +821,7 @@ On a le théorème suivant:
 \begin{theoreme}
 soient $l$ et $k$ deux entiers tels que $0\le l\le k+1$.
 Si $\hat{pi}\in\mathcal{L}(H^{k+1}(\hat{K}),J^l(\hat{K}))$ laisse
-$P_k(\hat{K})$ invariant, i.e.  si $\forall \hat{p}\in P_k(\hat{K})$, $\hat{\pi}\hat{p}=\hat{p}$ alors:
+$P_k(\hat{K})$ invariant, i.e. si $\forall \hat{p}\in P_k(\hat{K})$, $\hat{\pi}\hat{p}=\hat{p}$ alors:
 \begin{equation}
 \exists C(\hat{K},\hat{\pi}),\quad \forall \hat{v}\in H^{k+1}(\hat{K}),\quad |\hat{v}-\hat{\pi}\hat{v}|_{j,\hat{K}}
 \le C |\hat{v}|_{k+1,\hat{K}}
@@ -862,7 +862,7 @@ On obtient au final, le résultat classique de majoration d'erreur:
 \end{equation}
 Quelques remarques:
 \begin{itemize}
-   \item On rappelle que la formule précédente a été obtenue pour domaine $\Omega$
+  \item On rappelle que la formule précédente a été obtenue pour domaine $\Omega$
 	\textcolorred{polygonal}. Si ce n'est pas le cas, elle n'est plus valable.
 	Les éléments linéaires conduisent à une erreur en $O(h)$.
 	Utiliser des éléments plus raffinés (de degré 2 au lieu d'éléments linéaires) permet,
@@ -870,17 +870,17 @@ Quelques remarques:
 	erreur asymptotique en $O(h^2)$.
 	\textcolorgreen{Quelque soit le degré de l'approximation, si le domaine $\Omega$ n'est pas représenté
 	de manière exact, alors cela revient à une modification des conditions aux limites.}
-   \item Les calculs, et plus précisément les \textcolorred{intégrations}, ont été réalisées
+  \item Les calculs, et plus précisément les \textcolorred{intégrations}, ont été réalisées
 	\textcolorred{sans erreur}.
 	Si celles-ci sont faites de manière numérique, il convient d'introduire encore un
 	terme correctif supplémentaire, appelé \textcolorblue{erreur de consistance} due au remplacement des
 	formes par leur approximation ($a(\cdot,\cdot)$ par $a_h(\cdot,\cdot)$, $f(\cdot)$ par $f_h(\cdot)$...). Toutefois, cette
 	erreur supplémentaire peut être estimée en $O(h^k)$ selon la précision du schéma
 	d'intégration utilisé.
-   \item Le résultat de majoration d'erreur est souvent utilisé dans le cas $m=1$.
+  \item Le résultat de majoration d'erreur est souvent utilisé dans le cas $m=1$.
 	Comme l'espace des polynômes $P_k(\hat{k})\subset H^1(\hat{K})$, alors si
 	$\hat{\pi}$ est bien défini sur $H^{k+1}(\hat{K})$, on a:
 	\begin{equation}
-	\text{si } u\in H^{k+1}(\Omega), \quad \|u-u_h\|_1\le C h^k |u|_{k+1}
+	\text{si} u\in H^{k+1}(\Omega), \quad \|u-u_h\|_1\le C h^k |u|_{k+1}
 	\end{equation}
 \end{itemize} 

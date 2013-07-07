@@ -1,7 +1,7 @@
 \ifVersionAvecExemplesSepares
-   \chapter{[\castem] Sur le paragraphe~\ref{Sec-contact}: une toute première approche du contact}
+  \chapter{[\castem] Sur le paragraphe~\ref{Sec-contact}: une toute première approche du contact}
 \else
-   \section{Exemple: une toute première approche du contact avec \castem}
+  \section{Exemple: une toute première approche du contact avec \castem}
 \fi
 
 Dans ce chapitre, nous présentons un petit exemple simple de contact unidirectionnel 
@@ -13,18 +13,18 @@ sans frottement sous \castem.
 
 \medskip
 \ifVersionAvecExemplesSepares
-   \section{Contact sur une surface infiniment rigide}
+  \section{Contact sur une surface infiniment rigide}
 \else
-   \subsection{Contact sur une surface infiniment rigide}
+  \subsection{Contact sur une surface infiniment rigide}
 \fi
 
 Dans ce premier exemple, nous proposons d'étudier un carré soumis sur sa face supérieure à un
 déplacement imposé et reposant, sur sa face inférieure, sur une surface infiniment rigide, comme illustré
 à la \fig{Fig-Cont0}.
 \begin{figure}[ht]
-   \center
-   \includegraphics[height=40mm]{Contact0.eps}
-   \caption{\label{Fig-Cont0} Problème de contact}
+  \center
+  \includegraphics[height=40mm]{Contact0.eps}
+  \caption{\label{Fig-Cont0} Problème de contact}
 \end{figure}
 
 \color{gris}\scriptsize
@@ -41,12 +41,12 @@ haut1=long1;
 nhaut1=nlong1;
 jeu1=0.0;
 *
-* droite sur laquelle le carre viendra buter :
+* droite sur laquelle le carre viendra buter:
 k1 = (-1.*long1) 0.;
 k2 = long1 0.;
 l1 = DROI (nlong1-2) k2 k1;
 *
-* carre :
+* carre:
 k3 = (-0.5*long1) jeu1;
 k4 = (0.5*long1) jeu1;
 l2 = DROI nlong1 k3 k4;
@@ -58,28 +58,28 @@ s1 = l2 TRAN nhaut1 (0. haut1);
 \medskip
 On remarquera les choses suivantes:
 \begin{itemize}
-   \item la ligne $l_2$ correspondant à la face inférieure du carré \og repose\fg{}, sans jeu, sur la
-	ligne $l_1$ définissant la surface rigide sur laquelle le carré va venir buter (on aurait pu mettre
+  \item la ligne~$l_2$ correspondant à la face inférieure du carré <<~repose~>>, sans jeu, sur la
+	ligne~$l_1$ définissant la surface rigide sur laquelle le carré va venir buter (on aurait pu mettre
 	un jeu initial non nul, mais ce n'est pas nécessaire);
-   \item les orientations des lignes $l_1$ et $l_2$ sont inversées car les deux lignes en contact doivent se 
-	\og tourner le dos\fg{} au sens des normales. Cela est obligatoire;
-   \item La surface de contact $l_1$ est modélisée en utilisant $nlong_1-2$ éléments pour le maillage, 
-	alors que le carré (ligne $l_2$) n'en a que $nlong_1$, afin que les maillages ne soient pas \og compatibles\fg{} 
+  \item les orientations des lignes~$l_1$ et~$l_2$ sont inversées car les deux lignes en contact doivent se 
+	<<~tourner le dos~>> au sens des normales. Cela est obligatoire;
+  \item La surface de contact~$l_1$ est modélisée en utilisant~$nlong_1-2$ éléments pour le maillage, 
+	alors que le carré (ligne~$l_2$) n'en a que~$nlong_1$, afin que les maillages ne soient pas <<~compatibles~>> 
 	(i.e. que les nœuds ne tombent pas en face les uns des autres).
 \end{itemize}
 
 \color{gris}\scriptsize
 \begin{multicols}{2}
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
-* Modele :
+* Modele:
 ModM1 = MODEL s1 MECANIQUE ELASTIQUE;
 MatM1 = MATER ModM1 'YOUN' 1.E3 'NU' 0.3 ;
 *
-* CL en deplacements (Rigidites) :
+* CL en deplacements (Rigidites):
 * 1) il faut une condition selon UX, on prend le point (0,0)
 k5 = s1 POIN PROC (0. jeu1);
 CLk5 = BLOQ k5 UX;
-* 2) ligne de contact : rigidites
+* 2) ligne de contact: rigidites
 Depl1 Rigid1 = IMPO l2 l1;
 Rigid2 = BLOQ DEPL l1;
 * 2) ligne sur laquelle on va imposer le deplacement
@@ -126,7 +126,7 @@ DeplY1 = EXCO Dep1 UY;
 TRAC DeplY1 s1;
 *TRAC DeplY1 defo1;
 *
-* Contraintes :
+* Contraintes:
 Sig1 = SIGM ModM1 MatM1 Dep1;
 TITR 'Champ de contraintes' ;
 TRAC sig1 ModM1;
@@ -137,17 +137,17 @@ fin;
 \color{black}\normalsize
 
 \medskip
-On pourra ensuite mettre $jeu_1$ a une valeur différente de zéro et refaire le calcul.
+On pourra ensuite mettre~$jeu_1$ a une valeur différente de zéro et refaire le calcul.
 On s'apercevra que cela fonctionne toujours. La visualisation de la déformée permettra
 de bien comprendre comment s'effectue le calcul (on rappelle que dans \castem, toutes 
 les conditions aux limites sont introduites par l'intermédiaire de multiplicateurs de
 Lagrange: voir paragraphe~\ref{Sec-cast}).
 
 \begin{figure}[ht]
-   \includegraphics[height=40mm]{Contact1-def.eps} \hfill 
-%   \includegraphics[height=40mm]{Contact1-uy.eps}\hfill 
-   \includegraphics[height=40mm]{Contact1-reac.eps}
-   \caption{\label{Fig-Cont1} a) déformée b) %déplacement $u_y$ et c) 
+  \includegraphics[height=40mm]{Contact1-def.eps} \hfill 
+%  \includegraphics[height=40mm]{Contact1-uy.eps}\hfill 
+  \includegraphics[height=40mm]{Contact1-reac.eps}
+  \caption{\label{Fig-Cont1} a) déformée b) %déplacement~$u_y$ et c) 
 forces de réactions}
 \end{figure}
 
@@ -165,9 +165,9 @@ forces de réactions}
 
 \medskip
 \ifVersionAvecExemplesSepares
-   \section{Contact entre deux solides}
+  \section{Contact entre deux solides}
 \else
-   \subsection{Contact entre deux solides}
+  \subsection{Contact entre deux solides}
 \fi
 
 On peut faire une remarque sur le calcul précédent: que se passe-t-il si la surface sur laquelle
@@ -193,7 +193,7 @@ haut1=long1;
 nhaut1=nlong1;
 jeu1=1.0;
 *
-* pave sur lequel le carre viendra buter :
+* pave sur lequel le carre viendra buter:
 k1 = (-1.*long1) 0.;
 k2 = long1 0.;
 l1 = DROI (2*nlong1-1) k2 k1;
@@ -219,12 +219,12 @@ CLk5 = BLOQ k5 UX;
 * 2) ligne sur laquelle on impose le deplacement
 l3 = s1 'COTE' 3;
 CLl3 = BLOQ l3 UY ;
-DCLl3   = DEPI CLl3 UY0;
+DCLl3  = DEPI CLl3 UY0;
 * 3) encastrement sous la partie basse
 l4 = s2 'COTE' 3;
 CLl4 = BLOQ L4 DEPL;
 * Totalite des CL
-CL0  = CLk5 ET CLl3 ET CLl4;
+CL0 = CLk5 ET CLl3 ET CLl4;
 *
 * RESOLUTION
 Depl1 Rigid1 = IMPO l2 l1;
@@ -244,7 +244,7 @@ TITR 'Champ de deplacements.' ;
 DeplY1 = EXCO Dep1 UY;
 TRAC DeplY1 (s1 et s2);
 *
-* Comparaison des champs de contraintes :
+* Comparaison des champs de contraintes:
 Sig1 = SIGM (ModM1 ET ModM2) (MatM1 ET MatM2) Dep1;
 TITR 'Champ de contraintes.' ;
 TRAC sig1 (ModM1 ET ModM2);
@@ -255,24 +255,24 @@ fin;
 \color{black}\normalsize
 
 \medskip
-Cette fois-ci, nous avons mis $jeu_1$ a une valeur non nulle pour bien comprendre
+Cette fois-ci, nous avons mis~$jeu_1$ a une valeur non nulle pour bien comprendre
 comment se fait la résolution de ce système numérique.
 
 On obtient les résultats illustrés à la \fig{Fig-Cont21} pour la déformée et les forces de réactions et à la \fig{Fig-Cont22}
 pour les déplacements et contraintes.
 
 \begin{figure}[ht]
-   \includegraphics[height=40mm]{Contact2-pb.eps} \hfill 
-   \includegraphics[height=40mm]{Contact2-def.eps}\hfill 
-   \includegraphics[height=40mm]{Contact2-reac.eps}
-   \caption{\label{Fig-Cont21} a) maillage, b) déformée c) forces de réaction}
+  \includegraphics[height=40mm]{Contact2-pb.eps} \hfill 
+  \includegraphics[height=40mm]{Contact2-def.eps}\hfill 
+  \includegraphics[height=40mm]{Contact2-reac.eps}
+  \caption{\label{Fig-Cont21} a) maillage, b) déformée c) forces de réaction}
 \end{figure}
 
 \begin{figure}[ht]
-   \includegraphics[height=40mm]{Contact2-uy.eps} \hfill 
-   \includegraphics[height=40mm]{Contact2-sxx.eps}\hfill 
-   \includegraphics[height=40mm]{Contact2-syy.eps}
-   \caption{\label{Fig-Cont22} a) déplacement $u_y$ b) $\sigma_{xx}$ et c) $\sigma_{yy}$}
+  \includegraphics[height=40mm]{Contact2-uy.eps} \hfill 
+  \includegraphics[height=40mm]{Contact2-sxx.eps}\hfill 
+  \includegraphics[height=40mm]{Contact2-syy.eps}
+  \caption{\label{Fig-Cont22} a) déplacement~$u_y$ b)~$\sigma_{xx}$ et c)~$\sigma_{yy}$}
 \end{figure}
 
 
@@ -290,9 +290,9 @@ pour les déplacements et contraintes.
 
 \medskip
 \ifVersionAvecExemplesSepares
-   \section{Résolution pas à pas}
+  \section{Résolution pas à pas}
 \else
-   \subsection{Résolution pas à pas}
+  \subsection{Résolution pas à pas}
 \fi
 
 Les résolutions présentées ci-dessus étaient finalement de type classique, i.e. inversion
@@ -312,14 +312,14 @@ en TD. Toutefois, nous présentons le même calcul que précédemment, mais cod�
 pour une résolution pas à pas.
 
 \medskip
-Afin de définir le chargement dans le temps, nous commençons par construire la liste de réels $Ltemp_1$ 
-qui contient les pas de temps, à savoir $0.0$ et $1.0$ (2 pas de temps suffisent, puisque nous
+Afin de définir le chargement dans le temps, nous commençons par construire la liste de réels~$Ltemp_1$ 
+qui contient les pas de temps, à savoir~$0.0$ et~$1.0$ (2 pas de temps suffisent, puisque nous
 restons sur une analyse élastique linéaire dans cet exemple).
 
-À partir de cette discrétisation du temps (vraiment sommaire pour le coup), nous définissons l'objet $evo_1$
-de type évolution pour chacun des pas de temps. $evo_1$ est donc une fonction du temps, qui va nous servir
-à affecter le déplacement imposé: $CharU_1$ est de type chargement, nécessaire pour la résolution par
-PASAPAS. Avec l'option DIMP, on signifie qu'il s'agit d'un déplacement imposé. Ainsi $CharU_1$ contient 
+À partir de cette discrétisation du temps (vraiment sommaire pour le coup), nous définissons l'objet~$evo_1$
+de type évolution pour chacun des pas de temps.~$evo_1$ est donc une fonction du temps, qui va nous servir
+à affecter le déplacement imposé:~$CharU_1$ est de type chargement, nécessaire pour la résolution par
+PASAPAS. Avec l'option DIMP, on signifie qu'il s'agit d'un déplacement imposé. Ainsi~$CharU_1$ contient 
 l'évolution des déplacements imposés sur la condition DCLl3 au cours du temps.
 
 \medskip
@@ -339,7 +339,7 @@ haut1=long1;
 nhaut1=nlong1;
 jeu1=0.0;
 *
-* pave sur laquel le carre viendra buter :
+* pave sur laquel le carre viendra buter:
 k1 = (-1.*long1) 0.;
 k2 = long1 0.;
 l1 = DROI (2*nlong1-1) k2 k1;
@@ -367,15 +367,15 @@ CLk5 = BLOQ k5 UX;
 * 2) ligne sur laquelle on va imposer le deplacement
 l3 = s1 'COTE' 3;
 CLl3 = BLOQ l3 UY ;
-DCLl3   = DEPI CLl3 UY0;
+DCLl3  = DEPI CLl3 UY0;
 * 3) encastrement sous la partie basse
 l4 = s2 'COTE' 3;
 CLl4 = BLOQ L4 DEPL;
-* 4) ligne de contact :
+* 4) ligne de contact:
 Depl1 Rigid1 = IMPO l2 l1;
 *
 * Totalite des CL
-CL0  = CLk5 ET CLl3 ET CLl4 ET Rigid1;
+CL0 = CLk5 ET CLl3 ET CLl4 ET Rigid1;
 *
 * Chargement
 Ltemps1 = PROG 0. 1.;
@@ -385,15 +385,15 @@ Char0 = CharU1 ;
 *
 * RESOLUTION
 *
-* Construction de la table PASAPAS :
-TAB1                       = TABL;
-TAB1.'TEMPS_CALCULES'      = Ltemps1;
-TAB1.'MODELE'              = (ModM1 ET ModM2);
-TAB1.'CARACTERISTIQUES'    = (MatM1 ET MatM2);
+* Construction de la table PASAPAS:
+TAB1            = TABL;
+TAB1.'TEMPS_CALCULES'   = Ltemps1;
+TAB1.'MODELE'       = (ModM1 ET ModM2);
+TAB1.'CARACTERISTIQUES'  = (MatM1 ET MatM2);
 TAB1.'BLOCAGES_MECANIQUES' = CL0;
-TAB1.'CHARGEMENT'          = Char0;
+TAB1.'CHARGEMENT'     = Char0;
 *
-* Resolution :
+* Resolution:
 TAB2 = PASAPAS TAB1 ;
 *
 * Post-Traitement
@@ -410,12 +410,12 @@ TITR 'Champ de deplacements.' ;
 DeplY1 = EXCO Dep1 UY;
 TRAC DeplY1 (s1 et s2);
 *
-* Comparaison des champs de contraintes :
+* Comparaison des champs de contraintes:
 sig1 = TAB2 . 'CONTRAINTES' . 1 ;
 TITR 'Champ de contraintes.' ;
 TRAC sig1 (ModM1 ET ModM2);
 *
-* Visualisations des reactions :
+* Visualisations des reactions:
 reac1 = TAB2 . 'REACTIONS' . 1 ;
 vr1 = VECT reac1 0.8E-2 'FX' 'FY' 'ROUG' ;
 TITR 'Forces de reaction.' ;
@@ -437,11 +437,11 @@ Une fois que le plateau de presse est descendu, on obtient la pièce en forme do
 à la \fig{Fig-Thermo}b.
 
 \begin{figure}[ht]
-   \center
-   \includegraphics[width=80mm]{Thermo0.eps} \hfill
-%   \includegraphics[height=40mm]{Thermo1.eps} \hfill
-   \includegraphics[width=90mm]{Thermo2.eps}
-   \caption{\label{Fig-Thermo} Thermocompression: a) problème, b) forme de la pièce après production}
+  \center
+  \includegraphics[width=80mm]{Thermo0.eps} \hfill
+%  \includegraphics[height=40mm]{Thermo1.eps} \hfill
+  \includegraphics[width=90mm]{Thermo2.eps}
+  \caption{\label{Fig-Thermo} Thermocompression: a) problème, b) forme de la pièce après production}
 \end{figure}
 
 \medskip

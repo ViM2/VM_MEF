@@ -6,7 +6,7 @@ de non linéarité...
 \medskip
 Beaucoup de cas de non-linéarité s'imposent par la nature du problème à traiter:
 grands déplacements, loi de comportement choisie, contact...
-Ils sont donc facilement identifiables, et face à des tels cas, l'utilisateur sera  par conséquent
+Ils sont donc facilement identifiables, et face à des tels cas, l'utilisateur sera par conséquent
 précautionneux et ne se laissera donc pas surprendre.
 
 Toutefois, dans le cas de la dynamique, la non-linéarité existe de manière implicite, même si
@@ -16,7 +16,7 @@ conscient.
 
 Plusieurs types de non-linéarités peuvent être considérées. En mécanique des structures, on distinguera:
 \begin{itemize}
-      \item les \textcolorblue{non-linéarités géométriques} qui se manifestent dans les
+   \item les \textcolorblue{non-linéarités géométriques} qui se manifestent dans les
 	\textcolorred{problèmes des grands déplacements, des grandes rotations et/ou de grandes déformations}.
 	La notion de <<~grands~>> déplacements signifie tout simplement que l'hypothèse des petites perturbations
 	n'est plus vérifiable. Or celle-ci stipule que géométrie déformée et initiale doivent rester relativement
@@ -25,22 +25,22 @@ Plusieurs types de non-linéarités peuvent être considérées. En mécanique d
 	relations entre déplacements et déformations n'est plus conservée.
 
 \item les \textcolorblue{non-linéarités matérielles} dues à la \textcolorred{loi de comportement du
-	solide} (ou plus généralement à la loi de comportement dans le milieu $\Omega$).
+	solide} (ou plus généralement à la loi de comportement dans le milieu~$\Omega$).
 	Le plus souvent, cette loi peut s'exprimer sous la forme d'ED non-linéaires du premier ordre.
 
 	Nous avons déjà évoqué ce phénomènes à plusieurs endroits dans ce document,
-	et le chapitre précédent sur l'homogénéisation est une illustration du cas où l'on  peut
+	et le chapitre précédent sur l'homogénéisation est une illustration du cas où l'on peut
 	substituer un milieu homogénéisé simple à un milieu compliqué. Toutefois, nous irons
 	un peu plus loin dans ce chapitre et présenterons les principales lois de comportement
 	rencontrées en mécanique.
 
-   \item les \textcolorblue{non-linéarités liées à l'évolution des conditions aux limites}.
+  \item les \textcolorblue{non-linéarités liées à l'évolution des conditions aux limites}.
 	Ce type de non-linéarité apparaît en particulier dans les \textcolorred{problèmes de contact et de
 	frottement entre solides}.
 	Ces phénomènes sont décrits par des inéquations et des opérations de projection.
 
-   \item les \textcolorblue{non-linéarités liées aux instabilités du comportement} qui se présentent dans
-	l'analyse des  \textcolorred{problèmes dynamiques}.
+  \item les \textcolorblue{non-linéarités liées aux instabilités du comportement} qui se présentent dans
+	l'analyse des \textcolorred{problèmes dynamiques}.
 \end{itemize}
 
 
@@ -53,10 +53,10 @@ Le \textcolorblue{déviateur} est un opérateur matriciel utilisé en mécanique
 plus précisément en plasticité.
 
 \medskip
-Soit $\mathcal{M}$ une matrice (ou tenseur d'ordre 2) de dimension $n$.
-Le déviateur de $\mathcal{M}$, noté $\mathrm{dev} \mathcal{M}$, vaut :
-\begin{equation}    \mathrm{dev} \mathcal{M}=\mathcal{M}-\frac{\trace(\mathcal{M})}{n}I_n \end{equation}
-où $\trace(\mathcal{M})$ est la trace de la matrice, i.e. la somme de ses termes
+Soit~$\mathcal{M}$ une matrice (ou tenseur d'ordre 2) de dimension~$n$.
+Le déviateur de~$\mathcal{M}$, noté~$\mathrm{dev} \mathcal{M}$, vaut:
+\begin{equation}  \mathrm{dev} \mathcal{M}=\mathcal{M}-\frac{\trace(\mathcal{M})}{n}I_n \end{equation}
+où~$\trace(\mathcal{M})$ est la trace de la matrice, i.e. la somme de ses termes
 diagonaux.
 
 \medskip
@@ -74,29 +74,29 @@ déformations ($\sigma=H\varepsilon$).\index[aut]{Hooke (Robert), 1635-1703, Ang
 \medskip
 D'ailleurs, lorsque Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} l'introduit
 vers 1822, il le fait pour représenter les efforts intérieurs
-mis en jeu entre les portions déformées du milieu, via l'équilibre des efforts pour toute coupure
+mis en jeu entre les portions déformées du milieu, via l'équilibre des éléments finisforts pour toute coupure
 dans un matériau (i.e. définition sous forme de forces surfaciques).
 
 \medskip
 \colorgris%
-En tout point $M$ il existe une infinité de facettes d'orientation différentes.
+En tout point~$M$ il existe une infinité de facettes d'orientation différentes.
 \colorgris Le théorème de Cauchy
 \colorgris permet de définir l'état de contrainte sur une facette d'orientation quelconque
 à partir de la connaissance de l'état de contrainte selon trois directions différentes.
 L'énoncé de ce théorème est le suivant:
 
 \begin{theoreme}[Théorème de Cauchy] \colorblack [un des nombreux -]:\index{théorème!de Cauchy}
-Les composantes du vecteur contrainte en un point $M$ sur une facette de normale $\vect{n}$ dépendent
+Les composantes du vecteur contrainte en un point~$M$ sur une facette de normale~$\vect{n}$ dépendent
 linéairement des composantes de cette normale. Les coefficients linéaires sont les composantes du
 tenseur des contraintes.
 \end{theoreme}
 
 \medskip\colorgris
-Ce théorème conduit à formuler la contrainte s'exerçant sur une facette d'orientation quelconque comme :
+Ce théorème conduit à formuler la contrainte s'exerçant sur une facette d'orientation quelconque comme:
 \begin{equation}
 \vect{T}(M,\vect{n}) = \dsum_{j=1}^3 n_j \vect{T}(M,\vect{e_j})
 \end{equation}
-et, comme dans ce repère orthonormé $(\vect{e}_1,\vect{e}_2,\vect{e}_3)$ chacune des trois contraintes
+et, comme dans ce repère orthonormé~$(\vect{e}_1,\vect{e}_2,\vect{e}_3)$ chacune des trois contraintes
 de base a trois composantes, on a:
 \begin{equation}
 \vect{T}(M,\vect{e_j}) = \dsum_{i=1}^3 \sigma_{ij}\vect{e_i}
@@ -106,7 +106,7 @@ soit au final:
 \vect{T}(M,\vect{n}) = \dsum_{i,j=1}^3 \sigma_{ij}n_j\vect{e_i}
 \end{equation}
 
-Les coefficients linéaires $\sigma_{ij}$ apparaissent donc comme les éléments d'un tenseur de rang 2:
+Les coefficients linéaires~$\sigma_{ij}$ apparaissent donc comme les éléments d'un tenseur de rang 2:
 il s'agit du tenseur des contraintes de Cauchy.\index{tenseur! des contraintes de Cauchy}
 \end{histoire}
 \colorblack
@@ -120,12 +120,12 @@ De manière encore plus explicite, on écrit:
 \VV*{n_1\\n_2\\n_3}
 = \sigma n
 \end{equation}
-\textcolorgreen{D'un point de vue pratique, chacun des éléments $\sigma_{ij}$ du tenseur des
+\textcolorgreen{D'un point de vue pratique, chacun des éléments~$\sigma_{ij}$ du tenseur des
 contraintes de Cauchy\index{tenseur! des contraintes de Cauchy} rend compte d'une contribution clairement identifiable:
-le premier indice $i$ est l'indice de projection (direction selon laquelle s'exerce la contribution);
-le second indice $j$ repère l'orientation de la surface sur laquelle s'exerce la contribution.
-Par exemple $\sigma_{12}$ correspond à la composante  suivant $\vect{e}_1$ de la contrainte qui
-s'exerce sur la facette de normale $\vect{e}_2$.}
+le premier indice~$i$ est l'indice de projection (direction selon laquelle s'exerce la contribution);
+le second indice~$j$ repère l'orientation de la surface sur laquelle s'exerce la contribution.
+Par exemple~$\sigma_{12}$ correspond à la composante suivant~$\vect{e}_1$ de la contrainte qui
+s'exerce sur la facette de normale~$\vect{e}_2$.}
 
 
 \medskip
@@ -136,8 +136,8 @@ En exploitant la condition d'équilibre appliquée au moment résultant, il est 
 \colorgreen D'ailleurs, en se servant de cette symétrie, on introduit la \textcolorblue{notation de
 Voigt}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}\index{Notation de Voigt}
 ou \textcolorblue{notation de l'ingénieur}.
-On pose $\sigma_1=\sigma_{11}$,$\sigma_2=\sigma_{22}$, $\sigma_3=\sigma_{33}$,
-puis $\sigma_4=\sigma_{23}$, $\sigma_5=\sigma_{13}$, $\sigma_6=\sigma_{12}$,
+On pose~$\sigma_1=\sigma_{11}$,$\sigma_2=\sigma_{22}$, $\sigma_3=\sigma_{33}$,
+puis~$\sigma_4=\sigma_{23}$, $\sigma_5=\sigma_{13}$, $\sigma_6=\sigma_{12}$,
 et l'on peut présenter le tenseur des contraintes sous forme de vecteur:
 $<\sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_5, \sigma_6>$.
 Cela facilite l'écriture de la loi de Hooke généralisée et montre en même temps
@@ -148,8 +148,8 @@ que l'espace des contraintes est un espace vectoriel à six dimensions.\index[au
 Il existe (au moins) une base orthonormée dans laquelle le tenseur des contraintes est diagonal.
 Pour trouver ce repère, il faut résoudre le problème aux valeurs propres
 $\det(\sigma-\lambda I)=0$. Les trois racines de ce polynôme de degré 3 sont les
-valeurs propres encore appelées \textcolorblue{contraintes principales} $\sigma_I$,
-$\sigma_{II}$ et $\sigma_{III}$. Les vecteurs propres associés sont les \textcolorblue{directions
+valeurs propres encore appelées \textcolorblue{contraintes principales}~$\sigma_I$,
+$\sigma_{II}$ et~$\sigma_{III}$. Les vecteurs propres associés sont les \textcolorblue{directions
 principales} qui forment le \textcolorblue{repère principal}.
 \textcolorgris{Dans la mesure où le tenseur des contraintes est symétrique, il
 existe bien trois valeurs propres réelles, et les vecteurs propres associés sont orthogonaux.}
@@ -180,8 +180,8 @@ ou encore:
 s_{13}&s_{23}&s_{33}}
 +\MM*{p&0&0\\0&p&0\\0&0&p}
 \end{equation}
-où $p=\frac13\sigma_I\delta_{ij}$ est la partie sphérique (et $\sigma_I=\sigma_{kk}$)
-et $s_{ij}$ la partie déviatorique.
+où~$p=\frac13\sigma_I\delta_{ij}$ est la partie sphérique (et~$\sigma_I=\sigma_{kk}$)
+et~$s_{ij}$ la partie déviatorique.
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
 \textcolorblue{La partie sphérique correspond à une pression isostatique}, i.e. un vecteur
@@ -190,8 +190,8 @@ hydrostatique dans les liquides).
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
 Physiquement, le déviateur du tenseur des contraintes correspond donc aux contributions des
-contraintes autres que surfaciques (cas $n = 3$) ou linéiques (cas $n = 2$).
-Le déviateur est un tenseur de trace nulle, i.e. $s_{ii}=0$.
+contraintes autres que surfaciques (cas~$n = 3$) ou linéiques (cas~$n = 2$).
+Le déviateur est un tenseur de trace nulle, i.e.~$s_{ii}=0$.
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
 \textcolorblue{Le déviateur a les mêmes directions principales que le tenseur des contraintes},
@@ -208,8 +208,8 @@ On peut définir les \textcolorblue{invariants du déviateur des contraintes de 
 \end{aligned}\right.
 \end{equation}
 Ces invariants sont utiles pour définir \textcolorblue{la contrainte de comparaison},
-ou \textcolorblue{contrainte effective}\index{Contrainte effective} $\sigma_e=f(\sigma_{ij})$:
-cette valeur est ensuite comparée  à la limite élastique pour savoir si l'on est dans le domaine
+ou \textcolorblue{contrainte effective}\index{Contrainte effective}~$\sigma_e=f(\sigma_{ij})$:
+cette valeur est ensuite comparée à la limite élastique pour savoir si l'on est dans le domaine
 élastique ou plastique.
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -217,7 +217,7 @@ Le second invariant du déviateur des contraintes est la contrainte de von
 Mises.\index{Contrainte de von Mises}\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
-On appelle \textcolorblue{triaxialité des contraintes $\eta$} le rapport entre la contrainte
+On appelle \textcolorblue{triaxialité des contraintes~$\eta$} le rapport entre la contrainte
 isostatique et la contrainte équivalente de von Mises:
 \begin{equation} \eta = \frac{p}{\sigma_{e vm}} = \frac{\sigma_{ii}}{3\sigma_{e vm}} \end{equation}
 Ce paramètre est important dans l'étude de l'endommagement et de la mécanique de la rupture.
@@ -228,7 +228,7 @@ le cisaillement pur ($\eta= 0$), ou la traction uniaxiale ($\eta = 1/3$).
 Lorsque l'on parle de contraintes, on se réfère toujours au tenseur de Cauchy.
 Toutefois, plusieurs autres mesures des contraintes ont été développées:
 \begin{itemize}
-   \item Les tenseurs des contraintes de Piola-Kirchhoff:\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+  \item Les tenseurs des contraintes de Piola-Kirchhoff:\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	ils permettent d'exprimer les contraintes par rapport à une configuration de référence
 	(alors que le le tenseur des contraintes de Cauchy les exprime relativement à la configuration
 	actuelle).
@@ -238,25 +238,25 @@ Toutefois, plusieurs autres mesures des contraintes ont été développées:
 	On voit alors que, si le domaine étudié venait à varier, ces tenseurs seraient bien
 	appropriés (voir paragraphe~\ref{Sec-NLg} par exemple)
 
-   \item Le \textcolorblue{premier tenseur des contraintes de Piola-Kirchhoff $P$}\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+  \item Le \textcolorblue{premier tenseur des contraintes de Piola-Kirchhoff~$P$}\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	relie les forces dans la configuration actuelle au domaine (aires) dans une
 	configuration de référence.
-	Pour l'exprimer, nous aurons donc besoin du tenseur gradient de déformation $F$ et de son
-	jacobien $J$ (voir ci-dessous).
-	\begin{equation}P=J\sigma F^T \quad \text{ de coordonnées } \quad
+	Pour l'exprimer, nous aurons donc besoin du tenseur gradient de déformation~$F$ et de son
+	jacobien~$J$ (voir ci-dessous).
+	\begin{equation}P=J\sigma F^T \quad \text{ de coordonnées} \quad
 	P_{ij}= J \sigma_{ik}\frac{\partial u_j}{\partial x_k}\end{equation}
 
-   \item Le \textcolorblue{second tenseur des contraintes de Piola-Kirchhoff $S$},\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+  \item Le \textcolorblue{second tenseur des contraintes de Piola-Kirchhoff~$S$},\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	de manière duale, relie les forces de la configuration de référence avec le domaine actuel.
 	Avec les mêmes notations qu'au dessus, on a:
-	\begin{equation} S=J F^{-1}\sigma F^{-T}  \quad \text{ de coordonnées } \quad
+	\begin{equation} S=J F^{-1}\sigma F^{-T} \quad \text{ de coordonnées} \quad
 	S_{ij} = J \frac{\partial u_i}{\partial x_k}\frac{\partial u_j}{\partial x_m}\sigma_{km}\end{equation}
 
-   \item Le \textcolorblue{tenseur de contraintes de Kirchhoff}\index{tenseur! des contraintes de Kirchhoff}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
+  \item Le \textcolorblue{tenseur de contraintes de Kirchhoff}\index{tenseur! des contraintes de Kirchhoff}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	$\tau = J\sigma$: il est utilisé dans des 	algorithmes numériques en plasticité des métaux
 	(où il n'y a pas de changement de volume pendant la déformation plastique).
 
-   \item ...
+  \item ...
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -264,27 +264,27 @@ Pour exprimer les tenseurs de Piola-Kirchhoff\index{tenseur! des contraintes de 
 nous avons eu besoin du \textcolorblue{tenseur gradient de déformation
 $F$}.\index{tenseur! gradient de déformation} Ce dernier est défini comme suit:
 \begin{equation} F_{ij}(X,t) = \dfrac{\partial x_i}{\partial X_j} = \delta_{ij} + \frac{\partial u_i}{\partial X_j}
-\quad \text{ ou } \quad F = I + \nabla u\end{equation}
-où $X$ est la position de référence à l'instant $t_0$ (configuration $\Omega_0$) et $x$, la position
-courante à l'instant~$t$ (configuration actuelle $\Omega$).
+\quad \text{ ou} \quad F = I + \nabla u\end{equation}
+où~$X$ est la position de référence à l'instant~$t_0$ (configuration~$\Omega_0$) et~$x$, la position
+courante à l'instant~$t$ (configuration actuelle~$\Omega$).
 %%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Localement les formules de transport s'écrivent:
 \begin{itemize}
-   \item Pour un vecteur: $\dd x = F \dd X$
-   \item Pour un volume : $\dd v = J \dd V$ avec $J= J(F) = \det(F)$ le jacobien du tenseur gradient de déformation
-   \item Pour une surface orientée : $\dd s = J F^{-1} \dd S$
+  \item Pour un vecteur:~$\dd x = F \dd X$
+  \item Pour un volume:~$\dd v = J \dd V$ avec~$J= J(F) = \det(F)$ le jacobien du tenseur gradient de déformation
+  \item Pour une surface orientée:~$\dd s = J F^{-1} \dd S$
 \end{itemize}
 \medskipvm
-Pour caractériser les changements de forme, on introduit le tenseur $C = F^TF$, symétrique, qui est le
+Pour caractériser les changements de forme, on introduit le tenseur~$C = F^TF$, symétrique, qui est le
 \textcolorblue{tenseur des dilatations} ou encore le \textcolorblue{tenseur de Cauchy-Green droite}.
 \medskipvm
-Le tenseur $E = (C-I)/2$, symétrique, est le \textcolorblue{tenseur des déformations de Green-Lagrange}.
-Il a les mêmes directions principales que le tenseur $C$.
+Le tenseur~$E = (C-I)/2$, symétrique, est le \textcolorblue{tenseur des déformations de Green-Lagrange}.
+Il a les mêmes directions principales que le tenseur~$C$.
 \medskipvm
 Ces deux tenseurs sont lagrangiens\footnote{la \textcolorblue{description lagrangienne} consiste à suivre dans le temps les particules le long de leurs trajectoires: c'est une description intuitive de leur mouvement.
-En représentation lagrangienne, la position d'un point $M$ à l'instant $t$ qui se trouvait en $M_0$ à
-l'instant $t_0$ est donnée par une relation du type $M = f(M_0,t)$.
+En représentation lagrangienne, la position d'un point~$M$ à l'instant~$t$ qui se trouvait en~$M_0$ à
+l'instant~$t_0$ est donnée par une relation du type~$M = f(M_0,t)$.
 Cette méthode présente un inconvénient: le référentiel se déplace avec le fluide.
 Il est donc difficile de connaître l'état du fluide en un point donné de l'espace et du temps.
 
@@ -294,8 +294,8 @@ vecteur vitesse.
 La photographie avec un temps de pose assez court d'un écoulement muni de particules colorées permet
 de visualiser des éléments de ce champ de vitesses à un instant donné.
 Au contraire un temps de pose plus long permet de visualiser des trajectoires de la description lagrangienne.
-Le champ de vitesses est décrit en donnant à tout instant $t$ le vecteur vitesse $V$ en tout point $M$
-par une relation de type $V(M,t)$.
+Le champ de vitesses est décrit en donnant à tout instant~$t$ le vecteur vitesse~$V$ en tout point~$M$
+par une relation de type~$V(M,t)$.
 } et ils opèrent sur des quantités définies sur la configuration de référence
 $\Omega_0$.
 \medskipvm
@@ -309,24 +309,24 @@ Le \textcolorblue{tenseur des déformations}, ou \textcolorblue{tenseur de
 Green-Lagrange},\index{tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 est obtenu directement à partir des déplacements par la relation:
 \begin{equation}\varepsilon=\frac12\left(\nabla u+(\nabla u)^T\right)%\end{equation}
-\text{ soit pour chaque composante: }
+\text{ soit pour chaque composante:}
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}
 +\frac{\partial u_k}{\partial x_i}\frac{\partial u_k}{\partial x_j}
 \right)\end{equation}
 \textcolorgris{Cette écrire provient directement du fait d'écrire l'accroissement de déplacement à
-partir du déplacement du point $M$ en $M'$ que l'on formule en fonction du déplacement du point $M$,
+partir du déplacement du point~$M$ en~$M'$ que l'on formule en fonction du déplacement du point~$M$,
 et d'un accroissement de déplacement, caractérisant le fait que chaque point du solide est susceptible
 de subir un déplacement différent à l'origine de la déformation.}
 
 \medskip
 On peut alors distinguer deux grands types de contribution à la déformation en décomposant
-ce tenseur $\varepsilon$ comme la somme d'un tenseur symétrique $E$ et d'un tenseur antisymétrique $G$:
-\begin{equation} E=\frac12(\varepsilon+\varepsilon^T) \qquad \text{ et }\qquad G=\frac12(\varepsilon-\varepsilon^T) \end{equation}
+ce tenseur~$\varepsilon$ comme la somme d'un tenseur symétrique~$E$ et d'un tenseur antisymétrique~$G$:
+\begin{equation} E=\frac12(\varepsilon+\varepsilon^T) \qquad \text{ et}\qquad G=\frac12(\varepsilon-\varepsilon^T) \end{equation}
 On obtient alors le \textcolorblue{tenseur des déformations pures}:
 \begin{equation}E_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\end{equation}
 et le \textcolorblue{tenseur des rotations pures}:
 \begin{equation}G_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}-\frac{\partial u_j}{\partial x_i}\right)\end{equation} (on note
-souvent $\gamma_{ij}$ au lieu de $G_{ij}$).
+souvent~$\gamma_{ij}$ au lieu de~$G_{ij}$).
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Lorsque l'on parle de tenseur des déformations, on fait souvent référence au \textcolorblue{tenseur
@@ -335,7 +335,7 @@ les termes d'ordre 2 du tenseur de Green-Lagrange, ou encore \textcolorblue{tens
 dans le cas des petits déplacements}:
 \begin{equation}
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)
-\text{ que l'on note }
+\text{ que l'on note}
 \varepsilon_{ij}=\frac12(u_{i,j}+u_{j,i})
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -348,12 +348,12 @@ de chaque point du solide.
 Si l'on décompose le tenseur des déformations en une somme d'une partie déviatorique
 (ou déviateur) et d'une partie sphérique:
 \begin{equation} \varepsilon_{ij}=\frac13\varepsilon_I\delta_{ij}+e_{ij} \end{equation}
-avec $\varepsilon_I=\varepsilon_{kk}$ et $e_{ii}=0$;
+avec~$\varepsilon_I=\varepsilon_{kk}$ et~$e_{ii}=0$;
 on a une signification physique claire de chacun des termes.
-On vérifie en effet facilement que $\varepsilon_I$ caractérise la variation de volume:
+On vérifie en effet facilement que~$\varepsilon_I$ caractérise la variation de volume:
 \begin{equation} \frac{\Delta V}V=\varepsilon_I=\trace \varepsilon \end{equation}
 \colorgris Il suffit, pour s'en convaincre, de partir d'un cube unité (V = 1) dans les axes principaux, et
-de calculer le volume du parallélépipède rectangle déformé :
+de calculer le volume du parallélépipède rectangle déformé:
 \begin{equation}\begin{aligned}
 	1 + \Delta V &= (1+\varepsilon_1) (1+\varepsilon_2) (1+\varepsilon_3)\\
 		& = 1+( \varepsilon_1+\varepsilon_2+\varepsilon_3)+O(\varepsilon^2) \\
@@ -368,19 +368,19 @@ isochore} (sans variation de volume).
 Il existe une base orthonormée dans laquelle le tenseur des déformation est diagonal:
 \begin{equation} \varepsilon = \MM*{\varepsilon_I &0&0\\ 0&\varepsilon_{II}&0\\ 0&0&\varepsilon_{III}} \end{equation}
 Les directions propres sont appelées \textcolorblue{directions principales} de déformation,
-et les déformations $\varepsilon_I$, $\varepsilon_{II}$ et $\varepsilon_{III}$ les \textcolorblue{déformations
+et les déformations~$\varepsilon_I$, $\varepsilon_{II}$ et~$\varepsilon_{III}$ les \textcolorblue{déformations
 principales}.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Les déformations principales sont les valeurs propres du tenseur, et les direction propres, ses vecteurs propres.
-Les valeurs propres $\lambda$ vérifient l'équation $\det(\varepsilon - \lambda I) = 0$.
+Les valeurs propres~$\lambda$ vérifient l'équation~$\det(\varepsilon - \lambda I) = 0$.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
-\colorgris La trace étant invariante par changement de base, on a $\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}
+\colorgris La trace étant invariante par changement de base, on a~$\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}
 =\varepsilon_{I}+\varepsilon_{II}+\varepsilon_{III}$ et et ainsi en petites déformations, la variation relative
 de volume vaut:
 \begin{equation}
-    \frac{\Delta \mathrm{V}}{\mathrm{V}_0} = \varepsilon_{I} + \varepsilon_{II} + \varepsilon_{III}
+  \frac{\Delta \mathrm{V}}{\mathrm{V}_0} = \varepsilon_{I} + \varepsilon_{II} + \varepsilon_{III}
 \end{equation}\colorblack
 
 Contrairement aux contraintes principales, la notion de déformation principale est assez peu utilisée pour le calcul.
@@ -391,15 +391,15 @@ et pour le tenseur des contraintes.}
 
 
 \bigskip
-En vue de prendre en compte les cas les plus généraux, le tenseur des déformations $\varepsilon$
-se décompose en qutre parties :
+En vue de prendre en compte les cas les plus généraux, le tenseur des déformations~$\varepsilon$
+se décompose en qutre parties:
 \begin{itemize}
 	\item une \textcolorblue{partie élastique}: directement proportionnelle à la variation du tenseur
 		des contraintes (contraintes actuelles moins tenseur des contraintes initiales, généralement
 		nul, mais pas forcément);
 	\item une \textcolorblue{partie de dilatation thermique}: directement proportionnel à la variation de
 		température (température actuelle moins température initiale). Cette partie
-		s'écrit à l'aide d'un tenseur $\alpha$, dépendant éventuellement de la
+		s'écrit à l'aide d'un tenseur~$\alpha$, dépendant éventuellement de la
 		température également, et qui est sphérique dans la cas des matériaux isotropes;
 	\item une \textcolorblue{partie plastique};
 	\item une \textcolorblue{partie viscoélastique}.
@@ -429,14 +429,14 @@ l'état de contrainte.
 \section{Non linéarité géométrique}\label{Sec-NLg}
 Nous avons exposé en introduction qu'il s'agit du cas où l'hypothèse des petites perturbations
 n'est plus vérifiée.
-Cela se traduit par le fait que le domaine considéré $\Omega$ varie et doit donc être introduit comme
+Cela se traduit par le fait que le domaine considéré~$\Omega$ varie et doit donc être introduit comme
 une inconnue dans le problème.
 
 Si l'on se place dans le cas de grands déplacements, mais en conservant l'hypothèse de petites
 déformations, on est amené à effectuer la formulation variationnelle sur un domaine inconnu
 $\Omega_0$ par l'introduction des tenseurs non linéaires de Piola-Kirchhoff\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 (contraintes) et de Green-Lagrange\index{tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
-(déformations) tels que :
+(déformations) tels que:
 \begin{equation}
 \dint_\Omega \delta\varepsilon:\sigma = \dint_{\Omega_0} \delta\varepsilon_{GL}:\sigma_{PK}
 \end{equation}
@@ -445,7 +445,7 @@ On obtient la formulation variationnelle:
 \dint_{\Omega_0}\delta\varepsilon_{GL}:\sigma_{PK} -\dint_{\Gamma_0} \delta u.f_{\Gamma_0}
 -\dint_{\Omega_0} \delta u.F_{\Omega_0}
 \end{equation}
-avec $\Gamma_0=\delta\Omega_0$
+avec~$\Gamma_0=\delta\Omega_0$
 
 \medskip
 Au niveau discret, le système non linéaire nécessite alors de recourir à une technique de linéarisation,
@@ -475,31 +475,31 @@ Cela a été illustré au paragraphe~\ref{Sec-Loi}.
 
 \colorgris
 Lorsque l'on ne considère que le cas de la traction/compression, alors on a proportionnalité entre
-contrainte dans cette direction de chargement $\sigma_{11}$ et déformation dans cette direction
-$\varepsilon_{11}$ via le module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais} $E$:\index{Module d'Young}
+contrainte dans cette direction de chargement~$\sigma_{11}$ et déformation dans cette direction
+$\varepsilon_{11}$ via le module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}~$E$:\index{Module d'Young}
 $\sigma_{11}=E\varepsilon_{11}$.
 
-La même loi se retrouve pour une sollicitation en cisaillement, et la contrainte de cisaillement $\tau_{12}$
-est proportionnelle à l'angle de déformation relative $\gamma_{12}$ via le module de
-Coulomb\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français} $G$:\index{Module de Coulomb}
+La même loi se retrouve pour une sollicitation en cisaillement, et la contrainte de cisaillement~$\tau_{12}$
+est proportionnelle à l'angle de déformation relative~$\gamma_{12}$ via le module de
+Coulomb\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français}~$G$:\index{Module de Coulomb}
 $\tau_{12}=G\varepsilon_{12}$.
 
 Lorsque l'on synthétise tout cela pour toutes les directions, on parle alors de \textcolorblue{loi
 de Hooke généralisée},\index[aut]{Hooke (Robert), 1635-1703, Anglais}\index{Loi de comportement!Hooke}
-que l'on note sous la forme $\sigma=H\varepsilon$ (i.e. $\sigma_{ij}=H_{ijkl}\varepsilon_{kl}$):
+que l'on note sous la forme~$\sigma=H\varepsilon$ (i.e.~$\sigma_{ij}=H_{ijkl}\varepsilon_{kl}$):
 il y a proportionnalité entre les tenseurs des contraintes et des déformations (On note également
-souvent $C$ ou $D$ au lieu de $H$).
+souvent~$C$ ou~$D$ au lieu de~$H$).
 
 \medskip
-Nous rappelons que, pour un matériau isotrope, tous les coefficients $H_{ijkl}$ sont définis
-à l'aide du module d'Young $E$\index{Module d'Young}\index[aut]{Young (Thomas), 1773-1829, Anglais}
-et du coefficient de Poisson $\nu$,\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{Coefficients de Poisson}
+Nous rappelons que, pour un matériau isotrope, tous les coefficients~$H_{ijkl}$ sont définis
+à l'aide du module d'Young~$E$\index{Module d'Young}\index[aut]{Young (Thomas), 1773-1829, Anglais}
+et du coefficient de Poisson~$\nu$,\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{Coefficients de Poisson}
 ou de manière équivalente par les coefficients de Lamé\index{Coefficients de Lamé}
-$\lambda$ et $\mu$.\index{Coefficients de Lamé}\index[aut]{Lame@Lamé (Gabriel), 1795-1870, Français}
-\begin{equation}\sigma = 2\mu\varepsilon+\lambda \trace(\varepsilon)I \quad \text{ i.e. } \quad
+$\lambda$ et~$\mu$.\index{Coefficients de Lamé}\index[aut]{Lame@Lamé (Gabriel), 1795-1870, Français}
+\begin{equation}\sigma = 2\mu\varepsilon+\lambda \trace(\varepsilon)I \quad \text{ i.e.} \quad
 \sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\varepsilon_{kk}\delta_{ij}\end{equation}
 avec:
-\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et } \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)} \end{equation}
+\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et} \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)} \end{equation}
 ou:
 \begin{equation}E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et}\quad
 \nu=\dfrac{\lambda}{2(\lambda+\mu)} \end{equation}
@@ -521,13 +521,13 @@ définies.
 Ces comportements <<~de base~>>, qui peuvent être représentés par des systèmes mécaniques
 élémentaires, sont l'élasticité, la plasticité et la viscosité:
 \begin{itemize}
-   \item \emph{Le ressort} symbolise l'\textcolorblue{élasticité linéaire parfaite}, pour laquelle la
+  \item \emph{Le ressort} symbolise l'\textcolorblue{élasticité linéaire parfaite}, pour laquelle la
 	déformation est entièrement réversible lors d'une décharge, et où il existe une relation
 	biunivoque entre les paramètres de charge et de déformation.
-   \item \emph{L'amortisseur} schématise la \textcolorblue{viscosité, linéaire ou non}.
+  \item \emph{L'amortisseur} schématise la \textcolorblue{viscosité, linéaire ou non}.
 	La viscosité est dite pure s'il existe une relation biunivoque entre la charge et la vitesse de chargement.
 	Si cette relation est linéaire, 	le modèle correspond à la loi de Newton.
-   \item \emph{Le patin} symbolise l'apparition de déformations permanentes lorsque la
+  \item \emph{Le patin} symbolise l'apparition de déformations permanentes lorsque la
 	charge est suffisante.
 	Si le seuil d'apparition de la déformation permanente n'évolue pas avec le chargement, le
 	comportement est dit \textcolorblue{plastique parfait}.
@@ -540,28 +540,28 @@ Ces éléments peuvent être combinés entre eux pour former des modèles rhéol
 La réponse de ces systèmes peut être jugée dans 3 plans différents, qui permettent d'illustrer le
 comportement lors d'essais de type:
 \begin{itemize}
-   \item \emph{Écrouissage}, ou augmentation monotone de la charge ou de la déformation
-	(plan $\varepsilon-\sigma$);
-   \item \emph{Fluage}, ou maintien de la charge (plan $t-\varepsilon$);
-   \item \emph{Relaxation}, ou maintien de la déformation (plan $t-\sigma$).
+  \item \emph{Écrouissage}, ou augmentation monotone de la charge ou de la déformation
+	(plan~$\varepsilon-\sigma$);
+  \item \emph{Fluage}, ou maintien de la charge (plan~$t-\varepsilon$);
+  \item \emph{Relaxation}, ou maintien de la déformation (plan~$t-\sigma$).
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Les réponses de modèles classiques selon ces trois plans précédents sont présentées ci-dessous:
 \begin{itemize}
-   \item \emph{modèle du solide élastique:} $\sigma = H \varepsilon$, \textcolorblue{loi de
+  \item \emph{modèle du solide élastique:}~$\sigma = H \varepsilon$, \textcolorblue{loi de
 	Hooke};\index[aut]{Hooke (Robert), 1635-1703, Anglais}\index{Loi de comportement!Hooke}
-   \item \emph{modèle du solide viscoélastique} comportant un ressort et un amortisseur en parallèle:
+  \item \emph{modèle du solide viscoélastique} comportant un ressort et un amortisseur en parallèle:
 	$\sigma=\eta\dot{\varepsilon}+H\varepsilon$, \textcolorblue{modèle de
 	Voigt};\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}\index{Loi de comportement!Voigt}
-   \item \emph{modèle du solide élastique-parfaitement plastique}, constitué par un ressort linéaire et
+  \item \emph{modèle du solide élastique-parfaitement plastique}, constitué par un ressort linéaire et
 	un patin en série: \textcolorblue{modèle de
 	Saint-Venant}.\index{Loi de comportement!Saint-Venant}\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}
 
-	Lorsque le module $E$ tend vers l'infini, le \emph{modèle devient rigide-parfaitement plastique}.
-   \item \emph{modèle du solide élastique-plastique écrouissable}, qui donne une courbe de traction
+	Lorsque le module~$E$ tend vers l'infini, le \emph{modèle devient rigide-parfaitement plastique}.
+  \item \emph{modèle du solide élastique-plastique écrouissable}, qui donne une courbe de traction
 	linéaire par morceaux: \textcolorblue{modèle de Saint-Venant généralisé};
-   \item \emph{modèle du solide élastique-parfaitement viscoplastique}, formé par un amortisseur non linéaire:
+  \item \emph{modèle du solide élastique-parfaitement viscoplastique}, formé par un amortisseur non linéaire:
 	\textcolorblue{modèle de
 	Norton-Hoff}.\index{Loi de comportement!Norton-Hoff}\index[aut]{Norton (Frederick H.)}\index[aut]{Hoff (Nicholas J.), 1906-1997, Hongrois}
 \item \emph{modèle du solide élastique-parfaitement viscoplastique}, qui comporte un ressort linéaire en série
@@ -572,7 +572,7 @@ Les réponses de modèles classiques selon ces trois plans précédents sont pr�
 	dégénère en un \emph{modèle de fluide visqueux}, comportant un ressort et un amortisseur en série:
 	$\dot{\varepsilon}=\dot{\sigma}/E+\sigma/\eta$, \textcolorblue{modèle de
 	Maxwell}.\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais}\index{Loi de comportement!Maxwell}
-   \item \emph{modèle du solide élastique-viscoplastique écrouissable}, qui représente le schéma le plus complexe.
+  \item \emph{modèle du solide élastique-viscoplastique écrouissable}, qui représente le schéma le plus complexe.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -582,7 +582,7 @@ et de son histoire} (propriété d'hérédité).
 
 Il y a deux manières de prendre en compte cette histoire, \emph{la première} consiste à la décrire par une
 dépendance fonctionnelle entre les variables; \emph{la seconde} fait \textcolorblue{l'hypothèse qu'il est possible
-de représenter l'effet de l'histoire dans des variables internes, qui <<~concentrent~>>  les informations importantes définissant l'état du matériau.}
+de représenter l'effet de l'histoire dans des variables internes, qui <<~concentrent~>> les informations importantes définissant l'état du matériau.}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Sauf quelques cas exceptionnels comme celui de la viscoélasticité linéaire, la seconde méthode de
@@ -592,11 +592,11 @@ travail produit des modèles dont la modélisation numérique est plus simple.
 Les autres hypothèses importantes qui sont classiquement utilisées pour l'écriture de modèles de
 comportement sont:
 \begin{itemize}
-   \item Le \textcolorblue{principe de l'état local}, qui considère que le comportement en un point ne dépend
+  \item Le \textcolorblue{principe de l'état local}, qui considère que le comportement en un point ne dépend
 	que des variables définies en ce point, et non pas du voisinage;
-   \item Le \textcolorblue{principe de simplicité matérielle}, qui suppose que seul intervient dans les équations
+  \item Le \textcolorblue{principe de simplicité matérielle}, qui suppose que seul intervient dans les équations
 	de comportement le premier gradient de la transformation;
-   \item Le \textcolorblue{principe d'objectivité}, qui traduit l'indépendance de la loi de comportement vis-à-vis
+  \item Le \textcolorblue{principe d'objectivité}, qui traduit l'indépendance de la loi de comportement vis-à-vis
 	de l'observateur, et qui implique que le temps ne peut pas intervenir explicitement dans les relations de
 	comportement.
 \end{itemize}
@@ -604,13 +604,13 @@ comportement sont:
 \medskip
 Mentionnons enfin quelques cas type d'utilisation des modèles mentionnés:
 \begin{itemize}
-   \item Comportements viscoélastique: pour les polymères thermoplastiques au voisinage de la température
+  \item Comportements viscoélastique: pour les polymères thermoplastiques au voisinage de la température
 	de fusion, pour les verres au voisinage de la température de transition, pour les bétons frais...
-   \item Comportements rigides-parfaitement plastiques: pour l'étude des sols, pour l'analyse limite,
+  \item Comportements rigides-parfaitement plastiques: pour l'étude des sols, pour l'analyse limite,
 	pour la mise en forme des métaux...
-   \item Comportements plastiques: pour les métaux à des températures inférieures au quart de la
+  \item Comportements plastiques: pour les métaux à des températures inférieures au quart de la
 	température de fusion, pour les sols et roches...
-   \item Comportements viscoplastiques: pour les métaux à moyenne et haute température,
+  \item Comportements viscoplastiques: pour les métaux à moyenne et haute température,
 	pour le bois, les sols (dont le sel), pour les céramiques à très haute température...
 \end{itemize}
 
@@ -628,23 +628,23 @@ pour l'étude de sa stabilité sur de longues durées...
 \medskip
 \subsection{Visoélasticité}\index{Loi de comportement!Viscoélasticité}
 Un comportement viscoélastique correspond à la superposition d'un comportement
-élastique, traduit par une relation de type $\sigma = H\varepsilon$ (\textcolorblue{loi de
+élastique, traduit par une relation de type~$\sigma = H\varepsilon$ (\textcolorblue{loi de
 Hooke}),\index{Loi de comportement!Hooke}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 et un comportement visqueux, dont le plus simple est le modèle linéaire dit \textcolorblue{de
 Newton},\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{Loi de comportement!Newton}
-traduit par une relation de type $\sigma=\eta\dot{\varepsilon}$ ($\eta$ étant la viscosité
+traduit par une relation de type~$\sigma=\eta\dot{\varepsilon}$ ($\eta$ étant la viscosité
 du matériau).
 
 \medskip
-Un échelon de contrainte appliqué à partir d'un instant $t_0$ produit une déformation instantanée
+Un échelon de contrainte appliqué à partir d'un instant~$t_0$ produit une déformation instantanée
 suivie d'une déformation différée (fluage).
-Si, au-delà d'un instant $t_1$, la charge est ramenée à zéro, il apparaît, après une nouvelle déformation
+Si, au-delà d'un instant~$t_1$, la charge est ramenée à zéro, il apparaît, après une nouvelle déformation
 instantanée, le phénomène de recouvrance, qui tend à ramener la déformation à zéro.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
-Si une déformation est appliquée à partir de l'instant $t_0$, on obtient une contrainte instantanée
+Si une déformation est appliquée à partir de l'instant~$t_0$, on obtient une contrainte instantanée
 puis une diminution de la contrainte à partir de cette valeur instantanée (relaxation).
-Si, au-delà d'un instant $t_1$, la déformation est ramenée à zéro, il apparaît, après une nouvelle contrainte
+Si, au-delà d'un instant~$t_1$, la déformation est ramenée à zéro, il apparaît, après une nouvelle contrainte
 instantanée, le phénomène d'effacement, qui tend à ramener la contrainte à zéro.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -683,15 +683,15 @@ La \fig{Fig-MaxwellVoigt} illustre les réponses des modèles de Maxwell et Voig
 \end{figure}
 
 Le modèle de Voigt ne présente pas d'élasticité instantanée.
-L'application d'un saut de déformation en $t = 0$ produit une contrainte infinie.
+L'application d'un saut de déformation en~$t = 0$ produit une contrainte infinie.
 Ce modèle n'est donc pas utilisable en relaxation, sauf si la mise en charge est progressive, et sera pour
 cette raison associé à un ressort pour effectuer des calculs de structure (\textcolorblue{modèle de
 Kelvin-Voigt}).\index{Loi de comportement!Kelvin-Voigt}\index[aut]{Kelvin (William Thomson, connu sous le nom de Lord -), 1924-1907, Anglais}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 
-De plus, sous l'effet d'une contrainte $\sigma_0$ constante en fonction du temps, la déformation
-dans ce modèle de Voigt tend vers la valeur asymptotique $\sigma_0/H$: le fluage est donc limité.
-Si, après une mise en charge lente, la déformation est fixée à une valeur $\varepsilon_0$,
-la contrainte asymptotique sera $H\varepsilon_0$ : il n'y a donc pas disparition complète de la
+De plus, sous l'effet d'une contrainte~$\sigma_0$ constante en fonction du temps, la déformation
+dans ce modèle de Voigt tend vers la valeur asymptotique~$\sigma_0/H$: le fluage est donc limité.
+Si, après une mise en charge lente, la déformation est fixée à une valeur~$\varepsilon_0$,
+la contrainte asymptotique sera~$H\varepsilon_0$: il n'y a donc pas disparition complète de la
 contrainte.
 
 Au contraire, dans le cas du modèle de Maxwell,\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais}
@@ -715,40 +715,40 @@ C'est ce que nous allons maintenant aborder.
 Considérons le cas du chargement uniaxial d'un matériau isotrope.
 Celui-ci fait apparaître un domaine d'élasticité au travers de deux valeurs de contrainte, l'une en traction,
 l'autre en compression, pour lesquelles se produit l'écoulement plastique.
-On a donc élasticité dans un domaine $[-\sigma_y,\sigma_y]$, puis plasticité au delà, i.e. par exemple
-pour une contrainte supérieure à $\sigma_y+x$, où $x=H\varepsilon_p$.
+On a donc élasticité dans un domaine~$[-\sigma_y,\sigma_y]$, puis plasticité au delà, i.e. par exemple
+pour une contrainte supérieure à~$\sigma_y+x$, où~$x=H\varepsilon_p$.
 
-En fait, la limite du domaine de plasticité est défini par une \textcolorblue{fonction de charge $f$}
-de sorte que si $f(\sigma,x)<0$ l'état de contrainte est élastique, et si $f(\sigma,x)>0$
+En fait, la limite du domaine de plasticité est défini par une \textcolorblue{fonction de charge~$f$}
+de sorte que si~$f(\sigma,x)<0$ l'état de contrainte est élastique, et si~$f(\sigma,x)>0$
 l'état de contrainte est plastique.
 
 \medskip
-Dans le cas général, l'ensemble des paramètres de départ $A_I$ contiendra les contraintes et toutes
-les variables d'écrouissage, scalaires ou tensorielles, il faut donc définir $f(\sigma, A_I)$.
+Dans le cas général, l'ensemble des paramètres de départ~$A_I$ contiendra les contraintes et toutes
+les variables d'écrouissage, scalaires ou tensorielles, il faut donc définir~$f(\sigma, A_I)$.
 On va dans un premier temps limiter la présentation à la définition du domaine d'élasticité initial,
-pour lequel on supposera que les variables $A_I$ sont nulles, si bien qu'on se contentera d'écrire les
-restrictions des fonctions $f$ dans l'espace des contraintes.
+pour lequel on supposera que les variables~$A_I$ sont nulles, si bien qu'on se contentera d'écrire les
+restrictions des fonctions~$f$ dans l'espace des contraintes.
 
 L'expérience montre que, \textcolorblue{pour la plupart des matériaux, le domaine d'élasticité initial est
 convexe} (c'est en particulier vrai pour les métaux qui se déforment par glissement cristallographique).
-La fonction de charge doit donc elle-même être convexe en $\sigma$, ce qui implique, pour tout
-réel $\lambda$ compris entre 0 et 1, et pour un couple $(\sigma_1, \sigma_2)$ quelconque de la frontière:
+La fonction de charge doit donc elle-même être convexe en~$\sigma$, ce qui implique, pour tout
+réel~$\lambda$ compris entre 0 et 1, et pour un couple~$(\sigma_1, \sigma_2)$ quelconque de la frontière:
 \begin{equation} f (\lambda\sigma_1 + (1-\lambda)\sigma_2) \le \lambda f(\sigma_1) + (1-\lambda) f(\sigma_2) \end{equation}
 
 \textcolorblue{Il faut également respecter les symétries matérielles.}
-Ceci implique en particulier dans le cas d'un matériau isotrope que $f$ soit une fonction symétrique des
+Ceci implique en particulier dans le cas d'un matériau isotrope que~$f$ soit une fonction symétrique des
 seules contraintes principales, ou bien encore, ce qui est équivalent, des invariants du tenseur des contraintes
-présentés au paragraphe~\ref{Sec-TensS} (il s'agit de $I_1$, $I_2$ et $I_3$).
+présentés au paragraphe~\ref{Sec-TensS} (il s'agit de~$I_1$, $I_2$ et~$I_3$).
 
 \medskip
 Dans les matériaux métalliques on observe généralement l'incompressibilité plastique ($\varepsilon^p_{ii} = 0$)
 et l'indépendance du comportement vis-à-vis de la pression isostatique. Ceci amène à considérer
 comme variable critique à faire figurer dans la définition du critère non plus le tenseur de contraintes lui-même,
-mais son déviateur $s$ (et donc ses invariants $J_1$, $J_2$ et $J_3$).
+mais son déviateur~$s$ (et donc ses invariants~$J_1$, $J_2$ et~$J_3$).
 
 En vue de réaliser les comparaisons avec les résultats expérimentaux, il est pratique de disposer d'expressions
-des critères dans lesquelles les valeurs de $f$ sont homogènes à des contraintes.
-On peut alors remplacer $J_2$ par l'invariant $J$ (contrainte équivalente au sens de von Mises en cisaillement:
+des critères dans lesquelles les valeurs de~$f$ sont homogènes à des contraintes.
+On peut alors remplacer~$J_2$ par l'invariant~$J$ (contrainte équivalente au sens de von Mises en cisaillement:
 $J(\sigma)=\sigma_e= \sqrt{3J_2}$), qui peut également s'exprimer en fonction des contraintes principales,
 ou de la contrainte appliquée dans le cas d'un état de traction simple.
 
@@ -764,7 +764,7 @@ traction/compression.
 \begin{histoire}
 Un critère de plasticité, ou critère d'écoulement plastique, est un critère permettant de savoir, sous des sollicitations données,
 si une pièce se déforme plastiquement ou si elle reste dans le domaine élastique.
-De nombreux essais ont montré que l'on pouvait utiliser deux critères principaux : le critère de von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}
+De nombreux essais ont montré que l'on pouvait utiliser deux critères principaux: le critère de von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}
 (critère de l'énergie de distorsion élastique) ou le critère de Tresca\index[aut]{Tresca (Henri Édouard), 1814-1885, Français}
 (critère de la contrainte de cisaillement maximal).
 En résistance des matériaux, on désire parfois rester dans le domaine élastique, on parle alors de critère de résistance.
@@ -789,7 +789,7 @@ ou encore de critère de l'énergie de distorsion élastique.
 \medskip
 La renommée de Tresca\index[aut]{Tresca (Henri Édouard), 1814-1885, Français}
 était si grande à son époque que Gustave Eiffel\index[aut]{Eiffel (Gustave), 1832-1923, Français}
-mit son nom en troisième  position sur la Liste des soixante-douze noms de savants inscrits sur la tour Eiffel,
+mit son nom en troisième position sur la Liste des soixante-douze noms de savants inscrits sur la tour Eiffel,
 et plus précisément sur le pilier face au Trocadéro.
 
 \medskip
@@ -814,7 +814,7 @@ afin de permettre à la France de progresser grâce aux sciences et aux technolo
 Dans le \textcolorblue{critère de von Mises},\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}
 on considère que le seuil de plasticité est lié à l'énergie élastique de
 cisaillement. Cela revient à négliger l'influence du troisième invariant.
-Si $\sigma_y$ est la limite d'élasticité en traction, la fonction de charge est définie par:
+Si~$\sigma_y$ est la limite d'élasticité en traction, la fonction de charge est définie par:
 \begin{equation} f(\sigma) = J(\sigma) - \sigma_y \end{equation}
 La direction d'écoulement est donnée par le déviateur du tenseur des contraintes.
 
@@ -823,7 +823,7 @@ La direction d'écoulement est donnée par le déviateur du tenseur des contrain
 Le \textcolorblue{critère de Tresca},\index[aut]{Tresca (Henri Édouard), 1814-1885, Français} \index{critère de plasticité!Tresca}
 ou critère de Tresca-Guest,\index[aut]{Guest} ou critère de la contrainte de
 cisaillement maximal, s'exprime en fonction des cisaillements maxima dans chaque plan principal, représentés
-par les quantités $(\sigma_i-\sigma_j)$ (et non plus à l'énergie élastique de cisaillement).
+par les quantités~$(\sigma_i-\sigma_j)$ (et non plus à l'énergie élastique de cisaillement).
 
 La spécificité du critère de Tresca est de ne retenir que le plus grand d'entre eux. Le fait
 de rajouter une pression à chaque terme de la diagonale ne modifie pas, comme prévu, la valeur du critère.
@@ -840,7 +840,7 @@ En d'autres termes, la loi d'écoulement se définit par secteurs dans l'espace 
 littérature.}
 
 \medskip
-La fonction de charge s'écrit $f(\sigma)=(1-\alpha)J(\sigma)+\alpha tr(\sigma)$, si
+La fonction de charge s'écrit~$f(\sigma)=(1-\alpha)J(\sigma)+\alpha tr(\sigma)$, si
 bien que la normale possède une composante sphérique.
 La déformation plastique évaluée avec un tel critère est accompagnée d'une
 augmentation de volume quel que soit le chargement appliqué.
@@ -852,7 +852,7 @@ qui comporte donc un défaut).
 
 On l'écrit aussi sous une forme où il est plus facile de le voir comme une extension du critère de von Mises:\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{critère de plasticité!von Mises}
 \begin{equation} f(\sigma) = J(\sigma) - \dfrac{\sigma_y-\alpha I_1}{1-\alpha} \end{equation}
-où le coefficient $\alpha$ dépend du matériau et est compris entre 0 et $1/2$. Pour
+où le coefficient~$\alpha$ dépend du matériau et est compris entre 0 et~$1/2$. Pour
 $\alpha=0$, on retrouve le critère de von Mises.
 
 \medskip
@@ -864,7 +864,7 @@ car il fait intervenir comme lui le cisaillement maximum, mais, contrairement à
 la contrainte <<~moyenne~>>, représentée par le centre du cercle de Mohr correspondant au cisaillement
 maximum, soit:
 \begin{equation} f(\sigma) = \sigma_1 - \sigma_3 + (\sigma_1 + \sigma_3) \sin\varphi - 2C\cos \varphi \quad
-\text{ avec } \quad \sigma_3 \le \sigma_2 \le \sigma_1 \end{equation}
+\text{ avec} \quad \sigma_3 \le \sigma_2 \le \sigma_1 \end{equation}
 Ce critère est sous-tendu par la notion de frottement, et suppose que le cisaillement maximal que peut
 subir le matériau est d'autant plus grand que la contrainte normale de compression est élevée.
 
@@ -875,12 +875,12 @@ La méthode généralement utilisée pour faire apparaître de l'anisotropie con
 un tenseur du quatrième ordre dans l'expression du critère, qui vient multiplier le déviateur, ou directement
 le tenseur des contraintes.
 
-Une solution couramment adoptée généralise le critère de von Mises, en utilisant à la place de $J(\sigma)$
-l'expression : $J_H(\sigma) = \sqrt{\sigma : H : \sigma}$.
+Une solution couramment adoptée généralise le critère de von Mises, en utilisant à la place de~$J(\sigma)$
+l'expression:~$J_H(\sigma) = \sqrt{\sigma: H: \sigma}$.
 
 \medskip
 Le \textcolorblue{critère de Hill}\index[aut]{Hill (Rodney), 1921-2011, Anglais}\index{critère de plasticité!Hill}
-correspond à une anisotropie particulière qui conserve trois plans de  symétrie dans l'état d'écrouissage du
+correspond à une anisotropie particulière qui conserve trois plans de symétrie dans l'état d'écrouissage du
 matériau.
 
 \medskip
@@ -902,12 +902,12 @@ générale.
 \medskip
 Le comportement des élastomères est fortement non linéaire.
 Il faut prendre en compte par exemple la précharge, la fréquence et l'amplitude
-d'excitation comme paramètres sur :
+d'excitation comme paramètres sur:
 \begin{itemize}
-	\item en statique : très grandes déformations et retour à la configuration
-		initiale sans déformation permanente : lois hyperélastiques.
-	\item en dynamique : propriétés amortissantes, dont rigidification en fréquence
-		sous excitation harmonique : loi viscoélastique non linéaire.
+	\item en statique: très grandes déformations et retour à la configuration
+		initiale sans déformation permanente: lois hyperélastiques.
+	\item en dynamique: propriétés amortissantes, dont rigidification en fréquence
+		sous excitation harmonique: loi viscoélastique non linéaire.
 \end{itemize}
 
 \medskip
@@ -923,7 +923,7 @@ Le premier brevet sur la fabrication d'un élastomère synthétique a été dép
 \medskip
 Les élastomères sont \textcolorblue{quasi incompressibles}.
 le module de compressibilité du caoutchouc se situe entre 1000 et 2000 MPa alors
-que l'ordre du grandeur de son module de cisaillement est de 1 MPa : cette différence
+que l'ordre du grandeur de son module de cisaillement est de 1 MPa: cette différence
 signifie que le caoutchouc ne change quasiment pas de volume, même sous de
 fortes contraintes.
 
@@ -951,30 +951,30 @@ Une \textcolorblue{hystérésis est toujours présente}, mais augmente avec l'aj
 Rappelons ce qu'est l'hystérésis en quelques mots:
 l'amortissement correspond à l'énergie dissipée au cours d'un cycle. Il est
 caractérisé par un angle de perte et un module complexe.
-Si le système est soumis à des déformations sinusoïdales cycliques :
+Si le système est soumis à des déformations sinusoïdales cycliques:
 $\varepsilon(t)=\varepsilon_0\sin(\omega t)$ et que l'on estime que la
 contrainte transmise répond également de façon sinusoïdale, alors cette
-dernière est déphasée d'un angle $\delta$, l'angle de perte, et on a :
+dernière est déphasée d'un angle~$\delta$, l'angle de perte, et on a:
 $\sigma(t)=\sigma_0\sin(\omega t+\delta)$.
 Généralement cette hypothèse de première harmonique n'est pas
-vérifiée et la réponse contient plusieurs harmoniques :
+vérifiée et la réponse contient plusieurs harmoniques:
 $\sigma(t) = \sum_k \sigma_k\sin(k\omega t+\delta_k)$.
 
-Le module complexe est défini par : $E^* = \sigma / \varepsilon$. Il se calcule comme :
-\begin{equation} E^*=\dfrac{\sigma_0}{\varepsilon_0}e^{i\delta}=\dfrac{\sigma_0}{\varepsilon_0}(\cos\delta+i\sin\delta)\end{equation}
-ou encore :
+Le module complexe est défini par:~$\mathrm{e}^* = \sigma / \varepsilon$. Il se calcule comme:
+\begin{equation} \mathrm{e}^*=\dfrac{\sigma_0}{\varepsilon_0}\mathrm{e}^{i\delta}=\dfrac{\sigma_0}{\varepsilon_0}(\cos\delta+i\sin\delta)\end{equation}
+ou encore:
 \begin{equation}
-E^* = E' + i E'' = E'(1+i\tan\delta)
+\mathrm{e}^* = E' + i E'' = E'(1+i\tan\delta)
 \end{equation}
-et on appelle :
+et on appelle:
 \begin{itemize}
-	\item module dynamique = $|E^*|=\dfrac{\sigma_0}{\varepsilon_0}$;
-	\item module de stockage = $E'=|E^*|\cos\delta$, car il mesure l'énergie
+	\item module dynamique =~$|\mathrm{e}^*|=\dfrac{\sigma_0}{\varepsilon_0}$;
+	\item module de stockage =~$E'=|\mathrm{e}^*|\cos\delta$, car il mesure l'énergie
 		emmagasinée puis restituée au cours d'un cycle;
-	\item module de perte = $E''=|E^*|\sin\delta$, car il mesure l'énergie
+	\item module de perte =~$E''=|\mathrm{e}^*|\sin\delta$, car il mesure l'énergie
 		dissipée sous forme de chaleur au cours d'un cycle.
 \end{itemize}
-Le \textcolorblue{module d'Young complexe $E^*$ ou le module de Coulomb complexe $G^*$}
+Le \textcolorblue{module d'Young complexe~$\mathrm{e}^*$ ou le module de Coulomb complexe~$G^*$}
 \index[aut]{Young (Thomas), 1773-1829, Anglais}\index{Module d'Young}\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français}\index{Module de Coulomb}
 évoluent de manière significative avec la température, la fréquence et l'amplitude
 de l'excitation.
@@ -994,19 +994,19 @@ l'état déformé.
 
 On utilisera alors les tenseurs adaptés (Piola-Kirchhoff), comme exposé au paragraphe~\ref{Sec-NLg}.
 
-%Les variations de volume entre les configurations sont caractérisées par $J=\det(F)$.
+%Les variations de volume entre les configurations sont caractérisées par~$J=\det(F)$.
 
 \medskip
 \subsubsection{Incompressibilité}
 Aux lois de comportement précédentes, on ajoute la contrainte de variation
 nulle de volume entre les configurations.
 
-Pour un matériau incompressible, on  a $J=1$ ($J$ est le jacobien du gradient de la déformation).
+Pour un matériau incompressible, on a~$J=1$ ($J$ est le jacobien du gradient de la déformation).
 
 \medskip
 \subsubsection{Hyperélasticité}\index{Loi de comportement!Hyperélasticité}
-Un matériau est dit élastique si le tenseur des contraintes de Cauchy à l'instant $t$
-dépend uniquement de l'état de déformation à ce même instant : la contrainte ne
+Un matériau est dit élastique si le tenseur des contraintes de Cauchy à l'instant~$t$
+dépend uniquement de l'état de déformation à ce même instant: la contrainte ne
 dépend pas du chemin suivi par la déformation, alors que le travail fourni par cette
 contrainte en dépend.
 
@@ -1014,26 +1014,26 @@ Un matériau élastique est dit \textcolorblue{hyperélastique} si le tenseur de
 d'une \textcolorblue{fonction d'énergie} de ce matériau: cela implique que le travail fourni pour aller
 d'un état à un autre ne dépend pas du chemin suivi.
 
-Si on postule l'existence d'une \textcolorblue{énergie libre $\Psi$}, on peut la relier, pour les matériaux
+Si on postule l'existence d'une \textcolorblue{énergie libre~$\Psi$}, on peut la relier, pour les matériaux
 hyperélastiques, aux invariants des tenseurs. Cette énergie est également appelée énergie de
 déformation. De là on peut déduire les lois de comportement.
 
 
 \medskip
 \subsubsection{Approximation numérique}
-De nombreuses formes de l'énergie de déformation ont été proposées, s'exprimant à partir :
+De nombreuses formes de l'énergie de déformation ont été proposées, s'exprimant à partir:
 \begin{itemize}
 	\item des invariants;
 	\item des fonctions d'élongations principales;
-	\item des coefficients intervenant sous forme linéaire : Mooney-Rivlin\index[aut]{Mooney (Melvin), 1893-1968, Américain}
+	\item des coefficients intervenant sous forme linéaire: Mooney-Rivlin\index[aut]{Mooney (Melvin), 1893-1968, Américain}
 	et Rivlin généralisé;\index[aut]{Rivlin (Ronald Samuel), 1915-2005, Américain}
-	\item des coefficients intervenant sous forme de puissances : Ogden (1972)\index[aut]{Ogden (Ray W.)}
+	\item des coefficients intervenant sous forme de puissances: Ogden (1972)\index[aut]{Ogden (Ray W.)}
 	\item sous forme polynomiale...
 \end{itemize}
 
 \medskip
 Le \textcolorblue{modèle de Rivlin généralisé},\index[aut]{Rivlin (Ronald Samuel), 1915-2005, Américain}\index{Loi de comportement!Rivlin généralisé}
-implémenté dans la plupart des codes de calcul, est donné par le développement polynomial suivant :
+implémenté dans la plupart des codes de calcul, est donné par le développement polynomial suivant:
 \begin{equation}
 \Psi = \dsum\limits_{i,j=0}^N C_{ij}(I_1-3)^i(I_2-3)^j + \dsum_{i=1}^M D_i(J-1)^{2i}
 \end{equation}
@@ -1042,26 +1042,26 @@ ou plus simplement, si le matériau est bien incompressible:
 \Psi = \dsum\limits_{i,j=0}^N C_{ij}(I_1-3)^i(I_2-3)^j
 \end{equation}
 où l'énergie de déformation est développée à un ordre proportionnel à la plage
-de déformation souhaitée (pour $N=3$ on a généralement une bonne corrélation
+de déformation souhaitée (pour~$N=3$ on a généralement une bonne corrélation
 avec les mesures expérimentales).
-$C_{00}=0$ et les coefficients $C_{ij}$ sont des constantes du matériau liées à sa réponse
-en terme de distortion, et les coefficients $D_i$ sont des constantes du matériau liées à sa réponse
+$C_{00}=0$ et les coefficients~$C_{ij}$ sont des constantes du matériau liées à sa réponse
+en terme de distortion, et les coefficients~$D_i$ sont des constantes du matériau liées à sa réponse
 en terme de volume.
 
 \medskip
 Pour les matériaux faiblement compressibles, il est commode d'introduire la
 décomposition des déformations.
-On en arrive alors à la forme :
+On en arrive alors à la forme:
 \begin{equation}
 \Psi(J) = \dsum\limits_{i=1}^N \dfrac1{D_i}(J-1)^{2i}
 \end{equation}
-le module de compressibilité étant donné par $k_0=2/D_1$.
+le module de compressibilité étant donné par~$k_0=2/D_1$.
 
 
 \medskip
 Notons qu'une manière également simple de prendre en compte les élastomère a
 déjà été donnée: il s'agit de l'utilisation d'éléments hybrides faisant intervenir
-la matrice de souplesse $[S]$ au lieu de la matrice de Hooke $[H]$.
+la matrice de souplesse~$[S]$ au lieu de la matrice de Hooke~$[H]$.
 
 
 
@@ -1114,17 +1114,17 @@ qui peuvent jouer sur le comportement mécanique, mais n'interviennent pratiquem
 jamais dans le calcul de structure composite.
 
 \medskip
-\colorgreen Remarque : on conçoit un composite en fonction du type d'application, de chargement... ce qui est différent
+\colorgreen Remarque: on conçoit un composite en fonction du type d'application, de chargement... ce qui est différent
 des matériaux classiques où on adapte la conception d'une structure en fonction du matériau constitutif.
-On cherchera donc toujours à orienter au mieux les renforts en fonction des efforts auxquels la structure
+On cherchera donc toujours à orienter au mieux les renforts en fonction des éléments finisforts auxquels la structure
 est soumise.\colorblack
 
 \medskip
-\textcolorblue{Avantages} des matériaux composites :
+\textcolorblue{Avantages} des matériaux composites:
 \begin{itemize}
-	\item  grande résistance à la fatigue;
-	\item  faible vieillissement sous l'action de l'humidité, de la chaleur, de la corrosion (sauf alu-carbone);
-	\item  insensibles aux produits chimiques <<~mécaniques~>> comme les graisses, huiles, liquides hydrauliques,
+	\item grande résistance à la fatigue;
+	\item faible vieillissement sous l'action de l'humidité, de la chaleur, de la corrosion (sauf alu-carbone);
+	\item insensibles aux produits chimiques <<~mécaniques~>> comme les graisses, huiles, liquides hydrauliques,
 		 peintures, solvants, pétrole;
 \end{itemize}
 Mais attention aux décapants de peinture qui attaquent les résines époxydes !
@@ -1134,11 +1134,11 @@ Mais attention aux décapants de peinture qui attaquent les résines époxydes !
 \subsubsection{Les matériaux composites structuraux}
 
 \begin{itemize}
-	\item  Les \textcolorblue{monocouches} représentent l'élément de base de la structure composite.
-		 Les différents types de monocouches sont caractérisés par la forme du renfort :
+	\item Les \textcolorblue{monocouches} représentent l'élément de base de la structure composite.
+		 Les différents types de monocouches sont caractérisés par la forme du renfort:
 		 à fibres longues (unidirectionnelles UD, réparties aléatoirement), à fibres tissées,
 		 à fibres courtes.
-	\item  Un \textcolorblue{stratifié} est constitué d'un empilement de monocouches ayant chacun une orientation
+	\item Un \textcolorblue{stratifié} est constitué d'un empilement de monocouches ayant chacun une orientation
 		 propre par rapport à un référentiel commun aux couches et désigné comme le
 		 référentiel du stratifié.
 	\item Un matériau \textcolorblue{sandwich} est un matériau composé de deux \textcolorblue{peaux}
@@ -1152,22 +1152,22 @@ Mais attention aux décapants de peinture qui attaquent les résines époxydes !
 \medskip
 On pourra avoir des stratifiés de \textcolorblue{type}:
 \begin{itemize}
-	\item  \emph{Equilibré}: stratifié comportant autant de couches orientée suivant la direction
-		$+\theta$ que de couches orientée suivant la direction $-\theta$.
+	\item \emph{Equilibré}: stratifié comportant autant de couches orientée suivant la direction
+		$+\theta$ que de couches orientée suivant la direction~$-\theta$.
 	\item \emph{Symétrique}: stratifié comportant des couches disposées symétriquement par
 		 rapport à un plan moyen.
-	\item \emph{Orthogonal}: stratifié comportant autant de couches à $0^o$ que de couches à $90^o$.
-	\item Notation <<~composite ~>> :
+	\item \emph{Orthogonal}: stratifié comportant autant de couches à~$0^o$ que de couches à~$90^o$.
+	\item Notation <<~composite ~>>:
 		On porte, entre crochets, un nombre indiquant la valeur en degré de l'angle que fait la direction
 		des fibres de chaque couche avec l'axe de référence. les couches sont nommées successivement
 		en allant de la face inférieure à la face supérieure, les couches étant séparées par le symbole
-		<<~/~>> (ou une virgule parfois): $[0/+45/+90/-45]$
+		<<~/~>> (ou une virgule parfois):~$[0/+45/+90/-45]$
 
 		Les couches successives d'un même matériau et de même orientation sont désignées
-		par un indice: $[0/45/45/90/-45/-45/0]$ s'écrit $[0/45_2/90/-45_2/0]$.
+		par un indice:~$[0/45/45/90/-45/-45/0]$ s'écrit~$[0/45_2/90/-45_2/0]$.
 		
 		Si le stratifié est symétrique, seule la moitié est codifiée et le symbole <<~s~>> indique
-		la symétrie: $[-45/45/-45/-45/45/-45]$ s'écrit $[-45/45/-45]_s$.
+		la symétrie:~$[-45/45/-45/-45/45/-45]$ s'écrit~$[-45/45/-45]_s$.
 
 		En cas de stratification hybride (différents matériaux dans un même stratifié), il faut
 		préciser par un indice la nature de la couche.
@@ -1184,7 +1184,7 @@ Par ailleurs le chapitre~\ref{Ch-Homog} sur l'homogénéisation permet, dans cer
 un matériau composite compliqué par un matériau homogénéisé plus simple.
 
 \medskip
-La loi de Hooke, telle qu'elle a été écrite jusqu'\ a présent $\sigma=H\varepsilon$ ne s'oppose
+La loi de Hooke, telle qu'elle a été écrite jusqu'\ a présent~$\sigma=H\varepsilon$ ne s'oppose
 aucunement à l'anisotropie.
 
 L'isotropie se traduit juste par le fait que plus de coefficients sont nuls,
@@ -1192,19 +1192,19 @@ et que ceux qui sont non nuls ne dépendent que de deux paramètres, comme rappe
 en introduction au paragraphe~\ref{Sec-NLMat}.
 
 \medskip
-Lorsque le matériau est \textcolorblue{anisotrope}, alors $H$ peut être pleine, ce qui correspond à
-\textcolorblue{21 coefficients} non nuls, dépendant des paramètres :
-$E_i$ : modules de tensions, $G_{ij}$ : modules de cisaillement, $\nu_{ij}$ : coefficients de contraction,
-$\eta_{ij,k}$ : coefficients d'influence de 1ère espèce, $\eta_{i,kl}$ : coefficients d'influence de
-2nde espèce, et $\nu_{ij,kl}$: coefficients de Chentsov.
+Lorsque le matériau est \textcolorblue{anisotrope}, alors~$H$ peut être pleine, ce qui correspond à
+\textcolorblue{21 coefficients} non nuls, dépendant des paramètres:
+$E_i$: modules de tensions, $G_{ij}$: modules de cisaillement, $\nu_{ij}$: coefficients de contraction,
+$\eta_{ij,k}$: coefficients d'influence de 1ère espèce, $\eta_{i,kl}$: coefficients d'influence de
+2nde espèce, et~$\nu_{ij,kl}$: coefficients de Chentsov.
 
 L'\textcolorblue{orthotropie} (orthogonal et anisotrope, i.e. 2 plans orthogonaux de symétrie) fait descendre
-ce nombre de coefficients non nuls à \textcolorblue{9}, dépendant des paramètres: $E_1, E_2, E_3$:
+ce nombre de coefficients non nuls à \textcolorblue{9}, dépendant des paramètres:~$E_1, E_2, E_3$:
 modules d'élasticité longitudinaux, $G_{23}, G_{13}, G_{12}$: modules de cisaillement, $\nu_{23}, \nu_{13},
  \nu_{12}, \nu_{21}, \nu_{23}, \nu_{31}$: coefficients de Poisson.
 
 L'\textcolorblue{isotropie transverse} (1 axe de symétrie) fait encore descendre ce nombre de
-coefficients non nuls à \textcolorblue{6} (on n'a plus besoin de $E_2$, $G_{23}$ et $G_{12}$ par
+coefficients non nuls à \textcolorblue{6} (on n'a plus besoin de~$E_2$, $G_{23}$ et~$G_{12}$ par
 exemple)
 
 \medskip
@@ -1242,18 +1242,18 @@ massifs solides, sur la poussée des terres sans cohésion}, reprenant des étud
 Coulomb\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français} sur ce sujet, reposent sur
 un ensemble d'hypothèses très restrictives:
 %\begin{enumerate}
-%   \item
+%  \item
 1) les corps en présence sont supposés semi-infinis (cela n'est vrai que si les zones de contact sont
 vraiment très petites par rapport aux autres dimensions);
-%   \item
+%  \item
 2) au voisinage de la future zone de contact, leurs surfaces peuvent être représentées par des
 quadriques dont les courbures sont connues (Or la rugosité, qui rend la répartition des pressions
 de contact très irrégulière, est généralement très éloignée du modèle théorique);
-%   \item
+%  \item
 3) ces corps sont parfaitement élastiques, homogènes et isotropes (ce qui est très restrictif,
 et souvent réellement faux);
-%   \item
-4) l'aire de contact est assimilée à un très petit élément plan qui ne reçoit que des efforts
+%  \item
+4) l'aire de contact est assimilée à un très petit élément plan qui ne reçoit que des éléments finisforts
 normaux, donc parallèles entre eux (dans beaucoup de contacts, la zone d'application des pressions
 est loin d'être plane et surtout, le fait de ne considérer que des charges normales suppose que l'on
 fasse abstraction du frottement).
@@ -1262,7 +1262,7 @@ fasse abstraction du frottement).
 \medskip
 En 1881, Heinrich Hertz,\index[aut]{Hertz (Heinrich Rudolf), 1857-1894, Allemand} jeune ingénieur et
 docteur ès sciences de 24 ans, publie dans le célèbre Journal de Crelle (XVII, p. 156) sous le titre
-\emph{Über die Beruhrung fester elastischer Körper}  (Sur le contact des corps solides élastiques),
+\emph{Über die Beruhrung fester elastischer Körper} (Sur le contact des corps solides élastiques),
 un mémoire qui fera date, puisqu'il s'agit de la première théorie cohérente des contacts ponctuels.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -1276,7 +1276,7 @@ Boussinesq&%Coulomb&%Hertz%
 \ImageADroite{%
 Le fait de rester dans le domaine des déformations élastiques permet d'appliquer le principe de
 superposition:
-aux contraintes issues de 1) l'application des efforts normaux se superposent celles 2) provoquées
+aux contraintes issues de 1) l'application des éléments finisforts normaux se superposent celles 2) provoquées
 par les efforts tangentiels résultant du frottement ou de l'adhérence, puis celles 3) dues aux contraintes
 résiduelles dont on favorise l'apparition par des traitements mécaniques ou thermochimiques appropriés,
 et enfin celles 4) qui correspondent aux autres sollicitations des pièces, tension, compression, flexion, torsion...
@@ -1295,14 +1295,14 @@ concrètes.
 
 \medskip
 Depuis que Hertz\index[aut]{Hertz (Heinrich Rudolf), 1857-1894, Allemand} a introduit une théorie
-du contact en 1881, de nombreux problèmes  d'ingénieur faisant intervenir le contact ont été résolus.
+du contact en 1881, de nombreux problèmes d'ingénieur faisant intervenir le contact ont été résolus.
 L'outil de calcul basé sur une approche analytique, est limité à la résolution des problèmes
 simples de contact: en effet la plupart des solutions analytiques supposent un contact sans frottement
 et des zones de contact connues, à priori, et des formes géométriques simples.
 
 Le développement des techniques numériques de résolution a permis de traiter des
 problèmes de contact plus complexes.
-La MEF, en permettant la discrétisation des solides de formes quelconques et la prise en
+la méthode des éléments finis, en permettant la discrétisation des solides de formes quelconques et la prise en
 compte aisée de conditions aux limites diverses, offre un outil puissant de calcul pour
 étudier les problèmes de contact.
 
@@ -1322,7 +1322,7 @@ progressivement lorsqu'on applique le chargement externe.}
 
 \medskip
 Dans la littérature, de nombreuses méthodes ont été développées pour résoudre les problèmes
-de contact par des méthodes numériques comme la MEF, parmi lesquels la méthode de pénalisation,
+de contact par des méthodes numériques comme la méthode des éléments finis, parmi lesquels la méthode de pénalisation,
 la méthode de flexibilité, la méthode de programmation mathématique, la méthode des
 multiplicateurs\index{Multiplicateurs de Lagrange} de
 Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
@@ -1330,7 +1330,7 @@ Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 paragraphe~\ref{Sec-interf} sur les diverses manières de traiter une interface, qui est un
 contact rigide).
 Une grande partie de ces articles traitent d'algorithmes numériques.
-Dans les codes EF industriels (Ansys, Pamcrash...), les problèmes de contact avec frottement dans le
+Dans les codes éléments finis industriels (Ansys, Pamcrash...), les problèmes de contact avec frottement dans le
 contexte des grandes déformations sont presque exclusivement traités par des méthodes de pénalisation
 ou de régularisation. Ces méthodes présentent des inconvénients en ce qui concerne la stabilité
 et la précision numérique, en particulier pour tout ce qui touche à la simulation des phénomènes de
@@ -1365,31 +1365,31 @@ avantages et inconvénients dans chaque cas concret.
 \medskip
 \subsection{Lois de contact et de frottement}
 
-Considérons deux solides déformables $\Omega_1$ et $\Omega_2$ en contact en certains
+Considérons deux solides déformables~$\Omega_1$ et~$\Omega_2$ en contact en certains
 points de leurs frontières.
-Soient $v$ la vitesse relative locale en un point $P$ de $\Omega_1$ par rapport à $\Omega_2$,
-et $r$ la réaction que subit $\Omega_1$ de la part de $\Omega_2$.
-Supposons défini $n$ le vecteur unitaire normal dirigé vers $\Omega_1$.
-La projection orthogonale du point $P$ sur la surface de $\Omega_2$ définit un point $P'$, dit
-<<~point projeté de P~>>, qui sera l'origine du repère local du contact $(t_1, t_2, n)$,
+Soient~$v$ la vitesse relative locale en un point~$P$ de~$\Omega_1$ par rapport à~$\Omega_2$,
+et~$r$ la réaction que subit~$\Omega_1$ de la part de~$\Omega_2$.
+Supposons défini~$n$ le vecteur unitaire normal dirigé vers~$\Omega_1$.
+La projection orthogonale du point~$P$ sur la surface de~$\Omega_2$ définit un point~$P'$, dit
+<<~point projeté de P~>>, qui sera l'origine du repère local du contact~$(t_1, t_2, n)$,
 comme illustré à la \fig{Fig-rep-contact}.
 \begin{figure}[htb]
 \centerline{\includegraphics[height=40mm]{rep-contact.eps}}
 \caption{Contact entre deux solides déformables: notations}\label{Fig-rep-contact}
 \end{figure}
 
-Les vecteurs $v$ et $r$ peuvent être décomposé en partie tangente $v_t$ et $r_t$ et partie
-normale $v_n$ et $r_n$.
+Les vecteurs~$v$ et~$r$ peuvent être décomposé en partie tangente~$v_t$ et~$r_t$ et partie
+normale~$v_n$ et~$r_n$.
 
-Compte tenu de la distance initiale au contact $g$ et pour un pas de temps $\Delta t$, la distance
-$PP'$ exprimée dans le repère local est alors définie par : $x_n = g + \Delta t v_n$.
+Compte tenu de la distance initiale au contact~$g$ et pour un pas de temps~$\Delta t$, la distance
+$PP'$ exprimée dans le repère local est alors définie par:~$x_n = g + \Delta t v_n$.
 Par conséquent, les \textcolorblue{conditions de contact unilatéral} pour chaque point en contact,
 peuvent être exprimées comme suit:
 \begin{itemize}
-   \item Impénétrabilité: $x_n \ge 0$
-   \item Quand la particule est en contact avec l'obstacle, elle n'est pas attirée par lui:
+  \item Impénétrabilité:~$x_n \ge 0$
+  \item Quand la particule est en contact avec l'obstacle, elle n'est pas attirée par lui:
 	$x_n = 0 \rightarrow r_n \ge 0$
-   \item Quand la particule n'est pas en contact avec l'obstacle, la réaction normale est nulle:
+  \item Quand la particule n'est pas en contact avec l'obstacle, la réaction normale est nulle:
 	$x_n > 0 \rightarrow r_n = 0$
 \end{itemize}
 Ces trois conditions peuvent être condensées sous une forme complémentaire (\textcolorblue{conditions
@@ -1397,7 +1397,7 @@ de Signorini}):\index[aut]{Signorini (Antonio), 1888-1963, Italien}
 \begin{equation} x_n \ge 0; \qquad r_n \ge 0; \qquad x_n r_n = 0 \end{equation}
 ou sous la forme équivalente:
 \begin{equation} \forall \rho_n > 0, \qquad r_n = \mathrm{proj}_{R+} (r_n - \rho_n x_n) \end{equation}
-où $R+$ représente un ensemble de valeurs positives.
+où~$R+$ représente un ensemble de valeurs positives.
 
 \medskip
 En ce qui concerne le frottement, parmi les nombreux modèles existants, nous avons choisi le
@@ -1405,16 +1405,16 @@ En ce qui concerne le frottement, parmi les nombreux modèles existants, nous av
 qui est le plus utilisé dans les problèmes de contact avec frottement sec.
 Dans le cas du contact-frottement isotrope, le modèle de Coulomb s'écrit:
 \begin{equation} \left\{\begin{array}{ll}
-\|r_t\| < \mu r_n & \text{ si } \|v_t\|=0\\
-r_t=-\mu r_n \frac{v_t}{\|v_t\|} & \text{ si } \|v_t\|\ne0
+\|r_t\| < \mu r_n & \text{ si} \|v_t\|=0\\
+r_t=-\mu r_n \frac{v_t}{\|v_t\|} & \text{ si} \|v_t\|\ne0
 \end{array}\right. \end{equation}
-avec $\mu$ le coefficient de frottement.
+avec~$\mu$ le coefficient de frottement.
 
 On peut également utiliser la forme équivalente:
-\begin{equation}  \forall \rho_t>0, \quad r_t= \mathrm{proj}_C (r_t-\rho_t u_t) \end{equation}
-où $C$ est un ensemble qui représente l'intervalle $[-\mu r_n, \mu r_n]$ dans le cas bidimensionnel,
-ou le disque de centre $0$ et de rayon $R= \mu r_n$ dans le cas tridimensionnel.
-On rappelle que $u_t$ désigne la composante tangentielle du déplacement relatif, qui est
+\begin{equation} \forall \rho_t>0, \quad r_t= \mathrm{proj}_C (r_t-\rho_t u_t) \end{equation}
+où~$C$ est un ensemble qui représente l'intervalle~$[-\mu r_n, \mu r_n]$ dans le cas bidimensionnel,
+ou le disque de centre~$0$ et de rayon~$R= \mu r_n$ dans le cas tridimensionnel.
+On rappelle que~$u_t$ désigne la composante tangentielle du déplacement relatif, qui est
 aussi le glissement.
 
 \medskip
@@ -1422,16 +1422,16 @@ aussi le glissement.
 De manière usuelle, on définit le \textcolorblue{cône de frottement isotrope de
 Coulomb}\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français} pour chaque point
 en contact:
-\begin{equation} K_\mu = \left\{ (r_n, r_t) \in \RR^3 \text{ tels que } \|r_t\| \le \mu r_n \right\} \end{equation}
+\begin{equation} K_\mu = \left\{ (r_n, r_t) \in \RR^3 \text{ tels que} \|r_t\| \le \mu r_n \right\} \end{equation}
 
 À l'aide de la théorie du Matériau Standard Implicite, les conditions de contact unilatéral et la
 loi de frottement s'expriment par une seule inégalité variationnelle:
 \begin{equation}
 \begin{aligned}
-&\text{Trouver } (r_n, r_t) \in K_\mu \text{ tel que: }\\
+&\text{Trouver} (r_n, r_t) \in K_\mu \text{ tel que:}\\
 &\quad\forall (r_n^*, r_t^*) \in K_\mu, (x_n - \mu \|v_t\|) (r_n^* - r_n) + v_t.(r_t^* - r_t) \le 0\\
 %\end{equation}
-&\quad\quad\text{ où } \exists\lambda>0, - v_t = \lambda \frac{r_t}{\|r_t\|}
+&\quad\quad\text{ où} \exists\lambda>0, - v_t = \lambda \frac{r_t}{\|r_t\|}
 \end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%
@@ -1440,36 +1440,36 @@ Afin d'éviter des potentiels non différentiables qui apparaissent dans la repr
 on peut utiliser la méthode du lagrangien augmenté.
 Cette méthode, appliquée à l'inégalité variationnelle, conduit à une équation implicite:
 \begin{equation} r = \mathrm{proj}_{K\mu} (r_n + \rho_n(x_n - \mu \|v_t\|), \quad r_t + \rho_t v_t) \end{equation}
-où $\rho_n$ et $\rho_t$ sont des coefficients positifs qui dépendent de la matrice de flexibilité
+où~$\rho_n$ et~$\rho_t$ sont des coefficients positifs qui dépendent de la matrice de flexibilité
 de contact.
 
 Pour résoudre l'équation implicite, on utilise l'algorithme d'Uzawa\index[aut]{Uzawa (Hirofumi), 1928-, Japonais}
 (algorithme de gradient à pas fixe pour l'optimisation sous contraintes) qui conduit à une procédure
 itérative comportant les deux étapes suivantes:
 \begin{itemize}
-   \item prédiction:
-   \begin{equation}\left\{\begin{aligned}
+  \item prédiction:
+  \begin{equation}\left\{\begin{aligned}
 	\tau_n^{i+1}&=\tau_n^i+\rho_n^i(x_n^i-\mu\|v_t^i\|)\\
 	\tau_t^{i+1}&=\tau_t^i=\rho_t^iv_t^i
 	\end{aligned}\right.\end{equation}
-   \item correction:
-   \begin{equation}(r_n^{i+1},r_t^{i+1}) = \mathrm{proj}_{K\mu}(\tau_ n^{i+1}, \tau_t^{i+1})\end{equation}
+  \item correction:
+  \begin{equation}(r_n^{i+1},r_t^{i+1}) = \mathrm{proj}_{K\mu}(\tau_ n^{i+1}, \tau_t^{i+1})\end{equation}
 \end{itemize}
 contact avec adhérence ($\tau\in K_\mu$), non contact ($\tau\in K_\mu^*$) et contact avec
-glissement ($\tau\in\RR^3- (K_\mu \cup K_\mu^*)$), où $K_\mu^*$ est le cône dual de $K_\mu$.
+glissement ($\tau\in\RR^3- (K_\mu \cup K_\mu^*)$), où~$K_\mu^*$ est le cône dual de~$K_\mu$.
 
 \medskip
 \subsection{Algorithme global}
 
-Dans le contexte de la MEF, après discrétisation des solides en contact, on résout généralement
+Dans le contexte de la méthode des éléments finis, après discrétisation des solides en contact, on résout généralement
 un système d'équations d'équilibre au niveau global, obtenu par la \textcolorblue{méthode des
 résidus pondérés} (exposée au paragraphe~\ref{Sec-ResPond}), de type:
 \begin{equation}
 \VV{R^*} = -\VV{F_{int}} + \VV{F_{ext}} + \VV{F_{reac}} = \VV{\mO}
 \end{equation}
-où les vecteurs $\VV{R^*}$ des résidus, $\VV{F_{int}}$ des forces internes, $\VV{F_{ext}}$ des forces extérieures
-et $\VV{F_{reac}}$ des forces de contact et de frottement dans le repère global dépendent tous du vecteur
-des inconnues nodales de la structure $\VV{q}$.
+où les vecteurs~$\VV{R^*}$ des résidus, $\VV{F_{int}}$ des forces internes, $\VV{F_{ext}}$ des forces extérieures
+et~$\VV{F_{reac}}$ des forces de contact et de frottement dans le repère global dépendent tous du vecteur
+des inconnues nodales de la structure~$\VV{q}$.
 
 \medskip
 Pour résoudre ce système d'équations non linéaires, on utilise une méthode itérative
@@ -1479,7 +1479,7 @@ qui consiste à linéariser le système précédent en:
 &\MM{K_T}^i \VV{d}^{i+1} = -\VV{F_{int}}^i + \VV{F_{ext}}^i+\VV{F_{reac}}^i\\
 &\VV{q}^{i+1} = \VV{q}^i+\VV{d}^{i+1} 
 \end{align}
-où $\MM{K_T}^i$ est la \textcolorblue{matrice tangente de rigidité} à l'itération $i$.
+où~$\MM{K_T}^i$ est la \textcolorblue{matrice tangente de rigidité} à l'itération~$i$.
 
 \medskip
 \textcolorred{Insistons que le caractère fortement non-linéaire de ce système}:
@@ -1490,14 +1490,14 @@ De plus, les lois relatives au contact et au frottement sont exprimées par des 
 du contact étant même non différentiable.
 \textcolorred{Par conséquent, des difficultés numériques se manifestent à plusieurs niveaux au cour de:}
 \begin{itemize}
-   \item la résolution des équation non linéaires d'équilibre (niveau global);
-   \item l'intégration des lois de comportement (niveau local);
-   \item la résolution des inéquations de contact et de frottement couplées avec les équations
+  \item la résolution des équation non linéaires d'équilibre (niveau global);
+  \item l'intégration des lois de comportement (niveau local);
+  \item la résolution des inéquations de contact et de frottement couplées avec les équations
 	d'équilibre (niveaux local et global).
 \end{itemize}
 
 
 \ifVersionAvecExemplesSepares\else
-   \input{./tex/ex7}% contact Cast3M
+  \input{./tex/ex7}% contact Cast3M
 \fi
 

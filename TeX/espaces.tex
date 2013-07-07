@@ -27,8 +27,8 @@ utilité.
 \section{Panorama non exhaustif des espaces}
 
 \begin{histoire}%
-Le mot <<~topologie~>> vient de la contraction des noms grecs <<~topos~>> (lieu) et <<~logos~>>  (étude),
-c'est donc l'étude du lieu.  On a d'ailleurs commencé par l'appeler \emph{Analysis Situs}, le terme
+Le mot <<~topologie~>> vient de la contraction des noms grecs <<~topos~>> (lieu) et <<~logos~>> (étude),
+c'est donc l'étude du lieu. On a d'ailleurs commencé par l'appeler \emph{Analysis Situs}, le terme
 <<~topologie~>> n'étant introduit qu'en 1847, en allemand, par Johann Benedict Listing
 dans Vorstudien zur Topologie.\index[aut]{Listing (Johann Benedict), 1808-1882, Allemand}
 
@@ -89,16 +89,16 @@ Cela suffit déjà pour pouvoir s'intéresser par exemple à des fonctions, à d
 On peut ensuite définir un ensemble ordonné...}
 
 \medskip %\noindent
-\textcolorblue{Une topologie}\index{Topologie} $T$ est
-un ensemble de parties de $E$ que l'on définit comme les ouverts de $(E,T)$, vérifiant les
-propriétés suivantes :
+\textcolorblue{Une topologie}\index{Topologie}~$T$ est
+un ensemble de parties de~$E$ que l'on définit comme les ouverts de~$(E,T)$, vérifiant les
+propriétés suivantes:
 \begin{itemize}
-   \item L'ensemble vide et $E$ appartiennent à $T$.
-   \item Toute réunion quelconque d'ouverts est un ouvert, i.e. si $(O_i)_{i\in I}$ est une famille
-	d'éléments de $T$, indexée par un ensemble $I$ quelconque (pas nécessairement fini ni
-	même dénombrable) alors $\bigcup_{i \in I}O_i \in T$.
-   \item Toute intersection finie d'ouverts est un ouvert, i.e. si $O_1, ..., O_n$ sont des éléments de $T$
-	(avec $n > 0$), alors $O_1\cap \ldots \cap O_n \in T$.
+  \item L'ensemble vide et~$E$ appartiennent à~$T$.
+  \item Toute réunion quelconque d'ouverts est un ouvert, i.e. si~$(O_i)_{i\in I}$ est une famille
+	d'éléments de~$T$, indexée par un ensemble~$I$ quelconque (pas nécessairement fini ni
+	même dénombrable) alors~$\bigcup_{i \in I}O_i \in T$.
+  \item Toute intersection finie d'ouverts est un ouvert, i.e. si~$O_1, ..., O_n$ sont des éléments de~$T$
+	(avec~$n > 0$), alors~$O_1\cap \ldots \cap O_n \in T$.
 \end{itemize}
 
 
@@ -111,7 +111,7 @@ l'extérieur, voisinage...
 }
 
 \medskip
-\textcolorblue{Séparation}: % (dit aussi <<~axiome $T_2$~>> au sein des axiomes de séparation) :
+\textcolorblue{Séparation}: % (dit aussi <<~axiome~$T_2$~>> au sein des axiomes de séparation):
 
 deux points distincts quelconques admettent toujours des voisinages disjoints.
 
@@ -123,18 +123,18 @@ deux points distincts quelconques admettent toujours des voisinages disjoints.
 {\small \colorgreen
 \noindent Intérêts:
 \begin{itemize}
-   \item Unicité de la limite de tout filtre convergent.
-   \item Une suite convergente a une limite unique.
-   \item Une topologie plus fine qu'une topologie séparée est séparée.
-   \item Tout sous-espace d'un espace séparé est séparé.
-   \item Deux applications continues à valeurs dans un séparé qui coïncident sur une partie dense sont égales.
+  \item Unicité de la limite de tout filtre convergent.
+  \item Une suite convergente a une limite unique.
+  \item Une topologie plus fine qu'une topologie séparée est séparée.
+  \item Tout sous-espace d'un espace séparé est séparé.
+  \item Deux applications continues à valeurs dans un séparé qui coïncident sur une partie dense sont égales.
 \end{itemize}
 }
 
 \medskip
 \textcolorblue{Régularité}:
 
-Il est possible de séparer un point $x$ et un fermé $F$ ne contenant pas $x$ par deux ouverts disjoints.
+Il est possible de séparer un point~$x$ et un fermé~$F$ ne contenant pas~$x$ par deux ouverts disjoints.
 
 On peut même alors choisir ces deux ouverts de manière à ce que leurs adhérences respectives soient disjointes.
 
@@ -143,10 +143,10 @@ On peut même alors choisir ces deux ouverts de manière à ce que leurs adhére
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (t4) {Espace régulier};\index{espace!régulier}
 
 {\small \colorgreen
-\noindent Application :
+\noindent Application:
 \begin{itemize}
-   \item Tout point admet une base de voisinages fermés.
-   \item Tout fermé est l'intersection de ses voisinages fermés.
+  \item Tout point admet une base de voisinages fermés.
+  \item Tout fermé est l'intersection de ses voisinages fermés.
 \end{itemize}
 }
 
@@ -165,22 +165,22 @@ Tout produit de compacts est compact.
 
 $\overline{\RR}$ est compact
 
-Un espace peut ne pas être compact, mais une de ses parties l'être :
+Un espace peut ne pas être compact, mais une de ses parties l'être:
 \begin{itemize}
-   \item $\RR$ n'est pas fermé, mais tout $[a;b]$ fermé borné l'est.
-   \item $\RR^n$ n'est pas compact, mais tout pavé fermé l'est.
+  \item~$\RR$ n'est pas fermé, mais tout~$[a;b]$ fermé borné l'est.
+  \item~$\RR^n$ n'est pas compact, mais tout pavé fermé l'est.
 \end{itemize}
 }
 \begin{tikzpicture}[remember picture,overlay]
-   \draw[->,thick,ocre] (t1.west) -- +(-10pt,0) |-([yshift=2pt]t2.west);
-   \draw[->,thick,ocre] ([yshift=-2pt]t2.west) -- +(-10pt,0) |-([yshift=2pt]t3.west);
-   \draw[->,thick,ocre] ([yshift=-2pt]t3.west) -- +(-10pt,0) |-([yshift=2pt]t4.west);
-   \draw[->,thick,ocre] ([yshift=-2pt]t4.west) -- +(-10pt,0) |-(t5.west);
+  \draw[->,thick,ocre] (t1.west) -- +(-10pt,0) |-([yshift=2pt]t2.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]t2.west) -- +(-10pt,0) |-([yshift=2pt]t3.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]t3.west) -- +(-10pt,0) |-([yshift=2pt]t4.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]t4.west) -- +(-10pt,0) |-(t5.west);
 \end{tikzpicture}
 \end{marge}
 
 \medskip
-\textcolorred{Notons bien que rien n'est dit sur les éléments de l'ensemble $E$.
+\textcolorred{Notons bien que rien n'est dit sur les éléments de l'ensemble~$E$.
 Ce peuvent être des éléments discrets, des scalaires, des vecteurs,
 des fonctions...}
 
@@ -204,7 +204,7 @@ Fréchet&Cauchy
 \medskip
 \ImageADroite{%
 La métrique qui nous est la plus usuelle est évidemment la métrique euclidienne,\index[aut]{Euclide, -325-- -265, Grec}
-qui est celle que nous utilisons en géométrique <<~classique~>> (euclidienne) :
+qui est celle que nous utilisons en géométrique <<~classique~>> (euclidienne):
 la distance entre deux points est égale à la longueur du segment les reliant.
 La structure métrique fournit beaucoup plus d'information sur la forme géométrique
 des objets que la structure topologique.\\
@@ -214,7 +214,7 @@ Enfin nous redonnerons le si important critère de Cauchy\index[aut]{Cauchy (Aug
 pour tout espace uniforme, dont notamment les espaces métriques) qui permet de définir la toute aussi importante notion
 de complétude.
 }
-%Ce critère est vérifié par une suite lorsque les termes de celle-ci se \og rapprochent uniformément les uns des autres en l'infini\fg.
+%Ce critère est vérifié par une suite lorsque les termes de celle-ci se <<~rapprochent uniformément les uns des autres en l'infini\fg.
 %Elle est alors celles susceptible de converger.
 %Le critère de Cauchy ne sera présenté que dans le cas des espaces métriques.
 \end{histoire}
@@ -224,12 +224,12 @@ de complétude.
 \begin{marge}%
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (n1) {$E$, un ensemble};
 
-Une \textcolorblue{distance ou métrique} $d$\index{distance}\index{Métrique}
-est une application de $E\times E \rightarrow \RR_+$ telle que:
+Une \textcolorblue{distance ou métrique}~$d$\index{distance}\index{Métrique}
+est une application de~$E\times E \rightarrow \RR_+$ telle que:
 \begin{itemize}
-   \item $d(x,y)=d(y,x)$ (symétrie);
-   \item $d(x,y)>0$ si $x\ne y$, et $d(x,x)=0$ (positivité);
-   \item $d(x,z)\le d(x,y)+d(y,z)$ (inégalité triangulaire).
+  \item~$d(x,y)=d(y,x)$ (symétrie);
+  \item~$d(x,y)>0$ si~$x\ne y$, et~$d(x,x)=0$ (positivité);
+  \item~$d(x,z)\le d(x,y)+d(y,z)$ (inégalité triangulaire).
 \end{itemize}
 
 
@@ -238,26 +238,23 @@ est une application de $E\times E \rightarrow \RR_+$ telle que:
 
 {\small \colorgreen\noindent
 On peut réexprimer les notions d'ouvert, fermé, adhérence... densité, continuité... avec la métrique
-(les $\varepsilon$...).
+(les~$\varepsilon$...).
 
-\noindent 2 normes sont équivalentes si elles définissent la même topologie.
+\noindent Deux normes sont équivalentes si elles définissent la même topologie.
 
-\noindent 2 normes $\|.\|_1$ et $\|.\|_2$ sont équivalente s'il existe 2 constantes strictement positives
-$k'$ et $k''$ telles que :
-$\forall x\in E,\quad \|x\|_1\le k'\|x\|_2 \quad \text{ et }\quad \|x\|_2\le k'' \|x\|_1$
-}
+\noindent Deux normes~$\|\cdot\|_1$ et~$\|\cdot\|_2$ sont équivalentes s'il existe deux constantes strictement positives~$k'$ et~$k''$ telles que $\forall x\in E$, $\|x\|_1\le k'\|x\|_1$ et $\|x\|_2\le k'' \|x\|_1$.}
 
 \medskip
 \textcolorblue{Critère de Cauchy:}\index{critère de Cauchy}\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}
 
-Soit $E$ un espace métrique et soit $x_0$, $x_1$, ..., $x_n$, ...
-une suite d'éléments de $E$.
-Cette suite est de Cauchy de $E$ si:
+Soit~$E$ un espace métrique et soit~$x_0$, $x_1$, ..., $x_n$, ...
+une suite d'éléments de~$E$.
+Cette suite est de Cauchy de~$E$ si:
 \begin{equation}
 \forall\varepsilon>0, \exists N\in\NN, (\forall n\in\NN, \forall m\in\NN,
 n\ge N, m\ge N): d(x_m,x_n)\le\varepsilon
 \end{equation}
-ou encore: $d(x_m,x_n)$ tend vers $0$ quand $m$ et $n$ tendent
+ou encore:~$d(x_m,x_n)$ tend vers~$0$ quand~$m$ et~$n$ tendent
 vers l'infini.
 
 
@@ -267,15 +264,15 @@ vers l'infini.
 {\small \colorgreen\noindent
 Toute suite convergente est de Cauchy.
 
-\noindent Réciproque: si $x_0$, $x_1$, ..., $x_n$, ... est de Cauchy sur
-$\RR$ ou $\CC$, alors elle converge.
+\noindent Réciproque: si~$x_0$, $x_1$, ..., $x_n$, ... est de Cauchy sur
+$\RR$ ou~$\CC$, alors elle converge.
 }
 
 \medskip\noindent
 \textcolorred{Cette propriété est fondamentale car elle permet de reconnaître si une suite
 converge sans connaître sa limite.}
-%Mais attention, ce n'est pas vrai quelque soit l'espace métrique, mais sur $\RR$
-%et $\CC$.
+%Mais attention, ce n'est pas vrai quelque soit l'espace métrique, mais sur~$\RR$
+%et~$\CC$.
 
 \medskip\noindent
 Attention, la notion d'espace complet est une notion métrique et non topologique
@@ -286,8 +283,8 @@ Attention, la notion d'espace complet est une notion métrique et non topologiqu
 par une solution approchée. Si la suite des solutions approchées est de Cauchy d'un espace convenable,
 et si cet espace est complet, alors la convergence vers une solution du problème est assurée.
 \begin{tikzpicture}[remember picture,overlay]
-   \draw[->,thick,ocre] (n1.west) -- +(-10pt,0) |-([yshift=2pt]n2.west);
-   \draw[->,thick,ocre] ([yshift=-2pt]n2.west) -- +(-10pt,0) |-(n3.west);
+  \draw[->,thick,ocre] (n1.west) -- +(-10pt,0) |-([yshift=2pt]n2.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]n2.west) -- +(-10pt,0) |-(n3.west);
 \end{tikzpicture}
 \end{marge}
 
@@ -347,28 +344,28 @@ notamment en approfondissant la théorie des espaces vectoriels topologiques.
 \medskip
 \textcolorblue{Structure d'espace vectoriel}:
 
-C'est une structure comportant une loi de composition interne et une loi de composition externe sur un corps $\KK$ permettant d'effectuer des combinaisons
+C'est une structure comportant une loi de composition interne et une loi de composition externe sur un corps~$\KK$ permettant d'effectuer des combinaisons
 linéaires (voir cours sur les structures algébriques).
 
-La loi de composition interne, notée $+$ en fait un groupe abélien, la loi de composition externe est la multiplication par un scalaire,
-scalaire pris sur le corps $\KK$ considéré.
+La loi de composition interne, notée~$+$ en fait un groupe abélien, la loi de composition externe est la multiplication par un scalaire,
+scalaire pris sur le corps~$\KK$ considéré.
 
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (b2) {Espace vectoriel (topologique)\index{espace!vectoriel (topologique)}};
 
 {\small \colorgreen\noindent
-Sur un espace vectoriel de dimension finie sur $\RR$ ou $\CC$, 2 normes quelconques sont
+Sur un espace vectoriel de dimension finie sur~$\RR$ ou~$\CC$, 2 normes quelconques sont
 équivalentes.}
 
 \medskip
-Une \textcolorblue{norme sur un espace vectoriel} $E$\index{norme}
+Une \textcolorblue{norme sur un espace vectoriel}~$E$\index{norme}
 est une fonction, $x \mapsto \|x\|$ possédant les propriétés:
 \begin{itemize}
-   \item positivité: $\|x\|>0$ pour $x\ne0$, $\|0\|=0$;
-   \item transformation par les homothéties: $\|\lambda x\|=|\lambda|\| x\|, \lambda\in\KK$;
-   \item inégalité de convexité: $\|x+y\|\le\|x\|+\|y\|$.
+  \item positivité:~$\|x\|>0$ pour~$x\ne0$, $\|0\|=0$;
+  \item transformation par les homothéties:~$\|\lambda x\|=|\lambda|\| x\|, \lambda\in\KK$;
+  \item inégalité de convexité:~$\|x+y\|\le\|x\|+\|y\|$.
 \end{itemize}
 
-La \textcolorblue{distance issue de la norme} est la distance définie par $d(x,y)=\|x-y\|$.
+La \textcolorblue{distance issue de la norme} est la distance définie par~$d(x,y)=\|x-y\|$.
 
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (b3) {Espace vectoriel normé\index{espace!vectoriel normé}};
 
@@ -379,8 +376,8 @@ issue de sa norme).\index{distance!issue d'une norme}
 %\noindent
 De plus:
 \begin{itemize}
-   \item la distance est invariante par translation : $d(x-a,y-a)=d(x,y)$.
-   \item une homothétie de rapport $\lambda$ multiplie la distance par $|\lambda|$ : $d(\lambda x,\lambda y)=|\lambda| d(x,y)$.
+  \item la distance est invariante par translation:~$d(x-a,y-a)=d(x,y)$.
+  \item une homothétie de rapport~$\lambda$ multiplie la distance par~$|\lambda|$:~$d(\lambda x,\lambda y)=|\lambda| d(x,y)$.
 \end{itemize}
 
 \noindent Tout espace vectoriel normé de dimension finie est localement compact
@@ -396,27 +393,27 @@ cet espace métrique vérifie le \textcolorblue{critère de Cauchy}
 
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](b4) {Espace de Banach\index{espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}};
 \begin{tikzpicture}[remember picture,overlay]
-   \draw[->,thick,ocre] (b1.west) -- +(-10pt,0) |-([yshift=2pt]b2.west);
-   \draw[->,thick,ocre] ([yshift=-2pt]b2.west) -- +(-10pt,0) |-([yshift=2pt]b3.west);
-   \draw[->,thick,ocre] ([yshift=-2pt]b3.west) -- +(-10pt,0) |-([yshift=2pt]b4.west);
+  \draw[->,thick,ocre] (b1.west) -- +(-10pt,0) |-([yshift=2pt]b2.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]b2.west) -- +(-10pt,0) |-([yshift=2pt]b3.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]b3.west) -- +(-10pt,0) |-([yshift=2pt]b4.west);
 \end{tikzpicture}
 
 
 {\small \colorgreen\noindent
 C'est donc finalement un espace vectoriel normé sur un sous-corps
-$\KK$ de $\CC$ (en général, $\KK=\RR$ ou $\CC$), complet pour la distance issue de sa norme.
+$\KK$ de~$\CC$ (en général, $\KK=\RR$ ou~$\CC$), complet pour la distance issue de sa norme.
 
 \noindent Comme la topologie induite par sa distance est compatible avec sa structure d'espace vectoriel,
 c'est un espace vectoriel topologique.
 }
 
 \medskip
-Une norme $\|\cdot\|$ \textcolorblue{découle d'un produit scalaire ou hermitien}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{Produit scalaire}
-$\langle\cdot,\cdot\rangle$ si l'on a: $\| x\| = \sqrt{\langle x,x \rangle}$.%footnote
+Une norme~$\|\cdot\|$ \textcolorblue{découle d'un produit scalaire ou hermitien}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{Produit scalaire}
+$\langle\cdot,\cdot\rangle$ si l'on a:~$\| x\| = \sqrt{\langle x,x \rangle}$.%footnote
 
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](b5) {Espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}};
 \begin{tikzpicture}[remember picture,overlay]
-   \draw[->,thick,ocre] ([yshift=-2pt]b4.west) -- +(-10pt,0) |-(b5.west);
+  \draw[->,thick,ocre] ([yshift=-2pt]b4.west) -- +(-10pt,0) |-(b5.west);
 \end{tikzpicture}
 
 
@@ -434,19 +431,19 @@ un espace de Banach dont la norme découle d'un produit scalaire ou hermitien\in
 \medskip
 On peut encore faire les remarques suivantes concernant les espaces de Hilbert:
 \begin{itemize}
-   \item Tout sous-espace vectoriel fermé d'un Hilbert est un Hilbert.
-   \item \textcolorred{Le plus important} est de disposer d'un produit scalaire, car on va alors pouvoir déterminer des parties
+  \item Tout sous-espace vectoriel fermé d'un Hilbert est un Hilbert.
+  \item \textcolorred{Le plus important} est de disposer d'un produit scalaire, car on va alors pouvoir déterminer des parties
 	orthogonales de l'espace, donc en somme directe (théorème~\ref{th:projHilbert}).
 
-	On rappelle, si besoin, qu'un  \textcolorblue{produit scalaire}\index{Produit scalaire} est une
-	forme bilinéaire\index{Forme!bilinéaire} (i.e. une application\index{Application} de $E\times E$
-	dans $\RR$, linéaire pour chacune des deux variables) possédant les propriétés:
+	On rappelle, si besoin, qu'un \textcolorblue{produit scalaire}\index{Produit scalaire} est une
+	forme bilinéaire\index{Forme!bilinéaire} (i.e. une application\index{Application} de~$E\times E$
+	dans~$\RR$, linéaire pour chacune des deux variables) possédant les propriétés:
 	\begin{itemize}
-	   \item symétrie: $\forall x,y \in E$, $\langle x\, , \, y \rangle = \langle y\, , \, x\rangle$
-	   \item positivité: $\forall x \in E$, $\langle x\, , \, x \rangle \; \ge \; 0$
-	   \item définie: $\forall x \in E$,  $\big(\ \langle x\, , \, x \rangle = 0 \; \Rightarrow x = 0\ \big)$
+	  \item symétrie:~$\forall x,y \in E$, $\langle x\, , \, y \rangle = \langle y\, , \, x\rangle$
+	  \item positivité:~$\forall x \in E$, $\langle x\, , \, x \rangle \; \ge \; 0$
+	  \item définie:~$\forall x \in E$, $\big(\ \langle x\, , \, x \rangle = 0 \; \Rightarrow x = 0\ \big)$
 	\end{itemize}
-	ce qui se traduit pas la définition : <<~Un produit scalaire sur un espace vectoriel réel $E$ est une
+	ce qui se traduit pas la définition: <<~Un produit scalaire sur un espace vectoriel réel~$E$ est une
 	forme bilinéaire symétrique définie positive~>>.
 \end{itemize}
 
@@ -454,55 +451,55 @@ On peut encore faire les remarques suivantes concernant les espaces de Hilbert:
 \medskip
 Quelques espaces de Banach:
 \begin{itemize}
-\item Les espaces euclidiens\index[aut]{Euclide, -325-- -265, Grec} $\RR^n$ et
-les espaces hermitiens\index[aut]{Hermite (Charles), 1822-1901, Français} $\CC^n$
+\item Les espaces euclidiens\index[aut]{Euclide, -325-- -265, Grec}~$\RR^n$ et
+les espaces hermitiens\index[aut]{Hermite (Charles), 1822-1901, Français}~$\CC^n$
 munis de la norme:
-\begin{equation}\|(x_1,\ldots,x_n)\| = \sqrt{\dsum_{i=1}^n x_i \overline{x_i}}\end{equation} où $\overline{x_i}$
-désigne le conjugué de $x_i$.
+\begin{equation}\|(x_1,\ldots,x_n)\| = \sqrt{\dsum_{i=1}^n x_i \overline{x_i}}\end{equation} où~$\overline{x_i}$
+désigne le conjugué de~$x_i$.
 
-\item L'espace des fonctions (dans $\RR$ ou $\CC$) continues et bornées sur un espace topologique $X$,
-muni de la norme $\|f\| = \sup_{x \in X}(|f(x)|)$.
-En particulier, l'espace des fonctions continues sur un espace $X$ compact, comme un intervalle réel $[a,b]$.
+\item L'espace des fonctions (dans~$\RR$ ou~$\CC$) continues et bornées sur un espace topologique~$X$,
+muni de la norme~$\|f\| = \sup_{x \in X}(|f(x)|)$.
+En particulier, l'espace des fonctions continues sur un espace~$X$ compact, comme un intervalle réel~$[a,b]$.
 
-\item Pour tout réel $p \ge 1$, l'espace $L^p$ des classes de fonctions mesurables, dans $\RR$ ou $\CC$, sur un espace mesuré $X$.
+\item Pour tout réel~$p \ge 1$, l'espace~$L^p$ des classes de fonctions mesurables, dans~$\RR$ ou~$\CC$, sur un espace mesuré~$X$.
 \end{itemize}
 
 \medskip
 Quelques espaces de Hilbert:
 \begin{itemize}
-   \item Certains espaces de Sobolev (voir plus loin) sont des espaces de Hilbert (ceux qui nous intéresserons
+  \item Certains espaces de Sobolev (voir plus loin) sont des espaces de Hilbert (ceux qui nous intéresserons
 en général, ça tombe bien).
-   \item L'espace euclidien\index[aut]{Euclide, -325-- -265, Grec} $\RR^n$ muni du produit scalaire
-usuel est hilbertien,\index[aut]{Hilbert (David), 1862-1943, Allemand} ainsi que l'espace $L^2$.
+  \item L'espace euclidien\index[aut]{Euclide, -325-- -265, Grec}~$\RR^n$ muni du produit scalaire
+usuel est hilbertien,\index[aut]{Hilbert (David), 1862-1943, Allemand} ainsi que l'espace~$L^2$.
 \end{itemize}
 
 
 \begin{theoreme}[Théorème de complétion sur un espace de Banach]\label{th:complbanach}\index{théorème!de complétion (sur un Banach)}
-Soit $E$ un espace vectoriel normé incomplet.
-Alors $E$ est isomorphe, en tant qu'espace vectoriel, et isométrique à un sous-espace
-vectoriel dense dans un espace de Banach $\overline{E}$.
+Soit~$E$ un espace vectoriel normé incomplet.
+Alors~$E$ est isomorphe, en tant qu'espace vectoriel, et isométrique à un sous-espace
+vectoriel dense dans un espace de Banach~$\overline{E}$.
 
-Cet espace de Banach $\overline{E}$ est unique à un isomorphisme isométrique près.
+Cet espace de Banach~$\overline{E}$ est unique à un isomorphisme isométrique près.
 \end{theoreme}
 
 Ce théorème de complétion répond par l'affirmative à la question:
-si l'espace normé $E$ n'est pas complet, existe-t-il un Banach minimal $\overline{E}$ le
+si l'espace normé~$E$ n'est pas complet, existe-t-il un Banach minimal~$\overline{E}$ le
 contenant ?
 
 \begin{theoreme}[Théorème de projection dans un espace de Hilbert]\label{th:projHilbert}\index{théorème!de projection (dans un Hilbert)}
-Soit $F$ un sous-espace vectoriel fermé d'un Hilbert $H$ (il est alors lui-même un Hilbert).
+Soit~$F$ un sous-espace vectoriel fermé d'un Hilbert~$H$ (il est alors lui-même un Hilbert).
 Alors:
 \begin{itemize}
-   \item son orthogonal $F^\bot$, qui est l'ensemble des vecteurs orthogonaux à chaque
-	vecteur de $F$, est un sous-espace vectoriel fermé (donc un Hilbert);
-   \item Tout $h\in H$ s'écrit de façon unique $h=h'+h''$ où $h'$ est le projeté
-	orthogonal de $h$ sur $F$, et $h''$ le projeté orthogonal de $h$ sur $F^\bot$.
+  \item son orthogonal~$F^\bot$, qui est l'ensemble des vecteurs orthogonaux à chaque
+	vecteur de~$F$, est un sous-espace vectoriel fermé (donc un Hilbert);
+  \item Tout~$h\in H$ s'écrit de façon unique~$h=h'+h''$ où~$h'$ est le projeté
+	orthogonal de~$h$ sur~$F$, et~$h''$ le projeté orthogonal de~$h$ sur~$F^\bot$.
 \end{itemize}
 \end{theoreme}
 
 %\medskip
 Les points importants de ce théorème de projection sont que cette décomposition est
-unique, et que l'on a $H=F\oplus F^\bot$ (on parle parfois de <<~somme hilbertienne~>>).
+unique, et que l'on a~$H=F\oplus F^\bot$ (on parle parfois de <<~somme hilbertienne~>>).
 
 
 %\medskip
@@ -514,7 +511,7 @@ allons maintenant aborder l'aspect mesure.
 
 \medskip
 Le but, à travers la notion de mesure, est d'étendre la notion usuelle de longueur pour les ensembles
-de $\RR$, ou de volume pour ceux de $\RR^n$, et ceci de deux manières:
+de~$\RR$, ou de volume pour ceux de~$\RR^n$, et ceci de deux manières:
 \begin{itemize}
 \item on veut d'une part pouvoir considérer des espaces de base plus généraux (plus <<~abstraits~>>:
 espaces de dimension infinie, espaces sur lesquels on définit les probabilités...); 
@@ -522,14 +519,14 @@ espaces de dimension infinie, espaces sur lesquels on définit les probabilités
 d'autre part on veut englober dans le même cadre mathématique les notions de longueurs, 
 surface, volume, mais aussi de masses ou charges ponctuelles issues de la mécanique, de
 l'électricité... car toutes ces quantités possèdent une même propriété évidente: l'\textcolorblue{additivité}
-(i.e. si l'on désigne par $\mu(A)$ le volume, la masse, la charge électrique... d'une partie <<~raisonnable~>> $A$,
-alors $\mu(A\cap B)=\mu(A)+\mu(B)$ dès que $A$ et $B$ sont disjoints).
+(i.e. si l'on désigne par~$\mu(A)$ le volume, la masse, la charge électrique... d'une partie <<~raisonnable~>>~$A$,
+alors~$\mu(A\cap B)=\mu(A)+\mu(B)$ dès que~$A$ et~$B$ sont disjoints).
 \end{itemize}
 
 \medskip
 Afin de réaliser cela, il faut en passer par quelques complications mathématiques, et cela essentiellement
 pour deux raisons.
-Il nous faut tout d'abord définir ce qu'est une partie <<~raisonnable~>> d'un ensemble $E$ (s'il est
+Il nous faut tout d'abord définir ce qu'est une partie <<~raisonnable~>> d'un ensemble~$E$ (s'il est
 aisé de définir le volume d'un polyèdre par exemple, il existe des parties dont la <<~frontière~>> est
 si complexe qu'elles ne possèdent pas de notion de volume).
 Ensuite, la propriété d'additivité si dessus est un peu trop naïve et se révèle insuffisante pour avoir de bonnes 
@@ -537,32 +534,32 @@ propriétés pour les mesures.
 
 En effet, la classe des mesures additives a une structure mathématique extrêmement pauvre, ne permettant pas, 
 en particulier, de définir une notion satisfaisante d'intégrale par rapport à ces mesures additives.
-On est donc conduit à utiliser les mesures possédant la propriété de $\sigma$-additivité (voir définition
-d'une mesure ci-dessous), ce qui nous oblige à  considérer comme classe d'ensembles <<~mesurables~>> une 
+On est donc conduit à utiliser les mesures possédant la propriété de~$\sigma$-additivité (voir définition
+d'une mesure ci-dessous), ce qui nous oblige à considérer comme classe d'ensembles <<~mesurables~>> une 
 tribu (voir définition de tribu ci-dessous) au lieu de la notion plus simple d'algèbre.
 
 \medskip
 \begin{definition}[Algèbre]
-Une \textcolorblue{algèbre (de Boole)\index[aut]{Boole (George), 1815-1864, Anglais} $\mathcal{E}$} sur un ensemble 
-$X$ est un \textcolorred{ensemble} non vide de parties de $X$,  stable par passage au complémentaire et par union finie
+Une \textcolorblue{algèbre (de Boole)\index[aut]{Boole (George), 1815-1864, Anglais}~$\mathcal{E}$} sur un ensemble 
+$X$ est un \textcolorred{ensemble} non vide de parties de~$X$, stable par passage au complémentaire et par union finie
 (donc aussi par intersection finie), i.e.:
 \begin{enumerate}
- \item $\mathcal{E} \not=\varnothing$
- \item $\forall A \in \mathcal{E}$, ${}^c A \in\mathcal{E}$, où ${}^cA$ désigne le complémentaire de $A$ dans $X$.
-	(donc $X\in \mathcal{A}$)
-\item si $A_1$, ..., $A_n$ $\in\mathcal{E}$ alors $A_1\cup ...\cup A_n \in\mathcal{E}$
+ \item~$\mathcal{E} \not=\varnothing$
+ \item~$\forall A \in \mathcal{E}$, ${}^c A \in\mathcal{E}$, où~${}^cA$ désigne le complémentaire de~$A$ dans~$X$.
+	(donc~$X\in \mathcal{A}$)
+\item si~$A_1,\ldots,A_n$~$\in\mathcal{E}$ alors~$A_1\cup ...\cup A_n \in\mathcal{E}$
 \end{enumerate}
 \end{definition}
 
 \medskip
 \begin{definition}[Tribu]
-Une \textcolorblue{tribu $\mathcal{A}$}\index{Tribu} sur un ensemble $X$ est un \textcolorred{ensemble}
-non vide de parties de $X$,  stable par passage au complémentaire et par union dénombrable
-(donc aussi par intersection  dénombrable), i.e.:
+Une \textcolorblue{tribu~$\mathcal{A}$}\index{Tribu} sur un ensemble~$X$ est un \textcolorred{ensemble}
+non vide de parties de~$X$, stable par passage au complémentaire et par union dénombrable
+(donc aussi par intersection dénombrable), i.e.:
 \begin{enumerate}
- \item $\mathcal{A} \not=\varnothing$
- \item $\forall A \in \mathcal{A}$, ${}^c A \in\mathcal{A}$%, où ${}^cA$ désigne le complémentaire de $A$ dans $X$. (donc $X\in \mathcal{A}$)
-\item si $\forall n \in \mathbb{N}$, $A_n \in\mathcal{A}$ alors $\bigcup_{n\in\mathbb{N} } A_n \in\mathcal{A}$
+ \item~$\mathcal{A} \not=\varnothing$
+ \item~$\forall A \in \mathcal{A}$, ${}^c A \in\mathcal{A}$%, où~${}^cA$ désigne le complémentaire de~$A$ dans~$X$. (donc~$X\in \mathcal{A}$)
+\item si~$\forall n \in \mathbb{N}$, $A_n \in\mathcal{A}$ alors~$\bigcup_{n\in\mathbb{N}} A_n \in\mathcal{A}$
 \end{enumerate}
 \end{definition}
 
@@ -575,7 +572,7 @@ Il est donc évident que toute tribu est une algèbre, la réciproque étant fau
 
 %\medskip
 \begin{definition}[Espace mesurable]
-Le couple \textcolorblue{$\left(X,\mathcal{A}\right)$} est appelé \textcolorblue{espace
+Le couple \textcolorblue{$(X,\mathcal{A})$} est appelé \textcolorblue{espace
 mesurable}\index{espace!mesurable (probabilisable)} ou espace probabilisable en fonction du contexte.
 Sur les espaces mesurables on définit des mesures (voir ci-après); sur les espaces probabilisables, on
 appelle ces mesures des probabilités.
@@ -602,7 +599,7 @@ Borel &Lebesgue &Kolmogorov%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-En 1894, Émile Borel\index[aut]{Borel (Félix Édouard Justin Émile), 1871-1956, Français}  énonce la première définition d'ensemble négligeable.
+En 1894, Émile Borel\index[aut]{Borel (Félix Édouard Justin Émile), 1871-1956, Français} énonce la première définition d'ensemble négligeable.
 En 1897, il définit les ensembles mesurables.
 En 1901, Henri-Léon Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
  introduit la notion de mesure.
@@ -614,51 +611,51 @@ sur l'intégrale définie à partir d'une mesure.
 \end{histoire}
 
 %\medskip
-Les parties de $X$ qui appartiennent à la tribu $\mathcal{A}$ sont appelées \textcolorblue{ensembles
+Les parties de~$X$ qui appartiennent à la tribu~$\mathcal{A}$ sont appelées \textcolorblue{ensembles
 mesurables}.\index{ensemble mesurable}
-Dans un contexte probabiliste, on les appelle événements (il suffit que $\mu(X)=1$ pour que $\mu$ soit
+Dans un contexte probabiliste, on les appelle événements (il suffit que~$\mu(X)=1$ pour que~$\mu$ soit
 une probabilité).
 
 %\medskip
-Une \textcolorblue{mesure $\mu$}\index{mesure} sur un ensemble $X$ est une fonction qui
-associe à chaque élément d'une tribu d'un ensemble $X$ un \textcolorred{scalaire positif}
+Une \textcolorblue{mesure~$\mu$}\index{mesure} sur un ensemble~$X$ est une fonction qui
+associe à chaque élément d'une tribu d'un ensemble~$X$ un \textcolorred{scalaire positif}
 (une longueur, un volume, une probabilité...).
 
 \begin{definition}[Mesure]
 \medskip
-Soit $(X,\mathcal{A})$, un espace mesurable.
-Une application $\mu$ définie sur $\mathcal{A}$, à valeurs dans $[0,+\infty]$ est appelée
-mesure lorsque les deux propriétés suivantes sont satisfaites :
+Soit~$(X,\mathcal{A})$, un espace mesurable.
+Une application~$\mu$ définie sur~$\mathcal{A}$, à valeurs dans~$[0,+\infty]$ est appelée
+mesure lorsque les deux propriétés suivantes sont satisfaites:
 \begin{enumerate}
-   \item L'ensemble vide a une mesure nulle : $\mu\left(\varnothing\right)=0$
-   \item L'application $\mu$ est $\sigma$-additive :
-si $E_1$, $E_2$, ... est une famille dénombrable de parties de $X$ appartenant à
-$\mathcal{A}$ et si ces parties sont deux à deux disjointes, alors la mesure $\mu(E)$ de leur réunion
-$E$ est égale à la somme des mesures des parties :
+  \item L'ensemble vide a une mesure nulle:~$\mu\left(\varnothing\right)=0$
+  \item L'application~$\mu$ est~$\sigma$-additive:
+si~$E_1$, $E_2$, ... est une famille dénombrable de parties de~$X$ appartenant à
+$\mathcal{A}$ et si ces parties sont deux à deux disjointes, alors la mesure~$\mu(E)$ de leur réunion
+$E$ est égale à la somme des mesures des parties:
 \begin{equation}
 \mu\left(\bigcup_{k=1}^{\infty}E_{k}\right)=\sum_{k=1}^{\infty}\mu(E_{k}).1
 \end{equation}
 \end{enumerate}
 \end{definition}
 
-On appelle \textcolorblue{espace mesuré un triplet $(X,\mathcal{A},\mu)$},
-\index{espace!mesuré}  où $X$ est un ensemble, $\mathcal{A}$ une tribu sur
-$X$ et $\mu$ une mesure sur $\mathcal{A}$.
+On appelle \textcolorblue{espace mesuré un triplet~$(X,\mathcal{A},\mu)$},
+\index{espace!mesuré} où~$X$ est un ensemble, $\mathcal{A}$ une tribu sur
+$X$ et~$\mu$ une mesure sur~$\mathcal{A}$.
 
 \medskip
 \colorgris
-Soient $(X,T)$ et $(Y,U)$ deux espaces mesurables.
-On appelle rectangle mesurable du produit $\Omega=X\times Y$, toute partie de $\Omega$
-de la forme $A\times B$ où $A$ et $B$ sont des éléments resp de $T$ et $U$-mesurables.
+Soient~$(X,T)$ et~$(Y,U)$ deux espaces mesurables.
+On appelle rectangle mesurable du produit~$\Omega=X\times Y$, toute partie de~$\Omega$
+de la forme~$A\times B$ où~$A$ et~$B$ sont des éléments resp de~$T$ et~$U$-mesurables.
 
-On appelle produit tensoriel des deux tribus $T$ et $U$, la tribu
+On appelle produit tensoriel des deux tribus~$T$ et~$U$, la tribu
 engendrée par l'ensemble des rectangles mesurables.
-Cette tribu est notée $T \otimes U$, et est la plus petite tribu de $\Omega$ qui contient
-toutes les parties de la forme $A\times B$, $A\in T$, $B\in U$.
+Cette tribu est notée~$T \otimes U$, et est la plus petite tribu de~$\Omega$ qui contient
+toutes les parties de la forme~$A\times B$, $A\in T$, $B\in U$.
 
-Le produit des espaces mesurables est $(X\times Y, T \otimes U)$ et est un espace mesurable:
+Le produit des espaces mesurables est~$(X\times Y, T \otimes U)$ et est un espace mesurable:
 \begin{equation}
-\dint fd(\mu \otimes \nu) = \dint\dint f(x,y) \dd\mu(x)\dd\nu(y)
+\dint f\,\dd(\mu \otimes \nu) = \dint\dint f(x,y) \dd\mu(x)\dd\nu(y)
 \end{equation}
 \colorblack
 
@@ -668,7 +665,7 @@ Le produit des espaces mesurables est $(X\times Y, T \otimes U)$ et est un espac
 \begin{definition}[Tribu borélienne]
 On appelle \textcolorblue{tribu borélienne}\index{Tribu!borélienne} sur un espace topologique donné la tribu engendrée par les
 ensembles ouverts.
-Dans le cas simple et fondamental de l'espace usuel à $n$ dimensions, la tribu borélienne de $\RR^n$
+Dans le cas simple et fondamental de l'espace usuel à~$n$ dimensions, la tribu borélienne de~$\RR^n$
 est engendrée par une famille dénombrable de parties, les pavés dont les sommets sont à
 coordonnées rationnelles.
 \end{definition}
@@ -676,25 +673,25 @@ coordonnées rationnelles.
 %\medskip
 On aura besoin de ces notions (dont la tribu borélienne) pour l'intégrale de Lebesgue et par extension
 toute la théorie de l'intégration qui est à la base de l'analyse numérique (et oui, formulation faible, quand
-tu nous tiens) ainsi notamment que pour le théorème  de représentation de Riesz fondamental en
+tu nous tiens) ainsi notamment que pour le théorème de représentation de Riesz fondamental en
 éléments finis.
 
 \medskip
-Notons que tout intervalle ouvert, fermé ou semi-ouvert appartient à la tribu borélienne de $\RR$.
+Notons que tout intervalle ouvert, fermé ou semi-ouvert appartient à la tribu borélienne de~$\RR$.
 Il en est de même de toute réunion finie ou dénombrable de ces intervalles.
 
 \medskip
 Il n'est pas possible de donner une description plus concrète de la tribu
-borélienne de $\RR$ que ce qui a été fait. Toutes les réunions finies ou dénombrables d'intervalles 
+borélienne de~$\RR$ que ce qui a été fait. Toutes les réunions finies ou dénombrables d'intervalles 
 sont des boréliens, mais certains boréliens ne sont pas de cette forme. 
-\textcolorgreen{En fait, toutes les parties de $\RR$ que l'on rencontre dans la pratique sont des 
-boréliens. Il existe des parties de $\RR$ qui ne sont pas boréliennes, mais il faut un peu de sueur pour
+\textcolorgreen{En fait, toutes les parties de~$\RR$ que l'on rencontre dans la pratique sont des 
+boréliens. Il existe des parties de~$\RR$ qui ne sont pas boréliennes, mais il faut un peu de sueur pour
 les construire.}
 
 \medskip
 Les tribus sont des familles de parties qui sont destinées à être mesurées. Pour pouvoir
 mesurer des parties suffisamment compliquées comme celles qui ne peuvent être définies
-que par des passages à la limite (comme l'ensemble triadique de Cantor),\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand}  
+que par des passages à la limite (comme l'ensemble triadique de Cantor),\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand} 
 les tribus doivent être assez fines pour être stables par des opérations relativement générales comme
 le passage au complémentaire, les réunions et intersections dénombrables. Néanmoins,
 elles ne doivent pas être trop fines afin de ne pas contenir de parties non mesurables.
@@ -702,18 +699,18 @@ elles ne doivent pas être trop fines afin de ne pas contenir de parties non mes
 \medskip
 Rappelons également deux mesures simples et importantes:
 \begin{itemize}
-   \item la \textcolorblue{mesure de comptage}, qui donne le nombre d'éléments d'un ensemble.
-   \item la \textcolorblue{mesure de Dirac}\index{mesure!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
+  \item la \textcolorblue{mesure de comptage}, qui donne le nombre d'éléments d'un ensemble.
+  \item la \textcolorblue{mesure de Dirac}\index{mesure!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
 	ou masse de Dirac est une mesure supportée par un singleton et de masse totale 1.
 \end{itemize}
 
 \begin{definition}[Mesure de Dirac]
-Pour un espace mesurable $(X,\mathcal{A})$ et un point $a$ de $X$, on appelle mesure de Dirac au
-point $a$ la mesure notée $\delta_a$ sur $(X, \mathcal{A})$ telle que :
+Pour un espace mesurable~$(X,\mathcal{A})$ et un point~$a$ de~$X$, on appelle mesure de Dirac au
+point~$a$ la mesure notée~$\delta_a$ sur~$(X, \mathcal{A})$ telle que:
 \begin{equation}
-    \forall A \in \mathcal{A},\quad ( \delta_a(A)=1 \; \text{ si } \; a \in A \; \text{ et } \; \delta_a(A)=0 \; \text{ si } \; a \notin A ).
+  \forall A \in \mathcal{A},\quad ( \delta_a(A)=1 \; \text{ si} \; a \in A \; \text{ et} \; \delta_a(A)=0 \; \text{ si} \; a \notin A )
 \end{equation}
-Le support\index{Support} de $\delta_a$ est réduit au singleton $\{a\}$.
+Le support\index{Support} de~$\delta_a$ est réduit au singleton~$\{a\}$.
 \end{definition}
 
 Les masses de Dirac sont très importantes, notamment dans la pratique car elles permettent par exemple
@@ -722,11 +719,11 @@ de construire des mesures par approximations successives.
 
 %\bigskip
 \begin{definition}[Mesure complète]
-Soit $(X,\mathcal{A},\mu)$ un espace mesuré,\index{espace!mesuré}
-on dit que $\mu$ est une \textcolorblue{mesure complète}\index{mesure!complète}
-lorsque tout ensemble négligeable pour $\mu$ appartient à la tribu $\mathcal{A}$, i.e. :
+Soit~$(X,\mathcal{A},\mu)$ un espace mesuré,\index{espace!mesuré}
+on dit que~$\mu$ est une \textcolorblue{mesure complète}\index{mesure!complète}
+lorsque tout ensemble négligeable pour~$\mu$ appartient à la tribu~$\mathcal{A}$, i.e.:
 \begin{equation}
-\forall M,\, N\in\mathcal{P}(X), \left(N\subset M,\, M\in\mathcal{A}\hbox{ et }\mu(M)=0\right)\Rightarrow N\in\mathcal{A}.
+\forall M,\, N\in\mathcal{P}(X),\quad \left(N\subset M,\, M\in\mathcal{A}\;\text{ et}\;\mu(M)=0\right)\quad\Rightarrow\quad N\in\mathcal{A}
 \end{equation}
 \end{definition}
 
@@ -734,20 +731,20 @@ lorsque tout ensemble négligeable pour $\mu$ appartient à la tribu $\mathcal{A
 La \textcolorblue{mesure de Lebesgue}\index{mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 a permis de bâtir une théorie de
 l'intégration palliant les insuffisances de l'intégrale de Riemann (il suffit de vouloir
-intégrer $\mathbbmss{1}_{\QQ}$ sur $[0,1]$ avec Riemann pour être dans l'impasse).
+intégrer~$\mathbbmss{1}_{\QQ}$ sur~$\intff{0}{1}$ avec Riemann pour être dans l'impasse).
 Nous détaillerons cela un peu plus au chapitre sur les espaces de Lebesgue.\label{Sec-impasse}
 
 %\medskip
 Parmi les définitions de cette mesure, nous présentons la plus intuitive, celle
 qui consiste à généraliser la notion de volume en gardant les mesures sur
-les pavés de $\RR^n$.
+les pavés de~$\RR^n$.
 
 \begin{definition}[Mesure de Lebesgue]
-Il existe une plus petite mesure définie sur une tribu de parties de $\RR^n$ qui soit
+Il existe une plus petite mesure définie sur une tribu de parties de~$\RR^n$ qui soit
 complète et coïncide sur les pavés avec leur volume (i.e. avec le produit des longueurs de leurs côtés).
 
-Cette mesure est appelée la mesure de Lebesgue (notée $\lambda_n$) et sa tribu de définition
-la tribu de Lebesgue (notée  $\mathcal L_n$ et que nous ne définissons pas ici, et dont les éléments
+Cette mesure est appelée la mesure de Lebesgue (notée~$\lambda_n$) et sa tribu de définition
+la tribu de Lebesgue (notée~$\mathcal L_n$ et que nous ne définissons pas ici, et dont les éléments
 sont dits Lebesgue-mesurables).
 \end{definition}
 
@@ -755,12 +752,12 @@ sont dits Lebesgue-mesurables).
 Cette restriction aux boréliens de la mesure de Lebesgue est parfois dénommée mesure de Borel-Lebesgue.
 
 \medskip
-Si pour la mesure de Lebesgue $\lambda$ sur $\RR$, la notion de <<~presque partout~>> correspond bien
+Si pour la mesure de Lebesgue~$\lambda$ sur~$\RR$, la notion de <<~presque partout~>> correspond bien
 à l'intuition, ce n'est pas vrai en général.
-Par exemple, pour $\mu=\delta_a$ sur la tribu de l'ensemble des parties de $X$, une propriété
-est vraie $\mu$-pp simplement si elle est vérifiée en $a$.
+Par exemple, pour~$\mu=\delta_a$ sur la tribu de l'ensemble des parties de~$X$, une propriété
+est vraie~$\mu$-pp simplement si elle est vérifiée en~$a$.
 
-Si la mesure $\mu$ est nulle, toute propriété est vérifiée pp (ainsi que sa négation).
+Si la mesure~$\mu$ est nulle, toute propriété est vérifiée pp (ainsi que sa négation).
 
 \medskip
 \colorgris
@@ -773,17 +770,17 @@ théorème de Caratheodory\index[aut]{Carathéodory (Constantin), 1873-1950, Gre
 %\medskip
 \section{Propriétés de la mesure de Lebesgue}\index{mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
-On appelle \textcolorblue{mesure de Lebesgue sur un espace euclidien $E$}\index[aut]{Euclide, -325-- -265, Grec}
+On appelle \textcolorblue{mesure de Lebesgue sur un espace euclidien~$E$}\index[aut]{Euclide, -325-- -265, Grec}
 la mesure image de la mesure de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-sur $\RR^n$ par n'importe quelle isométrie de $\RR^n$ dans $E$.
+sur~$\RR^n$ par n'importe quelle isométrie de~$\RR^n$ dans~$E$.
 
-Soit $A$ une partie Lebesgue-mesurable d'un espace euclidien $E$.
-On appelle \textcolorblue{mesure de Lebesgue sur $A$} la restriction à $A$ de la mesure de Lebesgue de $E$.
+Soit~$A$ une partie Lebesgue-mesurable d'un espace euclidien~$E$.
+On appelle \textcolorblue{mesure de Lebesgue sur~$A$} la restriction à~$A$ de la mesure de Lebesgue de~$E$.
 
 \begin{theoreme}
 \textcolorblue{La mesure de Lebesgue est invariante sous toutes les isométries.}
 Elle est en particulier invariante sous les translations: c'est une mesure de Haar\index[aut]{Haar (Alfréd), 1885-1933, Hongrois} 
-du groupe topologique $\RR^n$.
+du groupe topologique~$\RR^n$.
 \end{theoreme}
 
 \textcolorgris{Oui, la mesure de Lebesgue peut être vue comme une mesure de Haar. Mais, historiquement, la mesure
@@ -792,12 +789,12 @@ mesure de Haar). Elle généralise celle de Lebesgue.}
 
 %\bigskip
 \begin{definition}[Mesure régulière]
-Une mesure (positive) $\mu$ définie sur une tribu contenant la tribu borélienne d'un espace
-topologique $X$ est dite \textcolorblue{régulière}\index{mesure!régulière} lorsque elle est
+Une mesure (positive)~$\mu$ définie sur une tribu contenant la tribu borélienne d'un espace
+topologique~$X$ est dite \textcolorblue{régulière}\index{mesure!régulière} lorsque elle est
 à la fois intérieurement régulière et extérieurement régulière:
 \begin{enumerate}
-   \item $\forall A\subset X$ de la tribu, $\mu(A)=\sup\{\mu(K)\,\mid\, K \text{ compact contenu dans } A\} $;
-   \item $\forall A\subset X$ de la tribu, $\mu(A)=\inf\{\mu(O)\,\mid\, O \text{ ouvert contenant } A\}$.
+\item~$\forall A\subset X$ de la tribu, $\mu(A)=\sup\{\mu(K)\,\mid\, K \text{ compact contenu dans} A\}$;
+\item~$\forall A\subset X$ de la tribu, $\mu(A)=\inf\{\mu(O)\,\mid\, O \text{ ouvert contenant} A\}$.
 \end{enumerate}
 \end{definition}
 
@@ -809,20 +806,20 @@ pouvant être enfermé dans un cube.
 
 Elle est par voie de conséquence régulière, $\RR^n$ étant métrisable, localement compact et séparable.
 \begin{itemize}
-   \item $\RR^n$ est métrisable: un espace topologique est un espace métrisable lorsqu'il est
+  \item~$\RR^n$ est métrisable: un espace topologique est un espace métrisable lorsqu'il est
 	homéomorphe à un espace métrique (un homéomorphisme est une application bijective
 	continue entre deux espaces topologiques dont la réciproque est continue);
-   \item $\RR^n$ est localement compact: un espace localement compact est un espace séparé qui,
+  \item~$\RR^n$ est localement compact: un espace localement compact est un espace séparé qui,
 	sans être nécessairement compact lui-même, admet des voisinages compacts pour tous
 	ses points (De plus, on a la propriété: Tout espace localement compact est régulier);
-   \item $\RR^n$ est séparable: un espace séparable est un espace topologique contenant un
+  \item~$\RR^n$ est séparable: un espace séparable est un espace topologique contenant un
 	sous-ensemble fini ou dénombrable et dense, i.e. contenant un ensemble fini ou dénombrable
 	de points dont l'adhérence est égale à l'espace topologique tout entier.
 \end{itemize}
 
 %\medskip
 \begin{theoreme}
-Dans $\RR^n$, les compacts sont les ensembles fermés bornés.
+Dans~$\RR^n$, les compacts sont les ensembles fermés bornés.
 \end{theoreme}
 
 %\medskip
@@ -853,10 +850,10 @@ peut être appréhendée en topologie.
 
 \medskip
 \section{Petit exemple amusant d'injection dans un Hilbert}
-Soient $V$ et $H$ deux espaces de Hilbert sur $\RR$ et $V$ inclus dans $H$
-avec injection continue et $V$ dense dans $H$.
+Soient~$V$ et~$H$ deux espaces de Hilbert sur~$\RR$ et~$V$ inclus dans~$H$
+avec injection continue et~$V$ dense dans~$H$.
 \medskip
-Comme $V$ est inclus dans $H$, l'injection est tout bêtement \(i\colon x\mapsto x\).
+Comme~$V$ est inclus dans~$H$, l'injection est tout bêtement \(i\colon x\mapsto x\).
 
 \medskip
 Dans ces conditions, \(H\) est un espace de Hilbert avec un produit scalaire \((\ \mid\ )_H\),
@@ -866,7 +863,7 @@ scalaire \((\ \mid\ )_H\).
 La structure hilbertienne de \(V\) est définie par un produit scalaire \((\ \mid\ )_V\) propre à \(V\).
 
 \medskip
-Il y a donc deux topologies sur \(V\) : la topologie hilbertienne propre à \(V\) et la
+Il y a donc deux topologies sur \(V\): la topologie hilbertienne propre à \(V\) et la
 topologie héritée de la structure hilbertienne de \(H\).
 La continuité de l'injection \(i\) impose donc une condition sur ces topologies:
 la topologie hilbertienne de \(V\) est plus fine que la trace sur \(V\) de la topologie hilbertienne de \(H\).

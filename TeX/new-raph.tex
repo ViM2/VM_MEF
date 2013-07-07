@@ -103,7 +103,7 @@ générée par l'algorithme a un comportement erratique, dont la convergence év
 être que le fruit du hasard (i.e. si l'un des itérés est par chance proche d'un zéro).
 
 \medskip
-L'importance de l'algorithme\index{méthode de Newton-Raphson} de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais}  
+L'importance de l'algorithme\index{méthode de Newton-Raphson} de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
 a incité les numériciens à étendre son application et à proposer 
 des remèdes à ses défauts. 
 
@@ -138,41 +138,41 @@ sans ou avec contraintes.
 \medskip
 \section{Algorithme}\index{méthode de Newton-Raphson}
 
-Soit $f: \RR\rightarrow\RR$ la fonction dont on cherche à construire une bonne approximation d'un zéro.
+Soit~$f: \RR\rightarrow\RR$ la fonction dont on cherche à construire une bonne approximation d'un zéro.
 pour cela, on se base sur son développement de Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} au 
 premier ordre. 
 
-Partant d'un point $x_0$ que l'on choisit de préférence proche du zéro à trouver (en faisant des estimations 
+Partant d'un point~$x_0$ que l'on choisit de préférence proche du zéro à trouver (en faisant des estimations 
 grossières par exemple), on approche la fonction au premier ordre, autrement dit, on la considère à peu 
-près égale à sa tangente en ce point :
+près égale à sa tangente en ce point:
 \begin{equation} f(x)\simeq f(x_0) + f'(x_0)(x-x_0) \end{equation}
 
 Pour trouver un zéro de cette fonction d'approximation, il suffit de calculer l'intersection de la droite tangente 
 avec l'axe des abscisses, i.e. de résoudre:
 \begin{equation} 0=f(x_0) + f'(x_0)(x-x_0) \end{equation}
 
-On obtient alors un point $x_1$ qui en général a de bonnes chances d'être plus proche du vrai zéro de $f$ 
-que le point $x_0$ précédent. 
+On obtient alors un point~$x_1$ qui en général a de bonnes chances d'être plus proche du vrai zéro de~$f$ 
+que le point~$x_0$ précédent. 
 Par cette opération, on peut donc espérer améliorer l'approximation par itérations successives.
 
 Cette méthode requiert que la fonction possède une tangente en chacun des points de la suite que l'on 
-construit par itération. Cela est évidemment vrai si $f$ est dérivable.
+construit par itération. Cela est évidemment vrai si~$f$ est dérivable.
 
 \medskip
 Formellement, on construit donc la suite:
 \begin{equation} x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)} \end{equation}
-à partir d'un point $x_0$.
+à partir d'un point~$x_0$.
 
 \medskip
 Bien que la méthode soit très efficace, certains aspects pratiques doivent être pris en compte: 
 \begin{itemize}
-   \item Avant tout, la méthode\index{méthode de Newton-Raphson} de 
+  \item Avant tout, la méthode\index{méthode de Newton-Raphson} de 
 	Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
  	nécessite que la dérivée soit effectivement calculée. 
 	Dans les cas où la dérivée est seulement estimée en prenant la pente entre deux points de la fonction, 
 	la méthode prend le nom de \textcolorblue{méthode de la sécante}, moins efficace.
 
-   \item Par ailleurs, si la valeur de départ est trop éloignée du vrai zéro, la la méthode\index{méthode de Newton-Raphson} 
+  \item Par ailleurs, si la valeur de départ est trop éloignée du vrai zéro, la la méthode\index{méthode de Newton-Raphson} 
 	de Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{Raphson (Joseph), 1648-1715, Anglais} 
 	peut entrer en boucle infinie sans produire d'approximation améliorée. 
 	À cause de cela, toute mise en œuvre de la méthode de Newton-Raphson doit inclure un code de 

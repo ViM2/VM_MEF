@@ -5,7 +5,7 @@ L'intégralité de la méthode des éléments finis a été présentée au chapi
 Dans ce chapitre et dans les suivants, nous allons détailler certains aspects.
 Nous proposons dans ce chapitre d'exposer un peu plus complètement les notions
 d'interpolation sur un élément, ainsi que le lien entre approximation locale
-(sur un élément) et approximation globale (construction de la base de $V_h$).
+(sur un élément) et approximation globale (construction de la base de~$V_h$).
 \end{abstract}
 
 
@@ -19,7 +19,7 @@ et que c'est à partir de ces valeurs que l'on effectue l'interpolation.
 \medskip
 La méthode la plus simple consiste à utiliser les polynômes de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 Dans cette méthode les fonctions de base valent 1 à un nœud du maillage et 0 à tous les autres.
-La fonction de base $i$ est alors la fonction valant 1 au nœud $i$ et 0 sur les autres nœuds
+La fonction de base~$i$ est alors la fonction valant 1 au nœud~$i$ et 0 sur les autres nœuds
 et qui est polynomiale sur chaque élément.
 Il y a autant de fonctions de base par élément que de nombre de nœuds.
 On appelle \textcolorblue{élément} la donnée d'une \textcolorblue{géométrie}
@@ -52,11 +52,11 @@ Les éléments de Lagrange sont les éléments finis les plus simples.
 \subsection{Unisolvance}\index{Unisolvance}\label{Sec-unisolvance}
 
 \begin{definition}[Unisolvance]
-Soit $\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de $N$ points distincts de $\RR^n$.
-Soit $P$ un espace vectoriel de dimension finie de fonctions de $\RR^n$ à valeurs dans $\RR$.
-On dit que $\Sigma$ est \textcolorblue{$P$-unisolvant} ssi pour tous réels $\alpha_1$,\ldots, $\alpha_N$,
-il existe un unique élément $p$ de $P$ tel que $\forall i=1,\ldots, N$, $p(a_i) = \alpha_i$.
-(ce qui revient à dire que la fonction de $P$ dans $\RR^N$ qui à $p$ fait correspondre
+Soit~$\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de~$N$ points distincts de~$\RR^n$.
+Soit~$P$ un espace vectoriel de dimension finie de fonctions de~$\RR^n$ à valeurs dans~$\RR$.
+On dit que~$\Sigma$ est \textcolorblue{$P$-unisolvant} ssi pour tous réels~$\alpha_1$,\ldots, $\alpha_N$,
+il existe un unique élément~$p$ de~$P$ tel que~$\forall i=1,\ldots, N$, $p(a_i) = \alpha_i$.
+(ce qui revient à dire que la fonction de~$P$ dans~$\RR^N$ qui à~$p$ fait correspondre
 $(p(a_i),\ldots, p(a_N))=(\alpha_1,\ldots, \alpha_N)$ est bijective).
 \end{definition}
 
@@ -64,24 +64,24 @@ $(p(a_i),\ldots, p(a_N))=(\alpha_1,\ldots, \alpha_N)$ est bijective).
 \subsection{Éléments finis de Lagrange}\index{élément fini de Lagrange}
 
 \begin{definition}[Éléments finis de Lagrange]
-Un \textcolorblue{élément fini de Lagrange} est un triplet $(K, \Sigma, P)$ tel que:
+Un \textcolorblue{élément fini de Lagrange} est un triplet~$(K, \Sigma, P)$ tel que:
 \begin{itemize}
-\item $K$ est un élément géométrique de $\RR^n$, compact, connexe, et d'intérieur
+\item~$K$ est un élément géométrique de~$\RR^n$, compact, connexe, et d'intérieur
 	non vide;
-\item $\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de $N$ points distincts de $\RR^n$;
-\item $P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur $K$, et tel
-	que $\Sigma$ soit $P$-unisolvant (donc $\dim P = N$).
+\item~$\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de~$N$ points distincts de~$\RR^n$;
+\item~$P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur~$K$, et tel
+	que~$\Sigma$ soit~$P$-unisolvant (donc~$\dim P = N$).
 \end{itemize}
 \end{definition}
 \medskip
-Les \textcolorblue{fonctions de bases locales} de l'élément fini de Lagrange $(K, \Sigma, P)$
-sont les $N$ fonctions de $P$ telles que $p_i(a_j)=\delta_{ij}$ pour $1\le i,j\le N$.
+Les \textcolorblue{fonctions de bases locales} de l'élément fini de Lagrange~$(K, \Sigma, P)$
+sont les~$N$ fonctions de~$P$ telles que~$p_i(a_j)=\delta_{ij}$ pour~$1\le i,j\le N$.
 \medskip
-\paragraph{Remarque} $(p_1,\ldots, p_N)$ est une base de $P$.
+\paragraph{Remarque}~$(p_1,\ldots, p_N)$ est une base de~$P$.
 \medskip
-\begin{definition}[Opérateur de $P$-interpolation]
-Un \textcolorblue{opérateur de $P$-interpolation sur $\Sigma$} est un opérateur $\pi_K$
-qui à toute fonction $v$ définie sur $K$ associe la fonction $\pi_Kv$ de $P$ définie par:
+\begin{definition}[Opérateur de~$P$-interpolation]
+Un \textcolorblue{opérateur de~$P$-interpolation sur~$\Sigma$} est un opérateur~$\pi_K$
+qui à toute fonction~$v$ définie sur~$K$ associe la fonction~$\pi_Kv$ de~$P$ définie par:
 $\pi_Kv=\dsum_{i=1}^N v(a_i)p_i$.
 \end{definition}
 \begin{theoreme}
@@ -89,69 +89,69 @@ $\pi_kv$ est l'unique élément de~$P$ qui prend les mêmes valeurs que~$v$ sur 
 points de~$\Sigma$.
 \end{theoreme}
 \medskip
-On notera \textcolorblue{$P_k$ l'espace vectoriel des polynômes de degré total inférieur ou égal à $k$.}
+On notera \textcolorblue{$P_k$ l'espace vectoriel des polynômes de degré total inférieur ou égal à~$k$.}
 \begin{itemize}
-\item sur $\RR$, $P_k=\vectt\{1, X,\ldots, X^k\}$ et $\dim P_k=k+1$;
-\item sur $\RR^2$, $P_k=\vectt\{X^iY^j, 0\le i+j\le k\}$ et $\dim P_k=\frac{(k+1)(k+2)}2$;
-\item sur $\RR^3$, $P_k=\vectt\{X^iY^jZ^l, 0\le i+j+l\le k\}$ et $\dim P_k=\frac{(k+1)(k+2)(k+3)}6$.
+\item sur~$\RR$, $P_k=\vectt\{1, X,\ldots, X^k\}$ et~$\dim P_k=k+1$;
+\item sur~$\RR^2$, $P_k=\vectt\{X^iY^j, 0\le i+j\le k\}$ et~$\dim P_k=\frac{(k+1)(k+2)}2$;
+\item sur~$\RR^3$, $P_k=\vectt\{X^iY^jZ^l, 0\le i+j+l\le k\}$ et~$\dim P_k=\frac{(k+1)(k+2)(k+3)}6$.
 \end{itemize}
 \medskip
-On notera \textcolorblue{$Q_k$ l'espace vectoriel des polynômes de degré inférieur ou égal à $k$ par rapport
+On notera \textcolorblue{$Q_k$ l'espace vectoriel des polynômes de degré inférieur ou égal à~$k$ par rapport
 à chaque variable.}
 \begin{itemize}
-\item sur $\RR$, $Q_k=P_k$;
-\item sur $\RR^2$, $Q_k=\vectt\{X^iY^j, 0\le i,j\le k\}$ et $\dim Q_k=(k+1)^2$;
-\item sur $\RR^3$, $Q_k=\vectt\{X^iY^jZ^l, 0\le i,j,l\le k\}$ et $\dim Q_k=(k+1)^3$.
+\item sur~$\RR$, $Q_k=P_k$;
+\item sur~$\RR^2$, $Q_k=\vectt\{X^iY^j, 0\le i,j\le k\}$ et~$\dim Q_k=(k+1)^2$;
+\item sur~$\RR^3$, $Q_k=\vectt\{X^iY^jZ^l, 0\le i,j,l\le k\}$ et~$\dim Q_k=(k+1)^3$.
 \end{itemize}
 
 
 
 \medskip
 \subsection*{Éléments finis unidimensionnels}
-On discrétise le segment $[a,b]$ avec des polynômes de degrés $1$ à $m$.
+On discrétise le segment~$[a,b]$ avec des polynômes de degrés~$1$ à~$m$.
 On obtient les éléments du tableau~\ref{tab:Elem:uni}.
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|cccc}
-Élément & $P_1$ & $P_2$ & ... & $P_m$\\
+Élément &~$P_1$ &~$P_2$ & ... &~$P_m$\\
 \hline
-$K$	   & $[a,b]$ & $[a,b]$ & ... & $[a,b]$\\
-$\Sigma$  & $\{a,b\}$ & $\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0,\ldots, m\}$\\
-$P$      & $P_1$ & $P_2$ & ... & $P_m$\\
+$K$	  &~$[a,b]$ &~$[a,b]$ & ... &~$[a,b]$\\
+$\Sigma$ &~$\{a,b\}$ &~$\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0,\ldots, m\}$\\
+$P$   &~$P_1$ &~$P_2$ & ... &~$P_m$\\
 \hline
 \end{tabular}
-\caption{Éléments de Lagrange unidimensionnels de degrés 1 à $m$}\label{tab:Elem:uni}
+\caption{Éléments de Lagrange unidimensionnels de degrés 1 à~$m$}\label{tab:Elem:uni}
 \end{table}
 
 \medskip
 \subsection*{Éléments finis bidimensionnels triangulaires}
-On discrétise le triangle de sommets $\{a_1, a_2, a_3\}$ avec, le long de chaque
-arête une interpolation polynomiale de degré $1$ à $m$.
+On discrétise le triangle de sommets~$\{a_1, a_2, a_3\}$ avec, le long de chaque
+arête une interpolation polynomiale de degré~$1$ à~$m$.
 On obtient les éléments du tableau~\ref{tab:Elem:bi}.
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|cc}
-Élément & $P_1$ & $P_2$ \\
+Élément &~$P_1$ &~$P_2$ \\
 \hline
-$K$	   & triangle de sommets $\{a_1, a_2, a_3\}$ & triangle de sommets $\{a_1, a_2, a_3\}$\\
-$\Sigma$  & $\{a_1, a_2, a_3\}$ & $\{a_{ij}=\frac{a_i+a_j}2, 1\le i,j\le 3\}$ \\
-$P$      & $P_1$ & $P_2$ \\
+$K$	  & triangle de sommets~$\{a_1, a_2, a_3\}$ & triangle de sommets~$\{a_1, a_2, a_3\}$\\
+$\Sigma$ &~$\{a_1, a_2, a_3\}$ &~$\{a_{ij}=\frac{a_i+a_j}2, 1\le i,j\le 3\}$ \\
+$P$   &~$P_1$ &~$P_2$ \\
 \hline
 \end{tabular}
 \caption{Éléments de Lagrange bidimensionnels triangulaires de degrés 1 et 2}\label{tab:Elem:bi}
 \end{table}
 
-\paragraph{Remarque}Les fonctions de base pour l'élément $P_1$ sont définies par $p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques: $p_i = \lambda_i$.
+\paragraph{Remarque}Les fonctions de base pour l'élément~$P_1$ sont définies par~$p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques:~$p_i = \lambda_i$.
 
 \medskip
 \subsection*{Éléments finis bidimensionnels rectangulaires}
-On discrétise le rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés
+On discrétise le rectangle de sommets~$\{a_1, a_2, a_3, a_4\}$ de côtés
 parallèles aux axes. La formulation est décrite dans le tableau~\ref{tab:Elem:bibi}.
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
-Élément & $Q_1$\\
+Élément &~$Q_1$\\
 \hline
-$K$ & rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes.\\
-$\Sigma$ & $\{a_1, a_2, a_3, a_4\}$\\
-$P$ & $Q_1$\\
+$K$ & rectangle de sommets~$\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes.\\
+$\Sigma$ &~$\{a_1, a_2, a_3, a_4\}$\\
+$P$ &~$Q_1$\\
 \hline
 \end{tabular}
 \caption{Élément de Lagrange bidimensionnel rectangulaire de degré 1}\label{tab:Elem:bibi}
@@ -160,7 +160,7 @@ $P$ & $Q_1$\\
 \begin{figure}[ht]
 \centering
 \includegraphics[height=30mm]{Lagrange2D.eps}
-\caption{\label{Lagrange2D} Éléments finis de Lagrange 2D: triangulaire $P_1$, triangulaire $P_2$ et rectangulaire $Q_1$}
+\caption{\label{Lagrange2D} Éléments finis de Lagrange 2D: triangulaire~$P_1$, triangulaire~$P_2$ et rectangulaire~$Q_1$}
 \end{figure}
 
 \medskip
@@ -170,17 +170,17 @@ On distingue les éléments finis tridimensionnels suivants, qui seront illustr�
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{Lagrange3D.eps}
-\caption{Éléments finis de Lagrange tridimensionnels: tétraédriques $P_1$ et $P_2$, parallélépipédique $Q_1$ et prismatique}\label{Lagrange3D}
+\caption{Éléments finis de Lagrange tridimensionnels: tétraédriques~$P_1$ et~$P_2$, parallélépipédique~$Q_1$ et prismatique}\label{Lagrange3D}
 \end{figure}
 \begin{itemize}
 \item les éléments tétraédriques, définis dans le tableau~\ref{tab:Elem:tri};
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|cc}
-Élément & $P_1$ & $P_2$ \\
+Élément &~$P_1$ &~$P_2$ \\
 \hline
-$K$	   & tétraèdre de sommets $\{a_1, a_2, a_3, a_4\}$ & tétraèdre de sommets $\{a_1, a_2, a_3, a_4\}$\\
-$\Sigma$  & $\{a_1, a_2, a_3, a_4\}$ & $\{a_i\}_{1\le i\le4}\cup\{a_{ij}\}_{1\le i<j\le 4}$ \\
-$P$      & $P_1$ & $P_2$ \\
+$K$	  & tétraèdre de sommets~$\{a_1, a_2, a_3, a_4\}$ & tétraèdre de sommets~$\{a_1, a_2, a_3, a_4\}$\\
+$\Sigma$ &~$\{a_1, a_2, a_3, a_4\}$ &~$\{a_i\}_{1\le i\le4}\cup\{a_{ij}\}_{1\le i<j\le 4}$ \\
+$P$   &~$P_1$ &~$P_2$ \\
 \hline
 \end{tabular}
 \caption{Éléments de Lagrange tridimensionnels tétrahédriques de degrés 1 et 2}\label{tab:Elem:tri}
@@ -188,11 +188,11 @@ $P$      & $P_1$ & $P_2$ \\
 \item les élément parallélépipédique, définis au tableau~\ref{tab:Elem:para};
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
-Élément & $Q_1$\\
+Élément &~$Q_1$\\
 \hline
-$K$ & parallélépipède de sommets $\{a_1,\ldots, a_8\}$ de côtés parallèles aux axes.\\
-$\Sigma$ & $\{a_i\}_{1\le i\le8}$\\
-$P$ & $Q_1$\\
+$K$ & parallélépipède de sommets~$\{a_1,\ldots, a_8\}$ de côtés parallèles aux axes.\\
+$\Sigma$ &~$\{a_i\}_{1\le i\le8}$\\
+$P$ &~$Q_1$\\
 \hline
 \end{tabular}
 \caption{Élément de Lagrange tridimensionnel parallélépipédique de degré 1}\label{tab:Elem:para}
@@ -200,11 +200,11 @@ $P$ & $Q_1$\\
 \item et les élément prismatique, définis selon le tableau~\ref{tab:Elem:pri}.
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
-Élément & $Q_1$\\
+Élément &~$Q_1$\\
 \hline
-$K$ & prisme droit de sommets $\{a_1,\ldots, a_6\}$\\
-$\Sigma$ & $\{a_i\}_{1\le i\le6}$\\
-$P$ & $\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
+$K$ & prisme droit de sommets~$\{a_1,\ldots, a_6\}$\\
+$\Sigma$ &~$\{a_i\}_{1\le i\le6}$\\
+$P$ &~$\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 \hline
 \end{tabular}
 \caption{Élément de Lagrange tridimensionnel prismatique}\label{tab:Elem:pri}
@@ -214,15 +214,15 @@ $P$ & $\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 
 \medskip
 \subsection{Famille affine d'éléments finis et élément de référence}\index{élément de référence}\index{Famille affine d'EF}
-En fait, la notion de transformation affine entre un élément $K$ d'un maillage
+En fait, la notion de transformation affine entre un élément~$K$ d'un maillage
 $\mathcal{T}_h$ et un élément de référence a déjà été utilisée en
 calcul de majoration d'erreur, mais la transformation elle-même n'a pas été
 détaillée.
 
 \medskip\colorgris
-Deux éléments finis $(\hat{K}, \hat{\Sigma}, \hat{P})$ et $(K, \Sigma, P)$ sont
-affine-équivalents ssi il existe une fonction affine $F$ inversible telle que
-$K=F(\hat{K})$, $a_i=F(\hat{a_i})$, i=1,\ldots, N, et $P=\{\hat{p}\circ F^{-1}, \hat{p}\in\hat{P}\}$.
+Deux éléments finis~$(\hat{K}, \hat{\Sigma}, \hat{P})$ et~$(K, \Sigma, P)$ sont
+affine-équivalents ssi il existe une fonction affine~$F$ inversible telle que
+$K=F(\hat{K})$, $a_i=F(\hat{a_i})$, i=1,\ldots, N, et~$P=\{\hat{p}\circ F^{-1}, \hat{p}\in\hat{P}\}$.
 \colorblack\normalsize
 
 \medskip
@@ -243,43 +243,43 @@ Voir figure~\ref{trsfaffine} pour une illustration d'une transformation affine.
 \medskip
 Les éléments finis de références sont ceux obtenus, dans les cas présentés ci-dessus avec:
 \begin{itemize}
-\item le segment $[0,1]$ en une dimension;
-\item le triangle unité de sommets $(0,0)$, $(0,1)$, $(1,0)$,
-\item et le carré unité $[0,1]\times[0,1]$ en deux dimensions;
-\item le tétraèdre unité de sommets $(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$,
-\item le cube unité $[0,1]\times[0,1]\times[0,1]$,
-\item le prisme unité de sommets $(0,0,0)$, $(0,1,0)$, $(1,0,0)$, $(0,0,1)$, $(0,1,1)$, $(1,0,1)$.
+\item le segment~$\intff{0}{1}$ en une dimension;
+\item le triangle unité de sommets~$(0,0)$, $(0,1)$, $(1,0)$,
+\item et le carré unité~$\intff{0}{1}\times\intff{0}{1}$ en deux dimensions;
+\item le tétraèdre unité de sommets~$(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$,
+\item le cube unité~$\intff{0}{1}\times\intff{0}{1}\times\intff{0}{1}$,
+\item le prisme unité de sommets~$(0,0,0)$, $(0,1,0)$, $(1,0,0)$, $(0,0,1)$, $(0,1,1)$, $(1,0,1)$.
 \end{itemize}
 
 \medskip
 \subsection{Construction de la base globale}
 Revenons à notre problème décrit par une équation aux dérivées partielles sous forme faible dans un domaine
-$\Omega$ sur lequel on réalise un maillage $\mathcal{T}_h$ à partir d'une famille affine
-de $N_e$ éléments finis $(K_i, \Sigma_i, P_i)_{i=1,\ldots,N_e}$.
+$\Omega$ sur lequel on réalise un maillage~$\mathcal{T}_h$ à partir d'une famille affine
+de~$N_e$ éléments finis~$(K_i, \Sigma_i, P_i)_{i=1,\ldots,N_e}$.
 \medskip
-Par unisolvance, la solution approchée $u_h$ sera entièrement définie sur chaque élément fini
-par ses valeurs sur les points de $\Sigma_i$, nommés \textcolorblue{nœuds} du maillage.
-Notons $(a_1,\ldots, a_{N_h})$ les nœuds du maillage ($N_h<N_e \cdot \card\Sigma_i$).
-Le problème approché revient à déterminer les valeurs de $u_h$ aux points $a_i$:
+Par unisolvance, la solution approchée~$u_h$ sera entièrement définie sur chaque élément fini
+par ses valeurs sur les points de~$\Sigma_i$, nommés \textcolorblue{nœuds} du maillage.
+Notons~$(a_1,\ldots, a_{N_h})$ les nœuds du maillage ($N_h<N_e \cdot \card\Sigma_i$).
+Le problème approché revient à déterminer les valeurs de~$u_h$ aux points~$a_i$:
 ce sont les \textcolorblue{degrés de liberté} du problème approché.
 \medskip
-On va construire une base de $V_h$ en associant à chaque ddl $a_i$ un vecteur de la base.
-On définit ainsi les fonctions de base globales $\varphi_i$ $(i = 1,\ldots, N_h)$ par:
-\begin{equation}\varphi_i|_{K_j} \in P_j, j = 1,\ldots, N_e \quad \text{ et }\quad \varphi_i(a_j) = \delta_{ij}, 1\le i,j\le N_h\end{equation}
-et l'espace d'approximation interne est $V_h=\vectt\{\varphi_1,\ldots, \varphi_{N_h}\}$.
-On remarquera qu'une telle fonction $\varphi_i$ est nulle partout sauf sur les éléments
-dont $a_i$ est un nœud.
+On va construire une base de~$V_h$ en associant à chaque ddl~$a_i$ un vecteur de la base.
+On définit ainsi les fonctions de base globales~$\varphi_i$~$(i = 1,\ldots, N_h)$ par:
+\begin{equation}\varphi_i|_{K_j} \in P_j, j = 1,\ldots, N_e \quad \text{ et}\quad \varphi_i(a_j) = \delta_{ij}, 1\le i,j\le N_h\end{equation}
+et l'espace d'approximation interne est~$V_h=\vectt\{\varphi_1,\ldots, \varphi_{N_h}\}$.
+On remarquera qu'une telle fonction~$\varphi_i$ est nulle partout sauf sur les éléments
+dont~$a_i$ est un nœud.
 \begin{figure}[ht]
 \centering
 \includegraphics[height=40mm]{phi1}~\includegraphics[height=40mm]{phi2.eps}
-\caption{\label{BaseVh} Base de $V_h$: exemple de fonction de base globale $\varphi_i$ sur un maillage avec des éléments triangulaires $P_1$.}
+\caption{\label{BaseVh} Base de~$V_h$: exemple de fonction de base globale~$\varphi_i$ sur un maillage avec des éléments triangulaires~$P_1$.}
 \end{figure}
 
 \medskip
-De plus, sur un élément $K$ dont $a_i$ est un nœud, $\varphi_i$ vaut $1$ en $a_i$ et
-$0$ aux autres nœuds de $K$. Donc $\varphi_i|_K$ est une fonction de base locale de $K$.
-On voit donc que la fonction de base globale $\varphi_i$ est construite comme réunion des
-fonctions de base locales sur les éléments du maillage dont $a_i$ est un nœud.
+De plus, sur un élément~$K$ dont~$a_i$ est un nœud, $\varphi_i$ vaut~$1$ en~$a_i$ et
+$0$ aux autres nœuds de~$K$. Donc~$\varphi_i|_K$ est une fonction de base locale de~$K$.
+On voit donc que la fonction de base globale~$\varphi_i$ est construite comme réunion des
+fonctions de base locales sur les éléments du maillage dont~$a_i$ est un nœud.
 
 \medskip
 \paragraph{Remarque} ce qui précède est vrai dans le cas d'un maillage conforme, i.e si
@@ -303,7 +303,7 @@ $u_h$. En particulier, $u_h$ est-elle continue? dérivable?
 
 $u_h$ est obtenue par combinaison linéaire des fonctions de base globales
 $\varphi$, la question revient donc à déterminer la régularité de celles-ci.
-Par construction, on voit que la régularité de $\varphi_i$ sera donnée par sa
+Par construction, on voit que la régularité de~$\varphi_i$ sera donnée par sa
 régularité au niveau des interfaces entre les éléments adjacents formant
 son support.
 
@@ -317,41 +317,41 @@ nous allons introduire maintenant.
 
 \begin{definition}[Élément fini d'Hermite]
 Un \textcolorblue{élément fini d'Hermite ou élément fini général} est un
-triplet $(K, \Sigma, P)$ tel que:
+triplet~$(K, \Sigma, P)$ tel que:
 \begin{itemize}
-\item $K$ est un élément géométrique de $\RR^n$, compact, connexe, et d'intérieur
+\item~$K$ est un élément géométrique de~$\RR^n$, compact, connexe, et d'intérieur
 	non vide;
-\item $\Sigma=\{\sigma_1,\ldots, \sigma_N\}$ un ensemble de $N$ \textcolorred{formes linéaires}
-	sur l'espace des fonctions définies sur $K$, ou sur un sous-espace plus régulier contenant $P$;
-\item $P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur $K$, et tel
-	que $\Sigma$ soit $P$-unisolvant.
+\item~$\Sigma=\{\sigma_1,\ldots, \sigma_N\}$ un ensemble de~$N$ \textcolorred{formes linéaires}
+	sur l'espace des fonctions définies sur~$K$, ou sur un sous-espace plus régulier contenant~$P$;
+\item~$P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur~$K$, et tel
+	que~$\Sigma$ soit~$P$-unisolvant.
 \end{itemize}
 \end{definition}
 
 \medskip
-\begin{definition}[Opérateur de $P$-interpolation]
-Un \textcolorblue{opérateur de $P$-interpolation sur $\Sigma$} est un opérateur $\pi_K$
-qui à toute fonction $v$ définie sur $K$ associe la fonction $\pi_Kv$ de $P$ définie par:
+\begin{definition}[Opérateur de~$P$-interpolation]
+Un \textcolorblue{opérateur de~$P$-interpolation sur~$\Sigma$} est un opérateur~$\pi_K$
+qui à toute fonction~$v$ définie sur~$K$ associe la fonction~$\pi_Kv$ de~$P$ définie par:
 $\colorred\pi_Kv=\dsum_{i=1}^N \sigma_i(v)p_i$.
 \end{definition}
 \medskip
-$\pi_kv$ est l'unique élément de $P$ qui prend les mêmes valeurs que $v$ sur les
-points de $\Sigma$.
+$\pi_kv$ est l'unique élément de~$P$ qui prend les mêmes valeurs que~$v$ sur les
+points de~$\Sigma$.
 \medskip
-On remarque immédiatement que si $\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les éléments finis
+On remarque immédiatement que si~$\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les éléments finis
 de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{élément fini de Lagrange}
-Cette généralisation permet d'introduire des opérations de dérivation dans $\Sigma$,
-et donc d'améliorer la régularité des fonctions de $V_h$.
+Cette généralisation permet d'introduire des opérations de dérivation dans~$\Sigma$,
+et donc d'améliorer la régularité des fonctions de~$V_h$.
 \medskip
-Les \textcolorblue{fonctions de base globales} $\varphi_i$, $(i=1,\ldots, N_h)$ sont
-définies par :
+Les \textcolorblue{fonctions de base globales}~$\varphi_i$, $(i=1,\ldots, N_h)$ sont
+définies par:
 \begin{equation}
-\varphi_i|_{K_j} \in P_j, j=1,\ldots, N_e \quad \text{ et } \quad \colorred
+\varphi_i|_{K_j} \in P_j, j=1,\ldots, N_e \quad \text{ et} \quad \colorred
 \sigma_j(\varphi_i)=\delta_{ij}, 1\le i,j\le N_h
 \end{equation}
 
-Suivant les éléments utilisés, ces fonctions de base pourront être de classe $C^1$
-ou même plus, et il en sera donc de même pour la solution approchée $u_h$.
+Suivant les éléments utilisés, ces fonctions de base pourront être de classe~$C^1$
+ou même plus, et il en sera donc de même pour la solution approchée~$u_h$.
 
 
 \medskip
@@ -363,7 +363,7 @@ Nous présentons quelques éléments finis d'Hermite utilisés classiquement, do
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{Hermite2D.eps}
-\caption{Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire $Q_3$}\label{Hermite2D}
+\caption{Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire~$Q_3$}\label{Hermite2D}
 \end{figure}
 \begin{itemize}
 \item les \textcolorblue{éléments finis unidimensionnels cubiques et quintiques} sont définis au tableau~\ref{tab:ElemH:uni};
@@ -371,26 +371,26 @@ Nous présentons quelques éléments finis d'Hermite utilisés classiquement, do
 \begin{tabular}{c|cc}
 Élément & cubique & quintique\\
 \hline
-$K$	   & segment $[a,b]$ & segment $[a,b]$\\
-$\Sigma$  & $\{p(a), p'(a), p(b), p'(b)\}$ & $\{p(a), p'(a), p''(a), p(b), p'(b), p''(b)\}$\\
-$P$      & $P_3$ & $P_3$\\
-Régularité & $C^1$ et $H^2$ & $C^2$ et $H^3$\\
+$K$	  & segment~$[a,b]$ & segment~$[a,b]$\\
+$\Sigma$ &~$\{p(a), p'(a), p(b), p'(b)\}$ &~$\{p(a), p'(a), p''(a), p(b), p'(b), p''(b)\}$\\
+$P$   &~$P_3$ &~$P_3$\\
+Régularité &~$C^1$ et~$H^2$ &~$C^2$ et~$H^3$\\
 \hline
 \end{tabular}
 \caption{Éléments d'Hermite unidimensionnels de degrés 3 et 5}\label{tab:ElemH:uni}
 \end{table}
 \item les \textcolorblue{éléments finis bidimensionnels triangulaires}:
-	on distingue l'élément \textcolorblue{cubique d'Hermite}, qui est $C^0$, et
-    l'éléments \textcolorblue{d'Argyris}, qui est $C^1$.
+	on distingue l'élément \textcolorblue{cubique d'Hermite}, qui est~$C^0$, et
+  l'éléments \textcolorblue{d'Argyris}, qui est~$C^1$.
 	Ils sont présentés dans les tableaux~\ref{tab:ElemH:bi} et~\ref{tab:ElemA:bi};
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
 Élément &\\
 \hline
-$K$	   & triangle de sommets $\{a_1, a_2, a_3\}$\\
-$\Sigma$  & $\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), i=1, 2, 3\right\} \cup\left\{p(a_0)\right\}$\\
-$P$      & $P_3$\\
-Régularité & $C^0$, mais pas $C^1$\\
+$K$	  & triangle de sommets~$\{a_1, a_2, a_3\}$\\
+$\Sigma$ &~$\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), i=1, 2, 3\right\} \cup\left\{p(a_0)\right\}$\\
+$P$   &~$P_3$\\
+Régularité &~$C^0$, mais pas~$C^1$\\
 \hline
 \end{tabular}\caption{Élément bidimensionnel triangulaire d'Hermite}\label{tab:ElemH:bi}
 \end{table}
@@ -398,13 +398,13 @@ Régularité & $C^0$, mais pas $C^1$\\
 \begin{tabular}{c|cc}
 Élément & \\
 \hline
-$K$	   & triangle de sommets $\{a_1, a_2, a_3\}$ \\
-$\Sigma$  & $\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
+$K$	  & triangle de sommets~$\{a_1, a_2, a_3\}$ \\
+$\Sigma$ &~$\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
 		\frac{\partial^2 p}{\partial x^2}(a_i), \frac{\partial^2 p}{\partial y^2}(a_i),
 		\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1, 2, 3\right\}
 		\cup\left\{\frac{\partial p}{\partial n}(a_{ij}), 1\le i<j\le3\right\}$\\
-$P$      & $P_5$\\
-Régularité & $C^1$\\
+$P$   &~$P_5$\\
+Régularité &~$C^1$\\
 \hline
 \end{tabular}
 \caption{Élément bidimensionnel triangulaire d'Argyris}\label{tab:ElemA:bi}
@@ -413,16 +413,16 @@ Régularité & $C^1$\\
 
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|c}
-Élément & $Q_3$ \\
+Élément &~$Q_3$ \\
 \hline
-$K$	   & rectangle de sommets $\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes\\
-$\Sigma$  & $\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
+$K$	  & rectangle de sommets~$\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes\\
+$\Sigma$ &~$\left\{p(a_i), \frac{\partial p}{\partial x}(a_i), \frac{\partial p}{\partial y}(a_i),
 	\frac{\partial^2 p}{\partial x\partial y}(a_i), i=1,\ldots, 4\right\}$\\
-$P$      & $P_3$ \\
-Régularité & $C^1$\\
+$P$   &~$P_3$ \\
+Régularité &~$C^1$\\
 \hline
 \end{tabular}
-\caption{Élément bidimensionnel rectangulaire d'Hermite $Q_3$}\label{tab:ElemH:bibi}
+\caption{Élément bidimensionnel rectangulaire d'Hermite~$Q_3$}\label{tab:ElemH:bibi}
 \end{table}
 \end{itemize}
 
@@ -466,15 +466,15 @@ Considérons donc le problème décrit à la figure~\ref{interf}.
 \includegraphics[height=50mm]{interface.eps}
 \caption{Interface et continuités}\label{interf}
 \end{figure}
-Deux domaines $\Omega_1$ et $\Omega_2$, consittués chacun de leur
-propre loi de comportement, ont une interface commune $\Gamma_I$.
-On supposera que le champ de déplacement est continu le long de $\Gamma_I$.
+Deux domaines~$\Omega_1$ et~$\Omega_2$, consittués chacun de leur
+propre loi de comportement, ont une interface commune~$\Gamma_I$.
+On supposera que le champ de déplacement est continu le long de~$\Gamma_I$.
 La continuité de la composante normale du déplacement à l'interface traduit le
 fait qu'il n'y a pas décollement entre les deux domaines; celle de la composante
 tangentielle qu'il n'y a pas glissement entre eux.
 
-On peut donc dire qu'en tout point de $\Gamma_I$ le déplacement est
-continu, ce que l'on peut noter $u_i^1=u_i^2$.
+On peut donc dire qu'en tout point de~$\Gamma_I$ le déplacement est
+continu, ce que l'on peut noter~$u_i^1=u_i^2$.
 
 \medskip
 L'état d'équilibre des forces doit lui-aussi être vérifié le long de l'interface.
@@ -524,14 +524,14 @@ Plusieurs stratégies sont envisageables:
 	mêmes remèdes que ci-dessus.
 
 	Notons qu'un avantage de cette formulation c'est qu'elle nécessite la matrice
-	de souplesse $[S]$ au lieu de la matrice de Hooke $[H]$, ce qui permet de
+	de souplesse~$[S]$ au lieu de la matrice de Hooke~$[H]$, ce qui permet de
 	traiter le cas des matériaux incompressibles.\index{Loi de comportement!Hooke}\index{Loi de comportement!incompressible}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 \item[\textcolorblue{Multiplicateurs de Lagrange:}]\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 	
 	D'une manière évidente, la continuité du champ de déplacements
-	à l'interface $\li$ entre deux éléments $~^1$ et $~^2$ peut être
+	à l'interface~$\li$ entre deux éléments~$~^1$ et~$~^2$ peut être
 	imposée par l'ajout à al fonctionnelle de la condition:
-	\begin{equation}  -\dint_{\li} \lambda_i(U_i^1-U_i^2)\ \dd\Gamma \end{equation}
+	\begin{equation} -\dint_{\li} \lambda_i(U_i^1-U_i^2)\ \dd\Gamma \end{equation}
 
 	Cette condition est facile à écrire et facile à implémenter (mais on perd la
 	définie-positivité de la matrice de rigidité).
@@ -585,9 +585,9 @@ $\MM{K}$, peut présenter l'état de déformation nulle ou d'énergie interne nu
 mouvement de corps rigide).
 
 \medskip
-Une méthode consiste à déterminer le nombre de valeurs propres \textcolorred{nulles} de $\MM{K}$.
+Une méthode consiste à déterminer le nombre de valeurs propres \textcolorred{nulles} de~$\MM{K}$.
 Ce nombre doit être égal au nombre de modes rigides: soit 3 en deux dimensions (2 translations, 1 rotation),
-6 en trois dimensions et 1 en axisymétrique. On notera $m_r$ le nombre de modes rigides.
+6 en trois dimensions et 1 en axisymétrique. On notera~$m_r$ le nombre de modes rigides.
 S'il y a plus de valeurs propres nulles que de modes rigides, alors c'est qu'il y a des
 \textcolorblue{modes parasites} à énergie nulle.
 Ces modes parasites doivent disparaître après assemblage de plusieurs éléments
@@ -600,14 +600,14 @@ ce facteur.
 \medskip
 Dans ce cas, il est possible d'introduire un champ de déplacement représentant le
 mouvement rigide.
-Pour chaque mode rigide $i$, le vecteur $\VV{u}^i_n$ associé à la matrice $\MM{K}$ doit
+Pour chaque mode rigide~$i$, le vecteur~$\VV{u}^i_n$ associé à la matrice~$\MM{K}$ doit
 vérifier:
 \begin{equation}\MM{K}\VV{u}^i_n=\VV{0}\end{equation}
-Un mode rigide quelconque étant une combinaison linéaire des modes $\VV{u}^i_n$,
-on construit un problème éléments finis dans lequel on impose $m_r$ valeurs du vecteur $\VV{u}^i_n$
-et on détermine numériquement les $n-m_r$ composantes (non imposées) de $\VV{u}^i_n$.
+Un mode rigide quelconque étant une combinaison linéaire des modes~$\VV{u}^i_n$,
+on construit un problème éléments finis dans lequel on impose~$m_r$ valeurs du vecteur~$\VV{u}^i_n$
+et on détermine numériquement les~$n-m_r$ composantes (non imposées) de~$\VV{u}^i_n$.
 Celles-ci doivent être identiques aux valeurs théoriques associées au mode
-rigide $i$. Si ce n'est pas le cas, c'est qu'il existe des modes rigides.
+rigide~$i$. Si ce n'est pas le cas, c'est qu'il existe des modes rigides.
 \medskip
 \subsection{Modes associés aux déformations constantes}
 Pour converger correctement l'élément doit également représenter
@@ -679,6 +679,6 @@ au paragraphe~\ref{Sec-interf})...
 
 
 \ifVersionAvecExemplesSepares\else
-  \input{./tex/ex2}% élts 1D
-  \input{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
+ \input{./tex/ex2}% élts 1D
+ \input{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
 \fi

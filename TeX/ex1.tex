@@ -1,7 +1,7 @@
 \ifVersionAvecExemplesSepares
-   \chapter{Sur la partie II: formulation variationnelle d'un problème de Neumann}
+  \chapter{Sur la partie II: formulation variationnelle d'un problème de Neumann}
 \else
-   \chapter{Exemple de formulation variationnelle d'un problème de Neumann}
+  \chapter{Exemple de formulation variationnelle d'un problème de Neumann}
 \fi
 \begin{abstract}
 Dans cet exemple, portant sur formulation d'un problème de Neumann,\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
@@ -13,11 +13,11 @@ bien~>> (et qui eux, feront ensuite l'objet d'une discrétisation numérique).
 
 Supposons que nos <<~investigations~>> sur un problème nous aient
 conduit à sa formulation sous forme d'un problème de Neumann\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
-(avec $f\in L^2(\Omega)$, ce qui n'est pas une condition si forte finalement, et c'est ce que l'on aimerait avoir):
+(avec~$f\in L^2(\Omega)$, ce qui n'est pas une condition si forte finalement, et c'est ce que l'on aimerait avoir):
 \begin{equation}\left\{
 \begin{aligned}
--&\Delta u = f && \text{ dans } \Omega\\
-&\frac{\partial u}{\partial n}=0 && \text{ sur }\Gamma=\partial\Omega
+-&\Delta u = f && \text{ dans} \Omega\\
+&\frac{\partial u}{\partial n}=0 && \text{ sur}\Gamma=\partial\Omega
 \end{aligned}
 \right.
 \end{equation}
@@ -26,20 +26,20 @@ Nous allons donc nous poser la question de l'existence et de l'unicité de la so
 \medskip
 \section{Étude directe de l'existence et l'unicité de la solution}
 \textcolorgreen{Sans être magicien, il doit sembler à peu près évident qu'une condition nécessaire d'existence
-doit être que $f\in L^2_0(\Omega)$, et que les conditions imposées semblent un peu courtes
+doit être que~$f\in L^2_0(\Omega)$, et que les conditions imposées semblent un peu courtes
 pour assurer l'unicité.}
 
 On voit en effet que l'existence implique que
 \begin{equation}\dint_\Omega -\Delta u = \dint_\Gamma \frac{\partial u}{\partial n}=0\end{equation}
-qui conduit à:\begin{equation}\dint_\Omega f =0\end{equation} i.e. $f\in L^2_0(\Omega)$.
+qui conduit à:\begin{equation}\dint_\Omega f =0\end{equation} i.e.~$f\in L^2_0(\Omega)$.
 Donc \textcolorblue{$f\in L^2_0(\Omega)$ est bien une condition nécessaire d'existence.}
 
-De même, d'après ce qui précède, on voit que si $u$ est solution, alors
+De même, d'après ce qui précède, on voit que si~$u$ est solution, alors
 $u+c$ est solution, ce qui prouve qu'\textcolorblue{il n'y a pas unicité de la solution.}
 
 \medskip
 \section{Formulation variationnelle}
-\textcolorgreen{Nous allons écrire la formulation variationnelle de notre problème dans $H^1(\Omega)$.
+\textcolorgreen{Nous allons écrire la formulation variationnelle de notre problème dans~$H^1(\Omega)$.
 Nous regarderons si nous retrouvons la même condition d'existence.
 Nous nous demanderons ensuite si, en nous restreignant à un certain espace, il n'est
 pas possible d'obtenir l'unicité de la solution.}
@@ -53,21 +53,21 @@ et comme le dernier terme est nul (condition aux limites), il reste:
 \begin{equation}
 \dint_\Omega -\Delta u\cdot v = \dint_\Omega \nabla u\cdot \nabla v
 \end{equation}
-Comme nous voulons la formulation variationnelle dans $H^1(\Omega)$ (i.e. $u\in H^1(\Omega))$, il vient:
+Comme nous voulons la formulation variationnelle dans~$H^1(\Omega)$ (i.e.~$u\in H^1(\Omega))$, il vient:
 \begin{equation}
 \dint_\Omega \nabla u\cdot \nabla v = \dint_\Omega f v, \quad \forall v\in H^1(\Omega)
 \end{equation}
 \medskip
-Si nous considérons $u=u_0+c$ et $v=v_0+d$, alors il vient:
+Si nous considérons~$u=u_0+c$ et~$v=v_0+d$, alors il vient:
 \begin{equation}
 \dint_\Omega \nabla u_0\cdot\nabla v_0 = \dint_\Omega f v_0 + d\dint_\Omega f, \quad \forall v_0\in H^1(\Omega),\quad \forall d
 \end{equation}
-ce qui implique, pour que ce soit vrai pour tout $d$ que $\int_\Omega f=0$, et on retrouve
+ce qui implique, pour que ce soit vrai pour tout~$d$ que~$\int_\Omega f=0$, et on retrouve
 bien que \textcolorblue{$f\in L^2_0(\Omega)$ est une condition nécessaire d'existence.}
 
 \medskip
-Mézalor, il est naturel de considérer $u_0\in H^1(\Omega)\cap L^2_0(\Omega)$ \textcolorgreen{(car
-on veut que $u$ et $v$ vivent dans le même espace pour pouvoir appliquer nos <<~méthodes~>>)}, et
+Mézalor, il est naturel de considérer~$u_0\in H^1(\Omega)\cap L^2_0(\Omega)$ \textcolorgreen{(car
+on veut que~$u$ et~$v$ vivent dans le même espace pour pouvoir appliquer nos <<~méthodes~>>)}, et
 la formulation précédente donne:
 \begin{equation}
 \dint_\Omega \nabla u_0\cdot\nabla v_0 = \dint_\Omega f v_0,
@@ -76,25 +76,25 @@ la formulation précédente donne:
 i.e. nous sommes ammenés à considérer l'espace \textcolorblue{$V=H^1(\Omega)\cap L^2_0(\Omega)$.}
 
 \medskip
-L'espace $V$ est un espace de Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand}
-normé par $\|\cdot\|_{H^1(\Omega)}$.
+L'espace~$V$ est un espace de Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand}
+normé par~$\|\cdot\|_{H^1(\Omega)}$.
 \begin{itemize}
-\item $v\in V \Rightarrow v\in H^1(\Omega)$ tel que $\int_\Omega v=0$ et l'application $v\in H^1(\Omega) \mapsto \int_\Omega v$ est continue sur $H^1(\Omega)$, donc $V$ est un sous-espace fermé de $H^1$, donc est un Hilbert. \textcolorgreen{Et donc
-	maintenant que l'on sait que $V$ est un Hilbert, on aimerait bien appliquer Lax-Milgram\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index{théorème!de Lax-Milgram}
+\item~$v\in V \Rightarrow v\in H^1(\Omega)$ tel que~$\int_\Omega v=0$ et l'application~$v\in H^1(\Omega) \mapsto \int_\Omega v$ est continue sur~$H^1(\Omega)$, donc~$V$ est un sous-espace fermé de~$H^1$, donc est un Hilbert. \textcolorgreen{Et donc
+	maintenant que l'on sait que~$V$ est un Hilbert, on aimerait bien appliquer Lax-Milgram\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index{théorème!de Lax-Milgram}
 	(voir~\ref{Sec:LaxMil}),
 	c'est pourquoi il faut s'intéresser à la forme bilinéaire définissant le problème. C'est ce
 	qui suit.}
-   \item Si l'on considère la \textcolorblue{forme bilinéaire}: \begin{equation} a(u_0, v_0) = \int_\Omega \nabla u_0\cdot\nabla v_0\end{equation}
+  \item Si l'on considère la \textcolorblue{forme bilinéaire}: \begin{equation} a(u_0, v_0) = \int_\Omega \nabla u_0\cdot\nabla v_0\end{equation}
 	alors on voit que \begin{equation}a(u_0, v_0) \le |u_0|_1 \overline{|v_0|}_1 \le \| u_0\|_{H^1} \|v_0\|_{H^1}\end{equation}
-	et donc $a$ est \textbf{continue}.
-   \item $(v_0, v_0) =|v_0|^2_1$. Or on a l'inégalité de type Poincaré suivante: $\exists c(\Omega)>0$ tel que: 
+	et donc~$a$ est \textbf{continue}.
+  \item~$(v_0, v_0) =|v_0|^2_1$. Or on a l'inégalité de type Poincaré suivante:~$\exists c(\Omega)>0$ tel que: 
 	\begin{equation}|\varphi|_{0,\Omega} \le c(\Omega)|\varphi|_{1,\Omega}, \quad \forall \varphi\in V\end{equation}
 	Cela conduit à: \begin{equation}\dfrac{|v_0|^2_1}{|v_0|^2_1+|v_0|^2_0} \ge \dfrac1{1+c^2(\Omega)},\quad 
-	\forall v\in V\end{equation} Donc $a$ est \textbf{V-elliptique}.
+	\forall v\in V\end{equation} Donc~$a$ est \textbf{V-elliptique}.
 \end{itemize}
 \textcolorblue{Le théorème de Lax-Milgram\index{théorème!de Lax-Milgram}\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
 permet donc de conclure à l'existence et à l'unicité
-de la solution $u_0\in V$}.
+de la solution~$u_0\in V$}.
 
 \medskip
 \section{Formulation mixte duale}
@@ -102,16 +102,16 @@ de la solution $u_0\in V$}.
 se servant de deux variables. C'est une voie fréquente pour <<~simplifier~>> les conditions
 aux limites.}
 
-En effet, plutôt que considérer $\frac{\partial u}{\partial n}=0$ sur $\Gamma=\partial\Omega$,
-on peut interpréter cela comme une pression nulle sur les bords, i.e. $p.n=0$ sur $\Gamma$.
+En effet, plutôt que considérer~$\frac{\partial u}{\partial n}=0$ sur~$\Gamma=\partial\Omega$,
+on peut interpréter cela comme une pression nulle sur les bords, i.e.~$p.n=0$ sur~$\Gamma$.
 
 \medskip
 Le problème considéré se formule alors de la manière suivante:
 \begin{equation}\left\{
 \begin{aligned}
--&\Delta u +p =0 && \text{ loi de comportement dans } \Omega\\
-&\dive p = -f && \text{ loi de conservation dans } \Omega\\
-& p\cdot n=0 && \text{ condition aux limites sur }\Gamma
+-&\Delta u +p =0 && \text{ loi de comportement dans} \Omega\\
+&\dive p = -f && \text{ loi de conservation dans} \Omega\\
+& p\cdot n=0 && \text{ condition aux limites sur}\Gamma
 \end{aligned}
 \right.
 \end{equation}
@@ -124,20 +124,20 @@ et la loi de comportement:
 \begin{equation}
 0=\dint_\Omega (p-\nabla u)\cdot q = \dint_\Omega p\cdot q + \dint_\Omega u \dive q=\langle u,q\cdot n\rangle
 \end{equation}
-On n'a pas d'information sur $u$.
-Par contre, on a un terme $p\cdot n=0$.
-Et il serait bien de disposer de son <<~symétrique~>>, i.e. d'un terme $q.n=0$ qui serait imposé
-par le choix de l'espace dans lequel vivrait $u$.
+On n'a pas d'information sur~$u$.
+Par contre, on a un terme~$p\cdot n=0$.
+Et il serait bien de disposer de son <<~symétrique~>>, i.e. d'un terme~$q.n=0$ qui serait imposé
+par le choix de l'espace dans lequel vivrait~$u$.
 \textcolorgreen{Ce que l'on a en tête c'est bien sûr de pouvoir utiliser le théorème
 de Brezzi.}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{théorème!de Brezzi}
 
 \medskip
 En correspondance avec les notations du paragraphe~\ref{Sec:Brezzi}, on choisit alors les espaces:
 \textcolorblue{$H=\{ q\in H(\dive;\Omega); q\cdot n_{|\Gamma}=0\}$}
-et $M=L^2(\Omega)$.
+et~$M=L^2(\Omega)$.
 Le problème est donné, dans la formulation de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 par les deux formes bilinéaires
-\begin{equation}a(p,q)=\dint_\Omega p\cdot q\quad\text{ et }\quad b(v,q)=\dint_\Omega v\dive q\end{equation}
+\begin{equation}a(p,q)=\dint_\Omega p\cdot q\quad\text{ et}\quad b(v,q)=\dint_\Omega v\dive q\end{equation}
 Quant aux formes linéaires définissant le problème, la première est nulle et la
 seconde vaut:\begin{equation}-\dint_\Omega fv\end{equation}
 
@@ -145,26 +145,26 @@ seconde vaut:\begin{equation}-\dint_\Omega fv\end{equation}
 Maintenant que nous nous sommes rapprochés du cadre du théorème de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 il va nous falloir vérifier si toutes les conditions sont vérifiées.
 \textcolorgreen{Toutefois, d'après ce qui a été vu dans les paragraphes précédents,
-il semble naturel de se demander s'il faudra bien conserver $L^2(\Omega)$, ou s'il faudra passer
-à $L^2_0(\Omega)$, et ce qu'il se passe quand $u=u_0+c$.}
+il semble naturel de se demander s'il faudra bien conserver~$L^2(\Omega)$, ou s'il faudra passer
+à~$L^2_0(\Omega)$, et ce qu'il se passe quand~$u=u_0+c$.}
 
 \medskip
 Pour l'instant, on a:
 \begin{equation}\dint_\Omega v \dive p = -\dint_\Omega fv,\quad\forall v\in L^2(\Omega)\end{equation}
-Si l'on prend $v=1$, alors il vient:
+Si l'on prend~$v=1$, alors il vient:
 \begin{equation}\dint_\Omega \dive p = -\dint_\Gamma p\cdot n =0
 \end{equation}
 ce qui
-implique que $\int_\Omega f=0$, soit $f\in L^2_0(\Omega)$
+implique que~$\int_\Omega f=0$, soit~$f\in L^2_0(\Omega)$
 \medskip
 On a également:
 \begin{equation}\int_\Omega p\cdot q + \dint_\Omega u \dive q =0,\quad\forall q\in H\end{equation}
-Or $q\in H$ implique $\int_\Omega \dive q =0$, ce qui implique aussi que si $u$ est solution, alors
+Or~$q\in H$ implique~$\int_\Omega \dive q =0$, ce qui implique aussi que si~$u$ est solution, alors
 $u+c$ l'est aussi.
 
-Encore une fois il n'y a pas uncitié de la solution. Pour l'imposer, il faut donc une condition sur $u$, comme
-par exemple $\int_\Omega u=0$, i.e. $u\in L^2_0(\Omega)$.
-Si de plus $\dive p\in L^2_0(\Omega)$ (et avec $f\in L^2_0(\Omega)$ comme vu au dessus), alors ce
+Encore une fois il n'y a pas uncitié de la solution. Pour l'imposer, il faut donc une condition sur~$u$, comme
+par exemple~$\int_\Omega u=0$, i.e.~$u\in L^2_0(\Omega)$.
+Si de plus~$\dive p\in L^2_0(\Omega)$ (et avec~$f\in L^2_0(\Omega)$ comme vu au dessus), alors ce
 implique que:
 \begin{equation}\dint_\Omega (\dive p + f)(v_{L^2_0}+c) = \dint_\Omega (\dive p+f) v_{L^2_0}\end{equation}
 \medskip
@@ -175,69 +175,69 @@ Il reste alors maintenant à \textbf{vérifier que toutes les conditions du thé
 sont bien satisfaites pour pouvoir conclure à l'existence et à l'unicité de la solution.
 Ces conditions sont:
 \begin{itemize}
-   \item $H$ et $M$ sont des Hilbert;
-   \item $a$, $b$ et $f$ sont continues;
-   \item $a$ est V-elliptique;
-   \item condition inf-sup sur $b$.
+  \item~$H$ et~$M$ sont des Hilbert;
+  \item~$a$, $b$ et~$f$ sont continues;
+  \item~$a$ est V-elliptique;
+  \item condition inf-sup sur~$b$.
 \end{itemize}
 
 \begin{description}
 \item[$H$ est un Hilbert]
-Pour montrer que $H$ est un Hilbert, on s'appuie sur le fait que l'application:
+Pour montrer que~$H$ est un Hilbert, on s'appuie sur le fait que l'application:
 $\varphi: q\in H(\dive;\Omega)\mapsto q\cdot n\in H^{-1/2}(\Gamma)$ est continue
-(car $\|q,0\|_{-1/2,\Gamma}\le \|q\|_{H(\dive;\Omega)}$).
+(car~$\|q,0\|_{-1/2,\Gamma}\le \|q\|_{H(\dive;\Omega)}$).
 
-Il en résulte alors que $H=\varphi^{-1}(0)$ est fermé et que $H(\dive;\Omega)$ étant un
-Hilbert, c'est également un Hilbert pour la norme de $H(\dive)$.
+Il en résulte alors que~$H=\varphi^{-1}(0)$ est fermé et que~$H(\dive;\Omega)$ étant un
+Hilbert, c'est également un Hilbert pour la norme de~$H(\dive)$.
 
 \medskip
 \item[$M$ est un Hilbert]
-Pour montrer que $M$ est un Hilbert, on s'appuie sur le fait que l'application:
+Pour montrer que~$M$ est un Hilbert, on s'appuie sur le fait que l'application:
 $\varphi: v\in L^2(\Omega)\mapsto \int_\Omega v=0$ est continue
-car $|\int v| \le \sqrt{|\Omega|} |v_{L^2(\Omega)}|$.
+car~$|\int v| \le \sqrt{|\Omega|} |v_{L^2(\Omega)}|$.
 
-Il en résulte que $M=\varphi^{-1}(0)$ est fermé et que $L^2(\Omega)$ étant un
-Hilbert, c'est également un Hilbert pour la norme de $L^2(\Omega)$.
+Il en résulte que~$M=\varphi^{-1}(0)$ est fermé et que~$L^2(\Omega)$ étant un
+Hilbert, c'est également un Hilbert pour la norme de~$L^2(\Omega)$.
 
 \medskip
 \item[$a$ est continue]
 \begin{equation}a(p,q)=\dint_\Omega p\cdot q\le |p|_0 |q|_0 \le \|p\|_{H(\dive;\Omega)} \|q\|_{H(\dive;\Omega)}\end{equation}
-et donc $a$ est continue et $\|a\|\le 1$.
+et donc~$a$ est continue et~$\|a\|\le 1$.
 
 \medskip
 \item[$b$ est continue]
 \begin{equation}b(v,q)=\dint_\Omega v \dive q \le |v|_0 |\dive q|_0 \le |v|_0 \|q\|_{H(\dive;\Omega)}\end{equation}
-et donc $b$ est continue et $\|b\|\le 1$.
+et donc~$b$ est continue et~$\|b\|\le 1$.
 
 \medskip
 \item[$f$ est continue]
 \begin{equation}\dint_\Omega fv\le |f|_0 |v|_0\end{equation} ce qui implique que la norme de la forme linéaire
-est $\le |f|_0$.
+est~$\le |f|_0$.
 
 \medskip
 \item[$a$ est V-elliptique]
 On a:
 \begin{equation}V=\left\{ q\in H; \dint_\Omega v \dive q =0,\quad \forall v\in L^2_0(\Omega)\right\}\end{equation}
 
-$q\in H$ implique que $\dint_\Omega (v+c)\dive q =0$, et donc
+$q\in H$ implique que~$\dint_\Omega (v+c)\dive q =0$, et donc
 $\dint_\Omega w \dive q=0$, $\forall w\in L^2(\Omega)$, ce qui finalement
-implique que $\dive q=0$ dans $L^2(\Omega)$.
+implique que~$\dive q=0$ dans~$L^2(\Omega)$.
 
-On a donc $V=\left\{ q\in H; \dive q=0\right\}$.
+On a donc~$V=\left\{ q\in H; \dive q=0\right\}$.
 
 On a alors:
-\begin{equation}a(q,q)=\dint_\Omega |q|^2 = \|q\|^2_{H(\dive;\Omega)}\end{equation} si $q\in V$, et
-donc la V-ellipticité de $a$ est démontrée.
+\begin{equation}a(q,q)=\dint_\Omega |q|^2 = \|q\|^2_{H(\dive;\Omega)}\end{equation} si~$q\in V$, et
+donc la V-ellipticité de~$a$ est démontrée.
 
 \medskip
 \item[Condition inf-sup]\index{Condition inf-sup}
-Pour montrer la conditions inf-sup, nous construirons $q$ à partir d'un $\varphi$ vérifiant
-$\frac{\partial\varphi}{\partial n}=0$ sur $\Gamma$, i.e.:
+Pour montrer la conditions inf-sup, nous construirons~$q$ à partir d'un~$\varphi$ vérifiant
+$\frac{\partial\varphi}{\partial n}=0$ sur~$\Gamma$, i.e.:
 \begin{equation}
-\forall v\in M,\quad \exists q\in H;\quad \dint_\Omega v \dive q = |v|_0^2 \quad\text{ et }\quad
+\forall v\in M,\quad \exists q\in H;\quad \dint_\Omega v \dive q = |v|_0^2 \quad\text{ et}\quad
 \|q\|_{H(\dive)}\le \frac1\beta |v|_0
 \end{equation}
-$q\in H$, $\dive q=v$ et $q=-\nabla\varphi$, $q\cdot n=0$ donc $\frac{\partial\varphi}{\partial n}=0$,
+$q\in H$, $\dive q=v$ et~$q=-\nabla\varphi$, $q\cdot n=0$ donc~$\frac{\partial\varphi}{\partial n}=0$,
 et:
 \begin{equation}\left\{
 \begin{aligned}
@@ -248,10 +248,10 @@ et:
 \end{equation}
 \end{description}
 Comme au paragraphe sur la formulation variationnelle, $\exists!\varphi\in H^1(\Omega)\cap L^2_0(\Omega)$
-car  $v\in L^2_0(\Omega)$:
+car~$v\in L^2_0(\Omega)$:
 \begin{equation}
 |q|_0^2=\dint_\Omega |\nabla \varphi|^2 = |\varphi|_1^2 = \dint_\Omega v\varphi \le |v|_0 |\varphi|_0
-\le c(\Omega) |V|_0 |\varphi|_1\end{equation} d'où $|a|_0\le c(\Omega) |V|_0$. De plus:
+\le c(\Omega) |V|_0 |\varphi|_1\end{equation} d'où~$|a|_0\le c(\Omega) |V|_0$. De plus:
 \begin{equation}|q|_0^2+|\dive q|_0^2 = |q|_0^2+|v|_0^2 \le (C^2(\Omega)+1)|v|_0^2\end{equation}
 d'où:
 \begin{equation}\beta = \frac1{\sqrt{1+c^2(\Omega)}}\end{equation}

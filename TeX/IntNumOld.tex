@@ -1,7 +1,7 @@
 \chapter{L'intégration numérique}\label{chap-quadrature}
 
-La méthode des éléments finis discrétisant une formulation faible,  la construction des matrices 
-constitutives du système à  résoudre comportent dont des intégrations.
+La méthode des éléments finis discrétisant une formulation faible, la construction des matrices 
+constitutives du système à résoudre comportent dont des intégrations.
 
 Dans certains cas particuliers, ou en utilisant des codes de calcul formel, ces intégrations
 peuvent être réalisées de manière exactes.
@@ -22,7 +22,7 @@ Soit à calculer l'intégrale suivante:
 \begin{equation}I=\int_a^b f(x)dx\end{equation}
 
 \medskip
-L'idée consiste à construire un polynôme pour interpoler $f(x)$, et
+L'idée consiste à construire un polynôme pour interpoler~$f(x)$, et
 à intégrer ce polynôme.
 
 \medskip
@@ -34,18 +34,18 @@ Les principales méthodes d'interpolations sont détaillées au chapitre~\ref{ch
 \medskip
 \subsection*{Méthode des rectangles}\index{méthode des rectangles}
 
-La \textcolorblue{méthode des rectangles} consiste à interpoler $f(x)$ par un
-polynôme de degré $0$, i.e. par la constante valant, selon les variantes de la
-méthode, soit $f(a)$, soit $f((a+b)/2)$.
+La \textcolorblue{méthode des rectangles} consiste à interpoler~$f(x)$ par un
+polynôme de degré~$0$, i.e. par la constante valant, selon les variantes de la
+méthode, soit~$f(a)$, soit~$f((a+b)/2)$.
 
 \medskip
 Comme cette approximation est très brutale, il est possible de subsiviser
-l'intervalle $[a,b]$ en plusieurs intervalles et d'appliquer la méthode sur chacun
-des intervalles, i.e. d'approcher $f$ par une fonction en escalier.
+l'intervalle~$[a,b]$ en plusieurs intervalles et d'appliquer la méthode sur chacun
+des intervalles, i.e. d'approcher~$f$ par une fonction en escalier.
 
-Si l'on subsivise l'intervalle $[a,b]$ en $n$ intervalles égaux, il vient alors:
+Si l'on subsivise l'intervalle~$[a,b]$ en~$n$ intervalles égaux, il vient alors:
 \begin{equation}I\approx h\sum_{i=0}^{n-1} f(x_i)\end{equation}
-où $h=(b-a)/n$ est la longueur de chaque sous intervalle et $x_i=a+ih$ le
+où~$h=(b-a)/n$ est la longueur de chaque sous intervalle et~$x_i=a+ih$ le
 point courant.
 
 
@@ -54,27 +54,27 @@ point courant.
 \medskip
 \subsection*{Méthode des trapèzes}\index{méthode des trapèzes}
 
-La \textcolorblue{méthode des trapèzes} consiste à interpoler $f(x)$ par un polynôme 
-de degré $1$, i.e. par la droite passant par les points $(a,f(a))$ et $(b,f(b))$.
+La \textcolorblue{méthode des trapèzes} consiste à interpoler~$f(x)$ par un polynôme 
+de degré~$1$, i.e. par la droite passant par les points~$(a,f(a))$ et~$(b,f(b))$.
 On obtient alors:
 \begin{equation} I\approx h\dfrac{f(a)+f(b)}2\end{equation}
-où $h=b-a$ est la longueur de l'intervalle,
-et l'erreur commise vaut $-\frac{h^3}{12} f''(w)$ pour un certain $w\in[a,b]$
-(sous réserve que $f$ soit 2 fois dérivable).
+où~$h=b-a$ est la longueur de l'intervalle,
+et l'erreur commise vaut~$-\frac{h^3}{12} f''(w)$ pour un certain~$w\in[a,b]$
+(sous réserve que~$f$ soit 2 fois dérivable).
 
-L'erreur étant proportionnelle à $f''$, la méthode est dite d'ordre $2$, ce qui
+L'erreur étant proportionnelle à~$f''$, la méthode est dite d'ordre~$2$, ce qui
 signifie qu'elle est exacte (erreur nulle) pour tout polynôme de degré inférieur
 où égale \ a 1.
 
 \medskip
 Comme cette approximation peut sembler un peu brutale, il est possible de subsiviser
-l'intervalle $[a,b]$ en plusieurs intervalles et d'appliquer cette formule sur chacun
-des intervalles, i.e. d'approcher $f$ par une fonction affine continue par morceaux.
+l'intervalle~$[a,b]$ en plusieurs intervalles et d'appliquer cette formule sur chacun
+des intervalles, i.e. d'approcher~$f$ par une fonction affine continue par morceaux.
 
-Si l'on subsivise l'intervalle $[a,b]$ en $n$ intervalles égaux, il vient alors:
+Si l'on subsivise l'intervalle~$[a,b]$ en~$n$ intervalles égaux, il vient alors:
 \begin{equation}I\approx \frac{(b-a)}{n}\sum_{i=0}^{n}f(x_i)\end{equation}
-où $h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le
-point courant et l'erreur commise vaut $-\frac{h^3}{12n^2} f''(w)$ pour un certain $w\in[a,b]$.
+où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le
+point courant et l'erreur commise vaut~$-\frac{h^3}{12n^2} f''(w)$ pour un certain~$w\in[a,b]$.
 
 \medskip
 \textbf{Remarques:}
@@ -82,41 +82,41 @@ point courant et l'erreur commise vaut $-\frac{h^3}{12n^2} f''(w)$ pour un certa
 \item la \textcolorblue{méthode de Romberg}\index[aut]{Romberg (Werner), 1909–2003, Allemand}, publiée en 1955,
 (elle même basée sur le procédé d'extropolation de Richardson)\index[aut]{Richardson (Lewis Fry), 1881-1953, Anglais}
 permet d'accélérer la convergence de la méthode des trapèze (Wiki est ton ami).
-\item La méthode des trapèzes est un cas particulier de celle de Newton-Cotes pour $n=1$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
+\item La méthode des trapèzes est un cas particulier de celle de Newton-Cotes pour~$n=1$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 \end{itemize}
 
 \medskip
 \subsection*{Méthode de Simpson}\index{méthode de Simpson}\index[aut]{Simpson (Thomas), 1710-1761, Anglais}
 
-La \textcolorblue{méthode de Simpson}  consiste à interpoler $f(x)$ par un polynôme 
-de degré $2$, i.e. par la parabole passant par les points extrêmes $(a,f(a))$ et $(b,f(b))$ 
-et le point milieu $(c,f(c))$ avec $c=(a+b)/2$.
+La \textcolorblue{méthode de Simpson} consiste à interpoler~$f(x)$ par un polynôme 
+de degré~$2$, i.e. par la parabole passant par les points extrêmes~$(a,f(a))$ et~$(b,f(b))$ 
+et le point milieu~$(c,f(c))$ avec~$c=(a+b)/2$.
 On obtient alors:
 \begin{equation} I\approx \frac{h}{6} \left( f(a)+f(b)+f(c)\right)\end{equation}
-où $h=b-a$ est la longueur de l'intervalle,
-et l'erreur commise vaut $-\frac{h^5}{2^5.90} f^{(4)}(w)$ pour un certain $w\in[a,b]$
-(sous réserve que $f$ soit 4 fois dérivable).
+où~$h=b-a$ est la longueur de l'intervalle,
+et l'erreur commise vaut~$-\frac{h^5}{2^5.90} f^{(4)}(w)$ pour un certain~$w\in[a,b]$
+(sous réserve que~$f$ soit 4 fois dérivable).
 
-L'erreur étant proportionnelle à $f^{(4)}$, la méthode est dite d'ordre $4$, ce qui
+L'erreur étant proportionnelle à~$f^{(4)}$, la méthode est dite d'ordre~$4$, ce qui
 signifie qu'elle est exacte (erreur nulle) pour tout polynôme de degré inférieur
 où égale \ a 3.
 
 \medskip
-Comme dans le cas préc\'edent, il est possible de subsiviser l'intervalle $[a,b]$ en plusieurs intervalles 
+Comme dans le cas préc\'edent, il est possible de subsiviser l'intervalle~$[a,b]$ en plusieurs intervalles 
 et d'appliquer cette formule sur chacun des intervalles.
 
-Si l'on subsivise l'intervalle $[a,b]$ en $n$ intervalles égaux, avec $n$ pair, il vient alors:
+Si l'on subsivise l'intervalle~$[a,b]$ en~$n$ intervalles égaux, avec~$n$ pair, il vient alors:
 \begin{equation} I\approx \frac{h}{3} \left( f(a)+f(b)+2\sum_{i=1}^{n/2-1}f(x_{2i})+4\sum_{i=1}^{n/2}f(x_{2i-1})
 \right)\end{equation}
-où $h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le
-point courant et l'erreur commise vaut $-\frac{nh^5}{180} f^{(4)}(w)$ pour un certain $w\in[a,b]$.
+où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le
+point courant et l'erreur commise vaut~$-\frac{nh^5}{180} f^{(4)}(w)$ pour un certain~$w\in[a,b]$.
 
 \medskip
 \textbf{Remarques:}
 \begin{itemize}
-\item La parabole interpolant $f$ est trouvée en utilisant l'interpolation de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+\item La parabole interpolant~$f$ est trouvée en utilisant l'interpolation de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \item La méthode de Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} est un cas particulier de 
-	celle de Newton-Cotes pour $n=2$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
+	celle de Newton-Cotes pour~$n=2$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 \end{itemize}
 
 
@@ -124,17 +124,17 @@ point courant et l'erreur commise vaut $-\frac{nh^5}{180} f^{(4)}(w)$ pour un ce
 \subsection*{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 
 Les \textcolorblue{formules de Newton-Cotes} se proposent également d'approximer
-l'intégrale $I$ et découpant l'intervalle $[a,b]$ en $n$ intervalles identiques.
-On posera donc encore une fois $h=(b-a)/n$ la longueur de chaque sous intervalle, 
-et $x_i=a+ih$ le point courant.
+l'intégrale~$I$ et découpant l'intervalle~$[a,b]$ en~$n$ intervalles identiques.
+On posera donc encore une fois~$h=(b-a)/n$ la longueur de chaque sous intervalle, 
+et~$x_i=a+ih$ le point courant.
 La formule est:
 \begin{equation} I\approx \sum_{i=0}^n \varpi_i f(x_i) \end{equation}
-où les $\varpi_i$ sont appelés \textcolorblue{poids} ou \textcolorblue{coefficients
+où les~$\varpi_i$ sont appelés \textcolorblue{poids} ou \textcolorblue{coefficients
 de la quadrature} et sont construits à partir des polynômes de Lagrange.
 
 \medskip
-\textcolorblue{La méthode de Newton-Cotes intègre exactement un polynôme de degré $n-1$ 
-avec $n$ points.}
+\textcolorblue{La méthode de Newton-Cotes intègre exactement un polynôme de degré~$n-1$ 
+avec~$n$ points.}
 
 \medskip
 \textbf{Remarque:}
@@ -152,10 +152,10 @@ $n=4$ méthode de Boole.
 Lorsque le degré augmente, des instabilités apparaissent, dues au
 \textcolorblue{phénomène de Runge}.\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand}
 En effet, avec certaines fonctions (même infiniment dérivables), l'augmentation 
-du nombre $n$ de points d'interpolation ne constitue pas nécessairement une bonne 
+du nombre~$n$ de points d'interpolation ne constitue pas nécessairement une bonne 
 stratégie d'approximation.
 Carle Runge a montré qu'il existe des configurations où l'écart maximal entre la fonction 
-et son interpolation augmente indéfiniment avec $n$.
+et son interpolation augmente indéfiniment avec~$n$.
 Pour remédier à cela on peut utiliser les abscisses de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} 
 au lieu de points équirépartis pour interpoler, ou plus simplement utiliser des splines (i.e. des polynômes 
 par morceaux), et donc augmenter le nombre de morceaux et non le degré des polynômes.
@@ -174,13 +174,13 @@ Le principe de la méthode reste le même que pour la méthode de Newton-Cotes, 
 on va essayer d'améliorer un peu encore la qualité du résultat.
 Pour cela, on souhaite que:
 \begin{equation}I=\int_a^b \varpi(x)f(x)dx \approx \sum_{i=1}^n \varpi_if(x_i)\end{equation}
-où $\varpi(x): (a,b)\rightarrow\RR$ est une \textcolorblue{fonction de pondération}, 
-qui peut assurer l'intégrabilité de $f$. 
-Les $\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature (ou poids)}.
-Les $x_i$ sont réels, distincts, uniques et sont les racines de polynêmes orthogonaux 
+où~$\varpi(x): (a,b)\rightarrow\RR$ est une \textcolorblue{fonction de pondération}, 
+qui peut assurer l'intégrabilité de~$f$. 
+Les~$\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature (ou poids)}.
+Les~$x_i$ sont réels, distincts, uniques et sont les racines de polynêmes orthogonaux 
 (et non plus uniquement de Lagrange) pour le produit scalaire 
 $\left\langle f,g \right\rangle = \int_a^b f(x)g(x) \varpi(x) \,\dd x$. 
-Ils sont appelés  \textcolorblue{points ou nœuds de Gauss}.
+Ils sont appelés \textcolorblue{points ou nœuds de Gauss}.
 Les poids et les nœuds sont choisis de façon à obtenir des degrés d'exactitude les plus 
 grands possibles.
 Cette fois-ci \textcolorred{$(a,b)$ peut être n'importe quel type d'intervalle (fermé, ouvert, fini ou non).}
@@ -191,36 +191,36 @@ Cette fois-ci \textcolorred{$(a,b)$ peut être n'importe quel type d'intervalle 
 
 \begin{center}
 \begin{tabular}{lll}
-Intervalle $(a,b)$ & Fonction de pondération $\varpi(x)$ & Famille de polynômes orthogonaux\\
+Intervalle~$(a,b)$ & Fonction de pondération~$\varpi(x)$ & Famille de polynômes orthogonaux\\
 \hline
-$[-1,1]$ & $1$ & Legendre\\
-$]-1,1[$ & $(1-x)^\alpha (1+x)^\beta \ , \ \alpha, \beta > -1$ & Jacobi\\
-$]-1,1[$ & $\frac{1}{\sqrt{1-x^2}}$ &Tchebychev (premier type)\\
-$]-1,1[$ & $\sqrt{1-x^2}$ & Tchebychev (second type)\\
-$\RR^+$ & $e^{-x}$ & Laguerre\\
-$\RR$ & $e^{-x^2}$ & Hermite\\
+$[-1,1]$ &~$1$ & Legendre\\
+$]-1,1[$ &~$(1-x)^\alpha (1+x)^\beta \ , \ \alpha, \beta > -1$ & Jacobi\\
+$]-1,1[$ &~$\frac{1}{\sqrt{1-x^2}}$ &Tchebychev (premier type)\\
+$]-1,1[$ &~$\sqrt{1-x^2}$ & Tchebychev (second type)\\
+$\RR^+$ &~$\mathrm{e}^{-x}$ & Laguerre\\
+$\RR$ &~$\mathrm{e}^{-x^2}$ & Hermite\\
 \end{tabular}
 \end{center}
 
-On rappelle que les nœuds sont déterminés comme les $n$ racines du $n$ème 
+On rappelle que les nœuds sont déterminés comme les~$n$ racines du~$n$ème 
 polynôme orthogonal associé à la formule de quadrature.
 
 \medskip
-\textcolorblue{Les méthodes de quadrature de Gauss intègrent exactement un polynôme de degré $2n-1$ 
-avec $n$ points.}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}\index{méthode de quadrature de Gau\ss{}}
+\textcolorblue{Les méthodes de quadrature de Gauss intègrent exactement un polynôme de degré~$2n-1$ 
+avec~$n$ points.}\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand}\index{méthode de quadrature de Gau\ss{}}
 
 \medskip
 \subsection*{Changement d'intervalle d'intégration}
 
-Si on intègre sur $(a,b)$ au lieu de $(-1,1)$, alors on fait un changement de
+Si on intègre sur~$(a,b)$ au lieu de~$(-1,1)$, alors on fait un changement de
 variable.
 Finalement, on obtient l'approximation:
-\begin{equation}   \frac{b-a}{2} \sum_{i=1}^n \varpi_i f\left(\frac{b-a}{2}x_i + \frac{a+b}{2}\right)  \end{equation}
+\begin{equation}  \frac{b-a}{2} \sum_{i=1}^n \varpi_i f\left(\frac{b-a}{2}x_i + \frac{a+b}{2}\right) \end{equation}
 
 \medskip
 \textbf{Remarques:}
 \begin{itemize}
-\item \textcolorred{Pour la MEF, l'intégration se déroule sur l'élément de référence, donc on n'a
+\item \textcolorred{Pour la méthode des éléments finis, l'intégration se déroule sur l'élément de référence, donc on n'a
 pas besoin de faire ce changement (il est fait par la transformation affine entre l'élément
 considéré et l'élément de référence).}
 \item Le nombre de points de Gauss\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand} ainsi que leurs positions sur l'élément sont donnés dans 
@@ -232,7 +232,7 @@ les trouver...)}.
 \begin{center}
 \includegraphics[height=50mm]{ptGauss.eps}
 \end{center}
-\caption{\label{ptGauss} Éléments rectangulaire $Q$1 de référence avec ces 4 points de Gauss (petits carrés)}
+\caption{\label{ptGauss} Éléments rectangulaire~$Q$1 de référence avec ces 4 points de Gauss (petits carrés)}
 \end{figure}
 
 \medskip
@@ -245,10 +245,10 @@ d'\{eléments de référence), on obtient les formules suivantes:
 
 \begin{equation} \int_{-1}^{-1}\int_{-1}^{-1}\int_{-1}^{-1} f(x,y,z)\dd x\dd y\dd z \approx
 \dsum_{i=1}^{n_x}\dsum_{j=1}^{n_y}\dsum_{k=1}^{n_z} \varpi_i\varpi_j\varpi_k f(x_i,x_j,x_k)\end{equation}
-où $n_x$, $n_y$ et $n_z$ sont les nombres de points de Gauss utilisés dans
-les directions $x$, $y$ et $z$.
+où~$n_x$, $n_y$ et~$n_z$ sont les nombres de points de Gauss utilisés dans
+les directions~$x$, $y$ et~$z$.
 
-Dans la pratique, on a souvent $n_x=n_y=n_z$.
+Dans la pratique, on a souvent~$n_x=n_y=n_z$.
 
 
 \medskip
@@ -266,13 +266,13 @@ I=\int_{\hat{K}} f(x,y)dxdy \approx \sum_{i=1}^n \varpi_if(x_i,y_i)
 \end{equation}
 
 \medskip
-Les positions et poids des $n$ points de Gauss\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand} 
-sont choisis afin d'intégrer exactement un polynôme de degré $N$.
+Les positions et poids des~$n$ points de Gauss\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand} 
+sont choisis afin d'intégrer exactement un polynôme de degré~$N$.
 
 Il vient:
 \begin{center}
 \begin{tabular}{cccccc}
- & $n$ & $x_i$ & $y_i$ & $\varpi_i$ & $N$\\
+ &~$n$ &~$x_i$ &~$y_i$ &~$\varpi_i$ &~$N$\\
 \hline
 \includegraphics[height=20mm]{trG1.eps} & 1 & 1/3 & 1/3 & 1/2 & 1\\
 \hline
@@ -282,7 +282,7 @@ Il vient:
 &&1/2&0&&\\[+2mm]
 \hline
 \multirow{3}{*}{\includegraphics[height=20mm]{trG3.eps}} &
-\multirow{3}{*}{3} & 1/6 & 1/6 &  \multirow{3}{*}{1/6} & \multirow{3}{*}{2}\\[+2mm]
+\multirow{3}{*}{3} & 1/6 & 1/6 & \multirow{3}{*}{1/6} & \multirow{3}{*}{2}\\[+2mm]
 &&2/3 & 1/6 &&\\[+2mm]
 &&1/6&2/3&&\\[+2mm]
 \\

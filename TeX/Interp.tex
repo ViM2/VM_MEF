@@ -24,13 +24,13 @@ Piazzi & Gauß& Legendre & Adrain& Markov
 \end{tabular}
 \end{histoire}
 
-L'approximation étant l'utilisation de méthodes permettant d'approcher une fonction mathématique par une suite de fonctions qui convergent dans un certain espace fonctionnel, on voit donc que ce qui a été fait dans la deuxième partie ressort bien de cela: on cherche une fonction généralement notée $u$ qui n'est pas connue explicitement mais solution d'une équation différentielle ou d'une équation aux dérivées partielles, et l'on cherche à construire une suite de problèmes plus simples, que l'on sait résoudre à chaque étape, et telle que la suite des solutions correspondantes converge vers la solution cherchée. L'approximation peut servir aussi dans le cas où la fonction considérée est connue: on cherche alors à la remplacer par une fonction plus simple, plus régulière ou ayant de meilleures propriétés. L'intégration numérique sera détaillée un peu plus au chapitre~\ref{chap-quadrature}. Ce sont les méthodes d'approximation numériques qui sont utilisées. 
+L'approximation étant l'utilisation de méthodes permettant d'approcher une fonction mathématique par une suite de fonctions qui convergent dans un certain espace fonctionnel, on voit donc que ce qui a été fait dans la deuxième partie ressort bien de cela: on cherche une fonction généralement notée~$u$ qui n'est pas connue explicitement mais solution d'une équation différentielle ou d'une équation aux dérivées partielles, et l'on cherche à construire une suite de problèmes plus simples, que l'on sait résoudre à chaque étape, et telle que la suite des solutions correspondantes converge vers la solution cherchée. L'approximation peut servir aussi dans le cas où la fonction considérée est connue: on cherche alors à la remplacer par une fonction plus simple, plus régulière ou ayant de meilleures propriétés. L'intégration numérique sera détaillée un peu plus au chapitre~\ref{chap-quadrature}. Ce sont les méthodes d'approximation numériques qui sont utilisées. 
 
 Pour en revenir à l'interpolation, la méthode des éléments finis est en elle-même une méthode d'interpolation (globale, basée sur des interpolations locales). On peut citer quelques méthodes d'interpolation telle que l'interpolation linéaire (dans laquelle deux points sucessifs sont reliés par un segment), l'interpolation cosinus (dans laquelle deux points successifs sont considérés comme les pics d'un cosinus. L'interpolation cubique ou spline (dans laquelle un polynôme de degré 3 passe par quatre points successifs: selon le type de continuité demandée plusieurs variantes existent) et de manière générale, l'interpolation polynomiale, est abordée ci-dessous. 
 
 Faisons d'emblée une mise en garde: la plus connue des interpolations polynomiale, l'interpolation lagrangienne (approximation par les polynômes de Lagrange,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} découverte initialement par Waring\index[aut]{Waring (Edward), 1736-1798, Anglais} et redécouverte par Euler)\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} peut fort bien diverger même pour des fonctions très régulières. C'est le phénomène de Runge:\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} contrairement à l'intuition, l'augmentation du nombre de points d'interpolation ne constitue pas nécessairement une bonne stratégie d'approximation avec certaines fonctions (même infiniment dérivables).
 
-Dans le cas où l'on travaille sur le corps des complexes, une méthode d'approximation d'une fonction analytique par une fonction rationnelle est l'approximant de Padé.\index[aut]{Padé (Henri Eugène), 1863-1953, Français} Cela correspond à un développement limité qui approche la fonction par un polynôme. Tout comme les développements limités forment une suite appelée série entière, convergeant vers la fonction initiale, les approximants de Padé sont souvent vus comme une suite, s'exprimant sous la forme d'une fraction continue dont la limite est aussi la fonction initiale. En ce sens, ces approximants font partie de la vaste théorie des fractions continues. Les approximants offrent un développement dont le domaine de convergence est parfois plus large que celui d'une série entière. Ils permettent ainsi de prolonger des fonctions analytiques et d'étudier certains aspects de la question des série divergentes. En théorie analytique des nombres, l'approximant permet de mettre en évidence la nature d'un nombre ou d'une fonction arithmétique comme celle de la fonction zêta de Riemann. Dans le domaine du calcul numérique, l'approximant joue un rôle, par exemple, pour évaluer le comportement d'une solution d'un système dynamique à l'aide de la théorie des perturbations. L'approximant de Padé a été utilisé pour la première fois par Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} pour démontrer l'irrationalité de $e$, la base du logarithme népérien. Une technique analogue a permis à Johann Heinrich Lambert\index[aut]{Lambert (Johann Heinrich), 1728-1777, Suisse} de montrer celle de $\pi$.
+Dans le cas où l'on travaille sur le corps des complexes, une méthode d'approximation d'une fonction analytique par une fonction rationnelle est l'approximant de Padé.\index[aut]{Padé (Henri Eugène), 1863-1953, Français} Cela correspond à un développement limité qui approche la fonction par un polynôme. Tout comme les développements limités forment une suite appelée série entière, convergeant vers la fonction initiale, les approximants de Padé sont souvent vus comme une suite, s'exprimant sous la forme d'une fraction continue dont la limite est aussi la fonction initiale. En ce sens, ces approximants font partie de la vaste théorie des fractions continues. Les approximants offrent un développement dont le domaine de convergence est parfois plus large que celui d'une série entière. Ils permettent ainsi de prolonger des fonctions analytiques et d'étudier certains aspects de la question des série divergentes. En théorie analytique des nombres, l'approximant permet de mettre en évidence la nature d'un nombre ou d'une fonction arithmétique comme celle de la fonction zêta de Riemann. Dans le domaine du calcul numérique, l'approximant joue un rôle, par exemple, pour évaluer le comportement d'une solution d'un système dynamique à l'aide de la théorie des perturbations. L'approximant de Padé a été utilisé pour la première fois par Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} pour démontrer l'irrationalité de~$e$, la base du logarithme népérien. Une technique analogue a permis à Johann Heinrich Lambert\index[aut]{Lambert (Johann Heinrich), 1728-1777, Suisse} de montrer celle de~$\pi$.
 
 
 
@@ -45,28 +45,28 @@ Lorsque l'on souhaite approximer une courbe par une autre, recourir aux polynôm
 L'interpolation polynomiale consiste donc à trouver un polynôme passant par un ensemble de points donnés.
 % \footnote{% 
 % \begin{tabular}{ccccc} \includegraphics[height=32mm]{Lagrange}& \includegraphics[height=32mm]{Hermite}& \includegraphics[height=32mm]{Bonnet}& \includegraphics[height=32mm]{Tchebychev}& \includegraphics[height=32mm]{Laguerre}\\ Joseph Louis&%, comte de Lagrange & Charles Hermite & Pierre-Ossian Bonnet & Pafnouti Lvovitch Tchebychev & Edmond Nicolas Laguerre \\ comte de Lagrange& 1822-1901& 1819-1892& 1821-1894& 1834-1886\\ 1736-1813 \\ 
-% \end{tabular} } 
+% \end{tabular}} 
  
 %%%%----------------------------------------------------------
 \subsection{Orthogonalité} 
 %%%%----------------------------------------------------------
-Une \emph{suite de polynômes orthogonaux}\index{polynôme!orthogonalité} est une suite infinie de polynômes $P_0(x)$, $P_1(x)$, ... à coefficients réels, dans laquelle chaque $P_n(x)$ est de degré $n$, et telle que les polynômes de la suite sont orthogonaux deux à deux pour un produit scalaire\index{produit scalaire} de fonctions donné. Le produit scalaire\index{produit scalaire} de fonctions le plus simple est l'intégrale du produit de ces fonctions sur un intervalle borné: 
+Une \emph{suite de polynômes orthogonaux}\index{polynôme!orthogonalité} est une suite infinie de polynômes~$P_0(x)$, $P_1(x)$, ... à coefficients réels, dans laquelle chaque~$P_n(x)$ est de degré~$n$, et telle que les polynômes de la suite sont orthogonaux deux à deux pour un produit scalaire\index{produit scalaire} de fonctions donné. Le produit scalaire\index{produit scalaire} de fonctions le plus simple est l'intégrale du produit de ces fonctions sur un intervalle borné: 
 \begin{equation}
 \langle f,g \rangle=\int_a^b f(x)g(x)\dd x 
 \end{equation}
-Plus généralement, on peut ajouter une fonction de poids $\varpi(x)$ dans l'intégrale. On notera bien que sur l'intervalle d'intégration $]a,b[$, la fonction poids $W$ doit être à valeurs finies et strictement positives, et l'intégrale du produit de la fonction poids par un polynôme doit être finie (voir espaces $L^p$). Par contre, les bornes $a$ et $b$ peuvent être infinies. Il vient alors: 
+Plus généralement, on peut ajouter une fonction de poids~$\varpi(x)$ dans l'intégrale. On notera bien que sur l'intervalle d'intégration~$]a,b[$, la fonction poids~$W$ doit être à valeurs finies et strictement positives, et l'intégrale du produit de la fonction poids par un polynôme doit être finie (voir espaces~$L^p$). Par contre, les bornes~$a$ et~$b$ peuvent être infinies. Il vient alors: 
 \begin{equation}
  \langle f,g \rangle=\int_a^b f(x)g(x)\varpi(x)\dd x 
 \end{equation}
-La norme associée est définie par $||f||=\sqrt{\langle f,f \rangle}$. Le produit scalaire\index{produit scalaire} fait de l'ensemble de toutes les fonctions de norme finie un espace de Hilbert.\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand} L'intervalle d'intégration est appelé \emph{intervalle d'orthogonalité}.  
+La norme associée est définie par~$||f||=\sqrt{\langle f,f \rangle}$. Le produit scalaire\index{produit scalaire} fait de l'ensemble de toutes les fonctions de norme finie un espace de Hilbert.\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand} L'intervalle d'intégration est appelé \emph{intervalle d'orthogonalité}. 
 %%%%----------------------------------------------------------
 \subsection{Base naturelle} 
 %%%%----------------------------------------------------------
-On rappelle que $1,X,\ldots,X^n$ est une base de $K_n[X]$ en tant que polynômes échelonnés. 
+On rappelle que~$1,X,\ldots,X^n$ est une base de~$K_n[X]$ en tant que polynômes échelonnés. 
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme! de Lagrange} 
 %%%%----------------------------------------------------------
-Connaissant $n + 1$ points $(x_0, y_0),\dots,(x_n, y_n)$ d'abscisses distinctes, le \emph{polynôme de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} est l'unique polynôme de degré $n$ passant tous les points.\index{polynôme! de Lagrange} Ce polynôme est trivialement défini par:\index{polynôme! de Lagrange} 
+Connaissant~$n + 1$ points~$(x_0, y_0),\dots,(x_n, y_n)$ d'abscisses distinctes, le \emph{polynôme de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} est l'unique polynôme de degré~$n$ passant tous les points.\index{polynôme! de Lagrange} Ce polynôme est trivialement défini par:\index{polynôme! de Lagrange} 
 \begin{equation}
 L(X) = \sum_{j=0}^{n} y_j \biggl(\prod_{i=0, i\neq j}^{n} \frac{X-x_i}{x_j-x_i} \biggr) 
 \end{equation}
@@ -80,10 +80,10 @@ l_i(X) = \prod_{j=0, j\neq i}^{n} \frac{X-x_j}{x_i-x_j} = \frac{X-x_0}{x_i-x_0} 
 \end{equation}
 alors, on remarque que: 
 \begin{itemize}
-\item $l_i$ est de degré $n$ pour tout $i$; 
-\item $l_i(x_j) = \delta_{i,j}, 0 \leq i,j \leq n$, i.e. $l_i(x_i) = 1$ et $l_i(x_j) = 0$ pour $j\ne i$ 
+\item~$l_i$ est de degré~$n$ pour tout~$i$; 
+\item~$l_i(x_j) = \delta_{i,j}, 0 \leq i,j \leq n$, i.e.~$l_i(x_i) = 1$ et~$l_i(x_j) = 0$ pour~$j\ne i$ 
 \end{itemize}
-On en déduit immédiatement que $\forall i$, $L(x_i) = y_i$ qui est bien la propriété recherchée par construction. 
+On en déduit immédiatement que~$\forall i$, $L(x_i) = y_i$ qui est bien la propriété recherchée par construction. 
 %%%%----------------------------------------------------------
 \subsection{Polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite} 
 %%%%----------------------------------------------------------
@@ -99,9 +99,9 @@ Les deux définitions sont liées par la propriété d'échelle suivante:
 \begin{equation}
 \widehat{H}_n(x) = 2^{n/2}H_n(x\sqrt{2})
 \end{equation}
-Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sont les suivants:\index{polynôme! d'Hermite} $H_0=1~$, $H_1=X~$, $H_2=X^2-1~$, $H_3=X^3-3X~$, $H_4=X^4-6X^2+3~$, $H_5=X^5-10X^3+15X~$, $H_6=X^6-15X^4+45X^2-15~$. $\widehat{H}_0=1~$, $\widehat{H}_1=2X~$, $\widehat{H}_2=4X^2-2~$, $\widehat{H}_3=8X^3-12X~$, $\widehat{H}_4=16X^4-48X^2+12~$, $\widehat{H}_5=32X^5-160X^3+120X~$, $\widehat{H}_6=64X^6-480X^4+720X^2-120$.   
+Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sont les suivants:\index{polynôme! d'Hermite}~$H_0=1~$, $H_1=X~$, $H_2=X^2-1~$, $H_3=X^3-3X~$, $H_4=X^4-6X^2+3~$, $H_5=X^5-10X^3+15X~$, $H_6=X^6-15X^4+45X^2-15~$.~$\widehat{H}_0=1~$, $\widehat{H}_1=2X~$, $\widehat{H}_2=4X^2-2~$, $\widehat{H}_3=8X^3-12X~$, $\widehat{H}_4=16X^4-48X^2+12~$, $\widehat{H}_5=32X^5-160X^3+120X~$, $\widehat{H}_6=64X^6-480X^4+720X^2-120$.  
 
-$H_n$ est un polynôme de degré $n$. Ces polynômes sont orthogonaux pour la mesure $\mu$ de densité: 
+$H_n$ est un polynôme de degré~$n$. Ces polynômes sont orthogonaux pour la mesure~$\mu$ de densité: 
 \begin{equation}
  \frac{\dd \mu(x)}{\dd x} = \frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}. 
 \end{equation}
@@ -109,7 +109,7 @@ $H_n$ est un polynôme de degré $n$. Ces polynômes sont orthogonaux pour la me
 \begin{equation}
  \int_{-\infty}^{+\infty} H_n(x)H_m(x)\,\mathrm{e}^{-x^2/2}\dd x=n!2^n\sqrt{2\pi}~\delta_{nm} 
 \end{equation}
-où $\delta_{n,m}$ est le symbole de Kronecker. Ces polynômes forment donc une base orthogonale de l'espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{produit scalaire!de $L^2$}\index{espace!de Lebesgue} $L^2(\CC,\mu)$ des fonctions boréliennes telles que: 
+où~$\delta_{n,m}$ est le symbole de Kronecker. Ces polynômes forment donc une base orthogonale de l'espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{produit scalaire!de~$L^2$}\index{espace!de Lebesgue}~$L^2(\CC,\mu)$ des fonctions boréliennes telles que: 
 \begin{equation}
 \int_{-\infty}^{+\infty}|f(x)|^2\,\frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}\dd x< +\infty
 \end{equation}
@@ -117,7 +117,7 @@ dans lequel le produit scalaire est donné par l'intégrale:\index{produit scala
 \begin{equation}
 \langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\,\frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}\dd x
 \end{equation}
-Des propriétés analogues sont vérifiées par les polynômes de Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sous leur forme physique.  
+Des propriétés analogues sont vérifiées par les polynômes de Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sous leur forme physique. 
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Legendre}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre} 
 %%%%----------------------------------------------------------
@@ -125,11 +125,11 @@ On appelle équation de Legendre l'équation:\index[aut]{Legendre (Adrien-Marie)
 \begin{equation}
 \frac{\textrm{d}}{\textrm{d}x}[(1-x^{2})\frac{\textrm{d}y}{\textrm{d}x}]+n(n+1)y=0
 \end{equation}
-On définit le \emph{polynôme de Legendre} $P_n$ par:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre} 
+On définit le \emph{polynôme de Legendre}~$P_n$ par:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre} 
 \begin{equation}
 \frac{\dd}{\dd x}[(1-x^{2})\frac{\dd P_n(x)}{\dd x}]+n(n+1)P_n(x)=0,\quad P_n(1)=1
 \end{equation}
-La manière la plus simple de les définir est par la formule de récurrence de Bonnet:\index[aut]{Bonnet (Pierre-Ossian), 1819-1892, Français} $P_0(x)=1$, $P_1(x)=x$ et:
+La manière la plus simple de les définir est par la formule de récurrence de Bonnet:\index[aut]{Bonnet (Pierre-Ossian), 1819-1892, Français}~$P_0(x)=1$, $P_1(x)=x$ et:
 \begin{equation}
 \forall n>0, \quad (n+1)P_{n+1}(x)=(2n+1)xP_n(x) - nP_{n-1}(x)
 \end{equation}
@@ -143,20 +143,20 @@ Les premiers polynômes de Legendre sont:\index[aut]{Legendre (Adrien-Marie), 17
 &P_{4}(x)=\frac{1}{8}(35x^{4}-30x^{2}+3)\\
 &P_{5}(x)=\frac{1}{8}(63x^{5}-70x^{3}+15x)
 \end{aligned}
-\end{equation}  
-Le polynôme $P_n$ est de degré $n$. La famille $(P_n)_{n\leq \NN}$ est une famille de polynômes à degrés étagés, elle est donc une base de l'espace vectoriel $\RR_n[X]$. On remarquera la propriété suivante: 
+\end{equation} 
+Le polynôme~$P_n$ est de degré~$n$. La famille~$(P_n)_{n\leq \NN}$ est une famille de polynômes à degrés étagés, elle est donc une base de l'espace vectoriel~$\RR_n[X]$. On remarquera la propriété suivante: 
 \begin{equation}
 P_n(-x)=(-1)^nP_n(x)
 \end{equation}
-qui donne en particulier $P_n( - 1) = ( - 1)^n$ et $P_{2n + 1}(0) = 0$. Les polynômes orthogonaux les plus simples sont les polynômes de Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre}\index{polynôme! orthogonalité} pour lesquels l'intervalle d'orthogonalité est $\intff{-1}{1}$ et la fonction poids est simplement la fonction constante de valeur $1$: ces polynômes sont orthogonaux par rapport au produit scalaire défini sur $\RR[X]$ par:\index{produit scalaire}\index{polynôme!orthogonalité} 
+qui donne en particulier~$P_n( - 1) = ( - 1)^n$ et~$P_{2n + 1}(0) = 0$. Les polynômes orthogonaux les plus simples sont les polynômes de Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre}\index{polynôme! orthogonalité} pour lesquels l'intervalle d'orthogonalité est~$\intff{-1}{1}$ et la fonction poids est simplement la fonction constante de valeur~$1$: ces polynômes sont orthogonaux par rapport au produit scalaire défini sur~$\RR[X]$ par:\index{produit scalaire}\index{polynôme!orthogonalité} 
 \begin{equation}
 \langle P,Q\rangle= \int_{-1}^{+1} P(x) Q(x)\dd x \langle P_m,P_n\rangle= \int_{-1}^{1} P_m(x)P_n(x)\dd x = 0\qquad \mathrm{pour}\qquad m \ne n 
 \end{equation}
-De plus, comme $(P_n)_{n\leq N}$ est une base de $\RR_N[X]$, on a $P_{N+1} \in (\RR_N[X])^\bot$: 
+De plus, comme~$(P_n)_{n\leq N}$ est une base de~$\RR_N[X]$, on a~$P_{N+1} \in (\RR_N[X])^\bot$: 
 \begin{equation}
 \forall Q \in \RR_N[X],\quad \int_{-1}^{1} P_{N+1}(x)Q(x)\dd x = 0 
 \end{equation}
-Le carré de la norme, dans $L^2(\intff{-1}{1})$, est:\index{produit scalaire!de $L^2$}\index{norme!induite par un produit scalaire} 
+Le carré de la norme, dans~$L^2(\intff{-1}{1})$, est:\index{produit scalaire!de~$L^2$}\index{norme!induite par un produit scalaire} 
 \begin{equation}
  \|P_n\|^2=\frac{2}{2n+1}. 
 \end{equation}
@@ -166,7 +166,7 @@ Ces polynômes peuvent servir à décomposer une fonction holomorphe, une foncti
 %%%%----------------------------------------------------------
 Les \emph{polynômes de Tchebychev} servent pour la convergence des interpolations de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} Ils sont également utilisés dans le calcul de filtres de Tchebychev en électronique analogique.\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} 
 
-Les polynômes de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme!de Tchebychev} constituent deux familles de polynômes (notés $T_n$ pour la première espèce et $U_n$ pour la seconde) définis sur l'intervalle $\intff{-1}{1}$ par les relations trigonométriques: 
+Les polynômes de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme!de Tchebychev} constituent deux familles de polynômes (notés~$T_n$ pour la première espèce et~$U_n$ pour la seconde) définis sur l'intervalle~$\intff{-1}{1}$ par les relations trigonométriques: 
 \begin{align}
 &T_n(\cos(\theta))=\cos(n\theta)\\
 &U_n(\cos(\theta))=\frac{\sin((n+1) \theta)}{\sin \theta} 
@@ -177,15 +177,15 @@ Ces deux suites sont définies par la relation de récurrence:
 \end{equation}
 et les deux premiers termes: 
 \begin{align}
-&T_0=1,~T_1=X \quad \text{pour la suite } T\\
-&U_0=1,~U_1=2X \quad \text{pour la suite } U 
+&T_0=1,~T_1=X \quad \text{pour la suite} T\\
+&U_0=1,~U_1=2X \quad \text{pour la suite} U 
 \end{align}
 Chacune de ces deux familles est une suite de polynômes orthogonaux\index{polynôme!orthogonalité} par rapport à un produit scalaire de fonctions assorti d'une pondération spécifique.\index{produit scalaire} 
 \paragraph{Propriétés des polynômes de Tchebychev de première espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} 
 \begin{equation}
 \forall n>0, \quad T_n(x)=\dfrac n2\dsum_{k=0}^{\left\lfloor \frac n2\right\rfloor}(-1)^k \frac{(n-k-1)!}{k!(n-2k)!}(2x)^{n-2k} 
 \end{equation}
-Les $T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scalaire}\index{polynôme!orthogonalité} 
+Les~$T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scalaire}\index{polynôme!orthogonalité} 
 \begin{equation}
  \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}\dd x= 
 \begin{cases} 0&\text{si}~n\ne m\\ \pi&\text{si}~n=m=0\\ \pi/2&\text{si}~n=m\ne 0~. 
@@ -194,19 +194,19 @@ Les $T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scala
 \begin{equation}
 \forall n, \quad T_n(1)=1,\qquad\forall n,m\in\NN,\quad \forall x\in\RR, \quad T_n(T_m(x))=T_{mn}(x) 
 \end{equation}
-Les premiers polynômes de Tchebychev de première espèce sont\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} $T_0 = 1$, $T_1 =x$, $T_2 = 2x^2 - 1$, $T_3 = 4x^3 - 3x$, $T_4 = 8x^4 - 8x^2 + 1$, $T_5 = 16x^5 - 20x^3 + 5x$, $T_6 = 32x^6 - 48x^4 + 18x^2 - 1$ et $ T_7 = 64x^7 - 112x^5 + 56x^3 - 7x$.   
+Les premiers polynômes de Tchebychev de première espèce sont\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}~$T_0 = 1$, $T_1 =x$, $T_2 = 2x^2 - 1$, $T_3 = 4x^3 - 3x$, $T_4 = 8x^4 - 8x^2 + 1$, $T_5 = 16x^5 - 20x^3 + 5x$, $T_6 = 32x^6 - 48x^4 + 18x^2 - 1$ et~$ T_7 = 64x^7 - 112x^5 + 56x^3 - 7x$.  
 \paragraph{Propriétés des polynômes de Tchebychev de seconde espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} 
 \begin{equation}
 \forall n\ge 0, \quad U_n(x)=\sum_{k=0}^{\left\lfloor \frac n2\right \rfloor}(-1)^k \binom{n-k}k~(2x)^{n-2k} 
 \end{equation}
-Les $U_n$ sont orthogonaux\index{polynôme!orthogonalité} pour le produit scalaire\index{produit scalaire} suivant: 
+Les~$U_n$ sont orthogonaux\index{polynôme!orthogonalité} pour le produit scalaire\index{produit scalaire} suivant: 
 \begin{equation}
 \int_{-1}^1 U_n(x)U_m(x)\sqrt{1-x^2}\dd x = 
-\begin{cases} 0&\text{si }n\ne m\\ \pi/2 &\text{si }n=m 
+\begin{cases} 0&\text{si}n\ne m\\ \pi/2 &\text{si}n=m 
 \end{cases} 
 \quad\text{et}\quad\forall n,\quad U_n(1)=n+1 
 \end{equation}
-Les premiers polynômes de Tchebychev de deuxième espèce sont\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} $U_0=1$, $U_1=2x$, $U_2=4x^2-1$, $U_3=8x^3-4X$, $U_4=16x^4-12x^2+1$, $U_5=32x^5-32x^3+6x$, $U_6=64x^6-80x^4+24x^2-1$ et $U_7=128x^7-192x^5+80x^3-8x$.
+Les premiers polynômes de Tchebychev de deuxième espèce sont\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}~$U_0=1$, $U_1=2x$, $U_2=4x^2-1$, $U_3=8x^3-4X$, $U_4=16x^4-12x^2+1$, $U_5=32x^5-32x^3+6x$, $U_6=64x^6-80x^4+24x^2-1$ et~$U_7=128x^7-192x^5+80x^3-8x$.
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre} 
 %%%%----------------------------------------------------------
@@ -214,17 +214,17 @@ Les \emph{polynômes de Laguerre} apparaissent en mécanique quantique dans la p
 \begin{equation}
  xy'' + (1 - x)y' + ny = 0 
 \end{equation}
-qui est une équation différentielle linéaire du second ordre possédant des solutions non singulières si seulement si $n$ est un entier positif. 
+qui est une équation différentielle linéaire du second ordre possédant des solutions non singulières si seulement si~$n$ est un entier positif. 
 
-Traditionnellement notés $L_0,L_1,\dots$ ces polynômes forment une suite de polynômes qui peut être définie par la formule de Rodrigues:\index[aut]{Rodrigues (Benjamin-Olinde), 1795-1851, Français} 
+Traditionnellement notés~$L_0,L_1,\dots$ ces polynômes forment une suite de polynômes qui peut être définie par la formule de Rodrigues:\index[aut]{Rodrigues (Benjamin-Olinde), 1795-1851, Français} 
 \begin{equation}
- L_n(x)=\frac{e^x}{n!}\frac{d^n}{dx^n}\left(\mathrm{e}^{-x} x^n\right). 
+ L_n(x)=\frac{\mathrm{e}^x}{n!}\frac{d^n}{dx^n}\left(\mathrm{e}^{-x} x^n\right). 
 \end{equation}
 Ils sont orthogonaux\index{polynôme!orthogonalité} les uns par rapport aux autres pour le produit scalaire\index{produit scalaire}: 
 \begin{equation}
 \langle f,g \rangle = \int_0^\infty f(x) g(x) \mathrm{e}^{-x}\dd x. 
 \end{equation}
-Cette propriété d'orthogonalité revient à dire que si $X$ est une variable aléatoire distribuée exponentiellement avec la fonction densité de probabilité suivantes: 
+Cette propriété d'orthogonalité revient à dire que si~$X$ est une variable aléatoire distribuée exponentiellement avec la fonction densité de probabilité suivantes: 
 \begin{equation}
  f(x)=\left\{
 \begin{aligned}
@@ -232,19 +232,19 @@ Cette propriété d'orthogonalité revient à dire que si $X$ est une variable a
 &0 && \mbox{si}\ x<0
 \end{aligned}\right. 
 \end{equation}
-alors $E(L_n(X),L_m(X))=0$ si $n\neq m$. Les premiers polynômes de Laguerre sont\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre} $L_0 = 1$, $L_1=-x+1$ et:
+alors~$E(L_n(X),L_m(X))=0$ si~$n\neq m$. Les premiers polynômes de Laguerre sont\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre}~$L_0 = 1$, $L_1=-x+1$ et:
 \begin{equation}
 L_2=\frac12(x^2-4x+2),\; L_3=\frac16(-x^3+9x^2-18x+6),\; L_4=\frac1{24}(x^4-16x^3+72x^2-96x+24)
-\end{equation}  
+\end{equation} 
 Il existe des polynômes de Laguerre\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français} généralisés dont l'orthogonalité peut être liée à une densité de probabilité faisant intervenir la fonction Gamma. Ils apparaissent dans le traitement de l'oscillateur harmonique quantique. Ils peuvent être exprimés en fonction des polynômes d'Hermite.\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite} 
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Bernstein}\index[aut]{Bernstein (Sergeï{} Natanovich), 1880-1968, Russe}\index{polynôme! de Bernstein} 
 %%%%----------------------------------------------------------
-Les \emph{polynômes de Bernstein} permettent de donner une démonstration constructive du théorème de Stone-Weierstrass. Dans le cadre de ce cours, nous les présentons surtout car ils sont utilisés dans la formulation générale des courbes de Bézier.\index[aut]{Bézier (Pierre), 1910-1999, Français} Pour un degré $n$, il y a $n+1$ polynômes de Bernstein $B^n_0, \dots, B^n_n$ définis, sur l'intervalle $[0,1]$ par:\index{polynôme! de Bernstein} 
+Les \emph{polynômes de Bernstein} permettent de donner une démonstration constructive du théorème de Stone-Weierstrass. Dans le cadre de ce cours, nous les présentons surtout car ils sont utilisés dans la formulation générale des courbes de Bézier.\index[aut]{Bézier (Pierre), 1910-1999, Français} Pour un degré~$n$, il y a~$n+1$ polynômes de Bernstein~$B^n_0, \dots, B^n_n$ définis, sur l'intervalle~$\intff{0}{1}$ par:\index{polynôme! de Bernstein} 
 \begin{equation}
  B_i^n(u) = 
 \begin{pmatrix} n \\ i 
-\end{pmatrix} u^i \left( 1-u \right)^{n-i} \quad \text{ où les $
+\end{pmatrix} u^i \left( 1-u \right)^{n-i} \quad \text{ où les~$
 \begin{pmatrix} n \\ i 
 \end{pmatrix}$ sont les coefficients binomiaux.}
 \end{equation}
@@ -252,21 +252,21 @@ Ces polynômes présentent quatre propriétés importantes:
 \begin{itemize}
 \item Partition de l'unité:
 \begin{equation}
-\dsum_{i=0}^n B_i^n(u) = 1,\qquad \forall u \in [0,1]
+\dsum_{i=0}^n B_i^n(u) = 1,\qquad \forall u \in \intff{0}{1}
 \end{equation}
 \item Positivité:
 \begin{equation}
-B_i^n(u)\geq 0,\qquad\forall u\in [0,1],\quad\forall i\in 0,\dots,n
+B_i^n(u)\geq 0,\qquad\forall u\in \intff{0}{1},\quad\forall i\in 0,\dots,n
 \end{equation}
 \item Symétrie:
 \begin{equation}
-B_i^n(u) = B_{n-i}^n(1-u), \qquad \forall u \in [0,1],\quad \forall i \in 0, \dots, n
+B_i^n(u) = B_{n-i}^n(1-u), \qquad \forall u \in \intff{0}{1},\quad \forall i \in 0, \dots, n
 \end{equation}
 \item Formule de récurrence:
 \begin{equation}
 B_i^n(u) = 
 \begin{cases} (1-u)B_i^{n-1}(u),& i = 0\\ (1-u)B_i^{n-1}(u) + u B_{i-1}^{n-1}(u),&\forall i \in 1, \dots, n-1\\ uB_{i-1}^{n-1}(u),& i = n 
-\end{cases},\qquad \forall u \in [0,1]
+\end{cases},\qquad \forall u \in \intff{0}{1}
 \end{equation}
 \end{itemize}
 On notera la grande ressemblance de ces polynômes avec la loi binomiale. 
@@ -276,30 +276,30 @@ On notera la grande ressemblance de ces polynômes avec la loi binomiale.
 %%%%----------------------------------------------------------
 \subsection{Interpolation de Lagrange} 
 %%%%----------------------------------------------------------
-Dans la version la plus simple (\emph{interpolation lagrangienne}), on impose simplement que le polynôme passe par tous les points donnés. On obtient les polynômes de Lagrange tels que présentés juste avant. \index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme!de Lagrange} Le théorème de l'unisolvance (voir paragraphe~\ref{Sec-unisolvance}) précise qu'il n'existe qu'un seul polynôme de degré $n$ au plus défini par un ensemble de $n+1$ points. 
+Dans la version la plus simple (\emph{interpolation lagrangienne}), on impose simplement que le polynôme passe par tous les points donnés. On obtient les polynômes de Lagrange tels que présentés juste avant. \index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme!de Lagrange} Le théorème de l'unisolvance (voir paragraphe~\ref{Sec-unisolvance}) précise qu'il n'existe qu'un seul polynôme de degré~$n$ au plus défini par un ensemble de~$n+1$ points. 
 
-L'\emph{erreur d'interpolation} lors de l'approximation d'une fonction $f$ (donnée par les points $(x_i,y_i=f(x_i))$) par un polynôme de Lagrange $p_n$ est donnée par une formule de type Taylor-Young:\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index[aut]{Young (William Henry), 1863-1942, Anglais} Si $f$ est $n+1$ fois continûment différentiable sur $I=[\min(x_0,\ldots,x_n,x),\max(x_0,\ldots,x_n,x)]$, alors:
+L'\emph{erreur d'interpolation} lors de l'approximation d'une fonction~$f$ (donnée par les points~$(x_i,y_i=f(x_i))$) par un polynôme de Lagrange~$p_n$ est donnée par une formule de type Taylor-Young:\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index[aut]{Young (William Henry), 1863-1942, Anglais} Si~$f$ est~$n+1$ fois continûment différentiable sur~$I=[\min(x_0,\ldots,x_n,x),\max(x_0,\ldots,x_n,x)]$, alors:
 \begin{equation}
-f(x) - p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i=0}^n (x-x_i) \quad \text{ avec } \xi \in I. 
+f(x) - p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i=0}^n (x-x_i) \quad \text{ avec} \xi \in I. 
 \end{equation}
-Dans le cas particulier où $x_i = x_0 + ih$ (points uniformément répartis), il se produit en général une aggravation catastrophique de l'erreur d'interpolation, connue sous le nom de \emph{phénomène de Runge}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} lorsqu'on augmente le nombre de points pour un intervalle $[x_0,x_n]$, donné (on a alors $\xi\in]-1,1[$). 
+Dans le cas particulier où~$x_i = x_0 + ih$ (points uniformément répartis), il se produit en général une aggravation catastrophique de l'erreur d'interpolation, connue sous le nom de \emph{phénomène de Runge}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} lorsqu'on augmente le nombre de points pour un intervalle~$[x_0,x_n]$, donné (on a alors~$\xi\in]-1,1[$). 
 
-\emph{Pour limiter le phénomène de Runge},\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} i.e. pour minimiser l'oscillation des polynômes interpolateurs, on peut utiliser les abscisses de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} au lieu de points équirépartis pour interpoler. Dans ce cas, on peut montrer que l'erreur d'interpolation décroît lorsque $n$ augmente. On peut aussi préférer utiliser des splines ppour approximer la fonction $f$ (ce sont des polynômes par morceaux définis plus bas). Dans ce cas, pour améliorer l'approximation, on augmente le nombre de morceaux et non le degré des polynômes. 
+\emph{Pour limiter le phénomène de Runge},\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} i.e. pour minimiser l'oscillation des polynômes interpolateurs, on peut utiliser les abscisses de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} au lieu de points équirépartis pour interpoler. Dans ce cas, on peut montrer que l'erreur d'interpolation décroît lorsque~$n$ augmente. On peut aussi préférer utiliser des splines ppour approximer la fonction~$f$ (ce sont des polynômes par morceaux définis plus bas). Dans ce cas, pour améliorer l'approximation, on augmente le nombre de morceaux et non le degré des polynômes. 
  
 %%%%----------------------------------------------------------
 \subsection{Interpolation par Spline} 
 %%%%----------------------------------------------------------
 Une \emph{spline} est une fonction définie par morceaux par des polynômes. Comme mentionné au dessus, la méthode des splines est souvent préférée à l'interpolation polynomiale, car on obtient des résultats similaires en se servant de polynômes ayant des degrés inférieurs, tout en évitant le phénomène de Runge. De plus, leur simplicité d'implémentation les rend très populaires et elles sont fréquemment utilisées dans les logiciels de dessin. 
 
-Une courbe spline est une fonction polynomiale par morceaux définie sur un intervalle $[a,b]$ divisé en sous intervalles $[t_{i-1}, t_i]$ tels que $a = t_0 < t_1 < \ldots < t_{k-1} < t_k = b$. On la note $S: [a,b]\to \RR$. Sur chaque intervalle $[t_{i-1}, t_i]$ on définit un polynôme $ P_i: [t_{i-1}, t_i] \to \RR$. Cela entraine pour une spline à $k$ intervalles: $S(t) = P_1 (t)$, $t_0 \le t < t_1$, $S(t) = P_2 (t)$, $t_1 \le t < t_2,\ldots,S(t) = P_k (t)$, $t_{k-1} \le t \le t_k$. 
+Une courbe spline est une fonction polynomiale par morceaux définie sur un intervalle~$[a,b]$ divisé en sous intervalles~$[t_{i-1}, t_i]$ tels que~$a = t_0 < t_1 < \ldots < t_{k-1} < t_k = b$. On la note~$S: [a,b]\to \RR$. Sur chaque intervalle~$[t_{i-1}, t_i]$ on définit un polynôme~$ P_i: [t_{i-1}, t_i] \to \RR$. Cela entraine pour une spline à~$k$ intervalles:~$S(t) = P_1 (t)$, $t_0 \le t < t_1$, $S(t) = P_2 (t)$, $t_1 \le t < t_2,\ldots,S(t) = P_k (t)$, $t_{k-1} \le t \le t_k$. 
 
-Le \emph{degré de la spline} est défini comme étant celui du polynôme $P_i (t)$ de plus haut degré. Si tous les polynômes ont le même degré, on dit que la spline est uniforme. Dans le cas contraire, elle est non uniforme. 
+Le \emph{degré de la spline} est défini comme étant celui du polynôme~$P_i (t)$ de plus haut degré. Si tous les polynômes ont le même degré, on dit que la spline est uniforme. Dans le cas contraire, elle est non uniforme. 
 
-Tout polynôme étant $C^\infty$, la \emph{continuité d'une spline} dépend de la continuité au niveau de la jointure des courbes polynômes. Si $\forall i$ tel que $1 \le i \le k$ et $\forall j$ tel que $0 \le j \le n$ l'égalité suivante est vérifiée: 
+Tout polynôme étant~$C^\infty$, la \emph{continuité d'une spline} dépend de la continuité au niveau de la jointure des courbes polynômes. Si~$\forall i$ tel que~$1 \le i \le k$ et~$\forall j$ tel que~$0 \le j \le n$ l'égalité suivante est vérifiée: 
 \begin{equation}
  P_i^{(j)} (t_i) = P_{i+1}^{(j)} (t_i). 
 \end{equation}
- alors la spline est $C^n$ 
+ alors la spline est~$C^n$ 
  
 %%%%----------------------------------------------------------
 \subsection{Interpolation d'Hermite}
@@ -319,21 +319,21 @@ Entré chez Renault en 1933, il y fera toute sa carrière jusqu'en 1975 au poste
 Les courbes de Bézier sont des courbes polynomiales paramétriques. \index[aut]{Bézier (Pierre), 1910-1999, Français} Elles ont de nombreuses applications dans la synthèse d'images et le rendu de polices de caractères (Pierre Bézier a travaillé sur les deux sujets). Ses recherches aboutirent à un logiciel, Unisurf, breveté en 1966. Il est à la base de tous les logiciels créés par la suite. Les concepts de CAO et de CFAO venaient de prendre forme. Ultérieurement, l'un des développeurs d'Apple, John Warnock,\index[aut]{Warnock (John Edward), 1940- , Américain} réutilise les travaux de Pierre Bézier pour élaborer un nouveau langage de dessin de polices: Postscript. Il crée ensuite en 1982, avec Charles M. Geschke,\index[aut]{Geschke (Charles M.), 1939-, Américain} la société Adobe pour lancer un logiciel de dessin dérivé de ces résultats: Illustrator. 
 \end{histoire}
 
-Notons que les splines existaient avant Bézier\index[aut]{Bézier (Pierre), 1910-1999, Français}, mais leur défaut était de changer d'aspect lors d'une rotation de repère, ce qui les rendait inutilisables en CAO. Bézier partit d'une approche géométrique fondée sur la linéarité de l'espace euclidien et la théorie, déjà existante, du barycentre: si la définition est purement géométrique, aucun repère n'intervient puisque la construction en est indépendante. Les splines conformes aux principes de Bézier seront par la suite nommées B-splines.   
+Notons que les splines existaient avant Bézier\index[aut]{Bézier (Pierre), 1910-1999, Français}, mais leur défaut était de changer d'aspect lors d'une rotation de repère, ce qui les rendait inutilisables en CAO. Bézier partit d'une approche géométrique fondée sur la linéarité de l'espace euclidien et la théorie, déjà existante, du barycentre: si la définition est purement géométrique, aucun repère n'intervient puisque la construction en est indépendante. Les splines conformes aux principes de Bézier seront par la suite nommées B-splines.  
 
-Pour $n+1$ \emph{points de contrôle} $(\mathbf{P}_0, \dots, \mathbf{P}_n)$ on définit une \emph{courbe de Bézier} par l'ensemble des points:
+Pour~$n+1$ \emph{points de contrôle}~$(\mathbf{P}_0, \dots, \mathbf{P}_n)$ on définit une \emph{courbe de Bézier} par l'ensemble des points:
 \begin{equation}
-b(t)=\dsum_{i=0}^n B_i^n(t)\cdot\mathbf{P}_i\quad\text{avec}\quad t \in[0,1]
+b(t)=\dsum_{i=0}^n B_i^n(t)\cdot\mathbf{P}_i\quad\text{avec}\quad t \in\intff{0}{1}
 \end{equation}
-où les $B_i^n$ sont les polynômes de Bernstein. La suite des points $\mathbf{P}_0,\ldots,\mathbf{P}_n$ forme le \emph{polygone de contrôle de Bézier}. 
+où les~$B_i^n$ sont les polynômes de Bernstein. La suite des points~$\mathbf{P}_0,\ldots,\mathbf{P}_n$ forme le \emph{polygone de contrôle de Bézier}. 
 
-Chaque point de la courbe peut être vu alors comme un barycentre des $n+1$ points de contrôle pondérés d'un poids égal au polynôme de Bernstein.\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{polynôme!de Bernstein} 
+Chaque point de la courbe peut être vu alors comme un barycentre des~$n+1$ points de contrôle pondérés d'un poids égal au polynôme de Bernstein.\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{polynôme!de Bernstein} 
 Les principales propriétés des courbes de Bézier sont les suivantes:
 \begin{itemize}
 \item la courbe est à l'intérieur de l'enveloppe convexe des points de contrôle;\index[aut]{Bézier (Pierre), 1910-1999, Français} 
-\item la courbe commence par le point $\mathbf{P}_0$ et se termine par le point $\mathbf{P}_n$, mais ne passe pas \emph{a priori} par les autres points de contrôle;
-\item $\mathbf{P_0P_1}$ est le vecteur tangent à la courbe en $\mathbf{P}_0$ et $\mathbf{P_{n-1}P_n}$ au point $\mathbf{P}_n$;
-\item une courbe de Bézier est $C^{\infty}$;
+\item la courbe commence par le point~$\mathbf{P}_0$ et se termine par le point~$\mathbf{P}_n$, mais ne passe pas \emph{a priori} par les autres points de contrôle;
+\item~$\mathbf{P_0P_1}$ est le vecteur tangent à la courbe en~$\mathbf{P}_0$ et~$\mathbf{P_{n-1}P_n}$ au point~$\mathbf{P}_n$;
+\item une courbe de Bézier est~$C^{\infty}$;
 \item la courbe de Bézier est un segment si et seulement si les points de contrôle sont alignés;
 \item chaque restriction d'une courbe de Bézier est aussi une courbe de Bézier;
 \item un arc de cercle (ni même aucun arc de courbe conique, en dehors du segment de droite) ne peut pas être décrit par une courbe de Bézier, quel que soit son degré;
@@ -343,11 +343,11 @@ Les principales propriétés des courbes de Bézier sont les suivantes:
 %%%%----------------------------------------------------------
 \subsection{B-Spline}
 %%%%----------------------------------------------------------
-Une \emph{B-spline} est une combinaison linéaire de splines positives à support compact minimal. Les B-splines sont la généralisation des courbes de Bézier, elles peuvent être à leur tour généralisées par les NURBS.\index[aut]{Bézier (Pierre), 1910-1999, Français} Étant donné $m+1$ points $t_i$ dans $[0,1]$ tels que $0\le t_0\le t_1\le\ldots\le t_m\le 1$, une courbe spline de degré $n$ est une courbe paramétrique $\mathbf{S}:[0,1]\to\mathbb{R}^d$, composée de fonctions \emph{B-splines} de degré $n$: 
+Une \emph{B-spline} est une combinaison linéaire de splines positives à support compact minimal. Les B-splines sont la généralisation des courbes de Bézier, elles peuvent être à leur tour généralisées par les NURBS.\index[aut]{Bézier (Pierre), 1910-1999, Français} Étant donné~$m+1$ points~$t_i$ dans~$\intff{0}{1}$ tels que~$0\le t_0\le t_1\le\ldots\le t_m\le 1$, une courbe spline de degré~$n$ est une courbe paramétrique~$\mathbf{S}:\intff{0}{1}\to\mathbb{R}^d$, composée de fonctions \emph{B-splines} de degré~$n$: 
 \begin{equation}
 \mathbf{S}(t)=\sum_{i=0}^{m-n-1}b_{i,n}(t)\cdot\mathbf{P}_{i},\qquad t \in [0, 1], 
 \end{equation}
-où les $P_i$ forment un polygone appelé \emph{polygone de contrôle}. Le nombre de points composant ce polygone est égal à $m-n$. Les $m-n$ fonctions B-splines de degré $n$ sont définies par récurrence sur le degré inférieur: 
+où les~$P_i$ forment un polygone appelé \emph{polygone de contrôle}. Le nombre de points composant ce polygone est égal à~$m-n$. Les~$m-n$ fonctions B-splines de degré~$n$ sont définies par récurrence sur le degré inférieur: 
 \begin{align}
 &b_{j, 0}(t)= \left\{ 
 \begin{aligned} &1 && \text{si} \quad t_j \leqslant t < t_{j + 1} \\
@@ -355,11 +355,11 @@ où les $P_i$ forment un polygone appelé \emph{polygone de contrôle}. Le nombr
 \end{aligned} \right.\\
 &b_{j, n}(t):= \frac{t - t_j}{t_{j + n} - t_j} b_{j, n - 1}(t) + \frac{t_{j + n + 1} - t}{t_{j + n + 1} - t_{j + 1}} b_{j + 1, n - 1}(t). 
 \end{align}
-Quand les points sont équidistants, les B-splines sont dites uniformes. C'est le cas des courbes de Bézier qui sont des B-splines uniformes, dont les points $t_i$ (pour $i$ entre $0$ et $m$) forment une suite arithmétique de $0$ à $1$ avec un pas constant $h=1/m$, et où le degré $n$ de la courbe de Bézier ne peut être supérieur à $m$). 
+Quand les points sont équidistants, les B-splines sont dites uniformes. C'est le cas des courbes de Bézier qui sont des B-splines uniformes, dont les points~$t_i$ (pour~$i$ entre~$0$ et~$m$) forment une suite arithmétique de~$0$ à~$1$ avec un pas constant~$h=1/m$, et où le degré~$n$ de la courbe de Bézier ne peut être supérieur à~$m$). 
 
-Par extension, lorsque deux points successifs $t_j$ et $t_{j+1}$ sont confondus, on pose $0/0 = 0$: cela a pour effet de définir une discontinuité de la tangente, pour le point de la courbe paramétré par une valeur de $t$, donc d'y créer un sommet d'angle non plat. Toutefois il est souvent plus simple de définir ce B-spline étendu comme l'union de deux B-splines définis avec des points distincts, ces splines étant simplement joints par ce sommet commun, sans introduire de difficulté dans l'évaluation paramétrique ci-dessus des B-splines pour certaines valeurs du paramètre $t$. Mais cela permet de considérer alors tout polygone simple comme un B-spline étendu.
+Par extension, lorsque deux points successifs~$t_j$ et~$t_{j+1}$ sont confondus, on pose~$0/0 = 0$: cela a pour effet de définir une discontinuité de la tangente, pour le point de la courbe paramétré par une valeur de~$t$, donc d'y créer un sommet d'angle non plat. Toutefois il est souvent plus simple de définir ce B-spline étendu comme l'union de deux B-splines définis avec des points distincts, ces splines étant simplement joints par ce sommet commun, sans introduire de difficulté dans l'évaluation paramétrique ci-dessus des B-splines pour certaines valeurs du paramètre~$t$. Mais cela permet de considérer alors tout polygone simple comme un B-spline étendu.
  
-La forme des fonctions de base est déterminée par la position des points. La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle. Une B-spline de degré $n$, $b_{i,n}(t)$ est non nulle dans l'intervalle $[t_i, t_{i+n+1}]$: 
+La forme des fonctions de base est déterminée par la position des points. La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle. Une B-spline de degré~$n$, $b_{i,n}(t)$ est non nulle dans l'intervalle~$[t_i, t_{i+n+1}]$: 
 \begin{equation}
 b_{i,n}(t) =\left\{\begin{aligned}
 &>0 && \text{si} \quad t_{i} \leqslant t < t_{i+n+1} \\
@@ -372,7 +372,7 @@ En d'autres termes, déplacer un point de contrôle ne modifie que localement l'
 %%%%----------------------------------------------------------
 Ces objets couramment nommés \emph{NURBS}, pour Non-Uniform Rational Basis Splines, correspondent à une généralisation des B-splines car ces fonctions sont définies avec des points en coordonnées homogènes. Les coordonnées homogènes, introduites par Möbius,\index[aut]{Möbius (August (us) Ferdinand), 1790-1868, Allemand} rendent les calculs possibles dans l'espace projectif comme les coordonnées cartésiennes le font dans l'espace euclidien. Ces coordonnées homogènes sont largement utilisées en infographie ou en CAO car elles permettent la représentation de scènes en trois dimensions. Les NURBS parviennent à ajuster des courbes qui ne peuvent pas être représentées par des B-splines uniformes. Ils permettent même une représentation exacte de la totalité des arcs coniques ainsi que la totalité des courbes et surfaces polynomiales, avec uniquement des paramètres entiers ou rationnels si les NURBS passent par un nombre limité mais suffisant de points définis dans un maillage discret de l'espace. 
 
-Les fonctions NURBS de degré $d$ sont définies par la formule doublement récursive de Cox-de Boor (formulation trouvée de manière indépendante par M.G. Cox en 1971 et C. de Boor en 1972):\index[aut]{Cox (M. G.)}\index[aut]{de Boor (Carl-Wilhelm Reinhold), 1937-, Américain} 
+Les fonctions NURBS de degré~$d$ sont définies par la formule doublement récursive de Cox-de Boor (formulation trouvée de manière indépendante par M.G. Cox en 1971 et C. de Boor en 1972):\index[aut]{Cox (M. G.)}\index[aut]{de Boor (Carl-Wilhelm Reinhold), 1937-, Américain} 
 \begin{equation}
 \left\{\begin{aligned}
 &b_{j,0}(t)=
@@ -383,4 +383,4 @@ Les fonctions NURBS de degré $d$ sont définies par la formule doublement récu
 &b_{j,d}(t)= \dfrac{t-t_j}{t_{j+d}-t_j} b_{j,d-1}(t)+\dfrac{t_{j+d+1}-t}{t_{j+d+1}-t_{j+1}}b_{j+1,d-1}(t)
 \end{aligned}\right. 
 \end{equation}
-où les $t_j$ sont des points. Lorsque plusieurs points $t_j$ sont confondus, on peut encore poser $0/0=0$ comme pour les B-splines. 
+où les~$t_j$ sont des points. Lorsque plusieurs points~$t_j$ sont confondus, on peut encore poser~$0/0=0$ comme pour les B-splines. 
