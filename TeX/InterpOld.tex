@@ -113,7 +113,7 @@ découverte initialement par Waring\index[aut]{Waring (Edward), 1736-1798, Angla
 Euler)\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} peut fort bien diverger même pour des fonctions 
 très régulières.
 C'est le phénomène de Runge:\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
-contrairement \ a l'intuition, \textcolorred{l'augmentation du nombre de points d'interpolation 
+contrairement à l'intuition, \textcolorred{l'augmentation du nombre de points d'interpolation 
 ne constitue pas nécessairement une bonne stratégie d'approximation avec certaines fonctions (même 
 infiniment dérivables).}
 
@@ -722,9 +722,9 @@ De plus, leur simplicité d'implémentation les rend très populaires et elles s
 dans les logiciels de dessin.
 
 \medskip
-Une courbe spline est une fonction polynomiale par morceaux définie sur un intervalle~$[a,b]$ divisé 
+Une courbe spline est une fonction polynomiale par morceaux définie sur un intervalle~$\intff{a}{b}$ divisé 
 en sous intervalles~$[t_{i-1}, t_i]$ tels que~$a = t_0 < t_1 < \cdots < t_{k-1} < t_k = b$. On la note 
-$S: [a,b]\to \RR$.
+$S: \intff{a}{b}\to \RR$.
 
 Sur chaque intervalle~$[t_{i-1}, t_i]$ on définit un polynôme
 $ P_i: [t_{i-1}, t_i] \to \RR$.

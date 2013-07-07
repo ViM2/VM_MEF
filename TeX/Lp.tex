@@ -47,7 +47,7 @@ telle qu'elle est définie.
 \medskip
 \index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 \begin{definition}[Intégrale de Riemann]
-Soit~$f$ une fonction réelle définie sur un intervalle~$[a,b]$.
+Soit~$f$ une fonction réelle définie sur un intervalle~$\intff{a}{b}$.
 On considère une suite~$(x_i)$, $0\le i\le n$ de subdivisions de cet intervalle:
 $a=x_0 < x_1 <\ldots < x_{n-1} <x_n=b$.
 Notons~$\delta_i=x_i-x_{i-1}$ et~$S=\delta_1f(a+\varepsilon_1\delta_1) +
@@ -95,15 +95,15 @@ Dualement, la borne inférieure (ou l'infimum) d'une partie est le plus grand de
 
 \textcolorblue{L'intégrale de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 peut être définie de manière géométrique: pour une fonction
-positive~$f$ définie sur~$[a,b]$, elle est égale à la mesure de dimension deux de l'ensemble
+positive~$f$ définie sur~$\intff{a}{b}$, elle est égale à la mesure de dimension deux de l'ensemble
 $\{(x,y)\in\RR^2 / a\le y\le f(x), a\le x\le b\}$ quand cette mesure existe.
 D'une manière analytique, cette définition de l'intégrale de Lebesgue devient:\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
 \begin{definition}[Intégrale de Lebesgue]
-soit~$f$ une fonction réelle, bornée, définie sur~$[a,b]$.
-Supposons~$m\le f(x)\le M$ pour~$x\in[a,b]$.
+soit~$f$ une fonction réelle, bornée, définie sur~$\intff{a}{b}$.
+Supposons~$m\le f(x)\le M$ pour~$x\in\intff{a}{b}$.
 Pour tous~$\xi, \eta$ tels que~$\xi\le\eta$, on définit:
-$V_{\xi,\eta}=\{x\in[a,b]/ \xi\le f(x)\le\eta\}$.
+$V_{\xi,\eta}=\{x\in\intff{a}{b}/ \xi\le f(x)\le\eta\}$.
 Si pour tous~$\xi$, $\eta$, $V_{\xi,\eta}$ est mesurable, alors~$f$ est mesurable.
 
 En considérant la partition~$m=\xi_1<\xi_2<...<\xi_n<\xi_{n+1}=M$ et
@@ -164,8 +164,8 @@ L'intégrale de Lebesgue peut alors être introduite comme un cas particulier de
 \section{Présentation des espaces de Lebesgue~$L^p$}\index{espace!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
 \begin{definition}[Ensemble des fonctions mesurables]
-Soit~$(E,\mathcal{A},\mu)$ un espace mesur\'e.
-Si~$\colorred p\in[1,\infty[$, on note~$\colorblue \mathcal{L}^p=\mathcal{L}^p(E,\mathcal{A},\mu)$ l'ensemble de toutes
+Soit~$(E,\mathcal{A},\mu)$ un espace mesuré.
+Si~$\colorred p\in\intfo{1}{+\infty}$, on note~$\colorblue \mathcal{L}^p=\mathcal{L}^p(E,\mathcal{A},\mu)$ l'ensemble de toutes
 les fonctions mesurables sur~$(E,\mathcal{A})$, à valeurs dans~$\RR$, telles que la fonction
 $|f|^p$ soit~$\mu$-intégrable.
 
@@ -178,8 +178,8 @@ Chaque espace~$\mathcal{L}^p$ est un espace vectoriel.
 \end{theoreme}
 
 \begin{definition}[Espace~$L^p$]
-Soit~$(E,\mathcal{A},\mu)$ un espace mesur\'e.
-Si~$\colorred p\in[1,\infty[$, on note~$\colorblue L^p=L^p(E,\mathcal{A},\mu)$ l'ensemble des
+Soit~$(E,\mathcal{A},\mu)$ un espace mesuré.
+Si~$\colorred p\in\intfo{1}{+\infty}$, on note~$\colorblue L^p=L^p(E,\mathcal{A},\mu)$ l'ensemble des
 classes d'équivalence des fonctions de~$\mathcal{L}^p$ pour la relation d'équivalence
 <<~égualité~$\mu$-presque partout~>>.
 
@@ -202,12 +202,7 @@ d'équivalence ou un représentant de la classe d'équivalence.
 En d'autres termes, on identifie une classe à l'un quelconque de ses représentants.
 
 \medskip
-\textcolorgris{En toute généralité, on aura bien remarqué que les définitions précédentes sont liées à la mesure
-$\mu$ utilisée.
-Si l'on considère simultanément deux mesures~$\mu$ et~$\nu$, les classes d'équivalences ne sont pas les mêmes
-respectivement à chacune de ces mesures, et l'identification d'une classe à l'un quelconque de ses représentant 
-ne peut plus se faire.}
-
+\textcolorgris{En toute généralité, on aura bien remarqué que les définitions précédentes sont liées à la mesure~$\mu$ utilisée. Si l'on considère simultanément deux mesures~$\mu$ et~$\nu$, les classes d'équivalences ne sont pas les mêmes respectivement à chacune de ces mesures, et l'identification d'une classe à l'un quelconque de ses représentant ne peut plus se faire.}
 
 \begin{theoreme}
 Chaque espace~$L^p$ est un espace vectoriel.

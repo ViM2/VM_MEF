@@ -5,7 +5,7 @@ dérivabilité, les espaces nécessaires ayant été définis précédemment,
 ainsi que les notions d'application...
 
 Dans la mesure où les problèmes que nous souhaitons aborder, i.e. ceux issus de
-la physique, sont généralement décrits par des équations différentielles ou des équations différentiellesP, on comprend bien
+la physique, sont généralement décrits par des équations différentielles ou des équations aux dérivées partielles, on comprend bien
 que la notion de dérivation est centrale.
 
 Mais n'oublions pas que ces notions de continuité et de différentiabilité n'ont pas toujours
@@ -563,7 +563,7 @@ Soient~$\mathbf{A}~$ un champ de vecteur et~$f$ un champ scalaire, on définit:
 \begin{equation} \dive \mathbf{A} \equiv \nabla\cdot\mathbf{A} \end{equation}
 
 \item Le \textcolorblue{rotationnel}:
-\begin{equation} \rotb {\mathbf{A}} \equiv \nabla \wedge \mathbf{A} \end{equation}
+\begin{equation} \rotb \mathbf{A} \equiv \nabla \wedge \mathbf{A} \end{equation}
 
 \item Le \textcolorblue{Laplacien} (scalaire et vectoriel):
 \begin{align} &\Delta f = \nabla^2 f\\
@@ -585,7 +585,7 @@ En coordonnées cartésiennes, il vient explicitement:
 	\VV*{{\partial f \over \partial x}\\ {\partial f \over \partial y}\\ {\partial f \over \partial z}}$
   \item divergence:~$ \dive \mathbf{A} =
 	{\partial A_x \over \partial x} + {\partial A_y \over \partial y} + {\partial A_z \over \partial z}$
-  \item rotationnel:~$ \rotb {\mathbf{A}} =
+  \item rotationnel:~$ \rotb \mathbf{A} =
 	\VV*{{\partial A_z \over \partial y} - {\partial A_y \over \partial z} \\
 	{\partial A_x \over \partial z} - {\partial A_z \over \partial x} \\
 	{\partial A_y \over \partial x} - {\partial A_x \over \partial y}}$
@@ -757,8 +757,8 @@ où~$\Gamma$ est le bord du domaine~$\Omega$ et~$f$ un champ scalaire (i.e. une 
 Ce théorème met en relation l'intégrale de volume du rotationnel d'un champ vectoriel et l'intégrale
 de surface du même champ:
 \begin{equation}
-\int_\Omega \rotb {\mathbf{A}} =
--\int_\Gamma {\mathbf{A}} \wedge \vect{n}(x)
+\int_\Omega \rotb \mathbf{A} =
+-\int_\Gamma \mathbf{A} \wedge \vect{n}(x)
 \end{equation}
 où~$\Gamma$ est la frontière de~$\Omega$, $\wedge$ est le produit vectoriel et~$n(x)$ est
 la normale dirigé vers l'extérieur.
@@ -770,7 +770,7 @@ et l'intégrale curviligne (ou circulation) du même champ sur la frontière.
 Elle découle du théorème de Green qui, pour une surface~$S$ (généralement non fermée) de
 frontière~$C$, implique:
 \begin{equation}
-\iint_S \rotb {\mathbf{A}} \cdot \dd\mathbf{s} = \oint_C {\mathbf{A}} \cdot \dd\mathbf{l}
+\iint_S \rotb \mathbf{A} \cdot \dd\mathbf{s} = \oint_C \mathbf{A} \cdot \dd\mathbf{l}
 \end{equation}
 Si~$S$ est fermée, $C$ est vide (ou réduit à un point) et le membre de droite est nul.
 
@@ -804,7 +804,6 @@ Alors la dérivée extérieure de~$\omega$ s'écrit:
 \begin{equation}
 \dd \omega = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \dd x \wedge \dd y
 \end{equation}
-
 On peut alors résumer le théorème de Green par la formule:
 \begin{equation}
 \oint_{\partial \Omega} \omega = \iint_{\Omega} \dd\omega
@@ -813,44 +812,38 @@ On peut alors résumer le théorème de Green par la formule:
 \colorblack
 
 \medskip
-\begin{theoreme}[Théorème de Green-Ostrogradsky (flux-divergence)]\index[aut]{Green (George), 1793-1841, Anglais}%
-\index[aut]{Ostrogradsky (Mikhaïl Vassilievitch), 1801-1862, Ukainien}\index{théorème!de Green-Ostrogradsky}%
-\index{théorème!du flux-divergence}
-(<<~Ostrogradsky~>> peut s'écrire avec un <<~y~>> ou un <<~i~>> à la fin.)
-\medskip
-\index{divergence}
-
+\begin{theoreme}[Théorème de Green--Ostrogradsky]\index[aut]{Green (George), 1793-1841, Anglais}%
+\index[aut]{Ostrogradsky (Mikhaïl Vassilievitch), 1801-1862, Ukainien}\index{théorème!de Green-Ostrogradsky}\index{théorème!du flux-divergence}\index{divergence}
 Soit~$\Omega$ un domaine de~$\RR^2$ ou~$\RR^3$ de frontière~$\Gamma$
-et~${\mathbf{A}}$ un champ de vecteurs:
+et~$\mathbf{A}$ un champ de vecteurs:
 \begin{equation}
-  \int_\Omega \dive\ {\mathbf{A}} = \int_\Gamma {\mathbf{A}}\cdot n
+  \int_\Omega \dive\ \mathbf{A} = \int_\Gamma \mathbf{A}\cdot n
 \end{equation}
 \end{theoreme}
 
 \medskip
 Ce théorème prend aussi le nom de théorème du flux-divergence ou plus simplement formule de la
-divergence.
+divergence. <<~Ostrogradsky~>> peut s'écrire avec un <<~y~>> ou un <<~i~>> à la fin. Du théorème de Green-Ostrogradsky, on peut déduire la formule de Green:\index[aut]{Green (George), 1793-1841, Anglais}
 
 \begin{theoreme}[Formule de Green]
-Du théorème de Green-Ostrogradsky on peut déduire la formule de Green:\index[aut]{Green (George), 1793-1841, Anglais}
-soit~$\Omega$ un domaine de~$\RR^2$ ou~$\RR^3$ de frontière~$\Gamma$
+Soient~$\Omega$ un domaine de~$\RR^2$ ou~$\RR^3$ de frontière~$\Gamma$
 et~$u$ et~$v$ deux fonctions régulières:
 \begin{equation}
-  \int_\Omega (\Delta u)v = -\dint_\Omega \nabla u\cdot\nabla v + \dint_\Gamma \dfrac{\partial u}{\partial n}v
+\int_\Omega (\Delta u)v = -\dint_\Omega \nabla u\cdot\nabla v + \dint_\Gamma \dfrac{\partial u}{\partial n}v
 \end{equation}
 \end{theoreme}
 
 \medskip
 On en déduit certaines formules utiles du calcul vectoriel.
 Soit~$\Omega$ un domaine de~$\RR^2$ ou~$\RR^3$ de frontière~$\Gamma$,
-${\mathbf{A}}$ et~${\mathbf{B}}$ des champ de vecteurs, $f$ et~$g$ des
+$\mathbf{A}$ et~$\mathbf{B}$ des champ de vecteurs, $f$ et~$g$ des
 fonctions régulières, et~$n(x)$ la normale extérieure au point considéré:
 \begin{align}
-  &\int_\Omega \left( {\mathbf{A}}\cdot \nabla f + f \left(\nabla \cdot {\mathbf{A}}\right)\right)=
-  \int_\Gamma f {\mathbf{A}}\cdot n(x)\\
-&\int_\Omega \left( {\mathbf{B}}\cdot\left(\nabla \wedge {\mathbf{A}}\right) - {\mathbf{A}}\cdot \left(\nabla
-\wedge {\mathbf{B}}\right) \right)
-= \int_\Gamma \left({\mathbf{A}} \wedge {\mathbf{B}}\right)\cdot n(x)\\
+  &\int_\Omega \left( \mathbf{A}\cdot \nabla f + f \left(\nabla \cdot \mathbf{A}\right)\right)=
+  \int_\Gamma f \mathbf{A}\cdot n(x)\\
+&\int_\Omega \left( \mathbf{B}\cdot\left(\nabla \wedge \mathbf{A}\right) - \mathbf{A}\cdot \left(\nabla
+\wedge \mathbf{B}\right) \right)
+= \int_\Gamma \left(\mathbf{A} \wedge \mathbf{B}\right)\cdot n(x)\\
 &\int_\Omega \left( f \nabla^{2} g + \nabla f \cdot \nabla g \right)
 = \int_\Gamma f \nabla g \cdot \vect{n}(x)
 \end{align}

@@ -40,10 +40,10 @@ méthode, soit~$f(a)$, soit~$f((a+b)/2)$.
 
 \medskip
 Comme cette approximation est très brutale, il est possible de subsiviser
-l'intervalle~$[a,b]$ en plusieurs intervalles et d'appliquer la méthode sur chacun
+l'intervalle~$\intff{a}{b}$ en plusieurs intervalles et d'appliquer la méthode sur chacun
 des intervalles, i.e. d'approcher~$f$ par une fonction en escalier.
 
-Si l'on subsivise l'intervalle~$[a,b]$ en~$n$ intervalles égaux, il vient alors:
+Si l'on subsivise l'intervalle~$\intff{a}{b}$ en~$n$ intervalles égaux, il vient alors:
 \begin{equation}I\approx h\sum_{i=0}^{n-1} f(x_i)\end{equation}
 où~$h=(b-a)/n$ est la longueur de chaque sous intervalle et~$x_i=a+ih$ le
 point courant.
@@ -59,22 +59,22 @@ de degré~$1$, i.e. par la droite passant par les points~$(a,f(a))$ et~$(b,f(b))
 On obtient alors:
 \begin{equation} I\approx h\dfrac{f(a)+f(b)}2\end{equation}
 où~$h=b-a$ est la longueur de l'intervalle,
-et l'erreur commise vaut~$-\frac{h^3}{12} f''(w)$ pour un certain~$w\in[a,b]$
-(sous réserve que~$f$ soit 2 fois dérivable).
+et l'erreur commise vaut~$-\frac{h^3}{12} f''(w)$ pour un certain~$w\in\intff{a}{b}$
+(sous réserve que~$f$ soit deux fois dérivable).
 
 L'erreur étant proportionnelle à~$f''$, la méthode est dite d'ordre~$2$, ce qui
 signifie qu'elle est exacte (erreur nulle) pour tout polynôme de degré inférieur
-où égale \ a 1.
+où égale à 1.
 
 \medskip
 Comme cette approximation peut sembler un peu brutale, il est possible de subsiviser
-l'intervalle~$[a,b]$ en plusieurs intervalles et d'appliquer cette formule sur chacun
+l'intervalle~$\intff{a}{b}$ en plusieurs intervalles et d'appliquer cette formule sur chacun
 des intervalles, i.e. d'approcher~$f$ par une fonction affine continue par morceaux.
 
-Si l'on subsivise l'intervalle~$[a,b]$ en~$n$ intervalles égaux, il vient alors:
+Si l'on subsivise l'intervalle~$\intff{a}{b}$ en~$n$ intervalles égaux, il vient alors:
 \begin{equation}I\approx \frac{(b-a)}{n}\sum_{i=0}^{n}f(x_i)\end{equation}
 où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le
-point courant et l'erreur commise vaut~$-\frac{h^3}{12n^2} f''(w)$ pour un certain~$w\in[a,b]$.
+point courant et l'erreur commise vaut~$-\frac{h^3}{12n^2} f''(w)$ pour un certain~$w\in\intff{a}{b}$.
 
 \medskip
 \textbf{Remarques:}
@@ -94,22 +94,22 @@ et le point milieu~$(c,f(c))$ avec~$c=(a+b)/2$.
 On obtient alors:
 \begin{equation} I\approx \frac{h}{6} \left( f(a)+f(b)+f(c)\right)\end{equation}
 où~$h=b-a$ est la longueur de l'intervalle,
-et l'erreur commise vaut~$-\frac{h^5}{2^5.90} f^{(4)}(w)$ pour un certain~$w\in[a,b]$
-(sous réserve que~$f$ soit 4 fois dérivable).
+et l'erreur commise vaut~$-\frac{h^5}{2^5.90} f^{(4)}(w)$ pour un certain~$w\in\intff{a}{b}$
+(sous réserve que~$f$ soit quatre fois dérivable).
 
 L'erreur étant proportionnelle à~$f^{(4)}$, la méthode est dite d'ordre~$4$, ce qui
 signifie qu'elle est exacte (erreur nulle) pour tout polynôme de degré inférieur
-où égale \ a 3.
+où égale à 3.
 
 \medskip
-Comme dans le cas préc\'edent, il est possible de subsiviser l'intervalle~$[a,b]$ en plusieurs intervalles 
+Comme dans le cas précédent, il est possible de subsiviser l'intervalle~$\intff{a}{b}$ en plusieurs intervalles 
 et d'appliquer cette formule sur chacun des intervalles.
 
-Si l'on subsivise l'intervalle~$[a,b]$ en~$n$ intervalles égaux, avec~$n$ pair, il vient alors:
+Si l'on subsivise l'intervalle~$\intff{a}{b}$ en~$n$ intervalles égaux, avec~$n$ pair, il vient alors:
 \begin{equation} I\approx \frac{h}{3} \left( f(a)+f(b)+2\sum_{i=1}^{n/2-1}f(x_{2i})+4\sum_{i=1}^{n/2}f(x_{2i-1})
 \right)\end{equation}
 où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le
-point courant et l'erreur commise vaut~$-\frac{nh^5}{180} f^{(4)}(w)$ pour un certain~$w\in[a,b]$.
+point courant et l'erreur commise vaut~$-\frac{nh^5}{180} f^{(4)}(w)$ pour un certain~$w\in\intff{a}{b}$.
 
 \medskip
 \textbf{Remarques:}
@@ -124,7 +124,7 @@ point courant et l'erreur commise vaut~$-\frac{nh^5}{180} f^{(4)}(w)$ pour un ce
 \subsection*{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{méthode de Newton-Cotes}
 
 Les \textcolorblue{formules de Newton-Cotes} se proposent également d'approximer
-l'intégrale~$I$ et découpant l'intervalle~$[a,b]$ en~$n$ intervalles identiques.
+l'intégrale~$I$ et découpant l'intervalle~$\intff{a}{b}$ en~$n$ intervalles identiques.
 On posera donc encore une fois~$h=(b-a)/n$ la longueur de chaque sous intervalle, 
 et~$x_i=a+ih$ le point courant.
 La formule est:
@@ -141,7 +141,7 @@ avec~$n$ points.}
 Il est possible de construire une formule de Newton-Cotes de degré quelconque.
 Toutefois, une telle formule \textcolorred{n'est pas inconditionnellement stable.}
 
-C'est pourquoi, on se cantonnera aux plus bas degrés:
+C'est pourquoi on se cantonnera aux plus bas degrés:
 $n=0$ méthode du point médian (i.e. méthode des rectangle où la valeur est
 évaluée en milieu d'intervalle); 
 $n=1$ méthode des trapèzes;
@@ -229,17 +229,16 @@ les trouver...)}.
 \end{itemize}
 
 \begin{figure}[ht]
-\begin{center}
+\centering
 \includegraphics[height=50mm]{ptGauss.eps}
-\end{center}
-\caption{\label{ptGauss} Éléments rectangulaire~$Q$1 de référence avec ces 4 points de Gauss (petits carrés)}
+\caption{Éléments rectangulaire~$Q$1 de référence avec ces quatre points de Gauss (petits carrés)}\label{ptGauss}
 \end{figure}
 
 \medskip
 \subsection*{Intégration sur des carrés ou des cubes}
 
 Sur les carrés et les cubes (qui correspondent à ce qui nous intéresse en terme
-d'\{eléments de référence), on obtient les formules suivantes:
+d'éléments de référence), on obtient les formules suivantes:
 \begin{equation} \int_{-1}^{-1}\int_{-1}^{-1} f(x,y)\dd x\dd y \approx
 \dsum_{i=1}^{n_x}\dsum_{j=1}^{n_y} \varpi_i\varpi_j f(x_i,x_j)\end{equation}
 
@@ -262,7 +261,7 @@ Dans ce cas, on construit des formules spécifiques qui ne sont pas issues du ca
 L'élément triangulaire de référence est un triangle isocèle côtés égaux
 de longueur 1. L'angle droit est à l'origine du repère. La forme générale d'intégration est:
 \begin{equation}
-I=\int_{\hat{K}} f(x,y)dxdy \approx \sum_{i=1}^n \varpi_if(x_i,y_i)
+I=\int_{\hat{K}} f(x,y)\,\dd x\,\dd y \approx \sum_{i=1}^n \varpi_if(x_i,y_i)
 \end{equation}
 
 \medskip

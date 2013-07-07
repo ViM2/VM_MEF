@@ -108,13 +108,13 @@ On notera \textcolorblue{$Q_k$ l'espace vectoriel des polynômes de degré infé
 
 \medskip
 \subsection*{Éléments finis unidimensionnels}
-On discrétise le segment~$[a,b]$ avec des polynômes de degrés~$1$ à~$m$.
+On discrétise le segment~$\intff{a}{b}$ avec des polynômes de degrés~$1$ à~$m$.
 On obtient les éléments du tableau~\ref{tab:Elem:uni}.
 \begin{table}[ht]\centering\small
 \begin{tabular}{c|cccc}
 Élément &~$P_1$ &~$P_2$ & ... &~$P_m$\\
 \hline
-$K$	  &~$[a,b]$ &~$[a,b]$ & ... &~$[a,b]$\\
+$K$	  &~$\intff{a}{b}$ &~$\intff{a}{b}$ & ... &~$\intff{a}{b}$\\
 $\Sigma$ &~$\{a,b\}$ &~$\{a,\frac{a+b}2, b\}$& ... &$\{a+i\frac{b-a}m, i=0,\ldots, m\}$\\
 $P$   &~$P_1$ &~$P_2$ & ... &~$P_m$\\
 \hline
@@ -371,7 +371,7 @@ Nous présentons quelques éléments finis d'Hermite utilisés classiquement, do
 \begin{tabular}{c|cc}
 Élément & cubique & quintique\\
 \hline
-$K$	  & segment~$[a,b]$ & segment~$[a,b]$\\
+$K$	  & segment~$\intff{a}{b}$ & segment~$\intff{a}{b}$\\
 $\Sigma$ &~$\{p(a), p'(a), p(b), p'(b)\}$ &~$\{p(a), p'(a), p''(a), p(b), p'(b), p''(b)\}$\\
 $P$   &~$P_3$ &~$P_3$\\
 Régularité &~$C^1$ et~$H^2$ &~$C^2$ et~$H^3$\\
