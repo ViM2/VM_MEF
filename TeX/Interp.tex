@@ -2,26 +2,58 @@
 
 
 \medskip
-L'\emph{interpolation} est une opération consistant à approcher une courbe qui n'est connue que par la donnée d'un nombre fini de points (ou une fonction à partir de la donnée d'un nombre fini de valeurs). 
+L'\textcolorblue{interpolation} est une opération consistant à approcher une courbe qui n'est connue que par la donnée d'un nombre fini de points (ou une fonction à partir de la donnée d'un nombre fini de valeurs). 
 
 Ainsi, l'interpolation numérique sert souvent à <<~faire émerger une courbe parmi des points~>>. Il s'agit de toutes les méthodes développées afin de mieux prendre en compte les erreurs de mesure, i.e. d'exploiter des données expérimentales pour la recherche de lois empiriques. Nous citerons par exemple la \textcolorblue{régression linéaire} et la \textcolorblue{méthode des moindres carrés} souvent bien maîtrisées. On demande à la solution du problème d'interpolation de \emph{passer par les points prescrits}, voire, suivant le type d'interpolation, de vérifier des propriétés supplémentaires (de continuité, de dérivabilité, de tangence en certains points...). Toutefois, parfois on ne demande pas à ce que l'approximation passe exactement par les points prescrits. On parle alors plutôt d'approximation. 
 
 
 \begin{histoire}
-Le jour du Nouvel An de 1801, l'astronome italien Giuseppe Piazzi\index[aut]{Piazzi (Giuseppe), 1746-1826, Italien} a découvert l'astéroïde Cérès; il a suivi sa trajectoire jusqu'au 14 février 18012. Durant cette année, plusieurs scientifiques ont tenté de prédire sa trajectoire sur la base des observations de Piazzi mais à cette époque, la résolution des équations non linéaires de Kepler\index[aut]{Kepler (Johannes), 1571-1630, Allemand} de la cinématique est un problème très difficile. La plupart des prédictions sont erronées et le seul calcul suffisamment précis pour permettre au baron Franz Xaver von Zach\index[aut]{Zach (Franz Xaver, Baron von -), 1754-1832, Allemand} de localiser à nouveau Cérès à la fin de l'année est celui de Gauß,\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} (alors âgé de 24 ans). Gauß avait déjà réalisé l'élaboration des concepts fondamentaux en 1795, lorsqu'il avait 18 ans. Cependant, sa méthode des moindres carrés ne fut publiée qu'en 1809 dans le tome 2 de ses travaux sur la Mécanique céleste \emph{Theoria Motus Corporum Coelestium in sectionibus conicis solem ambientium}. Le mathématicien français Adrien-Marie Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français} a développé indépendamment la même méthode en 1805. Le mathématicien américain Robert Adrain\index[aut]{Adrain (Robert), 1775-1843, Américain} a publié en 1808 une formulation de la méthode. 
+Le jour du Nouvel An de 1801, l'astronome italien Giuseppe Piazzi\index[aut]{Piazzi (Giuseppe), 1746-1826, Italien} 
+a découvert l'astéroïde Cérès (il a suivi sa trajectoire jusqu'au 14 février 1801). 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\noindent\begin{tabular}{cccc}
+\includegraphics[height=\the\HauteurDesPhotos]{Piazzi}&
+\includegraphics[height=\the\HauteurDesPhotos]{Gauss}&
+\includegraphics[height=\the\HauteurDesPhotos]{Legendre}&
+\includegraphics[height=\the\HauteurDesPhotos]{Adrain}\\
+Piazzi &Gau\ss&Legendre &Adrain%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Durant cette année, plusieurs scientifiques ont tenté de prédire sa trajectoire sur la base des 
+observations de Piazzi (à cette époque, la résolution des équations non linéaires de 
+Kepler\index[aut]{Kepler (Johannes), 1571-1630, Allemand} de la cinématique est un problème 
+très difficile). La plupart des prédictions furent erronées; et le seul calcul suffisamment précis pour 
+permettre au baron Franz Xaver von Zach\index[aut]{Zach (Franz Xaver, Baron von -), 1754-1832, Allemand} 
+(astronome allemand) de localiser à nouveau Cérès à la fin de l'année, fut celui de 
+Gau\ss,\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand} (alors âgé 
+de 24 ans). Gau\ss{} avait déjà réalisé l'élaboration des concepts fondamentaux en 1795, lorsqu'il avait
+18 ans. Mais sa méthode des moindres carrés ne fut publiée qu'en 1809, lorsqu'elle parut dans le tome 2 de ses 
+travaux sur la Mécanique céleste \emph{Theoria Motus Corporum Coelestium in sectionibus conicis solem ambientium}. 
+Le mathématicien français Adrien-Marie Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français} 
+a développé indépendamment la même méthode en 1805. 
+Le mathématicien américain Robert Adrain\index[aut]{Adrain (Robert), 1775-1843, Américain} 
+a publié en 1808 une formulation de la méthode.
+}
 
-En 1829, Gauß a pu donner les raisons de l'efficacité de cette méthode: celle-ci est optimale à l'égard de bien des critères. Cet argument est maintenant connu sous le nom de \textcolorblue{théorème de Gauß-Markov}\index[aut]{Markov (Andreï Andreïevitch), 1856-1922, Russe}. Ce théorème dit que dans un modèle linéaire dans lequel les erreurs ont une espérance nulle, sont non corrélées et dont les variances sont égales, le meilleur estimateur linéaire non biaisé des coefficients est l'estimateur des moindres carrés. Plus généralement, le meilleur estimateur linéaire non biaisé d'une combinaison linéaire des coefficients est son estimateur par les moindres carrés. On ne suppose pas que les erreurs possèdent une loi normale, ni qu'elles sont indépendantes mais seulement non corrélées, ni qu'elles possèdent la même loi de probabilité.\\[5pt]
-\footnotesize
-\setlength\tabcolsep{0pt}
-\begin{tabular}{ccccc} 
-\includegraphics[height=23mm]{Piazzi}& 
-\includegraphics[height=23mm]{Gauss}& 
-\includegraphics[height=23mm]{Legendre}& 
-\includegraphics[height=23mm]{Adrain}& 
-\includegraphics[height=23mm]{Markov}\\ 
-Piazzi & Gauß& Legendre & Adrain& Markov
-%1746-1826& 1777-1855& 1752-1833& 1775-1843& 1856-1922\\ 
-\end{tabular}
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Markov}\\
+Markov%
+\end{tabular}}
+\medskip
+\ImageAGauche{%
+En 1829, Gau\ss{} a pu donner les raisons de l'efficacité de cette méthode: 
+celle-ci est optimale à l'égard de bien des critères. 
+Cet argument est maintenant connu sous le nom de \textcolorblue{théorème de Gauss-Markov}\index[aut]{Markov (Andreï Andreïevitch), 1856-1922, Russe}.\\
+\indent
+Ce théorème dit que dans un modèle linéaire dans lequel les erreurs ont une espérance nulle, 
+sont non corrélées et dont les variances sont égales, le meilleur estimateur linéaire non biaisé 
+des coefficients est l'estimateur des moindres carrés. Plus généralement, le meilleur estimateur linéaire 
+non biaisé d'une combinaison linéaire des coefficients est son estimateur par les moindres carrés. 
+\textbf{On ne suppose pas} que les erreurs possèdent une loi normale, ni qu'elles sont indépendantes 
+(seulement non corrélées), ni qu'elles possèdent la même loi de probabilité.\colorblack%
+}
 \end{histoire}
 
 L'approximation étant l'utilisation de méthodes permettant d'approcher une fonction mathématique par une suite de fonctions qui convergent dans un certain espace fonctionnel, on voit donc que ce qui a été fait dans la deuxième partie ressort bien de cela: on cherche une fonction généralement notée~$u$ qui n'est pas connue explicitement mais solution d'une équation différentielle ou d'une équation aux dérivées partielles, et l'on cherche à construire une suite de problèmes plus simples, que l'on sait résoudre à chaque étape, et telle que la suite des solutions correspondantes converge vers la solution cherchée. L'approximation peut servir aussi dans le cas où la fonction considérée est connue: on cherche alors à la remplacer par une fonction plus simple, plus régulière ou ayant de meilleures propriétés. L'intégration numérique sera détaillée un peu plus au chapitre~\ref{chap-quadrature}. Ce sont les méthodes d'approximation numériques qui sont utilisées. 
@@ -314,7 +346,14 @@ L'\emph{interpolation d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Franç
 %%%%----------------------------------------------------------
 \begin{histoire}Pierre Bézier (ingénieur de l'École nationale supérieure d'arts et métiers en 1930 et de l'École supérieure d'électricité en 1931, il reçoit le titre de docteur en mathématiques de l'université de Paris en 1977) est connu pour son invention des courbes et surfaces de Bézier, couramment utilisées en informatique. 
 
-Entré chez Renault en 1933, il y fera toute sa carrière jusqu'en 1975 au poste de directeur des méthodes mécaniques. Il y conçoit, en 1945, des machines transferts pour la ligne de fabrication des Renault 4CV, et, en 1958, l'une des premières machines à commande numérique d'Europe, une fraiseuse servant aux maquettes. Sa préoccupation était de créer un moyen simple et puissant pour modéliser des formes et faciliter la programmation des machines à commande numérique. Le problème auquel il s'attaque est celui de la modélisation des surfaces en trois dimensions, les commandes numériques se contentant jusqu'alors de courbes en deux dimensions. La solution qu'il cherche est celle d'une interface intuitive accessible à tout utilisateur. Il décide de considérer classiquement les surfaces comme une transformation de courbes. Son exigence de s'adapter au dessinateur et non de contraindre le dessinateur à devenir calculateur, l'amène à une inversion géniale, déduire le calcul à partir du dessin et non le dessin à partir du calcul. Il invente alors la poignée de contrôle, curseur de déplacement des courbes d'un dessin informatisé transmettant automatiquement les variations de coordonnées au processeur. Ces poignées de contrôle sont toujours utilisées aujourd'hui. 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}%
+\includegraphics[height=\the\HauteurDesPhotos]{Bezier}\\%
+Bézier%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Entré chez Renault en 1933, il y fera toute sa carrière jusqu'en 1975 au poste de directeur des méthodes mécaniques. Il y conçoit, en 1945, des machines transferts pour la ligne de fabrication des Renault 4CV, et, en 1958, l'une des premières machines à commande numérique d'Europe, une fraiseuse servant aux maquettes. Sa préoccupation était de créer un moyen simple et puissant pour modéliser des formes et faciliter la programmation des machines à commande numérique. Le problème auquel il s'attaque est celui de la modélisation des surfaces en trois dimensions, les commandes numériques se contentant jusqu'alors de courbes en deux dimensions. La solution qu'il cherche est celle d'une interface intuitive accessible à tout utilisateur. Il décide de considérer classiquement les surfaces comme une transformation de courbes. Son exigence de s'adapter au dessinateur et non de contraindre le dessinateur à devenir calculateur, l'amène à une inversion géniale, déduire le calcul à partir du dessin et non le dessin à partir du calcul. Il invente alors la poignée de contrôle, curseur de déplacement des courbes d'un dessin informatisé transmettant automatiquement les variations de coordonnées au processeur. Ces poignées de contrôle sont toujours utilisées aujourd'hui.}
 
 Les courbes de Bézier sont des courbes polynomiales paramétriques. \index[aut]{Bézier (Pierre), 1910-1999, Français} Elles ont de nombreuses applications dans la synthèse d'images et le rendu de polices de caractères (Pierre Bézier a travaillé sur les deux sujets). Ses recherches aboutirent à un logiciel, Unisurf, breveté en 1966. Il est à la base de tous les logiciels créés par la suite. Les concepts de CAO et de CFAO venaient de prendre forme. Ultérieurement, l'un des développeurs d'Apple, John Warnock,\index[aut]{Warnock (John Edward), 1940- , Américain} réutilise les travaux de Pierre Bézier pour élaborer un nouveau langage de dessin de polices: Postscript. Il crée ensuite en 1982, avec Charles M. Geschke,\index[aut]{Geschke (Charles M.), 1939-, Américain} la société Adobe pour lancer un logiciel de dessin dérivé de ces résultats: Illustrator. 
 \end{histoire}

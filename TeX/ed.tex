@@ -2,12 +2,12 @@
 \begin{abstract} La résolution exacte des équation différentielle fait partie des choses qui ont été demandées comme complément. Elles ne correspondent pas vraiment au but de ce document. Toutefois, le paragraphe sur la résolution numérique des équation différentielle nous a permis d'introduire des méthodes qui sont employées également dans la méthode des éléments finis (notamment la méthode de Newmark).\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} 
 \end{abstract} 
 %%%%----------------------------------------------------------
-\section{Résolution exacte des équations différentielles linéaires} Une \emph{Équation différentielle linéaire} est de la forme suivante:
+\section{Résolution exacte des équations différentielles linéaires} Une \textcolorblue{Équation différentielle linéaire} est de la forme suivante:
 \begin{equation}
 a_0(x) y + a_1(x) y' + a_2(x) y'' + \ldots + a_n(x) y^{(n)}= f(x)
 \end{equation}
-où les coefficients~$a_i(x)$ sont des fonctions numériques continues. Si les fonctions~$y$ dépendent d'une seule variable~$x$, alors ces équation différentielle sont dites équation différentielle linéaires scalaires, si c'est un vecteur elles sont dites équation différentielle linéaires vectorielles ou système différentiel linéaire. Dans ce dernier cas, les~$a_i$ sont des applications linéaires. L'\emph{ordre} d'une équation différentielle est le degré non nul le plus des~$a_i$, ici~$n$. 
- La méthode générale consiste à résoudre d'abord l'\emph{équation homogène}, i.e. sans second membre, i.e.~$f(x)=0$, qui donne une solution contenant une ou des <<~constantes d'intégration~>> que l'on identifie ensuite en appliquant la forme générale trouvée à l'équation avec second membre. 
+où les coefficients~$a_i(x)$ sont des fonctions numériques continues. Si les fonctions~$y$ dépendent d'une seule variable~$x$, alors ces équation différentielle sont dites équation différentielle linéaires scalaires, si c'est un vecteur elles sont dites équation différentielle linéaires vectorielles ou système différentiel linéaire. Dans ce dernier cas, les~$a_i$ sont des applications linéaires. L'\textcolorblue{ordre} d'une équation différentielle est le degré non nul le plus des~$a_i$, ici~$n$. 
+ La méthode générale consiste à résoudre d'abord l'\textcolorblue{équation homogène}, i.e. sans second membre, i.e.~$f(x)=0$, qui donne une solution contenant une ou des <<~constantes d'intégration~>> que l'on identifie ensuite en appliquant la forme générale trouvée à l'équation avec second membre. 
  
 %%%%----------------------------------------------------------
 \subsection{Équation différentielle linéaire scalaire d'ordre 1} 
@@ -37,6 +37,7 @@ Ce type d'équation se retrouve:
 \end{itemize} 
 Si~$c\ne0$, il faut déterminer une solution particulière de l'équation avec second membre. On appliquera les mêmes techniques que dans le cas des coeeficients non constants (voir ci-après). 
 \subsubsection{Coefficients non constants} 
+\textbf{1. Traitement de l'équation homogène}\par
 On réécrit l'équation homogène:
 \begin{equation}
 y' + \frac{b(x)}{a(x)} y = 0
@@ -66,7 +67,7 @@ Les solutions sont alors les fonctions, définies sur~$I$, de la forme:
 y(x) = C \mathrm{e}^{-A(x)}
 \end{equation}
 où encore une fois la constante~$C\in\RR$ est déterminée par les conditions initiales. 
-\subsubsection{Solution particulière} 
+\par\medskip\noindent\textbf{2. Solution particulière}\par
 Plusieurs cas se présentent:
 \begin{itemize}
 \item~$c(x)=0$: la solution du problème est celle de l'équation homogène et on a fini;
@@ -76,7 +77,7 @@ Plusieurs cas se présentent:
 \item~$c(x)$ est un polynôme de degré~$n$:~$f_0$ est également un polynôme de degré~$n$;
 \item~$c(x) = A\cos(\omega x + \varphi) + B \sin(\omega x + \varphi)$: on cherche~$f_0$ comme combinaison linéaire de~$\cos(\omega x + \varphi)$ et~$\sin(\omega x + \varphi)$, i.e. sous la même forme que~$c(x)$. 
 \end{itemize}
-Dans le cas général, on utilise la méthode dite de la \emph{variation des constantes} qui consiste à se ramener, par un changement de fonction variable, à un problème de calcul de primitive. On suppose que, sur l'intervalle d'étude, la fonction~$a(x)$ ne s'annule pas\footnote{Il est possible de résoudre sur plusieurs intervalles de type~$I$ et essayer de <<~recoller~>> les solutions.}. On connait déjà la solution générale~\eqref{eq:ed:forme} de l'équation homogène. On décide d'étudier le cas de la fonction~$z(x)$ définie par:
+Dans le cas général, on utilise la méthode dite de la \textcolorblue{variation des constantes} qui consiste à se ramener, par un changement de fonction variable, à un problème de calcul de primitive. On suppose que, sur l'intervalle d'étude, la fonction~$a(x)$ ne s'annule pas\footnote{Il est possible de résoudre sur plusieurs intervalles de type~$I$ et essayer de <<~recoller~>> les solutions.}. On connait déjà la solution générale~\eqref{eq:ed:forme} de l'équation homogène. On décide d'étudier le cas de la fonction~$z(x)$ définie par:
 \begin{equation}
 z(x) = k(x)\mathrm{e}^{- A(x)}
 \end{equation}
@@ -100,11 +101,11 @@ On peut évidemment être confronté à un calcul d'intégral qui n'est pas simp
  
 %%%%----------------------------------------------------------
 \subsection{Équation différentielle du premier ordre à variables séparées} 
-Une \emph{équation différentielle d'ordre un à variables séparées} est une équation différentielle qui peut se mettre sous la forme:
+Une \textcolorblue{équation différentielle d'ordre un à variables séparées} est une équation différentielle qui peut se mettre sous la forme:
 \begin{equation}
 y' = f(x)g(y)
 \end{equation}
-Dans un tel problème, on commence par chercher les \emph{solutions régulières} qui sont les solutions telles que~$g(y)$ n'est jamais nul. Comme~$g(y)\ne0$, on peut écrire l'équation sous la forme:
+Dans un tel problème, on commence par chercher les \textcolorblue{solutions régulières} qui sont les solutions telles que~$g(y)$ n'est jamais nul. Comme~$g(y)\ne0$, on peut écrire l'équation sous la forme:
 \begin{equation}
 \frac{1}{g(y(x))} y'(x) = f(x)
 \end{equation}
@@ -116,9 +117,9 @@ et qui après changement de variable, est de la forme:
 \begin{equation}
 \int_{y_0}^y \frac{1}{g(v)} \d v = \int_{x_0}^x f(u) \d u 
 \end{equation}
-L'hypothèse~$g(y)\ne0$ écarte certaines solutions particulières. Par exemple, si~$y_0$ est un point d'annulation de~$g$, alors la fonction constante égale à~$y_0$ est une solution maximale de l'équation. Une telle solution, dite \emph{solution singulière}, est donc telle que~$g(y)$ est toujours nul. Si la seule hypothèse faite sur~$g$ est la continuité, il peut exister des solutions <<~hybrides~>> constituées du raccordement de solutions régulières et singulières. D'une manière générale, pour une solution donnée, la quantité~$g(y)$ sera soit toujours nulle, soit jamais nulle. 
+L'hypothèse~$g(y)\ne0$ écarte certaines solutions particulières. Par exemple, si~$y_0$ est un point d'annulation de~$g$, alors la fonction constante égale à~$y_0$ est une solution maximale de l'équation. Une telle solution, dite \textcolorblue{solution singulière}, est donc telle que~$g(y)$ est toujours nul. Si la seule hypothèse faite sur~$g$ est la continuité, il peut exister des solutions <<~hybrides~>> constituées du raccordement de solutions régulières et singulières. D'une manière générale, pour une solution donnée, la quantité~$g(y)$ sera soit toujours nulle, soit jamais nulle. 
 
-Il existe un cas partoculier, qui est celui de \emph{l'équation différentielle d'ordre un à variables séparées autonome} qui s'écrit:
+Il existe un cas partoculier, qui est celui de \textcolorred{l'équation différentielle d'ordre un à variables séparées autonome} qui s'écrit:
 \begin{equation}
 y' = g(y)
 \end{equation}
@@ -132,13 +133,13 @@ a(x)y'' + b(x)y' + c(x)y = d(x)
 \end{equation}
 où~$a(x)$, $b(x)$, $c(x)$ et~$d(x)$ sont des fonctions. Si elles ne peuvent pas toutes être résolues explicitement, beaucoup de méthodes existent. 
 \subsubsection{Équation différentielle homogène} Pour l'équation différentielle homogène ($d(x)=0$), une somme de deux solutions est encore solution, ainsi que le produit d'une solution par une constante. L'ensemble des solutions est donc un espace vectoriel et contient notamment une solution évidente, la fonction nulle. 
-\subsubsection{Équation différentielle homogène à coefficients constants} On cherche des solutions sous forme exponentielle~$f(x) = \mathrm{e}^{\lambda x}$. Une telle fonction sera solution de l'équation différentielle si et seulement si$\lambda$ est solution de l'\emph{équation caractéristique} de l'ED:
+\subsubsection{Équation différentielle homogène à coefficients constants} On cherche des solutions sous forme exponentielle~$f(x) = \mathrm{e}^{\lambda x}$. Une telle fonction sera solution de l'équation différentielle si et seulement si$\lambda$ est solution de l'\textcolorblue{équation caractéristique} de l'ED:
 \begin{equation}
 a\lambda^2 + b\lambda + c = 0
 \end{equation}
 Comme pour toute équation du second degré, il y a trois cas correspondant au signe du discriminant~$\Delta$:
 \begin{enumerate}
-\item$\Delta>0$ --- L'équation caractéristique possède deux solutions~$\lambda_1$ et~$\lambda_2$, et les solutions de l'équation différentielle sont \emph{engendrées} par~$f_1(x) = \mathrm{e}^{\lambda_1x}$ et~$f_2(x) = \mathrm{e}^{\lambda_2x}$, i.e. de la forme:
+\item$\Delta>0$ --- L'équation caractéristique possède deux solutions~$\lambda_1$ et~$\lambda_2$, et les solutions de l'équation différentielle sont \textcolorred{engendrées} par~$f_1(x) = \mathrm{e}^{\lambda_1x}$ et~$f_2(x) = \mathrm{e}^{\lambda_2x}$, i.e. de la forme:
 \begin{equation}
 f(x) = C_1f_1(x) + C_2f_2(x)
 \end{equation}
@@ -152,7 +153,7 @@ les constantes réeles~$C_1$ et~$C_2$ étant définies par:
 f(x) = (C_1 x + C_2)\mathrm{e}^{\lambda x}
 \end{equation}
 les constantes réelles~$C_1$ et~$C_2$ étant définies comme précédemment. 
-\item$\Delta<0$ --- L'équation caractéristique possède deux solutions~$\lambda_1$ et~$\lambda_2$ complexes conjuguées, et les solutions de~$\RR$ dans~$\CC$ de l'équation différentielle sont \emph{engendrées} par~$f_1(x) = \mathrm{e}^{\lambda_1x}$ et~$f_2(x) = \mathrm{e}^{\lambda_2x}$, i.e. de la forme:
+\item$\Delta<0$ --- L'équation caractéristique possède deux solutions~$\lambda_1$ et~$\lambda_2$ complexes conjuguées, et les solutions de~$\RR$ dans~$\CC$ de l'équation différentielle sont \textcolorred{engendrées} par~$f_1(x) = \mathrm{e}^{\lambda_1x}$ et~$f_2(x) = \mathrm{e}^{\lambda_2x}$, i.e. de la forme:
 \begin{equation}
 f(x) = C_1f_1(x) + C_2f_2(x)
 \end{equation}
@@ -173,7 +174,7 @@ avec~$q$ et~$r$ deux réels à déterminer comme précemment. Cette forme est pa
 \end{enumerate}
 \subsubsection{Équation différentielle homogène à coefficients non constants} Si les fonctions~$a(x)$, $b(x)$ et~$c(x)$ ne sont pas constantes, alors il n'existe pas d'expression générale des solutions. C'est pour cette raison qu'au XIXe siècle furent introduites de nombreuses fonctions spéciales, comme les fonctions de Bessel ou la fonction d'Airy, définies comme solutions d'équations qu'il est impossible de résoudre explicitement. 
 
-Toutefois, dès lors qu'une solution particulière non nulle de l'équation est connue, il est possible de la résoudre complètement. En effet, le théorème de Cauchy-Lipschitz affirme que l'ensemble des solutions de l'équation constitue un espace vectoriel de dimension deux. Résoudre l'équation différentielle revient donc à exhiber deux fonctions solutions non proportionnelles: elles formeront une base de l'espace des solutions. Une telle base est appelée \emph{système fondamental de solutions}. 
+Toutefois, dès lors qu'une solution particulière non nulle de l'équation est connue, il est possible de la résoudre complètement. En effet, le théorème de Cauchy-Lipschitz affirme que l'ensemble des solutions de l'équation constitue un espace vectoriel de dimension deux. Résoudre l'équation différentielle revient donc à exhiber deux fonctions solutions non proportionnelles: elles formeront une base de l'espace des solutions. Une telle base est appelée \textcolorblue{système fondamental de solutions}. 
 
 \subsubsection{Solution particulière et traitement du second membre} On peut agir de la même manière que pour les équation différentielle d'ordre un, et les mêmes remarques s'appliquent. On résoud l'équation homogène puis on cherche une solution de l'équation avec second membre pour les connaîtres toutes. 
 
@@ -249,9 +250,39 @@ C'est une méthode d'ordre 2 car l'erreur est de l'ordre de~$h^3$.
 y_{i+1} = y_i + {h \over 6} (k_1 + 2k_2 + 2k_3 + k_4)
 \end{equation}
 La méthode est d'ordre 4, ce qui signifie que l'erreur commise à chaque étape est de l'ordre de~$h^5$, alors que l'erreur totale accumulée est de l'ordre de~$h^4$. Notons enfin que toutes ces formulation sont encore valable pour des fonctions à valeurs vectorielles. 
- 
 %%%%----------------------------------------------------------
-\subsection{Méthode de Newmark}\label{Sec-Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{méthode de Newmark} La \emph{méthode de Newmark (1959)} permet de résoudre numériquement des équation différentielle du second ordre. Elle convient, non seulement pour des systèmes différentiels linéaires, mais aussi pour des syst\ emes fortement non-linéaires avec une matrice de masse et une force appliquée qui peuvent dépendre à la fois de la position et du temps. Dans ce second cas, le calcul nécessite à chaque pas une boucle d'itération. 
+\medskip
+\subsection{Méthode de Crank-Nicolson}\index[aut]{Crank (John), 1916-2006, Américain}\index[aut]{Nicolson (Phyllis), 1917-1968, Anglaise}
+
+La \textcolorblue{méthode de Crank-Nicolson}\index[aut]{Crank (John), 1916-2006, Américain}\index[aut]{Nicolson (Phyllis), 1917-1968, Anglaise} 
+est un algorithme simple permettant de résoudre des systèmes d'EDP. 
+Cette méthode utilise les différences finies en espace et la règle des trapèzes en temps pour approcher une solution du problème: 
+elle est numériquement stable et quadratique pour le temps. 
+On peut facilement la généraliser à des problèmes à deux ou trois dimensions.
+
+\medskip
+Si l'on considère l'ED suivante:
+\begin{equation}
+  \frac{\partial u}{\partial t} = F\left(u,\, x,\, t,\, \frac{\partial u}{\partial x},\, \frac{\partial^2 u}{\partial x^2}\right)
+\end{equation}
+alors, en notant~$u_{i}^{n}$ le terme~$u(i \Delta x,\, n \Delta t)$, le schéma est:
+\begin{equation}
+  \frac{u_{i}^{n + 1} - u_{i}^{n}}{\Delta t} = \frac{1}{2}\left[ F_{i}^{n + 1}\left(u,\, x,\, t,\, \frac{\partial u}{\partial x},\, \frac{\partial^2 u}{\partial x^2}\right) + F_{i}^{n}\left(u,\, x,\, t,\, \frac{\partial u}{\partial x},\, \frac{\partial^2 u}{\partial x^2}\right) \right]
+\end{equation}
+où la fonction~$F$ est discrétisée à l'aide des différences finies centrées en espace.
+
+\medskip
+\textcolorblue{Ce schéma est celui utilisé pour les équations paraboliques}, comme celles de mécanique des fluides.
+On l'utilise également pour des problèmes de mécanique quantique, de thermodynamique hors-équilibre
+et d'électromagnétisme... et pour tout phénomène pouvant être ramenés à l'étude de l'équation de la chaleur
+(qui a été le cadre de son développement).
+
+\medskip
+La méthode converge en~$O(\Delta_t^2)$.
+L'étude de convergence est d'ailleurs plus aisée que dans le cas des \textcolorblue{équations hyperboliques pour lesquelles
+la méthode de Newmark est préférée}.
+%%%%----------------------------------------------------------
+\subsection{Méthode de Newmark}\label{Sec-Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{méthode de Newmark} La \textcolorblue{méthode de Newmark (1959)} permet de résoudre numériquement des équation différentielle du second ordre. Elle convient, non seulement pour des systèmes différentiels linéaires, mais aussi pour des syst\ emes fortement non-linéaires avec une matrice de masse et une force appliquée qui peuvent dépendre à la fois de la position et du temps. Dans ce second cas, le calcul nécessite à chaque pas une boucle d'itération. 
 
 L'idée générale reste la même: on cherche à estimer les valeurs des dérivées (premières, secondes...) à l'instant~$t$ à partir des informations disponible à l'instant précédent (au pas de temps précédent). Pour cela, on va recourir à un développement limité. Considérons l'équation de la dynamique:
 \begin{equation}
@@ -265,6 +296,6 @@ et on fait l'hypothèse de linéarité de l'accélération à l'intérieur d'un 
 \begin{equation}
 \dddot{u}=\dfrac{\ddot{u}_{t+\Delta_t}-\ddot{u}_t}{\Delta_t}
 \end{equation}
-Les différents \emph{schémas de Newmark} correspondent à des valeurs particulières de~$\beta$ et~$\gamma$.\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{méthode de Newmark}\index{schéma! de Newmark} Dans le cas~$\beta=0$ et~$\gamma=1/2$, on retombe sur le schéma des \emph{différences finies centrées}.\index{schéma! des différences finies centrées} 
+Les différents \textcolorblue{schémas de Newmark} correspondent à des valeurs particulières de~$\beta$ et~$\gamma$.\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{méthode de Newmark}\index{schéma! de Newmark} Dans le cas~$\beta=0$ et~$\gamma=1/2$, on retombe sur le schéma des \textcolorblue{différences finies centrées}.\index{schéma! des différences finies centrées} 
 
-La méthode de Newmark fonctionne également pour les problèmes non linéaires, mais dans ce cas la matrice de rigidité devra être réévaluée à chaque pas de temps (ainsi que celle d'amortissement dans les cas les plus tordus). 
+\textcolorgreen{La méthode de Newmark fonctionne également pour les problèmes non linéaires, mais dans ce cas la matrice de rigidité devra être réévaluée à chaque pas de temps (ainsi que celle d'amortissement dans les cas les plus compliqués). }
