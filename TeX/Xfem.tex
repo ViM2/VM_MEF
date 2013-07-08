@@ -10,7 +10,7 @@
 \medskip
 \section{Méthode des éléments frontières}\label{Sec-BEM}\index{éléments frontières}
 %%%%----------------------------------------------------------
-La méthode des éléments finis et la méthode des éléments frontière\index{éléments frontières} peuvent être considérées comme issues des méthodes de Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse} et de Trefftz\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} respectivement. Dans les deux cas, il s'agit de résoudre un problème décrit par des équations aux dérivées partielles dans un domaine~$\Omega$ et sur sa frontière~$\Gamma=\partial\Omega$ en remplaçant le problème continu par un nombre fini de paramètres inconnus dans la résolution numérique.
+La méthode des éléments finis et la \textcolorblue{méthode des éléments frontière}\index{éléments frontières} peuvent être considérées comme issues des méthodes de Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse} et de Trefftz\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} respectivement. Dans les deux cas, il s'agit de résoudre un problème décrit par des équations aux dérivées partielles dans un domaine~$\Omega$ et sur sa frontière~$\Gamma=\partial\Omega$ en remplaçant le problème continu par un nombre fini de paramètres inconnus dans la résolution numérique.
 
 \medskip
 La méthode de Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse}, et donc la méthode des éléments finis, se base sur l'existence d'un principe variationnel pour lequel la fonction inconnue sera recherchée comme une combinaison de fonctions de base définies dans tout le domaine~$\Omega$.
@@ -29,14 +29,14 @@ La méthode des éléments finis et la méthode des éléments frontières\index
 \medskip
 \section{Méthodes sans maillage}\label{Sec-meshless}\index{méthode sans maillage}
 
-Depuis le début des années 90, de nombreuses méthodes sont apparues où la discrétisation ne repose plus sur un maillage mais sur un ensemble de points\footnote{On peut par exemple nommer la méthode des éléments diffus, la méthode de Galerkin sans éléments (Element Free Galerkin Method, EFGM), Reproducing Kernel Particle Method (RKPM), $h-p$ Cloud Method...}. Chaque point possède un domaine d'influence de forme simple, comme un cercle, sur lequel les fonctions d'approximation sont construites. Les différentes approches se distinguent, entre autres, par les techniques utilisées pour la construction des fonctions d'approximation. Ces fonctions sont construites de manière à pouvoir représenter tous les modes rigides et de déformation sur le domaine d'influence (c'est une condition nécessaire à la convergence de ces méthodes), et sont nulles en dehors. On écrira alors:
+Depuis le début des années 90, de nombreuses méthodes sont apparues où la discrétisation ne repose plus sur un maillage mais sur un ensemble de points\footnote{On peut par exemple nommer la méthode des éléments diffus, la méthode de Galerkin sans éléments (Element Free Galerkin Method, EFGM), Reproducing Kernel Particle Method (RKPM), $h-p$ Cloud Method...}. \textcolorred{Chaque point possède un domaine d'influence de forme simple}, comme un cercle, sur lequel les fonctions d'approximation sont construites. Les différentes approches se distinguent, entre autres, par les techniques utilisées pour la construction des fonctions d'approximation. Ces fonctions sont construites de manière à pouvoir représenter tous les modes rigides et de déformation sur le domaine d'influence (c'est une condition nécessaire à la convergence de ces méthodes), et sont nulles en dehors. On écrira alors:
 \begin{equation}
 u(x) = \dsum_{i\in N_s(x)}\dsum_{\alpha=1}^{N_f(i)} a_i^\alpha \phi_i^\alpha(x)
 \end{equation}
 où~$N_s(x)$ est l'ensemble des points~$i$ dont le support contient le point~$x$ et~$N_f (i)$ est le nombre de fonctions d'interpolation définies sur le support associé au point~$i$.
 
 \medskip
-Une fois les fonctions d'interpolation construites, il est possible d'en ajouter d'autres par \emph{enrichissement}. L'enrichissement de l'approximation permet ainsi de représenter un mode de déplacement donné~$F(x)e_x$\textcolor{red}{$e_x$ ?????}:
+Une fois les fonctions d'interpolation construites, il est possible d'en ajouter d'autres par \textcolorblue{enrichissement}. L'enrichissement de l'approximation permet ainsi de représenter un mode de déplacement donné~$F(x)\phi_i^\alpha(x)$:
 \begin{equation}
 u(x) = \dsum_{i\in N_s(x)}\dsum_{\alpha=1}^{N_f(i)} a_i^\alpha \phi_i^\alpha(x) + \dsum_{i\in N_s(x)\cap N_f}\dsum_{\alpha=1}^{N_f(i)} b_i^\alpha\phi_i^\alpha(x)F(x)
 \end{equation}
@@ -80,7 +80,7 @@ u(x) &= \dsum_{i\in I}u_i\phi_i(x) + \dsum_{i\in L} a_i\phi_i(x) H(x)\\
 où~$I$ est l'ensemble des nœuds du maillage, $L$ l'ensemble des nœuds enrichis pour modéliser la fissure coupant de part en part un élément, $K_1$ et~$K_2$ les nœuds enrichis pour modéliser le fond de fissure.
 
 \medskip
-L'avantage en X-FEM\index{méthode des éléments finis étendue}\index{X-FEM} est qu'il n'est plus demandé au maillage de se conformer à des surfaces, qu'elles soient intérieures ou extérieures, et qu'il peut alors être conservé lors de leur évolution. Les surfaces ne sont plus maillées et sont localisées sur le maillage grâce à la notion de fonction de niveau. À chaque nœud au voisinage de cette surface, on associe la distance signée à cette surface. Cette fonction <<~distance~>> peut être interpolée sur chaque élément avec les fonctions classique de premier ordre. Les surfaces sont ainsi stockées par un champ élément fini défini au voisinage de la surface qui participe au calcul au même titre que les autres champs physiques. En particulier, la X-FEM\index{méthode des éléments finis étendue}\index{X-FEM} permet la modélisation des trous, sans avoir à forcer le maillage à se conformer à ceux-ci. Un nœud dont le support est complètement à l'intérieur du trou ne donne pas lieu à la création de ddl. Pour un nœud dont le support coupe la frontière du trou, la fonction d'interpolation classique est multipliée par une fonction valant 1 dans la matière et 0 dans le trou.
+L'avantage en X-FEM\index{méthode des éléments finis étendue}\index{X-FEM} est qu'il n'est plus demandé au maillage de se conformer à des surfaces, qu'elles soient intérieures ou extérieures, et qu'il peut alors être conservé lors de leur évolution. Les surfaces ne sont plus maillées et sont localisées sur le maillage grâce à la notion de \textcolorred{fonction de niveau}. À chaque nœud au voisinage de cette surface, on associe la distance signée à cette surface. Cette fonction <<~distance~>> peut être interpolée sur chaque élément avec les fonctions classique de premier ordre. Les surfaces sont ainsi stockées par un champ élément fini défini au voisinage de la surface qui participe au calcul au même titre que les autres champs physiques. En particulier, la X-FEM\index{méthode des éléments finis étendue}\index{X-FEM} permet la modélisation des trous, sans avoir à forcer le maillage à se conformer à ceux-ci. Un nœud dont le support est complètement à l'intérieur du trou ne donne pas lieu à la création de ddl. Pour un nœud dont le support coupe la frontière du trou, la fonction d'interpolation classique est multipliée par une fonction valant 1 dans la matière et 0 dans le trou.
 
 \medskip
 \section{Méthodes particulaires}\label{Sec-PBM}\index{méthodes particulaires}
@@ -149,15 +149,15 @@ Dans cette approche, le terme de \textcolorblue{degré de liberté} désigne le 
 \caption{Exemple de système multi-corps}
 \end{figure}
 \medskipvm
-La dynamique d'un système multicorps est décrite par les équations du mouvement. On obtient alors un système de la forme \textcolor{red}{attention~$q$ et~$u$}:
+La dynamique d'un système multicorps est décrite par les équations du mouvement. On obtient alors un système de la forme:
 \begin{equation}%
 \left\{%
 \begin{aligned}%
-&\mathbf{M}\ddot{\mathbf{u}}-\mathbf{Q}_{\dot{\mathbf{u}}}+\mathbf{C}_q\lambda = \mathbf{f}\\
-&\mathbf{C}(\mathbf{u},\dot{\mathbf{u}})=\mathbf{0}
+&M\ddot{u}-Q_{\dot{u}}+C_q\lambda = F\\
+&C(u,\dot{u})=0
 \end{aligned}\right.%
 \end{equation}%
-où~$\mathbf{M}$ est la matrice de masse, $\mathbf{C}$, la matrice des conditions de contraintes, $\mathbf{C}_\mathbf{u}$ la matrice jacobienne (dérivée de~$\mathbf{C}$ par rapport à~$\mathbf{u}$) permettant d'appliquer les forces~$\lambda$ correspondant à des multiplicateurs de Lagrange et~$\mathbf{Q}_{\dot{\mathbf{u}}}$, le vecteur de vitesse quadratique utilisé pour introduire les termes de Coriolis et les termes centrifuges.
+où~$M$ est la matrice de masse, $C$, la matrice des conditions de contraintes, $C_u$ la matrice jacobienne (dérivée de~$C$ par rapport à~$u$) permettant d'appliquer les forces~$\lambda$ correspondant à des multiplicateurs de Lagrange et~$Q_{\dot{u}}$, le vecteur de vitesse quadratique utilisé pour introduire les termes de Coriolis et les termes centrifuges.
 
 \medskip
 Nous n'entrons pas plus en avant, car le système à résoudre doit sembler suffisamment simple pour le lecteur à ce niveau du document et parce que cette méthode est d'application très particulière.
