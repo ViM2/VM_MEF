@@ -43,7 +43,7 @@ La \textcolorblue{méthode de Simpson} consiste à interpoler~$f(x)$ par un poly
 \begin{equation}
  I\approx \frac{h}{6} \left( f(a)+f(b)+f(c)\right)
 \end{equation}
-où~$h=b-a$ est la longueur de l'intervalle, et l'erreur commise vaut~$-\frac{h^5}{2^5.90} f^{(4)}(w)$ pour un certain~$w\in\intff{a}{b}$ (sous réserve que~$f$ soit 4 fois dérivable). L'erreur étant proportionnelle à~$f^{(4)}$, la méthode est dite d'ordre~$4$, ce qui signifie qu'elle est exacte (erreur nulle) pour tout polynôme de degré inférieur où égale à 3. 
+où~$h=b-a$ est la longueur de l'intervalle, et l'erreur commise vaut~$-\frac{h^5}{2^5.90} f^{(4)}(w)$ pour un certain~$w\in\intff{a}{b}$ (sous réserve que~$f$ soit quatre fois dérivable). L'erreur étant proportionnelle à~$f^{(4)}$, la méthode est dite d'ordre~$4$, ce qui signifie qu'elle est exacte (erreur nulle) pour tout polynôme de degré inférieur où égale à 3. 
 
 Comme dans le cas précédent, il est possible de subsiviser l'intervalle~$\intff{a}{b}$ en plusieurs intervalles et d'appliquer cette formule sur chacun des intervalles. Si l'on subsivise l'intervalle~$\intff{a}{b}$ en~$n$ intervalles égaux, avec~$n$ pair, il vient alors: 
 \begin{equation}
@@ -74,16 +74,16 @@ Le principe de la méthode reste le même que pour la méthode de Newton-Cotes, 
 \begin{equation}
 I=\int_a^b \varpi(x)f(x)\d x \approx \sum_{i=1}^n \varpi_if(x_i)
 \end{equation}
-où~$\varpi(x): (a,b)\rightarrow\RR$ est une \textcolorblue{fonction de pondération}, qui peut assurer l'intégrabilité de~$f$. Les~$\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature (ou poids)}. Les~$x_i$ sont réels, distincts, uniques et sont les racines de polynêmes orthogonaux (et non plus uniquement de Lagrange) pour le produit scalaire:
+où~$\varpi(x): \intervalle{a}{b}\rightarrow\RR$ est une \textcolorblue{fonction de pondération}, qui peut assurer l'intégrabilité de~$f$. Les~$\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature (ou poids)}. Les~$x_i$ sont réels, distincts, uniques et sont les racines de polynêmes orthogonaux (et non plus uniquement de Lagrange) pour le produit scalaire:
 \begin{equation}
 \left\langle f,g \right\rangle = \int_a^b f(x)g(x) \varpi(x) \d x
 \end{equation}
-Ils sont appelés \textcolorblue{points ou nœuds de Gauß}. Les poids et les nœuds sont choisis de façon à obtenir des degrés d'exactitude les plus grands possibles. Cette fois-ci \textcolorred{$(a,b)$ peut être n'importe quel type d'intervalle (fermé, ouvert, fini ou non).} 
+Ils sont appelés \textcolorblue{points ou nœuds de Gauß}. Les poids et les nœuds sont choisis de façon à obtenir des degrés d'exactitude les plus grands possibles. Cette fois-ci \textcolorred{$\intervalle{a}{b}$ peut être n'importe quel type d'intervalle (fermé, ouvert, fini ou non).} 
 %%%%----------------------------------------------------------
 \subsection*{Intégration sur un intervalle type}\index{polynôme! orthogonalité}\index{polynôme! de Legendre}\index{polynôme! de Tchebychev}\index{polynôme! d'Hermite}\index{polynôme! de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Hermite (Charles), 1822-1901, Français}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} 
 %%%%----------------------------------------------------------
 \begin{table}[ht]\centering\small
-\begin{tabular}{lll} Intervalle~$(a,b)$ & Fonction de pondération~$\varpi(x)$ & Famille de polynômes orthogonaux\\ \hline~$]\intff{-1}{1}$ &~$1$ & Legendre\\~$\intoo{-1}{1}$ &~$(1-x)^\alpha (1+x)^\beta \ , \ \alpha, \beta > -1$ & Jacobi\\~$\intoo{-1}{1}$ &~$\frac{1}{\sqrt{1-x^2}}$ &Tchebychev (premier type)\\~$\intoo{-1}{1}$ &~$\sqrt{1-x^2}$ & Tchebychev (second type)\\~$\RR^+$ &~$\mathrm{e}^{-x}$ & Laguerre\\~$\RR$ &~$\mathrm{e}^{-x^2}$ & Hermite\\ 
+\begin{tabular}{lll} Intervalle~$\intervalle{a}{b}$ & Fonction de pondération~$\varpi(x)$ & Famille de polynômes orthogonaux\\ \hline~$\intff{-1}{1}$ &~$1$ & Legendre\\~$\intoo{-1}{1}$ &~$(1-x)^\alpha (1+x)^\beta \ , \ \alpha, \beta > -1$ & Jacobi\\~$\intoo{-1}{1}$ &~$\frac{1}{\sqrt{1-x^2}}$ &Tchebychev (premier type)\\~$\intoo{-1}{1}$ &~$\sqrt{1-x^2}$ & Tchebychev (second type)\\~$\RR^+$ &~$\mathrm{e}^{-x}$ & Laguerre\\~$\RR$ &~$\mathrm{e}^{-x^2}$ & Hermite\\ \hline
 \end{tabular} 
 \caption{Polynômes et intégration}
 \end{table} 
@@ -91,9 +91,7 @@ On rappelle que les nœuds sont déterminés comme les~$n$ racines du~$n$ème po
  \textcolorblue{Les méthodes de quadrature de Gauß intègrent exactement un polynôme de degré~$2n-1$ avec~$n$ points.}\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand}\index{méthode de quadrature de Gauß} 
  
 %%%%----------------------------------------------------------
-\subsection
-%%%%----------------------------------------------------------
-*{Changement d'intervalle d'intégration} Si on intègre sur~$(a,b)$ au lieu de~$(-1,1)$, alors on fait un changement de variable. Finalement, on obtient l'approximation: 
+\subsection{Changement d'intervalle d'intégration} Si on intègre sur~$\intervalle{a}{b}$ au lieu de~$\intervalle{-1}{1}$, alors on fait un changement de variable. Finalement, on obtient l'approximation: 
 \begin{equation}
  \frac{b-a}{2} \sum_{i=1}^n \varpi_i f\left(\frac{b-a}{2}x_i + \frac{a+b}{2}\right) 
 \end{equation}

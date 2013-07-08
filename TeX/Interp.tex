@@ -11,12 +11,13 @@ Ainsi, l'interpolation numérique sert souvent à <<~faire émerger une courbe p
 Le jour du Nouvel An de 1801, l'astronome italien Giuseppe Piazzi\index[aut]{Piazzi (Giuseppe), 1746-1826, Italien} 
 a découvert l'astéroïde Cérès (il a suivi sa trajectoire jusqu'au 14 février 1801). 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\noindent\begin{tabular}{cccc}
+\noindent\begin{tabular}{ccccc}
+\includegraphics[height=\the\HauteurDesPhotos]{Markov}&
 \includegraphics[height=\the\HauteurDesPhotos]{Piazzi}&
 \includegraphics[height=\the\HauteurDesPhotos]{Gauss}&
 \includegraphics[height=\the\HauteurDesPhotos]{Legendre}&
 \includegraphics[height=\the\HauteurDesPhotos]{Adrain}\\
-Piazzi &Gau\ss&Legendre &Adrain%
+Markov& Piazzi &Gauß&Legendre &Adrain%
 \end{tabular}}
 \medskip
 \ImageADroite{%
@@ -26,34 +27,25 @@ Kepler\index[aut]{Kepler (Johannes), 1571-1630, Allemand} de la cinématique est
 très difficile). La plupart des prédictions furent erronées; et le seul calcul suffisamment précis pour 
 permettre au baron Franz Xaver von Zach\index[aut]{Zach (Franz Xaver, Baron von -), 1754-1832, Allemand} 
 (astronome allemand) de localiser à nouveau Cérès à la fin de l'année, fut celui de 
-Gau\ss,\index[aut]{Gau\ss{} (Johann Carl Friedrich), 1777-1855, Allemand} (alors âgé 
-de 24 ans). Gau\ss{} avait déjà réalisé l'élaboration des concepts fondamentaux en 1795, lorsqu'il avait
+Gauß,\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} (alors âgé 
+de 24 ans). Gauß avait déjà réalisé l'élaboration des concepts fondamentaux en 1795, lorsqu'il avait
 18 ans. Mais sa méthode des moindres carrés ne fut publiée qu'en 1809, lorsqu'elle parut dans le tome 2 de ses 
 travaux sur la Mécanique céleste \emph{Theoria Motus Corporum Coelestium in sectionibus conicis solem ambientium}. 
 Le mathématicien français Adrien-Marie Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français} 
 a développé indépendamment la même méthode en 1805. 
 Le mathématicien américain Robert Adrain\index[aut]{Adrain (Robert), 1775-1843, Américain} 
-a publié en 1808 une formulation de la méthode.
-}
+a publié en 1808 une formulation de la méthode.}
 
-\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\begin{tabular}{c}
-\includegraphics[height=\the\HauteurDesPhotos]{Markov}\\
-Markov%
-\end{tabular}}
-\medskip
-\ImageAGauche{%
-En 1829, Gau\ss{} a pu donner les raisons de l'efficacité de cette méthode: 
+En 1829, Gauß a pu donner les raisons de l'efficacité de cette méthode: 
 celle-ci est optimale à l'égard de bien des critères. 
-Cet argument est maintenant connu sous le nom de \textcolorblue{théorème de Gauss-Markov}\index[aut]{Markov (Andreï Andreïevitch), 1856-1922, Russe}.\\
+Cet argument est maintenant connu sous le nom de \textcolorblue{théorème de Gauß-Markov}\index[aut]{Markov (Andreï Andreïevitch), 1856-1922, Russe}.\\
 \indent
 Ce théorème dit que dans un modèle linéaire dans lequel les erreurs ont une espérance nulle, 
 sont non corrélées et dont les variances sont égales, le meilleur estimateur linéaire non biaisé 
 des coefficients est l'estimateur des moindres carrés. Plus généralement, le meilleur estimateur linéaire 
 non biaisé d'une combinaison linéaire des coefficients est son estimateur par les moindres carrés. 
 \textbf{On ne suppose pas} que les erreurs possèdent une loi normale, ni qu'elles sont indépendantes 
-(seulement non corrélées), ni qu'elles possèdent la même loi de probabilité.\colorblack%
-}
+(seulement non corrélées), ni qu'elles possèdent la même loi de probabilité.
 \end{histoire}
 
 L'\textcolorblue{approximation} étant l'utilisation de méthodes permettant d'approcher une fonction mathématique par une suite de fonctions qui convergent dans un certain espace fonctionnel, on voit donc que ce qui a été fait dans la deuxième partie ressort bien de cela: on cherche une fonction généralement notée~$u$ qui n'est pas connue explicitement mais solution d'une équation différentielle ou d'une équation aux dérivées partielles, et l'on cherche à construire une suite de problèmes plus simples, que l'on sait résoudre à chaque étape, et telle que la suite des solutions correspondantes converge vers la solution cherchée. L'approximation peut servir aussi dans le cas où la fonction considérée est connue: on cherche alors à la remplacer par une fonction plus simple, plus régulière ou ayant de meilleures propriétés. L'intégration numérique sera détaillée un peu plus au chapitre~\ref{chap-quadrature}. Ce sont les méthodes d'approximation numériques qui sont utilisées. 
@@ -138,13 +130,13 @@ On en déduit immédiatement que~$\forall i$, $L(x_i) = y_i$ qui est bien la pro
 %%%%----------------------------------------------------------
 \subsection{Polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite} 
 %%%%----------------------------------------------------------
-Les \textcolorblue{polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} sont définis comme suit:\index{polynôme! d'Hermite} 
+Les \textcolorblue{polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} sont définis sous la forme dite \emph{probabiliste}:\index{polynôme! d'Hermite} 
 \begin{equation}
- H_n(x)=(-1)^n \mathrm{e}^{x^2/2}\frac{\dd ^n}{\dd x^n}\mathrm{e}^{-x^2/2} \quad \text{(forme dite probabiliste)} 
+ H_n(x)=(-1)^n \mathrm{e}^{x^2/2}\frac{\dd ^n}{\dd x^n}\mathrm{e}^{-x^2/2}
 \end{equation}
-ou: 
+ou sous la forme dite \emph{physique}: 
 \begin{equation}
- \widehat{H}_n(x)=(-1)^n \mathrm{e}^{x^2}\frac{\dd^n}{\dd x^n}\mathrm{e}^{-x^2} \quad \text{(forme dite physique)} 
+ \widehat{H}_n(x)=(-1)^n \mathrm{e}^{x^2}\frac{\dd^n}{\dd x^n}\mathrm{e}^{-x^2} 
 \end{equation}
 Les deux définitions sont liées par la propriété d'échelle suivante:
 \begin{equation}
@@ -152,27 +144,27 @@ Les deux définitions sont liées par la propriété d'échelle suivante:
 \end{equation}
 \colorgris
 Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sont les suivants:\index{polynôme! d'Hermite}
-\begin{multicols}{2}
-\noindent%
-$H_0=1~$,\\
-$H_1=X~$,\\
-$H_2=X^2-1~$,\\
-$H_3=X^3-3X~$,\\
-$H_4=X^4-6X^2+3~$,\\
-$H_5=X^5-10X^3+15X~$,\\
-$H_6=X^6-15X^4+45X^2-15~$.\\
-
-\noindent%
-$\widehat{H}_0=1~$,\\
-$\widehat{H}_1=2X~$,\\
-$\widehat{H}_2=4X^2-2~$,\\
-$\widehat{H}_3=8X^3-12X~$,\\
-$\widehat{H}_4=16X^4-48X^2+12~$,\\
-$\widehat{H}_5=32X^5-160X^3+120X~$,\\
-$\widehat{H}_6=64X^6-480X^4+720X^2-120~$.
-\end{multicols}
+\begin{equation}
+\begin{aligned}
+&H_0=1\\
+&H_1=x\\
+&H_2=x^2-1\\
+&H_3=x^3-3x\\
+&H_4=x^4-6x^2+3\\
+&H_5=x^5-10x^3+15x\\
+&H_6=x^6-15x^4+45x^2-15
+\end{aligned}
+\qquad\qquad\begin{aligned}
+&\widehat{H}_0=1\\
+&\widehat{H}_1=2x\\
+&\widehat{H}_2=4x^2-2\\
+&\widehat{H}_3=8x^3-12x\\
+&\widehat{H}_4=16x^4-48x^2+12\\
+&\widehat{H}_5=32x^5-160x^3+120x\\
+&\widehat{H}_6=64x^6-480x^4+720x^2-120
+\end{aligned}
+\end{equation}
 \colorblack
-
 $H_n$ est un polynôme de degré~$n$. Ces polynômes sont orthogonaux pour la mesure~$\mu$ de densité: 
 \begin{equation}
  \frac{\dd \mu(x)}{\dd x} = \frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}. 
@@ -195,7 +187,7 @@ Des propriétés analogues sont vérifiées par les polynômes de Hermite\index[
 %%%%----------------------------------------------------------
 On appelle équation de Legendre l'équation:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{équations!de Legendre} 
 \begin{equation}
-\frac{\textrm{d}}{\textrm{d}x}[(1-x^{2})\frac{\textrm{d}y}{\textrm{d}x}]+n(n+1)y=0
+\frac{\dd }{\dd x}[(1-x^{2})\frac{\dd y}{\dd x}]+n(n+1)y=0
 \end{equation}
 On définit le \textcolorblue{polynôme de Legendre}~$P_n$ par:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre} 
 \begin{equation}
@@ -232,7 +224,7 @@ Le carré de la norme, dans~$L^2(\intff{-1}{1})$, est:\index{produit scalaire!de
 \begin{equation}
  \|P_n\|^2=\frac{2}{2n+1}. 
 \end{equation}
-Ces polynômes peuvent servir à décomposer une fonction holomorphe, une fonction lipschitzienne ou à retrouver l'intégration numérique d'une fonction par la méthode de quadrature de Gauss-Legendre (voir chapitre~\ref{chap-quadrature}).\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} 
+Ces polynômes peuvent servir à décomposer une fonction holomorphe, une fonction lipschitzienne ou à retrouver l'intégration numérique d'une fonction par la méthode de quadrature de Gauß-Legendre (voir chapitre~\ref{chap-quadrature}).\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} 
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Tchebychev}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme!de Tchebychev} 
 %%%%----------------------------------------------------------
@@ -268,18 +260,20 @@ Les~$T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scala
 \end{equation}
 \colorgris
 Les premiers polynômes de Tchebychev de première espèce sont:\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
-
-\noindent
-$T_0 = 1 \,$,\\
-$T_1 = X \,$,\\
-$T_2 = 2X^2 - 1 \,$,\\
-$T_3 = 4X^3 - 3X \,$,\\
-$ T_4 = 8X^4 - 8X^2 + 1 \,$,\\
-$ T_5 = 16X^5 - 20X^3 + 5X \,$,\\
-$ T_6 = 32X^6 - 48X^4 + 18X^2 - 1 \,$,\\
-$ T_7 = 64X^7 - 112X^5 + 56X^3 - 7X \,$,\\
-$ T_8 = 128X^8 - 256X^6 + 160X^4 - 32X^2 + 1 \,$,\\
-$T_9 = 256X^9 - 576X^7 + 432X^5 - 120X^3 + 9X~.$ 
+\begin{equation}
+\begin{aligned}
+&T_0 = 1 \\
+&T_1 = x \\
+&T_2 = 2x^2 - 1 \\
+&T_3 = 4x^3 - 3x \\
+& T_4 = 8x^4 - 8x^2 + 1 \\
+& T_5 = 16x^5 - 20x^3 + 5x \\
+& T_6 = 32x^6 - 48x^4 + 18x^2 - 1 \\
+& T_7 = 64x^7 - 112x^5 + 56x^3 - 7x \\
+& T_8 = 128x^8 - 256x^6 + 160x^4 - 32x^2 + 1 \\
+&T_9 = 256x^9 - 576x^7 + 432x^5 - 120x^3 + 9x
+\end{aligned}
+\end{equation}
 \colorblack
 \paragraph{Propriétés des polynômes de Tchebychev de seconde espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} 
 \begin{equation}
@@ -294,18 +288,20 @@ Les~$U_n$ sont orthogonaux\index{polynôme!orthogonalité} pour le produit scala
 \end{equation}
 \colorgris
 Les premiers polynômes de Tchebychev de deuxième espèce sont:\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
-
-\noindent
-$U_0 = 1 \,$,\\
-$U_1 = 2X \,$,\\
-$U_2 = 4X^2 - 1 \,$,\\
-$U_3 = 8X^3 - 4X \,$,\\
-$U_4 = 16X^4 - 12X^2 + 1 \,$,\\
-$U_5 = 32X^5 - 32X^3 + 6X \,$,\\
-$U_6 = 64X^6 - 80X^4 + 24X^2 - 1 \,$,\\
-$U_7 = 128X^7 - 192X^5 + 80X^3 - 8X \,$,\\
-$U_8 = 256X^8 - 448 X^6 + 240 X^4 - 40 X^2 + 1 \,$,\\
-$U_9 = 512X^9 - 1024 X^7 + 672 X^5 - 160 X^3 + 10 X~.~$
+\begin{equation}
+\begin{aligned}
+&U_0 = 1 \\
+&U_1 = 2x \\
+&U_2 = 4x^2 - 1 \\
+&U_3 = 8x^3 - 4x \\
+&U_4 = 16x^4 - 12x^2 + 1 \\
+&U_5 = 32x^5 - 32x^3 + 6x \\
+&U_6 = 64x^6 - 80x^4 + 24x^2 - 1 \\
+&U_7 = 128x^7 - 192x^5 + 80x^3 - 8x \\
+&U_8 = 256x^8 - 448 x^6 + 240 x^4 - 40 x^2 + 1 \\
+&U_9 = 512x^9 - 1024 x^7 + 672 x^5 - 160 x^3 + 10 x
+\end{aligned}
+\end{equation}
 \colorblack
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Laguerre}\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre} 
@@ -318,11 +314,11 @@ qui est une équation différentielle linéaire du second ordre possédant des s
 
 Traditionnellement notés~$L_0,L_1,\dots$ ces polynômes forment une suite de polynômes qui peut être définie par la formule de Rodrigues:\index[aut]{Rodrigues (Benjamin-Olinde), 1795-1851, Français} 
 \begin{equation}
- L_n(x)=\frac{\mathrm{e}^x}{n!}\frac{d^n}{dx^n}\left(\mathrm{e}^{-x} x^n\right). 
+ L_n(x)=\frac{\mathrm{e}^x}{n!}\frac{\dd^n}{\dd x^n}\left(\mathrm{e}^{-x} x^n\right). 
 \end{equation}
 Ils sont orthogonaux\index{polynôme!orthogonalité} les uns par rapport aux autres pour le produit scalaire\index{produit scalaire}: 
 \begin{equation}
-\langle f,g \rangle = \int_0^\infty f(x) g(x) \mathrm{e}^{-x}\dd x. 
+\langle f,g \rangle = \int_0^\infty f(x) g(x) \mathrm{e}^{-x}\dd x 
 \end{equation}
 Cette propriété d'orthogonalité revient à dire que si~$X$ est une variable aléatoire distribuée exponentiellement avec la fonction densité de probabilité suivantes: 
 \begin{equation}
@@ -335,17 +331,18 @@ Cette propriété d'orthogonalité revient à dire que si~$X$ est une variable a
 alors~$E(L_n(X),L_m(X))=0$ si~$n\neq m$. 
 
 \colorgris\noindent
-Les premiers polynômes de Laguerre sont:\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre}\\
-\noindent
-$L_0 =	1\,$,\\
-$L_1= 	-x+1\,$,\\
-$L_2= 	\begin{matrix}\frac12\end{matrix} (x^2-4x+2) \,$,\\
-$L_3= 	\begin{matrix}\frac16\end{matrix} (-x^3+9x^2-18x+6) \,$,\\
-$L_4= 	\begin{matrix}\frac1{24}\end{matrix} (x^4-16x^3+72x^2-96x+24) \,$,\\
-$L_5= 	\begin{matrix}\frac1{120}\end{matrix} (-x^5+25x^4-200x^3+600x^2-600x+120) \,$,\\
-$L_6= 	\begin{matrix}\frac1{720}\end{matrix} (x^6-36x^5+450x^4-2400x^3+5400x^2-4320x+720) \,$.
-\colorblack
-
+Les premiers polynômes de Laguerre sont:\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français}\index{polynôme! de Laguerre}
+\begin{equation}
+\begin{aligned}
+&L_0 =	1\\
+&L_1= 	-x+1\\
+&L_2= 	\frac12 (x^2-4x+2)\\
+&L_3= 	\frac16 (-x^3+9x^2-18x+6)\\
+&L_4= 	\frac1{24} (x^4-16x^3+72x^2-96x+24)\\
+&L_5= 	\frac1{120} (-x^5+25x^4-200x^3+600x^2-600x+120)\\
+&L_6= 	\frac1{720} (x^6-36x^5+450x^4-2400x^3+5400x^2-4320x+720)
+\end{aligned}
+\end{equation}
 Il existe des polynômes de Laguerre\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français} généralisés dont l'orthogonalité peut être liée à une densité de probabilité faisant intervenir la fonction Gamma. Ils apparaissent dans le traitement de l'oscillateur harmonique quantique. Ils peuvent être exprimés en fonction des polynômes d'Hermite.\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite} 
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Bernstein}\index[aut]{Bernstein (Sergeï{} Natanovich), 1880-1968, Russe}\index{polynôme! de Bernstein} 
@@ -362,7 +359,7 @@ Ces polynômes présentent quatre propriétés importantes:
 \begin{itemize}
 \item Partition de l'unité:
 \begin{equation}
-\dsum_{i=0}^n B_i^n(u) = 1,\qquad \forall u \in \intff{0}{1}
+\dsum_{i=0}^n B_i^n(u) = 1,\quad \forall u \in \intff{0}{1}
 \end{equation}
 \item Positivité:
 \begin{equation}
@@ -370,13 +367,13 @@ B_i^n(u)\geq 0,\qquad\forall u\in \intff{0}{1},\quad\forall i\in 0,\dots,n
 \end{equation}
 \item Symétrie:
 \begin{equation}
-B_i^n(u) = B_{n-i}^n(1-u), \qquad \forall u \in \intff{0}{1},\quad \forall i \in 0, \dots, n
+B_i^n(u) = B_{n-i}^n(1-u), \quad \forall u \in \intff{0}{1},\quad \forall i \in 0, \dots, n
 \end{equation}
 \item Formule de récurrence:
 \begin{equation}
 B_i^n(u) = 
 \begin{cases} (1-u)B_i^{n-1}(u),& i = 0\\ (1-u)B_i^{n-1}(u) + u B_{i-1}^{n-1}(u),&\forall i \in 1, \dots, n-1\\ uB_{i-1}^{n-1}(u),& i = n 
-\end{cases},\qquad \forall u \in \intff{0}{1}
+\end{cases},\quad \forall u \in \intff{0}{1}
 \end{equation}
 \end{itemize}
 On notera la grande ressemblance de ces polynômes avec la loi binomiale. 
@@ -390,7 +387,7 @@ Dans la version la plus simple (\textcolorblue{interpolation lagrangienne}), on 
 
 L'\textcolorblue{erreur d'interpolation} lors de l'approximation d'une fonction~$f$ (donnée par les points~$(x_i,y_i=f(x_i))$) par un polynôme de Lagrange~$p_n$ est donnée par une formule de type Taylor-Young:\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index[aut]{Young (William Henry), 1863-1942, Anglais} Si~$f$ est~$n+1$ fois continûment différentiable sur~$I=[\min(x_0,\ldots,x_n,x),\max(x_0,\ldots,x_n,x)]$, alors:
 \begin{equation}
-f(x) - p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i=0}^n (x-x_i) \quad \text{ avec} \xi \in I. 
+f(x) - p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i=0}^n (x-x_i) \quad \text{ avec }\quad \xi \in I
 \end{equation}
 Dans le cas particulier où~$x_i = x_0 + ih$ (points uniformément répartis), il se produit en général une \textcolorred{aggravation catastrophique de l'erreur d'interpolation}, connue sous le nom de \textcolorblue{phénomène de Runge}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} lorsqu'on augmente le nombre de points pour un intervalle~$[x_0,x_n]$, donné (on a alors~$\xi\in]-1,1[$). 
 
@@ -401,15 +398,15 @@ Dans le cas particulier où~$x_i = x_0 + ih$ (points uniformément répartis), i
 %%%%----------------------------------------------------------
 Une \textcolorblue{spline} est une fonction définie par morceaux par des polynômes. Comme mentionné au dessus, la méthode des splines est souvent préférée à l'interpolation polynomiale, car on obtient des résultats similaires en se servant de polynômes ayant des degrés inférieurs, tout en évitant le phénomène de Runge. De plus, leur simplicité d'implémentation les rend très populaires et elles sont fréquemment utilisées dans les logiciels de dessin. 
 
-Une courbe spline est une fonction polynomiale par morceaux définie sur un intervalle~$\intff{a}{b}$ divisé en sous intervalles~$[t_{i-1}, t_i]$ tels que~$a = t_0 < t_1 < \ldots < t_{k-1} < t_k = b$. On la note~$S: \intff{a}{b}\to \RR$. Sur chaque intervalle~$[t_{i-1}, t_i]$ on définit un polynôme~$ P_i: [t_{i-1}, t_i] \to \RR$. Cela entraine pour une spline à~$k$ intervalles:~$S(t) = P_1 (t)$, $t_0 \le t < t_1$, $S(t) = P_2 (t)$, $t_1 \le t < t_2,\ldots,S(t) = P_k (t)$, $t_{k-1} \le t \le t_k$. 
+Une courbe spline est une fonction polynomiale par morceaux définie sur un intervalle~$\intff{a}{b}$ divisé en sous intervalles~$\intff{t_{i-1}}{t_i}$ tels que~$a = t_0 < t_1 < \ldots < t_{k-1} < t_k = b$. On la note~$S: \intff{a}{b}\to \RR$. Sur chaque intervalle~$\intff{t_{i-1}}{t_i}$ on définit un polynôme~$ P_i: \intff{t_{i-1}}{t_i} \to \RR$. Cela entraine pour une spline à~$k$ intervalles:~$S(t) = P_1 (t)$, $t_0 \le t < t_1$, $S(t) = P_2 (t)$, $t_1 \le t < t_2,\ldots,S(t) = P_k (t)$, $t_{k-1} \le t \le t_k$. 
 
 Le \textcolorblue{degré de la spline} est défini comme étant celui du polynôme~$P_i (t)$ de plus haut degré. Si tous les polynômes ont le même degré, on dit que la spline est uniforme. Dans le cas contraire, elle est non uniforme. 
 
 Tout polynôme étant~$C^\infty$, la \textcolorblue{continuité d'une spline} dépend de la continuité au niveau de la jointure des courbes polynômes. Si~$\forall i$ tel que~$1 \le i \le k$ et~$\forall j$ tel que~$0 \le j \le n$ l'égalité suivante est vérifiée: 
 \begin{equation}
- P_i^{(j)} (t_i) = P_{i+1}^{(j)} (t_i). 
+ P_i^{(j)} (t_i) = P_{i+1}^{(j)} (t_i)
 \end{equation}
- alors la spline est~$C^n$ 
+alors la spline est~$C^n$. 
  
 %%%%----------------------------------------------------------
 \subsection{Interpolation d'Hermite}
@@ -462,7 +459,7 @@ Les principales propriétés des courbes de Bézier sont les suivantes:
 %%%%----------------------------------------------------------
 Une \textcolorblue{B-spline} est une combinaison linéaire de splines positives à support compact minimal. Les B-splines sont la généralisation des courbes de Bézier, elles peuvent être à leur tour généralisées par les NURBS.\index[aut]{Bézier (Pierre), 1910-1999, Français} Étant donné~$m+1$ points~$t_i$ dans~$\intff{0}{1}$ tels que~$0\le t_0\le t_1\le\ldots\le t_m\le 1$, une courbe spline de degré~$n$ est une courbe paramétrique~$\mathbf{S}:\intff{0}{1}\to\mathbb{R}^d$, composée de fonctions \textcolorblue{B-splines} de degré~$n$: 
 \begin{equation}
-\mathbf{S}(t)=\sum_{i=0}^{m-n-1}b_{i,n}(t)\cdot\mathbf{P}_{i},\qquad t \in [0, 1], 
+\mathbf{S}(t)=\sum_{i=0}^{m-n-1}b_{i,n}(t)\cdot\mathbf{P}_{i},\quad t \in \intff{0}{1}
 \end{equation}
 où les~$P_i$ forment un polygone appelé \textcolorblue{polygone de contrôle}. Le nombre de points composant ce polygone est égal à~$m-n$. Les~$m-n$ fonctions B-splines de degré~$n$ sont définies par récurrence sur le degré inférieur: 
 \begin{align}
@@ -470,13 +467,13 @@ où les~$P_i$ forment un polygone appelé \textcolorblue{polygone de contrôle}.
 \begin{aligned} &1 && \text{si} \quad t_j \leqslant t < t_{j + 1} \\
 &0 && \text{ sinon} 
 \end{aligned} \right.\\
-&b_{j, n}(t):= \frac{t - t_j}{t_{j + n} - t_j} b_{j, n - 1}(t) + \frac{t_{j + n + 1} - t}{t_{j + n + 1} - t_{j + 1}} b_{j + 1, n - 1}(t). 
+&b_{j, n}(t)= \frac{t - t_j}{t_{j + n} - t_j} b_{j, n - 1}(t) + \frac{t_{j + n + 1} - t}{t_{j + n + 1} - t_{j + 1}} b_{j + 1, n - 1}(t)
 \end{align}
 Quand les points sont équidistants, les B-splines sont dites uniformes. C'est le cas des courbes de Bézier qui sont des B-splines uniformes, dont les points~$t_i$ (pour~$i$ entre~$0$ et~$m$) forment une suite arithmétique de~$0$ à~$1$ avec un pas constant~$h=1/m$, et où le degré~$n$ de la courbe de Bézier ne peut être supérieur à~$m$). 
 
 \textcolorgris{Par extension, lorsque deux points successifs~$t_j$ et~$t_{j+1}$ sont confondus, on pose~$0/0 = 0$: cela a pour effet de définir une discontinuité de la tangente, pour le point de la courbe paramétré par une valeur de~$t$, donc d'y créer un sommet d'angle non plat.} \textcolorgreen{Toutefois il est souvent plus simple de définir ce B-spline étendu comme l'union de deux B-splines définis avec des points distincts, ces splines étant simplement joints par ce sommet commun, sans introduire de difficulté dans l'évaluation paramétrique ci-dessus des B-splines pour certaines valeurs du paramètre~$t$. Mais cela permet de considérer alors tout polygone simple comme un B-spline étendu.}
  
-La forme des fonctions de base est déterminée par la position des points. La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle. Une B-spline de degré~$n$, $b_{i,n}(t)$ est non nulle dans l'intervalle~$[t_i, t_{i+n+1}]$: 
+La forme des fonctions de base est déterminée par la position des points. La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle. Une B-spline de degré~$n$, $b_{i,n}(t)$ est non nulle dans l'intervalle~$\intff{t_i}{t_{i+n+1}}$: 
 \begin{equation}
 b_{i,n}(t) =\left\{\begin{aligned}
 &>0 && \text{si} \quad t_{i} \leqslant t < t_{i+n+1} \\

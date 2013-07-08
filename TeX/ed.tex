@@ -37,7 +37,7 @@ Ce type d'équation se retrouve:
 \end{itemize} 
 Si~$c\ne0$, il faut déterminer une solution particulière de l'équation avec second membre. On appliquera les mêmes techniques que dans le cas des coeeficients non constants (voir ci-après). 
 \subsubsection{Coefficients non constants} 
-\textbf{1. Traitement de l'équation homogène}\par
+\paragraph{1. Traitement de l'équation homogène}
 On réécrit l'équation homogène:
 \begin{equation}
 y' + \frac{b(x)}{a(x)} y = 0
@@ -67,7 +67,7 @@ Les solutions sont alors les fonctions, définies sur~$I$, de la forme:
 y(x) = C \mathrm{e}^{-A(x)}
 \end{equation}
 où encore une fois la constante~$C\in\RR$ est déterminée par les conditions initiales. 
-\par\medskip\noindent\textbf{2. Solution particulière}\par
+\paragraph{2. Solution particulière}
 Plusieurs cas se présentent:
 \begin{itemize}
 \item~$c(x)=0$: la solution du problème est celle de l'équation homogène et on a fini;
@@ -172,7 +172,7 @@ f(x) = q \mathrm{e}^{ux}\cos(vx+r)
 \end{equation}
 avec~$q$ et~$r$ deux réels à déterminer comme précemment. Cette forme est parfois plus pratique selon les problèmes. 
 \end{enumerate}
-\subsubsection{Équation différentielle homogène à coefficients non constants} Si les fonctions~$a(x)$, $b(x)$ et~$c(x)$ ne sont pas constantes, alors il n'existe pas d'expression générale des solutions. C'est pour cette raison qu'au XIXe siècle furent introduites de nombreuses fonctions spéciales, comme les fonctions de Bessel ou la fonction d'Airy, définies comme solutions d'équations qu'il est impossible de résoudre explicitement. 
+\subsubsection{Équation différentielle homogène à coefficients non constants} Si les fonctions~$a(x)$, $b(x)$ et~$c(x)$ ne sont pas constantes, alors il n'existe pas d'expression générale des solutions. C'est pour cette raison qu'au \textsc{xix}\fup{e} siècle furent introduites de nombreuses fonctions spéciales, comme les fonctions de Bessel ou la fonction d'Airy, définies comme solutions d'équations qu'il est impossible de résoudre explicitement. 
 
 Toutefois, dès lors qu'une solution particulière non nulle de l'équation est connue, il est possible de la résoudre complètement. En effet, le théorème de Cauchy-Lipschitz affirme que l'ensemble des solutions de l'équation constitue un espace vectoriel de dimension deux. Résoudre l'équation différentielle revient donc à exhiber deux fonctions solutions non proportionnelles: elles formeront une base de l'espace des solutions. Une telle base est appelée \textcolorblue{système fondamental de solutions}. 
 
@@ -183,6 +183,13 @@ Les équation différentielle d'ordre deux correspondent typiquement en physique
 %%%%----------------------------------------------------------
 \section{Résolution numérique} 
 Dans le cas d'équation différentielle non linéaires, on passera forcément à une résolution numérique. Mais les méthodes numériques permettent évidemment aussi de résoudre numériquement les équations différentielles et les équations aux dérivées partielles.
+
+L'idée générale est toujours la même: un approche la dérivée d'une fonction en un point par sa tangente (ce qui revient finalement à la définition de la dérivée). Pour une fonction~$f(x)$, on écrit donc au point~$x=a$ une relation de la forme:
+\begin{equation}
+f'(a)\approx \frac{f(b)-f(c)}{b-c}
+\end{equation}
+où~$b$ et~$c$ sont d'autres points. Par exemple, pour~$c=a$ et~$b=a+\varepsilon$ on obtient un schéma décentré à droite; pour~$c=a-\varepsilon$ et~$b=a+\varepsilon$, on ontient un schéma centré.
+ 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc} 
 \includegraphics[height=25mm]{Euler}& 
@@ -198,12 +205,6 @@ Depuis, un grand nombre de techniques ont été développées: elles se basent s
 Il existe plusieurs critères pour mesurer la performance des méthodes numériques: la consistance d'une méthode indique que l'erreur théorique effectuée en approchant la solution tend vers zéro avec les pas. La stabilité indique la capacité à contrôler l'accumulation des erreurs d'arrondi. Ensemble elles assurent la convergence, i.e. la possibilité de faire tendre l'erreur globale vers zéro avec le pas. Ces notions seront posées brièvement
 au chapitre~\ref{Ch-shemanum}.}
 \end{histoire}
-L'idée générale est toujours la même: un approche la dérivée d'une fonction en un point par sa tangente (ce qui revient finalement à la définition de la dérivée). Pour une fonction~$f(x)$, on écrit donc au point~$x=a$ une relation de la forme:
-\begin{equation}
-f'(a)\approx \frac{f(b)-f(c)}{b-c}
-\end{equation}
-où~$b$ et~$c$ sont d'autres points. Par exemple, pour~$c=a$ et~$b=a+\varepsilon$ on obtient un schéma décentré à droite; pour~$c=a-\varepsilon$ et~$b=a+\varepsilon$, on ontient un schéma centré.
- 
 %%%%----------------------------------------------------------
 \subsection{Méthode d'Euler, Runge-Kutta ordre 1}\index{méthode de Runge-Kutta ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} Soit à résoudre l'équation différentielle suivante:
 \begin{equation}

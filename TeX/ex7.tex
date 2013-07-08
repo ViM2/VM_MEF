@@ -86,7 +86,7 @@ Rigid2 = BLOQ DEPL l1;
 l3 = s1 'COTE' 3;
 CLl3 = BLOQ l3 UY ;
 DCLl3 = DEPI CLl3 UY0;
-* Totalite des CL
+* Totalite des conditions aux limites
 CL0 = CLk5 ET CLl3 ET Rigid1 ET Rigid2;
 \end{Verbatim}
 \end{multicols}
@@ -223,7 +223,7 @@ DCLl3  = DEPI CLl3 UY0;
 * 3) encastrement sous la partie basse
 l4 = s2 'COTE' 3;
 CLl4 = BLOQ L4 DEPL;
-* Totalite des CL
+* Totalite des conditions aux limites
 CL0 = CLk5 ET CLl3 ET CLl4;
 *
 * RESOLUTION
@@ -374,7 +374,7 @@ CLl4 = BLOQ L4 DEPL;
 * 4) ligne de contact:
 Depl1 Rigid1 = IMPO l2 l1;
 *
-* Totalite des CL
+* Totalite des conditions aux limites
 CL0 = CLk5 ET CLl3 ET CLl4 ET Rigid1;
 *
 * Chargement

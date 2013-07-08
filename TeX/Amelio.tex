@@ -209,14 +209,14 @@ par rapport aux finalités du modèle micro. Cela peut dégrader fortement la qu
 résultats et donc restreindre le domaine de validité de ces approches.%
 }
 
-Pour palier ce problème, on écrit les CL micro de manière plus subtile en les décomposant
+Pour palier ce problème, on écrit les conditions aux limites micro de manière plus subtile en les décomposant
 en la somme d'un terme moyen et d'un terme de moyenne nulle. Ainsi, le champ micro~$u^m$
 sera écrit~$u^m=u^M +v^m$ où~$u^M$ est le champ macro (i.e. la moyenne du champ micro),
 et~$v^m$ est le reste (à moyenne nulle).
 Notre problème devient donc de \textcolorred{déterminer le reste~$v^m$}, et c'est là
 que les méthodes divergent le plus. On distingue néanmoins deux grosses familles:
 \begin{itemize}
-  \item \textcolorblue{Condition de périodicité}\index{Condition de périodicité}
+  \item \textcolorblue{Condition de périodicité}\index{condition de périodicité}
 
 	On postule que l'on connaît l'allure du reste. On peut alors enchaîner un calcul macro
 	avec un solveur spécifique puis un calcul micro avec un solveur classique;
@@ -231,7 +231,7 @@ Ces deux approches vont être un peu plus détaillées maintenant.
 
 
 \medskip
-\subsection{Condition de périodicité -- méthodes multi-niveaux}\index{Condition de périodicité}\index{Multi-niveaux}
+\subsection{Condition de périodicité -- méthodes multi-niveaux}\index{condition de périodicité}\index{Multi-niveaux}
 
 Souvent, les méthodes multi-niveaux sont basées sur des conditions de périodicité
 inspirées de l'homogénéisation périodique.\index{Homogénéisation}
@@ -575,7 +575,7 @@ Le système à résoudre est symétrique, régulier, mais non défini-positif.
 
 \medskip
 Pour pallier la lenteur des algorithmes disponibles pour la résolution numérique d'un tel
-système (méthode de Gauss ou de décomposition avec pivotage), il est préférable
+système (méthode de Gauß ou de décomposition avec pivotage), il est préférable
 de \textcolorblue{régulariser} le système.
 
 Pour cela, on s'appuie sur la connaissance de la matrice~$\MM{K}$: celle-ci est singulière d'ordre

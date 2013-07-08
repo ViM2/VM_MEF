@@ -20,7 +20,7 @@ Sur ce premier exemple, nous détaillerons plus la démarche et les étapes que 
 la suite des cas présentés.
 
 \medskip
-\subsubsection{Laplacien de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Laplace}\index{Laplacien}\index{ED-EDP!de Poisson}\index{Conditions aux limites!de Dirichlet}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
+\subsubsection{Laplacien de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Laplace}\index{Laplacien}\index{ED-EDP!de Poisson}\index{condition aux limites!de Dirichlet}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
 On considère l'équation de Poisson (Laplace si~$f=0$) avec les conditions aux limites de Dirichlet,
 i.e. le problème suivant:
 \begin{equation}\left\{\begin{aligned}
@@ -37,7 +37,7 @@ Multiplier par une fonction test~$v$ et intégrer par parties (ou utiliser la fo
 Comme, rappelons le, le but est de faire en sorte que~$u$ et~$v$ jouent un
 rôle symétrique, on veut donc qu'ils aient même régularité et mêmes
 conditions aux limites. La régularité nécessaire est~$u$ et~$v$ sont
-$H^1(\Omega)$, et la prise en compte des CL conduit finalement à chercher
+$H^1(\Omega)$, et la prise en compte des conditions aux limites conduit finalement à chercher
 $u$ et~$v$ dans~$H^1_0(\Omega)$.
 
 Le problème est donc:
@@ -104,7 +104,7 @@ le minimum de:
 \end{equation}
 
 \medskip
-\subsubsection{Laplacien de Dirichlet relevé}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Laplace}\index{Laplacien}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index{Conditions aux limites!de Dirichlet}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}
+\subsubsection{Laplacien de Dirichlet relevé}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Laplace}\index{Laplacien}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index{condition aux limites!de Dirichlet}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}
 On considère l'équation de Laplace-Poisson avec les conditions aux limites suivantes:
 \begin{equation}\left\{\begin{aligned}
 -&\Delta u=f &&\text{ dans} \Omega\\
@@ -137,7 +137,7 @@ La formulation variationnelle du problème est:
 \end{equation}
 
 \medskip
-\subsubsection{Laplacien de Neumann}\index{ED-EDP!de Laplace}\index{Laplacien}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Conditions aux limites!de Neumann}
+\subsubsection{Laplacien de Neumann}\index{ED-EDP!de Laplace}\index{Laplacien}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{condition aux limites!de Neumann}
 On considère l'équation de Laplace-Poisson avec les conditions aux limites de Neumann,
 i.e. le problème suivant:
 \begin{equation}\left\{\begin{aligned}
@@ -157,15 +157,15 @@ qui nécessite~$f\in L^2(\Omega)$ et~$g\in L^2(\Gamma)$.
 
 \medskip
 On peut remarquer qu'ici une simple intégration par parties a suffit à intégrer les conditions aux
-limites dans la formulation variationnelle, i.e. les CL n'ont pas eu à être introduites
+limites dans la formulation variationnelle, i.e. les conditions aux limites n'ont pas eu à être introduites
 dans l'espace fonctionnel pour~$u$, contrairement au cas du Laplacien de Dirichlet
 (en même temps, demander à une fonction de~$H^1(\Omega)$ d'avoir une dérivée
 normale égale à une fonction~$g$ au bord n'a pas de sens).
 
 Lorsque les conditions aux limites s'introduisent d'elles-mêmes comme dans
-le cas du Laplacien de Neumann, on dit que l'on tient compte des CL de
+le cas du Laplacien de Neumann, on dit que l'on tient compte des conditions aux limites de
 \textcolorblue{manière naturelle}. Lorsqu'il faut les inclure, on dit qu'on en tient
-compte de \textcolorblue{manière essentielle}.\index{Conditions aux limites!de manière essentielle}\index{Conditions aux limites!de manière naturelle}
+compte de \textcolorblue{manière essentielle}.\index{condition aux limites!essentielle}\index{condition aux limites!naturelle}
 
 \medskip
 Il faut remarquer que le problème variationnel ne peut avoir de solution que
@@ -203,7 +203,7 @@ aisément un cours de M2 sur le sujet.
 Cela dépasse le cadre que nous nous sommes fixé dans ce document.
 
 \medskip
-\subsubsection{Laplacien avec conditions mixtes}\index{ED-EDP!de Laplace}\index{Laplacien}\index{ED-EDP!de Poisson}\index{Conditions aux limites!mêlée}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
+\subsubsection{Laplacien avec conditions mixtes}\index{ED-EDP!de Laplace}\index{Laplacien}\index{ED-EDP!de Poisson}\index{condition aux limites!mêlée}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
 On considère l'équation de Laplace-Poisson avec les conditions aux limites mixtes suivantes:
 \begin{equation}\left\{\begin{aligned}
 -&\Delta u=f &&\text{ dans} \Omega\\
@@ -229,7 +229,7 @@ Dans le cadre de ce document, nous nous intéresserons plus particulièrement
 Ce paragraphe est donc traité un peu plus loin dans le document.
 
 \medskip
-\subsection{Équation de la chaleur}\index{ED-EDP!de la chaleur}\index{Conditions aux limites!de Dirichlet}
+\subsection{Équation de la chaleur}\index{ED-EDP!de la chaleur}\index{condition aux limites!de Dirichlet}
 Après avoir présenté le problème elliptique du Laplacien, intéressons-nous
 maintenant au cas parabolique de l'équation de la chaleur.
 Pour cela, considérons le problème suivant:
@@ -282,7 +282,7 @@ de nous permettre d'introduire les notations progressivement).
 
 
 \medskip
-\subsection{Équation de Stokes}\index{Conditions aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
+\subsection{Équation de Stokes}\index{condition aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
 Si l'on considère la problème de Stokes pour un fluide incompressible avec condition de Dirichlet, il
 nous faut résoudre le système:
 \begin{equation}\left\{
@@ -346,7 +346,7 @@ conclure à l'existence et à l'unicité de~$u$.
 De là, il ne reste plus qu'à démontrer la même chose pour~$p$ dans la formulation mixte.
 
 \medskip
-\subsection{Équation de Navier-Stokes}\index{Conditions aux limites!de Dirichlet}\index{ED-EDP!de Navier-Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
+\subsection{Équation de Navier-Stokes}\index{condition aux limites!de Dirichlet}\index{ED-EDP!de Navier-Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
 
 Considérons le problème de Navier-Stokes, pour un fluide incompressible, et soumis
 à des conditions initiales en temps et sur le contour~$\Gamma=\partial\Omega$:
@@ -440,7 +440,7 @@ comme tel.
 \section{Équations de la mécanique des milieux continus des solides}
 \medskip
 \subsection{Formulation générale}
-La formulation la plus générale du problème est:\index{ED-EDP!relation fondamentale de la dynamique}\index{Loi de comportement}\index{Conditions aux limites!de Dirichlet}\index{Conditions aux limites!de Neumann}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
+La formulation la plus générale du problème est:\index{ED-EDP!relation fondamentale de la dynamique}\index{Loi de comportement}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -549,7 +549,7 @@ Les relations entre déformations et déplacements et entre contraintes et dépl
 sont supposées vérifiées de manière implicite dans~$\Omega$.
 
 \medskip
-\subsubsection{Illustration: formulation en déplacements de la statique des matériaux isotropes}\index{ED-EDP!relation fondamentale de la dynamique}\index{Loi de comportement}\index{Conditions aux limites!de Dirichlet}\index{Conditions aux limites!de Neumann}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Loi de comportement!Hooke}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
+\subsubsection{Illustration: formulation en déplacements de la statique des matériaux isotropes}\index{ED-EDP!relation fondamentale de la dynamique}\index{Loi de comportement}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{Loi de comportement!Hooke}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 
 En se plaçant dans le cas statique, et en écrivant <<~en déplacements~>>, i.e.
 en supprimant le champ de contrainte des inconnues (et en utilisant, au passage,
@@ -715,7 +715,7 @@ On obtient alors l'\textcolorblue{équation de Helmholtz}:
 où~$k$ est le \textcolorblue{nombre d'onde}:~$k=\dfrac\omega{c}=\dfrac{2\pi}\lambda$.
 
 \medskip
-\subsection{Conditions aux limites en acoustique}\index{Conditions aux limites!de Dirichlet}\index{Conditions aux limites!de Neumann}\index{Conditions aux limites!de Robin}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
+\subsection{Conditions aux limites en acoustique}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index{condition aux limites!de Robin}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
 Soit~$\Gamma=\partial\Omega$ la frontière du domaine concerné.
 On considère que~$\Gamma$ est \textcolorblue{partitionné} en trois zones (i.e. dont
 l'union vaut~$\Gamma$ et dont aucune n'intersecte les autres) qui
