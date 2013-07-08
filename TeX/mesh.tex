@@ -1,0 +1,53 @@
+\chapter{Le maillage}\label{Ch-mesh}
+\begin{abstract}
+Le lecteur peut trouver que ce chapitre traitant du maillage arrive un peu tard.
+Cela a été fait très volontairement. En effet, les techniques de construction d'un maillage ne sont pas communes
+avec celles relatives aux éléments eux-mêmes.
+De plus, nous nous restreindrons aux maillages de type Voronoï\index[aut]{Voronoï (Gueorgui Feodossievitch), 1868-1908, Russe}-Delaunay.\index[aut]{Delaunay (Boris Nikolaïevitch), 1890-1980, Russe}
+\end{abstract}
+
+\medskip
+\section{Introduction}
+
+L'opération de maillage consiste à discrétiser un domaine (i.e. un milieu continu ou plutôt sa modélisation géométrique) par des éléments 
+(éléments finis nous concernant), si possible bien proportionnés: 
+au paragraphe \ref{Sec-mesh-carac}, nous avons déjà présenté les dimensions géométriques représentatives d'un maillage que sont 
+le diamètre maximum des éléments $h$\index{Diamètre d'un EF} et le facteur de forme du maillage\index{Facteur de forme du maillage} 
+$\sigma$, ainsi que le diamètre $h_K$ d'un élément $K$\index{Diamètre d'un EF} et sa rondeur $\rho_K$\index{Rondeur d'un EF}.
+Ces deux derniers paramètres sont représentés sur la figure \ref{h-rho}. 
+
+\medskip
+Dans ce chapitre, nous traiterons du cas bidimensionnel.
+Nous expliquerons les bases théoriques, mais ne rentrerons pas dans les détails pratiques de la programmation
+d'algorithmes de maillage (il y a de très bons cours disponibles sur le sujet).
+
+\medskip
+Dans la suite nous aurons besoin des notions suivantes:
+\begin{itemize}
+   \item un \textcolorblue{segment fermé} (resp. ouvert) d'extrémités $a$ et $b$ de $\RR^d$ est noté $[a,b]$ (resp. $]a,b[$);
+   \item un \textcolorblue{convexe} $E$ est un ensemble tel que: $\forall (a,b)\in E^2, [a,b]\subset E$;
+   \item le \textcolorblue{convexifié} d'un ensemble $E$ de points de $\RR^d$, noté $\mathcal{C}(E)$ est le plus petit convexe
+	contenent $E$.
+   \item un domaine $\Omega$ (i.e. un ouvert de $\RR^d$) est dit \textcolorblue{polygonal} si son bord $\Gamma=\partial\Omega$
+	est formé d'un nombre fini de segments;
+   \item un \textcolorblue{n-simplex $(x_0, ..., x_n)$} est le convexifié des $n+1$ points de $\RR^d$ affine indépendant.
+	Cela implique que $n\le d$. On a donc: un segment est un 1-simplex, un triangle un 2-simplex, un tétraèdre est un 3-simplex.
+	Les sommets sont des 0-simplex.
+\end{itemize}
+
+
+\medskip
+\section{Maillage simplexial}
+
+
+
+
+\medskip
+\section{Diagramme de Voronoï}
+
+
+
+\medskip
+\section{Maillage par projection}
+% projection d'un maillage sur une sphère... voir Oudot
+

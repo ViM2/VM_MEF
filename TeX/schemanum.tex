@@ -1,0 +1,155 @@
+\chapter{Schémas numériques}\label{Ch-shemanum}
+\begin{abstract}
+Il nous est apparu qu'il était nécessaire d'ajouter quelques mots encore sur les schémas numériques,
+notamment après la présentation des chapitres \ref{Ch-ED} et \ref{Ch_NewRaph}. Nous resterons
+évidemment brefs, tant le sujet est conséquent.
+\end{abstract}
+
+
+\medskip
+%\section{Introduction}
+Nous nous sommes efforcés de présenter la méthode des éléments finis ainsi que la théorie mathématique la 
+sous-tendant.
+
+La partie II nous a permis de voir que l'existence de solutions, dans le cas continu, est assurée notamment par 
+les théorèmes de Lax-Milgram,\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
+(paragraphe \ref{Sec:LaxMil}) Babuška\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque} (paragraphe \ref{Sec-ThBabuska}) et 
+Brezzi\index[aut]{Brezzi (Franco), 1945-, Italien}\label{Sec:Brezzi} (paragraphe \ref{Sec-ThBrezzi}) selon le type de formulation. 
+La partie III, nous a premis de s'assurer de la convergence de la solution approximée vers la solution continue, notamment par les 
+lemmes de Céa\index[aut]{Cea@Céa (Jean), ?- , Français} (paragraphe \ref{Sec-Cea}) et de 
+Strang\index[aut]{Strang (William Gilbert), 1934-, Américain} (paragraphe \ref{Sec-Strang}).
+
+Toutefois, nous avons vu lorsque nous prenons en compte certains phénomènes un peu plus complexes (non stationnarité, non linéarité), 
+nous devons avoir recours à d'autres algorithmes tels que les différences finies, et les algorithmes de Newmark et Newton-Raphson par 
+exemple. Or nous n'avons rien dit de très général sur la converges des schémas numériques, c'est le pourquoi de ce petit chapitre.
+
+
+\medskip
+\section{Les propriétés d'un schéma numérique}
+
+
+\medskip
+\subsection{Problème bien posé}
+Selon une définition due à Hadamard\index[aut]{Hadamard (Jacques Salomon), 1865-1963, Français} à propos des
+modèles mathématiques de phénomènes physiques, un \textcolorblue{problème est bien posé} s'il possède les propriétés
+suivantes:
+\begin{enumerate}
+   \item ce problème possède une solution (existence);
+   \item cette solution est unique (unicité);
+   \item et elle dépend de façon continue des données dans le cadre d'une topologie raisonnable.
+\end{enumerate}
+
+\medskip
+Typiquement, des problèmes issus de la physique et pour lesquels on peut observer (mesurer) les grandeurs physiques correspondantes
+sont bien posés. On pensera notamment au problème de Dirichlet pour l'équation de Laplace et à l'équation de la chaleur (avec conditions 
+initiales connues). 
+
+\medskip
+Encore une fois, la mécanique nous montre que tout n'est pas si simple.
+Un problème de mécanique des milieux continus est bien posé dans un domaine $\Omega$ si la frontière $\Gamma=\partial\Omega$ de
+ce domaine admet une partition en deux sous-ensembles $\Gamma_1$ et $\Gamma_2$ sur lesquels portent des conditions aux limites
+sur les déplacements et sur les efforts respectivement (un théorème d'Arnold\index[aut]{Arnold (Douglas Norman), ?-, Américain} existe 
+dans le cas où les deux conditions existent simultanément, mais nous n'en parlerons pas ici).
+
+\textcolorgreen{Si un problème de mécanique est bien posé, la solution en contrainte existe et est unique, alors que la solution en 
+déplacement ne l'est pas nécessairement lorsque des mouvements de corps rigides sont possibles.}
+
+\medskip
+Les \textcolorblue{problèmes inverses} fournissent souvent des problèmes mal posés.
+Par exemple, le problème dit d'i'inversion du temps dans l'équation de la chaleur consistant à déduire une distribution passée de la 
+température à partir d'un état final n'est pas bien posé. Sa solution est en effet très sensible à des perturbations de l'état final. 
+
+\medskip
+Comme nous l'avons déjà mentionné, la recherche de la solution d'un problème continu en utilisant des méthodes numériques sur la
+discrétisation de ce problème comporte de nombreux types d'erreurs, de la simple erreur d'arrondi dans une donnée au comportement
+d'un algorithme. C'est ce dont nous allons parler tout de suite.
+
+
+\medskip
+\subsection{Conditionnement}
+Le \textcolorblue{conditionnement} mesure la dépendance de la solution d'un problème numérique par rapport aux données du 
+problème, ceci afin de contrôler la validité d'une solution calculée par rapport à ces données. 
+En effet, les données d'un problème numérique dépendent en général de mesures expérimentales et sont donc entachées d'erreurs.
+
+De façon plus générale, on peut dire que le conditionnement associé à un problème est une mesure de la difficulté de calcul numérique 
+du problème. Un problème possédant un conditionnement bas est dit bien conditionné et un problème possédant un conditionnement élevé 
+est dit mal conditionné.
+
+
+\medskip
+\subsection{Stabilité ou robustesse}
+La \textcolorblue{stabilité} est une propriété de la solution obtenue. Elle se réfère à la propagation des erreurs au cours des 
+étapes du calcul, à la capacité de l'algorithme de ne pas trop amplifier d'éventuels écarts, à la précision des résultats obtenus,
+mais elle ne se limite pas aux erreurs d'arrondis et à leurs conséquences. 
+Une solution est dite stable si elle est bornée dans l'espace et/ou le temps. La valeur de la stabilité
+peut parfois (souvent) être exprimée en fonction du pas de discrétisation.
+
+Les algorithmes dédiés à la résolution d'équations différentielles ou d'équations aux dérivées partielles (en particulier la 
+méthode des différences finies et la méthode des éléments finis) se basent sur une discrétisation ou un maillage de l'espace 
+(et du temps): dans ce cas, la stabilité se réfère à un comportement numérique robuste lorsque le pas de discrétisation ou la 
+taille des mailles tend vers 0.
+
+\textcolorred{La stabilité d'un schéma n'a aucun lien avec la solution exacte du problème traité (convergence).}
+
+\medskip
+\colorgris
+Une solution $U_n$ est stable si l’on peut trouver une constante $C$ (souvent nulle) telle que:
+\begin{equation}
+-1 \le \dfrac{U_{n+1}-C}{U_n-C}\le 1, \qquad\forall n
+\end{equation}
+Ce critère simple permet donc de s'assurer que la solution ne s'éloigne pas d'une valeur de référence.
+\colorblack
+
+\medskip
+\subsection{Consistance}
+La \textcolorblue{consistance} est une propriété de la discrétisation.
+Un schéma numérique (d'une équation aux dérivées partielles par exemple) sera dit consistant par rapport au problème
+qu'il discrétise si celui-ci tend vers le problème considéré lorsque la discrétisation tend vers 0. 
+La consistance concerne essentiellement la capacité du schéma à représenter une solution régulière satisfaisant localement les équations aux 
+dérivées partielles, ceci lorsque les pas de discrétisation ($\Delta t$, $\Delta x$, etc.) tendent tous vers 0. 
+Plus précisément, si les données d'une étape du traitement algorithmique sont issues d'une solution exacte, les résultats de ce traitement 
+tendent vers cette solution.
+
+La différence entre l'équation discrétisée et l'équation réelle est appelée l'erreur de troncature
+
+\medskip
+\textcolorgris{La consistance d'une discrétisation s'analyse en effectuant un développement en série de Taylor de l'équation
+discrétisée et en vérifiant que celle-ci tend vers l'équation originale lorsque le pas de discrétisation tend vers 0.}
+
+\medskip
+\subsection{Convergence}
+Contrairement à la consistance, qui est une propriété locale, la convergence est de portée globale.
+
+On dit qu'une solution numérique converge vers la solution analytique si elle tend vers elle en tout point
+du temps et/ou de l’espace lorsque les paramètres de discrétisation ($\Delta t$, $\Delta x$...) tendent vers 0.
+
+\medskip
+C'est évidemment bien la convergence (souvent difficile à prouver) d'un schéma numérique que nous visons, mais 
+stabilité et consistance (plus faciles à prouver) sont les outils nous permettant de nous en assurer, et ceci via les très beaux 
+théorèmes de Lax\index[aut]{Lax (Peter), 1926-, Américain}(celui du théorème de Lax-Milgram) et de Lax-Wendroff, que 
+nous présentons maintenant.\index[aut]{Wendroff (Burton), 1930-, Américain}
+
+
+\medskip
+\section{Théorèmes de convergence}
+
+\begin{theoreme}[Théorème de Lax]\index[aut]{Lax (Peter), 1926-, Américain}\index{Théorème! de Lax}
+Pour résoudre un problème évolutif avec condition initiale qui est supposé être bien posé, ceci à l'aide d'un schéma numérique 
+consistant, la stabilité du schéma est une condition nécessaire et suffisante pour assurer sa convergence.
+Les notions de consistance, de stabilité et de convergence se réfèrent ici à une même norme.
+
+En d'autres termes: \textcolorred{consistance + stabilité $\Longrightarrow$ stabilité}
+\end{theoreme}
+Ce théorème est parfois également appelé théorème de Lax–Richtmyer\index[aut]{Richtmyer (Robert Davis), 1910-2003, Américain}
+
+\medskip
+Dans les applications physiques que nous considérons, le théorème suivant permet d'assurer la convergence du
+schéma numérique utilisé.
+\begin{theoreme}[Théorème de Lax-Wendroff]\index[aut]{Wendroff (Burton), 1930-, Américain}\index{Théorème! de Lax-Wendroff}
+Pour résoudre un problème aux dérivées partielles basé sur une loi de conservation, un schéma numérique qui est à la fois conservatif, 
+consistant et convergent (lorsque l'on raffine les pas de temps et d'espace, i.e. lorsque $\Delta t \rightarrow 0$ et $\Delta x \rightarrow 0$), 
+alors la solution numérique converge vers une solution faible des équations.
+\end{theoreme}
+
+Notons que Wendroff a passé sa thèse sous la direction de Peter Lax.
+

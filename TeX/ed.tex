@@ -182,26 +182,20 @@ Les équation différentielle d'ordre deux correspondent typiquement en physique
 %%%%----------------------------------------------------------
 \section{Résolution numérique} 
 Dans le cas d'équation différentielle non linéaires, on passera forcément à une résolution numérique. Mais les méthodes numériques permettent évidemment aussi de résoudre numériquement les équations différentielles et les équations aux dérivées partielles.
-\begin{histoire}
-La première méthode numérique fut introduite en 1768 par Leonhard Euler.\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} Depuis, un grand nombre de techniques ont été développées: elles se basent sur la discrétisation de l'intervalle d'étude en un certain nombre de pas. Suivant le type de formule utilisé pour approcher les solutions, on distingue les méthodes numériques à un pas ou à pas multiples, explicites ou implicites. 
-
-Il existe plusieurs critères pour mesurer la performance des méthodes numériques: la consistance d'une méthode indique que l'erreur théorique effectuée en approchant la solution tend vers zéro avec les pas. La stabilité indique la capacité à contrôler l'accumulation des erreurs d'arrondi. Ensemble elles assurent la convergence, i.e. la possibilité de faire tendre l'erreur globale vers zéro avec le pas.\\[5pt]
-
-\footnotesize\setlength\tabcolsep{0pt}
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc} 
 \includegraphics[height=25mm]{Euler}& 
 \includegraphics[height=25mm]{Runge}& 
 \includegraphics[height=25mm]{Kutta}& 
 \includegraphics[height=25mm]{Newmark}\\ 
-Euler & 
-Runge& 
-Kutta& 
-Newmark %\\ 
-%1707-1783& 
-%1856-1927& 
-%1867-1944& 
-%1910-1981\\ 
-\end{tabular}
+Euler & Runge& Kutta& Newmark\end{tabular}}
+\begin{histoire}
+La première méthode numérique fut introduite en 1768 par Leonhard Euler.\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\\
+\ImageAGauche{%
+Depuis, un grand nombre de techniques ont été développées: elles se basent sur la discrétisation de l'intervalle d'étude en un certain nombre de pas. Suivant le type de formule utilisé pour approcher les solutions, on distingue les méthodes numériques à un pas ou à pas multiples, explicites ou implicites. \\
+\indent
+Il existe plusieurs critères pour mesurer la performance des méthodes numériques: la consistance d'une méthode indique que l'erreur théorique effectuée en approchant la solution tend vers zéro avec les pas. La stabilité indique la capacité à contrôler l'accumulation des erreurs d'arrondi. Ensemble elles assurent la convergence, i.e. la possibilité de faire tendre l'erreur globale vers zéro avec le pas. Ces notions seront posées brièvement
+au chapitre~\ref{Ch-shemanum}.}
 \end{histoire}
 L'idée générale est toujours la même: un approche la dérivée d'une fonction en un point par sa tangente (ce qui revient finalement à la définition de la dérivée). Pour une fonction~$f(x)$, on écrit donc au point~$x=a$ une relation de la forme:
 \begin{equation}
