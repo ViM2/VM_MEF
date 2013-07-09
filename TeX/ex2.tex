@@ -37,7 +37,7 @@ Un point courant de cet élément sera obtenu par interpolation linéaire entre 
 paramétrée par~$\xi$. On Cherche cette interpolation sous la forme~$x(\xi)=\LL{N(\xi)}\VV{x_n}$, $y(\xi)=\LL{N(\xi)}\VV{y_n}$ et~$z(\xi)=\LL{N(\xi)}\VV{z_n}$, avec
 $\LL{N(\xi)}=\LLL{N_1(\xi), N_2(\xi)}$ et~$N_1(\xi)=\frac12 (1-\xi)$, $N_2(\xi)=\frac12(1+\xi)$.
 De manière plus <<~compacte~>>, on peut écrire:
-\begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et} \xi\in[-1,1]) \end{equation}
+\begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et } \xi\in[-1,1]) \end{equation}
 \ifVersionDuDocEstVincent
 
 \medskipvm\fi
@@ -282,7 +282,7 @@ Chaque élément~$e$ (de longueur~$L_e$) possède une matrice de rigidité élé
 et un vecteur des forces nodales élémentaires~$\VV{f_e}$ définis par:
 \begin{equation}
 \MM{K_e} = \frac{2EA}{L_e} \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
-\qquad \text{ et} \qquad
+\qquad \text{ et } \qquad
 \VV{f_e} = \rho g A \frac{L_e}4 \VV{\begin{array}{c} 1 \\1 \end{array}}
 \end{equation}
 \medskipvm
@@ -306,7 +306,7 @@ et les forces nodales:
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 L'\textcolorblue{assemblage} permettant de constituer le système complet est simplement obtenu par:
-\begin{equation} \MM{K}=\MM{K}_1+\MM{K}_2+\MM{K}_3 \qquad \text{ et} \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
+\begin{equation} \MM{K}=\MM{K}_1+\MM{K}_2+\MM{K}_3 \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 On résout alors~$\MM{K}\VV{q}=\VV{f}$ avec la condition aux limites~$u_1=0$.
@@ -341,7 +341,7 @@ La géométrie est encore une fois approximée par:
 \medskipvm
 Mais cette fois, l'approximation de la foction solution est voulue sous la forme:
 \begin{equation}
-u = \LLL{N_1, N_2, N_3, N_4}\VV{u_n} \qquad \text{ avec les ddl} \qquad
+u = \LLL{N_1, N_2, N_3, N_4}\VV{u_n} \qquad \text{ avec les ddl } \qquad
 \LL{u_n}=\LLL{u_1, u_{,x_1}, u_2, u_{,x_2}} 
 \end{equation}
 %%%%%%%%%%%%%%%%%%

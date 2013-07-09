@@ -71,7 +71,7 @@ On munit cet espace vectoriel de la topologie suivante: un ensemble~$U \subset \
 ouvert ssi~$\forall K \subset \Omega$ compact et~$f \in U$ dont le support est inclus dans~$K$,
 il existe~$\epsilon > 0$ et~$k \ge 0$ tels que:
 \begin{equation}
-  \{ g \in \mathcal{D}(\Omega)\;\mid\; \operatorname{supp}(g) \subset K\quad\text{et}\quad\forall x \in K,\; |f^{(k)}(x)-g^{(k)}(x)|\le \epsilon \}\;\subset\;U.
+  \{ g \in \mathcal{D}(\Omega)\;\mid\; \operatorname{supp}(g) \subset K\quad\text{ et }\quad\forall x \in K,\; |f^{(k)}(x)-g^{(k)}(x)|\le \epsilon \}\;\subset\;U.
 \end{equation}
 Muni de cette topologie, $\mathcal{D}(\Omega)$ est un espace vectoriel topologique \textcolorred{non métrisable}.
 \end{definition}
@@ -110,7 +110,7 @@ et intégrable~$f:\mathbb{R}\rightarrow\mathbb{R}$.
 Soit~$\varphi$ une fonction test, supposée régulière et à support compact.
 Une intégration par parties permet d'écrire:
 \begin{equation}
-  \int_\RR f'(x) \varphi(x)\,\dd x = -\int_\RR f(x)\varphi'(x)\,\dd x \qquad\text{soit}\qquad I_{f'}(\varphi)=I_{-f}(\varphi')
+  \int_\RR f'(x) \varphi(x)\,\dd x = -\int_\RR f(x)\varphi'(x)\,\dd x \qquad\text{ soit }\qquad I_{f'}(\varphi)=I_{-f}(\varphi')
 \end{equation}
 En effet, puisque la fonction~$\varphi$ est nulle en dehors d'un ensemble borné (elle est à support
 compact), les termes de bords s'annulent.
@@ -191,7 +191,7 @@ classe~$m$ sur~$\Omega$.
 Le théorème de Meyers-Serrin~$H=W$ donne une définition équivalente, par complétion de l'espace
 vectoriel normé:
 \begin{equation}
-\{u\in C^\infty(\Omega);\| u \|_{H^{m, p}} < \infty\}\quad\text{avec}\quad
+\{u\in C^\infty(\Omega);\| u \|_{H^{m, p}} < \infty\}\quad\text{ avec }\quad
 \| u \|_{H^{m, p}}:= \left( \sum_{| \alpha | \leqslant m} \| D^{\alpha} u \|_{L^{p}}^p \right)^{1/p}
 \end{equation}
 où~$D^\alpha u$ est une dérivée partielle de~$u$ au sens classique ($u \in C^\infty(\Omega)$).
@@ -296,7 +296,7 @@ $\forall m\ge 1$, on définit l'espace des distributions suivant:
 \begin{equation}
 H^{-m}(\Omega) =\left\{
 f\in \mathcal{D}'(\Omega), f=\dsum_{|\alpha|\le m} \partial^\alpha f_\alpha,
-\text{ avec} f_\alpha\in L^2(\Omega)
+\text{ avec } f_\alpha\in L^2(\Omega)
 \right\}
 \end{equation}
 muni de la norme:\index{norme!sur~$H^{-m}(\Omega)$}
@@ -341,7 +341,7 @@ On procède ainsi:
 \begin{itemize}
   \item On définit l'espace:
 	\begin{equation}C^1(\overline{\Omega}) = \left\{\varphi:\Omega\rightarrow\RR/ \exists O
-	\text{ ouvert contenant} \overline{\Omega}, \exists \psi\in C^1(O), \psi_{|\Omega}=\varphi
+	\text{ ouvert contenant } \overline{\Omega}, \exists \psi\in C^1(O), \psi_{|\Omega}=\varphi
 	\right\}\end{equation}
 	$C^1(\overline{\Omega})$ est donc l'espace des fonctions~$C^1$ sur~$\Omega$, prolongeables
 	par continuité sur~$\partial\Omega$ et dont le gradient est lui-aussi prolongeable par continuité.
@@ -549,7 +549,7 @@ Soit~$\Omega$ un ouvert borné de~$\RR^n$.
 Pour toute fonction~$u \in H^1(\Omega)$ et toute fonction~$T: \RR \to \RR$ de classe
 $C^1$ à dérivée bornée nous avons:
 \begin{equation}
-T(u) \in H^1(\Omega)\quad\text{ et}\quad\nabla T(u) = T'(u)\nabla u
+T(u) \in H^1(\Omega)\quad\text{ et }\quad\nabla T(u) = T'(u)\nabla u
 \end{equation}
 De plus, l'application~$u \in H^1(\Omega) \mapsto T(u) \in H^1(\Omega)$ est continue.
 \end{theoreme}
@@ -638,9 +638,9 @@ alors, pour tout entier~$m\ge 0$ et pour tout~$p\in\intfo{1}{+\infty}$, on dispo
 suivantes:
 \begin{equation}
 \left\{\begin{aligned}
-&W^{m,p}(\Omega) \hookrightarrow L^{p*} && \text{ si} m<\frac{n}p\\
-&W^{m,p}(\Omega) \hookrightarrow L^q && \forall q\in\intfo{1}{+\infty}, \text{ si} m=\frac{n}p\\
-&W^{m,p}(\Omega) \hookrightarrow C(\overline{\Omega}) && \text{ si} \frac{n}p<m
+&W^{m,p}(\Omega) \hookrightarrow L^{p*} && \text{ si } m<\frac{n}p\\
+&W^{m,p}(\Omega) \hookrightarrow L^q && \forall q\in\intfo{1}{+\infty}, \text{ si } m=\frac{n}p\\
+&W^{m,p}(\Omega) \hookrightarrow C(\overline{\Omega}) && \text{ si } \frac{n}p<m
 \end{aligned}\right.
 \end{equation}
 \end{theoreme}

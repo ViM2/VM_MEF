@@ -424,7 +424,7 @@ qui peut être représentée par une grandeur scalaire ou vectorielle.
 
 Dans le cas vectoriel, en espace libre, dans un milieu homogène, linéaire et isotrope, l'équation d'onde s'écrit:\index{ED-EDP!des ondes}
 \begin{equation}
-  \Delta u \ = - \frac1{c^2} \dfrac{\partial^2 u}{\partial t^2} \quad \text{ ou} \quad \square u =0
+  \Delta u \ = - \frac1{c^2} \dfrac{\partial^2 u}{\partial t^2} \quad \text{ ou } \quad \square u =0
 \end{equation}
 où la fonction d'onde inconnue est notée~$u(x,y,z,t)$, $t$ représente le temps, et 
 le nombre~$c$ représente la célérité ou vitesse de propagation de l'onde~$u$ 
@@ -453,7 +453,7 @@ L'équation des ondes permet également de modéliser le problème de l'évoluti
 de la déformation d'une membrane tendue (peau de tambour).\index{ED-EDP!de la déformation d'une membrane}
 Dans ce cas là, on note plutôt:
 \begin{equation}
- \sigma \Delta u = \rho\ddot{u} \text{ dans}\Omega
+ \sigma \Delta u = \rho\ddot{u} \text{ dans }\Omega
 \end{equation}
 où~$\Omega$ est notre domaine qui est une surface, donc~$\Omega\subset\RR^2$.
 
@@ -859,7 +859,7 @@ est équivalent au fait que la matrice~$A$ est définie positive.
 Les équations aux dérivées partielles elliptiques conduisent à la notion physique de flux conservatif donné
 par un gradient. Considérons le cas scalaire. On associe à la fonction~$u(x)$ un \textcolorblue{flux}
 $q(x)$ qui est nul vers l'extérieur:
-\begin{equation}\dint_{\delta\omega} q(x)\cdot n_x ds=0,\quad\forall\text{ volume}\omega\subset\Omega\end{equation}
+\begin{equation}\dint_{\delta\omega} q(x)\cdot n_x ds=0,\quad\forall\text{ volume }\omega\subset\Omega\end{equation}
 En utilisant la formule de divergence-flux, il vient:~$\int_\omega \dive_xq(x)\mathrm dx=0$, et
 en supposant la fonction~$q(x)$ suffisament régulière on en déduit
 $\dive_xq(x)=0$, $\forall x\in\Omega$.
@@ -1001,8 +1001,8 @@ de dissipation visqueuse, on écrira le problème général sous la forme:
 \begin{equation}
 \left\{
 \begin{array}{llr}
-\dive\sigma + f = \rho \ddot{u} + \mu \dot{u} & \text{ dans} \Omega & \text{ équation de la dynamique}\\
-\sigma=H(\varepsilon-\varepsilon_{th}) & \text{ dans} \Omega & \text{ loi de comportement}\\
+\dive\sigma + f = \rho \ddot{u} + \mu \dot{u} & \text{ dans } \Omega & \text{ équation de la dynamique}\\
+\sigma=H(\varepsilon-\varepsilon_{th}) & \text{ dans } \Omega & \text{ loi de comportement}\\
 \end{array}
 \right.
 \end{equation}\index{ED-EDP!relation fondamentale de la dynamique}\index{Loi de comportement}
@@ -1031,7 +1031,7 @@ i.e. s'il n'y a plus les termes~$\ddot{u}$ et~$\dot{u}$.
 \subsection{Grands / petits déplacements}
 La relation entre déformation et déplacement est donnée par:
 \begin{equation}\varepsilon=\frac12\left(\nabla u+(\nabla u)^T\right)%\end{equation}
-\text{ soit pour chaque composante:}
+\text{ soit pour chaque composante: }
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}
 +\frac{\partial u_k}{\partial x_i}\frac{\partial u_k}{\partial x_j}
 \right)\end{equation}
@@ -1040,7 +1040,7 @@ La relation entre déformation et déplacement est donnée par:
 Dans le cas des petits déplacements (termes d'ordre 2 négligés), elle devient:
 \begin{equation}
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)
-\text{ que l'on note}
+\text{ que l'on note }
 \varepsilon_{ij}=\frac12(u_{i,j}+u_{j,i})
 \end{equation}
 
@@ -1096,11 +1096,11 @@ propriétés matérielles quelque soit l'orientation), les relations constitutiv
 \begin{equation}\sigma = 2\mu\varepsilon+\lambda Tr(\varepsilon)I\end{equation}
 i.e.~$\sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\varepsilon_{kk}\delta_{ij}$.
 On rappelle également que:
-\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et} \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)}
+\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et } \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)}
 \end{equation}
 avec~$E$ le module d'Young et~$\nu$ le coefficient de Poisson, que l'on exprime, inversement:\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{Coefficients de Poisson}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{Module d'Young}
 \begin{equation}
-E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et}\quad
+E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et }\quad
 \nu=\dfrac{\lambda}{2(\lambda+\mu)}
 \end{equation}
 Pour assurer que la matrice~$H$ est définie positive, il faut que~$0<\nu<0,5$.

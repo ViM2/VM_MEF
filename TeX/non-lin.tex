@@ -243,13 +243,13 @@ Toutefois, plusieurs autres mesures des contraintes ont été développées:
 	configuration de référence.
 	Pour l'exprimer, nous aurons donc besoin du tenseur gradient de déformation~$F$ et de son
 	jacobien~$J$ (voir ci-dessous).
-	\begin{equation}P=J\sigma F^T \quad \text{ de coordonnées} \quad
+	\begin{equation}P=J\sigma F^T \quad \text{ de coordonnées } \quad
 	P_{ij}= J \sigma_{ik}\frac{\partial u_j}{\partial x_k}\end{equation}
 
   \item Le \textcolorblue{second tenseur des contraintes de Piola-Kirchhoff~$S$},\index{tenseur! des contraintes de Piola-Kirchhoff}\index[aut]{Piola (Gabrio), 1794-1850, Italien}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 	de manière duale, relie les forces de la configuration de référence avec le domaine actuel.
 	Avec les mêmes notations qu'au dessus, on a:
-	\begin{equation} S=J F^{-1}\sigma F^{-T} \quad \text{ de coordonnées} \quad
+	\begin{equation} S=J F^{-1}\sigma F^{-T} \quad \text{ de coordonnées } \quad
 	S_{ij} = J \frac{\partial u_i}{\partial x_k}\frac{\partial u_j}{\partial x_m}\sigma_{km}\end{equation}
 
   \item Le \textcolorblue{tenseur de contraintes de Kirchhoff}\index{tenseur! des contraintes de Kirchhoff}\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
@@ -264,7 +264,7 @@ Pour exprimer les tenseurs de Piola-Kirchhoff\index{tenseur! des contraintes de 
 nous avons eu besoin du \textcolorblue{tenseur gradient de déformation
 $F$}.\index{tenseur! gradient de déformation} Ce dernier est défini comme suit:
 \begin{equation} F_{ij}(X,t) = \dfrac{\partial x_i}{\partial X_j} = \delta_{ij} + \frac{\partial u_i}{\partial X_j}
-\quad \text{ ou} \quad F = I + \nabla u\end{equation}
+\quad \text{ ou } \quad F = I + \nabla u\end{equation}
 où~$X$ est la position de référence à l'instant~$t_0$ (configuration~$\Omega_0$) et~$x$, la position
 courante à l'instant~$t$ (configuration actuelle~$\Omega$).
 %%%%%%%%%%%%%%%%%%%%
@@ -309,7 +309,7 @@ Le \textcolorblue{tenseur des déformations}, ou \textcolorblue{tenseur de
 Green-Lagrange},\index{tenseur! des déformations de Green-Lagrange}\index[aut]{Green (George), 1793-1841, Anglais}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 est obtenu directement à partir des déplacements par la relation:
 \begin{equation}\varepsilon=\frac12\left(\nabla u+(\nabla u)^T\right)%\end{equation}
-\text{ soit pour chaque composante:}
+\text{ soit pour chaque composante: }
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}
 +\frac{\partial u_k}{\partial x_i}\frac{\partial u_k}{\partial x_j}
 \right)\end{equation}
@@ -321,7 +321,7 @@ de subir un déplacement différent à l'origine de la déformation.}
 \medskip
 On peut alors distinguer deux grands types de contribution à la déformation en décomposant
 ce tenseur~$\varepsilon$ comme la somme d'un tenseur symétrique~$E$ et d'un tenseur antisymétrique~$G$:
-\begin{equation} E=\frac12(\varepsilon+\varepsilon^T) \qquad \text{ et}\qquad G=\frac12(\varepsilon-\varepsilon^T) \end{equation}
+\begin{equation} E=\frac12(\varepsilon+\varepsilon^T) \qquad \text{ et }\qquad G=\frac12(\varepsilon-\varepsilon^T) \end{equation}
 On obtient alors le \textcolorblue{tenseur des déformations pures}:
 \begin{equation}E_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\end{equation}
 et le \textcolorblue{tenseur des rotations pures}:
@@ -335,7 +335,7 @@ les termes d'ordre 2 du tenseur de Green-Lagrange, ou encore \textcolorblue{tens
 dans le cas des petits déplacements}:
 \begin{equation}
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)
-\text{ que l'on note}
+\text{ que l'on note }
 \varepsilon_{ij}=\frac12(u_{i,j}+u_{j,i})
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -496,12 +496,12 @@ Nous rappelons que, pour un matériau isotrope, tous les coefficients~$H_{ijkl}$
 et du coefficient de Poisson~$\nu$,\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{Coefficients de Poisson}
 ou de manière équivalente par les coefficients de Lamé\index{Coefficients de Lamé}
 $\lambda$ et~$\mu$.\index{Coefficients de Lamé}\index[aut]{Lame@Lamé (Gabriel), 1795-1870, Français}
-\begin{equation}\sigma = 2\mu\varepsilon+\lambda \trace(\varepsilon)I \quad \text{ i.e.} \quad
+\begin{equation}\sigma = 2\mu\varepsilon+\lambda \trace(\varepsilon)I \quad \text{ i.e. } \quad
 \sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\varepsilon_{kk}\delta_{ij}\end{equation}
 avec:
-\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et} \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)} \end{equation}
+\begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et } \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)} \end{equation}
 ou:
-\begin{equation}E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et}\quad
+\begin{equation}E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et }\quad
 \nu=\dfrac{\lambda}{2(\lambda+\mu)} \end{equation}
 \colorblack
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -864,7 +864,7 @@ car il fait intervenir comme lui le cisaillement maximum, mais, contrairement à
 la contrainte <<~moyenne~>>, représentée par le centre du cercle de Mohr correspondant au cisaillement
 maximum, soit:
 \begin{equation} f(\sigma) = \sigma_1 - \sigma_3 + (\sigma_1 + \sigma_3) \sin\varphi - 2C\cos \varphi \quad
-\text{ avec} \quad \sigma_3 \le \sigma_2 \le \sigma_1 \end{equation}
+\text{ avec } \quad \sigma_3 \le \sigma_2 \le \sigma_1 \end{equation}
 Ce critère est sous-tendu par la notion de frottement, et suppose que le cisaillement maximal que peut
 subir le matériau est d'autant plus grand que la contrainte normale de compression est élevée.
 
@@ -1405,8 +1405,8 @@ En ce qui concerne le frottement, parmi les nombreux modèles existants, nous av
 qui est le plus utilisé dans les problèmes de contact avec frottement sec.
 Dans le cas du contact-frottement isotrope, le modèle de Coulomb s'écrit:
 \begin{equation} \left\{\begin{array}{ll}
-\|r_t\| < \mu r_n & \text{ si} \|v_t\|=0\\
-r_t=-\mu r_n \frac{v_t}{\|v_t\|} & \text{ si} \|v_t\|\ne0
+\|r_t\| < \mu r_n & \text{ si } \|v_t\|=0\\
+r_t=-\mu r_n \frac{v_t}{\|v_t\|} & \text{ si } \|v_t\|\ne0
 \end{array}\right. \end{equation}
 avec~$\mu$ le coefficient de frottement.
 
@@ -1422,16 +1422,16 @@ aussi le glissement.
 De manière usuelle, on définit le \textcolorblue{cône de frottement isotrope de
 Coulomb}\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français} pour chaque point
 en contact:
-\begin{equation} K_\mu = \left\{ (r_n, r_t) \in \RR^3 \text{ tels que} \|r_t\| \le \mu r_n \right\} \end{equation}
+\begin{equation} K_\mu = \left\{ (r_n, r_t) \in \RR^3 \text{ tels que } \|r_t\| \le \mu r_n \right\} \end{equation}
 
 À l'aide de la théorie du Matériau Standard Implicite, les conditions de contact unilatéral et la
 loi de frottement s'expriment par une seule inégalité variationnelle:
 \begin{equation}
 \begin{aligned}
-&\text{Trouver} (r_n, r_t) \in K_\mu \text{ tel que:}\\
+&\text{Trouver } (r_n, r_t) \in K_\mu \text{ tel que: }\\
 &\quad\forall (r_n^*, r_t^*) \in K_\mu, (x_n - \mu \|v_t\|) (r_n^* - r_n) + v_t.(r_t^* - r_t) \le 0\\
 %\end{equation}
-&\quad\quad\text{ où} \exists\lambda>0, - v_t = \lambda \frac{r_t}{\|r_t\|}
+&\quad\quad\text{ où } \exists\lambda>0, - v_t = \lambda \frac{r_t}{\|r_t\|}
 \end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%

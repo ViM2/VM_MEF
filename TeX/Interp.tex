@@ -246,8 +246,8 @@ Ces deux suites sont définies par la relation de récurrence:
 \end{equation}
 et les deux premiers termes: 
 \begin{align}
-&T_0=1,~T_1=X \quad \text{pour la suite } T\\
-&U_0=1,~U_1=2X \quad \text{pour la suite } U 
+&T_0=1,~T_1=X \quad \text{ pour la suite } T\\
+&U_0=1,~U_1=2X \quad \text{ pour la suite } U 
 \end{align}
 Chacune de ces deux familles est une suite de polynômes orthogonaux\index{polynôme!orthogonalité} par rapport à un produit scalaire de fonctions assorti d'une pondération spécifique.\index{produit scalaire} 
 \paragraph{Propriétés des polynômes de Tchebychev de première espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} 
@@ -257,7 +257,7 @@ Chacune de ces deux familles est une suite de polynômes orthogonaux\index{polyn
 Les~$T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scalaire}\index{polynôme!orthogonalité} 
 \begin{equation}
  \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}\dd x= 
-\begin{cases} 0&\text{si}~n\ne m\\ \pi&\text{si}~n=m=0\\ \pi/2&\text{si}~n=m\ne 0~. 
+\begin{cases} 0&\text{ si } n\ne m\\ \pi&\text{ si } n=m=0\\ \pi/2&\text{ si } n=m\ne 0~. 
 \end{cases} 
 \end{equation}
 \begin{equation}
@@ -287,9 +287,9 @@ Les premiers polynômes de Tchebychev de première espèce sont:\index[aut]{Tche
 Les~$U_n$ sont orthogonaux\index{polynôme!orthogonalité} pour le produit scalaire\index{produit scalaire} suivant: 
 \begin{equation}
 \int_{-1}^1 U_n(x)U_m(x)\sqrt{1-x^2}\dd x = 
-\begin{cases} 0&\text{si}n\ne m\\ \pi/2 &\text{si}n=m 
+\begin{cases} 0&\text{ si } n\ne m\\ \pi/2 &\text{ si } n=m 
 \end{cases} 
-\quad\text{et}\quad\forall n,\quad U_n(1)=n+1 
+\quad\text{ et }\quad\forall n,\quad U_n(1)=n+1 
 \end{equation}
 \colorgris
 Les premiers polynômes de Tchebychev de deuxième espèce sont:\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev}
@@ -442,7 +442,7 @@ Notons que les splines existaient avant Bézier\index[aut]{Bézier (Pierre), 191
 
 Pour~$n+1$ \textcolorblue{points de contrôle}~$(\mathbf{P}_0, \dots, \mathbf{P}_n)$ on définit une \textcolorblue{courbe de Bézier} par l'ensemble des points:
 \begin{equation}
-b(t)=\dsum_{i=0}^n B_i^n(t)\cdot\mathbf{P}_i\quad\text{avec}\quad t \in\intff{0}{1}
+b(t)=\dsum_{i=0}^n B_i^n(t)\cdot\mathbf{P}_i\quad\text{ avec }\quad t \in\intff{0}{1}
 \end{equation}
 où les~$B_i^n$ sont les polynômes de Bernstein. La suite des points~$\mathbf{P}_0,\ldots,\mathbf{P}_n$ forme le \textcolorblue{polygone de contrôle de Bézier}. 
 
@@ -469,8 +469,8 @@ Une \textcolorblue{B-spline} est une combinaison linéaire de splines positives 
 où les~$P_i$ forment un polygone appelé \textcolorblue{polygone de contrôle}. Le nombre de points composant ce polygone est égal à~$m-n$. Les~$m-n$ fonctions B-splines de degré~$n$ sont définies par récurrence sur le degré inférieur: 
 \begin{align}
 &b_{j, 0}(t)= \left\{ 
-\begin{aligned} &1 && \text{si} \quad t_j \leqslant t < t_{j + 1} \\
-&0 && \text{ sinon} 
+\begin{aligned} &1 && \text{ si } \quad t_j \leqslant t < t_{j + 1} \\
+&0 && \text{ sinon } 
 \end{aligned} \right.\\
 &b_{j, n}(t)= \frac{t - t_j}{t_{j + n} - t_j} b_{j, n - 1}(t) + \frac{t_{j + n + 1} - t}{t_{j + n + 1} - t_{j + 1}} b_{j + 1, n - 1}(t)
 \end{align}
@@ -481,8 +481,8 @@ Quand les points sont équidistants, les B-splines sont dites uniformes. C'est l
 La forme des fonctions de base est déterminée par la position des points. La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle. Une B-spline de degré~$n$, $b_{i,n}(t)$ est non nulle dans l'intervalle~$\intff{t_i}{t_{i+n+1}}$: 
 \begin{equation}
 b_{i,n}(t) =\left\{\begin{aligned}
-&>0 && \text{si} \quad t_{i} \leqslant t < t_{i+n+1} \\
-&0 && \text{sinon} 
+&>0 && \text{ si } \quad t_{i} \leqslant t < t_{i+n+1} \\
+&0 && \text{ sinon } 
 \end{aligned}\right. 
 \end{equation}
 En d'autres termes, \textcolorblue{déplacer un point de contrôle ne modifie que localement l'allure de la courbe}. Par contre, les B-splines ne permettent pas de décrire un arc de courbe conique. 
@@ -496,8 +496,8 @@ Les fonctions NURBS de degré~$d$ sont définies par la formule doublement récu
 \left\{\begin{aligned}
 &b_{j,0}(t)=
 \left\{\begin{aligned}
-& 1 && \text{si}\quad t_j \leq t < t_{j+1} \\
-& 0 && \text{sinon} 
+& 1 && \text{ si }\quad t_j \leq t < t_{j+1} \\
+& 0 && \text{ sinon } 
 \end{aligned}\right.\\ 
 &b_{j,d}(t)= \dfrac{t-t_j}{t_{j+d}-t_j} b_{j,d-1}(t)+\dfrac{t_{j+d+1}-t}{t_{j+d+1}-t_{j+1}}b_{j+1,d-1}(t)
 \end{aligned}\right. 

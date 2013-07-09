@@ -319,7 +319,7 @@ EDP munie de conditions aux limites.
 \medskip
 Ce problème, mis sous forme variationnelle, est:
 \begin{equation}\label{Eq-P}
-\text{ Trouver} u\in V \text{ tel que} a(u,v) = f(v),\quad \forall v\in V
+\text{Trouver } u\in V \text{ tel que } a(u,v) = f(v),\quad \forall v\in V
 \end{equation}
 où $V$ est un espace de Hilbert.
 On supposera également que l'équation de départ a de bonnes propriétés,
@@ -408,12 +408,12 @@ u_h=\dsum_{i=1}^{N_h} q_i e_i
 \medskip
 Le problème de la méthode des éléments finis devient donc:
 \begin{equation}
-\text{ Trouver} q_1,\ldots, q_{N_h} \text{ tels que}
+\text{Trouver } q_1,\ldots, q_{N_h} \text{ tels que }
 \dsum_{i=1}^{N_h} q_i a_h(e_i,v_h) = f_h(v_h) \quad , \forall v_h\in V_h
 \end{equation}
 soit, en exploitant les linéarités de $a_h(\cdot,\cdot)$ et $f_h(\cdot)$ et en décomposant $v_h$:
 \begin{equation}\label{Eq-Ph}
-\text{ Trouver} q_1,\ldots, q_{N_h} \text{ tels que}
+\text{Trouver } q_1,\ldots, q_{N_h} \text{ tels que }
 \dsum_{i=1}^{N_h} q_i a_h(e_i,e_j) = f_h(e_j) \quad ,\forall j=1,\ldots, N_h
 \end{equation}
 \medskip
@@ -437,7 +437,7 @@ f_h(e_{N_h})
 }
 \end{equation}
 que l'on note (dans la tradition mécanicienne):
-\begin{equation}\mathbf{Kq=F} \quad \text{ ou encore} \quad \MM*{K}\VV*{q}=\VV*{F}
+\begin{equation}\mathbf{Kq=F} \quad \text{ ou encore } \quad \MM*{K}\VV*{q}=\VV*{F}
 \end{equation}
 \medskip
 Telle que formulée, la matrice $\MM{K}$ semble pleine à priori.
@@ -549,7 +549,7 @@ $a(\cdot,\cdot)$ étant continue (de constante de majoration $M$) et coercitive
 de l'erreur appelée \textcolorblue{lemme de Céa:}
 \begin{equation}
 \|u-u_h\|\le\dfrac{M}{\alpha}\|u-v_h\|, \forall v_h\in V_h
-\quad \text{ c'est-à-dire} \quad
+\quad \text{ c'est-à-dire } \quad
 \|u-u_h\|\le\dfrac{M}{\alpha}d(u,V_h)
 \end{equation}
 où $d$ est la distance induite par la norme $\|\cdot\|$.
@@ -567,11 +567,11 @@ d'approximation} $\|u-u_h\|$ à celle de l'\textcolorblue{erreur d'interpolation
 On se place cette fois dans le cas d'un problème relevant du théorème de Babuška.
 Le problème est ($v$ est dans $M$ et non plus $V$):
 \begin{equation}\label{Eq-Pp}
-\text{ Trouver} u\in V \text{ tel que} a(u,v) = f(v), \forall v\in M
+\text{Trouver } u\in V \text{ tel que } a(u,v) = f(v), \forall v\in M
 \end{equation}
 L'approximation conforme du problème (\ref{Eq-Pp}) est le problème approché:
 \begin{equation}\label{Eq-Pph}
-\text{ Trouver} u_h\in V_h \text{ tel que} a(u_h,v_h) = f(v_h), \forall v_h\in M_h
+\text{Trouver } u_h\in V_h \text{ tel que } a(u_h,v_h) = f(v_h), \forall v_h\in M_h
 \end{equation}
 où $V_h\subset V$ et $M_h\subset M$.
 \medskip
@@ -582,14 +582,14 @@ $V_h$ et $M_h$ étant de dimension finie, il faut nécessairement que $\dim V_h=
 Le problème (\ref{Eq-Pph}) est bien posé, i.e. admet une unique solution, si:
 \begin{equation}\left\{
 \begin{aligned}
-&\displaystyle\exists\alpha_h>0 \text{ tel que} \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
+&\displaystyle\exists\alpha_h>0 \text{ tel que } \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
 &\forall w_h\in M_h,\quad \left(a(v_h,w_h)=0\right)\Rightarrow(w_h=0)
 \end{aligned}
 \right.\end{equation}
 ce qui est équivalent aux conditions:
 \begin{equation}\left\{
 \begin{aligned}
-&\displaystyle\exists\alpha_h>0 \text{ tel que} \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
+&\displaystyle\exists\alpha_h>0 \text{ tel que } \inf_{v_h\in V_h}\sup_{w_h\in M_h}\dfrac{a(v_h,w_h)}{\|v_h\|_{V_h}\|w_h\|_{M_h}}\ge\alpha_h\\
 &\dim V_h=\dim M_h
 \end{aligned}
 \right.\end{equation}
@@ -648,7 +648,7 @@ $V_h\subset V$ ou $V_h\not\subset V$.
 
 Le problème est donc:
 \begin{equation}
-\text{ Trouver} u_h\in V_h \text{ tel que} a_h(u_h,v_h) = f_h(v_h), \forall v_h\in V_h
+\text{Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h), \forall v_h\in V_h
 \end{equation}
 où $V_h\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
 de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ resp.
@@ -682,7 +682,7 @@ le reste \textcolorblue{erreur de consistence}.
 \subsection{Cas $V_h\not\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 Le problème est encore:
 \begin{equation}
-\text{ Trouver} u_h\in V_h \text{ tel que} a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
+\text{Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
 \end{equation}
 mais $V_h\not\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
 de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ resp.
@@ -808,7 +808,7 @@ On a même:
 %Alors, on a:
 Et avec les données géométriques de l'élément:
 \begin{equation}
-\|B\|\le\dfrac{h_K}{\hat{\rho}} \quad\text{ et}\quad
+\|B\|\le\dfrac{h_K}{\hat{\rho}} \quad\text{ et }\quad
 \|B^{-1}\|\le\dfrac{\hat{h}}{\rho_K}
 \end{equation}
 
@@ -879,6 +879,6 @@ Quelques remarques:
 	Comme l'espace des polynômes $P_k(\hat{k})\subset H^1(\hat{K})$, alors si
 	$\hat{\pi}$ est bien défini sur $H^{k+1}(\hat{K})$, on a:
 	\begin{equation}
-	\text{si} u\in H^{k+1}(\Omega), \quad \|u-u_h\|_1\le C h^k |u|_{k+1}
+	\text{si } u\in H^{k+1}(\Omega), \quad \|u-u_h\|_1\le C h^k |u|_{k+1}
 	\end{equation}
 \end{itemize} 

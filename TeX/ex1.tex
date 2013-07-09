@@ -16,8 +16,8 @@ conduit à sa formulation sous forme d'un problème de Neumann\index[aut]{Neuman
 (avec~$f\in L^2(\Omega)$, ce qui n'est pas une condition si forte finalement, et c'est ce que l'on aimerait avoir):
 \begin{equation}\left\{
 \begin{aligned}
--&\Delta u = f && \text{ dans} \Omega\\
-&\frac{\partial u}{\partial n}=0 && \text{ sur}\Gamma=\partial\Omega
+-&\Delta u = f && \text{ dans } \Omega\\
+&\frac{\partial u}{\partial n}=0 && \text{ sur }\Gamma=\partial\Omega
 \end{aligned}
 \right.
 \end{equation}
@@ -109,9 +109,9 @@ on peut interpréter cela comme une pression nulle sur les bords, i.e.~$p.n=0$ s
 Le problème considéré se formule alors de la manière suivante:
 \begin{equation}\left\{
 \begin{aligned}
--&\Delta u +p =0 && \text{ loi de comportement dans} \Omega\\
-&\dive p = -f && \text{ loi de conservation dans} \Omega\\
-& p\cdot n=0 && \text{ condition aux limites sur}\Gamma
+-&\Delta u +p =0 && \text{ loi de comportement dans } \Omega\\
+&\dive p = -f && \text{ loi de conservation dans } \Omega\\
+& p\cdot n=0 && \text{ condition aux limites sur }\Gamma
 \end{aligned}
 \right.
 \end{equation}
@@ -137,7 +137,7 @@ En correspondance avec les notations du paragraphe~\ref{Sec:Brezzi}, on choisit 
 et~$M=L^2(\Omega)$.
 Le problème est donné, dans la formulation de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 par les deux formes bilinéaires
-\begin{equation}a(p,q)=\dint_\Omega p\cdot q\quad\text{ et}\quad b(v,q)=\dint_\Omega v\dive q\end{equation}
+\begin{equation}a(p,q)=\dint_\Omega p\cdot q\quad\text{ et }\quad b(v,q)=\dint_\Omega v\dive q\end{equation}
 Quant aux formes linéaires définissant le problème, la première est nulle et la
 seconde vaut:\begin{equation}-\dint_\Omega fv\end{equation}
 
@@ -234,7 +234,7 @@ donc la V-ellipticité de~$a$ est démontrée.
 Pour montrer la conditions inf-sup, nous construirons~$q$ à partir d'un~$\varphi$ vérifiant
 $\frac{\partial\varphi}{\partial n}=0$ sur~$\Gamma$, i.e.:
 \begin{equation}
-\forall v\in M,\quad \exists q\in H;\quad \dint_\Omega v \dive q = |v|_0^2 \quad\text{ et}\quad
+\forall v\in M,\quad \exists q\in H;\quad \dint_\Omega v \dive q = |v|_0^2 \quad\text{ et }\quad
 \|q\|_{H(\dive)}\le \frac1\beta |v|_0
 \end{equation}
 $q\in H$, $\dive q=v$ et~$q=-\nabla\varphi$, $q\cdot n=0$ donc~$\frac{\partial\varphi}{\partial n}=0$,

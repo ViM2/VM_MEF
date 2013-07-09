@@ -486,7 +486,7 @@ Si les conditions suivantes sont satisfaites:
 %  \item~$f\in X'$, $g\in M'$;
   \item~$a(\cdot,\cdot)$ est continue;
   \item~$a(\cdot,\cdot)$ est coercitive sur~$V$ ou~$V$-elliptique (uniquement sur~$V$ et pas sur~$H$ tout entier) \textcolorgris{(sur~$\ker B$)}:
-  \begin{equation}\exists \alpha> 0 \text{ tel que:} a(v,v)\ge\alpha\|c\|^2, \quad \forall v\in V=\{v\in H; b(v,\mu)=0, \forall \mu\in M \}\end{equation}
+  \begin{equation}\exists \alpha> 0 \text{ tel que: } a(v,v)\ge\alpha\|c\|^2, \quad \forall v\in V=\{v\in H; b(v,\mu)=0, \forall \mu\in M \}\end{equation}
   \item~$b(\cdot,\cdot)$ est continue;
   \item~$b(\cdot,\cdot)$ vérifie la condition inf-sup suivante:
 \begin{equation}\inf_{\substack{\mu\in M\\\|\mu\|_M=1}} \sup_{\substack{v\in H\\\|v\|_H=1}} b(v,\mu) > 0\end{equation}
@@ -579,7 +579,7 @@ Si les conditions suivantes sont satisfaites:
 \begin{itemize}
   \item~$a(\cdot,\cdot)$ est continue;
   \item~$a(\cdot,\cdot)$ vérifie les deux conditions suivantes:
-  \begin{equation}\exists \alpha> 0 \text{ tel que:} \sup_{v\in V\backslash\{0\}} \frac{a(u,v)}{\|v\|} \ge\alpha\|u\|_H^2, \quad \forall u\in V=\ker B\end{equation}
+  \begin{equation}\exists \alpha> 0 \text{ tel que: } \sup_{v\in V\backslash\{0\}} \frac{a(u,v)}{\|v\|} \ge\alpha\|u\|_H^2, \quad \forall u\in V=\ker B\end{equation}
  ~$\forall v\in V\backslash\{0\}, \exists u\in V, a(u,v)\ne 0~$ ou de manière équivalente
 ~$\displaystyle\forall v\in V\backslash\{0\}, \sup_u a(u,v)> 0~$
   \item~$b(\cdot,\cdot)$ est continue;
@@ -594,8 +594,8 @@ $(u,\lambda) \in H\times M$.
 Pour vérifier la condition LBB, il est souvent plus simple de vérifier le critère suivant:
 La condition inf-sup sur~$b(\cdot,\cdot)$ est équivalente à:
 \begin{equation}\colorred
-\forall\mu\in M, \exists v\in H \text{ (uniquement dans}V^\bot\text{) tel que:}
-b(v,\mu)=\|\mu\|^2 \text{ et} \|v\|\le \dfrac1\beta \|\mu\|
+\forall\mu\in M, \exists v\in H \text{ (uniquement dans } V^\bot\text{) tel que: }
+b(v,\mu)=\|\mu\|^2 \text{ et } \|v\|\le \dfrac1\beta \|\mu\|
 \end{equation}
 
 
@@ -639,9 +639,9 @@ et entre~$M$ et~$M'$ respectivement.
 On considère le problème suivant:
 \begin{equation}
 \begin{array}{c}
-\text{Trouver} u\in H \text{ tel que} a(u,v)=f(v), \forall v\in H \\
+\text{Trouver } u\in H \text{ tel que } a(u,v)=f(v), \forall v\in H \\
 \text{ \textcolorred{et} vérifiant les
-\textcolorblue{contraintes} supplémentaires:} b(v,\mu)=g(\mu), \forall \mu\in M.
+\textcolorblue{contraintes} supplémentaires: } b(v,\mu)=g(\mu), \forall \mu\in M.
 \end{array}
 \end{equation}
 
@@ -649,9 +649,9 @@ On considère le problème suivant:
 Ce problème est équivalent à:
 \begin{equation}\label{Eq-Pmin}
 \begin{array}{c}
-\text{Trouver} u\in H \text{ tel que}
-J(u)=\min\{J(v), v\in H \text{ et} b(v,\mu)=\langle g,\mu\rangle_M, \mu\in M\} \\[+3mm]
-\text{ avec}
+\text{Trouver} u\in H \text{ tel que }
+J(u)=\min\{J(v), v\in H \text{ et } b(v,\mu)=\langle g,\mu\rangle_M, \mu\in M\} \\[+3mm]
+\text{ avec }
 J(v)=\frac12 a(v,v)-\langle f,v\rangle_H
 \end{array}
 \end{equation}

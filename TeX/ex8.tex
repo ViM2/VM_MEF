@@ -17,12 +17,12 @@ Rappelons que la matrice de rigidité élémentaire et le vecteur des forces nod
 \begin{equation} \MM{K} = \frac{2EA}L \MM*{1 & -1\\ -1& 1} %\end{equation}
 %et le vecteur des forces nodales élémentaires:
 %\begin{equation} 
-\qquad \text{ et} \qquad
+\qquad \text{ et } \qquad
 \VV{f} = \rho g A \frac{L}4 \VV*{1 \\1} \end{equation}
 %%%%%%%%%%%%
 \medskipvm
 L'assemblage de trois éléments, décrit au pagraphe~\ref{Sec-ass}, conduit à:
-\begin{equation} \MM{K}=\MM{K_1}+\MM{K_2}+\MM{K_3} \qquad \text{ et} \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
+\begin{equation} \MM{K}=\MM{K_1}+\MM{K_2}+\MM{K_3} \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
 %%%%%%%%%%%%
 \medskipvm
 On traitera le cas où les trois éléments ont la même longueurs ($L_1=L_2=L_3=L$) et où seul le nœud 4 est
@@ -79,7 +79,7 @@ x_1 = A_{11}^{-1}\left( b_1-A_{12}x_2 \right)
 ce qui donne, dans la deuxième ligne:
 \begin{equation}
 A_{22} - A_{21}A_{11}^{-1}A_{12}x_2 = b_2 - A_{21}A_{11}^{-1}b_1
-\quad \text{ que l'on note:}
+\quad \text{ que l'on note: }
 S x_2=c
 \end{equation}
 \textcolorblue{La matrice~$S$ est appelée complément de Schur}\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
@@ -167,7 +167,7 @@ Toutefois, on dispose du résultat suivant:
 \begin{theoreme}
 si~$\MM{K}$ est symétrique définie positive, alors:
 \begin{equation}
-\MM{A} \text{ inversible} \Longleftrightarrow \MM{D} \text{ injective} \Longleftrightarrow \ker \MM{D} = \emptyset
+\MM{A} \text{ inversible } \Longleftrightarrow \MM{D} \text{ injective } \Longleftrightarrow \ker \MM{D} = \emptyset
 \end{equation}
 \end{theoreme}
 ce qui correspond aux cas où toutes les liaisons sont indépendantes.
@@ -231,12 +231,12 @@ Tout d'abord, on pourra essayer de résoudre sans introduire de conditions aux l
 La méthode la plus rudimentaire consiste à prendre en compte directement et explicitement la condition aux limites.
 On supprime donc du système matriciel la ligne et la colonne correspondant à~$u_1$, et on résout:
 \begin{equation}\label{Eq-Base}
-u_1=0 \text{ et}
+u_1=0 \text{ et }
 \MM*{2 & -1 & 0 \\ -1 & 2 & -1\\ 0&-1&1}
 \VV*{u_2\\u_3\\u_4}
 =
 \VV*{0\\0\\F'}
-\qquad \text{ d'où:} 
+\qquad \text{ d'où: } 
 \left\{\begin{aligned} &u_1=0 \\ &u_2=F' \\ &u_3=2F' \\ &u_4=3F' \end{aligned}\right.
 \end{equation}
 %%%%%%%%%%%%%%%%%%%
@@ -256,7 +256,7 @@ avec:
 %\left[\begin{array}{cc} K_{11} & K_{12}\\ K_{21} & K_{22} \end{array} \right]
 %\left\{\begin{array}{c} q_1\\ q_2 \end{array} \right\} =
 %\left\{\begin{array}{c} f_1\\ f_2 \end{array} \right\} 
-%\text{ i.e.}
+%\text{ i.e. }
 \MM*{%
 \MM{K}_{11}=\MM*{2 & -1 & 0 \\ -1 & 2 & -1\\ 0 & -1 & 1} &
 \MM{K}_{12}=\MM*{-1 \\ 0\\ 0}\\
@@ -284,7 +284,7 @@ Par la méthode des multiplicateurs de Lagrange, on obtient le système:
 \VV*{u_1\\u_2\\u_3\\u_4\\ \lambda}
 =
 \VV*{0\\0\\0\\F' \\ u_d=0}
-\qquad \text{ d'où:} 
+\qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda = -F' \end{array}\right.
 \end{equation}
 %%%%%%%%%%%%%%%%%%
@@ -295,7 +295,7 @@ Par la technique du double multiplicateur, on obtient le système:
 \VV*{u_1\\u_2\\u_3\\u_4\\ \lambda_1 \\ \lambda_2}
 =
 \VV*{0\\0\\0\\F' \\ 0 \\ u_d=0}
-\qquad \text{ d'où:} 
+\qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
 %%%%%%%%%%%%%%%%%%%
@@ -306,7 +306,7 @@ En considérant une action extérieure, on obtient le système:
 \VV*{u_1\\u_2\\u_3\\u_4}
 =
 \VV*{0+k\cdot u_d = 0\\0\\0\\F'}
-\qquad \text{ d'où:} 
+\qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \end{array}\right.
 \end{equation}
 
@@ -352,6 +352,6 @@ Si cette condition aux limites est imposée par un multiplicateur de Lagrange~$\
 \VV*{u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1 \\ \lambda_2}
 =
 \VV*{0\\0\\0\\F' \\ 0 \\ 0 \\ 0}
-\qquad \text{ d'où:} 
+\qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=F' \\ u_4=2F' \\ u_5=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
