@@ -76,7 +76,8 @@ ModM1 = MODEL s1 MECANIQUE ELASTIQUE;
 MatM1 = MATER ModM1 'YOUN' 1.E3 'NU' 0.3 ;
 *
 * CL en deplacements (Rigidites):
-* 1) il faut une condition selon UX, on prend le point (0,0)
+* 1) il faut une condition selon UX: 
+*        on prend le point (0,0)
 k5 = s1 POIN PROC (0. jeu1);
 CLk5 = BLOQ k5 UX;
 * 2) ligne de contact: rigidites

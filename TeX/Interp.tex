@@ -11,13 +11,12 @@ Ainsi, l'interpolation numérique sert souvent à <<~faire émerger une courbe p
 Le jour du Nouvel An de 1801, l'astronome italien Giuseppe Piazzi\index[aut]{Piazzi (Giuseppe), 1746-1826, Italien} 
 a découvert l'astéroïde Cérès (il a suivi sa trajectoire jusqu'au 14 février 1801). 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\noindent\begin{tabular}{ccccc}
-\includegraphics[height=\the\HauteurDesPhotos]{Markov}&
+\noindent\begin{tabular}{cccc}
 \includegraphics[height=\the\HauteurDesPhotos]{Piazzi}&
 \includegraphics[height=\the\HauteurDesPhotos]{Gauss}&
 \includegraphics[height=\the\HauteurDesPhotos]{Legendre}&
 \includegraphics[height=\the\HauteurDesPhotos]{Adrain}\\
-Markov& Piazzi &Gauß&Legendre &Adrain%
+Piazzi &Gauß&Legendre &Adrain%
 \end{tabular}}
 \medskip
 \ImageADroite{%
@@ -36,7 +35,13 @@ a développé indépendamment la même méthode en 1805.
 Le mathématicien américain Robert Adrain\index[aut]{Adrain (Robert), 1775-1843, Américain} 
 a publié en 1808 une formulation de la méthode.}
 
-En 1829, Gauß a pu donner les raisons de l'efficacité de cette méthode: 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\noindent\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Markov}\\
+Markov%
+\end{tabular}}
+\medskip
+\ImageAGauche{En 1829, Gauß a pu donner les raisons de l'efficacité de cette méthode: 
 celle-ci est optimale à l'égard de bien des critères. 
 Cet argument est maintenant connu sous le nom de \textcolorblue{théorème de Gauß-Markov}\index[aut]{Markov (Andreï Andreïevitch), 1856-1922, Russe}.\\
 \indent
@@ -44,8 +49,8 @@ Ce théorème dit que dans un modèle linéaire dans lequel les erreurs ont une 
 sont non corrélées et dont les variances sont égales, le meilleur estimateur linéaire non biaisé 
 des coefficients est l'estimateur des moindres carrés. Plus généralement, le meilleur estimateur linéaire 
 non biaisé d'une combinaison linéaire des coefficients est son estimateur par les moindres carrés. 
-\textbf{On ne suppose pas} que les erreurs possèdent une loi normale, ni qu'elles sont indépendantes 
-(seulement non corrélées), ni qu'elles possèdent la même loi de probabilité.
+\emph{On ne suppose pas} que les erreurs possèdent une loi normale, ni qu'elles sont indépendantes 
+(seulement non corrélées), ni qu'elles possèdent la même loi de probabilité.}
 \end{histoire}
 
 L'\textcolorblue{approximation} étant l'utilisation de méthodes permettant d'approcher une fonction mathématique par une suite de fonctions qui convergent dans un certain espace fonctionnel, on voit donc que ce qui a été fait dans la deuxième partie ressort bien de cela: on cherche une fonction généralement notée~$u$ qui n'est pas connue explicitement mais solution d'une équation différentielle ou d'une équation aux dérivées partielles, et l'on cherche à construire une suite de problèmes plus simples, que l'on sait résoudre à chaque étape, et telle que la suite des solutions correspondantes converge vers la solution cherchée. L'approximation peut servir aussi dans le cas où la fonction considérée est connue: on cherche alors à la remplacer par une fonction plus simple, plus régulière ou ayant de meilleures propriétés. L'intégration numérique sera détaillée un peu plus au chapitre~\ref{chap-quadrature}. Ce sont les méthodes d'approximation numériques qui sont utilisées. 
@@ -111,15 +116,15 @@ On rappelle que~$1,X,\ldots,X^n$ est une base de~$K_n[X]$ en tant que polynômes
 %%%%----------------------------------------------------------
 Connaissant~$n + 1$ points~$(x_0, y_0),\dots,(x_n, y_n)$ d'abscisses \textcolorred{distinctes}, le \textcolorblue{polynôme de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} est l'unique polynôme de degré~$n$ passant tous les points.\index{polynôme! de Lagrange} Ce polynôme est trivialement défini par:\index{polynôme! de Lagrange} 
 \begin{equation}
-L(X) = \sum_{j=0}^{n} y_j \biggl(\prod_{i=0, i\neq j}^{n} \frac{X-x_i}{x_j-x_i} \biggr) 
+L(x) = \sum_{j=0}^{n} y_j \biggl(\prod_{i=0, i\neq j}^{n} \frac{x-x_i}{x_j-x_i} \biggr) 
 \end{equation}
 Si on note:
 \begin{equation}
-L(X) = \dsum_{j=0}^{n} y_j l_j(X)
+L(x) = \dsum_{j=0}^{n} y_j l_j(x)
 \end{equation}
 avec:
 \begin{equation}
-l_i(X) = \prod_{j=0, j\neq i}^{n} \frac{X-x_j}{x_i-x_j} = \frac{X-x_0}{x_i-x_0} \cdots \frac{X-x_{i-1}}{x_i-x_{i-1}} ~ \frac{X-x_{i+1}}{x_i-x_{i+1}} \cdots \frac{X-x_{n}}{x_i-x_{n}}
+l_i(x) = \prod_{j=0, j\neq i}^{n} \frac{x-x_j}{x_i-x_j} = \frac{x-x_0}{x_i-x_0} \cdots \frac{x-x_{i-1}}{x_i-x_{i-1}} ~ \frac{x-x_{i+1}}{x_i-x_{i+1}} \cdots \frac{x-x_{n}}{x_i-x_{n}}
 \end{equation}
 alors, on remarque que: 
 \begin{itemize}
@@ -241,8 +246,8 @@ Ces deux suites sont définies par la relation de récurrence:
 \end{equation}
 et les deux premiers termes: 
 \begin{align}
-&T_0=1,~T_1=X \quad \text{pour la suite} T\\
-&U_0=1,~U_1=2X \quad \text{pour la suite} U 
+&T_0=1,~T_1=X \quad \text{pour la suite } T\\
+&U_0=1,~U_1=2X \quad \text{pour la suite } U 
 \end{align}
 Chacune de ces deux familles est une suite de polynômes orthogonaux\index{polynôme!orthogonalité} par rapport à un produit scalaire de fonctions assorti d'une pondération spécifique.\index{produit scalaire} 
 \paragraph{Propriétés des polynômes de Tchebychev de première espèce}\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}\index{polynôme! de Tchebychev} 
@@ -342,7 +347,7 @@ Les premiers polynômes de Laguerre sont:\index[aut]{Laguerre (Edmond Nicolas), 
 &L_5= 	\frac1{120} (-x^5+25x^4-200x^3+600x^2-600x+120)\\
 &L_6= 	\frac1{720} (x^6-36x^5+450x^4-2400x^3+5400x^2-4320x+720)
 \end{aligned}
-\end{equation}
+\end{equation}\colorblack
 Il existe des polynômes de Laguerre\index[aut]{Laguerre (Edmond Nicolas), 1834-1886, Français} généralisés dont l'orthogonalité peut être liée à une densité de probabilité faisant intervenir la fonction Gamma. Ils apparaissent dans le traitement de l'oscillateur harmonique quantique. Ils peuvent être exprimés en fonction des polynômes d'Hermite.\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite} 
 %%%%----------------------------------------------------------
 \subsection{Polynômes de Bernstein}\index[aut]{Bernstein (Sergeï{} Natanovich), 1880-1968, Russe}\index{polynôme! de Bernstein} 
