@@ -206,7 +206,7 @@ Il existe plusieurs critères pour mesurer la performance des méthodes numériq
 au chapitre~\ref{Ch-shemanum}.}
 \end{histoire}
 %%%%----------------------------------------------------------
-\subsection{Méthode d'Euler, Runge-Kutta ordre 1}\index{méthode de Runge-Kutta ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} Soit à résoudre l'équation différentielle suivante:
+\subsection{Méthode d'Euler, Runge-Kutta ordre 1}\index{méthode de Runge-Kutta! ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} Soit à résoudre l'équation différentielle suivante:
 \begin{equation}
 y' = f(t, y), \qquad y(t_0) = y_0
 \end{equation}
@@ -218,10 +218,10 @@ On ontient alors le schéma numérique:
 \begin{equation}
 y_{i+1}=y_i+hf(t,y_i)
 \end{equation}
-qui permet d'obtenir~$y_{i+1}$ uniquement en fonction de données au pas~$i$. Cette méthode due à Euler, correspond également à la méthode de Runge-Kutta à l'ordre 1.\index{méthode de Runge-Kutta ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
+qui permet d'obtenir~$y_{i+1}$ uniquement en fonction de données au pas~$i$. Cette méthode due à Euler, correspond également à la méthode de Runge-Kutta à l'ordre 1.\index{méthode de Runge-Kutta! ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
  
 %%%%----------------------------------------------------------
-\subsection{Méthode de Runge-Kutta d'ordre 2}\index{méthode de Runge-Kutta ordre 2}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} La méthode de Runge-Kutta à l'ordre 2 est obtenue par amélioration de la méthode d'Euler en considérant le point milieu du pas~$h$. Ainsi, on écrit cette fois:
+\subsection{Méthode de Runge-Kutta d'ordre 2}\index{méthode de Runge-Kutta! ordre 2}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} La méthode de Runge-Kutta à l'ordre 2 est obtenue par amélioration de la méthode d'Euler en considérant le point milieu du pas~$h$. Ainsi, on écrit cette fois:
 \begin{equation}
 y_{i+1}=y_i+h.f\left(t+\frac{h}2,y_i+\frac{h}2f(y,y_i)\right)
 \end{equation}
@@ -239,7 +239,7 @@ y_{i+1} = y_i + h\left[\left(1-\frac1{2\alpha}\right)f \left( t, y_i \right) + \
 \end{equation}
 C'est une méthode d'ordre 2 car l'erreur est de l'ordre de~$h^3$. 
 %%%%----------------------------------------------------------
-\subsection{Méthode de Runge-Kutta d'ordre 4}\index{méthode de Runge-Kutta ordre 4}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} Aujourd'hui, le cas le plus fréquent est celui de l'ordre 4. L'idée est toujours d'estimer la pente de~$y$, mais de façon plus précise. Pour cela, on ne prend plus la pente en un point (début ou milieu), mais on utilise la moyenne pondérée des pentes obtenues en 4 points du pas. 
+\subsection{Méthode de Runge-Kutta d'ordre 4}\index{méthode de Runge-Kutta! ordre 4}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} Aujourd'hui, le cas le plus fréquent est celui de l'ordre 4. L'idée est toujours d'estimer la pente de~$y$, mais de façon plus précise. Pour cela, on ne prend plus la pente en un point (début ou milieu), mais on utilise la moyenne pondérée des pentes obtenues en 4 points du pas. 
 \begin{itemize} 
 \item~$k_1 = f \left( t_i, y_i \right)~$ est la pente au début de l'intervalle; 
 \item~$k_2 = f \left( t_i + {h \over 2}, y_i + {h\over 2} k_1 \right)$ est la pente au milieu de l'intervalle, en utilisant la pente~$k_1$ pour calculer la valeur de~$y$ au point~$t_i + h/2$ par la méthode d'Euler; 
@@ -283,7 +283,7 @@ La méthode converge en~$O(\Delta_t^2)$.
 L'étude de convergence est d'ailleurs plus aisée que dans le cas des \textcolorblue{équations hyperboliques pour lesquelles
 la méthode de Newmark est préférée}.
 %%%%----------------------------------------------------------
-\subsection{Méthode de Newmark}\label{Sec-Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{méthode de Newmark} La \textcolorblue{méthode de Newmark (1959)} permet de résoudre numériquement des équation différentielle du second ordre. Elle convient, non seulement pour des systèmes différentiels linéaires, mais aussi pour des syst\ emes fortement non-linéaires avec une matrice de masse et une force appliquée qui peuvent dépendre à la fois de la position et du temps. Dans ce second cas, le calcul nécessite à chaque pas une boucle d'itération. 
+\subsection{Méthode de Newmark}\label{Sec-Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{schéma!de Newmark} La \textcolorblue{méthode de Newmark (1959)} permet de résoudre numériquement des équation différentielle du second ordre. Elle convient, non seulement pour des systèmes différentiels linéaires, mais aussi pour des systèmes fortement non-linéaires avec une matrice de masse et une force appliquée qui peuvent dépendre à la fois de la position et du temps. Dans ce second cas, le calcul nécessite à chaque pas une boucle d'itération. 
 
 L'idée générale reste la même: on cherche à estimer les valeurs des dérivées (premières, secondes...) à l'instant~$t$ à partir des informations disponible à l'instant précédent (au pas de temps précédent). Pour cela, on va recourir à un développement limité. Considérons l'équation de la dynamique:
 \begin{equation}
@@ -297,6 +297,6 @@ et on fait l'hypothèse de linéarité de l'accélération à l'intérieur d'un 
 \begin{equation}
 \dddot{u}=\dfrac{\ddot{u}_{t+\Delta_t}-\ddot{u}_t}{\Delta_t}
 \end{equation}
-Les différents \textcolorblue{schémas de Newmark} correspondent à des valeurs particulières de~$\beta$ et~$\gamma$.\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{méthode de Newmark}\index{schéma! de Newmark} Dans le cas~$\beta=0$ et~$\gamma=1/2$, on retombe sur le schéma des \textcolorblue{différences finies centrées}.\index{schéma! des différences finies centrées} 
+Les différents \textcolorblue{schémas de Newmark} correspondent à des valeurs particulières de~$\beta$ et~$\gamma$.\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{schéma! de Newmark} Dans le cas~$\beta=0$ et~$\gamma=1/2$, on retombe sur le schéma des \textcolorblue{différences finies centrées}.\index{schéma!des différences finies centrées} 
 
-\textcolorgreen{La méthode de Newmark fonctionne également pour les problèmes non linéaires, mais dans ce cas la matrice de rigidité devra être réévaluée à chaque pas de temps (ainsi que celle d'amortissement dans les cas les plus compliqués). }
+\textcolorgreen{La méthode de Newmark fonctionne également pour les problèmes non linéaires, mais dans ce cas la matrice de rigidité devra être réévaluée à chaque pas de temps (ainsi que celle d'amortissement dans les cas les plus compliqués).}

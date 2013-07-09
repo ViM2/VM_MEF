@@ -128,25 +128,25 @@ exemples de ce phénomène dans la nature:
 \end{itemize}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-En mathématiques, le concept de vecteur propre\index{vecteur propre} est une notion portant sur une
+En mathématiques, le concept de vecteur propre\index{vecteur propre|see{mode propre}}\index{mode propre} est une notion portant sur une
 application linéaire d'un espace dans lui-même. Il correspond à l'étude des axes privilégiés, selon
 lesquels l'application se comporte comme une dilatation, multipliant les vecteurs par une même constante.
-Ce rapport de dilatation est appelé valeur propre;\index{valeur propre} les vecteurs auxquels il s'applique s'appellent
+Ce rapport de dilatation est appelé valeur propre;\index{valeur propre|see{fréquence propre}}\index{fréquence propre} les vecteurs auxquels il s'applique s'appellent
 vecteurs propres, réunis en un espace propre.\index{espace!propre}
 
 \medskip
 \begin{histoire}%
 Bien qu'existant sous une forme non formalisée depuis longtemps, il aura fallu attendre l'invention
-des structures algébriques nécessaires pour vraiment pouvoir parler des valeurs propres\index{valeur propre}
+des structures algébriques nécessaires pour vraiment pouvoir parler des valeurs propres\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 (issues par exemple de la cloture algébrique de~$\CC$ démontrée par Gauß).\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand}
 
 \medskip
 L'exemple immédiat qui vient à l'esprit est le traitement de l'équation de la chaleur\index{ED-EDP!de la chaleur} par
 Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} qui utilise déjà
-une base de vecteurs propres,\index{vecteur propre} bien que le concept n'ait pas encore été
+une base de vecteurs propres,\index{vecteur propre|see{mode propre}}\index{mode propre} bien que le concept n'ait pas encore été
 défini. Hamilton\index[aut]{Hamilton (William Rowan, Sir -), 1805-1865, Irlandais} introduira
 la notion de polynôme caractéristique, ce qui permet de déterminer ce
-que l'on appelle maintenant les valeurs propres\index{valeur propre} associées à l'endomorphisme d'une équation différentielle linéaire.
+que l'on appelle maintenant les valeurs propres\index{valeur propre|see{fréquence propre}}\index{fréquence propre} associées à l'endomorphisme d'une équation différentielle linéaire.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc}
@@ -162,18 +162,18 @@ Plusieurs aller-retour permettront de définir les notions d'espace vectoriel (C
 Grassmann,\index[aut]{Grassmann (Hermann Günther), 1809-1877, Allemand}
 Cauchy),\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}
 de matrice (Sylvester,\index[aut]{Sylvester (James Joseph), 1814-1897, Anglais}
-Cayley)\index[aut]{Cayley (Arthur), 1821-1895, Anglais} et de valeurs propres\index{valeur propre}
+Cayley)\index[aut]{Cayley (Arthur), 1821-1895, Anglais} et de valeurs propres\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 (Sylvester,\index[aut]{Sylvester (James Joseph), 1814-1897, Anglais}
 Jordan).\index[aut]{Jordan (Marie Ennemond Camille), 1838-1922, Français}
 Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand} finalement fera prendre
-conscience de la profondeur de la notion de valeur propre.\index{valeur propre}
+conscience de la profondeur de la notion de valeur propre.\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 L'analyse fonctionnelle naît dans la foulée, et elle est l'objet de la première partie de ce document.
 }
 \end{histoire}
 \colorblack
 
 \medskip
-\section{Notions de valeur, vecteur, mode et fréquence propres}\index{valeur propre}\index{vecteur propre}\index{mode propre}\index{fréquence propre}
+\section{Notions de valeur, vecteur, mode et fréquence propres}\index{valeur propre|see{fréquence propre}}\index{fréquence propre}\index{vecteur propre|see{mode propre}}\index{mode propre}\index{mode propre}\index{fréquence propre}
 
 \medskip
 Étant donné une matrice carrée~$\MM{A}$ d'ordre~$n$ \textcolorgris{(à coefficients dans un anneau commutatif)},
@@ -184,8 +184,8 @@ de~$\MM{A}$ et est défini par:
 avec~$X$ l'indéterminée du polynôme et~$\MM{I}_n$ la matrice identité d'ordre~$n$.
 %%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
-Si~$\lambda$ est une \textcolorblue{valeur propre}\index{valeur propre} de~$\MM{A}$, alors il existe un
-\textcolorblue{vecteur propre}\index{vecteur propre}~$\VV{V}$ non nul tel que~$\MM{A}\VV{V} = \lambda \VV{V}$, i.e.
+Si~$\lambda$ est une \textcolorblue{valeur propre}\index{valeur propre|see{fréquence propre}}\index{fréquence propre} de~$\MM{A}$, alors il existe un
+\textcolorblue{vecteur propre}\index{vecteur propre|see{mode propre}}\index{mode propre}~$\VV{V}$ non nul tel que~$\MM{A}\VV{V} = \lambda \VV{V}$, i.e.
 tel que l'on ait~$(\lambda \MM{I}_n-\MM{A})\VV{V} = \VV{0}$.
 %%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -197,7 +197,7 @@ i.e. des racines du polynôme~$\det(X\MM{I}_n-\MM{A})$.
 %%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 La propriété la plus importante des polynômes caractéristiques\index{polynôme! caractéristique} est que
-les valeurs propres\index{valeur propre} de~$\MM{A}$ sont exactement les racines du polynôme~$p_A(X)$.
+les valeurs propres\index{valeur propre|see{fréquence propre}}\index{fréquence propre} de~$\MM{A}$ sont exactement les racines du polynôme~$p_A(X)$.
 
 \medskip
 Quelques propriétés importantes:
@@ -286,7 +286,7 @@ ce qui conduit à:
 \begin{equation} \det\left(\MM{K}-\omega^2\MM{M}\right)=0\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
-On obtient ainsi les \textcolorblue{$n$ valeurs propres}\index{valeur propre}
+On obtient ainsi les \textcolorblue{$n$ valeurs propres}\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 $\omega_1,\ldots,\omega_n$, où~$n$ est la taille du système (i.e. les matrices~$\MM{M}$ et~$\MM{K}$ sont~$n\times n$).
 %%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -351,7 +351,7 @@ transforme en celle de la chaleur:\index{ED-EDP!de la chaleur}
 \begin{equation} \MM{C}\VV{\dot{q}}+\MM{K}\VV{q}=\VV{0} \end{equation}
 dont on cherche une solution générale sous la forme:
 \begin{equation} \VV{q}=\VV{\overline{q}}\mathrm{e}^{-\omega t} \end{equation}
-ce qui conduit au problème de valeurs propres:\index{valeur propre}
+ce qui conduit au problème de valeurs propres:\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 \begin{equation} \left(\MM{K}-\omega\MM{C}\right)\VV{\overline{q}}=0\end{equation}
 
 Les matrices~$\MM{C}$ et~$\MM{K}$ sont généralement définies positives, donc~$\omega$ est réelle positive. La solution présente un terme de décroissance exponentielle qui ne correspond pas réellement à un état de régime permanent.
@@ -364,7 +364,7 @@ sans sollicitation:
 dont on cherche une solution générale sous la forme:
 \begin{equation} \VV{q}=\VV{\overline{q}}\mathrm{e}^{-\alpha t} \end{equation}
 avec~$\alpha\in\CC$.
-Cela conduit au problème de valeurs propres:\index{valeur propre}
+Cela conduit au problème de valeurs propres:\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 \begin{equation} \left(\alpha^2\MM{M}+\alpha\MM{C}+\MM{K}\right)\VV{\overline{q}}=0\end{equation}
 où~$\VV{\overline{q}}\in\CC$.
 
@@ -532,7 +532,7 @@ les unes des autres. Le vecteur total est ensuite obtenu par superposition.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 Toutefois, pour effectuer cette superposition, il n'aura pas échappé au lecteur qu'il faut
-avoir résolu le problèmes des valeurs propres.\index{valeur propre}
+avoir résolu le problèmes des valeurs propres.\index{valeur propre|see{fréquence propre}}\index{fréquence propre}
 Dans le cas général, le calcul des valeurs et des vecteurs propres \textcolorred{complexes} est loin
 d'être facile.
 La méthode habituelle consiste à déterminer les valeurs propres \textcolorblue{réelles} du
@@ -571,7 +571,7 @@ donne la réponse transitoire totale (en principe !).
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \textcolorgreen{On rappelle que la méthode de décomposition modale\index{décomposition modale}
-nécessiterait la détermination de l'ensemble des valeurs et modes propres,\index{valeur propre}\index{mode propre}
+nécessiterait la détermination de l'ensemble des valeurs et modes propres,\index{valeur propre|see{fréquence propre}}\index{fréquence propre}\index{mode propre}
 ce qui représenterait des calculs considérables.
 D'un point de vue pratique, on ne prend en compte qu'un nombre limité de modes étant donné que
 les réponses à des fréquences élevées sont souvent très amorties et prennent par conséquent
@@ -818,7 +818,7 @@ un déphasage des oscillations à cause de cette accumulation des erreurs numér
 de temps peuvent être observées.
 
 Dans de tels cas, il est possible de \textcolorblue{se placer dans le domaine fréquentiel}\index{domaine! fréquentiel}
-(à l'aide de la FFT),\index{transformée de Fourier}\index{FFT} ce qui conduit à résoudre un problème de vibrations forcées sur une très large bande
+(à l'aide de la FFT),\index{transformée de Fourier} ce qui conduit à résoudre un problème de vibrations forcées sur une très large bande
 de fréquences incluant à la fois les basses et les moyennes fréquences pour l'étude des chocs.
 La solution temporelle est ensuite reconstruite par transformée de Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}\index{transformée de Fourier}
 inverse.
@@ -963,7 +963,7 @@ Parmis les méthodes d'intégration directes, on utilise classiquement:
 
 Afin de s'affranchir de l'intégration temporelle et des soucis numériques associés, il est
 possible de réécrire le problème temporelle en un problème fréquentiel (grâce à
-la FFT).\index{transformée de Fourier}\index{FFT}
+la FFT).\index{transformée de Fourier}
 
 \textcolorblue{L'approche fréquentielle est également plus adaptée dans les situations pour
 lesquelles des paramètres physiques dépendent de la fréquence.}\index{domaine! fréquentiel}
@@ -1033,14 +1033,14 @@ modes propres\index{mode propre} de chaque sous-structures servent de base pour 
 de la structure entière.
 
 \bigskip
-Une <<~deuxième~>> approche consiste à utiliser des \textcolorblue{éléments enrichis}\index{élément enrichi}
+Une <<~deuxième~>> approche consiste à utiliser des \textcolorblue{éléments enrichis}\index{élément fini!enrichi}
 (voir encore une fois le chapitre~\ref{Ch-XFEM}).
 Ces éléments sont développés pour pouvoir prendre en compte le caractère
 oscillant de la solution en enrichissant les fonctions de base utilisées afin de pouvoir
 mieux reproduire la solution.
 
 \medskip
-Les \textcolorblue{éléments finis hiérarchiques,\index{élément fini hiérarchique} issus des méthodes~$p$}\index{méthode~$p$}
+Les \textcolorblue{éléments finis hiérarchiques,\index{élément fini!hiérarchique} issus des méthodes~$p$}\index{méthode~$p$}
 (voir le paragraphe~\ref{Sec-rhp}:
 \textcolorgreen{l'augmentation du degré polynomial des fonctions de forme peut se voir comme
 une substitution à un raffinement de maillage, mais les estimateurs d'erreur des p-methods sont meilleurs
@@ -1060,11 +1060,11 @@ Si les fonctions d'enrichissement ne sont pas activées, on se retrouve avec la 
 
 la \textcolorblue{Méthode d'enrichissement discontinu}\index{méthode d'enrichissement discontinu}
 (Discontinuous Enrichment Method) est une méthode de Galerkine éléments finis
-discontinue avec multiplicateurs de Lagrange\index{méthode de Galerkine! discontinue avec multiplicateurs de Lagrange}
+discontinue avec multiplicateurs de Lagrange\index{méthode de Galerkine!discontinue!avec multiplicateurs de Lagrange}
 dédiée aux application de forts gradients ou oscillations rapides.
 
 \bigskip
-La \textcolorblue{BEM}\index{BEM}\index{méthode des éléments finis frontière}
+La \textcolorblue{BEM}\index{élément fini!frontière}
 (voir paragraphe~\ref{Sec-BEM}) est encore une <<~troisième~>> approche.
 Seuls les bords sont maillés afin de réduire le nombre de ddl.
 La formulation intégrale de la frontière établit un lien entre les champs intérieurs
@@ -1073,7 +1073,7 @@ La matrice obtenue est petite, mais pleine et non symétrique.
 
 \bigskip
 Les \textcolorblue{méthodes sans maillage}\index{méthode sans maillage} (voir paragraphe~\ref{Sec-meshless}):
-Dans la EFGM\index{élément finiGM} (Element Free Galerkin Method ou méthode de Galerkine sans maillage),\index{méthode de Galerkine! sans maillage}
+Dans la EFGM (Element Free Galerkin Method ou méthode de Galerkine sans maillage),\index{méthode de Galerkine!sans maillage}
 on n'a plus qu'un nuage de points sans connectivité entre eux.
 On utilise des fonctions de formes construites selon la méthode des moindres carrés mobiles et
 formant une partition de l'unité,\index{partition de l'unité} qui peuvent être polynomiales
@@ -1082,7 +1082,7 @@ Néanmoins, comme elle est basée sur une discrétisation nodale, elle nécessit
 un grand nombre de nœuds aux fréquences plus élevées.
 
 \bigskip
-Les \textcolorblue{méthodes des éléments discontinus}:\index{méthodes des éléments discontinus}
+Les \textcolorblue{méthodes des éléments discontinus}:\index{méthode des éléments discontinus}
 Pour des géométries simples (utilisation en construction navale), on utilise des solutions
 analytiques ou semi-analytiques sur des sous-domaines simples (poutres, plaques rectangulaires...)
 pour construire la structure complète.
@@ -1190,8 +1190,8 @@ $T$ est la durée du choc d'entrée (si~$T=1$ms, alors MF/HF = 2000Hz mini).
 
 la méthode des éléments finis utilisée en basses fréquences doit utiliser les~$n$ premiers modes pour la base réduite avec~$n$ tel que la fréquence de ce mode soit de~$2\times$ la fréquence BF/MF. On utilisera également la règle classique d'\textcolorblue{au moins 10 éléments linéaires par longueur d'onde pour le maillage}.
 
-La FFT\index{transformée de Fourier}\index{FFT} requiert par ailleurs que le chargement soit périodique. Le temps correspondant à cette période, $T_0$, doit être choisi judicieusement. Dans le cas d'un choc, on a donc~$T_0 > T$, mais il faut également le choisir tel que la réponse transitoire de la structure s'éteigne avant la fin de cet intervalle de temps. De plus, ce temps influe sur l'échantillonnage fréquentiel du calcul de la FRF. Les pulsations pour lesquelles la FRF est calculée doivent être telles que~$\omega_n=2\pi n f_0$ avec~$f_0=1/T_0$. Il faut également que le nombre de pas de fréquences~$N$ soit une puissance de 2 pour utiliser la FFT\index{transformée de Fourier}\index{FFT} et son efficacité, et~$N$ soit être tel que~$N/T_0 \ge 2 f_{\max}$ avec~$f_{\max}$ la fréquence maximale contenue dans le signal.
+La FFT\index{transformée de Fourier} requiert par ailleurs que le chargement soit périodique. Le temps correspondant à cette période, $T_0$, doit être choisi judicieusement. Dans le cas d'un choc, on a donc~$T_0 > T$, mais il faut également le choisir tel que la réponse transitoire de la structure s'éteigne avant la fin de cet intervalle de temps. De plus, ce temps influe sur l'échantillonnage fréquentiel du calcul de la FRF. Les pulsations pour lesquelles la FRF est calculée doivent être telles que~$\omega_n=2\pi n f_0$ avec~$f_0=1/T_0$. Il faut également que le nombre de pas de fréquences~$N$ soit une puissance de 2 pour utiliser la FFT\index{transformée de Fourier} et son efficacité, et~$N$ soit être tel que~$N/T_0 \ge 2 f_{\max}$ avec~$f_{\max}$ la fréquence maximale contenue dans le signal.
 
 \medskip
-Le choix judicieux de~$T_0$ influe directement sur la reconstruction temporelle de la réponse. Pour les structures peu amorties ou pour des chargements longs, $T_0$ est grand, et donc la FFT\index{transformée de Fourier}\index{FFT} coûteuse. Dans ces cas, des méthodes ont été développées: les fonctions de Green;\index[aut]{Green (George), 1793-1841, Anglais} la Implicit Fourier Transform; et l'amortissement artificiel.
+Le choix judicieux de~$T_0$ influe directement sur la reconstruction temporelle de la réponse. Pour les structures peu amorties ou pour des chargements longs, $T_0$ est grand, et donc la FFT\index{transformée de Fourier} coûteuse. Dans ces cas, des méthodes ont été développées: les fonctions de Green;\index[aut]{Green (George), 1793-1841, Anglais} la Implicit Fourier Transform; et l'amortissement artificiel.
 
