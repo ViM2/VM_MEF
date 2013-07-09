@@ -62,9 +62,9 @@ Par ailleurs, on a la relation:
 \begin{equation} \frac{\dd}{ \dd \xi} = \frac{\dd s}{ \dd \xi}\frac{\dd}{\dd s}=m\frac{\dd}{\dd s}\end{equation}
 \medskipvm
 \ifVersionAvecExemplesSepares
-  \section{Rappels sur la jacobienne et le jacobien d'une transformation}\index{Jacobien}\index{Jacobienne}
+  \section{Rappels sur la jacobienne et le jacobien d'une transformation}\index{jacobien}\index{jacobienne}
 \else
-  \subsection{Rappels sur la jacobienne et le jacobien d'une transformation}\index{Jacobien}\index{Jacobienne}
+  \subsection{Rappels sur la jacobienne et le jacobien d'une transformation}\index{jacobien}\index{jacobienne}
 \fi
 
 Nous considérons une transformation de~$\RR^n$ dans~$\RR^m$ donnée par la fonction~$f$: 
@@ -72,7 +72,7 @@ $\left(x_1, \ldots, x_n \right) \mapsto \left(f_{y_1}, \ldots, f_{y_m} \right)$.
 \ifVersionDuDocEstVincent
 
 \medskipvm\fi
-La \textcolorblue{matrice jacobienne}\index{Jacobienne} (d'après Carl Jacobi)\index[aut]{Jacobi (Carl Gustav Jakob), 1804-1851, Allemand} 
+La \textcolorblue{matrice jacobienne}\index{jacobienne} (d'après Carl Jacobi)\index[aut]{Jacobi (Carl Gustav Jakob), 1804-1851, Allemand} 
 associée à~$f$ est définie par:
 \begin{equation}
 J_f = \MM*{\LL{\nabla f_{y_1}} \\ \vdots \\ \LL{\nabla f_{y_m}}}
@@ -93,20 +93,20 @@ La composée~$f\circ g$ de fonctions différentiables est différentiable, et sa
 s'obtient par la formule:
 \begin{equation} J_{f \circ g}= \bigl( J_f \circ g \bigr) \cdot J_g\end{equation}
 \medskipvm
-Dans le cas où \textcolorred{$m = n$}, on appelle~$j_f$ le \textcolorblue{jacobien}\index{Jacobien} de~$f$, 
-défini comme le déterminant de sa matrice jacobienne: \index{Jacobien}\index{Jacobienne}
+Dans le cas où \textcolorred{$m = n$}, on appelle~$j_f$ le \textcolorblue{jacobien}\index{jacobien} de~$f$, 
+défini comme le déterminant de sa matrice jacobienne: \index{jacobien}\index{jacobienne}
 \begin{equation} j_f = \det\, \left(J_f \right) \end{equation}
 Dire que le jacobien est non nul revient donc à dire que la matrice jacobienne est inversible.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Si le jacobien\index{Jacobien} est positif au point~$M$, l'orientation de l'espace est conservée au voisinage de ce point. 
+Si le jacobien\index{jacobien} est positif au point~$M$, l'orientation de l'espace est conservée au voisinage de ce point. 
 À l'inverse, l'orientation est inversée si le jacobien est négatif.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Le jacobien\index{Jacobien} d'une composée de fonctions est le produit des jacobiens individuels.
+Le jacobien\index{jacobien} d'une composée de fonctions est le produit des jacobiens individuels.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-Le jacobien\index{Jacobien} de la réciproque d'une fonction est l'inverse du jacobien de la fonction.
+Le jacobien\index{jacobien} de la réciproque d'une fonction est l'inverse du jacobien de la fonction.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 \colorgris
@@ -117,7 +117,7 @@ comme une extension du théorème des fonctions implicite en dimension supérieu
 Une fonction~$F$ de classe~$C^1$ est inversible au voisinage de~$M$ avec une réciproque~$F^{-1}$ 
 de classe~$C^1$ si et seulement si son jacobien en~$M$ est non nul (théorème d'inversion locale). 
 De plus, la matrice jacobienne de~$F^{-1}$ se déduit de l'inverse de la matrice jacobienne de~$F$ 
-au moyen de la formule:\index{Jacobien}\index{Jacobienne}
+au moyen de la formule:\index{jacobien}\index{jacobienne}
 \begin{equation}J_{F^{-1}} = \bigl( J_F \circ F^{-1} \bigr)^{-1}\end{equation}
 
 \begin{theoreme}[Théorème d'inversion locale]\index{théorème!d'inversion locale}
@@ -147,7 +147,7 @@ de Lebesgue sur~$\RR^n$:
 \end{theoreme}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\textcolorgreen{Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction~$f$ sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{Jacobien}
+\textcolorgreen{Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction~$f$ sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{jacobien}
 
 \medskipvm
 \ifVersionAvecExemplesSepares
@@ -218,7 +218,7 @@ On aura également:
   \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
 \fi
 On considère la barre donnée ci-dessous, de section~$A$, de longueur~$L$, et constituée 
-d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{Module d'Young} 
+d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{module d'Young} 
 $E$ et densité~$\rho$ et soumise uniquement à son poids propre.\\
 \begin{figure}[ht]
 \centering

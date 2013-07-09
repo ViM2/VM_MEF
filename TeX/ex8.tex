@@ -82,7 +82,7 @@ A_{22} - A_{21}A_{11}^{-1}A_{12}x_2 = b_2 - A_{21}A_{11}^{-1}b_1
 \quad \text{ que l'on note: }
 S x_2=c
 \end{equation}
-\textcolorblue{La matrice~$S$ est appelée complément de Schur}\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
+\textcolorblue{La matrice~$S$ est appelée complément de Schur}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
 (présenté au paragraphe~\ref{Sec-Schur}), ou matrice condensée sur les degrés de liberté~$x_2$.
 Ce calcul est également identique à celui présenté à propos de la condensation statique au paragraphe~\ref{Sec-condens}.
 Dans ce cas, la matrice~$S$ est la matrice de rigidité du super-élément considéré.
@@ -106,9 +106,9 @@ qui peut être réécrit:
 
 \medskip
 \ifVersionAvecExemplesSepares
-  \section{Complément de Schur et déplacements imposés}\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
+  \section{Complément de Schur et déplacements imposés}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
 \else
-  \subsection{Complément de Schur et déplacements imposés}\index{Complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
+  \subsection{Complément de Schur et déplacements imposés}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
 \fi
 Nous cherchons toujours à résoudre notre système:
 \begin{equation}\MM{K}\VV{q}=\VV{f}\end{equation}
@@ -140,12 +140,12 @@ C'est ainsi que procède le code \abaqus pour imposer les déplacements.
 
 \medskip
 \ifVersionAvecExemplesSepares
-  \section{Multiplicateurs de Lagrange et déplacements imposés}\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
+  \section{Multiplicateurs de Lagrange et déplacements imposés}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
 \else
-  \subsection{Multiplicateurs de Lagrange et déplacements imposés}\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
+  \subsection{Multiplicateurs de Lagrange et déplacements imposés}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
 \fi
 
-Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
+Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
 
 Dans ce cas, il n'est plus nécessaire de séparer explicitement les ddl, mais \textcolorred{la taille du problème augmente} puisqu'il faut lui adjoindre les multiplicateurs.
 
@@ -157,7 +157,7 @@ Le système à résoudre s'écrit très simplement:
 \VV*{q\\ \lambda} =
 \VV*{F\\ -u_d}
 \end{equation}
-Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
 Par contre, la matrice du système (\ref{Eq-Lag1}), $\MM{A}$, si elle reste bien symétrique, \textcolorred{n'est plus définie positive}. Elle possède des valeurs propres négatives.
 %%%%%%%%%%%%%%%%%%%
@@ -176,7 +176,7 @@ ce qui correspond aux cas où toutes les liaisons sont indépendantes.
 \bigskipvm
 Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une factorisation de Gauß),\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} 
 et d'éviter des pivotages (que ferait une factorisation de Crout, i.e.~$\MM{LDL}^T$), on peut développer une autre technique, dite \textcolorblue{technique
-de double multiplicateur}, qui est celle employée dans \castem:\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+de double multiplicateur}, qui est celle employée dans \castem:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \begin{equation}
 \left\{\begin{aligned}
 &\MM{K}\VV{q} = \VV{F} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
@@ -336,7 +336,7 @@ Nous alons l'appliquer ici, à titre d'exemple simple, au cas où la poutre cons
 La poutre est consituée de la poutre~$1-2$ et de la poutre~$3-4-5$, les points~$2$ et~$3$ étant astreints à rester collés ensembles.
 %%%%%%%%%%%%%%%%%
 \medskipvm
-En ajoutant la relation~$u_2=u_3$ par l'intermédiaire d'un multiplicateur de Lagrange\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}, c'est-à-dire en ajoutant le terme~$\lambda_1(u_2-u_3$), on obtient le système:
+En ajoutant la relation~$u_2=u_3$ par l'intermédiaire d'un multiplicateur de Lagrange\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}, c'est-à-dire en ajoutant le terme~$\lambda_1(u_2-u_3$), on obtient le système:
 \begin{equation}
 \MM*{1&-1&0&0&0&0 \\ -1&1&0&0&0&1 \\ 0&0&1&-1&0&-1\\ 0&0&-1&2&-1&0\\ 0&0&0&-1&1&0 \\ 0&1&-1&0&0&0}
 \VV*{u_1\\u_2\\u_3\\u_4\\ u_5\\ \lambda_1}

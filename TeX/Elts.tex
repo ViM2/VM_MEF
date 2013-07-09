@@ -49,7 +49,7 @@ de fonctions pour un maillage donné.
 Les éléments de Lagrange sont les éléments finis les plus simples.
 
 \medskip
-\subsection{Unisolvance}\index{Unisolvance}\label{Sec-unisolvance}
+\subsection{Unisolvance}\index{unisolvance}\label{Sec-unisolvance}
 
 \begin{definition}[Unisolvance]
 Soit~$\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de~$N$ points distincts de~$\RR^n$.
@@ -213,7 +213,7 @@ $P$ &~$\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 
 
 \medskip
-\subsection{Famille affine d'éléments finis et élément de référence}\index{élément de référence}\index{Famille affine d'EF}
+\subsection{Famille affine d'éléments finis et élément de référence}\index{élément de référence}\index{famille affine d'EF}
 En fait, la notion de transformation affine entre un élément~$K$ d'un maillage
 $\mathcal{T}_h$ et un élément de référence a déjà été utilisée en
 calcul de majoration d'erreur, mais la transformation elle-même n'a pas été
@@ -435,7 +435,7 @@ champ, en imposant ou non certaines régularités (dérivées partielles).
 Une question naturelle consiste à se demander comment traiter les
 problèmes ayant plusieurs champs inconnus (cela à déjà été abordé,
 et certaines stratégies on déjà été présentées: formulation mixte (Brezzi),\index[aut]{Brezzi (Franco), 1945-, Italien}
-utilisation de multiplicateurs de Lagrange).\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{Multiplicateurs de Lagrange}
+utilisation de multiplicateurs de Lagrange).\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{multiplicateurs de Lagrange}
 
 On pourrait imaginer, si ces champs sont <<~dissociés~>> (sans lien les uns avec les
 autres), de modéliser chaque champ séparément, i.e. de traiter un
@@ -487,7 +487,7 @@ discontinues.
 \bigskip
 Plusieurs stratégies sont envisageables:
 \begin{description}
-\item[\textcolorblue{Post-traitement:}]\index{Post-traitement}
+\item[\textcolorblue{Post-traitement:}]\index{post-traitement}
 
 	Dans cette méthode, on effectue le calcul en déplacements, de manière classique.
 	On obtient les contraintes de manière toute aussi classique, mais celles-ci
@@ -525,8 +525,8 @@ Plusieurs stratégies sont envisageables:
 
 	Notons qu'un avantage de cette formulation c'est qu'elle nécessite la matrice
 	de souplesse~$[S]$ au lieu de la matrice de Hooke~$[H]$, ce qui permet de
-	traiter le cas des matériaux incompressibles.\index{Loi de comportement!Hooke}\index{Loi de comportement!incompressible}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
-\item[\textcolorblue{Multiplicateurs de Lagrange:}]\index{Multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+	traiter le cas des matériaux incompressibles.\index{loi de comportement!Hooke}\index{loi de comportement!incompressible}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
+\item[\textcolorblue{Multiplicateurs de Lagrange:}]\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 	
 	D'une manière évidente, la continuité du champ de déplacements
 	à l'interface~$\li$ entre deux éléments~$~^1$ et~$~^2$ peut être
@@ -548,7 +548,7 @@ Le but était de montrer que non seulement il est possible de développer de nom
 possible de construire une méthode numérique permettant d'obtenir les résultats
 souhaités.
 
-Les méthodes de post-traitement,\index{Post-traitement} que nous n'aborderons pas dans ce document,
+Les méthodes de post-traitement,\index{post-traitement} que nous n'aborderons pas dans ce document,
 sont très riches et permettent de faire beaucoup de choses.
 Elles ont en outre l'avantage d'être parfois plus faciles à implémenter dans des
 codes industriels que de nouveaux éléments.

@@ -89,7 +89,7 @@ Cela suffit déjà pour pouvoir s'intéresser par exemple à des fonctions, à d
 On peut ensuite définir un ensemble ordonné...}
 
 \medskip %\noindent
-\textcolorblue{Une topologie}\index{Topologie}~$T$ est
+\textcolorblue{Une topologie}\index{topologie}~$T$ est
 un ensemble de parties de~$E$ que l'on définit comme les ouverts de~$(E,T)$, vérifiant les
 propriétés suivantes:
 \begin{itemize}
@@ -151,7 +151,7 @@ On peut même alors choisir ces deux ouverts de manière à ce que leurs adhére
 }
 
 \medskip
-\textcolorblue{Compacité} (recouvrement fini):\index{Compacité}
+\textcolorblue{Compacité} (recouvrement fini):\index{compacité}
 
 Un espace séparé est compact (vérifie la propriété de Borel-Lebesgue),
 si chaque fois qu'il est recouvert par des ouverts, il est recouvert par un nombre fini d'entre eux.
@@ -224,7 +224,7 @@ de complétude.
 \begin{marge}%
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (n1) {$E$, un ensemble};
 
-Une \textcolorblue{distance ou métrique}~$d$\index{distance}\index{Métrique}
+Une \textcolorblue{distance ou métrique}~$d$\index{distance}\index{métrique}
 est une application de~$E\times E \rightarrow \RR_+$ telle que:
 \begin{itemize}
   \item~$d(x,y)=d(y,x)$ (symétrie);
@@ -408,7 +408,7 @@ c'est un espace vectoriel topologique.
 }
 
 \medskip
-Une norme~$\|\cdot\|$ \textcolorblue{découle d'un produit scalaire ou hermitien}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{Produit scalaire}
+Une norme~$\|\cdot\|$ \textcolorblue{découle d'un produit scalaire ou hermitien}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{produit scalaire}
 $\langle\cdot,\cdot\rangle$ si l'on a:~$\| x\| = \sqrt{\langle x,x \rangle}$.%footnote
 
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](b5) {Espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}};
@@ -435,8 +435,8 @@ On peut encore faire les remarques suivantes concernant les espaces de Hilbert:
   \item \textcolorred{Le plus important} est de disposer d'un produit scalaire, car on va alors pouvoir déterminer des parties
 	orthogonales de l'espace, donc en somme directe (théorème~\ref{th:projHilbert}).
 
-	On rappelle, si besoin, qu'un \textcolorblue{produit scalaire}\index{Produit scalaire} est une
-	forme bilinéaire\index{Forme!bilinéaire} (i.e. une application\index{Application} de~$E\times E$
+	On rappelle, si besoin, qu'un \textcolorblue{produit scalaire}\index{produit scalaire} est une
+	forme bilinéaire\index{forme!bilinéaire} (i.e. une application\index{application} de~$E\times E$
 	dans~$\RR$, linéaire pour chacune des deux variables) possédant les propriétés:
 	\begin{itemize}
 	  \item symétrie:~$\forall x,y \in E$, $\langle x\, , \, y \rangle = \langle y\, , \, x\rangle$
@@ -553,7 +553,7 @@ $X$ est un \textcolorred{ensemble} non vide de parties de~$X$, stable par passag
 
 \medskip
 \begin{definition}[Tribu]
-Une \textcolorblue{tribu~$\mathcal{A}$}\index{Tribu} sur un ensemble~$X$ est un \textcolorred{ensemble}
+Une \textcolorblue{tribu~$\mathcal{A}$}\index{tribu} sur un ensemble~$X$ est un \textcolorred{ensemble}
 non vide de parties de~$X$, stable par passage au complémentaire et par union dénombrable
 (donc aussi par intersection dénombrable), i.e.:
 \begin{enumerate}
@@ -663,7 +663,7 @@ Le produit des espaces mesurables est~$(X\times Y, T \otimes U)$ et est un espac
 \section{Tribu borélienne, mesures de Dirac et Lebesgue}
 
 \begin{definition}[Tribu borélienne]
-On appelle \textcolorblue{tribu borélienne}\index{Tribu!borélienne} sur un espace topologique donné la tribu engendrée par les
+On appelle \textcolorblue{tribu borélienne}\index{tribu!borélienne} sur un espace topologique donné la tribu engendrée par les
 ensembles ouverts.
 Dans le cas simple et fondamental de l'espace usuel à~$n$ dimensions, la tribu borélienne de~$\RR^n$
 est engendrée par une famille dénombrable de parties, les pavés dont les sommets sont à
@@ -710,7 +710,7 @@ point~$a$ la mesure notée~$\delta_a$ sur~$(X, \mathcal{A})$ telle que:
 \begin{equation}
   \forall A \in \mathcal{A},\quad ( \delta_a(A)=1 \; \text{ si } a \in A \text{ et } \delta_a(A)=0  \text{ si } a \notin A )
 \end{equation}
-Le support\index{Support} de~$\delta_a$ est réduit au singleton~$\{a\}$.
+Le support\index{support} de~$\delta_a$ est réduit au singleton~$\{a\}$.
 \end{definition}
 
 Les masses de Dirac sont très importantes, notamment dans la pratique car elles permettent par exemple
