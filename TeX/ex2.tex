@@ -21,13 +21,11 @@ Considérons un segment reliant deux points dans l'espace.
 Ce segment est défini par un point courant dont les coordonnées sont le vecteur~$\VV{x}$.
 On peut paramétrer ce segment par le paramètre~$\xi \in [-1,1]$, et le vecteur
 position s'exprime par~$\LL{x}=\LL{x(\xi), y(\xi), z(\xi)}$.
-\begin{table}[ht]\centering\small
-\begin{tabular}{cc}
-\includegraphics[width=60mm]{Elt1D-ref.eps} &
-\includegraphics[width=40mm]{Elt1D-espace.eps} \\
-Élément de référence & Segment réel (3D)
-\end{tabular}
-\end{table}
+\begin{figure}[ht]\centering\small
+   \subfloat[Élément de référence]{\includegraphics[width=60mm]{Elt1D-ref.eps}} \hspace{5em}
+   \subfloat[Segment réel (3D)]{\includegraphics[width=40mm]{Elt1D-espace.eps}}
+   \caption{Correspondance entre élément de référence et géométrie réelle}\label{fig-e1rr}
+\end{figure}
 \ifVersionDuDocEstVincent
 
 \medskipvm\fi
@@ -188,10 +186,9 @@ Il est possible, comme aux paragraphes précédents, de proposer une transformat
 entre un élément de référence de longeur 2 et un élément réel infini, transformation illustrée sur la figure~\ref{fig:ex2:trans}.
 \begin{figure}[ht]\centering
 \begin{tabular}{cc}
-\includegraphics[width=65mm]{Elt1D-ref.eps} &
-\includegraphics[width=65mm]{Elt1D-infty.eps} \\
-Élément de référence & Élément réel (infini)
-\end{tabular}\caption{Transformation}\label{fig:ex2:trans}
+\subfloat[Élément de référence]{\includegraphics[width=65mm]{Elt1D-ref.eps}} \hspace{5em}
+\subfloat[Élément réel (infini)]{\includegraphics[width=65mm]{Elt1D-infty.eps}}
+\end{tabular}\caption{Correspondance entre l'élément de référence et l'élément réel infini}\label{fig:ex2:trans}
 \end{figure}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -217,12 +214,13 @@ On aura également:
 \else
   \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
 \fi
-On considère la barre donnée ci-dessous, de section~$A$, de longueur~$L$, et constituée 
+On considère la barre de la figure~\ref{fig-barre}, de section~$A$, de longueur~$L$, et constituée 
 d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{module d'Young} 
 $E$ et densité~$\rho$ et soumise uniquement à son poids propre.\\
 \begin{figure}[ht]
 \centering
 \includegraphics[width=40mm]{Elt1D-barre.eps}
+\caption{Barre encastrée-libre}\label{fig-barre}
 \end{figure}
 On souhaite discrétiser ce problème à l'aide d'un éléments unidimensionnels linéaires
 tel que présenté au paragraphe~\ref{Sec-Elt1D2}.
@@ -272,9 +270,10 @@ Elle est constante sur l'élément. Quant à la contrainte, elle est obtenue par
   \subsection{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
 \fi
 Poursuivons le cas de la poutre du paragraphe précédent, mais considérons une discrétisation
-de la barre à l'aide de trois éléments:
+de la barre à l'aide de trois éléments, comme montré sur la figure~\ref{fig-ex2ass}
 \begin{figure}[ht]\centering
 \includegraphics[width=60mm]{Elt1D-ass.eps}
+\caption{Discrétisation de la barre en trois éléments}\label{fig-ex2ass}
 \end{figure}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
@@ -327,14 +326,12 @@ est généralement faite.
   \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini!d'Hermite}
 \fi
 En restant encore sur notre élément linéaire unidimensionnel, nous allons voir comment ajouter des
-contraintes sur les dérivées aux nœuds:
-\begin{table}[ht]\centering
-\begin{tabular}{cc}
-\includegraphics[width=60mm]{Elt1D-ref.eps} &
-\includegraphics[width=60mm]{Elt1D-hermite.eps} \\
-Élément de référence & Segment réel (2 nœuds, 4ddl)
-\end{tabular}
-\end{table}
+contraintes sur les dérivées aux nœuds, comme illustré à la figure~\ref{fig-ex2Her}.
+\begin{figure}[ht]\centering
+\subfloat[Élément de référence]{\includegraphics[width=60mm]{Elt1D-ref.eps}} \hspace{5em}
+\subfloat[Segment réel (2 nœuds, 4ddl)]{\includegraphics[width=60mm]{Elt1D-hermite.eps}}
+\caption{Élément de barre unidimensionnel de type Hermite}\label{fig-ex2Her}
+\end{figure}
 \medskipvm
 La géométrie est encore une fois approximée par:
 \begin{equation} x=\frac{1-\xi}2 x_1 + \frac{1+\xi}2 x_2, \quad \xi\in[-1;1] \end{equation}
@@ -374,15 +371,12 @@ donnée par:
 Continuons avec notre élément de référence linéaire unidimensionnel. Cette fois-ci nous souhaitons
 le mettre en relation avec un segment réel dont les inconnues nodales sont les déplacements
 $u_1$ et~$u_2$, mais qui possède en plus une approximation constante de la contrainte
-par élément:
-\begin{table}[ht]
-\centering
-\begin{tabular}{cc}
-\includegraphics[width=60mm]{Elt1D-ref.eps} &
-\includegraphics[width=60mm]{Elt1D-mixte.eps} \\
-Élément de référence & Élément réel
-\end{tabular}
-\end{table}
+par élément, comme montré sur la figure~\ref{fig-ex2mixte}.
+\begin{figure}[ht]\centering
+\subfloat[Élément de référence]{\includegraphics[width=60mm]{Elt1D-ref.eps}} \hspace{5 em}
+\subfloat[Élément réel]{\includegraphics[width=60mm]{Elt1D-mixte.eps}}
+\caption{Élément mixte unidimensionnel}\label{fig-ex2mixte}
+\end{figure}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
 Nous cherchons donc une approximation~$C^0$ du déplacement et~$C^{-1}$ de la

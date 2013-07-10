@@ -1111,45 +1111,46 @@ exemple le caoutchouc.\index{loi de comportement!incompressible}
 Nous verrons que selon les formulations il est plus ou moins aisé de prendre en compte
 ces matériaux. De plus, la littérature ne manque pas sur le sujet.
 
-\medskip\colorgreen\noindent
-\ifVersionDuDocEstVincent\begin{tabular}{p{3cm}p{136mm}}\else\begin{tabular}{p{3cm}p{113mm}}\fi
-\raisebox{-16mm}{\includegraphics[width=3cm]{mtx_poisson.eps}} &
+\medskip
+\begin{wrapfigure}{l}{60mm}
+  \centering
+  \subfloat[Matériau compressible]{\includegraphics[width=28mm]{mtx_poisson.eps}} \hfill
+  \subfloat[Matériau incompressible]{\includegraphics[width=28mm]{mtx_incompressible}}
+  \caption{Déformation et coefficient de Poisson}
+\end{wrapfigure}
+\colorgreen
 La signification physique du coefficent de Poisson est simple:
 $2\nu$ traduit le pourcentage de déformation dans le sens transverse
 à l'effort. En restant dans le cas plan, quand on fait subit à une pièce un effort de 
 compression telle qu'elle subit une déformation (de compression) de 1, alors elle 
-s'élargit de~$2\nu$ dans la direction transverse ($\nu$ de chaque côté par symétrie).\\
-\raisebox{-16mm}{\includegraphics[width=3cm]{mtx_incompressible}} &
+s'élargit de~$2\nu$ dans la direction transverse ($\nu$ de chaque côté par symétrie).
+
 Ainsi, il devient évident qu'un matériau incompressible\index{loi de comportement!incompressible}
 est caractérisé par~$2\nu=1$,
 i.e. lorsqu'il perd un volume~$1$ selon une direction, il reprend un volume~$1$ dans
 la direction transverse: en d'autres termes, il ne varie pas de volume, il est donc
 incompressible [ce qui ne veut pas dire <<~incomprimable~>> !].
-\end{tabular}
 
-\medskip\noindent
-\ifVersionDuDocEstVincent\begin{tabular}{p{115mm}p{45mm}}\else\begin{tabular}{p{93mm}p{45mm}}\fi
+\medskip
 Attention, cette signification physique du coefficient de Poisson n'est exacte que dans le cas 
 de matériaux non seulement isotropes mais pleins.
 Pour un assemblage de matériaux ou de géométries, cette relation est mise en
 défaut.
 
+\begin{wrapfigure}{r}{108mm}
+  \centering
+  \subfloat[Matériau composite]{\includegraphics[width=50mm]{mtx-comp2.eps}\label{fig-comp}} \hfill
+  \subfloat[Matériau auxétique]{\includegraphics[width=55mm]{mtx_auxetique.eps}\label{fig-aux}}
+  \caption{Cas d'un coefficient de Poisson <<~non standard~>>}
+\end{wrapfigure}
 Par exemple, la rigidité globale d'un assemblage de couches de composites
-renforcés de fibres peut conduire, selon les orientations des plis, à un coefficient
-de Poisson supérieur à 1 sans problème.&
-\raisebox{-27mm}{\includegraphics[width=50mm]{mtx-comp2.eps}} \\
-\end{tabular}
+renforcés de fibres, comme montré à la figure~\ref{fig-comp} peut conduire, selon les orientations des plis, à un coefficient
+de Poisson supérieur à 1.
 
-\medskip\noindent
-\ifVersionDuDocEstVincent\begin{tabular}{p{55mm}p{111mm}}\else\begin{tabular}{p{55mm}p{88mm}}\fi
-\raisebox{-25mm}{\includegraphics[width=55mm]{mtx_auxetique.eps}} &
 Si l'on considère un matériau constitué d'alvéoles (de type hexagonal), mais dont
-les pointes sont rentrantes et non sortantes, alors le coefficient de Poisson macroscopique 
+les pointes sont rentrantes et non sortantes (figure~\ref{fig-aux}), alors le coefficient de Poisson macroscopique 
 de ce matériau est négatif (quand on le comprime, il ne gonfle pas mais rétrécit).
-
-\medskip
 On parle alors d'un matériau auxétique.\index{loi de comportement!auxétique}
-\end{tabular}
 \colorblack
 
 \medskip
