@@ -68,6 +68,7 @@
   \usepackage{eso-pic}
   \pagestyle{fancy}
   \usepackage{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
+  \usepackage{idxlayout}
   \makeindex[program=texindy,columns=2,title=Index des concepts,options=-L french -M mystyle.xdy]
   \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres,options=-L french -M mystyle.xdy]
   \usepackage{csquotes}      % utilisé par biblatex
@@ -496,11 +497,7 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
   \printindex[aut]
   \printindex
 \endgroup
-  % \cite{*}
-  % \chapter*{Références bibliographiques}
-%%%%%%\index[aut]{Joly (Patrick), ?- , Français}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
-
-  % \printbibliography[heading=bibempty]
-% \fi
-
+\nocite{*}
+\chapter{Références bibliographiques}
+\printbibliography[heading=bibempty]
 \end{document}
