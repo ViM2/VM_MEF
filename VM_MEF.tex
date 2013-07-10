@@ -27,6 +27,8 @@
   \usepackage{cutwin,fancyvrb,titletoc}
   \usepackage[framemethod=tikz]{mdframed}
   \usepackage[frenchb]{babel}
+  \addto\captionsfrench{\def\figurename{Figure}}
+  \addto\captionsfrench{\def\tablename{Tableau}}
   \frenchbsetup{IndentFirst=false}
 %
 \ifVersionDuDocEstVincent
@@ -97,6 +99,37 @@
 % Gauß
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% majuscules droites en typographie française
+\DeclareSymbolFont{mymathvariables}{T1}{ptm}{m}{n}
+\DeclareSymbolFontAlphabet{\mathnormal}{mymathvariables}
+\DeclareMathSymbol{A}{\mathalpha}{mymathvariables}{`A}
+\DeclareMathSymbol{B}{\mathalpha}{mymathvariables}{`B}
+\DeclareMathSymbol{C}{\mathalpha}{mymathvariables}{`C}
+\DeclareMathSymbol{D}{\mathalpha}{mymathvariables}{`D}
+\DeclareMathSymbol{E}{\mathalpha}{mymathvariables}{`E}
+\DeclareMathSymbol{F}{\mathalpha}{mymathvariables}{`F}
+\DeclareMathSymbol{G}{\mathalpha}{mymathvariables}{`G}
+\DeclareMathSymbol{H}{\mathalpha}{mymathvariables}{`H}
+\DeclareMathSymbol{I}{\mathalpha}{mymathvariables}{`I}
+\DeclareMathSymbol{J}{\mathalpha}{mymathvariables}{`J}
+\DeclareMathSymbol{K}{\mathalpha}{mymathvariables}{`K}
+\DeclareMathSymbol{L}{\mathalpha}{mymathvariables}{`L}
+\DeclareMathSymbol{M}{\mathalpha}{mymathvariables}{`M}
+\DeclareMathSymbol{N}{\mathalpha}{mymathvariables}{`N}
+\DeclareMathSymbol{O}{\mathalpha}{mymathvariables}{`O}
+\DeclareMathSymbol{P}{\mathalpha}{mymathvariables}{`P}
+\DeclareMathSymbol{Q}{\mathalpha}{mymathvariables}{`Q}
+\DeclareMathSymbol{R}{\mathalpha}{mymathvariables}{`R}
+\DeclareMathSymbol{S}{\mathalpha}{mymathvariables}{`S}
+\DeclareMathSymbol{T}{\mathalpha}{mymathvariables}{`T}
+\DeclareMathSymbol{U}{\mathalpha}{mymathvariables}{`U}
+\DeclareMathSymbol{V}{\mathalpha}{mymathvariables}{`V}
+\DeclareMathSymbol{W}{\mathalpha}{mymathvariables}{`W}
+\DeclareMathSymbol{X}{\mathalpha}{mymathvariables}{`X}
+\DeclareMathSymbol{Y}{\mathalpha}{mymathvariables}{`Y}
+\DeclareMathSymbol{Z}{\mathalpha}{mymathvariables}{`Z}
+
+
 \begin{document}
 
 % Recto de la page de titre
@@ -115,8 +148,8 @@
 %
   \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
   \setlength{\belowdisplayskip}{\abovedisplayskip}
-  \setlength{\abovecaptionskip}{3pt}
-  \setlength{\belowcaptionskip}{0pt}
+  %\setlength{\abovecaptionskip}{3pt}
+  %\setlength{\belowcaptionskip}{0pt}
   \title
 \fi
 % Verso de la page de titre

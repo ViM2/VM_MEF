@@ -1,7 +1,7 @@
 \chapter{Intégration numérique}\label{chap-quadrature} 
 La méthode des éléments finis conduit à la discrétisation d'une formulation faible où la construction des matrices constitutives du système à résoudre nécessitent le calcul d'intégrales. Dans certains cas particuliers, ou en utilisant des codes de calcul formel, ces intégrations peuvent être réalisées de manière exacte. Cependant, dans la plupart des cas et dans la plupart des codes de calcul, ces intégrations sont calculées numériquement. On parle alors de méthodes d'intégration numérique et de formules de quadrature. 
 %%%%----------------------------------------------------------
-\section{Méthodes de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!méthode!de Newton-Cotes}
+\section{Méthodes de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!Newton-Cotes}
 %%%%----------------------------------------------------------
 Soit à calculer l'intégrale suivante: 
 \begin{equation}
@@ -9,7 +9,7 @@ I=\int_a^b f(x)\dd x
 \end{equation}
 L'idée consiste à construire un polynôme pour interpoler~$f(x)$ et à intégrer ce polynôme. Plusieurs types de polynômes peuvent être utilisés pour cette interpolation. Les principales méthodes d'interpolations sont détaillées au chapitre~\ref{chap-interpolation}. 
 %%%%----------------------------------------------------------
-\subsection{Méthode des rectangles}\index{intégration!méthode!des rectangles}
+\subsection{Méthode des rectangles}\index{intégration!rectangles}
 %%%%----------------------------------------------------------
 La \textcolorblue{méthode des rectangles} consiste à interpoler~$f(x)$ par un polynôme de degré~$0$, i.e. par la constante valant, selon les variantes de la méthode, soit~$f(a)$, soit~$f((a+b)/2)$. Comme cette approximation est très brutale, il est possible de subsiviser l'intervalle~$\intff{a}{b}$ en plusieurs intervalles et d'appliquer la méthode sur chacun des intervalles, i.e. d'approcher~$f$ par une fonction en escalier. Si l'on subsivise l'intervalle~$\intff{a}{b}$ en~$n$ intervalles égaux, il vient alors: 
 \begin{equation}
@@ -17,7 +17,7 @@ I\approx h\sum_{i=0}^{n-1} f(x_i)
 \end{equation}
 où~$h=(b-a)/n$ est la longueur de chaque sous intervalle et~$x_i=a+ih$ le point courant. 
 %%%%----------------------------------------------------------
-\subsection{Méthode des trapèzes}\index{intégration!méthode!des trapèzes} 
+\subsection{Méthode des trapèzes}\index{intégration!trapèzes} 
 %%%%----------------------------------------------------------
 La \textcolorblue{méthode des trapèzes} consiste à interpoler~$f(x)$ par un polynôme de degré~$1$, i.e. par la droite passant par les points~$(a,f(a))$ et~$(b,f(b))$. On obtient alors: 
 \begin{equation}
@@ -33,11 +33,11 @@ où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le point c
 \begin{remarque}[Remarques]\mbox{}
 \begin{itemize}
 \item la \textcolorblue{méthode de Romberg} permet d'accélérer la convergence de la méthode des trapèzes;
-\item la méthode des trapèzes est une méthode de Newton-Cotes pour~$n=1$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!méthode!de Newton-Cotes} 
+\item la méthode des trapèzes est une méthode de Newton-Cotes pour~$n=1$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!Newton-Cotes} 
 \end{itemize}
 \end{remarque} 
 %%%%----------------------------------------------------------
-\subsection{Méthode de Simpson}\index{intégration!méthode!de Simpson}\index[aut]{Simpson (Thomas), 1710-1761, Anglais} 
+\subsection{Méthode de Simpson}\index{intégration!Simpson}\index[aut]{Simpson (Thomas), 1710-1761, Anglais} 
 %%%%----------------------------------------------------------
 La \textcolorblue{méthode de Simpson} consiste à interpoler~$f(x)$ par un polynôme de degré~$2$, i.e. par la parabole passant par les points extrêmes~$(a,f(a))$ et~$(b,f(b))$ et le point milieu~$(c,f(c))$ avec~$c=(a+b)/2$. On obtient alors: 
 \begin{equation}
@@ -53,11 +53,11 @@ où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le point c
 \begin{remarque}[Remarques]\mbox{}
 \begin{itemize}
 \item la parabole interpolant~$f$ est trouvée en utilisant l'interpolation de Lagrange;\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} 
-\item la méthode de Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} est un cas particulier de celle de Newton-Cotes pour~$n=2$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!méthode!de Newton-Cotes} 
+\item la méthode de Simpson\index[aut]{Simpson (Thomas), 1710-1761, Anglais} est un cas particulier de celle de Newton-Cotes pour~$n=2$.\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!Newton-Cotes} 
 \end{itemize}
 \end{remarque}
 %%%%----------------------------------------------------------
-\subsection*{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!méthode!de Newton-Cotes} 
+\subsection*{Méthode de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!Newton-Cotes} 
 %%%%----------------------------------------------------------
 Les \textcolorblue{formules de Newton-Cotes} se proposent également d'approximer l'intégrale~$I$ et découpant l'intervalle~$\intff{a}{b}$ en~$n$ intervalles identiques. On posera donc encore une fois~$h=(b-a)/n$ la longueur de chaque sous intervalle, et~$x_i=a+ih$ le point courant. La formule est: 
 \begin{equation}
