@@ -130,6 +130,22 @@
 \DeclareMathSymbol{Y}{\mathalpha}{mymathvariables}{`Y}
 \DeclareMathSymbol{Z}{\mathalpha}{mymathvariables}{`Z}
 
+\makeatletter
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+    \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+	\phantomsection%
+    \addcontentsline{toc}{chapter}{\protect\color{ocre} Table des matières}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi}
+\makeatother
+
+
 
 \begin{document}
 
@@ -173,9 +189,9 @@ Ce document est sous licence Creative Commons 3.0 France:
 \newpage% 
 
 
-
+\phantomsection
 \chapter*{Introduction}
-%\addcontentsline{toc}{chapter}{Introduction}
+\addcontentsline{toc}{chapter}{\protect\color{ocre} Introduction}
 \markboth{Introduction}{}
 
 Dans ce (de moins en moins court) document, plutôt à destination d'ingénieurs
@@ -334,7 +350,8 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 %\colorblack
 %\medskip
 %\colorgris
-\tableofcontents%\markboth{Table des matières}{}
+\cleardoublepage
+\tableofcontents
 %\colorblack
 
 
@@ -346,7 +363,7 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
 
 % RIFF
 % Lattice-Boltzmann
-
+\cleardoublepage
 \part{Survol mathématique}
 \include{./tex/espaces}
 \include{./tex/Operat}
