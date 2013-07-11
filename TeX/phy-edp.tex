@@ -1135,22 +1135,44 @@ incompressible [ce qui ne veut pas dire <<~incomprimable~>> !].
 Attention, cette signification physique du coefficient de Poisson n'est exacte que dans le cas 
 de matériaux non seulement isotropes mais pleins.
 Pour un assemblage de matériaux ou de géométries, cette relation est mise en
-défaut.
+défaut, tout comme pour des matériaux orthotropes.
 
-\begin{wrapfigure}{r}{108mm}
+\medskip
+\begin{wrapfigure}{r}{60mm}
   \centering
-  \subfloat[Matériau composite]{\includegraphics[width=50mm]{mtx-comp2.eps}\label{fig-comp}} \hfill
-  \subfloat[Matériau auxétique]{\includegraphics[width=55mm]{mtx_auxetique.eps}\label{fig-aux}}
-  \caption{Cas d'un coefficient de Poisson <<~non standard~>>}
+  \includegraphics[width=55mm]{mtx_auxetique.eps}
+  \caption{Matériau auxétique}\label{fig-aux}
 \end{wrapfigure}
-Par exemple, la rigidité globale d'un assemblage de couches de composites
-renforcés de fibres, comme montré à la figure~\ref{fig-comp} peut conduire, selon les orientations des plis, à un coefficient
-de Poisson supérieur à 1.
-
 Si l'on considère un matériau constitué d'alvéoles (de type hexagonal), mais dont
 les pointes sont rentrantes et non sortantes (figure~\ref{fig-aux}), alors le coefficient de Poisson macroscopique 
-de ce matériau est négatif (quand on le comprime, il ne gonfle pas mais rétrécit).
+de ce matériau est négatif: quand on le comprime, il ne gonfle pas mais rétrécit.
+
 On parle alors d'un matériau auxétique.\index{loi de comportement!auxétique}
+
+On voit bien que dans un tel cas, la différence de comportement n'est due qu'à l'effet structurel, qu'à l'assemblage.
+Le matériau constituant les alvéoles lui, peut (et est) tout à fait conventionnel: on trouve ce genre de structures
+en carton, en aluminium et en acier, qui sont tous des matériaux homogènes isotropes.
+
+
+\medskip
+\begin{wrapfigure}{l}{70mm}
+  \centering
+  \includegraphics[width=70mm]{mtx-comp3.eps}
+  \caption{Matériau composite}\label{fig-comp}
+\end{wrapfigure}
+Par exemple, la rigidité globale d'un assemblage de couches de composites
+renforcés de fibres, comme montré à la figure~\ref{fig-comp} peut conduire, selon les orientations des plis, à des
+valeurs du coefficient de Poisson très variables, d'autant plus que celles-ci sont fonctions du repère dans lequel
+elles sont données (repère global, repère des fibres...)
+
+Un stratifié unidirectionnel T300 fibre de carbone/résine époxyde 934 a un coefficient de Poisson de seulement $\nu_{12}=0,04$.
+
+Un stratifié unidirectionnel T300 fibre de carbone/résine N5208 a un coefficient de Poisson de $\nu_{12}=0,3$ dans le sens des fibres,
+mais de $\nu_{12}=-0,77$ à 45\degres.
+
+En utilisant du verre ($E=69$~GPa, $\nu=0,25$) et de la résine époxyde ($E=3,5$~GPa, $\nu=0,4$), on peut réaliser
+un stratifié unidirectionnel verre-époxyde ayant pour propriétés $E_{ll}=45$~GPa, $E_{tt}=12$~GPa, $G_{lt}=4,5$~GPa, $\nu_{lt}=0,3$ pour une fraction volumique de verre de 60\%, et un stratifié [0/90] ayant pour propriétés $E_x=E_y=20$~GPa, $G_{xy}=2.85$~GPa et $\nu_{xy}=0.13$ pour une fraction volumique de verre de 50\%.
+
 \colorblack
 
 \medskip

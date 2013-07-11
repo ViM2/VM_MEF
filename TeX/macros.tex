@@ -319,6 +319,25 @@
 %
 % INDEX
 %
+\ifVersionDuDocEstVincent
+\makeatletter
+\renewenvironment{theindex}
+               {\if@twocolumn
+                  \@restonecolfalse
+                \else
+                  \@restonecoltrue
+                \fi
+                \twocolumn[\@makeschapterhead{\indexname}]%
+                \@mkboth{\MakeUppercase\indexname}%
+                        {\MakeUppercase\indexname}%
+                \thispagestyle{fancy}\parindent\z@
+                \parskip\z@ \@plus .3\p@\relax
+                \columnseprule \z@
+                \columnsep 35\p@
+                \let\item\@idxitem}
+               {\if@restonecol\onecolumn\else\clearpage\fi}
+\makeatother
+\else
 \makeatletter
 \renewenvironment{theindex}
                {\if@twocolumn
@@ -338,6 +357,7 @@
                 \let\item\@idxitem}
                {\if@restonecol\onecolumn\else\clearpage\fi}
 \makeatother
+\fi
 %--------------------------------------------------------------------------
 %
 % MACROS maths
