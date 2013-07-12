@@ -440,18 +440,18 @@ Les courbes de Bézier sont des courbes polynomiales paramétriques. \index[aut]
 
 Notons que les splines existaient avant Bézier\index[aut]{Bézier (Pierre), 1910-1999, Français}, mais leur défaut était de changer d'aspect lors d'une rotation de repère, ce qui les rendait inutilisables en CAO. Bézier partit d'une approche géométrique fondée sur la linéarité de l'espace euclidien et la théorie, déjà existante, du barycentre: si la définition est purement géométrique, aucun repère n'intervient puisque la construction en est indépendante. Les splines conformes aux principes de Bézier seront par la suite nommées B-splines.  
 
-Pour~$n+1$ \textcolorblue{points de contrôle}~$(\mathbf{P}_0, \dots, \mathbf{P}_n)$ on définit une \textcolorblue{courbe de Bézier} par l'ensemble des points:
+Pour~$n+1$ \textcolorblue{points de contrôle}~$(P_0, \dots, P_n)$ on définit une \textcolorblue{courbe de Bézier} par l'ensemble des points:
 \begin{equation}
-b(t)=\dsum_{i=0}^n B_i^n(t)\cdot\mathbf{P}_i\quad\text{ avec }\quad t \in\intff{0}{1}
+b(t)=\dsum_{i=0}^n B_i^n(t)\cdot P_i\quad\text{ avec }\quad t \in\intff{0}{1}
 \end{equation}
-où les~$B_i^n$ sont les polynômes de Bernstein. La suite des points~$\mathbf{P}_0,\ldots,\mathbf{P}_n$ forme le \textcolorblue{polygone de contrôle de Bézier}. 
+où les~$B_i^n$ sont les polynômes de Bernstein. La suite des points~$P_0, \ldots, P_n$ forme le \textcolorblue{polygone de contrôle de Bézier}. 
 
 Chaque point de la courbe peut être vu alors comme un barycentre des~$n+1$ points de contrôle pondérés d'un poids égal au polynôme de Bernstein.\index[aut]{Bernstein (Sergeï Natanovich), 1880-1968, Russe}\index{polynôme!de Bernstein} 
 Les principales propriétés des courbes de Bézier sont les suivantes:
 \begin{itemize}
 \item la courbe est à l'intérieur de l'enveloppe convexe des points de contrôle;\index[aut]{Bézier (Pierre), 1910-1999, Français} 
-\item la courbe commence par le point~$\mathbf{P}_0$ et se termine par le point~$\mathbf{P}_n$, mais ne passe pas \emph{a priori} par les autres points de contrôle;
-\item~$\mathbf{P_0P_1}$ est le vecteur tangent à la courbe en~$\mathbf{P}_0$ et~$\mathbf{P_{n-1}P_n}$ au point~$\mathbf{P}_n$;
+\item la courbe commence par le point~$P_0$ et se termine par le point~$P_n$, mais ne passe pas \emph{a priori} par les autres points de contrôle;
+\item~$\vect{P_0P_1}$ est le vecteur tangent à la courbe en~$P_0$ et~$\vect{P_{n-1}P_n}$ au point~$P_n$;
 \item une courbe de Bézier est~$C^{\infty}$;
 \item la courbe de Bézier est un segment si et seulement si les points de contrôle sont alignés;
 \item chaque restriction d'une courbe de Bézier est aussi une courbe de Bézier;
@@ -462,9 +462,9 @@ Les principales propriétés des courbes de Bézier sont les suivantes:
 %%%%----------------------------------------------------------
 \subsection{B-Spline}
 %%%%----------------------------------------------------------
-Une \textcolorblue{B-spline} est une combinaison linéaire de splines positives à support compact minimal. Les B-splines sont la généralisation des courbes de Bézier, elles peuvent être à leur tour généralisées par les NURBS.\index[aut]{Bézier (Pierre), 1910-1999, Français} Étant donné~$m+1$ points~$t_i$ dans~$\intff{0}{1}$ tels que~$0\le t_0\le t_1\le\ldots\le t_m\le 1$, une courbe spline de degré~$n$ est une courbe paramétrique~$\mathbf{S}:\intff{0}{1}\to\mathbb{R}^d$, composée de fonctions \textcolorblue{B-splines} de degré~$n$: 
+Une \textcolorblue{B-spline} est une combinaison linéaire de splines positives à support compact minimal. Les B-splines sont la généralisation des courbes de Bézier, elles peuvent être à leur tour généralisées par les NURBS.\index[aut]{Bézier (Pierre), 1910-1999, Français} Étant donné~$m+1$ points~$t_i$ dans~$\intff{0}{1}$ tels que~$0\le t_0\le t_1\le\ldots\le t_m\le 1$, une courbe spline de degré~$n$ est une courbe paramétrique~$S:\intff{0}{1}\to\mathbb{R}^d$, composée de fonctions \textcolorblue{B-splines} de degré~$n$: 
 \begin{equation}
-\mathbf{S}(t)=\sum_{i=0}^{m-n-1}b_{i,n}(t)\cdot\mathbf{P}_{i},\quad t \in \intff{0}{1}
+S(t)=\sum_{i=0}^{m-n-1}b_{i,n}(t)\cdot P_{i},\quad t \in \intff{0}{1}
 \end{equation}
 où les~$P_i$ forment un polygone appelé \textcolorblue{polygone de contrôle}. Le nombre de points composant ce polygone est égal à~$m-n$. Les~$m-n$ fonctions B-splines de degré~$n$ sont définies par récurrence sur le degré inférieur: 
 \begin{align}

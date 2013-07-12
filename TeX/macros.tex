@@ -253,8 +253,7 @@
                    \@makeschapterhead{#1}%
                    \@afterheading
                  \fi
-% ajout
-   %\addcontentsline{toc}{chapter}{\color{ocre} #1}
+   \ifVersionDuDocEstVincent\addcontentsline{toc}{chapter}{\color{ocre} #1}\fi
    \CeChapitreEstEtoiletrue
 }
 \makeatother
@@ -498,6 +497,17 @@
 %
 % MACROS MATHEMATIQUES
 %
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\gradb}{\mathbf{grad}}
+\DeclareMathOperator{\rotb}{\mathbf{rot}}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\vectt}{vect}
+\DeclareMathOperator{\trace}{tr}
+%
 \ifVersionDuDocEstVincent
    \makeatletter
    \newcommand\MM@star[1]{\begin{bmatrix}#1\end{bmatrix}}
@@ -523,6 +533,34 @@
    \newcommand{\vect}[1]{\overrightarrow{#1}}%
    \providecommand{\LLP}[1]{\langle #1\rangle}%   Angle bracket <>
 \else
+   \DeclareSymbolFont{mymathvariables}{T1}{ptm}{m}{n}
+   \DeclareSymbolFontAlphabet{\mathnormal}{mymathvariables}
+   \DeclareMathSymbol{A}{\mathalpha}{mymathvariables}{`A}
+   \DeclareMathSymbol{B}{\mathalpha}{mymathvariables}{`B}
+   \DeclareMathSymbol{C}{\mathalpha}{mymathvariables}{`C}
+   \DeclareMathSymbol{D}{\mathalpha}{mymathvariables}{`D}
+   \DeclareMathSymbol{E}{\mathalpha}{mymathvariables}{`E}
+   \DeclareMathSymbol{F}{\mathalpha}{mymathvariables}{`F}
+   \DeclareMathSymbol{G}{\mathalpha}{mymathvariables}{`G}
+   \DeclareMathSymbol{H}{\mathalpha}{mymathvariables}{`H}
+   \DeclareMathSymbol{I}{\mathalpha}{mymathvariables}{`I}
+   \DeclareMathSymbol{J}{\mathalpha}{mymathvariables}{`J}
+   \DeclareMathSymbol{K}{\mathalpha}{mymathvariables}{`K}
+   \DeclareMathSymbol{L}{\mathalpha}{mymathvariables}{`L}
+   \DeclareMathSymbol{M}{\mathalpha}{mymathvariables}{`M}
+   \DeclareMathSymbol{N}{\mathalpha}{mymathvariables}{`N}
+   \DeclareMathSymbol{O}{\mathalpha}{mymathvariables}{`O}
+   \DeclareMathSymbol{P}{\mathalpha}{mymathvariables}{`P}
+   \DeclareMathSymbol{Q}{\mathalpha}{mymathvariables}{`Q}
+   \DeclareMathSymbol{R}{\mathalpha}{mymathvariables}{`R}
+   \DeclareMathSymbol{S}{\mathalpha}{mymathvariables}{`S}
+   \DeclareMathSymbol{T}{\mathalpha}{mymathvariables}{`T}
+   \DeclareMathSymbol{U}{\mathalpha}{mymathvariables}{`U}
+   \DeclareMathSymbol{V}{\mathalpha}{mymathvariables}{`V}
+   \DeclareMathSymbol{W}{\mathalpha}{mymathvariables}{`W}
+   \DeclareMathSymbol{X}{\mathalpha}{mymathvariables}{`X}
+   \DeclareMathSymbol{Y}{\mathalpha}{mymathvariables}{`Y}
+   \DeclareMathSymbol{Z}{\mathalpha}{mymathvariables}{`Z}
    \makeatletter
    \newcommand\MM@star[1]{\begin{bmatrix}#1\end{bmatrix}}
    \newcommand\MM@nostar[1]{\mathbf{#1}}
@@ -573,7 +611,6 @@
    \newcommand{\textbff}[1]{\textbf{#1}}
 \else
    \newcommand{\textcolorblack}[1]{{\#1}}
-   %\newcommand{\textcolorgreen}[1]{\emph{#1}}
    \newcommand{\textcolorgreen}[1]{#1}
    \newcommand{\textcolorred}[1]{#1}
    \newcommand{\textcolorblue}[1]{#1}
@@ -590,20 +627,27 @@
    \renewcommand{\bigskip}{}
 \fi
 %
-\renewcommand{\le}{\leqslant}
-\renewcommand{\ge}{\geqslant}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\dive}{div}
-\DeclareMathOperator{\gradb}{\mathbf{grad}}
-\DeclareMathOperator{\rotb}{\mathbf{rot}}
-\DeclareMathOperator{\rot}{rot}
-\DeclareMathOperator{\vectt}{vect}
-\DeclareMathOperator{\trace}{tr}
-%
+% Quelques compléments de mise en page
 \newcommand{\medskipvm}{\ifVersionDuDocEstVincent
 
 \medskip\fi}
 \newcommand{\bigskipvm}{\ifVersionDuDocEstVincent
 
 \bigskip\fi}
+
+\ifVersionDuDocEstVincent\else
+\makeatletter
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+    \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+	\phantomsection%
+    \addcontentsline{toc}{chapter}{\protect\color{ocre} Table des matières}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi}
+\makeatother
+\fi

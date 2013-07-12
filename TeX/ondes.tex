@@ -602,7 +602,7 @@ Mais tout d'abord, commençons par présenter succinctement quelques méthodes d
 pas si aisé que cela, et peut s'avérer coûteux selon les méthodes et le nombre de modes calculés.
 
 \medskip
-\newpage
+%\newpage% Pour version livre du 20130712
 \subsubsection{Quotient de Rayleigh}\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}\index{quotient de Rayleigh}
 
 \begin{definition}[Matrice hermitienne]
@@ -655,7 +655,11 @@ On utilise l'algorithme suivant:
 	  \item si~$|\VV{x}_{i+1}-\VV{x}_i|<\varepsilon$, alors aller au point 4;
 	  \item sinon retourner au point 1 pour choisir un nouveau vecteur;
 	\end{itemize}
-  \item~$\VV{\varphi}=\VV{x}_{i+1}$ et~$\omega^2=\dfrac{\langle \boldsymbol{\Phi}, \MM{K}\boldsymbol{\Phi}\rangle}{\langle \boldsymbol{\Phi}, \MM{M}\boldsymbol{\Phi}\rangle}$
+   \ifVersionDuDocEstVincent
+      \item~$\VV{\varphi}=\VV{x}_{i+1}$ et~$\omega^2=\dfrac{\langle \VV{\Phi}, \MM{K}\VV{\Phi}\rangle}{\langle \VV{\Phi}, \MM{M}\VV{\Phi}\rangle}$
+   \else
+     \item~$\VV{\varphi}=\VV{x}_{i+1}$ et~$\omega^2=\dfrac{\langle \boldsymbol{\Phi}, \MM{K}\boldsymbol{\Phi}\rangle}{\langle \boldsymbol{\Phi}, \MM{M}\boldsymbol{\Phi}\rangle}$
+   \fi
 \end{enumerate}
 \textcolorblue{Ce processus converge vers le mode propre fondamental.}
 %%%%%%%%%%%%%%%%%
@@ -709,6 +713,7 @@ La base de réduction se compose de deux types de modes.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%
 \medskipvm
+\newpage% pour version cours 20130712
 \textcolorred{Inconvénients de la méthode:}
 \begin{itemize}
   \item cette méthode n'est pas celle qui permet d'obtenir la meilleure réduction du système et peut donc s'avérer coûteuse en temps de calcul.
