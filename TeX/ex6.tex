@@ -1,13 +1,4 @@
-\ifVersionAvecExemplesSepares
-  \chapter{[\freefem] Sur le chapitre~\ref{Ch-temps}: un calcul de propagation}
-
-  Dans la mesure où ce document est le support <<~théorique~>> à un cours
-  où les exemples sont abordés en cessions, nous n'avons pas souhaité alourdir
-  ce document de nombreux exemples.
-\else
-  \section{Exemple: un calcul de propagation avec \freefem}
-\fi
-
+\section{Exemple: un calcul de propagation avec \freefem}
 
 \medskip
 Quelque soit le logiciel utilisé\footnote{%
@@ -28,7 +19,7 @@ correspondant à un calcul réalisé sous \freefem.
 Ce logiciel gratuit vous permettra de faire vos calculs EF... mais c'est également un outil 
 pédagogique sans équivalent: sa manipulation se fait en des termes proches de la
 formulation mathématique, et en cela, il est une passerelle parfaite entre la théorie
-et la pratique de codes plus <<~industriels~>>.
+et la pratique de codes plus «industriels».
 
 Le fait de pouvoir discrétiser à loisir une formulation variationnelle que l'on rentre
 soi-même est également un argument qui nous semble un vrai plus, même si
@@ -112,7 +103,7 @@ func real w0( real x, real y)
 
 \medskip
 Ensuite, nous définissons l'espace des éléments finis utilisés, et les variables appartenant à ces espaces.
-L'analogie avec la <<~formulation mathématique~>> saute au yeux... et c'est pourquoi cet outil
+L'analogie avec la «formulation mathématique» saute au yeux... et c'est pourquoi cet outil
 nous semble particulièrement intéressant sur le plan pédagogique.
 
 \color{gris}\scriptsize
@@ -130,9 +121,9 @@ Wh sxz, syz ;
 
 \medskip
 Il s'agit d'un exemple non stationnaire, nous allons donc faire une boucle sur le temps. 
-Dans \freefem, nous entrons directement la formulation variationnelle du problème sous forme <<~mathématique~>>... 
+Dans \freefem, nous entrons directement la formulation variationnelle du problème sous forme «mathématique»... 
 le lien entre pratique des éléments finis et théorie est beaucoup plus clair. 
-La boucle de temps est basée sur un schéma de Newmark implicite. Le temps <<~courant~>>
+La boucle de temps est basée sur un schéma de Newmark implicite. Le temps «courant»
 est le temps~$t+\Delta_t$ et le temps précédent est le temps~$t$ pour rester cohérent avec
 les notations du chapitre~\ref{Ch-temps}.
 

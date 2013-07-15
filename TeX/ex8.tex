@@ -1,15 +1,7 @@
-\ifVersionAvecExemplesSepares
-  \chapter{Sur les déplacements imposés}\label{Ch-DispLag}% et les multiplicateurs de Lagrange}
-\else
-  \section{Sur les déplacements imposés}\label{Ch-DispLag}% et les multiplicateurs de Lagrange}
-\fi
+\section{Sur les déplacements imposés}\label{Ch-DispLag}% et les multiplicateurs de Lagrange}
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Problème considéré}
-\else
-  \subsection{Problème considéré}
-\fi
+\subsection{Problème considéré}
 
 Nous repartons de l'élément de barre 1D défini au paragraphe~\ref{Sec-barre1D}.
 
@@ -57,11 +49,8 @@ On obtient alors un système de type~$\MM{K}\VV{q}=\VV{F}$ à résoudre, avec la
 (avec~$F'=\rho g L^2/(8E)$).
 
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Retour sur la résolution de systèmes linéaires}
-\else
-  \subsection{Retour sur la résolution de systèmes linéaires}
-\fi
+\subsection{Retour sur la résolution de systèmes linéaires}
+
 Soit à résoudre un système linéaire de type:
 \begin{equation}\label{Eq-lin} \MM{A}\VV{x}=\VV{b} \end{equation}
 Ce système peut être réécrit par blocs sous la forme:
@@ -105,11 +94,8 @@ qui peut être réécrit:
 \end{equation}
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Complément de Schur et déplacements imposés}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
-\else
-  \subsection{Complément de Schur et déplacements imposés}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
-\fi
+\subsection{Complément de Schur et déplacements imposés}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
+
 Nous cherchons toujours à résoudre notre système:
 \begin{equation}\MM{K}\VV{q}=\VV{f}\end{equation}
 
@@ -133,17 +119,13 @@ Ce système est \textcolorblue{réduit}, i.e. possède moins d'inconnues que le 
 modifier le chargement extérieur.
 
 Son inconvénient est qu'il est nécessaire d'effectuer un \textcolorred{tri explicite} au sein des ddl, ce qui a pour conséquence de 
-<<~remplir~>> le terme~$\MM{K_{12}}$, et par suite peut générer un surcoût de calcul lorsque le nombre de ddl bloqué
+«remplir» le terme~$\MM{K_{12}}$, et par suite peut générer un surcoût de calcul lorsque le nombre de ddl bloqué
 est grand.
 
 C'est ainsi que procède le code \abaqus pour imposer les déplacements.
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Multiplicateurs de Lagrange et déplacements imposés}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
-\else
-  \subsection{Multiplicateurs de Lagrange et déplacements imposés}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
-\fi
+\subsection{Multiplicateurs de Lagrange et déplacements imposés}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
 
 Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
 
@@ -187,11 +169,7 @@ de double multiplicateur}, qui est celle employée dans \castem:\index{multiplic
 \textcolorred{L'inconvénient reste l'augmentation de la taille du système lorsque l'on a de nombreux blocages.}
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Actions extérieures et déplacements imposés}
-\else
-  \subsection{Actions extérieures et déplacements imposés}
-\fi
+\subsection{Actions extérieures et déplacements imposés}
 
 L'interprétation physique des multiplicateurs de Lagrange conduit naturellement à une autre méthode:
 il est possible de considérer un déplacement imposé comme une action extérieure, par exemple comme
@@ -210,11 +188,8 @@ déplacements et au vecteur des forces généralisées sur les efforts duaux.
 trop grande, le système devient très mal conditionné, voire numériquement singulier.
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Retour sur notre exemple}
-\else
-  \subsection{Retour sur notre exemple}
-\fi
+\subsection{Retour sur notre exemple}
+
 Nous devons toujours résoudre:
 \begin{equation}
 \MM*{1 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1\\ 0&0&-1&1}
@@ -316,11 +291,8 @@ Dans tous les exemples présentés, nous avons résolu les systèmes à la main,
 problèmes numériques (notamment dans le dernier cas).
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Relations linéaires entre ddl}
-\else
-  \subsection{Relations linéaires entre ddl}
-\fi
+\subsection{Relations linéaires entre ddl}
+
 Cette situation se présente par exemple lors de la prise en compte de conditions de symétrie, de conditions aux limites périodiques... Il s'agit à chaque fois de conditions de type:
 \begin{equation}
 \MM{D}\VV{q} = \VV{u_d}
@@ -328,7 +300,7 @@ Cette situation se présente par exemple lors de la prise en compte de condition
 où~$\MM{D}$ n'est plus forcément booléenne.
 
 \medskip
-Nous alons l'appliquer ici, à titre d'exemple simple, au cas où la poutre considérée est maintenant constituée de deux poutres, que l'on va <<~coller~>> par une telle relation.
+Nous alons l'appliquer ici, à titre d'exemple simple, au cas où la poutre considérée est maintenant constituée de deux poutres, que l'on va «coller» par une telle relation.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=60mm]{Elt1D-ass2.eps}

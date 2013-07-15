@@ -1,8 +1,4 @@
-\ifVersionAvecExemplesSepares
-  \chapter{[\ansys] Implémentation d'un post-traitement}
-\else
-  \section{Exemple d'implémentation d'un post-traitement dans \ansys}
-\fi
+\section{Exemple d'implémentation d'un post-traitement dans \ansys}
 
 Dans ce chapitre, nous présentons un manière d'implémenter la méthode de Reiss local mentionnée aux
 paragraphes~\ref{Sec-PT} et~\ref{Sec-interf}.
@@ -20,18 +16,14 @@ démontrerons également qu'il est assez simple d'implémenter des fonctions dan
 
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Macro dans \ansys}
-\else
-  \subsection{Macro dans \ansys}
-\fi
+\subsection{Macro dans \ansys}
 
 Si un code ne dispose pas de la méthode que l'on souhaite utiliser, il est toujours possible de retraiter les
 résultats... toutefois, selon les codes, il est plus ou moins aisé d'implémenter des fonctions dans ledit code.
 
 \medskip
-\ansys est souvent qualifié de <<~code industriel~>>, ce qui pourrait laisser supposer qu'il n'a pas la même capacité
-à résoudre les problèmes que des codes dits <<~de recherche~>> ou <<~spécialisés~>>.
+\ansys est souvent qualifié de «code industriel», ce qui pourrait laisser supposer qu'il n'a pas la même capacité
+à résoudre les problèmes que des codes dits «de recherche» ou «spécialisés».
 Or il n'en est rien (même si en toute rigueur, il y a une quinzaine d'années il était plus faible que d'autres sur
 les non linéarités, ce qui n'est plus vrai depuis longtemps).
 
@@ -52,7 +44,7 @@ Pour implémenter une nouvelle fonction dans \ansys, plusieurs méthodes s'offre
 	il faut décortiquer les formats d'écriture desdits fichiers, les relire, réécrire dans le même format...
 	et c'est donc beaucoup de travail (purement informatique);
   \item programmer la fonction directement sous \ansys (\ansys possède un langage assez riche et puissant);
-  \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en <<~coopération~>> avec un
+  \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en «coopération» avec un
 	petit programme extérieur.
 \end{itemize}
 
@@ -308,18 +300,14 @@ macros \ansys.
 
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Poutre en U}
-\else
-  \subsection{Poutre en U}
-\fi
+\subsection{Poutre en U}
 
 \begin{figure}[ht]
   \includegraphics[height=80mm]{U-geo.eps} \hfill
   \includegraphics[height=80mm]{U-mesh1.eps}\hfill
   \includegraphics[height=80mm]{U-mesh2.eps}
   \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le calcul (test de la méthode Reissner local,
-c) maillage permettant d'obtenir la <<~solution de référence~>> puisqu'il n'y a pas de solution analytique}
+c) maillage permettant d'obtenir la «solution de référence» puisqu'il n'y a pas de solution analytique}
 \end{figure}
 
 Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en~$U$.
@@ -572,12 +560,7 @@ et voir ce qui se passe aux interfaces...
 
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Résultats}
-\else
-  \subsection{Résultats}
-\fi
-
+\subsection{Résultats}
 
 Dans les listings ci-dessus, nous n'avons pas exposé comme atteindre les contraintes, car cela sera fait en TP.
 

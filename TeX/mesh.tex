@@ -1,8 +1,7 @@
 \chapter{Le maillage}\label{Ch-mesh}
 \begin{abstract}
-Le lecteur peut trouver que ce chapitre traitant du maillage arrive un peu tard.
-Cela a été fait très volontairement. En effet, les techniques de construction d'un maillage ne sont pas communes
-avec celles relatives aux éléments eux-mêmes.
+À ce niveau du document, on peut considérer que la méthode des éléments finis a été présentée, au moins en ce qui concerne les aspects les plus classiques (et même un peu plus).
+Nous avons décidé, avant d'entrer dans le détail de «subtilités» liées au comportement des matériaux et à la non-stationnarité, d'insérer ici un petit chapitre sur le maillage, dont les techniques de construction n'ont rien de commun avec celles relatives aux éléments eux-mêmes.
 De plus, nous nous restreindrons aux maillages de type Voronoï\index[aut]{Voronoï (Gueorgui Feodossievitch), 1868-1908, Russe}-Delaunay.\index[aut]{Delaunay (Boris Nikolaïevitch), 1890-1980, Russe}
 \end{abstract}
 
@@ -12,8 +11,8 @@ De plus, nous nous restreindrons aux maillages de type Voronoï\index[aut]{Voron
 L'opération de maillage consiste à discrétiser un domaine (i.e. un milieu continu ou plutôt sa modélisation géométrique) par des éléments 
 (éléments finis nous concernant), si possible bien proportionnés: 
 au paragraphe \ref{Sec-mesh-carac}, nous avons déjà présenté les dimensions géométriques représentatives d'un maillage que sont 
-le diamètre maximum des éléments $h$\index{élément fini!diamètre d'un} et le facteur de forme du maillage\index{facteur de forme du maillage} 
-$\sigma$, ainsi que le diamètre $h_K$ d'un élément $K$\index{élément fini!diamètre d'un} et sa rondeur $\rho_K$\index{rondeur d'un élément fini}.
+le diamètre maximum des éléments $h$\index{diamètre d'un élément fini} et le facteur de forme du maillage\index{facteur de forme du maillage} 
+$\sigma$, ainsi que le diamètre $h_K$ d'un élément $K$\index{diamètre d'un élément fini} et sa rondeur $\rho_K$\index{rondeur d'un élément fini}.
 Ces deux derniers paramètres sont représentés sur la figure \ref{h-rho}. 
 
 \medskip
@@ -49,5 +48,5 @@ Dans la suite nous aurons besoin des notions suivantes:
 
 \medskip
 \section{Maillage par projection}
-% projection d'un maillage sur une sphère... voir Oudot
+
 

@@ -5,7 +5,7 @@ d'équations différentielles ou plus certainement aux dérivées partielles.
 Une telle formulation est appelée \textcolorblue{formulation forte} du problème.
 
 Nous allons voir qu'il est possible d'exprimer ces ED ou EDP d'une manière
-<<~moins contraignante~>> pour les solutions recherchées.
+«moins contraignante» pour les solutions recherchées.
 Une telle formulation sera qualifiée de formulation faible, et ses
 solutions appelées solutions faibles.
 
@@ -33,7 +33,7 @@ On va donc essayer de donner un sens plus faible à la notion de solution, sans 
 possible les notions les plus naturelles. Donner un sens faible à une équation aux dérivées partielles signifie:
 \begin{enumerate}
   \item Chercher une solution dans un espace de régularité plus faible que souhaité;
-  \item Établir, en général à l'aide de fonction tests et d'intégrations par parties <<~formelles~>>,
+  \item Établir, en général à l'aide de fonction tests et d'intégrations par parties «formelles»,
 	une série d'équations que doit vérifier cette solution.
 	Cette série d'équations doit être construite (si possible) de telle sorte que les éventuelles
 	solutions régulières soient aussi solutions faibles et, a contrario, que des solutions faibles
@@ -81,8 +81,8 @@ fonctions tests.
 %<<diminuant l'ordre des dérivées>> (par une intégration par parties en général).
 
 %%%#%%%#\bigskip
-%L'idée est de <<~modifier~>> la formulation forte afin d'énoncer le même problème en
-%<<~diminuant l'ordre des dérivées~>> (par une intégration par parties en général).
+%L'idée est de «modifier» la formulation forte afin d'énoncer le même problème en
+%«diminuant l'ordre des dérivées» (par une intégration par parties en général).
 
 %Pour cela nous aurons recourt aux espaces de Hilbert et
 %de Sobolev présentés précédemment.
@@ -112,7 +112,7 @@ $\forall v$ définie sur~$\Omega$.
 
 
 \paragraph{Justification}
-Tout réside dans le fait de <<~multiplier par une fonction test et d'intégrer~>>.
+Tout réside dans le fait de «multiplier par une fonction test et d'intégrer».
 Pourquoi peut-on faire ça ?
 %Pourquoi les solutions aux deux problèmes sont-elles les mêmes ?
 
@@ -137,11 +137,11 @@ même espace fonctionnel...
 
 \medskip
 \colorgris
-Petit aparté sur d'autres manières de présenter <<~la chose~>>:
-en mécanique, on parle également du <<~principe du travail virtuel~>> (ou des puissances virtuelles),
-de <<~minimisation de l'énergie potentielle~>>, ou encore de <<~méthode des résidus pondérés~>>,
-Toutes ces méthodes sont <<~équivalentes~>> à celle exposée ici, mais souvent
-leur démonstration se fait uniquement <<~par les mains~>>, ce qui peut être
+Petit aparté sur d'autres manières de présenter «la chose»:
+en mécanique, on parle également du «principe du travail virtuel» (ou des puissances virtuelles),
+de «minimisation de l'énergie potentielle», ou encore de «méthode des résidus pondérés»,
+Toutes ces méthodes sont «équivalentes» à celle exposée ici, mais souvent
+leur démonstration se fait uniquement «par les mains», ce qui peut être
 frustrant.
 
 \medskip
@@ -184,8 +184,8 @@ et Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 en ce qui est connu actuellement sous le nom de principe de D'Alembert (1743).\index{principe! de d'Alembert}
 
 Le principe des puissances virtuelles est une synthèse de ces principes, ancrée dans un cadre
-beaucoup plus rigoureux et mathématique (on parle alors de <<~dualisation~>> et non plus de
-<<~perturbation~>> de l'équilibre ou du mouvement par un mouvement infinitésimal).
+beaucoup plus rigoureux et mathématique (on parle alors de «dualisation» et non plus de
+«perturbation» de l'équilibre ou du mouvement par un mouvement infinitésimal).
 }
 \end{histoire}
 
@@ -193,13 +193,13 @@ beaucoup plus rigoureux et mathématique (on parle alors de <<~dualisation~>> et
 \medskip
 \paragraph{Minimisation de l'énergie potentielle}\index{énergie potentielle}
 L'énergie potentielle d'un système physique est l'énergie liée à une interaction, qui a le
-<<~potentiel~>> de se transformer en énergie cinétique.
+«potentiel» de se transformer en énergie cinétique.
 
 Cette énergie est une fonction de ce système, dépendant des coordonnées d'espace,
 et éventuellement du temps, ayant la dimension d'une énergie et qui est associée à une
 force dite conservative dont l'expression s'en déduit par dérivation (ce qui veut dire au passage
 que dans les cas où toutes les forces ne sont pas conservatives, par exemple s'il y a
-du frottement, alors la méthode ne fonctionne pas et doit être <<~adaptée~>>.).
+du frottement, alors la méthode ne fonctionne pas et doit être «adaptée».).
 La différence entre les énergies potentielles associées à deux points de l'espace est
 égale à l'opposé du travail de la force concernée pour aller d'un point à l'autre, et ce
 quel que soit le chemin utilisé.
@@ -239,7 +239,7 @@ le cadre d'un espace de Hilbert.
 
 Il n'y a donc fondamentalement \textcolorred{pas de différence entre formulation faible et formulation
 variationnelle}, sauf que cette dernière appellation est généralement réservée à
-des cas <<~qui vont bien~>>... et de manière très pragmatique aux cas où
+des cas «qui vont bien»... et de manière très pragmatique aux cas où
 la formulation faible peut être transformée en un problème de minimisation:
 on dit alors qu'il existe une \textcolorblue{fonctionnelle}~$\Pi$ dont la
 \textcolorgreen{variation}~$\delta\Pi$ correspond au problème faible, d'où
@@ -377,8 +377,8 @@ par l'identité du parallélogramme.~$\square$
 
 
 \medskip
-\textcolorred{Ce théorème est l'un des fondements de la méthode des éléments finis} dits <<~classiques~>> ou <<~en déplacement~>>.
-Dans le cas d'éléments finis plus <<~exotiques~>> tels que les éléments
+\textcolorred{Ce théorème est l'un des fondements de la méthode des éléments finis} dits «classiques» ou «en déplacement».
+Dans le cas d'éléments finis plus «exotiques» tels que les éléments
 mixtes, hybrides, mixtes-hybrides et des multiplicateurs de Lagrange, on a besoin d'un peu plus... c'est ce que nous allons voir au paragraphe suivant.
 
 
@@ -398,7 +398,7 @@ $J: H\rightarrow\RR$ définie par~$J(v) = \frac12 a(v,v)-f(v)$ pour tout~$v$ de~
 
 
 \colorgreen
-Pour les problèmes issus de la mécanique des solides déformables, la quantité~$\frac12 a(v,v)$ représente l'énergie de déformation du solide associé à un <<~déplacement virtuel~>>~$v$, et~$f(v)$ l'énergie potentielle des forces extérieures appliquées au solide pour le même déplacement virtuel~$v$.
+Pour les problèmes issus de la mécanique des solides déformables, la quantité~$\frac12 a(v,v)$ représente l'énergie de déformation du solide associé à un «déplacement virtuel»~$v$, et~$f(v)$ l'énergie potentielle des forces extérieures appliquées au solide pour le même déplacement virtuel~$v$.
 \colorblack
 
 
@@ -620,9 +620,9 @@ de Babuška, nous avons traité le cas d'un problème décrit par un seul champ 
 Dans le paragraphe~\ref{Sec-ThBrezzi} sur le théorème de Brezzi, nous avons traité le cas d'un problème formulé
 avec deux champs inconnus (mais on pourrait l'étendre à autant de champs
 que nécessaire).
-Dans ce paragraphe, nous allons traiter un cas un peu <<~au milieu~>>: par exemple
+Dans ce paragraphe, nous allons traiter un cas un peu «au milieu»: par exemple
 deux domaines possédant chacun leur formulation, mais couplés. Il est donc
-nécessaire dans ce cas d'introduire une <<~équation de couplage~>> entre ces
+nécessaire dans ce cas d'introduire une «équation de couplage» entre ces
 formulations. C'est ce que l'on se propose de réaliser à l'aide des multiplicateurs
 de Lagrange.
 

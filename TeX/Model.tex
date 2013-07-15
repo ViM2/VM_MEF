@@ -37,7 +37,7 @@ outre ces travaux en mathématiques, pourrait sans conteste être
 considéré comme le saint patron de la mécanique. Il est tout au moins indubitablement
 le père de la mécanique statique.\\
 \indent
-Il s'intéressa aussi bien aux aspects <<~théoriques~>> portant sur le principe
+Il s'intéressa aussi bien aux aspects «théoriques» portant sur le principe
 du levier et la recherche de centre de gravité dans \emph{De l'équilibre des figures
 planes}, sur le principe d'Archimède sur les corps plongés dans un liquide
 dans \emph{Des corps flottants}; qu'aux aspects pratiques au travers de
@@ -135,7 +135,7 @@ Cela permet de prendre en compte certaines continuités des contraintes en certa
 (interface entre deux matériaux par exemple, voir paragraphe~\ref{Sec-interf} pour une synthèse)
 de la structure, et d'imposer les conditions aux limites de nullité des contraintes aux lieux le nécessitant (par exemple bord libre).
 
-Par contre, le champ de contraintes peut également être <<~trop~>> continu
+Par contre, le champ de contraintes peut également être «trop» continu
 en certains endroits selon le type de problème. Cette continuité étant
 liée à la constitution de l'élément fini choisi, on peut ne pas disposer
 d'éléments capables de modéliser correctement ce phénomène...
@@ -153,7 +153,7 @@ ces inconnues sont interpolées, ce que cela implique sur la régularité des so
 et donc si cela est compatible avec le phénomène physique que l'on souhaite simuler.}
 
 \medskip
-Un autre exemple typique est le cas des éléments <<~déplacement-pression~>>
+Un autre exemple typique est le cas des éléments «déplacement-pression»
 utilisés par exemple pour la modélisation des solides incompressibles (nous avons
 évoqué le problème précédemment).
 
@@ -416,7 +416,7 @@ par la matrice de rigidité équivalente suivante:
 
 
 \medskip
-Sur le plan du déroulement du calcul, on commence par résoudre une <<~ forme classique~>>
+Sur le plan du déroulement du calcul, on commence par résoudre une « forme classique»
 mais en utilisant la matrice de rigidité équivalente~$\MM{K_{eq}}$, puis le
 calcul des contraintes dans chaque élément se fait par la relation (\ref{Eq:TauQ}).
 
@@ -465,11 +465,11 @@ résoudre.
 
 La qualité de l'approximation des différents champs est non seulement liée
 au nombre de champs inconnus choisis, mais également au choix de l'élément.
-Ce dernier peut traduire une <<~simplification~>> du problème physique:
+Ce dernier peut traduire une «simplification» du problème physique:
 il s'agit du problème du choix du type de modélisation, en 1, 2 ou 3D.
 
 \textcolorred{Selon le type d'information recherché, un modélisation
-<<~plus simple~>> qu'une autre peut fournir les résultats escomptés}.
+«plus simple» qu'une autre peut fournir les résultats escomptés}.
 
 \medskip
 Dans ce paragraphe, nous nous proposons d'étudier un exemple où
@@ -574,9 +574,9 @@ On ne peut donc plus négliger le cisaillement.
 Robert Hooke, qui désirait obtenir une théorie des ressorts en soumettant ces derniers à des forces
 croissantes successives, énonça en 1978, à partir d'expériences datant de 1675,
 la loi de comportement suivante:
-<<~ut tensio sic vis~>>
-ce qui signifie <<~telle extension, telle force~>>, ou bien en termes modernes <<~l'allongement est
-proportionnel à la force~>>.\colorblack}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
+«ut tensio sic vis»
+ce qui signifie «telle extension, telle force», ou bien en termes modernes «l'allongement est
+proportionnel à la force».\colorblack}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 \end{histoire}
 
 \colorblack
@@ -646,7 +646,7 @@ Les \textcolorblue{hypothèses cinématiques} sont:
 \end{itemize}
 
 \medskip
-Ici, la comparaison des résultats <<~plaque~>> et <<~3D~>> montre que la contribution de
+Ici, la comparaison des résultats «plaque» et «3D» montre que la contribution de
 l'écrasement de la section à la flèche semble négligeable (0,7\% d'écart).
 Ce n'est pas forcément vrai car l'écrasement est un phénomène localisé sous la charge
 et lié au contact, qui a été modélisé très grossièrement...
@@ -655,7 +655,7 @@ Cette très forte concentration de contraintes sous la charge est caractéristiq
 \textcolorgreen{On peut même dire que physiquement, une force ponctuelle n'existe pas. Elle est forcément
 distribuée sur une petite surface...}
 
-De même, la comparaison des résultats <<~poutre~>> et <<~plaque~>> montre que la flexion et le
+De même, la comparaison des résultats «poutre» et «plaque» montre que la flexion et le
 cisaillement de la section contribuent davantage à la flèche que l'écrasement (6,4\% d'écart):
 la largeur de la pièce est visiblement suffisante pour que les déformations des sections droites
 provoquent un déplacement vertical non négligeable sous la charge.
@@ -684,15 +684,13 @@ s'assurer que le logiciel utilisé et son cadre théorique permettent bien d'acc
 voulu} (en plus d'être pertinents vis-à-vis de la géométrie du produit, de son environnement
 et du comportement attendu).
 
-De plus, si certains logiciels peuvent avoir des <<~limitations techniques~>>, ils peuvent
+De plus, si certains logiciels peuvent avoir des «limitations techniques», ils peuvent
 également disposer de \textcolorred{méthodes de post-traitement} susceptibles d'améliorer
 ou de permettre d'accéder à certaines composantes (sous certaines hypothèses). Cela aussi
 doit être pris en compte.
 
-\ifVersionAvecExemplesSepares\else
-  \input{./tex/ex3}% poutre Ch 10 sous Cast3M
+\input{./tex/ex3}% poutre Ch 10 sous Cast3M
 %  \input{./tex/ex5}% efforts équivalents sur une poutre
-\fi
 
 \medskip
 \section{Interpolation des champs et de la géométrie}

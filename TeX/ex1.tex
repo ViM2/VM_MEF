@@ -1,17 +1,13 @@
-\ifVersionAvecExemplesSepares
-  \chapter{Sur la partie II: formulation variationnelle d'un problème de Neumann}
-\else
-  \chapter{Exemple de formulation variationnelle d'un problème de Neumann}
-\fi
+\chapter{Exemple de formulation variationnelle d'un problème de Neumann}
 \begin{abstract}
 Dans cet exemple, portant sur formulation d'un problème de Neumann,\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
 nous allons essayer de montrer comment la réflexion mathématique se
-fait et évolue <<~au fil de l'eau~>> pour transformer un problème initial donné et obtenir
-les bonnes conditions d'existence et d'unicité de la solution sur les <<~espaces qui vont
-bien~>> (et qui eux, feront ensuite l'objet d'une discrétisation numérique).
+fait et évolue «au fil de l'eau» pour transformer un problème initial donné et obtenir
+les bonnes conditions d'existence et d'unicité de la solution sur les «espaces qui vont
+bien» (et qui eux, feront ensuite l'objet d'une discrétisation numérique).
 \end{abstract}
 
-Supposons que nos <<~investigations~>> sur un problème nous aient
+Supposons que nos «investigations» sur un problème nous aient
 conduit à sa formulation sous forme d'un problème de Neumann\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}
 (avec~$f\in L^2(\Omega)$, ce qui n'est pas une condition si forte finalement, et c'est ce que l'on aimerait avoir):
 \begin{equation}\left\{
@@ -67,7 +63,7 @@ bien que \textcolorblue{$f\in L^2_0(\Omega)$ est une condition nécessaire d'exi
 
 \medskip
 Mézalor, il est naturel de considérer~$u_0\in H^1(\Omega)\cap L^2_0(\Omega)$ \textcolorgreen{(car
-on veut que~$u$ et~$v$ vivent dans le même espace pour pouvoir appliquer nos <<~méthodes~>>)}, et
+on veut que~$u$ et~$v$ vivent dans le même espace pour pouvoir appliquer nos «méthodes»)}, et
 la formulation précédente donne:
 \begin{equation}
 \dint_\Omega \nabla u_0\cdot\nabla v_0 = \dint_\Omega f v_0,
@@ -99,7 +95,7 @@ de la solution~$u_0\in V$}.
 \medskip
 \section{Formulation mixte duale}
 \textcolorgreen{On va regarder maintenant ce qui se passe si l'on exprime le problème sous forme mixte, i.e. en
-se servant de deux variables. C'est une voie fréquente pour <<~simplifier~>> les conditions
+se servant de deux variables. C'est une voie fréquente pour «simplifier» les conditions
 aux limites.}
 
 En effet, plutôt que considérer~$\frac{\partial u}{\partial n}=0$ sur~$\Gamma=\partial\Omega$,
@@ -126,7 +122,7 @@ et la loi de comportement:
 \end{equation}
 On n'a pas d'information sur~$u$.
 Par contre, on a un terme~$p\cdot n=0$.
-Et il serait bien de disposer de son <<~symétrique~>>, i.e. d'un terme~$q.n=0$ qui serait imposé
+Et il serait bien de disposer de son «symétrique», i.e. d'un terme~$q.n=0$ qui serait imposé
 par le choix de l'espace dans lequel vivrait~$u$.
 \textcolorgreen{Ce que l'on a en tête c'est bien sûr de pouvoir utiliser le théorème
 de Brezzi.}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{théorème!de Brezzi}

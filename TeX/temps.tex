@@ -5,7 +5,7 @@ Toutefois, nous n'aborderons pas les EF espace-temps, car il s'agit d'une formul
 gourmande en ressources, d'où sa très faible utilisation (bien que la méthode
 soit en elle-même intéressante).
 
-Dans ce chapitre, nous aurons besoin de <<~dériver numériquement~>>, i.e. de
+Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de
 construire des schémas numériques approchant des dérivées.
 Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire
 en regardant comment on résout les équations différentielles et EDP directement... puis numériquement.
@@ -84,7 +84,7 @@ Le calcul se déroule donc comme suit:
   \item Solution initiale à~$t=0$:
 	\begin{itemize}
 	\item connaissant~$\VV{q}_0$ et~$\VV{\dot q}_0$, on calcule~$\VV{\ddot q}_0$ en résolvant
-	l'équation <<~classique~>> de la dynamique;
+	l'équation «classique» de la dynamique;
 	\item on calcule ensuite~$\VV{q}_{-\Delta_t} = \VV{q}_0 -\Delta_t \VV{\dot q}_0 + \frac{\Delta_t^2}2
 	\VV{\ddot q}_0$.
 	\end{itemize}
@@ -150,7 +150,7 @@ Le calcul se déroule donc comme suit:
   \item Solution initiale à~$t=0$:
 	\begin{itemize}
 	\item connaissant~$\VV{q}_0$ et~$\VV{\dot q}_0$, on calcule~$\VV{\ddot q}_0$ en résolvant
-	l'équation <<~classique~>> de la dynamique;
+	l'équation «classique» de la dynamique;
 	\item on construit~$\MM{\overline{K}}$ et, si~$\MM{M}$, $\MM{C}$, $\MM{K}$ et~$\Delta_t$ sont constants
 	(ce qui est généralement le cas), la triangulariser.
 	\end{itemize}
@@ -210,9 +210,8 @@ Enfin et surtout, on se souviendra que c'est une méthode \textcolorblue{coûteu
 La \fig{Fig-Im-Ex-plicite} donne, de manière imagée, les domaines d'utilisation des méthodes implicite et explicite.
 
 
-\ifVersionAvecExemplesSepares\else
-  \input{./tex/ex6}% propagation freefem++
-\fi
+\input{./tex/ex6}% propagation freefem++
+
 
 \bigskip
 \section{Décomposition modale}\index{décomposition modale}

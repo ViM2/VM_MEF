@@ -1,8 +1,4 @@
-\ifVersionAvecExemplesSepares
-  \chapter{[\castem] Sur le paragraphe~\ref{Sec-contact}: une toute première approche du contact}
-\else
-  \section{Exemple: une toute première approche du contact avec \castem}
-\fi
+\section{Exemple: une toute première approche du contact avec \castem}
 
 Dans ce chapitre, nous présentons un petit exemple simple de contact unidirectionnel 
 sans frottement sous \castem.
@@ -12,11 +8,7 @@ sans frottement sous \castem.
 
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Contact sur une surface infiniment rigide}
-\else
-  \subsection{Contact sur une surface infiniment rigide}
-\fi
+\subsection{Contact sur une surface infiniment rigide}
 
 Dans ce premier exemple, nous proposons d'étudier un carré soumis sur sa face supérieure à un
 déplacement imposé et reposant, sur sa face inférieure, sur une surface infiniment rigide, comme illustré
@@ -58,13 +50,13 @@ s1 = l2 TRAN nhaut1 (0. haut1);
 \medskip
 On remarquera les choses suivantes:
 \begin{itemize}
-  \item la ligne~$l_2$ correspondant à la face inférieure du carré <<~repose~>>, sans jeu, sur la
+  \item la ligne~$l_2$ correspondant à la face inférieure du carré «repose», sans jeu, sur la
 	ligne~$l_1$ définissant la surface rigide sur laquelle le carré va venir buter (on aurait pu mettre
 	un jeu initial non nul, mais ce n'est pas nécessaire);
   \item les orientations des lignes~$l_1$ et~$l_2$ sont inversées car les deux lignes en contact doivent se 
-	<<~tourner le dos~>> au sens des normales. Cela est obligatoire;
+	«tourner le dos» au sens des normales. Cela est obligatoire;
   \item La surface de contact~$l_1$ est modélisée en utilisant~$nlong_1-2$ éléments pour le maillage, 
-	alors que le carré (ligne~$l_2$) n'en a que~$nlong_1$, afin que les maillages ne soient pas <<~compatibles~>> 
+	alors que le carré (ligne~$l_2$) n'en a que~$nlong_1$, afin que les maillages ne soient pas «compatibles» 
 	(i.e. que les nœuds ne tombent pas en face les uns des autres).
 \end{itemize}
 
@@ -164,11 +156,7 @@ Lagrange: voir paragraphe~\ref{Sec-cast}).
 
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Contact entre deux solides}
-\else
-  \subsection{Contact entre deux solides}
-\fi
+\subsection{Contact entre deux solides}
 
 On peut faire une remarque sur le calcul précédent: que se passe-t-il si la surface sur laquelle
 on s'appuie n'est plus infiniment rigide ?
@@ -289,11 +277,7 @@ pour les déplacements et contraintes.
 
 
 \medskip
-\ifVersionAvecExemplesSepares
-  \section{Résolution pas à pas}
-\else
-  \subsection{Résolution pas à pas}
-\fi
+\subsection{Résolution pas à pas}
 
 Les résolutions présentées ci-dessus étaient finalement de type classique, i.e. inversion
 d'un système comprenant les conditions aux limites et le chargement.

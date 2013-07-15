@@ -1,21 +1,8 @@
-\ifVersionAvecExemplesSepares
-  \chapter{Sur le chapitre~\ref{Ch-Elts}: quelques variations sur le thème des éléments unidimensionnels}
-  \begin{abstract}
-  Dans ce chapitre, nous reprenons les explications du chapitre~\ref{Ch-Elts} pour les appliquer
-  sur quelques cas simples, de façon très explicite.
-  \end{abstract}
-\else
-  \section{Exemple: quelques variations sur le thème des éléments unidimensionnels}
-
-  Dans ce paragraphe, nous appliquons ce que nous venons de voir sur quelques cas simples d'éléments unidimensionnels.
-\fi
+\section{Exemple: quelques variations sur le thème des éléments unidimensionnels}
+Dans ce paragraphe, nous appliquons ce que nous venons de voir sur quelques cas simples d'éléments unidimensionnels.
 
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
-\else
-  \subsection{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
-\fi
+\subsection{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
 
 Considérons un segment reliant deux points dans l'espace.
 Ce segment est défini par un point courant dont les coordonnées sont le vecteur~$\VV{x}$.
@@ -34,7 +21,7 @@ nœuds de coordonnées~$\LLP{x_1, y_1, z_1}$ et~$\LLP{x_2, y_2, z_2}$.\ifVersion
 Un point courant de cet élément sera obtenu par interpolation linéaire entre les deux nœuds,
 paramétrée par~$\xi$. On Cherche cette interpolation sous la forme~$x(\xi)=\LL{N(\xi)}\VV{x_n}$, $y(\xi)=\LL{N(\xi)}\VV{y_n}$ et~$z(\xi)=\LL{N(\xi)}\VV{z_n}$, avec
 $\LL{N(\xi)}=\LLL{N_1(\xi), N_2(\xi)}$ et~$N_1(\xi)=\frac12 (1-\xi)$, $N_2(\xi)=\frac12(1+\xi)$.
-De manière plus <<~compacte~>>, on peut écrire:
+De manière plus «compacte», on peut écrire:
 \begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et } \xi\in[-1,1]) \end{equation}
 \ifVersionDuDocEstVincent
 
@@ -59,11 +46,7 @@ On voit alors l'égalité des intégrations:
 Par ailleurs, on a la relation:
 \begin{equation} \frac{\dd}{ \dd \xi} = \frac{\dd s}{ \dd \xi}\frac{\dd}{\dd s}=m\frac{\dd}{\dd s}\end{equation}
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Rappels sur la jacobienne et le jacobien d'une transformation}\index{jacobien}\index{jacobienne}
-\else
-  \subsection{Rappels sur la jacobienne et le jacobien d'une transformation}\index{jacobien}\index{jacobienne}
-\fi
+\subsection{Rappels sur la jacobienne et le jacobien d'une transformation}\index{jacobien}\index{jacobienne}
 
 Nous considérons une transformation de~$\RR^n$ dans~$\RR^m$ donnée par la fonction~$f$: 
 $\left(x_1, \ldots, x_n \right) \mapsto \left(f_{y_1}, \ldots, f_{y_m} \right)$.
@@ -145,14 +128,10 @@ de Lebesgue sur~$\RR^n$:
 \end{theoreme}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\textcolorgreen{Si l'on considère un <<~petit~>> domaine, le volume de l'image de ce domaine par la fonction~$f$ sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{jacobien}
+\textcolorgreen{Si l'on considère un «petit» domaine, le volume de l'image de ce domaine par la fonction~$f$ sera celui du domaine de départ multiplié par la valeur absolue du jacobien.}\index{jacobien}
 
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Éléments de référence unidimensionnels linéaires à~$n$ nœuds}
-\else
-  \subsection{Éléments de référence unidimensionnels linéaires à~$n$ nœuds}
-\fi
+\subsection{Éléments de référence unidimensionnels linéaires à~$n$ nœuds}
 
 Il est possible de généraliser en considérant un segment ayant plusieurs nœuds 
 intermédiaires comme indiqué sur la figure~\ref{fig:ex2:noeudint}.
@@ -174,11 +153,8 @@ Si de plus, les~$n$ nœuds sont régulièrement espacés:
 N_i(\xi) = \prod_{r=1\atop r\ne i}^n \dfrac{(2r-n-1)-\xi(n-1)}{2(r-i)} \end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Élément de référence unidimensionnel infini}
-\else
-  \subsection{Élément de référence unidimensionnel infini}
-\fi
+\subsection{Élément de référence unidimensionnel infini}
+
 Dans certains cas, il peut être nécessaire de prendre en compte des conditions aux limites situées à
 l'infini: problèmes de fondations, d'acoustique, de couplage fluide-dtructure.
 
@@ -197,7 +173,7 @@ Nous ne considèrerons que le cas de l'élément unidimensionnel linéaire à 2 
 \medskipvm
 Nous allons toujours avoir une interpolation de la fonction solution sous la forme:
 \begin{equation} u =\frac{1-\xi}2 u_1 + \frac{1+\xi}2 u_2\end{equation}
-car concrêtement~$u_2$ est connu (et fini): c'est le <<~lieu~>> où l'on situe l'infini dans le
+car concrêtement~$u_2$ est connu (et fini): c'est le «lieu» où l'on situe l'infini dans le
 modèle éléments finis.
 \medskipvm
 Par contre, l'interpolation du point courant sera donnée par:
@@ -209,11 +185,8 @@ où~$\alpha$ est une constante.
 On aura également:
 \begin{equation} u_{,x} = \frac{u_2-u_1}{4\alpha} (1-\xi)^2 \end{equation}
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
-\else
-  \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
-\fi
+\subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
+
 On considère la barre de la figure~\ref{fig-barre}, de section~$A$, de longueur~$L$, et constituée 
 d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{module d'Young} 
 $E$ et densité~$\rho$ et soumise uniquement à son poids propre.\\
@@ -264,11 +237,8 @@ Elle est constante sur l'élément. Quant à la contrainte, elle est obtenue par
 \begin{equation}\sigma=\frac{\rho g L}8\end{equation} Elle est également constante sur l'élément.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
-\else
-  \subsection{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
-\fi
+\subsection{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
+
 Poursuivons le cas de la poutre du paragraphe précédent, mais considérons une discrétisation
 de la barre à l'aide de trois éléments, comme montré sur la figure~\ref{fig-ex2ass}
 \begin{figure}[ht]\centering
@@ -320,11 +290,8 @@ C'est pourquoi, dans les programmes éléments finis, une étape de renumémorat
 est généralement faite.
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini!d'Hermite}
-\else
-  \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini!d'Hermite}
-\fi
+\subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini!d'Hermite}
+
 En restant encore sur notre élément linéaire unidimensionnel, nous allons voir comment ajouter des
 contraintes sur les dérivées aux nœuds, comme illustré à la figure~\ref{fig-ex2Her}.
 \begin{figure}[ht]\centering
@@ -363,11 +330,8 @@ donnée par:
 \begin{equation}\sigma_x=H \LL{B}\VV{u_n}\end{equation}
 %%%%%%%%%%%%%%%%%%
 \medskipvm
-\ifVersionAvecExemplesSepares
-  \section{Élément mixte unidimensionnel}
-\else
-  \subsection{Élément mixte unidimensionnel}
-\fi
+\subsection{Élément mixte unidimensionnel}
+
 Continuons avec notre élément de référence linéaire unidimensionnel. Cette fois-ci nous souhaitons
 le mettre en relation avec un segment réel dont les inconnues nodales sont les déplacements
 $u_1$ et~$u_2$, mais qui possède en plus une approximation constante de la contrainte

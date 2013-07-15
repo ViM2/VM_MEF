@@ -4,8 +4,8 @@
 \medskip
 \section{Amélioration d'un modèle: méthodes~$r$, $h$ et~$p$}\label{Sec-rhp}
 
-Les indicateurs d'erreur ont pour but de nous indiquer si <<~nous sommes loin de
-la solution~>>, afin de pouvoir modifier le modèle si besoin.
+Les indicateurs d'erreur ont pour but de nous indiquer si «nous sommes loin de
+la solution», afin de pouvoir modifier le modèle si besoin.
 Ainsi, par itérations successives, on pourra tendre vers une solution
 de plus en plus proche de la solution exacte.
 
@@ -45,10 +45,10 @@ dédiées à un problème donné.
 \medskip
 Un exemple déjà abordé dans ce document est celui où, à partir des déplacement
 nodaux obtenus par un calcul EF d'une structure mécanique composée de deux matériaux
-différents dans une discrétisation classique <<~en déplacements~>>, on souhaite remonter
+différents dans une discrétisation classique «en déplacements», on souhaite remonter
 aux contraintes à l'interface entre lesdits matériaux.
 
-Une méthode déjà mentionnée est la méthode dite de <<~Reissner local~>>\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
+Une méthode déjà mentionnée est la méthode dite de «Reissner local»\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 qui consiste à intégrer les équations d'équlibre sous la forme mixte de Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 mais uniquement sur des paires d'éléments ayant des propriété matérielles différentes
 et possédant une face commune.
@@ -70,9 +70,7 @@ points quelconque de la structure (donc via les hypothèses faites dans le modè
 sur la répartition des contraintes dans une section + via un interpolation lorsque l'on se
 trouve dans une section ne passant pas par un nœud)...
 
-\ifVersionAvecExemplesSepares\else
-  \input{./tex/ex4}% macro Ansys et poutre en U
-\fi
+\input{./tex/ex4}% macro Ansys et poutre en U
 
 
 \medskip
@@ -91,7 +89,7 @@ par des approches plus directes.
 
 \medskip
 Imaginons que nous souhaitions calculer un avion, mais que, pour des raisons
-évidente de sécurité nous ayons besoin d'obtenir une precision <<~boulon par boulon~>>.
+évidente de sécurité nous ayons besoin d'obtenir une precision «boulon par boulon».
 On se doute bien que l'on ne peut mailler tout l'avion avec un tel niveau de détail...
 On recourt alors à une cascade de modèles de dimensions et de finesses différentes,
 allant de l'avion tout entier (mais modélisé relativement grossièrement) à
@@ -136,7 +134,7 @@ distincts:
 
 	Il possède une description géométrique et un maillage suffisamment fins ainsi qu'un
 	modèle de comportement détaillé. Il ne comprend qu'une ou quelques
-	<<~cellules types~>> de petites dimensions.
+	«cellules types» de petites dimensions.
 
 	Il est souvent possible, pour les matériaux notamment, de disposer d'hypothèses
 	simplificatrices (telles que l'élasticité linéaire) permettant de se restreindre à une
@@ -162,7 +160,7 @@ Dans le cadre de la mécanique des solides déformables, on procède
 généralement comme suit:
 \begin{itemize}
   \item Le modèle de comportement macroscopique:\index{modèle macroscopique}
-	qui modélise des phénomènes se produisant <<~au cœur du matériau~>>,
+	qui modélise des phénomènes se produisant «au cœur du matériau»,
 	doit correspondre à la relation contraintes/déformations observée sur la cellule micro ;
 
   \item Le modèle de comportement microscopique:\index{modèle microscopique}
@@ -174,7 +172,7 @@ Le modèle macro ayant une résolution beaucoup plus grossière, la cohérence d
 modèles ne peut donc pas se traduire par une correspondance exacte, point par point, des
 conditions aux limites ou du comportement. Pour cette raison, la plupart des approches
 multi-échelles postulent que les quantités macroscopiques doivent correspondre à des
-<<~moyennes~>> des quantités micro correspondantes, la définition mathématique exacte de
+«moyennes» des quantités micro correspondantes, la définition mathématique exacte de
 cette moyenne variant fortement d'une approche à l'autre.
 
 \medskip
@@ -222,7 +220,7 @@ que les méthodes divergent le plus. On distingue néanmoins deux grosses famill
 	avec un solveur spécifique puis un calcul micro avec un solveur classique;
   \item \textcolorblue{Couplage des cellules micro}\index{couplage des cellules micro}
 
-	Lorsqu'il n'est pas si simple de <<~séparer~>> les échelles, alors il faut résoudre
+	Lorsqu'il n'est pas si simple de «séparer» les échelles, alors il faut résoudre
 	en même temps les deux problèmes micro et macro avec échange de données.
 \end{itemize}
 Ces deux approches vont être un peu plus détaillées maintenant.
@@ -264,7 +262,7 @@ quelconque, il envoie l'état de déformation macro de cet élément au solveur 
 Ce dernier a alors toutes les données nécessaires pour simuler numériquement son comportement
 à l'échelle microscopique. Il renvoie alors l'état de contraintes macro, selon la décomposition
 mentionnée ci-dessus.
-\textcolorgreen{Les cellules micro étant pour ainsi dire <<~indépendantes~>>, il est possible de
+\textcolorgreen{Les cellules micro étant pour ainsi dire «indépendantes», il est possible de
 recourir à des calculateur parallèles.}
 
 Le domaine de validité de ces méthodes est bon dès que l'on sait faire des hypothèses
@@ -277,10 +275,10 @@ Le cas de la fissuration sera traitée dans un chapitre ultérieur de ce documen
 \textbf{En résumé:}
 
 Les méthodes multi-niveaux abordent la simulation à l'échelle macro\index{modèle macroscopique}
-et se <<~nourrissent~>> du comportement simulé à l'échelle microscopique.\index{modèle microscopique}
+et se «nourrissent» du comportement simulé à l'échelle microscopique.\index{modèle microscopique}
 
 Dans les méthodes multi-niveaux,\index{multi-niveaux} l'emploi d'hypothèses de périodicité se traduit par
-des <<~sauts~>> de contraintes et de déplacements d'une cellule à l'autre; si les échelles sont
+des «sauts» de contraintes et de déplacements d'une cellule à l'autre; si les échelles sont
 mal séparées, ces sauts sont non négligeables. Ne correspondant \emph{a priori} pas à la physique,
 ils traduisent un écart avec la réalité.
 \colorblack
@@ -291,7 +289,7 @@ ils traduisent un écart avec la réalité.
 \subsection{Couplage des cellules micro -- méthodes de décomposition de domaine}\index{couplage des cellules micro}\index{décomposition de domaine}\label{Sec-dec}
 
 Les méthodes multi-niveaux présentées au paragraphe précédent sont mises à mal
-lorsque le comportement micro <<~déborde~>> un peu sur le comportement macro, i.e.
+lorsque le comportement micro «déborde» un peu sur le comportement macro, i.e.
 lorsque les échelles ne sont pas suffisamment bien séparées.
 On recourt alors aux méthodes de décomposition de domaines,\index{décomposition de domaine}
 dont la validité est plus large, mais qui sont plus complexes.
@@ -299,7 +297,7 @@ dont la validité est plus large, mais qui sont plus complexes.
 \medskip
 Puisque nous ne pouvons plus supposer une allure de la solution micro,\index{modèle microscopique}
 nous n'allons utiliser que les seules connaissance disponibles à priori: la continuité du champ de déplacements
-ainsi que la vérification par les contraintes du principe d'action-réaction. Il <<~suffit~>> donc
+ainsi que la vérification par les contraintes du principe d'action-réaction. Il «suffit» donc
 d'écrire qu'à l'interface entre deux cellules micro, il y a égalité des déplacements et
 nullité de la somme des traces\index{trace} des contraintes (on retrouve ce que nous avons déjà
 plusieurs fois évoqué avec l'état des contrainte à l'interface entre deux matériaux
@@ -311,7 +309,7 @@ La présence de couplages entre les cellules micro\index{couplage des cellules m
 du paragraphe précédent) change complètement le déroulement de la simulation par
 rapport aux méthodes multi-niveaux vues au paragraphe précédent.
 En effet, la prise en compte de ces couplages implique d'échanger directement des données
-entre les différents solveurs micro, qui ne sont plus <<~indépendants~>>.
+entre les différents solveurs micro, qui ne sont plus «indépendants».
 En contrepartie, cela permet de propager une information fine sur l'ensemble de la pièce et,
 ainsi, de se passer de l'hypothèse de séparation des échelles: il n'est plus nécessaire de
 modéliser séparément les phénomènes micro et macro.
@@ -349,10 +347,10 @@ une utilisation plus fréquente de ces méthodes.}
 \textcolorgris{Cependant, à plus long terme, la simulation multi-échelles\index{multi-échelles}
 suscite un intérêt considérable dans l'industrie: en rendant accessibles à la simulation
 des phénomènes qui ne peuvent actuellement être étudiés qu'expérimentalement,
-elle constitue un pas important en direction du <<~virtual testing~>>.
+elle constitue un pas important en direction du «virtual testing».
 Pour cette raison, elle fait toujours l'objet de nombreux projets de recherche.
 Ceux-ci concernent aussi bien la modélisation, avec notamment la mise au point de
-<<~matériaux virtuels~>> (qui ne sont rien d'autre que des modèles multi-échelles, notamment
+«matériaux virtuels» (qui ne sont rien d'autre que des modèles multi-échelles, notamment
 pour les matériaux composites), que les solveurs qui sont en constante évolution.}
 
 \medskip
@@ -367,7 +365,7 @@ assemblage, peuvent être vus comme un élément individuel du point de vue du c
 Cet assemblage peut être requis pour des raisons de modélisation ou de calcul.
 
 Pour constituer un super-éléments,\index{super-élément} les éléments groupés ne peuvent être
-pris au hasard. Ils doivent au moins constituer une <<~structure~>> en eux-même, mais
+pris au hasard. Ils doivent au moins constituer une «structure» en eux-même, mais
 d'autres conditions sont nécessaires qui seront détaillées plus loin.
 
 Comme nous l'avons dit au paragraphe précédent, il y a deux voies duales pour considérer
@@ -400,7 +398,7 @@ répondait à trois motivations:
 	les ordinateurs de l'époque atteignaient vite leurs limites (par exemple en terme
 	de taille mémoire). Diviser une structure complexe, que l'on était incapable de
 	calculer en une seule fois, permettait de sauvegarder des résultats sous-structure
-	par sous-structure puis d'effectuer <<~l'assemblage~>> des résultats.
+	par sous-structure puis d'effectuer «l'assemblage» des résultats.
 \end{itemize}
 Si les deux premiers points sont toujours d'actualité, le troisième l'est moins, surtout
 depuis le recourt aux algorithmes parallèles.
@@ -481,7 +479,7 @@ internes en réutilisant la formule:
 \medskip
 \section{Pseudo-inversion et réanalyse}\index{pseudo-inversion}\label{Sec-PInv}
 \textcolorgreen{On peut être amené, notamment lors de phases de conceptions, à devoir considérer plusieurs
-problèmes <<~relativement proches~>> les uns des autres (i.e. tester plusieurs configurations).
+problèmes «relativement proches» les uns des autres (i.e. tester plusieurs configurations).
 On est alors tenté d'utiliser tout ou partie de la première modélisation afin de
 réaliser les suivantes.}
 
@@ -500,7 +498,7 @@ positive} (tout en profitant de son caractère bande).\index{pseudo-inversion}
 Il est alors possible, tout en modifiant les conditions cinématiques et les chargements appliqués,
 de procéder à des réanalyses qui consistent alors simplement à résoudre des systèmes
 dits secondaires de tailles très inférieures au système global (mais un surcoût a été
-<<~payé~>> initialement pour calculer la pseudo-inverse).
+«payé» initialement pour calculer la pseudo-inverse).
 
 Des problèmes de contact avec ou sans frottement entre solides élastiques peuvent
 bénéficier de cette méthode, ainsi que la modélisation du comportement élastique
@@ -738,6 +736,6 @@ Cette démarche peut alors être généralisée aux ordres supérieurs.
 Nous n'entrons pas dans le détail, mais en cours de calcul se pose la question intéressante: obtient-on le même résultat si l'on discrétise d'abord et dérive ensuite ? En fait, la réponse est oui, sous certaines conditions de régularité que nous ne mentionnerons pas dans le cadre de ce document.
 
 \medskip
-\textcolorgreen{Encore une fois, nous n'avons fait qu'effleurer le problème, juste pour <<~faire connaître~>> la méthode. Il nous semblait intéressant de présenter la notion de dérivée par rapport à la géométrie.}
+\textcolorgreen{Encore une fois, nous n'avons fait qu'effleurer le problème, juste pour «faire connaître» la méthode. Il nous semblait intéressant de présenter la notion de dérivée par rapport à la géométrie.}
 
 De telles méthodes sont d'ores et déjà implémentées dans certains codes de calculs. Leur intérêt devrait apparaître clairement au lecteur (nous l'espérons).

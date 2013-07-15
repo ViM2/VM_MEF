@@ -1,7 +1,7 @@
 \chapter{La méthode des éléments finis}\label{Ch-MEF}
 \begin{abstract}
 Une fois le travail précédent accompli, i.e. une fois que l'on dispose d'une
-formulation faible, <<~il n'y a plus qu'à~>> calculer la solution!
+formulation faible, «il n'y a plus qu'à» calculer la solution!
 La méthode des éléments finis est l'un des outils numérique développé pour cela.
 
 La méthode des éléments finis se propose de mettre en place, sur la base de
@@ -50,7 +50,7 @@ Les éléments \textcolorred{recouvriront l'intégralité du domaine}
  \textcolorgris{(de la frontière pour les éléments de frontière qui est une autre méthode)}
 et \textcolorred{sans chevauchement entre eux}
 \textcolorgris{(les éléments peuvent se chevaucher dans la méthode des volumes finis)}.
-De plus, on va chercher la fonction solution $u$ comme étant interpolée par des <<~bouts~>>
+De plus, on va chercher la fonction solution $u$ comme étant interpolée par des «bouts»
 de solutions définis sur chaque élément.
 
 \medskip
@@ -58,7 +58,7 @@ Le problème étant interpolé sur les éléments, on se doute que le
 \textcolorblue{nombre d'éléments} va jouer sur la qualité de cette approximation de la solution.
 On se doute également que, comme on résout un problème comportant des
 dérivées, c'est plutôt dans les endroits où la solution \textcolorblue{va varier vite} qu'il
-sera nécessaire de <<~resserrer~>> le maillage.
+sera nécessaire de «resserrer» le maillage.
 
 \medskip
 \begin{histoire}%
@@ -142,7 +142,7 @@ numérique des systèmes physiques dans une large variété de disciplines.
 \colorblack
 
 On veillera également à ce que les éléments ne soient pas trop
-\textcolorblue{distordus}. Des critères dits <<~de forme~>> existent. Néanmoins, dans
+\textcolorblue{distordus}. Des critères dits «de forme» existent. Néanmoins, dans
 certains cas il est possible de violer allègrement ces critères tout en
 obtenant une très bonne approximation de la solution.
 
@@ -163,12 +163,12 @@ Pour des problèmes avec des ordres de dérivations supérieurs \textcolorgris{(
 techniques dites d'ordres élevés existent)}, comme par exemple en statique des poutres
 où l'on a une dérivation partielle d'ordre 4, on introduit des variables supplémentaires
 afin de diminuer les ordres des dérivées (déformations, contraintes... \textcolorgreen{cela
-a été évoqué en parlant du <<~choix des variables~>> en mécanique, nous
+a été évoqué en parlant du «choix des variables» en mécanique, nous
 détaillerons un peu plus loin la formulation éléments finis de ces formulations mixtes}).
 
 
 \medskip
-\section{Problèmes de la modélisation <<~réelle~>>}
+\section{Problèmes de la modélisation «réelle»}
 
 Pour faire suite aux dernières remarques faites au paragraphe précédent, il faut
 se rendre à l'évidence que les équations qui modélisent les principales théories
@@ -376,7 +376,7 @@ et $\frac{h_K}{\rho_K}\le\sigma, \forall K\in\mathcal{T}_h$.
 
 On notera $\hat{K}$ l'\textcolorblue{élément de référence} correspondant à
 l'élément $K$ du maillage $\mathcal{T}_h$, et d'une manière générale on ajoutera
-ce <<~chapeau~>> $\hat{~}$ sur toute quantité relative à un élément de référence
+ce «chapeau» $\hat{~}$ sur toute quantité relative à un élément de référence
 (voir plus loin le chapitre sur la formulation pratique des éléments finis).
 
 \medskip
@@ -471,7 +471,7 @@ la formulation pratique des éléments finis:
 	La manipulation des $e_i$ sera alors simplifiée, et les $e_i$
 	auront par ailleurs un support réduit à quelques mailles.
 
-	\item[Notion de <<~famille affine d'éléments~>>]
+	\item[Notion de «famille affine d'éléments»]
 
 	Le maillage sera tel que toutes les mailles soient identiques à une
 	transformation affine près.

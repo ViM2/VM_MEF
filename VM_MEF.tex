@@ -4,9 +4,6 @@
 \VersionDuCompilateurEstVincenttrue% à commenter pour compileur de Mathias
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
 \VersionDuDocEstPourHALtrue%
-\newif\ifVersionAvecExemplesSepares% par defaut false, donc exemples dans les chapitres
-%\VersionAvecExemplesSeparestrue% à dé commenter pour partie IV
-
 %
 \ifVersionDuDocEstVincent
    \documentclass[11pt,pdflatex]{book}
@@ -25,6 +22,8 @@
    \usepackage{cutwin,fancyvrb,titletoc}
    \usepackage[framemethod=tikz]{mdframed}
    \usepackage[frenchb]{babel}
+   \usepackage[babel]{csquotes}
+   \MakeAutoQuote{«}{»}
    \frenchbsetup{IndentFirst=false}
 %
 \ifVersionDuDocEstVincent
@@ -33,16 +32,9 @@
 %   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
 %   \usepackage[top=3.25cm,bottom=3.25cm,left=3cm,right=3cm,a4paper,headsep=15Pt]{geometry}
 %   \usepackage{enumitem}
-   \usepackage{a4}
    \usepackage{makeidx,index}
    \usepackage{frbib,bibtopic}
-%
-% Le A4 est "un peu court":
-   \addtolength{\textheight}{1.5cm}
-   \addtolength{\voffset}{-1.5cm}
-   \addtolength{\textwidth}{4cm}
-   \addtolength{\hoffset}{-1.5cm}
-%
+   \usepackage[a4paper,top=22.8mm,left=2.1cm,right=16.4201mm,bottom=32.2625mm]{geometry}
    \pagestyle{fancy}
    \date{\emph{version du \today}}
    \makeindex
@@ -143,7 +135,7 @@ Dans ce (de moins en moins court) document, plutôt à destination d'ingénieurs
 mécaniciens  connaissant déjà la méthode des éléments finis,
 nous allons essayer de faire une présentation un peu plus théorique que ce qui 
 leur est généralement proposé (et qui est quand même souvent de type 
-<<~preuve par les mains~>>, ce qui occulte trop de points).
+«preuve par les mains», ce qui occulte trop de points).
 
 Nous ne ferons appel qu'à des notions mathématiques de bases généralement 
 déjà vues pour la plupart en taupe (ou en tout début de cycle d'ingé)... bien
@@ -185,7 +177,7 @@ un survol des notions mathématiques, puis le traitement du problème
 continu constituent l'ossature théorique nécessaire à assoir la méthode des éléments finis
 sur un socle solide. La discrétisation par éléments finis à proprement parler
 n'est aborder qu'ensuite, et d'ailleurs un seul chapitre suffirait à en faire
-le tour... sauf à entrer plus dans le détail concernant <<~ce qui fâche~>>:
+le tour... sauf à entrer plus dans le détail concernant «ce qui fâche»:
 homogénéisation, non linéarité, dynamique, ce qui est fait dans des
 chapitres séparés.
 
@@ -220,11 +212,11 @@ les passages considérés comme moins importants ont été mis en gris.}\fi
 
 \medskip
 \ifVersionDuDocEstVincent
-D'ailleurs un certain <<~code couleur~>> sera plus ou moins respecté dans ce document.
+D'ailleurs un certain «code couleur» sera plus ou moins respecté dans ce document.
 En \textcolorblue{bleu} ou en \textcolorred{rouge}, les termes ou points importants,
 en \textcolorgris{gris, les choses moins importantes} dont la lecture peut être
 oubliée et enfin en
-\textcolorgreen{vert, des remarques <<~de bon sens~>>} sur ce qui est exposé.
+\textcolorgreen{vert, des remarques «de bon sens»} sur ce qui est exposé.
 %\else
 \fi
 
@@ -272,8 +264,8 @@ qualité typographique (environnements pour les notes historiques, les théorèm
 Nous le remercions également pour sa relecture avisée.
 
 C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du même code source):
-l'une que nous appelons <<~version cours~>> (plus en accord avec ce que nous proposons en cours),
-et l'autre <<~version livre~>>, plus proche d'un ouvrage.
+l'une que nous appelons «version cours» (plus en accord avec ce que nous proposons en cours),
+et l'autre «version livre», plus proche d'un ouvrage.
 
 
 \colorblack
@@ -304,7 +296,7 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
  \include{./tex/model}
 \include{./tex/Elts}
  \include{./tex/Amelio}
-% \include{./tex/Mesh}
+ \include{./tex/Mesh}
  \include{./tex/Homog}
  \include{./tex/temps}% ajouter dynamique rapide ?
  \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?
@@ -351,20 +343,13 @@ et l'autre <<~version livre~>>, plus proche d'un ouvrage.
    % il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
    % pour créer les fichiers .bbl nécessaires.
 
- Le présent document est essentiellement une composition faite à partir de textes
- trouvés sur le net, qui ont été <<~mis bout à bout~>> afin de réduire l'effort
- de rédaction (le document ayant été réalisé à ressources minimales ).
+Le présent document est essentiellement une composition faite à partir de textes  trouvés sur le net, qui ont été «mis bout à bout» afin de réduire l'effort  de rédaction (le document ayant été réalisé à ressources minimales ).
 
 
- Les principales  ressources bibliographiques utilisées pour la rédaction de ce document
- sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur
- désireux d'approfondir certains thèmes (Google est ton ami).
+ Les principales  ressources bibliographiques utilisées pour la rédaction de ce document  sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur  désireux d'approfondir certains thèmes (Google est ton ami).
 
 
- De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas
- mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est
- ouvert...
-
+ De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas  mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est  ouvert...
 
  \bibliographystyle{frunsrt}
 

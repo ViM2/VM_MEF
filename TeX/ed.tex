@@ -7,7 +7,7 @@
 a_0(x) y + a_1(x) y' + a_2(x) y'' + \ldots + a_n(x) y^{(n)}= f(x)
 \end{equation}
 où les coefficients~$a_i(x)$ sont des fonctions numériques continues. Si les fonctions~$y$ dépendent d'une seule variable~$x$, alors ces équation différentielle sont dites équation différentielle linéaires scalaires, si c'est un vecteur elles sont dites équation différentielle linéaires vectorielles ou système différentiel linéaire. Dans ce dernier cas, les~$a_i$ sont des applications linéaires. L'\textcolorblue{ordre} d'une équation différentielle est le degré non nul le plus des~$a_i$, ici~$n$. 
- La méthode générale consiste à résoudre d'abord l'\textcolorblue{équation homogène}, i.e. sans second membre, i.e.~$f(x)=0$, qui donne une solution contenant une ou des <<~constantes d'intégration~>> que l'on identifie ensuite en appliquant la forme générale trouvée à l'équation avec second membre. 
+ La méthode générale consiste à résoudre d'abord l'\textcolorblue{équation homogène}, i.e. sans second membre, i.e.~$f(x)=0$, qui donne une solution contenant une ou des «constantes d'intégration» que l'on identifie ensuite en appliquant la forme générale trouvée à l'équation avec second membre. 
  
 %%%%----------------------------------------------------------
 \subsection{Équation différentielle linéaire scalaire d'ordre 1} 
@@ -77,7 +77,7 @@ Plusieurs cas se présentent:
 \item~$c(x)$ est un polynôme de degré~$n$:~$f_0$ est également un polynôme de degré~$n$;
 \item~$c(x) = A\cos(\omega x + \varphi) + B \sin(\omega x + \varphi)$: on cherche~$f_0$ comme combinaison linéaire de~$\cos(\omega x + \varphi)$ et~$\sin(\omega x + \varphi)$, i.e. sous la même forme que~$c(x)$. 
 \end{itemize}
-Dans le cas général, on utilise la méthode dite de la \textcolorblue{variation des constantes} qui consiste à se ramener, par un changement de fonction variable, à un problème de calcul de primitive. On suppose que, sur l'intervalle d'étude, la fonction~$a(x)$ ne s'annule pas\footnote{Il est possible de résoudre sur plusieurs intervalles de type~$I$ et essayer de <<~recoller~>> les solutions.}. On connait déjà la solution générale~\eqref{eq:ed:forme} de l'équation homogène. On décide d'étudier le cas de la fonction~$z(x)$ définie par:
+Dans le cas général, on utilise la méthode dite de la \textcolorblue{variation des constantes} qui consiste à se ramener, par un changement de fonction variable, à un problème de calcul de primitive. On suppose que, sur l'intervalle d'étude, la fonction~$a(x)$ ne s'annule pas\footnote{Il est possible de résoudre sur plusieurs intervalles de type~$I$ et essayer de «recoller» les solutions.}. On connait déjà la solution générale~\eqref{eq:ed:forme} de l'équation homogène. On décide d'étudier le cas de la fonction~$z(x)$ définie par:
 \begin{equation}
 z(x) = k(x)\mathrm{e}^{- A(x)}
 \end{equation}
@@ -117,7 +117,7 @@ et qui après changement de variable, est de la forme:
 \begin{equation}
 \int_{y_0}^y \frac{1}{g(v)} \d v = \int_{x_0}^x f(u) \d u 
 \end{equation}
-L'hypothèse~$g(y)\ne0$ écarte certaines solutions particulières. Par exemple, si~$y_0$ est un point d'annulation de~$g$, alors la fonction constante égale à~$y_0$ est une solution maximale de l'équation. Une telle solution, dite \textcolorblue{solution singulière}, est donc telle que~$g(y)$ est toujours nul. Si la seule hypothèse faite sur~$g$ est la continuité, il peut exister des solutions <<~hybrides~>> constituées du raccordement de solutions régulières et singulières. D'une manière générale, pour une solution donnée, la quantité~$g(y)$ sera soit toujours nulle, soit jamais nulle. 
+L'hypothèse~$g(y)\ne0$ écarte certaines solutions particulières. Par exemple, si~$y_0$ est un point d'annulation de~$g$, alors la fonction constante égale à~$y_0$ est une solution maximale de l'équation. Une telle solution, dite \textcolorblue{solution singulière}, est donc telle que~$g(y)$ est toujours nul. Si la seule hypothèse faite sur~$g$ est la continuité, il peut exister des solutions «hybrides» constituées du raccordement de solutions régulières et singulières. D'une manière générale, pour une solution donnée, la quantité~$g(y)$ sera soit toujours nulle, soit jamais nulle. 
 
 Il existe un cas partoculier, qui est celui de \textcolorred{l'équation différentielle d'ordre un à variables séparées autonome} qui s'écrit:
 \begin{equation}
@@ -157,7 +157,7 @@ les constantes réelles~$C_1$ et~$C_2$ étant définies comme précédemment.
 \begin{equation}
 f(x) = C_1f_1(x) + C_2f_2(x)
 \end{equation}
-où cette fois~$C_1$ et~$C_2$ sont des complexes. Comme on cherche des solutions de~$\RR$ dans~$\RR$, on note~$\lambda_1 = u + iv$ (et donc~$\lambda_1 = u i iv$), on exprime~$f_1$ et~$f_2$, et on déduit que les fonctions~$g_1$ et~$g_2$, à valeurs dans~$\RR$ cette fois, sont encore solutions:
+où cette fois~$C_1$ et~$C_2$ sont des complexes. Comme on cherche des solutions de~$\RR$ dans~$\RR$, on note~$\lambda_1 = u + iv$ (et donc~$\lambda_2 = u -iv$), on exprime~$f_1$ et~$f_2$, et on déduit que les fonctions~$g_1$ et~$g_2$, à valeurs dans~$\RR$ cette fois, sont encore solutions:
 \begin{align}
 &g_1(x) =\frac 12 (f_1(x) + f_2(x) )= \mathrm{e}^{ux}\cos(vx)\\
 &g_2(x) = \frac{1}{2i}(f_1(x) - f_2(x)) = \mathrm{e}^{ux}\sin(vx)

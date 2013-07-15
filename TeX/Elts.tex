@@ -437,7 +437,7 @@ problèmes ayant plusieurs champs inconnus (cela à déjà été abordé,
 et certaines stratégies on déjà été présentées: formulation mixte (Brezzi),\index[aut]{Brezzi (Franco), 1945-, Italien}
 utilisation de multiplicateurs de Lagrange).\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{multiplicateurs de Lagrange}
 
-On pourrait imaginer, si ces champs sont <<~dissociés~>> (sans lien les uns avec les
+On pourrait imaginer, si ces champs sont «dissociés» (sans lien les uns avec les
 autres), de modéliser chaque champ séparément, i.e. de traiter un
 problème par champ (avec pour chaque champ un choix de maillage et
 d'élément qui lui est propre).
@@ -518,7 +518,7 @@ Plusieurs stratégies sont envisageables:
 	présentée précédemment
 	a l'avantage de ne pas faire intervenir de dérivée. Elle conduit elle-aussi
 	à un système de type mixte, mais la matrice de rigidité n'est même
-	plus symétrique (dans une discrétisation <<~brutale~>>). On sait la retraiter.
+	plus symétrique (dans une discrétisation «brutale»). On sait la retraiter.
 
 	Toutes les composantes des contraintes sont là aussi continues, et il faudra appliquer les
 	mêmes remèdes que ci-dessus.
@@ -612,7 +612,7 @@ rigide~$i$. Si ce n'est pas le cas, c'est qu'il existe des modes rigides.
 \subsection{Modes associés aux déformations constantes}
 Pour converger correctement l'élément doit également représenter
 exactement l'état de déformations ou contraintes constantes (ou plus
-généralement la représentation <<~constante~>> de tous les termes de la
+généralement la représentation «constante» de tous les termes de la
 forme variationnelle).
 
 Dans un premier temps, on calcule les efforts nodaux correspondant à une contrainte fixée.
@@ -634,12 +634,12 @@ quoi l'élément à été développé (élasticité tridimensionnelle,
 bidimensionnelle, problème de torsion, problème avec concentrations locales de
 déformations ou de contraintes, prise en compte des frontières courbes...).
 
-Sur les composantes d'<<~intérêt~>>, on regardera s'il y a bien convergence
+Sur les composantes d'«intérêt», on regardera s'il y a bien convergence
 du modèle et sa vitesse de convergence en fonction du nombre d'éléments,
 de la distorsion de ceux-ci...
 
 \medskip
-La <<~mesure~>> de l'écart peut demander une <<~jauge~>> particulière.
+La «mesure» de l'écart peut demander une «jauge» particulière.
 C'est ce que l'on appelle un \textcolorblue{estimateur d'erreur}.
 Nous n'avons abordé jusqu'à présent que la mesure de l'erreur due à la
 MEF elle-même, mais chaque problème particulier peut demander un
@@ -678,7 +678,5 @@ exemple à l'interface entre deux domaines, un problème évoqué un peu avant
 au paragraphe~\ref{Sec-interf})...
 
 
-\ifVersionAvecExemplesSepares\else
- \input{./tex/ex2}% élts 1D
- \input{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D
-\fi
+\input{./tex/ex2}% élts 1D
+\input{./tex/ex8}% déplacements imposés en multiplicateurs de Lagrange 1D

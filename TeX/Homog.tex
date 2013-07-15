@@ -1,16 +1,16 @@
 \chapter{Homogénéisation}\label{Ch-Homog}\index{homogénéisation}
 \begin{abstract}
 L'idée bien connue de l'homogénéisation\index{homogénéisation} est de remplacer un milieu
-<<~compliqué~>> par un milieu équivalent simple afin de simplifier le modèle
+«compliqué» par un milieu équivalent simple afin de simplifier le modèle
 numérique à résoudre.
 L'intérêt de ces techniques est donc évident.
 
 Par exemple, un matériau composite composé de plusieurs plis (couches)
 constituées chacune de fibres noyées dans une matrice et dont l'orientation
 diffère d'une couche à l'autre peut être représenté avantageusement par
-un matériau <<~homogénéisé~>> ou <<~équivalent~>>.%, ou encore <<~effectif~>>.
+un matériau «homogénéisé» ou «équivalent».%, ou encore «effectif».
 
-%Néanmoins, si le calcul s'en trouve simplifié, le <<~retour en arrière~>> n'est
+%Néanmoins, si le calcul s'en trouve simplifié, le «retour en arrière» n'est
 %que rarement possible (sous certaines hypothèses de comportement).
 %Ainsi, ce que l'on gagne d'un côté est reperdu de l'autre, puisque l'on ne peut
 %plus accéder alors au comportement microscopique (ce qui somme toute est normal...),
@@ -44,7 +44,7 @@ ou encore Lorentz.\index[aut]{Lorentz (Hendrik Antoon), 1853-1928, Néerlandais}
 Le but de ces modèles est de fournir soit des bornes pour le comportement effectif, soit des
 approximations du comportement effectif.
 Les bornes sont optimales lorsqu'il existe une microstructure particulière qui réalise exactement
-le modèle physique. On évalue les <<~bonnes~>> propriétés de ces théories en les confrontant
+le modèle physique. On évalue les «bonnes» propriétés de ces théories en les confrontant
 à d'autres résultats théoriques, calculs analytiques et numériques...
 }
 
@@ -63,7 +63,7 @@ On montre que, sous certaines hypothèses (en particulier l'existence d'un \emph
 remplacer un matériau hétérogène par un milieu homogène équivalent.
 
 Enfin, d'un point de vue purement numérique, ces méthodes peuvent être
-utilisées pour <<~simplifier~>> un système à résoudre, que cela ait un sens
+utilisées pour «simplifier» un système à résoudre, que cela ait un sens
 physique ou non.
 \end{histoire}
 
@@ -77,7 +77,7 @@ Le meilleur exemple en est la pression.
 Bien qu'en un point donné d'un gaz on voit passer des particules allant en
 tous sens, on constate également, à une échelle plus macroscopique,
 un schéma d'ensemble qui permet de définir par exemple la pression
-qu'exerce ledit gaz sur une paroi... pourtant rien de <<~cohérent~>>
+qu'exerce ledit gaz sur une paroi... pourtant rien de «cohérent»
 ne se dégage à l'échelle microscopique.
 \colorblack
 
@@ -265,7 +265,7 @@ et où les~$N_i(x/\varepsilon)$ sont 1-périodiques et~$N_0=1$.
 \medskip
 \subsection{Cas des coefficients discontinus}
 Il est possible d'appliquer la même approche que lorsque les coefficients sont continus
-avec quelques modifications: il <<~suffit~>> d'ajouter les conditions d'interfaces présentées
+avec quelques modifications: il «suffit» d'ajouter les conditions d'interfaces présentées
 en début de paragraphe et rappelées ci-dessous:
 \begin{equation} [u]=0 \quad \text{ et } \quad [n\cdot A(x/\varepsilon)\nabla u] = 0\end{equation}
 partout où cela est nécessaire.
@@ -278,8 +278,8 @@ continu et la périodicité de la solution homogénéisée reste inchangée.
 \medskip
 \section{Homogénéisation simplifiée pour les matériaux composites}\index{homogénéisation}
 
-Après ce petit tour <<~mathématique~>> des méthodes d'homogénéisation,
-nous proposons un petit complément très mécanique, et très <<~pratique~>>.
+Après ce petit tour «mathématique» des méthodes d'homogénéisation,
+nous proposons un petit complément très mécanique, et très «pratique».
 
 \medskip
 Pour information, la modélisation du muscle cardiaque s'inspire des techniques d'homogénéisation
@@ -322,7 +322,7 @@ Principalement pour les composites stratifiés ou sandwichs, il y a deux niveaux
 		 une étape d'homogénéisation locale.
 	\item du niveau mésoscopique au niveau macroscopique:
 		Les hétérogénéités de base sont les différentes couches du stratifié.
-		 Ces couches sont considérées comme <<~homogènes~>> (étape précédente).
+		 Ces couches sont considérées comme «homogènes» (étape précédente).
 		 Cette fois, il s'agit d'une homogénéisation dans l'épaisseur du stratifié.
 \end{itemize}
 
@@ -487,7 +487,7 @@ avec~$u_i(x,\xi,t)$ 1-périodique en~$\xi$.
 \medskip
 \section{Changement de dimension et raccord de maillage}
 \textcolorgreen{Les méthodes d'homogénéisation peuvent également être utilisées pour
-<<~changer (réduire)~>> la dimension d'un problème.}
+«changer (réduire)» la dimension d'un problème.}
 
 \medskip
 Considérons un problème qui se pose dans un domaine plan de longueur~$1$ et de largeur~$\pm\varepsilon/2$.
@@ -501,6 +501,6 @@ Ce genre de chose correspond typiquement à un modèle plaque ou coque (2D) util
 Cela permet également de développer des éléments finis permettant de raccorder des maillages 3D à des maillages 2D ou à des maillages 1D, afin d'alléger les modèles numériques là où ils peuvent l'être.
 
 \medskip
-En mécanique, de nombreuses théories de plaques ou poutres existent (voir la paragraphe~\ref{Sec-PlusModel}). Elles sont généralement présentées de manières <<~physique~>>, mais ne sont rien d'autre que des méthodes d'homogénéisation.
+En mécanique, de nombreuses théories de plaques ou poutres existent (voir la paragraphe~\ref{Sec-PlusModel}). Elles sont généralement présentées de manières «physique», mais ne sont rien d'autre que des méthodes d'homogénéisation.
 
 Libre à chacun de préférer une présentation plutôt mécanicienne ou plutôt mathématicienne, le résultat est finalement le même. Mais il nous semble, et c'est la motivation même à l'origine de ce document, que le fait de connaître les deux aide à mieux cerner à la fois les \textcolorblue{hypothèses} sur lesquelles ces développements sont faits (et que l'on oublie parfois, ayant pour conséquence des résultats que l'on peut qualifier de surprenants) ainsi que les \textcolorblue{potentialités} qui s'offrent à nous. 
