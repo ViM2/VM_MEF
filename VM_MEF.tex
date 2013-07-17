@@ -28,13 +28,17 @@
    \frenchbsetup{IndentFirst=false}
    \usepackage{url}
    \usepackage{eso-pic}
+   \usepackage[xindy]{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
+   \makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
+   \makeindex[columns=2,name=aut,title=Index des noms propres]
+
 %
 \ifVersionDuDocEstVincent
 %   \usepackage{times}% si on veut...
 %   \usepackage{mathptmx}% Use Times as de­fault text font, and pro­vide maths sup­port
 %   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
 %   \usepackage{enumitem}
-   \usepackage{makeidx,index}
+%   \usepackage{makeidx,index}
    \usepackage[a4paper,top=15mm,left=2cm,right=16.5mm,bottom=22mm]{geometry}
    \usepackage[%
      sorting=none,              % classement par nom, année, titre
@@ -53,8 +57,8 @@
    \defbibheading{bibliography}[\bibname]{\section*{#1}}
    
    \date{\emph{version du \today}}
-   \makeindex
-   \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
+%   \makeindex
+%   \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
 \else
    \usepackage{times}
    \gdef\ttdefault{cmtt}%
@@ -68,9 +72,6 @@
    \usepackage{enumitem}
    \setlist{nolistsep} 
    \pagestyle{fancy}
-   \usepackage[xindy]{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
-   \makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
-   \makeindex[columns=2,name=aut,title=Index des noms propres]
    \usepackage{csquotes}           % utilisé par biblatex
    \usepackage[                    % bibliographie (avec le moteur biber au lieu de bibtex)
     style=alphabetic,              % citations comme [Fa91] pour Faltings, 91
@@ -328,8 +329,8 @@ et l'autre «version livre», plus proche d'un ouvrage.
 
 
 
- \ifVersionDuDocEstVincent
-    \chapter*{Bibliographie}\markboth{Bibliographie}{}
+\ifVersionDuDocEstVincent
+   \chapter*{Bibliographie}\markboth{Bibliographie}{}
 
  Le présent document est essentiellement une composition faite à partir de textes trouvés sur le net, qui ont été «mis bout à bout» afin de réduire l'effort  de rédaction (le document ayant été réalisé à ressources minimales).
 
@@ -354,53 +355,23 @@ et l'autre «version livre», plus proche d'un ouvrage.
    \printbibliography[keyword=A,title={Références des annexes}]
 \index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
 
+   \cleardoublepage
+      \begingroup\small
+        \printindex[aut]
+        \printindex
+   \endgroup
 
-\cleardoublepage
-\phantomsection  
-\renewcommand{\indexname}{Index}
-\markboth{Index}{}
-\addcontentsline{toc}{chapter}{\indexname}  
- \printindex
-
- \cleardoublepage
- \makeatletter
- \renewenvironment{theindex}
-                {\if@twocolumn
-                   \@restonecoltrue\onecolumn
-                 \else
-                   \@restonecolfalse
-                 \fi
-                 \thispagestyle{fancy}\parindent\z@
-                 \parskip\z@ \@plus .3\p@\relax
-                 \columnseprule \z@
-                 \columnsep 35\p@
-                 \let\item\@idxitem}
-                {\if@restonecol\twocolumn\fi}
- \makeatother
-\phantomsection  
- \markboth{Index des Noms Propres}{}
-\addcontentsline{toc}{chapter}{Index des Noms Propres}
-
- ~\vspace{9mm}\\
-
- \noindent{\Huge \textbf{Index des Noms Propres}}\\[+2mm]
-
- \bigskip
-
-%%%%il faut MakeIndexer le fichier "VM_MEF.aut.idx"
-    \renewcommand{\indexname}{Index des Noms Propres}
-    \printindex[aut]
-    \cleardoublepage
-    \include{./tex/galerie}
-%%%%%%%%%
- \else
-\begingroup\small
-  \printindex[aut]
-  \printindex
-\endgroup
-\nocite{*}
-\chapter{Références bibliographiques}
-\printbibliography[heading=bibempty]
- \fi
+   \cleardoublepage
+   \include{./tex/galerie}
+%
+\else % version livre
+   \begingroup\small
+     \printindex[aut]
+     \printindex
+   \endgroup
+%   \nocite{*}% déjà en début de document
+   \chapter{Références bibliographiques}
+   \printbibliography[heading=bibempty]
+\fi
 
 \end{document}
