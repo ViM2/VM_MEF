@@ -15,7 +15,7 @@ La partie II nous a permis de voir que l'existence de solutions, dans le cas con
 les théorèmes de Lax-Milgram,\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}
 (paragraphe \ref{Sec:LaxMil}) Babuška\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque} (paragraphe \ref{Sec-ThBabuska}) et
 Brezzi\index[aut]{Brezzi (Franco), 1945-, Italien}\label{Sec:Brezzi} (paragraphe \ref{Sec-ThBrezzi}) selon le type de formulation.
-La partie III, nous a premis de s'assurer de la convergence de la solution approximée vers la solution continue, notamment par les
+La partie III, nous a permis de s'assurer de la convergence de la solution approximée vers la solution continue, notamment par les
 lemmes de Céa\index[aut]{Cea@Céa (Jean), ?- , Français} (paragraphe \ref{Sec-Cea}) et de
 Strang\index[aut]{Strang (William Gilbert), 1934-, Américain} (paragraphe \ref{Sec-Strang}).
 
@@ -56,7 +56,7 @@ déplacement ne l'est pas nécessairement lorsque des mouvements de corps rigide
 
 \medskip
 Les \textcolorblue{problèmes inverses} fournissent souvent des problèmes mal posés.
-Par exemple, le problème dit d'i'inversion du temps dans l'équation de la chaleur consistant à déduire une distribution passée de la
+Par exemple, le problème dit d'inversion du temps dans l'équation de la chaleur consistant à déduire une distribution passée de la
 température à partir d'un état final n'est pas bien posé. Sa solution est en effet très sensible à des perturbations de l'état final.
 
 \medskip
@@ -93,7 +93,7 @@ taille des mailles tend vers 0.
 
 \medskip
 \colorgris
-Une solution $U_n$ est stable si l’on peut trouver une constante $C$ (souvent nulle) telle que:
+Une solution $U_n$ est stable si l'on peut trouver une constante $C$ (souvent nulle) telle que:
 \begin{equation}
 -1 \le \dfrac{U_{n+1}-C}{U_n-C}\le 1, \qquad\forall n
 \end{equation}
@@ -121,21 +121,17 @@ discrétisée et en vérifiant que celle-ci tend vers l'équation originale lors
 Contrairement à la consistance, qui est une propriété locale, la convergence est de portée globale.
 
 On dit qu'une solution numérique converge vers la solution analytique si elle tend vers elle en tout point
-du temps et/ou de l’espace lorsque les paramètres de discrétisation ($\Delta t$, $\Delta x$...) tendent vers 0.
+du temps et/ou de l'espace lorsque les paramètres de discrétisation ($\Delta t$, $\Delta x$...) tendent vers 0.
 
 \medskip
-C'est évidemment bien la convergence (souvent difficile à prouver) d'un schéma numérique que nous visons, mais
-stabilité et consistance (plus faciles à prouver) sont les outils nous permettant de nous en assurer, et ceci via les très beaux
-théorèmes de Lax\index[aut]{Lax (Peter), 1926-, Américain}(celui du théorème de Lax-Milgram) et de Lax-Wendroff, que
-nous présentons maintenant.\index[aut]{Wendroff (Burton), 1930-, Américain}
+C'est évidemment bien la convergence (souvent difficile à prouver) d'un schéma numérique que nous visons, mais stabilité et consistance (plus faciles à prouver) sont les outils nous permettant de nous en assurer, et ceci via les très beaux théorèmes de Lax\index[aut]{Lax (Peter), 1926-, Américain}(celui du théorème de Lax-Milgram) et de Lax-Wendroff, que nous présentons maintenant.\index[aut]{Wendroff (Burton), 1930-, Américain}
 
 
 \medskip
 \section{Théorèmes de convergence}
 
 \begin{theoreme}[Théorème de Lax]\index[aut]{Lax (Peter), 1926-, Américain}\index{théorème! de Lax}
-Pour résoudre un problème évolutif avec condition initiale qui est supposé être bien posé, ceci à l'aide d'un schéma numérique
-consistant, la stabilité du schéma est une condition nécessaire et suffisante pour assurer sa convergence.
+Pour résoudre un problème évolutif avec condition initiale qui est supposé être bien posé, ceci à l'aide d'un schéma numérique consistant, la stabilité du schéma est une condition nécessaire et suffisante pour assurer sa convergence.
 Les notions de consistance, de stabilité et de convergence se réfèrent ici à une même norme.
 
 En d'autres termes: \textcolorred{consistance + stabilité $\Longrightarrow$ convergence}
@@ -143,13 +139,10 @@ En d'autres termes: \textcolorred{consistance + stabilité $\Longrightarrow$ con
 Ce théorème est parfois également appelé théorème de Lax–Richtmyer\index[aut]{Richtmyer (Robert Davis), 1910-2003, Américain}
 
 \medskip
-Dans les applications physiques que nous considérons, le théorème suivant permet d'assurer la convergence du
-schéma numérique utilisé.
+Dans les applications physiques que nous considérons, le théorème suivant permet d'assurer la convergence du schéma numérique utilisé.
 \begin{theoreme}[Théorème de Lax-Wendroff]\index[aut]{Wendroff (Burton), 1930-, Américain}\index{théorème! de Lax-Wendroff}
-Pour résoudre un problème aux dérivées partielles basé sur une loi de conservation, un schéma numérique qui est à la fois conservatif,
-consistant et convergent (lorsque l'on raffine les pas de temps et d'espace, i.e. lorsque $\Delta t \rightarrow 0$ et $\Delta x \rightarrow 0$),
-alors la solution numérique converge vers une solution faible des équations.
+Pour résoudre un problème aux dérivées partielles basé sur une loi de conservation, un schéma numérique qui est à la fois conservatif, consistant et convergent (lorsque l'on raffine les pas de temps et d'espace, i.e. lorsque $\Delta t \rightarrow 0$ et $\Delta x \rightarrow 0$), alors la solution numérique converge vers une solution faible des équations.
 \end{theoreme}
 
-Notons que Wendroff a passé sa thèse sous la direction de Peter Lax.
+Notons que Burton Wendroff a passé sa thèse sous la direction de Peter Lax.
 

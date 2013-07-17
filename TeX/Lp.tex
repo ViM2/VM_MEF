@@ -13,36 +13,25 @@ Regardons toutefois d'un peu plus près d'où tout cela provient.
 
 \medskip
 \begin{histoire}%
-Dans le chapitre VI, «Développement d'une fonction arbitraire en séries
-trigonométriques» de sa \emph{Théorie analytique}, Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
-considère une fonction~$f$
-définie dans~$]-\pi/2,+\pi/2[$ dont le développement en série trigonométrique est
-de la forme:
+Dans le chapitre VI, «Développement d'une fonction arbitraire en séries trigonométriques» de sa \emph{Théorie analytique}, Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} considère une fonction~$f$ définie dans~$]-\pi/2,+\pi/2[$ dont le développement en série trigonométrique est de la forme:
 \begin{equation} f(x)=a_1\sin x+a_2\sin 2x +\ldots+a_k\sin kx +\ldots\end{equation}
-Le problème est de calculer les coefficients~$a_k$ dans le cas même, dit-il, où «la
-fonction~$f(x)$ représente une suite de valeurs ou ordonnées dont chacune est
-arbitraire... On ne suppose point que ces coordonnées soient assujetties à une
-loi commune; elles se succèdent d'une manière quelconque et chacune d'elles
-est donnée comme le serait une seule quantité».
-
-On notera au passage que la fonction considérée par Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
-n'est définie que par la donnée de ses points (si en plus ils sont en nombre fini, cela représente alors
-un échantillonnage).
-
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}%
+\includegraphics[height=\the\HauteurDesPhotos]{Fourier}\\
+Fourier%
+\end{tabular}}
 \medskip
-Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
-conduit son calcul selon une voie nouvelle: en multipliant l'expression précédente
-par~$\sin kx$ et en intégrant terme à terme la série, mais sans justification, il obtient:
+\ImageAGauche{%
+Le problème est de calculer les coefficients~$a_k$ dans le cas même, dit-il, où «la fonction~$f(x)$ représente une suite de valeurs ou ordonnées dont chacune est arbitraire... On ne suppose point que ces coordonnées soient assujetties à une loi commune; elles se succèdent d'une manière quelconque et chacune d'elles est donnée comme le serait une seule quantité».\\ \indent
+On notera au passage que la fonction considérée par Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} n'est définie que par la donnée de ses points (si en plus ils sont en nombre fini, cela représente alors un échantillonnage).\\ \indent
+%
+%\medskip
+Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} conduit son calcul selon une voie nouvelle: en multipliant l'expression précédente par~$\sin kx$ et en intégrant terme à terme la série, mais sans justification, il obtient:
 \begin{equation}a_k=\frac2{\pi}\dint_0^{\pi} f(x)\sin kx \dd x\end{equation}
-Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
-observe que dans tous les cas envisagés, ces intégrales ont un sens et en conclut
-que toute fonction d'une variable peut-être représentée par une série trigonométrique.
+Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} observe que dans tous les cas envisagés, ces intégrales ont un sens et en conclut que toute fonction d'une variable peut-être représentée par une série trigonométrique.}
 
-Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
-même manquant de rigueur, aboutit à un résultat juste pour les fonctions
-qu'il considère.
-Or les fonctions considérées en l'occurrence «vont bien» pour l'intégrale de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
-telle qu'elle est définie.
+Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} même manquant de rigueur, aboutit à un résultat juste pour les fonctions qu'il considère.
+Or les fonctions considérées en l'occurrence «vont bien» pour l'intégrale de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} telle qu'elle est définie.
 
 \medskip
 \index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
@@ -66,37 +55,23 @@ de celle de Cauchy:\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Fran
 la fonction sur chaque sous-intervalle n'est plus celle du point de gauche, mais peut être prise n'importe où dans ledit sous-intervalle.}
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\begin{tabular}{cccc}%
+\begin{tabular}{ccc}%
 \includegraphics[height=\the\HauteurDesPhotos]{Riemann}&
 \includegraphics[height=\the\HauteurDesPhotos]{Dirichlet}&
-\includegraphics[height=\the\HauteurDesPhotos]{Fourier}&
 \includegraphics[height=\the\HauteurDesPhotos]{Lebesgue2}\\
-Riemann&Dirichlet&Fourier&Lebesgue%
+Riemann&Dirichlet&Lebesgue%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Dès la fin de son mémoire de 1829, \emph{Sur la convergence des séries trigonométriques
-qui servent à représenter une fonction arbitraire entre des limites données},
-Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
-donne l'exemple, d'une nature toute nouvelle, d'une fonction discontinue en tous ces points:
-la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre
-constante~$d$ si~$x$ est irrationnel.
-On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
-Le travail consistera alors à définir précisément ce que l'on peut négliger,
-i.e. les parties de mesure nulle.
+Dès la fin de son mémoire de 1829, \emph{Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données}, Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} donne l'exemple, d'une nature toute nouvelle, d'une fonction discontinue en tous ces points: la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre constante~$d$ si~$x$ est irrationnel.
+On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.
 }
 
 \medskip
-Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} va commencer par définir un
-\textcolorblue{ensemble mesurable}: c'est un ensemble
-dont la mesure extérieure (i.e. la borne inférieure de la mesure des ouverts le contenant)
-est égale à sa mesure intérieure (i.e. la borne supérieure de la mesure des fermés qu'il contient): est-il besoin de rappeler la différence entre borne inférieure et minimum et entre borne supérieure et maximum ? La borne supérieure (ou le supremum) d'une partie d'un ensemble partiellement ordonné est le plus petit de ses majorants. Une telle borne n'existe pas toujours, mais si elle existe alors elle est unique. Elle n'appartient pas nécessairement à la partie considérée.
+Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} va commencer par définir un \textcolorblue{ensemble mesurable}: c'est un ensemble dont la mesure extérieure (i.e. la borne inférieure de la mesure des ouverts le contenant) est égale à sa mesure intérieure (i.e. la borne supérieure de la mesure des fermés qu'il contient): est-il besoin de rappeler la différence entre borne inférieure et minimum et entre borne supérieure et maximum ? La borne supérieure (ou le supremum) d'une partie d'un ensemble partiellement ordonné est le plus petit de ses majorants. Une telle borne n'existe pas toujours, mais si elle existe alors elle est unique. Elle n'appartient pas nécessairement à la partie considérée.
 Dualement, la borne inférieure (ou l'infimum) d'une partie est le plus grand de ses minorants...
 
-\textcolorblue{L'intégrale de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-peut être définie de manière géométrique: pour une fonction
-positive~$f$ définie sur~$\intff{a}{b}$, elle est égale à la mesure de dimension deux de l'ensemble
-$\{(x,y)\in\RR^2 / a\le y\le f(x), a\le x\le b\}$ quand cette mesure existe.
+\textcolorblue{L'intégrale de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} peut être définie de manière géométrique: pour une fonction positive~$f$ définie sur~$\intff{a}{b}$, elle est égale à la mesure de dimension deux de l'ensemble $\{(x,y)\in\RR^2 / a\le y\le f(x), a\le x\le b\}$ quand cette mesure existe.
 D'une manière analytique, cette définition de l'intégrale de Lebesgue devient:\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
 \begin{definition}[Intégrale de Lebesgue]
@@ -110,51 +85,33 @@ En considérant la partition~$m=\xi_1<\xi_2<...<\xi_n<\xi_{n+1}=M$ et
 $V_i=\{x/ \xi_i\le f(x)\le\xi_{i+1}\}$, on définit les sommes
 \begin{equation} \dsum_{i=1}^n\xi_i m(V_i) \quad \text{ et }\quad \dsum_{i=1}^n\xi_{i+1} m(V_i) \end{equation}
 où~$m(V)$ est la mesure de l'ensemble~$V$.
-\textcolorblue{L'intégrale de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} est la
-\textcolorblue{limite commune} de ces deux sommes, dont on peut montrer qu'elle existe lorsque~$f$ est mesurable.
+\textcolorblue{L'intégrale de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} est la \textcolorblue{limite commune} de ces deux sommes, dont on peut montrer qu'elle existe lorsque~$f$ est mesurable.
 \end{definition}
 
-\medskip
-Voici par quelle image Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-expliquait la nature de son intégrale: «Je
-dois payer une certaine somme; je fouille dans mes poches et j'en sors des pièces
-et des billets de différentes valeurs. Je les verses à mon créancier dans l'ordre où
-elles se présentent jusqu'à atteindre le total de ma dette. C'est l'intégrale de
-Riemann.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
-Mais je peux opérer autrement. Ayant sorti tout mon argent, je réunis
-les billets de même valeur, les pièces semblables et j'effectue le paiement en
-donnent ensemble les signe monétaires de même valeur. C'est mon intégrale.»
+%\medskip
+Voici par quelle image Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} expliquait la nature de son intégrale:\\
+«Je dois payer une certaine somme; je fouille dans mes poches et j'en sors des pièces et des billets de différentes valeurs. Je les verses à mon créancier dans l'ordre où elles se présentent jusqu'à atteindre le total de ma dette. C'est l'intégrale de Riemann.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Mais je peux opérer autrement. Ayant sorti tout mon argent, je réunis les billets de même valeur, les pièces semblables et j'effectue le paiement en donnent ensemble les signe monétaires de même valeur. C'est mon intégrale.»
 
 \medskip
-La théorie de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-éclaire bien des difficultés des discussions du
-XIXe siècle (notamment sur les propriétés de différentiabilité des fonctions
-continues) et fournit un cadre général simplifié à de nombreux théorèmes
-alors que la théorie de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
-multiplie les hypothèses et les conditions restrictives.
+La théorie de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} éclaire bien des difficultés des discussions du \textsc{xix}\fup{e} siècle (notamment sur les propriétés de différentiabilité des fonctions continues) et fournit un cadre général simplifié à de nombreux théorèmes alors que la théorie de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} multiplie les hypothèses et les conditions restrictives.
 
-De plus, toute cette évolution s'est accompagnée de l'idée qu'on doit
-manipuler les fonctions comme des objets mathématiques en soi, des points
-de nouveaux espaces, les \emph{espaces fonctionnels}. Avec l'extension du langage
-ensembliste, il devient naturel d'employer un langage géométrique à propos
-de ces espaces.
+De plus, toute cette évolution s'est accompagnée de l'idée qu'on doit manipuler les fonctions comme des objets mathématiques en soi, des points de nouveaux espaces, les \emph{espaces fonctionnels}. Avec l'extension du langage ensembliste, il devient naturel d'employer un langage géométrique à propos de ces espaces.
 
 \medskip
-\textcolorgris{Rendons quand même hommage à cette belle (et malgré tout puissante) intégrale de Riemann, qui a de plus le bon goût d'être
-souvent très bien comprise des élèves.
-L'intégrale de Riemann nous apprends à nous poser la question «où se passent les choses importantes?», question qui
-n'a pas de sens pour l’intégrale de Lebesgue qui ne connaît pas la question «où?», mais seulement «combien souvent?».
-Les techniques riemanniennes consistant à localiser les problèmes et à découper l'intégrale sur plusieurs intervalles
-restent des outils indispensables pour aborder bien des problèmes.}
+\textcolorgris{Malgré tout ce qui vient d'être dit, rendons quand même hommage à cette belle (et malgré tout puissante) intégrale de Riemann, qui a de plus le bon goût d'être souvent très bien comprise des élèves.\\ \indent
+L'intégrale de Riemann nous apprend à nous poser la question «où se passent les choses importantes?», question qui n'a pas de sens pour l'intégrale de Lebesgue qui ne connaît pas la question «où?», mais seulement «combien souvent?».\\ \indent
+De plus, les techniques riemanniennes consistant à localiser les problèmes et à découper l'intégrale sur plusieurs intervalles restent des outils indispensables pour aborder bien des problèmes.}
 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Kurzweil}&
+\includegraphics[height=\the\HauteurDesPhotos]{Henstock}\\
+Kurzweil&Henstock%
+\end{tabular}}
 \medskip
-\textcolorgris{Dans les années 50 a été mise au point l'intégrale de Kurzweil-Henstock\index[aut]{Kurzweil (Jaroslav), 1926-, Tchèque}\index[aut]{Henstock (Ralph), 1923-2007, Anglais}
-(ou KH-intégrale, ou intégrale de jauge)
-à partir de celle de Riemann: on retravaille un peu les sous-intervalles et les points de calcul de la fonction: chaque point est
-appelé «marque» et l'on parle de «subdivision marquée». Sans faire appel à la théorie de la mesure, on dispose alors
-d'une intégrale aussi puissance que celle de Lebesgue (mais moins générale, car définie uniquement sur~$\RR$). Et on dispose même d'un très beau résultat:
-toute fonction dérivée est intégrable, et il n'est pas nécessaire d'introduire la notion d'intégrale impropre.
-L'intégrale de Lebesgue peut alors être introduite comme un cas particulier de cette intégrale.}
+\ImageAGauche{%
+\textcolorgris{Dans les années 50 a été mise au point l'intégrale de Kurzweil-Henstock\index[aut]{Kurzweil (Jaroslav), 1926-, Tchèque}\index[aut]{Henstock (Ralph), 1923-2007, Anglais} (ou KH-intégrale, ou intégrale de jauge) à partir de celle de Riemann. On retravaille un peu les sous-intervalles et les points de calcul de la fonction: chaque point est appelé «marque» et l'on parle de «subdivision marquée» (pour plus de détails, chercher «lemme de Cousin». Pierre Cousin\index[aut]{Cousin (Pierre), 1867-1933, Français} était un étudiant de Henri Poincaré).\index[aut]{Poincaré (Henri), 1854-1912, Français}\\ 
+\indent Sans faire appel à la théorie de la mesure, on dispose alors d'une intégrale aussi puissance que celle de Lebesgue (mais moins générale, car définie uniquement sur~$\RR$). Et on dispose même d'un très beau résultat: toute fonction dérivée est intégrable, et il n'est pas nécessaire d'introduire la notion d'intégrale impropre. L'intégrale de Lebesgue peut alors être introduite comme un cas particulier de cette intégrale.}}
 \end{histoire}\colorblack
 
 
@@ -187,18 +144,14 @@ Si~$f\in L^p$, on note~$\|f\|_p$ la valeur commune des~$\| g\| _p$ pour toutes l
 appartenant à la classe de~$f$.
 \end{definition}
 
-De manière équivalente, on peut également définir~$L^p$ comme étant le quotient
-de~$\mathcal{L}^p$ par la relation d'équivalence «égalité~$\mu$-presque partout».
+De manière équivalente, on peut également définir~$L^p$ comme étant le quotient de~$\mathcal{L}^p$ par la relation d'équivalence «égalité~$\mu$-presque partout».
 
 \medskip
-Il est clair que chaque espace~$L^p$ est plus exactement une classe d'équivalence obtenu en
-identifiant les fonctions qui ne diffèrent que sur un ensemble négligeable.
-Ainsi, si~$f\in L^p$, on appelle «représentant» de~$f$, toute fonction mesurable~$g\in\mathcal{L}^p$
-qui appartient à la classe d'équivalence de~$f$.
+Il est clair que chaque espace~$L^p$ est plus exactement une classe d'équivalence obtenu en identifiant les fonctions qui ne diffèrent que sur un ensemble négligeable.
+Ainsi, si~$f\in L^p$, on appelle «représentant» de~$f$, toute fonction mesurable~$g\in\mathcal{L}^p$ qui appartient à la classe d'équivalence de~$f$.
 
 Comme, par construction, deux représentant d'une même classe auront la même intégrale, on
-appelle (abusivement, mais sans confusion) tout~$f\in L^p$ une fonction de~$L^p$ et non pas une classe 
-d'équivalence ou un représentant de la classe d'équivalence.
+appelle (abusivement, mais sans confusion) tout~$f\in L^p$ une fonction de~$L^p$ et non pas une classe d'équivalence ou un représentant de la classe d'équivalence.
 En d'autres termes, on identifie une classe à l'un quelconque de ses représentants.
 
 \medskip
