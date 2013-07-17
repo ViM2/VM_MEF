@@ -54,7 +54,7 @@
       \refstepcounter{part}%
       \addcontentsline{toc}{part}{\texorpdfstring{%
       \setlength\fboxsep{2pt}%
-         \noindent\protect\colorbox{ocre}{\protect\vphantom{Ép}\protect\makebox[\ecart-2\fboxsep-2\fboxrule]{\color{black!5}\bfseries\thepart}}\;\colorbox{black!5}{\protect\vphantom{Ép}\protect\makebox[\linewidth-4\fboxsep-4\fboxrule-\ecart]{\MakeUppercase{#1}}}}{#1}}%
+      \noindent\protect\colorbox{ocre}{\protect\vphantom{Ép}\protect\makebox[\ecart-2\fboxsep-2\fboxrule]{\color{black!5}\bfseries\thepart}}\;\colorbox{black!5}{\protect\vphantom{Ép}\protect\makebox[\linewidth-4\fboxsep-4\fboxrule-\ecart]{\MakeUppercase{#1}}}}{#1}}%
    \else%
       \addcontentsline{toc}{part}{#1}%
    \fi%
@@ -68,39 +68,34 @@
   \begin{minipage}[c][\largeurBandeauHAL][c]{\largeurBandeauHAL} ~\end{minipage}
    \colorbox{ocre}{\begin{minipage}[c][\separab][c]{\separab}\color{white}\Huge\sffamily\bfseries\centering\thepart\end{minipage}}\;\;\colorbox{black!5}{\begin{minipage}[c][\separab][c]{\ecarttoto}\Huge\centering\sffamily\bfseries\MakeUppercase{#2}\end{minipage}}\;\;\colorbox{black!30}{\begin{minipage}[c][\separab][c]{\separab}\mbox{}\end{minipage}}}%
    \@endpart}%
-\makeatother
+   \makeatother
 %
 \else% doc pas pour HAL
-%
-\setlength\ecart{1.2cm}
-\addtolength\ecart{4pt}
-\newcommand{\parttitle}{}
-\setlength\ecarttoto{.965\paperwidth}
-\setlength\separab{3cm}
-\makeatletter
-\def\@part[#1]#2{%
-\renewcommand{\parttitle}{#1}%
-\ifnum \c@secnumdepth >-2\relax%
-\refstepcounter{part}%
-\addcontentsline{toc}{part}{\texorpdfstring{%
-\setlength\fboxsep{2pt}%
-\ifVersionDuDocEstVincent
-   \noindent\protect\colorbox{ocre}{\protect\vphantom{Ép}\protect\makebox[\ecart]{\color{black!5}\bfseries\thepart}}\;\colorbox{black!5}{\protect\vphantom{Ép}\protect\makebox[\linewidth-4\fboxsep-\ecart]{\MakeUppercase{#1}}}}{#1}}%
-\else
-   \noindent\protect\colorbox{ocre}{\protect\vphantom{Ép}\protect\makebox[\ecart]{\color{black!5}\bfseries\thepart}}\;\colorbox{black!5}{\protect\vphantom{Ép}\protect\makebox[\linewidth-4\fboxsep-4\fboxrule-\ecart]{\MakeUppercase{#1}}}}{#1}}%
-\fi
-\else%
-\addcontentsline{toc}{part}{#1}%
-\fi%
-{\centering%
-\interlinepenalty \@M%
-\normalfont%
-\ifVersionDuDocEstVincent\hspace*{-23.3mm}\else\hspace*{-\separab}\fi% car version Vincent utilise A4
-\addtolength\ecarttoto{-\fboxsep}\addtolength\ecarttoto{-\fboxsep}
-\addtolength\ecarttoto{-\separab}\addtolength\ecarttoto{-\separab}
-\colorbox{ocre}{\begin{minipage}[c][\separab][c]{\separab}\color{white}\Huge\sffamily\bfseries\centering\thepart\end{minipage}}\;\;\colorbox{black!5}{\begin{minipage}[c][\separab][c]{\ecarttoto}\Huge\centering\sffamily\bfseries\MakeUppercase{#2}\end{minipage}}\;\;\colorbox{black!30}{\begin{minipage}[c][\separab][c]{\separab}\mbox{}\end{minipage}}}%
-\@endpart}%
-\makeatother
+   \setlength\ecart{1.2cm}
+   \ifVersionDuDocEstVincent\addtolength\ecart{4pt}\fi
+   \newcommand{\parttitle}{}
+   \setlength\ecarttoto{.965\paperwidth}
+   \setlength\separab{3cm}
+   \makeatletter
+   \def\@part[#1]#2{%
+   \renewcommand{\parttitle}{#1}%
+   \ifnum \c@secnumdepth >-2\relax%
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\texorpdfstring{%
+      \setlength\fboxsep{2pt}%
+      \noindent\protect\colorbox{ocre}{\protect\vphantom{Ép}\protect\makebox[\ecart-2\fboxsep-2\fboxrule]{\color{black!5}\bfseries\thepart}}\;\colorbox{black!5}{\protect\vphantom{Ép}\protect\makebox[\linewidth-4\fboxsep-4\fboxrule-\ecart]{\MakeUppercase{#1}}}}{#1}}%
+   \else%
+      \addcontentsline{toc}{part}{#1}%
+   \fi%
+   {\centering%
+   \interlinepenalty \@M%
+   \normalfont%
+   \ifVersionDuDocEstVincent\hspace*{-20.0mm}\else\hspace*{-\separab}\fi%
+   \addtolength\ecarttoto{-\fboxsep}\addtolength\ecarttoto{-\fboxsep}%
+   \addtolength\ecarttoto{-\separab}\addtolength\ecarttoto{-\separab}%
+   \colorbox{ocre}{\begin{minipage}[c][\separab][c]{\separab}\color{white}\Huge\sffamily\bfseries\centering\thepart\end{minipage}}\;\;\colorbox{black!5}{\begin{minipage}[c][\separab][c]{\ecarttoto}\Huge\centering\sffamily\bfseries\MakeUppercase{#2}\end{minipage}}\;\;\colorbox{black!30}{\begin{minipage}[c][\separab][c]{\separab}\mbox{}\end{minipage}}}%
+   \@endpart}%
+   \makeatother
 \fi
 %
 %--------------------------------------------------------------------------
@@ -273,13 +268,40 @@
 \fancyhf{}%
 \ifVersionDuDocEstVincent
    \ifVersionDuDocEstPourHAL% (alors bandeau HAL)
-   \setlength\debordement{\paperwidth-3\ecartb+5.1mm-\largeurBandeauHAL}% qui n'est plus un débordement, mais pourquoi créer une dimension de plus...
-   \fancyfoot[CO]{\vskip1em\makebox[0cm]{\colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}}%
-   \fancyfoot[CE]{\vskip1em\colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}\makebox[0cm]{\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}\hspace*{10.1mm}}%
-   \else
-   \setlength\debordement{\paperwidth-3\ecartb+5.1mm}% qui n'est plus un débordement, mais pourquoi créer une dimension de plus...
-   \fancyfoot[CO]{\vskip1em\makebox[0cm]{\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}}%
-   \fancyfoot[CE]{\vskip1em\makebox[0cm]{\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}\hspace*{10.1mm}}%
+%      \setlength\debordement{\paperwidth-3\ecartb+8.5mm-\largeurBandeauHAL}%
+      \setlength\debordement{\paperwidth-3\ecartb-\largeurBandeauHAL+6.5mm}% larg boîte centre
+      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
+      \colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}}}%
+      \fancyfoot[CE]{\vskip1em\hspace{4mm}\makebox[0cm]{%
+      \colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize\vphantom{Élp} \MakeUppercase{\;\parttitle}\hfill\sffamily{\ifCeChapitreEstEtoile\else\rightmark\;\fi}}}%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      }}%
+   \else% Pour Vincent et pas pour HAL
+      \setlength\debordement{\paperwidth-2\ecartb-4mm}% larg boîte centre
+      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize%
+      \sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}}}%
+      \fancyfoot[CE]{\vskip1em\hspace{3mm}\makebox[0cm]{%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize\vphantom{Élp} \MakeUppercase{\;\parttitle}\hfill\sffamily{\ifCeChapitreEstEtoile\else\rightmark\;\fi}}}%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      }}%
+
+%      \setlength\debordement{\paperwidth-3\ecartb+5.1mm}
+% qui n'est plus un débordement, mais pourquoi créer une dimension de plus...
+%      \fancyfoot[CO]{\vskip1em\makebox[0cm]{\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}}%
+%      \fancyfoot[CE]{\vskip1em\makebox[0cm]{\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}\hspace*{10.1mm}}%
    \fi
 \else% Version Mathias
    \ifVersionDuDocEstPourHAL% (alors bandeau HAL) A AJOUTER

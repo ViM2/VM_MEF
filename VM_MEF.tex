@@ -35,11 +35,23 @@
 %   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
 %   \usepackage{enumitem}
    \usepackage{makeidx,index}
-   \usepackage{frbib,bibtopic}
-%   \usepackage[a4paper,top=22.8mm,left=2.1cm,right=16.4201mm,bottom=32.2625mm]{geometry}
    \usepackage[a4paper,top=15mm,left=2cm,right=16.5mm,bottom=22mm]{geometry}
+   \usepackage[%
+     sorting=none,              % classement par nom, année, titre
+     sortcites=true,             % classer les citations multiples
+     autopunct=true,             % gérer automatiquement les ponctuations
+     babel=hyphen,               % ajuster les césure pour chaque entrée
+     hyperref=true,              % les liens hypertexte, c'est le Bien
+     abbreviate=false,           % pas d'abréviation
+     backref=true,
+     bibencoding=utf8,
+     backend=biber]{biblatex}    % pas de réfs. aux pages où l'entrée est citée
 %
    \pagestyle{fancy}
+   \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
+   \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
+   \defbibheading{bibliography}[\bibname]{\section*{#1}}
+   
    \date{\emph{version du \today}}
    \makeindex
    \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
@@ -78,14 +90,12 @@
    \renewcommand{\geq}{\geqslant}
 \fi
 
-%\selectlanguage{francais}
-%\graphicspath{{./graphes/}{./photos/}{./eps/}}
 \graphicspath{{./photos/}{./eps/}}
 
 \include{./tex/macros}% macros
 
 \begin{document}
-
+\nocite{*}
 \title{La Méthode des éléments Finis. Vulgarisation des aspects mathématiques. Illustration des capacités de la méthode}
 \author{Vincent Manet}
 
@@ -319,57 +329,30 @@ et l'autre «version livre», plus proche d'un ouvrage.
 
 
  \ifVersionDuDocEstVincent
-    \chapter*{Bibliographie}
- \markboth{Bibliographie}{}
-  %%%%%%%\addcontentsline{toc}{chapter}{Bibliographie}
-   % BIBTOPIC crée pour chaque appel à BtSect un fichier .aux
-   % on aura donc VM_MEF1.aux... VM_MEF5.aux (correspondant
-   % aux fihicers VM_MEF0, ..., VM_MEF3, VM_MEFA.bib)
-   % il faut BIBTEXer chacun de ces fichiers .AUX (avec TeXWorks)
-   % pour créer les fichiers .bbl nécessaires.
+    \chapter*{Bibliographie}\markboth{Bibliographie}{}
 
- Le présent document est essentiellement une composition faite à partir de textes
- trouvés sur le net, qui ont été «mis bout à bout» afin de réduire l'effort
- de rédaction (le document ayant été réalisé à ressources minimales ).
+ Le présent document est essentiellement une composition faite à partir de textes trouvés sur le net, qui ont été «mis bout à bout» afin de réduire l'effort  de rédaction (le document ayant été réalisé à ressources minimales).
 
+ Les principales  ressources bibliographiques utilisées pour la rédaction de ce document  sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur désireux d'approfondir certains thèmes (Google est ton ami).
 
- Les principales  ressources bibliographiques utilisées pour la rédaction de ce document
- sont listées ci-dessous et peuvent donc aisément être trouvées par le lecteur
- désireux d'approfondir certains thèmes (Google est ton ami).
+ De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas  mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est  ouvert...
 
+ Dans tout le document, nous nous sommes servis intensivement de Wikipédia.
+ 
+   \printbibliography[keyword="0",title={Références générales}]
+   \index[aut]{Joly (Patrick), ?- , Français}
 
- De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas
- mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est
- ouvert...
+   \printbibliography[keyword=1,title={Références de la partie 1}]
+   \index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}
 
+   \printbibliography[keyword=2,title={Références de la partie 2}]
+\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}
 
- \bibliographystyle{frunsrt}
+   \printbibliography[keyword=3,title={Références de la partie 3}]
+\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}
 
- \begin{btSect}{VM_MEF0}
- \section*{Références générales}\markboth{Références générales}{}\index[aut]{Joly (Patrick), ?- , Français}
- Dans tout le document, nous nous servons intensivement de Wikipédia.
- \btPrintAll
- \end{btSect} 
-
- \begin{btSect}{VM_MEF1}\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}
- \section*{Références de la partie 1}\markboth{Preface}{Références de la partie 1}
- \btPrintAll
- \end{btSect} 
-
- \begin{btSect}{VM_MEF2}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}
- \section*{Références de la partie 2}\markboth{Références de la partie 2}{}
- \btPrintAll
- \end{btSect} 
-
-\begin{btSect}{VM_MEF3}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}
- \section*{Références de la partie 3}\markboth{Références de la partie 3}{}
- \btPrintAll
- \end{btSect} 
-
- \begin{btSect}{VM_MEFA}\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
- \section*{Références des annexes}\markboth{Références des annexes}{}
- \btPrintAll
- \end{btSect} 
+   \printbibliography[keyword=A,title={Références des annexes}]
+\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
 
 
 \cleardoublepage
