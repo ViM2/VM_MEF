@@ -28,67 +28,66 @@
    \frenchbsetup{IndentFirst=false}
    \usepackage{url}
    \usepackage{eso-pic}
-   \usepackage[xindy]{imakeidx} %% pas vraiment utile ici. Problèmes dans l'index pour certaines pages
+   \usepackage[xindy]{imakeidx}
    \makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
-   \makeindex[columns=2,name=aut,title=Index des noms propres]
+   \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres]
+%texindy -L french aut.idx
+%texindy -L french -M mystyle.xdy VM_MEF.idx
 
 %
 \ifVersionDuDocEstVincent
-%   \usepackage{times}% si on veut...
-%   \usepackage{mathptmx}% Use Times as de­fault text font, and pro­vide maths sup­port
-%   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
 %   \usepackage{enumitem}
-%   \usepackage{makeidx,index}
    \usepackage[a4paper,top=15mm,left=2cm,right=16.5mm,bottom=22mm]{geometry}
    \usepackage[%
-     sorting=none,              % classement par nom, année, titre
-     sortcites=true,             % classer les citations multiples
-     autopunct=true,             % gérer automatiquement les ponctuations
-     babel=hyphen,               % ajuster les césure pour chaque entrée
-     hyperref=true,              % les liens hypertexte, c'est le Bien
-     abbreviate=false,           % pas d'abréviation
+     sorting=none,%
+     sortcites=true,  % classer les citations multiples
+     autopunct=true,  % gérer automatiquement les ponctuations
+     babel=hyphen,    % ajuster les césure pour chaque entrée
+     hyperref=true,   % les liens hypertexte, c'est le Bien
+     abbreviate=false,% pas d'abréviation
      backref=true,
      bibencoding=utf8,
-     backend=biber]{biblatex}    % pas de réfs. aux pages où l'entrée est citée
+     backend=biber]{biblatex}
 %
    \pagestyle{fancy}
    \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
    \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
    \defbibheading{bibliography}[\bibname]{\section*{#1}}
-   
    \date{\emph{version du \today}}
-%   \makeindex
-%   \newindex{aut}{aut.idx}{aut.ind}{Index des Noms Propres}
+%
 \else
    \usepackage{times}
    \gdef\ttdefault{cmtt}%
    \ifVersionDuCompilateurEstVincent% Poor's man version
-      \usepackage{mathptmx,amssymb} % police ouverte (il peut y avoir des messages d'erreur à la compilation)
-      \providecommand\mathscr{\mathcal} % à commenter lors de l'utilisation de mtpro2
-   \else
-      \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2} % police propriétaire
+      \usepackage{mathptmx,amssymb}% police ouverte
+      \providecommand\mathscr{\mathcal}% à commenter lors de l'utilisation de mtpro2
+   \else% police propriétaire
+      \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
    \fi
    \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
    \usepackage{enumitem}
    \setlist{nolistsep} 
    \pagestyle{fancy}
-   \usepackage{csquotes}           % utilisé par biblatex
-   \usepackage[                    % bibliographie (avec le moteur biber au lieu de bibtex)
-    style=alphabetic,              % citations comme [Fa91] pour Faltings, 91
+   \usepackage{csquotes}
+   \usepackage[%
+    style=alphabetic,          % citations comme [Fa91] pour Faltings, 91
      style=numeric-comp,
-     sorting=nyt,                  % classement par nom, année, titre
-     sortcites=true,               % classer les citations multiples
-     autopunct=true,               % gérer automatiquement les ponctuations
-     babel=hyphen,                 % ajuster les césure pour chaque entrée
-     hyperref=true,                % les liens hypertexte, c'est le Bien
-     abbreviate=false,             % pas d'abréviation
+     sorting=nyt,              % classement par nom, année, titre
+     sortcites=true,           % classer les citations multiples
+     autopunct=true,           % gérer automatiquement les ponctuations
+     babel=hyphen,             % ajuster les césure pour chaque entrée
+     hyperref=true,            % les liens hypertexte, c'est bien
+     abbreviate=false,         % pas d'abréviation
      backref=true,
-     backend=biber]{biblatex}      % pas de réfs. aux pages où l'entrée est citée
-   \bibliography{VM}               % utiliser these.bib (format bibtex normal)
-   \defbibheading{bibempty}{}      % voir ci-dessous
+     backend=biber]{biblatex}  % pas de réfs. aux pages où l'entrée est citée
+%   \bibliography{VM}           % utiliser these.bib (format bibtex normal)
+   \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
+   \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
+
+   \defbibheading{bibempty}{}  % voir ci-dessous
    \usepackage[numbered,level=-1]{bookmark}
-   \renewcommand{\leq}{\leqslant}
-   \renewcommand{\geq}{\geqslant}
+%   \renewcommand{\leq}{\leqslant}
+%   \renewcommand{\geq}{\geqslant}
 \fi
 
 \graphicspath{{./photos/}{./eps/}}
@@ -141,21 +140,11 @@ Ce document est sous licence Creative Commons 3.0 France:
 \ifVersionDuDocEstVincent\else\addcontentsline{toc}{chapter}{Introduction}\fi
 \markboth{Introduction}{}
 
-Dans ce (de moins en moins court) document, plutôt à destination d'ingénieurs
-mécaniciens  connaissant déjà la méthode des éléments finis,
-nous allons essayer de faire une présentation un peu plus théorique que ce qui 
-leur est généralement proposé (et qui est quand même souvent de type 
-«preuve par les mains», ce qui occulte trop de points).
+Dans ce (de moins en moins court) document, plutôt à destination d'ingénieurs mécaniciens  connaissant déjà la méthode des éléments finis, nous allons essayer de faire une présentation un peu plus théorique que ce qui leur est généralement proposé (et qui est quand même souvent de type «preuve par les mains», ce qui occulte trop de points).
 
-Nous ne ferons appel qu'à des notions mathématiques de bases généralement 
-déjà vues pour la plupart en taupe (ou en tout début de cycle d'ingé)... bien
-que des compléments que l'on peut qualifier d'élémentaires nous aient été
-demandés et aient été inclus.
+Nous ne ferons appel qu'à des notions mathématiques de bases généralement déjà vues pour la plupart en taupe (ou en tout début de cycle d'ingé)... bien que des compléments que l'on peut qualifier d'élémentaires nous aient été demandés et aient été inclus.
 
-Nous espérons, grâce à cette présentation théorique
-montrer toute la souplesse et la puissance de la méthode, afin
-de permettre au lecteur d'envisager d'autres simulations que celles
-qu'il a pu déjà réaliser par le passé.
+Nous espérons, grâce à cette présentation théorique montrer toute la souplesse et la puissance de la méthode, afin de permettre au lecteur d'envisager d'autres simulations que celles qu'il a pu déjà réaliser par le passé.
 
 
 
@@ -166,80 +155,45 @@ qu'il a pu déjà réaliser par le passé.
 \markboth{But du document}{}
 \addcontentsline{toc}{section}{But du document}
 
-Le but initial était de \emph{présenter brièvement la théorie mathématique} derrière
-les éléments finis afin que les ingénieurs utilisant cette méthode puisse en envisager
-toutes les applications, ainsi que de \emph{couvrir les aspects qui}, selon nous, \emph{devraient être
-connus de tout ingénieur mécanicien impliqué ou intéressé par le calcul numérique}.
+Le but initial était de \emph{présenter brièvement la théorie mathématique} derrière les éléments finis afin que les ingénieurs utilisant cette méthode puisse en envisager toutes les applications, ainsi que de \emph{couvrir les aspects qui}, selon nous, \emph{devraient être connus de tout ingénieur mécanicien impliqué ou intéressé par le calcul numérique}.
 
-Toutefois, il s'envisage comme \textcolorblue{support de référence à plusieurs cours}, 
-cours qui ne portent pas sur tous les aspects traités dans ce document, et pendant lesquels les aspects 
-pratiques sont plus développés (avec mise en situation sur machine).
+Toutefois, il s'envisage comme \textcolorblue{support de référence à plusieurs cours}, cours qui ne portent pas sur tous les aspects traités dans ce document, et pendant lesquels les aspects pratiques sont plus développés (avec mise en situation sur machine).
 
 \medskip
-Même si nous avons voulu rester le plus succinct possible, l'introduction de
-notions de proche en proche à conduit à un document qui fait aujourd'hui une
-certaine taille (par exemple, nous avons besoins des espaces de Sobolev, mais
-comment les introduire sans parler des espaces de Lebesgue, mais comment
-les introduire sans parler...).
+Même si nous avons voulu rester le plus succinct possible, l'introduction de notions de proche en proche à conduit à un document qui fait aujourd'hui une certaine taille (par exemple, nous avons besoins des espaces de Sobolev, mais comment les introduire sans parler des espaces de Lebesgue, mais comment les introduire sans parler...).
 
-Aussi le document a-t-il finalement été découpé en plusieurs parties:
-un survol des notions mathématiques, puis le traitement du problème
-continu constituent l'ossature théorique nécessaire à assoir la méthode des éléments finis
-sur un socle solide. La discrétisation par éléments finis à proprement parler
-n'est aborder qu'ensuite, et d'ailleurs un seul chapitre suffirait à en faire
-le tour... sauf à entrer plus dans le détail concernant «ce qui fâche»:
-homogénéisation, non linéarité, dynamique, ce qui est fait dans des
-chapitres séparés.
+Aussi le document a-t-il finalement été découpé en plusieurs parties: 
+un survol des notions mathématiques, puis le traitement du problème continu constituent l'ossature théorique nécessaire à assoir la méthode des éléments finis sur un socle solide. La discrétisation par éléments finis à proprement parler n'est aborder qu'ensuite, et d'ailleurs un seul chapitre suffirait à en faire le tour... sauf à entrer plus dans le détail concernant «ce qui fâche»: homogénéisation, non linéarité, dynamique, ce qui est fait dans des chapitres séparés.
 
 \medskip
-Enfin, d'autres méthodes sont abordées car également très
-employées aujourd'hui. Aussi est-il indispensable selon nous d'en avoir 
-entendu parlé et d'en connaître les principales notions (BEM, FEEC...).
+Enfin, d'autres méthodes sont abordées car également très employées aujourd'hui. Aussi est-il indispensable selon nous d'en avoir entendu parlé et d'en connaître les principales notions (BEM, FEEC...).
 
 \medskip
-En annexes, se trouve un petit fourre-tout comprenant des choses censées être 
-maîtrisées depuis la taupe (mais qui parfois nous sont demandées) et les
-compléments qui alourdiraient encore les propos précédents.
+En annexes, se trouve un petit fourre-tout comprenant des choses censées être maîtrisées depuis la taupe (mais qui parfois nous sont demandées) et les compléments qui alourdiraient encore les propos précédents.
 
 \medskip
-Certaines notions (essentiellement de topologie) ne sont pas présentées dans ce 
-document.
-Il nous a semblé que le lecteur devait avoir quelques souvenirs de ce qu'est un
-ouvert, un fermé, l'adhérence, la densité...
-Par ailleurs, leur nom peut être suffisamment évocateur pour se passer d'une
-définition formelle dans le contexte de ce document.
+Certaines notions (essentiellement de topologie) ne sont pas présentées dans ce document.
+Il nous a semblé que le lecteur devait avoir quelques souvenirs de ce qu'est un ouvert, un fermé, l'adhérence, la densité...
+Par ailleurs, leur nom peut être suffisamment évocateur pour se passer d'une définition formelle dans le contexte de ce document.
 
 \bigskip
-Attention, \textcolorred{ce document n'est pas un document de mathématiques}, il ne contient
-d'ailleurs aucune preuve.
-C'est, dans ces deux premières parties, un \textcolorblue{document de vulgarisation} de 
-notions mathématiques nécessaires à une bonne compréhension de la méthode des éléments finis.
+Attention, \textcolorred{ce document n'est pas un document de mathématiques}, il ne contient d'ailleurs aucune preuve.
+C'est, dans ces deux premières parties, un \textcolorblue{document de vulgarisation} de notions mathématiques nécessaires à une bonne compréhension de la méthode des éléments finis.
 
 %\medskip
-Nous avons voulu réaliser un survol des notions importantes, mais malgré tout, afin de ne
-pas être parfois trop laconique, nous avons un peu débordé. \ifVersionDuDocEstVincent\textcolorgris{Dans ce cas, 
-les passages considérés comme moins importants ont été mis en gris.}\fi
+Nous avons voulu réaliser un survol des notions importantes, mais malgré tout, afin de ne pas être parfois trop laconique, nous avons un peu débordé. \ifVersionDuDocEstVincent\textcolorgris{Dans ce cas, les passages considérés comme moins importants ont été mis en gris.}\fi
 
 \medskip
 \ifVersionDuDocEstVincent
-D'ailleurs un certain «code couleur» sera plus ou moins respecté dans ce document.
-En \textcolorblue{bleu} ou en \textcolorred{rouge}, les termes ou points importants,
-en \textcolorgris{gris, les choses moins importantes} dont la lecture peut être
-oubliée et enfin en
-\textcolorgreen{vert, des remarques «de bon sens»} sur ce qui est exposé.
-%\else
+D'ailleurs un certain «code couleur» sera plus ou moins respecté dans ce document. En \textcolorblue{bleu} ou en \textcolorred{rouge}, les termes ou points importants, en \textcolorgris{gris, les choses moins importantes} dont la lecture peut être oubliée et enfin en \textcolorgreen{vert, des remarques «de bon sens»} sur ce qui est exposé.
 \fi
 
 \medskip
-En fin de document, un petit index des noms propres permettra au lecteur
-de replacer les divers développements mentionnés dans l'histoire...
-Il se peut qu'il subsistent quelques erreurs, notamment au niveau des
-nationalités mentionnées, car il n'est pas toujours aisé de déterminer rapidement cette 
-information (et nous ne connaissons pas toutes les biographies des personnes citées).
+En fin de document, un petit index des noms propres permettra au lecteur de replacer les divers développements mentionnés dans l'histoire...
+Il se peut qu'il subsistent quelques erreurs, notamment au niveau des nationalités mentionnées, car il n'est pas toujours aisé de déterminer rapidement cette information (et nous ne connaissons pas toutes les biographies des personnes citées).
 
 \medskip
-\emph{Ce document a été réalisé très rapidement, et de manière extrêmement hachée.
-Il comporte forcément encore beaucoup de fautes: merci de m'en faire part.}
+\emph{Ce document a été réalisé très rapidement, et de manière extrêmement hachée. Il comporte forcément encore beaucoup de fautes: merci de m'en faire part.}
 
 
 
@@ -249,8 +203,7 @@ Il comporte forcément encore beaucoup de fautes: merci de m'en faire part.}
 \markboth{Preface}{Démarche de l'ingénieur numéricien}
 \addcontentsline{toc}{section}{Démarche de l'ingénieur numéricien}
 
-En préambule à ce document, nous tenions à synthétiser \textcolorblue{la
-démarche complète de l'ingénieur numéricien}:
+En préambule à ce document, nous tenions à synthétiser \textcolorblue{la démarche complète de l'ingénieur numéricien}:
 \begin{itemize}
    \item Modélisation / mise en équations -- Construction du problème continu (système d'EDP).
    \item Analyse mathématique du problème posé -- Existence, unicité, propriétés des solutions.
@@ -268,14 +221,9 @@ Tous ces points ne seront évidemment pas abordés dans ce document!
 \textcolorred{\textbf{Remerciements:}}
 
 Nous n'avions pas prévu de réaliser une deuxième version aussi rapidement.
-Celle-ci existe suite aux sollicitations de Mathias Legrand\index[aut]{Legrand (Mathias), ?- , Français}.
-C'est lui  qui a développé les macros nécessaires à l'amélioration très très nette de la 
-qualité typographique (environnements pour les notes historiques, les théorèmes, lemmes...).
-Nous le remercions également pour sa relecture avisée.
+Celle-ci existe suite aux sollicitations de Mathias Legrand\index[aut]{Legrand (Mathias), ?- , Français}. C'est lui  qui a développé les macros nécessaires à l'amélioration très très nette de la qualité typographique (environnements pour les notes historiques, les théorèmes, lemmes...). Nous le remercions également pour sa relecture avisée.
 
-C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du même code source):
-l'une que nous appelons «version cours» (plus en accord avec ce que nous proposons en cours),
-et l'autre «version livre», plus proche d'un ouvrage.
+C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du même code source): l'une que nous appelons «version cours» (plus en accord avec ce que nous proposons en cours), et l'autre «version livre», plus proche d'un ouvrage.
 
 
 \colorblack
@@ -319,14 +267,9 @@ et l'autre «version livre», plus proche d'un ouvrage.
  \part{Annexes}
  \include{./tex/interp}
  \include{./tex/intnum}
- \include{./tex/ed}%\include{./tex/newmark}% inclus dans ED
-%%%%%\include{./tex/discretis}% ??? je ne sais plus ce que je voulais faire
-%%%%%\include{./tex/cvnum}% supprimé, trop loin de nos préoccupations
-%%%%%\include{./tex/matrices}% supprimé, trop loin de nos préoccupations
+ \include{./tex/ed}
  \include{./tex/new-raph}
  \include{./tex/schemanum}
-%%%%%\include{./tex/essais}% pas en rapport avec ce document
-
 
 
 \ifVersionDuDocEstVincent
