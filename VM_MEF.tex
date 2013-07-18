@@ -33,7 +33,6 @@
    \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres]
 %texindy -L french aut.idx
 %texindy -L french -M mystyle.xdy VM_MEF.idx
-
 %
 \ifVersionDuDocEstVincent
 %   \usepackage{enumitem}
@@ -68,7 +67,6 @@
    \usepackage{enumitem}
    \setlist{nolistsep} 
    \pagestyle{fancy}
-   \usepackage{csquotes}
    \usepackage[%
     style=alphabetic,          % citations comme [Fa91] pour Faltings, 91
      style=numeric-comp,
@@ -83,7 +81,6 @@
 %   \bibliography{VM}           % utiliser these.bib (format bibtex normal)
    \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
    \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
-
    \defbibheading{bibempty}{}  % voir ci-dessous
    \usepackage[numbered,level=-1]{bookmark}
 %   \renewcommand{\leq}{\leqslant}
@@ -274,6 +271,7 @@ C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du m
 
 \ifVersionDuDocEstVincent
    \chapter*{Bibliographie}\markboth{Bibliographie}{}
+   \phantomsection
 
  Le présent document est essentiellement une composition faite à partir de textes trouvés sur le net, qui ont été «mis bout à bout» afin de réduire l'effort  de rédaction (le document ayant été réalisé à ressources minimales).
 
@@ -281,9 +279,9 @@ C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du m
 
  De nombreux ouvrages existent sur le sujet. Nous ne les avons volontairement pas  mentionnés. S'il vous faut des livres ou des thèses sur le sujet, mon bureau est  ouvert...
 
- Dans tout le document, nous nous sommes servis intensivement de Wikipédia.
+ Dans tout le document, nous nous sommes servi intensivement de Wikipédia.
  
-   \printbibliography[keyword="0",title={Références générales}]
+   \printbibliography[keyword=0,title={Références générales}]
    \index[aut]{Joly (Patrick), ?- , Français}
 
    \printbibliography[keyword=1,title={Références de la partie 1}]
