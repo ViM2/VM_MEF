@@ -61,7 +61,8 @@
    {\centering%
    \interlinepenalty \@M%
    \normalfont%
-   \ifVersionDuDocEstVincent\hspace*{-23.3mm}\else\hspace*{-\separab}\fi% car version Vincent utilise A4
+   \ifVersionDuDocEstVincent\hspace*{-23.3mm}\else\hspace*{-\separab}\fi%
+   \thispagestyle{empty}
    \addtolength\ecarttoto{-\fboxsep}\addtolength\ecarttoto{-\fboxsep}
    \addtolength\ecarttoto{-\separab}\addtolength\ecarttoto{-\separab}
    \addtolength\ecarttoto{-\largeurBandeauHAL}
@@ -91,6 +92,7 @@
    \interlinepenalty \@M%
    \normalfont%
    \ifVersionDuDocEstVincent\hspace*{-20.0mm}\else\hspace*{-\separab}\fi%
+   \thispagestyle{empty}
    \addtolength\ecarttoto{-\fboxsep}\addtolength\ecarttoto{-\fboxsep}%
    \addtolength\ecarttoto{-\separab}\addtolength\ecarttoto{-\separab}%
    \colorbox{ocre}{\begin{minipage}[c][\separab][c]{\separab}\color{white}\Huge\sffamily\bfseries\centering\thepart\end{minipage}}\;\;\colorbox{black!5}{\begin{minipage}[c][\separab][c]{\ecarttoto}\Huge\centering\sffamily\bfseries\MakeUppercase{#2}\end{minipage}}\;\;\colorbox{black!30}{\begin{minipage}[c][\separab][c]{\separab}\mbox{}\end{minipage}}}%
