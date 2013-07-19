@@ -1,36 +1,22 @@
 \section{Exemple: un calcul de propagation avec \freefem}
 
 \medskip
-Quelque soit le logiciel utilisé\footnote{%
-Lorsque l'on parle de codes éléments finis, on cite les grands noms du domaine... et ils correspondent à des
-codes extraordinairement puissants, mais souvent chers.
+Quelque soit le logiciel utilisé\footnote{Lorsque l'on parle de codes éléments finis, on cite les grands noms du domaine... et ils correspondent à des codes extraordinairement puissants, mais souvent chers.
 
-Or un certain nombre de codes éléments finis professionnels sont disponibles gratuitement (au téléchargement
-et à l'utilisation).
-Les deux plus connus sont \castem (anciennement castem) et \aster développés et maintenus
-par le CEA et par EDF respectivement.%
-}, il y a toujours un gros pavé d'exemple fourni avec,
-sans compter le nombre d'ouvrages disponibles.
+Or un certain nombre de codes éléments finis professionnels sont disponibles gratuitement (au téléchargement et à l'utilisation). Les deux plus connus sont \castem (anciennement castem) et \aster développés et maintenus par le CEA et par EDF respectivement.}, il y a toujours un gros pavé d'exemple fourni avec, sans compter le nombre d'ouvrages disponibles.
 
 \medskip
-Nous avons souhaité néanmoins présenter un listing (qui sera discuté oralement)
-correspondant à un calcul réalisé sous \freefem.
+Nous avons souhaité néanmoins présenter un listing (qui sera discuté oralement) correspondant à un calcul réalisé sous \freefem.
 
-Ce logiciel gratuit vous permettra de faire vos calculs EF... mais c'est également un outil 
-pédagogique sans équivalent: sa manipulation se fait en des termes proches de la
-formulation mathématique, et en cela, il est une passerelle parfaite entre la théorie
-et la pratique de codes plus «industriels».
+Ce logiciel gratuit vous permettra de faire vos calculs EF... mais c'est également un outil pédagogique sans équivalent: sa manipulation se fait en des termes proches de la formulation mathématique, et en cela, il est une passerelle parfaite entre la théorie et la pratique de codes plus «industriels».
 
-Le fait de pouvoir discrétiser à loisir une formulation variationnelle que l'on rentre
-soi-même est également un argument qui nous semble un vrai plus, même si
-cela commence à exister dans des codes commerciaux (mais reste confidentiel).
+Le fait de pouvoir discrétiser à loisir une formulation variationnelle que l'on rentre soi-même est également un argument qui nous semble un vrai plus, même si cela commence à exister dans des codes commerciaux (mais reste confidentiel).
 
 \medskip
 Voici donc un petit listing sur lequel nous pourrons revenir de vive voix.
 %Je ne vous dis même pas de quoi il s'agit...
 
-Commençons donc, comme il se doit, par définir la géométrie du problème, paramétrée
-par~$a$ et~$b$, que nous maillons:
+Commençons donc, comme il se doit, par définir la géométrie du problème, paramétrée par~$a$ et~$b$, que nous maillons:
 
 \medskip
 \color{gris}\scriptsize
@@ -58,9 +44,7 @@ mesh Th=buildmesh(gam1(ncuts)+gam2(ncuts)+gam3(ncuts)+gam4(ncuts));
 \color{black}\normalsize
 
 \medskip
-Nous définissons quelques valeurs afin de pouvoir définir le chargement (dont l'un des chargement,
-défini par la fonction~$w_1$ ne sera pas utilisée dans la suite). Notons comme il est aisé de définir
-des fonctions:
+Nous définissons quelques valeurs afin de pouvoir définir le chargement (dont l'un des chargement, défini par la fonction~$w_1$ ne sera pas utilisée dans la suite). Notons comme il est aisé de définir des fonctions:
 
 \color{gris}\scriptsize
 \begin{multicols}{2}
@@ -102,9 +86,7 @@ func real w0( real x, real y)
 \color{black}\normalsize
 
 \medskip
-Ensuite, nous définissons l'espace des éléments finis utilisés, et les variables appartenant à ces espaces.
-L'analogie avec la «formulation mathématique» saute au yeux... et c'est pourquoi cet outil
-nous semble particulièrement intéressant sur le plan pédagogique.
+Ensuite, nous définissons l'espace des éléments finis utilisés, et les variables appartenant à ces espaces. L'analogie avec la «formulation mathématique» saute au yeux... et c'est pourquoi cet outil nous semble particulièrement intéressant sur le plan pédagogique.
 
 \color{gris}\scriptsize
 %\begin{multicols}{2}
@@ -120,19 +102,12 @@ Wh sxz, syz ;
 \color{black}\normalsize
 
 \medskip
-Il s'agit d'un exemple non stationnaire, nous allons donc faire une boucle sur le temps. 
-Dans \freefem, nous entrons directement la formulation variationnelle du problème sous forme «mathématique»... 
-le lien entre pratique des éléments finis et théorie est beaucoup plus clair. 
-La boucle de temps est basée sur un schéma de Newmark implicite. Le temps «courant»
-est le temps~$t+\Delta_t$ et le temps précédent est le temps~$t$ pour rester cohérent avec
-les notations du chapitre~\ref{Ch-temps}.
+Il s'agit d'un exemple non stationnaire, nous allons donc faire une boucle sur le temps. Dans \freefem, nous entrons directement la formulation variationnelle du problème sous forme «mathématique»... le lien entre pratique des éléments finis et théorie est beaucoup plus clair. La boucle de temps est basée sur un schéma de Newmark implicite. Le temps «courant» est le temps~$t+\Delta_t$ et le temps précédent est le temps~$t$ pour rester cohérent avec les notations du chapitre~\ref{Ch-temps}.
 
-Il s'agit d'un problème de déplacement hors plan, dont le champ inconnu est traditionnellement
-noté~$w$. Ainsi, dans le listing, \verb|w| représente~$q_{t+\Delta_t}$, \verb|wa|$\equiv q_t$, 
+Il s'agit d'un problème de déplacement hors plan, dont le champ inconnu est traditionnellement noté~$w$. Ainsi, dans le listing, \verb|w| représente~$q_{t+\Delta_t}$, \verb|wa|$\equiv q_t$, 
 \verb|wd|$\equiv \dot{q}_{t+\Delta_t}$, \verb|wda|$\equiv \dot{q}_t$, 
 \verb|wdd|$\equiv \ddot{q}_{t+\Delta_t}$ et \verb|wdda|$\equiv \ddot{q}_t$. \verb|fi|$\equiv\varphi$
-est la fonction test. La formulation variationnelle, en n'indiçant pas le temps actuel et en utilisant l'indice~$a$
-pour le pas de temps précédent ($a$ comme avant), est:
+est la fonction test. La formulation variationnelle, en n'indiçant pas le temps actuel et en utilisant l'indice~$a$ pour le pas de temps précédent ($a$ comme avant), est:
 \begin{equation}
 \begin{array}{rl}
 \text{antiplane}(\dot{w},\varphi) = &
@@ -182,9 +157,7 @@ for (ivi=0;ivi<10;ivi++){
 \color{black}\normalsize
 
 \medskip
-Enfin, pour tester la qualité des résultats, il nous faut quelques indicateurs...
-Sans entrer dans le détail, des noms comme~$E_c$, $E_p$ et~$E_T$ doivent vous mettre sur
-la piste.
+Enfin, pour tester la qualité des résultats, il nous faut quelques indicateurs... Sans entrer dans le détail, des noms comme~$E_c$, $E_p$ et~$E_T$ doivent vous mettre sur la piste.
 
 \color{gris}\scriptsize
 %\begin{multicols}{2}

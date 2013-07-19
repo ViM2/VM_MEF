@@ -4,8 +4,7 @@ Nous allons reprendre pour partie l'exemple de la poutre encastrée traitée au 
 \medskip
 \subsection{Modélisation 2D}
 
-Nous commençons par définir les données du problème: longueur, largeur, épaisseur, nombre d'éléments
-selon chacune de ces directions, et force appliquée:
+Nous commençons par définir les données du problème: longueur, largeur, épaisseur, nombre d'éléments selon chacune de ces directions, et force appliquée:
 
 \colorgris
 \begin{Verbatim}[numbers=left,numbersep=3pt]
@@ -32,8 +31,7 @@ OPTION DIME 3 ELEM QUA4;
 \colorblack
 
 \medskip
-Nous définissons les points~$k_i$ (dénommés ainsi pour rappel de la syntaxe Ansys des keypoints \verb|k,i,...|), puis les
-lignes~$L_i$, et la surface~$S_1$.
+Nous définissons les points~$k_i$ (dénommés ainsi pour rappel de la syntaxe Ansys des keypoints \verb|k,i,...|), puis les lignes~$L_i$, et la surface~$S_1$.
 
 \colorgris
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
@@ -167,13 +165,9 @@ S1 = DALLER L1 L2 L3 L4;
 \colorblack
 
 \medskip
-À partir de la surface~$S_1$, qui est la même que précédemment, nous allons créer le volume~$V_1$ par translation
-selon le vecteur~$Vect_1$.
+À partir de la surface~$S_1$, qui est la même que précédemment, nous allons créer le volume~$V_1$ par translation selon le vecteur~$Vect_1$.
 
-Nous en profitons également pour créer~$Face_1$ sur laquelle porterons les conditions aux limites.
-Notons par exemple que la ligne~$L_4$ appartient bien au maillage~$V_1$, puisque ce dernier est construit dessus.
-Par contre, la surface~$face_1$ n'appartient pas à~$V_1$, il est donc nécessaire de la lier à~$V_1$ en utilisant
-la commande ELIM.
+Nous en profitons également pour créer~$Face_1$ sur laquelle porterons les conditions aux limites. Notons par exemple que la ligne~$L_4$ appartient bien au maillage~$V_1$, puisque ce dernier est construit dessus. Par contre, la surface~$face_1$ n'appartient pas à~$V_1$, il est donc nécessaire de la lier à~$V_1$ en utilisant la commande ELIM.
 
 \colorgris
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]

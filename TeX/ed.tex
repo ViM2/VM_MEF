@@ -1,23 +1,30 @@
 \chapter{Résolution des équations différentielles ordinaires}\label{Ch-ED} 
-\begin{abstract} La résolution exacte des équation différentielle fait partie des choses qui ont été demandées comme complément. Elles ne correspondent pas vraiment au but de ce document. Toutefois, le paragraphe sur la résolution numérique des équation différentielle nous a permis d'introduire des méthodes qui sont employées également dans la méthode des éléments finis (notamment la méthode de Newmark).\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} 
+
+\begin{abstract}
+La résolution exacte des équation différentielle fait partie des choses qui ont été demandées comme complément. Elles ne correspondent pas vraiment au but de ce document. Toutefois, le paragraphe sur la résolution numérique des équation différentielle nous a permis d'introduire des méthodes qui sont employées également dans la méthode des éléments finis (notamment la méthode de Newmark).\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} 
 \end{abstract} 
-%%%%----------------------------------------------------------
-\section{Résolution exacte des équations différentielles linéaires} Une \textcolorblue{Équation différentielle linéaire} est de la forme suivante:
+
+\section{Résolution exacte des équations différentielles linéaires} 
+
+Une \textcolorblue{Équation différentielle linéaire} est de la forme suivante:
 \begin{equation}
 a_0(x) y + a_1(x) y' + a_2(x) y'' + \ldots + a_n(x) y^{(n)}= f(x)
 \end{equation}
 où les coefficients~$a_i(x)$ sont des fonctions numériques continues. Si les fonctions~$y$ dépendent d'une seule variable~$x$, alors ces équation différentielle sont dites équation différentielle linéaires scalaires, si c'est un vecteur elles sont dites équation différentielle linéaires vectorielles ou système différentiel linéaire. Dans ce dernier cas, les~$a_i$ sont des applications linéaires. L'\textcolorblue{ordre} d'une équation différentielle est le degré non nul le plus des~$a_i$, ici~$n$. 
- La méthode générale consiste à résoudre d'abord l'\textcolorblue{équation homogène}, i.e. sans second membre, i.e.~$f(x)=0$, qui donne une solution contenant une ou des «constantes d'intégration» que l'on identifie ensuite en appliquant la forme générale trouvée à l'équation avec second membre. 
+La méthode générale consiste à résoudre d'abord l'\textcolorblue{équation homogène}, i.e. sans second membre, i.e.~$f(x)=0$, qui donne une solution contenant une ou des «constantes d'intégration» que l'on identifie ensuite en appliquant la forme générale trouvée à l'équation avec second membre. 
  
-%%%%----------------------------------------------------------
+\medskip
 \subsection{Équation différentielle linéaire scalaire d'ordre 1} 
+
 Il s'agit du cas particulier:
 \begin{equation}
 a(x)y' + b(x)y = c(x)
 \end{equation}
 où~$a$, $b$ et~$c$ sont des fonctions (connues). 
 
+\medskip
 \subsubsection{Coefficients constants} 
+
 Si~$a$ et~$b$ sont des constantes, alors l'équation homogène précédente s'écrit sous la forme:
 \begin{equation}
 y' = ky
@@ -38,8 +45,11 @@ Ce type d'équation se retrouve:
 \end{itemize} 
 Si~$c\ne0$, il faut déterminer une solution particulière de l'équation avec second membre. On appliquera les mêmes techniques que dans le cas des coefficients non constants (voir ci-après). 
 
+\medskip
 \subsubsection{Coefficients non constants} 
+
 \paragraph{1. Traitement de l'équation homogène}
+
 On réécrit l'équation homogène:
 \begin{equation}
 y' + \frac{b(x)}{a(x)} y = 0
@@ -69,7 +79,10 @@ Les solutions sont alors les fonctions, définies sur~$I$, de la forme:
 y(x) = C \mathrm{e}^{-A(x)}
 \end{equation}
 où encore une fois la constante~$C\in\RR$ est déterminée par les conditions initiales. 
+
+\medskip
 \paragraph{2. Solution particulière}
+
 Plusieurs cas se présentent:
 \begin{itemize}
 \item~$c(x)=0$: la solution du problème est celle de l'équation homogène et on a fini;
@@ -101,8 +114,9 @@ f = \exp\left( -\int\frac{b(x)}{a(x)}\d x \right) \left\{ C + \int \frac{c(x)}{a
 \end{equation}
 On peut évidemment être confronté à un calcul d'intégral qui n'est pas simple (ou même pas possible à l'aide des fonctions usuelles). 
  
-%%%%----------------------------------------------------------
+\medskip
 \subsection{Équation différentielle du premier ordre à variables séparées} 
+
 Une \textcolorblue{équation différentielle d'ordre un à variables séparées} est une équation différentielle qui peut se mettre sous la forme:
 \begin{equation}
 y' = f(x)g(y)
@@ -127,18 +141,23 @@ y' = g(y)
 \end{equation}
 c'est-à-dire que la relation formelle ne dépend pas de~$x$. Dans ce cas, si~$x \mapsto y_0(x)$ est une solution, les fonctions obtenues par translation de la variable, de la forme~$x \mapsto y_0(x+A)$, sont également solutions. Il y a en outre une propriété de monotonie, au moins pour les solutions régulières: puisque~$g$ ne s'annule pas, il garde alors un signe constant. 
  
-%%%%----------------------------------------------------------
+\medskip
 \subsection{Équation différentielle linéaire d'ordre deux} 
+
 Les équations différentielles linéaires d'ordre deux sont de la forme:
 \begin{equation}
 a(x)y'' + b(x)y' + c(x)y = d(x)
 \end{equation}
 où~$a(x)$, $b(x)$, $c(x)$ et~$d(x)$ sont des fonctions. Si elles ne peuvent pas toutes être résolues explicitement, beaucoup de méthodes existent. 
 
+\medskip
 \subsubsection{Équation différentielle homogène} 
+
 Pour l'équation différentielle homogène ($d(x)=0$), une somme de deux solutions est encore solution, ainsi que le produit d'une solution par une constante. L'ensemble des solutions est donc un espace vectoriel et contient notamment une solution évidente, la fonction nulle. 
 
+\medskip
 \subsubsection{Équation différentielle homogène à coefficients constants} 
+
 On cherche des solutions sous forme exponentielle~$f(x) = \mathrm{e}^{\lambda x}$. Une telle fonction sera solution de l'équation différentielle si et seulement si$\lambda$ est solution de l'\textcolorblue{équation caractéristique} de l'équation différentielle:
 \begin{equation}
 a\lambda^2 + b\lambda + c = 0
@@ -179,18 +198,23 @@ f(x) = q \mathrm{e}^{ux}\cos(vx+r)
 avec~$q$ et~$r$ deux réels à déterminer comme précédemment. Cette forme est parfois plus pratique selon les problèmes. 
 \end{enumerate}
 
+\medskip
 \subsubsection{Équation différentielle homogène à coefficients non constants}
+
 Si les fonctions~$a(x)$, $b(x)$ et~$c(x)$ ne sont pas constantes, alors il n'existe pas d'expression générale des solutions. C'est pour cette raison qu'au \textsc{xix}\fup{e} siècle furent introduites de nombreuses fonctions spéciales, comme les fonctions de Bessel\index[aut]{Bessel (Friedrich Wilhelm), 1784-1846, Allemand} ou la fonction d'Airy,\index[aut]{Airy (George Biddell, Sir -), 1801-1892, Anglais} définies comme solutions d'équations qu'il est impossible de résoudre explicitement. 
 
 Toutefois, dès lors qu'une solution particulière non nulle de l'équation est connue, il est possible de la résoudre complètement. En effet, le théorème de Cauchy-Lipschitz\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}\index[aut]{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand} affirme que l'ensemble des solutions de l'équation constitue un espace vectoriel de dimension deux. Résoudre l'équation différentielle revient donc à exhiber deux fonctions solutions non proportionnelles: elles formeront une base de l'espace des solutions. Une telle base est appelée \textcolorblue{système fondamental de solutions}. 
 
+\medskip
 \subsubsection{Solution particulière et traitement du second membre} 
+
 On peut agir de la même manière que pour les équation différentielle d'ordre un, et les mêmes remarques s'appliquent. On résout l'équation homogène puis on cherche une solution de l'équation avec second membre pour les connaître toutes. 
 
 Les équation différentielle d'ordre deux correspondent typiquement en physique aux problèmes dynamiques. Même si dans le cas réel on n'a rarement des phénomènes linéaires, des hypothèses de petits mouvements permettent de s'y ramener. Si cette hypothèse de petits déplacements ne peut être vérifier, on aura alors recourt à des techniques dites de linéarisation, ou à des méthodes numériques comme la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} (qui sera présentée un petit peu plus loin).
  
-%%%%----------------------------------------------------------
+\medskip
 \section{Résolution numérique} 
+
 Dans le cas d'équation différentielle non linéaires, on passera forcément à une résolution numérique. Mais les méthodes numériques permettent évidemment aussi de résoudre numériquement les équations différentielles et les équations aux dérivées partielles.
 
 L'idée générale est toujours la même: un approche la dérivée d'une fonction en un point par sa tangente (ce qui revient finalement à la définition de la dérivée). Pour une fonction~$f(x)$, on écrit donc au point~$x=a$ une relation de la forme:
@@ -215,8 +239,10 @@ Depuis, un grand nombre de techniques ont été développées: elles se basent s
 Il existe plusieurs critères pour mesurer la performance des méthodes numériques: la consistance d'une méthode indique que l'erreur théorique effectuée en approchant la solution tend vers zéro avec les pas. La stabilité indique la capacité à contrôler l'accumulation des erreurs d'arrondi. Ensemble elles assurent la convergence, i.e. la possibilité de faire tendre l'erreur globale vers zéro avec le pas. Ces notions seront posées brièvement
 au chapitre~\ref{Ch-shemanum}.}
 \end{histoire}
-%%%%----------------------------------------------------------
+
+\medskip
 \subsection{Méthode d'Euler, Runge-Kutta ordre 1}\index{méthode de Runge-Kutta! ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
+
 Soit à résoudre l'équation différentielle suivante:
 \begin{equation}
 y' = f(t, y), \qquad y(t_0) = y_0
@@ -231,8 +257,9 @@ y_{i+1}=y_i+hf(t,y_i)
 \end{equation}
 qui permet d'obtenir~$y_{i+1}$ uniquement en fonction de données au pas~$i$. Cette méthode due à Euler, correspond également à la méthode de Runge-Kutta à l'ordre 1.\index{méthode de Runge-Kutta! ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
  
-%%%%----------------------------------------------------------
+\medskip
 \subsection{Méthode de Runge-Kutta d'ordre 2}\index{méthode de Runge-Kutta! ordre 2}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
+
 La méthode de Runge-Kutta à l'ordre 2 est obtenue par amélioration de la méthode d'Euler en considérant le point milieu du pas~$h$. Ainsi, on écrit cette fois:
 \begin{equation}
 y_{i+1}=y_i+h.f\left(t+\frac{h}2,y_i+\frac{h}2f(y,y_i)\right)
@@ -250,8 +277,10 @@ Notons qu'il s'agit du cas centré ($\alpha=1/2$) de la formule plus générale:
 y_{i+1} = y_i + h\left[\left(1-\frac1{2\alpha}\right)f \left( t, y_i \right) + \frac1{2\alpha}f \left( t + \alpha\,h, y_i + \alpha\,h f \left( t, y_i \right) \right)\right]
 \end{equation}
 C'est une méthode d'ordre 2 car l'erreur est de l'ordre de~$h^3$. 
-%%%%----------------------------------------------------------
+
+\medskip
 \subsection{Méthode de Runge-Kutta d'ordre 4}\index{méthode de Runge-Kutta! ordre 4}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
+
 Aujourd'hui, le cas le plus fréquent est celui de l'ordre 4. L'idée est toujours d'estimer la pente de~$y$, mais de façon plus précise. Pour cela, on ne prend plus la pente en un point (début ou milieu), mais on utilise la moyenne pondérée des pentes obtenues en 4 points du pas. 
 \begin{itemize} 
 \item~$k_1 = f \left( t_i, y_i \right)~$ est la pente au début de l'intervalle; 
@@ -264,7 +293,7 @@ Aujourd'hui, le cas le plus fréquent est celui de l'ordre 4. L'idée est toujou
 y_{i+1} = y_i + {h \over 6} (k_1 + 2k_2 + 2k_3 + k_4)
 \end{equation}
 La méthode est d'ordre 4, ce qui signifie que l'erreur commise à chaque étape est de l'ordre de~$h^5$, alors que l'erreur totale accumulée est de l'ordre de~$h^4$. Notons enfin que toutes ces formulation sont encore valable pour des fonctions à valeurs vectorielles. 
-%%%%----------------------------------------------------------
+
 \medskip
 \subsection{Méthode de Crank-Nicolson}\index[aut]{Crank (John), 1916-2006, Américain}\index[aut]{Nicolson (Phyllis), 1917-1968, Anglaise}
 
@@ -293,8 +322,10 @@ et d'électromagnétisme... et pour tout phénomène pouvant être ramenés à l
 \medskip
 La méthode converge en~$O(\Delta_t^2)$.
 L'étude de convergence est d'ailleurs plus aisée que dans le cas des \textcolorblue{équations hyperboliques pour lesquelles la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} est préférée}.
-%%%%----------------------------------------------------------
+
+\medskip
 \subsection{Méthode de Newmark}\label{Sec-Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{schéma!de Newmark} 
+
 La \textcolorblue{méthode de Newmark (1959)} permet de résoudre numériquement des équation différentielle du second ordre. Elle convient, non seulement pour des systèmes différentiels linéaires, mais aussi pour des systèmes fortement non-linéaires avec une matrice de masse et une force appliquée qui peuvent dépendre à la fois de la position et du temps. Dans ce second cas, le calcul nécessite à chaque pas une boucle d'itération. 
 
 L'idée générale reste la même: on cherche à estimer les valeurs des dérivées (premières, secondes...) à l'instant~$t$ à partir des informations disponible à l'instant précédent (au pas de temps précédent). Pour cela, on va recourir à un développement limité. Considérons l'équation de la dynamique:

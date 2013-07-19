@@ -1,20 +1,13 @@
 \chapter{Problèmes non stationnaires}\label{Ch-temps}
 \begin{abstract}
-Dans ce chapitre, nous nous intéresserons (brièvement) au cas non stationnaire.
-Toutefois, nous n'aborderons pas les EF espace-temps, car il s'agit d'une formulation
-gourmande en ressources, d'où sa très faible utilisation (bien que la méthode
-soit en elle-même intéressante).
+Dans ce chapitre, nous nous intéresserons (brièvement) au cas non stationnaire. Toutefois, nous n'aborderons pas les EF espace-temps, car il s'agit d'une formulation gourmande en ressources, d'où sa très faible utilisation (bien que la méthode soit en elle-même intéressante).
 
-Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de
-construire des schémas numériques approchant des dérivées.
-Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire
-en regardant comment on résout les équations différentielles et EDP directement... puis numériquement.
-Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
- décrite au paragraphe~\ref{Sec-Newmark}.
+Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de construire des schémas numériques approchant des dérivées. Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire en regardant comment on résout les équations différentielles et EDP directement... puis numériquement. Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} décrite au paragraphe~\ref{Sec-Newmark}.
 \end{abstract}
 
 \medskip
 \section{Équation non stationnaire de la dynamique}\index{ED-EDP!relation fondamentale de la dynamique}
+
 Considérons l'équation de la dynamique, sous forme non stationnaire (i.e. dépendant du temps):
 \begin{equation} M \ddot u(t) + C \dot u(t) + K u(t)= F(t) \end{equation}
 qui sous forme discrétisée par éléments finis sera réécrite:
@@ -22,17 +15,13 @@ qui sous forme discrétisée par éléments finis sera réécrite:
 avec les conditions initiales~$\VV{q}(t=0)=\VV{q}_0$ et~$\VV{\dot q}(t=0)=\VV{\dot q}_0$.
 
 \medskip
-On cherche à obtenir la discrétisation~$\VV{q}$ du champ~$u$ et ses dérivées
-temporelles~$\VV{\dot q}$ et~$\VV{\ddot q}$ à différents instants~$t$ et vérifiant l'équation de la dynamique.
+On cherche à obtenir la discrétisation~$\VV{q}$ du champ~$u$ et ses dérivées temporelles~$\VV{\dot q}$ et~$\VV{\ddot q}$ à différents instants~$t$ et vérifiant l'équation de la dynamique.
 
 \medskip
-Pour résoudre un tel problème, on se propose de réaliser une \textcolorblue{discrétisation
-temporelle} qui pourra être explicite ou implicite.
+Pour résoudre un tel problème, on se propose de réaliser une \textcolorblue{discrétisation temporelle} qui pourra être explicite ou implicite.
 
 \medskip
-Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
-(qui est présenté dans le cas de la résolution des équations différentielles au paragraphe~\ref{Sec-Newmark},
-ce complément nous ayant été demandé).
+Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} (qui est présenté dans le cas de la résolution des équations différentielles au paragraphe~\ref{Sec-Newmark}, ce complément nous ayant été demandé).
 Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
 \begin{equation}\colorblue
 \begin{aligned}
@@ -42,19 +31,16 @@ Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
 \right)
 \end{aligned}
 \end{equation}
-que nous avons écrit sous la forme discrétisée, mais qui serait valable pour l'approximation
-continue (comme présenté au chapitre au paragraphe~\ref{Sec-Newmark}).
+que nous avons écrit sous la forme discrétisée, mais qui serait valable pour l'approximation continue (comme présenté au chapitre au paragraphe~\ref{Sec-Newmark}).
 
-Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
-correspondent à des valeurs particulières de~$\beta$ et~$\gamma$.
+Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} correspondent à des valeurs particulières de~$\beta$ et~$\gamma$.
 
 
 
 \bigskip
 \section{Schéma explicite: différences finies centrées}\index{schéma! des différences finies centrées}
 
-Dans le cas \textcolorred{$\beta=0$ et~$\gamma=1/2$}, on retombe sur le schéma des \textcolorblue{différences
-finies centrées}.
+Dans le cas \textcolorred{$\beta=0$ et~$\gamma=1/2$}, on retombe sur le schéma des \textcolorblue{différences finies centrées}.
 
 Dans ce cas, on obtient:
 \begin{equation}\colorgreen
@@ -101,11 +87,11 @@ On peut faire les remarques suivantes sur ce type de calcul:
 \begin{itemize}
   \item Pour un pas de temps donné, $\VV{q}_t$ ne dépend que des données du temps passé,
 	on a donc une résolution vectorielle rapide.
-  \item Si les matrices~$\MM{M}$ et~$\MM{C}$ sont diagonales, alors cette méthode est très efficace
-	même pour les problèmes de grande taille.
-  \item Ce schéma est \textcolorblue{inconditionnellement stable si~$\Delta_t\le T_{\min}/\pi$},
-	avec~$T_{\min}$ la plus petite période du système correspondant à l'équation
-	de la dynamique (classique).
+  \item Si les matrices~$\MM{M}$ et~$\MM{C}$ sont diagonales, alors cette méthode est 
+   très efficace même pour les problèmes de grande taille.
+  \item Ce schéma est \textcolorblue{inconditionnellement stable 
+   si~$\Delta_t\le T_{\min}/\pi$}, avec~$T_{\min}$ la plus petite période du système
+   correspondant à l'équation de la dynamique (classique).
   \item la précision est de l'ordre de~$\Delta_t^2$.
   \item L'amortissement numérique est nul.
   \item Il est possible d'introduire un amortissement numérique pour contrôler les hautes
@@ -113,12 +99,11 @@ On peut faire les remarques suivantes sur ce type de calcul:
 	Il n'y a pas automatiquement stabilité du schéma, celle-ci est à calculer pour chaque
 	schéma.
 \end{itemize}
-\bigskip
+
+\medskip
 \section{Schéma implicite: schéma de Newmark classique}\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 
-Dans le cas \textcolorred{$\beta=1/4$ et~$\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite
-de Newmark},\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
-qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
+Dans le cas \textcolorred{$\beta=1/4$ et~$\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite de Newmark},\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
 
 Dans ce cas, on obtient:
 \begin{equation}\colorgreen
@@ -180,27 +165,14 @@ On peut faire les remarques suivantes sur ce type de calcul:
 
 
 
-
-\bigskip
+\medskip
 \section{Comparaison des méthodes explicite et implicite}\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}\index{schéma! des différences finies centrées}
 
-\medskip
-Concernant la méthode implicite, on retiendra d'abord que cette méthode nécessite moins de mémoire, est donc plus
-	rapide et mieux adaptée aux \textcolorblue{problèmes de grandes tailles}.
-Comme cette méthode nécessite moins de mémoire et des petits pas de temps (pour la stabilité),
-	elle est bien adaptée au cas des \textcolorblue{chocs}.
-Comme elle n'est que conditionnellement stable, elle est plutôt adaptée à la résolution élément
-	par élément, donc au \textcolorblue{traitement local}.
-Enfin, cette méthode est très robuste numériquement et permet de traiter le cas de \textcolorblue{non linéarités couplées}.
+Concernant la méthode implicite, on retiendra d'abord que cette méthode nécessite moins de mémoire, est donc plus rapide et mieux adaptée aux \textcolorblue{problèmes de grandes tailles}. Comme cette méthode nécessite moins de mémoire et des petits pas de temps (pour la stabilité), elle est bien adaptée au cas des \textcolorblue{chocs}. Comme elle n'est que conditionnellement stable, elle est plutôt adaptée à la résolution élément par élément, donc au \textcolorblue{traitement local}. Enfin, cette méthode est très robuste numériquement et permet de traiter le cas de \textcolorblue{non linéarités couplées}.
 
 
 \medskip
-Concernant la méthode implicite, on retiendra que puisque cette méthode est inconditionnellement stable, elle est bien adaptée à la résolution
-	de \textcolorblue{problèmes globaux} (qui nécessitent qu'il y ait convergence).
-De plus, cette méthode est bien moins robuste numériquement que la précédente (pivots nuls,
-	divergence)...
-Enfin et surtout, on se souviendra que c'est une méthode \textcolorblue{coûteuse} en
-	mémoire et en temps...
+Concernant la méthode implicite, on retiendra que puisque cette méthode est inconditionnellement stable, elle est bien adaptée à la résolution de \textcolorblue{problèmes globaux} (qui nécessitent qu'il y ait convergence). De plus, cette méthode est bien moins robuste numériquement que la précédente (pivots nuls,  divergence)... Enfin et surtout, on se souviendra que c'est une méthode \textcolorblue{coûteuse} en mémoire et en temps...
 
 \medskip
 \begin{figure}[ht]
@@ -216,24 +188,15 @@ La \fig{Fig-Im-Ex-plicite} donne, de manière imagée, les domaines d'utilisatio
 \bigskip
 \section{Décomposition modale}\index{décomposition modale}
 
-Pour le public visé, le lecteur devrait, à ce moment du document, se demander pourquoi
-il n'a pas encore été question de projection sur les modes propres.
+Pour le public visé, le lecteur devrait, à ce moment du document, se demander pourquoi il n'a pas encore été question de projection sur les modes propres.
 
 \medskip
-On peut montrer que les modes de vibration de la structure forment une base. Il peut
-paraître intéressant de chercher la solution en temps du problème sous forme d'une
-approximation par projection sur la base des quelques~$N$ premiers modes propres, i.e.
-de rechercher~$N$ fonctions scalaires du temps.
+On peut montrer que les modes de vibration de la structure forment une base. Il peut paraître intéressant de chercher la solution en temps du problème sous forme d'une approximation par projection sur la base des quelques~$N$ premiers modes propres, i.e. de rechercher~$N$ fonctions scalaires du temps.
 
-Lorsque l'on dispose déjà des~$N$ premiers modes et lorsque le nombre~$n$ de ddl est important,
-cette approche peut s'avérer particulièrement efficace.
-Par ailleurs, lorsque les modes sont associés à des mouvements simples de la structure, il
-peut être facile pour un ingénieur un peu expérimenté d'imaginer le nombre de modes à
-utiliser pour représenter le phénomène.
+Lorsque l'on dispose déjà des~$N$ premiers modes et lorsque le nombre~$n$ de degrés de liberté est important, cette approche peut s'avérer particulièrement efficace. Par ailleurs, lorsque les modes sont associés à des mouvements simples de la structure, il peut être facile pour un ingénieur un peu expérimenté d'imaginer le nombre de modes à utiliser pour représenter le phénomène.
 
 \medskip
-La méthode de la décomposition modale sera exposée au paragraphe~\ref{Sec-RT}, lorsque
-nous aurons fait quelques rappels sur les modes propres.
+La méthode de la décomposition modale sera exposée au paragraphe~\ref{Sec-RT}, lorsque nous aurons fait quelques rappels sur les modes propres.
 
 
 

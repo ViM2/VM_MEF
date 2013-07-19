@@ -1,11 +1,8 @@
-\chapter{Espaces de Lebesgue}
+\chapter{Espaces de Lebesgue}\label{Ch-Lp}
 \begin{abstract}
-Les espaces~$L^p$ sont indispensables à la définition des espaces de Sobolev après
-lesquels nous courons depuis quelques chapitres.
+Les espaces~$L^p$ sont indispensables à la définition des espaces de Sobolev après lesquels nous courons depuis quelques chapitres.
 
-La mesure de Lebesgue a été introduite, les notions d'application et
-de continuité ont été rappelées... nous en avons plus qu'il ne nous en faut
-pour définir de tels espaces.
+La mesure de Lebesgue a été introduite, les notions d'application et de continuité ont été rappelées... nous en avons plus qu'il ne nous en faut pour définir de tels espaces.
 \end{abstract}
 Comme promis au paragraphe~\ref{Sec-impasse}, nous fournissons maintenant quelques compléments sur l'intégration. Nous avons mentionné la mise en défaut de l'intégrale de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} dans le cas de l'indicatrice des rationnels.
 Ce contre-exemple a été historiquement fourni par Dirichlet.\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
@@ -197,22 +194,16 @@ On considère~$\Omega$ un ouvert de~$\RR^n$.
 Les fonctions~$f$ seront considérées de~$\Omega$ dans~$\RR$ ou~$\CC$.
 
 \medskip
-On appelle~$\colorblue L^p \colorblack= L^p_M(\Omega,\CC)$ pour~$p<\infty$
-l'espace des fonctions~$f$ mesurables, de~$\Omega \rightarrow \CC$, telles que
-$\mu(|f|^p)<\infty$ où~$\mu$ est une mesure sur~$\Omega$.
+On appelle~$\colorblue L^p \colorblack= L^p_M(\Omega,\CC)$ pour~$p<\infty$ l'espace des fonctions~$f$ mesurables, de~$\Omega \rightarrow \CC$, telles que $\mu(|f|^p)<\infty$ où~$\mu$ est une mesure sur~$\Omega$.
 
 \medskip
-Comme une fonction s'annulant presque partout est d'intégrale nulle, on peut définir
-l'espace~$L^p(X, \mathcal{A}, \mu)$ comme le quotient de l'espace des fonctions~$p$ intégrables
-$L^p(X, \mathcal{A}, \mu)$ par le sous-espace vectoriel des fonctions presque nulles.
+Comme une fonction s'annulant presque partout est d'intégrale nulle, on peut définir l'espace~$L^p(X, \mathcal{A}, \mu)$ comme le quotient de l'espace des fonctions~$p$ intégrables $L^p(X, \mathcal{A}, \mu)$ par le sous-espace vectoriel des fonctions presque nulles.
 
-\textcolorgreen{Ce quotient identifie donc les fonctions qui sont presque partout égales,
-autrement dit qui ne diffèrent que sur un ensemble de mesure nulle.}
+\textcolorgreen{Ce quotient identifie donc les fonctions qui sont presque partout égales, autrement dit qui ne diffèrent que sur un ensemble de mesure nulle.}
 
 \medskip
 \begin{definition}[Norme~$L^p$]
-Pour~$p<\infty$, on appelle \textcolorblue{norme~$L^p$} et on note~$\|\cdot\|_p$,
-l'application définie par~$\|f\|_p=\left(\dint_\Omega |f|^p\right)^{1/p}$.
+Pour~$p<\infty$, on appelle \textcolorblue{norme~$L^p$} et on note~$\|\cdot\|_p$, l'application définie par~$\|f\|_p=\left(\dint_\Omega |f|^p\right)^{1/p}$.
 \end{definition}
 
 Sur~$\RR$, cela donne:~$\|f\|_p=\left(\dint_a^b |f(t)|^p\dd t\right)^{1/p}$.
@@ -221,8 +212,7 @@ Sur un espace mesuré~$(X, \mathcal{A}, \mu)$ et à valeurs réelles ou complexe
 
 \medskip
 \begin{theoreme}
-Si l'espace~$X$ est fini et est muni d'une mesure finie~$\mu(X)<\infty$, alors tous les espaces~$L^p$
-(resp.~$\mathcal{L}^p$), pour~$1\le p\le \infty$ sont les mêmes.
+Si l'espace~$X$ est fini et est muni d'une mesure finie~$\mu(X)<\infty$, alors tous les espaces~$L^p$ (resp.~$\mathcal{L}^p$), pour~$1\le p\le \infty$ sont les mêmes.
 \end{theoreme}
 
 \begin{definition}[Espace des suites]
@@ -256,17 +246,14 @@ Muni de cette distance, l'espace~$L^0$ est complet.
 \end{theoreme}
 
 \medskip
-Rappel: la notion de convergence (de suite) est une propriété topologique et non
-métrique (l'écriture avec les~$\varepsilon$ n'est que la traduction métrique
-de l'écriture topologique avec les boules).
+Rappel: la notion de convergence (de suite) est une propriété topologique et non métrique (l'écriture avec les~$\varepsilon$ n'est que la traduction métrique de l'écriture topologique avec les boules).
 
 \medskip
 \section{Espace~$L^\infty$ et dualité avec~$L^1$}
 Dans le cas où l'exposant est infini, on procède de la même manière.
 
 \medskip
-L'espace~$L^\infty(X, \mathcal{A}, \mu)$ est défini comme l'espace vectoriel des fonctions
-$\mu$-essentiellement bornées (i.e. des fonctions bornées presque partout).
+L'espace~$L^\infty(X, \mathcal{A}, \mu)$ est défini comme l'espace vectoriel des fonctions $\mu$-essentiellement bornées (i.e. des fonctions bornées presque partout).
 
 L'espace~$L^\infty(X, \mathcal{A}, \mu)$ est l'espace vectoriel quotient de~$L^\infty(X, \mathcal{A}, \mu)$
 par la relation d'équivalence «$f \sim g$» ssi «$f$ et~$g$ sont égales presque partout».
@@ -278,8 +265,7 @@ L'espace dual de~$L^1$ est~$L^{\infty}$ mais l'espace dual de~$L^{\infty}$ conti
 \medskip
 \section{Espace~$L^2$}
 
-Par définition, si~$\Omega$ est un ouvert donné de~$\RR^n$, $L^2(\Omega)$ est l'espace des
-fonctions (réelles ou complexes) qui sont de carré intégrable au sens de l'intégrale de Lebesgue.
+Par définition, si~$\Omega$ est un ouvert donné de~$\RR^n$, $L^2(\Omega)$ est l'espace des fonctions (réelles ou complexes) qui sont de carré intégrable au sens de l'intégrale de Lebesgue.
 
 \medskip
 \begin{theoreme}
@@ -288,21 +274,15 @@ fonctions (réelles ou complexes) qui sont de carré intégrable au sens de l'in
 \end{theoreme}
 
 \medskip
-La formule des exposants conjugués conduit dans le cas~$p=2$, à~$q=2$, i.e.
-que \textcolorred{$L^2$ s'identifie à son dual.}
+La formule des exposants conjugués conduit dans le cas~$p=2$, à~$q=2$, i.e. que \textcolorred{$L^2$ s'identifie à son dual.}
 
-\textcolorgris{Si l'on reprend la remarque précédente sur la dualité, cela devient dans~$L^2$ (et dans tout espace de
-Hilbert~$H$): en associant à tout~$v\in H$ l'application~$\varphi_v(u)=\langle u,v\rangle$, on peut identifier l'espace
-de Hilbert~$H$ a son dual~$H'$.}
+\textcolorgris{Si l'on reprend la remarque précédente sur la dualité, cela devient dans~$L^2$ (et dans tout espace de Hilbert~$H$): en associant à tout~$v\in H$ l'application~$\varphi_v(u)=\langle u,v\rangle$, on peut identifier l'espace de Hilbert~$H$ a son dual~$H'$.}
 
 \medskip
-\textcolorgreen{Comme mentionné, l'intérêt d'avoir un espace de Hilbert est de disposer d'un produit scalaire, donc
-de pouvoir décomposer un vecteur. Ce que l'on retrouve dans le théorème suivant, vrai dans~$L^2$ ainsi que dans
-tout espace de Hilbert:}
+\textcolorgreen{Comme mentionné, l'intérêt d'avoir un espace de Hilbert est de disposer d'un produit scalaire, donc de pouvoir décomposer un vecteur. Ce que l'on retrouve dans le théorème \ref{th:projHilbert}, que nous réécrivons ci-dessous, et vrai dans~$L^2$ en tant qu'espace de Hilbert:}
 
-\begin{theoreme}
-Tout vecteur~$u$ d'un espace de Hilbert~$H$ se décompose de manière unique en une somme~$u=v+w$ avec
-$v\in K$ et~$w\in K^\bot$, et les sous-espaces~$K$ et~$K^\bot$ sont supplémentaires dans~$H$.
+\begin{theoreme}[Théorème de projection dans un espace de Hilbert]\index{théorème!de projection (dans un Hilbert)}
+Tout vecteur~$u$ d'un espace de Hilbert~$H$ se décompose de manière unique en une somme~$u=v+w$ avec $v\in K$ et~$w\in K^\bot$, et les sous-espaces~$K$ et~$K^\bot$ sont supplémentaires dans~$H$.
 \end{theoreme}
 
 On rappelle que:
@@ -312,8 +292,7 @@ vecteurs de~$K$.
 \end{definition}
 
 \begin{theoreme}
-L'orthogonal~$K^\bot$ de toute partie de~$K$ d'un espace de Hilbert~$H$ est un sous-espace vectoriel fermé de
-$H$, donc lui-même un espace de Hilbert.
+L'orthogonal~$K^\bot$ de toute partie de~$K$ d'un espace de Hilbert~$H$ est un sous-espace vectoriel fermé de $H$, donc lui-même un espace de Hilbert (théorème \ref{Th-SsH}).
 
 On a~$(K^\bot)^\bot = K$.
 \end{theoreme}
@@ -363,16 +342,13 @@ On dispose des résultats de \textcolorblue{densité} suivants:
   \item L'espace~$C_c^\infty(\Omega)$ des fonctions infiniment dérivables à support compact est dense dans~$L^p(\Omega)$ pour~$1\le p<\infty$
 	(mais n'est pas dense dans~$L^\infty(\Omega)$)
   \item L'espace~$C_c^\infty(\Omega)$ est dense dans le sous espace de~$L^\infty(\Omega)$ des fonctions bornées qui tendent vers 0 en l'infini.
-  \item L'ensemble des fonctions continues à support compact de~$L^p(\RR^n)$ est dense dans~$L^p(\RR^n)$, pour~$ p\neq \infty$. 
+  \item L'ensemble des fonctions continues à support compact de~$L^p(\RR^n)$ est dense dans~$L^p(\RR^n)$, pour~$p\neq\infty$. 
 \end{itemize}
 
 \textcolorgreen{Les arguments de densité ont une importance pratique dans certaines démonstrations:}
-si l'on doit démontrer qu'une propriété est vérifiée sur~$L^p(\Omega)$, alors on peut commencer par montrer que cette propriété est 
-vraie sur~$C_c^\infty(\Omega)$, avant de passer à la limite en utilisant l'argument de densité:
-«$C_c^\infty(\Omega)$ est dense dans~$L^p(\Omega)$».
+si l'on doit démontrer qu'une propriété est vérifiée sur~$L^p(\Omega)$, alors on peut commencer par montrer que cette propriété est vraie sur~$C_c^\infty(\Omega)$, avant de passer à la limite en utilisant l'argument de densité: «$C_c^\infty(\Omega)$ est dense dans~$L^p(\Omega)$».
 
 \medskip
 L'espace~$C_c^{\infty}(\Omega)$ est également noté~$\mathcal{D}(\Omega)$ et appelé espace des fonctions tests. 
-Les distributions sont définies comme les éléments de~$\mathcal{D}'(\Omega)$, dual topologique de~$\mathcal{D}(\Omega)$, 
-muni d'une topologie adéquate.
+Les distributions sont définies comme les éléments de~$\mathcal{D}'(\Omega)$, dual topologique de~$\mathcal{D}(\Omega)$, muni d'une topologie adéquate.
 Nous allons les aborder dès a présent, au chapitre~\ref{Ch-Sobo}.

@@ -1,8 +1,6 @@
 \chapter{Problèmes physiques: formulations faibles et variationnelles}
 \begin{abstract}
-Nous allons maintenant reprendre les problèmes types exposés sous forme
-forte dans le chapitre sur les équations différentielles et EDP, pour leur appliquer les méthodes
-du chapitre précédent.
+Nous allons maintenant reprendre les problèmes types exposés sous forme forte dans le chapitre \ref{Ch-EDPphy}, pour leur appliquer les méthodes du chapitre précédent.
 Nous obtiendrons alors les formulations faibles et variationnelles des mêmes problèmes.
 \end{abstract}
 
@@ -11,13 +9,11 @@ Nous obtiendrons alors les formulations faibles et variationnelles des mêmes pr
 \medskip
 \subsection{Équations de Laplace et Poisson}\index{ED-EDP!de Laplace}\index{ED-EDP!de Poisson}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{laplacien}
 
-Sur ce premier exemple, nous détaillerons plus la démarche et les étapes que dans
-la suite des cas présentés.
+Sur ce premier exemple, nous détaillerons plus la démarche et les étapes que dans la suite des cas présentés.
 
 \medskip
 \subsubsection{Laplacien de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Laplace}\index{laplacien}\index{ED-EDP!de Poisson}\index{condition aux limites!de Dirichlet}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
-On considère l'équation de Poisson (Laplace si~$f=0$) avec les conditions aux limites de Dirichlet,
-i.e. le problème suivant:
+On considère l'équation de Poisson (Laplace si~$f=0$) avec les conditions aux limites de Dirichlet, i.e. le problème suivant:
 \begin{equation}\left\{\begin{aligned}
 -&\Delta u=f &&\text{ dans } \Omega\\
 &u=0 &&\text{ sur } \Gamma=\partial\Omega
@@ -29,11 +25,7 @@ Multiplier par une fonction test~$v$ et intégrer par parties (ou utiliser la fo
 \dint_\Omega \nabla u\cdot\nabla v -\dint_\Gamma \dfrac{\partial u}{\partial n}v =
 \dint_\Omega fv
 \end{equation}
-Comme, rappelons le, le but est de faire en sorte que~$u$ et~$v$ jouent un
-rôle symétrique, on veut donc qu'ils aient même régularité et mêmes
-conditions aux limites. La régularité nécessaire est~$u$ et~$v$ sont
-$H^1(\Omega)$, et la prise en compte des conditions aux limites conduit finalement à chercher
-$u$ et~$v$ dans~$H^1_0(\Omega)$.
+Comme, rappelons le, le but est de faire en sorte que~$u$ et~$v$ jouent un rôle symétrique, on veut donc qu'ils aient même régularité et mêmes conditions aux limites. La régularité nécessaire est~$u$ et~$v$ sont $H^1(\Omega)$, et la prise en compte des conditions aux limites conduit finalement à chercher $u$ et~$v$ dans~$H^1_0(\Omega)$.
 
 Le problème est donc:
 \begin{equation}
@@ -41,59 +33,37 @@ Le problème est donc:
 \forall v\in H^1_0(\Omega),\quad
 \dint_\Omega \nabla u\cdot\nabla v = \dint_\Omega fv
 \end{equation}
-dont le second membre n'a de sens que si~$f\in L^2(\Omega)$, ce qui
-sera supposé.
-\textcolorgris{Notons que le problème est également bien défini dans le cas
-où~$f\in H^{-1}(\Omega)$, car~$v\in H^1_0(\Omega)$.}
+dont le second membre n'a de sens que si~$f\in L^2(\Omega)$, ce qui sera supposé.
+\textcolorgris{Notons que le problème est également bien défini dans le cas où~$f\in H^{-1}(\Omega)$, car~$v\in H^1_0(\Omega)$.}
 
-Avec cette formulation, le théorème de Lax-Milgram permet de conclure
-à l'existence et à l'unicité de la solution.
+Avec cette formulation, le théorème de Lax-Milgram permet de conclure à l'existence et à l'unicité de la solution.
 
 \medskip\colorgreen
 \paragraph{Équivalence des solutions}
-Nous avons construit un problème variationnel dont on sait qu'il a une
-unique solution.
-Une question naturelle est alors de savoir en quel sens on a résolu le problème initial.
+Nous avons construit un problème variationnel dont on sait qu'il a une unique solution. Une question naturelle est alors de savoir en quel sens on a résolu le problème initial.
 
-Il est facile de voir que l'équation~$-\Delta u = f$ est vérifiée au sens des distributions.
-Or~$f\in L^2(\Omega)$, donc~$-\Delta u \in L^2(\Omega)$, et l'égalité a donc lieu presque
-partout.
-De la même manière, on a~$u = 0$ presque partout sur~$\Gamma$ (pour la mesure
-surfacique sur~$\Gamma$).
+Il est facile de voir que l'équation~$-\Delta u = f$ est vérifiée au sens des distributions. Or~$f\in L^2(\Omega)$, donc~$-\Delta u \in L^2(\Omega)$, et l'égalité a donc lieu presque partout. De la même manière, on a~$u = 0$ presque partout sur~$\Gamma$ (pour la mesure surfacique sur~$\Gamma$).
 
-On comprend pourquoi, parmi différentes formulations faibles, on en retient une
-plutôt qu'une autre: afin d'obtenir une formulation variationnelle à partir de laquelle
-on raisonne rigoureusement, i.e. existence et unicité du résultat, puis retour au problème
-initial.
+On comprend pourquoi, parmi différentes formulations faibles, on en retient une plutôt qu'une autre: afin d'obtenir une formulation variationnelle à partir de laquelle on raisonne rigoureusement, i.e. existence et unicité du résultat, puis retour au problème initial.
 \colorblack
 
 \medskip\colorgris
 \paragraph{Une autre formulation variationnelle}
-Afin d'illustrer la remarque précédente, construisons une autre formulation
-variationnelle du même problème.
-Pour cela, intégrons une nouvelle fois par parties, afin de chercher
-une solution encore plus faible.
-Le problème devient:
+Afin d'illustrer la remarque précédente, construisons une autre formulation variationnelle du même problème. Pour cela, intégrons une nouvelle fois par parties, afin de chercher une solution encore plus faible. Le problème devient:
 \begin{equation}
 \text{Trouver } u \in L^1(\Omega) \text{ tel que }
 \forall v\in C_c^\infty(\Omega),\quad
 -\dint_\Omega u\Delta v = \dint_\Omega fv
 \end{equation}
-Tout d'abord, on peut remarquer que l'on ne peut plus appliquer Lax-Milgram.
-Ensuite, rappelons une remarque déjà faite:
-plus on cherche des solutions en un sens faible, plus il est facile de prouver l'existence
-de solutions, mais plus il est difficile d'obtenir l'unicité de la solution.
+Tout d'abord, on peut remarquer que l'on ne peut plus appliquer Lax-Milgram. Ensuite, rappelons une remarque déjà faite: plus on cherche des solutions en un sens faible, plus il est facile de prouver l'existence de solutions, mais plus il est difficile d'obtenir l'unicité de la solution.
 
-En travaillant dans~$L^1(\Omega)$, on ne pourrait pas, par exemple, donner de sens
-à~$u = 0$ sur~$\Gamma$.
+En travaillant dans~$L^1(\Omega)$, on ne pourrait pas, par exemple, donner de sens à~$u = 0$ sur~$\Gamma$.
 \colorblack
 
 \medskip
-Comme nous l'avons vu au chapitre précédent, \textcolorred{l'intérêt des problèmes
-symétriques, c'est qu'ils peuvent s'interpréter en terme de minimisation.}
+Comme nous l'avons vu au chapitre précédent, \textcolorred{l'intérêt des problèmes symétriques, c'est qu'ils peuvent s'interpréter en terme de minimisation.}
 
-La solution du problème initial est également la fonction~$u$ qui réalise
-le minimum de:
+La solution du problème initial est également la fonction~$u$ qui réalise le minimum de:
 \begin{equation}
 \min_{u\in H^1_0(\Omega)} \dfrac12\dint_\Omega |\nabla u|^2-\dint_\Omega fu
 \end{equation}
@@ -110,17 +80,11 @@ On considère l'équation de Laplace-Poisson avec les conditions aux limites sui
 où~$g\in H^{1/2}(\Gamma)$ est une fonction donnée.
 
 \medskip
-L'idée est évidemment de se ramener au cas précédent en réalisant un
-\textcolorblue{relèvement d'espace}.
+L'idée est évidemment de se ramener au cas précédent en réalisant un \textcolorblue{relèvement d'espace}.
 
-Pour cela, on considère la fonction~$v = u - \overline{u}$ où
-$\overline{u}\in H^1(\Omega)$ est un relèvement de la condition
-au bord, i.e. tel que~$\overline{u}=g$ sur~$\Gamma$.
+Pour cela, on considère la fonction~$v = u - \overline{u}$ où $\overline{u}\in H^1(\Omega)$ est un relèvement de la condition au bord, i.e. tel que~$\overline{u}=g$ sur~$\Gamma$.
 
-On utilise ensuite la surjectivité de l'application trace, $\gamma_0$ (ce qui
-devrait malgré tout rester compréhensible bien que la trace ait été définie
-de manière «un peu légère» au chapitre sur les espaces de
-Sobolev).
+On utilise ensuite la surjectivité de l'application trace, $\gamma_0$ (ce qui devrait malgré tout rester compréhensible bien que la trace ait été définie de manière «un peu légère» au chapitre sur les espaces de Sobolev).
 
 \medskip
 La formulation variationnelle du problème est:
@@ -133,8 +97,7 @@ La formulation variationnelle du problème est:
 
 \medskip
 \subsubsection{Laplacien de Neumann}\index{ED-EDP!de Laplace}\index{laplacien}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{ED-EDP!de Poisson}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{condition aux limites!de Neumann}
-On considère l'équation de Laplace-Poisson avec les conditions aux limites de Neumann,
-i.e. le problème suivant:
+On considère l'équation de Laplace-Poisson avec les conditions aux limites de Neumann, i.e. le problème suivant:
 \begin{equation}\left\{\begin{aligned}
 -&\Delta u=f &&\text{ dans } \Omega\\
 &\dfrac{\partial u}{\partial n}=g &&\text{ sur } \Gamma=\partial\Omega
@@ -151,51 +114,31 @@ On obtient immédiatement la formulation variationnelle suivante:
 qui nécessite~$f\in L^2(\Omega)$ et~$g\in L^2(\Gamma)$.
 
 \medskip
-On peut remarquer qu'ici une simple intégration par parties a suffit à intégrer les conditions aux
-limites dans la formulation variationnelle, i.e. les conditions aux limites n'ont pas eu à être introduites
-dans l'espace fonctionnel pour~$u$, contrairement au cas du Laplacien de Dirichlet
-(en même temps, demander à une fonction de~$H^1(\Omega)$ d'avoir une dérivée
-normale égale à une fonction~$g$ au bord n'a pas de sens).
+On peut remarquer qu'ici une simple intégration par parties a suffit à intégrer les conditions aux limites dans la formulation variationnelle, i.e. les conditions aux limites n'ont pas eu à être introduites dans l'espace fonctionnel pour~$u$, contrairement au cas du Laplacien de Dirichlet (en même temps, demander à une fonction de~$H^1(\Omega)$ d'avoir une dérivée normale égale à une fonction~$g$ au bord n'a pas de sens).
 
-Lorsque les conditions aux limites s'introduisent d'elles-mêmes comme dans
-le cas du Laplacien de Neumann, on dit que l'on tient compte des conditions aux limites de
-\textcolorblue{manière naturelle}. Lorsqu'il faut les inclure, on dit qu'on en tient
-compte de \textcolorblue{manière essentielle}.\index{condition aux limites!essentielle}\index{condition aux limites!naturelle}
+Lorsque les conditions aux limites s'introduisent d'elles-mêmes comme dans le cas du Laplacien de Neumann, on dit que l'on tient compte des conditions aux limites de \textcolorblue{manière naturelle}. Lorsqu'il faut les inclure, on dit qu'on en tient compte de \textcolorblue{manière essentielle}.\index{condition aux limites!essentielle}\index{condition aux limites!naturelle}
 
 \medskip
-Il faut remarquer que le problème variationnel ne peut avoir de solution que
-si~$f$ et~$g$ vérifient une \textcolorblue{condition de compatibilité}, i.e. si:
+Il faut remarquer que le problème variationnel ne peut avoir de solution que si~$f$ et~$g$ vérifient une \textcolorblue{condition de compatibilité}, i.e. si:
 \begin{equation}
 \dint_\Omega f + \dint_\Gamma g = 0
 \end{equation}
 
 \medskip
-Il faut aussi remarquer que si~$u$ est une solution du problème, alors~$u+c$,
-où~$c$ est une constante, est également solution.
-On ne peut donc pas espérer prouver qu'il existe une unique solution
-au problème sans restreindre l'espace fonctionnel pour~$u$.
-Pour éliminer l'indétermination due à cette constante additive, on introduit, par exemple, $V = \{u\in H^1(\Omega), \int_\Omega u=0\}$
-et on pose le problème sous la forme:
+Il faut aussi remarquer que si~$u$ est une solution du problème, alors~$u+c$, où~$c$ est une constante, est également solution. On ne peut donc pas espérer prouver qu'il existe une unique solution au problème sans restreindre l'espace fonctionnel pour~$u$.
+Pour éliminer l'indétermination due à cette constante additive, on introduit, par exemple, $V = \{u\in H^1(\Omega), \int_\Omega u=0\}$ et on pose le problème sous la forme:
 \begin{equation}
 \text{Trouver } u \in V \text{ tel que }
 \forall v\in V,\quad \dint_\Omega \nabla u\cdot\nabla v = \dint_\Omega fv + \dint_\Gamma gv
 \end{equation}
 
-En utilisant l'inégalité de Poincaré-Wirtinger, on montre que le problème est bien
-coercif et donc qu'il admet une unique solution.
+En utilisant l'inégalité de Poincaré-Wirtinger, on montre que le problème est bien coercitif et donc qu'il admet une unique solution.
 
 \medskip
-Remarquons que si la condition de compatibilité n'est pas vérifiée,
-alors la solution de la dernière formulation résout bien le problème initial avec
-un~$f$ ou un~$g$ modifié d'une constante additive, de manière à vérifier
-la condition de compatibilité.
+Remarquons que si la condition de compatibilité n'est pas vérifiée, alors la solution de la dernière formulation résout bien le problème initial avec un~$f$ ou un~$g$ modifié d'une constante additive, de manière à vérifier la condition de compatibilité.
 
 \medskip
-Il y aurait lieu à quelques discussions sur l'interprétation des résultats,
-mais celle-ci serait beaucoup plus abstraite que dans le cas du Laplacien de Dirichlet.
-Le lecteur désireux de rentrer (à raison) dans ce genre de détail trouvera
-aisément un cours de M2 sur le sujet.
-Cela dépasse le cadre que nous nous sommes fixé dans ce document.
+Il y aurait lieu à quelques discussions sur l'interprétation des résultats, mais celle-ci serait beaucoup plus abstraite que dans le cas du Laplacien de Dirichlet. Le lecteur désireux de rentrer (à raison) dans ce genre de détail trouvera aisément un cours de M2 sur le sujet. Cela dépasse le cadre que nous nous sommes fixé dans ce document.
 
 \medskip
 \subsubsection{Laplacien avec conditions mixtes}\index{ED-EDP!de Laplace}\index{laplacien}\index{ED-EDP!de Poisson}\index{condition aux limites!mêlée}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
@@ -216,18 +159,11 @@ On obtient la formulation variationnelle:
 
 \medskip
 \subsection{Équation d'onde}
-Rappelons que l'équation des ondes correspond à un problème d'évolution
-hyperbolique linéaire.
-Différentes conditions aux limites peuvent être imposées.
-Dans le cadre de ce document, nous nous intéresserons plus particulièrement
-à l'acoustique.
-Ce paragraphe est donc traité un peu plus loin dans le document.
+Rappelons que l'équation des ondes correspond à un problème d'évolution hyperbolique linéaire. Différentes conditions aux limites peuvent être imposées. Dans le cadre de ce document, nous nous intéresserons plus particulièrement à l'acoustique. Ce paragraphe est donc traité un peu plus loin dans le document.
 
 \medskip
 \subsection{Équation de la chaleur}\index{ED-EDP!de la chaleur}\index{condition aux limites!de Dirichlet}
-Après avoir présenté le problème elliptique du Laplacien, intéressons-nous
-maintenant au cas parabolique de l'équation de la chaleur.
-Pour cela, considérons le problème suivant:
+Après avoir présenté le problème elliptique du Laplacien, intéressons-nous maintenant au cas parabolique de l'équation de la chaleur. Pour cela, considérons le problème suivant:
 Trouver~$u(x,t)$ tel que:
 \begin{equation}
 \left\{
@@ -239,12 +175,7 @@ Trouver~$u(x,t)$ tel que:
 \right.
 \end{equation}
 \medskip
-On opère comme précédemment.
-Toutefois, nous faisons jouer à la variable de temps~$t$ et la variable d'espace~$x$
-des rôles différents: on considère la fonction~$u(t, x)$ comme une fonction
-du temps, à valeur dans un espace fonctionnel en~$x$, et on prend comme fonctions
-tests des fonctions qui dépendent seulement de la variable~$x$.
-On obtient alors facilement la formulation variationnelle suivante:
+On opère comme précédemment. Toutefois, nous faisons jouer à la variable de temps~$t$ et la variable d'espace~$x$ des rôles différents: on considère la fonction~$u(t, x)$ comme une fonction du temps, à valeur dans un espace fonctionnel en~$x$, et on prend comme fonctions tests des fonctions qui dépendent seulement de la variable~$x$. On obtient alors facilement la formulation variationnelle suivante:
 \begin{equation}
 \text{Trouver } u \text{ tel que } \forall v\in H^1_0(\Omega),\quad
 \dfrac{\mathrm d}{\mathrm dt}\dint_\Omega uv+\dint_\Omega \nabla u\cdot\nabla v=\dint_\Omega fv
@@ -266,20 +197,16 @@ La formulation variationnelle est donc:
 \dfrac{\mathrm d}{\mathrm dt}\dint_\Omega uv+\dint_\Omega \nabla u\cdot\nabla v=\dint_\Omega fv
 \end{equation}
 \medskip
-Pour résoudre le problème, il faut utiliser une méthode numérique. On montre l'existence puis l'unicité par les estimateurs à priori.
-Nous détaillerons cela plus loin.
+Pour résoudre le problème, il faut utiliser une méthode numérique. On montre l'existence puis l'unicité par les estimateurs à priori. Nous détaillerons cela plus loin.
 
 \medskip
 \section{Mécanique des fluides}
-Pour la présentation des formulations faibles, nous commencerons par le cas de
-l'équation de Stokes avant de passer à celui de l'équation de Navier-Stokes (afin
-de nous permettre d'introduire les notations progressivement).
+Pour la présentation des formulations faibles, nous commencerons par le cas de l'équation de Stokes avant de passer à celui de l'équation de Navier-Stokes (afin de nous permettre d'introduire les notations progressivement).
 
 
 \medskip
 \subsection{Équation de Stokes}\index{condition aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
-Si l'on considère la problème de Stokes pour un fluide incompressible avec condition de Dirichlet, il
-nous faut résoudre le système:
+Si l'on considère la problème de Stokes pour un fluide incompressible avec condition de Dirichlet, il nous faut résoudre le système:
 \begin{equation}\left\{
 \begin{aligned}
 -&\eta \Delta u + \nabla p = \rho f && \text{ dans } \Omega\\
@@ -308,8 +235,7 @@ et
 \end{aligned}
 \end{equation}
 \medskip
-On introduit également \textcolorblue{l'espace~$L^2_0(\Omega)$ des fonction~$L^2(\Omega)$
-à moyenne nulle}:
+On introduit également \textcolorblue{l'espace~$L^2_0(\Omega)$ des fonction~$L^2(\Omega)$ à moyenne nulle}:
 \begin{equation}L^2_0(\Omega)=\left\{ q\in L^2(\Omega),\quad \dint_\Omega q %d\Omega
 = 0\right\}\end{equation}
 \medskip
@@ -321,30 +247,23 @@ a(u,v)+b(v,p) &= (f,v) & \forall v\in H^1_0(\Omega)^n \\
 b(u,q) &=0 &\forall q \in L^2_0(\Omega)
 \end{array}\right.
 \end{equation}
-Notons que dans le seconde équation, la fonction test~$q$ pourrait de manière équivalente
-être cherchée dans~$L^2(\Omega)$ (pas besoin de la moyenne nulle).
+Notons que dans le seconde équation, la fonction test~$q$ pourrait de manière équivalente être cherchée dans~$L^2(\Omega)$ (pas besoin de la moyenne nulle).
 
-Par contre, il est important de chercher~$p \in L^2_0(\Omega)$. C'est cette condition
-de pression nulle qui assure l'unicité de la pression (comme dans le cas précédent du
-Laplacien de Neumann).
+Par contre, il est important de chercher~$p \in L^2_0(\Omega)$. C'est cette condition de pression nulle qui assure l'unicité de la pression (comme dans le cas précédent du Laplacien de Neumann).
 
 \medskip
-Il est possible de formuler ce problème de manière non mixte, i.e. sous une forme
-compatible avec Lax-Milgram.
+Il est possible de formuler ce problème de manière non mixte, i.e. sous une forme compatible avec Lax-Milgram.
 Considérons~$V=\left\{ u\in H^1_0(\Omega)^n / \dive u=0 \text{ dans } \Omega\right\}$.
 Alors~$u$ (la vitesse) est solution du problème:
 \begin{center}
 Trouver~$u\in V$ tel que~$a(u,v)=(f,v)$, $\forall v\in V$.
 \end{center}
-D'ailleurs c'est cette formulation qui permet ($a$ est continue et coercitive sur~$V$) de
-conclure à l'existence et à l'unicité de~$u$.
-De là, il ne reste plus qu'à démontrer la même chose pour~$p$ dans la formulation mixte.
+D'ailleurs c'est cette formulation qui permet ($a$ est continue et coercitive sur~$V$) de conclure à l'existence et à l'unicité de~$u$. De là, il ne reste plus qu'à démontrer la même chose pour~$p$ dans la formulation mixte.
 
 \medskip
 \subsection{Équation de Navier-Stokes}\index{condition aux limites!de Dirichlet}\index{ED-EDP!de Navier-Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
 
-Considérons le problème de Navier-Stokes, pour un fluide incompressible, et soumis
-à des conditions initiales en temps et sur le contour~$\Gamma=\partial\Omega$:
+Considérons le problème de Navier-Stokes, pour un fluide incompressible, et soumis à des conditions initiales en temps et sur le contour~$\Gamma=\partial\Omega$:
 \begin{equation}\left\{
 \begin{aligned}
 &\dfrac{\partial u}{\partial t} + (u\cdot\nabla) u + \eta\Delta u + \nabla p = \rho f && \text{ dans } \Omega\times\RR^+\\
@@ -354,15 +273,12 @@ Considérons le problème de Navier-Stokes, pour un fluide incompressible, et so
 \end{aligned}\right.
 \end{equation}
 
-\textcolorblue{La fonction~$g=g(x,t)$ dans la condition de type Dirichlet sur le bord du domaine
-doit être à flux nul sur~$\Gamma$}, i.e. on suppose que:
+\textcolorblue{La fonction~$g=g(x,t)$ dans la condition de type Dirichlet sur le bord du domaine doit être à flux nul sur~$\Gamma$}, i.e. on suppose que:
 \begin{equation}
 \dint_\Gamma g\cdot n %d\Gamma
 = 0
 \end{equation}
-avec~$n$ la normale extérieure à~$\Gamma$.
-Cette condition est \textcolorred{nécessaire} pour que le problème de Navier-Stokes admette une
-solution.
+avec~$n$ la normale extérieure à~$\Gamma$. Cette condition est \textcolorred{nécessaire} pour que le problème de Navier-Stokes admette une solution.
 
 \medskip
 Introduisons également \textcolorblue{les espaces de fonctions} à valeurs dans un espace
@@ -375,10 +291,7 @@ Ces espaces sont munis de la norme:
 \begin{equation}
 \|u\|_{L^q(0,T;B)} = \left(\dint_\Omega\|u(t)\|^q_B \mathrm dt\right)^{1/q}
 \end{equation}
-Notons que ces espaces ont été «présentés» au paragraphe précédent
-sur l'équation de la chaleur. La notation était un peu différente mais il s'agit bien
-des mêmes espaces. Nous avons voulu profiter de ces exemples pour introduire
-ces deux notations, différentes mais désignant bien la même chose.
+Notons que ces espaces ont été «présentés» au paragraphe précédent sur l'équation de la chaleur. La notation était un peu différente mais il s'agit bien des mêmes espaces. Nous avons voulu profiter de ces exemples pour introduire ces deux notations, différentes mais désignant bien la même chose.
 
 \medskip
 Posons~$X=H^1_0(\Omega)^n$ et~$Y=L^2_0(\Omega)^n$.
@@ -402,8 +315,7 @@ c(w,z,v) = \dint_\Omega [(w\cdot\nabla)z]\cdot v %d\Omega
 \end{equation}
 
 \medskip
-Cette forme trilinéaire a certaines propriétés, par exemple lorsque l'on permute
-des termes où lorsque l'on considère que certaines variables sont à divergence nulle...
+Cette forme trilinéaire a certaines propriétés, par exemple lorsque l'on permute des termes où lorsque l'on considère que certaines variables sont à divergence nulle...
 
 \medskip
 Pour des raisons de stabilité, la forme~$c$ est remplacée par le forme~$\tilde{c}$ définie par:
@@ -413,23 +325,18 @@ Pour des raisons de stabilité, la forme~$c$ est remplacée par le forme~$\tilde
 qui est antisymétrique et possède par conséquent la propriété~$\tilde{c}(w,z,z)=0$,
 $\forall w,x,z \in X$.
 
-Nous ne rentrons pas plus avant dans la méthode, car il faudrait alors parler dès à présent
-du schéma numérique associé, ce qui sera fait plus tard.
+Nous ne rentrons pas plus avant dans la méthode, car il faudrait alors parler dès à présent du schéma numérique associé, ce qui sera fait plus tard.
 
 \medskip
 \subsection{Équation d'Euler}\index{ED-EDP!d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
-Nous avons déjà vu que sans le cas d'un nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais}
-élevé, alors le terme de convection non-linéaire~$(u.\nabla)u$ devient prépondérant,
-et on obtient alors l'equation d'Euler.
-Pour un fluide incompressible, le problème à résoudre est donc:
+Nous avons déjà vu que sans le cas d'un nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} élevé, alors le terme de convection non-linéaire~$(u.\nabla)u$ devient prépondérant, et on obtient alors l'équation d'Euler. Pour un fluide incompressible, le problème à résoudre est donc:
 \begin{equation}\left\{
 \begin{aligned}
 &\dfrac{\partial u}{\partial t} + (u\cdot\nabla) u + \nabla p = \rho f && \text{ dans } \Omega\times\RR^+\\
 &\dive u = 0&& \text{ dans } \Omega\times\RR^+
 \end{aligned}\right.
 \end{equation}
-On considérera qu'il s'agit d'un cas simplifié de Navier-Stokes, et on le traitera
-comme tel.
+On considérera qu'il s'agit d'un cas simplifié de Navier-Stokes, et on le traitera comme tel.
 
 \medskip
 \section{Équations de la mécanique des milieux continus des solides}
@@ -454,72 +361,42 @@ La formulation la plus générale du problème est:\index{ED-EDP!relation fondam
 \end{aligned}
 \right.
 \end{equation}
-avec comme d'habitude, $\Gamma_D$ et~$\Gamma_N$ une partition de la
-frontière~$\Gamma=\partial\Omega$ du domaine~$\Omega$.
+avec comme d'habitude, $\Gamma_D$ et~$\Gamma_N$ une partition de la frontière~$\Gamma=\partial\Omega$ du domaine~$\Omega$.
 
 \medskip
-Pour obtenir une formulation faible, on applique les mêmes recettes
-que ci-dessus. Dans un premier temps, on ne traite que l'équation de
-la dynamique, la loi de comportement n'étant là finalement que pour
-«simplifier» l'équation en permettant de lier des variables entre elles.
-Ainsi, la formulation faible générale est:
+Pour obtenir une formulation faible, on applique les mêmes recettes que ci-dessus. Dans un premier temps, on ne traite que l'équation de la dynamique, la loi de comportement n'étant là finalement que pour «simplifier» l'équation en permettant de lier des variables entre elles. Ainsi, la formulation faible générale est:
 \begin{equation}
 \dint_\Omega \rho v\ddot{u} + \dint_\Omega \mu v\dot{u}
 +\dint_\Omega \varepsilon:\sigma - \dint_\Omega fv
 -\dint_{\Gamma_N} g_N v =0, \quad \forall v \text{ tel que } v=\overline{u} \text{ sur } \Gamma_D
 \end{equation}
-Nous sommes restés très prudents sur l'appartenance des différentes grandeurs
-à des espaces, car cela dépend du choix des variables.
+Nous sommes restés très prudents sur l'appartenance des différentes grandeurs à des espaces, car cela dépend du choix des variables.
 
 \medskip
 \subsection{Choix des variables}\label{Sec-form}
 
-Dans la formulation variationnelle présentée, on ne manquera pas de remarquer
-que les variables sont: les déplacements (et leurs dérivées temporelles: vitesse et accélération),
-les déformations et les contraintes.
+Dans la formulation variationnelle présentée, on ne manquera pas de remarquer que les variables sont: les déplacements (et leurs dérivées temporelles: vitesse et accélération), les déformations et les contraintes.
 
-Il est possible de choisir de conserver toutes ces variables, i.e. d'avoir un problème
-dépendant de trois champs inconnus:~$u$, $\varepsilon$ et~$\sigma$.
-Une telle formulation est qualifiée de \textcolorblue{mixte}.
-On qualifie d'ailleurs de mixte, toute formulation ayant plus d'un seul champ inconnu.
+Il est possible de choisir de conserver toutes ces variables, i.e. d'avoir un problème dépendant de trois champs inconnus:~$u$, $\varepsilon$ et~$\sigma$. Une telle formulation est qualifiée de \textcolorblue{mixte}. On qualifie d'ailleurs de mixte, toute formulation ayant plus d'un seul champ inconnu.
 
-Comme on connaît des relations entre les différents champs (relation déplacement /
-déformation et relation déformation / contrainte), il est possible
-d'obtenir des formulations ayant deux ou même un seul champ inconnu, comme
-nous l'avons déjà vu au chapitre précédent (théorèmes de Brezzi).\index[aut]{Brezzi (Franco), 1945-, Italien}
+Comme on connaît des relations entre les différents champs (relation déplacement / déformation et relation déformation / contrainte), il est possible d'obtenir des formulations ayant deux ou même un seul champ inconnu, comme nous l'avons déjà vu au chapitre précédent (théorèmes de Brezzi).\index[aut]{Brezzi (Franco), 1945-, Italien}
 
 \medskip
 \subsubsection{Formulation classique en déplacements}
-L'intérêt de réduire le nombre de champ inconnu est évident.
-Faut-il donc opter définitivement pour une formulation à un seul champ?
-Ce n'est pas évident. En effet, utiliser une formulation à~$k$ champs parmi~$n$
-se traduira par n'obtenir que ces~$k$ champs comme solution directe du
-système. Les~$n-k$ champs manquant doivent alors être obtenus à partir des
-$k$ champs choisis... et cela peut poser certains problèmes, dont nous parlerons plus tard.
+L'intérêt de réduire le nombre de champ inconnu est évident. Faut-il donc opter définitivement pour une formulation à un seul champ?
+Ce n'est pas évident. En effet, utiliser une formulation à~$k$ champs parmi~$n$ se traduira par n'obtenir que ces~$k$ champs comme solution directe du système. Les~$n-k$ champs manquant doivent alors être obtenus à partir des $k$ champs choisis... et cela peut poser certains problèmes, dont nous parlerons plus tard.
 
-Il est à noter que la formulation dite \textcolorblue{en déplacements}, également
-qualifiée de \textcolorblue{classique}, est la plus utilisée. Comme son nom
-l'indique, elle ne comporte que le champ de déplacement comme inconnu.
-Il suffit de considérer, dans la formulation précédente, que les contraintes
-sont obtenues à partir des déformations, via la loi de comportement, et que
-les déformations sont obtenues à partir des déplacements par la relation
-idoine (en petits ou grands déplacements).
+Il est à noter que la formulation dite \textcolorblue{en déplacements}, également qualifiée de \textcolorblue{classique}, est la plus utilisée. Comme son nom l'indique, elle ne comporte que le champ de déplacement comme inconnu. Il suffit de considérer, dans la formulation précédente, que les contraintes sont obtenues à partir des déformations, via la loi de comportement, et que les déformations sont obtenues à partir des déplacements par la relation idoine (en petits ou grands déplacements).
 
 \medskip
-Dans la formulation en déplacement, on suppose que les relations liant les
-déformations aux déplacements (opérateur de dérivation en petites ou grandes
-déformations) et les contraintes aux déplacements (en fait les contraintes aux
-déformations via la loi de comportement, puis les déformations aux déplacements
-comme ci-avant) sont connues et vérifiées:
+Dans la formulation en déplacement, on suppose que les relations liant les déformations aux déplacements (opérateur de dérivation en petites ou grandes déformations) et les contraintes aux déplacements (en fait les contraintes aux déformations via la loi de comportement, puis les déformations aux déplacements comme ci-avant) sont connues et vérifiées:
 \begin{equation}
 \dint_\Omega \rho v\ddot{u} + \dint_\Omega \mu v\dot{u}
 +\dint_\Omega \varepsilon(v):\sigma(u) - \dint_\Omega fv
 -\dint_{\Gamma_N} g_N v =0, \quad \forall v \text{ tel que } v=\overline{u} \text{ sur } \Gamma_D
 \end{equation}
 \colorgris
-De manière plus explicite, si on note~$\varepsilon=\mathcal{L}u$ la relation entre
-déformations et déplacements et~$\sigma = H\varepsilon = H\mathcal{L}u$ la relation entre
-contraintes et déplacement, alors il vient:
+De manière plus explicite, si on note~$\varepsilon=\mathcal{L}u$ la relation entre déformations et déplacements et~$\sigma = H\varepsilon = H\mathcal{L}u$ la relation entre contraintes et déplacement, alors il vient:
 \begin{equation}
 \dint_\Omega \rho v\ddot{u} + \dint_\Omega \mu v\dot{u}
 +\dint_\Omega \mathcal{L}v:H\mathcal{L}u - \dint_\Omega fv
@@ -527,35 +404,27 @@ contraintes et déplacement, alors il vient:
 \end{equation}
 où n'apparaissent effectivement plus que les déplacements comme inconnues.\colorblack
 
-\textcolorgreen{On se contente toutefois généralement d'écrire~$\varepsilon(u)$ et~$\sigma(u)$ pour
-dire que l'inconnue est bien~$u$, ce qui évite d'alourdir l'écriture.}
+\textcolorgreen{On se contente toutefois généralement d'écrire~$\varepsilon(u)$ et~$\sigma(u)$ pour dire que l'inconnue est bien~$u$, ce qui évite d'alourdir l'écriture.}
 
 \medskip
-Cette formulation «en déplacement» correspond au problème de minimisation
-de la \textcolorblue{fonctionnelle de l'énergie potentielle totale}\index{fonctionnelle!de l'énergie potentielle totale}
-que l'on appelle également \textcolorblue{fonctionnelle primale}\index{fonctionnelle!primale}:
+Cette formulation «en déplacement» correspond au problème de minimisation de la \textcolorblue{fonctionnelle de l'énergie potentielle totale}\index{fonctionnelle!de l'énergie potentielle totale} que l'on appelle également \textcolorblue{fonctionnelle primale}\index{fonctionnelle!primale}:
 \begin{equation}
 J(u)=
 \frac12 \dint_\Omega \varepsilon(v):\sigma(u) - \dint_\Omega fv -
 \dint_{\Gamma_N} g_N v
 \end{equation}
 où le champ de déplacements doit vérifier~$v=\overline{u}$ sur~$\Gamma_D$.
-Les relations entre déformations et déplacements et entre contraintes et déplacements
-sont supposées vérifiées de manière implicite dans~$\Omega$.
+Les relations entre déformations et déplacements et entre contraintes et déplacements sont supposées vérifiées de manière implicite dans~$\Omega$.
 
 \medskip
 \subsubsection{Illustration: formulation en déplacements de la statique des matériaux isotropes}\index{ED-EDP!relation fondamentale de la dynamique}\index{loi de comportement}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{loi de comportement!Hooke}\index[aut]{Hooke (Robert), 1635-1703, Anglais}
 
-En se plaçant dans le cas statique, et en écrivant «en déplacements», i.e.
-en supprimant le champ de contrainte des inconnues (et en utilisant, au passage,
-la symétrie de~$\sigma$), la formulation variationnelle précédente devient:
+En se plaçant dans le cas statique, et en écrivant «en déplacements», i.e. en supprimant le champ de contrainte des inconnues (et en utilisant, au passage, la symétrie de~$\sigma$), la formulation variationnelle précédente devient:
 \begin{equation}
 \dint_\Omega H_{ijkl}\varepsilon_{ij}(u)\varepsilon_{kl}(v) = \dint_\Omega fv +
 \dint_{\Gamma_N} g_N v, \quad \forall v\in H^1_D(\Omega)
 \end{equation}
-\textcolorgris{Notons que pour prouver la coercitivité de la forme bilinéaire,
-il faut recourir à l'inégalité de Korn, qui a été présentée précédemment à la
-fin de la partie 1.}
+\textcolorgris{Notons que pour prouver la coercitivité de la forme bilinéaire, il faut recourir à l'inégalité de Korn.}
 
 \medskip
 Si en plus le matériau est isotrope, cette expression se simplifie en:
@@ -570,16 +439,12 @@ J(u)=
 \dint_{\Gamma_N} g_N v
 \end{equation}
 \medskip
-D'une manière générale, toute formulation faible, quelque soit le nombre
-de champs inconnus, s'écrit en mécanique sous la forme de minimisation d'une
-fonctionnelle, dont on sait trouver la signification physique.
+D'une manière générale, toute formulation faible, quelque soit le nombre de champs inconnus, s'écrit en mécanique sous la forme de minimisation d'une fonctionnelle, dont on sait trouver la signification physique.
 
 \medskip
 \subsubsection{Formulations mixte et hybride}\label{Sec-MH}
-La formulation la plus générale est celle comportant les trois champs de déplacements
-$u$, de déformations~$\varepsilon$, et de contraintes~$\sigma$ comme inconnues.
-Cette formulation mixte est connue sous le nom de \textcolorblue{principe de Hu-Washizu} (1975).\index[aut]{Hu (Haichang), 1928-2011, Chinois}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}
-Sous forme variationnelle, elle s'écrit:\index{fonctionnelle!de Hu-Washizu}
+La formulation la plus générale est celle comportant les trois champs de déplacements $u$, de déformations~$\varepsilon$, et de contraintes~$\sigma$ comme inconnues.
+Cette formulation mixte est connue sous le nom de \textcolorblue{principe de Hu-Washizu} (1975).\index[aut]{Hu (Haichang), 1928-2011, Chinois}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais} Sous forme variationnelle, elle s'écrit:\index{fonctionnelle!de Hu-Washizu}
 \begin{equation}
 J(u,\varepsilon,\sigma) =
 \frac12 \dint_\Omega \varepsilon:\sigma
@@ -588,26 +453,20 @@ J(u,\varepsilon,\sigma) =
 - \dint_{\Gamma_N} g_N v
 - \dint_{\Gamma_D} (u-\overline{u}) (\sigma(v)\cdot n)
 \end{equation}
-et ne comporte aucune condition (puisqu'elles sont toutes formellement présente dans
-la formulation).
+et ne comporte aucune condition (puisqu'elles sont toutes formellement présente dans la formulation).
 
 \medskip
-Il est possible d'obtenir une formulation n'ayant que le champ de contraintes
-comme inconnue. Il s'agit de la \textcolorblue{fonctionnelle duale}:\index{fonctionnelle!duale}
+Il est possible d'obtenir une formulation n'ayant que le champ de contraintes comme inconnue. Il s'agit de la \textcolorblue{fonctionnelle duale}:\index{fonctionnelle!duale}
 \begin{equation}
 J(\sigma) =
 -\frac12 \dint_\Omega \sigma S \sigma
 -\dint_\Omega \sigma(v) S\sigma_0
 + \dint_{\Gamma_D} \overline{u} \sigma(v)\cdot n
 \end{equation}
-où le champ de contrainte doit vérifier les conditions aux limites~$\dive \sigma + f =0$ sur~$\Omega$
-et~$\sigma n = g_N$ sur~$\Gamma_N$.
-$S$ désigne la loi de comportement donnée sous forme inverse (i.e. sous forme de
-souplesse, i.e.~$S=H^{-1}$).
+où le champ de contrainte doit vérifier les conditions aux limites~$\dive \sigma + f =0$ sur~$\Omega$ et~$\sigma n = g_N$ sur~$\Gamma_N$. $S$ désigne la loi de comportement donnée sous forme inverse (i.e. sous forme de souplesse, i.e.~$S=H^{-1}$).
 
 \medskip
-L'utilisation de multiplicateurs de Lagrange permet de construire des fonctionnelles multi-champs.
-La \textcolorblue{fonctionnelle de l'énergie complémentaire}\index{fonctionnelle!de l'énergie complémentaire} est la suivante:
+L'utilisation de multiplicateurs de Lagrange permet de construire des fonctionnelles multi-champs. La \textcolorblue{fonctionnelle de l'énergie complémentaire}\index{fonctionnelle!de l'énergie complémentaire} est la suivante:
 \begin{equation}
 J(\sigma,\lambda,\mu) =
 -\frac12\dint_\Omega \sigma S \sigma
@@ -616,13 +475,8 @@ J(\sigma,\lambda,\mu) =
 + \dint_{\Gamma_N} \mu (\sigma\cdot n -g_N)
 \end{equation}
 où~$\lambda$ et~$\mu$ sont les multiplicateurs de Lagrange.\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
-\medskip
-Les multiplicateurs de Lagrange présentés ci-dessus ont une signification physique
-(que l'on trouve en écrivant la stationnarité de la fonctionnelle).
-En remplaçant les multiplicateurs par les quantités qu'ils représentent, i.e. en remplaçant
-$\lambda$ par~$u$ dans~$\Omega$ et~$\mu$ par~$u$ sur~$\Gamma_N$, on obtient la
-\textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
-sous sa première forme:
+\medskipvm
+Les multiplicateurs de Lagrange présentés ci-dessus ont une signification physique (que l'on trouve en écrivant la stationnarité de la fonctionnelle). En remplaçant les multiplicateurs par les quantités qu'ils représentent, i.e. en remplaçant $\lambda$ par~$u$ dans~$\Omega$ et~$\mu$ par~$u$ sur~$\Gamma_N$, on obtient la \textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} sous sa première forme:
 \begin{equation}
 J(u,\sigma) =
 -\frac12 \dint_\Omega \sigma S \sigma
@@ -649,20 +503,14 @@ J(u,\sigma) =
 - \dint_\Omega f v
 - \dint_{\Gamma_N} g_N v
 \end{equation}
-où le champ de déplacement doit vérifier~$v=\overline{u}$ sur~$\Gamma_D$,
-et où la relation entre déformations et déplacement est supposée vérifiée dans~$\Omega$.
+où le champ de déplacement doit vérifier~$v=\overline{u}$ sur~$\Gamma_D$, et où la relation entre déformations et déplacement est supposée vérifiée dans~$\Omega$.
 
 Cette fonctionnelle d'Hellinger-Reissner est également appelée \textcolorblue{fonctionnelle mixte}.\index{fonctionnelle!mixte}
-\medskip
-L'adjectif \textcolorblue{hybride} peut être adjoint à l'une quelconque des formulations
-précédentes si le ou les champs sont interpolés d'une part sur tout le domaine~$\Omega$
-et d'autre part sur tout ou partie du contour~$\Gamma$ de façon indépendante.
+\medskipvm
+L'adjectif \textcolorblue{hybride} peut être adjoint à l'une quelconque des formulations précédentes si le ou les champs sont interpolés d'une part sur tout le domaine~$\Omega$ et d'autre part sur tout ou partie du contour~$\Gamma$ de façon indépendante.
 
-Il est possible de modifier la fonctionnelle de l'énergie complémentaire de plusieurs manière.
-Nous ne présentons que celle conduisant à ce que l'on appelle souvent \textcolorblue{fonctionnelle hybride}\index{fonctionnelle!hybride} et
-qui est la \textcolorblue{fonctionnelle de Pian et
-Tong}\index{fonctionnelle!de Pian et Tong}\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois}
-(1978):
+Il est possible de modifier la fonctionnelle de l'énergie complémentaire de plusieurs manières.
+Nous ne présentons que celle conduisant à ce que l'on appelle souvent \textcolorblue{fonctionnelle hybride}\index{fonctionnelle!hybride} et qui est la \textcolorblue{fonctionnelle de Pian et Tong}\index{fonctionnelle!de Pian et Tong}\index[aut]{Pian (Theodore H.H.), 1919-2009, Américain}\index[aut]{Tong (Pin), ? , Chinois} (1978):
 \begin{equation}
 J(u,\varepsilon) =
 -\frac12 \dint_\Omega \sigma S \sigma
@@ -677,19 +525,14 @@ Sa variation:
 +\dint_\Gamma u \sigma(v)\cdot n + v \sigma(u)\cdot n
 - \dint_{\Gamma_N} g_N v
 \end{equation}
-a l'avantage de ne pas comporter de dérivée.
+a l'avantage de \textcolorred{ne pas comporter de dérivée}.
 
 \medskip
-Au paragraphe~\ref{Sec-champs}, nous reprendrons ces formulations pour les exprimer,
-peut-être de manière plus «explicite» pour le lecteur sous forme matricielle.
+Au paragraphe~\ref{Sec-champs}, nous reprendrons ces formulations pour les exprimer, peut-être de manière plus «explicite» pour le lecteur sous forme matricielle.
 
 \medskip
 \section{Équations de l'acoustique}\index{ED-EDP!de l'acoustique}
-On s'intéresse à la propagation et à la réflexion d'ondes de pression dans un
-fluide parfait non pesant.
-On supposera le mouvement harmonique autour d'un état moyen (ambiance) au repos
-\textcolorgris{(ce qui est le lien «physique» avec l'introduction de l'espace~$L^2_0(\Omega)$
-présenté pour l'équation de Stokes)}.
+On s'intéresse à la propagation et à la réflexion d'ondes de pression dans un fluide parfait non pesant. On supposera le mouvement harmonique autour d'un état moyen (ambiance) au repos \textcolorgris{(ce qui est le lien «physique» avec l'introduction de l'espace~$L^2_0(\Omega)$ présenté pour l'équation de Stokes)}.
 
 \medskip
 On rappelle que l'équation des ondes acoustiques de célérité~$c$ dans un milieu est:
@@ -699,11 +542,7 @@ On rappelle que l'équation des ondes acoustiques de célérité~$c$ dans un mil
 
 \medskip
 \subsection{Équation de Helmholtz}\index{ED-EDP!de Helmholtz}\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand}
-Il s'agit de la formulation générale d'un problème acoustique linéaire.
-Elle est obtenue en cherchant la \textcolorblue{solution harmonique} de l'équation
-des ondes, i.e. une solution sous la forme:~$p'(x,y,z,t)=p(x,y,z)\mathrm \mathrm{e}^{i\omega t}$.
-\textcolorgris{(Au passage, les physiciens utilisent plutôt~$j$ au lieu de~$i$ pour gagner en clarté sans
-doute... comme s'ils passaient leur temps à parler d'intensité!)}
+Il s'agit de la formulation générale d'un problème acoustique linéaire. Elle est obtenue en cherchant la \textcolorblue{solution harmonique} de l'équation des ondes, i.e. une solution sous la forme:~$p'(x,y,z,t)=p(x,y,z)\mathrm \mathrm{e}^{i\omega t}$. \textcolorgris{(Au passage, les physiciens utilisent plutôt~$j$ au lieu de~$i$ pour gagner en clarté sans doute... comme s'ils passaient leur temps à parler d'intensité!)}
 
 On obtient alors l'\textcolorblue{équation de Helmholtz}:
 \begin{equation} \Delta p + k^2 p=0 \end{equation}
@@ -711,42 +550,29 @@ où~$k$ est le \textcolorblue{nombre d'onde}:~$k=\dfrac\omega{c}=\dfrac{2\pi}\la
 
 \medskip
 \subsection{Conditions aux limites en acoustique}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index{condition aux limites!de Robin}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
-Soit~$\Gamma=\partial\Omega$ la frontière du domaine concerné.
-On considère que~$\Gamma$ est \textcolorblue{partitionné} en trois zones (i.e. dont
-l'union vaut~$\Gamma$ et dont aucune n'intersecte les autres) qui
-portent chacune une condition aux limites différente:~$\Gamma_D$ de Dirichlet,
-$\Gamma_N$ de Neumann et~$\Gamma_R$ de Robin.
-\medskip
+Soit~$\Gamma=\partial\Omega$ la frontière du domaine concerné. On considère que~$\Gamma$ est \textcolorblue{partitionné} en trois zones (i.e. dont l'union vaut~$\Gamma$ et dont aucune n'intersecte les autres) qui portent chacune une condition aux limites différente:~$\Gamma_D$ de Dirichlet, $\Gamma_N$ de Neumann et~$\Gamma_R$ de Robin.
+\medskipvm
 On a donc:
 \begin{itemize}
   \item Dirichlet:~$p=\overline{p}$ sur~$\Gamma_D$;\\[-2ex]
   \item Neumann:~$\partial_n p = -i\rho\omega \overline{V}_n$ sur~$\Gamma_N$;\\[-2ex]
   \item Robin:~$\partial_n p=-i\rho\omega A_n p$ sur~$\Gamma_R$.
 \end{itemize}
-\medskip\colorgreen
+\medskipvm\colorgreen
 \paragraph{Condition de Neumann}
-$\overline{V_n}$ est la valeur imposée de la composante normale de la vitesse.
-Cette condition limite modélise la \textcolorred{vibration} d'un panneau, ce qui en fait la condition la
-plus souvent utilisée lorsque l'on a un couplage faible entre la structure et le fluide.
-On effectue alors une étude vibratoire de la structure, puis grâce à celle-ci une
-étude acoustique du fluide sans se préoccuper des interactions fluide-structure.
+$\overline{V_n}$ est la valeur imposée de la composante normale de la vitesse. Cette condition limite modélise la \textcolorred{vibration} d'un panneau, ce qui en fait la condition la plus souvent utilisée lorsque l'on a un couplage faible entre la structure et le fluide. On effectue alors une étude vibratoire de la structure, puis grâce à celle-ci une étude acoustique du fluide sans se préoccuper des interactions fluide-structure.
 
 \medskip
 \paragraph{Condition de Robin}
 $A_n$ est appelé coefficient d'admittance, il vaut l'inverse de l'impédance~$Z_n$:
-$A_n\cdot Z_n=1$.
-Physiquement, ce coefficient représente l'\textcolorred{absorption} de l'onde par le matériau environnant
-dont la frontière est modélisée par~$\Gamma_R$.
+$A_n\cdot Z_n=1$. Physiquement, ce coefficient représente l'\textcolorred{absorption} de l'onde par le matériau environnant dont la frontière est modélisée par~$\Gamma_R$.
 \colorblack
 
 \medskip
 \subsection{Formulation faible}
-En notant~$H^1_D(\Omega)=\left\{p\in H^1(\Omega), p=\overline{p} \text{ sur } \Gamma_D\right\}$ et
-$H^0_D(\Omega)=\left\{v\in H^1(\Omega), v=0 \text{ sur } \Gamma_D\right\}$, les espaces qui sont
-des sous-espaces de~$H^1(\Omega)$, on trouve finalement:
+En notant~$H^1_D(\Omega)=\left\{p\in H^1(\Omega), p=\overline{p} \text{ sur } \Gamma_D\right\}$ et $H^0_D(\Omega)=\left\{v\in H^1(\Omega), v=0 \text{ sur } \Gamma_D\right\}$, les espaces qui sont des sous-espaces de~$H^1(\Omega)$, on trouve finalement:
 \begin{equation}a(p,\tilde{w})=b(\tilde{w}), \quad \forall w\in H^0_D(\Omega)\end{equation}
-avec~$\tilde{\cdot}$ la conjugaison complexe, $a(p,q): H^1_D\times H^1_D \rightarrow \CC$ la forme
-sesquilinéaire définie par:
+avec~$\tilde{\cdot}$ la conjugaison complexe, $a(p,q): H^1_D\times H^1_D \rightarrow \CC$ la forme sesquilinéaire définie par:
 \begin{equation}a(p,q)=\dint_\Omega \partial_{x_i}p\partial_{x_i}\tilde{q}-k^2p\tilde{q} +
 \dint_{\Gamma_R} i\rho ckA_n\tilde{q}
 \end{equation}
@@ -754,8 +580,7 @@ et~$b(a): H^1_D\rightarrow\CC$ définie par:
 \begin{equation}b(q)=-\dint_{\Gamma_N} i\rho c k\overline{V_n} q\end{equation}
 
 \medskip
-Et comme on peut vérifier que l'on est dans un cas qui va bien, on définit l'énergie
-potentielle totale du domaine par:
+Et comme on peut vérifier que l'on est dans un cas qui va bien, on définit l'énergie potentielle totale du domaine par:
 \begin{equation}W_p=\frac12 a(p,\tilde{p})-b(\tilde{p})\end{equation}
 et la résolution du problème devient:
 \begin{equation}

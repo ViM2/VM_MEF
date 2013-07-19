@@ -1,187 +1,94 @@
 \chapter{Quelques mots sur les singularités}\label{Ch-Singul}
+
 \begin{abstract}
-Les modélisations basées sur la mécanique des milieux continus conduisent, dans un certain
-nombre de cas particuliers, à des contraintes «infinies» en certains points: les singularités.
-Ces valeurs infinies sortent du domaine de validité de la plupart des modélisations et, dans le cadre
-des simulations par éléments finis, pourraient mener un concepteur peu averti à des erreurs d'analyse.
+Les modélisations basées sur la mécanique des milieux continus conduisent, dans un certain nombre de cas particuliers, à des contraintes «infinies» en certains points: les singularités. Ces valeurs infinies sortent du domaine de validité de la plupart des modélisations et, dans le cadre des simulations par éléments finis, pourraient mener un concepteur peu averti à des erreurs d'analyse.
 \end{abstract}
 
 
 \medskip
 \section{Qu'est-ce qu'une singularité ?}
 
-Comme nous l'avons vu au cours de ce document, la mise en œuvre de la mécanique des milieux
-continus conduit à la construction d'un problème mathématique dont la solution est constituée
-d'un champ des déplacements et d'un champ des contraintes.
-Concernant le problème continu (i.e. non discrétisé, i.e. tel que présenté à la partie II),
-ces champs sont généralement des fonctions spatiales relativement régulières.
+Comme nous l'avons vu au cours de ce document, la mise en œuvre de la mécanique des milieux continus conduit à la construction d'un problème mathématique dont la solution est constituée d'un champ des déplacements et d'un champ des contraintes. Concernant le problème continu (i.e. non discrétisé, i.e. tel que présenté à la partie II), ces champs sont généralement des fonctions spatiales relativement régulières.
 
 \medskip
-Cependant, dans certains cas, il existe des points où la solution n'est pas entièrement définie;
-ces points sont nommés \textcolorblue{singularités}.
-D'une manière très pragmatique, la contrainte et la déformation tendent vers
-l'infini lorsque l'on s'approche du point singulier. Le déplacement, quant à lui, garde
-généralement une valeur finie.
-Nous avons par exemple abordé cela au chapitre précédent: la contrainte tend vers l'infini au
-voisinage de la pointe d'une fissure.
+Cependant, dans certains cas, il existe des points où la solution n'est pas entièrement définie: ces points sont nommés \textcolorblue{singularités}. D'une manière très pragmatique, la contrainte et la déformation tendent vers l'infini lorsque l'on s'approche du point singulier. Le déplacement, quant à lui, garde généralement une valeur finie. Nous avons par exemple abordé cela au chapitre~\ref{Ch-NL}: la contrainte tend vers l'infini au voisinage de la pointe d'une fissure.
 
 \medskip
-Il est important de noter que les singularités ne proviennent ni d'erreurs de calcul, ni d'erreurs
-dans l'application de la théorie, ni de modèles physiques spécialisés: elles proviennent de la
-mécanique des milieux continus (ou, plus généralement de toute autre théorie physique basée sur
-la notion de milieu continu), et leur existence est prédite par l'étude mathématique de ces
-théories.
+Il est important de noter que les singularités ne proviennent ni d'erreurs de calcul, ni d'erreurs dans l'application de la théorie, ni de modèles physiques spécialisés: elles proviennent de la mécanique des milieux continus (ou, plus généralement de toute autre théorie physique basée sur la notion de milieu continu), et leur existence est prédite par l'étude mathématique de ces théories.
 
 \medskip
 \section{Singularités et éléments finis}
 
-\medskip
-En pratique, la plupart des simulations de mécanique des milieux continus sont basées sur la
-méthode des éléments finis. Or, celle-ci, comme toute méthode numérique, a la fâcheuse
-et dangereuse habitude de toujours retourner des valeurs finies, ce qui masque par conséquent la présence
-éventuelle de singularités.
+En pratique, la plupart des simulations de mécanique des milieux continus sont basées sur la méthode des éléments finis. Or, celle-ci, comme toute méthode numérique, a la fâcheuse et dangereuse habitude de toujours retourner des valeurs finies, ce qui masque par conséquent la présence éventuelle de singularités.
 
 \medskip
-En effet, un solveur éléments finis ne calcule les contraintes et déformations qu'aux points
-d'intégration (ou points de Gauß) des éléments, qui sont situés à l'intérieur des éléments.
-Or, dans une simulation par éléments finis, les points singuliers sont toujours des nœuds du
-maillage, et sont donc situés au bord des éléments. Les contraintes ne sont donc jamais
-calculées aux points singuliers, et ne présentent pas de valeurs infinies qui permettraient de
-détecter la singularité. \textcolorblue{Ce que l'on observe ressemble plutôt à une simple
-concentration de contraintes} et les valeurs obtenues n'ont souvent rien de choquant à première
-vue.
+En effet, un solveur éléments finis ne calcule les contraintes et déformations qu'aux points d'intégration (ou points de Gauß) des éléments, qui sont situés à l'intérieur des éléments. Or, dans une simulation par éléments finis, les points singuliers sont toujours des nœuds du maillage, et sont donc situés au bord des éléments. Les contraintes ne sont donc jamais calculées aux points singuliers, et ne présentent pas de valeurs infinies qui permettraient de détecter la singularité. \textcolorblue{Ce que l'on observe ressemble plutôt à une simple concentration de contraintes} et les valeurs obtenues n'ont souvent rien de choquant à première vue.
 
-C'est pourquoi il est indispensable de savoir quand ces singularités doivent se produire
-afin d'être en mesure d'effectuer les corrections nécessaires et ainsi redonner du
-sens à l'analyse effectuée.
+C'est pourquoi il est indispensable de savoir quand ces singularités doivent se produire afin d'être en mesure d'effectuer les corrections nécessaires et ainsi redonner du sens à l'analyse effectuée.
 
 
 \medskip
 \section{Quand les singularités se produisent-elles ?}
 
-Si les singularités avaient la gentillesse de ne se produire que que dans certains cas particuliers
-bien spécifiques, elles ne constitueraient alors pas vraiment un problème.
-Malheureusement, c'est loin d'être le cas, et de nombreux modèles courants de
-lois de comportements ou de conditions aux limites conduisent à des singularités.
-Même en restant dans le cadre de l'élasticité linéaire, on trouve des cas fréquents
-conduisant à des singularités, parmi lesquels les plus fréquemment rencontrés sont:
+Si les singularités avaient la gentillesse de ne se produire que que dans certains cas particuliers bien spécifiques, elles ne constitueraient alors pas vraiment un problème. Malheureusement, c'est loin d'être le cas, et de nombreux modèles courants de lois de comportements ou de conditions aux limites conduisent à des singularités. Même en restant dans le cadre de l'élasticité linéaire, on trouve des cas fréquents conduisant à des singularités, parmi lesquels les plus fréquemment rencontrés sont:
 \medskip
 \begin{itemize}
-  \item les modèles comportant un \textcolorblue{angle rentrant} (i.e. inférieur à
-	180$^o$ entre deux faces extérieures). Une fissure peut d'ailleurs être considérée
-	comme un angle rentrant d'angle nul;
-
-  \item les modèles de \textcolorblue{lois comportements discontinues}, comme à
-	l'interface entre deux matériaux (dont nous avons souvent parlé tout au long de ce
-	document);
-  \item les modèles de chargements contenant des \textcolorblue{efforts ponctuels}, qui est
-	de loin le cas le plus fréquemment rencontré.
+  \item les modèles comportant un \textcolorblue{angle rentrant} (i.e. inférieur à 	180\degre entre deux faces extérieures). Une fissure peut d'ailleurs être considérée 	comme un angle rentrant d'angle nul;
+  \item les modèles de \textcolorblue{lois comportements discontinues}, comme à 	l'interface entre deux matériaux (dont nous avons souvent parlé tout au long de ce 	document);
+  \item les modèles de chargements contenant des \textcolorblue{efforts ponctuels}, qui est de loin le cas le plus fréquemment rencontré.
 \end{itemize}
 
 \medskip
-En tout honnêteté, il est difficile de ne pas dire que ces trois cas sont vraiment couramment
-employés, ce qui permet de prendre toute la mesure du problème: on observe régulièrement des
-dimensionnements réalisés à partir de contraintes calculées au fond d'un angle rentrant ou sous
-une force ponctuelle, alors que les valeurs de ces contraintes n'y sont absolument pas fiables...
+En tout honnêteté, il est difficile de ne pas dire que ces trois cas sont vraiment couramment employés, ce qui permet de prendre toute la mesure du problème: on observe régulièrement des dimensionnements réalisés à partir de contraintes calculées au fond d'un angle rentrant ou sous une force ponctuelle, alors que les valeurs de ces contraintes n'y sont absolument pas fiables...
 
-Cette liste n'est naturellement pas exhaustive et il existe d'autres cas pouvant entraîner des
-singularités, comme la présence d'\textcolorblue{encastrements} ou de déplacements imposés
-dans certaines configurations géométriques particulières.
-\textcolorgreen{Inversement, et contrairement à ce que d'aucuns croient, les théories des poutres,
-plaques et coques présentent généralement moins de cas singuliers que la mécanique des milieux
-continus tridimensionnels (car ces aspects sont pris en compte dans la construction du modèle).}
+Cette liste n'est naturellement pas exhaustive et il existe d'autres cas pouvant entraîner des singularités, comme la présence d'\textcolorblue{encastrements} ou de déplacements imposés dans certaines configurations géométriques particulières. \textcolorgreen{Inversement, et contrairement à ce que d'aucuns croient, les théories des poutres, plaques et coques présentent généralement moins de cas singuliers que la mécanique des milieux continus tridimensionnels (car ces aspects sont pris en compte dans la construction du modèle).}
 
 
 \medskip
 \section{Comment éviter les singularités}
 
-Nous avons vu que les singularités proviennent de limitations intrinsèques de la mécanique des
-milieux continus: cette dernière donne des résultats non valides en présence d'un certain
-nombre de configurations. Cela signifie que ces configurations n'appartiennent
-pas au domaine de validité de la mécanique des milieux continus 3D, et que leur emploi peut
-donc mener à des résultats non pertinents (en l'occurrence, singuliers).
+Nous avons vu que les singularités proviennent de limitations intrinsèques de la mécanique des milieux continus: cette dernière donne des résultats non valides en présence d'un certain nombre de configurations. Cela signifie que ces configurations n'appartiennent pas au domaine de validité de la mécanique des milieux continus 3D, et que leur emploi peut donc mener à des résultats non pertinents (en l'occurrence, singuliers).
 
 \medskip
-Schématiquement, la singularité provient du fait que la mécanique des milieux continus postule
-l'existence d'une densité volumique d'énergie, et s'accommode donc mal du caractère
-«ponctuel» de ces modèles (angle ponctuel, force ponctuelle, interface d'épaisseur nulle) qui
-conduit à des densités d'énergie infinies. Pour éviter la singularité, il faut donc utiliser des
-modèles non ponctuels comme:
+Schématiquement, la singularité provient du fait que la mécanique des milieux continus postule l'existence d'une densité volumique d'énergie, et s'accommode donc mal du caractère «ponctuel» de ces modèles (angle ponctuel, force ponctuelle, interface d'épaisseur nulle) qui conduit à des densités d'énergie infinies. Pour éviter la singularité, il faut donc utiliser des modèles non ponctuels comme:
 \begin{itemize}
-  \item remplacer un angle rentrant par un congé de raccordement possédant un rayon de courbure
-	non nul;
-  \item remplacer une discontinuité entre lois de comportement par une zone de transition dans
-	laquelle les paramètres varient de façon continue;
-  \item remplacer une force ponctuelle par une pression de contact appliquée sur une surface non
-	nulle...
+  \item remplacer un angle rentrant par un congé de raccordement possédant un rayon de courbure non nul;
+  \item remplacer une discontinuité entre lois de comportement par une zone de transition dans laquelle les paramètres varient de façon continue;
+  \item remplacer une force ponctuelle par une pression de contact appliquée sur une surface non nulle...
 \end{itemize}
 
 \medskip
-Ces configurations ne créent pas de singularités, mais de simples concentrations de contraintes:
-les contraintes et les déformations restent finies dans leur voisinage. \textcolorred{Dans les faits, leur usage est
-indispensable à chaque fois que l'objectif de la simulation est de calculer une contrainte ou une
-déformation localisée dans la zone incriminée.}
+Ces configurations ne créent pas de singularités, mais de simples concentrations de contraintes: les contraintes et les déformations restent finies dans leur voisinage. \textcolorred{Dans les faits, leur usage est indispensable à chaque fois que l'objectif de la simulation est de calculer une contrainte ou une déformation localisée dans la zone incriminée.}
 
 
 \medskip
 \section{Singularités et pertinence d'un résultat}
 
-Le problème des configurations suggérées pour éviter les singularités est qu'elles sont plus
-riches, qu'elles demandent plus d'informations que les modélisations ponctuelles.
-Or, le concepteur ne dispose pas toujours de ces informations, notamment aux premiers stades
-de la conception d'un produit, et peut donc être tenté d'utiliser un modèle plus simple, quitte
-à violer le domaine de validité de la mécanique des milieux continus.
+Le problème des configurations suggérées pour éviter les singularités est qu'elles sont plus riches, qu'elles demandent plus d'informations que les modélisations ponctuelles. Or, le concepteur ne dispose pas toujours de ces informations, notamment aux premiers stades de la conception d'un produit, et peut donc être tenté d'utiliser un modèle plus simple, quitte à violer le domaine de validité de la mécanique des milieux continus.
 
 \medskip
-\textcolorred{En réalité, il peut même être tout à fait légitime d'utiliser un modèle
-«non valide» (entraînant des singularités), à condition d'avoir la certitude que ces
-singularités perturberont peu le résultat que l'on cherche à calculer.}
+\textcolorred{En réalité, il peut même être tout à fait légitime d'utiliser un modèle «non valide» (entraînant des singularités), à condition d'avoir la certitude que ces singularités perturberont peu le résultat que l'on cherche à calculer.}
 
-C'est typiquement le cas lorsque le résultat est une quantité située suffisamment loin de la zone
-singulière: les singularités sont des anomalies très localisées, et leur effet direct décroît rapidement
-avec la distance. La singularité n'influe alors sur le résultat que par le biais des redistributions de
-contraintes, et cette influence est souvent (mais pas toujours !) négligeable.
+C'est typiquement le cas lorsque le résultat est une quantité située suffisamment loin de la zone singulière: les singularités sont des anomalies très localisées, et leur effet direct décroît rapidement avec la distance. La singularité n'influe alors sur le résultat que par le biais des redistributions de contraintes, et cette influence est souvent (mais pas toujours !) négligeable.
 
 \medskip
-En tout état de cause, il appartient au concepteur d'évaluer le caractère gênant ou non d'une
-singularité à l'aide de son expérience et de son esprit critique.
+En tout état de cause, il appartient au concepteur d'évaluer le caractère gênant ou non d'une singularité à l'aide de son expérience et de son esprit critique.
 
-%VM
 \medskip
 \section{Conclusion}
 
 Nous espérons avoir pu mettre en évidence les points suivants:
 \begin{itemize}
-  \item En mécanique des milieux continus, de nombreuses modélisations courantes mènent à des
-	contraintes infinies en un ou plusieurs points: angles rentrants dans les modèles
-	géométriques, discontinuités dans les modèles de comportements des matériaux, efforts
-	ponctuels dans les modèles de chargement...
-  \item Ces contraintes infinies sont prédites par les mathématiques, mais sortent du domaine de
-	validité de la mécanique des milieux continus.
-  \item Dans les simulations par éléments finis, les contraintes restent finies au voisinage des
-	singularités, mais leur valeur n'est pas pertinente pour autant: elle dépend uniquement
-	de la taille et de la forme des éléments et augmente indéfiniment lorsque l'on raffine le
-	maillage.
-  \item Un concepteur qui ignore l'existence de ces singularités risque donc de dimensionner une
-	pièce par rapport à un résultat non fiable, sauf s'il prend la peine de raffiner
-	successivement le maillage, ce qui permet de diagnostiquer le problème \textcolorgreen{(vous
-	savez, 	la fameuse étude de convergence que l'on fait toujours tant que l'on est élève ingénieur
-	et que l'on a tendance à oublier, ou à négliger par la suite).}
-  \item Si l'on souhaite simuler l'état de contraintes au voisinage de la région singulière, il est
-	nécessaire de modéliser celle-ci plus finement pour faire disparaître la singularité. Cela
-	nécessite généralement des connaissances supplémentaires sur le produit, son
-	environnement ou le comportement de ses matériaux dans la région concernée.
-  \item Si l'état de contraintes ou de déformations au voisinage de la singularité ne fait pas
-	partie des objectifs du calcul, alors celle-ci n'est pas gênante. Mieux vaut néanmoins être
-	conscient du problème pour ne pas en tirer de fausses conclusions...
+  \item En mécanique des milieux continus, de nombreuses modélisations courantes mènent à des contraintes infinies en un ou plusieurs points: angles rentrants dans les modèles 	géométriques, discontinuités dans les modèles de comportements des matériaux, efforts 	ponctuels dans les modèles de chargement...
+  \item Ces contraintes infinies sont prédites par les mathématiques, mais sortent du domaine de validité de la mécanique des milieux continus.
+  \item Dans les simulations par éléments finis, les contraintes restent finies au voisinage des singularités, mais leur valeur n'est pas pertinente pour autant: elle dépend uniquement de la taille et de la forme des éléments et augmente indéfiniment lorsque l'on raffine le maillage.
+  \item Un concepteur qui ignore l'existence de ces singularités risque donc de dimensionner une pièce par rapport à un résultat non fiable, sauf s'il prend la peine de raffiner successivement le maillage, ce qui permet de diagnostiquer le problème \textcolorgreen{(vous savez, 	la fameuse étude de convergence que l'on fait toujours tant que l'on est élève ingénieur et que l'on a tendance à oublier, ou à négliger par la suite).}
+  \item Si l'on souhaite simuler l'état de contraintes au voisinage de la région singulière, il est nécessaire de modéliser celle-ci plus finement pour faire disparaître la singularité. Cela nécessite généralement des connaissances supplémentaires sur le produit, son environnement ou le comportement de ses matériaux dans la région concernée.
+  \item Si l'état de contraintes ou de déformations au voisinage de la singularité ne fait pas partie des objectifs du calcul, alors celle-ci n'est pas gênante. Mieux vaut néanmoins être conscient du problème pour ne pas en tirer de fausses conclusions...
 \end{itemize}
 
 \medskip
-Nous réitérons ce que nous avons déjà dit: la plupart des ingénieurs pratiquant le calcul
-sont conscients que ces problèmes de singularités existent. Nous n'avons donc fait ici que
-rappeler des choses connues... et c'est très bien ainsi si c'est le cas.
-%Vous conviendrez que nous ne pouvions décemment pas passer ces problèmes sous silence
-%dans ce document.
+Nous réitérons ce que nous avons déjà dit: la plupart des ingénieurs pratiquant le calcul sont conscients que ces problèmes de singularités existent. Nous n'avons donc fait ici que rappeler des choses connues... et c'est très bien ainsi si c'est le cas. 
 
 
 

@@ -1,4 +1,4 @@
-\chapter{Les espaces de base}
+\chapter{Les espaces de base}\label{Ch-Esp}
 \begin{abstract}
 Dans les problèmes que nous envisageons de traiter \emph{in fine}, il n'est finalement
 besoin que d'espaces vectoriels normés finis sur le corps des réels.
@@ -27,16 +27,9 @@ utilité.
 \section{Panorama non exhaustif des espaces}
 
 \begin{histoire}%
-Le mot «topologie» vient de la contraction des noms grecs «topos» (lieu) et «logos» (étude),
-c'est donc l'étude du lieu. On a d'ailleurs commencé par l'appeler \emph{Analysis Situs}, le terme
-«topologie» n'étant introduit qu'en 1847, en allemand, par Johann Benedict Listing
-dans Vorstudien zur Topologie.\index[aut]{Listing (Johann Benedict), 1808-1882, Allemand}
+Le mot «topologie» vient de la contraction des noms grecs «topos» (lieu) et «logos» (étude), c'est donc l'étude du lieu. On a d'ailleurs commencé par l'appeler \emph{Analysis Situs}, le terme «topologie» n'étant introduit qu'en 1847, en allemand, par Johann Benedict Listing dans Vorstudien zur Topologie.\index[aut]{Listing (Johann Benedict), 1808-1882, Allemand}
 
-La topologie vise à définir ce qu'est un lieu (i.e. un espace) et quelles peuvent être ses propriétés
-(je dirais uniquement en tant que tel, sans autre ajout).
-Elle s'intéresse plus précisément à ce que l'on appelle aujourd'hui espaces topologiques et aux
-applications, dites continues, qui les lient, ainsi qu'à leurs déformations
-(``\emph{A topologist is one who doesn't know the difference between a doughnut and a coffee cup}'').
+La topologie vise à définir ce qu'est un lieu (i.e. un espace) et quelles peuvent être ses propriétés (je dirais uniquement en tant que tel, sans autre ajout). Elle s'intéresse plus précisément à ce que l'on appelle aujourd'hui espaces topologiques et aux applications, dites continues, qui les lient, ainsi qu'à leurs déformations (``\emph{A topologist is one who doesn't know the difference between a doughnut and a coffee cup}'').
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{ccc}%
@@ -47,78 +40,51 @@ Euler&Poincaré&Hausdorff%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-En analyse, elle fournit des informations sur l'espace considéré permettant d'obtenir un certain nombre de
-résultats (existence et/ou unicité de solutions d'EDP, notamment).
-%
-Les espaces métriques ainsi que les espaces vectoriels normés sont des exemples d'espaces topologiques.
-%
-%\medskip
-L'origine de la topologie est l'étude de la géométrie dans les cultures antiques.
-Le travail de Leonhard Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
-datant de 1736 sur le problème des sept ponts de Königsberg est
-considéré comme l'un des premiers résultats de géométrie qui ne dépend d'aucune mesure,
-i.e. l'un des premiers résultats topologiques.
+En analyse, elle fournit des informations sur l'espace considéré permettant d'obtenir un certain nombre de résultats (existence et/ou unicité de solutions d'équations au dérivées partielles, notamment). Les espaces métriques ainsi que les espaces vectoriels normés sont des exemples d'espaces topologiques. L'origine de la topologie est l'étude de la géométrie dans les cultures antiques. Le travail de Leonhard Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} datant de 1736 sur le problème des sept ponts de Königsberg est considéré comme l'un des premiers résultats de géométrie qui ne dépend d'aucune mesure, i.e. l'un des premiers résultats topologiques.
 }
 
-Henri Poincaré\index[aut]{Poincaré (Henri), 1854-1912, Français}
- publia \emph{Analysis Situs} en 1895, introduisant les concepts d'homotopie et d'homologie.
-Bien d'autres mathématiciens ont contribué au sujet parmi lesquels nous citerons:
-Cantor, Volterra, Arzelà, Hadamard, Ascoli, Fréchet, Hausdorff...\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand}\index[aut]{Hadamard (Jacques Salomon), 1865-1963, Français}\index[aut]{Ascoli (Giulio), 1843-1896, Italien}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}\index[aut]{Hausdorff (Felix), 1868-1942, Allemand}
+Henri Poincaré\index[aut]{Poincaré (Henri), 1854-1912, Français} publia \emph{Analysis Situs} en 1895, introduisant les concepts d'homotopie et d'homologie. Bien d'autres mathématiciens ont contribué au sujet parmi lesquels nous citerons: Cantor, Volterra, Arzelà, Hadamard, Ascoli, Fréchet, Hausdorff...\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand}\index[aut]{Hadamard (Jacques Salomon), 1865-1963, Français}\index[aut]{Ascoli (Giulio), 1843-1896, Italien}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}\index[aut]{Hausdorff (Felix), 1868-1942, Allemand}
 
-%La notion de métrique s'invite rapidement dans ce chapitre, mais dans ce premier paragraphe,
-%nous allons essayer de l'éviter pour n'en parler qu'au paragraphe suivant.
-%
-Finalement, une dernière généralisation en 1922, par Kuratowski, donna le concept actuel d'espace
-topologique.\index[aut]{Kuratowski (Kazimierz), 1896-1980, Polonais}
+Finalement, une dernière généralisation en 1922, par Kuratowski, donna le concept actuel d'espace topologique.\index[aut]{Kuratowski (Kazimierz), 1896-1980, Polonais}
 \end{histoire}
 \colorblack
 
 
 \newpage
-\medskip
 \subsection{Point de vue topologique}
 
+\medskip
 \begin{marge}
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](t1) {$E$, un ensemble};
 
 {\small \colorgreen
 \noindent
-Cela suffit déjà pour pouvoir s'intéresser par exemple à des fonctions, à des relations d'équivalence
-(donc au quotient)... décomposition canonique, permutation...
+Cela suffit déjà pour pouvoir s'intéresser par exemple à des fonctions, à des relations d'équivalence (donc au quotient)... décomposition canonique, permutation...
 
 On peut ensuite définir un ensemble ordonné...}
 
 \medskip %\noindent
 \textcolorblue{Une topologie}\index{topologie}~$T$ est
-un ensemble de parties de~$E$ que l'on définit comme les ouverts de~$(E,T)$, vérifiant les
-propriétés suivantes:
+un ensemble de parties de~$E$ que l'on définit comme les ouverts de~$(E,T)$, vérifiant les propriétés suivantes:
 \begin{itemize}
   \item L'ensemble vide et~$E$ appartiennent à~$T$.
-  \item Toute réunion quelconque d'ouverts est un ouvert, i.e. si~$(O_i)_{i\in I}$ est une famille
-	d'éléments de~$T$, indexée par un ensemble~$I$ quelconque (pas nécessairement fini ni
-	même dénombrable) alors~$\bigcup_{i \in I}O_i \in T$.
-  \item Toute intersection finie d'ouverts est un ouvert, i.e. si~$O_1, ..., O_n$ sont des éléments de~$T$
-	(avec~$n > 0$), alors~$O_1\cap \ldots \cap O_n \in T$.
+  \item Toute réunion quelconque d'ouverts est un ouvert, i.e. si~$(O_i)_{i\in I}$ est une famille 	d'éléments de~$T$, indexée par un ensemble~$I$ quelconque (pas nécessairement fini ni 	même dénombrable) alors~$\bigcup_{i \in I}O_i \in T$.
+  \item Toute intersection finie d'ouverts est un ouvert, i.e. si~$O_1, ..., O_n$ sont des éléments de~$T$ (avec~$n > 0$), alors~$O_1\cap \ldots \cap O_n \in T$.
 \end{itemize}
 
-
-
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](t2) {Espace topologique};\index{espace!topologique}
 
 {\small \colorgreen\noindent
-À partir des ouverts, on définit les fermés, l'adhérence, l'intérieur,
-l'extérieur, voisinage...
-}
+À partir des ouverts, on définit les fermés, l'adhérence, l'intérieur, l'extérieur, voisinage...}
 
 \medskip
 \textcolorblue{Séparation}: % (dit aussi «axiome~$T_2$» au sein des axiomes de séparation):
 
 deux points distincts quelconques admettent toujours des voisinages disjoints.
 
-
-
-\noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](t3) {Espace séparé (ou de Hausdorff)};
-\index{espace!séparé}\index{espace!de Hausdorff}\index[aut]{Hausdorff (Felix), 1868-1942, Allemand}
+\medskip
+\noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](t3) {Espace séparé (ou de Hausdorff)};\index{espace!séparé}\index{espace!de Hausdorff}\index[aut]{Hausdorff (Felix), 1868-1942, Allemand}
 
 {\small \colorgreen
 \noindent Intérêts:
@@ -138,8 +104,7 @@ Il est possible de séparer un point~$x$ et un fermé~$F$ ne contenant pas~$x$ p
 
 On peut même alors choisir ces deux ouverts de manière à ce que leurs adhérences respectives soient disjointes.
 
-
-
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (t4) {Espace régulier};\index{espace!régulier}
 
 {\small \colorgreen
@@ -153,11 +118,9 @@ On peut même alors choisir ces deux ouverts de manière à ce que leurs adhére
 \medskip
 \textcolorblue{Compacité} (recouvrement fini):\index{compacité}
 
-Un espace séparé est compact (vérifie la propriété de Borel-Lebesgue),
-si chaque fois qu'il est recouvert par des ouverts, il est recouvert par un nombre fini d'entre eux.
+Un espace séparé est compact (vérifie la propriété de Borel-Lebesgue), si chaque fois qu'il est recouvert par des ouverts, il est recouvert par un nombre fini d'entre eux.
 
-
-
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (t5) {Espace compact};\index{espace!compact}
 
 {\small \colorgreen
@@ -180,11 +143,8 @@ Un espace peut ne pas être compact, mais une de ses parties l'être:
 \end{marge}
 
 \medskip
-\textcolorred{Notons bien que rien n'est dit sur les éléments de l'ensemble~$E$.
-Ce peuvent être des éléments discrets, des scalaires, des vecteurs,
-des fonctions...}
+\textcolorred{Notons bien que rien n'est dit sur les éléments de l'ensemble~$E$. Ce peuvent être des éléments discrets, des scalaires, des vecteurs, des fonctions...}
 
-%\medskip
 \newpage
 \subsection{Point de vue métrique}
 Comme nous le mentionnions au paragraphe précédent, lorsque l'on parle d'espace
@@ -192,31 +152,20 @@ on a intuitivement envie de parler de «distance».
 
 %\medskip
 \begin{histoire}
-Unifiant les travaux de ses prédécesseurs sur les espaces de fonctions, c'est en 1906 que
-Maurice Fréchet introduit le concept d'espace métrique.\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
+Unifiant les travaux de ses prédécesseurs sur les espaces de fonctions, c'est en 1906 que Maurice Fréchet introduit le concept d'espace métrique.\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}%
 \includegraphics[height=\the\HauteurDesPhotos]{Frechet}&%
 \includegraphics[height=\the\HauteurDesPhotos]{Cauchy}\\%
-Fréchet&Cauchy
+Fréchet&Cauchy%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-La métrique qui nous est la plus usuelle est évidemment la métrique euclidienne,\index[aut]{Euclide, -325-- -265, Grec}
-qui est celle que nous utilisons en géométrique «classique» (euclidienne):
-la distance entre deux points est égale à la longueur du segment les reliant.
-La structure métrique fournit beaucoup plus d'information sur la forme géométrique
-des objets que la structure topologique.\\
+La métrique qui nous est la plus usuelle est évidemment la métrique euclidienne,\index[aut]{Euclide, -325-- -265, Grec} qui est celle que nous utilisons en géométrique «classique» (euclidienne): la distance entre deux points est égale à la longueur du segment les reliant.
+La structure métrique fournit beaucoup plus d'information sur la forme géométrique des objets que la structure topologique.\\
 \indent
-Enfin nous redonnerons le si important critère de Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français}
-(qui est valable %non seulement pour les réels, aussi également pour les complexes, et d'une manière encore plus générale
-pour tout espace uniforme, dont notamment les espaces métriques) qui permet de définir la toute aussi importante notion
-de complétude.
-}
-%Ce critère est vérifié par une suite lorsque les termes de celle-ci se «rapprochent uniformément les uns des autres en l'infini\fg.
-%Elle est alors celles susceptible de converger.
-%Le critère de Cauchy ne sera présenté que dans le cas des espaces métriques.
+Enfin nous redonnerons le si important critère de Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} (qui est valable pour tout espace uniforme, dont notamment les espaces métriques) qui permet de définir la toute aussi importante notion de complétude.}
 \end{histoire}
 \colorblack
 
@@ -232,8 +181,7 @@ est une application de~$E\times E \rightarrow \RR_+$ telle que:
   \item~$d(x,z)\le d(x,y)+d(y,z)$ (inégalité triangulaire).
 \end{itemize}
 
-
-
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (n2) {Espace métrique\index{espace!métrique}};
 
 {\small \colorgreen\noindent
@@ -257,8 +205,7 @@ n\ge N, m\ge N): d(x_m,x_n)\le\varepsilon
 ou encore:~$d(x_m,x_n)$ tend vers~$0$ quand~$m$ et~$n$ tendent
 vers l'infini.
 
-
-
+\medskip
 \noindent \tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (n3) {Espace métrique complet\index{espace!métrique!complet}};
 
 {\small \colorgreen\noindent
@@ -271,8 +218,7 @@ $\RR$ ou~$\CC$, alors elle converge.
 \medskip\noindent
 \textcolorred{Cette propriété est fondamentale car elle permet de reconnaître si une suite
 converge sans connaître sa limite.}
-%Mais attention, ce n'est pas vrai quelque soit l'espace métrique, mais sur~$\RR$
-%et~$\CC$.
+%Mais attention, ce n'est pas vrai quelque soit l'espace métrique, mais sur~$\RR$ et~$\CC$.
 
 \medskip\noindent
 Attention, la notion d'espace complet est une notion métrique et non topologique
@@ -292,24 +238,12 @@ et si cet espace est complet, alors la convergence vers une solution du problèm
 \subsection{Point de vue algébrique}
 
 \medskip
-Jusqu'à présent, nous n'avons pas vraiment parlé d'opérations que nous
-pourrions effectuer à l'intérieur des espaces que nous avons définis, ou entre
-ces espaces.
-%
-\textcolorgris{\small Pour une présentation des structures algébriques on se reportera au cours homonyme.
-Elles sont riches et nombreuses.
-Dans le cadre de ce document, nous ne nous intéresserons qu'au cas de la structure
-d'espace vectoriel, le but étant, comme mentionné en introduction, d'en arriver aux
-espaces de Hilbert, fondements de l'analyse fonctionnelle.}
+Jusqu'à présent, nous n'avons pas vraiment parlé d'opérations que nous pourrions effectuer à l'intérieur des espaces que nous avons définis, ou entre ces espaces.
+\textcolorgris{\small Pour une présentation des structures algébriques on se reportera au cours homonyme. Elles sont riches et nombreuses. Dans le cadre de ce document, nous ne nous intéresserons qu'au cas de la structure d'espace vectoriel, le but étant, comme mentionné en introduction, d'en arriver aux espaces de Hilbert, fondements de l'analyse fonctionnelle.}
 
 \medskip
 \begin{histoire}
-Lorsque l'on demande de citer l'un des grands mathématiciens du \textsc{xx}\fup{e} siècle,
-Henri Poincaré\index[aut]{Poincaré (Henri), 1854-1912, Français}
-et David Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand}
-se partagent souvent la première place, aussi
-bien pour l'éventail considérable des sujets qu'ils ont
-abordés que pour avoir fait émerger de nombreuses idées fondamentales.
+Lorsque l'on demande de citer l'un des grands mathématiciens du \textsc{xx}\fup{e} siècle, Henri Poincaré\index[aut]{Poincaré (Henri), 1854-1912, Français} et David Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand} se partagent souvent la première place, aussi bien pour l'éventail considérable des sujets qu'ils ont abordés que pour avoir fait émerger de nombreuses idées fondamentales.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}%
@@ -319,46 +253,31 @@ Hilbert&Banach%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Hilbert reste célèbre pour ses 23 problèmes (dits problèmes de Hilbert)
-qu'il présenta au deuxième congrès international des mathématiciens à Paris en 1900,
-qui tenaient jusqu'alors les mathématiciens en échec et devaient marquer le cours
-des mathématiques du \textsc{xx}\fup{e} siècle (et il avait raison; tous ne sont pas résolus à ce jour).\\
+Hilbert reste célèbre pour ses 23 problèmes (dits problèmes de Hilbert) qu'il présenta au deuxième congrès international des mathématiciens à Paris en 1900, qui tenaient jusqu'alors les mathématiciens en échec et devaient marquer le cours des mathématiques du \textsc{xx}\fup{e} siècle (et il avait raison; tous ne sont pas résolus à ce jour).\\
 \indent
-Nous croiserons également un autre fondateur de l'analyse fonctionnelle, Stephan Banach
-\index[aut]{Banach (Stephan), 1892-1945, Polonais}
-qui a généralisé entre autre les travaux de Hilbert sur les équations intégrales,
-notamment en approfondissant la théorie des espaces vectoriels topologiques.
-}
+Nous croiserons également un autre fondateur de l'analyse fonctionnelle, Stephan Banach\index[aut]{Banach (Stephan), 1892-1945, Polonais} qui a généralisé entre autre les travaux de Hilbert sur les équations intégrales, notamment en approfondissant la théorie des espaces vectoriels topologiques.}
 \end{histoire}
 \colorblack
-
-
-
 
 
 \medskip
 \begin{marge}
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (b1) {$E$, un ensemble};
 
-
 \medskip
 \textcolorblue{Structure d'espace vectoriel}:
 
-C'est une structure comportant une loi de composition interne et une loi de composition externe sur un corps~$\KK$ permettant d'effectuer des combinaisons
-linéaires (voir cours sur les structures algébriques).
+C'est une structure comportant une loi de composition interne et une loi de composition externe sur un corps~$\KK$ permettant d'effectuer des combinaisons linéaires (voir cours sur les structures algébriques).
 
-La loi de composition interne, notée~$+$ en fait un groupe abélien, la loi de composition externe est la multiplication par un scalaire,
-scalaire pris sur le corps~$\KK$ considéré.
-
-\noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (b2) {Espace vectoriel (topologique)\index{espace!vectoriel!topologique}};
-
-{\small \colorgreen\noindent
-Sur un espace vectoriel de dimension finie sur~$\RR$ ou~$\CC$, 2 normes quelconques sont
-équivalentes.}
+La loi de composition interne, notée~$+$ en fait un groupe abélien, la loi de composition externe est la multiplication par un scalaire, scalaire pris sur le corps~$\KK$ considéré.
 
 \medskip
-Une \textcolorblue{norme sur un espace vectoriel}~$E$\index{norme}
-est une fonction, $x \mapsto \|x\|$ possédant les propriétés:
+\noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (b2) {Espace vectoriel (topologique)\index{espace!vectoriel!topologique}};
+
+{\small \colorgreen\noindent Sur un espace vectoriel de dimension finie sur~$\RR$ ou~$\CC$, deux normes quelconques sont équivalentes.}
+
+\medskip
+Une \textcolorblue{norme sur un espace vectoriel}~$E$\index{norme} est une fonction, $x \mapsto \|x\|$ possédant les propriétés:
 \begin{itemize}
   \item positivité:~$\|x\|>0$ pour~$x\ne0$, $\|0\|=0$;
   \item transformation par les homothéties:~$\|\lambda x\|=|\lambda|\| x\|, \lambda\in\KK$;
@@ -367,30 +286,22 @@ est une fonction, $x \mapsto \|x\|$ possédant les propriétés:
 
 La \textcolorblue{distance issue de la norme} est la distance définie par~$d(x,y)=\|x-y\|$.
 
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt] (b3) {Espace vectoriel normé\index{espace!vectoriel!normé}};
 
-{\small \colorgreen\noindent
-Tout espace vectoriel normé est automatiquement un espace métrique (avec la distance
-issue de sa norme).\index{distance!issue d'une norme}
-%
-%\noindent
-De plus:
+{\small \colorgreen\noindent Tout espace vectoriel normé est automatiquement un espace métrique (avec la distance issue de sa norme).\index{distance!issue d'une norme} De plus:
 \begin{itemize}
   \item la distance est invariante par translation:~$d(x-a,y-a)=d(x,y)$.
   \item une homothétie de rapport~$\lambda$ multiplie la distance par~$|\lambda|$:~$d(\lambda x,\lambda y)=|\lambda| d(x,y)$.
 \end{itemize}
 
-\noindent Tout espace vectoriel normé de dimension finie est localement compact
-(i.e. tout point possède au moins un voisinage compact), car toute boule
-fermée est compacte.
+\noindent Tout espace vectoriel normé de dimension finie est localement compact (i.e. tout point possède au moins un voisinage compact), car toute boule fermée est compacte.
 }
 
 \medskip
-Comme un espace vectoriel normé muni avec la distance
-issue de sa norme est un espace métrique, on peut se demander si
-cet espace métrique vérifie le \textcolorblue{critère de Cauchy}
-(voir paragraphe précédent) afin d'en faire un espace complet.
+Comme un espace vectoriel normé muni avec la distance issue de sa norme est un espace métrique, on peut se demander si cet espace métrique vérifie le \textcolorblue{critère de Cauchy} (voir paragraphe précédent) afin d'en faire un espace complet.
 
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](b4) {Espace de Banach\index{espace!de Banach}\index[aut]{Banach (Stephan), 1892-1945, Polonais}};
 \begin{tikzpicture}[remember picture,overlay]
   \draw[->,thick,ocre] (b1.west) -- +(-10pt,0) |-([yshift=2pt]b2.west);
@@ -398,58 +309,46 @@ cet espace métrique vérifie le \textcolorblue{critère de Cauchy}
   \draw[->,thick,ocre] ([yshift=-2pt]b3.west) -- +(-10pt,0) |-([yshift=2pt]b4.west);
 \end{tikzpicture}
 
-
 {\small \colorgreen\noindent
-C'est donc finalement un espace vectoriel normé sur un sous-corps
-$\KK$ de~$\CC$ (en général, $\KK=\RR$ ou~$\CC$), complet pour la distance issue de sa norme.
+C'est donc finalement un espace vectoriel normé sur un sous-corps $\KK$ de~$\CC$ (en général, $\KK=\RR$ ou~$\CC$), complet pour la distance issue de sa norme.
 
-\noindent Comme la topologie induite par sa distance est compatible avec sa structure d'espace vectoriel,
-c'est un espace vectoriel topologique.
+\noindent Comme la topologie induite par sa distance est compatible avec sa structure d'espace vectoriel, c'est un espace vectoriel topologique.
 }
 
 \medskip
-Une norme~$\|\cdot\|$ \textcolorblue{découle d'un produit scalaire ou hermitien}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{produit scalaire}
-$\langle\cdot,\cdot\rangle$ si l'on a:~$\| x\| = \sqrt{\langle x,x \rangle}$.%footnote
+Une norme~$\|\cdot\|$ \textcolorblue{découle d'un produit scalaire ou hermitien}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{produit scalaire} $\langle\cdot,\cdot\rangle$ si l'on a:~$\| x\| = \sqrt{\langle x,x \rangle}$.
 
+\medskip
 \noindent\tikz[remember picture,baseline] \node[fill=ocre!10,inner sep=3pt](b5) {Espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}};
 \begin{tikzpicture}[remember picture,overlay]
   \draw[->,thick,ocre] ([yshift=-2pt]b4.west) -- +(-10pt,0) |-(b5.west);
 \end{tikzpicture}
 
+{\small \colorgreen\noindent C'est donc un espace préhilbertien complet, i.e. un espace de Banach dont la norme découle d'un produit scalaire ou hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} \textcolorred{unique}.
 
-{ \small \colorgreen\noindent
-C'est donc un espace préhilbertien complet, i.e.
-un espace de Banach dont la norme découle d'un produit scalaire ou hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} \textcolorred{unique}.
-
-\noindent Un espace de Hilbert est la généralisation en dimension quelconque d'un espace euclidien\index[aut]{Euclide, -325-- -265, Grec}
-	ou hermitien\index[aut]{Hermite (Charles), 1822-1901, Français}
-	(Un \textbf{espace vectoriel euclidien} est un espace vectoriel réel de dimension finie muni d'un produit scalaire).
-
+\noindent Un espace de Hilbert est la généralisation en dimension quelconque d'un espace euclidien\index[aut]{Euclide, -325-- -265, Grec} ou hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} (Un \textbf{espace vectoriel euclidien} est un espace vectoriel réel de dimension finie muni d'un produit scalaire).
 }
 \end{marge}
 
 \medskip
-On peut encore faire les remarques suivantes concernant les espaces de Hilbert:
-\begin{itemize}
-  \item Tout sous-espace vectoriel fermé d'un Hilbert est un Hilbert.
-  \item \textcolorred{Le plus important} est de disposer d'un produit scalaire, car on va alors pouvoir déterminer des parties
-	orthogonales de l'espace, donc en somme directe (théorème~\ref{th:projHilbert}).
+\textcolorred{Le plus important} est de disposer d'un produit scalaire, car on va alors pouvoir déterminer des parties orthogonales de l'espace, donc en somme directe (voir théorème~\ref{th:projHilbert}).
 
-	On rappelle, si besoin, qu'un \textcolorblue{produit scalaire}\index{produit scalaire} est une
-	forme bilinéaire\index{forme!bilinéaire} (i.e. une application\index{application} de~$E\times E$
-	dans~$\RR$, linéaire pour chacune des deux variables) possédant les propriétés:
+	On rappelle, si besoin, qu'un \textcolorblue{produit scalaire}\index{produit scalaire} est une forme bilinéaire\index{forme!bilinéaire} (i.e. une application\index{application} de~$E\times E$ dans~$\RR$, linéaire pour chacune des deux variables) possédant les propriétés:
 	\begin{itemize}
 	  \item symétrie:~$\forall x,y \in E$, $\langle x\, , \, y \rangle = \langle y\, , \, x\rangle$
 	  \item positivité:~$\forall x \in E$, $\langle x\, , \, x \rangle \; \ge \; 0$
 	  \item définie:~$\forall x \in E$, $\big(\ \langle x\, , \, x \rangle = 0 \; \Rightarrow x = 0\ \big)$
 	\end{itemize}
-	ce qui se traduit pas la définition: «Un produit scalaire sur un espace vectoriel réel~$E$ est une
-	forme bilinéaire symétrique définie positive».
-\end{itemize}
-
+ce qui se traduit pas la définition: «Un produit scalaire sur un espace vectoriel réel~$E$ est une forme bilinéaire symétrique définie positive».
 
 \medskip
-Quelques espaces de Banach:
+%On dispose également du théorème suivant, particulièrement utile.
+\begin{theoreme}\label{Th-SsH}
+Tout sous-espace vectoriel fermé d'un espace de Hilbert est un espace de Hilbert.
+\end{theoreme}
+
+\medskip
+Voici quelques espaces de Banach couramment utilisés:
 \begin{itemize}
 \item Les espaces euclidiens\index[aut]{Euclide, -325-- -265, Grec}~$\RR^n$ et
 les espaces hermitiens\index[aut]{Hermite (Charles), 1822-1901, Français}~$\CC^n$
@@ -465,84 +364,64 @@ En particulier, l'espace des fonctions continues sur un espace~$X$ compact, comm
 \end{itemize}
 
 \medskip
-Quelques espaces de Hilbert:
+Voici quelques espaces de Hilbert classiques:
 \begin{itemize}
-  \item Certains espaces de Sobolev (voir plus loin) sont des espaces de Hilbert (ceux qui nous intéresserons
-en général, ça tombe bien).
-  \item L'espace euclidien\index[aut]{Euclide, -325-- -265, Grec}~$\RR^n$ muni du produit scalaire
-usuel est hilbertien,\index[aut]{Hilbert (David), 1862-1943, Allemand} ainsi que l'espace~$L^2$.
+  \item L'espace euclidien\index[aut]{Euclide, -325-- -265, Grec}~$\RR^n$ muni du produit scalaire usuel est hilbertien,\index[aut]{Hilbert (David), 1862-1943, Allemand} 
+  \item L'espace~$L^2$ des fonctions de carré intégrable (voir chapitre~\ref{Ch-Lp}).
+  \item Certains espaces de Sobolev (voir chapitre~\ref{Ch-Sobo}) sont des espaces de Hilbert (ceux qui nous intéresserons en général, ça tombe bien).
 \end{itemize}
 
-
+\medskip
 \begin{theoreme}[Théorème de complétion sur un espace de Banach]\label{th:complbanach}\index{théorème!de complétion (sur un Banach)}
 Soit~$E$ un espace vectoriel normé incomplet.
-Alors~$E$ est isomorphe, en tant qu'espace vectoriel, et isométrique à un sous-espace
-vectoriel dense dans un espace de Banach~$\overline{E}$.
+Alors~$E$ est isomorphe, en tant qu'espace vectoriel, et isométrique à un sous-espace vectoriel dense dans un espace de Banach~$\overline{E}$.
 
 Cet espace de Banach~$\overline{E}$ est unique à un isomorphisme isométrique près.
 \end{theoreme}
 
-Ce théorème de complétion répond par l'affirmative à la question:
-si l'espace normé~$E$ n'est pas complet, existe-t-il un Banach minimal~$\overline{E}$ le
+Ce théorème de complétion répond par l'affirmative à la question: si l'espace normé~$E$ n'est pas complet, existe-t-il un Banach minimal~$\overline{E}$ le
 contenant ?
 
+\medskip
 \begin{theoreme}[Théorème de projection dans un espace de Hilbert]\label{th:projHilbert}\index{théorème!de projection (dans un Hilbert)}
-Soit~$F$ un sous-espace vectoriel fermé d'un Hilbert~$H$ (il est alors lui-même un Hilbert).
-Alors:
+Soit~$F$ un sous-espace vectoriel fermé d'un espace de Hilbert~$H$ (il est alors lui-même un espace de Hilbert d'après le théorème~\ref{Th-SsH}). Alors:
 \begin{itemize}
-  \item son orthogonal~$F^\bot$, qui est l'ensemble des vecteurs orthogonaux à chaque
-	vecteur de~$F$, est un sous-espace vectoriel fermé (donc un Hilbert);
-  \item Tout~$h\in H$ s'écrit de façon unique~$h=h'+h''$ où~$h'$ est le projeté
-	orthogonal de~$h$ sur~$F$, et~$h''$ le projeté orthogonal de~$h$ sur~$F^\bot$.
+  \item son orthogonal~$F^\bot$, qui est l'ensemble des vecteurs orthogonaux à chaque 	vecteur de~$F$, est un sous-espace vectoriel fermé (donc est aussi un espace de Hilbert, toujours en vertu du théorème~\ref{Th-SsH});
+  \item et est également le supplémentaire de $F$: tout~$h\in H$ s'écrit de façon unique~$h=h'+h''$ où~$h'$ est le projeté orthogonal de~$h$ sur~$F$, et~$h''$ le projeté orthogonal de~$h$ sur~$F^\bot$.
 \end{itemize}
+
+\medskip
+Ainsi, $F^\bot$ est l'orthogonal et le supplémentaire de $F$, et ces deux sous-espaces sont donc en sommes directe. On a donc=~$H=F\oplus F^\bot$ (on utilise parfois le terme de «somme hilbertienne»).
 \end{theoreme}
 
-%\medskip
-Les points importants de ce théorème de projection sont que cette décomposition est
-unique, et que l'on a~$H=F\oplus F^\bot$ (on parle parfois de «somme hilbertienne»).
-
-
-%\medskip
-\section{Tribu, mesure, espaces mesurable et mesuré}
-
-En complément à l'aspect métrique (Fréchet 1906), nous
-\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
-allons maintenant aborder l'aspect mesure.
+\textcolorgris{Ce résultat subsiste si l'on suppose seulement que $H$ est un espace préhilbertien et que $F$ est un sous-espace vectoriel complet de $H$.}
 
 \medskip
-Le but, à travers la notion de mesure, est d'étendre la notion usuelle de longueur pour les ensembles
-de~$\RR$, ou de volume pour ceux de~$\RR^n$, et ceci de deux manières:
+\section{Tribu, mesure, espaces mesurable et mesuré}
+
+En complément à l'aspect métrique (Fréchet 1906),\index[aut]{Fréchet (Maurice René), 1878-1973, Français} nous allons maintenant aborder l'aspect mesure.
+
+\medskip
+\textcolorgreen{Le but, à travers la notion de mesure}, est d'étendre la notion usuelle de longueur pour les ensembles de~$\RR$, ou de volume pour ceux de~$\RR^n$, et ceci de deux manières:
 \begin{itemize}
-\item on veut d'une part pouvoir considérer des espaces de base plus généraux (plus «abstraits»:
-espaces de dimension infinie, espaces sur lesquels on définit les probabilités...); 
-\item et
-d'autre part on veut englober dans le même cadre mathématique les notions de longueurs, 
-surface, volume, mais aussi de masses ou charges ponctuelles issues de la mécanique, de
-l'électricité... car toutes ces quantités possèdent une même propriété évidente: l'\textcolorblue{additivité}
-(i.e. si l'on désigne par~$\mu(A)$ le volume, la masse, la charge électrique... d'une partie «raisonnable»~$A$,
-alors~$\mu(A\cap B)=\mu(A)+\mu(B)$ dès que~$A$ et~$B$ sont disjoints).
+\item on veut d'une part pouvoir considérer des espaces de base plus généraux (plus «abstraits»: espaces de dimension infinie, espaces sur lesquels on définit les probabilités...); 
+\item et d'autre part on veut englober dans le même cadre mathématique les notions de longueurs, surface, volume, mais aussi de masses ou charges ponctuelles issues de la mécanique, de l'électricité... car toutes ces quantités possèdent une même propriété évidente: l'\textcolorblue{additivité} (i.e. si l'on désigne par~$\mu(A)$ le volume, la masse, la charge électrique... d'une partie «raisonnable»~$A$, alors~$\mu(A\cap B)=\mu(A)+\mu(B)$ dès que~$A$ et~$B$ sont disjoints).
 \end{itemize}
 
 \medskip
-Afin de réaliser cela, il faut en passer par quelques complications mathématiques, et cela essentiellement
-pour deux raisons.
-Il nous faut tout d'abord définir ce qu'est une partie «raisonnable» d'un ensemble~$E$ (s'il est
-aisé de définir le volume d'un polyèdre par exemple, il existe des parties dont la «frontière» est
-si complexe qu'elles ne possèdent pas de notion de volume).
-Ensuite, la propriété d'additivité si dessus est un peu trop naïve et se révèle insuffisante pour avoir de bonnes 
-propriétés pour les mesures.
+Afin de réaliser cela, il faut en passer par quelques complications mathématiques, et cela essentiellement pour deux raisons:
+\begin{itemize}
+   \item Il nous faut tout d'abord définir ce qu'est une partie «raisonnable» d'un ensemble~$E$ (s'il est aisé de définir le volume d'un polyèdre par exemple, il existe des parties dont la «frontière» est si complexe qu'elles ne possèdent pas de notion de volume).
 
-En effet, la classe des mesures additives a une structure mathématique extrêmement pauvre, ne permettant pas, 
-en particulier, de définir une notion satisfaisante d'intégrale par rapport à ces mesures additives.
-On est donc conduit à utiliser les mesures possédant la propriété de~$\sigma$-additivité (voir définition
-d'une mesure ci-dessous), ce qui nous oblige à considérer comme classe d'ensembles «mesurables» une 
-tribu (voir définition de tribu ci-dessous) au lieu de la notion plus simple d'algèbre.
+   \item Ensuite, la propriété d'additivité si dessus est un peu trop naïve et se révèle insuffisante pour avoir de bonnes propriétés pour les mesures.
+
+En effet, la classe des mesures additives a une structure mathématique extrêmement pauvre, ne permettant pas, en particulier, de définir une notion satisfaisante d'intégrale par rapport à ces mesures additives.
+On est donc conduit à utiliser les mesures possédant la propriété de~$\sigma$-additivité (voir définition d'une mesure ci-dessous), ce qui nous oblige à considérer comme classe d'ensembles «mesurables» une tribu (voir définition~\ref{Def-tribu}) au lieu de la notion plus simple d'algèbre.
+\end{itemize}
 
 \medskip
 \begin{definition}[Algèbre]
-Une \textcolorblue{algèbre (de Boole)\index[aut]{Boole (George), 1815-1864, Anglais}~$\mathcal{E}$} sur un ensemble 
-$X$ est un \textcolorred{ensemble} non vide de parties de~$X$, stable par passage au complémentaire et par union finie
-(donc aussi par intersection finie), i.e.:
+Une \textcolorblue{algèbre (de Boole)\index[aut]{Boole (George), 1815-1864, Anglais}~$\mathcal{E}$} sur un ensemble $X$ est un \textcolorred{ensemble} non vide de parties de~$X$, stable par passage au complémentaire et par union finie (donc aussi par intersection finie), i.e.:
 \begin{enumerate}
  \item~$\mathcal{E} \not=\varnothing$
  \item~$\forall A \in \mathcal{E}$, ${}^c A \in\mathcal{E}$, où~${}^cA$ désigne le complémentaire de~$A$ dans~$X$.
@@ -552,10 +431,8 @@ $X$ est un \textcolorred{ensemble} non vide de parties de~$X$, stable par passag
 \end{definition}
 
 \medskip
-\begin{definition}[Tribu]
-Une \textcolorblue{tribu~$\mathcal{A}$}\index{tribu} sur un ensemble~$X$ est un \textcolorred{ensemble}
-non vide de parties de~$X$, stable par passage au complémentaire et par union dénombrable
-(donc aussi par intersection dénombrable), i.e.:
+\begin{definition}[Tribu]\label{Def-tribu}
+Une \textcolorblue{tribu~$\mathcal{A}$}\index{tribu} sur un ensemble~$X$ est un \textcolorred{ensemble} non vide de parties de~$X$, stable par passage au complémentaire et par union dénombrable (donc aussi par intersection dénombrable), i.e.:
 \begin{enumerate}
  \item~$\mathcal{A} \not=\varnothing$
  \item~$\forall A \in \mathcal{A}$, ${}^c A \in\mathcal{A}$%, où~${}^cA$ désigne le complémentaire de~$A$ dans~$X$. (donc~$X\in \mathcal{A}$)
@@ -563,32 +440,22 @@ non vide de parties de~$X$, stable par passage au complémentaire et par union d
 \end{enumerate}
 \end{definition}
 
-Ces deux dernières définitions étant placées l'une sous l'autre, leur différence doit apparaître clairement:
-dans le cas d'une algèbre, on a à faire à un nombre fini d'intersection ou de réunions, dans celui
-d'une tribu, on prend en compte un ensemble dénombrable (donc fini ou non).
+Ces deux dernières définitions étant placées l'une sous l'autre, leur différence doit apparaître clairement: dans le cas d'une algèbre, on a à faire à un nombre fini d'intersection ou de réunions, dans celui d'une tribu, on prend en compte un ensemble dénombrable (donc fini ou non).
 
 \medskip
 Il est donc évident que toute tribu est une algèbre, la réciproque étant fausse.
 
-%\medskip
 \begin{definition}[Espace mesurable]
-Le couple \textcolorblue{$(X,\mathcal{A})$} est appelé \textcolorblue{espace
-mesurable}\index{espace!mesurable (probabilisable)} ou espace probabilisable en fonction du contexte.
-Sur les espaces mesurables on définit des mesures (voir ci-après); sur les espaces probabilisables, on
-appelle ces mesures des probabilités.
+Le couple \textcolorblue{$(X,\mathcal{A})$} est appelé \textcolorblue{espace mesurable}\index{espace!mesurable (probabilisable)} ou espace probabilisable en fonction du contexte.
+Sur les espaces mesurables on définit des mesures (voir ci-après); sur les espaces probabilisables, on appelle ces mesures des probabilités.
 \end{definition}
 
 \medskip
 \begin{histoire}
-La théorie de la mesure s'occupe de regarder un peu plus en détail ce qui se
-passe à l'intérieur des espaces dits mesurés (définis plus bas): il s'agit
-de mesurer les différentes parties existant dans un tel espace, parties en lien
-avec la topologie, ce qui reboucle le sujet...
+La théorie de la mesure s'occupe de regarder un peu plus en détail ce qui se passe à l'intérieur des espaces dits mesurés (définis plus bas): il s'agit de mesurer les différentes parties existant dans un tel espace, parties en lien avec la topologie, ce qui reboucle le sujet...
 
 \medskip
-Lorsque l'on évoque le concept de mesure, on en arrive assez rapidement
-à se demander: Est-ce que l'on peut tout mesurer? Est-ce
-que l'on doit tout mesurer? Qu'est-ce qui est négligeable ?
+Lorsque l'on évoque le concept de mesure, on en arrive assez rapidement à se demander: Est-ce que l'on peut tout mesurer? Est-ce que l'on doit tout mesurer? Qu'est-ce qui est négligeable ?
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{ccc}%
@@ -601,25 +468,18 @@ Borel &Lebesgue &Kolmogorov%
 \ImageADroite{%
 En 1894, Émile Borel\index[aut]{Borel (Félix Édouard Justin Émile), 1871-1956, Français} énonce la première définition d'ensemble négligeable.
 En 1897, il définit les ensembles mesurables.
-En 1901, Henri-Léon Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
- introduit la notion de mesure.
+En 1901, Henri-Léon Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}  introduit la notion de mesure.
 La théorie se développe jusque dans les années 1950.\\\indent
-Andreï Kolmogorov\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe}
- proposera une axiomatisation du calcul des probabilités basée notamment
-sur l'intégrale définie à partir d'une mesure.
+Andreï Kolmogorov\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe} proposera une axiomatisation du calcul des probabilités basée notamment sur l'intégrale définie à partir d'une mesure.
 }
 \end{histoire}
 
-%\medskip
-Les parties de~$X$ qui appartiennent à la tribu~$\mathcal{A}$ sont appelées \textcolorblue{ensembles
-mesurables}.\index{ensemble mesurable}
-Dans un contexte probabiliste, on les appelle événements (il suffit que~$\mu(X)=1$ pour que~$\mu$ soit
-une probabilité).
+\medskip
+Les parties de~$X$ qui appartiennent à la tribu~$\mathcal{A}$ sont appelées \textcolorblue{ensembles mesurables}.\index{ensemble mesurable}
+Dans un contexte probabiliste, on les appelle événements (il suffit que~$\mu(X)=1$ pour que~$\mu$ soit une probabilité).
 
 %\medskip
-Une \textcolorblue{mesure~$\mu$}\index{mesure} sur un ensemble~$X$ est une fonction qui
-associe à chaque élément d'une tribu d'un ensemble~$X$ un \textcolorred{scalaire positif}
-(une longueur, un volume, une probabilité...).
+Une \textcolorblue{mesure~$\mu$}\index{mesure} sur un ensemble~$X$ est une fonction qui associe à chaque élément d'une tribu d'un ensemble~$X$ un \textcolorred{scalaire positif} (une longueur, un volume, une probabilité...).
 
 \begin{definition}[Mesure]
 \medskip
@@ -645,13 +505,10 @@ $X$ et~$\mu$ une mesure sur~$\mathcal{A}$.
 \medskip
 \colorgris
 Soient~$(X,T)$ et~$(Y,U)$ deux espaces mesurables.
-On appelle rectangle mesurable du produit~$\Omega=X\times Y$, toute partie de~$\Omega$
-de la forme~$A\times B$ où~$A$ et~$B$ sont des éléments resp de~$T$ et~$U$-mesurables.
+On appelle rectangle mesurable du produit~$\Omega=X\times Y$, toute partie de~$\Omega$ de la forme~$A\times B$ où~$A$ et~$B$ sont des éléments resp de~$T$ et~$U$-mesurables.
 
-On appelle produit tensoriel des deux tribus~$T$ et~$U$, la tribu
-engendrée par l'ensemble des rectangles mesurables.
-Cette tribu est notée~$T \otimes U$, et est la plus petite tribu de~$\Omega$ qui contient
-toutes les parties de la forme~$A\times B$, $A\in T$, $B\in U$.
+On appelle produit tensoriel des deux tribus~$T$ et~$U$, la tribu engendrée par l'ensemble des rectangles mesurables.
+Cette tribu est notée~$T \otimes U$, et est la plus petite tribu de~$\Omega$ qui contient toutes les parties de la forme~$A\times B$, $A\in T$, $B\in U$.
 
 Le produit des espaces mesurables est~$(X\times Y, T \otimes U)$ et est un espace mesurable:
 \begin{equation}
@@ -663,116 +520,82 @@ Le produit des espaces mesurables est~$(X\times Y, T \otimes U)$ et est un espac
 \section{Tribu borélienne, mesures de Dirac et Lebesgue}
 
 \begin{definition}[Tribu borélienne]
-On appelle \textcolorblue{tribu borélienne}\index{tribu!borélienne} sur un espace topologique donné la tribu engendrée par les
-ensembles ouverts.
-Dans le cas simple et fondamental de l'espace usuel à~$n$ dimensions, la tribu borélienne de~$\RR^n$
-est engendrée par une famille dénombrable de parties, les pavés dont les sommets sont à
-coordonnées rationnelles.
+On appelle \textcolorblue{tribu borélienne}\index{tribu!borélienne} sur un espace topologique donné la tribu engendrée par les ensembles ouverts.
+Dans le cas simple et fondamental de l'espace usuel à~$n$ dimensions, la tribu borélienne de~$\RR^n$ est engendrée par une famille dénombrable de parties, les pavés dont les sommets sont à coordonnées rationnelles.
 \end{definition}
 
 %\medskip
-On aura besoin de ces notions (dont la tribu borélienne) pour l'intégrale de Lebesgue et par extension
-toute la théorie de l'intégration qui est à la base de l'analyse numérique (et oui, formulation faible, quand
-tu nous tiens) ainsi notamment que pour le théorème de représentation de Riesz fondamental en
-éléments finis.
+On aura besoin de ces notions (dont la tribu borélienne) pour l'intégrale de Lebesgue et par extension toute la théorie de l'intégration qui est à la base de l'analyse numérique (et oui, formulation faible, quand tu nous tiens) ainsi notamment que pour le théorème de représentation de Riesz fondamental en éléments finis.
 
 \medskip
 Notons que tout intervalle ouvert, fermé ou semi-ouvert appartient à la tribu borélienne de~$\RR$.
 Il en est de même de toute réunion finie ou dénombrable de ces intervalles.
 
 \medskip
-Il n'est pas possible de donner une description plus concrète de la tribu
-borélienne de~$\RR$ que ce qui a été fait. Toutes les réunions finies ou dénombrables d'intervalles 
-sont des boréliens, mais certains boréliens ne sont pas de cette forme. 
-\textcolorgreen{En fait, toutes les parties de~$\RR$ que l'on rencontre dans la pratique sont des 
-boréliens. Il existe des parties de~$\RR$ qui ne sont pas boréliennes, mais il faut un peu de sueur pour
-les construire.}
+Il n'est pas possible de donner une description plus concrète de la tribu borélienne de~$\RR$ que ce qui a été fait. Toutes les réunions finies ou dénombrables d'intervalles sont des boréliens, mais certains boréliens ne sont pas de cette forme. 
+\textcolorgreen{En fait, toutes les parties de~$\RR$ que l'on rencontre dans la pratique sont des boréliens. Il existe des parties de~$\RR$ qui ne sont pas boréliennes, mais il faut un peu de sueur pour les construire.}
 
 \medskip
-Les tribus sont des familles de parties qui sont destinées à être mesurées. Pour pouvoir
-mesurer des parties suffisamment compliquées comme celles qui ne peuvent être définies
-que par des passages à la limite (comme l'ensemble triadique de Cantor),\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand} 
-les tribus doivent être assez fines pour être stables par des opérations relativement générales comme
-le passage au complémentaire, les réunions et intersections dénombrables. Néanmoins,
-elles ne doivent pas être trop fines afin de ne pas contenir de parties non mesurables.
+Les tribus sont des familles de parties qui sont destinées à être mesurées. Pour pouvoir mesurer des parties suffisamment compliquées comme celles qui ne peuvent être définies que par des passages à la limite (comme l'ensemble triadique de Cantor),\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand} les tribus doivent être assez fines pour être stables par des opérations relativement générales comme le passage au complémentaire, les réunions et intersections dénombrables. Néanmoins, elles ne doivent pas être trop fines afin de ne pas contenir de parties non mesurables.
 
 \medskip
 Rappelons également deux mesures simples et importantes:
 \begin{itemize}
   \item la \textcolorblue{mesure de comptage}, qui donne le nombre d'éléments d'un ensemble.
-  \item la \textcolorblue{mesure de Dirac}\index{mesure!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
-	ou masse de Dirac est une mesure supportée par un singleton et de masse totale 1.
+  \item la \textcolorblue{mesure de Dirac}\index{mesure!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} ou masse de Dirac est une mesure supportée par un singleton et de masse totale~$1$.
 \end{itemize}
 
 \begin{definition}[Mesure de Dirac]
-Pour un espace mesurable~$(X,\mathcal{A})$ et un point~$a$ de~$X$, on appelle mesure de Dirac au
-point~$a$ la mesure notée~$\delta_a$ sur~$(X, \mathcal{A})$ telle que:
+Pour un espace mesurable~$(X,\mathcal{A})$ et un point~$a$ de~$X$, on appelle mesure de Dirac au point~$a$ la mesure notée~$\delta_a$ sur~$(X, \mathcal{A})$ telle que:
 \begin{equation}
   \forall A \in \mathcal{A},\quad ( \delta_a(A)=1 \; \text{ si } a \in A \text{ et } \delta_a(A)=0  \text{ si } a \notin A )
 \end{equation}
 Le support\index{support} de~$\delta_a$ est réduit au singleton~$\{a\}$.
 \end{definition}
 
-Les masses de Dirac sont très importantes, notamment dans la pratique car elles permettent par exemple
-de construire des mesures par approximations successives.
+Les masses de Dirac sont très importantes, notamment dans la pratique car elles permettent par exemple de construire des mesures par approximations successives.
 
 
 %\bigskip
 \begin{definition}[Mesure complète]
-Soit~$(X,\mathcal{A},\mu)$ un espace mesuré,\index{espace!mesuré}
-on dit que~$\mu$ est une \textcolorblue{mesure complète}\index{mesure!complète}
-lorsque tout ensemble négligeable pour~$\mu$ appartient à la tribu~$\mathcal{A}$, i.e.:
+Soit~$(X,\mathcal{A},\mu)$ un espace mesuré,\index{espace!mesuré} on dit que~$\mu$ est une \textcolorblue{mesure complète}\index{mesure!complète} lorsque tout ensemble négligeable pour~$\mu$ appartient à la tribu~$\mathcal{A}$, i.e.:
 \begin{equation}
 \forall M,\, N\in\mathcal{P}(X),\quad \left(N\subset M,\, M\in\mathcal{A} \text{ et } \mu(M)=0\right)\quad\Rightarrow\quad N\in\mathcal{A}
 \end{equation}
 \end{definition}
 
 \medskip
-La \textcolorblue{mesure de Lebesgue}\index{mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-a permis de bâtir une théorie de
-l'intégration palliant les insuffisances de l'intégrale de Riemann (il suffit de vouloir
-intégrer~$\mathbbmss{1}_{\QQ}$ sur~$\intff{0}{1}$ avec Riemann pour être dans l'impasse).
-Nous détaillerons cela un peu plus au chapitre sur les espaces de Lebesgue.\label{Sec-impasse}
+La \textcolorblue{mesure de Lebesgue}\index{mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} a permis de bâtir une théorie de l'intégration palliant les insuffisances de l'intégrale de Riemann (il suffit de vouloir intégrer~$\mathbbmss{1}_{\QQ}$ sur~$\intff{0}{1}$ avec Riemann pour être dans l'impasse).
+Nous détaillerons cela un peu plus au chapitre~\ref{Ch-Lp} sur les espaces de Lebesgue.\label{Sec-impasse}
 
 %\medskip
-Parmi les définitions de cette mesure, nous présentons la plus intuitive, celle
-qui consiste à généraliser la notion de volume en gardant les mesures sur
-les pavés de~$\RR^n$.
+Parmi les définitions de cette mesure, nous présentons la plus intuitive, celle qui consiste à généraliser la notion de volume en gardant les mesures sur les pavés de~$\RR^n$.
 
 \begin{definition}[Mesure de Lebesgue]
-Il existe une plus petite mesure définie sur une tribu de parties de~$\RR^n$ qui soit
-complète et coïncide sur les pavés avec leur volume (i.e. avec le produit des longueurs de leurs côtés).
+Il existe une plus petite mesure définie sur une tribu de parties de~$\RR^n$ qui soit complète et coïncide sur les pavés avec leur volume (i.e. avec le produit des longueurs de leurs côtés).
 
-Cette mesure est appelée la mesure de Lebesgue (notée~$\lambda_n$) et sa tribu de définition
-la tribu de Lebesgue (notée~$\mathcal L_n$ et que nous ne définissons pas ici, et dont les éléments
-sont dits Lebesgue-mesurables).
+Cette mesure est appelée la mesure de Lebesgue (notée~$\lambda_n$) et sa tribu de définition la tribu de Lebesgue (notée~$\mathcal L_n$ et que nous ne définissons pas ici, et dont les éléments sont dits Lebesgue-mesurables).
 \end{definition}
 
 %\medskip
 Cette restriction aux boréliens de la mesure de Lebesgue est parfois dénommée mesure de Borel-Lebesgue.
 
 \medskip
-Si pour la mesure de Lebesgue~$\lambda$ sur~$\RR$, la notion de «presque partout» correspond bien
-à l'intuition, ce n'est pas vrai en général.
-Par exemple, pour~$\mu=\delta_a$ sur la tribu de l'ensemble des parties de~$X$, une propriété
-est vraie~$\mu$-pp simplement si elle est vérifiée en~$a$.
+Si pour la mesure de Lebesgue~$\lambda$ sur~$\RR$, la notion de «presque partout» correspond bien à l'intuition, ce n'est pas vrai en général.
+Par exemple, pour~$\mu=\delta_a$ sur la tribu de l'ensemble des parties de~$X$, une propriété est vraie~$\mu$-pp simplement si elle est vérifiée en~$a$.
 
 Si la mesure~$\mu$ est nulle, toute propriété est vérifiée pp (ainsi que sa négation).
 
 \medskip
 \colorgris
 «Construire une mesure», c'est montrer qu'il existe une unique mesure qui vérifie certaines propriétés. 
-Pour cela, on utilise le théorème (ou lemme) de la classe monotone (dû à Wacław Sierpiński\index[aut]{Sierpiński (Wacław Franciszek), 1882-1969, Polonais} 
-et popularisé par Dynkin\index[aut]{Dynkin (Eugène Borisovitch), 1924-, Russe}) pour montrer l'unicité et le 
-théorème de Caratheodory\index[aut]{Carathéodory (Constantin), 1873-1950, Grec} pour montrer l'existence.
+Pour cela, on utilise le théorème (ou lemme) de la classe monotone (dû à Wacław Sierpiński\index[aut]{Sierpiński (Wacław Franciszek), 1882-1969, Polonais} et popularisé par Dynkin\index[aut]{Dynkin (Eugène Borisovitch), 1924-, Russe}) pour montrer l'unicité et le théorème de Caratheodory\index[aut]{Carathéodory (Constantin), 1873-1950, Grec} pour montrer l'existence.
 \colorblack
 
 %\medskip
 \section{Propriétés de la mesure de Lebesgue}\index{mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 
-On appelle \textcolorblue{mesure de Lebesgue sur un espace euclidien~$E$}\index[aut]{Euclide, -325-- -265, Grec}
-la mesure image de la mesure de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-sur~$\RR^n$ par n'importe quelle isométrie de~$\RR^n$ dans~$E$.
+On appelle \textcolorblue{mesure de Lebesgue sur un espace euclidien~$E$}\index[aut]{Euclide, -325-- -265, Grec} la mesure image de la mesure de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} sur~$\RR^n$ par n'importe quelle isométrie de~$\RR^n$ dans~$E$.
 
 Soit~$A$ une partie Lebesgue-mesurable d'un espace euclidien~$E$.
 On appelle \textcolorblue{mesure de Lebesgue sur~$A$} la restriction à~$A$ de la mesure de Lebesgue de~$E$.
@@ -783,15 +606,11 @@ Elle est en particulier invariante sous les translations: c'est une mesure de Ha
 du groupe topologique~$\RR^n$.
 \end{theoreme}
 
-\textcolorgris{Oui, la mesure de Lebesgue peut être vue comme une mesure de Haar. Mais, historiquement, la mesure
-de Haar est définie plus tard (on parle souvent de \emph{la} mesure de Haar, alors que l'on devrait parler d'\emph{une}
-mesure de Haar). Elle généralise celle de Lebesgue.}
+\textcolorgris{Oui, la mesure de Lebesgue peut être vue comme une mesure de Haar. Mais, historiquement, la mesure de Haar est définie plus tard (on parle souvent de \emph{la} mesure de Haar, alors que l'on devrait parler d'\emph{une} mesure de Haar). Elle généralise celle de Lebesgue.}
 
 %\bigskip
 \begin{definition}[Mesure régulière]
-Une mesure (positive)~$\mu$ définie sur une tribu contenant la tribu borélienne d'un espace
-topologique~$X$ est dite \textcolorblue{régulière}\index{mesure!régulière} lorsque elle est
-à la fois intérieurement régulière et extérieurement régulière:
+Une mesure (positive)~$\mu$ définie sur une tribu contenant la tribu borélienne d'un espace topologique~$X$ est dite \textcolorblue{régulière}\index{mesure!régulière} lorsque elle est à la fois intérieurement régulière et extérieurement régulière:
 \begin{enumerate}
 \item~$\forall A\subset X$ de la tribu, $\mu(A)=\sup\{\mu(K)\,\mid\, K \text{ compact contenu dans } A\}$;
 \item~$\forall A\subset X$ de la tribu, $\mu(A)=\inf\{\mu(O)\,\mid\, O \text{ ouvert contenant } A\}$.
@@ -800,21 +619,14 @@ topologique~$X$ est dite \textcolorblue{régulière}\index{mesure!régulière} l
 
 %\medskip
 \begin{theoreme}
-La mesure de Lebesgue est finie sur tout compact; chaque compact, qui est borné,
-pouvant être enfermé dans un cube.
+La mesure de Lebesgue est finie sur tout compact; chaque compact, qui est borné, pouvant être enfermé dans un cube.
 \end{theoreme}
 
 Elle est par voie de conséquence régulière, $\RR^n$ étant métrisable, localement compact et séparable.
 \begin{itemize}
-  \item~$\RR^n$ est métrisable: un espace topologique est un espace métrisable lorsqu'il est
-	homéomorphe à un espace métrique (un homéomorphisme est une application bijective
-	continue entre deux espaces topologiques dont la réciproque est continue);
-  \item~$\RR^n$ est localement compact: un espace localement compact est un espace séparé qui,
-	sans être nécessairement compact lui-même, admet des voisinages compacts pour tous
-	ses points (De plus, on a la propriété: Tout espace localement compact est régulier);
-  \item~$\RR^n$ est séparable: un espace séparable est un espace topologique contenant un
-	sous-ensemble fini ou dénombrable et dense, i.e. contenant un ensemble fini ou dénombrable
-	de points dont l'adhérence est égale à l'espace topologique tout entier.
+  \item~$\RR^n$ est métrisable: un espace topologique est un espace métrisable lorsqu'il est homéomorphe à un espace métrique (un homéomorphisme est une application bijective  continue entre deux espaces topologiques dont la réciproque est continue);
+  \item~$\RR^n$ est localement compact: un espace localement compact est un espace séparé qui, sans être nécessairement compact lui-même, admet des voisinages compacts pour tous 	ses points (De plus, on a la propriété: Tout espace localement compact est régulier);
+  \item~$\RR^n$ est séparable: un espace séparable est un espace topologique contenant un 	sous-ensemble fini ou dénombrable et dense, i.e. contenant un ensemble fini ou dénombrable de points dont l'adhérence est égale à l'espace topologique tout entier.
 \end{itemize}
 
 %\medskip
@@ -824,49 +636,34 @@ Dans~$\RR^n$, les compacts sont les ensembles fermés bornés.
 
 %\medskip
 \begin{histoire}%
-En complément à la première note historique de ce chapitre, nous vous proposons une illustration très concrete de l'application
-de la topologie, que vous avez très certainement rencontrée: la carte du métro.
+En complément à la première note historique de ce chapitre, nous vous proposons une illustration très concrète de l'application de la topologie, que vous avez très certainement rencontrée: la carte du métro.
 
-%\sbox{\MaBoiteAvecPhotos}{\scriptsize\begin{tabular}{c}\includegraphics[height=\the\HauteurDesPhotos]{metro}\\carte du métro\end{tabular}}
 \sbox{\MaBoiteAvecPhotos}{\scriptsize\begin{tabular}{c}\includegraphics[height=\the\HauteurDesPhotos]{metro}\end{tabular}}
 \medskip
 \ImageAGauche{%
-La représentation schématique généralement utilisée pour représenter un réseau de métro a été mise au point, la première fois,
-en 1931 par Henry Beck,\index[aut]{Beck (Henry Charles, dit Harry), 1902-1974, Anglais}
-alors dessinateur industriel de 29 ans et engagé comme intérimaire par la société du métro londonien.
-Facile à comprendre et à utiliser, esthétique... il est pourtant faux à tous les égards sauf deux.\\
-\indent Il n'est pas à l'échelle, donc toutes les distances sont fausses; les lignes droites reliant les stations
-ne traduisent absolument pas le cheminement réel du métro sous les rues; les orientations sont fausses (une
-ligne verticale ne signifie pas que le trajet s'effectue selon l'axe nord-sud).\\
-\indent Le premier aspect exact est que si une station de métro est représentée au nord de la Tamise, alors il en est de même
-pour la station réelle.
-Le second aspect exact est la description du réseau: l'ordre des stations sur chaque ligne et les interconnexions
-entre les lignes sont fidèles à la réalité. C'est d'ailleurs ce second aspect qui est finalement le seul dont les
-voyageurs ont effectivement besoin.\\
-\indent Notons enfin que cette illustration permet de comprendre aisément comment la notion de distance
-peut être appréhendée en topologie.
+La représentation schématique généralement utilisée pour représenter un réseau de métro a été mise au point, la première fois, en 1931 par Henry Beck,\index[aut]{Beck (Henry Charles, dit Harry), 1902-1974, Anglais} alors dessinateur industriel de 29 ans et engagé comme intérimaire par la société du métro londonien.
+Facile à comprendre et à utiliser, esthétique... elle est pourtant fausse à tous les égards sauf deux.\\
+\indent Elle n'est pas à l'échelle, donc toutes les distances sont fausses; les lignes droites reliant les stations ne traduisent absolument pas le cheminement réel du métro sous les rues; les orientations sont fausses (une ligne verticale ne signifie pas que le trajet s'effectue selon l'axe nord-sud).\\
+\indent Le premier aspect exact est que si une station de métro est représentée au nord de la Tamise, alors il en est de même pour la station réelle.
+Le second aspect exact est la description du réseau: l'ordre des stations sur chaque ligne et les interconnexions entre les lignes sont fidèles à la réalité. C'est d'ailleurs ce second aspect qui est finalement le seul dont les voyageurs ont effectivement besoin.\\
+\indent Notons enfin que cette illustration permet de comprendre aisément comment la notion de distance peut être appréhendée en topologie.
 }
 \end{histoire}
 
 \medskip
 \section{Petit exemple amusant d'injection dans un Hilbert}
-Soient~$V$ et~$H$ deux espaces de Hilbert sur~$\RR$ et~$V$ inclus dans~$H$
-avec injection continue et~$V$ dense dans~$H$.
-\medskip
-Comme~$V$ est inclus dans~$H$, l'injection est tout bêtement \(i\colon x\mapsto x\).
+Soient~$V$ et~$H$ deux espaces de Hilbert sur~$\RR$ et~$V$ inclus dans~$H$ avec injection continue et~$V$ dense dans~$H$.
 
 \medskip
-Dans ces conditions, \(H\) est un espace de Hilbert avec un produit scalaire \((\ \mid\ )_H\),
-et \(V\) muni du produit scalaire induit est un sous-espace dense, donc
-\textcolorred{ne peut pas être un espace de Hilbert} par restriction du produit
-scalaire \((\ \mid\ )_H\).
-La structure hilbertienne de \(V\) est définie par un produit scalaire \((\ \mid\ )_V\) propre à \(V\).
+Comme~$V$ est inclus dans~$H$, l'injection est tout bêtement $i: x\mapsto x$.
 
 \medskip
-Il y a donc deux topologies sur \(V\): la topologie hilbertienne propre à \(V\) et la
-topologie héritée de la structure hilbertienne de \(H\).
-La continuité de l'injection \(i\) impose donc une condition sur ces topologies:
-la topologie hilbertienne de \(V\) est plus fine que la trace sur \(V\) de la topologie hilbertienne de \(H\).
+Dans ces conditions, $H$ est un espace de Hilbert avec un produit scalaire $(\ \mid\ )_H$, et $V$ muni du produit scalaire induit est un sous-espace dense, donc \textcolorred{ne peut pas être un espace de Hilbert} par restriction du produit scalaire $(\ \mid\ )_H$.
+La structure hilbertienne de $V$ est définie par un produit scalaire $(\ \mid\ )_V$ propre à $V$.
+
+\medskip
+Il y a donc deux topologies sur $V$: la topologie hilbertienne propre à $V$ et la topologie héritée de la structure hilbertienne de $H$.
+La continuité de l'injection $i$ impose donc une condition sur ces topologies: la topologie hilbertienne de $V$ est plus fine que la trace sur $V$ de la topologie hilbertienne de $H$.
 
 \medskip
 \textcolorgris{... et maintenant que le terme «injection» a été prononcé, il est temps

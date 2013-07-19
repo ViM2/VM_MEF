@@ -1,25 +1,20 @@
 \chapter{Quelques méthodes dérivées}\label{Ch-XFEM}
-\begin{abstract} Dans ce court chapitre, nous survolons quelques méthodes également utilisées en simulation numérique. Nous n'entrons pas dans le détail, mais si les notions d'éléments finis, de formulations mixtes et hybrides et les multiplicateurs de Lagrange ont été comprises, alors nos courtes explications doivent suffire.
-\end{abstract} %
-%%%%----------------------------------------------------------
-%\section{Les volumes finis}
-
+\begin{abstract}
+Dans ce court chapitre, nous survolons quelques méthodes également utilisées en simulation numérique. Nous n'entrons pas dans le détail, mais si les notions d'éléments finis, de formulations mixtes et hybrides et les multiplicateurs de Lagrange ont été comprises, alors nos courtes explications doivent suffire.
+\end{abstract}
 %\medskip
 %\section{Les volumes finis}
 
 \medskip
 \section{Méthode des éléments frontières}\label{Sec-BEM}\index{élément fini!frontière}
-%%%%----------------------------------------------------------
+
 La méthode des éléments finis et la \textcolorblue{méthode des éléments frontière}\index{élément fini!frontière} peuvent être considérées comme issues des méthodes de Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse} et de Trefftz\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} respectivement. Dans les deux cas, il s'agit de résoudre un problème décrit par des équations aux dérivées partielles dans un domaine~$\Omega$ et sur sa frontière~$\Gamma=\partial\Omega$ en remplaçant le problème continu par un nombre fini de paramètres inconnus dans la résolution numérique.
 
 \medskip
 La méthode de Ritz\index[aut]{Ritz (Walther), 1878-1909, Suisse}, et donc la méthode des éléments finis, se base sur l'existence d'un principe variationnel pour lequel la fonction inconnue sera recherchée comme une combinaison de fonctions de base définies dans tout le domaine~$\Omega$.
 
 \medskip
-La méthode de Trefftz\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} a été proposée en 1926 dans un article intitulé «une alternative à la méthode de Ritz». Le passage domaine/frontière se fait en appliquant Green\index[aut]{Green (George), 1793-1841, Anglais} à la formulation variationnelle considérée et en proposant des fonctions d'interpolation linéairement indépendantes qui satisfont les équations aux dérivées partielles d'intérieur de domaine \emph{a priori}. Trefftz montre que l'intégrale d'intérieur de domaine du principe variationnel disparaît et que seules subsistent des intégrations aux frontières. \textcolorred{Cependant, cette méthode discrétisant la frontière seule peut être employée uniquement
-si le problème physique considéré est gouverné par des équations différentielles linéaires et homogènes.}
-On obtient encore un système de type~$\MM{K}\VV{q}=\VV{F}$, mais les intégrales se font uniquement
-sur~$\Gamma$.
+La méthode de Trefftz\index[aut]{Trefftz (Erich Immanuel), 1888-1937, Allemand} a été proposée en 1926 dans un article intitulé «une alternative à la méthode de Ritz». Le passage domaine/frontière se fait en appliquant Green\index[aut]{Green (George), 1793-1841, Anglais} à la formulation variationnelle considérée et en proposant des fonctions d'interpolation linéairement indépendantes qui satisfont les équations aux dérivées partielles d'intérieur de domaine \emph{a priori}. Trefftz montre que l'intégrale d'intérieur de domaine du principe variationnel disparaît et que seules subsistent des intégrations aux frontières. \textcolorred{Cependant, cette méthode discrétisant la frontière seule peut être employée uniquement si le problème physique considéré est gouverné par des équations différentielles linéaires et homogènes.} On obtient encore un système de type~$\MM{K}\VV{q}=\VV{F}$, mais les intégrales se font uniquement sur~$\Gamma$.
 
 \medskip
 La méthode des éléments finis et la méthode des éléments frontières\index{élément fini!frontière} sont toutes deux des méthodes très robustes pour de nombreuses applications industrielles, ce qui en fait des outils de choix pour les simulations numériques. Cependant, leur utilisation pose des problèmes lorsque l'on a évolution des surfaces internes à cause du «maillage» de ces surfaces: description correcte, évolution de ces surfaces, fissures, front de sollicitation, interfaces... Une des motivations pour les méthodes sans maillage est de s'affranchir de ces difficultés.
@@ -49,26 +44,20 @@ u(x) = \dsum_{i\in N_s(x)}\dsum_{\alpha=1}^{N_f(i)} a_i^\alpha \phi_i^\alpha(x) 
 L'enrichissement des fonctions d'interpolation a par exemple permis de résoudre des problèmes de propagation de fissure en deux et trois dimension sans remaillage: la fissure se propage à travers un nuage de points et est modélisée par enrichissement, à savoir des fonctions~$F(x)$ discontinues sur la fissure ou représentant la singularité en fond de fissure.
 
 \medskip
-En résumé, pour déveloper une méthode sans maillage, on a besoin: 1) d'un nuage de points, 2) d'une méthode d'interpolation, comme par exemple la formule~\ref{Eq-meshless}, et 3) d'une formule de quadrature permettant d'exprimer la formulation faible que l'on souhaite traiter sous forme matricielle.
+En résumé, pour développer une méthode sans maillage, on a besoin: 1) d'un nuage de points, 2) d'une méthode d'interpolation, comme par exemple la formule~\ref{Eq-meshless}, et 3) d'une formule de quadrature permettant d'exprimer la formulation faible que l'on souhaite traiter sous forme matricielle.
 Les \textcolorblue{méthodes sans maillage (Meshless Methods)}\index{méthode sans maillage} sont flexibles dans le choix de l'approximation et de l'enrichissement. Elles comportent néanmoins quelques inconvénients.
 Tout d'abord, on remarquera que la méthode d'interpolation n'est pas, contrairement au cas de la méthode des éléments finis, interpolante. Il s'en suit que dans nombre de méthodes sans maillage, l'imposition des conditions aux limites de Dirichlet est plus compliquée à réaliser.
 On ne peut pas non plus utiliser les schémas d'intégration numérique de la méthode des éléments finis car les fonctions de forme ne sont plus polynomiales et que l'on ne dispose pas d'un maillage pour placer les points d'intégration. Le choix du nombre de points d'intégration et de la taille du domaine d'influence dans un nuage arbitraire de points d'approximation n'est pas trivial: alors que dans le cas de la méthode des éléments finis, la matrice de rigidité est obtenue par assemblage des contributions élémentaires, pour les méthodes sans maillage, l'assemblage se fait en couvrant le domaine de points d'intégration et en ajoutant leur contribution. De plus, chaque point ayant généralement plus de voisins que dans la méthode des éléments finis, la matrice de «rigidité» est moins creuse. Enfin, dans nombre de cas, il est nécessaire de faire varier la taille du domaine d'influence dans l'espace et le temps pour mieux suivre le problème: la raréfaction des particules en cours de calcul dans certaines zones conduit à des instabilités dues par exemple à l'augmentation des erreurs numériques dans le calcul de dérivées (mais augmenter la zone d'influence correspond à augmenter le nombre de voisins donc à alourdir le calcul...).
 
 \medskip
 \section{Partition de l'unité}\label{Sec-partition}\index{partition de l'unité}
-\textcolorred{La base des éléments finis classiques peut elle-aussi être enrichie} (afin de ne pas recourir aux méthodes sans maillage) de manière à représenter une fonction donnée sur un domaine donné.
-Melenk\index[aut]{Melenk (Jens Markus), ?- , Autrichien} et
-Babu\u{s}ka,\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}
-en 1996, ont appelé cette technique:
-la \textcolorblue{Partition de l'Unité (PU)}.
+
+\textcolorred{La base des éléments finis classiques peut elle-aussi être enrichie} (afin de ne pas recourir aux méthodes sans maillage) de manière à représenter une fonction donnée sur un domaine donné. Melenk\index[aut]{Melenk (Jens Markus), ?- , Autrichien} et Babu\u{s}ka,\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque} en 1996, ont appelé cette technique: la \textcolorblue{Partition de l'Unité (PU)}.
 Ils ont remarqué en fait que si~$N_s(x)$, autrement dit l'ensemble des points~$i$ dont le support contient le point~$x$, était remplacé par~$N_n(x)$, c'est-à-dire l'ensemble des nœuds contenant~$x$, alors on retombait sur la formulation éléments finis usuelle, qui, sous forme «assemblée» s'écrivait bien alors:
 \begin{equation}
 u(x) = \dsum_{i\in N_n(x)}\dsum_{\alpha} a_i^\alpha \phi_i^\alpha(x)
 \end{equation}
-\textcolorgreen{Cela veut simplement dire que, dans le cas des éléments finis, on considère les supports
-comme liés à des nœuds, alors que dans le cas sans maillage, ils sont liés à des points. En d'autres
-termes, si l'on considère un nœud à chaque point, la méthode des éléments finis est un cas particulier de la méthode
-sans maillage.} On peut alors également écrire l'approximation de partition de l'unité par:
+\textcolorgreen{Cela veut simplement dire que, dans le cas des éléments finis, on considère les supports comme liés à des nœuds, alors que dans le cas sans maillage, ils sont liés à des points. En d'autres termes, si l'on considère un nœud à chaque point, la méthode des éléments finis est un cas particulier de la méthode sans maillage.} On peut alors également écrire l'approximation de partition de l'unité par:
 \begin{equation}
 u(x) = \dsum_{i\in N_n(x)}\dsum_{\alpha} a_i^\alpha \phi_i^\alpha(x) + \dsum_{i\in N_n(x)\cap N_f}\dsum_{\alpha} b_i^\alpha\phi_i^\alpha(x)F(x)
 \end{equation}
@@ -77,6 +66,7 @@ u(x) = \dsum_{i\in N_n(x)}\dsum_{\alpha} a_i^\alpha \phi_i^\alpha(x) + \dsum_{i\
 
 \medskip
 \section{Méthode des éléments finis étendue}\label{Sec-XFEM}\index{méthode des éléments finis étendue}\index{X-FEM}
+
 Dans le cas particulier où la méthode de partition de l'unité\index{partition de l'unité} est appliquée à la modélisation de discontinuités ou de vides au sein même des éléments, on obtient alors la \textcolorblue{méthode des éléments finis étendue (X-FEM)}:\index{méthode des éléments finis étendue}\index{X-FEM}
 \begin{equation}
 \begin{aligned}
@@ -131,6 +121,7 @@ où~$c_s$ est la vitesse du son, $p=\vect{c_i}\cdot\vect{c_i}$ et~$t_p$ est la d
 
 \medskip\colorgris
 \section{FEEC}
+
 Le \textcolorblue{Finite element exterior calculus}, introduit par Douglas N. Arnod,\index[aut]{Arnold (Douglas Norman), ?-, Américain} Richard S. Falk\index[aut]{Falk (Richard S.), ?-, Américain} et Ragnar Winther\index[aut]{Winther (Ragnar), 1949-, Norvégien} en 2006, est une approche visant à expliquer (et à développer) des solutions éléments finis pour une grande variété d'équations aux dérivées partielles. Il s'agit de mettre à profit les outils de la géométrie différentielle, de la topologie algébrique et de l'algèbre homologique afin de développer des discrétisations compatibles avec les structures géométriques, topologiques et algébriques nécessaires pour que le problème aux équations aux dérivées partielles considéré soit bien posé.
 
 \medskip
@@ -146,7 +137,7 @@ Dans cette version de ce document, nous n'entrons pas plus avant dans cette mét
 
 Le concept de système multicorps est utilisé en mécanique du solide, plus particulièrement dans les domaines de la robotique, de l'automobile, de la biomécanique... pour modéliser le comportement dynamique de corps rigides et/ou flexibles connectés les uns aux autres par des liaisons mécaniques, chacun de ses corps décrivant de grands déplacements à la fois en translation et en rotation. Une analyse peut inclure plusieurs milliers de corps rigides. \textcolorred{Dans une telle approche, ce n'est plus le comportement local qui est visé mais plutôt le comportement de plusieurs corps formant un} \textcolorblue{«mécanisme»}.
 
-Un corps représente donc une partie rigide ou flexible d'un système mécanique. Un lien désigne une connection entre au moins deux corps ou entre un corps et le sol: on retrouve donc les liaisons mécaniques classiques comme l'appui ponctuel, la rotule, le glissière, le cardan...
+Un corps représente donc une partie rigide ou flexible d'un système mécanique. Un lien désigne une connexion entre au moins deux corps ou entre un corps et le sol: on retrouve donc les liaisons mécaniques classiques comme l'appui ponctuel, la rotule, le glissière, le cardan...
 
 \medskip
 Dans cette approche, le terme de \textcolorblue{degré de liberté} désigne le nombre de mouvements cinématiques possibles, autrement dit le nombre de rotations ou déplacements qu'il reste à fixer pour définir complètement la position dans l'espace. De manière complémentaire, une \textcolorblue{condition de contrainte} désigne une restriction des libertés de mouvement du corps. Ce terme désigne également les contraintes pouvant porter sur les vitesses ou les accélérations de ces mouvements. Enfin, pour parfaire l'analyse, des contraintes supplémentaires peuvent être introduites comme des contraintes de glissement et de contact, entre autres.

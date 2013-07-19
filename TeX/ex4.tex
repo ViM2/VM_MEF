@@ -1,62 +1,43 @@
 \section{Exemple d'implémentation d'un post-traitement dans \ansys}
 
-Dans ce chapitre, nous présentons un manière d'implémenter la méthode de Reiss local mentionnée aux
-paragraphes~\ref{Sec-PT} et~\ref{Sec-interf}.
+Dans ce chapitre, nous présentons un manière d'implémenter la méthode «Reissner local» mentionnée aux paragraphes~\ref{Sec-PT} et~\ref{Sec-interf}.
 
 Il s'agit de calculer les contraintes à l'interface entre deux matériaux en utilisant la fonctionnelle mixte d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte}
 donnée à l'équation (\ref{Eq-HR2}).
 
 \medskip
-Le but est de montrer que même sur un maillage grossier, il est possible de correctement estimer les contraintes
-aux interfaces, pour peu que l'on dispose d'une méthode appropriée. Nous espérons qu'au passage, nous
-démontrerons également qu'il est assez simple d'implémenter des fonctions dans un code existant.
-
-
-
+Le but est de montrer que même sur un maillage grossier, il est possible de correctement estimer les contraintes aux interfaces, pour peu que l'on dispose d'une méthode appropriée. Nous espérons qu'au passage, nous démontrerons également qu'il est assez simple d'implémenter des fonctions dans un code existant.
 
 
 \medskip
 \subsection{Macro dans \ansys}
 
-Si un code ne dispose pas de la méthode que l'on souhaite utiliser, il est toujours possible de retraiter les
-résultats... toutefois, selon les codes, il est plus ou moins aisé d'implémenter des fonctions dans ledit code.
+Si un code ne dispose pas de la méthode que l'on souhaite utiliser, il est toujours possible de retraiter les résultats... toutefois, selon les codes, il est plus ou moins aisé d'implémenter des fonctions dans ledit code.
 
 \medskip
-\ansys est souvent qualifié de «code industriel», ce qui pourrait laisser supposer qu'il n'a pas la même capacité
-à résoudre les problèmes que des codes dits «de recherche» ou «spécialisés».
-Or il n'en est rien (même si en toute rigueur, il y a une quinzaine d'années il était plus faible que d'autres sur
-les non linéarités, ce qui n'est plus vrai depuis longtemps).
+\ansys est souvent qualifié de «code industriel», ce qui pourrait laisser supposer qu'il n'a pas la même capacité à résoudre les problèmes que des codes dits «de recherche» ou «spécialisés». Or il n'en est rien (même si en toute rigueur, il y a une quinzaine d'années il était plus faible que d'autres sur les non linéarités, ce qui n'est plus vrai depuis longtemps).
 
-C'est vrai que disposant d'une interface utilisateur remarquable (comparée à celle de nombreux autres codes),
-il est possible de ne réaliser les calculs que via cette interface, i.e. sans passer par un fichier batch... ce que ne
-font de toutes façons pas les gens sérieux (donc cet argument ne tient pas).
+C'est vrai que disposant d'une interface utilisateur remarquable (comparée à celle de nombreux autres codes), il est possible de ne réaliser les calculs que via cette interface, i.e. sans passer par un fichier batch... ce que ne font de toutes façons pas les gens sérieux (donc cet argument ne tient pas).
 
-Le qualificatif d'industriel peut également laisser penser que le logiciel est plus fermé que d'autres, mais ce
-n'est que partiellement le cas, en tous les cas on peut y remédier facilement, et c'est pourquoi nous allons
-présenter l'implémentation d'une macro dans ce code.
+Le qualificatif d'industriel peut également laisser penser que le logiciel est plus fermé que d'autres, mais ce n'est que partiellement le cas, en tous les cas on peut y remédier facilement, et c'est pourquoi nous allons présenter l'implémentation d'une macro dans ce code.
 
 \medskip
 Pour implémenter une nouvelle fonction dans \ansys, plusieurs méthodes s'offrent à nous. Nous citerons:
 \begin{itemize}
-  \item écrire le bout de programme et recompiler le noyau: c'est faisable en théorie, mais personnellement je n'ai
-	jamais réussi...
-  \item partir des fichiers de résultats binaires pour les retravailler: c'est également théoriquement faisable, mais
-	il faut décortiquer les formats d'écriture desdits fichiers, les relire, réécrire dans le même format...
-	et c'est donc beaucoup de travail (purement informatique);
+  \item écrire le bout de programme et recompiler le noyau: c'est faisable en théorie, mais personnellement je n'ai jamais réussi...
+  \item partir des fichiers de résultats binaires pour les retravailler: c'est également théoriquement faisable, mais 	il faut décortiquer les formats d'écriture desdits fichiers, les relire, réécrire dans le même format... et c'est donc beaucoup de travail (purement informatique);
   \item programmer la fonction directement sous \ansys (\ansys possède un langage assez riche et puissant);
-  \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en «coopération» avec un
-	petit programme extérieur.
+  \item ou alors, et c'est la voie que nous allons montrer, utiliser \ansys en «coopération» avec un petit programme extérieur.
 \end{itemize}
 
 \medskip
-La structure de la macro \ansys que nous proposons (et qui peut être également incluse dans les menus d'\ansys, mais
-nous n'entrons pas dans ce niveau de détail d'interfaçage) est très simple:
+La structure de la macro \ansys que nous proposons (et qui peut être également incluse dans les menus d'\ansys, mais nous n'entrons pas dans ce niveau de détail d'interfaçage) est très simple:
 \begin{itemize}
   \item on récupère les données dont nous avons besoin et on les stocke dans des fichiers externes (simples);
   \item on lance un programme externe (dont la structure sera exposée plus bas);
   \item on réintègre les résultats dans \ansys.
 \end{itemize}
-On peut alors se servir de toutes les fonctions de visualisation disponibles dans \ansys avec les résulats modifiés...
+On peut alors se servir de toutes les fonctions de visualisation disponibles dans \ansys avec les résultats modifiés...
 
 \color{gris}\scriptsize
 \begin{multicols}{2}
@@ -267,34 +248,20 @@ C---- Last line of VM2
 \color{black}\normalsize
 
 \medskip
-La routine READANS permet de lire les données. Celles-ci sont stockées dans les matrices
-COORD(NODMAX,3), DISP(NODMAX,2), XMAT(MATMAX,3) et NLT(NELTMAX,9).
+La routine READANS permet de lire les données. Celles-ci sont stockées dans les matrices COORD(NODMAX,3), DISP(NODMAX,2), XMAT(MATMAX,3) et NLT(NELTMAX,9).
 
 \medskip
-la routine CHELT détecte les interfaces, i.e. les faces dont les nœuds appartiennent à des éléments dont les propriétés
-matérielles sont différentes.
-Le vecteur NADJ(NODMAX,8) contient les numéros des deux éléments adjacents (posistions 1 et 2) ainsi que les
-numéros des nœuds de l'interface (position 3, 4 et 5).
+la routine CHELT détecte les interfaces, i.e. les faces dont les nœuds appartiennent à des éléments dont les propriétés matérielles sont différentes.
+Le vecteur NADJ(NODMAX,8) contient les numéros des deux éléments adjacents (posistions 1 et 2) ainsi que les numéros des nœuds de l'interface (position 3, 4 et 5).
 
 \medskip
-La routine MATER construit, pour chacune des faces de l'interface, la matrice de rigidité (aussi bien pour le cas isotrope
-que pour le cas orthotrope).
+La routine MATER construit, pour chacune des faces de l'interface, la matrice de rigidité (aussi bien pour le cas isotrope que pour le cas orthotrope).
 
 \medskip
 La routine LOCREISS calcule les contraintes nodales le long de chaque face.
 
 \medskip
-Les contraintes ayant été calculées pour les nœuds de chacune des faces de l'interface, on moyenne les résultats
-pour un nœud appartenant à plusieurs faces. C'est ce que fait la routine AVERAGE. À ce stade, nous disposons donc
-des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte}
-le long de toutes les interfaces présentes dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soient relus par la 
-macros \ansys.
-
-
-
-
-
-
+Les contraintes ayant été calculées pour les nœuds de chacune des faces de l'interface, on moyenne les résultats pour un nœud appartenant à plusieurs faces. C'est ce que fait la routine AVERAGE. À ce stade, nous disposons donc des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte} le long de toutes les interfaces présentes dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soient relus par la macros \ansys.
 
 
 
@@ -312,13 +279,10 @@ c) maillage permettant d'obtenir la «solution de référence» puisqu'il n'y a 
 
 Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en~$U$.
 
-Il s'agit d'une poutre sandwich dont les peaux sont en aluminium et l'âme en résine époxy.
-Par symétrie, seule une demi-poutre est modélisée. Elle est soumise à une force unitaire
-sur chaque montant.
+Il s'agit d'une poutre sandwich dont les peaux sont en aluminium et l'âme en résine époxy. Par symétrie, seule une demi-poutre est modélisée. Elle est soumise à une force unitaire sur chaque montant.
 
 \medskip
-Les points pour lesquels nous nous intéresserons aux contraintes sont les points indiqués sur la
-\fig{Fig-poutU-geo}, à savoir les points A, B, C, D, E et F.
+Les points pour lesquels nous nous intéresserons aux contraintes sont les points indiqués sur la \fig{Fig-poutU-geo}, à savoir les points A, B, C, D, E et F.
 
 
 
@@ -431,9 +395,7 @@ pldisp,1
 \end{multicols}
 \color{black}\normalsize
 
-On utilise la macro en tapant \verb|*USE,INTERF|, et les contraintes sont directement
-modifiées dans \ansys. On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les
-différentes composantes des contraintes.
+On utilise la macro en tapant \verb|*USE,INTERF|, et les contraintes sont directement modifiées dans \ansys. On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les différentes composantes des contraintes.
 
 
 \medskip
@@ -548,13 +510,8 @@ trace (def0 ET def1);
 \end{Verbatim}
 \end{multicols}
 \color{black}\normalsize
-Il reste maintenant à avoir les résultats dans les repères locaux éléementaires,
+Il reste maintenant à avoir les résultats dans les repères locaux élémentaires,
 et voir ce qui se passe aux interfaces...
-
-
-
-
-
 
 
 
@@ -564,8 +521,7 @@ et voir ce qui se passe aux interfaces...
 
 Dans les listings ci-dessus, nous n'avons pas exposé comme atteindre les contraintes, car cela sera fait en TP.
 
-Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour la déformée et les déplacements selon~$x$ et~$y$,
-et à la \fig{Fig-poutU-eps} pour les déformations.
+Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour la déformée et les déplacements selon~$x$ et~$y$, et à la \fig{Fig-poutU-eps} pour les déformations.
 \begin{figure}[h!]
   \includegraphics[height=80mm]{U-def.eps} \hfill
   \includegraphics[height=80mm]{U-ux.eps}\hfill
@@ -580,33 +536,22 @@ et à la \fig{Fig-poutU-eps} pour les déformations.
 \end{figure}
 
 
+\medskip
+Néanmoins nous présentons quelques résultats issus de l'analyse des contraintes aux interfaces avec ou sans utilisation de la méthode de Reissner local. Nous nous concentrerons sur les résultats numériques et graphiques permettant d'apprécier la précision de la méthode de Reissner local par rapport aux résultats d'\ansys aux points~$A$, $B$, $E$ et~$F$ ainsi que d'étudier l'influence de la valeur du rayon~$R$.
 
 \medskip
-Néanmoins nous présentons quelques résultats issus de l'analyse des contraintes aux interfaces avec ou sans
-utilisation de la méthode de Reissner local.
-Nous nous concentrerons sur les résultats numériques et graphiques permettant d'apprécier la précision de la
-méthode de Reissner local par rapport aux résultats d'\ansys aux points~$A$, $B$, $E$ et~$F$ ainsi que d'étudier
-l'influence de la valeur du rayon~$R$.
+Une première remarque s'impose: plus la valeur du rayon est faible, plus les résultats sont mauvais, quelle que soit la méthode employée (et vous devez savoir pourquoi à ce niveau du document).
 
 \medskip
-Une première remarque s'impose: plus la valeur du rayon est faible, plus les résultats sont mauvais, quelle que soit la
-méthode employée (et vous devez savoir pourquoi à ce niveau du document).
+Au point~$A$, l'influence des conditions aux limites est encore sensible: en plus de la condition de symétrie de la structure, le blocage du déplacement vertical induit une légère détérioration des résultats numériques. L'influence de cette condition aux limites n'est plus visible au point~$B$.
 
 \medskip
-Au point~$A$, l'influence des conditions aux limites est encore sensible: en plus de la condition de symétrie de la structure,
-le blocage du déplacement vertical induit une légère détérioration des résultats numériques. L'influence
-de cette condition aux limites n'est plus visible au point~$B$.
+En~$A$ et~$B$, la composante discontinue est~$\sigma_{xx}$, les composantes~$\sigma_{yy}$ et~$\sigma_{xy}$ sont continues. Par contre, aux points~$E$ et~$F$, c'est~$\sigma_{yy}$ la composante discontinue et~$\sigma_{xx}$ et $\sigma_{xy}$ les composantes continues.
 
 \medskip
-En~$A$ et~$B$, la composante discontinue est~$\sigma_{xx}$, les composantes~$\sigma_{yy}$ et~$\sigma_{xy}$ sont
-continues. Par contre, aux points~$E$ et~$F$, c'est~$\sigma_{yy}$ la composante discontinue et~$\sigma_{xx}$ et
-$\sigma_{xy}$ les composantes continues.
+D'après les résultats présentés ci-après, il est visible que la méthode de Reissner local permet d'améliorer les résultats par rapport à \ansys.
 
-\medskip
-D'après les résultats présentés ci-après, il est visible que la méthode de Reissner local permet d'améliorer les
-résultats par rapport à \ansys.
-
-\bigskip
+%\bigskip
 \begin{table}[h!]
 \centering\small
   \begin{tabular}{|l||r|r|r|r|r|}
@@ -681,7 +626,7 @@ résultats par rapport à \ansys.
 \caption{\label{Fig:asxy}~$\sigma_{xy}$ en~$A$}
 \end{figure}
 
-%\clearpage
+\clearpage
 \begin{table}[h!]
 \centering\small
   \begin{tabular}{|l||r|c|c|c|c|}
@@ -729,7 +674,7 @@ résultats par rapport à \ansys.
   \end{tabular}
   \caption{\label{Tab:pt-B} Résultats au point~$B$}
 \end{table}
-\clearpage
+%\clearpage
 %\begin{figure}
 %\centering
 %\input{tex/b-sxxc.2012.txt}
@@ -751,14 +696,14 @@ résultats par rapport à \ansys.
 \input{tex/b-syy.2012.txt}
 \caption{\label{Fig:bsyy}~$\sigma_{yy}$ en~$B$}
 \end{figure}
-%\clearpage
 
+\clearpage
 \begin{figure}[h!]
 \centering
 \input{tex/b-sxy.2012.txt}
 \caption{\label{Fig:bsxy}~$\sigma_{xy}$ en~$B$}
 \end{figure}
-\clearpage
+%\clearpage
 
 \begin{table}[h!]
 \centering\small
@@ -822,14 +767,14 @@ résultats par rapport à \ansys.
 %  \caption{\label{Fig:esxxs}~$\sigma_{yy}$ dans la peau en~$E$}
 %\end{figure}
 %
-%\clearpage
+\clearpage
 
 \begin{figure}[h!]
 \centering
 \input{tex/e-syy.2012.txt}
 \caption{\label{Fig:esyy}~$\sigma_{xx}$ en~$E$}
 \end{figure}
-\clearpage
+%\clearpage
 
 \begin{figure}[h!]
 \centering
@@ -837,6 +782,7 @@ résultats par rapport à \ansys.
 \caption{\label{Fig:esxy}~$\sigma_{xy}$ en~$E$}
 \end{figure}
 
+\clearpage
 \begin{table}[h!]
 \centering\small
   \begin{tabular}{|l||r|c|c|c|c|}
@@ -884,7 +830,7 @@ résultats par rapport à \ansys.
   \end{tabular}
 \caption{\label{Tab:pt-F} Résultats au point~$F$}
 \end{table}
-\clearpage
+%\clearpage
 
 %\begin{figure}
 %\centering
@@ -908,9 +854,10 @@ résultats par rapport à \ansys.
 \caption{\label{Fig:fsyy}~$\sigma_{xx}$ en~$F$}
 \end{figure}
 
+\clearpage
 \begin{figure}[h!]
 \centering
 \input{tex/f-sxy.2012.txt}
 \caption{\label{Fig:fsxy}~$\sigma_{xy}$ en~$F$}
 \end{figure}
-\clearpage
+%\clearpage

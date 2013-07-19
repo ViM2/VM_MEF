@@ -3,22 +3,15 @@
 \medskip
 \subsection{Problème considéré}
 
-Nous repartons de l'élément de barre 1D défini au paragraphe~\ref{Sec-barre1D}.
-
-Rappelons que la matrice de rigidité élémentaire et le vecteur des forces nodales élémentaires sont:
+Nous repartons de l'élément de barre 1D défini au paragraphe~\ref{Sec-barre1D}, et nous rappelons que la matrice de rigidité élémentaire et le vecteur des forces nodales élémentaires sont:
 \begin{equation} \MM{K} = \frac{2EA}L \MM*{1 & -1\\ -1& 1} %\end{equation}
-%et le vecteur des forces nodales élémentaires:
-%\begin{equation} 
 \qquad \text{ et } \qquad
 \VV{f} = \rho g A \frac{L}4 \VV*{1 \\1} \end{equation}
-%%%%%%%%%%%%
 \medskipvm
 L'assemblage de trois éléments, décrit au pagraphe~\ref{Sec-ass}, conduit à:
 \begin{equation} \MM{K}=\MM{K_1}+\MM{K_2}+\MM{K_3} \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
-%%%%%%%%%%%%
 \medskipvm
-On traitera le cas où les trois éléments ont la même longueurs ($L_1=L_2=L_3=L$) et où seul le nœud 4 est
-soumis à une force.
+On traitera le cas où les trois éléments ont la même longueurs ($L_1=L_2=L_3=L$) et où seul le nœud 4 est soumis à une force.
 %\medskip
 %Dans ce cas, on obtient les matrices élémentaires:
 %\begin{equation}
@@ -48,7 +41,7 @@ On obtient alors un système de type~$\MM{K}\VV{q}=\VV{F}$ à résoudre, avec la
 \end{equation}
 (avec~$F'=\rho g L^2/(8E)$).
 
-\medskipvm
+\medskip
 \subsection{Retour sur la résolution de systèmes linéaires}
 
 Soit à résoudre un système linéaire de type:
@@ -59,7 +52,6 @@ Ce système peut être réécrit par blocs sous la forme:
 \VV*{x_1 \\ x_2} =
 \VV*{b_1\\ b_2}
 \end{equation}
-%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Si~$A_{11}$ est inversible, alors on peut écrire la première ligne:
 \begin{equation}
@@ -71,13 +63,9 @@ A_{22} - A_{21}A_{11}^{-1}A_{12}x_2 = b_2 - A_{21}A_{11}^{-1}b_1
 \quad \text{ que l'on note: }
 S x_2=c
 \end{equation}
-\textcolorblue{La matrice~$S$ est appelée complément de Schur}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
-(présenté au paragraphe~\ref{Sec-Schur}), ou matrice condensée sur les degrés de liberté~$x_2$.
-Ce calcul est également identique à celui présenté à propos de la condensation statique au paragraphe~\ref{Sec-condens}.
-Dans ce cas, la matrice~$S$ est la matrice de rigidité du super-élément considéré.
+\textcolorblue{La matrice~$S$ est appelée complément de Schur}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe} (présenté au paragraphe~\ref{Sec-Schur}), ou matrice condensée sur les degrés de liberté~$x_2$. Ce calcul est également identique à celui présenté à propos de la condensation statique au paragraphe~\ref{Sec-condens}. Dans ce cas, la matrice~$S$ est la matrice de rigidité du super-élément considéré.
 
-%%%%%%%%%%%%%%%%%%%
-\medskipvm
+\medskip
 Le système initial (\ref{Eq-lin}) est équivalent à:
 \begin{equation}\label{Eq-Sch1}
 \MM*{A_{11} & A_{12}\\ \mO & S}
@@ -100,27 +88,17 @@ Nous cherchons toujours à résoudre notre système:
 \begin{equation}\MM{K}\VV{q}=\VV{f}\end{equation}
 
 \medskip
-Considérons la matrice~$\MM{D}$, \textcolorblue{matrice booléenne}, permettant d'extraire de l'ensemble des inconnues
-nodales~$\VV{q}$ le sous-ensemble~$\VV{q_2}=\MM{D}\VV{q}$ sur lesquels portent les conditions de déplacements imposés~$\VV{q_d}$
-\textcolorred{(ici on traite le cas général, i.e. les déplacements imposés peuvent être nuls ou non)}.
-La matrice \textcolorblue{$\MM{D}$ n'est pas rectangulaire}: si on souhaite imposer~$d$ déplacements parmis les~$n$ ddl
-du système, alors~$\MM{D}$ est de dimension~$d\times n$, et donc~$\VV{q_2}$ est bien un vecteur à~$d$ composantes,
-comme~$\VV{u_d}$.
+Considérons la matrice~$\MM{D}$, \textcolorblue{matrice booléenne}, permettant d'extraire de l'ensemble des inconnues nodales~$\VV{q}$ le sous-ensemble~$\VV{q_2}=\MM{D}\VV{q}$ sur lesquels portent les conditions de déplacements imposés~$\VV{q_d}$ \textcolorred{(ici on traite le cas général, i.e. les déplacements imposés peuvent être nuls ou non)}. La matrice \textcolorblue{$\MM{D}$ n'est pas rectangulaire}: si on souhaite imposer~$d$ déplacements parmi les~$n$ degrés de liberté du système, alors~$\MM{D}$ est de dimension~$d\times n$, et donc~$\VV{q_2}$ est bien un vecteur à~$d$ composantes, comme~$\VV{u_d}$.
 
 \medskip
-Le système~$\MM{K}\VV{q}=\VV{F}$ peut alors s'écrire, par blocs, en utilisant le complément de Schur (\ref{Eq-Sch1}) sous une
-forme triangulaire d'où l'on tire le sous-système correspondant aux déplacements non imposés:
+Le système~$\MM{K}\VV{q}=\VV{F}$ peut alors s'écrire, par blocs, en utilisant le complément de Schur (\ref{Eq-Sch1}) sous une forme triangulaire d'où l'on tire le sous-système correspondant aux déplacements non imposés:
 \begin{equation}
 \MM{K_{11}}\VV{q_1} = \VV{f_1} - \MM{K_{12}}\VV{u_d}
 \end{equation}
-%%%%%%%%%%%%%%%
 \medskipvm
-Ce système est \textcolorblue{réduit}, i.e. possède moins d'inconnues que le problème initial, mais il est nécessaire de
-modifier le chargement extérieur.
+Ce système est \textcolorblue{réduit}, i.e. possède moins d'inconnues que le problème initial, mais il est nécessaire de modifier le chargement extérieur.
 
-Son inconvénient est qu'il est nécessaire d'effectuer un \textcolorred{tri explicite} au sein des ddl, ce qui a pour conséquence de 
-«remplir» le terme~$\MM{K_{12}}$, et par suite peut générer un surcoût de calcul lorsque le nombre de ddl bloqué
-est grand.
+Son inconvénient est qu'il est nécessaire d'effectuer un \textcolorred{tri explicite} au sein des degrés de liberté, ce qui a pour conséquence de «remplir» le terme~$\MM{K_{12}}$, et par suite peut générer un surcoût de calcul lorsque le nombre de degrés de liberté bloqués est grand.
 
 C'est ainsi que procède le code \abaqus pour imposer les déplacements.
 
@@ -129,7 +107,7 @@ C'est ainsi que procède le code \abaqus pour imposer les déplacements.
 
 Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
 
-Dans ce cas, il n'est plus nécessaire de séparer explicitement les ddl, mais \textcolorred{la taille du problème augmente} puisqu'il faut lui adjoindre les multiplicateurs.
+Dans ce cas, il n'est plus nécessaire de séparer explicitement les degrés de liberté, mais \textcolorred{la taille du problème augmente} puisqu'il faut lui adjoindre les multiplicateurs.
 
 Le système à résoudre s'écrit très simplement:
 \begin{equation}\label{Eq-Lag1}
@@ -154,11 +132,8 @@ si~$\MM{K}$ est symétrique définie positive, alors:
 \end{theoreme}
 ce qui correspond aux cas où toutes les liaisons sont indépendantes.
 
-%%%%%%%%%%%%%%%%%
 \bigskipvm
-Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une factorisation de Gauß),\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} 
-et d'éviter des pivotages (que ferait une factorisation de Crout, i.e.~$\MM{LDL}^T$), on peut développer une autre technique, dite \textcolorblue{technique
-de double multiplicateur}, qui est celle employée dans \castem:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une factorisation de Gauß),\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} et d'éviter des pivotages (que ferait une factorisation de Crout, i.e.~$\MM{LDL}^T$), on peut développer une autre technique, dite \textcolorblue{technique de double multiplicateur}, qui est celle employée dans \castem:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \begin{equation}
 \left\{\begin{aligned}
 &\MM{K}\VV{q} = \VV{F} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
@@ -171,21 +146,17 @@ de double multiplicateur}, qui est celle employée dans \castem:\index{multiplic
 \medskip
 \subsection{Actions extérieures et déplacements imposés}
 
-L'interprétation physique des multiplicateurs de Lagrange conduit naturellement à une autre méthode:
-il est possible de considérer un déplacement imposé comme une action extérieure, par exemple comme
-la réaction d'un ressort ayant une raideur~$k$ très grande et un déplacement imposé à sa base.
+L'interprétation physique des multiplicateurs de Lagrange conduit naturellement à une autre méthode: il est possible de considérer un déplacement imposé comme une action extérieure, par exemple comme la réaction d'un ressort ayant une raideur~$k$ très grande et un déplacement imposé à sa base.
 
 \medskip
 On se retrouve alors avec un système du type:
 \begin{equation}
 \left(\MM{K} + \MMT{D}k\MM{D}\right) \VV{q} = \VV{F} + \MMT{D}k\MM{D}\VV{u_d}
 \end{equation}
-dans lequel on n'a fait qu'ajouter des termes à la matrice de rigidité sur les ddl correspondant à ces
-déplacements et au vecteur des forces généralisées sur les efforts duaux.
+dans lequel on n'a fait qu'ajouter des termes à la matrice de rigidité sur les degrés de liberté correspondant à ces déplacements et au vecteur des forces généralisées sur les efforts duaux.
 
 \medskip
-\textcolorred{Le problème réside dans le choix de la valeur de~$k$}: trop petite, la condition est mal imposée; 
-trop grande, le système devient très mal conditionné, voire numériquement singulier.
+\textcolorred{Le problème réside dans le choix de la valeur de~$k$}: trop petite, la condition est mal imposée; trop grande, le système devient très mal conditionné, voire numériquement singulier.
 
 \medskip
 \subsection{Retour sur notre exemple}
@@ -198,13 +169,10 @@ Nous devons toujours résoudre:
 \VV*{0\\0\\0\\F'}
 \end{equation}
 avec la condition aux limites~$u_1=0$.
-%%%%%%%%%%%%%%
 \medskipvm
 Tout d'abord, on pourra essayer de résoudre sans introduire de conditions aux limites afin de voir que le système est alors singulier. On obtient~$u_1=u_2=u_3=u_4$ et~$F'=0$.
-%%%%%%%%%%%%%%
 \medskipvm
-La méthode la plus rudimentaire consiste à prendre en compte directement et explicitement la condition aux limites.
-On supprime donc du système matriciel la ligne et la colonne correspondant à~$u_1$, et on résout:
+La méthode la plus rudimentaire consiste à prendre en compte directement et explicitement la condition aux limites. On supprime donc du système matriciel la ligne et la colonne correspondant à~$u_1$, et on résout:
 \begin{equation}\label{Eq-Base}
 u_1=0 \text{ et }
 \MM*{2 & -1 & 0 \\ -1 & 2 & -1\\ 0&-1&1}
@@ -214,9 +182,8 @@ u_1=0 \text{ et }
 \qquad \text{ d'où: } 
 \left\{\begin{aligned} &u_1=0 \\ &u_2=F' \\ &u_3=2F' \\ &u_4=3F' \end{aligned}\right.
 \end{equation}
-%%%%%%%%%%%%%%%%%%%
 \medskipvm
-Séparons maintenant les déplacements imposés des autres ddl, par une matrice booléenne~$\MM{D}$:
+Séparons maintenant les déplacements imposés des autres degrés de liberté, par une matrice booléenne~$\MM{D}$:
 $\MM{D}$ est une matrice~$1\times 4$, et seul le terme~$D_{11}=1$ est non nul:~$\VV{q_2}=\MM{D}\VV{q}=\VV{u_1}$,
 et le déplacement imposé est~$\VV{u_d}=\VV{0}$.
 
@@ -245,12 +212,9 @@ avec:
 \VV*{\VV{f}_1 =\VV*{0\\0\\F'}\\ 
 \VV{f}_2=\VV*{u_d=0}}
 \end{equation*}
-%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
-Par la méthode du complément de Schur, on est encore ramené à la résolution du système (\ref{Eq-Base}).
-On pourra s'amuser à calculer~$\MM{K}_{11}^{-1}$, $\MM{S}$...
+Par la méthode du complément de Schur, on est encore ramené à la résolution du système (\ref{Eq-Base}). On pourra s'amuser à calculer~$\MM{K}_{11}^{-1}$, $\MM{S}$...
 %$[K_{11}]^{-1} = \left[\begin{array}{ccc} 1&1&1 \\ 1&2&2\\ 1&2&3 \end{array} \right]$
-%%%%%%%%%%%%%%%%%
 \medskipvm
 Par la méthode des multiplicateurs de Lagrange, on obtient le système:
 \begin{equation}
@@ -262,7 +226,6 @@ Par la méthode des multiplicateurs de Lagrange, on obtient le système:
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda = -F' \end{array}\right.
 \end{equation}
-%%%%%%%%%%%%%%%%%%
 \medskipvm
 Par la technique du double multiplicateur, on obtient le système:
 \begin{equation}
@@ -273,7 +236,6 @@ Par la technique du double multiplicateur, on obtient le système:
 \qquad \text{ d'où: } 
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \\ \lambda_1 = -F' \\ \lambda_2 = -F' \end{array}\right.
 \end{equation}
-%%%%%%%%%%%%%%%%%%%
 \medskipvm
 En considérant une action extérieure, on obtient le système:
 \begin{equation}
@@ -285,10 +247,8 @@ En considérant une action extérieure, on obtient le système:
 \left\{\begin{array}{l} u_1=0 \\ u_2=F' \\ u_3=2F' \\ u_4=3F' \end{array}\right.
 \end{equation}
 
-
 \medskip
-Dans tous les exemples présentés, nous avons résolu les systèmes à la main, ce qui masque d'éventuels
-problèmes numériques (notamment dans le dernier cas).
+Dans tous les exemples présentés, nous avons résolu les systèmes à la main, ce qui masque d'éventuels problèmes numériques (notamment dans le dernier cas).
 
 \medskip
 \subsection{Relations linéaires entre ddl}
@@ -300,13 +260,12 @@ Cette situation se présente par exemple lors de la prise en compte de condition
 où~$\MM{D}$ n'est plus forcément booléenne.
 
 \medskip
-Nous alons l'appliquer ici, à titre d'exemple simple, au cas où la poutre considérée est maintenant constituée de deux poutres, que l'on va «coller» par une telle relation.
+Nous allons l'appliquer ici, à titre d'exemple simple, au cas où la poutre considérée est maintenant constituée de deux poutres, que l'on va «coller» par une telle relation.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=60mm]{Elt1D-ass2.eps}
 \end{figure}
-La poutre est consituée de la poutre~$1-2$ et de la poutre~$3-4-5$, les points~$2$ et~$3$ étant astreints à rester collés ensembles.
-%%%%%%%%%%%%%%%%%
+La poutre est constituée de la poutre~$1-2$ et de la poutre~$3-4-5$, les points~$2$ et~$3$ étant astreints à rester collés ensembles.
 \medskipvm
 En ajoutant la relation~$u_2=u_3$ par l'intermédiaire d'un multiplicateur de Lagrange\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}, c'est-à-dire en ajoutant le terme~$\lambda_1(u_2-u_3$), on obtient le système:
 \begin{equation}

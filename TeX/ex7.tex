@@ -1,18 +1,11 @@
 \section{Exemple: une toute première approche du contact avec \castem}
 
-Dans ce chapitre, nous présentons un petit exemple simple de contact unidirectionnel 
-sans frottement sous \castem.
-
-
-
-
+Dans ce chapitre, nous présentons un petit exemple simple de contact unidirectionnel sans frottement sous \castem.
 
 \medskip
 \subsection{Contact sur une surface infiniment rigide}
 
-Dans ce premier exemple, nous proposons d'étudier un carré soumis sur sa face supérieure à un
-déplacement imposé et reposant, sur sa face inférieure, sur une surface infiniment rigide, comme illustré
-à la \fig{Fig-Cont0}.
+Dans ce premier exemple, nous proposons d'étudier un carré soumis sur sa face supérieure à un déplacement imposé et reposant, sur sa face inférieure, sur une surface infiniment rigide, comme illustré à la \fig{Fig-Cont0}.
 \begin{figure}[ht]
   \center
   \includegraphics[height=40mm]{Contact0.eps}
@@ -50,14 +43,9 @@ s1 = l2 TRAN nhaut1 (0. haut1);
 \medskip
 On remarquera les choses suivantes:
 \begin{itemize}
-  \item la ligne~$l_2$ correspondant à la face inférieure du carré «repose», sans jeu, sur la
-	ligne~$l_1$ définissant la surface rigide sur laquelle le carré va venir buter (on aurait pu mettre
-	un jeu initial non nul, mais ce n'est pas nécessaire);
-  \item les orientations des lignes~$l_1$ et~$l_2$ sont inversées car les deux lignes en contact doivent se 
-	«tourner le dos» au sens des normales. Cela est obligatoire;
-  \item La surface de contact~$l_1$ est modélisée en utilisant~$nlong_1-2$ éléments pour le maillage, 
-	alors que le carré (ligne~$l_2$) n'en a que~$nlong_1$, afin que les maillages ne soient pas «compatibles» 
-	(i.e. que les nœuds ne tombent pas en face les uns des autres).
+  \item la ligne~$l_2$ correspondant à la face inférieure du carré «repose», sans jeu, sur la ligne~$l_1$ définissant la surface rigide sur laquelle le carré va venir buter (on aurait pu mettre un jeu initial non nul, mais ce n'est pas nécessaire);
+  \item les orientations des lignes~$l_1$ et~$l_2$ sont inversées car les deux lignes en contact doivent se  «tourner le dos» au sens des normales. Cela est obligatoire;
+  \item La surface de contact~$l_1$ est modélisée en utilisant~$nlong_1-2$ éléments pour le maillage, alors que le carré (ligne~$l_2$) n'en a que~$nlong_1$, afin que les maillages ne soient pas «compatibles» (i.e. que les nœuds ne tombent pas en face les uns des autres).
 \end{itemize}
 
 \color{gris}\scriptsize
@@ -86,8 +74,7 @@ CL0 = CLk5 ET CLl3 ET Rigid1 ET Rigid2;
 \color{black}\normalsize
 
 \medskip
-Nous sommes en élasticité linéaire... forces et déplacements sont proportionnels et il n'y a aucun problème 
-de convergence.
+Nous sommes en élasticité linéaire... forces et déplacements sont proportionnels et il n'y a aucun problème de convergence.
 
 La résolution se fait le plus simplement du monde.
 
@@ -130,11 +117,7 @@ fin;
 \color{black}\normalsize
 
 \medskip
-On pourra ensuite mettre~$jeu_1$ a une valeur différente de zéro et refaire le calcul.
-On s'apercevra que cela fonctionne toujours. La visualisation de la déformée permettra
-de bien comprendre comment s'effectue le calcul (on rappelle que dans \castem, toutes 
-les conditions aux limites sont introduites par l'intermédiaire de multiplicateurs de
-Lagrange: voir paragraphe~\ref{Sec-cast}).
+On pourra ensuite mettre~$jeu_1$ a une valeur différente de zéro et refaire le calcul. On s'apercevra que cela fonctionne toujours. La visualisation de la déformée permettra de bien comprendre comment s'effectue le calcul (on rappelle que dans \castem, toutes les conditions aux limites sont introduites par l'intermédiaire de multiplicateurs de Lagrange: voir paragraphe~\ref{Sec-cast}).
 
 \begin{figure}[ht]
   \subfloat[déformée]{\includegraphics[height=40mm]{Contact1-def.eps}} \hfill
@@ -148,22 +131,13 @@ Lagrange: voir paragraphe~\ref{Sec-cast}).
 
 
 
-
-
-
-
-
-
-
 \medskip
 \subsection{Contact entre deux solides}
 
-On peut faire une remarque sur le calcul précédent: que se passe-t-il si la surface sur laquelle
-on s'appuie n'est plus infiniment rigide ?
+On peut faire une remarque sur le calcul précédent: que se passe-t-il si la surface sur laquelle on s'appuie n'est plus infiniment rigide ?
 
 \medskip
-On pourrait modéliser la partie inférieure et lui appliquer les forces de réactions qui ont été
-calculées précédemment.
+On pourrait modéliser la partie inférieure et lui appliquer les forces de réactions qui ont été calculées précédemment.
 
 Nous n'allons évidemment pas procéder ainsi et laisser \castem tout calculer pour nous...
 
@@ -243,11 +217,9 @@ fin;
 \color{black}\normalsize
 
 \medskip
-Cette fois-ci, nous avons mis~$jeu_1$ a une valeur non nulle pour bien comprendre
-comment se fait la résolution de ce système numérique.
+Cette fois-ci, nous avons mis~$jeu_1$ a une valeur non nulle pour bien comprendre comment se fait la résolution de ce système numérique.
 
-On obtient les résultats illustrés à la \fig{Fig-Cont21} pour la déformée et les forces de réactions et à la \fig{Fig-Cont22}
-pour les déplacements et contraintes.
+On obtient les résultats illustrés à la \fig{Fig-Cont21} pour la déformée et les forces de réactions et à la \fig{Fig-Cont22} pour les déplacements et contraintes.
 
 \begin{figure}[ht]
   \includegraphics[height=40mm]{Contact2-pb.eps} \hfill 
@@ -270,41 +242,22 @@ pour les déplacements et contraintes.
 
 
 
-
-
-
-
-
-
 \medskip
 \subsection{Résolution pas à pas}
 
-Les résolutions présentées ci-dessus étaient finalement de type classique, i.e. inversion
-d'un système comprenant les conditions aux limites et le chargement.
+Les résolutions présentées ci-dessus étaient finalement de type classique, i.e. inversion d'un système comprenant les conditions aux limites et le chargement.
 
-Cela fonctionnait particulièrement bien car nous étions en élasticité linéaire...
-mais que se passerait-il si le carré considéré avait un comportement non linéaire,
-en particulier s'il devait être le siège de déformations permanentes ?
+Cela fonctionnait particulièrement bien car nous étions en élasticité linéaire... mais que se passerait-il si le carré considéré avait un comportement non linéaire, en particulier s'il devait être le siège de déformations permanentes ?
 
-On se doute aisément que le modèle rudimentaire ne fonctionnerait pas.
-C'est pourquoi nous allons le modifier afin d'introduire une résolution pas à pas, qui permet 
-d'appliquer un chargement (ou un déplacement imposé) de manière progressive.
+On se doute aisément que le modèle rudimentaire ne fonctionnerait pas. C'est pourquoi nous allons le modifier afin d'introduire une résolution pas à pas, qui permet d'appliquer un chargement (ou un déplacement imposé) de manière progressive.
 
 \medskip
-Nous ne présentons pas ici de comportement non linéaire pour les matériaux, cela se fait
-en TD. Toutefois, nous présentons le même calcul que précédemment, mais codé
-pour une résolution pas à pas.
+Nous ne présentons pas ici de comportement non linéaire pour les matériaux, cela se fait en TD. Toutefois, nous présentons le même calcul que précédemment, mais codé pour une résolution pas à pas.
 
 \medskip
-Afin de définir le chargement dans le temps, nous commençons par construire la liste de réels~$Ltemp_1$ 
-qui contient les pas de temps, à savoir~$0.0$ et~$1.0$ (2 pas de temps suffisent, puisque nous
-restons sur une analyse élastique linéaire dans cet exemple).
+Afin de définir le chargement dans le temps, nous commençons par construire la liste de réels~$Ltemp_1$ qui contient les pas de temps, à savoir~$0.0$ et~$1.0$ (2 pas de temps suffisent, puisque nous restons sur une analyse élastique linéaire dans cet exemple).
 
-À partir de cette discrétisation du temps (vraiment sommaire pour le coup), nous définissons l'objet~$evo_1$
-de type évolution pour chacun des pas de temps.~$evo_1$ est donc une fonction du temps, qui va nous servir
-à affecter le déplacement imposé:~$CharU_1$ est de type chargement, nécessaire pour la résolution par
-PASAPAS. Avec l'option DIMP, on signifie qu'il s'agit d'un déplacement imposé. Ainsi~$CharU_1$ contient 
-l'évolution des déplacements imposés sur la condition DCLl3 au cours du temps.
+À partir de cette discrétisation du temps (vraiment sommaire pour le coup), nous définissons l'objet~$evo_1$ de type évolution pour chacun des pas de temps.~$evo_1$ est donc une fonction du temps, qui va nous servir à affecter le déplacement imposé:~$CharU_1$ est de type chargement, nécessaire pour la résolution par PASAPAS. Avec l'option DIMP, on signifie qu'il s'agit d'un déplacement imposé. Ainsi~$CharU_1$ contient l'évolution des déplacements imposés sur la condition DCLl3 au cours du temps.
 
 \medskip
 Les résultats sonr présentés à la \fig{Fig-Cont1}, après le listing.
@@ -413,12 +366,7 @@ fin;
 On obtient les mêmes résultats que ceux déjà présentés (voir \fig{Fig-Cont21} et \fig{Fig-Cont22}).
 
 \bigskip
-Nous pouvons mentionner également que ce type de calcul permet de calculer la géométrie de
-pièces réalisées en thermocompression.
-Considérons un matelas de matière souple placé entre le plateau supérieur d'une presse et
-un outil comportant un logement, comme illustré à la \fig{Fig-Thermo}a.
-Une fois que le plateau de presse est descendu, on obtient la pièce en forme donnée 
-à la \fig{Fig-Thermo}b.
+Nous pouvons mentionner également que ce type de calcul permet de calculer la géométrie de pièces réalisées en thermocompression. Considérons un matelas de matière souple placé entre le plateau supérieur d'une presse et un outil comportant un logement, comme illustré à la \fig{Fig-Thermo}a. Une fois que le plateau de presse est descendu, on obtient la pièce en forme donnée à la \fig{Fig-Thermo}b.
 
 \begin{figure}[ht]
   \center
@@ -429,20 +377,12 @@ Une fois que le plateau de presse est descendu, on obtient la pièce en forme do
 \end{figure}
 
 \medskip
-À partir des listings précédents, il est aisé d'obtenir les résultats de la \fig{Fig-Thermo}b...
-et nous vous invitons à le faire.
+À partir des listings précédents, il est aisé d'obtenir les résultats de la \fig{Fig-Thermo}b... et nous vous invitons à le faire.
 
 \medskip
-Une fois ce premier calcul réalisé (et donc pleins de fierté et de confiance en nous), nous vous proposons 
-d'utiliser un matelas de matière plus épais, \textcolorred{vraiment plus épais}. 
-Le but est que lors du process, lorsque le plateau de la presse descend (situation réelle ou simulée), 
-la matière vienne suffisament remplir la cavité du moule pour qu'il y ait contact entre la pièce déformée 
-et le fond de la cavité.
+Une fois ce premier calcul réalisé (et donc pleins de fierté et de confiance en nous), nous vous proposons d'utiliser un matelas de matière plus épais, \textcolorred{vraiment plus épais}. Le but est que lors du process, lorsque le plateau de la presse descend (situation réelle ou simulée), la matière vienne suffisamment remplir la cavité du moule pour qu'il y ait contact entre la pièce déformée et le fond de la cavité.
 
 \bigskip
-Nous allons alors constater que le contact n'est pris en compte que dans la partie supérieure du
-moule, mais pas sur les côtés de la cavité, ni au fond de celle-ci...
+Nous allons alors constater que le contact n'est pris en compte que dans la partie supérieure du moule, mais pas sur les côtés de la cavité, ni au fond de celle-ci...
 
-En TP, nous travaillerons à comprendre pourquoi (qu'est-ce que le code de calcul a compris de ce 
-que nous lui avons proposé comme modélisation ?) et à réaliser un modèle correspondant
-à ce que nous souhaitions.
+En TP, nous travaillerons à comprendre pourquoi (qu'est-ce que le code de calcul a compris de ce que nous lui avons proposé comme modélisation ?) et à réaliser un modèle correspondant à ce que nous souhaitions.

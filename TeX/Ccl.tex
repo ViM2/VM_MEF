@@ -2,35 +2,23 @@
 %\addcontentsline{toc}{chapter}{Conclusion}
 \markboth{Conclusion}{}
 
-
-En guise de conclusion à ce document (qui se poursuit par des exemples), nous souhaitions synthétiser
-les problèmes qui peuvent survenir lors d'un calcul et ouvrir sur quelques perspectives.
-
+En guise de conclusion à ce document (qui se poursuit par des exemples), nous souhaitions synthétiser les problèmes qui peuvent survenir lors d'un calcul et ouvrir sur quelques perspectives.
 
 
 \medskip
 \section*{Sur la fiabilité des résultats}
 \addcontentsline{toc}{section}{Sur la fiabilité des résultats}
 
-La fiabilité d'un résultat dépend de celle de toute la chaîne d'approximation réalisées depuis la modélisation
-du phénomènes physique jusqu'à l'obtention des résultats numériques fournis par le programme de calcul.
-Nombre de ces problèmes ont été mentionnés au cours de ce document. Rappelons les ici:
+La fiabilité d'un résultat dépend de celle de toute la chaîne d'approximation réalisées depuis la modélisation du phénomènes physique jusqu'à l'obtention des résultats numériques fournis par le programme de calcul. Nombre de ces problèmes ont été mentionnés au cours de ce document. Rappelons les ici:
 \begin{itemize}
-  \item \textcolorblue{erreurs de modélisation}: aussi bien au niveau du choix des équations mathématiques décrivant le phénomène,
-	que de la représentativité des conditions aux limites choisies;
-  \item \textcolorblue{erreurs de discrétisation}: elles sont liées aux choix des méthodes numériques (méthode des éléments finis ou autre), aux problèmes
-	d'intégration, de représentation du domaine...
-  \item \textcolorblue{erreurs de verrouillage numérique}: elles concernent des problèmes survenant lors du traitement de paramètres
-	introduits dans le calcul tels que les pas de temps, des modes parasites, des instabilités numériques...
-  \item \textcolorblue{incertitudes des données}: connaissance approximative des lois de comportement, des éléments finisforts,
-	des liaisons... Il faut alors procéder à une approche fiabiliste qui n'a pas été présentée dans ce document;
-  \item \textcolorblue{erreurs d'arrondis}: la manière dont un ordinateur traite un nombre est soumise à des contraintes
-	(représentation en base 2 par exemple, approximation à~$n$ décimales...). Ces erreurs, mêmes infimes, peuvent
-	dans certains cas se cumuler pour aboutir à un résultat faux.
+  \item \textcolorblue{erreurs de modélisation}: aussi bien au niveau du choix des équations mathématiques décrivant le phénomène, que de la représentativité des conditions aux limites choisies;
+  \item \textcolorblue{erreurs de discrétisation}: elles sont liées aux choix des méthodes numériques (méthode des éléments finis ou autre), aux problèmes d'intégration, de représentation du domaine...
+  \item \textcolorblue{erreurs de verrouillage numérique}: elles concernent des problèmes survenant lors du traitement de paramètres introduits dans le calcul tels que les pas de temps, des modes parasites, des instabilités numériques...
+  \item \textcolorblue{incertitudes des données}: connaissance approximative des lois de comportement, des efforts, des liaisons... Il faut alors procéder à une approche fiabiliste qui n'a pas été présentée dans ce document;
+  \item \textcolorblue{erreurs d'arrondis}: la manière dont un ordinateur traite un nombre est soumise à des contraintes (représentation en base 2 par exemple, approximation à~$n$ décimales...). Ces erreurs, mêmes infimes, peuvent dans certains cas se cumuler pour aboutir à un résultat faux.
 \end{itemize}
 
-Lorsque cela est possible, on n'hésitera donc pas a effectuer des comparaison avec des essais, ce que l'on nomme
-\textcolorblue{recalage calcul-essais}.
+Lorsque cela est possible, on n'hésitera donc pas a effectuer des comparaison avec des essais, ce que l'on nomme \textcolorblue{recalage calcul-essais}.
 
 
 
@@ -38,31 +26,18 @@ Lorsque cela est possible, on n'hésitera donc pas a effectuer des comparaison a
 \section*{Quelques perspectives}
 \addcontentsline{toc}{section}{Quelques perspectives}
 
-Le calcul scientifique d'une manière générale, et la méthode des éléments finis en particulier, sont utilisés de manière intensive dans
-tous les secteurs.
+Le calcul scientifique d'une manière générale, et la méthode des éléments finis en particulier, sont utilisés de manière intensive dans tous les secteurs.
 \medskipvm
-Toute amélioration de la performance des méthodes numériques est donc un enjeu majeur: rapidité,
-précision, fiabilité...
+Toute amélioration de la performance des méthodes numériques est donc un enjeu majeur: rapidité, précision, fiabilité...
 
-On pourra citer le développement de codes de calculs parallèles, ou l'amélioration des techniques d'optimisation
-par les algorithmes génétiques.
+On pourra citer le développement de codes de calculs parallèles, ou l'amélioration des techniques d'optimisation par les algorithmes génétiques.
 \medskipvm
-Nous avons parlé des modèles multi-échelle essentiellement pour les matériaux, mais le développement de modèles
-pour les structures minces (plaques, coques) rentre dans cette catégorie... et si les théories de plaques sont aujourd'hui
-assez bien maîtrisées (d'un point de vue théorique et dans les codes), il reste des problèmes ouverts concernant
-les coques minces.
+Nous avons parlé des modèles multi-échelle essentiellement pour les matériaux, mais le développement de modèles pour les structures minces (plaques, coques) rentre dans cette catégorie... et si les théories de plaques sont aujourd'hui assez bien maîtrisées (d'un point de vue théorique et dans les codes), il reste des problèmes ouverts concernant les coques minces.
 
 \medskip
-Les problèmes inverses constituent également un défi d'intérêt.
-Ils permettent par exemple de remonter aux caractéristiques d'un matériau (qui seront utilisées dans d'autres
-calculs), à partir d'essais sur un échantillon.
+Les problèmes inverses constituent également un défi d'intérêt. Ils permettent par exemple de remonter aux caractéristiques d'un matériau (qui seront utilisées dans d'autres calculs), à partir d'essais sur un échantillon.
 
-C'est également souvent la seule voie d'identification des paramètres et comportement pour tout ce qui
-concerne la biomécanique et la modélisation du corps humain en général, car il n'est pas possible d'effectuer
-des mesures réelles.
+C'est également souvent la seule voie d'identification des paramètres et comportement pour tout ce qui concerne la biomécanique et la modélisation du corps humain en général, car il n'est pas possible d'effectuer des mesures réelles.
 
 \medskip
-Enfin, et peut-être surtout, les modèles développés aujourd'huis se veulent de plus en plus réalistes.
-Il devient alors indispensable de coupler des modèles numériques différents, ce qui n'est possible
-que si, au préalable, on a su établir des passerelles, des lieux de travail commun, entre des
-spécialistes de plusieurs disciplines.
+Enfin, et peut-être surtout, les modèles développés aujourd'hui se veulent de plus en plus réalistes. Il devient alors indispensable de coupler des modèles numériques différents, ce qui n'est possible que si, au préalable, on a su établir des passerelles, des lieux de travail commun, entre des spécialistes de plusieurs disciplines.
