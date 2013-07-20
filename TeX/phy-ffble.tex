@@ -168,8 +168,8 @@ Trouver~$u(x,t)$ tel que:
 \begin{equation}
 \left\{
 \begin{aligned}
-&\partial_t u -\Delta u = f &&\text{ dans } [0,T]\times\Omega\\
-&u(t,\cdot) = 0 &&\text{ sur } [0,T]\times\Gamma\\
+&\partial_t u -\Delta u = f &&\text{ dans } \intff{0}{T}\times\Omega\\
+&u(t,\cdot) = 0 &&\text{ sur } \intff{0}{T}\times\Gamma\\
 &u(0,\cdot)=u_0 &&\text{ sur } \Omega
 \end{aligned}
 \right.
@@ -182,11 +182,11 @@ On opère comme précédemment. Toutefois, nous faisons jouer à la variable de 
 \end{equation}
 Pour donner un sens à cette formulation variationnelle, une certaine régularité de~$u$ est requise:
 \begin{equation}
-u\in V = C^0\left([0,T],L^2(\Omega)\right)\cap L^2\left([0,T],H^1_0(\Omega)\right)
+u\in V = C^0\left(0,T;L^2(\Omega)\right)\cap L^2\left(0,T;H^1_0(\Omega)\right)
 \end{equation}
-L'espace~$C^0\left([0,T],L^2(\Omega)\right)$ est l'espace des fonctions~$v(t,x)$ telles
+L'espace~$C^0\left(0,T;L^2(\Omega)\right)$ est l'espace des fonctions~$v(t,x)$ telles
 que pour tout~$t$, $v(t,\cdot)$ est une fonction de~$L^2(\Omega)$;
-l'espace~$L^2\left([0,T],H^1_0(\Omega)\right)$ est l'espace des fonctions~$v(t,x)$ telles
+l'espace~$L^2\left(0,T;H^1_0(\Omega)\right)$ est l'espace des fonctions~$v(t,x)$ telles
 que pour presque tout~$t$, $v(t,\cdot)$ est une fonction de~$H^1_0(\Omega)$ et
 $\int_0^T \|v\|^2_{H^1_0(\Omega)}<\infty$. Le premier est un Banach, le second, un Hilbert.
 
@@ -242,10 +242,10 @@ On introduit également \textcolorblue{l'espace~$L^2_0(\Omega)$ des fonction~$L^
 La \textcolorblue{formulation variationnelle mixte (vitesse/pression)} est alors:
 Trouver~$(u,p)\in H^1_0(\Omega)\times L^2_0(\Omega)$ tels que:
 \begin{equation}\left\{
-\begin{array}{rll}
-a(u,v)+b(v,p) &= (f,v) & \forall v\in H^1_0(\Omega)^n \\
-b(u,q) &=0 &\forall q \in L^2_0(\Omega)
-\end{array}\right.
+\begin{aligned}
+a(u,v)+b(v,p) &= (f,v) && \forall v\in H^1_0(\Omega)^n \\
+b(u,q) &=0 &&\forall q \in L^2_0(\Omega)
+\end{aligned}\right.
 \end{equation}
 Notons que dans le seconde équation, la fonction test~$q$ pourrait de manière équivalente être cherchée dans~$L^2(\Omega)$ (pas besoin de la moyenne nulle).
 
@@ -284,7 +284,7 @@ avec~$n$ la normale extérieure à~$\Gamma$. Cette condition est \textcolorred{n
 Introduisons également \textcolorblue{les espaces de fonctions} à valeurs dans un espace
 de Banach~$B$. Pour~$q\ge1$, on a:
 \begin{equation}
-L^q(0,T;B) =\left\{ v: [0,T]\rightarrow B; v \text{ est mesurable et }
+L^q(0,T;B) =\left\{ v: \intff{0}{T}\rightarrow B; v \text{ est mesurable et }
 \dint_0^T \|v(t)\|^q_B \mathrm dt<+\infty\right\}
 \end{equation}
 Ces espaces sont munis de la norme:

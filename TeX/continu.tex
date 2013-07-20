@@ -40,23 +40,16 @@ Il existe une notion de continuité uniforme qui est plus forte que la simple co
 
 \medskip
 La continuité est une propriété topologique (donc indépendante de la métrique).
-
-\medskip
 \begin{definition}[Continuité d'une fonction en un point (version topologique)]
 Soit~$f$ une application d'un espace topologique~$E$ dans un espace topologique $F$.
-On dit que \textcolorblue{$f$ est continue en un point}~$a$ de~$E$ si, quelque soit le voisinage~$W$ de~$f(a)$ dans~$F$, il existe un voisinage~$V$ de~$a$ dans~$E$ tel que:
-\begin{equation}
-\forall x\in V, \quad f(x)\in W
-\end{equation}
-i.e. que l'image réciproque de tout voisinage de~$f(a)$ est un voisinage de~$a$.
+On dit que \textcolorblue{$f$ est continue en un point}~$a$ de~$E$ si, quelque soit le voisinage~$W$ de~$f(a)$ dans~$F$, il existe un voisinage~$V$ de~$a$ dans~$E$ tel que $\forall x\in V$, $f(x)\in W$, c'est-à-dire que l'image réciproque de tout voisinage de~$f(a)$ est un voisinage de~$a$.
 \end{definition}
-
 \textcolorgris{Cette définition est donnée pour la culture, car nous n'avons pas rappelé la notion de voisinage dans ce document. Cela n'a pas d'importance dans ce contexte puisque nous travaillerons sur des cas moins généraux.}
 
 \medskip
 Évidemment, une application de~$E$ dans~$F$ est \textcolorblue{continue} si elle est continue en tout point de~$E$.
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Ramenons nous à des choses plus connues et plus en lien avec ce document.
 Dans le cas des espaces métriques, la continuité se définit comme suit.
 
@@ -133,7 +126,7 @@ Si~$(E, d)$ et~$(F, d')$ sont deux espaces métriques, une fonction~$f: E \right
 \medskip
 La continuité höldérienne d'une fonction dépend donc d'un paramètre réel strictement positif~$a \in \intof{0}{1}$, et prend en compte toutes les variations de la valeur de la fonction sur son ensemble de définition.
 \medskip
-Si~$0 < a \leq1$ est fixé, l'ensemble des fonctions réelles~$a$-höldériennes est un espace vectoriel, conventionnellement noté~$\mathcal{C}^{0, a}(E,\RR)$.
+Si~$0 < a \le 1$ est fixé, l'ensemble des fonctions réelles~$a$-höldériennes est un espace vectoriel, conventionnellement noté~$\mathcal{C}^{0, a}(E,\RR)$.
 
 \medskip
 \begin{theoreme}
@@ -156,9 +149,9 @@ Toute fonction réelle lipschitzienne est (absolument continue donc à variation
 \section{Dérivée}\index{dérivée!classique}
 \medskip
 \begin{definition}[Dérivée d'une fonction]
-Soit~$f$ une application d'un ouvert~$\Omega$ du corps des scalaires~$\KK$ (resp. un intervalle de~$\RR$) dans un espace affine normé~$F$ (resp.~$\RR$), alors on peut donner un sens, pour~$a\in\Omega$ à la quantité:
+Soit~$f$ une application d'un ouvert~$\Omega$ du corps~$\KK$ (resp. un intervalle de~$\RR$) dans un espace affine normé~$F$ (resp.~$\RR$), alors on peut donner un sens, pour~$a\in\Omega$, à la quantité:
 \begin{equation}
-f'(a)=\lim_{\substack{h\ne0\\h\to0\\a+h\in\Omega}} \dfrac{f(a+h)-f(a)}h \in F
+f'(a)=\lim_{\substack{h\ne0,h\to0\\a+h\in\Omega}} \dfrac{f(a+h)-f(a)}h \in F
 \end{equation}
 que l'on appelle le vecteur dérivé ou simplement la \textcolorblue{dérivée} de $f$ en~$a$.
 \end{definition}

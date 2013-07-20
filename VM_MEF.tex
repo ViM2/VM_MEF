@@ -1,5 +1,5 @@
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
-\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
+%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
 \newif\ifVersionDuCompilateurEstVincent% par défaut vaut false, donc compilation avec les packages de Mathias
 \VersionDuCompilateurEstVincenttrue% à commenter pour compileur de Mathias
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
@@ -143,8 +143,12 @@ Nous ne ferons appel qu'à des notions mathématiques de bases généralement d�
 
 Nous espérons, grâce à cette présentation théorique montrer toute la souplesse et la puissance de la méthode, afin de permettre au lecteur d'envisager d'autres simulations que celles qu'il a pu déjà réaliser par le passé.
 
+\medskip
+Pourquoi un ingénieur pratiquant déjà les éléments finis devrait-il s'intéresser plus en profondeur aux mathématiques derrière la méthode ?
 
+Tout d'abord parce que c'est beau et intéressant: deux raisons parfaitement licites et suffisantes. Mais surtout parce que le monde change! On souhaite des modélisations toujours plus proches du réel, toujours plus détaillées, toujours plus complexes, toujours plus couplées... Par ailleurs un constat s'impose: si la physique d'hier était essentiellement celle du continu, celle d'aujourd'hui est le règne du discontinu. Ainsi, connaître l'intégrale de Riemann et savoir intégrer par partie étaient autrefois des outils suffisants, alors qu'aujourd'hui il faut en passer par les dérivées au sens des distributions, les espaces de Sobolev, l'intégrale de Lebesgue...
 
+Rester sur les outils d'hier c'est se condamner à résoudre les problèmes d'hier! C'est pourquoi ce document a vu le jour, pour essayer de présenter et d'expliquer «simplement» (nous l'espérons) les mathématiques derrière la méthode, mais sans demander au lecteur de se transformer en mathématicien.
 
 
 \bigskip
@@ -202,7 +206,7 @@ Il se peut qu'il subsistent quelques erreurs, notamment au niveau des nationalit
 
 En préambule à ce document, nous tenions à synthétiser \textcolorblue{la démarche complète de l'ingénieur numéricien}:
 \begin{itemize}
-   \item Modélisation / mise en équations -- Construction du problème continu (système d'EDP).
+   \item Modélisation / mise en équations -- Construction du problème continu (système d'équations aux dérivées partielles).
    \item Analyse mathématique du problème posé -- Existence, unicité, propriétés des solutions.
    \item Conception d'une méthode numérique -- Construction d'un problème discrétisé.
    \item Analyse numérique -- Questions de stabilité, convergence, précision.

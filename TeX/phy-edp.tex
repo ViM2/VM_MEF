@@ -5,16 +5,12 @@ La première partie était uniquement des «rappels» de notions mathématiques 
 Cette deuxième partie va donc présenter des problèmes physiques, sous leur forme forte (dans ce chapitre), puis sous forme faible et variationnelle; la théorie de la formulation faible étant exposée entre temps.
 \end{abstract}
 
-
-
 \medskip
 \section{Introduction}
-
 Une \textcolorblue{équation différentielle} est une relation entre une ou plusieurs fonctions inconnues et leurs dérivées. 
 \textcolorblue{L'ordre d'une équation différentielle} correspond au degré maximal de dérivation auquel l'une des fonctions inconnues a été soumise.
 
 Pour les méthodes explicites de résolution des équations différentielles, on ira voir en annexes.
-
 
 \medskip
 \begin{histoire}%
@@ -88,7 +84,6 @@ Pour revenir à des exemples plus connus du lecteurs, on n'oubliera pas que la r
 \begin{equation} m\ddot{x}=f(x)
 \end{equation}
 est une d'équation différentielle du second ordre.\index{ED-EDP!relation fondamentale de la dynamique}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}
-
 On pourrait multiplier les exemples comme l'équation de l'oscillation d'une masse suspendue à un ressort:
 \begin{equation}
 \ddot{x} = - c \dot{x} - \omega^2x 
@@ -98,8 +93,7 @@ avec ($c>0$) ou sans ($c=0$) frottement.
 \medskip
 Comme on le voit sur les exemples ci-dessus, et comme on s'en souvient sans doute, il est nécessaire, pour déterminer complètement la solution d'une équation différentielle (ou d'une équation aux dérivées partielles), de disposer de valeurs de la solution en certains points. On appelle ces «contraintes», des \textcolorblue{conditions aux limites}.
 
-Les conditions aux limites types sont présentées au paragraphe suivant.
-
+%Les conditions aux limites types sont présentées au paragraphe suivant.
 
 \medskip
 \begin{histoire}%
@@ -127,17 +121,18 @@ La solution de l'intégration de ces équations allait venir d'un mathématicien
 
 \medskip
 \section{Conditions aux limites}\index{condition aux limites}
-
 Comme nous venons de le dire, les \textcolorblue{conditions aux limites} sont des contraintes (des valeurs) que l'on impose à la fonction solution (ou à certaines de ces dérivées) sur tout ou partie du domaine~$\Omega$, et/ou sur toute ou partie de sa frontière~$\Gamma=\partial\Omega$.
-
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 D'un point de vue «vocabulaire», certains types de conditions aux limites standard existent qui sont listées ci-après.
 
 \medskip
 \subsection{Dirichlet -- valeurs aux bords}\index{condition aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
-
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 On parle de \textcolorblue{condition de Dirichlet} imposée à une équation différentielle ou une équation aux dérivées partielles, lorsque l'on spécifie les \textcolorred{valeurs} que la solution doit vérifier sur toute ou partie de la frontière du domaine.
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Il peut s'agir par exemple d'un déplacement imposé (par exemple nul) en des points d'une structure (points d'appuis rigides).
 
 \medskip
@@ -149,35 +144,28 @@ On parle de \textcolorblue{condition de Neumann} imposée à une équation diff�
 \subsection{Robin -- relation gradient/valeurs sur le bord}\index{condition aux limites!de Robin}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
 
 On parle de \textcolorblue{condition de Robin} ou \textcolorblue{condition de Fourier} ou \textcolorblue{condition d'impédance} imposée à une équation différentielle ou une équation aux dérivées partielles, lorsque l'on spécifie une \textcolorred{relation linéaire} entre les valeurs de la fonction et les valeurs de la dérivée de la fonction qui est solution du problème sur toute ou partie de la frontière du domaine.
-
-C'est donc une pondérations de conditions de Dirichlet et de Neumann.
+%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
+C'est donc une pondération de conditions de Dirichlet et de Neumann.
 
 \medskip
 \subsection{Condition aux limites dynamique}\index{condition aux limites!dynamique}
-
 On parle de \textcolorblue{condition aux limites dynamique} imposée à une équation différentielle ou une équation aux dérivées partielles, lorsque l'on spécifie une \textcolorred{combinaison linéaire} entre la dérivée temporelle et la dérivée normale que la solution doit vérifier sur toute ou partie la frontière du domaine.
 
 \medskip
 \subsection{Condition aux limites mêlée}\index{condition aux limites!mêlée}
-
 On parle de \textcolorblue{condition aux limites mêlée} lorsque l'on juxtapose plusieurs conditions aux limites différentes sur toute ou partie de la frontière du domaine.
 
-
-
-
-
-
 \medskip
-\section{Types d'équations aux dérivées partielles}
-
+\section{Types d'équation aux dérivées partielles}
 La forme générale d'une équation aux dérivées partielles linéaire, scalaire, d'ordre 2 est:
 \begin{equation}
 au + c \nabla u + \dive (A\nabla u) = f
 \end{equation}
 où~$a: \Omega\rightarrow\RR$, $c: \Omega\rightarrow\RR^n$, 
 $A: \Omega\rightarrow\RR^{n\times n}$ et~$f: \Omega\rightarrow\RR$ sont les coefficients de l'équation aux dérivées partielles linéaires.
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Dans le cas où~$u$ est scalaire ($n = 1$) et les coefficients sont constants, on obtient:
 \begin{equation}
 \alpha\dfrac{\partial^2 u}{\partial x^2}+\beta\dfrac{\partial^2 u}{\partial x\partial y}
@@ -185,7 +173,6 @@ Dans le cas où~$u$ est scalaire ($n = 1$) et les coefficients sont constants, o
 + \epsilon \dfrac{\partial u}{\partial y} +\gamma u = f
 \end{equation}
 où~$\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$, $\gamma$ sont des scalaires.
-
 Cette équation est dite:
 \begin{itemize}
   \item \textcolorblue{elliptique} si~$\beta^2-4\alpha\gamma>0$;
@@ -211,6 +198,10 @@ Dans ce paragraphe, nous avons regroupé les notions de propagation et de diffus
 
 La propagation est la diffusion sont liées. La diffusion, c'est en quelque sorte l'homogénéisation d'une grandeur dans un milieu et dans le temps. Or pour qu'il y ait diffusion, il faut bien que ledit phénomène se propage.
 
+\medskip
+Nous nous placerons dans un cadre beaucoup plus macroscopique, où les interactions entre particules sont quantifiées au travers de variables macroscopiques continues, comme par exemple la température, la pression, mais également le frottement fluide, la conductivité thermique, la masse volumique...
+
+L'analogie de formulation mathématique nous fera également considérer les cas de propagation des ondes dans des milieux donnés. C'est d'ailleurs essentiellement via la propagation des ondes que nous aborderons les formulations... l'équation de la chaleur constituant le liant idéal pour illustrer les liens entre propagation et diffusion.
 
 \medskip
 \begin{histoire}%
@@ -234,18 +225,12 @@ En 1855, Adolph Fick\index[aut]{Fick (Adolf Eugene), 1829-1901, Allemand} propos
 \end{histoire}
 \colorblack
 
-\medskip
-Nous nous placerons dans un cadre beaucoup plus macroscopique, où les interactions entre particules sont quantifiées au travers de variables macroscopiques continues, comme par exemple la température, la pression, mais également le frottement fluide, la conductivité thermique, la masse volumique...
-
-L'analogie de formulation mathématique nous fera également considérer les cas de propagation des ondes dans des milieux donnés. C'est d'ailleurs essentiellement via la propagation des ondes que nous aborderons les formulations... l'équation de la chaleur constituant le liant idéal pour illustrer les liens entre propagation et diffusion.
 
 \medskip
 \subsection{Équations de Laplace et Poisson}
 L'\textcolorblue{équation de Laplace, ou Laplacien} est l'équation:\index{ED-EDP!de Laplace}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index{laplacien}
 \begin{equation}\Delta \varphi=0\end{equation}
-Elle est elliptique.
-
-Elle apparaît dans de nombreux problèmes physiques: astronomie, électrostatique, mécanique des fluides, propagation de la chaleur, diffusion, mouvement brownien, mécanique quantique.
+Elle est elliptique. Elle apparaît dans de nombreux problèmes physiques: astronomie, électrostatique, mécanique des fluides, propagation de la chaleur, diffusion, mouvement brownien, mécanique quantique.
 
 Les fonctions solutions de l'équation de Laplace sont appelées les \textcolorblue{fonctions harmoniques}. Toute fonction holomorphe est harmonique.
 
@@ -253,13 +238,12 @@ Les fonctions solutions de l'équation de Laplace sont appelées les \textcolorb
 L\textcolorblue{'équation de Poisson} est l'équation:\index{ED-EDP!de Poisson}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
 \begin{equation}\Delta \varphi=f\end{equation}
 où~$f$ est une fonction donnée. Elle est elliptique.
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Par exemple, en électrostatique, on exprime le potentiel électrique~$V$ associé à une distribution connue de charges~$\rho$ (dans le vide) par la relation:
 \begin{equation}
   \Delta V = - \dfrac{\rho}{\epsilon_0}
 \end{equation}
-
 En gravitation universelle, le potentiel gravitationnel~$\Phi$ est relié à la masse volumique $\mu$ par la relation:
 \begin{equation}
 \Delta \Phi = 4 \pi \, G \, \mu 
@@ -267,14 +251,15 @@ En gravitation universelle, le potentiel gravitationnel~$\Phi$ est relié à la 
 
 \medskip
 \subsection{Équation d'onde, phénomènes vibratoires}
-
 Il s'agit encore d'une extension de l'équation de Laplace.
-
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 L'\textcolorblue{équation d'onde} est l'équation générale qui décrit la propagation d'une onde (sonore ou électromagnétique dont la lumière), qui peut être représentée par une grandeur scalaire ou vectorielle.
-
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Dans le cas vectoriel, en espace libre, dans un milieu homogène, linéaire et isotrope, l'équation d'onde s'écrit:\index{ED-EDP!des ondes}
 \begin{equation}
-  \Delta u \ = - \frac1{c^2} \dfrac{\partial^2 u}{\partial t^2} \quad \text{ ou } \quad \square u =0
+  \Delta u = - \frac1{c^2} \dfrac{\partial^2 u}{\partial t^2} \quad \text{ ou } \quad \square u =0
 \end{equation}
 où la fonction d'onde inconnue est notée~$u(x,y,z,t)$, $t$ représente le temps, et le nombre~$c$ représente la célérité ou vitesse de propagation de l'onde~$u$ (rappel:~$\square$ est le d'Alembertien). Elle est hyperbolique.
 
@@ -288,7 +273,6 @@ Dans le cas de \textcolorblue{l'acoustique}, alors cette équation est obtenue �
   \item le fluide est parfait, et sa relation de comportement est donc:~$\sigma=-p'I$ avec
 	$p'$ la pression dans le fluide.
 \end{itemize}
-
 À partir de ces trois équations, on retrouve l'équation des ondes sous la forme:\index{ED-EDP!de l'acoustique}
 \begin{equation}
 \Delta p' - \dfrac1{c^2} \ddot{p}' = 0
@@ -346,27 +330,26 @@ où:
   \item~$\rho$ est la masse volumique du matériau (en~$kg/m^3$);
   \item~$c$ la chaleur spécifique massique du matériau (en~$J/kg·K$).
 \end{itemize}
-
 \medskip\colorgris
 L'équation de la chaleur est donc une équation de la forme:
 \begin{equation}
 \dot{u}-\Delta u=f
 \end{equation}
 Elle est parabolique.\colorblack
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 Pour que le problème soit bien posé, il faut spécifier:
 \begin{itemize}
-  \item une condition initiale:~$\forall x\in\Omega, \quad T (x,0) = T_0(x)~$;
+  \item une condition initiale:
+  \begin{equation}\forall x\in\Omega, \quad T (x,0) = T_0(x)\end{equation}
   \item une condition aux limites sur le bord du domaine, par exemple:
-
-    de Dirichlet:~$\forall x\in\partial \Omega, \quad T (x,t) = 0~$;
-
-    ou de Neumann:~$\forall x\in\partial \Omega, \quad \frac{\partial T (x,t)}{\partial n} \ 
-	= n(x) \cdot \nabla T(x,t) = 0$, où~$n(x)$ est le vecteur normal unitaire au point~$x$.
+  \begin{itemize}
+  \item de Dirichlet:\begin{equation}\forall x\in\partial \Omega, \quad T (x,t) = 0\end{equation}
+  \item de Neumann:\begin{equation}\forall x\in\partial \Omega, \quad \frac{\partial T (x,t)}{\partial n} = n(x) \cdot \nabla T(x,t) = 0\end{equation} où~$n(x)$ est le vecteur normal unitaire au point~$x$.
+	\end{itemize}
 \end{itemize}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
 L'équation de la chaleur, introduite initialement pour décrire la conduction thermique, permet de décrire le phénomène de diffusion.
 
 La diffusion est un phénomène de transport irréversible qui se traduit à terme par une homogénéisation de la grandeur considérée (par exemple la température dans un domaine, la concentration en produits chimiques dans une solution...).
@@ -387,7 +370,32 @@ La mécanique des fluides est une des deux composantes de la mécanique des mili
 
 \medskip
 \subsection{Équation de Navier-Stokes}
+Les équations de Navier-Stokes sont des équations aux dérivées partielles non linéaires qui décrivent le mouvement des fluides newtoniens (visqueux) dans l'approximation des milieux continus. Elles modélisent par exemple les mouvements de l'air de l'atmosphère, les courants océaniques, l'écoulement de l'eau dans un tuyau, et de nombreux autres phénomènes d'écoulement de fluides.
 
+\medskip
+Nous considérons l'équation de Navier-Stokes sous la forme:\index{ED-EDP!de Navier-Stokes}\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
+\begin{equation}
+\rho \dot{u} + \rho (u\cdot\nabla)u - \eta \Delta u
+- \left( \zeta + \frac{\eta}{3} \right) \gradb (\dive u)
+= \rho f - \nabla p
+\end{equation}
+où:
+\begin{itemize}
+  \item~$u$ est la vitesse du fluide ;
+  \item~$p$ est la pression dans le fluide ;
+  \item~$\rho$ est la masse volumique du fluide;
+  \item~$\eta$ est la viscosité dynamique en cisaillement du fluide;
+  \item~$\zeta$ est la viscosité dynamique en compression du fluide;
+  \item~$f$ est une force massique s'exerçant dans le fluide (par exemple: pesanteur).
+\end{itemize}
+
+\medskip
+Si de plus le fluide est incompressible (bonne approximation pour les liquides), alors~$\dive u = 0$ 
+et l'équation se simplifie:
+\begin{equation}
+\rho \dot{u} + \rho (u\cdot\nabla)u - \eta \Delta u
+= \rho f - \nabla p
+\end{equation}
 \begin{histoire}%
 Des 23 problèmes de Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand} énoncés en 1900, la moitié est aujourd'hui complètement résolue, l'un a été démontré indécidable, cinq ne le sont pas du tout, les autres étant partiellement traités.
 
@@ -440,36 +448,6 @@ Bien que des résultats d'existences et d'unicité existent, aucun ne permet soi
 
 
 \medskip
-Les équations de Navier-Stokes sont des équations aux dérivées partielles non linéaires qui décrivent le mouvement des fluides newtoniens (visqueux) dans l'approximation des milieux continus. Elles modélisent par exemple les mouvements de l'air de l'atmosphère, les courants océaniques, l'écoulement de l'eau dans un tuyau, et de nombreux autres phénomènes d'écoulement de fluides.
-
-\medskip
-Nous considérons l'équation de Navier-Stokes sous la forme:\index{ED-EDP!de Navier-Stokes}\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
-\begin{equation}
-\rho \dot{u} + \rho (u\cdot\nabla)u - \eta \Delta u
-- \left( \zeta + \frac{\eta}{3} \right) \gradb (\dive u)
-= \rho f - \nabla p
-\end{equation}
-où:
-\begin{itemize}
-  \item~$u$ est la vitesse du fluide ;
-  \item~$p$ est la pression dans le fluide ;
-  \item~$\rho$ est la masse volumique du fluide;
-  \item~$\eta$ est la viscosité dynamique en cisaillement du fluide;
-  \item~$\zeta$ est la viscosité dynamique en compression du fluide;
-  \item~$f$ est une force massique s'exerçant dans le fluide (par exemple: pesanteur).
-\end{itemize}
-
-\medskip
-Si de plus le fluide est incompressible (bonne approximation pour les liquides), alors~$\dive u = 0$ 
-et l'équation se simplifie:
-\begin{equation}
-\rho \dot{u} + \rho (u\cdot\nabla)u - \eta \Delta u
-= \rho f - \nabla p
-\end{equation}
-
-
-
-\medskip
 \subsection{Équation de Stokes}
 
 Il s'agit d'un cas particulier de l'équation de Navier-Stokes (termes inertiels absents ou négligés).
@@ -488,20 +466,20 @@ $\dive u = 0$ dans~$\Omega$.
 
 \medskip
 Contrairement à l'équation de Navier-Stokes, l'équation de Stokes est linéaire. Les écoulements solutions de cette équation possèdent par conséquent des propriétés bien particulières:
-\begin{itemize}
-  \item \textbf{unicité}: 
+\begin{description}
+  \item[unicité]
 	pour des conditions aux limites données (valeur de la vitesse au niveau des parois et/ou à l'infini), il existe un et un seul écoulement vérifiant l'équation de Stokes;
-  \item \textbf{additivité}: 
+  \item[additivité] 
 	les solutions de l'équation de Stokes vérifient le principe de superposition: 
 	si~$u_1$ et~$u_2$ sont solutions, alors toute combinaison linéaire~$\lambda_1 u_1 
 	+ \lambda_2 u_2$ le sera aussi (ceci n'est pas incompatible avec la propriété d'unicité: seul 
 	l'écoulement vérifiant les bonnes conditions aux limites sera observé);
-  \item \textbf{réversibilité}: 
+  \item[réversibilité] 
 	si un champ de vitesse~$u$ est solution de l'équation, alors~$-u$ l'est aussi, à condition de changer le signe des gradients de pression, ainsi que des vitesses aux parois et à l'infini; cette propriété est contraire à l'intuition, fondée sur notre expérience des écoulements macroscopiques: la réversibilité des écoulements à bas nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} a ainsi poussé les êtres vivants de très petite taille à développer des moyens de propulsion originaux.
-  \item \textbf{paradoxe de Stokes}: 
+  \item[paradoxe de Stokes] 
 	il faut prendre garde au fait que les solutions mathématiques de l'équation de Stokes, dans un cas donné ou dans certaines régions du domaine de solution, peuvent être physiquement fausses. Ceci est dû au «paradoxe de Stokes» à savoir que les conditions physiques permettant de ramener l'équation de Navier-Stokes à l'équation de Stokes ne sont pas nécessairement réalisées dans tout le domaine de solution, à priori. 
 	On aboutit alors à des solutions présentant des comportements potentiellement aberrants dans certaines limites. C'est le cas par exemple «à l'infini» où souvent le terme inertiel finit par l'emporter sur le terme visqueux, sans qu'on puisse le préjuger à priori.
-\end{itemize}
+\end{description}
 
 
 
@@ -519,19 +497,16 @@ Toujours avec les mêmes notations, elle s'écrit dans~$\Omega\times\RR^+$:\inde
 \begin{equation}
 \rho \dot{u} + \nabla p = \rho f
 \end{equation}
-
 Et, si de plus le fluide est incompressible, alors on a également 
 $\dive u = 0$ dans~$\Omega$.
-
-\medskip\colorgris
+\medskipvm\colorgris
 Dans le cas où la description du problème est une description eulérienne (i.e. le champ de vitesse est associé à chaque point et est considéré de manière instantanée), on peut alors écrire:
 \begin{equation}
   \rho f - \nabla p = \rho \dot{u} =
 	\rho \left(\dot{u} + (u\cdot\nabla)u \right)=
 	\rho \left( \dot{u} + \frac12 \nabla u^2 + (\nabla\wedge u)\wedge u \right)
 \end{equation}\colorblack
-
-\medskip
+\medskipvm
 \textcolorgreen{Bien que ces équations correspondent à une simplification de l'équation de Navier-Stokes, elles n'en sont pas plus stables... bien au contraire.}
 
 \medskip
@@ -738,7 +713,7 @@ Dans le cas de matériaux \textcolorblue{isotropes} (i.e. possédant les mêmes 
 %1781-1840&
 % 1773-1829\\
 %\end{tabular}}
-\begin{equation}\sigma = 2\mu\varepsilon+\lambda Tr(\varepsilon)I\end{equation}
+\begin{equation}\sigma = 2\mu\varepsilon+\lambda \trace(\varepsilon)I\end{equation}
 i.e.~$\sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\varepsilon_{kk}\delta_{ij}$.
 On rappelle également que:
 \begin{equation}\lambda=\dfrac{E}{2(1+\nu)} \quad \text{ et } \quad \mu=\dfrac{E\nu}{(1-2\nu)(1+\nu)}
@@ -801,7 +776,7 @@ En utilisant du verre ($E=69$~GPa, $\nu=0,25$) et de la résine époxyde ($E=3,5
 Notons également que si~$\mu\ne0$ et~$3\lambda+2\mu\ne0$, alors on peut inverser la
 relation contrainte/dé\-pla\-ce\-ment:
 \begin{equation}
-\varepsilon_{ij}=\dfrac1{2\mu}\left(\sigma_{ij}-\dfrac\lambda{3\lambda+2\mu}Tr(\sigma)\delta_{ij}\right)
+\varepsilon_{ij}=\dfrac1{2\mu}\left(\sigma_{ij}-\dfrac\lambda{3\lambda+2\mu}\trace(\sigma)\delta_{ij}\right)
 \end{equation}
 
 \medskip

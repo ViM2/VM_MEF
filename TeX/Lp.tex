@@ -142,10 +142,9 @@ appartenant à la classe de~$f$.
 \end{definition}
 
 De manière équivalente, on peut également définir~$L^p$ comme étant le quotient de~$\mathcal{L}^p$ par la relation d'équivalence «égalité~$\mu$-presque partout».
-
-\medskip
-Il est clair que chaque espace~$L^p$ est plus exactement une classe d'équivalence obtenu en identifiant les fonctions qui ne diffèrent que sur un ensemble négligeable.
-Ainsi, si~$f\in L^p$, on appelle «représentant» de~$f$, toute fonction mesurable~$g\in\mathcal{L}^p$ qui appartient à la classe d'équivalence de~$f$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskipvm
+Il est clair que chaque espace~$L^p$ est une classe d'équivalence obtenu en identifiant les fonctions qui ne diffèrent que sur un ensemble négligeable. Ainsi, si~$f\in L^p$, on appelle «représentant» de~$f$, toute fonction mesurable~$g\in\mathcal{L}^p$ qui appartient à la classe d'équivalence de~$f$.
 
 Comme, par construction, deux représentant d'une même classe auront la même intégrale, on
 appelle (abusivement, mais sans confusion) tout~$f\in L^p$ une fonction de~$L^p$ et non pas une classe d'équivalence ou un représentant de la classe d'équivalence.
@@ -203,13 +202,16 @@ Comme une fonction s'annulant presque partout est d'intégrale nulle, on peut d�
 
 \medskip
 \begin{definition}[Norme~$L^p$]
-Pour~$p<\infty$, on appelle \textcolorblue{norme~$L^p$} et on note~$\|\cdot\|_p$, l'application définie par~$\|f\|_p=\left(\dint_\Omega |f|^p\right)^{1/p}$.
+Pour~$p<\infty$, on appelle \textcolorblue{norme~$L^p$} et on note~$\|\cdot\|_p$, l'application définie par:
+\begin{equation}\|f\|_p=\left(\dint_\Omega |f|^p\right)^{1/p}
+\end{equation}
 \end{definition}
-
-Sur~$\RR$, cela donne:~$\|f\|_p=\left(\dint_a^b |f(t)|^p\dd t\right)^{1/p}$.
-
-Sur un espace mesuré~$(X, \mathcal{A}, \mu)$ et à valeurs réelles ou complexes:~$\|f\|_p=\left(\dint_X |f|^p\dd\mu\right)^{1/p}$.
-
+\begin{itemize}
+\item Sur~$\RR$, cela donne:
+\begin{equation}\|f\|_p=\left(\dint_a^b |f(t)|^p\dd t\right)^{1/p}\end{equation}
+\item Sur un espace mesuré~$(X, \mathcal{A}, \mu)$ et à valeurs réelles ou complexes:
+\begin{equation}\|f\|_p=\left(\dint_X |f|^p\dd\mu\right)^{1/p}\end{equation}
+\end{itemize}
 \medskip
 \begin{theoreme}
 Si l'espace~$X$ est fini et est muni d'une mesure finie~$\mu(X)<\infty$, alors tous les espaces~$L^p$ (resp.~$\mathcal{L}^p$), pour~$1\le p\le \infty$ sont les mêmes.
@@ -316,8 +318,8 @@ Soient~$p\in[1,\infty]$, et~$f$ et~$g$ dans~$L^p$, alors on a:
 \end{theoreme}
 
 \begin{theoreme}[Inégalité de Hölder]\index[aut]{Hoelder@Hölder (Otto Ludwig), 1859-1937, Allemand}
-Soient~$p$, $q$ et~$r$ des nombres de~$[1,\infty]$ vérifiant
-$\dfrac1p+\dfrac1q=\dfrac1r$ (avec la convention~$1/\infty=0$).
+Soient~$p$, $q$ et~$r$ des nombres de~$[1,\infty]$ vérifiant;
+\begin{equation}\dfrac1p+\dfrac1q=\dfrac1r\end{equation} (avec la convention~$1/\infty=0$).
 Si~$f\in L^p$ et~$g\in L^q$, alors le produit~$fg\in L^r$, et on a:
 \begin{equation}\|fg\|_r\le\|f\|_p\|g\|_q\end{equation}
 \end{theoreme}
