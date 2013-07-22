@@ -123,7 +123,7 @@ La solution de l'intégration de ces équations allait venir d'un mathématicien
 \section{Conditions aux limites}\index{condition aux limites}
 Comme nous venons de le dire, les \textcolorblue{conditions aux limites} sont des contraintes (des valeurs) que l'on impose à la fonction solution (ou à certaines de ces dérivées) sur tout ou partie du domaine~$\Omega$, et/ou sur toute ou partie de sa frontière~$\Gamma=\partial\Omega$.
 %%%%%%%%%%%%%%%%%%%%%%
-\medskipvm
+\parvm
 D'un point de vue «vocabulaire», certains types de conditions aux limites standard existent qui sont listées ci-après.
 
 \medskip
@@ -193,14 +193,13 @@ On peut dire que:
 \medskip
 \section{Phénomènes de propagation et de diffusion}
 
-
 Dans ce paragraphe, nous avons regroupé les notions de propagation et de diffusion.
-
+\medskipvm
 La propagation est la diffusion sont liées. La diffusion, c'est en quelque sorte l'homogénéisation d'une grandeur dans un milieu et dans le temps. Or pour qu'il y ait diffusion, il faut bien que ledit phénomène se propage.
 
 \medskip
 Nous nous placerons dans un cadre beaucoup plus macroscopique, où les interactions entre particules sont quantifiées au travers de variables macroscopiques continues, comme par exemple la température, la pression, mais également le frottement fluide, la conductivité thermique, la masse volumique...
-
+\medskipvm
 L'analogie de formulation mathématique nous fera également considérer les cas de propagation des ondes dans des milieux donnés. C'est d'ailleurs essentiellement via la propagation des ondes que nous aborderons les formulations... l'équation de la chaleur constituant le liant idéal pour illustrer les liens entre propagation et diffusion.
 
 \medskip
@@ -230,8 +229,10 @@ En 1855, Adolph Fick\index[aut]{Fick (Adolf Eugene), 1829-1901, Allemand} propos
 \subsection{Équations de Laplace et Poisson}
 L'\textcolorblue{équation de Laplace, ou Laplacien} est l'équation:\index{ED-EDP!de Laplace}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index{laplacien}
 \begin{equation}\Delta \varphi=0\end{equation}
-Elle est elliptique. Elle apparaît dans de nombreux problèmes physiques: astronomie, électrostatique, mécanique des fluides, propagation de la chaleur, diffusion, mouvement brownien, mécanique quantique.
-
+Elle est elliptique. 
+\medskipvm
+Elle apparaît dans de nombreux problèmes physiques: astronomie, électrostatique, mécanique des fluides, propagation de la chaleur, diffusion, mouvement brownien, mécanique quantique.
+\medskipvm
 Les fonctions solutions de l'équation de Laplace sont appelées les \textcolorblue{fonctions harmoniques}. Toute fonction holomorphe est harmonique.
 
 \medskip
@@ -273,6 +274,7 @@ Dans le cas de \textcolorblue{l'acoustique}, alors cette équation est obtenue �
   \item le fluide est parfait, et sa relation de comportement est donc:~$\sigma=-p'I$ avec
 	$p'$ la pression dans le fluide.
 \end{itemize}
+\medskipvm
 À partir de ces trois équations, on retrouve l'équation des ondes sous la forme:\index{ED-EDP!de l'acoustique}
 \begin{equation}
 \Delta p' - \dfrac1{c^2} \ddot{p}' = 0
@@ -330,7 +332,7 @@ où:
   \item~$\rho$ est la masse volumique du matériau (en~$kg/m^3$);
   \item~$c$ la chaleur spécifique massique du matériau (en~$J/kg·K$).
 \end{itemize}
-\medskip\colorgris
+\medskipvm\colorgris
 L'équation de la chaleur est donc une équation de la forme:
 \begin{equation}
 \dot{u}-\Delta u=f

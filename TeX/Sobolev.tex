@@ -147,9 +147,9 @@ où~$D^\alpha u$ est une dérivée partielle de~$u$ au sens classique ($u \in C^
 
 
 \medskip
-\section{Espaces~$H^m(\Omega)$}\index{espace!de Sobolev!$H^m(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\section{Espaces~$H^m(\Omega)$, $H^m_0(\Omega)$ et~$H^{-m}(\Omega)$}\index{espace!de Sobolev!$H^m(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}\index{espace!de Sobolev!$H_0^m(\Omega$}\index{espace!de Sobolev!$H^{-m}(\Omega)$}
 
-\begin{definition}[Espace~$H^m(\Omega)$]
+\begin{definition}[Espace~$H^m(\Omega)$]\label{Th-Hm}\index{espace!de Sobolev!$H^m(\Omega)$}
 \textcolorblue{Dans le cas~$p=2$, on note~$H^m(\Omega)$ l'espace~$W^{m,2}(\Omega)$, défini par la relation (\ref{Eq-SoboW}).}
 \end{definition}
 
@@ -193,12 +193,10 @@ On peut aussi utiliser la norme équivalente:
 \colorblack
 
 
-
-
 \medskip
-\section{Espaces~$H^m_0(\Omega)$}\index{espace!de Sobolev!$H_0^m(\Omega$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+%\section{Espaces~$H^m_0(\Omega)$}\index{espace!de Sobolev!$H_0^m(\Omega$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
-\begin{definition}[Espace~$H^m_0(\Omega)$]
+\begin{definition}[Espace~$H^m_0(\Omega)$]\label{Th-Hmz}\index{espace!de Sobolev!$H_0^m(\Omega$}
 On définit \textcolorblue{$H^m_0(\Omega)$} comme l'adhérence dans~$H^m(\Omega)$ de~$\mathcal{D}(\Omega)$, ensemble des fonctions de classe~$C^\infty$ et à support compact dans~$\Omega$.
 \end{definition}
 Plus exactement et de manière générale, $W^{m,p}_0$ est l'adhérence de~$\mathcal{D}(\Omega)$ dans l'espace $W^{m,p}$. La définition ci-dessus correspond donc au cas~$p=2$.
@@ -221,9 +219,9 @@ Les espaces trace sont définis plus loin.\index{espace!trace}.
 
 
 \medskip
-\section{Espaces~$H^{-m}(\Omega)$}\index{espace!de Sobolev!$H^{-m}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
-
-\colorgris
+%\section{Espaces~$H^{-m}(\Omega)$}\index{espace!de Sobolev!$H^{-m}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+%\colorgris
+\begin{definition}[Espace~$H^{-m}(\Omega)$]\label{Th-Hmm}\index{espace!de Sobolev!$H^{-m}(\Omega)$}
 Il est possible de caractériser le dual topologique de~$H^m_0(\Omega)$ de la façon suivante.\index{espace!vectoriel!topologique}
 
 $\forall m\ge 1$, on définit l'espace des distributions suivant:
@@ -238,6 +236,7 @@ muni de la norme:\index{norme!sur~$H^{-m}(\Omega)$}
 \|f\|_{H^{-m}} = \inf \left( \dsum_{|\alpha|\le m} \|f_\alpha\|^2_{L^2} \right)^{1\over2}
 \end{equation}
 l'infimum étant pris sur toutes les décompositions possibles de~$f$ sous la forme intervenant dans la définition de~$H^{-m}$.
+\end{definition}
 \medskipvm
 Ainsi défini, l'espace~$H^{-m}(\Omega)$ est un espace de Hilbert isomorphe au dual topologique de~$H^m_0(\Omega)$, et le crochet de dualité s'écrit:\index{dual topologique d'un espace vectoriel}
 \begin{equation}
@@ -248,10 +247,12 @@ f_\alpha \partial^\alpha u \dd x,
 Cette formule ne dépend pas de la décomposition de~$f$ en somme des~$\partial^\alpha f_\alpha$.
 \medskipvm
 Remarquons que le dual de~$H^m(\Omega)$ n'est pas un espace de distribution et ne possède donc pas de caractérisation aussi simple.
-\colorblack
+%\colorblack
 
 \medskip
-\section{Trace}\index{espace!trace}
+\section{Trace et espace trace}\index{espace!trace}
+
+\subsection{Trace}\index{espace!trace}
 Dans ce paragraphe, nous essayons de présenter la notion de trace de manière simple et intuitive.
 
 \medskip
@@ -287,15 +288,15 @@ Dans le cas où~$u$ est une fonction de~$H^2(\Omega)$ qui soit en même temps da
 \textcolorred{C'est pourquoi on note souvent, par abus, $\partial_n u$ plutôt que~$\gamma_1(u)$.}
 
 \medskip
-\section{Espace trace}\index{espace!trace}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\subsection{Espace trace}\index{espace!trace}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
-\textcolorgreen{Compte tenu du paragraphe précédent qui exposait la notion de trace, cette section n'a plus vraiment d'intérêt si l'on ne souhaite pas entrer trop dans les détails mathématiques.}
-
-\medskip
+%\textcolorgreen{Compte tenu du paragraphe précédent qui exposait la notion de trace, cette section n'a plus vraiment d'intérêt si l'on ne souhaite pas entrer trop dans les détails mathématiques.}
+%
+%\medskip
 Dans le cas d'exposant entier, on note souvent l'ordre avec la lettre~$m$, dans le cas non-entier, on utilisera la lettre~$s$, et donc les espaces seront notés:~$W^{s,p}$ ou~$H^s$.
 
 \medskip
-\subsection{Cas~$p=2$ et~$\Omega=\RR^{n}$}
+\subsubsection{Cas~$p=2$ et~$\Omega=\RR^{n}$}
 
 \colorgris
 Dans ce cas, l'espace de Sobolev~$H^{s}(\RR^n)$, $s\geqslant 0$, peut être défini grâce à la transformée de Fourier:
@@ -307,7 +308,7 @@ $H^{s}(\RR^n)$ est un espace de Hilbert muni de la norme:
 \colorblack
 
 \medskip
-\subsection{Cas~$p=2$ et~$\Omega \subset \RR^{n}$ quelconque}
+\subsubsection{Cas~$p=2$ et~$\Omega \subset \RR^{n}$ quelconque}
 On peut alors caractériser les espaces de Sobolev d'ordre fractionnaire~$H^s(\Omega)$ grâce au produit intérieur donné par:
 \begin{equation}
 (u, v)_{H^{s} (\Omega)} = (u,v)_{H^{k} (\Omega)} + \sum_{| \alpha | = k} \int_{\Omega} \int_{\Omega} \frac{( D^{\alpha}u (x) - D^{\alpha}u (y) ) (D^{\alpha}v (x) - D^{\alpha}v (y) )}{| x - y |^{n + 2 t}} \, \dd x \dd y
@@ -316,7 +317,7 @@ où~$s = k + T$, $k$ est un entier tel que~$0 < T < 1$ et~$n$ est la dimension d
 La norme induite est essentiellement l'analogue pour~$L^2$ de la continuité au sens de Hölder.
 
 \medskip
-\subsection{Cas~$p\neq 2$ et~$\Omega = \intoo{0}{1}$}
+\subsubsection{Cas~$p\neq 2$ et~$\Omega = \intoo{0}{1}$}
 
 \colorgris
 On définit un opérateur~$D^s$ de dérivation d'ordre fractionnaire~$s$ par:
@@ -331,7 +332,7 @@ comme l'espace des fonctions pour lesquelles cette norme est finie.
 \colorblack
 
 \medskip
-\subsection{Cas général des espaces~$H^s$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\subsubsection{Cas général des espaces~$H^s$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 Soit~$s > \frac{1}{2}$. Si~$\Omega$ est un ouvert dont la frontière~$\partial \Omega$ est «suffisamment régulière», alors on peut définir un \textcolorblue{opérateur de trace~$T$} qui à une fonction~$u \in H^{s}(\Omega)$ lui associe sa trace, i.e sa restriction sur la frontière de~$\Omega$: \textcolorgreen{$Tu=u|_{\partial \Omega}$.}
 
@@ -344,7 +345,7 @@ De façon intuitive, on peut dire que l'on perd en régularité «une demi-déri
 \textcolorgreen{Nous nous servirons de ces espaces dans le cas des éléments finis pour un problème de continuité des contraintes à une interface entre deux milieux solides ayant des propriété matérielles différentes. Ce problème sera abordé plusieurs fois dans ce document, et le paragraphe~\ref{Sec-interf} fera une synthèse des stratégies possibles pour le résoudre.}
 
 \medskip
-\subsection{Cas général des espaces~$W^{s,p}$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
+\subsubsection{Cas général des espaces~$W^{s,p}$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \colorgris
 Définir la trace d'une fonction de~$W^{s,p}$ est très difficile et demande d'utiliser les techniques plus compliqués (dont les espaces de Besov).
@@ -353,10 +354,15 @@ De façon plus intuitive, on peut dire que l'on perd en régularité~$1/p$-ème 
 \colorblack
 
 
+
 \medskip
 \section{Espaces~$H^1(\Omega)$, $H^1_0(\Omega)$ et~$H^{-1}(\Omega)$}\index{espace!de Sobolev!$H_0^1(\Omega)$}\index{espace!de Sobolev!$H^1(\Omega)$}\index{espace!de Sobolev!$H^{-1}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
-Par définition:
+Nous avons déjà défini les espaces~$H^m(\Omega)$, $H^m_0(\Omega)$ et~$H^{-m}(\Omega)$.
+Toutefois, dans la pratique, nous n'irons guerre au delà de $m=2$, et même le plus souvent nous nous contenterons de $m=1$. Nous donnons ici quelques compléments dans ce dernier cas.
+
+\medskip
+En application de la définition~\ref{Th-Hm}, nous avons:
 \begin{equation}
 H^1(\Omega)=\left\lbrace u\in L^2(\Omega);\; \forall i =1,\ldots,n,\; \frac{\partial u}{\partial x_i}\in L^2(\Omega) \right\rbrace
 \end{equation}
@@ -437,32 +443,36 @@ Comme on va s'intéresser par la suite à la discrétisation de problème aux d�
 %\section{Relèvement d'espace}
 \medskip
 \section{Espaces~$H(\dive)$ et~$H(\rot)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
-Nous introduisons un espace, intermédiaire entre~$L^2(\Omega)$ et $H^1(\Omega)$, l'\textcolorblue{espace~$H(\dive,\Omega)$} défini par:\index{espace!de Sobolev!$H(\dive)$}
+
+\begin{definition}[Espace~$H(\dive,\Omega)$]\index{espace!de Sobolev!$H(\dive)$}
+L'espace $H(\dive,\Omega)$ est un espace intermédiaire entre~$L^2(\Omega)$ et $H^1(\Omega)$, l'\textcolorblue{espace~$H(\dive,\Omega)$} défini par:
 \begin{equation}
 H(\dive,\Omega)=\left\{ f\in L^2(\Omega)^n;\; \dive f\in L^2(\Omega)\right\}
 \end{equation}
 %où~$\dive f$ est la divergence faible, que nous ne définissons pas dans ce document.
+\end{definition}
 C'est un espace de Hilbert, muni du produit scalaire:\index{produit scalaire!de~$H(\dive)$}\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}
 \begin{equation}
 \langle f,g \rangle = \dint_\Omega \left( f(x)\cdot g(x)+\dive f(x) \dive g(x) \right) \dd x
 \end{equation}
 et de la norme~$\|f\|_{H(\dive,\Omega)}=\sqrt{\langle f,f\rangle}$.
-\medskip
+\medskipvm
 \textcolorgreen{%
 Un des intérêts de l'espace~$H(\dive,\Omega)$ est qu'il permet de démontrer un théorème de trace et une formule de Green avec encore moins de régularité que dans~$H^1(\Omega)$. En effet, si~$f\in H(\dive,\Omega)$, on ne «contrôle» qu'une seule combinaison de ses dérivées partielles, et non pas toutes comme dans~$H^1(\Omega)$, mais on peut quand même donner un sens à la trace normale~$f\cdot n$ sur~$\partial\Omega$.}
 
 \medskip
-%\section{Espace}
-L'\textcolorblue{espace~$H(\rot,\Omega)$} est défini par:\index{espace!de Sobolev!$H(\rot)$}
+\begin{definition}[Espace~$H(\rot,\Omega)$]\index{espace!de Sobolev!$H(\rot)$}
+L'\textcolorblue{espace~$H(\rot,\Omega)$} est défini par:
 \begin{equation}
 H(\rot,\Omega) = \left\{ f\in (L^2(\Omega))^2;\; \rot(f) \in L^2(\Omega)\right\}
 \end{equation}
+\end{definition}
 $H(\rot,\Omega)$ est un espace de Hilbert muni de la norme:\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{norme!sur~$H(\rot)$}
 \begin{equation}
 \|f\|_{H(\rot,\Omega)} = \left( \|f\|^2_{L^2(\Omega)} + \|\rot(f)\|^2_{L^2(\Omega)}\right)^{1/2}
 \end{equation}
 L'application trace tangentielle~$f \mapsto f \wedge n$ est continue de $H(\rot,\Omega)$ sur un espace de Hilbert de fonctions définies sur~$\partial\Omega$ qui n'est pas précisé. On peut introduire l'espace~$H_0(\rot,\Omega)$ des fonctions de~$H(\rot,\Omega)$ de trace tangentielle nulle.
-\medskip
+\medskipvm
 \textcolorgreen{Cet espace peut être utiliser pour la modélisation de phénomènes électromagnétiques par les équations de Maxwell.}
 
 \medskip
