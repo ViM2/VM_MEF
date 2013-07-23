@@ -130,12 +130,11 @@ Il n'y a donc fondamentalement \textcolorred{pas de différence entre formulatio
 
 \medskip
 Par ailleurs, d'autres contraintes sur la frontière de~$\Omega$ peuvent (doivent) être imposées à~$u$ (et à~$v$). Ce sont les \textcolorblue{conditions aux limites}.
-%Nous allons présenter ces conditions aux limites maintenant.
-Les conditions aux limites types ont été présentées au chapitre précédent.
+Les conditions aux limites types ont été présentées au chapitre~\ref{Ch-EDPphy}.
 
 \medskip
 \section{Théorème de représentation de Riesz-Fréchet}\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
-Le théorème le plus fondamental sera le théorème de Lax-Milgram, toutefois, nous aurons besoin du théorème de représentation de Riesz-Fréchet pour sa démonstration.
+Le théorème le plus fondamental pour la méthode des éléments finis sera le théorème de Lax-Milgram, toutefois, nous aurons besoin du théorème de représentation de Riesz-Fréchet pour sa démonstration. \textcolorgris{Ce magnifique théorème fait lui-aussi des outils de base d'analyse fonctionnelle.}
 
 \medskip
 Pour tout vecteur~$y$ d'un espace de Hilbert~$H$, la forme linéaire qui à~$x$ associe~$\langle y,x\rangle$ est continue sur~$H$ (sa norme est égale à celle de~$y$, d'après l'inégalité de Cauchy-Schwarz). Le théorème de Riesz énonce la réciproque: toute forme linéaire continue sur~$H$ s'obtient de cette façon.
@@ -146,12 +145,12 @@ Pour tout vecteur~$y$ d'un espace de Hilbert~$H$, la forme linéaire qui à~$x$ 
 \begin{theoreme}[Théorème de représentation de Riesz-Fréchet]\label{Th-RF}
 %\colorblue
 Soient~$H$ un espace de Hilbert (réel ou complexe) muni de son produit scalaire noté $\langle\cdot,\cdot\rangle$ et~$f \in H'$ une forme linéaire continue sur~$H$.
-Alors il existe un unique~$y$ dans~$H$ tel que pour tout~$x$ de~$H$ on ait~$f(x)=\langle y,x\rangle$.
+Alors il existe un unique~$y$ dans~$H$ tel que pour tout~$x$ de~$H$ on ait~$f(x)=\langle y,x\rangle$. En d'autres termes:
 \begin{equation}
 \exists\,!\ y \in H\,, \quad \forall x\in H\,, \quad f(x) = \langle y,x\rangle
 \end{equation}
 \end{theoreme}
-\colorblack
+%\colorblack
 
 \medskip
 \subsection{Extension aux formes bilinéaires}
@@ -231,14 +230,33 @@ $J: H\rightarrow\RR$ définie par~$J(v) = \frac12 a(v,v)-f(v)$ pour tout~$v$ de~
 Pour les problèmes issus de la mécanique des solides déformables, la quantité~$\frac12 a(v,v)$ représente l'énergie de déformation du solide associé à un «déplacement virtuel»~$v$, et~$f(v)$ l'énergie potentielle des forces extérieures appliquées au solide pour le même déplacement virtuel~$v$.
 \colorblack
 
+\medskip
+\begin{histoire}
+Nous venons de voir le théorème de Lax-Milgram, fondement de la méthode des éléments finis.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Lax}&
+%\includegraphics[height=\the\HauteurDesPhotos]{Milgram}&
+\includegraphics[height=\the\HauteurDesPhotos]{Babuska}&
+\includegraphics[height=\the\HauteurDesPhotos]{Brezzi}&
+\includegraphics[height=\the\HauteurDesPhotos]{Ladyzhenskaya}\\
+Lax&Babuška&Brezzi&Ladyjenskaïa%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Dans le but d'étendre encore la portée de celle-ci, plusieurs cas ont été étudiés.
+En 1971/72, Babuška a cherché, et à réussi, à étendre le théorème de Lax-Milgram aux problèmes non nécessairement coercitifs (i.e. la forme bilinéaire n'est plus supposée coercitive), élargissant le champ d'application de la méthode des éléments finis.\\
+\indent
+Puis, en 1974, Brezzi s'est chargé d'étendre le théorème de Lax-Milgram au cas où le problème n'est plus écrit à l'aide d'une seule variable ($u$ jusqu'à présent), mais à l'aide de plusieurs variables, ouvrant ainsi la porte aux \textcolorblue{formulations mixtes.}
+Ce faisant, il a eu besoin d'imposer des conditions, connues sous le nom de \textcolorblue{conditions inf-sup}, mais également de condition BBL pour Babuška-Brezzi-Ladyjenskaïa.\\
+\indent Enfin, Brezzi a remplacé sa condition de $V$-ellipticité par des conditions de Babuška dans son théorème généralisé.
+}
+\end{histoire}
 
 \medskip
 \section{Théorème de Babuška et condition inf-sup}\index{théorème!de Babuška}\label{Sec-ThBabuska}\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}
-\textcolorgreen{Il s'agit d'une situation introduite en 1971/72 par Babuška.}
 
-\textcolorgreen{Le but est d'étendre le théorème de Lax-Milgram aux problèmes non nécessairement coercitifs (i.e. la forme bilinéaire n'est plus supposée coercitive).}
-
-\medskip
 \begin{theoreme}[Théorème de Babuška]
 Soient~$H$ et~$M$ deux espaces de Hilbert.
 Soient~$a(\cdot,\cdot)$ une forme bilinéaire continue sur~$H \times M$ et~$f(\cdot)$ une forme linéaire continue sur~$M$.
@@ -272,9 +290,6 @@ Alors que le seconde s'écrit:
 
 \section{Théorèmes de Brezzi et condition BBL}\index{théorème!de Brezzi}\index{condition BBL}\label{Sec-ThBrezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 
-\textcolorgreen{Il s'agit d'étendre le théorème de Lax-Milgram au cas où, cette fois, le problème n'est plus écrit à l'aide d'une seule variable ($u$ jusqu'à présent), mais à l'aide de plusieurs variables. Dans ce cas, on parle de \textcolorblue{formulation mixte.}}
-
-\medskip
 \begin{theoreme}[Théorème de Brezzi (1974)]
 %\colorblue
 Considérons le problème variationnel mixte suivant:
@@ -303,7 +318,7 @@ $(u,\lambda) \in H\times M$.
 
 \medskip
 \textcolorgreen{%
-On dit condition inf-sup ou condition de Brezzi, ou condition de Babuška-Brezzi-Ladyjenskaïa, ou condition BBL.}\index{condition inf-sup}\index[aut]{Ladyjenskaïa (Olga Aleksandrovna), 1922-2007, Russe}\index[aut]{Brezzi (Franco), 1945-, Italien}\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}
+Rappel: on parle de condition inf-sup ou condition de Brezzi, ou condition de Babuška-Brezzi-Ladyjenskaïa, ou condition BBL.}\index{condition inf-sup}\index[aut]{Ladyjenskaïa (Olga Aleksandrovna), 1922-2007, Russe}\index[aut]{Brezzi (Franco), 1945-, Italien}\index[aut]{Babuška (Ivo Milan), 1926-, Tchèque}
 
 
 La condition de~$V$-ellipticité s'écrit également:
@@ -382,8 +397,9 @@ Alors, $\forall (f,g)\in H'\times M'$, le problème précédent possède une uni
 $(u,\lambda) \in H\times M$.
 \end{theoreme}
 \colorblack
-Pour vérifier la condition LBB, il est souvent plus simple de vérifier le critère suivant:
-La condition inf-sup sur~$b(\cdot,\cdot)$ est équivalente à:
+\medskipvm
+Pour vérifier la condition LBB, \textcolorred{il est souvent plus simple de vérifier} le critère suivant:
+la condition inf-sup sur~$b(\cdot,\cdot)$ est équivalente à:
 \begin{equation}\colorred
 \forall\mu\in M, \exists v\in H \text{ (uniquement dans } V^\bot\text{) tel que: }
 b(v,\mu)=\|\mu\|^2 \text{ et } \|v\|\le \dfrac1\beta \|\mu\|
