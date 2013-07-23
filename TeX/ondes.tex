@@ -36,21 +36,42 @@ Les domaines moyenne fréquence et haute fréquence sont définis par la densit�
 \medskip
 Le phénomène de \textcolorblue{synchronisation},\index{synchronisation} ou \textcolorblue{accrochage de fréquences} est un phénomène par lequel deux systèmes excités chacun selon une fréquences se mettent à osciller selon la même fréquence. On trouve de nombreux exemples de ce phénomène dans la nature:
 \begin{itemize}
-  \item Le plus connu et observable est la Lune: la Lune présente toujours la même face à la Terre. Cela signifie que la période de rotation de la Lune sur elle-même~$T_0$ est égale à la période de rotation de la lune autour de la Terre~$T\cong 28$~jours. C'est une 	résonance 1:1. L'analyse montre que ce n'est pas une coïncidence: cela 	est dû à un faible couplage gravitationnel entre ces deux mouvements.
+  \item Le plus connu et le plus facilement observable concerne la Lune: celle-ci présente toujours la même face à la Terre. Cela signifie que la période de rotation de la Lune sur elle-même~$T_0$ est égale à la période de rotation de la lune autour de la Terre~$T\cong 28$~jours. Il s'agit d'une résonance 1:1. L'analyse montre que ce n'est pas une coïncidence, et que cela est dû à un faible couplage gravitationnel entre ces deux mouvements.
 
-  \item Un exemple tout aussi connu est celui de la synchronisation des balanciers de deux pendules accrochées au même mur d'une pièce. Un faible couplage par les vibrations transmises dans le mur, et une légère dissipation, expliquent cet accrochage de fréquences et cette résonance 1:1.
+  \item Le règne animal n'est pas en reste et fourni lui-aussi des exemples de synchronisation, auxquels on ne pense pas spontanément. Citons le vol d'oiseaux ou le clignotement des lucioles...
+\end{itemize}
 
+\medskip
+\begin{histoire}
+On trouve d'autre exemples historiques relatifs à ce phénomène de synchronisation. En voici deux parmi les plus connus.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Huygens}\\
+Huygens%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Le premier est celui de la synchronisation des balanciers de deux pendules accrochées au même mur d'une pièce. Un faible couplage par les vibrations transmises dans le mur, et une légère dissipation, expliquent cet accrochage de fréquences et cette résonance 1:1.\\
+\indent
 	C'est Huygens\index[aut]{Huygens [ou Huyghens] (Christian), 1629-1695, Néerlandais} qui a remarqué et expliqué ce phénomène: le système composé des deux balanciers et du mur a deux fréquences voisines faiblement couplées, il possède par le couplage deux modes propres correspondant aux mouvements en phase et en opposition de phase des deux pendules. C'est sur le premier mode\index{mode propre} que se produit la synchronisation.\index{synchronisation}
+}
 
-  \item L'escalier de Cantor,\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand} ou escalier du diable est un exemple mathématique incontournable en analyse. Il correspond au graphe d'une fonction continue~$f$, sur~$\intff{0}{1}$, telle que~$f(0)=0$, $f(1)=1$, qui est dérivable presque partout, la dérivée étant presque partout nulle.
-
-	L'escalier de Cantor peut également être vu comme la fonction de répartition d'une variable aléatoire réelle continue qui n'est pas à densité, et qui est même étrangère à la mesure de Lebesgue.\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
-
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Cantor}\\
+Cantor%
+\end{tabular}}
+%\medskip
+\ImageAGauche{%
+L'escalier de Cantor,\index[aut]{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand} ou escalier du diable est un exemple mathématique incontournable en analyse. Il correspond au graphe d'une fonction continue~$f$, sur~$\intff{0}{1}$, telle que~$f(0)=0$, $f(1)=1$, qui est dérivable presque partout, la dérivée étant presque partout nulle.\\
+\indent
+	L'escalier de Cantor peut également être vu comme la fonction de répartition d'une variable aléatoire réelle continue qui n'est pas à densité, et qui est même étrangère à la mesure de Lebesgue.\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}\\
+\indent
 	Enfin, l'escalier du diable peut aussi être vu comme résultant d'un phénomène de 	synchronisation.\index{synchronisation} Si on change un paramètre extérieur du système de façon lente et continue, par exemple l'amplitude~$\alpha_0\in\RR$, alors la valeur de l'accrochage~$a=p/q$ va dépendre de ce paramètre. On obtient alors une fonction~$a(\alpha_0)$ de~$\RR$ dans les rationnels~$\QQ$.
 	Cette fonction très étrange comporte une multitude de paliers plus ou moins larges... et correspond à l'escalier du diable.
-	
-  \item On retrouve la synchronisation dans de nombreux phénomènes naturels: vols d'oiseau, clignotement des lucioles...
-\end{itemize}
+}
+\end{histoire}
 \medskipvm
 En mathématiques, le concept de vecteur propre\index{vecteur propre|see{mode propre}}\index{mode propre} est une notion portant sur une application linéaire d'un espace dans lui-même. Il correspond à l'étude des axes privilégiés, selon lesquels l'application se comporte comme une dilatation, multipliant les vecteurs par une même constante.
 Ce rapport de dilatation est appelé valeur propre;\index{valeur propre|see{fréquence propre}}\index{fréquence propre} les vecteurs auxquels il s'applique s'appellent vecteurs propres, réunis en un espace propre.\index{espace!propre}
@@ -547,12 +568,22 @@ Vous avez peut-être déjà rencontré des cas pour lesquels ont été développ
 \begin{histoire}
 Il ne faut pas négliger ces modèles simplifiés. Ne serait-ce que c'est eux qui ont vu le jour en premier...
 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccccc}
+\includegraphics[height=\the\HauteurDesPhotos]{Chladni}&
+\includegraphics[height=\the\HauteurDesPhotos]{Wheatstone}&
+\includegraphics[height=\the\HauteurDesPhotos]{Ritz}&
+\includegraphics[height=\the\HauteurDesPhotos]{Warburton}&
+\includegraphics[height=\the\HauteurDesPhotos]{Leissa}\\
+Chladni&Wheatstone&Ritz&Warburton&Leissa%
+\end{tabular}}
 \medskip
-C'est en 1787 à Leipzig que Chladni\index[aut]{Chladni (Ernst Florens Friedrich), 1756-1827, Allemand} met en évidence expérimentalement la formation de lignes nodales sur une plaque libre avec du sable. Wheatstone\index[aut]{Wheatstone (Charles), 1802-1875, Anglais} et Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais} respectivement en 1833 et 1873, utiliseront des modes de poutre libre pour essayer de comprendre et d'expliquer les figures de Chladni.
-
-En 1909, Ritz,\index[aut]{Ritz}{Ritz (Walther), 1878-1909, Suisse} toujours sur ce problème de la plaque libre, utilisera pour la première fois la méthode qui porte son nom. Les premiers résultats concernant la plaque encastré ne viendront qu'en 1931, et sont dus à Sezawa.\index[aut]{Sezawa (Katsutada), ?, Japonais}
-
-En 1939, Igushi développe une méthode pour obtenir certains résultats analytiques, mais les premières synthèses complètes sur les méthodes utilisables pour calculer les fréquences naturelles et les déformées modales de plaques ne viendront qu'en 1954 par Warburton,\index[aut]{Warburton (Geoffrey Barratt), 1924-2009, Anglais} et 1969 par Leissa.\index[aut]{Leissa (Arthur W.), 1932-, Américain}
+\ImageADroite{%
+C'est en 1787 à Leipzig que Chladni\index[aut]{Chladni (Ernst Florens Friedrich), 1756-1827, Allemand} met en évidence expérimentalement la formation de lignes nodales sur une plaque libre avec du sable. Wheatstone\index[aut]{Wheatstone (Charles), 1802-1875, Anglais} et Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais} respectivement en 1833 et 1873, utiliseront des modes de poutre libre pour essayer de comprendre et d'expliquer les figures de Chladni.\\
+\indent
+En 1909, Ritz,\index[aut]{Ritz (Walther), 1878-1909, Suisse} toujours sur ce problème de la plaque libre, utilisera pour la première fois la méthode qui porte son nom. Les premiers résultats concernant la plaque encastré ne viendront qu'en 1931, et sont dus à Sezawa.\index[aut]{Sezawa (Katsutada), ?, Japonais}\\
+\indent
+En 1939, Igushi développe une méthode pour obtenir certains résultats analytiques, mais les premières synthèses complètes sur les méthodes utilisables pour calculer les fréquences naturelles et les déformées modales de plaques ne viendront qu'en 1954 par Warburton,\index[aut]{Warburton (Geoffrey Barratt), 1924-2009, Anglais} et 1969 par Leissa.\index[aut]{Leissa (Arthur W.), 1932-, Américain}}
 \end{histoire}
 
 \medskip
