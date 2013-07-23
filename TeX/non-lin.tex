@@ -312,12 +312,24 @@ Newton-Raphson\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index[aut]{
 
 Jusqu'à présent, nous nous sommes placés, de manière implicite, dans le cadre d'un comportement élastique linéaire. On parle encore de \textcolorblue{loi de Hooke}.\index[aut]{Hooke (Robert), 1635-1703, Anglais}\index{loi de comportement!Hooke} Cela a été illustré au paragraphe~\ref{Sec-Loi}.
 
-\colorgris
+\begin{histoire}
 Lorsque l'on ne considère que le cas de la traction/compression, alors on a proportionnalité entre contrainte dans cette direction de chargement~$\sigma_{11}$ et déformation dans cette direction $\varepsilon_{11}$ via le module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}~$E$:\index{module d'Young} $\sigma_{11}=E\varepsilon_{11}$.
 
-La même loi se retrouve pour une sollicitation en cisaillement, et la contrainte de cisaillement~$\tau_{12}$ est proportionnelle à l'angle de déformation relative~$\gamma_{12}$ via le module de Coulomb\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français}~$G$:\index{module de Coulomb} $\tau_{12}=G\varepsilon_{12}$.
-
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Hooke}&%
+\includegraphics[height=\the\HauteurDesPhotos]{YoungT}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Coulomb}&
+\includegraphics[height=\the\HauteurDesPhotos]{Poisson}&
+\includegraphics[height=\the\HauteurDesPhotos]{Lame}\\
+Hooke&Young&Coulomb&Poisson&Lamé%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+La même loi se retrouve pour une sollicitation en cisaillement, et la contrainte de cisaillement~$\tau_{12}$ est proportionnelle à l'angle de déformation relative~$\gamma_{12}$ via le module de Coulomb\index[aut]{Coulomb (Charles-Augustin), 1736-1806, Français}~$G$:\index{module de Coulomb} $\tau_{12}=G\varepsilon_{12}$.\\
+\indent
 Lorsque l'on synthétise tout cela pour toutes les directions, on parle alors de \textcolorblue{loi de Hooke généralisée},\index[aut]{Hooke (Robert), 1635-1703, Anglais}\index{loi de comportement!Hooke} que l'on note sous la forme~$\sigma=H\varepsilon$ (i.e.~$\sigma_{ij}=H_{ijkl}\varepsilon_{kl}$): il y a proportionnalité entre les tenseurs des contraintes et des déformations (On note également souvent~$C$ ou~$D$ au lieu de~$H$).
+}
 
 \medskip
 Nous rappelons que, pour un matériau isotrope, tous les coefficients~$H_{ijkl}$ sont définis à l'aide du module d'Young~$E$\index{module d'Young}\index[aut]{Young (Thomas), 1773-1829, Anglais} et du coefficient de Poisson~$\nu$,\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index{coefficients de Poisson} ou de manière équivalente par les coefficients de Lamé\index{coefficients de Lamé} $\lambda$ et~$\mu$.\index{coefficients de Lamé}\index[aut]{Lame@Lamé (Gabriel), 1795-1870, Français}
@@ -328,9 +340,9 @@ avec:
 ou:
 \begin{equation}E=\dfrac{\mu(3\lambda+2\mu)}{\lambda+\mu} \quad\text{ et }\quad
 \nu=\dfrac{\lambda}{2(\lambda+\mu)} \end{equation}
-\colorblack
+\end{histoire}
 \medskipvm
-Dans ce paragraphe, nous proposons d'exposer brièvement quelques lois de comportement qui vont au delà de la simple élasticité linéaire.
+Dans ce paragraphe, nous proposons d'exposer brièvement quelques lois de comportement qui vont au-delà de la simple élasticité linéaire.
 
 %\medskip
 %Nous séparerons les cas «instantanés», comme l'élasticité ou la plasticité, des
@@ -490,11 +502,20 @@ La contrainte de comparaison n'est pas une contrainte réelle existant à un ins
 
 Cette contrainte est comparée à la limite d'élasticité ou encore la contrainte de rupture obtenue par essai de traction.
 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Maxwell2}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Mises}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Tresca}\\%
+Maxwell&von Mises&Tresca
+\end{tabular}}
 \medskip
-Le critère dit de von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{critère de plasticité!von Mises} a été formulé initialement par Maxwell en 1865.\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais} En 1904, Huber\index[aut]{Huber (Tytus Maksymilian), 1872-1950, Polonais} le développa partiellement dans un article en polonais. Cependant, sa paternité est généralement attribuée à von Mises (1913).\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien} On parle aussi parfois de la théorie de Maxwell-Huber-Hencky-von Mises,\index[aut]{Hencky (Heinrich), 1885-1951, Allemand} ou de critère de Prandtl-Reuss,\index[aut]{Prandtl (Ludwig), 1875-1953, Allemand}\index[aut]{Reuss} ou encore de critère de l'énergie de distorsion élastique.
-
-\medskip
+\ImageADroite{%
+Le critère dit de von Mises\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien}\index{critère de plasticité!von Mises} a été formulé initialement par Maxwell en 1865.\index[aut]{Maxwell (James Clerk), 1831-1879, Écossais} En 1904, Huber\index[aut]{Huber (Tytus Maksymilian), 1872-1950, Polonais} le développa partiellement dans un article en polonais. Cependant, sa paternité est généralement attribuée à von Mises (1913).\index[aut]{Mises (Richard Edler, von -), 1883-1953, Autrichien} On parle aussi parfois de la théorie de Maxwell-Huber-Hencky-von Mises,\index[aut]{Hencky (Heinrich), 1885-1951, Allemand} ou de critère de Prandtl-Reuss,\index[aut]{Prandtl (Ludwig), 1875-1953, Allemand}\index[aut]{Reuss} ou encore de critère de l'énergie de distorsion élastique.\\
+\indent
+%\medskip
 La renommée de Tresca\index[aut]{Tresca (Henri Édouard), 1814-1885, Français} était si grande à son époque que Gustave Eiffel\index[aut]{Eiffel (Gustave), 1832-1923, Français} mit son nom en troisième position sur la Liste des soixante-douze noms de savants inscrits sur la tour Eiffel, et plus précisément sur le pilier face au Trocadéro.
+}
 
 \medskip
 Sur ce même pilier (comportant 18 noms), en plus des mathématiciens Lagrange,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} Laplace,\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français} Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français} et Chasles,\index[aut]{Chasles (Michel), 1793-1880, Français} se trouve également Navier.\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français} Celui-ci n'apparaît pas pour ses contributions aux mathématiques et à la physique\footnote{Lorsque, en 1822, il modifia les équations d'Euler pour décrire un fluide en incluant la viscosité, son raisonnement mathématique était erroné, mais par chance, ou grâce à son intuition, il obtint malgré tout les bonnes équations. Le raisonnement rigoureux fut trouvé quelques années plus tard par le mathématicien irlandais Stokes\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}}, mais parce qu'il était considéré lui-aussi comme l'un des plus grands ingénieurs français et comme personnage public important: de 1830 à sa mort en 1836, il fut employé par le gouvernement français comme consultant afin de permettre à la France de progresser grâce aux sciences et aux technologies.
