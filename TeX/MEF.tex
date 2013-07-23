@@ -679,10 +679,12 @@ Une majoration de l'erreur est donnée par le lemme 1 de Strang.
 S'il existe $\alpha^*>0$ tel que $\forall h, a_h(v_h,v_h)\ge\alpha^*\|v_h\|^2, \forall v_h\in V_h$,
 alors il existe une constante $C$ indépendante de $h$ telle que:
 \begin{equation}
-\|u-u_h\|\le C\left[
-\inf_{v_h\in V_h} \left\{ \|u-v_h\| + \sup_{w_h\in V_h} \dfrac{|a(v_h,w_h)-a_h(v_h,w_h)|}{\|w_h\|}\right\}
-+\sup_{w_h\in V_h}\left\{\dfrac{|f(w_h)-f_h(w_h)|}{\|w_h\|}\right\}
+\begin{array}{rl}
+\|u-u_h\|\le C &\left[
+\inf_{v_h\in V_h} \left\{ \|u-v_h\| + \sup_{w_h\in V_h} \dfrac{|a(v_h,w_h)-a_h(v_h,w_h)|}{\|w_h\|}\right\} \textbf{...}\right.\\
+& \textbf{ ... }\left. +\sup_{w_h\in V_h}\left\{\dfrac{|f(w_h)-f_h(w_h)|}{\|w_h\|}\right\}
 \right]
+\end{array}
 \end{equation}
 Le premier terme $ \|u-v_h\|$ est appelé \textcolorblue{erreur d'approximation},
 le reste \textcolorblue{erreur de consistence}.
@@ -795,11 +797,11 @@ On se sert du théorème suivant:
 
 \begin{theoreme}
 Soit $K$ un élément quelconque de $\mathcal{T}_h$, et $\hat{K}$ l'élément de
-référence. Soit $F$ la transformation affine de$\hat{K}$ vers $K$:
+référence. Soit $F$ la transformation affine de~$\hat{K}$ vers $K$:
 $F(\hat{x}) = B\hat{x} + b$, avec $B$ inversible. On a:
 \begin{equation}
 \forall v\in H^l(K), \quad
-|\hat{v}|_{l,K} \le C(l,n) \|B\|_2^l |\det B|^{-1/2} |v|_{l,K}
+|\hat{v}|_{l,K} \le C(l,n) \|B\|_2^l |\det B|^{-1/2} |v|_{l,\hat{K}}
 \end{equation}
 Ce résultat n'est rien d'autre qu'un résultat de changement de variable
 dans une intégrale.
