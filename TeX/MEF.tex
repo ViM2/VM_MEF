@@ -679,12 +679,12 @@ Une majoration de l'erreur est donnée par le lemme 1 de Strang.
 S'il existe $\alpha^*>0$ tel que $\forall h, a_h(v_h,v_h)\ge\alpha^*\|v_h\|^2, \forall v_h\in V_h$,
 alors il existe une constante $C$ indépendante de $h$ telle que:
 \begin{equation}
-\begin{array}{rl}
+\begin{aligned}
 \|u-u_h\|\le C &\left[
 \inf_{v_h\in V_h} \left\{ \|u-v_h\| + \sup_{w_h\in V_h} \dfrac{|a(v_h,w_h)-a_h(v_h,w_h)|}{\|w_h\|}\right\} \textbf{...}\right.\\
 & \textbf{ ... }\left. +\sup_{w_h\in V_h}\left\{\dfrac{|f(w_h)-f_h(w_h)|}{\|w_h\|}\right\}
 \right]
-\end{array}
+\end{aligned}
 \end{equation}
 Le premier terme $ \|u-v_h\|$ est appelé \textcolorblue{erreur d'approximation},
 le reste \textcolorblue{erreur de consistence}.
