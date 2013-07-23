@@ -59,7 +59,7 @@ i.e. nous sommes amenés à considérer l'espace \textcolorblue{$V=H^1(\Omega)\c
 \medskip
 L'espace~$V$ est un espace de Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand} normé par~$\|\cdot\|_{H^1(\Omega)}$.
 \begin{itemize}
-\item~$v\in V \Rightarrow v\in H^1(\Omega)$ tel que~$\int_\Omega v=0$ et l'application~$v\in H^1(\Omega) \mapsto \int_\Omega v$ est continue sur~$H^1(\Omega)$, donc~$V$ est un sous-espace fermé de~$H^1$, donc est un Hilbert. \textcolorgreen{Et donc 	maintenant que l'on sait que~$V$ est un Hilbert, on aimerait bien appliquer Lax-Milgram\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index{théorème!de Lax-Milgram} (voir~\ref{Sec:LaxMil}), c'est pourquoi il faut s'intéresser à la forme bilinéaire définissant le problème. C'est ce qui suit.}
+\item~$v\in V \Rightarrow v\in H^1(\Omega)$ tel que~$\int_\Omega v=0$ et l'application~$v\in H^1(\Omega) \mapsto \int_\Omega v$ est continue sur~$H^1(\Omega)$, donc~$V$ est un sous-espace fermé de~$H^1$, donc est un Hilbert. \textcolorgreen{Et donc 	maintenant que l'on sait que~$V$ est un Hilbert, on aimerait bien appliquer Lax-Milgram\index[aut]{Lax (Peter), 1926-, Américain}\index[aut]{Milgram (Arthur Norton), 1912-1961, Américain}\index{théorème!de Lax-Milgram} (voir~\ref{Sec-ThLaxMilgram}), c'est pourquoi il faut s'intéresser à la forme bilinéaire définissant le problème. C'est ce qui suit.}
   \item Si l'on considère la \textcolorblue{forme bilinéaire}: \begin{equation} a(u_0, v_0) = \int_\Omega \nabla u_0\cdot\nabla v_0\end{equation}
 	alors on voit que \begin{equation}a(u_0, v_0) \le |u_0|_1 \overline{|v_0|}_1 \le \| u_0\|_{H^1} \|v_0\|_{H^1}\end{equation}
 	et donc~$a$ est \textbf{continue}.
@@ -98,7 +98,7 @@ et la loi de comportement:
 On n'a pas d'information sur~$u$. Par contre, on a un terme~$p\cdot n=0$. Et il serait bien de disposer de son «symétrique», i.e. d'un terme~$q.n=0$ qui serait imposé par le choix de l'espace dans lequel vivrait~$u$. \textcolorgreen{Ce que l'on a en tête c'est bien sûr de pouvoir utiliser le théorème de Brezzi.}\index[aut]{Brezzi (Franco), 1945-, Italien}\index{théorème!de Brezzi}
 
 \medskip
-En correspondance avec les notations du paragraphe~\ref{Sec:Brezzi}, on choisit alors les espaces: \textcolorblue{$H=\{ q\in H(\dive;\Omega); q\cdot n_{|\Gamma}=0\}$} et~$M=L^2(\Omega)$. Le problème est donné, dans la formulation de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien} par les deux formes bilinéaires
+En correspondance avec les notations du paragraphe~\ref{Sec-ThBrezzi}, on choisit alors les espaces: \textcolorblue{$H=\{ q\in H(\dive;\Omega); q\cdot n_{|\Gamma}=0\}$} et~$M=L^2(\Omega)$. Le problème est donné, dans la formulation de Brezzi,\index{théorème!de Brezzi}\index[aut]{Brezzi (Franco), 1945-, Italien} par les deux formes bilinéaires
 \begin{equation}a(p,q)=\dint_\Omega p\cdot q\quad\text{ et }\quad b(v,q)=\dint_\Omega v\dive q\end{equation}
 Quant aux formes linéaires définissant le problème, la première est nulle et la seconde vaut:\begin{equation}-\dint_\Omega fv\end{equation}
 
