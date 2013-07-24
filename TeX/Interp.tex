@@ -49,8 +49,30 @@ Faisons d'emblée une \textcolorred{mise en garde}: la plus connue des interpola
 \medskip
 \subsection{Motivation} 
 
-Lorsque l'on souhaite approximer une courbe par une autre, recourir aux polynômes semble une voie naturelle. Le \textcolorblue{théorème de Taylor (1715)}\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index{théorème!de Taylor} montre qu'une fonction plusieurs fois dérivable au voisinage d'un point peut être approximée par une fonction polynôme dont les coefficients dépendent uniquement des dérivées de la fonction en ce point. 
-\begin{theoreme}[Développement en série de Taylor]
+\begin{histoire}
+Lorsque l'on souhaite approximer une courbe par une autre, recourir aux polynômes semble une voie naturelle. 
+
+Les séries de fonctions sont apparues à la fin du \textsc{xvii}\fup{e} siècle, lorsque Isaac Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} puis Brook Taylor décomposèrent des fonctions en séries (entières, donc sur $\CC$) pour le calcul d'intégrales. Ce n'est qu'en 1821 que Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} fournira les critères précis de convergence dans ses notes de cours de Polytechnique \emph{Analyse algébrique}, différents autres types de convergence étant introduits jusqu'en 1840.
+
+La richesse de cette théorie vient de ce qu'elle permet d'étudier des fonctions qui ne s'expriment pas à l'aide de fonctions connues, comme le sont certaines solutions d'équations différentielles.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}%
+\includegraphics[height=\the\HauteurDesPhotos]{Taylor}\\%
+Taylor%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+\medskip
+Le \textcolorblue{théorème de Taylor (1715)}\index[aut]{Taylor (Brook), 1685-1731, Anglais}\index{théorème!de Taylor} (théorème \ref{Th-Taylor}) montre qu'une fonction plusieurs fois dérivable au voisinage d'un point peut être approximée par une fonction polynôme dont les coefficients dépendent uniquement des dérivées de la fonction en ce point. 
+En présentant cette formule, Taylor propose une méthode de développement en série, mais il se préoccupe peu de la nature du reste; il faut attendre ses successeurs pour la caractériser rigoureusement.
+On désigne par \textcolorblue{théorèmes de Taylor} ou formules de Taylor plusieurs résultats et expressions pour le reste~$R_n(x)$, parfois renforcé par quelques hypothèses supplémentaires: 
+Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Young\index[aut]{Young (William Henry), 1863-1942, Anglais},
+Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien},
+Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français},
+Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} avec reste intégral.}
+\end{histoire}
+\begin{theoreme}[Développement en série de Taylor]\label{Th-Taylor}
 Soit~$I$ un intervalle de~$\RR$, $a\in I$, $E$ un espace vectoriel normé et~$f: I\rightarrow R$f une fonction dérivable en~$a$ 
 jusqu’à l’ordre~$n$. Alors:
 \begin{equation}
@@ -59,13 +81,7 @@ f(x) =\sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k + R_n(x)
 \end{equation}
 définit un reste~$R_n(x)$ dont le comportement s'apparente au monôme~$(x-a)^{n+1}$.
 \end{theoreme}
-En présentant cette formule, Taylor propose une méthode de développement en série, mais il se préoccupe peu de la nature du reste; il faut attendre ses successeurs pour la caractériser rigoureusement.
-On désigne par \textcolorblue{théorèmes de Taylor} ou formules de Taylor plusieurs résultats et expressions pour le reste~$R_n(x)$, parfois renforcé par quelques hypothèses supplémentaires: 
-Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Young\index[aut]{Young (William Henry), 1863-1942, Anglais},
-Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien},
-Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français},
-Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} avec reste intégral.
-
+\medskipvm
 Le \textcolorblue{théorème d'approximation de Weierstrass}\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}\index{théorème!de Weierstrass} en analyse réelle dit que toute fonction continue définie sur un segment peut être approchée uniformément par des fonctions polynômes. \textcolorgris{Le théorème de Stone-Weierstrass\index[aut]{Stone (Marshall Harvey), 1903-1989, Américain}\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}\index{théorème!de Stone-Weierstrass} généralise ce résultat aux fonctions continues définies sur un espace compact et à valeurs réelles, en remplaçant l'algèbre des polynômes par une algèbre de fonctions qui sépare les points et contient au moins une fonction constante non nulle. }
 
 L'interpolation polynomiale consiste donc à trouver un polynôme passant par un ensemble de points donnés. Nous verrons qu'il est également possible de demander à ce que ce polynôme satisfasse à d'autres conditions.
