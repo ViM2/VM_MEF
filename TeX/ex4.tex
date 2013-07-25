@@ -532,9 +532,8 @@ Les résultats directement obtenus sont donnés à la \fig{Fig-poutU-disp} pour 
   \includegraphics[height=80mm]{U-epsXX.eps} \hfill
   \includegraphics[height=80mm]{U-epsYY.eps}\hfill
   \includegraphics[height=80mm]{U-epsXY.eps}
-  \caption{\label{Fig-poutU-eps} Déformations}
+  \caption{\label{Fig-poutU-eps} Déformations}\label{VMtiti}
 \end{figure}
-
 
 \medskip
 Néanmoins nous présentons quelques résultats issus de l'analyse des contraintes aux interfaces avec ou sans utilisation de la méthode de Reissner local. Nous nous concentrerons sur les résultats numériques et graphiques permettant d'apprécier la précision de la méthode de Reissner local par rapport aux résultats d'\ansys aux points~$A$, $B$, $E$ et~$F$ ainsi que d'étudier l'influence de la valeur du rayon~$R$.
@@ -547,12 +546,34 @@ Au point~$A$, l'influence des conditions aux limites est encore sensible: en plu
 
 \medskip
 En~$A$ et~$B$, la composante discontinue est~$\sigma_{xx}$, les composantes~$\sigma_{yy}$ et~$\sigma_{xy}$ sont continues. Par contre, aux points~$E$ et~$F$, c'est~$\sigma_{yy}$ la composante discontinue et~$\sigma_{xx}$ et $\sigma_{xy}$ les composantes continues.
+\newif\ifVMSurLaMemePage% Dernière fig et 1et tableau sur la même page si true
+\VMSurLaMemePagetrue% vrai pour v2b cours
 
 \medskip
 D'après les résultats présentés ci-après, il est visible que la méthode de Reissner local permet d'améliorer les résultats par rapport à \ansys.
+%
+%
+%\ifthenelse{\equal{1}{1}}{Même}{Différent}
+%\newcounter{PageDeLImage}
+%\setcounter{PageDeLImage}{\arabic{\pageref{VMtiti}}}
+%\newboolean{VMSurLaMemePage}
+%arabic \roman{\protect{\pageref{VMtiti}}} et \arabic{\pageref{VMtoto}};
+%    \ifx&\arabic{\pageref{VMtiti}}&\arabic{\pageref{VMtoto}}%
+%     true
+%    \else
+%     false!!!!
+%    \fi
+%\pageref{VMtiti},\pageref{VMtoto}%\unexpanded{\pageref{VMtiti}}
+%\ifdef{\equal{1}{1}}{Même}{Différent}
+%\ifthenelse{\equal{\pageref{VMtiti}}{\pageref{VMtoto}}}{True}{False}
 
-%\bigskip
-\begin{table}[h!]
+%\ifthenelse{\equal{\expandafter{\pageref{Fig-poutU-eps}}}{\expandafter{\pageref{Tab:pt-A}}}}{Même}{Différent}
+%\ifthenelse{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{SUR LA MEME PAGE}{PAGES DIFFRENTES}
+%\newpage
+
+
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+\begin{table}[h!]\label{VMtoto}
 \centering\small
   \begin{tabular}{|l||r|r|r|r|r|}
    \hline
@@ -614,19 +635,24 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:asxxs}~$\sigma_{xx}$ dans la peau en~$A$}
 %\end{figure}
 
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
+\ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/a-syy.2012.txt}
 \caption{\label{Fig:asyy}~$\sigma_{yy}$ en~$A$}
 \end{figure}
 
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+\ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/a-sxy.2012.txt}
 \caption{\label{Fig:asxy}~$\sigma_{xy}$ en~$A$}
 \end{figure}
 
-\clearpage
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}%%%
+\ifVMSurLaMemePage\clearpage\fi
 \begin{table}[h!]
 \centering\small
   \begin{tabular}{|l||r|c|c|c|c|}
@@ -689,22 +715,25 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:bsxxs}~$\sigma_{xx}$ dans la peau en~$B$}
 %\end{figure}
 %
-%\clearpage
 
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
+\ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/b-syy.2012.txt}
 \caption{\label{Fig:bsyy}~$\sigma_{yy}$ en~$B$}
 \end{figure}
 
-\clearpage
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+\ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/b-sxy.2012.txt}
 \caption{\label{Fig:bsxy}~$\sigma_{xy}$ en~$B$}
 \end{figure}
-%\clearpage
 
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
+\ifVMSurLaMemePage\else\clearpage\fi
 \begin{table}[h!]
 \centering\small
   \begin{tabular}{|l||r|c|c|c|c|}
@@ -767,22 +796,24 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:esxxs}~$\sigma_{yy}$ dans la peau en~$E$}
 %\end{figure}
 %
-\clearpage
-
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+\ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/e-syy.2012.txt}
 \caption{\label{Fig:esyy}~$\sigma_{xx}$ en~$E$}
 \end{figure}
-%\clearpage
 
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
+\ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/e-sxy.2012.txt}
 \caption{\label{Fig:esxy}~$\sigma_{xy}$ en~$E$}
 \end{figure}
 
-\clearpage
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+\ifVMSurLaMemePage\clearpage\fi
 \begin{table}[h!]
 \centering\small
   \begin{tabular}{|l||r|c|c|c|c|}
@@ -830,7 +861,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
   \end{tabular}
 \caption{\label{Tab:pt-F} Résultats au point~$F$}
 \end{table}
-%\clearpage
 
 %\begin{figure}
 %\centering
@@ -848,13 +878,16 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:fsxxs}~$\sigma_{yy}$ dans la peau en~$F$}
 %\end{figure}
 
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
+\ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/f-syy.2012.txt}
 \caption{\label{Fig:fsyy}~$\sigma_{xx}$ en~$F$}
 \end{figure}
 
-\clearpage
+%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+\ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
 \input{tex/f-sxy.2012.txt}

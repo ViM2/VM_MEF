@@ -223,7 +223,7 @@ f'(a)\approx \frac{f(b)-f(c)}{b-c}
 \end{equation}
 où~$b$ et~$c$ sont d'autres points. Par exemple, pour~$c=a$ et~$b=a+\varepsilon$ on obtient un schéma décentré à droite; pour~$c=a-\varepsilon$ et~$b=a+\varepsilon$, on ontient un schéma centré.
  
-%\newpage% Pour version livre du 20130712
+\ifVersionDuDocEstVincent\newpage\fi% Pour version cours v2b
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc} 
 \includegraphics[height=25mm]{Euler}& 
@@ -231,6 +231,7 @@ où~$b$ et~$c$ sont d'autres points. Par exemple, pour~$c=a$ et~$b=a+\varepsilon
 \includegraphics[height=25mm]{Kutta}& 
 \includegraphics[height=25mm]{Newmark}\\ 
 Euler & Runge& Kutta& Newmark\end{tabular}}
+\medskip
 \begin{histoire}
 La première méthode numérique fut introduite en 1768 par Leonhard Euler.\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\\
 \ImageAGauche{%

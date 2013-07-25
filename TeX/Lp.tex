@@ -17,17 +17,15 @@ Dans le chapitre VI, «Développement d'une fonction arbitraire en séries trigo
 \includegraphics[height=\the\HauteurDesPhotos]{Fourier}\\
 Fourier%
 \end{tabular}}
-\medskip
+%\medskip
 \ImageAGauche{%
 Le problème est de calculer les coefficients~$a_k$ dans le cas même, dit-il, où «la fonction~$f(x)$ représente une suite de valeurs ou ordonnées dont chacune est arbitraire... On ne suppose point que ces coordonnées soient assujetties à une loi commune; elles se succèdent d'une manière quelconque et chacune d'elles est donnée comme le serait une seule quantité».\\ \indent
-On notera au passage que la fonction considérée par Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} n'est définie que par la donnée de ses points (si en plus ils sont en nombre fini, cela représente alors un échantillonnage).\\ \indent
+On notera au passage que la fonction considérée par Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} n'est définie que par la donnée de ses points (si en plus ils sont en nombre fini, cela représente alors un échantillonnage). %\\ \indent
 %
-%\medskip
 Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} conduit son calcul selon une voie nouvelle: en multipliant l'expression précédente par~$\sin kx$ et en intégrant terme à terme la série, mais sans justification, il obtient:
 \begin{equation}a_k=\frac2{\pi}\dint_0^{\pi} f(x)\sin kx \dd x\end{equation}
-Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} observe que dans tous les cas envisagés, ces intégrales ont un sens et en conclut que toute fonction d'une variable peut-être représentée par une série trigonométrique.}
-
-Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} même manquant de rigueur, aboutit à un résultat juste pour les fonctions qu'il considère.
+Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} observe que dans tous les cas envisagés, ces intégrales ont un sens et en conclut que toute fonction d'une variable peut-être représentée par une série trigonométrique. }
+Même manquant de rigueur, Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} aboutit à un résultat juste pour les fonctions qu'il considère.
 Or les fonctions considérées en l'occurrence «vont bien» pour l'intégrale de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} telle qu'elle est définie.
 
 \medskip
@@ -47,6 +45,7 @@ définie~$\int_a^b f(x)\dd x$.
 \end{definition}
 En termes modernes, on dira que pour qu'une fonction bornée soit Riemann-intégrable,\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 il faut et il suffit que l'ensemble des points de discontinuité de~$f$ soit de mesure nulle.
+\medskipvm
 \textcolorgris{En complément, on rappellera également que l'intégrale de Riemann n'est que la généralisation
 de celle de Cauchy:\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} la valeur retenue pour calculer
 la fonction sur chaque sous-intervalle n'est plus celle du point de gauche, mais peut être prise n'importe où dans ledit sous-intervalle.}
@@ -61,8 +60,7 @@ Riemann&Dirichlet&Lebesgue%
 \medskip
 \ImageADroite{%
 Dès la fin de son mémoire de 1829, \emph{Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données}, Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} donne l'exemple, d'une nature toute nouvelle, d'une fonction discontinue en tous ces points: la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre constante~$d$ si~$x$ est irrationnel.
-On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.
-}
+On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.}
 
 \medskip
 Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} va commencer par définir un \textcolorblue{ensemble mesurable}: c'est un ensemble dont la mesure extérieure (i.e. la borne inférieure de la mesure des ouverts le contenant) est égale à sa mesure intérieure (i.e. la borne supérieure de la mesure des fermés qu'il contient): est-il besoin de rappeler la différence entre borne inférieure et minimum et entre borne supérieure et maximum ? La borne supérieure (ou le supremum) d'une partie d'un ensemble partiellement ordonné est le plus petit de ses majorants. Une telle borne n'existe pas toujours, mais si elle existe alors elle est unique. Elle n'appartient pas nécessairement à la partie considérée.
@@ -95,9 +93,9 @@ La théorie de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 De plus, toute cette évolution s'est accompagnée de l'idée qu'on doit manipuler les fonctions comme des objets mathématiques en soi, des points de nouveaux espaces, les \emph{espaces fonctionnels}. Avec l'extension du langage ensembliste, il devient naturel d'employer un langage géométrique à propos de ces espaces.
 
 \medskip
-\textcolorgris{Malgré tout ce qui vient d'être dit, rendons quand même hommage à cette belle (et malgré tout puissante) intégrale de Riemann, qui a de plus le bon goût d'être souvent très bien comprise des élèves.\\ \indent
+\colorgris Malgré tout ce qui vient d'être dit, rendons quand même hommage à cette belle (et malgré tout puissante) intégrale de Riemann, qui a de plus le bon goût d'être souvent très bien comprise des élèves.\\ \indent
 L'intégrale de Riemann nous apprend à nous poser la question «où se passent les choses importantes?», question qui n'a pas de sens pour l'intégrale de Lebesgue qui ne connaît pas la question «où?», mais seulement «combien souvent?».\\ \indent
-De plus, les techniques riemanniennes consistant à localiser les problèmes et à découper l'intégrale sur plusieurs intervalles restent des outils indispensables pour aborder bien des problèmes.}
+De plus, les techniques riemanniennes consistant à localiser les problèmes et à découper l'intégrale sur plusieurs intervalles restent des outils indispensables pour aborder bien des problèmes.\colorblack
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}%

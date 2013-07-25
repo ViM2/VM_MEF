@@ -40,15 +40,16 @@ Il existe une notion de continuité uniforme qui est plus forte que la simple co
 
 \medskip
 La continuité est une propriété topologique (donc indépendante de la métrique).
+\medskipvm
 \begin{definition}[Continuité d'une fonction en un point (version topologique)]
 Soit~$f$ une application d'un espace topologique~$E$ dans un espace topologique $F$.
 On dit que \textcolorblue{$f$ est continue en un point}~$a$ de~$E$ si, quelque soit le voisinage~$W$ de~$f(a)$ dans~$F$, il existe un voisinage~$V$ de~$a$ dans~$E$ tel que $\forall x\in V$, $f(x)\in W$, c'est-à-dire que l'image réciproque de tout voisinage de~$f(a)$ est un voisinage de~$a$.
 \end{definition}
+\medskipvm
 \textcolorgris{Cette définition est donnée pour la culture, car nous n'avons pas rappelé la notion de voisinage dans ce document. Cela n'a pas d'importance dans ce contexte puisque nous travaillerons sur des cas moins généraux.}
 
 \medskip
 Évidemment, une application de~$E$ dans~$F$ est \textcolorblue{continue} si elle est continue en tout point de~$E$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Ramenons nous à des choses plus connues et plus en lien avec ce document.
 Dans le cas des espaces métriques, la continuité se définit comme suit.
@@ -111,7 +112,7 @@ Avec Hölder\index[aut]{Hoelder@Hölder (Otto Ludwig), 1859-1937, Allemand} et L
 La distinction entre continuité et continuité uniforme est la même que celle entre la convergence simple et la convergence uniforme dans le cas des séries (pour le lecteur qui s'en souviendrait).
 En effet, cette continuité uniforme ne regarde pas comment (quel~$\varepsilon$) la fonction est continue en chaque point, mais comment elle est continue dans sa globalité, i.e. lorsque ce fameux~$\varepsilon$ n'est plus lié à la position sur la courbe, mais est fixé pour la fonction entière.}
 \colorblack
-\medskip
+\medskipvm
 La \textcolorblue{continuité höldérienne} ou \textcolorblue{condition de Hölder} est une condition suffisante (mais non nécessaire) pour qu'une application définie entre deux espaces \textcolorred{métriques} soit continue.
 
 La définition s'applique en particulier pour les fonctions d'une variable réelle.
@@ -123,9 +124,8 @@ Si~$(E, d)$ et~$(F, d')$ sont deux espaces métriques, une fonction~$f: E \right
   \forall (x, y) \in \mathrm{e}^2,\quad d'\left(f(x), f(y)\right) \le C\,d\left(x,y\right)^a
 \end{equation}
 \end{definition}
-\medskip
 La continuité höldérienne d'une fonction dépend donc d'un paramètre réel strictement positif~$a \in \intof{0}{1}$, et prend en compte toutes les variations de la valeur de la fonction sur son ensemble de définition.
-\medskip
+\parvm
 Si~$0 < a \le 1$ est fixé, l'ensemble des fonctions réelles~$a$-höldériennes est un espace vectoriel, conventionnellement noté~$\mathcal{C}^{0, a}(E,\RR)$.
 
 \medskip
@@ -136,18 +136,21 @@ Toute application~$f$ qui est~$a$-höldérienne est continue. Mieux, elle est \t
 \end{equation}
 Le réel~$\eta$ dépend de~$\varepsilon$ mais est indépendant de la variable~$x$ parcourant l'espace de définition de l'application.
 \end{theoreme}
-%%%#\bigskip
+\medskipvm
 \begin{definition}[Fonction lipschitzienne]
 Lorsque~$a = 1$, l'application est dit \textcolorblue{lipschitzienne}.
 Une application lipschitzienne est plus «régulière» qu'une fonction simplement continue.
 \end{definition}
-\medskip
 Toute fonction lipschitzienne (en tant que fonction höldérienne) est uniformément continue.
-\medskip
+\parvm
 Toute fonction réelle lipschitzienne est (absolument continue donc à variation bornée donc) dérivable presque partout pour la mesure de Lebesgue et sa dérivée est essentiellement bornée.
+
 \medskip
 \section{Dérivée}\index{dérivée!classique}
-\medskip
+
+Le nombre dérivé en un point d'une fonction à variable et valeurs réelles est le coefficient directeur de la tangente au graphe de cette fonction en ce point, ou aussi le coefficient directeur de l'approximation affine de cette fonction en ce point: ce nombre n'est donc défini que si cette tangente, ou cette approximation, existe.
+La dérivée d'une fonction $f$ est une fonction qui, à tout nombre pour lequel $f$ admet un nombre dérivé, associe ce nombre dérivé.
+%\medskipvm
 \begin{definition}[Dérivée d'une fonction]
 Soit~$f$ une application d'un ouvert~$\Omega$ du corps~$\KK$ (resp. un intervalle de~$\RR$) dans un espace affine normé~$F$ (resp.~$\RR$), alors on peut donner un sens, pour~$a\in\Omega$, à la quantité:
 \begin{equation}
@@ -216,7 +219,7 @@ La dérivabilité est elle-aussi une notion topologique et non métrique (même 
 
 \medskip
 \section{Fonctions de classe~$C^k$}\index{continuité!$C^k$}
-\medskipvm
+
 Il est évident que si la dérivée (telle que définie au dessus) existe partout dans $\Omega$, alors on peut à nouveau considérer sa dérivée... et ainsi de suite.
 
 On définit donc les \textcolorblue{classes~$C^1$, $C^2$, ...~$C^k$, ...~$C^\infty$} de fonctions 1 fois, 2 fois, ..., $k$ fois continûment dérivables ou même indéfiniment dérivables.
@@ -229,6 +232,7 @@ Toutes les fonctions polynomiales sont~$C^\infty$, car à partir d'un certain ra
 
 \medskip
 \section{Dérivées partielles}\index{dérivée!partielle}
+
 Nous allons maintenant étendre la dérivation au cas où une fonction dépend de plusieurs variables. Évidemment, il faudra que dans le cas où la fonction ne dépend que d'une seule variable, les deux notions coïncident.
 
 \medskip
@@ -242,7 +246,7 @@ Par exemple~$\frac{ \partial^2 f}{ \partial x^2} = f_{xx}' = \partial_{xx} f = \
 \medskip
 \begin{definition}[Dérivée partielle d'ordre 1 en un point]
 %La définition se fait de manière analogue au cas de la dérivée «classique».
-%
+
 Soient~$\Omega$ un ouvert de~$\RR^n$ et~$f$ une fonction de~$n$ variables:
 \begin{equation}
 f: \begin{array}{ccc}
@@ -344,11 +348,10 @@ qui est une norme sur~$C^k_b(\Omega)$ et en fait un espace de Banach (i.e. norm�
 On définit, pour~$k\in\NN\cup\{\infty\}$, l'ensemble \textcolorblue{$C_c^k(\Omega)$} par:
 $f\in C_c^k(\Omega)$ si~$f\in C^k(\Omega)$ et si~$f$ est de support compact inclus dans~$\Omega$.
 \end{definition}
-
 Pour tout ouvert~$\Omega$ de~$\RR^n$, et pour tout~$k\in\NN\cup\{\infty\}$:
 \begin{itemize}
-  \item~$C_c^k(\Omega)$ est dense dans~$C^k(\Omega)$
-  \item~$C_c^\infty(\Omega)$ est dense dans~$C^k(\Omega)$
+  \item~$C_c^k(\Omega)$ est dense dans~$C^k(\Omega)$;
+  \item~$C_c^\infty(\Omega)$ est dense dans~$C^k(\Omega)$.
 \end{itemize}
 
 \medskip

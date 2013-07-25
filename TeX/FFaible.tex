@@ -183,6 +183,7 @@ Une forme bilinéaire~$a$ est dite \textcolorblue{coercitive} si elle vérifie:
 \end{equation}
 \end{definition}
 
+\medskip
 \begin{theoreme}[Théorème de Lax-Milgram]
 Soit~$H$ un espace de Hilbert réel ou complexe muni de son produit scalaire noté $\langle\cdot,\cdot\rangle$, de norme associée~$\|\cdot\|$.
 
@@ -195,10 +196,9 @@ Alors il existe un unique~$u$ dans~$H$ tel que l'équation~$a(u,v) = f(v)$ soit 
 \colorblack
 \end{theoreme}
 
-
 \medskip
 {\noindent\footnotesize\colorgris
-\textbf{Preuve}\hskip5pt
+\textbf{Preuve:}\hskip5pt
 La continuité et la coercitivité de~$a$ permettent de dire que~$a$ définit un produit scalaire~$(\cdot,\cdot)_a$ dont la norme associée~$\|\cdot\|_a$ est équivalente à la norme~$\|\cdot\|$. 
 Le problème devient: trouver~$u$ tel que~$\forall v\in H, (u,v)_a=f(v)$.
 
@@ -208,22 +208,23 @@ trouver~$u$ tel que~$\forall v\in H, (u,v)_a=<f,v>$.
 Le théorème de représentation de Riesz-Fréchet permet de conclure à l'existence et à l'unicité de la solution.~$\square$
 
 \noindent
-Une autre preuve consiste à étudier directement le problème de minimisation de la fonctionnelle \textcolorblue{$J=\frac12 a(v,v)-f(v)$} (ce qui est une façon de montrer le théorème de Riesz) en considérant une suite minimisante et en montrant qu'elle est de Cauchy par l'identité du parallélogramme.~$\square$
+\textbf{Autre Preuve:}\hskip5pt Une autre voie consiste à étudier directement le problème de minimisation de la fonctionnelle définie par \textcolorblue{$J=\tfrac12 a(v,v)-f(v)$} (ce qui est une façon de montrer le théorème de Riesz) en considérant une suite minimisante et en montrant qu'elle est de Cauchy par l'identité du parallélogramme.~$\square$
 \colorblack}
 
 
 \medskip
 \textcolorred{Ce théorème est l'un des fondements de la méthode des éléments finis} dits «classiques» ou «en déplacement». Dans le cas d'éléments finis plus «exotiques» tels que les éléments mixtes, hybrides, mixtes-hybrides et des multiplicateurs de Lagrange, on a besoin d'un peu plus... c'est ce que nous allons voir au paragraphe suivant.
 
-
-\begin{theoreme}[Forme variationnelle du théorème du Lax-Milgram]
+\medskip
+La forme variationnelle du théorème de Lax-Milgram a déjà été abordée dans la seconde «preuve» proposée du théorème de de Lax-Milgram. Il s'agit, dans les cas où cela est possible, d'aborder le problème sous l'angle de la minimisation d'une fonctionnelle.
+\medskipvm
+\begin{theoreme}[Forme variationnelle du théorème de Lax-Milgram]
 Si de plus la forme bilinéaire~$a$ est symétrique, alors~$u$ est l'unique élément de~$H$ qui minimise la fonctionnelle
 $J: H\rightarrow\RR$ définie par~$J(v) = \frac12 a(v,v)-f(v)$ pour tout~$v$ de~$E$:
 \begin{equation}
 \exists!\ u \in H,\quad J(u) = \min_{v\in H}\ J(v) = \min_{v\in H} \left( \frac12 a(v,v) - f(v) \right)
 \end{equation}
 \end{theoreme}
-
 
 \medskip
 \colorgreen
