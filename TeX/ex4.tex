@@ -546,33 +546,12 @@ Au point~$A$, l'influence des conditions aux limites est encore sensible: en plu
 
 \medskip
 En~$A$ et~$B$, la composante discontinue est~$\sigma_{xx}$, les composantes~$\sigma_{yy}$ et~$\sigma_{xy}$ sont continues. Par contre, aux points~$E$ et~$F$, c'est~$\sigma_{yy}$ la composante discontinue et~$\sigma_{xx}$ et $\sigma_{xy}$ les composantes continues.
-\newif\ifVMSurLaMemePage% Dernière fig et 1et tableau sur la même page si true
-\VMSurLaMemePagetrue% vrai pour v2b cours
 
 \medskip
 D'après les résultats présentés ci-après, il est visible que la méthode de Reissner local permet d'améliorer les résultats par rapport à \ansys.
-%
-%
-%\ifthenelse{\equal{1}{1}}{Même}{Différent}
-%\newcounter{PageDeLImage}
-%\setcounter{PageDeLImage}{\arabic{\pageref{VMtiti}}}
-%\newboolean{VMSurLaMemePage}
-%arabic \roman{\protect{\pageref{VMtiti}}} et \arabic{\pageref{VMtoto}};
-%    \ifx&\arabic{\pageref{VMtiti}}&\arabic{\pageref{VMtoto}}%
-%     true
-%    \else
-%     false!!!!
-%    \fi
-%\pageref{VMtiti},\pageref{VMtoto}%\unexpanded{\pageref{VMtiti}}
-%\ifdef{\equal{1}{1}}{Même}{Différent}
-%\ifthenelse{\equal{\pageref{VMtiti}}{\pageref{VMtoto}}}{True}{False}
-
-%\ifthenelse{\equal{\expandafter{\pageref{Fig-poutU-eps}}}{\expandafter{\pageref{Tab:pt-A}}}}{Même}{Différent}
-%\ifthenelse{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{SUR LA MEME PAGE}{PAGES DIFFRENTES}
-%\newpage
 
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+
 \begin{table}[h!]\label{VMtoto}
 \centering\small
   \begin{tabular}{|l||r|r|r|r|r|}
@@ -635,7 +614,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:asxxs}~$\sigma_{xx}$ dans la peau en~$A$}
 %\end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
 \ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -643,7 +621,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:asyy}~$\sigma_{yy}$ en~$A$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
 \ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -651,7 +628,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:asxy}~$\sigma_{xy}$ en~$A$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}%%%
 \ifVMSurLaMemePage\clearpage\fi
 \begin{table}[h!]
 \centering\small
@@ -716,7 +692,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %\end{figure}
 %
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
 \ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -724,7 +699,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:bsyy}~$\sigma_{yy}$ en~$B$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
 \ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -732,7 +706,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:bsxy}~$\sigma_{xy}$ en~$B$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
 \ifVMSurLaMemePage\else\clearpage\fi
 \begin{table}[h!]
 \centering\small
@@ -796,7 +769,7 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:esxxs}~$\sigma_{yy}$ dans la peau en~$E$}
 %\end{figure}
 %
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
+
 \ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -804,7 +777,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:esyy}~$\sigma_{xx}$ en~$E$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
 \ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -812,7 +784,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:esxy}~$\sigma_{xy}$ en~$E$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
 \ifVMSurLaMemePage\clearpage\fi
 \begin{table}[h!]
 \centering\small
@@ -878,7 +849,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 %  \caption{\label{Fig:fsxxs}~$\sigma_{yy}$ dans la peau en~$F$}
 %\end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{\clearpage}{}
 \ifVMSurLaMemePage\else\clearpage\fi
 \begin{figure}[h!]
 \centering
@@ -886,7 +856,6 @@ D'après les résultats présentés ci-après, il est visible que la méthode de
 \caption{\label{Fig:fsyy}~$\sigma_{xx}$ en~$F$}
 \end{figure}
 
-%\ifdef{\equal{\pageref{Fig-poutU-eps}}{\pageref{Tab:pt-A}}}{}{\clearpage}
 \ifVMSurLaMemePage\clearpage\fi
 \begin{figure}[h!]
 \centering

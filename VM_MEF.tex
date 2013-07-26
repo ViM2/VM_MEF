@@ -5,6 +5,13 @@
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
 \VersionDuDocEstPourHALtrue%
 %
+% Mise en page des figures dans l'ex4.tex du Ch Amelio.tex
+\newif\ifVMSurLaMemePage% si la dernière fig et 1e 1er tableau sur la même page: true
+\VMSurLaMemePagetrue% vrai pour v2b cours
+% il ne restera plus qu'à coder quelque chose du type (utiliser etoolbox au lieu de ifthen ou xifthen n'améliore pas les choses)
+%\ifthenelse{\equal{\pageref{VMtiti}}{\pageref{VMtoto}}}{\VMSurLaMemePagetrue}{\VMSurLaMemePagefalse}
+% Mais hyperef et french font que ce n'est pas possible
+%
 \ifVersionDuDocEstVincent
    \documentclass[11pt,pdflatex]{book}
 \else
@@ -31,6 +38,7 @@
    \usepackage[xindy]{imakeidx}
    \makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
    \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres]
+%   \usepackage{etoolbox,ifthen,xifthen}
 %texindy -L french aut.idx
 %texindy -L french -M mystyle.xdy VM_MEF.idx
 %
