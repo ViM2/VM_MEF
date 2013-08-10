@@ -1,8 +1,8 @@
-\chapter*{Galerie}
+\chapter*{Galerie}\phantomsection
 %\addcontentsline{toc}{chapter}{Galerie}
 \markboth{Galerie}{}
 
-\newcommand{\VMport}[2]{{\small
+\newcommand{\VMport}[2]{{\footnotesize%\small
 \begin{tabular}{p{33mm}}
 %   \,\hfill\includegraphics[height=32mm]{#1}\hfill\,\\
    \includegraphics[height=32mm]{#1}\\
@@ -16,49 +16,53 @@
 \VMport{Adrain}{Adrain (Robert), 1775-1843, Américain}
 \VMport{Airy}{Airy (George Biddell, Sir -), 1801-1892, Anglais}
 \VMport{Alart}{Alart (Pierre), ?-, Français}
-\VMport{Allaire}{Allaire (Grégoire), ?-, Français}
+\ifAuteursDansGallerie\VMport{Allaire}{Allaire (Grégoire), ?-, Français}\fi
 \VMport{Archimede}{Archimède de Syracuse, -287-- -212, Grec}
 \VMport{Argyris}{Argyris (John Hadji), 1913-2004, Grec}
 \VMport{Aristote}{Aristote (dit le Stagirite), -384-- -322, Grec}
 \VMport{Arnold}{Arnold (Douglas Norman), ?-, Américain}
+\VMport{ArnoldV}{Arnold (Vladimir Igorevitch), 1937-2010, Russe}
 \VMport{Ascoli}{Ascoli (Giulio), 1843-1896, Italien}
 \VMport{Babuska}{Babu\u {s}ka (Ivo Milan), 1926-, Tchèque}
 \VMport{Bachet}{Bachet (Claude-Gaspard, dit - de Mérizac), 1581-1638, Français}
-\VMport{Bahlouli}{Bahlouli (Nadia), ?- , Française}
+\ifAuteursDansGallerie\VMport{Bahlouli}{Bahlouli (Nadia), ?- , Française}\fi
 \VMport{NONE}{Bampton (Mervyn Cyril Charles), ?, Américain}
 \VMport{Banach}{Banach (Stephan), 1892-1945, Polonais}
-\VMport{Basseville}{Basseville (Stéphanie), ?-, Française}
-\VMport{Batoz}{Batoz (Jean-Louis), 1947-, Français}
+\ifAuteursDansGallerie\VMport{Basseville}{Basseville (Stéphanie), ?-, Française}\fi
+\ifAuteursDansGallerie\VMport{Batoz}{Batoz (Jean-Louis), 1947-, Français}\fi
 \VMport{Beck}{Beck (Henry Charles, dit Harry), 1903-1974, Anglais}
 \VMport{Bernoulli-Daniel}{Bernoulli (Daniel), 1700-1782, Suisse}
 \VMport{Bernoulli-Jacques}{Bernoulli (Jacques), 1654-1705, Suisse}
 \VMport{Bernoulli-Jean}{Bernoulli (Jean), 1667-1748, Suisse}
 \VMport{Bernstein}{Bernstein (Sergeï Natanovich), 1880-1968, Russe}
+\ifAuteursDansGallerie\VMport{NONE}{Berveiller (Marc), ?- , Français}\fi
 \VMport{Bessel}{Bessel (Friedrich Wilhelm), 1784-1846, Allemand}
 \VMport{Bezier}{Bézier (Pierre), 1910-1999, Français}
 \VMport{Bhatnagar}{Bhatnagar (Prabhu Lal), 1912-1976, Indien}
 \VMport{Bingham}{Bingham (Eugene Cook), 1878-1945, Américain}
-\VMport{Blayo}{Blayo (Éric), ?-, Français}
+\VMport{NONE}{Bolotin (Vladimir V.), 1926-?, Russe}
+\ifAuteursDansGallerie\VMport{Blayo}{Blayo (Éric), ?-, Français}\fi
 \VMport{Boltzmann}{Boltzmann (Ludwig), 1944-1906, Autrichien}
 \VMport{Bolzano}{Bolzano (Bernard Placidus Johann Nepomuk), 1781-1848, Allemand}
 \VMport{Bonnet}{Bonnet (Pierre-Ossian), 1819-1892, Français}
 \VMport{Boole}{Boole (George), 1815-1864, Anglais}
 \VMport{Borel}{Borel (Félix Édouard Justin Émile), 1871-1956, Français}
 \VMport{Boussinesq}{Boussinesq (Joseph Valentin), 1842-1929, Français}
-\VMport{NONE}{Boyer (Franck), 1977-, Français}
+\ifAuteursDansGallerie\VMport{NONE}{Boyer (Franck), 1977-, Français}\fi
 \VMport{Brezzi}{Brezzi (Franco), 1945-, Italien}
 \VMport{Brown}{Brown (Robert), 1773-1859, Écossais}
+\VMport{NONE}{Cameron (Robert Horton), 1908-1989, Américain}
 \VMport{Cantor}{Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand}
 \VMport{Caratheodory}{Carathéodory (Constantin), 1873-1950, Grec}
 \VMport{Castigliano}{Castigliano (Carlo Alberto), 1847-1884, Italien}
 \VMport{Cauchy}{Cauchy (Augustin Louis, baron -), 1789-1857, Français}
 \VMport{Cayley}{Cayley (Arthur), 1821-1895, Anglais}
 \VMport{Cea}{Céa (Jean), ?- , Français}
-\VMport{Champaney}{Champaney (Laurent), 1968-, Français}
+\ifAuteursDansGallerie\VMport{Champaney}{Champaney (Laurent), 1968-, Français}\fi
 \VMport{NONE}{Charpit de Villecourt (Paul), ?-1784, Français}
 \VMport{Chasles}{Chasles (Michel), 1793-1880, Français}
-\VMport{Chaussedent}{Chaussedent (Stéphane), ?-, Français}
-\VMport{Chen}{Chen (Shiyi), ?-, Chinois}
+\ifAuteursDansGallerie\VMport{Chaussedent}{Chaussedent (Stéphane), ?-, Français}\fi
+\ifAuteursDansGallerie\VMport{Chen}{Chen (Shiyi), ?-, Chinois}\fi
 \VMport{Cherepanov}{Cherepanov (Genady P.), 1937-, Américain}
 \VMport{Chevreuil}{Chevreuil (Mathilde), ?- , Française}
 \VMport{Chladni}{Chladni (Ernst Florens Friedrich), 1756-1827, Allemand}
@@ -66,7 +70,8 @@
 \VMport{Clairaut}{Clairaut (Alexis Claude), 1713-1765, Français}
 \VMport{Clough}{Clough (Ray William), 1920-?, Américain}
 \VMport{Colson}{Colson (John), 1680-1760, Anglais}
-\VMport{Combescure}{Combescure (Didier), 1970- , Français}
+\VMport{Cornell}{Cornell (Carl Allin), 1938-2007, Américain}
+\ifAuteursDansGallerie\VMport{Combescure}{Combescure (Didier), 1970- , Français}\fi
 \VMport{Cotes}{Cotes (Roger), 1682-1716, Anglais}
 \VMport{Cottrell}{Cottrell (Alan Howard, Sir -), 1919-2012, Anglais}
 \VMport{Coulomb}{Coulomb (Charles-Augustin), 1736-1806, Français}
@@ -76,26 +81,29 @@
 \VMport{Craig}{Craig (Roy R. Jr), ?, Américain}
 \VMport{Crank}{Crank (John), 1916-2006, Américain}
 \VMport{Curnier}{Curnier (Alain), 1948-, Suisse}
-\VMport{Dahan}{Dahan-Dalmedico (Amy), ?-, Française}
+\ifAuteursDansGallerie\VMport{Dahan}{Dahan-Dalmedico (Amy), ?-, Française}\fi
 \VMport{dAlembert}{d'Alembert (Jean le Rond), 1717-1783, Français}
 \VMport{de-Boor}{de Boor (Carl-Wilhelm Reinhold), 1937-, Américain}
 \VMport{DeGiorgi}{De Giorgi (Ennio), 1928-1996, Italien}
-%\VMport{Delaunay}{Delaunay (Boris Nikolaïevitch), 1890-1980, Russe}
 \VMport{Desaxe}{De Saxé (Géry), 1955-, Français}
+\VMport{Delaunay}{Delaunay (Boris Nikolaïevitch), 1890-1980, Russe}
+\VMport{DerKiureghian}{Der Kiureghian (Armen), 1947-, Arménien}
 \VMport{Descartes}{Descartes (René), 1596-1650, Français}
 \VMport{Desvillettes}{Desvillettes (Laurent), 1966- , Français}
-\VMport{NONE}{Dhatt (Gouri), ?-, Français}
+\ifAuteursDansGallerie\VMport{NONE}{Dhatt (Gouri), ?-, Français}\fi
 \VMport{Dirac}{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
+\VMport{NONE}{Ditlevsen (Ove Dalager), 1935-, Suédois}
 \VMport{Dirichlet}{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}
-\VMport{NONE}{Doolen (Gary D.), ?-, Américain}
+\ifAuteursDansGallerie\VMport{NONE}{Doolen (Gary D.), ?-, Américain}\fi
 \VMport{Drucker}{Drucker (Daniel Charles), 1918-2001, Américain}
 \VMport{NONE}{Dugdale (Donald Stephen)}
-\VMport{Dureisseix}{Dureisseix (David), ?- , Français}
+\ifAuteursDansGallerie\VMport{Dureisseix}{Dureisseix (David), ?- , Français}\fi
 \VMport{Dynkin}{Dynkin (Eugène Borisovitch), 1924-, Russe}
-\VMport{NONE}{Dysli (Michel), 1935-, Suisse}
-\VMport{NONE}{Eggert (Kenneth G.), ?-, Américain}
+\ifAuteursDansGallerie\VMport{NONE}{Dysli (Michel), 1935-, Suisse}\fi
+\ifAuteursDansGallerie\VMport{NONE}{Eggert (Kenneth G.), ?-, Américain}\fi
 \VMport{Eiffel}{Eiffel (Gustave), 1832-1923, Français}
 \VMport{Einstein}{Einstein (Albert), 1879-1955, Suisse-américain}
+\VMport{NONE}{Esteva (Luis), 1935-2012, Mexicain}
 \VMport{Euclide}{Euclide, -325-- -265, Grec}
 \VMport{Euler}{Euler (Leonhard Paul), 1707-1783, Suisse}
 \VMport{Falk}{Falk (Richard S.), ?-, Américain}
@@ -105,6 +113,9 @@
 \VMport{Fix}{Fix (George J. III), 1939-2002, Américain}
 \VMport{Fourier}{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
 \VMport{Frechet}{Fréchet (Maurice René), 1878-1973, Français}
+\VMport{Fredholm}{Fredholm (Ivar), 1866-1927, Suédois}
+\VMport{Freudenthal}{Freudenthal (Alfred Martin), 1906-1977, Américain}
+\ifAuteursDansGallerie\VMport{Frey}{Frey (Pascal), ?- , Français}\fi
 \VMport{Friedrichs}{Friedrichs (Kurt Otto), 1901-1982, Allemand}
 \VMport{Frobenius}{Frobenius (Ferdinand Georg), 1849-1917, Allemand}
 \VMport{Galerkine}{Galerkine (Boris), 1871-1945, Russe}
@@ -112,20 +123,24 @@
 \VMport{Galois}{Galois (Évariste), 1811-1832, Français}
 \VMport{Gauss}{Gauß {} (Johann Carl Friedrich), 1777-1855, Allemand}
 \VMport{Geschke}{Geschke (Charles M.), 1939-, Américain}
-\VMport{Golub}{Golub (Gene Howard), 1932-2007, Américain}
+\VMport{Ghanem}{Ghanem (Roger G.), ?-, Libanais}
+\ifAuteursDansGallerie\VMport{Golub}{Golub (Gene Howard), 1932-2007, Américain}\fi
 \VMport{Goodyear}{Goodyear (Charles), 1800-1860, Américain}
 \VMport{Grassmann}{ (Hermann Günther), 1809-1877, Allemand}
 \VMport{Green}{Green (George), 1793-1841, Anglais}
 \VMport{Griffith}{Griffith (Alan Arnold), 1893-1963, Anglais}
 \VMport{Gross}{Gross (Eugène P.), 1926-1991, Américain}
 \VMport{NONE}{Guest}
+\VMport{Gumbel}{Gumbel (Emil Julius), 1891-1966, Allemand}
 \VMport{Haar}{Haar (Alfréd), 1885-1933, Hongrois} 
 \VMport{Hadamard}{Hadamard (Jacques Salomon), 1865-1963, Français}
 \VMport{Halley}{Halley (Edmond), 1656-1742, Anglais}
 \VMport{HamiltonR}{Hamilton (Richard Streit), 1943-, Américain}
 \VMport{Hamilton}{Hamilton (William Rowan, Sir -), 1805-1865, Irlandais}
-\VMport{Hauchecorne}{Hauchecorne (Bertrand), 1950-, Français}
+\VMport{NONE}{Hasofer (A. M.), ?}
+\ifAuteursDansGallerie\VMport{Hauchecorne}{Hauchecorne (Bertrand), 1950-, Français}}\fi
 \VMport{Hausdorff}{Hausdorff (Felix), 1868-1942, Allemand}
+\ifAuteursDansGallerie\VMport{Hecht}{Hecht (Frédéric), ?- , Français}\fi
 \VMport{Heine}{Heine (Eduard), 1821-1881, Allemand}
 \VMport{Hellinger}{Hellinger (Ernst David), 1883-1950, Allemand}
 \VMport{Helmholtz}{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand}
@@ -133,10 +148,12 @@
 \VMport{Henstock}{Henstock (Ralph), 1923-2007, Anglais}
 \VMport{Hermite}{Hermite (Charles), 1822-1901, Français}
 \VMport{Hertz}{Hertz (Heinrich Rudolf), 1857-1894, Allemand}
+\ifAuteursDansGallerie\VMport{NONE}{Heschung (Frédéric), ?- , Français}\fi
+\ifAuteursDansGallerie\VMport{Hetroy}{Hetroy (Franck), ?- , Français}\fi
 \VMport{Hilbert}{Hilbert (David), 1862-1943, Allemand}
 \VMport{Hill}{Hill (Rodney), 1921-2011, Anglais}
-\VMport{Hoff}{Hoff (Nicholas J.), 1906-1997, Hongrois}
 \VMport{Holder}{Hölder (Otto Ludwig), 1859-1937, Allemand}
+\VMport{Hoff}{Hoff (Nicholas J.), 1906-1997, Hongrois}
 \VMport{Hofmann}{Hofmann (Friedrich Carl Albert dit Fritz), 1866-1956, Allemand}
 \VMport{Hooke}{Hooke (Robert), 1635-1703, Anglais}
 \VMport{Howard}{Howard (Ronald William), 1954- , Américain}
@@ -146,18 +163,24 @@
 \VMport{Huygens}{Huygens [ou Huyghens] (Christian), 1629-1695, Néerlandais}
 \VMport{Inglis}{Inglis (Charles), 1875-1952, Anglais}
 \VMport{Irwin}{Irwin (George Rankine), 1907-1998, Américain}
+\VMport{Ito}{It$\overline{\text{o}}$ (Kiyoshi), 1915-2008, Japonais}
 \VMport{Jacobi}{Jacobi (Carl Gustav Jakob), 1804-1851, Allemand}
-\VMport{Jacod}{Jacod (Jean), ?- , Français}
-\VMport{Joly}{Joly (Patrick), ?- , Français}
+\VMport{NONE}{Johnson (A. I.), ?}
+\ifAuteursDansGallerie\VMport{Jacod}{Jacod (Jean), ?- , Français}\fi
+\ifAuteursDansGallerie\VMport{Joly}{Joly (Patrick), ?- , Français}\fi
 \VMport{Jones}{Jones (William, Sir -), 1675-1749, Gallois}
 \VMport{Jordan}{Jordan (Marie Ennemond Camille), 1838-1922, Français}
-\VMport{Kato}{Kato (Tosio), 1917-1999, Japonais}
+\VMport{Kac}{Kac (Mark ou Marek), 1914-1984, Américain}
+\VMport{Karadeniz}{Karadeniz (Halil), 1946-, Turque}
+\VMport{Karhunen}{Karhunen (Kari), 1915-1992, Finlandais}
+\ifAuteursDansGallerie\VMport{Kato}{Kato (Tosio), 1917-1999, Japonais}}\fi
 \VMport{Kelvin}{Kelvin (William Thomson, connu sous le nom de Lord -), 1924-1907, Anglais}
 \VMport{Kepler}{Kepler (Johannes), 1571-1630, Allemand}
 \VMport{Kirchhoff}{Kirchhoff (Gustav Robert), 1824-1887, Allemand}
 \VMport{NONE}{Kirsch}
 \VMport{Kolmogorov}{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe}
 \VMport{Korn}{Korn (Arthur), 1870-1945, Allemand}
+\ifAuteursDansGallerie\VMport{Krikorian}{Krikorian (Raphaël), ?- , Français}\fi
 \VMport{Kronecker}{Kronecker (Leopold), 1823-1891, Allemand}
 \VMport{NONE}{Krook (Max), 1913-1985, Américain}
 \VMport{Kuratowski}{Kuratowski (Kazimierz), 1896-1980, Polonais}
@@ -179,20 +202,28 @@
 \VMport{Legrand}{Legrand (Mathias), ?- , Français}
 \VMport{Leibniz}{Leibniz (Gottfried Wilhelm), 1646-1716, Allemand}
 \VMport{Leissa}{Leissa (Arthur W.), 1932-, Américain}
-\VMport{Li}{Li (Daniel), ?-, Français}
+\VMport{NONE}{Lemaire (Christophe), ?-, Français}
+\VMport{lemaire}{Lemaire (Maurice), ?-, Français}
+\VMport{Levy}{Lévy (Paul Pierre), 1886-1971, Français}
+\VMport{NONE}{Lind (Niels Christian), ?}
+\ifAuteursDansGallerie\VMport{Li}{Li (Daniel), ?-, Français}\fi
 \VMport{Liouville}{Liouville (Joseph), 1809-1882, Français}
 \VMport{Lipschitz}{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand}
 \VMport{Listing}{Listing (Johann Benedict), 1808-1882, Allemand}
+\VMport{Loeve}{Loève (Michel), 1907-1979, Français}
 \VMport{Lorentz}{Lorentz (Hendrik Antoon), 1853-1928, Néerlandais}
 \VMport{Lotka}{Lotka (Alfred James), 1880-1949, Américain}
 \VMport{Love}{Love (Augustus Edward Hough), 1863-1940, Anglais}
-\VMport{NONE}{Maitre (Jean-François), ?-, Français}
+\ifAuteursDansGallerie\VMport{NONE}{Maitre (Jean-François), ?-, Français}\fi
 \VMport{Markov}{Markov (Andreï Andreïevitch), 1856-1922, Russe}
+\VMport{NONE}{Martin (William T.), 1911-2004, Américain}
 \VMport{Maxwell}{Maxwell (James Clerk), 1831-1879, Écossais}
+\VMport{NONE}{Mayer (Max), ?, Allemand}
 \VMport{Melenk}{Melenk (Jens Markus), ?-, Autrichien}
 %\VMport{Menabrea}{Menabrea (Luigi Federico; général comte -; premier marquis de Valdora), 1867-1869, Italien}
+\VMport{Metropolis}{Metropolis (Nicholas Constantine), 1915-1999, Américain}
 \VMport{NONE}{Meyers (Norman George), 1930-, Américain}
-\VMport{Norton}{Milgram (Arthur Norton), 1912-1961, Américain}
+\VMport{NONE}{Milgram (Arthur Norton), 1912-1961, Américain}
 \VMport{Mindlin}{Mindlin (Raymond David), 1906-1987, Américain}
 \VMport{NONE}{Miner}
 \VMport{Minkowski}{Minkowski (Hermann), 1864-1909, Allemand}
@@ -200,9 +231,11 @@
 \VMport{Mobius}{Möbius (August (us) Ferdinand), 1790-1868, Allemand}
 \VMport{Mohr}{Mohr (Christian Otto), 1835-1918, Allemand}
 \VMport{NONE}{Mooney (Melvin), 1893-1968, Américain}
+\VMport{Moser}{Moser (Jürgen Kurt), 1928-1999, Allemand}
+\VMport{Moses}{Moses (Fred), ?-, Américain}
 \VMport{Mossotti}{Mossotti (Ottaviano-Fabrizio), 1791-1863, Italien}
 \VMport{NONE}{Mullins (Leonard)}
-\VMport{Naceur}{Naceur (Hakim), ?-, Français}
+\ifAuteursDansGallerie\VMport{Naceur}{Naceur (Hakim), ?-, Français}\fi
 \VMport{Nash}{Nash (John Forbes), 1928- , Américain}
 \VMport{Navier}{Navier (Claude Louis Marie Henri), 1785-1836, Français}
 \VMport{Neumann}{Neumann (Carl Gottfried), 1832-1925, Allemand}
@@ -211,30 +244,33 @@
 \VMport{Newton}{Newton (Isaac, Sir -), 1643-1727, Anglais}
 \VMport{Nicolson}{Nicolson (Phyllis), 1917-1968, Anglaise}
 \VMport{Nirenberg}{Nirenberg (Louis), 1925- , Américain}
-\VMport{NONE}{Norton (Frederick H.)}
+\VMport{Norton}{Norton (Frederick H.)}
 \VMport{NONE}{Ogden (Ray W.)}
 \VMport{Oresme}{Oresme (Nicole), 1325-1382, Allemand}
 \VMport{Ostrogradsky}{Ostrogradsky (Mikhaïl Vassilievitch), 1801-1862, Ukainien}
+\ifAuteursDansGallerie\VMport{Oudot}{Oudot (Steve Yann), ?-, Américain}\fi
 \VMport{Pade}{Padé (Henri Eugène), 1863-1953, Français}
-\VMport{Panasenko}{Panasenko (Grigory), ?-, Russe}
+\VMport{NONE}{P\'aez (A.), ?, Espagnol}
+\ifAuteursDansGallerie\VMport{Panasenko}{Panasenko (Grigory), ?-, Russe}\fi
 \VMport{NONE}{Parent (Antoine), 1660-1726, Français}
 \VMport{NONE}{Paris}
-\VMport{Peiffer}{Peiffer (Jeanne), ?-, Française}
+\ifAuteursDansGallerie\VMport{Peiffer}{Peiffer (Jeanne), ?-, Française}\fi
 \VMport{Perelman}{Perelman (Grigori Iakovlevitch), 1966- , Russe}
 \VMport{Pian}{Pian (Theodore H.H.), 1919-2009, Américain}
 \VMport{Piazzi}{Piazzi (Giuseppe), 1746-1826, Italien}
 \VMport{Piola}{Piola (Gabrio), 1794-1850, Italien}
 \VMport{Poincare}{Poincaré (Henri), 1854-1912, Français}
 \VMport{Poisson}{Poisson (Siméon Denis), 1781-1840, Français}
-\VMport{NONE}{Popier (Alexandre), ?-, Français}
+\ifAuteursDansGallerie\VMport{NONE}{Popier (Alexandre), ?-, Français}\fi
 \VMport{NONE}{Poritsky (H.)}
-\VMport{Pousin}{Pousin (Jérôme), ?-, Français}
+\ifAuteursDansGallerie\VMport{Pousin}{Pousin (Jérôme), ?-, Français}\fi
 \VMport{Prager}{Prager (William), 1903-1980, Américain}
 \VMport{Prandtl}{Prandtl (Ludwig), 1875-1953, Allemand}
+\VMport{rackwitz}{Rackwitz (Rüdiger), 1941-2012, Allemand}
 \VMport{Raphson-manu}{Raphson (Joseph), 1648-1715, Anglais}
 \VMport{Rayleigh}{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais}
 \VMport{Reissner}{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
-\VMport{Rethore}{Réthoré (Julien), ?- , Français}
+\ifAuteursDansGallerie\VMport{Rethore}{Réthoré (Julien), ?- , Français}\fi
 \VMport{NONE}{Reuss}
 \VMport{Reynolds}{Reynolds (Osborne), 1842-1912, Irlandais}
 \VMport{Riccati}{Riccati (Jacopo Francesco), 1676-1754, Italien}
@@ -245,26 +281,33 @@
 \VMport{Riemann}{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 \VMport{Riesz}{Riesz (Frigyes), 1880-1956, Hongrois}
 \VMport{Ritz}{Ritz (Walther), 1878-1909, Suisse}
-\VMport{NONE}{Rivlin (Ronald Samuel), 1915-2005, Américain}
+\VMport{Rivlin}{Rivlin (Ronald Samuel), 1915-2005, Américain}
 \VMport{NONE}{Robin (Victor Gustave), 1855-1897, Français}
 \VMport{Rodrigues}{Rodrigues (Benjamin-Olinde), 1795-1851, Français}
-\VMport{Romberg}{Romberg (Werner), 1909–2003, Allemand}
+\VMport{NONE}{Rosenblatt (Murray), 1926-, Américain}
+\VMport{Rosenblueth}{Rosenblueth (Emilio), 1926-1994, Mexicain}
+%\VMport{Romberg}{Romberg (Werner), 1909–2003, Allemand}
 \VMport{Runge}{Runge (Carl David Tolmé), 1856-1927, Allemand}
 \VMport{Saint-Venant}{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}
 \VMport{SanMartin}{San Mart\'in (Jorge), ?- , Chilien}
-\VMport{Scheid}{Scheid (Jean-Fran\ cois), ?- , Français}
+\ifAuteursDansGallerie\VMport{Scheid}{Scheid (Jean-Fran\ cois), ?- , Français}\fi
 \VMport{Schrodinger}{Schrödinger (Erwin Rudolf Josef Alexander), 1887-1961, Autrichien}
 \VMport{Schur}{Schur (Issai), 1875-1941, Russe}
 \VMport{Schwartz}{Schwartz (Laurent), 1915-2002, Français}
 \VMport{Schwarz}{Schwarz (Hermann Amandus), 1843-1921, Allemand}
 \VMport{Serrin}{Serrin (James Burton), 1926-2012, Américain}
+\VMport{NONE}{Sezawa (Katsutada), 1895-1944, Japonais}
+\VMport{Shinozuka}{Shinozuka (Masanobu), 1930-, Japonais}
+\VMport{Siegert}{Siegert (Arnold John Frederick), 1911-1995, Américain}
 \VMport{Sierpinski}{Sierpiński (Wacław Franciszek), 1882-1969, Polonais}
 \VMport{Signorini}{Signorini (Antonio), 1888-1963, Italien}
 \VMport{NONE}{Simo (Juan-Carlos), 1952-1994, Espagnol}
 \VMport{Simpson}{Simpson (Thomas), 1710-1761, Anglais}
 \VMport{Snell}{Snell (Willebrord Snell van - ou Snellius), 1580-1626, Néerlandais}
+\VMport{Snow}{Snow (John), 1813-1858, Anglais}
 \VMport{Sobolev}{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 \VMport{Soize}{Soize (Christian), 1948- , Français}
+\VMport{Spanos}{Spanos (Pol D.), ?-, Grec}
 \VMport{Stokes}{Stokes (George Gabriel), 1819-1903, Anglais}
 \VMport{Stone}{Stone (Marshall Harvey), 1903-1989, Américain}
 \VMport{Strang}{Strang (William Gilbert), 1934-, Américain}
@@ -272,31 +315,38 @@
 \VMport{Sylvester}{Sylvester (James Joseph), 1814-1897, Anglais}
 \VMport{Taylor}{Taylor (Brook), 1685-1731, Anglais}
 \VMport{Tchebychev}{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe}
+\VMport{NONE}{Thiessen (Alfred H.), 1872-1956, Américain}
 \VMport{Timoshenko}{Timoshenko (Stephen), 1878-1972, Russe}
+\VMport{Tisserand}{Tisserand (François Félix), 1845-1896, Français}
 \VMport{NONE}{Tong (Pin), ? , Chinois}
+\VMport{NONE}{Torroja (Eduardo), ?, Espagnol}
 \VMport{Toscani}{Toscani (Giuseppe), ?- , Italien}
 \VMport{Trefftz}{Trefftz (Erich Immanuel), 1888-1937, Allemand}
 \VMport{Tresca}{Tresca (Henri Édouard), 1814-1885, Français}
 \VMport{Tsai}{Tsaï (Stephen W), ?-, Américain}
 \VMport{NONE}{Tsotsis (Thomas K.), ?- , Américain}
 \VMport{NONE}{Uflyand (Yakov Solomonovic), ,Russe}
+\VMport{Ulam}{Ulam (Stanisław Marcin), 1909-1984, Américain}
 \VMport{Uzawa}{Uzawa (Hirofumi), 1928-, Japonais}
-\VMport{vanLoan}{van Loan (Charles F.), ?-, Américain}
+\ifAuteursDansGallerie\VMport{vanLoan}{van Loan (Charles F.), ?-, Américain}\fi
 \VMport{Villani}{Villani (Cédric), 1973- , Français}
 \VMport{Vinci}{Vinci (Léonard, de-), 1452-1519, Italien}
 \VMport{Voigt}{Voigt (Woldemar), 1850-1919, Allemand}
 \VMport{Volterra}{Volterra (Vito), 1860-1940, Italien}
-%\VMport{Voronoi}{Voronoï (Gueorgui Feodossievitch), 1868-1908, Russe}
+\VMport{Voronoi}{Voronoï (Gueorgui Feodossievitch), 1868-1908, Russe}
 \VMport{Wallis}{Wallis (John), 1616-1703, Anglais}
 \VMport{Warburton}{Warburton (Geoffrey Barratt), 1924-2009, Anglais}
 \VMport{Waring}{Waring (Edward), 1736-1798, Anglais}
 \VMport{Warnock}{Warnock (John Edward), 1940- , Américain}
 \VMport{Washizu}{Washizu (Kyuichiro), 1921-1981, Japonais}
+\VMport{NONE}{Wästlund (Karl Georg), 1905-1980, Suédois}
 \VMport{Weibull}{Weibull (Ernst Hjalmar Waloddi), 1887-1979, Suédois}
 \VMport{Weierstrass}{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand}
+\VMport{NONE}{Weill (Jean-Christophe), ?-, Français}
 \VMport{Wells}{Wells (Alan Arthur), 1924-2005, Anglais}
 \VMport{Wendroff}{Wendroff (Burton), 1930-, Américain}
 \VMport{Wheatstone}{Wheatstone (Charles), 1802-1875, Anglais}
+\VMport{Wiener}{Wiener (Norbert), 1894-1964, Américain}
 \VMport{NONE}{Wilson (John), 1741-1793, Anglais}
 \VMport{Winther}{Winther (Ragnar), 1949-, Norvégien}
 \VMport{Wirtinger}{Wirtinger (Wilhelm), 1865-1945, Autrichien}

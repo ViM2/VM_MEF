@@ -179,6 +179,16 @@
 \leftmargin=25pt%
 \rightmargin=25pt}\item[]\ignorespaces\setlength{\parindent}{\parindentSTD}}{\end{list}\vskip5pt}
 
+% demonstration
+\newlength\parindentD
+\setlength{\parindentD}{\parindent}
+\newenvironment{demonstration}[1][Démonstration]{\par\footnotesize\abovedisplayskip=3pt plus1pt minus 1pt\belowdisplayskip=3pt plus1pt minus 1pt\pushQED{\qed}\relax%
+\begin{list}{}{%
+\labelwidth=-5pt%
+\labelsep=5pt%
+\leftmargin=25pt%
+\rightmargin=25pt}\item[\it#1\@addpunct{.}]\ignorespaces\setlength{\parindent}{\parindentD}}{\end{list}}
+
 % indentation arpès théorèmes
 \def\@endtheorem{\endtrivlist}% NEW
 \makeatother
@@ -421,16 +431,6 @@
 \renewcommand{\figurename}{\textsc{Fig.}}
 %--------------------------------------------------------------------------
 %
-% Package HYPERREF
-%
-\ifVersionDuDocEstVincent
-   \hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=true,breaklinks=true,urlcolor= blue,linkcolor=black,pageanchor=true,hyperindex =true,bookmarks=false,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
-\else
-   \hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= blue,bookmarks=true,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
-\fi
-%
-%--------------------------------------------------------------------------
-%
 % Package CUTWIN
 %
 \newlength\LargeurDeLaBoite
@@ -513,6 +513,11 @@
 \DeclareMathOperator{\rot}{rot}
 \DeclareMathOperator{\vectt}{vect}
 \DeclareMathOperator{\trace}{tr}
+\DeclareMathOperator{\cova}{Cov}
+\DeclareMathOperator{\Ea}{E}
+\newcommand\cov[1]{\cova[#1]}
+\newcommand\E[1]{\Ea[#1]}
+\newcommand\PP[1]{\begin{pmatrix}#1\end{pmatrix}}
 %
 \ifVersionDuDocEstVincent
    \makeatletter
@@ -596,6 +601,7 @@
 \newcommand{\intof}[2]{\mathopen{]}#1\,;#2\mathclose{]}}
 \newcommand{\intfo}[2]{\mathopen{[}#1\,;#2\mathclose{[}}
 \newcommand{\intervalle}[2]{\mathopen{(}#1\,;#2\mathclose{)}}
+
 
 %--------------------------------------------------------------------------
 % COLORATION DU TEXTE

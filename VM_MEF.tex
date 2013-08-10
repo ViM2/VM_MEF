@@ -1,49 +1,54 @@
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
-\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
-\newif\ifVersionDuCompilateurEstVincent% par défaut vaut false, donc compilation avec les packages de Mathias
-%\VersionDuCompilateurEstVincenttrue% à commenter pour compileur de Mathias
+%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
 \VersionDuDocEstPourHALtrue%
 %
 % Mise en page des figures dans l'ex4.tex du Ch Amelio.tex
 \newif\ifVMSurLaMemePage% si la dernière fig et 1e 1er tableau sur la même page: true
-\VMSurLaMemePagetrue% vrai pour v2b cours
+%\VMSurLaMemePagetrue% vrai pour v2b cours
 % il ne restera plus qu'à coder quelque chose du type (utiliser etoolbox au lieu de ifthen ou xifthen n'améliore pas les choses)
 %\ifthenelse{\equal{\pageref{VMtiti}}{\pageref{VMtoto}}}{\VMSurLaMemePagetrue}{\VMSurLaMemePagefalse}
 % Mais hyperef et french font que ce n'est pas possible
 %
+\newif\ifAuteursDansGallerie% ne sert qu'en version cours
+%
 \ifVersionDuDocEstVincent
+   \VMSurLaMemePagetrue
    \documentclass[11pt,pdflatex]{book}
+   \AuteursDansGalleriefalse%
 \else
+   \VMSurLaMemePagefalse
    \documentclass[fleqn,11pt,pdflatex]{book}
 \fi
 %
 % packages communs
-   \usepackage[utf8]{inputenc}
-   \usepackage[T1]{fontenc}
-   \usepackage{fancyhdr}
-   \usepackage{array,subfig,wrapfig}
-   \usepackage{graphicx,color,epstopdf,rotating}
-   \usepackage{amsmath,amsfonts,amssymb,bm,mathrsfs,amsthm,amstext,mathtools,bbm}
-   \usepackage{hyperref,multirow,multicol,xspace}
-   \usepackage{cutwin,fancyvrb,titletoc}
-   \usepackage{microtype}
-   \usepackage[framemethod=tikz]{mdframed}
-   \usepackage[frenchb]{babel}
-   \usepackage[babel]{csquotes}
-   \MakeAutoQuote{«}{»}
-   \frenchbsetup{IndentFirst=false}
-   \usepackage{url}
-   \usepackage{eso-pic}
-   \usepackage[xindy]{imakeidx}
-   \makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
-   \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres]
-%   \usepackage{etoolbox,ifthen,xifthen}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{array,subfig,wrapfig}
+\usepackage{graphicx,color,epstopdf,rotating}
+\usepackage{amsmath,amsfonts,mathrsfs,amsthm,amstext,mathtools,bbm}
+\usepackage{hyperref,multirow,multicol,xspace}
+\usepackage{cutwin,fancyvrb,titletoc}
+\usepackage{microtype}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[frenchb]{babel}
+\usepackage[babel]{csquotes}
+\MakeAutoQuote{«}{»}
+\frenchbsetup{IndentFirst=false}
+\usepackage{url}
+\usepackage{eso-pic}
+\usepackage{enumitem}
+\usepackage[numbered,level=-1]{bookmark}
+\usepackage[xindy]{imakeidx}
+\makeindex[program=texindy,columns=2,title=Index des concepts,options=-M mystyle.xdy]
+\makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres]
 %texindy -L french aut.idx
 %texindy -L french -M mystyle.xdy VM_MEF.idx
+\hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= blue,bookmarks=true,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
 %
 \ifVersionDuDocEstVincent
-%   \usepackage{enumitem}
+   \usepackage{amssymb,bm}
    \usepackage[a4paper,top=15mm,left=2cm,right=16.5mm,bottom=22mm]{geometry}
    \usepackage[%
      sorting=none,%
@@ -55,7 +60,6 @@
      backref=true,
      bibencoding=utf8,
      backend=biber]{biblatex}
-%
    \pagestyle{fancy}
    \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
    \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
@@ -64,14 +68,8 @@
 \else
    \usepackage{times}
    \gdef\ttdefault{cmtt}%
-   \ifVersionDuCompilateurEstVincent% Poor's man version
-      \usepackage{mathptmx,amssymb}% police ouverte
-      \providecommand\mathscr{\mathcal}% à commenter lors de l'utilisation de mtpro2
-   \else% police propriétaire
-      \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
-   \fi
+   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
    \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
-   \usepackage{enumitem}
    \setlist{nolistsep} 
    \pagestyle{fancy}
    \usepackage[%
@@ -85,15 +83,13 @@
      abbreviate=false,         % pas d'abréviation
      backref=true,
      backend=biber]{biblatex}  % pas de réfs. aux pages où l'entrée est citée
-%   \bibliography{VM}           % utiliser these.bib (format bibtex normal)
    \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
    \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
    \defbibheading{bibempty}{}  % voir ci-dessous
-   \usepackage[numbered,level=-1]{bookmark}
 %   \renewcommand{\leq}{\leqslant}
 %   \renewcommand{\geq}{\geqslant}
 \fi
-
+   
 \graphicspath{{./photos/}{./eps/}}
 
 \include{./tex/macros}% macros
@@ -110,7 +106,7 @@
 %
    \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
    \setlength{\belowdisplayskip}{\abovedisplayskip}
-   ~\\[+15cm]\centerline{Version 2b du \today}
+   ~\\[+15cm]\centerline{Version 3 du \today}
    \title
 \else
    \thispagestyle{empty}\mbox{}%
@@ -251,8 +247,8 @@ C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du m
  \part{Problème continu}
  \include{./tex/phy-edp}
  \include{./tex/FFaible}
- \include{./tex/phy-ffble}%\include{./tex/phy-varia}% inclus dans mhy-ffble
- \include{./tex/ex1}% exemple formulation math
+ \include{./tex/phy-ffble}
+ \include{./tex/ex1}
 
  \part{Éléments finis}
  \include{./tex/MEFintro}
@@ -260,14 +256,14 @@ C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du m
  \include{./tex/model}
  \include{./tex/Elts}
  \include{./tex/Amelio}
-% \include{./tex/Mesh}
+ \include{./tex/Mesh}% v3
  \include{./tex/Homog}
  \include{./tex/temps}% ajouter dynamique rapide ?
  \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?
  \include{./tex/non-lin}
  \include{./tex/rupture}
- \include{./tex/xfem}% ajouter \section{L'utilisation de plusieurs maillages} => stochastique => dans les méthodes dérivées ? (xfem.tex)
-%%GFREM (Global FEM), IFEM (Integrated FEM/BEM)
+ \include{./tex/stocha}%v3
+ \include{./tex/xfem}
  \include{./tex/singul}
  \include{./tex/ccl}
 
@@ -293,19 +289,19 @@ C'est également pourquoi coexistent aujourd'hui deux versions (mais issues du m
  Dans tout le document, nous nous sommes servi intensivement de Wikipédia.
  
    \printbibliography[keyword=0,title={Références générales}]
-   \index[aut]{Joly (Patrick), ?- , Français}
+   \ifAuteursDansGallerie\index[aut]{Joly (Patrick), ?- , Français}\fi
 
    \printbibliography[keyword=1,title={Références de la partie 1}]
-   \index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Hauchecorne (Bertrand), 1950-, Français}
+   \ifAuteursDansGallerie\index[aut]{Schwartz (Laurent), 1915-2002, Français}\index[aut]{Kato (Tosio), 1917-1999, Japonais}\index[aut]{Popier (Alexandre), ?-, Français}\index[aut]{Li (Daniel), ?-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Allaire (Grégoire), ?-, Français}\index[aut]{Dahan-Dalmedico (Amy), ?-, Française}\index[aut]{Peiffer (Jeanne), ?-, Française}\index[aut]{Jacod (Jean), ?- , Français}\index[aut]{Hauchecorne (Bertrand), 1950-, Français}\fi
 
    \printbibliography[keyword=2,title={Références de la partie 2}]
-\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}
+   \ifAuteursDansGallerie\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Washizu (Kyuichiro), 1921-1981, Japonais}\index[aut]{Maitre (Jean-François), ?-, Français}\fi
 
    \printbibliography[keyword=3,title={Références de la partie 3}]
-\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Soize (Christian), 1948- , Français}\index[aut]{Ladevèze (Pierre), ?- , Français}\index[aut]{Jacod (Jean), ?- , Français}
+   \ifAuteursDansGallerie\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Boyer (Franck), 1977-, Français}\index[aut]{Batoz (Jean-Louis), 1947-, Français}\index[aut]{Dhatt (Gouri), ?-, Français}\index[aut]{Pousin (Jérôme), ?-, Français}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Panasenko (Grigory), ?-, Russe}\index[aut]{Naceur (Hakim), ?-, Français}\index[aut]{Basseville (Stéphanie), ?-, Française}\index[aut]{Chaussedent (Stéphane), ?-, Français}\index[aut]{Feng (Zhi-Qiang), 1963-, Français}\index[aut]{Tsotsis (Thomas K.), ?- , Américain}\index[aut]{Lee (Shaw M.), ?- , Américain}\index[aut]{Saad (Patricia), ?- , Française}\index[aut]{Rethore@Réthoré (Julien), ?- , Français}\index[aut]{Chevreuil (Mathilde), ?- , Française}\index[aut]{Bahlouli (Nadia), ?- , Française}\index[aut]{San Mart\'in (Jorge), ?- , Chilien}\index[aut]{Scheid (Jean-François), ?- , Français}\index[aut]{Takahashi (Takéo), ?- , Français}\index[aut]{Tucsnak (Marius), ?- , Français}\index[aut]{Chen (Shiyi), ?-, Chinois}\index[aut]{Doolen (Gary D.), ?-, Américain}\index[aut]{Eggert (Kenneth G.), ?-, Américain}\index[aut]{Combescure (Didier), 1970- , Français}\index[aut]{Dureisseix (David), ?- , Français}\index[aut]{Soize (Christian), 1948- , Français}\index[aut]{Ladevèze (Pierre), ?- , Français}\index[aut]{Berveiller (Marc), ?- , Français}\index[aut]{Krikorian (Raphaël), ?- , Français}\index[aut]{Ghanem (Roger G.), ?-, Libanais}\index[aut]{Spanos (Pol D.), ?-, Grec}\index[aut]{Frey (Pascal), ?- , Français},\index[aut]{Hecht (Frédéric), ?- , Français}\index[aut]{Heschung (Frédéric), ?- , Français}\index[aut]{Hetroy (Franck), ?- , Français}\index[aut]{Oudot (Steve Yann), ?-, Américain}\index[aut]{Lemaire (Christophe), ?-, Français}\index[aut]{Weill (Jean-Christophe), ?-, Français}\fi
 
    \printbibliography[keyword=A,title={Références des annexes}]
-\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}
+   \ifAuteursDansGallerie\index[aut]{Dysli (Michel), 1935-, Suisse}\index[aut]{Champaney (Laurent), 1968-, Français}\index[aut]{Blayo (Éric), ?-, Français}\index[aut]{Golub (Gene  Howard), 1932-2007, Américain}\index[aut]{van Loan (Charles F.), ?-, Américain}\fi
 
    \cleardoublepage
       \begingroup\small

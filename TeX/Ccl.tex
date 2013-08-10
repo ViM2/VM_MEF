@@ -11,10 +11,10 @@ En guise de conclusion à ce document (qui se poursuit par des exemples), nous s
 
 La fiabilité d'un résultat dépend de celle de toute la chaîne d'approximation réalisées depuis la modélisation du phénomènes physique jusqu'à l'obtention des résultats numériques fournis par le programme de calcul. Nombre de ces problèmes ont été mentionnés au cours de ce document. Rappelons les ici:
 \begin{itemize}
-  \item \textcolorblue{erreurs de modélisation}: aussi bien au niveau du choix des équations mathématiques décrivant le phénomène, que de la représentativité des conditions aux limites choisies;
+  \item \textcolorblue{erreurs de modélisation}: aussi bien au niveau du choix des équations mathématiques décrivant le phénomène, que de la représentativité des conditions aux limites choisies. Mais au-delà même, il est nécessaire de se rappeler que les modèles mathématiques ne fonctionnent bien qu'avec les plus simples des situations, ou avec des situations complexes ne dépendant que quelques facteurs dominants simples. La plupart des modèles sont des modèles linéaires, mais mêmes ceux-ci peuvent dissimuler de la complexité: le chaos linéaire existe et les simulations numériques d'un tel système peuvent conduire à des résultats qui peuvent surprendre si l'on n'en est pas averti (voir la linéarisation du pendule double, ou la suite logistique);
   \item \textcolorblue{erreurs de discrétisation}: elles sont liées aux choix des méthodes numériques (méthode des éléments finis ou autre), aux problèmes d'intégration, de représentation du domaine...
   \item \textcolorblue{erreurs de verrouillage numérique}: elles concernent des problèmes survenant lors du traitement de paramètres introduits dans le calcul tels que les pas de temps, des modes parasites, des instabilités numériques...
-  \item \textcolorblue{incertitudes des données}: connaissance approximative des lois de comportement, des efforts, des liaisons... Il faut alors procéder à une approche fiabiliste qui n'a pas été présentée dans ce document;
+  \item \textcolorblue{incertitudes des données}: connaissance approximative des lois de comportement, des efforts, des liaisons... Il faut alors procéder à une approche fiabiliste;
   \item \textcolorblue{erreurs d'arrondis}: la manière dont un ordinateur traite un nombre est soumise à des contraintes (représentation en base 2 par exemple, approximation à~$n$ décimales...). Ces erreurs, mêmes infimes, peuvent dans certains cas se cumuler pour aboutir à un résultat faux.
 \end{itemize}
 
@@ -36,8 +36,9 @@ Nous avons parlé des modèles multi-échelle essentiellement pour les matériau
 
 \medskip
 Les problèmes inverses constituent également un défi d'intérêt. Ils permettent par exemple de remonter aux caractéristiques d'un matériau (qui seront utilisées dans d'autres calculs), à partir d'essais sur un échantillon.
-
 C'est également souvent la seule voie d'identification des paramètres et comportement pour tout ce qui concerne la biomécanique et la modélisation du corps humain en général, car il n'est pas possible d'effectuer des mesures réelles.
 
 \medskip
 Enfin, et peut-être surtout, les modèles développés aujourd'hui se veulent de plus en plus réalistes. Il devient alors indispensable de coupler des modèles numériques différents, ce qui n'est possible que si, au préalable, on a su établir des passerelles, des lieux de travail commun, entre des spécialistes de plusieurs disciplines.
+
+\medskip

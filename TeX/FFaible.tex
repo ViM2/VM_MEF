@@ -197,20 +197,19 @@ Alors il existe un unique~$u$ dans~$H$ tel que l'équation~$a(u,v) = f(v)$ soit 
 \end{theoreme}
 
 \medskip
-{\noindent\footnotesize\colorgris
-\textbf{Preuve:}\hskip5pt
+\begin{demonstration}\footnotesize\colorgris
 La continuité et la coercitivité de~$a$ permettent de dire que~$a$ définit un produit scalaire~$(\cdot,\cdot)_a$ dont la norme associée~$\|\cdot\|_a$ est équivalente à la norme~$\|\cdot\|$. 
 Le problème devient: trouver~$u$ tel que~$\forall v\in H, (u,v)_a=f(v)$.
 
 Or~$f(v)=<f,v>$ dans la dualité~$H$~$H'$ et le problème devient:
 trouver~$u$ tel que~$\forall v\in H, (u,v)_a=<f,v>$.
 
-Le théorème de représentation de Riesz-Fréchet permet de conclure à l'existence et à l'unicité de la solution.~$\square$
+Le théorème de représentation de Riesz-Fréchet permet de conclure à l'existence et à l'unicité de la solution.~$\square$\colorblack
+\end{demonstration}
 
-\noindent
-\textbf{Autre Preuve:}\hskip5pt Une autre voie consiste à étudier directement le problème de minimisation de la fonctionnelle définie par \textcolorblue{$J=\tfrac12 a(v,v)-f(v)$} (ce qui est une façon de montrer le théorème de Riesz) en considérant une suite minimisante et en montrant qu'elle est de Cauchy par l'identité du parallélogramme.~$\square$
-\colorblack}
-
+\begin{demonstration}\footnotesize\colorgris
+Une autre voie consiste à étudier directement le problème de minimisation de la fonctionnelle définie par~$J=\tfrac12 a(v,v)-f(v)$ (ce qui est une façon de montrer le théorème de Riesz) en considérant une suite minimisante et en montrant qu'elle est de Cauchy par l'identité du parallélogramme.~$\square$\colorblack
+\end{demonstration}
 
 \medskip
 \textcolorred{Ce théorème est l'un des fondements de la méthode des éléments finis} dits «classiques» ou «en déplacement». Dans le cas d'éléments finis plus «exotiques» tels que les éléments mixtes, hybrides, mixtes-hybrides et des multiplicateurs de Lagrange, on a besoin d'un peu plus... c'est ce que nous allons voir au paragraphe suivant.
@@ -284,10 +283,9 @@ Alors que le seconde s'écrit:
 \forall v\in M\backslash\{0\},\quad \exists u\in H,\quad a(u,v)>0
 \end{equation}
 
-
-\medskip
-\textcolorgris{La preuve du théorème de Babuška revient à montrer que l'opérateur~$A$ associé à la forme bilinéaire~$a$ est un homéomorphisme.}
-
+\begin{demonstration}\footnotesize\colorgris
+La preuve du théorème de Babuška revient à montrer que l'opérateur~$A$ associé à la forme bilinéaire~$a$ est un homéomorphisme.~$\square$\colorblack
+\end{demonstration}
 
 \section{Théorèmes de Brezzi et condition BBL}\index{théorème!de Brezzi}\index{condition BBL}\label{Sec-ThBrezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 
@@ -331,9 +329,8 @@ et la condition BBL:
 
 
 \medskip
-On va écrire la démarche de la démonstration car elle est typique de la résolution de ce genre de problème.
-
-\colorgris{\footnotesize\noindent\textbf{Preuve:}
+Nous allons écrire la démarche de la démonstration car elle est typique de la résolution de ce genre de problème.
+\begin{demonstration}\footnotesize\colorgris
 On va se servir de~$H=V\oplus V^\bot$ avec~$V=\ker B$ où évidemment~$B$ est l'opérateur définit de~$H$ dans~$M'$ tel que:~$\langle Bu,\mu\rangle_M=b(u,\mu)$, $\forall\mu\in M$. Pour le produit scalaire induit, $V$ et~$V^\bot$ sont des Hilbert.
 
 La solution cherchée est~$u=u_0+u_\bot$.
@@ -363,9 +360,9 @@ On est ramené à 3 sous-problèmes:
   \item sous-problème 3: chercher~$\lambda\in M$ tel que~$b(v_\bot,\lambda)=\langle f,v_\bot\rangle-a(u,v_\bot)$,
 	$\forall v_\bot\in V^\bot$.
 	Il faut un peu plus travailler pour vérifier que l'on est dans le cas d'application du théorème de Babuška, mais ça se
-	fait (une quinzaine de lignes en détail).
+	fait (une quinzaine de lignes en détail).~$\square$\colorblack
 \end{itemize}
-}\colorblack
+\end{demonstration}
 
 
 

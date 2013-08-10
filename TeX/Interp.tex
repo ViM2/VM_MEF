@@ -47,12 +47,12 @@ Faisons d'emblée une \textcolorred{mise en garde}: la plus connue des interpola
 \section{Quelques bases polynomiales} 
 
 \medskip
-\subsection{Motivation} 
+\subsection{Motivation}\label{Sec-Taylor}
 
 \begin{histoire}
 Lorsque l'on souhaite approximer une courbe par une autre, recourir aux polynômes semble une voie naturelle. 
 
-Les séries de fonctions sont apparues à la fin du \textsc{xvii}\fup{e} siècle, lorsque Isaac Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} puis Brook Taylor décomposèrent des fonctions en séries (entières, donc sur $\CC$) pour le calcul d'intégrales. Ce n'est qu'en 1821 que Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} fournira les critères précis de convergence dans ses notes de cours de Polytechnique \emph{Analyse algébrique}, différents autres types de convergence étant introduits jusqu'en 1840.
+Les séries de fonctions sont apparues à la fin du \textsc{xvii}\fup{e} siècle, lorsque Isaac Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} puis Brook Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} décomposèrent des fonctions en séries (entières, donc sur $\CC$) pour le calcul d'intégrales. Ce n'est qu'en 1821 que Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} fournira les critères précis de convergence dans ses notes de cours de Polytechnique \emph{Analyse algébrique}, différents autres types de convergence étant introduits jusqu'en 1840.
 
 La richesse de cette théorie vient de ce qu'elle permet d'étudier des fonctions qui ne s'expriment pas à l'aide de fonctions connues, comme le sont certaines solutions d'équations différentielles.
 
@@ -127,11 +127,12 @@ alors, on remarque que:
 On en déduit immédiatement que~$\forall i$, $L(x_i) = y_i$ qui est bien la propriété recherchée par construction. 
 
 \medskip
-\subsection{Polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite} 
+\subsection{Polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{polynôme! d'Hermite}\label{Sec-PolHermite}
 
 Les \textcolorblue{polynômes d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} sont définis sous la forme dite \emph{probabiliste}:\index{polynôme! d'Hermite} 
 \begin{equation}
  H_n(x)=(-1)^n \mathrm{e}^{x^2/2}\frac{\dd ^n}{\dd x^n}\mathrm{e}^{-x^2/2}
+% =\dfrac{(-1)^n}{\varphi(x)}\frac{\dd ^n\varphi(x)}{\dd x^n}
 \end{equation}
 ou sous la forme dite \emph{physique}: 
 \begin{equation}
@@ -166,19 +167,26 @@ Les premiers polynômes d'Hermite\index[aut]{Hermite (Charles), 1822-1901, Fran�
 \colorblack
 $H_n$ est un polynôme de degré~$n$. Ces polynômes sont orthogonaux pour la mesure~$\mu$ de densité: 
 \begin{equation}
- \frac{\dd \mu(x)}{\dd x} = \frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}. 
+ \frac{\dd \mu(x)}{\dd x} = \frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}} = \varphi(x) 
 \end{equation}
- Ils vérifient: 
+avec $\varphi(x)$ la densité de probabilité d'une variable aléatoire gaussienne centrée réduite (moyenne nulle, écart-type égal à 1). 
+Ils vérifient: 
 \begin{equation}
- \int_{-\infty}^{+\infty} H_n(x)H_m(x)\,\mathrm{e}^{-x^2/2}\dd x=n!2^n\sqrt{2\pi}~\delta_{nm} 
+% \int_{-\infty}^{+\infty} H_n(x)H_m(x)\,\mathrm{e}^{-x^2/2}\dd x=n!2^n\sqrt{2\pi}~\delta_{nm} 
+% \text{ ou encore }
+  \int_{-\infty}^{+\infty} H_n(x)H_m(x)\varphi(x)\dd x=n!\delta_{nm} 
 \end{equation}
-où~$\delta_{n,m}$ est le symbole de Kronecker. C'est pour ces intéressantes propriétés que cette base a été choisie en mécanique stochastique... on utilise alors la jolie expression de \textcolorblue{base de chaos polynomial}. Ces polynômes forment une base orthogonale de l'espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{produit scalaire!de~$L^2$}\index{espace!de Lebesgue}~$L^2(\CC,\mu)$ des fonctions boréliennes telles que: 
+où~$\delta_{nm}$ est le symbole de Kronecker. C'est pour ces intéressantes propriétés que cette base a été choisie en mécanique stochastique... on utilise alors la jolie expression de \textcolorblue{base de chaos polynomial}. 
+Pour une application à la prise en compte de l'aléa dans la méthode des éléments finis, voir le chapitre \ref{Ch-stocha}.
+Ces polynômes forment une base orthogonale de l'espace de Hilbert\index{espace!de Hilbert}\index[aut]{Hilbert (David), 1862-1943, Allemand}\index{produit scalaire!de~$L^2$}\index{espace!de Lebesgue}~$L^2(\CC,\mu)$ des fonctions boréliennes telles que: 
 \begin{equation}
-\int_{-\infty}^{+\infty}|f(x)|^2\,\frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}\dd x< +\infty
+%\int_{-\infty}^{+\infty}|f(x)|^2\,\frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}\dd x< +\infty
+\int_{-\infty}^{+\infty}|f(x)|^2\varphi(x)\dd x< +\infty
 \end{equation}
 dans lequel le produit scalaire est donné par l'intégrale:\index{produit scalaire}\index{polynôme! orthogonalité} 
 \begin{equation}
-\langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\,\frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}\dd x
+%\langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\,\frac{\mathrm{e}^{-x^2/2}}{\sqrt{2\pi}}\dd x
+\langle f,g\rangle=\int_{-\infty}^{+\infty} f(x)\overline{g(x)}\varphi(x)\dd x
 \end{equation}
 Des propriétés analogues sont vérifiées par les polynômes de Hermite\index[aut]{Hermite (Charles), 1822-1901, Français} sous leur forme physique. 
 
