@@ -47,7 +47,7 @@ Un \textcolorblue{élément fini de Lagrange} est un triplet~$(K, \Sigma, P)$ te
 \medskip
 Les \textcolorblue{fonctions de bases locales} de l'élément fini de Lagrange~$(K, \Sigma, P)$ sont les~$N$ fonctions de~$P$ telles que~$p_i(a_j)=\delta_{ij}$ pour~$1\le i,j\le N$.
 \medskip
-\paragraph{Remarque}~$(p_1,\ldots, p_N)$ est une base de~$P$.
+\begin{remarque}$(p_1,\ldots, p_N)$ est une base de~$P$.\end{remarque}
 \medskip
 \begin{definition}[Opérateur de~$P$-interpolation]
 Un \textcolorblue{opérateur de~$P$-interpolation sur~$\Sigma$} est un opérateur~$\pi_K$ qui à toute fonction~$v$ définie sur~$K$ associe la fonction~$\pi_Kv$ de~$P$ définie par: $\pi_Kv=\dsum_{i=1}^N v(a_i)p_i$.
@@ -104,7 +104,7 @@ $P$   &~$P_1$ &~$P_2$ \\
 \caption{Éléments de Lagrange bidimensionnels triangulaires de degrés 1 et 2}\label{tab:Elem:bi}
 \end{table}
 
-\paragraph{Remarque}Les fonctions de base pour l'élément~$P_1$ sont définies par~$p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques:~$p_i = \lambda_i$.
+\begin{remarque}Les fonctions de base pour l'élément~$P_1$ sont définies par~$p_i(a_j) = \delta_{ij}$. Ce sont les coordonnées barycentriques:~$p_i = \lambda_i$.\end{remarque}
 
 \medskip
 \subsection*{Éléments finis bidimensionnels rectangulaires}
@@ -233,7 +233,7 @@ De plus, sur un élément~$K$ dont~$a_i$ est un nœud, $\varphi_i$ vaut~$1$ en~$
 On voit donc que la fonction de base globale~$\varphi_i$ est construite comme réunion des fonctions de base locales sur les éléments du maillage dont~$a_i$ est un nœud.
 
 \medskip
-\paragraph{Remarque} ce qui précède est vrai dans le cas d'un maillage conforme, i.e si l'intersection entre deux éléments est soit vide, soit réduite à un sommet ou une arête en dimension 2, ou à un sommet, une arête ou une face en dimension 3.
+\begin{remarque} Ce qui précède est vrai dans le cas d'un maillage conforme, i.e si l'intersection entre deux éléments est soit vide, soit réduite à un sommet ou une arête en dimension 2, ou à un sommet, une arête ou une face en dimension 3.\end{remarque}
 \begin{figure}[ht]
 \centering
 \includegraphics[height=25mm]{MaillageNC.eps}

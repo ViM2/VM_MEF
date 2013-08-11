@@ -115,12 +115,11 @@ Le système à résoudre s'écrit très simplement:
 \VV*{q\\ \lambda} =
 \MM*{A}
 \VV*{q\\ \lambda} =
-\VV*{F\\ -u_d}
+\VV*{f\\ -u_d}
 \end{equation}
 Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
 Par contre, la matrice du système (\ref{Eq-Lag1}), $\MM{A}$, si elle reste bien symétrique, \textcolorred{n'est plus définie positive}. Elle possède des valeurs propres négatives.
-%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Toutefois, on dispose du résultat suivant:
 
@@ -133,10 +132,10 @@ si~$\MM{K}$ est symétrique définie positive, alors:
 ce qui correspond aux cas où toutes les liaisons sont indépendantes.
 
 \bigskipvm
-Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une factorisation de Gauß),\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} et d'éviter des pivotages (que ferait une factorisation de Crout, i.e.~$\MM{LDL}^T$), on peut développer une autre technique, dite \textcolorblue{technique de double multiplicateur}, qui est celle employée dans \castem:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
+Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une factorisation de Gauß),\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} et d'éviter des pivotages (que ferait une factorisation de Crout, i.e.~$\MM{L}\MM{D}\MMT{L}$), on peut développer une autre technique, dite \textcolorblue{technique de double multiplicateur}, qui est celle employée dans \castem:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \begin{equation}
 \left\{\begin{aligned}
-&\MM{K}\VV{q} = \VV{F} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
+&\MM{K}\VV{q} = \VV{f} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
 &\VV{\lambda_1} = \VV{\lambda_2} \\ 
 &\MM{D}\VV{q} = \VV{u_d}
 \end{aligned}\right.
@@ -151,7 +150,7 @@ L'interprétation physique des multiplicateurs de Lagrange conduit naturellement
 \medskip
 On se retrouve alors avec un système du type:
 \begin{equation}
-\left(\MM{K} + \MMT{D}k\MM{D}\right) \VV{q} = \VV{F} + \MMT{D}k\MM{D}\VV{u_d}
+\left(\MM{K} + \MMT{D}k\MM{D}\right) \VV{q} = \VV{f} + \MMT{D}k\MM{D}\VV{u_d}
 \end{equation}
 dans lequel on n'a fait qu'ajouter des termes à la matrice de rigidité sur les degrés de liberté correspondant à ces déplacements et au vecteur des forces généralisées sur les efforts duaux.
 

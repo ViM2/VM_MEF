@@ -46,14 +46,14 @@ C'est pourquoi la manière la plus naturelle d'appréhender le traitement de l'�
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{ccc}%
-\includegraphics[height=\the\HauteurDesPhotos]{Kolmogorov}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Kolmogorov2}&%
 \includegraphics[height=\the\HauteurDesPhotos]{ArnoldV}&%
 \includegraphics[height=\the\HauteurDesPhotos]{Moser}\\%
 Kolmogorov&Arnold&Moser%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Dès le début du \textsc{xviii}\fup{e} siècle, la \textcolorblue{théorie des perturbations} a été utilisée par les astronomes pour les besoins de la mécanique céleste: en effet, les équations différentielles décrivant un système de $N$ corps en interaction gravitationnelle n'a pas de solution exacte générale pour $N \ge 3$. Cet aspect de la théorie des perturbations a été synthétisé à la fin du \textsc{xix}\fup{e} siècle dans les ouvrages classiques de Laplace,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} Tisserand\index[aut]{Tisserand (François Félix), 1845-1896, Français} et Poincaré,\index[aut]{Poincaré (Henri), 1854-1912, Français} avant de connaitre de nouveaux développements dans la seconde moitié du \textsc{xx}\fup{e} siècle avec l'avènement en 1954 de la «théorie KAM» ( théorème de mécanique classique i.e. non relativiste et non quantique, mettant en défaut l'hypothèse ergodique de Boltzmann),\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} du nom de ses trois concepteurs: Kolmogorov,\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe} Arnold\index[aut]{Arnold (Vladimir Igorevitch), 1937-2010, Russe} et Moser.\index[aut]{Moser (Jürgen Kurt), 1928-1999, Allemand} La méthode a par ailleurs été abondamment utilisée au \textsc{xx}\fup{e} siècle pour les besoins de la physique quantique, d'abord en mécanique quantique non relativiste, puis en théorie quantique des champs perturbative.}
+Dès le début du \textsc{xviii}\fup{e} siècle, la \textcolorblue{théorie des perturbations} a été utilisée par les astronomes pour les besoins de la mécanique céleste: en effet, les équations différentielles décrivant un système de~$n$ corps en interaction gravitationnelle n'a pas de solution exacte générale pour~$n\ge3$. Cet aspect de la théorie des perturbations a été synthétisé à la fin du \textsc{xix}\fup{e} siècle dans les ouvrages classiques de Laplace,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} Tisserand\index[aut]{Tisserand (François Félix), 1845-1896, Français} et Poincaré,\index[aut]{Poincaré (Henri), 1854-1912, Français} avant de connaitre de nouveaux développements dans la seconde moitié du \textsc{xx}\fup{e} siècle avec l'avènement en 1954 de la «théorie KAM» ( théorème de mécanique classique i.e. non relativiste et non quantique, mettant en défaut l'hypothèse ergodique de Boltzmann),\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} du nom de ses trois concepteurs: Kolmogorov,\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe} Arnold\index[aut]{Arnold (Vladimir Igorevitch), 1937-2010, Russe} et Moser.\index[aut]{Moser (Jürgen Kurt), 1928-1999, Allemand} La méthode a par ailleurs été abondamment utilisée au \textsc{xx}\fup{e} siècle pour les besoins de la physique quantique, d'abord en mécanique quantique non relativiste, puis en théorie quantique des champs perturbative.}
 
 \medskip
 C'est encore cette même méthode de perturbation qui est la plus ancienne et la plus utilisée en ingénierie pour analyser les systèmes aléatoires.
@@ -630,7 +630,7 @@ Le tout premier essai dans l'utilisation des concepts statistiques pour la fiabi
 \includegraphics[height=\the\HauteurDesPhotos]{Gumbel}\\%
 Freudenthal&Gumbel%
 \end{tabular}}
-\medskip
+\medskip\ifVersionDuDocEstVincent\else\vspace{\smallskipamount}\fi
 \ImageADroite{%
 Après 1945, le nombre d'article croit constamment. A l'université de Columbia, A.M.~Freudenthal\index[aut]{Freudenthal (Alfred Martin), 1906-1977, Américain} créa un institut pour l'étude de la fatigue et de la fiabilité, et produisit un grand nombre d'articles. L'évolution des codes modernes a été grandement influencée par les articles de 1949 à 1952 de E.~Torroja\index[aut]{Torroja (Eduardo), ?, Espagnol} et A.~P\'aez\index[aut]{P\'aez (A.), ?, Espagnol} (par exemple \emph{Calcul du coefficient de sécurité}, 1952).
 En 1953, dans sa thèse \emph{Strength, safety and economical dimension of structures}, A.I.~Johnson\index[aut]{Johnson (A.I.), ?, Suédois}  suggéra d'utiliser les distributions de valeurs extrêmes, celles-ci étant étudiées par E.J.~Gumbel\index[aut]{Gumbel (Emil Julius), 1891-1966, Allemand} (\emph{Statistics of Extremes}, 1958).}
@@ -643,14 +643,14 @@ J.~Ferry Borges en 1952 pointa l'importance de prendre en compte le caractère a
 \includegraphics[height=\the\HauteurDesPhotos]{Rosenblueth}\\%
 Cornell&Rosenblueth%
 \end{tabular}}
-\bigskip
+\medskip\ifVersionDuDocEstVincent\else\vspace{\smallskipamount}\fi
 \ImageAGauche{
-En 1967, C.A.~Cornell\index[aut]{Cornell (Carl Allin), 1938-2007, Américain} dans deux articles (\emph{Bounds on the reliability of structural systems} et \emph{A probability-based structural code}) propose une représentation du chargement, de la résistance et des dimensions par leurs moyenne et variance, ce qui devient la base des méthodes dites de niveau II\footnotemark.
+En 1967, C.A.~Cornell\index[aut]{Cornell (Carl Allin), 1938-2007, Américain} dans deux articles (\emph{Bounds on the reliability of structural systems} et \emph{A probability-based structural code}) propose une représentation du chargement, de la résistance et des dimensions par leurs moyenne et variance, ce qui devient la base des méthodes dites de niveau II$\,^a$. %\footnotemark ou\footnotemark[1] ne fonctionnent pas ici (donne 1. et pas a. car environnement dans environnement
 D'importantes contributions dans ce domaine seront dues à E.~Rosenblueth\index[aut]{Rosenblueth (Emilio), 1926-1994, Mexicain} et L.~Esteva\index[aut]{Esteva (Luis), 1935-2012, Mexicain} en 1972, O.~Ditlevsen\index[aut]{Ditlevsen (Ove Dalager), 1935-, Danois} en 1973, A.M.~Hasofer\index[aut]{Hasofer (A. M.),} et N.C.~Lind\index[aut]{Lind (Niels Christian),} en 1974 et D.~Veneziano en 1974. Nous allons en dire quelques mots un peu plus bas (indices de fiabilité).}
 
 En 1968, dans un article sur la conception sous chargement sismique (\emph{Probabilistic models for seismic force design}) J.R.~Benjamin défend l'utilisation des concepts probabilistes Bayésiens.
 %Toujours en 1968, A.H. Ang et M. Amin, dans \emph{Reliability of structures and structural systems}, proposent de diviser le facteur total en deux parties dans le but de diminuer la sensibilité du type de distribution.
-Les recherches des scientifiques russes ont été publiées par V.V.~Bolotin\index[aut]{Bolotin (Vladimir V.), 1926-?, Russe} en 1969 dans \emph{Statistical methods in structural mechanics}.
+Quant aux recherches des scientifiques russes sur le sujet, elles sont publiées par V.V.~Bolotin\index[aut]{Bolotin (Vladimir V.), 1926-?, Russe} en 1969 dans \emph{Statistical methods in structural mechanics}.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{ccccc}%
@@ -663,21 +663,21 @@ Les recherches des scientifiques russes ont été publiées par V.V.~Bolotin\ind
 %Moses&
 Rackwitz&Karadeniz&Der Kiureghian&Shinozuka&Lemaire%
 \end{tabular}}
-\bigskip
+\medskip\ifVersionDuDocEstVincent\else\vspace{\smallskipamount}\fi
 \ImageADroite{%
-Depuis 1970, de très nombreux articles ont été publiés sur le sujet. N'en mentionner que quelque uns est faire offense à de nombreux très bons autres articles. Nous citerons encore quelques grands noms du domaine tels que J.~Armit (\emph{wind structures}, 1976), F.~Moses (\emph{Reliability of structural systems}, 1976),\index[aut]{Moses (Fred), ?-, Américain} R.~Rackwitz\index[aut]{Rackwitz (Rüdiger), 1941-2012, Allemand} (\emph{First order reliability theories and stichastic models}, 1977), H.~Karadeniz,\index[aut]{Karadeniz (Halil), 1946-, Turque} (logiciel SAPOS), A.~Der Kiureghian,\index[aut]{Der Kiureghian (Armen), 1947-, Arménien}, M.~Shinozuka\index[aut]{Shinozuka (Masanobu), 1930-, Japonais}, M.~Lemaire\index[aut]{Lemaire (Maurice), ?-, Français}...}
-\footnotetext{On distingue les méthodes de:
+Depuis 1970, de très nombreux articles ont été publiés sur le sujet. N'en mentionner que quelque uns est faire offense à de nombreux très bons autres articles. Nous citerons encore quelques grands noms du domaine tels que J.~Armit (\emph{wind structures}, 1976), F.~Moses (\emph{Reliability of structural systems}, 1976),\index[aut]{Moses (Fred), ?-, Américain} R.~Rackwitz\index[aut]{Rackwitz (Rüdiger), 1941-2012, Allemand} (\emph{First order reliability theories and stichastic models}, 1977), H.~Karadeniz\index[aut]{Karadeniz (Halil), 1946-, Turque} (logiciel SAPOS), A.~Der Kiureghian\index[aut]{Der Kiureghian (Armen), 1947-, Arménien}, M.~Shinozuka\index[aut]{Shinozuka (Masanobu), 1930-, Japonais}, M.~Lemaire\index[aut]{Lemaire (Maurice), ?-, Français}...}
+\footnotetext[1]{On distingue les méthodes de:
 \begin{itemize}
    \item niveau I: l'aspect probabiliste est introduit en donnant aux variables aléatoires une «valeur caractéristique» associée à un facteur de sécurité partiel;
-   \item niveau II: ce sont les méthodes fiabilistes utilisant deux paramètre pour décrire chaque variable aléatoire (moyenne et variance);
-   \item niveau III: elles procèdent à l'analyse complète du problème et impliquent l'intégration de la fonction de densité de probabilité conjointe multidimensionnelle des variables aléatoires étendus sur le domaine de la sécurité. La fiabilité est exprimée en termes d'indices de sécurité adéquates, à savoir: indice de fiabilité et probabilité de défaillance;
-   \item niveau IV: elles concernent les structures qui sont d'une importance économique majeure, et impliquent l'utilisation des principes de l'analyse économique de l'ingénierie sous incertitude. Elles tiennent compte des coûts et des bénéfices de la construction, la maintenance, la réparation, les conséquences de la défaillance, les intérêts sur le capital... Elles doivent être utilisées pour les projets sensibles comme les projets nucléaires, les tours de transmission, des ponts routiers.   
+   \item niveau II: ce sont les méthodes fiabilistes utilisant deux paramètres pour décrire chaque variable aléatoire (moyenne et variance);
+   \item niveau III: elles procèdent à l'analyse complète du problème et impliquent l'intégration de la fonction de densité de probabilité conjointe multidimensionnelle des variables aléatoires étendue sur le domaine de la sécurité. La fiabilité est exprimée en termes d'indices de sécurité adéquates, à savoir: indice de fiabilité et probabilité de défaillance;
+   \item niveau IV: elles concernent les structures qui sont d'une importance économique majeure, et impliquent l'utilisation des principes de l'analyse économique de l'ingénierie sous incertitude. Elles tiennent compte des coûts et des bénéfices de la construction, de la maintenance, de la réparation, des conséquences de la défaillance, des intérêts sur le capital... Elles doivent être utilisées pour les projets sensibles comme les projets nucléaires, les tours de transmission, les ponts routiers.   
 \end{itemize}}
 
-\medskip
-\textcolorblue{L'indice de fiabilité} (ou de sûreté), utilisé en analyse de risque, est une mesure de la sûreté qui est élevée lorsque la probabilité de défaillance est faible. Il s'agit d'un outil plus rudimentaire que la probabilité de défaillance qui est utilisé si~$P_f$ est trop grande ou lorsque son calcul est trop incertain à cause de l'approximation faite ou parce que l'on ne dispose pas d'informations suffisantes pour la calculer.
+\medskip\ifVersionDuDocEstVincent\else\vspace{\medskipamount}\fi
+Revenons un peu sur \textcolorblue{L'indice de fiabilité} utilisé en analyse de risque. C'est une mesure de la sûreté qui est élevé lorsque la probabilité de défaillance~$P_f$ est faible. Il s'agit d'un outil plus rudimentaire que la probabilité de défaillance qui est utilisé si celle-ci est trop grande ou lorsque son calcul est trop incertain à cause de l'approximation faite ou parce que l'on ne dispose pas d'informations suffisantes pour la calculer.
 
-En 1969, Cornell\index[aut]{Cornell (Carl Allin), 1938-2007, Américain} défini l'indice de fiabilité~$\beta_c$ (dans le cas de variables gaussiennes) comme:
+En 1969, Cornell\index[aut]{Cornell (Carl Allin), 1938-2007, Américain} définit l'indice de fiabilité~$\beta_c$ (dans le cas de variables gaussiennes) comme:
 \begin{equation}
 \beta_C=\dfrac{\E{M}}{D[M]}
 \end{equation}
@@ -693,7 +693,7 @@ En 1972, Rosenblueth\index[aut]{Rosenblueth (Emilio), 1926-1994, Mexicain} et Es
 qui est calculé en linéarisant la marge de sécurité~$M$. Un développement de Taylor au premier ordre donne:
 $$M\approx\dfrac{\log\mu_R-\log\mu_S}{\sqrt{\sigma_R^2+\sigma_S^2}}$$
 
-En 1974, Hasofer\index[aut]{Hasofer (A. M.),} et Lind\index[aut]{Lind (Niels Christian),} proposent de passer de l'espace des variables~$X$ à celui de variables normalisées et non corrélées. Ce sont eux qui définissent la définition de l'indice de fiabilité~$\beta_{HL}$ comme la distance minimale de l'origine à la surface d'état limite.
+En 1974, Hasofer\index[aut]{Hasofer (A. M.),} et Lind\index[aut]{Lind (Niels Christian),} proposent de passer de l'espace des variables~$X$ à celui de variables normalisées et non corrélées. Ce sont eux qui donnent la définition de l'indice de fiabilité~$\beta_{HL}$ comme la distance minimale de l'origine à la surface d'état limite.
 En 1976, Ditlevsen\index[aut]{Ditlevsen (Ove Dalager), 1935-, Danois} propose un autre indice de fiabilité, plus sélectif, en introduisant une mesure de fiabilité obtenue en intégrant une fonction pondérée sur le domaine de sûreté. En pratique, on a souvent $\beta_G=\beta_{HL}$.
 \end{histoire}
 

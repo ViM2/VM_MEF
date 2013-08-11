@@ -204,9 +204,9 @@ Poursuivons le cas de la poutre du paragraphe précédent, mais considérons une
 \medskipvm
 Chaque élément~$e$ (de longueur~$L_e$) possède une matrice de rigidité élémentaire~$\MM{k_e}$ et un vecteur des forces nodales élémentaires~$\VV{f_e}$ définis par:
 \begin{equation}
-\MM{K_e} = \frac{2EA}{L_e} \MM{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
+\MM{K_e} = \frac{2EA}{L_e} \MM*{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
 \qquad \text{ et } \qquad
-\VV{f_e} = \rho g A \frac{L_e}4 \VV{\begin{array}{c} 1 \\1 \end{array}}
+\VV{f_e} = \rho g A \frac{L_e}4 \VV*{\begin{array}{c} 1 \\1 \end{array}}
 \end{equation}
 \medskipvm
 Les variables nodales sont~$\LL{q}=\LL{u_1, u_2, u_3, u_4}$, et, les matrices élémentaires
@@ -233,10 +233,11 @@ L'\textcolorblue{assemblage} permettant de constituer le système complet est si
 On résout alors~$\MM{K}\VV{q}=\VV{f}$ avec la condition aux limites~$u_1=0$.
 
 \medskip
-\paragraph{Remarque}
+\begin{remarque}
 La matrice~$\MM{K}$ obtenue sur cet exemple a un \textcolorblue{caractère bande} (la matrice est vide en dehors d'une zone centrée sur la diagonale). Ceci est dû à la numérotation des nœuds. Une autre numérotation pourrait faire perdre ce caractère important (stockage et résolution).
 
 C'est pourquoi, dans les programmes éléments finis, une étape de renumémoration automatique des nœuds est généralement faite.
+\end{remarque}
 
 \medskip
 \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini!d'Hermite}

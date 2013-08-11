@@ -370,9 +370,14 @@ Nous pouvons mentionner également que ce type de calcul permet de calculer la g
 
 \begin{figure}[ht]
   \center
-  \includegraphics[width=80mm]{Thermo0.eps} \hfill
-%  \includegraphics[height=40mm]{Thermo1.eps} \hfill
-  \includegraphics[width=90mm]{Thermo2.eps}
+  \ifVersionDuDocEstVincent
+     \includegraphics[width=80mm]{Thermo0.eps} \hfill
+%     \includegraphics[height=40mm]{Thermo1.eps} \hfill
+     \includegraphics[width=90mm]{Thermo2.eps}
+  \else
+     \includegraphics[width=64mm]{Thermo0.eps} \hfill
+     \includegraphics[width=72mm]{Thermo2.eps}
+  \fi
   \caption{\label{Fig-Thermo} Thermocompression: a) problème, b) forme de la pièce après production}
 \end{figure}
 
