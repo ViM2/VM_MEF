@@ -11,14 +11,14 @@ Nous nous restreindrons dans le nombre de formulations afin de ne présenter que
 
 \section{Introduction}
 
-Dans la manière traditionnelle, encore appelée approche déterministe, la conception des structures repose sur des paramètres tels que les dimensions, la résistance des matériaux et le chargement, tous caractérisés par une valeur constante, i.e. leur moyenne. Sur la base de ces constantes on utilise un modèle mathématique du comportement pour déterminer si la structure est sûre ou non. Afin d'améliorer encore la sécurité, les variables structurelles sont alors remplacées par leur pire cas. Cette philosophie de conception se révèle trop coûteuse d'un point de vue économique car on se place dans le cas où toutes les paramètres sont à leur pire valeur en même temps. 
+Dans la manière traditionnelle, encore appelée approche déterministe, la conception des structures repose sur des paramètres tels que les dimensions, la résistance des matériaux et le chargement, tous caractérisés par une valeur constante, i.e. leur moyenne. Sur la base de ces constantes on utilise un modèle mathématique du comportement pour déterminer si la structure est sûre ou non. Afin d'améliorer encore la sécurité, les variables structurelles sont alors remplacées par leur pire cas. Cette philosophie de conception se révèle trop coûteuse d'un point de vue économique car on se place dans le cas où toutes les paramètres sont à leur pire valeur en même temps.
 
 Il est bien connu que, par exemple, la résistance varie d'un élément structurel à l'autre, de sorte que cette résistance ne peut être décrite par une unique valeur. De plus, il est parfois nécessaire de prendre en compte des variations temporelles. Ces mêmes variations existent également pour les dimensions et le chargement. Cela est particulièrement vrai pour les chargements naturels comme la houle, le vent et les séismes, qu'il est difficile de prendre en compte de manière déterministe. Il faut en outre garder en tête qu'une certaine incertitude existe également dans le choix des modèles mathématiques utilisés pour l'analyse de la structure.
 
 Le but d'utiliser une approche probabiliste plutôt qu'une simple approche déterministe est d'essayer de prendre en compte les incertitudes mentionnées ci-dessus afin de réaliser une analyse plus réaliste de la sûreté de la structure.
 
 \medskip
-Dans ce chapitre, nous considèrerons le problème de formulation classique suivant:
+Dans ce chapitre, nous considérerons le problème de formulation classique suivant:
 \begin{equation}\label{Eq-Sto1}
 au=f
 \end{equation}
@@ -53,7 +53,7 @@ Kolmogorov&Arnold&Moser%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Dès le début du \textsc{xviii}\fup{e} siècle, la \textcolorblue{théorie des perturbations} a été utilisée par les astronomes pour les besoins de la mécanique céleste: en effet, les équations différentielles décrivant un système de~$n$ corps en interaction gravitationnelle n'a pas de solution exacte générale pour~$n\ge3$. Cet aspect de la théorie des perturbations a été synthétisé à la fin du \textsc{xix}\fup{e} siècle dans les ouvrages classiques de Laplace,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} Tisserand\index[aut]{Tisserand (François Félix), 1845-1896, Français} et Poincaré,\index[aut]{Poincaré (Henri), 1854-1912, Français} avant de connaitre de nouveaux développements dans la seconde moitié du \textsc{xx}\fup{e} siècle avec l'avènement en 1954 de la «théorie KAM» ( théorème de mécanique classique i.e. non relativiste et non quantique, mettant en défaut l'hypothèse ergodique de Boltzmann),\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} du nom de ses trois concepteurs: Kolmogorov,\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe} Arnold\index[aut]{Arnold (Vladimir Igorevitch), 1937-2010, Russe} et Moser.\index[aut]{Moser (Jürgen Kurt), 1928-1999, Allemand} La méthode a par ailleurs été abondamment utilisée au \textsc{xx}\fup{e} siècle pour les besoins de la physique quantique, d'abord en mécanique quantique non relativiste, puis en théorie quantique des champs perturbative.}
+Dès le début du \textsc{xviii}\fup{e} siècle, la \textcolorblue{théorie des perturbations} a été utilisée par les astronomes pour les besoins de la mécanique céleste: en effet, les équations différentielles décrivant un système de~$n$ corps en interaction gravitationnelle n'a pas de solution exacte générale pour~$n\ge3$. Cet aspect de la théorie des perturbations a été synthétisé à la fin du \textsc{xix}\fup{e} siècle dans les ouvrages classiques de Laplace,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} Tisserand\index[aut]{Tisserand (François Félix), 1845-1896, Français} et Poincaré,\index[aut]{Poincaré (Henri), 1854-1912, Français} avant de connaître de nouveaux développements dans la seconde moitié du \textsc{xx}\fup{e} siècle avec l'avènement en 1954 de la «théorie KAM» ( théorème de mécanique classique i.e. non relativiste et non quantique, mettant en défaut l'hypothèse ergodique de Boltzmann),\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} du nom de ses trois concepteurs: Kolmogorov,\index[aut]{Kolmogorov (Andreï Nikolaïevitch), 1903-1987, Russe} Arnold\index[aut]{Arnold (Vladimir Igorevitch), 1937-2010, Russe} et Moser.\index[aut]{Moser (Jürgen Kurt), 1928-1999, Allemand} La méthode a par ailleurs été abondamment utilisée au \textsc{xx}\fup{e} siècle pour les besoins de la physique quantique, d'abord en mécanique quantique non relativiste, puis en théorie quantique des champs perturbative.}
 
 \medskip
 C'est encore cette même méthode de perturbation qui est la plus ancienne et la plus utilisée en ingénierie pour analyser les systèmes aléatoires (pas seulement aléatoires, voir la présentation de la méthode de réanalyse au paragraphe~\ref{Sec-PInv} qui est une méthode de perturbation).
@@ -77,7 +77,7 @@ et on peut poursuivre ainsi, si on le souhaite. Cela ne peut néanmoins être fa
 \begin{equation}\label{Eq-Unco}
 \E{\PP{\overline{a}^{-1}\widetilde{a}}^nu} = \E{\PP{\overline{a}^{-1}\widetilde{a}}^n}\E{u}
 \end{equation}
-où~$\E{.}$ est la moyenne (espérance mathématique). 
+où~$\E{.}$ est la moyenne (espérance mathématique).
 
 \textcolorgreen{Le découplage effectué par l'équation~(\ref{Eq-Unco}) n'a pas de base rigoureuse et est souvent justifié intuitivement par un argument d'indépendance locale.} \textcolorred{On aboutit de toutes façons à une formulation très complexes pour les moments d'ordres élevés,} de sorte que cette méthode n'est utilisée en pratique elle aussi que pour le cas des petites fluctuations.
 \end{histoire}
@@ -93,15 +93,15 @@ Reprenons cela avec un vocabulaire probabiliste.
 \subsection{Variable aléatoire}
 
 On appelle \textcolorblue{épreuve} l'observation d'un phénomène aléatoire.
-Toutes les \textcolorblue{réalisations} possibles d'une épreuve forment l'ensemble de tous les résultats d'une expérience aléatoire, qui sera noté~$\Theta$. 
-Un \textcolorblue{événement}~$E$ est un sous-ensemble de~$\Theta$ contenant les réalisations~$\theta\in\Theta$. 
+Toutes les \textcolorblue{réalisations} possibles d'une épreuve forment l'ensemble de tous les résultats d'une expérience aléatoire, qui sera noté~$\Theta$.
+Un \textcolorblue{événement}~$E$ est un sous-ensemble de~$\Theta$ contenant les réalisations~$\theta\in\Theta$.
 La \textcolorblue{mesure} de l'occurrence de~$E$ est une mesure de probabilité notée~$P$.
 L'ensemble de tous les événements possibles ayant une probabilité ainsi définie est appelé une~$\sigma$-algèbre associée à~$\Theta$, et est notée~$\mathcal{F}$.
 L'espace de probabilité construit grâce à ces notions est noté~$(\Theta,\mathcal{F},P)$.
 En d'autres termes, pour reprendre la partie I, l'espace de probabilité~$(\Theta,\mathcal{F},P)$ est construit sur la tribu~$\mathcal{F}$ et avec la mesure~$P$.
 
 \medskip
-Une \textcolorblue{variable aléatoire} réelle~$X$ est une fonction~$X : (\Theta,\mathcal{F},P) \rightarrow \RR$. 
+Une \textcolorblue{variable aléatoire} réelle~$X$ est une fonction~$X : (\Theta,\mathcal{F},P) \rightarrow \RR$.
 Pour les variables aléatoires continues, la \textcolorblue{densité de probabilité} est notée~$f_X(x)$ et la \textcolorblue{fonction de répartition} est notée~$F_X(x)$.
 Un \textcolorblue{vecteur aléatoire} est un vecteur dont les composantes sont des variables aléatoires.
 
@@ -162,7 +162,7 @@ On rappelle également qu'une variable aléatoire gaussienne centrée réduite (
 \medskip
 Nous présentons quelques propriétés des polynômes d'Hermite,\index{polynôme!d'Hermite} à commencer par la relation d'orthogonalité:\index{polynôme!orthogonalité}
 \begin{equation}
-  \int_{-\infty}^{+\infty} H_n(x)H_m(x)\varphi(x)\dd x=n!\delta_{nm} 
+  \int_{-\infty}^{+\infty} H_n(x)H_m(x)\varphi(x)\dd x=n!\delta_{nm}
 \end{equation}
 où~$\delta_{nm}$ est le symbole de Kronecker.
 \begin{equation}
@@ -175,7 +175,7 @@ avec:
 \begin{equation}
 \left\{\begin{array}{rll}
 C_{ijk} &=0& \text{ si } \frac{i+j+k}2\not\in\NN\\
-C_{ijk} &=\dfrac{i!j!}{\PP{\frac{i+j-k}2}!\PP{\frac{i+k-j}2}!\PP{\frac{j+k-i}2}!}& \text{ sinon } 
+C_{ijk} &=\dfrac{i!j!}{\PP{\frac{i+j-k}2}!\PP{\frac{i+k-j}2}!\PP{\frac{j+k-i}2}!}& \text{ sinon }
 \end{array}
 \right.
 \end{equation}
@@ -185,7 +185,7 @@ C_{ijk} &=\dfrac{i!j!}{\PP{\frac{i+j-k}2}!\PP{\frac{i+k-j}2}!\PP{\frac{j+k-i}2}!
 \subsection{Processus ou champ aléatoire}
 
 Nous venons de présenter les variables aléatoires.
-Or, ce qui nous intéresse, est de prendre en compte la variation d'une propriété (par exemple le module d'Young du matériau) continument sur notre domaine~$\Omega$.
+Or, ce qui nous intéresse, est de prendre en compte la variation d'une propriété (par exemple le module d'Young du matériau) continûment sur notre domaine~$\Omega$.
 
 \begin{definition}[Champ aléatoire ou processus stochastique]
 Un \textcolorblue{champ aléatoire scalaire}~$w(x,\theta)$ peut être défini comme un ensemble de variables aléatoires indexées par un paramètre continu~$x\in\Omega$.
@@ -206,7 +206,7 @@ Un champ aléatoire est dit:
    \begin{equation}
        C(x,x')=\cov{w(x),w(x')}
    \end{equation}
-   \item \textcolorblue{stationnaire (au sens faible)} si sa moyenne et sa variance sont constantes et si sa fonction d'autocorrélation~$\rho$ ne dépend que de la différence~$(x-x')$. La fonction d'autocorrélation est définie par: 
+   \item \textcolorblue{stationnaire (au sens faible)} si sa moyenne et sa variance sont constantes et si sa fonction d'autocorrélation~$\rho$ ne dépend que de la différence~$(x-x')$. La fonction d'autocorrélation est définie par:
    \begin{equation}
       \rho(x,x')=\dfrac{C(x,x')}{\sigma(x)\sigma(x')}
    \end{equation}
@@ -264,7 +264,7 @@ Il faut donc résoudre le problème aux valeurs propres suivant:
 \dint_\Omega C_{ww}(x,x')\varphi(x')\dd \Omega = \lambda_i\varphi_i(x), \quad \forall i\ge 1
 \end{equation}
 qui est une équation intégrale de Fredholm\index[aut]{Fredholm (Ivar), 1866-1927, Suédois} de deuxième espèce.
-Le noyau~$C_{ww}(.,.)$ étant une fonction d'autocovariance, il est borné, symétrique et défini positif (Loève,\index[aut]{Loève (Michel), 1907-1979, Français} 1977). l'ensemble des~$\{\varphi_i\}$ forme une base complète orthogonale de l'espace des fonctions~$L^2(\Omega)$. Les valeurs propres sont réelles, positives et en nombre fini. 
+Le noyau~$C_{ww}(.,.)$ étant une fonction d'autocovariance, il est borné, symétrique et défini positif (Loève,\index[aut]{Loève (Michel), 1907-1979, Français} 1977). l'ensemble des~$\{\varphi_i\}$ forme une base complète orthogonale de l'espace des fonctions~$L^2(\Omega)$. Les valeurs propres sont réelles, positives et en nombre fini.
 
 \medskip
 Chaque réalisation de~$w$ peut donc être développée sur cette base sous la forme:
@@ -335,10 +335,10 @@ où~$\alpha$ est la liste considérée.
 \medskip
 Déterminons la dimension de la base du chaos polynomial de dimension~$M$ et d'ordre~$p$:
 \begin{demonstration}\footnotesize\colorgris
-(On pourrait aboutir au résultat plus directement, mais nous en profitons pour parler des polynômes homogènes). 
+(On pourrait aboutir au résultat plus directement, mais nous en profitons pour parler des polynômes homogènes).
 Considérons l'anneau des polynômes en~$M$ indéterminées~$\RR[X_1, ..., X_M]$.
-Un polynôme homogène, ou forme algébrique, est un polynôme en plusieurs indéterminées dont tous les monômes non nuls sont de même degré total. 
-L'ensemble des polynômes homogènes de degré~$p$ dans~$\RR[X_1, ..., X_M]$ forme un~$\RR$-espace vectoriel. 
+Un polynôme homogène, ou forme algébrique, est un polynôme en plusieurs indéterminées dont tous les monômes non nuls sont de même degré total.
+L'ensemble des polynômes homogènes de degré~$p$ dans~$\RR[X_1, ..., X_M]$ forme un~$\RR$-espace vectoriel.
 %(le polynôme nul est homogène de degré~$p$, pour tout entier~$p$; c'est le seul polynôme homogène dont le degré n'est donc pas défini).
 Sa base canonique est l'ensemble des monômes~$X_1^{\alpha_1}X_2^{\alpha_2}...X_M^{\alpha_M} \text{ où } \alpha_1+\alpha_2+...+\alpha_M=p$.
 Sa dimension est donc le nombre de~$p$-combinaisons avec répétition de l'ensemble~$\{1, 2, ..., M\}$, i.e.~$\Gamma_M^p={M+p-1\choose p}$.
@@ -370,7 +370,7 @@ $M=6$ &7&28&84&210
 \section{Éléments finis stochastiques}\index{élément fini!stochastique}
 
 Nous rappelons l'équation~(\ref{Eq-Sto1}):
-$$ au=f \text{ que l'on peut écrire maintenant: } a(x,\theta) u(x,\theta) = f(x,\theta)$$
+\begin{equation*}au=f \text{ que l'on peut écrire maintenant: } a(x,\theta) u(x,\theta) = f(x,\theta)\end{equation*}
 où l'opérateur~$a$ est défini sur le produit d'un espace de Hilbert de type~$L^2$ (en fonction du problème) par l'espace de Hilbert~$L^2(\Theta,\mathcal{F},P)$.
 C'est un opérateur différentiel dont les coefficients ont des fluctuations aléatoires dépendant d'une ou plusieurs variables.
 
@@ -403,7 +403,7 @@ qui ne converge que si:
 \end{equation}
 L'intérêt est que l'on ne doit inverser que~$\overline{a}^{-1}(x)$.
 Toutefois, on ne sait pas calculer symboliquement les termes d'ordre supérieur à deux, et on se contente de simulations numériques au delà.
-On peut faire les mêmes remarques que pour la méthode de perturbation et il est difficile d'obtenir les moments d'ordre supérieur à deux, surtout si l'on considère la valeur moyenne du rocessus sur chaque élément, comme nous allons l'illustrer immédiatement en mécanique.
+On peut faire les mêmes remarques que pour la méthode de perturbation et il est difficile d'obtenir les moments d'ordre supérieur à deux, surtout si l'on considère la valeur moyenne du processus sur chaque élément, comme nous allons l'illustrer immédiatement en mécanique.
 
 \medskip
 \subsection{Un exemple en statique linéaire}
@@ -420,7 +420,7 @@ où~$H_0$ est une matrice déterministe constante.
 Chaque matrice de rigidité élémentaire, donnée par~$\MM{k^e}=\dint_{\Omega_e} \MMI{N_u}\MMI{\mathcal{L}}\MM{H}\MM{\mathcal{L}}\MM{N_u} \dd\Omega_e$ s'écrit, en reportant le développement de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} de~$w(x,\theta)$ est donnée par la relation~(\ref{Eq-KL}):
 \begin{equation}
 \MM{k^e(\theta)}=\MM{k^e_0} +\dsum_{i=1}^\infty \MM{k_i^e}\xi_i(\theta)
-\end{equation} 
+\end{equation}
 avec
 \begin{equation}
 \MM{k_i^e}=\sqrt{\lambda_i}\dint_{\Omega_e} \varphi_i\MMI{N_u}\MMI{\mathcal{L}}\MM{H_0}\MM{\mathcal{L}}\MM{N_u} \dd\Omega_e
@@ -450,14 +450,14 @@ En tronquant les développements de Karhunen-Loève\index[aut]{Karhunen (Kari), 
 \medskip
 \subsection{Projection sur la base du chaos polynomial}
 
-Les équations~(\ref{Eq-StoNeu}) et~(\ref{Eq-StoQ}) montrent que la solution s'exprime comme série polynomiale de variables gaussiennes centrées réduites~$\xi_i$. 
+Les équations~(\ref{Eq-StoNeu}) et~(\ref{Eq-StoQ}) montrent que la solution s'exprime comme série polynomiale de variables gaussiennes centrées réduites~$\xi_i$.
 Il est possible de réarranger tous les termes de l'équation~(\ref{Eq-StoNeu}) en l'indexant par un seul indice~$j$ sous la forme:
 \begin{equation}
 u^i(\theta)=\dsum_{j=0}^\infty u_j^i\mathcal{P}_j
 \end{equation}
 où les~$\mathcal{P}_j$ sont les polynômes homogènes en les variables gaussiennes centrées réduites~$\xi_k$ (avec~$\mathcal{P}_0\equiv1$).
 Comme les polynômes homogènes forment une base de~$L^2(\Theta,\mathcal{F},P)$, les coefficients~$u_j^i$ sont les coordonnées de~$u^i(\theta)$ dans cette base.
-Mais les polynômes homogènes ne forment pas une base orthogonale de~$L^2(\Theta,\mathcal{F},P)$ au sens du produit scalaire défini par la relation~(\ref{Eq_StoPS}), contrairement au chaos polynomial. 
+Mais les polynômes homogènes ne forment pas une base orthogonale de~$L^2(\Theta,\mathcal{F},P)$ au sens du produit scalaire défini par la relation~(\ref{Eq_StoPS}), contrairement au chaos polynomial.
 La solution peut donc également s'écrire dans la base du chaos polynomial sous la forme:
 \begin{equation}\label{Eq-StoChP}
 u(\theta)=\dsum_{j=0}^\infty u_j\Psi_j
@@ -465,7 +465,7 @@ u(\theta)=\dsum_{j=0}^\infty u_j\Psi_j
 \textcolorgreen{Il s'agit simplement d'un changement de base}, et dans ce cas, même le premier terme de la série dans la base du chaos polynomial n'est pas le même que dans la série de von Neumann.\index[aut]{Neumann (John, von -), 1903-1957, Hongrois}\index{série de von Neumann}
 
 \medskip
-Pour en revenir à l'exemple précédent, ce signifie que l'on peut décomposer les déplacements dans la base du chaos polynomial:~$\VV{q(\theta)}=\sum_{i\ge0}\VV{q_i}\Psi_i(\theta)$, où les~$\VV{q_j}$ sont des vecteurs déterministes (de dimension égale au nombre de degrés de liberté). 
+Pour en revenir à l'exemple précédent, ce signifie que l'on peut décomposer les déplacements dans la base du chaos polynomial:~$\VV{q(\theta)}=\sum_{i\ge0}\VV{q_i}\Psi_i(\theta)$, où les~$\VV{q_j}$ sont des vecteurs déterministes (de dimension égale au nombre de degrés de liberté).
 Dans ce cas, tous les termes sont différents du développement en série de von Neumann,\index[aut]{Neumann (John, von -), 1903-1957, Hongrois}\index{série de von Neumann} \textcolorgreen{même le premier~$\VV{q_0}$.}
 
 \medskip
@@ -481,7 +481,7 @@ Et il est évidemment nécessaire de tronquer les séries dans cette équation p
 \medskip
 Nous supposerons donc que le développement de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} est tronqué à l'ordre~$M+1$ et que la base de chaos polynomial sera considérée jusqu'à l'ordre~$p$. Le résidu correspondant à cette troncature de l'équation~(\ref{Eq-StoEFEx}) est:
 \begin{equation}
-R_{M,p} = 
+R_{M,p} =
 \dsum_{i=0}^M\dsum_{j=0}^{p-1} \MM{K_i}\VV{q_j}\xi_i(\theta)\Psi_j(\theta) - \VV{f}
 \end{equation}
 La meilleure approximation de~$\VV{q(\theta)}$ est obtenue en minimisant le résidu au sens des moindre carrés. Cela se produit lorsque le résidu est orthogonal au sous-espace engendré par les~$\{\Psi_k\}_{k=0}^{p-1}$ dans~$L^2(\Theta,\mathcal{F},P)$, ce qui s'écrit:
@@ -516,20 +516,20 @@ Il peut être résolu directement par une factorisation de Cholesky,\index[aut]{
 \medskip
 \subsection{Synthèse et remarques}
 
-\textcolorred{Toute variable aléatoire~$X$ de~$L^2(\Theta,\mathcal{F},P)$ de fonction de répartition~$F_X(x)$, peut être transformée en une variable gaussienne centrée réduite~$\xi$} en utilisant la relation~$\xi=F_X^{-1}(\Phi(\xi))$ (où~$\Phi$ est la fonction de répartition gaussienne centrée réduite) et donc se décomposer sur une base orthogonale de~$L^2(\Theta,\mathcal{F},P)$ telle que celle des polynômes d'Hermite:\index{polynôme!d'Hermite} 
+\textcolorred{Toute variable aléatoire~$X$ de~$L^2(\Theta,\mathcal{F},P)$ de fonction de répartition~$F_X(x)$, peut être transformée en une variable gaussienne centrée réduite~$\xi$} en utilisant la relation~$\xi=F_X^{-1}(\Phi(\xi))$ (où~$\Phi$ est la fonction de répartition gaussienne centrée réduite) et donc se décomposer sur une base orthogonale de~$L^2(\Theta,\mathcal{F},P)$ telle que celle des polynômes d'Hermite:\index{polynôme!d'Hermite}
 $$X=\dsum_{i=0}^\infty a_i H_i(\xi)$$
-Les coefficients~$a_i$, dans cette base, s'expriment comme: 
+Les coefficients~$a_i$, dans cette base, s'expriment comme:
 $$a_i=\dfrac{\E{XH_i(\xi)}}{\E{H_i(\xi}^2}=\dfrac{\E{XH_i(\xi)}}{i!}$$
-De la même manière, un vecteur aléatoire~$X$ de~$M$ variables aléatoires indépendantes peut être représenté par~$M$ variables aléatoires gaussiennes centrées réduites~$\xi_i$ ($i=1...M$). \textcolorred{Enfin, toute fonction~$S$ suffisamment régulière d'une variables ou d'un vecteur aléatoire~$X$ à valeur scalaire ou vectorielle peut être décomposée sur la base du chaos polynomial} composée des polynômes d'Hermites\index{polynôme!d'Hermite} multidimensionnels (i.e. en~$M$ variables) de variables gaussiennes centrées réduites et s'écrire sous la forme: 
+De la même manière, un vecteur aléatoire~$X$ de~$M$ variables aléatoires indépendantes peut être représenté par~$M$ variables aléatoires gaussiennes centrées réduites~$\xi_i$ ($i=1...M$). \textcolorred{Enfin, toute fonction~$S$ suffisamment régulière d'une variables ou d'un vecteur aléatoire~$X$ à valeur scalaire ou vectorielle peut être décomposée sur la base du chaos polynomial} composée des polynômes d'Hermites\index{polynôme!d'Hermite} multidimensionnels (i.e. en~$M$ variables) de variables gaussiennes centrées réduites et s'écrire sous la forme:
 $$S=\dsum_{i=0}^\infty S_i\Psi(\xi_j), \quad j=1...M$$
 
 \medskip
 La méthode des éléments finis stochastiques\index{élément fini!stochastique} spectraux initialement proposée par Ghanem\index[aut]{Ghanem (Roger G.), ?-, Libanais} et Spanos\index[aut]{Spanos (Pol D.), ?-, Grec} avait pour but de modéliser la variabilité spatiale des propriétés matérielles d'un système mécanique, puis de propager cette incertitude à travers le modèle. Le module d'Young est modélisé comme un champ gaussien~$E(x)$ et un développement en série de Karhunen-Loève\index{série de Karhunen-Loève} permet de le représenter à partir d'une famille de variables gaussiennes centrées réduites:
-$$ E(x) = \mu(x) + \dsum_{i=0}^\infty \sqrt{\lambda_i}\varphi_i(x)\xi_i $$
+\begin{equation*}E(x) = \mu(x) + \dsum_{i=0}^\infty \sqrt{\lambda_i}\varphi_i(x)\xi_i\end{equation*}
 à partir des valeurs propres~$\lambda_i$ et des vecteurs propres~$\varphi_i$ de la fonction d'autocovariance du champ aléatoire. \textcolorgreen{En pratique, on n'utilisera évidemment qu'un nombre limité~$M$ de termes, correspondant aux valeurs propres les plus grandes.}
 
 La matrice de rigidité est alors elle-aussi aléatoire et on peut l'exprimer aussi bien dans la base de variables gaussiennes que dans la base du chaos polynomial:
-$$ \MM{K}=\dsum_{i=0}^\infty \MM{K}_i\xi_i = \dsum_{j=0}^\infty \MM{K}_j\Psi_j $$
+\begin{equation*}\MM{K}=\dsum_{i=0}^\infty \MM{K}_i\xi_i = \dsum_{j=0}^\infty \MM{K}_j\Psi_j\end{equation*}
 Si le champ aléatoire considéré n'est plus gaussien (par exemple lognormal), ou si la dépendance de la rigidité en fonction de ce champ n'est plus linéaire, Ghanem montre que la matrice de rigidité peut encore être représentée sur la base du chaos polynomial. \textcolorgreen{On a montré que cela est encore valable quelque soit la loi des variables aléatoires.}
 
 \medskip
@@ -545,7 +545,7 @@ Le plus simple des choix est donc de considérer la même discrétisation pour l
 Toutefois, le maillage du domaine~$\Omega$ correspond au problème traité et plus particulièrement à l'obtention de certaines quantités: pour un calcul mécanique, le maillage doit permettre d'appréhender correctement le champ de contraintes.
 Or ce maillage «compatible» avec les contraintes n'a strictement aucune raison d'être adapté à la discrétisation du champ stochastique!
 \textcolorgreen{C'est pourquoi il est souvent préférable d'utiliser deux maillages différents.}
-La minimisation du résidu dans le choix de la tronquature des séries essaye de «faire au mieux» avec les nœuds disponibles, mais cela peut se révéler insuffisant.
+La minimisation du résidu dans le choix de la troncature des séries essaye de «faire au mieux» avec les nœuds disponibles, mais cela peut se révéler insuffisant.
 
 \medskip
 Dans la mise en place de telles méthodes, il convient de comparer les résultats avec des résultats de référence... or, comme nus l'avons vu, à part dans de très rares cas, il n'est pas possible d'obtenir des formulations simples et donc de disposer de résultats analytiques.
@@ -555,8 +555,8 @@ Dans ce cas, la \textcolorblue{méthode Monte-Carlo}\index{méthode de Monte-Car
 \medskip
 \section{Post-traitement: moments statistiques}
 
-Quels que soient les paramètres considérés comme aléatoires, le vecteur des déplacements nodaux et les tenseurs de déformations et de contraintes en tout point peuvent s'écrire sous la forme d'un développement sur le chaos polynomial. 
-Nous considèrerons disposer à présent de la réponse du système~$S$ (déplacement, déformation, contrainte) écrite dans la base du chaos polynomial:
+Quels que soient les paramètres considérés comme aléatoires, le vecteur des déplacements nodaux et les tenseurs de déformations et de contraintes en tout point peuvent s'écrire sous la forme d'un développement sur le chaos polynomial.
+Nous considérerons disposer à présent de la réponse du système~$S$ (déplacement, déformation, contrainte) écrite dans la base du chaos polynomial:
 \begin{equation}\label{Eq-StoS}
 S=\dsum_{i=0}^{p-1}s_j\Psi_j
 \end{equation}
@@ -602,9 +602,8 @@ P_f = \text{Prob}[g(X,S(X))\le0] = \dint_{g(X,S(X))\le0} f_X(x)\dd x
 \medskip
 En appelant~$R$ la résistance et~$S$ le chargement (notation classique), une illustration est donnée à la figure~\ref{Fig-StoFiab}.
 \begin{figure}[htb]
-\begin{center}
+\centering
 \includegraphics[width=110mm]{fiabilite.eps}
-\end{center}
 \caption{Illustration des concepts de fiabilité}\label{Fig-StoFiab}
 \end{figure}
 
@@ -671,7 +670,7 @@ Depuis 1970, de très nombreux articles ont été publiés sur le sujet. N'en me
    \item niveau I: l'aspect probabiliste est introduit en donnant aux variables aléatoires une «valeur caractéristique» associée à un facteur de sécurité partiel;
    \item niveau II: ce sont les méthodes fiabilistes utilisant deux paramètres pour décrire chaque variable aléatoire (moyenne et variance);
    \item niveau III: elles procèdent à l'analyse complète du problème et impliquent l'intégration de la fonction de densité de probabilité conjointe multidimensionnelle des variables aléatoires étendue sur le domaine de la sécurité. La fiabilité est exprimée en termes d'indices de sécurité adéquates, à savoir: indice de fiabilité et probabilité de défaillance;
-   \item niveau IV: elles concernent les structures qui sont d'une importance économique majeure, et impliquent l'utilisation des principes de l'analyse économique de l'ingénierie sous incertitude. Elles tiennent compte des coûts et des bénéfices de la construction, de la maintenance, de la réparation, des conséquences de la défaillance, des intérêts sur le capital... Elles doivent être utilisées pour les projets sensibles comme les projets nucléaires, les tours de transmission, les ponts routiers.   
+   \item niveau IV: elles concernent les structures qui sont d'une importance économique majeure, et impliquent l'utilisation des principes de l'analyse économique de l'ingénierie sous incertitude. Elles tiennent compte des coûts et des bénéfices de la construction, de la maintenance, de la réparation, des conséquences de la défaillance, des intérêts sur le capital... Elles doivent être utilisées pour les projets sensibles comme les projets nucléaires, les tours de transmission, les ponts routiers.
 \end{itemize}}
 
 \medskip\ifVersionDuDocEstVincent\else\vspace{\medskipamount}\fi
@@ -717,11 +716,11 @@ P = \min_{\|u\|} \left\{g(T^{-1}(U),S(T^{-1}(U)))\le0\right\}
 \end{equation}
 en utilisant un algorithme d'optimisation pour résoudre ce problème de minimisation.
 
-Enfin on approxime le domaine d'intégration~$D_f$ dans (\ref{Eq-StoPfU}) par le demi-espace défini par l'hyperplan tangent à~$D_f$ en~$P$. L'intégration est alors analytique, et on obtient l'équation~(\ref{Eq-StoPf}).
+Enfin on approche le domaine d'intégration~$D_f$ dans (\ref{Eq-StoPfU}) par le demi-espace défini par l'hyperplan tangent à~$D_f$ en~$P$. L'intégration est alors analytique, et on obtient l'équation~(\ref{Eq-StoPf}).
 
 \medskip
-Les méthodes \textcolorblue{SORM} (Second Order Reliability Method) sont des extensions de la méthode FORM. 
-L'une d'elle consiste à approximer la surface d'état limite par un hyperparaboloïde d'ordre 2 au voisinage du point de conception. Si~$(\kappa_1, ..., \kappa_{n-1})$ désignent les courbures principales de cet hyperparaboloïde, l'approximation SORM de la probabilité de défaillance conduit à la formule de Breitung:
+Les méthodes \textcolorblue{SORM} (Second Order Reliability Method) sont des extensions de la méthode FORM.
+L'une d'elle consiste à approcher la surface d'état limite par un hyperparaboloïde d'ordre 2 au voisinage du point de conception. Si~$(\kappa_1, ..., \kappa_{n-1})$ désignent les courbures principales de cet hyperparaboloïde, l'approximation SORM de la probabilité de défaillance conduit à la formule de Breitung:
 \begin{equation}
 P_f = \Phi(-\beta)\prod_{i=1}^{n-1}\dfrac1{\sqrt{1-\beta_{\kappa_i}}}
 \end{equation}
@@ -732,6 +731,6 @@ P_f = \Phi(-\beta)\prod_{i=1}^{n-1}\dfrac1{\sqrt{1-\beta_{\kappa_i}}}
 Les simulations de Monte Carlo\index{méthode de Monte-Carlo} sont les méthodes les plus simples à mettre en œuvre pour calculer la probabilité de défaillance d'un système, mais ce sont aussi les plus coûteuses. Après avoir généré des réalisations pour les variables aléatoires d'entrée selon leur densité conjointe de probabilité, on évalue la fonction d'état limite pour ces réalisations. On compte le nombre total de cas défaillants parmi les calculs effectués, ce qui permet d'estimer la probabilité en fonction du nombre de cas défaillants par rapport au nombre total des réalisations effectuées. Pour s'assurer de la convergence des méthodes de simulation, il faut calculer le coefficient de variation de la simulation: la convergence est atteinte pour un coefficient de variation d'environ 5\%.
 
 Les \textcolorblue{simulations d'importance} (ou Importance sampling) sont des méthodes efficaces pour estimer la probabilité de défaillance, car elles permettent de générer des tirages qui conduisent plus fréquemment à la défaillance et permettent de gagner plus d'information sur le domaine de défaillance.
-Comme le poids de la probabilité de défaillance est généralement situé au voisinage du point de conception, il est plus efficace de concentrer les tirages autour de ce point. On commence donc par l'approximer, par exemple par la méthode FORM. On introduit la fonction~$\psi(u)$, dite densité d'importance, que l'on peut prendre égale à la densité multinormale réduite centrée au point de conception de coordonnées~$u^*$. Dans ce cas, pour simuler~$U$ suivant la densité~$\psi(U)$, on génère d'abord une variable multinormale centrée réduite~$U_r$ et on effectue le changement de variables~$U=U_r+U^*$. Pour la simulation de variables aléatoires, on pourra consulter~\cite{bib-Krikorian}.
+Comme le poids de la probabilité de défaillance est généralement situé au voisinage du point de conception, il est plus efficace de concentrer les tirages autour de ce point. On commence donc par l'approcher, par exemple par la méthode FORM. On introduit la fonction~$\psi(u)$, dite densité d'importance, que l'on peut prendre égale à la densité multinormale réduite centrée au point de conception de coordonnées~$u^*$. Dans ce cas, pour simuler~$U$ suivant la densité~$\psi(U)$, on génère d'abord une variable multinormale centrée réduite~$U_r$ et on effectue le changement de variables~$U=U_r+U^*$. Pour la simulation de variables aléatoires, on pourra consulter~\cite{bib-Krikorian}.
 
 
