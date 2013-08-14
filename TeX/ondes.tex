@@ -341,7 +341,7 @@ de conduction de chaleur.}
 \paragraph{Rappel du cas unidimensionnel}
 L'équation différentielle à résoudre est:~$M\ddot{u}+C\dot{u}+Ku=F(t)$, que l'on
 réécrit: \begin{equation} \ddot{u}+2\xi\omega_0\dot{u}+\omega^2_0 u=F_0/M \cos(\omega t)\end{equation}
-en supposant que~$F(t)$ est un chargement monofréquentiel.
+en supposant que~$F(t)$ est un chargement mono fréquentiel.
 
 La solution est somme d'une solution particulière, appelée régime permanent ou forcé, et d'une
 combinaison linéaire de l'équation sans second membre, dit régime transitoire.
@@ -396,14 +396,14 @@ d'une combinaison linéaire des modes propres}, i.e. sous la forme:
 où la quantité~$y_i(t)$ représente la contribution de chaque mode.
 \medskipvm
 En injectant cette forme de solution dans l'équation de la dynamique (puis en composant à gauche par $\LL{\overline{q}}_i$), on obtient un \textcolorblue{ensemble d'équations scalaires indépendantes}:
-\begin{equation} m_i\ddot{y}_i+c_i\dot{u}_i+k_iy_i+F_i = 0 \end{equation}
+\begin{equation} m_i\ddot{y}_i+c_i\dot{u}_i+k_iy_i+f_i = 0 \end{equation}
 dont les paramètres sont, grâce à l'orthogonalité des modes:\index{propriété d'orthogonalité}
 \begin{equation}\left\{
 \begin{aligned}
 	m_i &= \LL{\overline{q}}_i\MM{M}\VV{\overline{q}}_i\\
 	c_i &= \LL{\overline{q}}_i\MM{C}\VV{\overline{q}}_i\\
 	k_i &= \LL{\overline{q}}_i\MM{K}\VV{\overline{q}}_i\\
-	F_i &= \LL{\overline{q}}_i\VV{F}
+	f_i &= \LL{\overline{q}}_i\VV{F}
 \end{aligned}
 \right.\end{equation}
 Les équations scalaires se résolvent ensuite par des méthodes élémentaires indépendamment les unes des autres. Le vecteur total est ensuite obtenu par superposition.
@@ -425,9 +425,9 @@ et par suite:
 \begin{equation} \omega_i^2m_i = k_i\end{equation}
 \medskipvm
 \textcolorblue{En supposant que les modes sont normalisés} de telle sorte que~$m_i=1$ et en posant~$c_i = 2\omega_i^2c'_i$ (où \textcolorgreen{$c'_i$ correspond au pourcentage d'amortissement par rapport à sa valeur critique}), on montre que les équations scalaires se mettent sous forme d'une équation différentielle du second ordre:
-\begin{equation} \ddot{y_i}+2\omega_i^2c'_i \dot{y_i} + \omega_i^2y_i + F_i = 0 \end{equation}
+\begin{equation} \ddot{y_i}+2\omega_i^2c'_i \dot{y_i} + \omega_i^2y_i + f_i = 0 \end{equation}
 dont la solution générale est:
-\begin{equation} y_i = \dint_0^t F_i \mathrm{e}^{-c'_i\omega_i(t-\tau)}\sin \omega_i (t-\tau) \dd\tau \end{equation}
+\begin{equation} y_i = \dint_0^t f_i \mathrm{e}^{-c'_i\omega_i(t-\tau)}\sin \omega_i (t-\tau) \dd\tau \end{equation}
 \medskipvm
 Une intégration numérique permet de déterminer une réponse, puis la superposition de ces termes donne la réponse transitoire totale (en principe !).
 \medskipvm
@@ -502,7 +502,7 @@ On utilise l'algorithme suivant:
 \end{enumerate}
 \textcolorblue{Ce processus converge vers le mode propre fondamental.}
 \medskipvm
-Lorsque l'on veut déterminer le mode le plus proche d'une pulsation donnée~$\varpi$, il suffit de remplacer la matrice de rigidité par~$\MM{\tilde{K}}=\MM{K} - \varpi^2 \MM{M}$.
+Lorsque l'on veut déterminer le mode le plus proche d'une pulsation donnée~$\varpi$, il suffit de remplacer la matrice de rigidité par~$\ifVersionDuDocEstVincent\MM*{\tilde{K}}\else\MM{\tilde{K}}\fi=\MM{K} - \varpi^2 \MM{M}$.
 \medskipvm
 \textcolorblue{Le processus converge alors vers le mode de pulsation~$\tilde{\omega}^2=\omega^2-\varpi^2$.}
 

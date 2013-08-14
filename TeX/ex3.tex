@@ -6,7 +6,7 @@ Nous allons reprendre pour partie l'exemple de la poutre encastrée traitée au 
 
 Nous commençons par définir les données du problème: longueur, largeur, épaisseur, nombre d'éléments selon chacune de ces directions, et force appliquée:
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt]
 * DONNEES
 * geometrie
@@ -19,21 +19,21 @@ nlarg1=8;
 * effort
 Forc1=-41.;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 Puis nous définissons la dimension du problème (modèle tridimensionnel), et le type de découpage:
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 OPTION DIME 3 ELEM QUA4;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 Nous définissons les points~$k_i$ (dénommés ainsi pour rappel de la syntaxe Ansys des keypoints \verb|k,i,...|), puis les lignes~$L_i$, et la surface~$S_1$.
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 k1 = 0. 0. 0.;
 k2 = long1 0. 0.;
@@ -47,21 +47,21 @@ L4 = DROI nlarg1 k4 k1;
 *
 S1 = DALLER L1 L2 L3 L4;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 Le modèle est un modèle de mécanique élastique isotrope utilisant lélément de coque COQ4 pour le maillage~$S_1$:
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 Model1 = MODL S1 MECANIQUE ELASTIQUE ISOTROPE COQ4;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 Enfin on résout le problème après avoir fourni les données matérielles et les conditions aux limites:
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 Mater1 = MATERIAU Model1 YOUNG 70000.0 NU 0.33 RHO 2700.0;
 Car1 = CARAC Model1 EPAI ep1;
@@ -73,7 +73,7 @@ FOR1 = FORCE(0. 0. Forc1) k3;
 MTOT1 = MR1 ET CL1 ET CL2;
 Depl1 = RESOUD MTOT1 FOR1 ;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 On peut post-traiter les résultats et les afficher.
@@ -94,7 +94,7 @@ Les composantes de~$Eps_1$ dans le repère LOCAL sont:
   \item les courbures: RTSS, RTTT, RTST.
 \end{itemize}
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 * DEPLACEMENTS
 UZ1 = EXCO 'UZ' depl1;
@@ -117,7 +117,7 @@ Eppss1 = EXCO RTSS Eps1;
 
 fin;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 
 \medskip
@@ -127,7 +127,7 @@ Nous allons maintenant construire le modèle tridimensionnel.
 
 Comme nous voulons travailler à l'économie, nous repartons du fichier précédent que nous adaptons.
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt]
 * DONNEES
 * geometrie
@@ -141,12 +141,12 @@ nep1=3;
 * effort
 Forc1=-41.;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 Cette fois, nous nous servons de CUB8 au lieu de QUA4.
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 OPTION DIME 3 ELEM CUB8;
 *
@@ -162,35 +162,35 @@ L4 = DROI nlarg1 k4 k1;
 *
 S1 = DALLER L1 L2 L3 L4;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 À partir de la surface~$S_1$, qui est la même que précédemment, nous allons créer le volume~$V_1$ par translation selon le vecteur~$Vect_1$.
 
 Nous en profitons également pour créer~$Face_1$ sur laquelle porterons les conditions aux limites. Notons par exemple que la ligne~$L_4$ appartient bien au maillage~$V_1$, puisque ce dernier est construit dessus. Par contre, la surface~$face_1$ n'appartient pas à~$V_1$, il est donc nécessaire de la lier à~$V_1$ en utilisant la commande ELIM.
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 Vec1=0. 0. (-1.0*ep1);
 V1=S1 VOLU nep1 TRAN Vec1;
 Face1 = L4 TRAN nep1 Vec1;
 ELIM 0.0000001 V1 Face1;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 Cette fois, le modèle correspond au maillage~$V_1$ et utilise l'élément CUB8.
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 Model1 = MODL V1 MECANIQUE ELASTIQUE ISOTROPE CUB8;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize
 
 \medskip
 On résout, puis on post-traite.
 
-\colorgris
+\colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
 Mater1 = MATERIAU Model1 YOUNG 70000.0 NU 0.33 RHO 2700.0;
 MR1 = RIGIDITE Model1 Mater1;
@@ -221,4 +221,4 @@ TRAC CACH Siigg1 Model1 def1;
 
 fin;
 \end{Verbatim}
-\colorblack
+\colorblack\normalsize

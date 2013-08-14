@@ -73,9 +73,8 @@ Le jacobien\index{jacobien} de la réciproque d'une fonction est l'inverse du ja
 \colorgris
 Cette dernière propriété est liée au théorème d'inversion locale (qui peut être vu entre autre comme une extension du théorème des fonctions implicite en dimension supérieure à 1 dans le cas réel).
 \medskipvm
-Une fonction~$F$ de classe~$C^1$ est inversible au voisinage de~$M$ avec une réciproque~$F^{-1}$ 
-de classe~$C^1$ si et seulement si son jacobien en~$M$ est non nul (théorème d'inversion locale). De plus, la matrice jacobienne de~$F^{-1}$ se déduit de l'inverse de la matrice jacobienne de~$F$ au moyen de la formule:\index{jacobien}\index{jacobienne}
-\begin{equation}J_{F^{-1}} = \bigl( J_F \circ F^{-1} \bigr)^{-1}\end{equation}
+Une fonction~$f$ de classe~$C^1$ est inversible au voisinage de~$M$ avec une réciproque~$f^{-1}$ de classe~$C^1$ si et seulement si son jacobien en~$M$ est non nul (théorème d'inversion locale). De plus, la matrice jacobienne de~$f^{-1}$ se déduit de l'inverse de la matrice jacobienne de~$f$ au moyen de la formule:\index{jacobien}\index{jacobienne}
+\begin{equation}J_{f^{-1}} = \bigl( J_f \circ f^{-1} \bigr)^{-1}\end{equation}
 
 \begin{theoreme}[Théorème d'inversion locale]\index{théorème!d'inversion locale}
 Soit~$f$ une application de~$U$ dans~$F$, où~$U$ est un ouvert d'un espace de Banach réel et $F$ un espace de Banach et soit~$x$ un point de~$U$.
@@ -86,11 +85,11 @@ Si~$f$ est de classe~$C^p$, avec~$p$ un entier strictement positif et si la diff
 \textcolorgreen{Comme illustré au paragraphe précédent, le jacobien sert surtout pour effectuer des changement de variables dans le calculs des intégrales.}
 \medskipvm
 \begin{theoreme}[Théorème de changement de variables dans les intégrales multiples]\index{théorème!de changement de variables dans les intégrales multiples}
-Soient~$U$ un ouvert de~$\RR^n$, $F$ une injection de classe~$C^1$ de~$U$ dans~$\RR^n$ et~$V=F(U)$.
+Soient~$U$ un ouvert de~$\RR^n$, $f$ une injection de classe~$C^1$ de~$U$ dans~$\RR^n$ et~$V=f(U)$.
 
 Si~$g$ est une fonction mesurable de~$V$ dans~$\intfo{0}{+\infty}$, on a égalité des intégrales pour la mesure de Lebesgue sur~$\RR^n$:
-\begin{equation}  \int_V g(y_1,\ldots,y_n)~\dd y_1\ldots\dd y_n = \int_U g\left(F\left(x_1,\ldots,x_n\right)\right) 
-\left|\det J_F(x_1,\ldots,x_n)\right|~\dd x_1\ldots\dd x_n.
+\begin{equation}  \int_V g(y_1,\ldots,y_n)~\dd y_1\ldots\dd y_n = \int_U g\left(f\left(x_1,\ldots,x_n\right)\right) 
+\left|\det J_f(x_1,\ldots,x_n)\right|~\dd x_1\ldots\dd x_n.
 \end{equation}
 \end{theoreme}
 \medskipvm
@@ -149,7 +148,7 @@ On aura également:
 \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
 
 On considère la barre de la figure~\ref{fig-barre}, de section~$A$, de longueur~$L$, et constituée d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{module d'Young} $E$ et densité~$\rho$ et soumise uniquement à son poids propre.
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=40mm]{Elt1D-barre.eps}
 \caption{Barre encastrée-libre}\label{fig-barre}
@@ -197,7 +196,7 @@ Elle est également constante sur l'élément.
 \subsection{Assemblage de trois éléments unidimensionnels linéaires à deux nœuds}\label{Sec-ass}
 
 Poursuivons le cas de la poutre du paragraphe précédent, mais considérons une discrétisation de la barre à l'aide de trois éléments, comme montré sur la figure~\ref{fig-ex2ass}.
-\begin{figure}[ht]\centering
+\begin{figure}[h!]\centering
 \includegraphics[width=60mm]{Elt1D-ass.eps}
 \caption{Discrétisation de la barre en trois éléments}\label{fig-ex2ass}
 \end{figure}
@@ -230,7 +229,7 @@ et les forces nodales:
 L'\textcolorblue{assemblage} permettant de constituer le système complet est simplement obtenu par:
 \begin{equation} \MM{K}=\MM{K}_1+\MM{K}_2+\MM{K}_3 \qquad \text{ et } \qquad \VV{F}=\VV{f_1}+\VV{f_2}+\VV{f_3} \end{equation}
 \medskipvm
-On résout alors~$\MM{K}\VV{q}=\VV{f}$ avec la condition aux limites~$u_1=0$.
+On résout alors~$\MM{K}\VV{q}=\VV{F}$ avec la condition aux limites~$u_1=0$.
 
 \medskip
 \begin{remarque}
@@ -243,7 +242,7 @@ C'est pourquoi, dans les programmes éléments finis, une étape de renumémorat
 \subsection{Élément de barre unidimensionnel de type Hermite (élément subparamétrique)}\index[aut]{Hermite (Charles), 1822-1901, Français}\index{élément fini!d'Hermite}
 
 En restant encore sur notre élément linéaire unidimensionnel, nous allons voir comment ajouter des contraintes sur les dérivées aux nœuds, comme illustré à la figure~\ref{fig-ex2Her}.
-\begin{figure}[ht]\centering
+\begin{figure}[h!]\centering
 \subfloat[Élément de référence]{\includegraphics[width=60mm]{Elt1D-ref.eps}} \hspace{5em}
 \subfloat[Segment réel (2 nœuds, 4ddl)]{\includegraphics[width=60mm]{Elt1D-hermite.eps}}
 \caption{Élément de barre unidimensionnel de type Hermite}\label{fig-ex2Her}

@@ -11,7 +11,7 @@ Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de con
 Considérons l'équation de la dynamique, sous forme non stationnaire (i.e. dépendant du temps):
 \begin{equation} M \ddot u(t) + C \dot u(t) + K u(t)= F(t) \end{equation}
 qui sous forme discrétisée par éléments finis sera réécrite:
-\begin{equation}\colorblue \MM{M}\VV{\ddot q}(t) + \MM{C}\VV{\dot q}(t) + \MM{K}\VV{q}(t)= \VV{f}(t) \end{equation}
+\begin{equation} \MM{M}\VV{\ddot q}(t) + \MM{C}\VV{\dot q}(t) + \MM{K}\VV{q}(t)= \VV{F}(t) \end{equation}
 avec les conditions initiales~$\VV{q}(t=0)=\VV{q}_0$ et~$\VV{\dot q}(t=0)=\VV{\dot q}_0$.
 
 \medskip
@@ -23,7 +23,7 @@ Pour résoudre un tel problème, on se propose de réaliser une \textcolorblue{d
 \medskip
 Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} (qui est présenté dans le cas de la résolution des équations différentielles au paragraphe~\ref{Sec-Newmark}, ce complément nous ayant été demandé).
 Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
-\begin{equation}\colorblue
+\begin{equation}
 \begin{aligned}
 &\VV{q}_{t+\Delta_t} = \VV{q}_t + \Delta t \VV{\dot q}_t + \frac{\Delta_t^2}2\left((1-2\beta)\VV{\ddot q}_t
 +2\beta\VV{\ddot q}_{t+\Delta_t}\right) \\
@@ -43,28 +43,28 @@ Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan M
 Dans le cas \textcolorred{$\beta=0$ et~$\gamma=1/2$}, on retombe sur le schéma des \textcolorblue{différences finies centrées}.
 
 Dans ce cas, on obtient:
-\begin{equation}\colorgreen
+\begin{equation}
 \begin{aligned}
 &\VV{\ddot q}_t = \frac1{\Delta_t^2} \left( \VV{q}_{t+\Delta_t} - 2\VV{q}_t + \VV{q}_{t-\Delta_t}\right)\\
 &\VV{\dot q}_t = \frac1{2\Delta_t}\left( \VV{q}_{t+\Delta_t} - \VV{q}_{t-\Delta_t}\right)
 \end{aligned}
 \end{equation}
 et l'équation de la dynamique discrétisée s'écrit sous la forme d'une équation modifiée:
-\begin{equation}\colorblue
+\begin{equation}
 \MM{\overline{K}} \VV{q}_{t+\Delta_t} = \VV{R}
 \end{equation}
 avec:
-\begin{equation}\colorgreen
+\begin{equation}
 \MM{\overline{K}} = \frac1{\Delta_t^2}\MM{M}+\frac1{2\Delta_t}\MM{C}
 \end{equation}
 %\quad \text{ et } \quad
 et:
-\begin{equation}\colorgreen
-\VV{R} = \VV{f}_t -\MM{K}\VV{q}_t + \frac1{\Delta_t^2}\MM{M}\left( 2\VV{q}_t -\VV{q}_{t-\Delta_t}\right)
+\begin{equation}
+\VV{R} = \VV{F}_t -\MM{K}\VV{q}_t + \frac1{\Delta_t^2}\MM{M}\left( 2\VV{q}_t -\VV{q}_{t-\Delta_t}\right)
 +\frac1{2\Delta_t}\MM{C}\VV{q}_{t-\Delta_t}
 \end{equation}
 qui ne dépendent bien que de données disponibles.
-\bigskip
+\medskipvm
 Le calcul se déroule donc comme suit:
 \begin{itemize}
   \item Solution initiale à~$t=0$:
@@ -106,7 +106,7 @@ On peut faire les remarques suivantes sur ce type de calcul:
 Dans le cas \textcolorred{$\beta=1/4$ et~$\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite de Newmark},\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
 
 Dans ce cas, on obtient:
-\begin{equation}\colorgreen
+\begin{equation}
 \begin{aligned}
 &\VV{\ddot q}_{t+\Delta_t} = \frac4{\Delta_t^2} \left( \VV{q}_{t+\Delta_t} -\VV{q}_t\right)
 -\frac4{\Delta_t}\left( \VV{\dot q}_t - \VV{\ddot q}_t\right)\\
@@ -114,17 +114,17 @@ Dans ce cas, on obtient:
 \end{aligned}
 \end{equation}
 et l'équation de la dynamique discrétisée s'écrit encore sous la forme d'une équation modifiée:
-\begin{equation}\colorblue
+\begin{equation}
 \MM{\overline{K}} \VV{q}_{t+\Delta_t} = \VV{R}
 \end{equation}
 mais cette fois avec:
-\begin{equation}\colorgreen
+\begin{equation}
 \MM{\overline{K}} = \MM{K}+\frac4{\Delta_t^2}\MM{M}+\frac2{\Delta_t}\MM{C}
 \end{equation}
 %\quad \text{ et } \quad
 et:
-\begin{equation}\colorgreen
-\VV{R} = \VV{f}_{t+\Delta_t} + \MM{M}\left(\frac4{\Delta_t^2}\VV{q}_t + \frac4{\Delta_t}\VV{\dot q}_t
+\begin{equation}
+\VV{R} = \VV{F}_{t+\Delta_t} + \MM{M}\left(\frac4{\Delta_t^2}\VV{q}_t + \frac4{\Delta_t}\VV{\dot q}_t
 + \VV{\ddot q}_t\right)
 +\MM{C}\left( \frac2{\Delta_t}\VV{q}_t + \VV{\dot q}_t\right)
 \end{equation}

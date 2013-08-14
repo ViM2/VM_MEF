@@ -409,7 +409,7 @@ On peut faire les mêmes remarques que pour la méthode de perturbation et il es
 \subsection{Un exemple en statique linéaire}
 
 Considérons le cas de la statique linéaire décrite par le système:
-$$ \MM{K}\VV{q}=\VV{f} $$
+$$ \MM{K}\VV{q}=\VV{F} $$
 mais où cette fois, le matériau utilisé est supposé avoir un module d'Young représenté par un champ aléatoire gaussien.
 La loi de comportement, traduite par la matrice d'élasticité, s'écrit alors:
 \begin{equation}
@@ -428,17 +428,17 @@ avec
 
 Suite à l'assemblage, on obtient le système:
 \begin{equation}\label{Eq-StoKLEx}
-\PP{\MM{K_0}+\dsum_{i=}^\infty\MM{K_i}\xi_i}\VV{q(\theta)}=\VV{f}
+\PP{\MM{K_0}+\dsum_{i=}^\infty\MM{K_i}\xi_i}\VV{q(\theta)}=\VV{F}
 \end{equation}
 où~$\MM{K_0}$ est la matrice de rigidité globale calculée aux valeurs moyennes, et les matrices~$\MM{K_i}$ des matrices déterministes obtenues par les techniques d'assemblage classique.
 
 On réécrit le système précédent:
 \begin{equation}
-\MM{K_0}\PP{\MM{I}+\dsum_{i=1}^\infty\MMI{K_0}\MM{K_i}\xi_i}\VV{q(\theta)}=\VV{f}
+\MM{K_0}\PP{\MM{I}+\dsum_{i=1}^\infty\MMI{K_0}\MM{K_i}\xi_i}\VV{q(\theta)}=\VV{F}
 \end{equation}
 ce qui conduit à:
 \begin{equation}
-\VV{q(\theta)} = \PP{\MM{I}+\dsum_{i=1}^\infty\MMI{K_0}\MM{K_i}\xi_i}^{-1}\VV{q_0}, \quad \text{ avec } \quad \VV{q_0}=\MMI{K_0}\VV{f}
+\VV{q(\theta)} = \PP{\MM{I}+\dsum_{i=1}^\infty\MMI{K_0}\MM{K_i}\xi_i}^{-1}\VV{q_0}, \quad \text{ avec } \quad \VV{q_0}=\MMI{K_0}\VV{F}
 \end{equation}
 et le développement en série de von Neumann\index[aut]{Neumann (John, von -), 1903-1957, Hongrois}\index{série de von Neumann} de cette dernière équation donne:
 \begin{equation}\label{Eq-StoQ}
@@ -474,7 +474,7 @@ Dans ce cas, tous les termes sont différents du développement en série de von
 Nous allons poursuivre notre exemple de statique linéaire pour obtenir explicitement le système à résoudre.
 Pour cela, nous substituons le développement sur la base du chaos polynomial donné par la relation~(\ref{Eq-StoChP}) dans le développement de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} de l'équation~(\ref{Eq-StoKLEx}). En notant~$\xi_0(\theta)\equiv1$, on obtient:
 \begin{equation}\label{Eq-StoEFEx}
-\PP{\dsum_{i=0}^\infty \MM{K_i}\xi_i(\theta)}\PP{\dsum_{i=0}^\infty \VV{q_i}\Psi_i(\theta)} = \VV{f}
+\PP{\dsum_{i=0}^\infty \MM{K_i}\xi_i(\theta)}\PP{\dsum_{i=0}^\infty \VV{q_i}\Psi_i(\theta)} = \VV{F}
 \end{equation}
 Et il est évidemment nécessaire de tronquer les séries dans cette équation pour pouvoir résoudre numériquement.
 
@@ -482,7 +482,7 @@ Et il est évidemment nécessaire de tronquer les séries dans cette équation p
 Nous supposerons donc que le développement de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} est tronqué à l'ordre~$M+1$ et que la base de chaos polynomial sera considérée jusqu'à l'ordre~$p$. Le résidu correspondant à cette troncature de l'équation~(\ref{Eq-StoEFEx}) est:
 \begin{equation}
 R_{M,p} =
-\dsum_{i=0}^M\dsum_{j=0}^{p-1} \MM{K_i}\VV{q_j}\xi_i(\theta)\Psi_j(\theta) - \VV{f}
+\dsum_{i=0}^M\dsum_{j=0}^{p-1} \MM{K_i}\VV{q_j}\xi_i(\theta)\Psi_j(\theta) - \VV{F}
 \end{equation}
 La meilleure approximation de~$\VV{q(\theta)}$ est obtenue en minimisant le résidu au sens des moindre carrés. Cela se produit lorsque le résidu est orthogonal au sous-espace engendré par les~$\{\Psi_k\}_{k=0}^{p-1}$ dans~$L^2(\Theta,\mathcal{F},P)$, ce qui s'écrit:
 \begin{equation}
@@ -493,7 +493,7 @@ La meilleure approximation de~$\VV{q(\theta)}$ est obtenue en minimisant le rés
 Maintenant, posons:
 \begin{align}
 c_{ijk} & = \E{\xi_i\Psi_j\Psi_k}\\
-\VV{f}_k & = \E{\Psi_k\VV{f}}\\
+\VV{F}_k & = \E{\Psi_k\VV{F}}\\
 \MM{K}_{jk} & = \dsum_{i=0}^M c_{ijk}\MM{K_i}
 \end{align}
 On remarquera au passage que~$\VV{f_k}$ est nul pour tout~$k>0$ dans le cas d'un chargement déterministe (ce qui est le cas dans notre exemple).
@@ -505,7 +505,7 @@ On obtient finalement le système matriciel suivant à résoudre:
 \vdots & &\vdots\\
 \MM{K}_{p-1,0} & \cdots & \MM{K}_{p-1,p-1}}
 \VV*{\VV{q}_0 \\ \vdots \\ \VV{q}_{p-1}}
-= \VV*{\VV{f}_0 \\ \vdots \\ \VV{f}_{p-1}}
+= \VV*{\VV{F}_0 \\ \vdots \\ \VV{F}_{p-1}}
 \end{equation}
 qui est un système de taille~$p$ (ordre du développement dans la base du chaos polynomial)~$\times$ nombre de degrés de liberté du modèle déterministe.
 
@@ -535,7 +535,7 @@ Si le champ aléatoire considéré n'est plus gaussien (par exemple lognormal), 
 \medskip
 Dans l'exemple présenté, le chargement était considéré comme déterministe, mais il peut lui-aussi être modélisé par des variables aléatoires de loi quelconque du moment qu'elles sont décomposées sur la base du chaos polynomial, et on obtient le système discrétisé suivant:
 \begin{equation}
-\PP{\dsum_{i=0}^\infty \MM{K}_i\Psi_i}\PP{\dsum_{j=0}^\infty \VV{q}_j\Psi_j}=\PP{\dsum_{k=0}^\infty \VV{f}_k\Psi_k}
+\PP{\dsum_{i=0}^\infty \MM{K}_i\Psi_i}\PP{\dsum_{j=0}^\infty \VV{q}_j\Psi_j}=\PP{\dsum_{k=0}^\infty \VV{F}_k\Psi_k}
 \end{equation}
 La résolution numérique se fait en tronquant les séries de sorte que le résidu associé soit minimal au sens de Galerkine.
 
@@ -730,7 +730,4 @@ P_f = \Phi(-\beta)\prod_{i=1}^{n-1}\dfrac1{\sqrt{1-\beta_{\kappa_i}}}
 
 Les simulations de Monte Carlo\index{méthode de Monte-Carlo} sont les méthodes les plus simples à mettre en œuvre pour calculer la probabilité de défaillance d'un système, mais ce sont aussi les plus coûteuses. Après avoir généré des réalisations pour les variables aléatoires d'entrée selon leur densité conjointe de probabilité, on évalue la fonction d'état limite pour ces réalisations. On compte le nombre total de cas défaillants parmi les calculs effectués, ce qui permet d'estimer la probabilité en fonction du nombre de cas défaillants par rapport au nombre total des réalisations effectuées. Pour s'assurer de la convergence des méthodes de simulation, il faut calculer le coefficient de variation de la simulation: la convergence est atteinte pour un coefficient de variation d'environ 5\%.
 
-Les \textcolorblue{simulations d'importance} (ou Importance sampling) sont des méthodes efficaces pour estimer la probabilité de défaillance, car elles permettent de générer des tirages qui conduisent plus fréquemment à la défaillance et permettent de gagner plus d'information sur le domaine de défaillance.
-Comme le poids de la probabilité de défaillance est généralement situé au voisinage du point de conception, il est plus efficace de concentrer les tirages autour de ce point. On commence donc par l'approcher, par exemple par la méthode FORM. On introduit la fonction~$\psi(u)$, dite densité d'importance, que l'on peut prendre égale à la densité multinormale réduite centrée au point de conception de coordonnées~$u^*$. Dans ce cas, pour simuler~$U$ suivant la densité~$\psi(U)$, on génère d'abord une variable multinormale centrée réduite~$U_r$ et on effectue le changement de variables~$U=U_r+U^*$. Pour la simulation de variables aléatoires, on pourra consulter~\cite{bib-Krikorian}.
-
-
+Les \textcolorblue{simulations d'importance} (ou Importance sampling) sont des méthodes efficaces pour estimer la probabilité de défaillance, car elles permettent de générer des tirages qui conduisent plus fréquemment à la défaillance et permettent d

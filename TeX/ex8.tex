@@ -85,7 +85,7 @@ qui peut être réécrit:
 \subsection{Complément de Schur et déplacements imposés}\index{complément de Schur}\index[aut]{Schur (Issai), 1875-1941, Russe}
 
 Nous cherchons toujours à résoudre notre système:
-\begin{equation}\MM{K}\VV{q}=\VV{f}\end{equation}
+\begin{equation}\MM{K}\VV{q}=\VV{F}\end{equation}
 
 \medskip
 Considérons la matrice~$\MM{D}$, \textcolorblue{matrice booléenne}, permettant d'extraire de l'ensemble des inconnues nodales~$\VV{q}$ le sous-ensemble~$\VV{q_2}=\MM{D}\VV{q}$ sur lesquels portent les conditions de déplacements imposés~$\VV{q_d}$ \textcolorred{(ici on traite le cas général, i.e. les déplacements imposés peuvent être nuls ou non)}. La matrice \textcolorblue{$\MM{D}$ n'est pas rectangulaire}: si on souhaite imposer~$d$ déplacements parmi les~$n$ degrés de liberté du système, alors~$\MM{D}$ est de dimension~$d\times n$, et donc~$\VV{q_2}$ est bien un vecteur à~$d$ composantes, comme~$\VV{u_d}$.
@@ -115,7 +115,7 @@ Le système à résoudre s'écrit très simplement:
 \VV*{q\\ \lambda} =
 \MM*{A}
 \VV*{q\\ \lambda} =
-\VV*{f\\ -u_d}
+\VV*{F\\ -u_d}
 \end{equation}
 Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 
@@ -135,7 +135,7 @@ ce qui correspond aux cas où toutes les liaisons sont indépendantes.
 Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une factorisation de Gauß),\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} et d'éviter des pivotages (que ferait une factorisation de Crout, i.e.~$\MM{L}\MM{D}\MMT{L}$), on peut développer une autre technique, dite \textcolorblue{technique de double multiplicateur}, qui est celle employée dans \castem:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \begin{equation}
 \left\{\begin{aligned}
-&\MM{K}\VV{q} = \VV{f} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
+&\MM{K}\VV{q} = \VV{F} - \MMT{D}\left(\VV{\lambda_1} - \VV{\lambda_2}\right) \\
 &\VV{\lambda_1} = \VV{\lambda_2} \\ 
 &\MM{D}\VV{q} = \VV{u_d}
 \end{aligned}\right.
@@ -150,7 +150,7 @@ L'interprétation physique des multiplicateurs de Lagrange conduit naturellement
 \medskip
 On se retrouve alors avec un système du type:
 \begin{equation}
-\left(\MM{K} + \MMT{D}k\MM{D}\right) \VV{q} = \VV{f} + \MMT{D}k\MM{D}\VV{u_d}
+\left(\MM{K} + \MMT{D}k\MM{D}\right) \VV{q} = \VV{F} + \MMT{D}k\MM{D}\VV{u_d}
 \end{equation}
 dans lequel on n'a fait qu'ajouter des termes à la matrice de rigidité sur les degrés de liberté correspondant à ces déplacements et au vecteur des forces généralisées sur les efforts duaux.
 

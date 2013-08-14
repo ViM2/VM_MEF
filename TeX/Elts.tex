@@ -92,7 +92,7 @@ $P$   &~$P_1$ &~$P_2$ & ... &~$P_m$\\
 \subsection*{Éléments finis bidimensionnels triangulaires}
 On discrétise le triangle de sommets~$\{a_1, a_2, a_3\}$ avec, le long de chaque arête une interpolation polynomiale de degré~$1$ à~$m$.
 On obtient les éléments du tableau~\ref{tab:Elem:bi}.
-\begin{table}[ht]\centering\small
+\begin{table}[h!]\centering\small
 \begin{tabular}{c|cc}
 Élément &~$P_1$ &~$P_2$ \\
 \hline
@@ -109,7 +109,7 @@ $P$   &~$P_1$ &~$P_2$ \\
 \medskip
 \subsection*{Éléments finis bidimensionnels rectangulaires}
 On discrétise le rectangle de sommets~$\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes. La formulation est décrite dans le tableau~\ref{tab:Elem:bibi}.
-\begin{table}[ht]\centering\small
+\begin{table}[h!]\centering\small
 \begin{tabular}{c|c}
 Élément &~$Q_1$\\
 \hline
@@ -131,14 +131,15 @@ $P$ &~$Q_1$\\
 \subsection*{Éléments finis tridimensionnels}
 
 On distingue les éléments finis tridimensionnels suivants, qui seront illustrés à la figure~\ref{Lagrange3D}:
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Lagrange3D.eps}
 \caption{Éléments finis de Lagrange tridimensionnels: tétraédriques~$P_1$ et~$P_2$, parallélépipédique~$Q_1$ et prismatique}\label{Lagrange3D}
 \end{figure}
 \begin{itemize}
 \item les éléments tétraédriques, définis dans le tableau~\ref{tab:Elem:tri};
-\begin{table}[ht]\centering\small
+\begin{table}[h!]
+\centering\small
 \begin{tabular}{c|cc}
 Élément &~$P_1$ &~$P_2$ \\
 \hline
@@ -150,7 +151,8 @@ $P$   &~$P_1$ &~$P_2$ \\
 \caption{Éléments de Lagrange tridimensionnels tétrahédriques de degrés 1 et 2}\label{tab:Elem:tri}
 \end{table}
 \item les élément parallélépipédique, définis au tableau~\ref{tab:Elem:para};
-\begin{table}[ht]\centering\small
+\begin{table}[h!]
+\centering\small
 \begin{tabular}{c|c}
 Élément &~$Q_1$\\
 \hline
@@ -162,7 +164,8 @@ $P$ &~$Q_1$\\
 \caption{Élément de Lagrange tridimensionnel parallélépipédique de degré 1}\label{tab:Elem:para}
 \end{table}
 \item et les élément prismatique, définis selon le tableau~\ref{tab:Elem:pri}.
-\begin{table}[ht]\centering\small
+\begin{table}[h!]
+\centering\small
 \begin{tabular}{c|c}
 Élément &~$Q_1$\\
 \hline
@@ -192,7 +195,7 @@ On appelle \textcolorblue{famille affine d'éléments finis} une famille d'élé
 \medskip
 \textcolorgreen{D'un point de vue pratique, le fait de travailler avec une famille affine d'éléments finis permet de ramener tous les calculs d'intégrales à des calculs sur l'élément de référence.}
 Voir figure~\ref{trsfaffine} pour une illustration d'une transformation affine.
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[height=45mm]{trsfaffine.eps}
 \caption{\label{trsfaffine} Transformation affine sur un triangle}
@@ -222,7 +225,7 @@ On définit ainsi les fonctions de base globales~$\varphi_i$~$(i = 1,\ldots, N_h
 et l'espace d'approximation interne est~$V_h=\vectt\{\varphi_1,\ldots, \varphi_{N_h}\}$.
 On remarquera qu'une telle fonction~$\varphi_i$ est nulle partout sauf sur les éléments
 dont~$a_i$ est un nœud.
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[height=40mm]{phi1} \hspace{5em} \includegraphics[height=40mm]{phi2.eps}
 \caption{\label{BaseVh} Base de~$V_h$: exemple de fonction de base globale~$\varphi_i$ sur un maillage avec des éléments triangulaires~$P_1$.}
@@ -234,7 +237,7 @@ On voit donc que la fonction de base globale~$\varphi_i$ est construite comme r�
 
 \medskip
 \begin{remarque} Ce qui précède est vrai dans le cas d'un maillage conforme, i.e si l'intersection entre deux éléments est soit vide, soit réduite à un sommet ou une arête en dimension 2, ou à un sommet, une arête ou une face en dimension 3.\end{remarque}
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[height=25mm]{MaillageNC.eps}
 \caption{Maillage non conforme: situations interdites}\label{maillageNC}
@@ -287,17 +290,16 @@ Suivant les éléments utilisés, ces fonctions de base pourront être de classe
 
 \medskip
 \subsection{Éléments uni- et bidimensionnels}
-%\subsection*{Éléments finis unidimensionnels}
 
 Nous présentons quelques éléments finis d'Hermite utilisés classiquement, dont certains seront illustrés à la figure~\ref{Hermite2D}:
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Hermite2D.eps}
 \caption{Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire~$Q_3$}\label{Hermite2D}
 \end{figure}
 \begin{itemize}
 \item les \textcolorblue{éléments finis unidimensionnels cubiques et quintiques} sont définis au tableau~\ref{tab:ElemH:uni};
-\begin{table}[ht]\centering\small
+\begin{table}[h!]\centering\small
 \begin{tabular}{c|cc}
 Élément & cubique & quintique\\
 \hline
@@ -313,7 +315,7 @@ Régularité &~$C^1$ et~$H^2$ &~$C^2$ et~$H^3$\\
 	on distingue l'élément \textcolorblue{cubique d'Hermite}, qui est~$C^0$, et
   l'élément \textcolorblue{d'Argyris}, qui est~$C^1$.
 	Ils sont présentés dans les tableaux~\ref{tab:ElemH:bi} et~\ref{tab:ElemA:bi};
-\begin{table}[ht]\centering\small
+\begin{table}[h!]\centering\small
 \begin{tabular}{c|c}
 Élément &\\
 \hline
@@ -324,7 +326,7 @@ Régularité &~$C^0$, mais pas~$C^1$\\
 \hline
 \end{tabular}\caption{Élément bidimensionnel triangulaire d'Hermite}\label{tab:ElemH:bi}
 \end{table}
-\begin{table}\centering\small
+\begin{table}[h!]\centering\small
 \begin{tabular}{c|cc}
 Élément & \\
 \hline
@@ -341,7 +343,7 @@ Régularité &~$C^1$\\
 \end{table}
 \item l'\textcolorblue{élément fini bidimensionnel rectangulaire} défini au tableau~\ref{tab:ElemH:bibi};
 
-\begin{table}[ht]\centering\small
+\begin{table}[h!]\centering\small
 \begin{tabular}{c|c}
 Élément &~$Q_3$ \\
 \hline
@@ -374,7 +376,7 @@ Nous avons exposé au chapitre précédent pourquoi la mécanique reste un cas c
 Nous ne construirons pas ici un élément à plusieurs champs, mais nous allons donner une motivation pour le faire: celui du calcul des contraintes à l'interface entre deux matériaux différents que nous supposerons parfaitement collés.
 
 Considérons donc le problème décrit à la figure~\ref{interf}.
-\begin{figure}[ht]
+\begin{figure}[h!]
 \centering
 \includegraphics[height=50mm]{interface.eps}
 \caption{Interface et continuités}\label{interf}
