@@ -339,25 +339,14 @@ que le problème admet une solution unique $u$.
 \medskip
 La méthode des éléments finis se propose de \textcolorblue{discrétiser} le problème considéré.
 La discrétisation intervient à plusieurs niveaux:
-\begin{itemize}
-  \item \textcolorblue{discrétisation}:
-	il est nécessaire de disposer d'une description du domaine $\Omega$ sur lequel
-	on souhaite travailler. Cette description va se faire en l'approchant par
-	un \textcolorblue{maillage}, qui sera constitué d'\textcolorblue{éléments}.
-  \item \textcolorblue{interpolation}:
-	il est ensuite nécessaire de disposer d'une manière de représenter le ou
-	les champs inconnus. Ce que se proposer de faire la méthode des éléments finis, c'est d'approcher
-	ces champs par des fonctions plus simples (disons polynomiales de
-	degré un ou deux) définies sur chacun des éléments du maillage
-	(le champ est approché par des bouts de fonctions qui, elles, ne sont définies
-	chacune que sur un seul élément).
-  \item \textcolorblue{approximation}:
-	selon le type d'approximation, on remplace non seulement l'espace $V$
-	(qui correspond, selon les notations utilisées au chapitre sur la formulation faible, aux espaces
-	$H$, $V$, $M$ ou même $H\times M$), de dimension infinie, par des approximations $V_h$
-	de dimension finie, mais parfois également les formes bilinéaires et linéaires définissant
-	le problème (nous expliquerons plus tard les motivations).
-\end{itemize}
+\begin{description}
+  \item[\textcolorblue{discrétisation:}]
+	il est nécessaire de disposer d'une description du domaine $\Omega$ sur lequel 	on souhaite travailler. Cette description va se faire en l'approchant par 	un \textcolorblue{maillage}, qui sera constitué d'\textcolorblue{éléments}.
+  \item[\textcolorblue{interpolation:}]
+	il est ensuite nécessaire de disposer d'une manière de représenter le ou les champs inconnus. Ce que se proposer de faire la méthode des éléments finis, c'est d'approcher 	ces champs par des fonctions plus simples (disons polynomiales de degré un ou deux) définies sur chacun des éléments du maillage (le champ est approché par des bouts de fonctions qui, elles, ne sont définies chacune que sur un seul élément).
+  \item[\textcolorblue{approximation:}]
+	selon le type d'approximation, on remplace non seulement l'espace $V$ (qui correspond, selon les notations utilisées au chapitre sur la formulation faible, aux espaces $H$, $V$, $M$ ou même $H\times M$), de dimension infinie, par des approximations $V_h$ de dimension finie, mais parfois également les formes bilinéaires et linéaires définissant le problème (nous expliquerons plus tard les motivations).
+\end{description}
 
 \medskip
 De manière classique, on notera $\mathcal{T}_h$ le maillage de $\Omega$ considéré.
@@ -467,21 +456,21 @@ Indiquons d'ores et déjà que la plupart de ces difficultés seront levées
 grâce à trois idées principales qui seront détaillées au chapitre sur
 la formulation pratique des éléments finis:
 \begin{description}
- \item[Principe d'unisolvance]
+ \item[\textcolorblue{Principe d'unisolvance:}]
 
 	On s'attachera à trouver des \textcolorblue{degrés de liberté} (ou
 	ddl) tels que la donnée de ces ddl détermine de façon univoque
 	toute fonction de $V_h$.
 	Il pourra s'agir par exemple des valeurs de la fonction en quelques points.
 	Déterminer une fonction reviendra alors à déterminer ses valeurs sur ces ddl.
-  \item[Définition des $e_i$]
+  \item[\textcolorblue{Définition des $e_i$:}]
 
 	On définira les fonctions de base par $e_i = 1$ sur le $i$ème ddl, et
 	$e_i = 0$ sur les autres ddl.
 	La manipulation des $e_i$ sera alors simplifiée, et les $e_i$
 	auront par ailleurs un support réduit à quelques mailles.
 
-	\item[Notion de «famille affine d'éléments»]
+	\item[\textcolorblue{Notion de «famille affine d'éléments»:}]
 
 	Le maillage sera tel que toutes les mailles soient identiques à une
 	transformation affine près.

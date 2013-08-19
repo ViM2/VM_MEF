@@ -598,12 +598,12 @@ La méthodologie est toujours la même et se base sur la \textcolorblue{techniqu
 
 \medskip
 Généralement, dans un premier temps, lors du développement de ces modèles de cordes, barres, poutres, membranes et plaques, l'amortissement n'est pas pris en compte. Les solutions obtenues pour les réponses libres ne présentent donc pas de décroissance de l'amplitude des mouvements dans le temps. Il est possible d'intégrer cet amortissement de plusieurs façons:
-\begin{itemize}
-  \item \textcolorblue{Facteur d'amortissement modal:} il s'agit de la manière la plus simple d'introduire l'amortissement en incluant un terme dissipatif correspondant à un modèle d'amortissement visqueux sur la fonction dépendant du temps uniquement. \textcolorgris{Dans ce cas, la fonction de dépendance temporelle~$T(t)$, qui avait pour équation différentielle $\ddot{T}_n(t)+\omega^2_nT_n(t)=0$, pour les modes~$n\ge1$, devra désormais répondre à l'équation $\ddot{T}_n(t)+2\xi_n\omega_n\dot{T}_n(t)+\omega^2_nT_n(t)=0$, où~$\xi_n$ est le facteur d'amortissement modal};	
-  \item \textcolorblue{Coefficient d'amortissement dans l'équation d'onde:}
+\begin{description}
+  \item[\textcolorblue{Facteur d'amortissement modal:}] il s'agit de la manière la plus simple d'introduire l'amortissement en incluant un terme dissipatif correspondant à un modèle d'amortissement visqueux sur la fonction dépendant du temps uniquement. \textcolorgris{Dans ce cas, la fonction de dépendance temporelle~$T(t)$, qui avait pour équation différentielle $\ddot{T}_n(t)+\omega^2_nT_n(t)=0$, pour les modes~$n\ge1$, devra désormais répondre à l'équation $\ddot{T}_n(t)+2\xi_n\omega_n\dot{T}_n(t)+\omega^2_nT_n(t)=0$, où~$\xi_n$ est le facteur d'amortissement modal};	
+  \item[\textcolorblue{Coefficient d'amortissement dans l'équation d'onde:}]
 	un terme dissipatif est introduit directement dans l'équation des ondes. Celui-ci peut être proportionnel au milieu externe dans lequel se produit le phénomène \textcolorgris{(par exemple proportionnel à la vitesse de déformation hors plan d'une membrane vibrant dans un fluide, comme l'air)}, ou proportionnel au milieu interne considéré \textcolorgris{(par exemple proportionnel à la vitesse de fluctuation des contraintes dans une poutre: modèle de Kelvin-Voigt)};
-  \item \textcolorblue{Dissipation aux limites:} l'amortissement peut également être introduit dans la définition des conditions aux limites, par exemple pour prendre en compte le mode de fixation de la structure. \textcolorgris{(Par exemple, dans le cas des ondes longitudinales dans une barre, on introduit un ressort et un amortisseur à chaque bout de la barre).}
-\end{itemize}
+  \item[\textcolorblue{Dissipation aux limites:}] l'amortissement peut également être introduit dans la définition des conditions aux limites, par exemple pour prendre en compte le mode de fixation de la structure. \textcolorgris{(Par exemple, dans le cas des ondes longitudinales dans une barre, on introduit un ressort et un amortisseur à chaque bout de la barre).}
+\end{description}
 
 Ces remarques, bien que générales, nécessitent d'être correctement prises en compte pour ces modèles simplifiés.
 
