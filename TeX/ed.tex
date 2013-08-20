@@ -215,15 +215,6 @@ Les équation différentielle d'ordre deux correspondent typiquement en physique
 \medskip
 \section{Résolution numérique} 
 
-Dans le cas d'équation différentielle non linéaires, on passera forcément à une résolution numérique. Mais les méthodes numériques permettent évidemment aussi de résoudre numériquement les équations différentielles et les équations aux dérivées partielles.
-
-L'idée générale est toujours la même: un approche la dérivée d'une fonction en un point par sa tangente (ce qui revient finalement à la définition de la dérivée). Pour une fonction~$f(x)$, on écrit donc au point~$x=a$ une relation de la forme:
-\begin{equation}
-f'(a)\approx \frac{f(b)-f(c)}{b-c}
-\end{equation}
-où~$b$ et~$c$ sont d'autres points. Par exemple, pour~$c=a$ et~$b=a+\varepsilon$ on obtient un schéma décentré à droite; pour~$c=a-\varepsilon$ et~$b=a+\varepsilon$, on ontient un schéma centré.
- 
-\ifVersionDuDocEstVincent\newpage\fi% Pour version cours v2b
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc} 
 \includegraphics[height=25mm]{Euler}& 
@@ -241,6 +232,14 @@ Il existe plusieurs critères pour mesurer la performance des méthodes numériq
 au chapitre~\ref{Ch-shemanum}.}
 \end{histoire}
 
+Dans le cas d'équation différentielle non linéaires, on passera forcément à une résolution numérique. Mais les méthodes numériques permettent évidemment aussi de résoudre numériquement les équations différentielles et les équations aux dérivées partielles.
+
+L'idée générale est toujours la même: on approche la dérivée d'une fonction en un point par sa tangente (ce qui revient finalement à la définition de la dérivée). Pour une fonction~$f(x)$, on écrit donc au point~$x=a$ une relation de la forme:
+\begin{equation}
+f'(a)\approx \frac{f(b)-f(c)}{b-c}
+\end{equation}
+où~$b$ et~$c$ sont d'autres points. Par exemple, pour~$c=a$ et~$b=a+\varepsilon$ on obtient un schéma décentré à droite; pour~$c=a-\varepsilon$ et~$b=a+\varepsilon$, on ontient un schéma centré.
+ 
 \medskip
 \subsection{Méthode d'Euler, Runge-Kutta ordre 1}\index{méthode de Runge-Kutta! ordre 1}\index{méthode d'Euler}\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Kutta (Martin Wilhelm), 1867-1944, Allemand}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} 
 

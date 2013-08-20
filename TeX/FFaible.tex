@@ -55,7 +55,7 @@ $\forall v$ définie sur~$\Omega$.
 
 
 \colorgreen%
-\paragraph{Justification}
+\paragraph{Justification}{\small
 Tout réside dans le fait de «multiplier par une fonction test et d'intégrer».
 Pourquoi peut-on faire ça ?
 %Pourquoi les solutions aux deux problèmes sont-elles les mêmes ?
@@ -69,23 +69,17 @@ Comme cette seconde équation est vraie en tout point de~$\Omega$, alors elle es
 
 On entrevoit alors clairement la suite des opérations: si en plus d'être régulière, la fonction~$v$ est différentiable, alors on va pouvoir réaliser sur le terme~$\int A(u)\cdot v$ une intégration par parties pour diminuer les conditions de dérivabilité portant sur~$u$, mais en augmentant celles portant sur~$v$.
 
-Si l'ordre de dérivation de~$u$ est paire (disons~$2k$), alors on pourra faire en sorte par un nombre suffisant de manipulations que~$u$ et~$v$ aient à être différentiables à l'ordre~$k$... et on pourra essayer de faire en sorte que~$u$ et~$v$ appartiennent au même espace fonctionnel...
-
-\medskip
-\colorgris
+Si l'ordre de dérivation de~$u$ est paire (disons~$2k$), alors on pourra faire en sorte par un nombre suffisant de manipulations que~$u$ et~$v$ aient à être différentiables à l'ordre~$k$... et on pourra essayer de faire en sorte que~$u$ et~$v$ appartiennent au même espace fonctionnel...}\colorgris
+%
+\begin{remarque}\colorgris
 Petit aparté sur d'autres manières de présenter «la chose»: en mécanique, on parle également du «principe du travail virtuel» (ou des puissances virtuelles), de «minimisation de l'énergie potentielle», ou encore de «méthode des résidus pondérés»,
 Toutes ces méthodes sont «équivalentes» à celle exposée ici, mais souvent leur démonstration se fait uniquement «par les mains», ce qui peut être frustrant.
-
-\medskip
+\end{remarque}%\colorgris
+%
 \paragraph{Principe des puissances virtuelles}\index{principe!des puissances virtuelles}\index{principe!des travaux virtuels}
 Le Principe des travaux virtuels est un principe fondamental en mécanique, qui postule un équilibre de puissance dans un mouvement virtuel, il s'agit d'une formulation duale du principe fondamental de la dynamique. On raisonne comme suit: si un solide est à l'équilibre (statique du solide), la somme des efforts est nulle. Donc si l'on fait faire un déplacement fictif (virtuel) à l'objet, la somme des puissances des forces et moments est nulle. Ce principe constitue la base d'une démarche de modélisation pour les milieux continus (théorie du premier gradient, théorie du second gradient). On parle parfois du principe des travaux virtuels qui est sensiblement identique.
 
-
-
-\medskip
-
-
-
+%\medskip\ifVersionDuDocEstVincent\newpage\fi
 \begin{histoire}%
 L'origine de ce principe revient à Jean Bernoulli\index[aut]{Bernoulli (Jean), 1667-1748, Suisse},\index[aut]{Bernoulli (Jean), 1667-1748, Suisse} qui énonce en 1725 le principe des vitesses virtuelles, qui consiste à considérer la perturbation de l'équilibre d'un système mécanique par un mouvement infinitésimal respectant les conditions de liaison du système, un mouvement virtuel, et d'en déduire une égalité de puissance.
 
@@ -287,6 +281,7 @@ Alors que le seconde s'écrit:
 La preuve du théorème de Babuška revient à montrer que l'opérateur~$A$ associé à la forme bilinéaire~$a$ est un homéomorphisme.~$\square$\colorblack
 \end{demonstration}
 
+\ifVersionDuDocEstVincent\newpage\fi
 \section{Théorèmes de Brezzi et condition BBL}\index{théorème!de Brezzi}\index{condition BBL}\label{Sec-ThBrezzi}\index[aut]{Brezzi (Franco), 1945-, Italien}
 
 \begin{theoreme}[Théorème de Brezzi (1974)]
