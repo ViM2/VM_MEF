@@ -43,7 +43,7 @@ Faisons d'emblée une \textcolorred{mise en garde}: la plus connue des interpola
 \colorgris Dans le cas où l'on travaille sur le corps des complexes, une méthode d'approximation d'une fonction analytique par une fonction rationnelle est l'approximant de Padé.\index[aut]{Padé (Henri Eugène), 1863-1953, Français} Cela correspond à un développement limité qui approche la fonction par un polynôme. Tout comme les développements limités forment une suite appelée série entière, convergeant vers la fonction initiale, les approximants de Padé sont souvent vus comme une suite, s'exprimant sous la forme d'une fraction continue dont la limite est aussi la fonction initiale. En ce sens, ces approximants font partie de la vaste théorie des fractions continues. Les approximants offrent un développement dont le domaine de convergence est parfois plus large que celui d'une série entière. Ils permettent ainsi de prolonger des fonctions analytiques et d'étudier certains aspects de la question des série divergentes. En théorie analytique des nombres, l'approximant permet de mettre en évidence la nature d'un nombre ou d'une fonction arithmétique comme celle de la fonction zêta de Riemann. Dans le domaine du calcul numérique, l'approximant joue un rôle, par exemple, pour évaluer le comportement d'une solution d'un système dynamique à l'aide de la théorie des perturbations. L'approximant de Padé a été utilisé pour la première fois par Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} pour démontrer l'irrationalité de~$e$, la base du logarithme népérien. Une technique analogue a permis à Johann Heinrich Lambert\index[aut]{Lambert (Johann Heinrich), 1728-1777, Suisse} de montrer celle de~$\pi$.\colorblack
 
 
-\medskip
+\medskip\ifVersionDuDocEstVincent\else\newpage\fi
 \section{Quelques bases polynomiales} 
 
 \medskip
@@ -428,7 +428,7 @@ alors la spline est~$C^n$.
 
 L'\textcolorblue{interpolation d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français} consiste à chercher un polynôme\index{polynôme! d'Hermite} qui non seulement prend les valeurs fixées en les abscisses données, mais dont également la dérivée, donc la pente de la courbe, prend une valeur imposée en chacun de ces points. Naturellement, il faut pour cela un polynôme de degré supérieur au polynôme de Lagrange. \index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme! de Lagrange} On peut aussi imposer encore la valeur des dérivées secondes, troisièmes, etc. en chaque point. La démarche de l'interpolation newtonienne\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} utilisant les différences divisées est particulièrement adaptée pour construire ces polynômes. 
  
-\medskip
+\medskip\ifVersionDuDocEstVincent\else\newpage\fi
 \section{Méthodes d'approximation}
 
 \medskip
