@@ -39,7 +39,7 @@ Un \textcolorblue{élément fini de Lagrange} est un triplet~$(K, \Sigma, P)$ te
 \begin{itemize}
 \item~$K$ est un élément géométrique de~$\RR^n$, compact, connexe, et d'intérieur
 	non vide;
-\item~$\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de~$N$ points distincts de~$\RR^n$;
+\item~$\Sigma=\{a_1,\ldots, a_N\}$ est un ensemble de~$N$ points distincts de~$\RR^n$;
 \item~$P$ est un espace vectoriel de dimension finie de fonctions réelles définies sur~$K$, et tel
 	que~$\Sigma$ soit~$P$-unisolvant (donc~$\dim P = N$).
 \end{itemize}
@@ -50,7 +50,7 @@ Les \textcolorblue{fonctions de bases locales} de l'élément fini de Lagrange~$
 \begin{remarque}$(p_1,\ldots, p_N)$ est une base de~$P$.\end{remarque}
 \medskip
 \begin{definition}[Opérateur de~$P$-interpolation]
-Un \textcolorblue{opérateur de~$P$-interpolation sur~$\Sigma$} est un opérateur~$\pi_K$ qui à toute fonction~$v$ définie sur~$K$ associe la fonction~$\pi_Kv$ de~$P$ définie par: $\pi_Kv=\dsum_{i=1}^N v(a_i)p_i$.
+Un \textcolorblue{opérateur de~$P$-interpolation sur~$\Sigma$} est un opérateur~$\pi_K$ qui à toute fonction~$v$ définie sur~$K$ associe la fonction~$\pi_Kv$ de~$P$ définie par: \begin{equation}\pi_Kv=\dsum_{i=1}^N v(a_i)p_i\end{equation}
 \end{definition}
 \begin{theoreme}
 $\pi_kv$ est l'unique élément de~$P$ qui prend les mêmes valeurs que~$v$ sur les points de~$\Sigma$.
@@ -90,7 +90,7 @@ $P$   &~$P_1$ &~$P_2$ & ... &~$P_m$\\
 
 \medskip
 \subsection*{Éléments finis bidimensionnels triangulaires}
-On discrétise le triangle de sommets~$\{a_1, a_2, a_3\}$ avec, le long de chaque arête une interpolation polynomiale de degré~$1$ à~$m$.
+On discrétise le triangle de sommets~$\{a_1, a_2, a_3\}$ avec, le long de chaque arête, une interpolation polynomiale de degré~$1$ à~$m$.
 On obtient les éléments du tableau~\ref{tab:Elem:bi}.
 \begin{table}[h!]\centering\small
 \begin{tabular}{c|cc}

@@ -442,7 +442,7 @@ que l'on note (dans la tradition mécanicienne):
 Telle que formulée, la matrice $\MM{K}$ semble pleine à priori.
 L'astuce consiste à choisir des fonctions de base $e_i$ dont le support sera petit,
 i.e. chaque fonction $e_i$ sera nulle partout sauf sur quelques mailles.
-Ainsi les termes $a(e_i,e_j)$ seront le plus souvent nuls et la matrice A sera creuse.
+Ainsi les termes $a(e_i,e_j)$ seront le plus souvent nuls et la matrice sera creuse.
 De plus, on ordonnera les $e_i$ de sorte que $\MM{K}$ soit à structure bande, avec une
 largeur de bande la plus faible possible.
 Il existe un moyen avantageux de stocker une matrice creuse qui s'appelle le
@@ -650,7 +650,7 @@ Le problème est donc:
 \text{Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h), \forall v_h\in V_h
 \end{equation}
 où $V_h\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
-de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ resp.
+de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ respectivement.
 \medskip
 \textcolorgreen{Dans le pratique, $a_h$ et $f_h$ sont définies sur un espace plus grand que
 $V_h$, mais pas sur $V$.}
@@ -686,7 +686,7 @@ Le problème est encore:
 \text{Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
 \end{equation}
 mais $V_h\not\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
-de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ resp.
+de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ respectivement.
 
 \medskip
 \paragraph{Motivation}
@@ -727,21 +727,12 @@ le second \textcolorblue{erreur de consistence}.
 \medskip
 \section[Convergence de la méthode des éléments finis en approximation conforme]{Convergence de la méthode des éléments finis en approximation conforme lorsque $V_h\subset V$}\index{approximation! non conforme}\index{approximation! conforme}
 
-Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine
-de $\RR^n$, et notre problème que nous résolvons de manière approchée
-par la méthode des éléments finis.
-Il s'agit maintenant de fournir une estimation de l'erreur $\|u-u_h\|_m$ dans $H^m$
-(souvent $m = 0$, $1$ ou $2$).
-La régularité de $u$ et de $u_h$ (et donc les valeurs possibles pour $m$) dépendent
-du problème continu considéré ainsi que du type d'éléments finis choisis pour sa
-résolution.
+Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine de $\RR^n$, et notre problème que nous résolvons de manière approchée par la méthode des éléments finis.
+Il s'agit maintenant de fournir une estimation de l'erreur $\|u-u_h\|_m$ dans $H^m$ (souvent $m = 0$, $1$ ou $2$).
+La régularité de $u$ et de $u_h$ (et donc les valeurs possibles pour $m$) dépendent du problème continu considéré ainsi que du type d'éléments finis choisis pour sa résolution.
 
 \medskip
-On rappelle que $\mathcal{T}_h$ est le maillage de $\Omega$ considéré.
-On supposera de plus le domaine $\Omega$ \textcolorred{polygonal},
-ce qui permet de le recouvrir exactement par le maillage.
-Si ce n'est pas le cas, il faut prendre en compte de \textcolorred{l'écart} entre le domaine couvert
-par le maillage et le domaine réel.
+On rappelle que $\mathcal{T}_h$ est le maillage de $\Omega$ considéré. On supposera de plus le domaine $\Omega$ \textcolorred{polygonal}, ce qui permet de le recouvrir exactement par le maillage. Si ce n'est pas le cas, il faut prendre en compte \textcolorred{l'écart} entre le domaine couvert par le maillage et le domaine réel.
 
 
 \medskip
