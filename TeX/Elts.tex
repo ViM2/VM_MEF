@@ -251,9 +251,9 @@ On voit donc que la fonction de base globale~$\varphi_i$ est construite comme r�
 
 Une question naturelle est de savoir quelle est la régularité de la solution approchée $u_h$. En particulier, $u_h$ est-elle continue? dérivable?
 
-$u_h$ est obtenue par combinaison linéaire des fonctions de base globales $\varphi$, la question revient donc à déterminer la régularité de celles-ci. Par construction, on voit que la régularité de~$\varphi_i$ sera donnée par sa régularité au niveau des interfaces entre les éléments adjacents formant son support.
+La solution approchée $u_h$ est obtenue par combinaison linéaire des fonctions de base globales $\varphi$, la question revient donc à déterminer la régularité de celles-ci. Par construction, on voit que la régularité de~$\varphi_i$ sera donnée par sa régularité au niveau des interfaces entre les éléments adjacents formant son support.
 
-Dans les éléments finis de Lagrange, $\varphi_i$ est construite pour être continue d'un élément à l'autre, mais pas sa dérivée... c'est cette contrainte que nous allons introduire maintenant.
+Nous avons vu au paragraphe précédent que pour les éléments finis de Lagrange, $\varphi_i$ est construite pour être continue d'un élément à l'autre, mais pas sa dérivée... c'est cette contrainte que nous allons introduire maintenant.
 
 
 \medskip
@@ -271,10 +271,13 @@ Un \textcolorblue{élément fini d'Hermite ou élément fini général} est un t
 \medskip
 \begin{definition}[Opérateur de~$P$-interpolation]
 Un \textcolorblue{opérateur de~$P$-interpolation sur~$\Sigma$} est un opérateur~$\pi_K$ qui à toute fonction~$v$ définie sur~$K$ associe la fonction~$\pi_Kv$ de~$P$ définie par:
-$\colorred\pi_Kv=\dsum_{i=1}^N \sigma_i(v)p_i$.
+\begin{equation}
+\pi_Kv=\dsum_{i=1}^N \sigma_i(v)p_i
+\end{equation}
 \end{definition}
-\medskip
+\begin{theoreme}
 $\pi_kv$ est l'unique élément de~$P$ qui prend les mêmes valeurs que~$v$ sur les points de~$\Sigma$.
+\end{theoreme}
 \medskip
 On remarque immédiatement que si~$\sigma_i(p) = p(ai), i=1,\ldots, N$, on retrouve les éléments finis de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{élément fini!de Lagrange} Cette généralisation permet d'introduire des opérations de dérivation dans~$\Sigma$, et donc d'améliorer la régularité des fonctions de~$V_h$.
 \medskip
@@ -291,7 +294,7 @@ Suivant les éléments utilisés, ces fonctions de base pourront être de classe
 \medskip
 \subsection{Éléments uni- et bidimensionnels}
 
-Nous présentons quelques éléments finis d'Hermite utilisés classiquement, dont certains seront illustrés à la figure~\ref{Hermite2D}:
+Nous présentons quelques éléments finis d'Hermite utilisés classiquement, dont certains sont illustrés à la figure~\ref{Hermite2D}:
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Hermite2D.eps}
@@ -397,7 +400,7 @@ Plusieurs stratégies sont envisageables:
 
 	On utilise une méthode de post-traitement qui va modifier le calcul des contraintes 	sur les éléments situés de part et d'autre de l'interface, par exemple 	en imposant la vérification des équations d'équilibre (voir par exemple 	la méthode de Reissner locale, qui applique la fonctionnelle de Reissner uniquement 	le long de l'interface).\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\item[\textcolorblue{Élément mixte:}]
 
-	La fonctionnelle d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner} possède les champs de déplacement et de 	contrainte comme inconnues. Elle conduit à un système de type mixte (équation \eqref{Eq:SysMixte}) avec une matrice qui n'est plus définie-positive.
+	La fonctionnelle d'Hellinger-Reissner\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner} possède les champs de déplacement et de 	contrainte comme inconnues. Elle conduit à un système de type mixte donné par l'équation \eqref{Eq:SysMixte}, avec une matrice qui n'est plus définie-positive.
 
 	Il s'en suit que ces deux champs sont continus, et notamment que toutes les 	composantes des contraintes le sont, ce qui ne satisfait pas les conditions d'équilibre.
 
@@ -413,7 +416,7 @@ Plusieurs stratégies sont envisageables:
 	
 	\item[\textcolorblue{Multiplicateurs de Lagrange:}]\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 	
-	D'une manière évidente, la continuité du champ de déplacements 	à l'interface~$\li$ entre deux éléments~$~^1$ et~$~^2$ peut être imposée par l'ajout à al fonctionnelle de la condition: 
+	D'une manière évidente, la continuité du champ de déplacements 	à l'interface~$\li$ entre deux éléments~$~^1$ et~$~^2$ peut être imposée par l'ajout à la fonctionnelle de la condition: 
 	\begin{equation} -\dint_{\li} \lambda_i(U_i^1-U_i^2)\ \dd\Gamma \end{equation}
 
 	Cette condition est facile à écrire et facile à implémenter (mais on perd la 	définie-positivité de la matrice de rigidité).
