@@ -1,11 +1,45 @@
+%http://svn.parisson.org/castax/
 \chapter{L'acoustique}\label{Ch-Acous}
 \begin{abstract}
 En complément avec ce qui a été vu aux chapitres précédents~\ref{Ch-temps} et~\ref{Ch-ondes} sur les problèmes non stationnaires et les ondes, nous allons nous focaliser dans ce chapitre sur l'acoustique, et plus particulièrement sur le calcul de problèmes pour lesquels les fréquences restent inférieures à quelques milliers de Hz. Nous en profiterons pour effectuer une présentation pratique de l'acoustique et des solutions qui peuvent être mises en œuvre physiquement.
 \end{abstract}
 
-\medskip
-Dans le paragraphe~\ref{Sec-choc}, nous avons indiqué que la méthode des éléments finis devait se cantonner aux basses fréquences, celles-ci allant jusqu'à 600~Hz environ. Il est vrai qu'au-delà, de nombreuses autres méthodes existent... et nous souhaitions profiter de ce paragraphe pour les présenter.
-Néanmoins, l'augmentation rapide des capacités des ordinateurs, fait qu'il est tout à fait raisonnable aujourd'hui de traiter des cas allant jusqu'à quelques milliers de Hz, disons 3000~Hz pour fixer les idées, à l'aide de la méthode des éléments finis. Cela permet de traiter la plupart des cas pratiques qui se posent à nous, et nous verrons dans ce chapitre pourquoi il est souvent inutile de monter plus haut en fréquence.
+Nous avons déjà présenté la problématique de l'acoustique à plusieurs reprises au long de ce document: au paragraphe~\ref{Sec-EqOnde}, l'équation des ondes a été donnée dans le cas de l'acoustique sous forme d'équation différentielle~(\ref{Eq-EqOndeAcou}) dont l'inconnue est la pression acoustique; des remarques plus «physiques» concernant l'acoustique ont été faites au paragraphe~\ref{Sec-EqAcou}, notamment concernant les échelles d'énergies mises en œuvre, ainsi que sur les aspects solidien et aérien; mais c'est surtout au paragraphe~\ref{Sec-EqFblAcou} qu'ont été présentées l'équation d'Helmholtz~(\ref{Eq-Helm})\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} et sa formulation faible. Quant à la formulation éléments finis, elle a été abordée au chapitre~\ref{Ch-ondes}, où ont été décrit les systèmes matriciels à traiter selon les cas (réponse libre, périodique ou transitoire, amortie ou non).
+
+Toutefois, nous souhaitions apporter des éléments supplémentaires sur le sujet: 
+\begin{itemize}
+   \item au paragraphe~\ref{Sec-AcouPhy}, nous proposerons une présentation de l'acoustique «sur le terrain»: nous exposerons brièvement l'acoustique à partir des problématiques qui se posent physiquement, et nous présenterons quelques solutions typiquement utilisées pour résoudre ces problèmes d'acoustique. Nous verrons d'ailleurs que les problèmes rencontrés en hautes fréquences sont généralement aisément résolus, et qu'il convient donc de se concentrer sur les fréquences inférieures à 1000~Hz.
+   \item au paragraphe suivant~\ref{Sec-AcouMEF} nous reviendrons plus en détails sur la mise en œuvre pratique d'un calcul acoustique par éléments finis.
+   
+   La motivation principale vient de ce que, dans le paragraphe~\ref{Sec-choc}, nous avons indiqué que la méthode des éléments finis devait se cantonner aux basses fréquences, celles-ci allant jusqu'à 600~Hz environ. Il est vrai qu'au-delà, de nombreuses autres méthodes existent... et nous avions profité de ce paragraphe pour les présenter.
+Néanmoins, l'augmentation rapide des capacités des ordinateurs, fait qu'il est tout à fait raisonnable aujourd'hui de traiter des cas allant jusqu'à quelques milliers de Hz, disons 3000~Hz pour fixer les idées, à l'aide de la méthode des éléments finis. Cela permet de traiter la plupart des cas pratiques qui se posent à nous, puisque nous aurons vu auparavant qu'il est souvent inutile de monter plus haut en fréquence.
+   
+   \item Enfin, un exemple de calcul par éléments finis d'un problème acoustique sera donné pour clore ce chapitre d'illustration et de complément.
+\end{itemize}
 
 \medskip
 
+\medskip
+\section{L'acoustique physique}\label{Sec-AcouPhy}
+
+
+
+
+
+
+
+\medskip
+\section{Calcul acoustique par éléments finis}\label{Sec-AcouMEF}
+
+
+
+\medskip
+\section{Exemple de calcul}
+
+
+%\medskip
+%\section{Un cas qui ne fonctionne pas}
+% sous réserve de trouver un cas où une excitation à la fréquence f1
+% conduit à une solution à la fréquence f2:
+% via un composant mécanique: on sait modéliser, donc pas d'intérêt
+% via un milieu très dispersif ? à essayer

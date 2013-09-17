@@ -474,7 +474,7 @@ J(\sigma,\lambda,\mu) =
 où~$\lambda$ et~$\mu$ sont les multiplicateurs de Lagrange.\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 \medskipvm
 Les multiplicateurs de Lagrange présentés ci-dessus ont une signification physique (que l'on trouve en écrivant la stationnarité de la fonctionnelle). En remplaçant les multiplicateurs par les quantités qu'ils représentent, i.e. en remplaçant $\lambda$ par~$u$ dans~$\Omega$ et~$\mu$ par~$u$ sur~$\Gamma_N$, on obtient la \textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} sous sa première forme:
-\begin{equation}
+\begin{equation}\label{Eq-Fonc-Reiss}
 J(u,\sigma) =
 -\frac12 \dint_\Omega \sigma S \sigma
 -\dint_\Omega (\dive \sigma+f) u
@@ -528,7 +528,7 @@ a l'avantage de \textcolorred{ne pas comporter de dérivée}.
 Au paragraphe~\ref{Sec-champs}, nous reprendrons ces formulations pour les exprimer, peut-être de manière plus «explicite» pour le lecteur sous forme matricielle.
 
 \medskip
-\section{Équations de l'acoustique}\index{ED-EDP!de l'acoustique}
+\section{Équations de l'acoustique}\label{Sec-EqFblAcou}\index{ED-EDP!de l'acoustique}
 On s'intéresse à la propagation et à la réflexion d'ondes de pression dans un fluide parfait non pesant. On supposera le mouvement harmonique autour d'un état moyen (ambiance) au repos \textcolorgris{(ce qui est le lien «physique» avec l'introduction de l'espace~$L^2_0(\Omega)$ présenté pour l'équation de Stokes)}.
 
 \medskip
@@ -542,7 +542,7 @@ On rappelle que l'équation des ondes acoustiques de célérité~$c$ dans un mil
 Il s'agit de la formulation générale d'un problème acoustique linéaire. Elle est obtenue en cherchant la \textcolorblue{solution harmonique} de l'équation des ondes, i.e. une solution sous la forme:~$p'(x,y,z,t)=p(x,y,z)\mathrm \mathrm{e}^{i\omega t}$. \textcolorgris{(Au passage, les physiciens utilisent plutôt~$j$ au lieu de~$i$ pour gagner en clarté sans doute... comme s'ils passaient leur temps à parler d'intensité!)}
 
 On obtient alors l'\textcolorblue{équation de Helmholtz}:
-\begin{equation} \Delta p + k^2 p=0 \end{equation}
+\begin{equation}\label{Eq-Helm} \Delta p + k^2 p=0 \end{equation}
 où~$k$ est le \textcolorblue{nombre d'onde}:~$k=\dfrac\omega{c}=\dfrac{2\pi}\lambda$.
 
 \medskip

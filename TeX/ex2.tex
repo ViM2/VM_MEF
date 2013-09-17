@@ -202,14 +202,14 @@ Poursuivons le cas de la poutre du paragraphe précédent, mais considérons une
 \end{figure}
 \medskipvm
 Chaque élément~$e$ (de longueur~$L_e$) possède une matrice de rigidité élémentaire~$\MM{k_e}$ et un vecteur des forces nodales élémentaires~$\VV{f_e}$ définis par:
-\begin{equation}
+\begin{equation}\label{Eq-Ke}
 \MM{K_e} = \frac{2EA}{L_e} \MM*{\begin{array}{cc} 1 & -1\\ -1& 1 \end{array}}
 \qquad \text{ et } \qquad
 \VV{f_e} = \rho g A \frac{L_e}4 \VV*{\begin{array}{c} 1 \\1 \end{array}}
 \end{equation}
 \medskipvm
-Les variables nodales sont~$\LL{q}=\LL{u_1, u_2, u_3, u_4}$, et, les matrices élémentaires
-redonnées ci-dessus s'écrivent, en fonction de ces variables nodales:
+Les variables nodales sont~$\LL{q}=\LL{u_1, u_2, u_3, u_4}$. Les matrices élémentaires,
+issues de l'équation~(\ref{Eq-Ke}), s'écrivent en fonction de ces variables nodales:
 \begin{equation*}
 \MM{K}_1 = \frac{2EA}{L_1} \MM*{1 & -1 & 0 & 0\\ -1& 1 & 0 & 0\\ 0&0&0&0\\0&0&0&0}
 \quad
@@ -217,7 +217,7 @@ redonnées ci-dessus s'écrivent, en fonction de ces variables nodales:
 \quad
 \MM{K}_3 = \frac{2EA}{L_3} \MM*{0&0&0&0\\0&0&0&0\\0& 0& 1 & -1\\ 0&0 & -1& 1}
 \end{equation*}
-et les forces nodales:
+et les forces nodales, quant à elles, s'expriment sous la forme:
 \begin{equation*}
 \VV{f_1} = \rho g A \frac{L_1}4 \VV*{1 \\1\\0\\0}
 \quad
@@ -234,8 +234,7 @@ On résout alors~$\MM{K}\VV{q}=\VV{F}$ avec la condition aux limites~$u_1=0$.
 \medskip
 \begin{remarque}
 La matrice~$\MM{K}$ obtenue sur cet exemple a un \textcolorblue{caractère bande} (la matrice est vide en dehors d'une zone centrée sur la diagonale). Ceci est dû à la numérotation des nœuds. Une autre numérotation pourrait faire perdre ce caractère important (stockage et résolution).
-
-C'est pourquoi, dans les programmes éléments finis, une étape de renumémoration automatique des nœuds est généralement faite.
+C'est pourquoi les programmes éléments finis peuvent comporter une étape de renumémoration automatique des nœuds.
 \end{remarque}
 
 \medskip
@@ -265,7 +264,7 @@ N_3=\frac14(1+\xi)^2(2-\xi); \qquad
 N_2=\frac{L}8(\xi^2-1)(1+\xi)
 \end{equation}
 \medskipvm
-Le champ~$u_{,x}$, qui est la déformation~$\varepsilon$ est donné par:~$\varepsilon=\LL{B}\{u_n\}$ avec:
+Le champ~$u_{,x}$, qui est la déformation~$\varepsilon$, est donné par~$\varepsilon=\LL{B}\{u_n\}$ avec:
 \begin{equation} \LL{B}=\LLL{\frac3{2L}(\xi^2-1), \quad \frac14(3\xi^2-2\xi-1), \quad \frac3{2L}(1-\xi^2), \quad
 \frac14(3\xi^2+2\xi-1)}\end{equation}
 \medskipvm
@@ -291,8 +290,7 @@ Pour la géométrie, nous avons une fois encore:
 Pour la contrainte, nous avons:
 \begin{equation} \sigma_x(x)=\sigma_1 \text{ (constante)} \end{equation}
 \medskipvm
-La formulation variationnelle mixte de l'élasticité linéaire unidimensionnel est (voir fonctionnelle
-d'Hellinger-Reissner sous sa deuxième forme ou fonctionnelle mixte):\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte}
+La fonctionnelle d'Hellinger-Reissner sous sa deuxième forme (ou fonctionnelle mixte), donnée dans sa formulation générale par l'équation~(\ref{Eq-HR2}),\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte} s'écrit, dans le cas de l'élasticité linéaire unidimensionnelle:
 \begin{equation}
 W=\dint_0^L A\left(-\sigma_x^*\frac1H\sigma_x+\sigma_x^*u_{,x}+v_{,x}\sigma_x\right) \dd x
 -\dint_0^L Avf_x \dd x - (v f_S)_{S_f} = 0\qquad \forall v,\sigma^*
@@ -319,7 +317,7 @@ $\sigma_1^*=\left(\LL{b}\VV{u_n}-a\sigma_1\right)=0$, $\forall \sigma_1^*$,
 d'où:
 \begin{equation} \sigma_1 = \frac1a \LL{b}\VV{u_n} \end{equation}
 \medskipvm
-Et le système devient alors:
+Le système devient alors:
 \begin{equation} W=\LL{v_n}\left( \VV{b}\sigma_1 -\VV{f_n}\right) =
 \LL{v_n} \left( \MM{K}\VV{u_n}-\VV{f_n}\right) \end{equation}
 avec:
