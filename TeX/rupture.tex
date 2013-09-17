@@ -1,5 +1,6 @@
 \chapter{La rupture en mécanique}\label{Ch-rupt}
 
+\ifVersionDuDocEstVincent\vspace{15mm}\fi
 La mécanique de la rupture s'intéresse à la formation et à la propagation de fissures macroscopiques dans les structures, ce qui peut conduire à la séparation d'un corps en deux parties disjointes suite à une phase d'amorçage qui a vu le développement de microcavités, microfissures... mais les fissures peuvent aussi s'arrêter. Le mode de rupture peut être fragile (sans déformation plastique) ou ductile (avec déformation plastique).
 
 \medskip
@@ -11,16 +12,6 @@ En fonction du chargement et du matériau considéré:
   \item si le milieu est globalement plastique ou viscoplastique, on recourra à la mécanique non linéaire de la rupture, ou approche locale (description fine des contraintes et déformations en pointe de fissure à l'aide de modèles non linéaires);
   \item si la plasticité absente ou très confinée, on utilisera la mécanique linéaire de la rupture.
 \end{itemize}
-
-%\medskip
-%1920: Griffith montre que la rupture d'un milieu élastique fragile peut être caractérisé par
-%une variable que l'on appellera plus tard le taux de restitution d'énergie.
-%
-%1956: Irwin étudiant les singularités du champ de contraintes introduit la notion de facteur
-%d'intensité des contraintes.
-%
-%Puis essors des développements numériques et traitement des problèmes non linéaires.
-
 
 
 
@@ -45,6 +36,7 @@ La modélisation du comportement des matériaux est importante puisque directeme
 
 La \emph{modélisation de l'avancée de la fissure} conduit à de très fortes non linéarités (avec des problèmes de convergence dans les algorithmes). De plus, la modélisation de l'avancée de fissure est liée à la discrétisation faite, donc est liée à la taille des éléments.
 
+\medskip
 Les mailleurs automatiques sont souvent incapables de mener à bien leur tâche car il y a une incompatibilité entre les dimensions de la structure et la finesse nécessaire pour la fissure, et parce que les approches locale et globale ont des spécificités de maillage différentes et difficiles à prendre en compte. Il est donc souvent nécessaire de développer ses propres outils de maillage. De plus beaucoup de critères mis au point en 2D ne sont pas forcément valables en 3D.
 
 \medskip
@@ -61,7 +53,7 @@ On opte également pour une approche couplée essais / calculs:
   \item développement / validation des critères.
 \end{itemize}
 
-\medskip
+%\medskip
 \paragraph{Approches numériques des fissures}
 \begin{description}
   \item[\textcolorblue{Fissure droite} sollicitée en mode I]

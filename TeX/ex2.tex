@@ -3,7 +3,7 @@
 Dans ce paragraphe, nous appliquons ce que nous venons de voir sur quelques cas simples d'éléments unidimensionnels.
 
 \medskipvm
-\subsection{Élément de référence unidimensionnels linéaire à deux nœuds}\label{Sec-Elt1D2}
+\subsection{Élément de référence unidimensionnel linéaire à deux nœuds}\label{Sec-Elt1D2}
 
 Considérons un segment reliant deux points dans l'espace. Ce segment est défini par un point courant dont les coordonnées sont le vecteur~$\VV{x}$. On peut paramétrer ce segment par le paramètre~$\xi \in [-1,1]$, et le vecteur position s'exprime par~$\LL{x}=\LL{x(\xi), y(\xi), z(\xi)}$.
 \begin{figure}[ht]\centering\small
@@ -19,7 +19,7 @@ $\LL{N(\xi)}=\LLL{N_1(\xi), N_2(\xi)}$ et~$N_1(\xi)=\frac12 (1-\xi)$, $N_2(\xi)=
 De manière plus «compacte», on peut écrire:
 \begin{equation} N_i(\xi)=\frac12(1+\xi_i\xi), \qquad i=1,2, \quad \xi_i=\pm1 \quad (\text{et } \xi\in[-1,1]) \end{equation}
 \medskipvm
-Dans cette interpolation (comme dans toutes interpolation), on a une relation entre~$\dd\VV{x}$ et $\dd\xi$. Notons~$\dd\VV{x} = \VV{a} \dd \xi$. Alors:
+Dans cette interpolation (comme dans toute interpolation), on a une relation entre~$\dd\VV{x}$ et $\dd\xi$. Notons~$\dd\VV{x} = \VV{a} \dd \xi$. Alors:
 \begin{equation} \LL{a} = \LLL{x_{,\xi}, y_{,\xi}, z_{,\xi}} = \frac12 \LLL{x_{21}, y_{21}, z_{21}}\end{equation}
 avec ici~$x_{21}=x_2-x_1$, $y_{21}=y_2-y_1$ et~$z_{21}=z_2-z_1$.
 On voit ainsi comment passer d'une intégrale sur le segment réel à une intégrale sur l'élément de référence.
@@ -161,7 +161,7 @@ La forme variationnelle de ce problème d'élasticité linéaire unidimensionnel
 W=\dint_0^L EA v_{,x}u_{,x} \dd x - \dint_0^L \rho g A v = 0, \quad \forall v
 \end{equation}
 avec les conditions aux limites~$u(0)=0$ et~$v(0)=0$.
-Cette forme variationnelle, s'écrit pour l'élément (ou pour chaque élément si on en avait plusieurs):
+Cette forme variationnelle s'écrit pour l'élément (ou pour chaque élément si on en avait plusieurs):
 \begin{equation}
 W = \LL{v} \left( \MM{K}\VV{u} - \VV{f} \right)
 \end{equation}

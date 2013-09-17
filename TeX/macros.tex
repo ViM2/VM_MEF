@@ -231,6 +231,34 @@
 %--------------------------------------------------------------------------
 % Bidouillage des chapitres
 %
+\font\fntimes=ptmr scaled 10000
+\newlength\Chaplengthsup
+\newlength\Chaplengthinf
+\setlength{\Chaplengthsup}{25mm}
+\setlength{\Chaplengthinf}{30mm}%35
+%
+\newsavebox{\titreChapitre}
+\newlength\longTitre
+\newlength\hautTitre
+\newlength\longReste
+%
+\newcommand{\ChapPresentation}[1]{%
+   \sbox{\titreChapitre}{\rotatebox{45}{\fntimes\thechapter\includegraphics[height=24mm]{bandes.eps}}}
+   \setlength{\longTitre}{\wd\titreChapitre}
+   \setlength{\hautTitre}{\ht\titreChapitre}
+   \setlength{\longReste}{\textwidth}
+   \addtolength{\longReste}{-\longTitre}
+   \addtolength{\longReste}{-1mm}
+   \noindent\parbox[t]{\longTitre}{%\vspace{\Chaplengthsup}
+      \unitlength=1mm
+      \begin{picture}(0,0)
+         \put(-4,0){\raisebox{-\hautTitre}{\usebox{\titreChapitre}}}%\raisebox{-46mm}{\usebox{\titreChapitre}}}
+      \end{picture}
+   }\hfill%
+   \parbox[t]{\longReste}{\vspace{12mm}%\vspace{\Chaplengthsup}
+   \flushright\Huge\bfseries#1}\\[\Chaplengthinf]
+}
+%
 \makeatletter
 \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
                        \if@mainmatter
@@ -248,9 +276,17 @@
                     \addtocontents{lof}{\protect\addvspace{10\p@}}%
                     \addtocontents{lot}{\protect\addvspace{10\p@}}%
                     \if@twocolumn
-                      \@topnewpage[\@makechapterhead{#2}]%
+                       \ifVersionDuDocEstVincent
+                          \@topnewpage[\ChapPresentation{#2}]%
+                       \else
+                          \@topnewpage[\@makechapterhead{#2}]%
+                       \fi
                     \else
-                      \@makechapterhead{#2}%
+                       \ifVersionDuDocEstVincent
+                          \ChapPresentation{#2}%
+                       \else
+                          \@makechapterhead{#2}%
+                       \fi
                       \@afterheading
                     \fi%
 %ajout
