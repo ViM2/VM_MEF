@@ -31,9 +31,9 @@ Une manière d'améliorer les résultats est de recourir à des méthodes dites 
 En fonction des problèmes (donc des données disponibles et des données souhaitées) de nombreuses méthodes existent. Elles sont généralement dédiées à un problème donné.
 
 \medskip
-Un exemple déjà abordé dans ce document est celui où, à partir des déplacement nodaux obtenus par un calcul EF d'une structure mécanique composée de deux matériaux différents dans une discrétisation classique «en déplacements», on souhaite remonter aux contraintes à l'interface entre lesdits matériaux.
+Un exemple déjà abordé dans ce document est celui où, à partir des déplacement nodaux obtenus par un calcul éléments finis d'une structure mécanique composée de deux matériaux différents dans une discrétisation classique «en déplacements», on souhaite remonter aux contraintes à l'interface entre lesdits matériaux.
 
-Une méthode déjà mentionnée est la méthode dite de «Reissner local»\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} qui consiste à intégrer les équations d'équlibre sous la forme mixte de Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} mais uniquement sur des paires d'éléments ayant des propriété matérielles différentes et possédant une face commune.
+Une méthode déjà mentionnée est la méthode dite de «Reissner local»\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} qui consiste à intégrer les équations d'équilibre sous la forme mixte de Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} mais uniquement sur des paires d'éléments ayant des propriété matérielles différentes et possédant une face commune.
 
 On obtient alors un champ de contrainte complètement continu dont on ne retient que les composantes correspondant à la trace\index{trace} des contraintes, les autres étant calculées comme dans la méthode classique. On montre que l'on améliore grandement la qualité de l'approximation des contraintes aux interfaces, mêmes avec un maillage grossier.
 
@@ -41,7 +41,7 @@ On obtient alors un champ de contrainte complètement continu dont on ne retient
 Un autre exemple serait, disposant d'un point de pression constant par élément, de calculer la pression en un point quelconque comme interpolation (linéaire ou non) à partir des points disponibles.
 
 \medskip
-Un troisième exemple serait à partir des données nodales dans un modèle unidimensionnel (poutre ou barre selon le cas), de remonter à la répartition des contraintes en un points quelconque de la structure (donc via les hypothèses faites dans le modèle sur la répartition des contraintes dans une section + via un interpolation lorsque l'on se trouve dans une section ne passant pas par un nœud)...
+Un troisième exemple serait à partir des données nodales dans un modèle unidimensionnel (poutre ou barre selon le cas), de remonter à la répartition des contraintes en un points quelconque de la structure (donc via les hypothèses faites dans le modèle sur la répartition des contraintes dans une section + via une interpolation lorsque l'on se trouve dans une section ne passant pas par un nœud)...
 
 \input{./tex/ex4}% macro Ansys et poutre en U
 
@@ -73,77 +73,60 @@ Considérons un problème comportant deux échelles. Le point 1 évoqué ci-dess
 \begin{itemize}
   \item \textcolorblue{Un modèle macroscopique}\index{modèle macroscopique}
 
-	Il représente le produit et son environnement extérieur et est constitué
-	d'une géométrie et d'un modèle de comportement relativement grossiers
-	(puisque n'ayant pas vocation à représenter les phénomènes microscopiques);
+	Il représente le produit et son environnement extérieur et est constitué d'une géométrie et d'un modèle de comportement relativement grossiers (puisque n'ayant pas vocation à représenter les phénomènes microscopiques);
   \item \textcolorblue{Un modèle microscopique}\index{modèle microscopique}
 
-	Il possède une description géométrique et un maillage suffisamment fins ainsi qu'un
-	modèle de comportement détaillé. Il ne comprend qu'une ou quelques
-	«cellules types» de petites dimensions.
+	Il possède une description géométrique et un maillage suffisamment fins ainsi que soit modélisé de comportement détaillé. Il ne comprend qu'une ou quelques «cellules types» de petites dimensions.
 
-	Il est souvent possible, pour les matériaux notamment, de disposer d'hypothèses
-	simplificatrices (telles que l'élasticité linéaire) permettant de se restreindre à une
-	seule cellule type.
-	Pour le cas des matériaux anisotropes constitués de plusieurs autres matériaux tels
-	que les matériaux composites et fibreux, on se reportera au chapitre~\ref{Ch-Homog}. 
+	Il est souvent possible, pour les matériaux notamment, de disposer d'hypothèses simplificatrices (telles que l'élasticité linéaire) permettant de se restreindre à une seule cellule type. Pour le cas des matériaux anisotropes constitués de plusieurs autres matériaux tels que les matériaux composites et fibreux, on se reportera au chapitre~\ref{Ch-Homog}. 
 
-	Toutefois, certaines fois on ne dispose pas de telles hypothèses et il faut multiplier le nombre de cellules (jusqu'à parfois couvrir tout le modèle macro !)
+	Toutefois, il peut arriver que l'on ne dispose pas de telles hypothèses et il soit alors nécessaire de multiplier le nombre de cellules (jusqu'à parfois couvrir tout le modèle macro !)
 \end{itemize}
 
 \medskip
 Le point 2 consiste donc à relier les deux échelles de modélisation.
 
-En effet, les modèles macro et micro ne sont pas indépendants puisqu'ils modélisent la même physique à des échelles différentes. Il est donc nécessaire qu'ils soient cohérents l'un vis-à-vis de l'autre, en tout point et à chaque instant de la simulation. Pour cette raison, les modélisations multi-échelles\index{multi-échelles} comportent des couplages, i.e. des modèles d'interactions, entre les échelles.
+En effet, les modèles macroscopique et microscopique ne sont pas indépendants puisqu'ils modélisent la même physique à des échelles différentes. Il est donc nécessaire qu'ils soient cohérents l'un vis-à-vis de l'autre, en tout point et à chaque instant de la simulation. Pour cette raison, les modélisations multi-échelles\index{multi-échelles} comportent des couplages, i.e. des modèles d'interactions, entre les échelles.
 
+\medskipvm
 Dans le cadre de la mécanique des solides déformables, on procède généralement comme suit:
 \begin{itemize}
-  \item Le modèle de comportement macroscopique:\index{modèle macroscopique}
-	qui modélise des phénomènes se produisant «au cœur du matériau»,
-	doit correspondre à la relation contraintes/déformations observée sur la cellule micro;
+  \item Le modèle de comportement macroscopique:\index{modèle macroscopique} qui modélise des phénomènes se produisant «au cœur du matériau», doit correspondre à la relation contraintes/déformations observée sur la cellule microscopique;
 
-  \item Le modèle de comportement microscopique:\index{modèle microscopique}
-	qui traduisent la façon dont la cellule est sollicitée par son environnement
- 	extérieur, doivent correspondre à l'état de contraintes ou de déformations macro.
+  \item Le modèle de comportement microscopique:\index{modèle microscopique} qui traduisent la façon dont la cellule est sollicitée par son environnement extérieur, doivent correspondre à l'état de contraintes ou de déformations macroscopique.
 \end{itemize}
 
-Le modèle macro ayant une résolution beaucoup plus grossière, la cohérence des deux modèles ne peut donc pas se traduire par une correspondance exacte, point par point, des conditions aux limites ou du comportement. Pour cette raison, la plupart des approches multi-échelles postulent que les quantités macroscopiques doivent correspondre à des «moyennes» des quantités micro correspondantes, la définition mathématique exacte de cette moyenne variant fortement d'une approche à l'autre.
+Le modèle macroscopique ayant une résolution beaucoup plus grossière, la cohérence des deux modèles ne peut donc pas se traduire par une correspondance exacte, point par point, des conditions aux limites ou du comportement. Pour cette raison, la plupart des approches multi-échelles postulent que les quantités macroscopiques doivent correspondre à des «moyennes» des quantités microscopiques correspondantes, la définition mathématique exacte de cette moyenne variant fortement d'une approche à l'autre.
 
 \medskip
 \colorgreen On peut donc dire que:
 \begin{itemize}
-  \item Le modèle de comportement macroscopique\index{modèle macroscopique} d'un 
-   élément de volume est choisi égal au comportement moyen de la cellule micro
-   correspondante, calculé en utilisant une technique d'homogénéisation;\index{homogénéisation}
+  \item Le modèle de comportement macroscopique\index{modèle macroscopique} d'un élément de volume est choisi égal au comportement moyen de la cellule microscopique correspondante, calculé en utilisant une technique d'homogénéisation;\index{homogénéisation}
 
-  \item Les conditions aux limites micro sont appliquées en moyenne, car les champs de
-	contraintes ou de déplacements macro sont beaucoup trop grossiers.
+  \item Les conditions aux limites microscopiques sont appliquées en moyenne, car les champs de contraintes ou de déplacements macroscopiques sont beaucoup trop grossiers.
 \end{itemize}\colorblack
 
 \medskip
 Le problème est donc \textcolorred{d'échanger des données pertinentes entre les différentes échelles}, compte tenu des différentes résolutions des modèles.
 
 \medskip
-\textcolorred{Dans le sens micro vers macro, on utilisera les techniques d'homogénéisation} \index{homogénéisation} dont il sera l'objet au chapitre~\ref{Ch-Homog}.
+\textcolorred{Dans le sens microscopique vers macroscopique, on utilisera les techniques d'homogénéisation} \index{homogénéisation} dont il sera l'objet au chapitre~\ref{Ch-Homog}.
 
 \medskip
-\textcolorred{Dans le sens macro vers micro, il s'agit donc de spécifier des conditions aux limites à appliquer sur le bord des cellules micro, à partir d'une solution macro.}
+\textcolorred{Dans le sens macroscopique vers microscopique, il s'agit donc de spécifier des conditions aux limites à appliquer sur le bord des cellules microscopiques, à partir d'une solution macroscopique.}
 
 \textcolorgris{%
-Les méthodes les plus simples se contentent d'imposer directement le champ de déplacements (ou de contraintes) macro comme condition aux limites. Le modèle macro ayant par définition une résolution beaucoup plus grossière que le modèle micro, il est incapable de capturer l'allure microscopique des déplacements ou des contraintes. Ces CL sont donc souvent trop imprécises par rapport aux finalités du modèle micro. Cela peut dégrader fortement la qualité des résultats et donc restreindre le domaine de validité de ces approches.%
-}
+Les méthodes les plus simples se contentent d'imposer directement le champ de déplacements (ou de contraintes) macroscopique comme condition aux limites. Le modèle macroscopique ayant par définition une résolution beaucoup plus grossière que le modèle microscopique, il est incapable de capturer l'allure microscopique des déplacements ou des contraintes. Ces conditions aux limites sont donc souvent trop imprécises par rapport aux finalités du modèle microscopique. Cela peut dégrader fortement la qualité des résultats et donc restreindre le domaine de validité de ces approches.}
 
-Pour palier ce problème, on écrit les conditions aux limites micro de manière plus subtile en les décomposant en la somme d'un terme moyen et d'un terme de moyenne nulle. Ainsi, le champ micro~$u^m$ sera écrit~$u^m=u^M +v^m$ où~$u^M$ est le champ macro (i.e. la moyenne du champ micro), et~$v^m$ est le reste (à moyenne nulle).
+Pour palier ce problème, on écrit les conditions aux limites microscopiques de manière plus subtile en les décomposant en la somme d'un terme moyen et d'un terme de moyenne nulle. Ainsi, le champ microscopique~$u^m$ sera écrit~$u^m=u^M +v^m$ où~$u^M$ est le champ macroscopique (i.e. la moyenne du champ microscopique), et~$v^m$ est le reste (à moyenne nulle).
 Notre problème devient donc de \textcolorred{déterminer le reste~$v^m$}, et c'est là que les méthodes divergent le plus. On distingue néanmoins deux grosses familles:
 \begin{itemize}
   \item \textcolorblue{Condition de périodicité}\index{condition de périodicité}
 
-	On postule que l'on connaît l'allure du reste. On peut alors enchaîner un calcul macro
-	avec un solveur spécifique puis un calcul micro avec un solveur classique;
-  \item \textcolorblue{Couplage des cellules micro}\index{couplage des cellules micro}
+	On postule que l'on connaît l'allure du reste. On peut alors enchaîner un calcul macroscopique avec un solveur spécifique puis un calcul microscopique avec un solveur classique;
+  \item \textcolorblue{Couplage des cellules microscopiques}\index{couplage des cellules microscopiques}
 
-	Lorsqu'il n'est pas si simple de «séparer» les échelles, alors il faut résoudre 
-	en même temps les deux problèmes micro et macro avec échange de données.
+	Lorsqu'il n'est pas si simple de «séparer» les échelles, alors il faut résoudre en même temps les deux problèmes microscopique et macroscopique avec échange de données.
 \end{itemize}
 Ces deux approches vont être un peu plus détaillées maintenant.
 
@@ -153,27 +136,27 @@ Ces deux approches vont être un peu plus détaillées maintenant.
 \medskip
 \subsection{Condition de périodicité -- méthodes multi-niveaux}\index{condition de périodicité}\index{multi-niveaux}
 
-Souvent, les méthodes multi-niveaux sont basées sur des conditions de périodicité inspirées de l'homogénéisation périodique.\index{homogénéisation} Ces conditions supposent que la partie micro du champ de déplacement, $v^m$, est périodique, i.e. est égale sur chaque paire de faces opposées de la cellule type considérée. La même hypothèse est formulée sur les contraintes. On obtient ainsi un ensemble de CL permettant de déterminer entièrement la solution micro à partir d'une déformation (ou d'une contrainte) macro imposée.
+Souvent, les méthodes multi-niveaux sont basées sur des conditions de périodicité inspirées de l'homogénéisation périodique.\index{homogénéisation} Ces conditions supposent que la partie microscopique du champ de déplacement, $v^m$, est périodique, i.e. est égale sur chaque paire de faces opposées de la cellule type considérée. La même hypothèse est formulée sur les contraintes. On obtient ainsi un ensemble de conditions aux limites permettant de déterminer entièrement la solution microscopique à partir d'une déformation (ou d'une contrainte) macroscopique imposée.
 
-Le résultat micro ainsi obtenu est pertinent à deux conditions: 1) il faut que la microstructure soit effectivement périodique, et 2) que le principe de Saint-Venant\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{principe! de Saint-Venant} s'applique, i.e. que l'on se trouve suffisamment loin de la surface de la pièce (y compris des détails géométriques tels que des trous, des fissures...). Dans le cas contraire, des effets de bord peuvent affecter l'allure de la solution, qui n'est alors plus périodique: il faut donc recourir à d'autres modélisations.
+Le résultat microscopique ainsi obtenu est pertinent à deux conditions: 1) il faut que la microstructure soit effectivement périodique, et 2) que le principe de Saint-Venant\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{principe! de Saint-Venant} s'applique, i.e. que l'on se trouve suffisamment loin de la surface de la pièce (y compris des détails géométriques tels que des trous, des fissures...). Dans le cas contraire, des effets de bord peuvent affecter l'allure de la solution, qui n'est alors plus périodique: il faut donc recourir à d'autres modélisations.
 
 \medskip
 La simulation multi-niveaux\index{multi-niveaux} fait appel à deux types de modèles, chacun équipé de son solveur:
 \begin{itemize}
-  \item un modèle macro\index{modèle macroscopique} ne possédant pas de relation de comportement du matériau prédéfinie, équipé d'un solveur éléments fini modifié;
-  \item un ensemble de modèles micro\index{modèle microscopique} ne possédant pas de conditions aux limites prédéfinies, équipés de solveurs éléments finis classiques.
+  \item un modèle macroscopique\index{modèle macroscopique} ne possédant pas de relation de comportement du matériau prédéfinie, équipé d'un solveur éléments fini modifié;
+  \item un ensemble de modèles microscopiques\index{modèle microscopique} ne possédant pas de conditions aux limites prédéfinies, équipés de solveurs éléments finis classiques.
 \end{itemize}
 
-En fait, le solveur éléments finis modifié est un solveur éléments finis classique avec une petite différence: à chaque fois que le solveur macro a besoin du comportement d'un élément de volume quelconque, il envoie l'état de déformation macro de cet élément au solveur micro. Ce dernier a alors toutes les données nécessaires pour simuler  numériquement son comportement à l'échelle microscopique. Il renvoie alors l'état de contraintes macro, selon la décomposition mentionnée ci-dessus.
-\textcolorgreen{Les cellules micro étant pour ainsi dire «indépendantes», il est possible de recourir à des calculateur parallèles.}
+En fait, le solveur éléments finis modifié est un solveur éléments finis classique avec une petite différence: à chaque fois que le solveur macroscopique a besoin du comportement d'un élément de volume quelconque, il envoie l'état de déformation macroscopique de cet élément au solveur microscopique. Ce dernier dispose alors toutes les données nécessaires pour simuler  numériquement son comportement à l'échelle microscopique. Il est donc capable de renvoyer l'état de contraintes macroscopiques, selon la décomposition mentionnée ci-dessus.
+\textcolorgreen{Les cellules microscopiques étant pour ainsi dire «indépendantes», il est possible de recourir à des calculateur parallèles.}
 
-Le domaine de validité de ces méthodes est bon dès que l'on sait faire des hypothèses réalistes sur l'allure de la solution micro. Ce n'est pas toujours le cas: par exemple, la fissuration, lorsqu'elle sort d'un cadre microscopique pour atteindre un cadre macroscopique, se prête très mal à cet exercice.
+Le domaine de validité de ces méthodes est bon dès que l'on sait faire des hypothèses réalistes sur l'allure de la solution microscopique. Ce n'est pas toujours le cas: par exemple, la fissuration, lorsqu'elle sort d'un cadre microscopique pour atteindre un cadre macroscopique, se prête très mal à cet exercice.
 Le cas de la fissuration sera abordé au chapitre~\ref{Ch-rupt}.
 
 \medskip\colorgreen
 \textbf{En résumé:}
 
-Les méthodes multi-niveaux abordent la simulation à l'échelle macro\index{modèle macroscopique} et se «nourrissent» du comportement simulé à l'échelle microscopique.\index{modèle microscopique}
+Les méthodes multi-niveaux abordent la simulation à l'échelle macroscopique\index{modèle macroscopique} et se «nourrissent» du comportement simulé à l'échelle microscopique.\index{modèle microscopique}
 
 Dans les méthodes multi-niveaux,\index{multi-niveaux} l'emploi d'hypothèses de périodicité se traduit par des «sauts» de contraintes et de déplacements d'une cellule à l'autre; si les échelles sont mal séparées, ces sauts sont non négligeables. Ne correspondant \emph{a priori} pas à la physique, ils traduisent un écart avec la réalité.
 \colorblack
@@ -181,26 +164,26 @@ Dans les méthodes multi-niveaux,\index{multi-niveaux} l'emploi d'hypothèses de
 
 
 \medskip
-\subsection{Couplage des cellules micro -- méthodes de décomposition de domaine}\index{couplage des cellules micro}\index{décomposition de domaine}\label{Sec-dec}
+\subsection{Couplage des cellules microscopiques -- méthodes de décomposition de domaine}\index{couplage des cellules microscopiques}\index{décomposition de domaine}\label{Sec-dec}
 
-Les méthodes multi-niveaux présentées au paragraphe précédent sont mises à mal lorsque le comportement micro «déborde» un peu sur le comportement macro, i.e. lorsque les échelles ne sont pas suffisamment bien séparées. On recourt alors aux méthodes de décomposition de domaines,\index{décomposition de domaine} dont la validité est plus large, mais qui sont plus complexes.
-
-\medskip
-Puisque nous ne pouvons plus supposer une allure de la solution micro,\index{modèle microscopique} nous n'allons utiliser que les seules connaissance disponibles à priori: la continuité du champ de déplacements ainsi que la vérification par les contraintes du principe d'action-réaction. Il «suffit» donc d'écrire qu'à l'interface entre deux cellules micro, il y a égalité des déplacements et nullité de la somme des traces\index{trace} des contraintes (on retrouve ce que nous avons déjà plusieurs fois évoqué avec l'état des contrainte à l'interface entre deux matériaux différents).
+Les méthodes multi-niveaux présentées au paragraphe précédent sont mises à mal lorsque le comportement microscopique «déborde» un peu sur le comportement macroscopique, i.e. lorsque les échelles ne sont pas suffisamment bien séparées. On recourt alors aux méthodes de décomposition de domaines,\index{décomposition de domaine} dont la validité est plus large, mais qui sont plus complexes.
 
 \medskip
-La présence de couplages entre les cellules micro\index{couplage des cellules micro} (qui en quelque sorte correspond à une généralisation de la condition de périodicité du paragraphe précédent) change complètement le déroulement de la simulation par rapport aux méthodes multi-niveaux vues au paragraphe précédent. En effet, la prise en compte de ces couplages implique d'échanger directement des données entre les différents solveurs micro, qui ne sont plus «indépendants». En contrepartie, cela permet de propager une information fine sur l'ensemble de la pièce et, ainsi, de se passer de l'hypothèse de séparation des échelles: il n'est plus nécessaire de modéliser séparément les phénomènes micro et macro.
+Puisque nous ne pouvons plus supposer une allure de la solution microscopique,\index{modèle microscopique} nous n'allons utiliser que les seules connaissance disponibles à priori: la continuité du champ de déplacements ainsi que la vérification par les contraintes du principe d'action-réaction. Il «suffit» donc d'écrire qu'à l'interface entre deux cellules microscopiques, il y a égalité des déplacements et nullité de la somme des traces\index{trace} des contraintes (on retrouve ce que nous avons déjà plusieurs fois évoqué avec l'état des contrainte à l'interface entre deux matériaux différents).
 
 \medskip
-Concrètement, les méthodes de décomposition de domaine\index{décomposition de domaine} sont des solveurs, qui ont généralement un fonctionnement multi-échelles.\index{multi-échelles} Elles partent d'un modèle micro\index{modèle microscopique} du produit
-décomposé en sous-structures, et consistent à coupler les sous-structures en échangeant des contraintes et des déplacements sur les interfaces. Des versions plus ou moins simples existent. Notons bien qu'il n'y a pas de modèle macro dans une telle approche.
+La présence de couplages entre les cellules microscopiques\index{couplage des cellules microscopiques} (qui en quelque sorte correspond à une généralisation de la condition de périodicité du paragraphe précédent) change complètement le déroulement de la simulation par rapport aux méthodes multi-niveaux vues au paragraphe précédent. En effet, la prise en compte de ces couplages implique d'échanger directement des données entre les différents solveurs microscopiques, qui ne sont plus «indépendants». En contrepartie, cela permet de propager une information fine sur l'ensemble de la pièce et, ainsi, de se passer de l'hypothèse de séparation des échelles: il n'est plus nécessaire de modéliser séparément les phénomènes microscopiques et macroscopiques.
+
+\medskip
+Concrètement, les méthodes de décomposition de domaine\index{décomposition de domaine} sont des solveurs, qui ont généralement un fonctionnement multi-échelles.\index{multi-échelles} Elles partent d'un modèle microscopique\index{modèle microscopique} du produit
+décomposé en sous-structures, et consistent à coupler les sous-structures en échangeant des contraintes et des déplacements sur les interfaces. Des versions plus ou moins simples existent. Notons bien qu'il n'y a pas de modèle macroscopique dans une telle approche.
 
 \medskip\colorgreen
 \textbf{En résumé:}
 
 Dans la décomposition de domaine,\index{décomposition de domaine} la simulation est abordée à l'échelle la plus fine: la sous-structuration et le problème grossier ne sont utilisés que pour améliorer l'efficacité de la résolution.
 
-Une simulation par décomposition de domaine\index{décomposition de domaine} conduit toujours à un champ de déplacement micro continu sur toute la structure, et un champ de contraintes micro équilibré (au sens des éléments finis) sur toute la structure.
+Une simulation par décomposition de domaine\index{décomposition de domaine} conduit toujours à un champ de déplacement microscopique continu sur toute la structure, et un champ de contraintes microscopique équilibré (au sens des éléments finis) sur toute la structure.
 \colorblack
 
 \medskip
@@ -230,7 +213,7 @@ Finalement, quand parle-t-on de sous-structure ou de macro-élément?\index{macr
 Originellement introduit dans l'aéronautique dans les années 60 (d'où le schéma au paragraphe précédent), le concept de sous-structuration\index{sous-structuration} répondait à trois motivations:
 \begin{itemize}
   \item faciliter la division du travail:
-	des sous-structures\index{sous-structure} avec des fonctions différentes (fuselage, ailes, train d'atterrissage...)pouvaient être traitées par des groupes d'experts différents. Chaque groupe pouvait à loisir améliorer, raffiner... sa partie tant que l'interface avec les autres parties restait inchangée.
+	des sous-structures\index{sous-structure} avec des fonctions différentes (fuselage, ailes, train d'atterrissage...) pouvaient être traitées par des groupes d'experts différents. Chaque groupe pouvait à loisir améliorer, raffiner... sa partie tant que l'interface avec les autres parties restait inchangée.
   \item profiter de la répétition:
 	en remarquant qu'une même structure peut contenir plusieurs sous-structures identiques, il est possible de diminuer le temps d'étude (par exemple symétrie des ailes...) 
   \item contourner les limitations des ordinateurs:
@@ -269,7 +252,7 @@ de frontière~$\VV{q_b}$, de sorte que le système, une fois réordonné s'écri
 =
 \VV*{\VV{f_b}\\\VV{f_i}}
 \end{equation}
-Si la matrice~$\MM{K}_{ii}$ n'est pas singulière, alors la seconde équation peut être résolue en terme de variables internes en:
+Si la matrice~$\MM{K_{ii}}$ n'est pas singulière, alors la seconde équation peut être résolue en terme de variables internes en:
 \begin{equation}
 \VV{q_i} = \MMI{K_{ii}}\left(\VV{f_i}-\MM{K_{ib}}\VV{q_b}\right)
 \end{equation}
@@ -311,9 +294,6 @@ On obtient alors une solution générale de ce système faisant intervenir une \
 Il est alors possible, tout en modifiant les conditions cinématiques et les chargements appliqués, de procéder à des réanalyses qui consistent alors simplement à résoudre des systèmes dits secondaires de tailles très inférieures au système global (mais un surcoût a été «payé» initialement pour calculer la pseudo-inverse).
 
 Des problèmes de contact avec ou sans frottement entre solides élastiques peuvent bénéficier de cette méthode, ainsi que la modélisation du comportement élastique incompressible.
-
-\medskip
-\textcolorred{Dans ce paragraphe sur la réanalyse, nous n'utiliserons pas la notation avec les crochets et les accolades pour les matrices et les vecteurs afin d'alléger l'écriture}.
 
 
 \medskip
@@ -403,7 +383,7 @@ $\VV{q}$ sur l'orthogonal du noyau de~$\MM{K}$), \textcolorblue{$\VV{v}$ devient
 et l'on retrouvera la solution du système initial~$\VV{q}$ par:
 \begin{equation}\VV{q}=\VV{v}+\MM{R}\MMT{R}\VV{q} = \MMI{K_\alpha}\VV{F}+\MM{R}\MMT{R}\VV{q}\end{equation}
 \medskip
-On peut remarquer que~$\MMI{K_\alpha}$, que l'on note~$\MM{S_\alpha}$ possède les mêmes valeurs propres que~$\MM{K_\alpha}$ (et donc les mêmes que~$\MM{K}$ et~$\MM{R}\MMT{R}$). On est donc naturellement amené à décomposer~$\MM{S_\alpha}$ comme:
+On peut remarquer que~$\MMI{K_\alpha}$, que l'on note~$\MM{S_\alpha}$, possède les mêmes valeurs propres que~$\MM{K_\alpha}$ (et donc les mêmes que~$\MM{K}$ et~$\MM{R}\MMT{R}$). On est donc naturellement amené à décomposer~$\MM{S_\alpha}$ comme:
 \begin{equation} \MM{S_\alpha}=\MM{S}+\frac1\alpha \MM{R}\MMT{R}\end{equation}
 avec~$\MM{S}\MM{R}=0$ et~$\MMT{R}\MM{S}=0$.
 
@@ -462,15 +442,15 @@ par:
 \begin{equation}
 \dfrac{\partial{\mathbf J}}{\partial\Omega}(\Omega, u,V) = \dint_\Gamma u V\cdot n
 \end{equation}
-La difficulté tient à ce que l'ensemble des domaines~$\Omega$ ne consitue pas un espace vectoriel (les perturbations ne s'ajoutent pas, ou au moins ne sont pas associatives:
-$(\Omega+V)+W\ne(\Omega+W)+V$).
+La difficulté tient à ce que l'ensemble des domaines~$\Omega$ ne constitue pas un espace vectoriel (les perturbations ne s'ajoutent pas, ou au moins ne sont pas associatives:
+$(\Omega+V)+W\ne(\Omega+W)+V$.
 
 \medskip
 \textcolorred{Toutefois, si l'on utilise un \textcolorblue{paramétrage} du domaine, il est alors possible d'utiliser les outils classiques du calcul différentiel dans les espaces normés.} On introduit alors le paramètre~$F$ par:
 \begin{equation}
 J(F,u)={\mathbf J}(F(\Omega),u\circ F^{-1}),\quad F\in W^{1,\infty}(\Omega;\RR^n)
 \end{equation}
-et l'on a alors~$(F+V)+W=(F+W)+V)$.
+et l'on a alors~$(F+V)+W=(F+W)+V$.
 
 La dérivée partielle de~$J$ par rapport au paramètre~$F$ est définie sans ambiguïté. Dans notre exemple, cette dérivée, prise au point~$F=I$ est:
 \begin{equation}

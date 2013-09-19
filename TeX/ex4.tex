@@ -248,20 +248,20 @@ C---- Last line of VM2
 \color{black}\normalsize
 
 \medskip
-La routine READANS permet de lire les données. Celles-ci sont stockées dans les matrices COORD(NODMAX,3), DISP(NODMAX,2), XMAT(MATMAX,3) et NLT(NELTMAX,9).
+La routine \textsc{readans} permet de lire les données. Celles-ci sont stockées dans les matrices \textsc{coord(nodmax,3), disp(nodmax,2), xmat(matmax,3)} et \textsc{nlt(neltmax,9)}.
 
 \medskip
-la routine CHELT détecte les interfaces, i.e. les faces dont les nœuds appartiennent à des éléments dont les propriétés matérielles sont différentes.
-Le vecteur NADJ(NODMAX,8) contient les numéros des deux éléments adjacents (posistions 1 et 2) ainsi que les numéros des nœuds de l'interface (position 3, 4 et 5).
+la routine \textsc{chelt} détecte les interfaces, i.e. les faces dont les nœuds appartiennent à des éléments dont les propriétés matérielles sont différentes.
+Le vecteur \textsc{nadj(nodmax,8)} contient les numéros des deux éléments adjacents (positions 1 et 2) ainsi que les numéros des nœuds de l'interface (positions 3, 4 et 5).
 
 \medskip
-La routine MATER construit, pour chacune des faces de l'interface, la matrice de rigidité (aussi bien pour le cas isotrope que pour le cas orthotrope).
+La routine \textsc{mater} construit, pour chacune des faces de l'interface, la matrice de rigidité (aussi bien pour le cas isotrope que pour le cas orthotrope).
 
 \medskip
-La routine LOCREISS calcule les contraintes nodales le long de chaque face.
+La routine \textsc{locreiss} calcule les contraintes nodales le long de chaque face.
 
 \medskip
-Les contraintes ayant été calculées pour les nœuds de chacune des faces de l'interface, on moyenne les résultats pour un nœud appartenant à plusieurs faces. C'est ce que fait la routine AVERAGE. À ce stade, nous disposons donc des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte} le long de toutes les interfaces présentes dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soient relus par la macros \ansys.
+Les contraintes ayant été calculées pour les nœuds de chacune des faces de l'interface, on moyenne les résultats pour un nœud appartenant à plusieurs faces. C'est ce que fait la routine \textsc{average}. À ce stade, nous disposons donc des contraintes nodales, calculées par la fonctionnelle mixte d'Hellinger-Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index{fonctionnelle!d'Hellinger-Reissner}\index{fonctionnelle!mixte} le long de toutes les interfaces présentes dans le modèle. Il ne reste plus qu'à écrire ces résultats pour qu'ils soient relus par la macros \ansys.
 
 
 
@@ -273,8 +273,7 @@ Les contraintes ayant été calculées pour les nœuds de chacune des faces de l
   \includegraphics[height=80mm]{U-geo.eps} \hfill
   \includegraphics[height=80mm]{U-mesh1.eps}\hfill
   \includegraphics[height=80mm]{U-mesh2.eps}
-  \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le calcul (test de la méthode Reissner local,
-c) maillage permettant d'obtenir la «solution de référence» puisqu'il n'y a pas de solution analytique}
+  \caption{\label{Fig-poutU-geo} a) Géométrie de la poutre en U, b) le maillage utilisé pour le tester la méthode Reissner local, c) maillage permettant d'obtenir la «solution de référence» puisqu'il n'y a pas de solution analytique}
 \end{figure}
 
 Disposant de la macro précédente, nous allons l'appliquer au calcul d'une poutre en~$U$.
@@ -399,7 +398,7 @@ On utilise la macro en tapant \verb|*USE,INTERF|, et les contraintes sont direct
 
 
 \medskip
-Le listing Cast3M est le suivant:
+Le listing Cast3M du même problème est le suivant:
 
 \color{gris}\scriptsize
 \begin{multicols}{2}
