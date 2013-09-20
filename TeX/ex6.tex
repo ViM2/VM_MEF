@@ -3,18 +3,17 @@
 \medskip
 Quelque soit le logiciel utilisé\footnote{Lorsque l'on parle de codes éléments finis, on cite les grands noms du domaine... et ils correspondent à des codes extraordinairement puissants, mais souvent chers.
 
-Or un certain nombre de codes éléments finis professionnels sont disponibles gratuitement (au téléchargement et à l'utilisation). Les deux plus connus sont \castem (anciennement castem) et \aster développés et maintenus par le CEA et par EDF respectivement.}, il y a toujours un gros pavé d'exemple fourni avec, sans compter le nombre d'ouvrages disponibles.
+Or un certain nombre de codes éléments finis professionnels sont disponibles gratuitement (au téléchargement et à l'utilisation). Les deux plus connus sont \castem (anciennement castem) et \aster développés et maintenus par le CEA et par EDF respectivement.}, il y a toujours un grand nombre d'exemples traités fournis avec, sans compter le nombre d'ouvrages disponibles.
 
 \medskip
 Nous avons souhaité néanmoins présenter un listing (qui sera discuté oralement) correspondant à un calcul réalisé sous \freefem.
 
-Ce logiciel gratuit vous permettra de faire vos calculs EF... mais c'est également un outil pédagogique sans équivalent: sa manipulation se fait en des termes proches de la formulation mathématique, et en cela, il est une passerelle parfaite entre la théorie et la pratique de codes plus «industriels».
+Ce logiciel gratuit vous permettra de faire vos calculs par éléments finis... mais c'est également un outil pédagogique sans équivalent: sa manipulation se fait en des termes proches de la formulation mathématique, et en cela, il est une passerelle parfaite entre la théorie et la pratique de codes plus «industriels».
 
-Le fait de pouvoir discrétiser à loisir une formulation variationnelle que l'on rentre soi-même est également un argument qui nous semble un vrai plus, même si cela commence à exister dans des codes commerciaux (mais reste confidentiel).
+Le fait de pouvoir discrétiser à loisir une formulation variationnelle que l'on rentre soi-même est également un argument qui nous semble un vrai plus, même si cela commence à exister dans des codes commerciaux (mais reste confidentiel).\footnote{Notons que pour ceux qui préfèrent, il existe aussi \textsc{Rheolef}, un environnement C++ pour le calcul par éléments finis, qui reste proche, dans sa philosophie, de ce que propose \freefem. Nous ne le connaissons pas assez pour fournir des exemples dans ce document.}
 
 \medskip
 Voici donc un petit listing sur lequel nous pourrons revenir de vive voix.
-%Je ne vous dis même pas de quoi il s'agit...
 
 Commençons donc, comme il se doit, par définir la géométrie du problème, paramétrée par~$a$ et~$b$, que nous maillons:
 
@@ -44,7 +43,7 @@ mesh Th=buildmesh(gam1(ncuts)+gam2(ncuts)+gam3(ncuts)+gam4(ncuts));
 \color{black}\normalsize
 
 \medskip
-Nous définissons quelques valeurs afin de pouvoir définir le chargement (dont l'un des chargement, défini par la fonction~$w_1$ ne sera pas utilisée dans la suite). Notons comme il est aisé de définir des fonctions:
+Nous définissons quelques valeurs afin de pouvoir définir le chargement (le chargement défini par la fonction~$w_1$ ne sera pas utilisée dans le calcul effectué). Notons comme il est aisé de définir des fonctions:
 
 \color{gris}\scriptsize
 \begin{multicols}{2}
@@ -157,7 +156,7 @@ for (ivi=0;ivi<10;ivi++){
 \color{black}\normalsize
 
 \medskip
-Enfin, pour tester la qualité des résultats, il nous faut quelques indicateurs... Sans entrer dans le détail, des noms comme~$E_c$, $E_p$ et~$E_T$ doivent vous mettre sur la piste.
+Enfin, pour tester la qualité des résultats, il nous faut quelques indicateurs... Sans entrer dans le détail, des noms comme~\verb|enerC|, \verb|enerP|, et~\verb|enerT| doivent vous mettre sur la piste.
 
 \color{gris}\scriptsize
 %\begin{multicols}{2}
@@ -200,7 +199,7 @@ for (n=0;n<Ntemps;n++){
 \medskip
 À la \fig{Fig-Exo6} se trouve une illustration de ce que nous venons de calculer.
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \center
   \includegraphics[height=55mm]{Exo6pas00.eps} \hfill
   \includegraphics[height=55mm]{Exo6pas20.eps} \hfill

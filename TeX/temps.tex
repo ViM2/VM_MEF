@@ -1,6 +1,6 @@
 \chapter{Problèmes non stationnaires}\label{Ch-temps}
 \begin{abstract}
-Dans ce chapitre, nous nous intéresserons (brièvement) au cas non stationnaire. Toutefois, nous n'aborderons pas les EF espace-temps, car il s'agit d'une formulation gourmande en ressources, d'où sa très faible utilisation (bien que la méthode soit en elle-même intéressante).
+Dans ce chapitre, nous nous intéresserons (brièvement) au cas non stationnaire. Toutefois, nous n'aborderons pas les éléments finis espace-temps, car il s'agit d'une formulation gourmande en ressources, d'où sa très faible utilisation (bien que la méthode soit en elle-même intéressante).
 
 Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de construire des schémas numériques approchant des dérivées. Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire en regardant comment on résout les équations différentielles et EDP directement... puis numériquement. Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} décrite au paragraphe~\ref{Sec-Newmark}.
 \end{abstract}
@@ -40,9 +40,9 @@ Les différents \textcolorblue{schémas de Newmark}\index[aut]{Newmark (Nathan M
 \bigskip
 \section{Schéma explicite: différences finies centrées}\index{schéma! des différences finies centrées}
 
-Dans le cas \textcolorred{$\beta=0$ et~$\gamma=1/2$}, on retombe sur le schéma des \textcolorblue{différences finies centrées}.
+Dans le cas où~\textcolorred{$\beta=0$ et~$\gamma=1/2$}, on retombe sur le schéma des \textcolorblue{différences finies centrées}.
 
-Dans ce cas, on obtient:
+On obtient:
 \begin{equation}
 \begin{aligned}
 &\VV{\ddot q}_t = \frac1{\Delta_t^2} \left( \VV{q}_{t+\Delta_t} - 2\VV{q}_t + \VV{q}_{t-\Delta_t}\right)\\
@@ -103,9 +103,9 @@ On peut faire les remarques suivantes sur ce type de calcul:
 \medskip
 \section{Schéma implicite: schéma de Newmark classique}\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain}
 
-Dans le cas \textcolorred{$\beta=1/4$ et~$\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite de Newmark},\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
+Dans le cas où~\textcolorred{$\beta=1/4$ et~$\gamma=1/2$}, on obtient le \textcolorblue{schéma implicite de Newmark},\index{schéma! de Newmark}\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} qui est celui qui est utilisé généralement pour l'analyse dynamique des structures.
 
-Dans ce cas, on obtient:
+Il vient alors:
 \begin{equation}
 \begin{aligned}
 &\VV{\ddot q}_{t+\Delta_t} = \frac4{\Delta_t^2} \left( \VV{q}_{t+\Delta_t} -\VV{q}_t\right)
