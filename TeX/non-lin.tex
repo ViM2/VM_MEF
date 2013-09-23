@@ -8,19 +8,15 @@ Beaucoup de cas de non-linéarité s'imposent par la nature du problème à trai
 Toutefois, dans le cas de la dynamique, la non-linéarité existe de manière implicite, même si tout le reste est «linéaire» par ailleurs. Cela peut constituer un écueil si l'on n'en est pas conscient.
 \end{abstract}
 
-\noindent Plusieurs types de non-linéarités peuvent être considérées. En mécanique des structures, on distinguera:
+\noindent Plusieurs types de non-linéarités peuvent être considérés. En mécanique des structures, on distinguera:
 \begin{description}
    \item[les \textcolorblue{non-linéarités géométriques}] qui se manifestent dans les
-	\textcolorred{problèmes des grands déplacements, des grandes rotations et/ou de grandes déformations}. La notion de «grands» déplacements signifie tout simplement que l'hypothèse des petites perturbations n'est plus vérifiable. Or celle-ci stipule que géométrie déformée et initiale doivent rester relativement proches.
+	\textcolorred{problèmes des grands déplacements, des grandes rotations et/ou de grandes déformations}. La notion de «grands» déplacements signifie tout simplement que l'hypothèse des petites perturbations n'est plus vérifiable. Or celle-ci stipule que géométries déformée et initiale doivent rester relativement proches.
 	La notion de grandes déformations, déjà mentionnée dans ce document, fait que la linéarité des relations entre déplacements et déformations n'est plus conservée.
 \item[les \textcolorblue{non-linéarités matérielles}] dues à la \textcolorred{loi de comportement du solide} (ou plus généralement à la loi de comportement dans le milieu~$\Omega$).
 	Le plus souvent, cette loi peut s'exprimer sous la forme d'équations différentielles non-linéaires du premier ordre.
 
-	Nous avons déjà évoqué ce phénomènes à plusieurs endroits dans ce document,
-	et le chapitre précédent sur l'homogénéisation est une illustration du cas où l'on peut
-	substituer un milieu homogénéisé simple à un milieu compliqué. Toutefois, nous irons
-	un peu plus loin dans ce chapitre et présenterons les principales lois de comportement
-	rencontrées en mécanique.
+	Nous avons déjà évoqué ce phénomènes à plusieurs endroits dans ce document, et le chapitre~\ref{Ch-Homog} sur l'homogénéisation est une illustration du cas où l'on peut 	substituer un milieu homogénéisé simple à un milieu compliqué. Toutefois, nous irons un peu plus loin dans ce chapitre et présenterons les principales lois de comportement 	rencontrées en mécanique.
 
   \item[les \textcolorblue{non-linéarités liées à l'évolution des conditions aux limites.}]
 	Ce type de non-linéarité apparaît en particulier dans les \textcolorred{problèmes de contact et de frottement entre solides}. Ces phénomènes sont décrits par des inéquations et des opérations de projection.
@@ -91,8 +87,8 @@ De manière encore plus explicite, on écrit:
 \VV*{n_1\\n_2\\n_3}
 = \sigma n
 \end{equation}
-\textcolorgreen{D'un point de vue pratique, chacun des éléments~$\sigma_{ij}$ du tenseur des contraintes de Cauchy\index{tenseur! des contraintes de Cauchy} rend compte d'une contribution clairement identifiable: le premier indice~$i$ est l'indice de projection (direction selon laquelle s'exerce la contribution); le second indice~$j$ repère l'orientation de la surface sur laquelle s'exerce la contribution. Par exemple~$\sigma_{12}$ correspond à la composante suivant~$\vect{e}_1$ de la contrainte qui
-s'exerce sur la facette de normale~$\vect{e}_2$.}
+\textcolorgreen{D'un point de vue pratique, chacun des éléments~$\sigma_{ij}$ du tenseur des contraintes de Cauchy\index{tenseur! des contraintes de Cauchy} rend compte d'une contribution clairement identifiable: le premier indice~$i$ est l'indice de projection (direction selon laquelle s'exerce la contribution); le second indice~$j$ repère l'orientation de la surface sur laquelle s'exerce la contribution. Par exemple~$\sigma_{12}$ correspond à la composante suivant~$\vect{e_1}$ de la contrainte qui
+s'exerce sur la facette de normale~$\vect{e_2}$.}
 
 \medskip
 En exploitant la condition d'équilibre appliquée au moment résultant, il est possible de démontrer que, \textcolorblue{en statique, le tenseur des contraintes est nécessairement symétrique}.
@@ -183,7 +179,7 @@ Pour exprimer les tenseurs de Piola-Kirchhoff\index{tenseur! des contraintes de 
 \quad \text{ ou } \quad F = I + \nabla u\end{equation}
 où~$X$ est la position de référence à l'instant~$t_0$ (configuration~$\Omega_0$) et~$x$, la position courante à l'instant~$t$ (configuration actuelle~$\Omega$).
 \medskipvm
-Localement les formules de transport s'écrivent:
+Localement les formules de transport s'écrivent (voir paragraphe \ref{Sec-Jacob}):
 \begin{itemize}
   \item Pour un vecteur:~$\dd x = F \dd X$
   \item Pour un volume:~$\dd v = J \dd V$ avec~$J= J(F) = \det(F)$ le jacobien du tenseur gradient de déformation
@@ -212,7 +208,7 @@ Le \textcolorblue{tenseur des déformations}, ou \textcolorblue{tenseur de Green
 \varepsilon_{ij}=\frac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}
 +\frac{\partial u_k}{\partial x_i}\frac{\partial u_k}{\partial x_j}
 \right)\end{equation}
-\textcolorgris{Cette écrire provient directement du fait d'écrire l'accroissement de déplacement à partir du déplacement du point~$M$ en~$M'$ que l'on formule en fonction du déplacement du point~$M$, et d'un accroissement de déplacement, caractérisant le fait que chaque point du solide est susceptible de subir un déplacement différent à l'origine de la déformation.}
+\textcolorgris{Cette écriture provient directement du fait d'écrire l'accroissement de déplacement à partir du déplacement du point~$M$ en~$M'$ que l'on formule en fonction du déplacement du point~$M$, et d'un accroissement de déplacement, caractérisant le fait que chaque point du solide est susceptible de subir un déplacement différent à l'origine de la déformation.}
 
 \medskip
 On peut alors distinguer deux grands types de contribution à la déformation en décomposant ce tenseur~$\varepsilon$ comme la somme d'un tenseur symétrique~$E$ et d'un tenseur antisymétrique~$G$:
@@ -254,7 +250,7 @@ Les déformations principales sont les valeurs propres du tenseur, et les direct
   \frac{\Delta \mathrm{V}}{\mathrm{V}_0} = \varepsilon_{I} + \varepsilon_{II} + \varepsilon_{III}
 \end{equation}\colorblack
 
-Contrairement aux contraintes principales, la notion de déformation principale est assez peu utilisée pour le calcul. Elle permet par contre d'exprimer de manière simple l'énergie élastique, et est utile pour dépouiller les résultats d'extensométrie.
+Contrairement aux contraintes principales, \textcolorgreen{la notion de déformation principale} est assez peu utilisée pour le calcul. Elle permet par contre d'exprimer de manière simple l'énergie élastique, et \textcolorgreen{est utile pour dépouiller les résultats d'extensométrie.}
 Par ailleurs, \textcolorred{les directions principales sont les mêmes pour le tenseur des déformations et pour le tenseur des contraintes.}
 
 
@@ -268,7 +264,7 @@ En vue de prendre en compte les cas les plus généraux, le tenseur des déforma
 \end{itemize}
 
 \medskip
-chaque mécanisme responsable du comportement inélastique est caractérisé par un certain nombre de variables, appelées \textcolorblue{variables d'écrouissage}, caractéristique de l'état du matériau à un instant donné ainsi que de l'influence de chargement thermomécanique passé.
+Chaque mécanisme responsable du comportement inélastique est caractérisé par un certain nombre de variables, appelées \textcolorblue{variables d'écrouissage}, caractéristique de l'état du matériau à un instant donné ainsi que de l'influence de chargement thermomécanique passé.
 
 Les lois d'écrouissage définissent l'évolution du domaine élastique. Elles complètent le modèle pour le cas d'un matériau dont la résistance à la déformation évolue avec celle-ci. Sans écrouissage, le domaine d'élasticité est défini uniquement en fonction de l'état de contrainte.
 
@@ -360,7 +356,7 @@ L'allure qualitative de la réponse des matériaux à quelques essais simples (t
 	\textcolorblue{rigide-parfaitement plastique}.
 \end{itemize}
 \medskipvm
-Ces éléments peuvent être combinés entre eux pour former des modèles rhéologiques. La réponse de ces systèmes peut être jugée dans 3 plans différents, qui permettent d'illustrer le comportement lors d'essais de type:
+Ces éléments peuvent être combinés entre eux pour former des modèles rhéologiques. La réponse de ces systèmes peut être jugée dans trois plans différents, qui permettent d'illustrer le comportement lors d'essais de type:
 \begin{itemize}
   \item \emph{Écrouissage}, ou augmentation monotone de la charge ou de la déformation
 	(plan~$\varepsilon-\sigma$);
@@ -392,7 +388,7 @@ Les réponses de modèles classiques selon ces trois plans précédents sont pr�
   \item \emph{modèle du solide élastique-viscoplastique écrouissable}, qui représente le schéma le plus complexe.
 \end{itemize}
 \medskipvm
-Excepté le cas de l'élasticité (déjà traité), l'ensemble des modèles présentés ci-dessus s'expriment sous forme \emph{différentielle}, si bien que \textcolorred{la réponse actuelle dépend de la sollicitation actuelle et de son histoire} (propriété d'hérédité).
+Excepté le cas de l'élasticité (déjà traité), chacun des modèles présentés ci-dessus s'exprime sous forme \emph{différentielle}, si bien que \textcolorred{la réponse actuelle dépend de la sollicitation actuelle et de son histoire} (propriété d'hérédité).
 
 Il y a deux manières de prendre en compte cette histoire, \emph{la première} consiste à la décrire par une dépendance fonctionnelle entre les variables; \emph{la seconde} fait \textcolorblue{l'hypothèse qu'il est possible de représenter l'effet de l'histoire dans des variables internes, qui «concentrent» les informations importantes définissant l'état du matériau.}
 \medskipvm
@@ -455,6 +451,7 @@ La \fig{Fig-MaxwellVoigt} illustre les réponses des modèles de Maxwell et Voig
 \caption{Modèles de Maxwell et Voigt}\label{Fig-MaxwellVoigt}
 \end{figure}
 
+\medskip
 Le modèle de Voigt ne présente pas d'élasticité instantanée. L'application d'un saut de déformation en~$t = 0$ produit une contrainte infinie. Ce modèle n'est donc pas utilisable en relaxation, sauf si la mise en charge est progressive, et sera pour cette raison associé à un ressort pour effectuer des calculs de structure (\textcolorblue{modèle de Kelvin-Voigt}).\index{loi de comportement!Kelvin-Voigt}\index[aut]{Kelvin (William Thomson, connu sous le nom de Lord -), 1924-1907, Anglais}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
 
 De plus, sous l'effet d'une contrainte~$\sigma_0$ constante en fonction du temps, la déformation dans ce modèle de Voigt tend vers la valeur asymptotique~$\sigma_0/H$: le fluage est donc limité. Si, après une mise en charge lente, la déformation est fixée à une valeur~$\varepsilon_0$, la contrainte asymptotique sera~$H\varepsilon_0$: il n'y a donc pas disparition complète de la contrainte.
@@ -489,7 +486,7 @@ En vue de réaliser les comparaisons avec les résultats expérimentaux, il est 
 \medskip
 Nous allons maintenant présenter quelques critères classiques de plasticité: von Mises et Tresca, ne faisant pas intervenir la pression isostatique, Drucker-Prager, Mohr-Coulomb, Hill et Tsaï, faisant intervenir la pression isostatique.
 
-\textcolorgreen{Introduire la pression isostatique permet d'exprimer le fait qu'une contrainte isostatique de compression rend plus difficile la déformation plastique, ce qui conduit à une dissymétrie des critère en traction/compression.}
+\textcolorgreen{Introduire la pression isostatique permet d'exprimer le fait qu'une contrainte isostatique de compression rend plus difficile la déformation plastique, ce qui conduit à une dissymétrie des critères en traction/compression.}
 
 %\newpage% version cours 20130712
 \begin{histoire}
@@ -585,12 +582,12 @@ Dans ce paragraphe, nous faisons une présentation sommaire des élastomères de
 générale.
 
 \medskip
-Le comportement des élastomères est fortement non linéaire. Il faut prendre en compte par exemple la précharge, la fréquence et l'amplitude d'excitation comme paramètres sur:
+Le comportement des élastomères est fortement non linéaire. Il faut prendre en compte par exemple la précharge, la fréquence et l'amplitude d'excitation comme paramètres:
 \begin{itemize}
 	\item en statique: très grandes déformations et retour à la configuration
-		initiale sans déformation permanente: lois hyperélastiques.
+		initiale sans déformation permanente. Ce sont les lois hyperélastiques;
 	\item en dynamique: propriétés amortissantes, dont rigidification en fréquence
-		sous excitation harmonique: loi viscoélastique non linéaire.
+		sous excitation harmonique. C'est la loi viscoélastique non linéaire.
 \end{itemize}
 
 \medskip
@@ -605,7 +602,7 @@ Les élastomères sont \textcolorblue{quasi incompressibles}. le module de compr
 \textcolorblue{Les déformations de cisaillement peuvent être considérées comme linéaires:} le coefficient de cisaillement est relativement indépendant du taux de cisaillement, au moins jusqu'à des niveaux de déformation modérés.
 
 \medskip
-Enfin, notons également un comportement particulier, connu sous le nom d'\textcolorblue{effet Mullins} (publications en 1966 et 1969):\index[aut]{Mullins (Leonard)} si l'on applique un chargement cyclique sur un matériau initialement non précontraint, on observe une diminution de la raideur lors des premiers cycles. Si on impose ensuite une déformation cyclique jusqu'à un niveau de déformation plus élevé, on observe à nouveau une diminution de la contrainte et de l'hystérésis jusqu'à un nouvel équilibre. Ce comportement provient d'une rupture progressive des liaisons moléculaires.
+Enfin, notons également un comportement particulier, connu sous le nom d'\textcolorblue{effet Mullins} (publications en 1966 et 1969):\index[aut]{Mullins (Leonard)} si l'on applique un chargement cyclique sur un matériau initialement non précontraint, on observe une diminution de la raideur lors des premiers cycles. Si l'on impose ensuite une déformation cyclique jusqu'à un niveau de déformation plus élevé, on observe à nouveau une diminution de la contrainte et de l'hystérésis jusqu'à un nouvel équilibre. Ce comportement provient d'une rupture progressive des liaisons moléculaires.
 
 
 \medskip
@@ -636,7 +633,7 @@ Le \textcolorblue{module d'Young complexe~$\mathrm{e}^*$ ou le module de Coulomb
 de l'excitation.
 
 \medskip
-Notons également que l'\textcolorblue{effet mémoire} (expériences de fluage et relaxation) est présent pour ces matériaux: Le niveau des contraintes à un instant dépend non seulement du niveau de sollicitation à cet instant, mais également des sollicitations auxquelles le matériau a été soumis précédemment.
+Notons également que l'\textcolorblue{effet mémoire} (expériences de fluage et relaxation) est présent pour ces matériaux: le niveau des contraintes à un instant dépend non seulement du niveau de sollicitation à cet instant, mais également des sollicitations auxquelles le matériau a été soumis précédemment.
 
 
 \medskip
@@ -747,7 +744,7 @@ Des produits chimiques entrent aussi dans la composition du composite, l'interph
 \begin{itemize}
 	\item grande résistance à la fatigue;
 	\item faible vieillissement sous l'action de l'humidité, de la chaleur, de la corrosion (sauf alu-carbone);
-	\item insensibles aux produits chimiques «mécaniques» comme les graisses, huiles, liquides hydrauliques, peintures, solvants, pétrole;
+	\item insensibilité aux produits chimiques «mécaniques» comme les graisses, huiles, liquides hydrauliques, peintures, solvants, pétrole;
 \end{itemize}
 Mais attention aux décapants de peinture qui attaquent les résines époxydes !
 
@@ -758,7 +755,7 @@ Mais attention aux décapants de peinture qui attaquent les résines époxydes !
 \begin{itemize}
 	\item Les \textcolorblue{monocouches} représentent l'élément de base de la structure composite. Les différents types de monocouches sont caractérisés par la forme du renfort:
 		 à fibres longues (unidirectionnelles UD, réparties aléatoirement), à fibres tissées, à fibres courtes.
-	\item Un \textcolorblue{stratifié} est constitué d'un empilement de monocouches ayant chacun une orientation propre par rapport à un référentiel commun aux couches et désigné comme le référentiel du stratifié.
+	\item Un \textcolorblue{stratifié} est constitué d'un empilement de monocouches ayant chacune une orientation propre par rapport à un référentiel commun aux couches et désigné comme le référentiel du stratifié.
 	\item Un matériau \textcolorblue{sandwich} est un matériau composé de deux \textcolorblue{peaux} de grande rigidité et de faible épaisseur enveloppant une \textcolorblue{âme (ou cœur)} de forte épaisseur et faible résistance.
 		L'ensemble forme une structure d'une grande légèreté.
 		Le matériau sandwich possède une grande rigidité en flexion et est un excellent isolant thermique.
@@ -772,13 +769,9 @@ On pourra avoir des stratifiés de \textcolorblue{type}:
 		 rapport à un plan moyen.
 	\item \emph{Orthogonal}: stratifié comportant autant de couches à~$0^o$ que de couches à~$90^o$.
 	\item Notation «composite »:
-		On porte, entre crochets, un nombre indiquant la valeur en degré de l'angle que fait la direction
-		des fibres de chaque couche avec l'axe de référence. les couches sont nommées successivement
-		en allant de la face inférieure à la face supérieure, les couches étant séparées par le symbole
-		«/» (ou une virgule parfois):~$[0/+45/+90/-45]$
+		on porte, entre crochets, un nombre indiquant la valeur en degré de l'angle que fait la direction des fibres de chaque couche avec l'axe de référence. les couches sont nommées successivement en allant de la face inférieure à la face supérieure, les couches étant séparées par le symbole «/» (ou une virgule parfois):~$[0/+45/+90/-45]$.
 
-		Les couches successives d'un même matériau et de même orientation sont désignées
-		par un indice:~$[0/45/45/90/-45/-45/0]$ s'écrit~$[0/45_2/90/-45_2/0]$.
+		Les couches successives d'un même matériau et de même orientation sont désignées par un indice:~$[0/45/45/90/-45/-45/0]$ s'écrit~$[0/45_2/90/-45_2/0]$.
 		
 		Si le stratifié est symétrique, seule la moitié est codifiée et le symbole «s» indique la symétrie:~$[-45/45/-45/-45/45/-45]$ s'écrit~$[-45/45/-45]_s$.
 
@@ -829,7 +822,7 @@ Les premiers calculs de Joseph Boussinesq,\index[aut]{Boussinesq (Joseph Valenti
 %  \item
 1) les corps en présence sont supposés semi-infinis (cela n'est vrai que si les zones de contact sont vraiment très petites par rapport aux autres dimensions);
 %  \item
-2) au voisinage de la future zone de contact, leurs surfaces peuvent être représentées par des quadriques dont les courbures sont connues (Or la rugosité, qui rend la répartition des pressions de contact très irrégulière, est généralement très éloignée du modèle théorique);
+2) au voisinage de la future zone de contact, leurs surfaces peuvent être représentées par des quadriques dont les courbures sont connues (or la rugosité, qui rend la répartition des pressions de contact très irrégulière, est généralement très éloignée du modèle théorique);
 %  \item
 3) ces corps sont parfaitement élastiques, homogènes et isotropes (ce qui est très restrictif, et souvent réellement faux);
 %  \item
