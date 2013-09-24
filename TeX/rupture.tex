@@ -4,13 +4,13 @@
 La mécanique de la rupture s'intéresse à la formation et à la propagation de fissures macroscopiques dans les structures, ce qui peut conduire à la séparation d'un corps en deux parties disjointes suite à une phase d'amorçage qui a vu le développement de microcavités, microfissures... mais les fissures peuvent aussi s'arrêter. Le mode de rupture peut être fragile (sans déformation plastique) ou ductile (avec déformation plastique).
 
 \medskip
-La \textcolorblue{résilience} est le rapport de l'énergie nécessaire pour rompre une pièce sur la section droite de matière rompue: elle caractérise l'énergie nécessaire pour produire la rupture. La résilience évolue avec la température (la température de transition caractérise le passage d'une mode de rupture à un autre: fragile ou ductile). Par ailleurs, le mode de rupture dépend de l'état de contrainte, en particulier de la \emph{triaxialité des contraintes} (rapport du premier sur le second invariant, voir paragraphe~\ref{Sec-TensS}): un matériau très plastique peut développer des ruptures fragiles; un matériau sans plasticité ne présentera que des ruptures fragiles.
+La \textcolorblue{résilience} est le rapport de l'énergie nécessaire pour rompre une pièce sur la section droite de matière rompue: elle caractérise l'énergie nécessaire pour produire la rupture. La résilience évolue avec la température (la température de transition caractérise le passage d'une mode de rupture à un autre: fragile ou ductile). Par ailleurs, le mode de rupture dépend de l'état de contrainte, en particulier de la \emph{triaxialité des contraintes} (rapport du premier sur le second invariant, voir paragraphe~\ref{Sec-TensS}): \textcolorgreen{un matériau très plastique peut développer des ruptures fragiles; un matériau sans plasticité ne présentera que des ruptures fragiles.}
 
 \medskip
 En fonction du chargement et du matériau considéré:
 \begin{itemize}
   \item si le milieu est globalement plastique ou viscoplastique, on recourra à la mécanique non linéaire de la rupture, ou approche locale (description fine des contraintes et déformations en pointe de fissure à l'aide de modèles non linéaires);
-  \item si la plasticité absente ou très confinée, on utilisera la mécanique linéaire de la rupture.
+  \item si la plasticité est absente ou très confinée, on utilisera la mécanique linéaire de la rupture.
 \end{itemize}
 
 
@@ -30,7 +30,7 @@ D'un point de vue numérique, les deux approches nécessitent des maillages fins
   \item alors que l'approche locale impose un \textcolorblue{maillage fin} (calcul des contraintes), dont la taille est imposée ainsi que le type d'éléments.
 \end{itemize}
 \medskipvm
-Les fissures sont souvent trop complexes pour être parfaitement reproduites, ce qui impose des approximations du domaine, ce qui rend le choix du type d'éléments et leur taille encore plus critique.
+Les fissures sont souvent trop complexes pour être parfaitement reproduites, ce qui impose des approximations du domaine et rend le choix du type d'éléments et leur taille encore plus critique.
 
 La modélisation du comportement des matériaux est importante puisque directement liée au calcul des sollicitations en pointes de fissure, qui de plus apparaissent toujours dans des zones où les sollicitations sont complexes (fatigue, fluage, plasticité, endommagement...).
 
@@ -75,14 +75,14 @@ On opte également pour une approche couplée essais / calculs:
 	au quart de ses côtés (ou ayant son nœud intermédiaire déplacé), qui
 	permet d'intégrer exactement la singularité élastique, mais il reste
 	nécessaire de disposer d'un outil spécifique de remaillage.
-  \item[Méthodes \textcolorblue{sans maillage}] Elles permettent de s'affranchir
+  \item[\textcolorblue{Méthodes sans maillage}] Elles permettent de s'affranchir
 	des problèmes liés à la connaissance trop intime de la fissure;
-  \item[Méthodes utilisant la \textcolorblue{partition de l'unité}]
+  \item[\textcolorblue{Méthodes utilisant la partition de l'unité}]
 	Elles permettent de s'affranchir du maillage explicite de la fissure dont la
 	description se fait au moyen d'éléments géométriques ou de fonctions
 	de niveau pour le problème 3D.
 \end{description}
-Notons que les méthodes de remaillage peuvent introduire des singularité dans la discrétisation temporelle qui sont peu souvent mentionnées.
+Notons que les méthodes de remaillage peuvent introduire des singularités dans la discrétisation temporelle qui sont peu souvent mentionnées.
 
 
 
@@ -103,7 +103,7 @@ Mais le facteur de concentration des contraintes devenait infini dans le cas d'u
 \medskip
 Inglis,\index[aut]{Inglis (Charles), 1875-1952, Anglais} donc, en 1913, a montré l'effet de \textcolorblue{concentration de contraintes}.
 \medskipvm
-Considérons une plaque avec un trou elliptique, de grand axe~$2a$ et petit axe~$2b$, dont la largeur~$\ell$ est très supérieure aux dimensions du trou (i.e.~$\ell\gg 2a$) et soumise à une contrainte nominale constante $\sigma$ --- voir figure~\ref{fig:fissure}. La contrainte en pointe de fissure (point A) est:
+Considérons une plaque avec un trou elliptique, de grand axe~$2a$ et petit axe~$2b$, dont la largeur~$\ell$ est très supérieure aux dimensions du trou (i.e.~$\ell\gg 2a$) et soumise à une contrainte nominale constante $\sigma$, comme illustré sur la figure~\ref{fig:fissure}. La contrainte en pointe de fissure (i.e. au point A) est:
 \begin{equation} \sigma_A = \sigma \left( 1+\frac{2a}b\right) \end{equation}
 Le \textcolorblue{facteur de concentration de contraintes~$k_f$} est défini comme~$k_f = \sigma_A/\sigma$:
 \begin{itemize}
@@ -145,12 +145,12 @@ Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} suggère que la 
 Pour vérifier l'hypothèse de défauts préexistants, Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} a introduit une discontinuité artificielle dans ses échantillons expérimentaux. La discontinuité artificielle était une forme de fissure débouchante plus importante que les autres discontinuités supposées préexistantes dans l'échantillon.
 
 \medskip
-Les expériences ont montré que le produit de la racine carrée de la longueur de défauts et la contrainte à la rupture étaient à peu près constante.
+Les expériences ont montré que le produit de la racine carrée de la longueur du défaut et de la contrainte à la rupture était à peu près constant.
 \end{histoire}
 \colorblack
 
 \medskip
-En 1920, Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} considère le cas d'une plaque d'épaisseur~$B$ contenant une fissure de longueur~$2a$ et dont la largeur~$\ell$ est très supérieure aux dimensions de la fissure (i.e.~$\ell\gg 2a$) et à son épaisseur (i.e.~$\ell\gg B$), soumise à une contrainte nominale constante~$\sigma$ --- voir figure~\ref{fig:fissure2}.
+En 1920, Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} considère le cas d'une plaque d'épaisseur~$B$ contenant une fissure de longueur~$2a$ et dont la largeur~$\ell$ est très supérieure aux dimensions de la fissure (i.e.~$\ell\gg 2a$) et à son épaisseur (i.e.~$\ell\gg B$), soumise à une contrainte nominale constante~$\sigma$ (voir figure~\ref{fig:fissure2}).
 \medskipvm
 Sous l'hypothèse de contrainte plane, Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} montre que l'équilibre énergétique est:
 \begin{equation} \frac{\dd E}{\dd A} = \dfrac{\dd\Pi}{\dd A}+\frac{\dd W_s}{\dd A} = 0 \end{equation}
@@ -166,7 +166,7 @@ L'équation d'équilibre énergétique de Griffith\index[aut]{Griffith (Alan Arn
 \begin{equation}-\frac{\dd\Pi}{\dd A}=\frac{\dd W_s}{\dd A}\end{equation} et donc:
 \begin{equation}\frac{\pi a\sigma^2}{E}=2\gamma_s\end{equation}
 \medskipvm
-Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} obtient donc la \textcolorblue{contrainte globale de rupture~$\sigma_f$} pour les matériaux fragiles (uniquement):
+Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} obtient donc la \textcolorblue{contrainte globale de rupture~$\sigma_f$} pour les matériaux fragiles (et uniquement eux):
 \begin{equation} \sigma_f = \sqrt{\dfrac{2E\gamma_s}{\pi a}} \end{equation}
 Ces travaux seront complétés par Irwin\index[aut]{Irwin (George Rankine), 1907-1998, Américain} afin de prendre en compte le cas de la rupture ductile (pour les matériaux métalliques). Ce dernier obtient la contrainte globale de rupture:
 \begin{equation} \sigma_f = \sqrt{\dfrac{2E(\gamma_s+\gamma_p)}{\pi a}} \end{equation}
@@ -256,10 +256,10 @@ Pour un mode mixte général il vient:
 
 
 \medskip\colorgreen
-La détermination de~$K$ peut se faire analytiquement uniquement pour des géométries simples. Pour des cas plus complexes, il faut le faire numériquement ou expérimentalement.
+La détermination de~$K$ peut se faire analytiquement uniquement pour des géométries simples. Pour des cas plus complexes, il faut le faire numériquement ou expérimentalement:
 \begin{itemize}
-\item Par les contraintes: par exemple~$K_I$ sera pris égale à la valeur obtenue (post-traitée) de~$\sigma_{yy}\sqrt{2\pi r}$ en fond de fissure. Cette méthode simple et directe est peu précise (car on utilise les contraintes).
-\item Par les déplacements:~$K_I$ est obtenu par~$\nu \sqrt{2\pi/r}$ en fond de fissure (obtenu par extrapolation), $\nu$ étant le coefficient de Poisson. Cette méthode relativement simple nécessite de raffiner le maillage autour de la fissure et sa précision n'est pas excellente (environ 5\%).
+\item par les contraintes: par exemple~$K_I$ sera pris égale à la valeur obtenue (post-traitée) de~$\sigma_{yy}\sqrt{2\pi r}$ en fond de fissure. Cette méthode simple et directe est peu précise (car on utilise les contraintes).
+\item par les déplacements:~$K_I$ est obtenu par~$\nu \sqrt{2\pi/r}$ en fond de fissure (obtenu par extrapolation), $\nu$ étant le coefficient de Poisson. Cette méthode relativement simple nécessite de raffiner le maillage autour de la fissure et sa précision n'est pas excellente (environ 5\%).
 \end{itemize}
 \colorblack
 
@@ -304,7 +304,7 @@ La quantité~$J_{1c}$ définit le point à partir duquel se forme une zone plast
 L'intégrale~$J$\index{intégrale~$J$} est équivalente au taux de restitution de l'énergie de déformation d'une fissure dans un solide soumis à une charge constante.\index{taux de restitution d'énergie~$G$} Cela est vrai, dans des conditions quasi-statiques, tant pour les matériaux linéairement élastiques que pour les échantillons expérimentés à petite échelle en passe de céder en front de fissure.
 \end{histoire}
 
-Considérons un solide linéaire élastique homogène 2D~$\Omega$ sur lequel agissent des force~$T_k$, comme illustré à la figure~\ref{fig-j1}. Les efforts de traction s'écrivent~$T_i=\sigma_{ij}n_j$ (où~$n$ est la normale sortante à~$\Gamma=\partial\Omega$). La densité d'énergie interne élastique est:
+Considérons un solide linéaire élastique homogène bidimensionnel~$\Omega$ sur lequel agissent des force~$T_k$, comme illustré à la figure~\ref{fig-j1}. Les efforts de traction s'écrivent~$T_i=\sigma_{ij}n_j$ (où~$n$ est la normale sortante à~$\Gamma=\partial\Omega$). La densité d'énergie interne élastique est:
 \begin{equation}
 \omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}\dd\varepsilon_{ij}
 \end{equation}
@@ -327,7 +327,7 @@ Q_j =\dint_\Gamma \left(\omega n_j- \sigma_{lk}n_l u_{k,j}\right)\dd\Gamma
 Le théorème de divergence puis quelques manipulations de l'opérande permettent d'arriver au résultat suivant: \textcolorblue{$Q_j = 0$}. De là, on en tire que la densité d'énergie interne élastique:
 \begin{equation}\omega=\dint_0^{\varepsilon_{kl}} \sigma_{ij}\dd\varepsilon_{ij}\end{equation}
 est indépendante du chemin dans l'espace des déformations. Le même type de calcul permet de montrer que la densité d'énergie complémentaire:
-\begin{equation}\Omega = \dint_0^{\sigma_{kl}} \varepsilon_{ij}\dd\sigma_{ij}\end{equation}
+\begin{equation}\omega = \dint_0^{\sigma_{kl}} \varepsilon_{ij}\dd\sigma_{ij}\end{equation}
 est indépendante du chemin dans l'espace des contraintes.
 
 \medskip
@@ -342,7 +342,7 @@ Si sur~$AB$ et~$CD$:~$dy=0$, $T_k=0$, alors~$J_{AB}=J_{CD}=0$
 et il vient:~$J_{\Gamma_1} = J_{\Gamma_2}$
 
 \medskip
-Rice\index[aut]{Rice (James R.), 1940-, Américain} a également démontré que la valeur de l'intégrale~$J$\index{intégrale~$J$} représente le taux de relaxation d'énergie\index{taux de restitution d'énergie~$G$} pour la propagation des fissures planes, ou le taux de diminution d'énergie potentielle par rapport à l'accroissement de la fissure, i.e.~$J=G$.
+Rice\index[aut]{Rice (James R.), 1940-, Américain} a également démontré que la valeur de l'intégrale~$J$\index{intégrale~$J$} représente le taux de relaxation d'énergie\index{taux de restitution d'énergie~$G$} pour la propagation des fissures planes, ou le taux de diminution d'énergie potentielle par rapport à l'accroissement de la fissure, i.e.~$\colorblue J=G$.
 
 \medskip
 L'intégrale~$J$ a été développée pour résoudre des difficultés rencontrées dans le calcul des contraintes aux abords d'une fissure dans un matériau linéairement élastique. Rice\index[aut]{Rice (James R.), 1940-, Américain} a montré qu'en mode de chargement constant et sans atteindre l'adaptation plastique, l'intégrale~$J$\index{intégrale~$J$} peut aussi être utilisée pour calculer le taux de relaxation d'énergie dans un matériau plastique.\index{taux de restitution d'énergie~$G$}
@@ -357,7 +357,7 @@ L'intégrale~$J$ a été développée pour résoudre des difficultés rencontré
 
 Nous avons déjà mentionné que l'analyse linéaire élastique en mécanique de la rupture ne s'applique que pour les matériaux fragiles. En effet, dans la plupart des cas, il existe des déformations plastiques au fond de fissure.
 
-Si l'on suppose que cette zone plastique est présente dans un rayon~$R$ autour du fond de fissure, et qu'au delà, jusqu'à un rayon~$D$ la solution singulière est dominée par~$K$; alors~$R \ll D$ alors on peut considérer que la solution est dominée par le facteur d'intensité de contrainte K.
+Si l'on suppose que cette zone plastique est présente dans un rayon~$R$ autour du fond de fissure, et qu'au delà, jusqu'à un rayon~$D$ la solution singulière est dominée par~$K$; alors~$R \ll D$ et l'on peut considérer que la solution est dominée par le facteur d'intensité de contrainte K.
 
 Si~$R$ n'est pas petit devant~$D$, alors il faut tenir compte de la plastification locale.
 
@@ -375,7 +375,7 @@ L'idée générale est de déterminer le lieu géométrique des points où le ch
 \medskip
 Par exemple, pour un matériau isotrope et un critère de von Mises, la zone plastique en contraintes planes est neuf fois plus grande que celle en déformations planes.
 \medskipvm
-Les chemins de propagation de la plasticité suivant l'épaisseur sont, dans ces deux cas, illustrés sur la figure~\ref{fig:propagation}.
+Les chemins de propagation de la plasticité suivant l'épaisseur sont, dans les cas de contraintes et déformations planes, illustrés sur la figure~\ref{fig:propagation}.
 
 
 \medskip
