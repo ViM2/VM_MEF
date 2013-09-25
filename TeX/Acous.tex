@@ -20,7 +20,7 @@ Néanmoins, l'augmentation rapide des capacités des ordinateurs, fait qu'il est
 \medskip
 
 \medskip
-\section{L'acoustique physique}\label{Sec-AcouPhy}
+\section{Introduction à l'acoustique physique}\label{Sec-AcouPhy}
 
 Nous nous proposons d'étudier comment une nuisance vibroacoustique se propage depuis son émission jusqu'à sa réception.
 La source pourra être mécanique, aéro- ou hydrodynamique... et pourra couvrir un très large spectre de fréquences, depuis les plus basses (excitation vibratoire, i.e. inférieure à environ 500~Hz), jusqu'aux plus hautes (excitation acoustique, depuis 500 jusqu'à environ 8000~Hz).
@@ -62,7 +62,8 @@ Pour les matériaux acoustiques, la réflexion et la transmission seront déduit
 L'\textcolorblue{isolement} est une donnée globale qui traduit la capacité d'un ensemble à «faire barrière au bruit». Il s'agit tout simplement de la différence entre ce qui attaque d'un côté et ce que l'on récupère de l'autre. Un isolement donné ne donne donc pas d'information sur la manière dont il est obtenu: réflexion, amortissement, absorption, ou plus probablement par une combinaison plus ou moins complexe (et inconnue) de ces trois phénomènes.
 
 \medskip\newpage
-Comme déjà mentionné au paragraphe~\ref{Sec-EqAcou}, il peut être nécessaire d'étudier un ou plusieurs des cas suivants:
+\subsubsection{Modes de propagation}
+Comme déjà mentionné au paragraphe~\ref{Sec-EqAcou}, il peut être nécessaire de considérer un ou plusieurs des modes de propagation suivants:
 \begin{itemize}
 \item \textcolorblue{solidien/solidien:} la source excite mécaniquement la structure, et la vibration se propage dans la structure;
   \item \textcolorblue{aérien/aérien:} la source émet une vibration (un bruit) qui se propage dans l'air (en général). il s'agit de la propagation d'une onde acoustique de sa source jusqu'au récepteur, dans l'air;
@@ -84,6 +85,7 @@ Dans la «réalité», tous ces cas existent bien:
 Tous ces cas existent donc bien, et peuvent même se superposer. Il convient donc d'être prudent dans le choix de la modélisation la plus adaptée au problème étudié.
 
 \medskip
+\subsubsection{Les trois «lois» de l'acoustique}
 Il en va de même dans l'utilisation de matériaux ou solutions acoustiques. Plusieurs phénomènes peuvent intervenir et se superposer:
 \begin{itemize}
    \item \textcolorblue{absorption:} il s'agit du cas où l'énergie acoustique est dissipée dans ou par le matériau ou la solution. Pour les matériaux poreux ou fibreux, des modèles de fluides équivalent existent. Ils sont modélisés par des paramètres tels que la porosité, la tortuosité... dans le cas de résonateurs ou de foils absorbers, ce sont les caractéristiques du matériau constituant ceux-ci ainsi que leur géométrie qui déterminent leur performance d'absorption;
@@ -100,40 +102,77 @@ Enfin, d'autres systèmes peuvent être utilisés. Parmi ceux-ci, le système «
 L'ajout d'une pièces d'insonorisation, par exemple réalisée par thermocompression de matières fibreuses, sur une structure a pour effet d'augmenter l'absorption. Toutefois, cette pièce possède une masse, même faible, qui ajoute de l'isolation. De plus, son mode de fixation peut apporter de l'amortissement à la structure étudiée. Mais, si la pièce est montée sur une tôle, sa masse étant vraiment faible face à celle de la tôle, il n'est pas faux de ne pas prendre en compte son apport sur l'isolation. Si de plus elle est juste maintenue mécaniquement, il est également possible de négliger leur influence en terme d'amortissement.
 
 \medskip
-Revenons quelques instants sur l'\textcolorblue{absorption}, et plus particulièrement sur les performances d'absorptions des solutions existantes, qui sont illustrées sur la figure~\ref{Mtx-alpha}.
+\subsubsection{L'absorption}
+Revenons quelques instants sur l'\textcolorblue{absorption}, et plus particulièrement sur les performances d'absorption des solutions existantes, qui sont illustrées sur la figure~\ref{Fig-mtxalpha}.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=150mm]{Mtx-alpha.eps}
 \caption{Coefficient d'absorption pour différents types d'absorbants}\label{Fig-mtxalpha}
 \end{figure}
 
+%VM A COMPLETER
 
 \medskip
-La \textcolorblue{diffraction} est un autre phénomène avec lequel il faut compter dans la propagation des ondes. Deux types apparaissent, comme illustré à la figure~\ref{Fig-diffrac}.
+\subsubsection{Diffraction et réflexion}
+La \textcolorblue{diffraction} est un autre phénomène avec lequel il faut compter dans la propagation des ondes. Il est à la figure~\ref{Fig-diffrac}.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=40mm]{diffraction1.eps}\hfill\includegraphics[width=60mm]{diffraction3.eps}\hfill\includegraphics[width=32mm]{diffraction2.eps}
-\caption{Phénomène de diffraction: a) au travers d'un trou, b) illustration avec des balles et c) réflexions sur un mur}\label{Fig-diffrac}
+\includegraphics[height=35mm]{diffraction1.eps}\hfill%
+\includegraphics[height=35mm]{diffraction2.eps}\hfill%
+\includegraphics[height=35mm]{diffraction3.eps}\hfill%
+\includegraphics[height=35mm]{diffraction5.eps}\hfill%
+\includegraphics[height=35mm]{diffraction4.eps}
+\caption{Phénomène de diffraction}\label{Fig-diffrac}
 \end{figure}
 
-Sur la figure~\ref{Fig-diffrac}a est représenté le phénomène de diffraction au travers d'une ouverture. l'onde après l'obstacle, i.e. l'onde diffractée, a la même fréquence, la même longueur d'onde et la même vitesse que l'onde incidente. Par contre, sa direction, son amplitude et sa forme sont modifiées (l'amplitude de l'onde diffractée  est inférieure à celle de l'onde incidente). C'est ce phénomène qui fait qu'au coin d'une rue, on entend la personne venant perpendiculairement à nous avant de la voir. Rappelons que deux ondes, diffractées ou non (mais ça a plus de sens ici en parlant d'ondes diffractées) peuvent interférer.
-Le phénomène analogue se produit également lorsqu'un obstacle est inséré au sein d'un fluide. Les ondes doivent «éviter» l'obstacle, ce qui modifie notamment leur direction sur les bords de l'obstacle, et génère plus en aval de l'obstacle des figures d'interférence.
+Les figures~\ref{Fig-diffrac}a--\ref{Fig-diffrac}c représentent le phénomène de diffraction au travers d'une ouverture. l'onde après l'obstacle, i.e. l'onde diffractée, a la même fréquence, la même longueur d'onde et la même vitesse que l'onde incidente. Par contre, sa direction, son amplitude et sa forme sont modifiées (l'amplitude de l'onde diffractée  est inférieure à celle de l'onde incidente). 
 
-La figure~\ref{Fig-diffrac}b illustre avec des balles le phénomène également décrit par la figure~\ref{Fig-diffrac}c, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}. Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a effectivement un phénomène de diffraction qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
+C'est ce phénomène qui fait qu'au coin d'une rue, on entend la personne venant perpendiculairement à nous avant de la voir, comme montré sur la figure~\ref{Fig-diffrac}d.
+
+Rappelons que deux ondes, diffractées ou non (mais ça a plus de sens ici en parlant d'ondes diffractées) peuvent interférer.
+Le phénomène analogue se produit également lorsqu'un obstacle est inséré au sein d'un fluide, comme le représente la figure~\ref{Fig-diffrac}d. Les ondes doivent «éviter» l'obstacle, ce qui modifie notamment leur direction sur les bords de l'obstacle.
+Il se crée un zone d'ombre en arrière de l'obstacle (schématisée en gris).
+De plus, selon la forme de l'objet, les ondes diffractées peuvent générer, plus en aval de l'obstacle, des figures d'interférence.
+
+\medskip
+Le phénomène de \textcolorblue{réflexion} sur un obstacle est illustré sur la figure~\ref{Fig-reflex}.
+\begin{figure}[h!]
+\centering
+\includegraphics[height=60mm]{reflexion1.eps}\hspace{2cm}
+\includegraphics[height=60mm]{reflexion2.eps}
+\caption{Phénomène de réflexion}\label{Fig-reflex}
+\end{figure}
+La figure~\ref{Fig-reflex}a propose une analogie avec des balles, de ce qui est décrit avec des ondes à la figure~\ref{Fig-reflex}b, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}. Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a effectivement un phénomène de diffraction qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
 
 
 \medskip
-Enfin, un bonne question consiste à se demander ce qu'il se passe lorsqu'une source émet des fréquences qui «n'ont pas la place» de se développer au sein du volume disponible, i.e. \textcolorblue{lorsque les longueurs d'ondes considérées sont supérieures aux dimensions de l'espace dans lequel émet la source}. Ce cas se produit pour les basses fréquences émises par un moteur au sein de son encoffrement, ce dernier étant approximativement un cube de longueur 60~cm.
+\subsubsection{Environnement ouvert ou fermé}
 
-Et bien, dans ce cas, l'énergie injectée «gonfle» en quelque sorte l'encoffrement. Celui-ci est sollicité en pression... et répond évidemment selon ses modes propres.
-Dans de nombreux cas (encoffrement moteur, habitacle de véhicule...), il est nécessaire de prendre en compte la réponse modale du volume dans lequel on définit le problème, car celle-ci influe sur la répartition du champ acoustique.
-Le champ acoustique dans de telles situations (et dans d'autres) est non uniforme, i.e. a des valeurs très différentes d'un point à l'autre.
-Ces deux aspects sont illustrés à la figure~\ref{Fig-modalVh}.
+La propagation d'ondes acoustiques se traite généralement dans deux cas distincts:
+\begin{itemize}
+   \item celui d'un environnement ouvert, ou champ libre: l'onde peut se propager «à l'infini»;
+   \item ou celui d'un environnement fermé: l'onde est confinée dans un volume donné dont elle ne peut sortir.
+\end{itemize}
+
+On rappelle par ailleurs qu'une onde voit son intensité décroitre avec la distance parcourue.
+\textcolorgris{L'intensité (vectorielle) est le produit de la pression (scalaire) par la vitesse (vecteur).}
+Dans ces conditions de champ libre, l'intensité acoustique est proportionnelle au carré de la pression acoustique. Quand la distance à la source est doublée, la pression est divisée par deux (et l'intensité acoustique est divisée par quatre). Le niveau de pression acoustique diminue alors de 6~dB.
+
+\medskip
+Une question intéressante, dans le cas d'un environnement fermé, est de se demander ce qu'il se passe lorsqu'une source émet à des fréquences qui «n'ont pas la place» de se développer au sein du volume disponible, i.e. \textcolorblue{lorsque les longueurs d'ondes considérées sont supérieures aux dimensions de l'espace dans lequel émet la source}. Ce cas se produit pour les basses fréquences émises par un moteur au sein de son encoffrement, ce dernier étant approximativement un cube de longueur 60~cm.
+
+Et bien, dans ce cas, l'énergie injectée «gonfle» en quelque sorte l'encoffrement. Celui-ci est sollicité en pression... et répond évidemment selon ses \textcolorblue{modes propres}.
+Dans de nombreux cas (encoffrement moteur, habitacle de véhicule...), il est nécessaire de prendre en compte la réponse modale du volume dans lequel on définit le problème, car celle-ci influe sur la répartition du champ acoustique, dont notamment d'éventuelles \textcolorblue{résonances}.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=95mm]{modalVh1.eps}\hfill\includegraphics[height=55mm]{modalVh2.eps}
+\includegraphics[width=95mm]{modalVh1.eps}\hspace{20mm}%\hfill
+\includegraphics[height=55mm]{modalVh2.eps}
 \caption{a) Répartition modale dans un véhicule et b) non-uniformité du champ acoustique}\label{Fig-modalVh}
 \end{figure}
+
+Le champ acoustique dans de telles situations (et dans d'autres) est non uniforme, i.e. a des valeurs très différentes d'un point à l'autre.
+Ces deux aspects sont illustrés à la figure~\ref{Fig-modalVh}.
+
 
 %hétérodynage
 
