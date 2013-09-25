@@ -1,4 +1,3 @@
-%http://svn.parisson.org/castax/
 \chapter{L'acoustique}\label{Ch-Acous}
 \begin{abstract}
 En complément avec ce qui a été vu aux chapitres précédents~\ref{Ch-temps} et~\ref{Ch-ondes} sur les problèmes non stationnaires et les ondes, nous allons nous focaliser dans ce chapitre sur l'acoustique, et plus particulièrement sur le calcul de problèmes pour lesquels les fréquences restent inférieures à quelques milliers de Hz. Nous en profiterons pour effectuer une présentation pratique de l'acoustique et des solutions qui peuvent être mises en œuvre physiquement.
@@ -8,7 +7,7 @@ Nous avons déjà présenté la problématique de l'acoustique à plusieurs repr
 
 Toutefois, nous souhaitions apporter des éléments supplémentaires sur le sujet: 
 \begin{itemize}
-   \item au paragraphe~\ref{Sec-AcouPhy}, nous proposerons une présentation de l'acoustique «sur le terrain»: nous exposerons brièvement l'acoustique à partir des problématiques qui se posent physiquement, et nous présenterons quelques solutions typiquement utilisées pour résoudre ces problèmes d'acoustique. Nous verrons d'ailleurs que les problèmes rencontrés en hautes fréquences sont généralement aisément résolus, et qu'il convient donc de se concentrer sur les fréquences inférieures à 1000~Hz.
+   \item au paragraphe~\ref{Sec-AcouPhy}, nous proposerons une présentation de l'acoustique «sur le terrain»: nous exposerons brièvement l'acoustique à partir des problématiques qui se posent physiquement, et nous présenterons quelques solutions typiquement utilisées pour résoudre ces problèmes d'acoustique. Nous verrons d'ailleurs que les problèmes rencontrés en hautes fréquences sont généralement aisément résolus, et qu'il convient donc de se concentrer sur les fréquences inférieures à quelques~kHz.
    \item au paragraphe suivant~\ref{Sec-AcouMEF} nous reviendrons plus en détails sur la mise en œuvre pratique d'un calcul acoustique par éléments finis.
    
    La motivation principale vient de ce que, dans le paragraphe~\ref{Sec-choc}, nous avons indiqué que la méthode des éléments finis devait se cantonner aux basses fréquences, celles-ci allant jusqu'à 600~Hz environ. Il est vrai qu'au-delà, de nombreuses autres méthodes existent... et nous avions profité de ce paragraphe pour les présenter.
@@ -110,7 +109,15 @@ Revenons quelques instants sur l'\textcolorblue{absorption}, et plus particuliè
 \caption{Coefficient d'absorption pour différents types d'absorbants}\label{Fig-mtxalpha}
 \end{figure}
 
-%VM A COMPLETER
+On voit, sur la figure~\ref{Fig-mtxalpha} que l'on peut distinguer deux types de comportements:
+\begin{itemize}
+   \item un comportement d'absorption centré sur une fréquence: il s'agit des panneaux fléchissants, des résonateurs de Helmholtz et des panneaux rigides perforés. L'avantage de ces systèmes est qu'ils permettent d'attaquer des fréquences relativement faibles. Leur inconvénient est que face à une source large bande, ils ne traitent qu'une infime partie du problème;
+   \item et un comportement d'absorption large bande: il s'agit des matériaux poreux et fibreux. Bien que n'apportant qu'une absorption très limitée aux basses fréquences, ils permettent de bien traiter le spectre en hautes fréquences et constituent donc une solution simple et aisée à mettre en œuvre.
+\end{itemize}
+
+Cela justifie la remarque que nous faisons en introduction: la partie difficile à traiter dans les problèmes d'acoustique ne concerne que les basses fréquences où il n'existe que très peu de solutions, surtout simples de mise en œuvre. Les hautes fréquences (supérieures à 2 ou 3000~Hz) peuvent être facilement traitées. De plus, l'oreille humaine, bien que percevant les fréquences de 20 à 20000~Hz, est surtout sensible dans la bande comprise en 1 et 4~kHz. \textcolorgreen{Dès lors, bien qu'une étude acoustique doive prendre en compte la totalité du spectre (de la source et audible), du point de vue calculatoire (et du point de vue de la conception des solutions), c'est au-dessous de 3000~Hz que le travail devra se concentrer.} Ainsi donc, un traitement par la méthode des éléments finis est tout à fait envisageable pour faire face à la majorité des problèmes: nous entendons par là, avec un «coût» de calcul raisonnable.
+
+%VM A COMPLETER ?
 
 \medskip
 \subsubsection{Diffraction et réflexion}
@@ -142,7 +149,9 @@ Le phénomène de \textcolorblue{réflexion} sur un obstacle est illustré sur l
 \includegraphics[height=60mm]{reflexion2.eps}
 \caption{Phénomène de réflexion}\label{Fig-reflex}
 \end{figure}
-La figure~\ref{Fig-reflex}a propose une analogie avec des balles, de ce qui est décrit avec des ondes à la figure~\ref{Fig-reflex}b, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}. Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a effectivement un phénomène de diffraction qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
+La figure~\ref{Fig-reflex}a propose une analogie avec des balles, de ce qui est décrit avec des ondes à la figure~\ref{Fig-reflex}b, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}.
+
+Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a effectivement un phénomène de diffraction qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
 
 
 \medskip
@@ -177,10 +186,77 @@ Ces deux aspects sont illustrés à la figure~\ref{Fig-modalVh}.
 %hétérodynage
 
 \medskip
-\subsection{Réception}
+\subsection{Réception}\label{Sec-Reception}
+
+\begin{histoire}
+Le bel (B) est utilisé dans les télécommunications, l'électronique et l'acoustique. Vers 1920, les entreprises de téléphonie utilisaient comme unité pour l'atténuation le msc, valant celle d'un mile (1,6 km) de câble standard à la fréquence de 800 Hz. Des ingénieurs des Laboratoires Bell définirent une unité de transmission indépendante du câble et de la fréquence, basée sur dix fois le logarithme décimal. Cette unité s'appela d'abord TU pour «Transmission Unit» (unité de transmission). Elle présentait l'avantage d'être presque équivalente au  msc (1 TU = 1,083 msc). Elle fut renommée décibel en 1923 ou 1924 en l'honneur du fondateur du laboratoire et pionnier des télécoms, Alexander Graham Bell.\index[aut]{Bell (Alexander Graham), 1847-1922, Britannique}
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}%
+\includegraphics[height=\the\HauteurDesPhotos]{Bell}\\%&%
+Bell%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Les Laboratoires Bell consultèrent les opérateurs téléphoniques et administrations responsables. Certaines utilisaient des logarithmes népériens, qui présentent certains avantages pour le calcul, avec une unité appelée le néper (symbole Np). Les deux unités ont coexisté, mais le néper n'a pas connu le succès du décibel. 
+La norme ISO 80000-3, page viii, dit d'ailleurs: «L'utilisation du néper est le plus souvent limitée à des calculs théoriques sur des grandeurs de champ, où cette unité est la plus commode, alors que, dans d'autres cas, en particulier pour des grandeurs de puissance, le bel, ou en pratique son sous-multiple, le décibel (dB), est largement utilisé. Il convient de souligner que le fait que le néper soit choisi comme l'unité cohérente n'implique pas qu'il convienne d'éviter d'utiliser le bel. Le bel est accepté par le CIPM et l'OIML pour être utilisé avec le SI. À certains égards, cette situation est similaire au fait que l'unité degré (\degre) est utilisée couramment à la place de l'unité SI cohérente radian (rad) pour les angles plans.»}
+
+L'usage du logarithme décimal était d'autant plus pratique qu'avant la diffusion des calculatrices électroniques, on se servait pour les calculs de tables de logarithmes décimaux. Lorsqu'on se propose de calculer l'atténuation dans une ligne de longueur $l$ et de coefficient d'atténuation $\alpha$, il faut élever $(1-\alpha)$ à la puissance $l$. En pratique, on cherchait $l\log(1-\alpha)$ dans la table avant de reconvertir le logarithme en rapport.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Fechner}&
+\includegraphics[height=\the\HauteurDesPhotos]{Weber}&
+\includegraphics[height=\the\HauteurDesPhotos]{Stevens}\\
+Fechner&Weber&Stevens%
+\end{tabular}}
+\medskip
+\ImageAGauche{%
+Le décibel a connu un grand succès dans le domaine de l'acoustique. Par une coïncidence fortuite, un décibel, en puissance sonore, correspond à peu près à la plus petite variation perceptible. Selon le philosophe et psychologue Gustav Fechner,\index[aut]{Fechner (Gustav Theodor), 1801—1887, Allemand} la sensation ressentie varierait comme le logarithme de l'excitation. Une unité à progression logarithmique semblait particulièrement pertinente dans un domaine où la perception humaine était en jeu. Des recherches ultérieures sont venues contester la loi de Weber-Fechner\index[aut]{Weber (Ernst Heinrich), 1795-1878, Allemand} (comme la loi de puissance de Stevens,\index[aut]{Stevens (Stanley Smith), 1906-1973, Américain} en 1951); mais l'usage du décibel s'était établi, même dans des cas où il complique la compréhension.}
+
+La loi de Weber-Fechner stipule que la sensation perçue, $S$, est proportionnelle au logarithme de l'intensité, $I$, du stimulus:
+\begin{equation}
+ S = k\log(I) 
+\end{equation}
+alors que la loi de puissance de Stevens modélise cette relation entre ces deux grandeurs par une loi puissance:
+\begin{equation}
+     S = kI^a 
+\end{equation}
+où, dans les deux cas, $k$ est une constante.
+Stevens a donné des valeurs obtenues pour l'exposant $a$ dans différents domaines dans une publication de 1957 et dans son ouvrage de 1951 \emph{Handbook of Experimental Psychology}.
+\end{histoire}
+
+\medskip
+Nous avons plusieurs fois déjà utilisé le décibel (dB).
+Toutefois, il convient de distinguer plusieurs échelles:
+\begin{itemize}
+   \item Le \textcolorblue{décibel} (dB) est une unité de grandeur adimensionnelle définie comme 10 fois le logarithme décimal du rapport entre deux puissances. Pour l'acoustique, ce rapport des puissances est défini entre la grandeur mesurée et une valeur de référence fixée par une norme.
+   \item le \textcolorblue{dB lin} traduit la physique du phénomène. C'est lui que l'on utilise dans les calculs et analyses.
+   \item Le \textcolorblue{dB A} traduit la perception par l'oreille du phénomène (protection physiologique par filtrage). C'est lui qu'il faut utiliser en lien avec des normes adéquates (fonction du problème considéré) pour savoir s'il y a nuisance sonore ou non.
+   
+   Notons que pour être tout à fait exact, cette pondération du dB lin qu'est le dB A devrait varier avec l'âge: en effet, la perception en fonction de la fréquence et de la puissance varie avec l'âge, ainsi que l'étendue de fréquences audibles (qui diminue, phénomène appelé presbyacousie), comme on le voit sur les courbes (ou diagrammes) de Fletcher\index[aut]{Fletcher (Harvey C.), 1884-1981, Américain} et Munson,\index[aut]{Munson (Wilden A.), 1902-1982, Américain} présentées dans leur article \emph{Loudness, its definition, measurement and calculation} paru en 1933 dans le Journal of the Acoustic Society of America, et que l'on appelle également courbes isosoniques. Fletcher et Munson travaillaient tous les deux aux laboratoires Bell.
+
+   \item Il existe d'autres pondérations: le dB C est quasiment linéaire sur plusieurs octaves et est utile pour les mesures subjectives avec de fortes pressions acoustiques. Le dB B est entre les dB A et le dB C. Ils sont rarement utilisés.    
+   
+   
+\end{itemize}
+
 %slides VM p27
+\medskip
+\subsubsection{Normes}
 
 
+
+\medskip
+\subsubsection{Pshycoacoustique}
+
+\begin{itemize}
+   \item la Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psychoacoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson, puis de Zwicker entre autres, expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
+   \item 
+   \item 
+   \item 
+   \item 
+\end{itemize}
 
 \medskip
 \section{Calcul acoustique par éléments finis}\label{Sec-AcouMEF}
@@ -205,6 +281,7 @@ Far Field
 
 \medskip
 \section{Exemple de calcul}
+%http://svn.parisson.org/castax/
 
 
 %\medskip
