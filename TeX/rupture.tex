@@ -429,10 +429,10 @@ Si le matériau est élastoplastique, les contraintes seront calculées de faço
 \medskip
 \subsubsection{Éléments finis singuliers}\index{élément fini!singulier}
 
-Certains éléments ou configurations entraînent des \textcolorblue{singularités des déformations}. Ce phénomène, que l'on cherche généralement soigneusement à éviter, est en fait idéal en mécanique de la rupture. Forcer les éléments à se comporter en~$1/\sqrt{r}$ permet d'améliorer considérablement la solution même avec maillage grossier. Cette singularité peut être obtenue en utilisant des éléments quadratiques et en déplaçant les nœuds des milieux de coté de~$1/4$.
+Certains éléments ou configurations entraînent des \textcolorblue{singularités des déformations}. Ce phénomène, que l'on cherche généralement soigneusement à éviter, est en fait idéal en mécanique de la rupture. Forcer les éléments à se comporter en~$1/\sqrt{r}$ permet d'améliorer considérablement la solution même avec un maillage grossier. Cette singularité peut être obtenue en utilisant des éléments quadratiques et en déplaçant les nœuds des milieux des côtés de~$1/4$, comme nous allons le voir.
 
 \medskip
-Considérons l'élément de référence 2D carré quadratique à huit nœuds (souvent appelé Q8). Ses fonctions de forme~$N_i$ sont:
+Considérons l'élément de référence 2D carré quadratique à huit nœuds, souvent appelé Q8. Ses fonctions de forme~$N_i$ sont:
 \begin{equation} \begin{aligned}
 N_i &=\left[ (1+\xi\xi_i)(1+\eta\eta_i)-(1-\xi^2)(1+\eta\eta_i)-(1-\eta^2)(1+\xi\xi_i)\right]
 \dfrac{\xi_i^2\eta_i^2}4 \\
@@ -465,7 +465,7 @@ Si l'on calcule la déformation~$\varepsilon_x$ le long du côté~$1-2$, on trou
 qui est bien en~$1/\sqrt{x}$.
 
 \medskip
-\subsubsection{Techniques numériques de calcul de~$K$, $G$, $J$}
+\subsubsection{Techniques numériques de calcul de~$K$, $G$ et $J$}
 
 Il est possible d'effectuer un \textcolorblue{post-traitement des contraintes} en créant un repère local centré sur la pointe de la fissure et en calculant la variable $\sigma_{22}\sqrt{2\pi r}$ en chaque point de Gauß.\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand}
 
@@ -495,8 +495,7 @@ la méthode des éléments finis souffre des limitations suivantes:
 \begin{itemize}
   \item La création de maillage pour des problèmes industriels est une tâche qui reste
 	difficile et coûteuse;
-  \item En général les champs de contraintes EF sont discontinus, donc peu précis (mais
-	nous avons vu comment y remédier...);
+  \item En général les champs de contraintes issus des éléments finis sont discontinus, donc peu précis (mais nous avons vu comment y remédier...);
   \item Distorsion des éléments en grandes déformations (ou alors régénération
 	d'éléments, ce qui est une technique compliquée);
   \item Difficulté de prédiction des chemins de propagation de fissures (ne passant pas par les nœuds), doublée de la difficulté de remailler automatiquement pour le suivi de propagation de fissures
@@ -537,7 +536,7 @@ Tant que les fissures restent suffisamment petites, il n'y à a pas de risque de
 \subsection{Courbe et limite de fatigue}\index{courbe de Wöhler (ou S-N)}
 
 La courbe de Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand}\index{courbe de Wöhler (ou S-N)} ou courbe S-N (pour Stress vs Number of cycles) de beaucoup de CFRP et
-GFRP peut être décrite (entre~$10^3$ et~$10^6$ cycles) par une équation de la forme: \begin{equation}  \dfrac{\sigma_a}{\sigma_u}=1-b\log N \end{equation} 
+GFRP \textcolorgris{(CFRP = Carbon Fiber Reinforced Polymer = polymère à renfort fibre de carbone; GFRP = Glass Fiber Reinforced Polymer = polymère à renfort fibre de verre)} peut être décrite (entre~$10^3$ et~$10^6$ cycles) par une équation de la forme: \begin{equation}  \dfrac{\sigma_a}{\sigma_u}=1-b\log N \end{equation} 
 où~$\sigma_a$ et~$\sigma_u$ sont la contrainte appliquée et la résistance ultime, $N$, le nombre de cycle et~$b$, une constante.
 
 \medskip
@@ -566,13 +565,13 @@ Si~$1 / N_A$ est le dommage de l'événement A et si~$n_A$ est le nombre d'occur
 \medskipvm
 \textcolorblue{Avec cette définition, le dommage cumulé est égal à 1 au moment où la pièce se rompt.} Il faut nuancer cette affirmation: des pièces apparemment identiques soumises aux mêmes sollicitations se rompent en général au bout de nombres de cycles différents. \textcolorred{La dispersion des durées de vie peut être très importante.}
 
-On trouve par expérience que les durées de vie peuvent varier d'un facteur 5 ou 10 pour des pièces issues d'un même lot de production. Il faut donc préciser davantage la formulation de la règle de Miner:\index[aut]{Miner} s'il faut en moyenne~$N_A$ répétitions de l'événement A pour qu'une défaillance survienne alors le dommage causé par une occurrence de A est mesuré par~$1 / N_A$.
+On trouve par expérience que les durées de vie peuvent varier d'un facteur 5 ou 10 pour des pièces issues d'un même lot de production. Il faut donc préciser davantage la formulation de la règle de Miner:\index[aut]{Miner} s'il faut en moyenne~$N_A$ répétitions de l'événement A pour qu'une défaillance survienne, alors le dommage causé par une occurrence de A est mesuré par~$1 / N_A$.
 
 \medskip
-Les principes de Miner\index[aut]{Miner} permettent de définir le dommage causé par un événement et affirment que pour cumuler les dommages, il suffit de les additionner. Ils imposent en outre le choix de l'unité de dommage. Remarquons qu'il est toujours possible de changer d'unité. Par exemple, lorsqu'il y a un seul événement endommageant, il est naturel de choisir comme unité de dommage le dommage causé par une occurrence de cet événement.
+Les principes de Miner\index[aut]{Miner} permettent de définir le dommage causé par un événement et affirment que pour cumuler les dommages, il suffit de les additionner. Ils imposent en outre le choix de l'unité de dommage. Remarquons qu'il est toujours possible de changer d'unité. Par exemple, lorsqu'il n'y a un seul événement endommageant, il est naturel de choisir comme unité de dommage le dommage causé par une occurrence de cet événement.
 
 \medskip
-Les principes de Miner\index[aut]{Miner} permettent d'établir l'égalité des endommagements produits par des événements de natures différentes. En particulier, ils permettent de préciser quand un petit nombre d'événements de grande amplitude produit un endommagement égal à un grand nombre d'événements de faible amplitude. Cela revêt une grande importance lorsqu'il faut définir un essai aussi court que possible.
+\textcolorblue{Les principes de Miner\index[aut]{Miner} permettent d'établir l'égalité des endommagements produits par des événements de natures différentes.} En particulier, ils permettent de préciser quand un petit nombre d'événements de grande amplitude produit un endommagement égal à un grand nombre d'événements de faible amplitude. Cela revêt une grande importance lorsqu'il faut définir un essai aussi court que possible.
 
 
 \medskip
@@ -581,7 +580,7 @@ Les principes de Miner\index[aut]{Miner} permettent d'établir l'égalité des e
 \medskip
 Pour une singularité caractérisée par sa dimension~$a$ et sa forme, on étudie les courbes
 \begin{equation}\frac{\dd a}{\dd N - \Delta K}\end{equation} 
-(où~$N$ est le nombre de cycles et~$\Delta K$ la variation du facteur d'intensité de contrainte sur un cycle).
+où~$N$ est le nombre de cycles et~$\Delta K$ la variation du facteur d'intensité de contrainte sur un cycle.
 
 \medskip
 \textcolorblue{Ces courbes, dont la partie centrale est linéaire, présentent deux asymptotes pour~$\dd a/\dd N$ et~$\Delta K$ faibles et pour~$\dd a/\dd N$ et~$\Delta K$ grands.} La valeur minimale vers laquelle tend la courbe est~$\Delta K_S$, la valeur maximale~$\Delta K_{Ic}$. $K_{Ic}$ est la valeur critique qui correspond à une rupture instantanée par dépassement de la valeur critique de~$K$ sous chargement monotone. $K_S$ est la valeur en dessous de laquelle il n'y à pas de propagation de fissure, c'est un facteur d'intensité de contrainte seuil.
@@ -601,7 +600,7 @@ où~$\sigma$ est une contrainte effective dans une direction normale à la fissu
 \medskip
 \subsection{Prédiction de la durée de vie}
 
-Une fois un \textcolorred{indicateur d'endommagement choisi} (généralement la rigidité ou la résistance résiduelle, la première pouvant être mesurée de manière non destructive), on utilise:
+Une fois un \textcolorred{indicateur d'endommagement choisi} (généralement la rigidité ou la résistance résiduelle, la première ayant l'avantage non négligeable de pouvoir être mesurée de manière non destructive), on utilise:
 \begin{description}
   \item[\textcolorblue{Théories empiriques:}] Les courbes S-N\index{courbe de Wöhler (ou S-N)} sont utilisées
      pour caractériser le comportement en fatigue du composite.
@@ -633,7 +632,10 @@ où, ici encore, $x > 0$.
 Une version généralisée à trois paramètres existe.
 
 \medskip
-La distribution de Weibull est souvent utilisée dans le domaine de l'analyse de la durée de vie, grâce à sa flexibilité, car elle permet de représenter au moins approximativement une infinité de lois de probabilité. Si le taux de panne diminue au cours du temps alors, $k < 1$.  Si le taux de panne est constant dans le temps alors, $k = 1$. Si le taux de panne augmente avec le temps alors, $k > 1$. La compréhension du taux de panne peut fournir une indication au sujet de la cause des pannes:
+La distribution de Weibull est souvent utilisée dans le domaine de l'analyse de la durée de vie, grâce à sa flexibilité, car elle permet de représenter au moins approximativement une infinité de lois de probabilité.
+
+\medskip
+Par exemple, si le taux de panne diminue au cours du temps alors, $k < 1$.  Si le taux de panne est constant dans le temps alors, $k = 1$. Si le taux de panne augmente avec le temps alors, $k > 1$. La compréhension du taux de panne peut fournir une indication au sujet de la cause des pannes:
 \begin{itemize}
 	\item un taux de panne décroissant relève d'une «mortalité infantile». Ainsi, les
 		éléments défectueux tombent en panne rapidement, et le taux de panne diminue
@@ -642,9 +644,7 @@ La distribution de Weibull est souvent utilisée dans le domaine de l'analyse de
 	\item un taux de panne croissant suggère une «usure ou un problème de fiabilité»:
 		les éléments ont de plus en plus de chances de tomber en panne quand le temps passe.
 \end{itemize}
-On dit que la courbe de taux de panne est en forme de baignoire. Selon l'appareil, baignoire sabot ou piscine. Les fabricants et distributeurs ont tout intérêt à bien maîtriser ces informations par type de produits afin d'adapter:
-  1. les durées de garantie (gratuites ou payantes)
-  2. le planning d'entretien} 
+On dit que la courbe de taux de panne est en forme de baignoire. Les fabricants et distributeurs ont tout intérêt à bien maîtriser ces informations par type de produits afin d'adapter: 1) les durées de garantie (gratuites ou payantes), et 2) le planning d'entretien.} 
 de la résistance des composites. La rupture par fatigue survient lorsque la résistance résiduelle du composite est atteinte par la contrainte appliquée.
 
   \item[\textcolorblue{Théories de perte de rigidité:}] Ce sont des généralisations
@@ -680,11 +680,11 @@ de la résistance des composites. La rupture par fatigue survient lorsque la ré
      à modéliser et mesurer.
 \end{description}
 \medskipvm
-Notons également que \textcolorred{pour obtenir les informations nécessaires, de nombreux essais doivent être menés}, surtout parce que de nombreux facteurs conditionnement la fatigue des FRP:
+Notons également que \textcolorred{pour obtenir les informations nécessaires, de nombreux essais doivent être menés}, surtout parce que de nombreux facteurs conditionnement la fatigue des FRP \textcolorgris{(FRP = Fibre-reinforced plastic = plastique à renfort de fibres)}:
 \begin{itemize}
 	\item \textcolorblue{fréquence}: un échauffement du matériau avec la fréquence de sollicitation est constaté. Il faudrait modifier ses lois de comportement.
 	\item \textcolorblue{amplitude}: une sollicitation de grande amplitude suivie d'une sollicitation de faible amplitude conduit à une durée de vie inférieure au cas où l'ordre des sollicitations est inversé.
-	\item \textcolorblue{$R=-1$} (rapport entre charge positive et négative dans le cyclage): ce cas est très défavorable dans notre exemple car la tenue en compression est moins bonne qu'en traction (flambage des fibres et splitting...);
+	\item \textcolorblue{$R=-1$} (rapport entre charge positive et négative dans le cyclage): ce cas est très défavorable pour les FRP car leur tenue en compression est moins bonne qu'en traction (flambage des fibres et splitting...);
 	\item \textcolorblue{la forme du signal} a une influence qui serait à considérer.
 	\item \textcolorblue{séquence d'empilement}: les composites sont censés être conçus pour soutenir la charge dans le sens des fibres. Dans le cas de sollicitations complexes, les plis les moins bien orientés par rapport à la charge cèdent en premier...
 	\item \textcolorblue{humidité};
@@ -693,7 +693,7 @@ Notons également que \textcolorred{pour obtenir les informations nécessaires, 
 \end{itemize}
 \textcolorred{C'est un problème de structure car il y a couplage entre les modes d'endommagement à différentes échelles.}
 \medskipvm
-Dans ces cas simples, on peut utiliser un critère cumulatif de Miner ou des lois d'équivalence (par exemple entre temps, fréquence, température...)
+Dans les cas simples, on peut utiliser un critère cumulatif de Miner ou des lois d'équivalence. Attention toutefois, l'«équivalence» entre temps, fréquence, température... ne «va pas de soi». Il s'agit d'hypothèses, parfois restrictives, et toujours limitées à une plage d'utilisation. On les manipulera donc avec intérêt (par exemple pour la conception d'essais accélérés) et avec prudence.
 
 
 \medskip
@@ -716,15 +716,10 @@ Les remarques suivantes peuvent être faites, quant à la poursuite de travaux d
   \item La dégradation des GFRP à haute température n'est pas
      bien comprise.
 
-     Toutefois, Tsotsis\index[aut]{Tsotsis (Thomas K.), ?- , Américain} et
-	 Lee\index[aut]{Lee (Shaw M.), ?- , Américain} notent que le
-     comportement à long terme des composites soumis à des
-     températures élevées
-     est contrôlé par les dégradations d'oxydation et thermique.
-     Dans leur article, deux résines particulières sont étudiées.
+     Toutefois, Tsotsis\index[aut]{Tsotsis (Thomas K.), ?- , Américain} et Lee\index[aut]{Lee (Shaw M.), ?- , Américain} notent, suite à l'étude de deux résines particulières, que le comportement à long terme des composites soumis à des températures élevées est contrôlé par les dégradations d'oxydation et thermique.
 
-  \item Les {\em composites épais ne sont pas étudiés}, tout comme
-     l'influence de l'épaisseur.
+  \item Les composites épais ne sont que très peu étudiés, tout comme
+     l'influence de l'épaisseur en général.
      Pourtant, des mécanismes de ruptures suivant l'épaisseur peuvent
      sans doute apparaître de manières différentes de celles des
      laminés plus fins: effet de taille ou interaction de mécanismes.
