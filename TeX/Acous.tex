@@ -112,16 +112,25 @@ Revenons quelques instants sur l'\textcolorblue{absorption}, et plus particuliè
 On voit, sur la figure~\ref{Fig-mtxalpha} que l'on peut distinguer deux types de comportements:
 \begin{itemize}
    \item un comportement d'absorption centré sur une fréquence: il s'agit des panneaux fléchissants, des résonateurs de Helmholtz et des panneaux rigides perforés. L'avantage de ces systèmes est qu'ils permettent d'attaquer des fréquences relativement faibles. Leur inconvénient est que face à une source large bande, ils ne traitent qu'une infime partie du problème;
-   \item et un comportement d'absorption large bande: il s'agit des matériaux poreux et fibreux. Bien que n'apportant qu'une absorption très limitée aux basses fréquences, ils permettent de bien traiter le spectre en hautes fréquences et constituent donc une solution simple et aisée à mettre en œuvre.
+   \item et un comportement d'absorption large bande: il s'agit des matériaux poreux et fibreux. Bien que n'apportant qu'une absorption très limitée aux basses fréquences, ils permettent de bien traiter le spectre en hautes fréquences et constituent donc une solution simple et aisée à mettre en œuvre. La figure~\ref{Fig-poro}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=50mm]{poroF.eps}\hspace{10mm}
+\includegraphics[width=50mm]{poroO.eps}\hspace{10mm}
+\includegraphics[width=40mm]{fibres.eps}
+\caption{Rôle de la porosité}\label{Fig-poro}
+\end{figure}
+montre le rôle de la porosité dans l'absorption, en augmentant le parcourt moyen parcouru par l'onde acoustique. La dernière photo est une microscopie d'un matériau fibreux réel (on remarquera qu'il y a «beaucoup d'air» et peu de fibres finalement).
 \end{itemize}
 
-Cela justifie la remarque que nous faisons en introduction: la partie difficile à traiter dans les problèmes d'acoustique ne concerne que les basses fréquences où il n'existe que très peu de solutions, surtout simples de mise en œuvre. Les hautes fréquences (supérieures à 2 ou 3000~Hz) peuvent être facilement traitées. De plus, l'oreille humaine, bien que percevant les fréquences de 20 à 20000~Hz, est surtout sensible dans la bande comprise en 1 et 4~kHz. \textcolorgreen{Dès lors, bien qu'une étude acoustique doive prendre en compte la totalité du spectre (de la source et audible), du point de vue calculatoire (et du point de vue de la conception des solutions), c'est au-dessous de 3000~Hz que le travail devra se concentrer.} Ainsi donc, un traitement par la méthode des éléments finis est tout à fait envisageable pour faire face à la majorité des problèmes: nous entendons par là, avec un «coût» de calcul raisonnable.
+\medskip
+Tout cela justifie la remarque que nous faisons en introduction: la partie difficile à traiter dans les problèmes d'acoustique ne concerne que les basses fréquences où il n'existe que très peu de solutions, surtout simples de mise en œuvre. Les hautes fréquences (supérieures à 2 ou 3000~Hz) peuvent être facilement traitées. De plus, l'oreille humaine, bien que percevant les fréquences de 20 à 20000~Hz, est surtout sensible dans la bande de fréquences allant de 1 à 4~kHz. \textcolorgreen{Dès lors, bien qu'une étude acoustique doive prendre en compte la totalité du spectre (de la source et audible), du point de vue calculatoire (et du point de vue de la conception des solutions), c'est au-dessous de 3000~Hz que le travail devra se concentrer.} Ainsi donc, un traitement par la méthode des éléments finis est tout à fait envisageable pour faire face à la majorité des problèmes: nous entendons par là, avec un «coût» de calcul raisonnable.
 
 %VM A COMPLETER ?
 
 \medskip
 \subsubsection{Diffraction et réflexion}
-La \textcolorblue{diffraction} est un autre phénomène avec lequel il faut compter dans la propagation des ondes. Il est à la figure~\ref{Fig-diffrac}.
+La \textcolorblue{diffraction} est un autre phénomène avec lequel il faut compter dans la propagation des ondes. Il est illustré sur plusieurs cas à la figure~\ref{Fig-diffrac}.
 \begin{figure}[h!]
 \centering
 \includegraphics[height=35mm]{diffraction1.eps}\hfill%
