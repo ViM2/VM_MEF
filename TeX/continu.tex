@@ -153,7 +153,7 @@ La dérivée d'une fonction $f$ est une fonction qui, à tout nombre pour lequel
 %\medskipvm
 \begin{definition}[Dérivée d'une fonction]
 Soit~$f$ une application d'un ouvert~$\Omega$ du corps~$\KK$ (resp. un intervalle de~$\RR$) dans un espace affine normé~$F$ (resp.~$\RR$), alors on peut donner un sens, pour~$a\in\Omega$, à la quantité:
-\begin{equation}
+\begin{equation}\label{Eq-derivee}
 f'(a)=\lim_{\substack{h\ne0,h\to0\\a+h\in\Omega}} \dfrac{f(a+h)-f(a)}h \in F
 \end{equation}
 que l'on appelle le vecteur dérivé ou simplement la \textcolorblue{dérivée} de $f$ en~$a$.
@@ -231,9 +231,29 @@ Pour être très clair, \textcolorred{une fonction est de classe~$C^k$ signifie 
 Toutes les fonctions polynomiales sont~$C^\infty$, car à partir d'un certain rang leur dérivée est identiquement nulle.
 
 \medskip
+\section{Différentielle}\label{Sec-Differentielle}%\index{dérivée!partielle}
+
+Il s'agit de généraliser la formule~\ref{Eq-derivee} à des applications de~$\RR^n$ dans~$\RR^p$. La variable étant maintenant un vecteur de~$\RR^n $, il n'est plus question de diviser par~$h$... il faut donc modifier la définition pour supprimer le dénominateur. Et cela est très facile: il suffit d'approcher l'accroissement de la fonction par une application linéaire.
+\begin{definition}[Différentielle]
+Soient $E$ et $F$ deux espaces normés sur le corps $\KK=\RR$ ou $\CC$, et $U$ un ouvert de $E$. Une application $f: U\rightarrow F$ est dite \textcolorblue{différentiable au point $a\in U$} s'il existe une application linéaire $L\in\mathcal{L}(E,F)$ telle que:
+\begin{equation}
+f(a+h)-f(a)=L(h)+R(h)
+\end{equation}
+où le reste $R(h)$ est un $o(\|h\|)$ lorsque $h$ tend vers $0$ dans $E$.
+
+\medskip
+Si elle existe, l'application $L$ est unique et on l'appelle la \textcolorblue{différentielle} de $f$ en $a$.
+On la note $L=Df(a)$, ou $f'(a)$ ou $df(a)$ ou $D_af$ ou $df_a$, selon les auteurs et les circonstances.
+\end{definition}
+Cela signifie qu'au voisinage de~$a$, l'application~$f$ se comporte à peu près comme l'application affine $x\mapsto f(a)+Df(a)(x-a)$, pour laquelle on pourra utiliser les outils de l'algèbre linéaire. Géométriquement, on retrouve l'idée qu'une courbe est, au voisinage d'un point, à peu près confondues avec sa tangente\footnote{tangente, du latin «tangerer»: toucher} (droite tangente, plan tangent...). C'est pourquoi l'application linéaire~$Df(a)$ est également appelée application linéaire tangente à~$f$ en~$a$.
+
+\medskip
+Évidemment, dans le cas où~$E=\RR$ et~$F=\RR$, tout ce qui a été dit coïncide avec ce que nous avions vu avec la dérivée classique.
+
+\medskip
 \section{Dérivées partielles}\index{dérivée!partielle}
 
-Nous allons maintenant étendre la dérivation au cas où une fonction dépend de plusieurs variables. Évidemment, il faudra que dans le cas où la fonction ne dépend que d'une seule variable, les deux notions coïncident.
+Nous nous intéressons maintenant au cas où une fonction dépend de plusieurs variables, i.e. au cas d'une fonction numérique d'une variable vectorielle. Avec les notation du paragraphe précédent, cela correspond au cas où~$E=\RR^n$ et~$F=\RR$.
 
 \medskip
 \textcolorblue{La dérivée partielle d'une fonction de plusieurs variables est la dérivée par rapport à l'une de ses variables, les autres étant gardées constantes.}
@@ -259,6 +279,25 @@ par rapport à la~$i$-ème variable~$x_i$} par:
   \frac{ \partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0}{ f(a_1, \dots , a_{i-1}, a_i+h, a_{i+1}, \dots ,a_n) - f(a_1, \dots ,a_n) \over h}
 \end{equation}
 \end{definition}
+
+\begin{remarque}
+Pour en revenir au cadre général qu'est celui de la différentielle, on parle ici des dérivées partielles pour désigner les dérivées dans la direction des vecteurs de base, ou plus exactement des dérivées selon les vecteurs de base.
+
+\medskip
+Nous utiliserons, comme tout le monde, la notation $\frac{ \partial f}{ \partial x_i}$, bien qu'elle présente quelques défauts: tout d'abord elle est typographiquement lourde, ensuite elle a les apparences trompeuses d'un quotient, et enfin la mention  de la variable $x_i$ peut être source de confusions dans les calculs de dérivées de fonctions composées. On devrait donc toujours préférer la notation $\partial_if$ ou $f'_i$.
+
+\medskip
+La formulation générale de la différentielle donnée au paragraphe~\ref{Sec-Differentielle} permet de retrouver tous les cas:
+\begin{itemize}
+   \item le cas «classique» d'une fonction d'une variable réelle à valeur réelle correspond au cas $E=\RR$ et~$F=\RR$;
+   \item le cas d'une fonction numérique d'une fonction vectorielle correspond au cas $E=\RR^n$ et~$F=\RR$ et vient d'être présenté. Dans ce cas, la différentielle~$Df(\mathbf{a})$ est la forme linéaire sur~$\RR^n$ de composantes~$\LL{\partial_1f(\mathbf{a}), ..., \partial_nf(\mathbf{a})}$ dans la base canonique.
+   
+   Si~$\RR^n$ est muni d'un produit scalaire, alors il existe un unique vecteur, appelé \textcolorblue{gradient} de~$f$ en~$\mathbf{a}$ et noté~$\gradb f(\mathbf{a})\in\RR^n$ tel que: $Df(\mathbf{a})h=\gradb f(\mathbf{a}).h$. Pour une définition plus opérationnelle du gradient, on se réfèrera au paragraphe~\ref{Sec-nabla}. Celui-ci a pour composantes les dérivées partielles par rapport à la base considérée;
+   \item le cas d'une fonction vectorielle d'une variable réelle correspond au cas $E=\RR$ et~$F=\RR^p$. Il est à nouveau possible de diviser par~$h$. La différentiabilité\footnote{On ne confondra pas «différencier» et «différentier»} de~$f$ équivaut alors à la dérivabilité de ses composantes~$f_i$.
+
+   \item le cas d'une fonction vectorielle d'une variable vectorielle correspond au cas le plus général $E=\RR^n$ et~$F=\RR^p$. La différentielle est l'application linéaire définie dans les bases canoniques de~$\RR^n$ et~$\RR^p$ par la matrice \textcolorblue{jacobienne}. La ligne~$i$ de la matrice jacobienne correspond à la différentielle de la composante~$f_i$ de~$f$. La colonne~$j$ de la matrice jacobienne correspond à la dérivée de~$f$ dans la direction du~$j$\fup{e} vecteur de la base. Nous y reviendrons de manière plus pragmatique au paragraphe~\ref{Sec-Jacob}.
+\end{itemize}
+\end{remarque}
 
 \medskip
 \textcolorred{Attention:}
@@ -355,7 +394,7 @@ Pour tout ouvert~$\Omega$ de~$\RR^n$, et pour tout~$k\in\NN\cup\{\infty\}$:
 \end{itemize}
 
 \medskip
-\section{Nabla et comparses}
+\section{Nabla et comparses}\label{Sec-nabla}
 
 \subsection{Champs de vecteurs et de scalaires}
 
