@@ -45,10 +45,9 @@ définie~$\int_a^b f(x)\dd x$.
 \end{definition}
 En termes modernes, on dira que pour qu'une fonction bornée soit Riemann-intégrable,\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 il faut et il suffit que l'ensemble des points de discontinuité de~$f$ soit de mesure nulle.
-\medskipvm
-\textcolorgris{En complément, on rappellera également que l'intégrale de Riemann n'est que la généralisation
-de celle de Cauchy:\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} la valeur retenue pour calculer
-la fonction sur chaque sous-intervalle n'est plus celle du point de gauche, mais peut être prise n'importe où dans ledit sous-intervalle.}
+
+\medskip
+Le cadre classique le plus simple pour définir une intégrale est celui des fonctions en escalier sur un intervalle $[a,b]$, ou sa complétion pour la topologie de la convergence uniforme, l'espace des fonctions réglées (admettant une limite finie à droite et à gauche). La théorie de Riemann permet d'atteindre une plus grande généralité. Cependant, Riemann lui-même a conscience que l'intégrabilité «au sens de Riemann» impose encore des conditions relativement fortes: il démontre qu'une fonction $f: [a,b]\rightarrow \RR$ est intégrable si et seulement si, pour tout~$\alpha>0$ donné, on peut choisir une décomposition de $[a,b]$ en sous-intervalles suffisamment fins pour que la somme des longueurs des sous-intervalles sur lesquels l'oscillation de la fonction dépasse~$\alpha$ soit arbitrairement petite.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{ccc}%
@@ -59,11 +58,11 @@ Riemann&Dirichlet&Lebesgue%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Dès la fin de son mémoire de 1829, \emph{Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données}, Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} donne l'exemple, d'une nature toute nouvelle, d'une fonction discontinue en tous ces points: la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre constante~$d$ si~$x$ est irrationnel.
-On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.}
+Les conditions énoncées au paragraphe précédent peuvent sembler faibles, mais, dès la fin de son mémoire de 1829, \emph{Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données}, Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} donne l'exemple, d'une nature toute nouvelle, discontinue en tous ces points: la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre constante~$d$ si~$x$ est irrationnel (on appelle une telle fonction, «fonction de Dirichlet», bien que celui-ci l'ai toujours exhibée comme un monstre, existant, mais non représentatif de ce que devrait être une fonction. Lorsque $c=1$ et $d=0$, on parle alors plutôt de l'indicatrice de~$\QQ$). On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.}
 
 \medskip
-Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} va commencer par définir un \textcolorblue{ensemble mesurable}: c'est un ensemble dont la mesure extérieure (i.e. la borne inférieure de la mesure des ouverts le contenant) est égale à sa mesure intérieure (i.e. la borne supérieure de la mesure des fermés qu'il contient): est-il besoin de rappeler la différence entre borne inférieure et minimum et entre borne supérieure et maximum ? La borne supérieure (ou le supremum) d'une partie d'un ensemble partiellement ordonné est le plus petit de ses majorants. Une telle borne n'existe pas toujours, mais si elle existe alors elle est unique. Elle n'appartient pas nécessairement à la partie considérée.
+Dans la théorie de Lebesgue, on va élargir la classe des fonctions intégrables (Par exemple, toute fonction bornée «raisonnable», disons qui peut être décrite par un énoncé mathématique, est Lebesgue-intégrable).
+Pour cela, Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} va commencer par définir un \textcolorblue{ensemble mesurable}: c'est un ensemble dont la mesure extérieure (i.e. la borne inférieure de la mesure des ouverts le contenant) est égale à sa mesure intérieure (i.e. la borne supérieure de la mesure des fermés qu'il contient): est-il besoin de rappeler la différence entre borne inférieure et minimum et entre borne supérieure et maximum ? La borne supérieure (ou le supremum) d'une partie d'un ensemble partiellement ordonné est le plus petit de ses majorants. Une telle borne n'existe pas toujours, mais si elle existe alors elle est unique. Elle n'appartient pas nécessairement à la partie considérée.
 Dualement, la borne inférieure (ou l'infimum) d'une partie est le plus grand de ses minorants...
 
 \textcolorblue{L'intégrale de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} peut être définie de manière géométrique: pour une fonction positive~$f$ définie sur~$\intff{a}{b}$, elle est égale à la mesure de dimension deux de l'ensemble $\{(x,y)\in\RR^2 / a\le y\le f(x), a\le x\le b\}$ quand cette mesure existe.
@@ -87,6 +86,14 @@ où~$m(V)$ est la mesure de l'ensemble~$V$.
 Voici par quelle image Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} expliquait la nature de son intégrale:\\
 «Je dois payer une certaine somme; je fouille dans mes poches et j'en sors des pièces et des billets de différentes valeurs. Je les verses à mon créancier dans l'ordre où elles se présentent jusqu'à atteindre le total de ma dette. C'est l'intégrale de Riemann.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Mais je peux opérer autrement. Ayant sorti tout mon argent, je réunis les billets de même valeur, les pièces semblables et j'effectue le paiement en donnent ensemble les signe monétaires de même valeur. C'est mon intégrale.»
 
+\medskip%vm
+Poursuivons l'interprétation géométrique à laquelle nous invite Lebesgue dans la comparaison des intégrales selon Riemann et Lebesgue.
+Comme dans le cas de l'intégrale de Riemann, il s'agit d'approcher l'aire sous le graphe de la fonction par une union de rectangles. Mais ces rectangles sont définis de manière différente. Dans le cas de Riemann, on s'intéresse aux variations de la fonction sur son domaine de définition: une base étant donnée (l'axe des abscisses en général),on définit le rectangle comme l'ensemble des points au-dessus de cette base, qui sont situés en-dessous de la courbe. Au contraire, dans le cas de Lebesgue, on définit le rectangle en fonction des valeurs de la fonction, sans jamais s'intéresser trop à l'espace de départ. Ce n'est donc pas la base du rectangle que l'on se donnera au départ, mais une variation dans les valeurs atteintes (côté «vertical»). Évidemment, on doit admettre que plusieurs rectangles partagent un même côté vertical. C'est ici que l'intégrale de Lebesgue va gagner toute sa complexité: alors que dans l'intégrale de Riemann, une brique élémentaire est un simple rectangle, dans celle de Lebesgue, il pourra s'agir de plusieurs ou même d'une infinité de rectangles.
+
+L'exemple de la fonction indicatrice de~$\QQ$ est révélateur: bien que discontinue partout, cette fonction est très facile à décrire en fonction de ses valeurs. Dans la théorie de Riemann, on tenterait vainement de découper le segment~$[0,1]$ en tout petits intervalles où cette fonction ne varie guère; dans celle de Lebesgue, on partage~$[0,1]$ en seulement deux morceaux qui sont assez complexes (totalement discontinus) mais sur chacun desquels la fonction est effectivement constante.
+
+Ainsi, l'intégration de Lebesgue prolonge bien celle de Riemann, et, en se «débarrassant» de la référence à l'espace de base, peut être adaptée à un cadre extrêmement général, sans qu'aucune hypothèse topologique ne soit faite sur l'espace d'intégration; et l'expérience montre que l'on peut construire ainsi des théories maniables.
+
 \medskip
 La théorie de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} éclaire bien des difficultés des discussions du \textsc{xix}\fup{e} siècle (notamment sur les propriétés de différentiabilité des fonctions continues) et fournit un cadre général simplifié à de nombreux théorèmes alors que la théorie de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} multiplie les hypothèses et les conditions restrictives.
 
@@ -106,7 +113,13 @@ Kurzweil&Henstock%
 \medskip
 \ImageAGauche{%
 \colorgris Dans les années 50 a été mise au point l'intégrale de Kurzweil-Henstock\index[aut]{Kurzweil (Jaroslav), 1926-, Tchèque}\index[aut]{Henstock (Ralph), 1923-2007, Anglais} (ou KH-intégrale, ou intégrale de jauge) à partir de celle de Riemann. On retravaille un peu les sous-intervalles et les points de calcul de la fonction: chaque point est appelé «marque» et l'on parle de «subdivision marquée» (pour plus de détails, il suffit faire une recherche avec «lemme de Cousin». Ce lemme est dû à Pierre Cousin\index[aut]{Cousin (Pierre), 1867-1933, Français} qui fut un étudiant de Henri Poincaré).\index[aut]{Poincaré (Henri), 1854-1912, Français}\\ 
-\indent Sans faire appel à la théorie de la mesure, on dispose alors d'une intégrale aussi puissance que celle de Lebesgue (mais moins générale, car définie uniquement sur~$\RR$). Et on dispose même d'un très beau résultat: toute fonction dérivée est intégrable, et il n'est pas nécessaire d'introduire la notion d'intégrale impropre. L'intégrale de Lebesgue peut alors être introduite comme un cas particulier de cette intégrale.\colorblack}%
+\indent Sans faire appel à la théorie de la mesure, on dispose alors d'une intégrale aussi puissance que celle de Lebesgue (mais moins générale, car définie uniquement sur~$\RR$). Et on dispose même d'un très beau résultat: toute fonction dérivée est intégrable, et il n'est pas nécessaire d'introduire la notion d'intégrale impropre. L'intégrale de Lebesgue peut alors être introduite comme un cas particulier de cette intégrale.\colorblack}
+
+\medskip
+Pour puissante qu'elle soit, la théorie de Lebesgue est impuissante à traiter la «semi-convergence» des intégrales, i.e. les situations où une fonction se trouve être intégrable du fait de compensations entre valeurs positives et négatives, alors que sa valeur absolue n'est pas intégrable. D'autres théories sont plus habiles à tirer parti des compensations: ainsi les intégrales de Denjoy\index[aut]{Denjoy (Arnaud), 1884-1974, Français} ou de Perron.\index[aut]{Perron (Oskar), 1880-1975, Allemand}
+Pourquoi alors n'enseigne-t-on pas ces théories alternatives plutôt que celle de Lebesgue? D'une part, parce que dans l'immense majorité des applications, le mauvais traitement des intégrales semi-convergentes s'avère sans gravité (il s'agit en fait de situations relativement exceptionnelles); d'autre part, parce que la théorie de Lebesgue dispose d'une grande souplesse qui lui permet de se généraliser de manière abstraite, notamment par son insensibilité à la topologie, que nous avons déjà mentionnée.
+
+
 \end{histoire}
 
 \medskip\colorblack

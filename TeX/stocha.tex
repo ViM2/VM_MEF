@@ -268,7 +268,7 @@ Le noyau~$C_{ww}(.,.)$ étant une fonction d'autocovariance, il est borné, sym�
 
 \medskip
 Chaque réalisation de~$w$ peut donc être développée sur cette base sous la forme:
-\begin{equation}\label{Eq-KL}
+\begin{equation}\label{Eq-KL0}
 w(x,\theta) = \mu(x) + \dsum_{i=1}^\infty \sqrt{\lambda_i}\xi_i(\theta)\varphi_i(x)
 \end{equation}
 où les~$\xi_i$ sont les coordonnées de la réalisation du champ aléatoire par rapport à l'ensemble des fonctions déterministes~$\varphi_i$.
@@ -276,7 +276,7 @@ où les~$\xi_i$ sont les coordonnées de la réalisation du champ aléatoire par
 On montre aisément que~$\E{\xi_m\xi_n}=\delta_{mn}$ et~$\E{\xi_n}=0$. La famille~$\{\xi_i\}_{i\ge1}$ forme un ensemble orthonormal de variables aléatoires.
 
 \medskip
-Comme il ne peut y avoir de valeurs propres multiples (sauf 0), il est possible de les classer en une suite décroissante. En tronquant la somme de l'équation~(\ref{Eq-KL}) à l'ordre~$M$ (i.e. en ne retenant que les~$M$ plus grands valeurs propres), on obtient l'approximation de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} du champ aléatoire:
+Comme il ne peut y avoir de valeurs propres multiples (sauf 0), il est possible de les classer en une suite décroissante. En tronquant la somme de l'équation~(\ref{Eq-KL0}) à l'ordre~$M$ (i.e. en ne retenant que les~$M$ plus grands valeurs propres), on obtient l'approximation de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} du champ aléatoire:
 \begin{equation}\label{Eq-KL}
 w_h(x,\theta) = \mu(x) + \dsum_{i=1}^M \sqrt{\lambda_i}\xi_i(\theta)\varphi_i(x)
 \end{equation}
@@ -417,7 +417,7 @@ H(x,\theta)=w(x,\theta)H_0
 \end{equation}
 où~$H_0$ est une matrice déterministe constante.
 
-Chaque matrice de rigidité élémentaire, donnée par~$\MM{k^e}=\dint_{\Omega_e} \MMI{N_u}\MMI{\mathcal{L}}\MM{H}\MM{\mathcal{L}}\MM{N_u} \dd\Omega_e$ s'écrit, en reportant le développement de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} de~$w(x,\theta)$ est donnée par la relation~(\ref{Eq-KL}):
+Chaque matrice de rigidité élémentaire, donnée par~$\MM{k^e}=\dint_{\Omega_e} \MMI{N_u}\MMI{\mathcal{L}}\MM{H}\MM{\mathcal{L}}\MM{N_u} \dd\Omega_e$ s'écrit, en reportant le développement de Karhunen-Loève\index[aut]{Karhunen (Kari), 1915-1992, Finlandais}\index[aut]{Loève (Michel), 1907-1979, Français}\index{série de Karhunen-Loève} de~$w(x,\theta)$ est donnée par la relation~(\ref{Eq-KL0}):
 \begin{equation}
 \MM{k^e(\theta)}=\MM{k^e_0} +\dsum_{i=1}^\infty \MM{k_i^e}\xi_i(\theta)
 \end{equation}
@@ -465,7 +465,7 @@ u(\theta)=\dsum_{j=0}^\infty u_j\Psi_j
 \textcolorgreen{Il s'agit simplement d'un changement de base}, et dans ce cas, même le premier terme de la série dans la base du chaos polynomial n'est pas le même que dans la série de von Neumann.\index[aut]{Neumann (John, von -), 1903-1957, Hongrois}\index{série de von Neumann}
 
 \medskip
-Pour en revenir à l'exemple précédent, ce signifie que l'on peut décomposer les déplacements dans la base du chaos polynomial:~$\VV{q(\theta)}=\sum_{i\ge0}\VV{q_i}\Psi_i(\theta)$, où les~$\VV{q_j}$ sont des vecteurs déterministes (de dimension égale au nombre de degrés de liberté).
+Pour en revenir à l'exemple précédent, cela signifie que l'on peut décomposer les déplacements dans la base du chaos polynomial:~$\VV{q(\theta)}=\sum_{i\ge0}\VV{q_i}\Psi_i(\theta)$, où les~$\VV{q_j}$ sont des vecteurs déterministes (de dimension égale au nombre de degrés de liberté).
 Dans ce cas, tous les termes sont différents du développement en série de von Neumann,\index[aut]{Neumann (John, von -), 1903-1957, Hongrois}\index{série de von Neumann} \textcolorgreen{même le premier~$\VV{q_0}$.}
 
 \medskip
@@ -496,7 +496,7 @@ c_{ijk} & = \E{\xi_i\Psi_j\Psi_k}\\
 \VV{F}_k & = \E{\Psi_k\VV{F}}\\
 \MM{K}_{jk} & = \dsum_{i=0}^M c_{ijk}\MM{K_i}
 \end{align}
-On remarquera au passage que~$\VV{f_k}$ est nul pour tout~$k>0$ dans le cas d'un chargement déterministe (ce qui est le cas dans notre exemple).
+On remarquera au passage que~$\VV{F_k}$ est nul pour tout~$k>0$ dans le cas d'un chargement déterministe (ce qui est le cas dans notre exemple).
 
 \medskip
 On obtient finalement le système matriciel suivant à résoudre:
@@ -516,7 +516,7 @@ Il peut être résolu directement par une factorisation de Cholesky,\index[aut]{
 \medskip
 \subsection{Synthèse et remarques}
 
-\textcolorred{Toute variable aléatoire~$X$ de~$L^2(\Theta,\mathcal{F},P)$ de fonction de répartition~$F_X(x)$, peut être transformée en une variable gaussienne centrée réduite~$\xi$} en utilisant la relation~$\xi=F_X^{-1}(\Phi(\xi))$ (où~$\Phi$ est la fonction de répartition gaussienne centrée réduite) et donc se décomposer sur une base orthogonale de~$L^2(\Theta,\mathcal{F},P)$ telle que celle des polynômes d'Hermite:\index{polynôme!d'Hermite}
+\textcolorred{Toute variable aléatoire~$X$ de~$L^2(\Theta,\mathcal{F},P)$ de fonction de répartition~$F_X(x)$ peut être transformée en une variable gaussienne centrée réduite~$\xi$} en utilisant la relation~$\xi=F_X^{-1}(\Phi(\xi))$ (où~$\Phi$ est la fonction de répartition gaussienne centrée réduite) et donc se décomposer sur une base orthogonale de~$L^2(\Theta,\mathcal{F},P)$ telle que celle des polynômes d'Hermite:\index{polynôme!d'Hermite}
 $$X=\dsum_{i=0}^\infty a_i H_i(\xi)$$
 Les coefficients~$a_i$, dans cette base, s'expriment comme:
 $$a_i=\dfrac{\E{XH_i(\xi)}}{\E{H_i(\xi}^2}=\dfrac{\E{XH_i(\xi)}}{i!}$$
@@ -548,14 +548,14 @@ Or ce maillage «compatible» avec les contraintes n'a strictement aucune raison
 La minimisation du résidu dans le choix de la troncature des séries essaye de «faire au mieux» avec les nœuds disponibles, mais cela peut se révéler insuffisant.
 
 \medskip
-Dans la mise en place de telles méthodes, il convient de comparer les résultats avec des résultats de référence... or, comme nus l'avons vu, à part dans de très rares cas, il n'est pas possible d'obtenir des formulations simples et donc de disposer de résultats analytiques.
+Dans la mise en place de telles méthodes, il convient de comparer les résultats avec des résultats de référence... or, comme nous l'avons vu, à part dans de très rares cas, il n'est pas possible d'obtenir des formulations simples et donc de disposer de résultats analytiques.
 Dans ce cas, la \textcolorblue{méthode Monte-Carlo}\index{méthode de Monte-Carlo} est utilisée. Le nom de ces méthodes, qui fait allusion aux jeux de hasard pratiqués à Monte-Carlo, a été inventé en 1947 par Nicholas Metropolis,\index[aut]{Metropolis (Nicholas Constantine), 1915-1999, Américain} et publié pour la première fois en 1949 dans un article coécrit avec Stanislaw Ulam.\index[aut]{Ulam (Stanisław Marcin), 1909-1984, Américain} Pour chacune des variables aléatoires, un grand nombre de tirages aléatoires est effectué dans les distributions de probabilité déterminées précédemment, afin de trouver la probabilité d'occurrence de chacun des résultats en appliquant la loi des grands nombres. Il s'agit d'une méthode simple et brutale... mais qui permet à coup sûr d'obtenir un résultat que l'on peut considérer comme la référence... à condition d'avoir effectué un nombre suffisamment élevé de tirages!
 
 
 \medskip
 \section{Post-traitement: moments statistiques}
 
-Quels que soient les paramètres considérés comme aléatoires, le vecteur des déplacements nodaux et les tenseurs de déformations et de contraintes en tout point peuvent s'écrire sous la forme d'un développement sur le chaos polynomial.
+Quels que soient les paramètres considérés comme aléatoires, le vecteur des déplacements nodaux et les tenseurs de déformations et de contraintes en tout point peuvent s'écrire sous la forme d'un développement sur la base du chaos polynomial.
 Nous considérerons disposer à présent de la réponse du système~$S$ (déplacement, déformation, contrainte) écrite dans la base du chaos polynomial:
 \begin{equation}\label{Eq-StoS}
 S=\dsum_{i=0}^{p-1}s_j\Psi_j
@@ -621,7 +621,7 @@ où~$\Phi$ est la fonction de répartition gaussienne centrée réduite.
 Toutefois, déterminer ce point (i.e. le minimum de la fonction d'état limite) n'est pas si facile. Tous les algorithmes d'optimisation convergent vers un minimum, mais aucun ne peut affirmer que ce minimum est global.
 
 \begin{histoire}
-Le tout premier essai dans l'utilisation des concepts statistiques pour la fiabilité des structures dans de 1926, par Max Mayer\index[aut]{Mayer (Max), ?, Allemand} dans \emph{Die Sicherheit der Bauwerke und ihre Berechnung nach Grenzkräften anstatt nach zulässigen Spannungen}. De nombreux progrès ont été faits par M. Prot (\emph{Note sur la notion de coefficient de sécurité}, 1936), W. Weibul\index[aut]{Weibull (Ernst Hjalmar Waloddi), 1887-1979, Suédois} (\emph{Investigations into strength of properties of brittle materials}, 1938, \emph{A statistical theory of strength of materials}, 1939), W. Kjellman\index[aut]{Kjellman (Walter), 1905-1955, Suédois} (\emph{Säkerhetproblemet ur principiell och teoretisk synpunkt}, 1940), et G. Wästlund\index[aut]{Wästlund (Karl Georg), 1905-1980, Suédois} (\emph{Säkerhetproblemet ur praktisk-konstruktiv synpunkt}, 1940), mais globalement, très peu d'articles avaient été publiés dans le domaine avant la seconde guerre mondiale.
+Le tout premier essai dans l'utilisation des concepts statistiques pour la fiabilité des structures date de 1926, par Max Mayer\index[aut]{Mayer (Max), ?, Allemand} dans \emph{Die Sicherheit der Bauwerke und ihre Berechnung nach Grenzkräften anstatt nach zulässigen Spannungen}. De nombreux progrès ont été faits par M. Prot (\emph{Note sur la notion de coefficient de sécurité}, 1936), W. Weibul\index[aut]{Weibull (Ernst Hjalmar Waloddi), 1887-1979, Suédois} (\emph{Investigations into strength of properties of brittle materials}, 1938, \emph{A statistical theory of strength of materials}, 1939), W. Kjellman\index[aut]{Kjellman (Walter), 1905-1955, Suédois} (\emph{Säkerhetproblemet ur principiell och teoretisk synpunkt}, 1940), et G. Wästlund\index[aut]{Wästlund (Karl Georg), 1905-1980, Suédois} (\emph{Säkerhetproblemet ur praktisk-konstruktiv synpunkt}, 1940), mais globalement, très peu d'articles avaient été publiés dans le domaine avant la seconde guerre mondiale.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}%
@@ -674,7 +674,7 @@ Depuis 1970, de très nombreux articles ont été publiés sur le sujet. N'en me
 \end{itemize}}
 
 \medskip\ifVersionDuDocEstVincent\else\vspace{\medskipamount}\fi
-Revenons un peu sur \textcolorblue{L'indice de fiabilité} utilisé en analyse de risque. C'est une mesure de la sûreté qui est élevé lorsque la probabilité de défaillance~$P_f$ est faible. Il s'agit d'un outil plus rudimentaire que la probabilité de défaillance qui est utilisé si celle-ci est trop grande ou lorsque son calcul est trop incertain à cause de l'approximation faite ou parce que l'on ne dispose pas d'informations suffisantes pour la calculer.
+Revenons un peu sur \textcolorblue{L'indice de fiabilité} utilisé en analyse de risque. C'est une mesure de la sûreté qui est élevée lorsque la probabilité de défaillance~$P_f$ est faible. Il s'agit d'un outil plus rudimentaire que la probabilité de défaillance qui est utilisé si celle-ci est trop grande ou lorsque son calcul est trop incertain à cause de l'approximation faite ou parce que l'on ne dispose pas d'informations suffisantes pour la calculer.
 
 En 1969, Cornell\index[aut]{Cornell (Carl Allin), 1938-2007, Américain} définit l'indice de fiabilité~$\beta_c$ (dans le cas de variables gaussiennes) comme:
 \begin{equation}
@@ -730,4 +730,6 @@ P_f = \Phi(-\beta)\prod_{i=1}^{n-1}\dfrac1{\sqrt{1-\beta_{\kappa_i}}}
 
 Les simulations de Monte Carlo\index{méthode de Monte-Carlo} sont les méthodes les plus simples à mettre en œuvre pour calculer la probabilité de défaillance d'un système, mais ce sont aussi les plus coûteuses. Après avoir généré des réalisations pour les variables aléatoires d'entrée selon leur densité conjointe de probabilité, on évalue la fonction d'état limite pour ces réalisations. On compte le nombre total de cas défaillants parmi les calculs effectués, ce qui permet d'estimer la probabilité en fonction du nombre de cas défaillants par rapport au nombre total des réalisations effectuées. Pour s'assurer de la convergence des méthodes de simulation, il faut calculer le coefficient de variation de la simulation: la convergence est atteinte pour un coefficient de variation d'environ 5\%.
 
-Les \textcolorblue{simulations d'importance} (ou Importance sampling) sont des méthodes efficaces pour estimer la probabilité de défaillance, car elles permettent de générer des tirages qui conduisent plus fréquemment à la défaillance et permettent d
+Les \textcolorblue{simulations d'importance} (ou Importance sampling) sont des méthodes efficaces pour estimer la probabilité de défaillance, car elles permettent de générer des tirages qui conduisent plus fréquemment à la défaillance et permettent de gagner plus d'information sur le domaine de défaillance.
+
+Comme le poids de la probabilité de défaillance est généralement situé au voisinage du point de conception, il est plus efficace de concentrer les tirages autour de ce point. On commence donc par l'approcher, par exemple par la méthode FORM. On introduit la fonction~$\psi(u)$, dite densité d'importance, que l'on peut prendre égale à la densité multinormale réduite centrée au point de conception de coordonnées~$u^*$. Dans ce cas, pour simuler~$U$ suivant la densité~$\psi(U)$, on génère d'abord une variable multinormale centrée réduite~$U_r$ et on effectue le changement de variables~$U=U_r+U^*$. Pour la simulation de variables aléatoires, on pourra consulter~\cite{bib-Krikorian}.
