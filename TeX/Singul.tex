@@ -14,7 +14,7 @@ Comme nous l'avons vu au cours de ce document, la mise en œuvre de la mécaniqu
 Cependant, dans certains cas, il existe des points où la solution n'est pas entièrement définie: ces points sont nommés \textcolorblue{singularités}. D'une manière très pragmatique, la contrainte et la déformation tendent vers l'infini lorsque l'on s'approche du point singulier. Le déplacement, quant à lui, garde généralement une valeur finie. Nous avons par exemple abordé cela au chapitre~\ref{Ch-NL}: la contrainte tend vers l'infini au voisinage de la pointe d'une fissure.
 
 \medskip
-Il est important de noter que les singularités ne proviennent ni d'erreurs de calcul, ni d'erreurs dans l'application de la théorie, ni de modèles physiques spécialisés: elles proviennent de la mécanique des milieux continus (ou, plus généralement de toute autre théorie physique basée sur la notion de milieu continu), et leur existence est prédite par l'étude mathématique de ces théories.
+Il est important de noter que les singularités ne proviennent ni d'erreurs de calcul, ni d'erreurs dans l'application de la théorie, ni de modèles physiques spécialisés: elles proviennent de la mécanique des milieux continus (ou, plus généralement, de toute autre théorie physique basée sur la notion de milieu continu), et leur existence est prédite par l'étude mathématique de ces théories.
 
 \medskip
 \section{Singularités et éléments finis}
@@ -39,15 +39,15 @@ Si les singularités avaient la gentillesse de ne se produire que que dans certa
 \end{itemize}
 
 \medskip
-En tout honnêteté, il est difficile de ne pas dire que ces trois cas sont vraiment couramment employés, ce qui permet de prendre toute la mesure du problème: on observe régulièrement des dimensionnements réalisés à partir de contraintes calculées au fond d'un angle rentrant ou sous une force ponctuelle, alors que les valeurs de ces contraintes n'y sont absolument pas fiables...
+En tout honnêteté, il est difficile de nier le fait que ces trois cas sont vraiment couramment employés, ce qui permet de prendre toute la mesure du problème: on observe régulièrement des dimensionnements réalisés à partir de contraintes calculées au fond d'un angle rentrant ou sous une force ponctuelle, alors que les valeurs de ces contraintes n'y sont absolument pas fiables...
 
-Cette liste n'est naturellement pas exhaustive et il existe d'autres cas pouvant entraîner des singularités, comme la présence d'\textcolorblue{encastrements} ou de déplacements imposés dans certaines configurations géométriques particulières. \textcolorgreen{Inversement, et contrairement à ce que d'aucuns croient, les théories des poutres, plaques et coques présentent généralement moins de cas singuliers que la mécanique des milieux continus tridimensionnels (car ces aspects sont pris en compte dans la construction du modèle).}
+Cette liste n'est naturellement pas exhaustive et il existe d'autres cas pouvant entraîner des singularités, comme la présence d'\textcolorblue{encastrements} ou de déplacements imposés dans certaines configurations géométriques particulières. \textcolorgreen{Inversement, et contrairement à ce que d'aucuns croient, les théories des poutres, plaques et coques présentent généralement moins de cas singuliers que la mécanique des milieux continus tridimensionnels (car certains de ces aspects peuvent être pris en compte dans la construction du modèle).}
 
 
 \medskip
 \section{Comment éviter les singularités}
 
-Nous avons vu que les singularités proviennent de limitations intrinsèques de la mécanique des milieux continus: cette dernière donne des résultats non valides en présence d'un certain nombre de configurations. Cela signifie que ces configurations n'appartiennent pas au domaine de validité de la mécanique des milieux continus 3D, et que leur emploi peut donc mener à des résultats non pertinents (en l'occurrence, singuliers).
+Nous avons vu que les singularités proviennent de limitations intrinsèques de la mécanique des milieux continus: cette dernière donne des résultats non valides en présence d'un certain nombre de configurations. Cela signifie que ces configurations n'appartiennent pas au domaine de validité de la mécanique des milieux continus tridimensionnelle, et que leur emploi peut donc mener à des résultats non pertinents (en l'occurrence, singuliers).
 
 \medskip
 Schématiquement, la singularité provient du fait que la mécanique des milieux continus postule l'existence d'une densité volumique d'énergie, et s'accommode donc mal du caractère «ponctuel» de ces modèles (angle ponctuel, force ponctuelle, interface d'épaisseur nulle) qui conduit à des densités d'énergie infinies. Pour éviter la singularité, il faut donc utiliser des modèles non ponctuels comme:
