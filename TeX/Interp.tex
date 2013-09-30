@@ -73,7 +73,7 @@ Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Cauchy\index[aut]{Cauchy (
 Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} avec reste intégral.}
 \end{histoire}
 \begin{theoreme}[Développement en série de Taylor]\label{Th-Taylor}
-Soit~$I$ un intervalle de~$\RR$, $a\in I$, $E$ un espace vectoriel normé et~$f: I\rightarrow R$f une fonction dérivable en~$a$ 
+Soit~$I$ un intervalle de~$\RR$, $a\in I$, $E$ un espace vectoriel normé et~$f: I\rightarrow R$ une fonction dérivable en~$a$ 
 jusqu’à l’ordre~$n$. Alors:
 \begin{equation}
 \forall x\in I, \qquad
@@ -93,7 +93,7 @@ Une \textcolorblue{suite de polynômes orthogonaux}\index{polynôme!orthogonalit
 \begin{equation}
 \langle f,g \rangle=\int_a^b f(x)g(x)\dd x 
 \end{equation}
-Plus généralement, on peut ajouter une \textcolorblue{fonction de poids}~$\varpi(x)$ dans l'intégrale. On notera bien que sur l'intervalle d'intégration~$]a,b[$, la fonction poids~$W$ doit être à valeurs finies et strictement positives, et l'intégrale du produit de la fonction poids par un polynôme doit être finie (voir espaces~$L^p$). Par contre, les bornes~$a$ et~$b$ peuvent être infinies. Il vient alors: 
+Plus généralement, on peut ajouter une \textcolorblue{fonction de poids}~$\varpi(x)$ dans l'intégrale. On notera bien que sur l'intervalle d'intégration~$]a,b[$, la fonction poids~$\varpi(x)$ doit être à valeurs finies et strictement positives, et l'intégrale du produit de la fonction poids par un polynôme doit être finie (voir espaces~$L^p$). Par contre, les bornes~$a$ et~$b$ peuvent être infinies. Il vient alors: 
 \begin{equation}
  \langle f,g \rangle=\int_a^b f(x)g(x)\varpi(x)\dd x 
 \end{equation}
@@ -102,7 +102,7 @@ La norme associée est définie par~$||f||=\sqrt{\langle f,f \rangle}$. Le produ
 \medskip
 \subsection{Base naturelle} 
 
-On rappelle que~$1,X,\ldots,X^n$ est une base de~$K_n[X]$ en tant que polynômes échelonnés. 
+On rappelle que~$1,X,\ldots,X^n$ est une base de~$\KK_n[X]$ en tant que polynômes échelonnés. 
 
 \medskip
 \subsection{Polynômes de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{polynôme! de Lagrange} 
@@ -111,7 +111,7 @@ Connaissant~$n + 1$ points~$(x_0, y_0),\dots,(x_n, y_n)$ d'abscisses \textcolorr
 \begin{equation}
 L(x) = \sum_{j=0}^{n} y_j \biggl(\prod_{i=0, i\neq j}^{n} \frac{x-x_i}{x_j-x_i} \biggr) 
 \end{equation}
-Si on note:
+Si l'on note:
 \begin{equation}
 L(x) = \dsum_{j=0}^{n} y_j l_j(x)
 \end{equation}
@@ -122,7 +122,7 @@ l_i(x) = \prod_{j=0, j\neq i}^{n} \frac{x-x_j}{x_i-x_j} = \frac{x-x_0}{x_i-x_0} 
 alors, on remarque que: 
 \begin{itemize}
 \item~$l_i$ est de degré~$n$ pour tout~$i$; 
-\item~$l_i(x_j) = \delta_{i,j}, 0 \leq i,j \leq n$, i.e.~$l_i(x_i) = 1$ et~$l_i(x_j) = 0$ pour~$j\ne i$ 
+\item~$l_i(x_j) = \delta_{ij}, 0 \leq i,j \leq n$, i.e.~$l_i(x_i) = 1$ et~$l_i(x_j) = 0$ pour~$j\ne i$ 
 \end{itemize}
 On en déduit immédiatement que~$\forall i$, $L(x_i) = y_i$ qui est bien la propriété recherchée par construction. 
 
@@ -193,14 +193,13 @@ Des propriétés analogues sont vérifiées par les polynômes de Hermite\index[
 \medskip
 \subsection{Polynômes de Legendre}\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre} 
 
-
 On appelle équation de Legendre l'équation:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{équations!de Legendre} 
 \begin{equation}
-\frac{\dd }{\dd x}[(1-x^{2})\frac{\dd y}{\dd x}]+n(n+1)y=0
+\frac{\dd }{\dd x}\left((1-x^{2})\frac{\dd y}{\dd x}\right)+n(n+1)y=0
 \end{equation}
 On définit le \textcolorblue{polynôme de Legendre}~$P_n$ par:\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français}\index{polynôme! de Legendre} 
 \begin{equation}
-\frac{\dd}{\dd x}[(1-x^{2})\frac{\dd P_n(x)}{\dd x}]+n(n+1)P_n(x)=0,\quad P_n(1)=1
+\frac{\dd}{\dd x}\left((1-x^{2})\frac{\dd P_n(x)}{\dd x}\right)+n(n+1)P_n(x)=0,\quad P_n(1)=1
 \end{equation}
 La manière la plus simple de les définir est par la formule de récurrence de Bonnet:\index[aut]{Bonnet (Pierre-Ossian), 1819-1892, Français}~$P_0(x)=1$, $P_1(x)=x$ et:
 \begin{equation}
@@ -260,7 +259,7 @@ Chacune de ces deux familles est une suite de polynômes orthogonaux\index{polyn
 \begin{equation}
 \forall n>0, \quad T_n(x)=\dfrac n2\dsum_{k=0}^{\left\lfloor \frac n2\right\rfloor}(-1)^k \frac{(n-k-1)!}{k!(n-2k)!}(2x)^{n-2k} 
 \end{equation}
-Les~$T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scalaire}\index{polynôme!orthogonalité} 
+Les polynômes~$T_n$ sont orthogonaux pour le produit scalaire suivant:\index{produit scalaire}\index{polynôme!orthogonalité} 
 \begin{equation}
  \int_{-1}^1 \frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}\dd x= 
 \begin{cases} 0&\text{ si } n\ne m\\ \pi&\text{ si } n=m=0\\ \pi/2&\text{ si } n=m\ne 0~. 
@@ -291,7 +290,7 @@ Les premiers polynômes de Tchebychev de première espèce sont:\index[aut]{Tche
 \begin{equation}
 \forall n\ge 0, \quad U_n(x)=\sum_{k=0}^{\left\lfloor \frac n2\right \rfloor}(-1)^k \binom{n-k}k~(2x)^{n-2k} 
 \end{equation}
-Les~$U_n$ sont orthogonaux\index{polynôme!orthogonalité} pour le produit scalaire\index{produit scalaire} suivant: 
+Les polynômes~$U_n$ sont orthogonaux\index{polynôme!orthogonalité} pour le produit scalaire\index{produit scalaire} suivant: 
 \begin{equation}
 \int_{-1}^1 U_n(x)U_m(x)\sqrt{1-x^2}\dd x = 
 \begin{cases} 0&\text{ si } n\ne m\\ \pi/2 &\text{ si } n=m 
@@ -323,7 +322,7 @@ Les \textcolorblue{polynômes de Laguerre} apparaissent en mécanique quantique 
 \begin{equation}
  xy'' + (1 - x)y' + ny = 0 
 \end{equation}
-qui est une équation différentielle linéaire du second ordre possédant des solutions non singulières si seulement si~$n$ est un entier positif. 
+qui est une équation différentielle linéaire du second ordre possédant des solutions non singulières si et seulement si~$n$ est un entier positif. 
 
 Traditionnellement notés~$L_0,L_1,\dots$ ces polynômes forment une suite de polynômes qui peut être définie par la formule de Rodrigues:\index[aut]{Rodrigues (Benjamin-Olinde), 1795-1851, Français} 
 \begin{equation}
@@ -333,7 +332,7 @@ Ils sont orthogonaux\index{polynôme!orthogonalité} les uns par rapport aux aut
 \begin{equation}
 \langle f,g \rangle = \int_0^\infty f(x) g(x) \mathrm{e}^{-x}\dd x 
 \end{equation}
-Cette propriété d'orthogonalité revient à dire que si~$X$ est une variable aléatoire distribuée exponentiellement avec la fonction densité de probabilité suivantes: 
+Cette propriété d'orthogonalité revient à dire que si~$X$ est une variable aléatoire distribuée exponentiellement avec la fonction densité de probabilité suivante: 
 \begin{equation}
  f(x)=\left\{
 \begin{aligned}
@@ -404,7 +403,7 @@ L'\textcolorblue{erreur d'interpolation} lors de l'approximation d'une fonction~
 \begin{equation}
 f(x) - p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i=0}^n (x-x_i) \quad \text{ avec }\quad \xi \in I
 \end{equation}
-Dans le cas particulier où~$x_i = x_0 + ih$ (points uniformément répartis), il se produit en général une \textcolorred{aggravation catastrophique de l'erreur d'interpolation}, connue sous le nom de \textcolorblue{phénomène de Runge}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} lorsqu'on augmente le nombre de points pour un intervalle~$[x_0,x_n]$, donné (on a alors~$\xi\in]-1,1[$). 
+Dans le cas particulier où~$x_i = x_0 + ih$ (points uniformément répartis), il se produit en général une \textcolorred{aggravation catastrophique de l'erreur d'interpolation}, connue sous le nom de \textcolorblue{phénomène de Runge}\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} lorsque l'on augmente le nombre de points pour un intervalle~$[x_0,x_n]$, donné (on a alors~$\xi\in]-1,1[$). 
 
 \textcolorblue{Pour limiter le phénomène de Runge},\index[aut]{Runge (Carl David Tolmé), 1856-1927, Allemand} i.e. pour minimiser l'oscillation des polynômes interpolateurs, on peut utiliser les abscisses de Tchebychev\index[aut]{Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe} au lieu de points équirépartis pour interpoler. Dans ce cas, on peut montrer que l'erreur d'interpolation décroît lorsque~$n$ augmente. On peut aussi préférer utiliser des splines pour approximer la fonction~$f$ (ce sont des polynômes par morceaux définis plus bas). Dans ce cas, pour améliorer l'approximation, on augmente le nombre de morceaux et non le degré des polynômes. 
  
@@ -434,7 +433,7 @@ L'\textcolorblue{interpolation d'Hermite}\index[aut]{Hermite (Charles), 1822-190
 \medskip
 \subsection{Courbe de Bézier}\index[aut]{Bézier (Pierre), 1910-1999, Français}
 
-\begin{histoire}Pierre Bézier (ingénieur de l'École nationale supérieure d'arts et métiers en 1930 et de l'École supérieure d'électricité en 1931, il reçoit le titre de docteur en mathématiques de l'université de Paris en 1977) est connu pour son invention des courbes et surfaces de Bézier, couramment utilisées en informatique. 
+\begin{histoire}Pierre Bézier (ingénieur de l'École Nationale Supérieure d'Arts et Métiers en 1930 et de l'École Supérieure d'Électricité en 1931, docteur en mathématiques de l'université de Paris en 1977) est connu pour son invention des courbes et surfaces de Bézier, couramment utilisées en informatique. 
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{c}%
@@ -465,7 +464,7 @@ Les principales propriétés des courbes de Bézier sont les suivantes:
 \item une courbe de Bézier est~$C^{\infty}$;
 \item la courbe de Bézier est un segment si et seulement si les points de contrôle sont alignés;
 \item chaque restriction d'une courbe de Bézier est aussi une courbe de Bézier;
-\item un arc de cercle (ni même aucun arc de courbe conique, en dehors du segment de droite) ne peut pas être décrit par une courbe de Bézier, quel que soit son degré;
+\item un arc de cercle, ni même aucun arc de courbe conique (en dehors du segment de droite) ne peut être décrit par une courbe de Bézier, quel que soit son degré;
 \item \textcolorred{le contrôle de la courbe est global: modifier un point de contrôle modifie toute la courbe, et non pas un voisinage du point de contrôle;}
 \item pour effectuer une transformation affine de la courbe, il suffit d'effectuer la transformation sur tous les points de contrôle. 
 \end{itemize}
@@ -487,7 +486,7 @@ où les~$P_i$ forment un polygone appelé \textcolorblue{polygone de contrôle}.
 \end{align}
 Quand les points sont équidistants, les B-splines sont dites uniformes. C'est le cas des courbes de Bézier qui sont des B-splines uniformes, dont les points~$t_i$ (pour~$i$ entre~$0$ et~$m$) forment une suite arithmétique de~$0$ à~$1$ avec un pas constant~$h=1/m$, et où le degré~$n$ de la courbe de Bézier ne peut être supérieur à~$m$). 
 
-\textcolorgris{Par extension, lorsque deux points successifs~$t_j$ et~$t_{j+1}$ sont confondus, on pose~$0/0 = 0$: cela a pour effet de définir une discontinuité de la tangente, pour le point de la courbe paramétré par une valeur de~$t$, donc d'y créer un sommet d'angle non plat.} \textcolorgreen{Toutefois il est souvent plus simple de définir ce B-spline étendu comme l'union de deux B-splines définis avec des points distincts, ces splines étant simplement joints par ce sommet commun, sans introduire de difficulté dans l'évaluation paramétrique ci-dessus des B-splines pour certaines valeurs du paramètre~$t$. Mais cela permet de considérer alors tout polygone simple comme un B-spline étendu.}
+\textcolorgris{Par extension, lorsque deux points successifs~$t_j$ et~$t_{j+1}$ sont confondus, on pose~$0/0 = 0$: cela a pour effet de définir une discontinuité de la tangente, pour le point de la courbe paramétré par une valeur de~$t$, donc d'y créer un sommet d'angle non plat.} \textcolorgreen{Toutefois il est souvent plus simple de définir ce B-spline étendu comme l'union de deux B-splines définis avec des points distincts, ces splines étant simplement joints par ce sommet commun, sans introduire de difficulté dans l'évaluation paramétrique ci-dessus des B-splines pour certaines valeurs du paramètre~$t$. Mais cela permet de considérer alors tout polygone simple comme une B-spline étendue.}
  
 La forme des fonctions de base est déterminée par la position des points. La courbe est à l'intérieur de l'enveloppe convexe des points de contrôle. Une B-spline de degré~$n$, $b_{i,n}(t)$ est non nulle dans l'intervalle~$\intff{t_i}{t_{i+n+1}}$: 
 \begin{equation}

@@ -1,7 +1,7 @@
 \chapter{Intégration numérique}\label{chap-quadrature} 
 
 \ifVersionDuDocEstVincent\vspace{10mm}\fi
-La méthode des éléments finis conduit à la discrétisation d'une formulation faible où la construction des matrices constitutives du système à résoudre nécessitent le calcul d'intégrales. Dans certains cas particuliers, ou en utilisant des codes de calcul formel, ces intégrations peuvent être réalisées de manière exacte. Cependant, dans la plupart des cas et dans la plupart des codes de calcul, ces intégrations sont calculées numériquement. On parle alors de méthodes d'intégration numérique et de formules de quadrature. 
+La méthode des éléments finis conduit à la discrétisation d'une formulation faible où la construction des matrices constitutives du système à résoudre nécessite le calcul d'intégrales. Dans certains cas particuliers, ou en utilisant des codes de calcul formel, ces intégrations peuvent être réalisées de manière exacte. Cependant, dans la plupart des cas et dans la plupart des codes de calcul, ces intégrations sont calculées numériquement. On parle alors de méthodes d'intégration numérique et de formules de quadrature. 
 
 \medskip
 \section{Méthodes de Newton-Cotes}\index[aut]{Cotes (Roger), 1682-1716, Anglais}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}\index{intégration!Newton-Cotes}
@@ -10,7 +10,7 @@ Soit à calculer l'intégrale suivante:
 \begin{equation}
 I=\int_a^b f(x)\dd x
 \end{equation}
-L'idée consiste à construire un polynôme pour interpoler~$f(x)$ et à intégrer ce polynôme. Plusieurs types de polynômes peuvent être utilisés pour cette interpolation. Les principales méthodes d'interpolations sont détaillées au chapitre~\ref{chap-interpolation}. 
+L'idée consiste à construire un polynôme pour interpoler~$f(x)$ et à intégrer ce polynôme. Plusieurs types de polynômes peuvent être utilisés pour cette interpolation. Les principales méthodes d'interpolations ont été détaillées au chapitre~\ref{chap-interpolation}. 
 
 \medskip
 \subsection*{Méthode des rectangles}\index{intégration!rectangles}
@@ -35,6 +35,7 @@ Comme cette approximation peut sembler un peu brutale, il est possible de subsiv
 I\approx \frac{(b-a)}{n}\sum_{i=0}^{n}f(x_i)
 \end{equation}
 où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le point courant et l'erreur commise vaut~$-\frac{h^3}{12n^2} f''(w)$ pour un certain~$w\in\intff{a}{b}$. 
+\medskipvm
 \begin{remarque}[Remarques]\mbox{}
 \begin{itemize}
 \item la \textcolorblue{méthode de Romberg} permet d'accélérer la convergence de la méthode des trapèzes;
@@ -56,6 +57,7 @@ Comme dans le cas précédent, il est possible de subdiviser l'intervalle~$\intf
  I\approx \frac{h}{3} \left( f(a)+f(b)+2\sum_{i=1}^{n/2-1}f(x_{2i})+4\sum_{i=1}^{n/2}f(x_{2i-1}) \right)
 \end{equation}
 où~$h=(b-a)/n$ est la longueur de chaque sous intervalle, $x_i=a+ih$ le point courant et l'erreur commise vaut~$-\frac{nh^5}{180} f^{(4)}(w)$ pour un certain~$w\in\intff{a}{b}$. 
+\medskipvm
 \begin{remarque}[Remarques]\mbox{}
 \begin{itemize}
 \item la parabole interpolant~$f$ est trouvée en utilisant l'interpolation de Lagrange;\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} 
@@ -82,7 +84,7 @@ Le principe de la méthode reste le même que pour la méthode de Newton-Cotes, 
 \begin{equation}
 I=\int_a^b \varpi(x)f(x)\d x \approx \sum_{i=1}^n \varpi_if(x_i)
 \end{equation}
-où~$\varpi(x): \intervalle{a}{b}\rightarrow\RR$ est une \textcolorblue{fonction de pondération}, qui peut assurer l'intégrabilité de~$f$. Les~$\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature (ou poids)}. Les~$x_i$ sont réels, distincts, uniques et sont les racines de polynômes orthogonaux (et non plus uniquement de Lagrange) pour le produit scalaire:
+où~$\varpi(x): \intervalle{a}{b}\rightarrow\RR$ est une \textcolorblue{fonction de pondération}, qui peut assurer l'intégrabilité de~$f$. Les~$\varpi_i$ sont appelés les \textcolorblue{poids ou coefficients de quadrature}. Les~$x_i$ sont réels, distincts, uniques et sont les racines de polynômes orthogonaux (et non plus uniquement de Lagrange) pour le produit scalaire:
 \begin{equation}
 \left\langle f,g \right\rangle = \int_a^b f(x)g(x) \varpi(x) \d x
 \end{equation}
@@ -106,7 +108,7 @@ Si on intègre sur~$\intervalle{a}{b}$ au lieu de~$\intervalle{-1}{1}$, alors on
 \begin{equation}
  \frac{b-a}{2} \sum_{i=1}^n \varpi_i f\left(\frac{b-a}{2}x_i + \frac{a+b}{2}\right) 
 \end{equation}
-\begin{remarque} \mbox{}
+\begin{remarque}[Remarques] \mbox{}
 \begin{itemize} 
 \item \textcolorred{pour la méthode des éléments finis, l'intégration se déroule sur l'élément de référence, donc on n'a pas besoin de faire ce changement. Il est fait par la transformation affine entre l'élément considéré et l'élément de référence;}
 \item le nombre de points de Gauß\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} ainsi que leurs positions sur l'élément sont donnés dans les documentations des logiciels \textcolorgris{(bien que vous sachiez désormais les trouver)}.
@@ -132,7 +134,7 @@ où~$n_x$, $n_y$ et~$n_z$ sont les nombres de points de Gauß utilisés dans les
 \medskip
 \subsection*{Intégration sur un triangle ou un tétraèdre} 
 
-Malheureusement, tous les éléments ne sont pas des segments, carrés ou cubes... on a également souvent à faire à des triangles et à des tétraèdres. Dans ce cas, on construit des formules spécifiques qui ne sont pas issues du cas monodimensionel. L'élément triangulaire de référence est un triangle isocèle côtés égaux de longueur 1. L'angle droit est à l'origine du repère. La forme générale d'intégration est: 
+Malheureusement, tous les éléments ne sont pas des segments, carrés ou cubes... on a également souvent à faire à des triangles et à des tétraèdres. Dans ce cas, on construit des formules spécifiques qui ne sont pas issues du cas unidimensionnel. L'élément triangulaire de référence est un triangle isocèle à côtés égaux de longueur 1. L'angle droit est à l'origine du repère. La forme générale d'intégration est: 
 \begin{equation}
  I=\int_{\hat{K}} f(x,y)\d x\d y \approx \sum_{i=1}^n \varpi_if(x_i,y_i) 
 \end{equation}
