@@ -236,19 +236,119 @@ Stevens a donné des valeurs obtenues pour l'exposant $a$ dans différents domai
 \end{histoire}
 
 \medskip
-Nous avons plusieurs fois déjà utilisé le décibel (dB).
-Toutefois, il convient de distinguer plusieurs échelles:
+\subsubsection{Décibels}
+
+La notion de réception sera forcément liée à une échelle de mesure (une métrique). Nous avons plusieurs fois déjà utilisé le décibel (dB). Toutefois, il convient de distinguer plusieurs échelles:
 \begin{itemize}
    \item Le \textcolorblue{décibel} (dB) est une unité de grandeur adimensionnelle définie comme 10 fois le logarithme décimal du rapport entre deux puissances. Pour l'acoustique, ce rapport des puissances est défini entre la grandeur mesurée et une valeur de référence fixée par une norme.
-   \item le \textcolorblue{dB lin} traduit la physique du phénomène. C'est lui que l'on utilise dans les calculs et analyses.
-   \item Le \textcolorblue{dB A} traduit la perception par l'oreille du phénomène (protection physiologique par filtrage). C'est lui qu'il faut utiliser en lien avec des normes adéquates (fonction du problème considéré) pour savoir s'il y a nuisance sonore ou non.
+   \begin{equation}
+   n \text{(en dB)} = 10 \log_{10} (I_1/I_0)
+   \end{equation}
+   où $I_1$ et $I_0$ sont deux intensités.
    
-   Notons que pour être tout à fait exact, cette pondération du dB lin qu'est le dB A devrait varier avec l'âge: en effet, la perception en fonction de la fréquence et de la puissance varie avec l'âge, ainsi que l'étendue de fréquences audibles (qui diminue, phénomène appelé presbyacousie), comme on le voit sur les courbes (ou diagrammes) de Fletcher\index[aut]{Fletcher (Harvey C.), 1884-1981, Américain} et Munson,\index[aut]{Munson (Wilden A.), 1902-1982, Américain} présentées dans leur article \emph{Loudness, its definition, measurement and calculation} paru en 1933 dans le Journal of the Acoustic Society of America, et que l'on appelle également courbes isosoniques. Fletcher et Munson travaillaient tous les deux aux laboratoires Bell.
+   \item Dans la formule précédente, si $I_0$ correspond au seuil de perception ($10^{-12}$~Watt/m$^2$), on obtient les \textcolorblue{décibels absolus ou dB lin ou SPL}. C'est lui que l'on utilise dans les calculs et analyses.
+   \begin{equation}
+   n \text{(en dB)} = 10 \log_{10} (I_1/10^{-12})
+   \end{equation}
+   Si $I_1 = 10^{-12}$~Watt/m$^2$ (seuil de perception), on obtient 0~dB.
+   Si $I_1 = 1$~Watt/m$^2$ (seuil de douleur), on obtient 120~dB.
 
-   \item Il existe d'autres pondérations: le dB C est quasiment linéaire sur plusieurs octaves et est utile pour les mesures subjectives avec de fortes pressions acoustiques. Le dB B est entre les dB A et le dB C. Ils sont rarement utilisés.    
-   
-   
+   \item Le \textcolorblue{dBA} traduit la perception par l'oreille du phénomène (protection physiologique par filtrage). C'est souvent lui qu'il faut utiliser en lien avec des normes adéquates (fonction du problème considéré) pour savoir s'il y a nuisance sonore ou non.
+
+   \item Il existe d'autres pondérations: le dBC est quasiment linéaire sur plusieurs octaves et est utile pour les mesures subjectives avec de fortes pressions acoustiques. Le dBB est entre le dBA et le dBC. Le dBD est appliqué pour tenir compte de la gêne causée par les sifflements (à hautes fréquences) perçus à l'intérieur des avions modernes. Le dBG est adapté aux basses fréquences...
+
+  \item  Notons que pour être tout à fait exact, que ces pondérations devraient varier avec l'âge: en effet, la perception en fonction de la fréquence et de la puissance varie avec l'âge, ainsi que l'étendue de fréquences audibles (qui diminue, phénomène appelé presbyacousie), comme on le voit sur les courbes (ou diagrammes) de Fletcher\index[aut]{Fletcher (Harvey C.), 1884-1981, Américain} et Munson,\index[aut]{Munson (Wilden A.), 1902-1982, Américain} présentées dans leur article \emph{Loudness, its definition, measurement and calculation} paru en 1933 dans le Journal of the Acoustic Society of America, et que l'on appelle également courbes isosoniques. Fletcher et Munson travaillaient tous les deux aux laboratoires Bell. 
 \end{itemize}
+
+\medskip
+\subsubsection{Grandeurs}
+
+À ce niveau, il convient de rappeler quelques définitions:
+\begin{itemize}
+   \item La \textcolorblue{pression acoustique} est l'amplitude des variations de la pression en un point de l'espace, par rapport à la pression atmosphérique, provoquées par le passage d'une onde sonore en ce point. (Unité: $N/m^2$)
+   \item La \textcolorblue{puissance acoustique} est la quantité (ou le flux) d'énergie acoustique qu'émet une source par unité de temps. (Unité: $W$)
+   \item L'\textcolorblue{intensité acoustique} est le flux d'énergie acoustique qui est transmis dans une direction donnée, à travers une unité de surface, pendant une unité de temps. Elle dépend de la puissance de la source, du milieu de propagation, de la distance à la source. (Unité: $W/m^2$)
+\end{itemize}
+
+\medskip
+L'intensité acoustique s'exprime comme:
+\begin{equation}
+I = \frac{p^2}{Z}
+\end{equation}
+où $p$ est la pression acoustique et $Z$ l'\textcolorblue{impédance} (Unité: $Ns/m^3$).
+
+\medskip
+Dans le cadre de mesures:
+\begin{itemize}
+   \item l'intensité acoustique est représentée par la puissance électrique (Watt);
+   \item la pression acoustique est représentée par la tension électrique (V) \textcolorgris{(la tension électrique fournie par un microphone est proportionnelle à la pression acoustique $p$)};
+   \item l'impédance acoustique est représentée par la résistance électrique.
+\end{itemize}
+On peut remplacer $I = p^2/Z$ par $P = V^2/R$ et en déduire la \textcolorblue{puissance moyenne}:
+\begin{equation}
+P_{moy}=\dfrac{V_1^2+...+V_n^2}{nR}
+\end{equation}
+On définit aussi la \textcolorblue{tension efficace ou tension RMS} (Root Mean Square), qui est la tension continue qui donnerait une puissance continue égale à la puissance moyenne. On a donc $P_{moy}=V_{eff}^2/R$, soit:
+\begin{equation}
+V_{eff}=\sqrt{\dfrac{V_1^2+...+V_n^2}{n}}
+\end{equation}
+
+\medskip
+\subsubsection{Impédance}
+
+La notion d'impédance mérite que nous y passions quelques instants. En effet, elle nous permettra par la suite de définir des conditions aux limites pour nos modèles numériques.
+
+L'impédance caractéristique d'un milieu (solide, liquide ou gazeux) est définie comme le rapport de la pression acoustique sur la vitesse de déplacement en milieu ouvert (i.e. en l'absence d'ondes réfléchies). C'est une propriété du matériau considéré qui est égale, dans le cas d'un espace illimité, au produit de la masse volumique du matériau par la vitesse du son dans ce même matériau.
+
+\medskip
+L'impédance acoustique dans les solides est définie par:
+\begin{equation}
+Z = \dfrac{F}{v}=\rho c
+\end{equation}
+où~$F$ est la force ($N$), $v$ la vitesse de déplacement ($m/s$), $\rho$ la densité linéique du milieu ($kg/m$) et $c$ la vitesse de propagation ($m/s$).
+On remarquera que~$c$ et~$v$ sont inversement proportionnelles.
+Dans les solides, la vitesse de propagation est plus élevée que dans les gaz et l'énergie s'y dissipe moins rapidement: l'onde peut se propager plus loin.
+
+\medskip
+L'impédance acoustique dans les gaz est définie par:
+\begin{equation}
+Z = \dfrac{p}{v}=\rho c
+\end{equation}
+où cette fois~$p$ est la pression acoustique ($Pa$), les autres grandeurs étant les mêmes qu'auparavant.
+
+\medskip\colorgreen
+L'impédance de l'air vaut $Z=413,5$ (en~$Pa.s/m$ ou~$N.S/m^3$) à 20\degre C. Elle varie avec la température, tout comme la densité et la célérité du son.
+
+La vitesse du son dans l'air en $m/s$ vaut $c=331,5+0,6\theta$, où~$\theta$ est la température de l'air en \degre C (elle varie également en fonction de la pression atmosphérique et de la température).
+
+L'impédance acoustique de l'eau est d'environ~$1,5.10^6 ~Pa.s/m$.
+
+\medskip\colorblack
+Considérons deux milieux d'impédances respectives~$Z_1$ et~$Z_2$, et une onde incidente se propageant dans le milieu 1 jusqu'à arriver à sa frontière avec le milieu 2.
+Si $Z_1=Z_2$, alors l'onde incidente se propage intégralement dans le milieu 2, i.e. elle est intégralement transmise.
+Par contre, si $Z_1\ne Z_2$, alors l'onde incidente se scinde en une onde réfléchie et une onde transmise. L'amplitude de l'onde réfléchie est d'autant plus grande que la discontinuité entre les deux milieux est marquée.
+On définit alors le \textcolorblue{coefficient de réflexion} par:
+\begin{equation}
+\dfrac{p_r}{p_i}=\dfrac{Z_2-Z_1}{Z_2+Z_1}
+\end{equation}
+où les indices~$r$ et~$i$ désignent l'onde réfléchie et l'onde incidente respectivement.
+
+\medskip\colorgreen
+Supposons qu'une onde se propage dans l'air ($Z_1=413,5$) et rencontre un solide tel que $Z_2=500 000$. Alors le coefficient de réflexion est de 99,8\%.
+Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, le coefficient de réflexion devient négatif.%: «la compression s'est réfléchie en raréfaction».
+
+\medskip\colorblack
+Deux cas extrêmes nous intéressent:
+\begin{itemize}
+   \item la \textcolorblue{réflexion à une extrémité libre}: dans ce cas,~$Z_2\approx0$ et la vitesse de l'extrémité est~$v=2v_i$. On assiste à un changement de signe de $v_r$ sans renversement de la forme de l'onde.
+   \item la \textcolorblue{réflexion à une extrémité fixe}: dans ce cas,~$Z_2\rightarrow\infty$ et la vitesse de l'extrémité est $v=0$. Il n'y a pas de changement de signe de~$v_r$, mais la forme de l'onde est renversée.
+\end{itemize}
+
+
+
+
+
+
 
 %slides VM p27
 \medskip
@@ -257,7 +357,7 @@ Toutefois, il convient de distinguer plusieurs échelles:
 
 
 \medskip
-\subsubsection{Pshycoacoustique}
+\subsubsection{Psychoacoustique}
 
 \begin{itemize}
    \item la Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psychoacoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson, puis de Zwicker entre autres, expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
