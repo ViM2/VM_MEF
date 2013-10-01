@@ -11,7 +11,7 @@ Regardons toutefois d'un peu plus près d'où tout cela provient.
 \medskip
 \begin{histoire}%
 Dans le chapitre VI, «Développement d'une fonction arbitraire en séries trigonométriques» de sa \emph{Théorie analytique}, Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} considère une fonction~$f$ définie dans~$]-\pi/2,+\pi/2[$ dont le développement en série trigonométrique est de la forme:
-\begin{equation} f(x)=a_1\sin x+a_2\sin 2x +\ldots+a_k\sin kx +\ldots\end{equation}
+\begin{equation}\label{Eq-FourierTrigo} f(x)=a_1\sin x+a_2\sin 2x +\ldots+a_k\sin kx +\ldots\end{equation}
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{c}%
 \includegraphics[height=\the\HauteurDesPhotos]{Fourier}\\
@@ -23,7 +23,7 @@ Le problème est de calculer les coefficients~$a_k$ dans le cas même, dit-il, o
 On notera au passage que la fonction considérée par Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} n'est définie que par la donnée de ses points (si en plus ils sont en nombre fini, cela représente alors un échantillonnage). %\\ \indent
 %
 Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} conduit son calcul selon une voie nouvelle: en multipliant l'expression précédente par~$\sin kx$ et en intégrant terme à terme la série, mais sans justification, il obtient:
-\begin{equation}a_k=\frac2{\pi}\dint_0^{\pi} f(x)\sin kx \dd x\end{equation}
+\begin{equation}\label{Eq-FourierAk} a_k=\frac2{\pi}\dint_0^{\pi} f(x)\sin kx \dd x\end{equation}
 Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} observe que dans tous les cas envisagés, ces intégrales ont un sens et en conclut que toute fonction d'une variable peut-être représentée par une série trigonométrique. }
 Même manquant de rigueur, Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} aboutit à un résultat juste pour les fonctions qu'il considère.
 Or les fonctions considérées en l'occurrence «vont bien» pour l'intégrale de Riemann\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} telle qu'elle est définie.

@@ -292,25 +292,64 @@ où~$\Omega$ est notre domaine qui est une surface, donc~$\Omega\subset\RR^2$.
 \medskip
 \subsection{Équation de la chaleur}
 
-L'\textcolorblue{équation de la chaleur} est une équation aux dérivées partielles parabolique, introduite initialement en 1811 par Fourier pour décrire le phénomène physique de conduction thermique.\index{ED-EDP!de la chaleur}\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
+L'\textcolorblue{équation de la chaleur} est une équation aux dérivées partielles parabolique, introduite au début du \textsc{xix}\fup{e} siècle par Fourier pour décrire le phénomène physique de conduction thermique.\index{ED-EDP!de la chaleur}\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français}
 
 \medskip
 \begin{histoire}%
-\textbf{À propos de l'effet régularisant de la chaleur:}
+En dépit des railleries de Hugo\index[aut]{Hugo (Victor), 1802-1885, Français} et Stendhal\index[aut]{Beyle (Henri), dit Stendhal, 1783-1842, Français} à son encontre, Joseph Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} laissera son nom à la postérité à plus d'un titre:\\[-2.5mm]
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cc}
+\includegraphics[height=\the\HauteurDesPhotos]{Fourier2}&
+\includegraphics[height=\the\HauteurDesPhotos]{Champollion}\\
+Fourier&Champollion%
+\end{tabular}}
+\ImageADroite{%
+\noindent en tant qu'égyptologue, une spécialité  qu'il bouleverse à la suite de sa participation à l'expédition napoléonienne de 1798 (en 1810, il créera l'Université Royale de Grenoble, dont il deviendra le recteur, et y remarquera Jean-François Champollion.\index[aut]{Champollion (Jean-François), 1790-1832, Français} Ils sont enterrés au cimetière du Père-Lachaise à côté l'un de l'autre); en tant qu'homme politique puisqu'il est préfet d'Isère sous Napoléon Bonaparte\index[aut]{Bonaparte (Napoléon), 1769-1821, Français} et sous la Restauration; en tant qu'administrateur, comme réorganisateur des statistiques françaises; et enfin en tant que scientifique, la consécration de sa carrière étant son élection au poste de secrétaire perpétuel de l'Académie des Sciences. Pour tous les mathématiciens, il reste le fondateur de l'analyse de Fourier, qu'il crée au début du \textsc{xix}\fup{e} siècle pour étudier mathématiquement la répartition de chaleur dans un corps conducteur.}
 
-L'équation de la chaleur a un «effet régularisant»: quelque soit la distribution initiale de la température pour un problème donné, même discontinue, on aboutit rapidement à une distribution continue et même lisse de la température.
+Quelques repères chronologiques:
+En 1807, Fourier écrit l'équation de la chaleur.
+En 1808, son mémoire est accepté par l'Académie des Sciences en dépit de sérieuses critiques concernant la rigueur des démonstrations (Fourier a en particulier une controverse avec Poisson).\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
+En 1822 a lieu la publication du \emph{Traité analytique de la chaleur}, version remaniée et augmentée de son mémoire, qui s'imposera comme l'un des ouvrages scientifiques majeurs du dix-neuvième siècle.
+
+\medskip
+La lecture du \emph{Traité analytique} est toujours profitable. La première phrase sonne comme une profession de foi: «Les causes primordiales ne nous sont point connues; mais elles sont assujetties à des lois simples et constantes, que l'on peut découvrir par l'observation, et dont l'étude est l'objet de la philosophie naturelle». Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} confesse donc son ambition de décrire des phénomènes physiques jusque là jugés inaccessibles, par le moyen des mathématiques; il le confirme dans le choix d'une devise en latin (attribuée par Fourier à Aristote,\index[aut]{Aristote (dit le Stagirite), -384-- -322, Grec} mais probablement inventée par lui-même) : \emph{Et ignem regunt numeri} (Même le feu est régi par les nombres).
+
+\medskip
+L'idée maîtresse de Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} celle que l'on lui attribue le plus naturellement, consiste à décomposer une fonction périodique arbitraire sous forme de série trigonométrique déjà mentionnée à l'équation~(\ref{Eq-FourierTrigo}). Des décompositions de ce style ne sont pas à proprement parler nouvelles: elles faisaient partie du répertoire des analystes de la fin du \textsc{xviii}\fup{e} siècle, à commencer par le plus impressionnant d'entre eux, le Suisse Euler.\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} Mais Fourier est le premier à avoir l'intuition du caractère universel et particulièrement commode de cette décomposition trigonométrique.
+
+Fourier donne quelques exemples frappants pour montrer que «n'importe quelle» fonction est décomposable en série trigonométrique: une fonction «en dents de scie» et une autre «en créneaux». Ainsi, même des fonctions discontinues peuvent être exprimées en séries de Fourier, pourvu que l'on définisse la fonction aux points de discontinuité en utilisant la «condition de demi-somme»:
+\begin{equation}\label{Eq-Demi-Somme}
+f(x)=\dfrac{f(x^+)+f(x^-)}2
+\end{equation}
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\begin{tabular}{ccc}
-\includegraphics[height=\the\HauteurDesPhotos]{Nirenberg}&
-\includegraphics[height=\the\HauteurDesPhotos]{Nash}&
-\includegraphics[height=\the\HauteurDesPhotos]{DeGiorgi}\\
-Nirenberg&Nash&De Giorgi%
+\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Dirichlet3}\\
+Dirichlet%
+\end{tabular}}
+%\medskip
+\ImageAGauche{%
+Cela pouvait paraître surprenant à l'époque de Fourier, mais bien sûr ce n'est pas contradictoire avec les théorèmes connus: une série de fonctions continues n'est pas en général continue.
+L'acte de foi suivant consiste à admettre que des décompositions similaires s'appliquent à des fonctions non périodiques (définies sur~$\RR$ tout entier). Dans tous les cas, la formule donnant les coefficients de Fourier, fournis par la relation~(\ref{Eq-FourierAk}) instantanément quelques questions, et notamment: comment trouver les coefficients? (problème de l'analyse) En quel sens faut-il comprendre la convergence de ces séries?\\
+\indent
+La convergence des séries de Fourier est reconnue dès le début comme un problème important et délicat, sur lequel Fourier lui-même avait été attaqué. Le résultat qui fait référence en la matière est le théorème de Dirichlet (1829):\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}}
+\begin{theoreme}[Théorème de Dirichlet]\index{théorème!de Dirichlet}
+Soit $f: \TT\rightarrow\CC$, continue par morceaux, satisfaisant la condition de demi-somme~(\ref{Eq-Demi-Somme}) et $C^1$ de part et d'autre de chaque point de discontinuité, alors:
+\begin{equation}
+\forall x\in\TT, \qquad \dsum_{k\in\ZZ} c_k(f)e^{2i\pi kx} = f(x)
+\end{equation}
+\end{theoreme}
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Gibbs}\\
+Gibbs%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-En 1956, Louis Nirenberg\index[aut]{Nirenberg (Louis), 1925- , Américain} propose un nouveau problème à John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} (qui est «aussi pressé que X, aussi exaspérant que Y, quels que soient X et Y» selon Warren Ambrose): la continuité des solutions de l'équation de la chaleur dans les milieux discontinus, i.e. lorsque le coefficient de conductivité est quelconque, et peut même varier brutalement d'un point à l'autre et que l'on a seulement des bornes inférieure et supérieure sur la conductivité.\\ \indent
-John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} résout le problème, notamment à l'aide du concept d'entropie de Boltzmann,\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} mais n'obtiendra pas le triomphe escompté, le problème ayant été résolu, en même temps, mais par une autre méthode, par l'italien De Giorgi,\index[aut]{De Giorgi (Ennio), 1928-1996, Italien} qui lui deviendra célèbre (mais John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} est célèbre pour d'autres travaux... prix Nobel d'économie en 1994, voir le film «un homme d'exception» (\emph{A Beautiful Mind}) de Ron Howard\index[aut]{Howard (Ronald William), 1954- , Américain} en 2001).}
+Jusqu'en 1876 les spécialistes pensaient que l'hypothèse de continuité $C^1$ de part et d'autre était superflue; mais un contre-exemple de DuBois-Reymond prouva le contraire. Si l'on veut avoir la propriété de reconstruction ponctuelle, on doit supposer une certaine régularité; tout au mieux on peut relaxer l'hypothèse $C^1$.\\
+\indent
+Même quand elle est vraie, la convergence ponctuelle des séries de Fourier peut être médiocre. Un exemple bien connu est le phénomène de Gibbs,\index[aut]{Gibbs (Josiah Willard), 1839-1903, Américain} qui pose des problèmes pratiques: la série de Fourier d'une fonction créneau présente des oscillations près des points de discontinuité, dont l'ampleur ne s'atténue pas quand le nombre de fréquences tend vers l'infini.}
 \end{histoire}
 \colorblack
 
@@ -354,7 +393,24 @@ La diffusion est un phénomène de transport irréversible qui se traduit à ter
 
 D'un point de vue phénoménologique, et au premier ordre, ce phénomène est régi par une \textcolorblue{loi de Fick} (par exemple sorption d'eau dans les matériaux composites, diffusion d'actifs au travers de la peau).\index[aut]{Fick (Adolf Eugene), 1829-1901, Allemand} Dans l'équation précédente, $T$ représente alors la répartition de la grandeur considérée (eau dans un composite, concentration d'un constituant chimique...) et le terme source dans~$\Omega$ est souvent nul (i.e.~$f=0$).
 
+\begin{histoire}%
+\textbf{À propos de l'effet régularisant de la chaleur:}
 
+L'équation de la chaleur a un «effet régularisant»: quelque soit la distribution initiale de la température pour un problème donné, même discontinue, on aboutit rapidement à une distribution continue et même lisse de la température.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccc}
+\includegraphics[height=\the\HauteurDesPhotos]{Nirenberg}&
+\includegraphics[height=\the\HauteurDesPhotos]{Nash}&
+\includegraphics[height=\the\HauteurDesPhotos]{DeGiorgi}\\
+Nirenberg&Nash&De Giorgi%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+En 1956, Louis Nirenberg\index[aut]{Nirenberg (Louis), 1925- , Américain} propose un nouveau problème à John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} (qui est «aussi pressé que X, aussi exaspérant que Y, quels que soient X et Y» selon Warren Ambrose): la continuité des solutions de l'équation de la chaleur dans les milieux discontinus, i.e. lorsque le coefficient de conductivité est quelconque, et peut même varier brutalement d'un point à l'autre et que l'on a seulement des bornes inférieure et supérieure sur la conductivité.\\ \indent
+John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} résout le problème, notamment à l'aide du concept d'entropie de Boltzmann,\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} mais n'obtiendra pas le triomphe escompté, le problème ayant été résolu, en même temps, mais par une autre méthode, par l'italien De Giorgi,\index[aut]{De Giorgi (Ennio), 1928-1996, Italien} qui lui deviendra célèbre (mais John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} est célèbre pour d'autres travaux... prix Nobel d'économie en 1994, voir le film «un homme d'exception» (\emph{A Beautiful Mind}) de Ron Howard\index[aut]{Howard (Ronald William), 1954- , Américain} en 2001).}
+\end{histoire}
+\colorblack
 
 
 

@@ -32,7 +32,7 @@ L'étude des conditions de régularité des solutions des équations aux dériv�
 
 \medskip
 Quelques mots s'imposent au sujet de la théorie des distributions.
-Parmi tous les travaux ayant valus à leur auteur la médaille Fields, la théorie des distributions de Laurent Schwartz\index[aut]{Schwartz (Laurent), 1915-2002, Français} est l'une des très rares à être abordable par les étudiants dès leur premier cycle universitaire. C'est une partie de l'explication du réel engouement pour les distributions, l'autre partie étant sa puissance, sa commodité d'usage et surtout sa très rare beauté.
+Parmi tous les travaux ayant valus à leur auteur la médaille Fields, la théorie des distributions de Laurent Schwartz\index[aut]{Schwartz (Laurent), 1915-2002, Français} est l'une des très rares à être abordable par les étudiants dès leur premier cycle universitaire. C'est une partie de l'explication du réel engouement pour les distributions, l'autre partie étant sa puissance, sa commodité d'usage et surtout sa très grande beauté.
 
 Si cette théorie fournit aux analystes un cadre général et un formalisme agréable pour l'étude des espaces fonctionnels et des équations aux dérivées partielles dans lesquels ils aiment à se placer, elle n'est pourtant pas indispensable.
 D'une part, les spécialistes d'équations aux dérivées partielles parviennent toujours à trouver des formulations bien adaptées à leurs problèmes, en s'inspirant des idées sous-jacentes à la théorie des distributions, mais sans y avoir recours explicitement. D'autre part, on peut étudier la plupart des espaces fonctionnels intéressants sans la notion de distribution: par exemple, les espaces de Sobolev peuvent être définis en termes de  distributions, ou bien en termes de complétion de l'espace des fonctions $C^\infty$ à support compact pour des normes bien choisies. %L'équivalence de ces deux points de vue est d'ailleurs un résultat célèbre dû à Meyers et Serin.
@@ -49,24 +49,42 @@ Une distribution (également appelée fonction généralisée) est un objet qui 
 
 \begin{histoire}
 \noindent\emph{Généralisation de la notion de fonction:}\\
-Depuis le milieu des années 1920, les théoriciens de la physique quantique, et en particulier Dirac,\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} utilisaient des objets étranges qu'ils manipulaient comme des fonctions. Le plus typique était la «fonction de Dirac»,\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} mystérieuse fonction qui vaut $0$ partout, sauf en $0$ où elle vaut $+\infty$, et dont l'intégrale est égale à $1$ (en violation de toutes les règles de la théorie de l'intégration de Lebesgue). Non seulement Dirac\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} utilisait cette fonction à des fins de calcul formel, mais encore il se permettait de la dériver à volonté, se contentant de remarquer que les dérivées successives étaient «de plus en plus singulières».
-
-L'utilité et le caractère intuitif de ces objets rendait presque indispensable leur incorporation dans une théorie mathématique; c'est ce qu'a réalisé la théorie des distributions. Leur interprétation est d'ailleurs très simple, et cause beaucoup moins de
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{c}
+\includegraphics[height=\the\HauteurDesPhotos]{Dirac}\\
+Dirac%
+\end{tabular}}
+\ImageADroite{%
+Depuis le milieu des années 1920, les théoriciens de la physique quantique, et en particulier Dirac,\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} utilisaient des objets étranges qu'ils manipulaient comme des fonctions. Le plus typique était la «fonction de Dirac»,\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} mystérieuse fonction qui vaut $0$ partout, sauf en $0$ où elle vaut $+\infty$, et dont l'intégrale est égale à $1$ (en violation de toutes les règles de la théorie de l'intégration de Lebesgue). Non seulement Dirac\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais} utilisait cette fonction à des fins de calcul formel, mais encore il se permettait de la dériver à volonté, se contentant de remarquer que les dérivées successives étaient «de plus en plus singulières».\\
+\indent L'utilité et le caractère intuitif de ces objets rendait presque indispensable leur incorporation dans une théorie mathématique; c'est ce qu'a réalisé la théorie des distributions. Leur interprétation est d'ailleurs très simple, et cause beaucoup moins de
 maux de tête que les interrogations que l'on peut avoir sur la nature des «fonctions»
-considérées par Dirac.\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}
+considérées par Dirac.\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}}
 
 \medskip
 \noindent\emph{Réhabilitation de la dérivation:}\\
-Au début du vingtième siècle, la théorie de l'intégration de Lebesgue a pris un essor rapide, et l'intégration apparaît désormais comme l'opération reine de l'analyse. La plupart des fonctions sont intégrables, alors que très peu sont dérivables. En outre, la théorie de Lebesgue montre que l'intégration est souvent une opération continue vis-à-vis de la convergence des fonctions, uniforme ou même simple (ponctuelle); alors que la dérivation est une opération grossièrement discontinue.
-
-Dans la théorie de Schwartz\index[aut]{Schwartz (Laurent), 1915-2002, Français} au contraire, ces problèmes disparaîtront: à toute fonction continue on pourra associer des «fonctions dérivées» à tous les ordres, selon une notion qui prolongera celle de dérivée des fonctions continûment dérivables. De manière plus générale, toute distribution sera dérivable à tout ordre, et on pourra définir une notion de convergence qui prolongera la notion de convergence uniforme, et pour laquelle l'opération de dérivée sera continue. 
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cc}
+\includegraphics[height=\the\HauteurDesPhotos]{Lebesgue4}&
+\includegraphics[height=\the\HauteurDesPhotos]{Schwartz2}\\
+Lebesgue&Schwartz%
+\end{tabular}}
+\ImageAGauche{%
+Au début du vingtième siècle, la théorie de l'intégration de Lebesgue a pris un essor rapide, et l'intégration apparaît désormais comme l'opération reine de l'analyse. La plupart des fonctions sont intégrables, alors que très peu sont dérivables. En outre, la théorie de Lebesgue montre que l'intégration est souvent une opération continue vis-à-vis de la convergence des fonctions, uniforme ou même simple (ponctuelle), alors que la dérivation est une opération grossièrement discontinue.\\
+\indent
+Dans la théorie de Schwartz\index[aut]{Schwartz (Laurent), 1915-2002, Français} au contraire, ces problèmes disparaîtront: à toute fonction continue on pourra associer des «fonctions dérivées» à tous les ordres, selon une notion qui prolongera celle de dérivée des fonctions continûment dérivables. De manière plus générale, toute distribution sera dérivable à tout ordre, et on pourra définir une notion de convergence qui prolongera la notion de convergence uniforme, et pour laquelle l'opération de dérivée sera continue.}
 
 \medskip
 \noindent\emph{Extension des espaces de solutions acceptables:}\\
-Leray\index[aut]{Leray (Jean), 1906-1998, Français} en 1934,Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} en 1936, introduisent de nouvelles notions de solutions d'équations aux dérivées partielles, appelées solutions faibles ou solutions généralisées, qui permettent de formuler des équations aux dérivées partielles sans supposer nécessairement l'existence de dérivées au sens classique. Leur approche préfigure très bien la théorie des distributions, qui ne sera mise au point qu'une quinzaine d'années plus tard. Les contributions de Leray et Sobolev ne constituent pas les seuls travaux précurseurs
-de la théorie des distributions: dans les années 30 et 40, de nombreux chercheurs vont utiliser les concepts de solutions généralisées pour étudier les solutions de diverses équations aux dérivées partielles: Courant et Hilbert, Bochner, Friedrichs, Krylov...
+Leray\index[aut]{Leray (Jean), 1906-1998, Français} en 1934 et Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} en 1936 introduisent de nouvelles notions de solutions d'équations aux dérivées partielles, appelées solutions faibles ou solutions généralisées, qui permettent de formuler des équations aux dérivées partielles sans supposer nécessairement l'existence de dérivées au sens classique. Leur approche préfigure très bien la théorie des distributions, qui ne sera mise au point qu'une quinzaine d'années plus tard. Les contributions de Leray et Sobolev ne constituent pas les seuls travaux précurseurs de la théorie des distributions. Dans les années 30 et 40, de nombreux chercheurs vont utiliser les concepts de solutions généralisées pour étudier les solutions de diverses équations aux dérivées partielles: Courant\index[aut]{Courant (Richard), 1888-1972, Américain} et Hilbert,\index[aut]{Hilbert (David), 1862-1943, Allemand} Bochner,\index[aut]{Bochner (Salomon), 1899-1982, Américain} Friedrichs,\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} Krylov...\index[aut]{Krylov (Aleksey Nikolaevich), 1863-1945, Russe}
 
-Nous arrivons maintenant à l'idée majeure de la théorie des distributions, déjà présente dans les travaux de Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} et Leray.\index[aut]{Leray (Jean), 1906-1998, Français} Du point de vue physique, on peut la motiver comme suit. Le résultat ou l'interprétation d'une expérience physique faisant intervenir une certaine grandeur, qui varie en fonction du temps ou de l'espace, ne dépend que très rarement des valeurs ponctuelles de cette grandeur, mais plus souvent de sa valeur moyenne (ou intégrale) prise contre une fonction du temps ou de l'espace, plus ou moins localisée. En d'autres termes, plutôt qu'une fonction $u$, c'est plutôt une «moyenne» de la forme $\int u\varphi$ qui sera accessible en pratique. Ainsi, un signal électrique oscillant avec une période très élevée fournira, de manière apparemment paradoxale, un signal plat quand on l'utilisera pour alimenter un oscilloscope: dans le processus de moyenne inhérent à la mesure, les valeurs positives et négatives se compenseront.
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cc}
+\includegraphics[height=\the\HauteurDesPhotos]{Leray}&
+\includegraphics[height=\the\HauteurDesPhotos]{Sobolev2}\\
+Leray&Sobolev\\
+\end{tabular}}
+\ImageADroite{%
+Nous arrivons maintenant à l'idée majeure de la théorie des distributions, déjà présente dans les travaux de Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} et Leray.\index[aut]{Leray (Jean), 1906-1998, Français} Du point de vue physique, on peut la motiver comme suit. Le résultat ou l'interprétation d'une expérience physique faisant intervenir une certaine grandeur, qui varie en fonction du temps ou de l'espace, ne dépend que très rarement des valeurs ponctuelles de cette grandeur, mais plus souvent de sa valeur moyenne (ou intégrale) prise contre une fonction du temps ou de l'espace, plus ou moins localisée. En d'autres termes, plutôt qu'une fonction $u$, c'est plutôt une «moyenne» de la forme $\int u\varphi$ qui sera accessible en pratique. Ainsi, un signal électrique oscillant avec une période très élevée fournira, de manière apparemment paradoxale, un signal plat quand on l'utilisera pour alimenter un oscilloscope: dans le processus de moyenne inhérent à la mesure, les valeurs positives et négatives se compenseront.}
 
 Dans le cas de l'équation des ondes aussi bien que dans celui des équations de transport avec données singulières, on résout ainsi le dilemme qui nous est proposé, en reformulant l'équation par son action sur les fonctions-test.
 
@@ -74,14 +92,14 @@ Explicitons plus en détail la réflexion de Sobolev.\index[aut]{Sobolev (Sergue
 à l'analyse (fonctionnelle) de certaines classes d'équations aux dérivées partielles,
 il cherchait à étudier les fonctions possédant une dérivée carré-intégrable, dans un
 cadre suffisamment général... et en particulier, sans supposer la fonction dérivable!
-Il montra que l'on pouvait donner une définition utile et pratique du concept de «fonction dont la dérivée est de carré intégrable», qui ne présuppose pas l'existence d'une dérivée au sens usuel. L'espace ainsi défini est aujourd'hui appelé espace de Sobolev $W^{1,2}$, ou $H^1$.
+Il montra que l'on pouvait donner une définition utile et pratique du concept de «fonction dont la dérivée est de carré intégrable», qui ne présuppose pas l'existence d'une dérivée au sens usuel. L'espace ainsi défini est aujourd'hui appelé espace de Sobolev $W^{1,2}$ ou $H^1$.
 
 \medskip
 \noindent\emph{Simplification de problèmes non linéaires ardus:}\\
 L'utilisation de solutions généralisées peut venir d'une nécessité de modélisation, mais également par l'incapacité à prouver l'existence de solutions classiques. L'exemple archétypal en la matière est celui des équations de la mécanique des fluides, en particulier l'équation de Navier-Stokes\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais} incompressible, dont la première étude mathématique moderne est due à Leray.\index[aut]{Leray (Jean), 1906-1998, Français} L'écriture même de l'équation de Navier-Stokes incompressible présuppose apparemment la dérivabilité de la fonction inconnue $u$, mais rien ne semblait permettre d'affirmer l'existence de solutions dérivables pour des données initiales assez générales. Ce problème est d'ailleurs toujours ouvert, et compte parmi les sept problèmes du millénaire de l'Institut Clay, mais nous en reparlerons au paragraphe~\ref{Sec-NavierStokes}. Leray\index[aut]{Leray (Jean), 1906-1998, Français} eut l'idée de définir une solution de l'équation de Navier-Stokes incompressible par une formulation duale qui ne présupposait pas de régularité. de Navier-Stokes. De telles solutions sont aujourd'hui appelées solutions faibles.
 
 \medskip
-La théorie des distributions exploite au maximum l'idée de moyenner les solutions contre des fonctions-test qui se comportent bien: on définit au départ une classe agréable de fonctions-test, à la fois très régulières et bien localisées: les fonctions indéfiniment dérivables, à support compact. Toutes les propriétés des objets que l'on cherche à définir sont alors définies en fonction des «intégrales» de ces objets contre les fonctions-test.
+La théorie des distributions exploite au maximum l'idée de moyenner les solutions contre des fonctions-test qui se comportent bien: on définit au départ une classe agréable de fonctions-test, à la fois très régulières et bien localisées, à savoir les fonctions indéfiniment dérivables, à support compact. Toutes les propriétés des objets que l'on cherche à définir sont alors définies en fonction des «intégrales» de ces objets contre les fonctions-test.
 \end{histoire}
 
 \medskip
