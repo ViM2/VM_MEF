@@ -121,7 +121,7 @@ La définition s'applique en particulier pour les fonctions d'une variable réel
 \begin{definition}[Fonction~$a$-höldérienne]
 Si~$(E, d)$ et~$(F, d')$ sont deux espaces métriques, une fonction~$f: E \rightarrow F$ est dite $a$-höldérienne s'il existe une constante~$C > 0$ telle que:
 \begin{equation}
-  \forall (x, y) \in \mathrm{e}^2,\quad d'\left(f(x), f(y)\right) \le C\,d\left(x,y\right)^a
+  \forall (x, y) \in E^2,\quad d'\left(f(x), f(y)\right) \le C\,d\left(x,y\right)^a
 \end{equation}
 \end{definition}
 La continuité höldérienne d'une fonction dépend donc d'un paramètre réel strictement positif~$a \in \intof{0}{1}$, et prend en compte toutes les variations de la valeur de la fonction sur son ensemble de définition.
@@ -172,13 +172,13 @@ Newton &Leibniz%
 \ImageADroite{%
 Les échanges, les conceptions et la compréhension des infinitésimaux ont animé le monde scientifique pendant bien longtemps, la discussion était tout autant philosophique que mathématique, ce qui est somme toute assez normal compte tenu du sujet...
 Les fondateurs incontestés de l'analyse sont Newton\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} et Leibniz.\index[aut]{Leibniz (Gottfried Wilhelm), 1646-1716, Allemand}
-La portée de ces travaux est considérable car ils vont permettre non seulement la compréhension des courbes (puis le calcul des aires), mais aussi celle du mouvement des corps.
+La portée de leurs travaux est considérable car ils vont permettre non seulement la compréhension des courbes (puis le calcul des aires), mais aussi celle du mouvement des corps.
 C'est véritablement une révolution où l'on passe d'une science de la statique à une
 science de la dynamique.}
 
 Un débat houleux sur la paternité du calcul différentiel entre mathématiciens britanniques et allemands fit rage, mais Newton et Leibniz s'en tinrent à l'écart.
 Toutefois, cette polémique entre les deux camps ne sera pas sans effet.
-Celle-ci fera que les anglais resteront à l'écart du développement général des mathématiques au \textsc{xviii}\fup{e} siècle, la tradition newtonienne dominante ayant abouti à une certaine stagnation scientifique. Au début du \textsc{xix}\fup{e} siècle, avec la diffusion des notations symboliques leibniziennes du calcul infinitésimal, un petit groupe de mathématicien de Cambridge se mettront à réfléchir sur le rôle et l'importance de la symbolique.
+Celle-ci fera que les anglais resteront à l'écart du développement général des mathématiques au \textsc{xviii}\fup{e} siècle, la tradition newtonienne dominante ayant abouti à une certaine stagnation scientifique. Au début du \textsc{xix}\fup{e} siècle, avec la diffusion des notations symboliques leibniziennes du calcul infinitésimal, un petit groupe de mathématicien de Cambridge se mettra à réfléchir sur le rôle et l'importance de la symbolique.
 
 \medskip
 L'opinion générale est aujourd'hui que Leibniz s'est presque certainement inspiré de certaines des idées de Newton (dont les travaux sont antérieurs, mais non publiés au moment où Leibniz publie), mais que sa contribution reste suffisamment importante pour que le mérite de l'invention du calcul différentiel soit accordé aux deux hommes.
@@ -195,7 +195,7 @@ Archimède&Oresme%
 \end{tabular}}
 \medskip
 \ImageAGauche{%
-Avant Newton et Leibniz, Descartes\index[aut]{Descartes (René), 1596-1650, Français} s'était intéressé au problème des tangentes à une courbe et Fermat\index[aut]{Fermat (Pierre, de -), ?-1665, Français} avait introduit une notion assez de la dérivée lors d'une recherche d'extremum.
+Avant Newton et Leibniz, Descartes\index[aut]{Descartes (René), 1596-1650, Français} s'était intéressé au problème des tangentes à une courbe et Fermat\index[aut]{Fermat (Pierre, de -), ?-1665, Français} avait introduit une notion assez proche de la dérivée lors d'une recherche d'extremum.
 En remontant encore plus dans l'Histoire, on peut dire que la méthode d'exhaustion, telle qu'elle a été développée et utilisée par Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec} (i.e. avec toute la rigueur nécessaire, en usant du procédé d'encadrement évitant le recourt aux~$\varepsilon$) est réellement la première utilisation des infinitésimaux.
 Malgré, ou peut-être à cause de, la grande originalité de ses travaux, Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec} n'a été que peu suivi dans le monde grec et n'a pas eu de disciple direct.\\
 \indent
@@ -355,7 +355,7 @@ i=1, ..., n\right\}, k\ge 1
 \medskip
 \begin{definition}[Multi-indice]
 On appelle \textcolorblue{multi-indice}~$\alpha$ un~$n$-uplet d'entiers $\alpha=(\alpha_1, ..., \alpha_n)$, $\alpha_j\in\NN$.
-Sa \textcolorblue{longueur} est~$|\alpha|=\alpha_1+ ... + \alpha_n$, et on note \textcolorblue{$\partial^\alpha$} la quantité (l'opération)
+Sa \textcolorblue{longueur} est~$|\alpha|=\alpha_1+ ... + \alpha_n$, et on note \textcolorblue{$\partial^\alpha$} la quantité (l'opération):
 \begin{equation}
    \partial^\alpha=\left(\dfrac{\partial}{\partial x_1}\right)^{\alpha_1}...\left(\dfrac{\partial}{\partial x_n}\right)^{\alpha_n}\end{equation}
 \end{definition}
@@ -544,7 +544,7 @@ La \textcolorgreen{divergence} d'un champ de vecteurs mesure comment son courant
 \textcolorgreen{D'une manière plus générale, la divergence traduit la conservation (si elle est nulle) ou non d'une grandeur physique en un point: cela mesure donc, en chaque point si une grandeur (par exemple le volume comme avant) est conservative ou non.}
 
 
-Le \textcolorgreen{rotationnel} exprime la tendance qu'ont les lignes de champ d'un champ vectoriel à tourner autour d'un point: sa circulation locale sur un petit lacet entourant ce point est non nulle quand son rotationnel ne l'est pas (nous n'avons pas défini la notion de lacet, nous compterons sur l'imagination du lecteur). \textcolorgris{On rappelle que les lignes de champ sont les lignes qui, en première approche, représente le chemin que l'on suivrait en partant d'un point.
+Le \textcolorgreen{rotationnel} exprime la tendance qu'ont les lignes de champ d'un champ vectoriel à tourner autour d'un point: sa circulation locale sur un petit lacet entourant ce point est non nulle quand son rotationnel ne l'est pas (nous n'avons pas défini la notion de lacet, nous compterons sur l'imagination du lecteur). \textcolorgris{On rappelle que les lignes de champ sont les lignes qui, en première approche, représentent le chemin que l'on suivrait en partant d'un point.
 Ce sont en fait les lignes orthogonales aux équipotentielles, ou surfaces de niveau, du champ.}
 
 \medskip
@@ -569,7 +569,7 @@ Les relations ci-après permettent de passer d'intégrales sur un domaine à des
 \begin{theoreme}[Théorème du gradient]\index{gradient}\index{théorème!du gradient}
 Ce théorème met en relation l'intégrale de volume du gradient d'un champ scalaire et l'intégrale de surface de ce même champ:
  \begin{equation}
-  \int_\Omega \nabla f = \int_\Gamma f \vect{n}(x)
+  \int_\Omega \nabla f = \int_\Gamma f n(x)
 \end{equation}
 où~$\Gamma$ est le bord du domaine~$\Omega$ et~$f$ un champ scalaire (i.e. une fonction régulière).
 \end{theoreme}
@@ -579,7 +579,7 @@ où~$\Gamma$ est le bord du domaine~$\Omega$ et~$f$ un champ scalaire (i.e. une 
 Ce théorème met en relation l'intégrale de volume du rotationnel d'un champ vectoriel et l'intégrale de surface du même champ:
 \begin{equation}
 \int_\Omega \rotb \mathbf{A} =
--\int_\Gamma \mathbf{A} \wedge \vect{n}(x)
+-\int_\Gamma \mathbf{A} \wedge n(x)
 \end{equation}
 où~$\Gamma$ est la frontière de~$\Omega$, $\wedge$ est le produit vectoriel et~$n(x)$ est la normale dirigé vers l'extérieur.
 \end{theoreme}
@@ -653,6 +653,6 @@ Soit~$\Omega$ un domaine de~$\RR^2$ ou~$\RR^3$ de frontière~$\Gamma$, $\mathbf{
 \wedge \mathbf{B}\right) \right)
 = \int_\Gamma \left(\mathbf{A} \wedge \mathbf{B}\right)\cdot n(x)\\
 &\int_\Omega \left( f \nabla^{2} g + \nabla f \cdot \nabla g \right)
-= \int_\Gamma f \nabla g \cdot \vect{n}(x)
+= \int_\Gamma f \nabla g \cdot n(x)
 \end{align}
 Ces formules sont exploitées pour obtenir des formulations faibles associées à des problèmes aux dérivées partielles. 
