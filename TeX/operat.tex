@@ -85,9 +85,9 @@ $F$ a au moins autant d'éléments que~$E$.
 
 \emph{\small (plus d'étoile verte dans~$E$ et plus d'étoile rouge dans~$F$)}
 
-Soit~$\forall x,y\in \mathrm{e}^2, x\ne y \Rightarrow f(x)\ne f(y)$,
+Soit~$\forall x,y\in E^2, x\ne y \Rightarrow f(x)\ne f(y)$,
 
-ou~$\forall x,y\in \mathrm{e}^2, f(x)=f(y) \Rightarrow x=y$
+ou~$\forall x,y\in E^2, f(x)=f(y) \Rightarrow x=y$
 &
 %\includegraphics[width=4cm]{injection} \\
 \raisebox{-22mm}{\includegraphics[height=2.5cm]{injection.eps}} \\
@@ -203,7 +203,7 @@ Soient~$(E,+,.)$ et~$(F,+,.)$ deux espaces vectoriels sur un corps~$\KK$.
 Un \textcolorblue{morphisme d'ev}~$f$ entre~$E$ et~$F$ est une application qui respecte la condition de linéarité par rapport aux lois~$+$ (en fait qui est un morphisme de groupe entre les groupes~$(E,+)$ et~$(F,+)$) et qui conserve la «linéarité par rapport à la multiplication par un scalaire»:
 \begin{equation}\left\{
 \begin{array}{ll}
-\forall (x,y)\in \mathrm{e}^2, \quad f(x+ y)=f(x)+ f(y) &\text{ condition d'additivité}\\
+\forall (x,y)\in E^2, \quad f(x+ y)=f(x)+ f(y) &\text{ condition d'additivité}\\
 \forall x\in E,\quad \forall \lambda\in\KK,\quad f(\lambda\cdot x)=\lambda\cdot f(x) &\text{ condition d'homogénéité}
 \end{array}
 \right.\end{equation}
@@ -212,7 +212,7 @@ Un \textcolorblue{morphisme d'ev}~$f$ entre~$E$ et~$F$ est une application qui r
 Ceci est équivalent à la condition suivante (on parle de «préservation des combinaisons
 linéaires»):
 \begin{equation}\colorred
-\forall (x,y)\in \mathrm{e}^2,\quad \forall \lambda\in\KK,\quad f(\lambda\cdot x+ y)=\lambda \cdot f(x) + f(y)
+\forall (x,y)\in E^2,\quad \forall \lambda\in\KK,\quad f(\lambda\cdot x+ y)=\lambda \cdot f(x) + f(y)
 \end{equation}
 et on utilise plutôt le terme \textcolorblue{d'application linéaire} ou \textcolorblue{d'opérateur linéaire} ou encore de \textcolorblue{transformation linéaire}.
 
@@ -241,7 +241,7 @@ Un \textcolorblue{isomorphisme} est est un morphisme~$f$ entre deux ensembles mu
 
 Deux ensembles munis du même type de structure algébrique sont dits \textcolorblue{isomorphes} s'il existe un isomorphisme entre les deux ensembles.\index{morphisme!isomorphisme}
 
-\textcolorred{L'isomorphie présente un intérêt majeur, car elle permet de transposer des résultats et propriétés démontrés sur l'un des deux ensembles à l'autre.}
+\textcolorgreen{L'isomorphie présente un intérêt majeur, car elle permet de transposer des résultats et propriétés démontrés sur l'un des deux ensembles à l'autre.}
 
 \medskip
 Un \textcolorblue{automorphisme}\index{morphisme!automorphisme} est un isomorphisme d'une structure dans elle-même, i.e. à la fois un isomorphisme et un endomorphisme.
@@ -263,7 +263,7 @@ On note:
 \subsection{Espace dual d'un espace vectoriel}\index{dual d'un espace vectoriel}
 
 \begin{definition}[Espace dual]
-On appelle \textcolorblue{espace dual} d'un espace vectoriel~$E$ l'ensemble des formes linéaires sur~$E$. Il est lui-même un~$\KK$-espace vectoriel, et on le note $\mathrm{e}^*$ ou~$hom(E,\KK)$.
+On appelle \textcolorblue{espace dual} d'un espace vectoriel~$E$ l'ensemble des formes linéaires sur~$E$. Il est lui-même un~$\KK$-espace vectoriel, et on le note $E^*$ ou~$hom(E,\KK)$.
 \end{definition}
 
 La structure d'un espace et celle de son dual sont très liées.
@@ -271,12 +271,12 @@ Nous allons détailler quelques points en nous restreignant aux cas qui nous int
 
 \medskip
 \colorgris
-Si l'on dispose, sur l'espace vectoriel considéré~$E$, d'un produit scalaire~$\langle\cdot,\cdot\rangle$ (voir chapitre \ref{Ch-Esp}), alors il existe un moyen «naturel» de plonger~$E$ dans~$\mathrm{e}^*$, i.e. d'associer à chaque élément de~$E$ un élément du dual, et ce de manière à former un isomorphisme entre~$E$ et un sous-espace de~$\mathrm{e}^*$:
+Si l'on dispose, sur l'espace vectoriel considéré~$E$, d'un produit scalaire~$\langle\cdot,\cdot\rangle$ (voir chapitre \ref{Ch-Esp}), alors il existe un moyen «naturel» de plonger~$E$ dans~$E^*$, i.e. d'associer à chaque élément de~$E$ un élément du dual, et ce de manière à former un isomorphisme entre~$E$ et un sous-espace de~$E^*$:
 à chaque élément~$x\in E$ on associe la forme linéaire~$\varphi_x: E \to K;\ y \mapsto \langle x,y\rangle$.
-Alors l'application~$f: E \to \mathrm{e}^*;\ x \mapsto \varphi_x$ est une application linéaire injective, donc l'espace~$E$ est isomorphe au sous-espace~$f(E)$ de~$\mathrm{e}^*$.\colorblack
+Alors l'application~$f: E \to E^*;\ x \mapsto \varphi_x$ est une application linéaire injective, donc l'espace~$E$ est isomorphe au sous-espace~$f(E)$ de~$E^*$.\colorblack
 
 \medskip
-\textcolorred{Si l'espace~$E$ est de dimension finie~$n$, alors l'espace dual~$\mathrm{e}^*$ est isomorphe à~$E$ et est donc lui aussi de dimension~$n$.}
+\textcolorred{Si l'espace~$E$ est de dimension finie~$n$, alors l'espace dual~$E^*$ est isomorphe à~$E$ et est donc lui aussi de dimension~$n$.}
 On a alors le théorème de la base duale (que je ne présente pas, car je n'ai pas parlé de base... mais peut-être pourrons-nous nous passer de ces rappels dans ce document).
 
 \medskip
@@ -286,7 +286,7 @@ Cette notation est appelée \textcolorblue{crochet de dualité.}\index{crochet d
 \medskip
 \begin{definition}[Dual topologique]\index{dual topologique d'un espace vectoriel}
 Soit~$E$ un espace vectoriel topologique sur le corps~$\KK$.
-Le dual topologique~$E'$ de~$E$ est le sous-espace vectoriel de~$\mathrm{e}^*$ (le dual algébrique de~$E$) formé des formes linéaires continues.
+Le dual topologique~$E'$ de~$E$ est le sous-espace vectoriel de~$E^*$ (le dual algébrique de~$E$) formé des formes linéaires continues.
 \end{definition}
 Si l'espace est de dimension finie, le dual topologique coïncide avec le dual algébrique, puisque dans ce cas toute forme linéaire est continue.
 Mais dans le cas général, l'inclusion du dual topologique dans le dual algébrique est stricte.
