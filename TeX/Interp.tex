@@ -72,6 +72,15 @@ Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Lagrange\index[aut]{Lagran
 Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais}-Cauchy\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français},
 Taylor\index[aut]{Taylor (Brook), 1685-1731, Anglais} avec reste intégral.}
 \end{histoire}
+\begin{remarque}
+L'usage de chacune des formules de Taylor dépend du but recherché.
+
+La formule de Taylor-Young précise seulement le comportement d'une expression lorsque~$h$ tend vers 0; elle est donc purement locale au voisinage du point~$a$ considéré. À l'ordre 1 (i.e.~$k=1$) elle se réduit à la définition de la différentielle. Pour~$k=2$ elle montre que le terme en~$o(\|h\|)$ est en fait en~$O(\|h\|^2)$ dès que la fonction est deux fois  différentiable en~$a$.
+
+La formule avec reste intégral est la plus précise. On l'utilisera chaque fois que l'on a besoin d'informations détaillées sur le reste, notamment sur sa dépendance par rapport aux variables ou à d'éventuels paramètres.
+
+La majoration de Taylor-Lagrange sera utilisée pour évaluer l'accroissement entre deux points, non nécessairement proches l'un de l'autre.
+\end{remarque}
 \begin{theoreme}[Développement en série de Taylor]\label{Th-Taylor}
 Soit~$I$ un intervalle de~$\RR$, $a\in I$, $E$ un espace vectoriel normé et~$f: I\rightarrow R$ une fonction dérivable en~$a$ 
 jusqu’à l’ordre~$n$. Alors:

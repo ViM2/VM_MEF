@@ -74,14 +74,14 @@ Au début du vingtième siècle, la théorie de l'intégration de Lebesgue a pri
 Dans la théorie de Schwartz\index[aut]{Schwartz (Laurent), 1915-2002, Français} au contraire, ces problèmes disparaîtront: à toute fonction continue on pourra associer des «fonctions dérivées» à tous les ordres, selon une notion qui prolongera celle de dérivée des fonctions continûment dérivables. De manière plus générale, toute distribution sera dérivable à tout ordre, et on pourra définir une notion de convergence qui prolongera la notion de convergence uniforme, et pour laquelle l'opération de dérivée sera continue.}
 
 \medskip
-\noindent\emph{Extension des espaces de solutions acceptables:}\\
+\noindent\emph{Extension des espaces de solutions acceptables:}\\[+2.5mm]
 Leray\index[aut]{Leray (Jean), 1906-1998, Français} en 1934 et Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} en 1936 introduisent de nouvelles notions de solutions d'équations aux dérivées partielles, appelées solutions faibles ou solutions généralisées, qui permettent de formuler des équations aux dérivées partielles sans supposer nécessairement l'existence de dérivées au sens classique. Leur approche préfigure très bien la théorie des distributions, qui ne sera mise au point qu'une quinzaine d'années plus tard. Les contributions de Leray et Sobolev ne constituent pas les seuls travaux précurseurs de la théorie des distributions. Dans les années 30 et 40, de nombreux chercheurs vont utiliser les concepts de solutions généralisées pour étudier les solutions de diverses équations aux dérivées partielles: Courant\index[aut]{Courant (Richard), 1888-1972, Américain} et Hilbert,\index[aut]{Hilbert (David), 1862-1943, Allemand} Bochner,\index[aut]{Bochner (Salomon), 1899-1982, Américain} Friedrichs,\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} Krylov...\index[aut]{Krylov (Aleksey Nikolaevich), 1863-1945, Russe}
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}
 \includegraphics[height=\the\HauteurDesPhotos]{Leray}&
 \includegraphics[height=\the\HauteurDesPhotos]{Sobolev2}\\
-Leray&Sobolev\\
+Leray&Sobolev%
 \end{tabular}}
 \ImageADroite{%
 Nous arrivons maintenant à l'idée majeure de la théorie des distributions, déjà présente dans les travaux de Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} et Leray.\index[aut]{Leray (Jean), 1906-1998, Français} Du point de vue physique, on peut la motiver comme suit. Le résultat ou l'interprétation d'une expérience physique faisant intervenir une certaine grandeur, qui varie en fonction du temps ou de l'espace, ne dépend que très rarement des valeurs ponctuelles de cette grandeur, mais plus souvent de sa valeur moyenne (ou intégrale) prise contre une fonction du temps ou de l'espace, plus ou moins localisée. En d'autres termes, plutôt qu'une fonction $u$, c'est plutôt une «moyenne» de la forme $\int u\varphi$ qui sera accessible en pratique. Ainsi, un signal électrique oscillant avec une période très élevée fournira, de manière apparemment paradoxale, un signal plat quand on l'utilisera pour alimenter un oscilloscope: dans le processus de moyenne inhérent à la mesure, les valeurs positives et négatives se compenseront.}
@@ -95,7 +95,7 @@ cadre suffisamment général... et en particulier, sans supposer la fonction dé
 Il montra que l'on pouvait donner une définition utile et pratique du concept de «fonction dont la dérivée est de carré intégrable», qui ne présuppose pas l'existence d'une dérivée au sens usuel. L'espace ainsi défini est aujourd'hui appelé espace de Sobolev $W^{1,2}$ ou $H^1$.
 
 \medskip
-\noindent\emph{Simplification de problèmes non linéaires ardus:}\\
+\noindent\emph{Simplification de problèmes non linéaires ardus:}\\[+2.5mm]
 L'utilisation de solutions généralisées peut venir d'une nécessité de modélisation, mais également par l'incapacité à prouver l'existence de solutions classiques. L'exemple archétypal en la matière est celui des équations de la mécanique des fluides, en particulier l'équation de Navier-Stokes\index[aut]{Navier (Claude Louis Marie Henri), 1785-1836, Français}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais} incompressible, dont la première étude mathématique moderne est due à Leray.\index[aut]{Leray (Jean), 1906-1998, Français} L'écriture même de l'équation de Navier-Stokes incompressible présuppose apparemment la dérivabilité de la fonction inconnue $u$, mais rien ne semblait permettre d'affirmer l'existence de solutions dérivables pour des données initiales assez générales. Ce problème est d'ailleurs toujours ouvert, et compte parmi les sept problèmes du millénaire de l'Institut Clay, mais nous en reparlerons au paragraphe~\ref{Sec-NavierStokes}. Leray\index[aut]{Leray (Jean), 1906-1998, Français} eut l'idée de définir une solution de l'équation de Navier-Stokes incompressible par une formulation duale qui ne présupposait pas de régularité. de Navier-Stokes. De telles solutions sont aujourd'hui appelées solutions faibles.
 
 \medskip
@@ -119,7 +119,7 @@ Muni de cette topologie, $\mathcal{D}(\Omega)$ est un espace vectoriel topologiq
 \textcolorblue{Une distribution} est une \textbf{forme linéaire continue}\index{forme!linéaire} sur~$\mathcal{D}(\Omega)$.
 \end{definition}
 
-L'ensemble des distributions est donc le dual topologique de~$\mathcal{D}(\Omega)$ et est donc noté~$\mathcal{D}'(\Omega)$.\index{dual topologique d'un espace vectoriel}
+L'ensemble des distributions est donc le dual topologique de~$\mathcal{D}(\Omega)$ et est par conséquent noté~$\mathcal{D}'(\Omega)$.\index{dual topologique d'un espace vectoriel}
 \medskipvm
 Toujours aussi classiquement, si~$T$ est une distribution et~$\varphi$ une fonction test de $\mathcal{D}(\Omega)$ alors on note~$T(\varphi)=\langle T,\varphi \rangle$. (i.e. $\langle\cdot,\cdot\rangle$ désigne comme d'habitude le crochet de dualité).
 \medskipvm
