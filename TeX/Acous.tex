@@ -60,7 +60,7 @@ Pour les matériaux acoustiques, la réflexion et la transmission seront déduit
 \medskip
 L'\textcolorblue{isolement} est une donnée globale qui traduit la capacité d'un ensemble à «faire barrière au bruit». Il s'agit tout simplement de la différence entre ce qui attaque d'un côté et ce que l'on récupère de l'autre. Un isolement donné ne donne donc pas d'information sur la manière dont il est obtenu: réflexion, amortissement, absorption, ou plus probablement par une combinaison plus ou moins complexe (et inconnue) de ces trois phénomènes.
 
-\medskip\newpage
+\medskip\ifVersionDuDocEstVincent\newpage\fi
 \subsubsection{Modes de propagation}
 Comme déjà mentionné au paragraphe~\ref{Sec-EqAcou}, il peut être nécessaire de considérer un ou plusieurs des modes de propagation suivants:
 \begin{itemize}
@@ -126,7 +126,15 @@ montre le rôle de la porosité dans l'absorption, en augmentant le parcourt moy
 \medskip
 Tout cela justifie la remarque que nous faisons en introduction: la partie difficile à traiter dans les problèmes d'acoustique ne concerne que les basses fréquences où il n'existe que très peu de solutions, surtout simples de mise en œuvre. Les hautes fréquences (supérieures à 2 ou 3000~Hz) peuvent être facilement traitées. De plus, l'oreille humaine, bien que percevant les fréquences de 20 à 20000~Hz, est surtout sensible dans la bande de fréquences allant de 1 à 4~kHz. \textcolorgreen{Dès lors, bien qu'une étude acoustique doive prendre en compte la totalité du spectre (de la source et audible), du point de vue calculatoire (et du point de vue de la conception des solutions), c'est au-dessous de 3000~Hz que le travail devra se concentrer.} Ainsi donc, un traitement par la méthode des éléments finis est tout à fait envisageable pour faire face à la majorité des problèmes: nous entendons par là, avec un «coût» de calcul raisonnable.
 
-%VM A COMPLETER ?
+
+\textcolorred{VM A COMPLETER}
+$\alpha$ Sabine
+
+Aire équivalente
+
+Helmholtz / vases
+
+
 
 \medskip
 \subsubsection{Diffraction et réflexion}
@@ -352,40 +360,165 @@ Deux cas extrêmes nous intéressent:
 
 %slides VM p27
 \medskip
-\subsubsection{Normes}
-
-
-
-\medskip
-\subsubsection{Psychoacoustique}
+\subsubsection{Normes, indices et psychoacoustique}
 
 \begin{itemize}
    \item la Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psychoacoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson, puis de Zwicker entre autres, expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
-   \item 
-   \item 
-   \item 
-   \item 
+   \item Indice NR (noise rating) selon la norme ISO R 1996 «assessment of noise with respect of community response».
+   L'Organisation Internationale de Normalisation (ISO) a proposé plusieurs courbes qui correspondent toutes à un certain degré de confort acoustique (ou de gêne) : courbes d'évaluation du bruit, ou courbes NR (Noise Rating). Grâce à ces courbes, il est possible de déterminer au moyen d'un seul chiffre le niveau de pression acoustique maximum autorisé. Les indices N40 et N80 sont souvent pris en référence
+   \item Indice de gêne subjective selon les courbes de WISNER.
+   Wisner a défini trois seuils de bruit :
+   - lorsque le bruit ambiant est en zone 1 le travail intellectuel n'est pas gêné de façon appréciable
+   - lorsque le bruit ambiant est en zone2, le travail intellectuel est pénible, le travail courant n'est pas gêné de façon appréciable
+   - lorsque le bruit ambiant est en zone 3, le travail intellectuel est extrêment pénible, le travail courant est difficile
+   - lorsque le bruit ambiant est situé en zone 4, une exposition prolongée peut conduire à la surdité
+   \item Pré qualification des locaux selon la norme NFS 31080
+   \item calcul de l'intelligibilité de la parole (SI)  
+   
+   \item Recommandations INRS
+   \item norme  NF S31080
+   \item taux de décroissance spatiale $DL_2$
+   \item Intelligibilité
+   \item rayon de discrétion
+   \item rayon de confidentialité
+   \item TR
+   \item Il est toujours possible de construire d'autres métriques pour des problèmes particuliers. Par exemple dans \cite{bib-VM-suav}, on trouvera une métrique adaptée à la mesure de la «beauté» des bruits périodiques.
 \end{itemize}
 
 \medskip
 \section{Calcul acoustique par éléments finis}\label{Sec-AcouMEF}
 
 \medskip
-\subsection{Modélisation}
+\subsection{Modèle}
 
 \medskip
-\subsection{Condition CFL}
+\subsubsection{Modèles analytiques d'acoustique des salles}
+
+Considérons le cas où l'on s'intéresse à une salle pour laquelle on veut connaître, ou améliorer, 
+
+absorption par panneaux flechissants en BF
+
+absorption par résonateurs de Helmholtz (vases dans les théâtres antiques)
+
+absorption par matériaux poreux en HF
+
+\medskip
+En champ libre, on a la loi de propagation pour le champ direct suivante:
+\begin{equation}
+L_p=L_w+10\log_{10}\left(\dfrac{Q}{4\pi d}\right)
+\end{equation}
+où~$L_p$ (en dBA) est le niveau de pression sonore du champ direct, $L_w$ le niveau de puissance de la source et~$d$ la distance à la source.
+
+\medskip
+Dans une salle (suffisamment réverbérante), on remarque que le champ est diffus. Sous cette hypothèse de champ diffus, on a:
+\begin{equation}
+L_p = L_w + 6 - 10\log_{10} A
+\end{equation}
+où~$L_p$ (en dBA) est le niveau de pression sonore du champ diffus, $L_w$ le niveau de puissance de la source et~$A$ l'aire équivalente d'absorption.
+
+On remarque que~$L_p$ est constant quelle que soit la distance à la source, puisqu'on est en hypothèse de champ diffus, et qu'il ne dépend que de~$A$, i.e. de la capacité d'absorption disponible dans la salle.
+On notera que les parois, surtout si elles sont en placo, présentent une certaine transparence et qu'il est bon, pour ajuster le modèle, d'augmenter l'aire d'absorption de la proportion d'énergie qui quitte la salle par transmission (défaut d'isolation).
+
+L'aire d'absorption équivalent est calculée:
+\begin{equation}
+A = \dsum_{i=1}^n \alpha_iS_i
+\end{equation}
+où~$\alpha_i$ est le coefficient d'absorption de Sabine de chaque paroi~$i$ du local, et~$S_i$ la surface de cette paroi.
+
+Le temps de réverbération de la salle (en seconde) est donné par:
+\begin{equation}
+TR = 0,16.\dfrac{V}{A}
+\end{equation}
+
+Pour les longueurs d'onde de l'ordre des dimensions de la salle, il y a prédominance des modes propres de la salle.
+Pour un salle parallélépipédique de longueurs~$a$, $b$ et~$c$, les fréquences de résonance sont données par:
+\begin{equation}
+f
+\end{equation}
+Pour une salle non parallélépipédique, on peut, sauf géométrie vraiment très biscornue, utiliser la relation précédente en considérant le parallélépipède le plus proche de la géométrie réelle.
+
+Densité modale,
+
+limite de champ diffus
+
+\medskip
+Transmission entre plusieurs salles
+
+\medskip
+Les phénomènes locaux (écrantage...) ne sont pas pris en compte, ou alors globalement.
+Pour descendre dans le détail local de la répartition de la pression acoustique on peut utiliser plusieurs méthodes, dont les éléments finis, que nous allons présenter maintenant.
+
+\medskip
+\subsubsection{Modèle éléments finis d'acoustique des salles}
+
+Nous nous intéressons donc au cas général de l'acoustique des salles, où seul le volume intérieur de la salle nous intéresse. C'est ce dernier qu'il nous faut discrétiser.
+
+Pour un calcul assez général, il suffit de définir les bonnes conditions aux limites sur les parois de la salles, d'ajouter la source acoustique... et le tour est joué.
+
+\medskip
+
+
+
+
+\medskip
+\subsubsection{Interaction fluide-structure}
+
+\medskip
+\subsection{Maillage et convergence}
+
+La vérification de la convergence d'un calcul acoustique se fera en fonction de la taille du maillage, mais également en fonction de la taille du pas de temps.
+
+\medskip
+\subsubsection{Discrétisation en espace}
+Le maillage doit être en mesure de prendre en compte les longueurs d'ondes qui nous intéressent dans le calcul. Les ondes doivent pouvoir «se développer» dans le calcul, et pour cela, on utilisera la condition simple suivante:
+\begin{equation}
+h=\dfrac{k\lambda}{10}
+\end{equation}
+où~$h$ est la taille de la maille, et~$k$ le degré de l'approximation utilisée dans l'élément.
+
+\textcolorgreen{Ainsi $h=\lambda/10$ pour un élément linéaire, et $h=\lambda/5$ pour un élément quadratique.}
+
+\medskip
+\subsubsection{Discrétisation en temps}
+
+La condition de Courant,\index[aut]{Courant (Richard), 1888-1972, Américain} Friedrichs\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} et Lewy\index[aut]{Lewy (Hans), 1904-1988, Américain} (condition CFL), énoncée dans leur article de 1928 \cite{bib-CFL}, 
+est un nombre adimensionnel (utilisé en informatique et en mathématiques et plus particulièrement en calcul par différences finie) qui définit en une condition de convergence pour résoudre certaines équations aux dérivées partielles (notamment les équations aux dérivées partielles hyperboliques). Pratiquement, il sert à donner le seuil dimensionnel sous lequel on observe une instabilité de calcul, erreur d'approximation dans des calculs numériques, grandissant rapidement au fur et à mesure des calculs. Si la dimension de la grille est inférieure à la distance parcourue dans l'intervalle de pas de temps par l'onde la plus rapide que permet l'équation, l'erreur grandit et envahit la solution physique.
+
+\medskip
+Le nombre de courant~$C$, pour un problème de dimension~$n$ en espace (et $1$ en temps), est défini par:
+\begin{equation}
+C = \Delta t \sum_{i=1}^n\frac{u_{x_i}}{\Delta x_i} \leq C_{max}. 
+\end{equation}
+où~$u$ est la fonction inconnue du problème, $\Delta t$ le pas de temps et $\Delta x_i$ le pas de discrétisation de chaque variable spatiale.
+
+La constante $C_{max}$ prend différentes valeurs en fonction de la méthode utilisée pour résoudre l'équation discrétisée.
+Pour une méthode explicite, on utilisera $C_{max} = 1$, alors que pour une méthode implicite, moins sensible aux instabilités numériques, on pourra prendre une valeur plous grande pour~$C_{max}$.
+On fera en sorte de prendre~$C_{max}$ le plus grand possible pour la méthode considérée, ce qui permettra par conséquent de calculer le pas de temps le plus grand possible (la taille de la discrétisation en espace étant contrainte par les fréquences visées) afin de minimiser les calculs.
+
 
 \medskip
 \subsection{Absorption}
 
 \medskip
 \subsection{Vers l'infini...}
-PML
+
+Nécessité de CL pour l'infini : PML «Perfectly Matched Layed» (absorption), Impédance de frontière...
 
 \medskip
 \subsection{... et au-delà}
-Far Field
+Si l'on souhaite savoir ce qu'il se passe loin de la source, en dehors du domaine de simulation (sans devoir tout mailler), alors des CL dites de «champ lointain» (Far Field) qui permettent cela.
+
+
+
+RQ:
+Près des parois se développent des couches limites thermiques et visqueuses qu'il faudra prendre en compte pour simuler au mieux l'amortissement. Dans certains cas, on pourra simplifier en appliquant des modèles fluides
+
+RQ:
+Vibration de la paroi: pour le prendre en compte, on ne prend plus une paroi rigide, mais une autre CL, comme par exemple une impédance.
+
+\medskip
+\subsection{Post-Traitement}
+
 
 
 \medskip
