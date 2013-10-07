@@ -488,7 +488,7 @@ f = u + \dive G
 avec~$u \in L^2(\Omega)$ et~$G \in (L^2(\Omega))^n$.
 \medskip
 \begin{theoreme}[Dérivation des fonctions composées dans les espaces de Sobolev]\index{théorème!de dérivation des fonctions composées dans les espaces de Sobolev}
-\colorgris
+%\colorgris
 Soit~$\Omega$ un ouvert borné de~$\RR^n$.
 Pour toute fonction~$u \in H^1(\Omega)$ et toute fonction~$T: \RR \to \RR$ de classe $C^1$ à dérivée bornée nous avons:
 \begin{equation}
@@ -498,12 +498,12 @@ De plus, l'application~$u \in H^1(\Omega) \mapsto T(u) \in H^1(\Omega)$ est cont
 \end{theoreme}
 \colorblack
 \medskip
-On se contente ici de donner les résultats concernant l'espace~$H^1(\Omega)$ même si des résultats similaires peuvent êtres démontrés pour les espaces~$H^m(\Omega)$ ou les espaces~$W^{1,p}(\Omega)$, avec~$p\ne 2$.
+On se contente ici de donner les résultats concernant l'espace~$H^1(\Omega)$ même si des résultats similaires peuvent êtres démontrés pour les espaces~$H^m(\Omega)$ ou les espaces~$W^{1,p}(\Omega)$, avec~$p\ne 2$ (voir théorème~\ref{Th-Inj-Sobo}).
 Soit~$\Omega$ un ouvert borné Lipschitzien de~$\RR^n$.
 \begin{itemize}
-  \item si~$n=1$, on a une injection continue de~$H^1(\Omega)$ dans l'espace de Hölder~$C^{0,1\over2}(\Omega)$;
+  \item si~$n=1$, on a une injection continue de~$H^1(\Omega)$ dans l'espace de Hölder~$C^{0,\frac12}(\Omega)$;
   \item si~$n=2$, on a une injection continue de~$H^1(\Omega)$ dans l'espace $L^p(\Omega)$ pour tout~$p<\infty$ (et donc pas dans~$L^\infty(\Omega)$.
-  \item si~$n\ge 3$, on a une injection continue de~$H^1(\Omega)$ dans l'espace $L^{p*}(\Omega)$ avec~$p*=$~${2d}\over{d-2}$.
+  \item si~$n\ge 3$, on a une injection continue de~$H^1(\Omega)$ dans l'espace $L^{p*}(\Omega)$ avec~$p*=\frac{2n}{n-2}$.
 \end{itemize}
 De plus les injection non critiques sont compactes.
 
@@ -515,7 +515,7 @@ Comme on va s'intéresser par la suite à la discrétisation de problème aux d�
 \section{Espaces~$H(\dive)$ et~$H(\rot)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 
 \begin{definition}[Espace~$H(\dive,\Omega)$]\index{espace!de Sobolev!$H(\dive)$}
-L'espace $H(\dive,\Omega)$ est un espace intermédiaire entre~$L^2(\Omega)$ et $H^1(\Omega)$, l'\textcolorblue{espace~$H(\dive,\Omega)$} défini par:
+L'espace \textcolorblue{$H(\dive,\Omega)$} est un espace intermédiaire entre~$L^2(\Omega)$ et $H^1(\Omega)$, qui est défini par:
 \begin{equation}
 H(\dive,\Omega)=\left\{ f\in L^2(\Omega)^n;\; \dive f\in L^2(\Omega)\right\}
 \end{equation}
@@ -550,10 +550,8 @@ En fait, il est possible de définir de nombreux espaces de Sobolev en fonction 
 
 \medskip
 \section{Inégalités utiles}
-Dans ce paragraphe, nous présentons quelques inégalités utilisées pour borner une fonction à partir d'une estimation sur ses dérivées et de la géométrie de son domaine de définition.
-
-Nous en aurons besoin pour les formulations faibles ainsi que pour les problèmes d'homogénéisation.
-\medskip
+Dans ce paragraphe, nous présentons quelques inégalités utilisées pour borner une fonction à partir d'une estimation sur ses dérivées et de la géométrie de son domaine de définition. Nous en aurons besoin pour les formulations faibles ainsi que pour les problèmes d'homogénéisation.
+%%%
 \begin{definition}[Exposant conjugué de Sobolev]\index{exposant conjugué!de Sobolev}
 On s'intéresse à~$\Omega$ un ouvert de~$\RR^n$ (qui peut être~$\RR^n$ tout entier), ainsi qu'aux espaces de type~$W^{m,p}(\Omega)$.
 
@@ -562,7 +560,7 @@ On appelle conjugué de Sobolev du nombre~$p$, le nombre~$p^*$, défini par la r
   \frac{1}{p^*} = \frac{1}{p} - \frac{m}{n}
 \end{equation}
 \end{definition}
-\begin{theoreme}[Injections continues de Sobolev]\index{théorème!d'injections continues de Sobolev}
+\begin{theoreme}[Injections continues de Sobolev]\label{Th-Inj-Sobo}\index{théorème!d'injections continues de Sobolev}
 Soit~$\Omega$ un ouvert de~$\RR^n$. Si~$\Omega$ est borné et a une frontière Lipschitz-continue, alors, pour tout entier~$m\ge 0$ et pour tout~$p\in\intfo{1}{+\infty}$, on dispose des inclusions avec injections continues suivantes:
 \begin{equation}
 \left\{\begin{aligned}
