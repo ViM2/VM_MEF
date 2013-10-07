@@ -203,12 +203,14 @@ est une norme équivalente à la précédente. On utilisera donc indifféremment
 Si~$p<\infty$, alors~$W^{m,p}(\Omega)$ est identique à la fermeture de l'ensemble $\lbrace u \in C^m(\Omega) ; \left\|u \right\|_{m,p} < \infty \rbrace$ par rapport à la norme $\left\|\cdot\right\|_{m,p}$ où~$C^m(\Omega)$ désigne l'espace de Hölder des fonctions de
 classe~$m$ sur~$\Omega$.
 \medskipvm
-Le théorème de Meyers-Serrin\index{théorème!de Meyers-Serrin}\index[aut]{Meyers (Norman George), 1930-, Américain}\index[aut]{Serrin (James Burton), 1926-2012, Américain}~$H=W$ donne une définition équivalente, par complétion de l'espace vectoriel normé:
+\begin{remarque}
+Le théorème de Meyers-Serrin\index{théorème!de Meyers-Serrin}\index[aut]{Meyers (Norman George), 1930-, Américain}\index[aut]{Serrin (James Burton), 1926-2012, Américain} dit~«$H=W$» (qui est le titre de leur article de 1964 \cite{bib-WH}) montre l'équivalence de deux définitions des espaces de Sobolev~$W^{m,p}(\Omega) = H^{m,p}(\Omega)$, i.e. dans notre cas, donne une définition équivalente, par complétion de l'espace vectoriel normé:
 \begin{equation}
 \{u\in C^\infty(\Omega);\| u \|_{H^{m, p}} < \infty\}\quad\text{ avec }\quad
 \| u \|_{H^{m, p}}:= \left( \sum_{| \alpha | \leqslant m} \| D^{\alpha} u \|_{L^{p}}^p \right)^{1/p}
 \end{equation}
 où~$D^\alpha u$ est une dérivée partielle de~$u$ au sens classique ($u \in C^\infty(\Omega)$).
+\end{remarque}
 \colorblack
 
 
@@ -229,10 +231,13 @@ où:
 \end{equation}
 est le produit intérieur dans $L^{2} ( \Omega)$; produit scalaire dans le cas réel, hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} dans le cas complexe.
 
-\medskip
-\textcolorgreen{Si~$\Omega$ est Lipschitzien, alors l'ensemble~$C^\infty(\overline{\Omega})$ des fonctions régulières jusqu'au bord de~$\Omega$ est dense dans~$H^m(\Omega)$.}
+%\medskip
+\begin{theoreme}
+Si~$\Omega$ est Lipschitzien, alors l'ensemble~$C^\infty(\overline{\Omega})$ des fonctions régulières jusqu'au bord de~$\Omega$ est dense dans~$H^m(\Omega)$.
+\end{theoreme}
 
-\medskip\colorgris
+\medskip
+\begin{remarque}\colorgris
 De plus, dans le cas où la transformation de Fourier peut être définie dans~$L^{2} ( \Omega)$, l'espace~$H^k(\Omega)$ peut être défini de façon naturelle à partir de la transformée de Fourier (voir cours sur le traitement du signal).
 \medskipvm
 Par exemple si~$\Omega = \RR^{n}$, si~$\widehat{u}$ est la transformée de Fourier de~$u$:
@@ -256,6 +261,7 @@ On peut aussi utiliser la norme équivalente:
 \begin{equation}
 \|u\|^2=\sum\limits_{n=-\infty}^{+\infty} (1 + |n|^{2})^m |\widehat{u}_n|^2
 \end{equation}
+\end{remarque}
 \colorblack
 
 
@@ -288,9 +294,7 @@ Les espaces trace sont définis plus loin.\index{espace!trace}.
 %\section{Espaces~$H^{-m}(\Omega)$}\index{espace!de Sobolev!$H^{-m}(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
 %\colorgris
 \begin{definition}[Espace~$H^{-m}(\Omega)$]\label{Th-Hmm}\index{espace!de Sobolev!$H^{-m}(\Omega)$}
-Il est possible de caractériser le dual topologique de~$H^m_0(\Omega)$ de la façon suivante.\index{espace!vectoriel!topologique}
-
-$\forall m\ge 1$, on définit l'espace des distributions suivant:
+Il est possible de caractériser le dual topologique de~$H^m_0(\Omega)$ de la façon suivante.\index{espace!vectoriel!topologique} Pour tout~$m\ge 1$, on définit l'espace des distributions suivant:
 \begin{equation}
 H^{-m}(\Omega) =\left\{
 f\in \mathcal{D}'(\Omega), f=\dsum_{|\alpha|\le m} \partial^\alpha f_\alpha,
@@ -350,7 +354,7 @@ Pour~$u\in H^2(\Omega)$, on a~$\partial_iu\in H^1(\Omega)$, $\forall i=1,\ldots,
 On pose alors:
 \begin{equation}\gamma_1(u) = \dsum_{i=1}^n \gamma_0(\partial_iu)n_i\end{equation}
 Cette application continue~$\gamma_1$ de~$H^2(\Omega)$ dans~$L^2(\partial\Omega)$) permet donc bien de prolonger la définition usuelle de la dérivée normale.
-Dans le cas où~$u$ est une fonction de~$H^2(\Omega)$ qui soit en même temps dans~$C^1(\overline{\Omega})$, la dérivée normale au sens usuel de~$u$ existe, et~$\gamma_1(u)$ lui est évidemment égal.
+Dans le cas où~$u$ est une fonction de~$H^2(\Omega)$ qui soit en même temps dans~$C^1(\overline{\Omega})$, la dérivée normale au sens usuel de~$u$ existe, et~$\gamma_1(u)$ lui est évidemment égale.
 \textcolorred{C'est pourquoi on note souvent, par abus, $\partial_n u$ plutôt que~$\gamma_1(u)$.}
 
 \medskip
