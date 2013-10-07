@@ -58,7 +58,7 @@ Clairaut, D'Alembert, Euler, Lagrange et Laplace consacrent de nombreux mémoire
 \end{histoire}
 
 \medskip
-Les mathématiciens du \textsc{xviii}\fup{e} siècle admettent sans discussion l'existence de solutions des équation différentielles et des équations aux dérivées partielles sans chercher le domaine d'existence de ces solutions. Il faut attendre Cauchy,\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} vers 1820, pour que soit abordée l'existence d'une solution à l'équation différentielle~$y' = f(x,y)$, où~$f$ est supposée continument différentiable en chaque variable. Sans connaître les travaux de Cauchy, Lipschitz,\index[aut]{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand} en 1868, retrouve le résultat de Cauchy mais, s'affranchit de l'hypothèse de différentiabilité de~$f$ au profit de la condition dite aujourd'hui de Lipschitz. En 1837, Liouville\index[aut]{Liouville (Joseph), 1809-1882, Français} utilise, pour le cas particulier d'une équation linéaire du second ordre une méthode d'approximation successive: on construit une suite de fonctions convergeant vers la solution.
+Les mathématiciens du \textsc{xviii}\fup{e} siècle admettent sans discussion l'existence de solutions des équations différentielles et des équations aux dérivées partielles sans chercher le domaine d'existence de ces solutions. Il faut attendre Cauchy,\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} vers 1820, pour que soit abordée l'existence d'une solution à l'équation différentielle~$y' = f(x,y)$, où~$f$ est supposée continument différentiable en chaque variable. Sans connaître les travaux de Cauchy, Lipschitz,\index[aut]{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand} en 1868, retrouve le résultat de Cauchy mais s'affranchit de l'hypothèse de différentiabilité de~$f$ au profit de la condition dite aujourd'hui de Lipschitz. En 1837, Liouville\index[aut]{Liouville (Joseph), 1809-1882, Français} utilise, pour le cas particulier d'une équation linéaire du second ordre une méthode d'approximation successive: on construit une suite de fonctions convergeant vers la solution.
 \colorblack
 
 
@@ -77,10 +77,10 @@ Cela conduit au système de Lotka-Volterra:\index{ED-EDP!Lotka-Volterra}\index{E
 \begin{equation}%$\colorgreen
   \begin{cases} g'(t)&=A\,g(t)-B\,g(t)\,m(t) \\ m'(t)&=-C\,m(t)+D\,g(t)\,m(t) \end{cases} 
 \end{equation}
-où il est nécessaire de résoudre les équations simultanément (on dit que les équations sont couplées)
+où il est nécessaire de résoudre les équations simultanément (on dit que les équations sont couplées).
 
 \medskip
-Pour revenir à des exemples plus connus du lecteurs, on n'oubliera pas que la relation fondamentale de la dynamique, de Newton: 
+Pour revenir à des exemples plus connus des lecteurs, on n'oubliera pas que la relation fondamentale de la dynamique de Newton: 
 \begin{equation} m\ddot{x}=f(x)
 \end{equation}
 est une d'équation différentielle du second ordre.\index{ED-EDP!relation fondamentale de la dynamique}\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais}
@@ -109,7 +109,7 @@ Cauchy&Lipschitz&Dirichlet&Neumann%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-La théorie de l'intégration des équations aux dérivées partielles du premier ordre ne date que de 1734. L'idée d'Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} est de ramener ladite intégration à celle des équations différentielles ordinaires. Euler montre qu'une famille de fonctions dépendant de deux paramètres vérifie une EDP du premier ordre en éliminant ces paramètres entre les dérivées partielles. Inversement, une telle équation admet une solution dépendant d'une fonction arbitraire. Il parvient ainsi à intégrer plusieurs équations de ce type.}
+La théorie de l'intégration des équations aux dérivées partielles du premier ordre ne date que de 1734. L'idée d'Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} est de ramener ladite intégration à celle des équations différentielles ordinaires. Euler montre qu'une famille de fonctions dépendant de deux paramètres vérifie une équation aux dérivées partielles du premier ordre en éliminant ces paramètres entre les dérivées partielles. Inversement, une telle équation admet une solution dépendant d'une fonction arbitraire. Il parvient ainsi à intégrer plusieurs équations de ce type.}
 
 \medskip
 Lagrange,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} dans un mémoire de 1785, résume les connaissances de l'époque sur ces questions. Il ne sait intégrer que onze types d'équations aux dérivées partielles du premier ordre.
@@ -195,7 +195,7 @@ On peut dire que:
 
 Dans ce paragraphe, nous avons regroupé les notions de propagation et de diffusion.
 \medskipvm
-La propagation est la diffusion sont liées. La diffusion, c'est en quelque sorte l'homogénéisation d'une grandeur dans un milieu et dans le temps. Or pour qu'il y ait diffusion, il faut bien que ledit phénomène se propage.
+La propagation et la diffusion sont liées. La diffusion, c'est en quelque sorte l'homogénéisation d'une grandeur dans un milieu et dans le temps. Or pour qu'il y ait diffusion, il faut bien que ledit phénomène se propage.
 
 \medskip
 Nous nous placerons dans un cadre beaucoup plus macroscopique, où les interactions entre particules sont quantifiées au travers de variables macroscopiques continues, comme par exemple la température, la pression, mais également le frottement fluide, la conductivité thermique, la masse volumique...
@@ -330,7 +330,7 @@ Dirichlet%
 %\medskip
 \ImageAGauche{%
 Cela pouvait paraître surprenant à l'époque de Fourier, mais bien sûr ce n'est pas contradictoire avec les théorèmes connus: une série de fonctions continues n'est pas en général continue.
-L'acte de foi suivant consiste à admettre que des décompositions similaires s'appliquent à des fonctions non périodiques (définies sur~$\RR$ tout entier). Dans tous les cas, la formule donnant les coefficients de Fourier, fournis par la relation~(\ref{Eq-FourierAk}) instantanément quelques questions, et notamment: comment trouver les coefficients? (problème de l'analyse) En quel sens faut-il comprendre la convergence de ces séries?\\
+L'acte de foi suivant consiste à admettre que des décompositions similaires s'appliquent à des fonctions non périodiques (définies sur~$\RR$ tout entier). Dans tous les cas, la formule donnant les coefficients de Fourier~(\ref{Eq-FourierAk}) conduit immédiatement à quelques questions, et notamment: comment trouver les coefficients? (problème de l'analyse) En quel sens faut-il comprendre la convergence de ces séries?\\
 \indent
 La convergence des séries de Fourier est reconnue dès le début comme un problème important et délicat, sur lequel Fourier lui-même avait été attaqué. Le résultat qui fait référence en la matière est le théorème de Dirichlet (1829):\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}}
 \begin{theoreme}[Théorème de Dirichlet]\index{théorème!de Dirichlet}
@@ -341,13 +341,14 @@ Soit $f: \TT\rightarrow\CC$, continue par morceaux, satisfaisant la condition de
 \end{theoreme}
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\begin{tabular}{c}
+\begin{tabular}{cc}
+\includegraphics[height=\the\HauteurDesPhotos]{duBois-Reymond}&
 \includegraphics[height=\the\HauteurDesPhotos]{Gibbs}\\
-Gibbs%
+du Bois-Reymond&Gibbs%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Jusqu'en 1876 les spécialistes pensaient que l'hypothèse de continuité $C^1$ de part et d'autre était superflue; mais un contre-exemple de DuBois-Reymond prouva le contraire. Si l'on veut avoir la propriété de reconstruction ponctuelle, on doit supposer une certaine régularité; tout au mieux on peut relaxer l'hypothèse $C^1$.\\
+Jusqu'en 1873 les spécialistes pensaient que l'hypothèse de continuité $C^1$ de part et d'autre était superflue; mais dans son article \emph{Eine neue Theorie der Convergenz und Divergenz von Reihen mit positiven Gliedern}, du Bois-Reymond,\index[aut]{du Bois-Reymond (Paul David Gustave), 1831-1889, Allemand} donna un contre-exemple sous la forme d'une fonction continue périodique dont la série de Fourier diverge en un point. Si l'on veut avoir la propriété de reconstruction ponctuelle, on doit supposer une certaine régularité; tout au mieux on peut relaxer l'hypothèse~$C^1$.\\
 \indent
 Même quand elle est vraie, la convergence ponctuelle des séries de Fourier peut être médiocre. Un exemple bien connu est le phénomène de Gibbs,\index[aut]{Gibbs (Josiah Willard), 1839-1903, Américain} qui pose des problèmes pratiques: la série de Fourier d'une fonction créneau présente des oscillations près des points de discontinuité, dont l'ampleur ne s'atténue pas quand le nombre de fréquences tend vers l'infini.}
 \end{histoire}
@@ -416,7 +417,7 @@ John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} résout le problèm
 
 \medskip
 \section{Mécanique des fluides}
-La mécanique des fluides est une des deux composantes de la mécanique des milieux continus; l'autre composante étant la mécanique des solides qui sera traitée un peu plus loin.
+La mécanique des fluides est l'une des deux composantes de la mécanique des milieux continus; l'autre composante étant la mécanique des solides qui sera traitée un peu plus loin.
 
 
 
@@ -482,7 +483,7 @@ Le problème des équations de Navier-Stokes\index[aut]{Navier (Claude Louis Mar
 On n'a pas pu prouver, pour ces équations, qu'il existe en toutes circonstances une solution parfaitement déterminée par les conditions initiales. Pour expliquer sommairement où réside la difficulté avec ces équations, on pourrait dire qu'avec les équations de Navier-Stokes, on passe du discret au continu.
 
 \medskip
-Le problème c'est que l'on n'est pas sûr que ce qui est calculé est réellement une solution approchée et si le résultat est fidèle à la réalité: nous nous trouvons dans un cas où l'existence et l'unicité des solutions n'est pas facile à prouver. S'il existe des cas où des solutions régulières parfaitement déterminées à partir des conditions aux limites, cela n'est pas vrai en toutes circonstances et pour tous temps (on ne sait pas si une solution régulière ne peut pas devenir turbulente près un temps suffisamment long par exemple).
+Le problème c'est que l'on n'est pas sûr que ce qui est calculé est réellement une solution approchée et si le résultat est fidèle à la réalité: nous nous trouvons dans un cas où l'existence et l'unicité des solutions n'est pas facile à prouver. S'il existe des cas où des solutions régulières sont parfaitement déterminées à partir des conditions aux limites, cela n'est pas vrai en toutes circonstances et pour tous temps (on ne sait pas si une solution régulière ne peut pas devenir turbulente près un temps suffisamment long par exemple).
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc}
