@@ -21,13 +21,12 @@ Aristote&Archimède&Galilée%
 \ImageADroite{%
 Archimède,\index[aut]{Archimède de Syracuse, -287-- -212, Grec} outre ces travaux en mathématiques, pourrait sans conteste être considéré comme le saint patron de la mécanique. Il est tout au moins indubitablement le père de la mécanique statique.\\
 \indent
-Il s'intéressa aussi bien aux aspects «théoriques» portant sur le principe du levier et la recherche de centre de gravité dans \emph{De l'équilibre des figures planes}, sur le principe d'Archimède sur les corps plongés dans un liquide dans \emph{Des corps flottants}; qu'aux aspects pratiques au travers de nombreuses inventions: machines de traction (où il démontre qu'à l'aide de poulies, de palans et de leviers, l'homme peut soulever bien plus que son poids), machines de guerre (principe de la meurtrière, catapultes, bras mécaniques utilisés dans le combat naval), l'odomètre (appareil à mesurer les distances), la vis sans fin et la vis d'Archimède, le principe de la roue dentée...}
+Il s'intéressa aussi bien aux aspects «théoriques» portant sur le principe du levier et la recherche de centre de gravité dans \emph{De l'équilibre des figures planes}, sur le principe d'Archimède pour les corps plongés dans un liquide dans \emph{Des corps flottants}; qu'aux aspects «pratiques» au travers de nombreuses inventions: machines de traction (où il démontre qu'à l'aide de poulies, de palans et de leviers, l'homme peut soulever bien plus que son poids), machines de guerre (principe de la meurtrière, catapultes, bras mécaniques utilisés dans le combat naval), l'odomètre (appareil à mesurer les distances), la vis sans fin et la vis d'Archimède, le principe de la roue dentée...}
 
 Le siège de Syracuse, les miroirs d'Archimède et sa mort ne font qu'ajouter à sa légende.
 
-
 \medskip
-Bien qu'Aristote\index[aut]{Aristote (dit le Stagirite), -384-- -322, Grec} posa le premier (avant Archimède)\index[aut]{Archimède de Syracuse, -287-- -212, Grec} les bases d'une véritable théorie mécanique (alors encore très imparfaite), les fondements de la mécanique, en tant que science et au sens moderne du terme, sont posés par Galilé\index[aut]{Galilée (Galileo Galilei), 1564-1642, Italien} en 1632 dans \emph{les Dialogues} et en 1638 dans \emph{les Discours}.
+Bien qu'Aristote\index[aut]{Aristote (dit le Stagirite), -384-- -322, Grec} posa le premier (avant Archimède)\index[aut]{Archimède de Syracuse, -287-- -212, Grec} les bases d'une véritable théorie mécanique (alors encore très imparfaite), les fondements de la mécanique, en tant que science et au sens moderne du terme, sont posées par Galilée\index[aut]{Galilée (Galileo Galilei), 1564-1642, Italien} en 1632 dans \emph{les Dialogues} et en 1638 dans \emph{les Discours}.
 
 La mécanique n'est alors pas dissociée des arts mécaniques, i.e. des techniques de construction des machines. La distinction entre la mécanique en tant science et la mécanique en tant que technique ne se fera qu'au \textsc{xix}\fup{e} siècle.
 
@@ -58,9 +57,7 @@ La mécanique classique sera ensuite complétée et mathématisée pour devenir 
 Dans ce paragraphe, nous reprenons les formulation présentées au paragraphe~\ref{Sec-form}, mais en essayant de les éclairer par un discours plus pragmatique. C'est pourquoi nous changerons quelque peu les notations, afin de retomber sur des choses peut-être plus familières pour des ingénieurs mécaniciens.
 
 \medskip
-Bien qu'étant un sujet ancien, la mécanique n'en est pas pour autant un problème simple.
-
-En mécanique, les champs inconnus sont les déplacements, déformations et contraintes (et d'autres si besoin, comme la température...). De plus, on dispose de relations entre ces champs.
+Bien qu'étant un sujet ancien, la mécanique n'en est pas pour autant un problème simple. En mécanique, les champs inconnus sont les déplacements, déformations et contraintes (et d'autres si besoin, comme la température...). De plus, on dispose de relations entre ces champs.
 
 \medskip
 Il est possible de n'exprimer le problème qu'à l'aide des seuls déplacements. Les déformations sont alors calculées à partir des déplacements (par combinaison linéaire des dérivées, obtenues de manière approchée), puis les contraintes sont obtenues à partir des déformations par la loi de comportement (linéaire ou non, isotrope ou non...).
@@ -72,22 +69,15 @@ Par contre, le champ de contraintes peut également être «trop» continu en ce
 
 \medskip
 Notons qu'il serait tout aussi possible d'utiliser une formulation ayant les trois champs comme inconnues...
-
 \textcolorred{Enfin bref, tout est possible, mais il faut veiller à ce que la modélisation de chaque champ soit cohérente avec le phénomène physique à modéliser.}
-
 \textcolorgreen{En d'autres termes, on ne choisit pas un élément au hasard, juste parce qu'il a le bon nombre d'inconnues, il est évidemment nécessaire de se demander comment ces inconnues sont interpolées, ce que cela implique sur la régularité des solutions et donc si cela est compatible avec le phénomène physique que l'on souhaite simuler.}
-
-\medskip
 Un autre exemple typique est le cas des éléments «déplacement-pression» utilisés par exemple pour la modélisation des solides incompressibles (nous avons évoqué le problème précédemment).
 
-
-\bigskip
+\medskip
 \textcolorred{Ce document s'adressant à des personnes connaissant déjà la méthode des éléments finis, nous allons présenter très brièvement, sous forme d'a parte, la discrétisation multi-champs, de manière un peu découplée du reste du document, juste pour fixer les idées.}
 
 \medskip
-Si l'on note~$u$ le champ de déplacements, il peut être approché à partir des déplacements nodaux (sous forme de vecteur)~$\VV{q}$ par l'intermédiaire de fonctions de formes rangées dans la matrice~$\MM{N_u}$.
-
-Compte tenu des notations utilisées, les interpolations des différents champs se font, sur chaque élément, de la manière suivante:
+Si l'on note~$u$ le champ de déplacements, celui-ci peut être approché à partir des déplacements nodaux (sous forme de vecteur)~$\VV{q}$ par l'intermédiaire de fonctions de formes rangées dans la matrice~$\MM{N_u}$. Compte tenu des notations utilisées, les interpolations des différents champs se font, sur chaque élément, de la manière suivante:
 \begin{equation}
   u=\MM{N_u}\VV{q}
 \end{equation}
@@ -103,7 +93,7 @@ Cela vaut également pour les contraintes~$\sigma$ qui, si elles sont choisies c
 \end{equation}
 Notons que dans la pratique, rien n'empêche de prendre les mêmes fonctions de forme pour les différents champs.
 \medskipvm
-De manière analogue, le vecteur~$\VV{\lambda}$ de multiplicateurs de Lagrange sera interpolé de la façon suivante:
+De manière analogue, le vecteur~$\VV{\lambda}$ des multiplicateurs de Lagrange sera interpolé de la façon suivante:
 \begin{equation}
   \VV{\lambda}=\MM{N_\lambda}\VV{L}
 \end{equation}
@@ -170,7 +160,6 @@ La méthode des éléments finis \emph{classique}, ou \emph{en déplacements}, n
       -\dint_{\ls} \delta u\Tbar \ \dd\Gamma
 \end{equation}
 avec~$\fbar$ les forces imposées dans~$\Omega$ et~$\Tbar$ les forces imposées sur~$\ls$, où~$\ls$ et~$\lu$ forment une partition de $\Gamma=\partial\Omega$.
-\medskip
 Ce principe est obtenu comme variation de la fonctionnelle de l'\textcolorblue{énergie potentielle totale} exprimée en déplacements:
 \begin{equation}
   \label{Eq:PiTV}
@@ -190,7 +179,6 @@ La \textcolorblue{fonctionnelle d'Hellinger-Reissner}\index[aut]{Reissner (Max E
      -\dint_{\lu} \Ubar T\ \dd\Gamma
 \end{equation}
 bien que l'on puisse la trouver sous une autre forme, obtenue par intégration par parties de celle-ci. Elle n'a à satisfaire à aucune condition subsidiaire.
-
 La stationnarité de cette fonctionnelle conduit aux équations d'équilibre, à la loi de comportement, et aux conditions aux limites en forces et déplacements.
 
 \medskip
@@ -297,7 +285,7 @@ Sur le plan du déroulement du calcul, on commence par résoudre une « forme cl
 
 \bigskip
 Les multiplicateurs de Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} peuvent être utilisés pour introduire des conditions supplémentaires directement à la fonctionnelle.
-Ces conditions sont généralement imposées sur~$\Gamma_X$, tout ou partie de~$\Gamma$, contour de~$\Omega$. Pour ce faire, il suffit d'ajouter à la fonctionnelle~$\Pi$ du problème le terme:
+Ces conditions sont généralement imposées sur~$\Gamma_X$, tout ou partie de~$\Gamma=\partial\Omega$. Pour ce faire, il suffit d'ajouter à la fonctionnelle~$\Pi$ du problème le terme:
 \begin{equation}
   \pm\dint_{\Gamma_X} \LL{\lambda}\VV{\text{condition}}
 \end{equation}
@@ -312,7 +300,7 @@ Les multiplicateurs de Lagrange\index[aut]{Lagrange (Joseph Louis, comte de -), 
 \end{itemize}
 
 \medskip
-Notons qu'un autre de leurs avantages est de permettre l'utilisation d'une formulation différente dans chaque élément, en assurant les continuités nécessaires aux interfaces (voir synthèse de ce problème d'interface au paragraphe~\ref{Sec-interf}). Bien sûr, apparaissant comme inconnues, ils viennent grossir la taille du système à résoudre.
+Notons qu'un autre de leurs avantages est de permettre l'utilisation d'une formulation différente dans chaque élément, en assurant les continuités nécessaires aux interfaces (voir synthèse de ce problème d'interface au paragraphe~\ref{Sec-interf}). Bien sûr, apparaissant comme inconnues, les multiplicateurs de Lagrange viennent grossir la taille du système à résoudre.
 
 
 
@@ -320,7 +308,6 @@ Notons qu'un autre de leurs avantages est de permettre l'utilisation d'une formu
 \section{Plusieurs modélisations d'un même problème}\label{Sec-PlusModel}
 
 La qualité de l'approximation des différents champs est non seulement liée au nombre de champs inconnus choisis, mais également au choix de l'élément. Ce dernier peut traduire une «simplification» du problème physique: il s'agit du problème du choix du type de modélisation, en une, deux ou trois dimensions.
-
 \textcolorred{Selon le type d'information recherché, un modélisation «plus simple» qu'une autre peut fournir les résultats escomptés}.
 
 \medskip
@@ -403,32 +390,27 @@ L'étude de la contrainte axiale~$\sigma_{xx}$ est donnée à la figure~\ref{Pou
 \begin{figure}[ht]
 \centering
 \includegraphics[height=45mm]{pout1-sigxx.eps}
-\caption{\label{Pout1-sigxx} Contrainte axiale sur la peau supérieure: (a) modèle 3D,
-(b) modèle 2D.}
+\caption{Contrainte axiale sur la peau supérieure: (a) modèle 3D, (b) modèle 2D.}\label{Pout1-sigxx}
 \end{figure}
 Si les cartographies présentent bien la même répartition, seul le modèle 3D permet de mettre en évidence la concentration de contrainte due à la force ponctuelle.
 
 \medskip
-Si on veut comparer les trois modèles sur cette même composante, alors on se reportera à la figure~\ref{Pout1-siglieux}.
+Une comparaison plus fine des trois modélisations concernant cette même contrainte normale le long de trois lignes est reportée à la figure~\ref{Pout1-siglieux}.
 \begin{figure}[ht]
 \centering
 \includegraphics[height=25mm]{pout1-lieux.eps}\\
 \includegraphics[height=40mm]{pout1-siglieux.eps}
-\caption{Contrainte axiale sur la peau supérieure en différentes sections}
-\end{figure}\label{Pout1-siglieux}
+\caption{Contrainte axiale sur la peau supérieure en différentes sections}\label{Pout1-siglieux}
+\end{figure}
+Les différences de résultats proviennent des \textcolorred{hypothèses cinématiques} et des \textcolorred{composantes accessibles} dans les différentes théories utilisées.
 On y voit que loin des extrémités, les trois solutions concordent parfaitement, conformément au principe de Saint-Venant.\footnote{Le \textcolorblue{\textbf{principe de Saint-Venant}} précise que le comportement en un point quelconque de la poutre, pourvu que ce point soit suffisamment éloigné des zones d'applications des forces et des liaisons, est indépendant de la façon dont sont appliquées les forces et de la façon dont sont physiquement réalisées les liaisons; le comportement dépend alors uniquement du torseur des forces internes en ce point.}\index[aut]{Saint-Venant (Adhémar Jean Claude Barré de -), 1797-1886, Français}\index{principe! de Saint-Venant} Les différences proviennent des effets de bord, i.e. des variations locales des contraintes et déformations au voisinage des conditions aux limites.
 
-Une comparaison plus fine des trois modélisations concernant cette même contrainte normale le long de trois lignes est reportée à la figure~\ref{Pout1-sec}.
-
-\medskip
-Les différences de résultats proviennent des \textcolorred{hypothèses cinématiques} et des \textcolorred{composantes accessibles} dans les différentes théories utilisées.
 \begin{figure}[ht]
 \centering
 \includegraphics[height=25mm]{Pout1-Sec.eps}
 \caption{Mouvements d'une section droite: (a) théorie des poutres;
 (b) théorie des plaques ou coques; (c) théorie volumique}\label{Pout1-sec}
 \end{figure}
-
 \medskip
 Les \textcolorblue{hypothèses cinématiques} sont:
 \begin{itemize}
