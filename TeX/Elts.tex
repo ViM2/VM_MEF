@@ -30,7 +30,9 @@ Les éléments de Lagrange sont les éléments finis les plus simples.
 \begin{definition}[Unisolvance]
 Soit~$\Sigma=\{a_1,\ldots, a_N\}$ un ensemble de~$N$ points distincts de~$\RR^n$.
 Soit~$P$ un espace vectoriel de dimension finie de fonctions de~$\RR^n$ à valeurs dans~$\RR$.
-On dit que~$\Sigma$ est \textcolorblue{$P$-unisolvant} ssi pour tous réels~$\alpha_1$,\ldots, $\alpha_N$, il existe un unique élément~$p$ de~$P$ tel que~$\forall i=1,\ldots, N$, $p(a_i) = \alpha_i$ (ce qui revient à dire que la fonction de~$P$ dans~$\RR^N$ qui à~$p$ fait correspondre $(p(a_i),\ldots, p(a_N))=(\alpha_1,\ldots, \alpha_N)$ est bijective).
+On dit que~$\Sigma$ est \textcolorblue{$P$-unisolvant} si et seulement si pour tous réels~$\alpha_1$,\ldots, $\alpha_N$, il existe un unique élément~$p$ de~$P$ tel que~$\forall i=1,\ldots, N$, $p(a_i) = \alpha_i$.
+
+Cela revient à dire que la fonction de~$P$ dans~$\RR^N$ qui à~$p$ fait correspondre $(p(a_i),\ldots, p(a_N))=(\alpha_1,\ldots, \alpha_N)$ est bijective.
 \end{definition}
 
 \medskip
@@ -186,7 +188,7 @@ $P$ &~$\{p(X,Y,Z) = (a + bX + cY ) + Z(d + eX + fY ), a,b,c,d,e,f\in\RR\}$\\
 En fait, la notion de transformation affine entre un élément~$K$ d'un maillage $\mathcal{T}_h$ et un élément de référence a déjà été utilisée en calcul de majoration d'erreur, mais la transformation elle-même n'a pas été détaillée.
 
 \medskip\colorgris
-Deux éléments finis~$(\hat{K}, \hat{\Sigma}, \hat{P})$ et~$(K, \Sigma, P)$ sont affine-équivalents ssi il existe une fonction affine~$F$ inversible telle que 
+Deux éléments finis~$(\hat{K}, \hat{\Sigma}, \hat{P})$ et~$(K, \Sigma, P)$ sont affine-équivalents si et seulement si il existe une fonction affine~$F$ inversible telle que 
 $K=F(\hat{K})$, $a_i=F(\hat{a_i})$, i=1,\ldots, N, et~$P=\{\hat{p}\circ F^{-1}, \hat{p}\in\hat{P}\}$.
 \colorblack\normalsize
 
@@ -216,12 +218,11 @@ Les éléments finis de références sont ceux obtenus, dans les cas présentés
 \medskip
 \subsection{Construction de la base globale}
 Revenons à notre problème décrit par une équation aux dérivées partielles sous forme faible dans un domaine $\Omega$ sur lequel on réalise un maillage~$\mathcal{T}_h$ à partir d'une famille affine de~$N_e$ éléments finis~$(K_i, \Sigma_i, P_i)_{i=1,\ldots,N_e}$.
-\medskip
+
 Par unisolvance, la solution approchée~$u_h$ sera entièrement définie sur chaque élément fini par ses valeurs sur les points de~$\Sigma_i$, nommés \textcolorblue{nœuds} du maillage.
 Notons~$(a_1,\ldots, a_{N_h})$ les nœuds du maillage ($N_h<N_e \cdot \card\Sigma_i$).
 Le problème approché revient à déterminer les valeurs de~$u_h$ aux points~$a_i$: ce sont les \textcolorblue{degrés de liberté} du problème approché.
-\medskip
-On va construire une base de~$V_h$ en associant à chaque ddl~$a_i$ un vecteur de la base.
+On va construire une base de~$V_h$ en associant à chaque degré de liberté~$a_i$ un vecteur de la base.
 On définit ainsi les fonctions de base globales~$\varphi_i$~$(i = 1,\ldots, N_h)$ par:
 \begin{equation}\varphi_i|_{K_j} \in P_j, j = 1,\ldots, N_e \quad \text{ et }\quad \varphi_i(a_j) = \delta_{ij}, 1\le i,j\le N_h\end{equation}
 et l'espace d'approximation interne est~$V_h=\vectt\{\varphi_1,\ldots, \varphi_{N_h}\}$.
@@ -251,9 +252,9 @@ On voit donc que la fonction de base globale~$\varphi_i$ est construite comme r�
 \medskip
 \subsection{Classe d'un élément fini}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
-Une question naturelle est de savoir quelle est la régularité de la solution approchée $u_h$. En particulier, $u_h$ est-elle continue? dérivable?
+Une question naturelle est de savoir quelle est la régularité de la solution approchée~$u_h$. En particulier, $u_h$ est-elle continue? dérivable?
 
-La solution approchée $u_h$ est obtenue par combinaison linéaire des fonctions de base globales $\varphi$, la question revient donc à déterminer la régularité de celles-ci. Par construction, on voit que la régularité de~$\varphi_i$ sera donnée par sa régularité au niveau des interfaces entre les éléments adjacents formant son support.
+La solution approchée~$u_h$ est obtenue par combinaison linéaire des fonctions de base globales~$\varphi$, la question revient donc à déterminer la régularité de celles-ci. Par construction, on voit que la régularité de~$\varphi_i$ sera donnée par sa régularité au niveau des interfaces entre les éléments adjacents formant son support.
 
 Nous avons vu au paragraphe précédent que pour les éléments finis de Lagrange, $\varphi_i$ est construite pour être continue d'un élément à l'autre, mais pas sa dérivée... c'est cette contrainte que nous allons introduire maintenant.
 
@@ -303,7 +304,7 @@ Nous présentons quelques éléments finis d'Hermite utilisés classiquement, do
 \caption{Éléments finis d'Hermite triangulaire cubique, élément d'Argyris et élément rectangulaire~$Q_3$}\label{Hermite2D}
 \end{figure}
 \begin{itemize}
-\item les \textcolorblue{éléments finis unidimensionnels cubiques et quintiques} sont définis au tableau~\ref{tab:ElemH:uni};
+\item les éléments finis unidimensionnels cubiques et quintiques sont définis au tableau~\ref{tab:ElemH:uni};
 \begin{table}[h!]\centering\small
 \begin{tabular}{c|cc}
 Élément & cubique & quintique\\
@@ -316,10 +317,10 @@ Régularité &~$C^1$ et~$H^2$ &~$C^2$ et~$H^3$\\
 \end{tabular}
 \caption{Éléments d'Hermite unidimensionnels de degrés 3 et 5}\label{tab:ElemH:uni}
 \end{table}
-\item les \textcolorblue{éléments finis bidimensionnels triangulaires}:
+\item les éléments finis bidimensionnels triangulaires:
 	on distingue l'élément \textcolorblue{cubique d'Hermite}, qui est~$C^0$, et
   l'élément \textcolorblue{d'Argyris}, qui est~$C^1$.
-	Ils sont présentés dans les tableaux~\ref{tab:ElemH:bi} et~\ref{tab:ElemA:bi};
+	Ils sont présentés aux tableaux~\ref{tab:ElemH:bi} et~\ref{tab:ElemA:bi};
 \begin{table}[h!]\centering\small
 \begin{tabular}{c|c}
 Élément &\\
@@ -346,7 +347,7 @@ Régularité &~$C^1$\\
 \end{tabular}
 \caption{Élément bidimensionnel triangulaire d'Argyris}\label{tab:ElemA:bi}
 \end{table}
-\item l'\textcolorblue{élément fini bidimensionnel rectangulaire} défini au tableau~\ref{tab:ElemH:bibi};
+\item l'élément fini bidimensionnel rectangulaire défini au tableau~\ref{tab:ElemH:bibi};
 
 \begin{table}[h!]\centering\small
 \begin{tabular}{c|c}
@@ -366,8 +367,6 @@ Régularité &~$C^1$\\
 \medskip
 \section{Traitement de plusieurs champs}\label{Sec-interf}
 Dans ce qui précède, le lecteur aura noté que l'on interpole un seul champ, en imposant ou non certaines régularités (dérivées partielles).
-
-\medskip
 Une question naturelle consiste à se demander comment traiter les problèmes ayant plusieurs champs inconnus (cela à déjà été abordé, et certaines stratégies on déjà été présentées: formulation mixte (Brezzi),\index[aut]{Brezzi (Franco), 1945-, Italien} utilisation de multiplicateurs de Lagrange).\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\index{multiplicateurs de Lagrange}
 
 On pourrait imaginer, si ces champs sont «dissociés» (sans lien les uns avec les autres), de modéliser chaque champ séparément, i.e. de traiter un problème par champ (avec pour chaque champ un choix de maillage et d'élément qui lui est propre).
@@ -377,9 +376,9 @@ En fait, les problèmes à plusieurs champs ne concernent généralement pas des
 \medskip
 Nous avons exposé au chapitre précédent pourquoi la mécanique reste un cas compliqué. Cela provient de ce que les champs inconnus sont les déplacements, déformations et contraintes. De plus, le chapitre précédent a permis une illustration du choix d'un modèle, même lorsque l'on ne recourt qu'à une théorie à un champ (déplacements).
 
-\medskip
 Nous ne construirons pas ici un élément à plusieurs champs, mais nous allons donner une motivation pour le faire: celui du calcul des contraintes à l'interface entre deux matériaux différents que nous supposerons parfaitement collés.
 
+\medskip
 Considérons donc le problème décrit à la figure~\ref{interf}.
 \begin{figure}[h!]
 \centering
@@ -387,18 +386,17 @@ Considérons donc le problème décrit à la figure~\ref{interf}.
 \caption{Interface et continuités}\label{interf}
 \end{figure}
 Deux domaines~$\Omega_1$ et~$\Omega_2$, constitués chacun de leur propre loi de comportement, ont une interface commune~$\Gamma_I$. On supposera que le champ de déplacement est continu le long de~$\Gamma_I$. La continuité de la composante normale du déplacement à l'interface traduit le fait qu'il n'y a pas décollement entre les deux domaines; celle de la composante tangentielle qu'il n'y a pas glissement entre eux.
-
 On peut donc dire qu'en tout point de~$\Gamma_I$, le déplacement est continu, ce que l'on note~$u_i^1=u_i^2$.
 
 \medskip
 L'état d'équilibre des forces doit lui-aussi être vérifié le long de l'interface. Cela implique que les composantes normales des contraintes doivent être également continues le long de cette interface, i.e. que la trace du tenseur des contraintes doit être continue le long de l'interface. Par contre, les autres composantes peuvent (et doivent selon les cas) être discontinues.
 
-\bigskip
+\medskip
 Plusieurs stratégies sont envisageables:
 \begin{description}
 \item[\textcolorblue{Post-traitement:}]\index{post-traitement}
 
-	Dans cette méthode, on effectue le calcul en déplacements, de manière classique. 	On obtient les contraintes de manière toute aussi classique, mais celles-ci 	n'ont évidemment pas les continuités et discontinuités souhaitées.
+	Dans cette méthode, on effectue le calcul en déplacements, de manière classique. On obtient les contraintes de manière toute aussi classique, mais celles-ci 	n'ont évidemment pas les continuités et discontinuités souhaitées.
 
 	On utilise une méthode de post-traitement qui va modifier le calcul des contraintes 	sur les éléments situés de part et d'autre de l'interface, par exemple 	en imposant la vérification des équations d'équilibre (voir par exemple 	la méthode de Reissner locale, qui applique la fonctionnelle de Reissner uniquement 	le long de l'interface).\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}\item[\textcolorblue{Élément mixte:}]
 
@@ -419,7 +417,7 @@ Plusieurs stratégies sont envisageables:
 	\item[\textcolorblue{Multiplicateurs de Lagrange:}]\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
 	
 	D'une manière évidente, la continuité du champ de déplacements 	à l'interface~$\li$ entre deux éléments~$~^1$ et~$~^2$ peut être imposée par l'ajout à la fonctionnelle de la condition: 
-	\begin{equation} -\dint_{\li} \lambda_i(U_i^1-U_i^2)\ \dd\Gamma \end{equation}
+	\begin{equation} -\dint_{\li} \lambda_i(u_i^1-u_i^2)\ \dd\Gamma \end{equation}
 
 	Cette condition est facile à écrire et facile à implémenter (mais on perd la 	définie-positivité de la matrice de rigidité).
 	
@@ -427,9 +425,7 @@ Plusieurs stratégies sont envisageables:
 \end{description}
 \medskip
 Voilà quelques stratégies. D'autres peuvent exister, surtout si en plus on veut passer sur des modèles poutre ou plaque.
-
 Le but était de montrer que non seulement il est possible de développer de nombreux éléments finis, mais que même à partir d'éléments existants, il est toujours possible de construire une méthode numérique permettant d'obtenir les résultats souhaités.
-
 Les méthodes de post-traitement,\index{post-traitement} que nous n'aborderons pas dans ce document, sont très riches et permettent de faire beaucoup de choses. Elles ont en outre l'avantage d'être parfois plus faciles à implémenter dans des codes industriels que de nouveaux éléments.
 
 \medskip
@@ -480,7 +476,6 @@ Le domaine choisi doit posséder au moins un nœud à l'intérieur du domaine. O
 \subsection{Test de précision d'un élément}
 
 On confronte le modèle élément fini à un ou des cas tests représentatifs de ce pour quoi l'élément à été développé (élasticité tridimensionnelle, bidimensionnelle, problème de torsion, problème avec concentrations locales de déformations ou de contraintes, prise en compte des frontières courbes...).
-
 Sur les composantes d'«intérêt», on regardera s'il y a bien convergence du modèle et sa vitesse de convergence en fonction du nombre d'éléments, de la distorsion de ceux-ci...
 
 \medskip

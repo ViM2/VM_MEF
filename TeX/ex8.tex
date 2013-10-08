@@ -88,7 +88,7 @@ Nous cherchons toujours à résoudre notre système:
 \begin{equation}\MM{K}\VV{q}=\VV{F}\end{equation}
 
 \medskip
-Considérons la matrice~$\MM{D}$, \textcolorblue{matrice booléenne}, permettant d'extraire de l'ensemble des inconnues nodales~$\VV{q}$ le sous-ensemble~$\VV{q_2}=\MM{D}\VV{q}$ sur lesquels portent les conditions de déplacements imposés~$\VV{q_d}$ \textcolorred{(ici on traite le cas général, i.e. les déplacements imposés peuvent être nuls ou non)}. La matrice \textcolorblue{$\MM{D}$ n'est pas rectangulaire}: si on souhaite imposer~$d$ déplacements parmi les~$n$ degrés de liberté du système, alors~$\MM{D}$ est de dimension~$d\times n$, et donc~$\VV{q_2}$ est bien un vecteur à~$d$ composantes, comme~$\VV{u_d}$.
+Considérons la matrice~$\MM{D}$, \textcolorblue{matrice booléenne}, permettant d'extraire de l'ensemble des inconnues nodales~$\VV{q}$ le sous-ensemble~$\VV{q_2}=\MM{D}\VV{q}$ sur lequel portent les conditions de déplacements imposés~$\VV{q_d}$ \textcolorred{(ici on traite le cas général, i.e. les déplacements imposés peuvent être nuls ou non)}. La matrice \textcolorblue{$\MM{D}$ n'est pas rectangulaire}: si on souhaite imposer~$d$ déplacements parmi les~$n$ degrés de liberté du système, alors~$\MM{D}$ est de dimension~$d\times n$, et donc~$\VV{q_2}$ est bien un vecteur à~$d$ composantes, comme~$\VV{u_d}$.
 
 \medskip
 Le système~$\MM{K}\VV{q}=\VV{F}$ peut alors s'écrire, par blocs, en utilisant le complément de Schur (\ref{Eq-Sch1}) sous une forme triangulaire d'où l'on tire le sous-système correspondant aux déplacements non imposés:
@@ -106,9 +106,7 @@ C'est ainsi que procède le code \abaqus pour imposer les déplacements.
 \subsection{Multiplicateurs de Lagrange et déplacements imposés}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\label{Sec-cast}
 
 Une autre technique, pour imposer des déplacements, consiste à utiliser les multiplicateurs de Lagrange:\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} les contraintes sont relaxées, puis réintroduites via des multiplicateurs de Lagrange.
-
 Dans ce cas, il n'est plus nécessaire de séparer explicitement les degrés de liberté, mais \textcolorred{la taille du problème augmente} puisqu'il faut lui adjoindre les multiplicateurs.
-
 Le système à résoudre s'écrit très simplement:
 \begin{equation}\label{Eq-Lag1}
 \MM*{\MM{K} & -\MM{D}^T\\ -\MM{D} & \mO{}}
@@ -118,11 +116,8 @@ Le système à résoudre s'écrit très simplement:
 \VV*{F\\ -u_d}
 \end{equation}
 Il est intéressant de remarquer que la première ligne montre que \textcolorblue{les multiplicateurs de Lagrange sont bien les réactions aux appuis}.\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}
-
 Par contre, la matrice du système (\ref{Eq-Lag1}), $\MM{A}$, si elle reste bien symétrique, \textcolorred{n'est plus définie positive}. Elle possède des valeurs propres négatives.
-\medskipvm
 Toutefois, on dispose du résultat suivant:
-
 \begin{theoreme}
 si~$\MM{K}$ est symétrique définie positive, alors:
 \begin{equation}
@@ -146,8 +141,6 @@ Afin de ne pas détruire la structure bande de~$\MM{K}$ (ce que ferait une facto
 \subsection{Actions extérieures et déplacements imposés}
 
 L'interprétation physique des multiplicateurs de Lagrange conduit naturellement à une autre méthode: il est possible de considérer un déplacement imposé comme une action extérieure, par exemple comme la réaction d'un ressort ayant une raideur~$k$ très grande et un déplacement imposé à sa base.
-
-\medskip
 On se retrouve alors avec un système du type:
 \begin{equation}
 \left(\MM{K} + \MMT{D}k\MM{D}\right) \VV{q} = \VV{F} + \MMT{D}k\MM{D}\VV{u_d}
@@ -185,7 +178,6 @@ u_1=0 \text{ et }
 Séparons maintenant les déplacements imposés des autres degrés de liberté, par une matrice booléenne~$\MM{D}$:
 $\MM{D}$ est une matrice~$1\times 4$, et seul le terme~$D_{11}=1$ est non nul:~$\VV{q_2}=\MM{D}\VV{q}=\VV{u_1}$,
 et le déplacement imposé est~$\VV{u_d}=\VV{0}$.
-
 Le système s'écrit:
 \begin{equation}
 \MM*{K_{11} & K_{12}\\ K_{21} & K_{22}}
@@ -250,7 +242,7 @@ En considérant une action extérieure, on obtient le système:
 Dans tous les exemples présentés, nous avons résolu les systèmes à la main, ce qui masque d'éventuels problèmes numériques (notamment dans le dernier cas).
 
 \medskip
-\subsection{Relations linéaires entre ddl}
+\subsection{Relations linéaires entre degrés de liberté}
 
 Cette situation se présente par exemple lors de la prise en compte de conditions de symétrie, de conditions aux limites périodiques... Il s'agit à chaque fois de conditions de type:
 \begin{equation}
@@ -274,7 +266,6 @@ En ajoutant la relation~$u_2=u_3$ par l'intermédiaire d'un multiplicateur de La
 \VV*{0\\0\\0\\F' \\ 0 \\ u_d=0}
 \end{equation}
 auquel il faut également ajouter la condition aux limites~$u_1$=0.
-
 Si cette condition aux limites est imposée par un multiplicateur de Lagrange~$\lambda_2$, alors finalement, il faut résoudre:
 \begin{equation}
 \MM*{1&-1&0&0&0&0&-1 \\ -1&1&0&0&0&1&0 \\ 0&0&1&-1&0&-1&0\\ 

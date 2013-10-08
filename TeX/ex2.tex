@@ -27,7 +27,7 @@ On voit ainsi comment passer d'une intégrale sur le segment réel à une intég
 \medskipvm
 De même, on peut chercher la relation entre~$\dd s=\dd\VV{x}\cdot\dd\VV{x}$. Nous notons $\dd s=m \dd \xi$. On a alors: 
 \begin{equation}m=|\VV{a}| = \frac12 \sqrt{x_{21}^2+y_{21}^2+z_{21}^2} = \frac{L_e}2 \end{equation}
-On voit alors l'égalité des intégrations:
+avec~$L_e$ la longueur de l'élément. On voit alors l'égalité des intégrations:
 \begin{equation}\int_{L_e} \ldots \dd s = \int_{-1}^{+1}\ldots m \dd \xi\end{equation}
 
 \medskipvm
@@ -46,7 +46,7 @@ J_f = \MM*{\LL{\nabla f_{y_1}} \\ \vdots \\ \LL{\nabla f_{y_m}}}
 \end{equation}
 i.e., sous forme complètement développée la jacobienne de~$f$ s'écrit:
 \begin{equation}
-J_f = \MM*{\frac{\partial f_{y_1}}{\partial x_1} & \cdots & \frac{\partial f_{y_1}}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{y_m}}{\partial x_1} & \cdots & \frac{\partial f_{y_m}}{\partial x_n}}
+J_f = \MM*{\dfrac{\partial f_{y_1}}{\partial x_1} & \cdots & \dfrac{\partial f_{y_1}}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f_{y_m}}{\partial x_1} & \cdots & \dfrac{\partial f_{y_m}}{\partial x_n}}
 \end{equation}
 \medskipvm
 Au voisinage d'un point~$M$, l'approximation linéaire de la fonction~$f$ est donnée par:
@@ -78,7 +78,8 @@ Une fonction~$f$ de classe~$C^1$ est inversible au voisinage de~$M$ avec une ré
 
 \begin{theoreme}[Théorème d'inversion locale]\index{théorème!d'inversion locale}
 Soit~$f$ une application de~$U$ dans~$F$, où~$U$ est un ouvert d'un espace de Banach réel et $F$ un espace de Banach et soit~$x$ un point de~$U$.
-Si~$f$ est de classe~$C^p$, avec~$p$ un entier strictement positif et si la différentielle de~$f$ au point $x$ est un isomorphisme bicontinu, alors il existe un voisinage ouvert~$V$ de~$x$ et un voisinage ouvert $W$ de~$f(x)$ tels que~$f$ se restreigne en une bijection de~$V$ dans~$W$ dont la réciproque est de classe~$C^p$.
+
+Si~$f$ est de classe~$C^p$, avec~$p$ un entier strictement positif et si la différentielle de~$f$ au point $x$ (définie au paragraphe \ref{Sec-Differentielle}) est un isomorphisme bicontinu, alors il existe un voisinage ouvert~$V$ de~$x$ et un voisinage ouvert $W$ de~$f(x)$ tels que~$f$ se restreigne en une bijection de~$V$ dans~$W$ dont la réciproque est de classe~$C^p$.
 \end{theoreme}
 \colorblack
 \medskipvm
@@ -147,13 +148,13 @@ On aura également:
 \medskip
 \subsection{Élément fini de barre unidimensionnel}\label{Sec-barre1D}
 
-On considère la barre de la figure~\ref{fig-barre}, de section~$A$, de longueur~$L$, et constituée d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{module d'Young} $E$ et densité~$\rho$ et soumise uniquement à son poids propre.
+On considère la barre de la figure~\ref{fig-barre}, de section~$A$, de longueur~$L$,  constituée d'un matériau homogène isotrope de module d'Young\index[aut]{Young (Thomas), 1773-1829, Anglais}\index{module d'Young} $E$ et densité~$\rho$ et soumise uniquement à son poids propre.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=40mm]{Elt1D-barre.eps}
 \caption{Barre encastrée-libre}\label{fig-barre}
 \end{figure}
-On souhaite discrétiser ce problème à l'aide d'un éléments unidimensionnels linéaires
+On souhaite discrétiser ce problème à l'aide d'un élément unidimensionnel linéaire
 tel que présenté au paragraphe~\ref{Sec-Elt1D2}.
 \medskipvm
 La forme variationnelle de ce problème d'élasticité linéaire unidimensionnel (théorie des poutres) est:
