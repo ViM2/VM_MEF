@@ -39,7 +39,8 @@ Il s'agit donc de trouver un juste équilibre...
 
 Dans le cas des équations elliptiques, celles-ci ont pour propriété, en général, de mettre en jeu des dérivées d'ordre pair de la solution dans le terme principal de l'équation. L'idée première pour résoudre ces problèmes aussi bien d'un point de vue théorique que numérique va être de multiplier formellement l'équation par une fonction test régulière, puis d'intégrer sur le domaine et enfin d'intégrer par parties un nombre suffisant de fois pour faire porter autant de dérivées sur la solution que sur les fonctions tests. On pourra ainsi envisager d'utiliser le même espace fonctionnel pour la solution et les fonctions tests.
 
-\bigskip
+\medskip
+\begin{definition}[Formulations forte et faible]
 Étant donné un opérateur différentiel~$A(\cdot)$ et une fonction~$f$ définie sur un domaine ouvert~$\Omega$, la \textcolorblue{formulation forte} du problème est la suivante:
 \begin{center}
   Trouver la \textcolorblue{fonction}~$u$ définie sur~$\Omega$ vérifiant~$A(u)=f$ en tout point de~$\Omega$.
@@ -49,13 +50,12 @@ Dans le cas des équations elliptiques, celles-ci ont pour propriété, en gén�
 Une solution~$u$ du problème précédent est alors également solution du problème suivant
 appelé \textcolorblue{formulation faible} (On appelle~$v$ une fonction test):
 \begin{center}
-  Trouver une fonction~$u$ définie sur~$\Omega$ vérifiant~$\dint_\Omega A(u),\quad v = \int_\Omega f\ v$
-$\forall v$ définie sur~$\Omega$.
+  Trouver une fonction~$u$ définie sur~$\Omega$ vérifiant~$\dint_\Omega A(u)v = \int_\Omega f\ v \quad \forall v$ définie sur~$\Omega$.
 \end{center}
+\end{definition}
 
-
-\colorgreen%
-\paragraph{Justification}{\small
+\colorgreen
+\begin{remarque}[Justification]
 Tout réside dans le fait de «multiplier par une fonction test et d'intégrer».
 Pourquoi peut-on faire ça ?
 %Pourquoi les solutions aux deux problèmes sont-elles les mêmes ?
@@ -69,12 +69,14 @@ Comme cette seconde équation est vraie en tout point de~$\Omega$, alors elle es
 
 On entrevoit alors clairement la suite des opérations: si en plus d'être régulière, la fonction~$v$ est différentiable, alors on va pouvoir réaliser sur le terme~$\int A(u)\cdot v$ une intégration par parties pour diminuer les conditions de dérivabilité portant sur~$u$, mais en augmentant celles portant sur~$v$.
 
-Si l'ordre de dérivation de~$u$ est paire (disons~$2k$), alors on pourra faire en sorte par un nombre suffisant de manipulations que~$u$ et~$v$ aient à être différentiables à l'ordre~$k$... et on pourra essayer de faire en sorte que~$u$ et~$v$ appartiennent au même espace fonctionnel...}\colorgris
-%
-\begin{remarque}\colorgris
+Si l'ordre de dérivation de~$u$ est paire (disons~$2k$), alors on pourra faire en sorte par un nombre suffisant de manipulations que~$u$ et~$v$ aient à être différentiables à l'ordre~$k$... et on pourra essayer de faire en sorte que~$u$ et~$v$ appartiennent au même espace fonctionnel...%}
+\end{remarque}
+
+\colorgris
+\begin{remarque}
 Petit aparté sur d'autres manières de présenter «la chose»: en mécanique, on parle également du «principe du travail virtuel» (ou des puissances virtuelles), de «minimisation de l'énergie potentielle», ou encore de «méthode des résidus pondérés»,
 Toutes ces méthodes sont «équivalentes» à celle exposée ici, mais souvent leur démonstration se fait uniquement «par les mains», ce qui peut être frustrant.
-\end{remarque}%\colorgris
+\end{remarque}
 %
 \paragraph{Principe des puissances virtuelles}\index{principe!des puissances virtuelles}\index{principe!des travaux virtuels}
 Le Principe des travaux virtuels est un principe fondamental en mécanique, qui postule un équilibre de puissance dans un mouvement virtuel, il s'agit d'une formulation duale du principe fondamental de la dynamique. On raisonne comme suit: si un solide est à l'équilibre (statique du solide), la somme des efforts est nulle. Donc si l'on fait faire un déplacement fictif (virtuel) à l'objet, la somme des puissances des forces et moments est nulle. Ce principe constitue la base d'une démarche de modélisation pour les milieux continus (théorie du premier gradient, théorie du second gradient). On parle parfois du principe des travaux virtuels qui est sensiblement identique.

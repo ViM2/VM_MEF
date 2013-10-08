@@ -161,6 +161,10 @@ En d'autres termes, on identifie une classe à l'un quelconque de ses représent
 \medskip
 \textcolorgris{En toute généralité, on aura bien remarqué que les définitions précédentes sont liées à la mesure~$\mu$ utilisée. Si l'on considère simultanément deux mesures~$\mu$ et~$\nu$, les classes d'équivalences ne sont pas les mêmes respectivement à chacune de ces mesures, et l'identification d'une classe à l'un quelconque de ses représentant ne peut plus se faire.}
 
+\begin{remarque}
+Sans l'identification des fonctions égales presque partout, les fonctions~$\|.\|_{L^p}$ ne sont que des semi-normes. Cette identification est sans conséquence pour la plupart des problèmes concrets, mais parfois désastreuse quand on veut étudier des propriétés fines de fonctions mesurables, par exemple si l'on veut étudier la dimension de Hausdorff d'un ensemble de points de discontinuité de~$f$... De tels problèmes ne relèvent pas de l'analyse fonctionnelle.
+\end{remarque}
+
 \begin{theoreme}
 Chaque espace~$L^p$ est un espace vectoriel.
 \end{theoreme}
@@ -178,7 +182,6 @@ Chaque espace~$L^p$ est un espace de Banach lorsque son exposant~$p$ est~$\ge 1$
 \begin{theoreme}
 Lorsque~$0 < p < 1$, l'intégrale définit une quasi-norme qui en fait un espace complet.
 \end{theoreme}
-
 
 \medskip
 \begin{definition}[Exposants conjugués]\index{exposant conjugué!de Lebesgue}
@@ -269,7 +272,7 @@ L'espace~$L^\infty(X, \mathcal{A}, \mu)$ est l'espace vectoriel quotient de~$\ma
 par la relation d'équivalence «$f \sim g$» ssi «$f$ et~$g$ sont égales presque partout».
 
 \begin{theoreme}
-L'espace dual de~$L^1$ est~$L^{\infty}$ mais l'espace dual de~$L^{\infty}$ contient strictement~$L^1$.
+L'espace dual de~$L^1$ est~$L^{\infty}$ mais l'espace dual de~$L^{\infty}$ contient strictement~$L^1$, et d'ailleurs~$L^1$ n'est le dual d'aucun espace de Banach.
 \end{theoreme}
 
 \medskip
@@ -308,7 +311,7 @@ On a~$(K^\bot)^\bot = K$.
 \end{theoreme}
 
 \medskip
-\section{Compléments}
+\section{Compléments et retour sur les fonctions continues et différentiables}
 
 Commençons par quelques exemples ultra classiques:
 \begin{itemize}
@@ -339,8 +342,36 @@ Si~$\mu$ est une mesure finie et si~$1\le p\le q\le \infty$, on a:
 \end{theoreme}
 
 \medskip
-Terminons en revenant un peu à nos fonctions continues~$C^k$, et plus précisément sur les fonctions continues à support compact
-dans un ouvert~$\Omega$ mesurable de~$\RR^n$ (voir la définition~\ref{Def-Cc} page \pageref{Def-Cc}).
+\medskip
+Terminons ce cours chapitre en revenant un peu aux fonctions continues et~$C^k$, dont nous avons déjà parlé au paragraphe~\ref{Sec-Ck}. Nous commençons d'ailleurs par rappeler certaines définitions déjà données.
+
+\begin{definition}
+Soit~$\Omega$ un espace topologique. On définit~$C_b(\Omega)$ comme l'espace des fonctions continues bornées de~$\Omega$ dans~$\RR$; $C_0(\Omega)$ comme l'espace des fonctions continues sur~$\Omega$, tendant vers 0 à l'infini; $C_c(\Omega)$ comme l'espace des fonctions continues à support compact dans~$\Omega$. Ces trois espaces, munis de la norme sup:
+\begin{equation}
+\|f\|_\infty = \sup_{\Omega} |f|
+\end{equation}
+sont des espaces vectoriels topologiques; les espaces~$C_b(\Omega)$ et~$C_0(\Omega)$ sont des espaces de Banach, alors que $C_c(\Omega)$ ne l'est pas en général.
+\end{definition}
+
+Si~$\Omega=\RR^n$, alors~$C_0(\Omega)$ est l'adhérence de~$C_c(\Omega)$.
+
+\medskip
+\begin{definition}
+Soient~$\Omega$ un ouvert de~$\RR^n$, et $k\in\NN$, $k\ge1$. On définit l'espace~$C^k(\Omega)$ comme l'espace des fonctions~$k$ fois dérivables dans~$\Omega$, dont toutes les dérivées sont bornées jusqu'à l'ordre~$k$. C'est un espace de Banach quand on le munit de la norme:
+\begin{equation}
+\|f\|_{C^k} = \|f\|_\infty +\dsum_{|\alpha|=k} \|\nabla^\alpha f\|_\infty
+\end{equation}
+
+On note parfois cet espace~$C^k(\overline{\Omega})$ pour insister sur le fait que l'on prend le supremum jusqu'au bord. Une notation plus appropriée serait sans doute~$C^k_b(\Omega)$.
+\end{definition}
+
+\medskip
+\begin{definition}
+Soit~$\Omega$ un ouvert de~$\RR^n$. L'intersection des espaces~$C_c(\Omega)$ et~$C^k(\Omega)$, pour tout~$k$, est appelée espace des fonctions~$C^\infty$ à support compact; on la note~$C_c^\infty(\Omega)$ ou~$\mathcal{D}(\Omega)$. Nous en reparlerons au chapitre suivant...
+\end{definition}
+Puisque~$C_c(\Omega)$ n'est déjà pas un espace de Banach, il semble inutile de tenter de normer~$\mathcal{D}(\Omega)$.
+
+\medskip
 On dispose des résultats de \textcolorblue{densité} suivants:
 \begin{itemize}
   \item L'espace~$C_c^0(\Omega)$ des fonctions continues à support compact est dense dans~$L^p(\Omega)$ pour~$1\le p<\infty$
