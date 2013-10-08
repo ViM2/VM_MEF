@@ -130,7 +130,7 @@ Les conditions aux limites types ont été présentées au chapitre~\ref{Ch-EDPp
 
 \medskip
 \section{Théorème de représentation de Riesz-Fréchet}\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
-Le théorème le plus fondamental pour la méthode des éléments finis sera le théorème de Lax-Milgram, toutefois, nous aurons besoin du théorème de représentation de Riesz-Fréchet pour sa démonstration. \textcolorgris{Ce magnifique théorème fait lui-aussi des outils de base d'analyse fonctionnelle.}
+Le théorème le plus fondamental pour la méthode des éléments finis sera le théorème de Lax-Milgram, toutefois, nous aurons besoin du théorème de représentation de Riesz-Fréchet pour sa démonstration. \textcolorgris{Ce magnifique théorème fait lui-aussi partie des outils de base d'analyse fonctionnelle.}
 
 \medskip
 Pour tout vecteur~$y$ d'un espace de Hilbert~$H$, la forme linéaire qui à~$x$ associe~$\langle y,x\rangle$ est continue sur~$H$ (sa norme est égale à celle de~$y$, d'après l'inégalité de Cauchy-Schwarz). Le théorème de Riesz énonce la réciproque: toute forme linéaire continue sur~$H$ s'obtient de cette façon.
@@ -197,18 +197,18 @@ Alors il existe un unique~$u$ dans~$H$ tel que l'équation~$a(u,v) = f(v)$ soit 
 La continuité et la coercitivité de~$a$ permettent de dire que~$a$ définit un produit scalaire~$(\cdot,\cdot)_a$ dont la norme associée~$\|\cdot\|_a$ est équivalente à la norme~$\|\cdot\|$. 
 Le problème devient: trouver~$u$ tel que~$\forall v\in H, (u,v)_a=f(v)$.
 
-Or~$f(v)=<f,v>$ dans la dualité~$H$~$H'$ et le problème devient:
-trouver~$u$ tel que~$\forall v\in H, (u,v)_a=<f,v>$.
+Or~$f(v)=\langle f,v\rangle$ dans la dualité~$H$~$H'$ et le problème devient:
+trouver~$u$ tel que~$\forall v\in H, (u,v)_a=\langle f,v\rangle$.
 
 Le théorème de représentation de Riesz-Fréchet permet de conclure à l'existence et à l'unicité de la solution.~$\square$\colorblack
 \end{demonstration}
 
-\begin{demonstration}\footnotesize\colorgris
+\begin{demonstration}[Autre démonstration]\footnotesize\colorgris
 Une autre voie consiste à étudier directement le problème de minimisation de la fonctionnelle définie par~$J=\tfrac12 a(v,v)-f(v)$ (ce qui est une façon de montrer le théorème de Riesz) en considérant une suite minimisante et en montrant qu'elle est de Cauchy par l'identité du parallélogramme.~$\square$\colorblack
 \end{demonstration}
 
 \medskip
-\textcolorred{Ce théorème est l'un des fondements de la méthode des éléments finis} dits «classiques» ou «en déplacement». Dans le cas d'éléments finis plus «exotiques» tels que les éléments mixtes, hybrides, mixtes-hybrides et des multiplicateurs de Lagrange, on a besoin d'un peu plus... c'est ce que nous allons voir au paragraphe suivant.
+\textcolorred{Ce théorème est l'un des fondements de la méthode des éléments finis} dits «classiques» ou «en déplacement». Dans le cas d'éléments finis plus «exotiques» tels que les éléments mixtes, hybrides, mixtes-hybrides et des multiplicateurs de Lagrange, on a besoin d'un peu plus... c'est ce que nous allons voir aux paragraphes suivants.
 
 \medskip
 La forme variationnelle du théorème de Lax-Milgram a déjà été abordée dans la seconde «preuve» proposée du théorème de de Lax-Milgram. Il s'agit, dans les cas où cela est possible, d'aborder le problème sous l'angle de la minimisation d'une fonctionnelle.
@@ -449,22 +449,14 @@ On parle de \textcolorblue{problème de minimisation sous contrainte}.
 \end{definition}
 
 \medskip
-
-
-
 On introduit un \textcolorblue{Lagrangien}:
 $\mathscr{L}(v,\mu) = J(v)+b(v,\mu) - \langle g,\mu\rangle_M$.
 Évidemment, $\forall\mu, \mathscr{L}(v,\mu)=J(v)$ si~$v$ vérifie les contraintes.
 L'idée est de considérer~$\min_{v\in H} \mathscr{L}(v,.)$.
-La question devient alors: \textcolorblue{existe-t-il un multiplicateur particulier~$\lambda\in M$ tel que
-~$\min_{v\in H} \mathscr{L}(v,\lambda)$ soit égale à~$u\in H$ solution de (\ref{Eq-Pmin})?}
-\textcolorgreen{$\lambda$ est parfois également appelé pénalité ou fonction de pénalisation.}
-
+La question devient alors: existe-t-il un multiplicateur particulier~$\lambda\in M$ tel que~$\min_{v\in H} \mathscr{L}(v,\lambda)$ soit égale à~$u\in H$ solution de (\ref{Eq-Pmin})?
+On appelle parfois~$\lambda$ pénalité ou fonction de pénalisation.
 
 \medskip
-
-
-
 En notant que:
 \begin{equation}\langle\frac{\partial\mathscr{L}}{\partial v}(u,\lambda),v\rangle_H
 =\frac d{dt}\mathscr{L}(y+tv,\lambda)|_{t=0}
@@ -486,7 +478,6 @@ De plus, si~$a(v,v)\ge 0$, $\forall v\in H$, alors~$(u,\lambda)$ est solution de
 \mathscr{L}(v,\lambda), \forall v\in H
 \end{equation}
 
-
 \medskip
 Remarquons enfin que si l'on note:
 \begin{align}&A((u,\lambda),(v,\mu))=a(u,v)+b(v,\lambda)+b(u,\mu)\\
@@ -505,7 +496,7 @@ Lagrange%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Il est également le fondateur de la théorie des formes quadratiques, et démontre le théorème de Wilson\index[aut]{Wilson (John), 1741-1793, Anglais} sur les nombres premiers et la conjecture de Bachet\index[aut]{Bachet (Claude-Gaspard, dit - de Mérizac), 1581-1638, Français} sur la décomposition d'un entier en quatre carrés (connu aussi sous le nom de théorème des quatre carrés de Lagrange). On lui doit un cas particulier du théorème auquel on donnera son nom en théorie des groupes, un autre sur les fractions continues, l'équation différentielle de Lagrange.\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\\
+Il est également le fondateur de la théorie des formes quadratiques, et démontre le théorème de Wilson\index[aut]{Wilson (John), 1741-1793, Anglais} sur les nombres premiers et la conjecture de Bachet\index[aut]{Bachet (Claude-Gaspard, dit - de Mérizac), 1581-1638, Français} sur la décomposition d'un entier en quatre carrés (connu aussi sous le nom de théorème des quatre carrés de Lagrange). On lui doit un cas particulier du théorème auquel on donnera son nom en théorie des groupes, un autre sur les fractions continues, l'équation différentielle de Lagrange...\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}\\
 \indent
 En physique, en précisant le principe de moindre action, avec le calcul des variations, vers 1756, il invente la fonction de Lagrange,\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} qui vérifie les équations de Lagrange, puis développe la mécanique analytique, vers 1788, pour laquelle il introduit les multiplicateurs de Lagrange.\index{multiplicateurs de Lagrange} Il entreprend aussi des recherches importantes sur le problème des trois corps en astronomie, un de ses résultats étant la mise en évidence des points de libration (dits points de Lagrange) en 1772.\\
 \indent

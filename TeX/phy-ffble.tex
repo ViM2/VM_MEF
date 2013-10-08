@@ -48,16 +48,17 @@ On comprend pourquoi, parmi différentes formulations faibles, on en retient une
 \colorblack
 
 \medskip\colorgris
-\paragraph{Une autre formulation variationnelle}
+\begin{remarque}[Une autre formulation variationnelle]
 Afin d'illustrer la remarque précédente, construisons une autre formulation variationnelle du même problème. Pour cela, intégrons une nouvelle fois par parties, afin de chercher une solution encore plus faible. Le problème devient:
 \begin{equation}
 \text{Trouver } u \in L^1(\Omega) \text{ tel que }
 \forall v\in C_c^\infty(\Omega),\quad
 -\dint_\Omega u\Delta v = \dint_\Omega fv
 \end{equation}
-Tout d'abord, on peut remarquer que l'on ne peut plus appliquer Lax-Milgram. Ensuite, rappelons une remarque déjà faite: plus on cherche des solutions en un sens faible, plus il est facile de prouver l'existence de solutions, mais plus il est difficile d'obtenir l'unicité de la solution.
+Tout d'abord, on peut remarquer que l'on ne peut plus appliquer le théorème de Lax-Milgram. Ensuite, rappelons une remarque déjà faite: plus on cherche des solutions en un sens faible, plus il est facile de prouver l'existence de solutions, mais plus il est difficile d'obtenir l'unicité de la solution.
 
 En travaillant dans~$L^1(\Omega)$, on ne pourrait pas, par exemple, donner de sens à~$u = 0$ sur~$\Gamma$.
+\end{remarque}
 \colorblack
 
 \medskip
@@ -114,7 +115,7 @@ On obtient immédiatement la formulation variationnelle suivante:
 qui nécessite~$f\in L^2(\Omega)$ et~$g\in L^2(\Gamma)$.
 
 \medskip
-On peut remarquer qu'ici une simple intégration par parties a suffit à intégrer les conditions aux limites dans la formulation variationnelle, i.e. les conditions aux limites n'ont pas eu à être introduites dans l'espace fonctionnel pour~$u$, contrairement au cas du Laplacien de Dirichlet (en même temps, demander à une fonction de~$H^1(\Omega)$ d'avoir une dérivée normale égale à une fonction~$g$ au bord n'a pas de sens).
+On peut remarquer qu'ici une simple intégration par parties a suffi à intégrer les conditions aux limites dans la formulation variationnelle, i.e. les conditions aux limites n'ont pas eu à être introduites dans l'espace fonctionnel pour~$u$, contrairement au cas du Laplacien de Dirichlet (en même temps, demander à une fonction de~$H^1(\Omega)$ d'avoir une dérivée normale égale à une fonction~$g$ au bord n'a pas de sens).
 
 Lorsque les conditions aux limites s'introduisent d'elles-mêmes comme dans le cas du Laplacien de Neumann, on dit que l'on tient compte des conditions aux limites de \textcolorblue{manière naturelle}. Lorsqu'il faut les inclure, on dit qu'on en tient compte de \textcolorblue{manière essentielle}.\index{condition aux limites!essentielle}\index{condition aux limites!naturelle}
 
@@ -203,7 +204,7 @@ Pour la présentation des formulations faibles, nous commencerons par le cas de 
 
 \medskip
 \subsection{Équation de Stokes}\index{condition aux limites!de Dirichlet}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
-Si l'on considère la problème de Stokes pour un fluide incompressible avec condition de Dirichlet, il nous faut résoudre le système:
+Si l'on considère le problème de Stokes pour un fluide incompressible avec condition de Dirichlet, il nous faut résoudre le système:
 \begin{equation}\left\{
 \begin{aligned}
 -&\eta \Delta u + \nabla p = \rho f && \text{ dans } \Omega\\
@@ -244,12 +245,12 @@ a(u,v)+b(v,p) &= (f,v) && \forall v\in H^1_0(\Omega)^n \\
 b(u,q) &=0 &&\forall q \in L^2_0(\Omega)
 \end{aligned}\right.
 \end{equation}
-Notons que dans le seconde équation, la fonction test~$q$ pourrait de manière équivalente être cherchée dans~$L^2(\Omega)$ (pas besoin de la moyenne nulle).
+Notons que dans la seconde équation, la fonction test~$q$ pourrait de manière équivalente être cherchée dans~$L^2(\Omega)$ (pas besoin de la moyenne nulle).
 
 Par contre, il est important de chercher~$p \in L^2_0(\Omega)$. C'est cette condition de pression nulle qui assure l'unicité de la pression (comme dans le cas précédent du Laplacien de Neumann).
 
 \medskip
-Il est possible de formuler ce problème de manière non mixte, i.e. sous une forme compatible avec Lax-Milgram.
+Il est possible de formuler ce problème de manière non mixte, i.e. sous une forme compatible avec le théorème de Lax-Milgram.
 Considérons~$V=\left\{ u\in H^1_0(\Omega)^n / \dive u=0 \text{ dans } \Omega\right\}$.
 Alors~$u$ (la vitesse) est solution du problème:
 \begin{center}
@@ -296,7 +297,7 @@ Posons~$X=H^1_0(\Omega)^n$ et~$Y=L^2_0(\Omega)^n$.
 La \textcolorblue{formulation variationnelle mixte des équations de Navier-Stokes} s'écrit: Soit~$f\in L^2(0,T;L^2(\Omega)^n)$ et~$u_0\in L^2(\Omega)^n$.
 Trouver:
 \begin{equation}u\in W(0,T)=\left\{v\in L^2(0,T;X), \dfrac{\mathrm dv}{\mathrm dt}\in L^2(0,T;X') \right\}\end{equation} et
-$p\in L^2(0,T;Y)$, tels que p.p.~$t\in(0,T)$, on a:
+$p\in L^2(0,T;Y)$, tels que p.p.~$t\in(0,T)$, on ait:
 \begin{equation}\left\{
 \begin{aligned}
 &\langle\dfrac{\mathrm du}{\mathrm dt}(t),v\rangle_{X',X}+a(u(t),v)+c(u(t),u(t),v)+b(v,p(t)) = (f(t),v) &&
@@ -435,7 +436,7 @@ J(u)=
 \dint_\Omega \lambda (\dive u)^2+2\mu\dsum_{ij}\varepsilon_{ij}(u)^2 - \dint_\Omega fv -
 \dint_{\Gamma_N} g_N v
 \end{equation}
-\medskip
+%\medskip
 D'une manière générale, toute formulation faible, quelque soit le nombre de champs inconnus, s'écrit en mécanique sous la forme de minimisation d'une fonctionnelle, dont on sait trouver la signification physique.
 
 \medskip
@@ -488,7 +489,7 @@ En notant:
 &L(u)=\dint_\Omega fu + \dint_{\Gamma_N} g_N v\end{align}
 alors, le première fonctionnelle de Reissner se met sous la forme:
 \begin{equation} J(\sigma,u) = \frac12a(\sigma,\sigma)+b(\sigma_u)-L(u)\end{equation}
-\medskip
+%\medskip
 En effectuant une intégration par parties du terme mixte~$b(\sigma,u)$, on obtient la
 \textcolorblue{fonctionnelle d'Hellinger-Reissner}\index{fonctionnelle!d'Hellinger-Reissner}\index[aut]{Hellinger (Ernst David), 1883-1950, Allemand}\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain}
 sous sa deuxième forme:
@@ -501,7 +502,6 @@ J(u,\sigma) =
 - \dint_{\Gamma_N} g_N v
 \end{equation}
 où le champ de déplacement doit vérifier~$v=\overline{u}$ sur~$\Gamma_D$, et où la relation entre déformations et déplacement est supposée vérifiée dans~$\Omega$.
-
 Cette fonctionnelle d'Hellinger-Reissner est également appelée \textcolorblue{fonctionnelle mixte}.\index{fonctionnelle!mixte}
 \medskipvm
 L'adjectif \textcolorblue{hybride} peut être adjoint à l'une quelconque des formulations précédentes si le ou les champs sont interpolés d'une part sur tout le domaine~$\Omega$ et d'autre part sur tout ou partie du contour~$\Gamma$ de façon indépendante.
@@ -539,11 +539,14 @@ On rappelle que l'équation des ondes acoustiques de célérité~$c$ dans un mil
 
 \medskip
 \subsection{Équation de Helmholtz}\index{ED-EDP!de Helmholtz}\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand}
-Il s'agit de la formulation générale d'un problème acoustique linéaire. Elle est obtenue en cherchant la \textcolorblue{solution harmonique} de l'équation des ondes, i.e. une solution sous la forme:~$p'(x,y,z,t)=p(x,y,z)\mathrm \mathrm{e}^{i\omega t}$. \textcolorgris{(Au passage, les physiciens utilisent plutôt~$j$ au lieu de~$i$ pour gagner en clarté sans doute... comme s'ils passaient leur temps à parler d'intensité!)}
+Il s'agit de la formulation générale d'un problème acoustique linéaire. Elle est obtenue en cherchant la \textcolorblue{solution harmonique} de l'équation des ondes, i.e. une solution sous la forme:~$p'(x,y,z,t)=p(x,y,z)\mathrm \mathrm{e}^{i\omega t}$. \textcolorgris{(Au passage, les physiciens utilisent plutôt~$j$ au lieu de~$i$ pour gagner en clarté sans doute... comme s'ils passaient leur temps à parler d'intensité, qu'en plus ils notent plutôt~$I$!)}
 
 On obtient alors l'\textcolorblue{équation de Helmholtz}:
 \begin{equation}\label{Eq-Helm} \Delta p + k^2 p=0 \end{equation}
-où~$k$ est le \textcolorblue{nombre d'onde}:~$k=\dfrac\omega{c}=\dfrac{2\pi}\lambda$.
+où~$k$ est le \textcolorblue{nombre d'onde}:
+\begin{equation}
+k=\dfrac\omega{c}=\dfrac{2\pi}\lambda
+\end{equation}
 
 \medskip
 \subsection{Conditions aux limites en acoustique}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index{condition aux limites!de Robin}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
@@ -557,7 +560,7 @@ On a donc:
 \end{itemize}
 \medskipvm\colorgreen
 \paragraph{Condition de Neumann}
-$\overline{V_n}$ est la valeur imposée de la composante normale de la vitesse. Cette condition limite modélise la \textcolorred{vibration} d'un panneau, ce qui en fait la condition la plus souvent utilisée lorsque l'on a un couplage faible entre la structure et le fluide. On effectue alors une étude vibratoire de la structure, puis grâce à celle-ci une étude acoustique du fluide sans se préoccuper des interactions fluide-structure.
+$\overline{V}_n$ est la valeur imposée de la composante normale de la vitesse. Cette condition limite modélise la \textcolorred{vibration} d'un panneau, ce qui en fait la condition la plus souvent utilisée lorsque l'on a un couplage faible entre la structure et le fluide. On effectue alors une étude vibratoire de la structure, puis grâce à celle-ci une étude acoustique du fluide sans se préoccuper des interactions fluide-structure.
 
 \medskip
 \paragraph{Condition de Robin}
@@ -574,7 +577,7 @@ avec~$\tilde{\cdot}$ la conjugaison complexe, $a(p,q): H^1_D\times H^1_D \righta
 \dint_{\Gamma_R} i\rho ckA_n\tilde{q}
 \end{equation}
 et~$b(a): H^1_D\rightarrow\CC$ définie par:
-\begin{equation}b(q)=-\dint_{\Gamma_N} i\rho c k\overline{V_n} q\end{equation}
+\begin{equation}b(q)=-\dint_{\Gamma_N} i\rho c k\overline{V}_n q\end{equation}
 
 \medskip
 Et comme on peut vérifier que l'on est dans un cas qui va bien, on définit l'énergie potentielle totale du domaine par:
