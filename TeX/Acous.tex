@@ -88,17 +88,13 @@ Tous ces cas existent donc bien, et peuvent même se superposer. Il convient don
 Il en va de même dans l'utilisation de matériaux ou solutions acoustiques. Plusieurs phénomènes peuvent intervenir et se superposer:
 \begin{itemize}
    \item \textcolorblue{absorption:} il s'agit du cas où l'énergie acoustique est dissipée dans ou par le matériau ou la solution. Pour les matériaux poreux ou fibreux, des modèles de fluides équivalent existent. Ils sont modélisés par des paramètres tels que la porosité, la tortuosité... dans le cas de résonateurs ou de foils absorbers, ce sont les caractéristiques du matériau constituant ceux-ci ainsi que leur géométrie qui déterminent leur performance d'absorption;
-   \item \textcolorblue{isolation:} il s'agit du cas où l'on fait barrière au bruit. Les notions d'étanchéité et de masses sont prépondérantes.
-   
-   On commencera donc par éviter au maximum toutes les fuites acoustiques (tous les trous);
-
-Ensuite, on pourra utiliser le fait que l'isolation est liée à la masse: on gagne 6~dB par doublement de masse (en fait $20\log_{10}2$).
+   \item \textcolorblue{isolation:} il s'agit du cas où l'on fait barrière au bruit. Les notions d'étanchéité et de masses sont prépondérantes. On commencera donc par éviter au maximum toutes les fuites acoustiques (tous les trous). Ensuite, on pourra utiliser le fait que l'isolation est liée à la masse: on gagne 6~dB par doublement de masse (en fait $20\log_{10}2$).
 
 Enfin, d'autres systèmes peuvent être utilisés. Parmi ceux-ci, le système «masse-ressort» constitue l'une des plus anciennes solutions pour améliorer l'isolation acoustique. Il s'agit de réaliser un système rudimentaire de double parois découplées. Lorsque la première paroi est attaquée par le bruit et les vibrations, la seconde réagit de manière découplée. On peut choisir le ressort et la masse pour «filtrer» les fréquences indésirables. Ce système présente par contre une fréquence de coupure pour laquelle l'isolation n'est pas améliorée, mais au contraire le phénomène est amplifié.
    
    \item \textcolorblue{amortissement:} il s'agit du cas où l'énergie vibratoire est dissipée dans un matériau choisi pour ses propriétés d'amortissement visqueux, ou par son mode de fixation (collage, montage en contrainte...).
 \end{itemize}
-L'ajout d'une pièces d'insonorisation, par exemple réalisée par thermocompression de matières fibreuses, sur une structure a pour effet d'augmenter l'absorption. Toutefois, cette pièce possède une masse, même faible, qui ajoute de l'isolation. De plus, son mode de fixation peut apporter de l'amortissement à la structure étudiée. Mais, si la pièce est montée sur une tôle, sa masse étant vraiment faible face à celle de la tôle, il n'est pas faux de ne pas prendre en compte son apport sur l'isolation. Si de plus elle est juste maintenue mécaniquement, il est également possible de négliger leur influence en terme d'amortissement.
+L'ajout d'une pièces d'insonorisation, par exemple réalisée par thermocompression de matières fibreuses, sur une structure a pour effet d'augmenter l'absorption. Toutefois, cette pièce possède une masse, même faible, qui ajoute de l'isolation. De plus, son mode de fixation peut apporter de l'amortissement à la structure étudiée. Toutefois, si la pièce est montée sur une tôle, sa masse étant vraiment faible face à celle de la tôle, il n'est pas faux de ne pas prendre en compte son apport sur l'isolation. Si de plus elle est juste maintenue mécaniquement, il est également possible de négliger son influence en terme d'amortissement.
 
 \medskip
 \subsubsection{L'absorption}
@@ -115,8 +111,8 @@ On voit, sur la figure~\ref{Fig-mtxalpha} que l'on peut distinguer deux types de
    \item et un comportement d'absorption large bande: il s'agit des matériaux poreux et fibreux. Bien que n'apportant qu'une absorption très limitée aux basses fréquences, ils permettent de bien traiter le spectre en hautes fréquences et constituent donc une solution simple et aisée à mettre en œuvre. La figure~\ref{Fig-poro}
 \begin{figure}[h!]
 \centering
-\includegraphics[width=50mm]{poroF.eps}\hspace{10mm}
-\includegraphics[width=50mm]{poroO.eps}\hspace{10mm}
+\includegraphics[width=50mm]{poroF.eps}\hspace{5mm}
+\includegraphics[width=50mm]{poroO.eps}\hspace{5mm}
 \includegraphics[width=40mm]{fibres.eps}
 \caption{Rôle de la porosité}\label{Fig-poro}
 \end{figure}
@@ -124,7 +120,7 @@ montre le rôle de la porosité dans l'absorption, en augmentant le parcourt moy
 \end{itemize}
 
 \medskip
-Tout cela justifie la remarque que nous faisons en introduction: la partie difficile à traiter dans les problèmes d'acoustique ne concerne que les basses fréquences où il n'existe que très peu de solutions, surtout simples de mise en œuvre. Les hautes fréquences (supérieures à 2 ou 3000~Hz) peuvent être facilement traitées. De plus, l'oreille humaine, bien que percevant les fréquences de 20 à 20000~Hz, est surtout sensible dans la bande de fréquences allant de 1 à 4~kHz. \textcolorgreen{Dès lors, bien qu'une étude acoustique doive prendre en compte la totalité du spectre (de la source et audible), du point de vue calculatoire (et du point de vue de la conception des solutions), c'est au-dessous de 3000~Hz que le travail devra se concentrer.} Ainsi donc, un traitement par la méthode des éléments finis est tout à fait envisageable pour faire face à la majorité des problèmes: nous entendons par là, avec un «coût» de calcul raisonnable.
+Tout cela justifie la remarque que nous faisons en introduction: la partie difficile à traiter dans les problèmes d'acoustique ne concerne que les basses fréquences où il n'existe que très peu de solutions, surtout simples de mise en œuvre. Les hautes fréquences (supérieures à 2 ou 3000~Hz) peuvent être facilement traitées (poreux, fibreux). De plus, l'oreille humaine, bien que percevant les fréquences de 20 à 20000~Hz, est surtout sensible dans la bande de fréquences allant de 1 à 4~kHz. \textcolorgreen{Dès lors, bien qu'une étude acoustique doive prendre en compte la totalité du spectre (de la source et audible), du point de vue calculatoire (et du point de vue de la conception des solutions), c'est au-dessous de 3000~Hz que le travail devra se concentrer.} Ainsi donc, un traitement par la méthode des éléments finis est tout à fait envisageable pour faire face à la majorité des problèmes: nous entendons par là, avec un «coût» de calcul raisonnable.
 
 
 \textcolorred{VM A COMPLETER}
@@ -149,12 +145,12 @@ La \textcolorblue{diffraction} est un autre phénomène avec lequel il faut comp
 \caption{Phénomène de diffraction}\label{Fig-diffrac}
 \end{figure}
 
-Les figures~\ref{Fig-diffrac}a--\ref{Fig-diffrac}c représentent le phénomène de diffraction au travers d'une ouverture. l'onde après l'obstacle, i.e. l'onde diffractée, a la même fréquence, la même longueur d'onde et la même vitesse que l'onde incidente. Par contre, sa direction, son amplitude et sa forme sont modifiées (l'amplitude de l'onde diffractée  est inférieure à celle de l'onde incidente). 
+Les figures~\ref{Fig-diffrac}a--\ref{Fig-diffrac}c représentent le phénomène de diffraction au travers d'une ouverture. L'onde après l'obstacle, i.e. l'onde diffractée, a la même fréquence, la même longueur d'onde et la même vitesse que l'onde incidente. Par contre, sa direction, son amplitude et sa forme sont modifiées (l'amplitude de l'onde diffractée  est inférieure à celle de l'onde incidente). 
 
 C'est ce phénomène qui fait qu'au coin d'une rue, on entend la personne venant perpendiculairement à nous avant de la voir, comme montré sur la figure~\ref{Fig-diffrac}d.
 
 Rappelons que deux ondes, diffractées ou non (mais ça a plus de sens ici en parlant d'ondes diffractées) peuvent interférer.
-Le phénomène analogue se produit également lorsqu'un obstacle est inséré au sein d'un fluide, comme le représente la figure~\ref{Fig-diffrac}d. Les ondes doivent «éviter» l'obstacle, ce qui modifie notamment leur direction sur les bords de l'obstacle.
+Le phénomène analogue se produit également lorsqu'un obstacle est inséré au sein d'un fluide, comme le représente la figure~\ref{Fig-diffrac}e. Les ondes doivent «éviter» l'obstacle, ce qui modifie notamment leur direction sur les bords de l'obstacle.
 Il se crée un zone d'ombre en arrière de l'obstacle (schématisée en gris).
 De plus, selon la forme de l'objet, les ondes diffractées peuvent générer, plus en aval de l'obstacle, des figures d'interférence.
 
@@ -182,7 +178,7 @@ La propagation d'ondes acoustiques se traite généralement dans deux cas distin
 
 On rappelle par ailleurs qu'une onde voit son intensité décroitre avec la distance parcourue.
 \textcolorgris{L'intensité (vectorielle) est le produit de la pression (scalaire) par la vitesse (vecteur).}
-Dans ces conditions de champ libre, l'intensité acoustique est proportionnelle au carré de la pression acoustique. Quand la distance à la source est doublée, la pression est divisée par deux (et l'intensité acoustique est divisée par quatre). Le niveau de pression acoustique diminue alors de 6~dB.
+Dans les conditions de champ libre, l'intensité acoustique est proportionnelle au carré de la pression acoustique. Quand la distance à la source est doublée, la pression est divisée par deux (et l'intensité acoustique est divisée par quatre). Le niveau de pression acoustique diminue alors de 6~dB.
 
 \medskip
 Une question intéressante, dans le cas d'un environnement fermé, est de se demander ce qu'il se passe lorsqu'une source émet à des fréquences qui «n'ont pas la place» de se développer au sein du volume disponible, i.e. \textcolorblue{lorsque les longueurs d'ondes considérées sont supérieures aux dimensions de l'espace dans lequel émet la source}. Ce cas se produit pour les basses fréquences émises par un moteur au sein de son encoffrement, ce dernier étant approximativement un cube de longueur 60~cm.
@@ -191,7 +187,7 @@ Et bien, dans ce cas, l'énergie injectée «gonfle» en quelque sorte l'encoffr
 Dans de nombreux cas (encoffrement moteur, habitacle de véhicule...), il est nécessaire de prendre en compte la réponse modale du volume dans lequel on définit le problème, car celle-ci influe sur la répartition du champ acoustique, dont notamment d'éventuelles \textcolorblue{résonances}.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=95mm]{modalVh1.eps}\hspace{20mm}%\hfill
+\includegraphics[width=95mm]{modalVh1.eps}\hspace{10mm}%\hfill
 \includegraphics[height=55mm]{modalVh2.eps}
 \caption{a) Répartition modale dans un véhicule et b) non-uniformité du champ acoustique}\label{Fig-modalVh}
 \end{figure}
