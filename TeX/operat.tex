@@ -269,13 +269,15 @@ On appelle \textcolorblue{espace dual} d'un espace vectoriel~$E$ l'ensemble des 
 La structure d'un espace et celle de son dual sont très liées.
 Nous allons détailler quelques points en nous restreignant aux cas qui nous intéressent (cas réel, dimension finie).
 
-\medskip
-\colorgris
+%\medskip
+%\colorgris
+\begin{remarque}
 Si l'on dispose, sur l'espace vectoriel considéré~$E$, d'un produit scalaire~$\langle\cdot,\cdot\rangle$ (voir chapitre \ref{Ch-Esp}), alors il existe un moyen «naturel» de plonger~$E$ dans~$E^*$, i.e. d'associer à chaque élément de~$E$ un élément du dual, et ce de manière à former un isomorphisme entre~$E$ et un sous-espace de~$E^*$:
 à chaque élément~$x\in E$ on associe la forme linéaire~$\varphi_x: E \to K;\ y \mapsto \langle x,y\rangle$.
 Alors l'application~$f: E \to E^*;\ x \mapsto \varphi_x$ est une application linéaire injective, donc l'espace~$E$ est isomorphe au sous-espace~$f(E)$ de~$E^*$.\colorblack
+\end{remarque}
 
-\medskip
+%\medskip
 \textcolorred{Si l'espace~$E$ est de dimension finie~$n$, alors l'espace dual~$E^*$ est isomorphe à~$E$ et est donc lui aussi de dimension~$n$.}
 On a alors le théorème de la base duale (que je ne présente pas, car je n'ai pas parlé de base... mais peut-être pourrons-nous nous passer de ces rappels dans ce document).
 
@@ -290,7 +292,35 @@ Le dual topologique~$E'$ de~$E$ est le sous-espace vectoriel de~$E^*$ (le dual a
 \end{definition}
 Si l'espace est de dimension finie, le dual topologique coïncide avec le dual algébrique, puisque dans ce cas toute forme linéaire est continue.
 Mais dans le cas général, l'inclusion du dual topologique dans le dual algébrique est stricte.
-%\colorblack
+\colorgris
+\begin{remarque}[Remarques topologiques]\index{topologie}
+En complément, quelques mots sur les topologies faible et faible-*, afin de pouvoir faire dans de bonnes conditions une remarque sur leur usage.
+\begin{definition}[Topologies faible et faible-*]
+Soient~$E$ un espace vectoriel topologique et~$E'$ son dual topologique, i.e. l'espace vectoriel des formes linéaires continues sur~$E$.\\
+On appelle topologie forte sur~$E$ la topologie initiale de~$E$;\\
+On appelle topologie faible sur~$E$ la topologie la plus grossière qui rende continus tous les éléments de~$E'$;\\
+On appelle topologie faible-* sur~$E'$ la topologie la plus grossière qui rendue continus tous les éléments de~$E$.
+\end{definition}
+Notons que si~$E$ est réflexif, i.e. si~$E''=E$ alors la topologie faible et la topologie faible-* coïncident.
+
+\medskip
+Les topologies faibles ne sont en général pas métrisables, et ne peuvent donc se définir par la seule donnée des notions de convergence de suites. Cependant, c'est bien la notion de convergence faible de suites qui est utile en pratique.
+
+\medskip
+On place ici des remarques faisant appel aux espaces de Lebesgue définis au chapitre~\ref{Ch-Lp}.
+
+Soit~$\Omega$ un ouvert de~$\RR^n$. Pour~$1<p<\infty$, les topologies faible et faible-* sur~$L^p(\Omega)$ coïncident, et la notion de convergence associée (convergence contre des fonctions test dans~$L^p$) est:
+\begin{equation*}
+\forall g\in {L^p}'(\Omega), \quad \int_\Omega f_ng \longrightarrow \int_\Omega fg
+\end{equation*}
+Pour~$p=\infty$, la topologie faible-* correspond à la convergence contre des fonctions test dans~$L^1$; pour~$p=1$, la topologie faible correspond à la convergence contre des fonctions test dans~$L^\infty$. 
+On s'interdira en revanche de considérer la convergence faible-* dans~$L^1$, ou la convergence faible dans~$L^\infty$ (la question de savoir si~$L^1$ est le dual de~$L^\infty$ touche à de subtiles questions d'axiomatique, et la réponse est négative si l'on admet l'axiome du choix...)
+
+\medskip
+Quel est l'intérêt d'appauvrir la topologie? 
+Une des motivations majeures est que \textcolorblue{moins il y a d'ouverts, plus il y a de compacts}. Il est beaucoup plus facile d'être compact pour la topologie faible que pour la topologie forte.
+\end{remarque}
+\colorblack
 
 \medskip
 \subsection{Noyau et image}\index{noyau}\index{image}

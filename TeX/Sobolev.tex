@@ -107,7 +107,7 @@ La théorie des distributions exploite au maximum l'idée de moyenner les soluti
 Soit~$\Omega$ un sous-espace topologique de~$\RR^n$ (ou~$\CC^n$).
 \textcolorblue{L'espace des fonctions tests~$\mathcal{D}(\Omega)$} est l'ensemble des fonctions à valeurs réelles indéfiniment dérivables de~$\Omega$ à support compact inclus dans~$\Omega$.
 
-On munit cet espace vectoriel de la topologie suivante: un ensemble~$U \subset \mathcal{D}(\Omega)$ est ouvert ssi~$\forall K \subset \Omega$ compact et~$f \in U$ dont le support est inclus dans~$K$, il existe~$\epsilon > 0$ et~$k \ge 0$ tels que:
+On munit cet espace vectoriel de la topologie suivante: un ensemble~$U \subset \mathcal{D}(\Omega)$ est ouvert si et seulement si~$\forall K \subset \Omega$ compact et~$f \in U$ dont le support est inclus dans~$K$, il existe~$\epsilon > 0$ et~$k \ge 0$ tels que:
 \begin{equation}
   \{ g \in \mathcal{D}(\Omega)\;\mid\; \operatorname{supp}(g) \subset K\quad\text{ et }\quad\forall x \in K,\; |f^{(k)}(x)-g^{(k)}(x)|\le \epsilon \}\;\subset\;U.
 \end{equation}
@@ -120,10 +120,23 @@ Muni de cette topologie, $\mathcal{D}(\Omega)$ est un espace vectoriel topologiq
 \end{definition}
 
 L'ensemble des distributions est donc le dual topologique de~$\mathcal{D}(\Omega)$ et est par conséquent noté~$\mathcal{D}'(\Omega)$.\index{dual topologique d'un espace vectoriel}
+
 \begin{remarque}
 L'espace des distributions est extrêmement grand, et contient tous les espaces fonctionnels que nous avons mentionnés jusqu'à présent et leur dual, y compris les espaces à poids et les espaces locaux (non présentés dans ce document).
-\end{remarque}
-%\medskipvm
+\end{remarque}\colorgris
+\begin{remarque}[Complément topologique]
+L'espace~$\mathcal{D}$ n'est pas métrisable. Définir sa topologie n'est pas équivalent à définir la convergence des suites. Cependant, dans la pratique c'est presque la seule notion de convergence que l'on utilise.
+
+\medskip
+Soit~$\Omega$ un ouvert de~$\RR^n$. On muni~$\mathcal{D}'(\Omega)$ de la topologie faible-* induite par~$\mathcal{D}(\Omega)$. Alors:\\
+-- $\mathcal{D}'(\Omega)$ est un espace topologique complet (et un espace de Montel);\index[aut]{Montel (Paul Antoine Aristide Montel), 1876-1975, Français}\\
+-- Le dual topologique de~$\mathcal{D}'(\Omega)$ s'identifie à~$\mathcal{D}(\Omega)$, qui est donc réflexif;\\
+-- La topologie de~$\mathcal{D}'(\Omega)$ n'est pas métrisable.
+
+\medskip
+Notons que la convergence dans le dual de n'importe quel espace de Sobolev implique la convergence au sens des distributions.
+\end{remarque}\colorblack
+
 Toujours aussi classiquement, si~$T$ est une distribution et~$\varphi$ une fonction test de $\mathcal{D}(\Omega)$ alors on note~$T(\varphi)=\langle T,\varphi \rangle$. (i.e. $\langle\cdot,\cdot\rangle$ désigne comme d'habitude le crochet de dualité).
 \medskipvm
 Dans~$\mathcal{D}'(\mathbb{R})$, l'application qui à~$\varphi$ associe~$\varphi(0)$ est une distribution et c'est la distribution de Dirac\index{distribution!de Dirac}\index[aut]{Dirac (Paul Adrien Maurice), 1902-1984, Anglais}:
@@ -148,7 +161,7 @@ Une intégration par parties permet d'écrire:
 En effet, puisque la fonction~$\varphi$ est nulle en dehors d'un ensemble borné (elle est à support compact), les termes de bords s'annulent.
 
 \medskip
-\begin{definition}[Dérivée d'une distribution]
+\begin{definition}[Dérivée d'une distribution]\label{Def-DerivDistrib}
 Si~$S$ est une distribution, cet exemple suggère que l'on puisse \textcolorblue{définir sa dérivée~$S'$ comme la forme linéaire} qui à une fonction test~$\varphi$ fait correspondre la valeur~$- S(\varphi')$. On pose donc:
 \begin{equation}\colorred
   \langle S', \varphi \rangle = - \langle S, \varphi' \rangle
@@ -168,8 +181,34 @@ Lorsque la distribution~$S$ modélise un phénomène physique, la fonction test~
 \medskip
 \textcolorgris{Nous définirons dans un autre cours (sur le traitement du signal) les notions de distribution à support compact, les distributions tempérées et la décroissance rapide utiles en analyse de Fourier ainsi que les espaces de Schwartz.}
 
+\colorgris
+\begin{remarque}[Complément au sujet des opérations sur des distributions]
+L'addition, la soustraction et la multiplication par un scalaire sont telles qu'on les imagine.
 
+Le cas de la dérivation (pour lequel les distributions ont été inventées) a été traité ci-dessus à la définition~\ref{Def-DerivDistrib}.
 
+\medskip
+Les distributions permettent de changer momentanément l'ouvert~$\Omega$ sur lequel on travaille. Pour cela, on dispose des trois opérations suivantes:\\
+-- Opération de \emph{restriction}:
+Soient~$\Omega$ un ouvert de~$\RR^n$, et~$\Omega'$ un ouvert de~$\Omega$. Toute distribution~$T\in\mathcal{D}'(\Omega)$ définit une distribution sur~$\Omega'$, simplement par restriction de l'espace des fonctions test: $\mathcal{D}(\Omega') \subset \mathcal{D}(\Omega)$. On peut donc restreindre une distribution à un ouvert plus petit que celui sur lequel elle était définie initialement.\\
+-- Opération de \emph{localisation}: Soient un compact~$K$ (au voisinage duquel on veut étudier la distribution), $O$ un ouvert contenant~$K$, et~$T\in\mathcal{D}(\Omega)$ une distribution. On peut trouver une autre distribution~$T'$ dont le support est inclus dans~$O$, et qui coïncide avec~$T$ dans un voisinage de~$K$. Pour cela il suffit de définir $\langle T',\varphi\rangle = \langle T,\chi_\varphi\rangle$ où $\chi_\varphi$ est une fonction plateau identiquement 1 au voisinage de~$K$,à support compact inclus dans~$O$.\\
+-- Opération de \emph{recollement}: Soient~$(\Omega_i)_{i\in J}$ une famille(éventuellement
+infinie) d'ouverts de~$\RR^n$, et~$\Omega$ la réunion des~$\Omega_i$. Pour chaque~$i$, on se donne une distribution~$T_i\in\mathcal{D}'(\Omega_i)$. On peut définir dans~$\Omega$ une distribution~$T$ dont la restriction à chaque~$\Omega_i$ soit~$T_i$, sous la condition nécessaire que~$T_i=T_j$ dans~$\Omega_i\cap\Omega_j$. On utilise le théorème de partition de l'unité pour construire cette distribution, et on montre que celle-ci est indépendante de la partition choisie.
+
+\medskip
+La multiplication des distributions pose des problèmes considérables et ne se résout que partiellement.
+\end{remarque}
+
+\begin{remarque}[Exemples de calculs avec les distributions]
+Considérons la fonction~$f(x) =|x|$ sur~$\RR$. Alors~$f'$ est la fonction «signe», $f'' = 2\delta_0$, $f'''$ vaut 2 fois l'application «évaluation de la dérivée en 0». Attention donc à ne pas confondre ces dérivées au sens des distributions avec les dérivées presque partout, qui sont nulles à partir du rang 2.
+
+\medskip
+Soit~$f(x)=x\log|x|-x$ dans~$\RR$, alors on peut écrire, au sens des distributions, $f'(x) = \log|x|$, $f''(x) = v.p.(1/x)$ (où $v.p.$ est la valeur principale).
+
+\medskip
+Soit~$(u_n)$ la suite de fonctions définie par~$u_n(x) = (1/n)sin(nx)$. Alors la famille $(u'_n)$ converge au sens des distributions vers 0.
+\end{remarque}
+\colorblack
 
 
 \medskip
@@ -239,8 +278,8 @@ est le produit intérieur dans $L^{2} ( \Omega)$; produit scalaire dans le cas r
 Si~$\Omega$ est Lipschitzien, alors l'ensemble~$C^\infty(\overline{\Omega})$ des fonctions régulières jusqu'au bord de~$\Omega$ est dense dans~$H^m(\Omega)$.
 \end{theoreme}
 
-\medskip
-\begin{remarque}\colorgris
+\colorgris
+\begin{remarque}[Complément]
 De plus, dans le cas où la transformation de Fourier peut être définie dans~$L^{2} ( \Omega)$, l'espace~$H^k(\Omega)$ peut être défini de façon naturelle à partir de la transformée de Fourier (voir cours sur le traitement du signal).
 \medskipvm
 Par exemple si~$\Omega = \RR^{n}$, si~$\widehat{u}$ est la transformée de Fourier de~$u$:
@@ -574,8 +613,6 @@ Soit~$\Omega$ un ouvert de~$\RR^n$. Si~$\Omega$ est borné et a une frontière L
 \end{equation}
 \end{theoreme}
 
-
-\medskip
 \begin{theoreme}[Inégalité de Poincaré]\index{inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
 Soit~$p$, tel que~$1 \le p <\infty$, et~$\Omega$ un ouvert de largeur finie
 (i.e. borné dans une direction).
@@ -584,8 +621,6 @@ Alors il existe une constante~$C$, dépendant uniquement de~$\Omega$ et~$p$, tel
 \|u\|_{L^p(\Omega)} \le C \|\nabla u\|_{L^p(\Omega)}
 \end{equation}
 \end{theoreme}
-
-\medskip
 
 \begin{theoreme}[Inégalité de Poincaré-Friedrichs]\index{inégalité!de Poincaré-Friedrichs}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand}
 Si~$\Omega$ est borné de diamètre~$d$, alors la constante de Poincaré précédente s'exprime en fonction de ce diamètre. On a, pour toute fonction~$u\in W_0^{k,p}(\Omega)$:
@@ -598,9 +633,6 @@ En particulier pour~$p=2$:
 \begin{equation} \colorred\forall u\in H^1_0(\Omega),\quad \|u\|^2_{L^2(\Omega)} \le d^2
 \|\nabla u\|^2_{L^2(\Omega)} \end{equation}
 
-
-\medskip
-
 \begin{theoreme}[Inégalité de Poincaré-Wirtinger]\index{inégalité!de Poincaré-Wirtinger}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Wirtinger (Wilhelm), 1865-1945, Autrichien}
 Soit~$p$, tel que~$1 \le p <\infty$ et~$\Omega$ un domaine (i.e. un ouvert connexe) lipschitzien (i.e. borné et «à frontière lipschitzienne») de l'espace euclidien\index[aut]{Euclide, -325-- -265, Grec} $\RR^n$.
 Alors il existe une constante~$C$, dépendant uniquement de~$\Omega$ et~$p$, telle que, pour toute fonction~$u\in W^{1,p}(\Omega)$, on ait:
@@ -610,8 +642,6 @@ Alors il existe une constante~$C$, dépendant uniquement de~$\Omega$ et~$p$, tel
 où~$u_\Omega=\frac1{|\Omega|}\int_\Omega u(y)\dd y$ est la valeur moyenne de~$u$ sur~$\Omega$, $|\Omega|$ désignant la mesure de Lebesgue du domaine~$\Omega$.
 \end{theoreme}
 
-
-\bigskip
 \begin{theoreme}[Inégalité de Korn]\index{inégalité!de Korn}\index[aut]{Korn (Arthur), 1870-1945, Allemand}
 Soit~$\Omega$ un ouvert borné de~$\RR^n$ de la frontière est «suffisamment» régulière (par exemple~$C^1$ par morceaux).
 Notons~$\varepsilon(v)=\frac{1}{2}\left(\nabla v + (\nabla v)^T \right)$ le linéarisé du tenseur des déformations défini pour tout~$v\in V=\left(H^1(\Omega)\right)^n$ ou $\left(H^1_0(\Omega)\right)^n$.
@@ -628,11 +658,6 @@ Cette inégalité est assez puissante puisqu'elle contient, dans son membre de g
 L'inégalité inverse de l'inégalité de Korn étant évidente, on en déduit que les deux membres définissent des \textcolorred{normes équivalentes.}
 
 \medskip
-\textcolorgreen{%
-En mécanique, l'inégalité de Korn\index[aut]{Korn (Arthur), 1870-1945, Allemand} dit que l'énergie élastique (qui est proportionnelle à la norme du tenseur des déformations dans~$L^2(\Omega)$) contrôle (i.e. est supérieure à) la norme du déplacement dans~$H^1(\Omega)$ à l'addition près de la norme du déplacement dans~$L^2(\Omega)$.
-Ce dernier point permet de prendre en compte les «mouvements de corps rigides», i.e. les déplacements~$u$ non nuls mais d'énergie élastique nulle.}
-
-\medskip
 \begin{histoire}%
 Arthur Korn\index[aut]{Korn (Arthur), 1870-1945, Allemand} a été un étudiant de Henri Poincaré.\index[aut]{Poincaré (Henri), 1854-1912, Français}\\
 
@@ -647,3 +672,9 @@ Poincaré&Friedrichs&Wirtinger&Korn%
 \ImageADroite{%
 Il est plus connu comme pionnier des télécommunications, plus précisément comme l'inventeur de la téléphotographie. Il met au point un téléautographe, un système de transmission des images fixes à distance, par le biais du fil télégraphique, en recourant aux propriétés photoélectriques du sélénium.}
 \end{histoire}
+
+\medskip
+\textcolorgreen{%
+En mécanique, l'inégalité de Korn\index[aut]{Korn (Arthur), 1870-1945, Allemand} dit que l'énergie élastique (qui est proportionnelle à la norme du tenseur des déformations dans~$L^2(\Omega)$) contrôle (i.e. est supérieure à) la norme du déplacement dans~$H^1(\Omega)$ à l'addition près de la norme du déplacement dans~$L^2(\Omega)$.
+Ce dernier point permet de prendre en compte les «mouvements de corps rigides», i.e. les déplacements~$u$ non nuls mais d'énergie élastique nulle.}
+

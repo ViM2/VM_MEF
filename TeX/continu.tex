@@ -8,7 +8,6 @@ Mais n'oublions pas que ces notions de continuité et de différentiabilité n'o
 \end{abstract}
 
 
-
 \medskip
 \section{Continuité et classe~$C^0$}\index{continuité!$C^0$}
 
@@ -360,7 +359,8 @@ Sa \textcolorblue{longueur} est~$|\alpha|=\alpha_1+ ... + \alpha_n$, et on note 
    \partial^\alpha=\left(\dfrac{\partial}{\partial x_1}\right)^{\alpha_1}...\left(\dfrac{\partial}{\partial x_n}\right)^{\alpha_n}\end{equation}
 \end{definition}
 
-\medskip\colorgris
+\colorgris
+\begin{remarque}[Compléments sur $C^k$]
 $C^k(\Omega)$ est l'espace vectoriel des fonctions~$f: \Omega \to \RR$ telles que $\forall \alpha$, $|\alpha|\le k$, $x\mapsto \partial^\alpha f(x)$ existe et appartient à~$C^0(\Omega)$.
 
 Pour~$f$ et~$g$ dans~$C^k(\Omega)$, on définit:
@@ -368,12 +368,15 @@ Pour~$f$ et~$g$ dans~$C^k(\Omega)$, on définit:
 d(f,g)=\dsum_{i=1}^\infty \dfrac1{2^i}\dfrac{\dsum_{|\alpha|\le k} \sup_{K_i}|\partial^\alpha f(x)-g(x)|}{%
 1+\dsum_{|\alpha|\le k} \sup_{K_i}|\partial^\alpha f(x)-g(x)|}
 \end{equation}
-qui est une distance sur~$C^k(\Omega)$ qui en fait un espace complet. L'espace~$C^\infty(\Omega)$ peut se définir par:
+qui est une distance sur~$C^k(\Omega)$ qui en fait un espace complet. 
+
+L'espace~$C^\infty(\Omega)$ peut se définir par:
 \begin{equation} C^\infty(\Omega)=\bigcup\limits_{k\in\NN}C^k(\Omega)\end{equation}
 qui est également complet pour la même distance.
-%\textcolorblue{Cette définition permet de clairement voir les inclusions successives des espaces~$C^k$.}
 
-\bigskip\colorblack
+Cette définition permet de clairement voir les inclusions successives des espaces~$C^k$.
+\end{remarque}\colorblack
+
 On définit également~$C^k_b(\Omega)$ comme le sous-espace vectoriel des éléments de~$C^k(\RR^n)$ dont \textcolorblue{toutes les dérivées jusqu'à l'ordre~$k$ sont bornées} sur~$\Omega$.
 
 On définit alors:
