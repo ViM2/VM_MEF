@@ -14,8 +14,6 @@ En fonction du chargement et du matériau considéré:
 \end{itemize}
 
 
-
-
 \medskip
 \section{Approches globale et locale}
 On distingue deux approches:
@@ -86,7 +84,8 @@ Notons que les méthodes de remaillage peuvent introduire des singularités dans
 
 
 
-\medskip\ifVersionDuDocEstVincent\else\newpage\fi
+%\medskip\ifVersionDuDocEstVincent\else\newpage\fi
+\newpage
 \section{Mécanique linéaire de la rupture}
 
 \medskip
@@ -100,10 +99,18 @@ Mais le facteur de concentration des contraintes devenait infini dans le cas d'u
 \end{histoire}
 \colorblack
 
-\medskip
+\begin{wrapfigure}{l}{70mm}
+\begin{center}
+\includegraphics[height=45mm]{fissure.eps}\label{fig:fissure}
+\end{center}
+\caption{Concentration de contraintes autour d'une fissure: cas plan}\label{fig:fissure}
+\end{wrapfigure}
 Inglis,\index[aut]{Inglis (Charles), 1875-1952, Anglais} donc, en 1913, a montré l'effet de \textcolorblue{concentration de contraintes}.
-\medskipvm
-Considérons une plaque avec un trou elliptique, de grand axe~$2a$ et petit axe~$2b$, dont la largeur~$\ell$ est très supérieure aux dimensions du trou (i.e.~$\ell\gg 2a$) et soumise à une contrainte nominale constante $\sigma$, comme illustré sur la figure~\ref{fig:fissure}. La contrainte en pointe de fissure (i.e. au point A) est:
+
+\medskip
+Considérons une plaque avec un trou elliptique, de grand axe~$2a$ et petit axe~$2b$, dont la largeur~$\ell$ est très supérieure aux dimensions du trou (i.e.~$\ell\gg 2a$) et soumise à une contrainte nominale constante $\sigma$, comme illustré sur la figure~\ref{fig:fissure}. 
+
+La contrainte en pointe de fissure (i.e. au point A) est:
 \begin{equation} \sigma_A = \sigma \left( 1+\frac{2a}b\right) \end{equation}
 Le \textcolorblue{facteur de concentration de contraintes~$k_f$} est défini comme~$k_f = \sigma_A/\sigma$:
 \begin{itemize}
@@ -112,11 +119,7 @@ Le \textcolorblue{facteur de concentration de contraintes~$k_f$} est défini com
 	où~$\rho=b^2/A$ est le rayon en pointe de fissure;
   \item si~$a\gg b$, alors~$\sigma_A=2\sigma \sqrt{\frac{a}{\rho}}$.
 \end{itemize}
-\begin{figure}[ht]\centering
-\subfloat[Cas plan]{\includegraphics[height=45mm]{fissure.eps}\label{fig:fissure}}\hspace{7em}
-\subfloat[Cas d'une plaque mince]{\includegraphics[height=45mm]{fissure2.eps}\label{fig:fissure2}}
-\caption{Concentration de contraintes autour d'une fissure}
-\end{figure}
+
 
 \medskip
 \subsection{Équilibre énergétique}
@@ -150,6 +153,12 @@ Les expériences ont montré que le produit de la racine carrée de la longueur 
 \colorblack
 
 \medskip
+\begin{wrapfigure}{l}{70mm}
+\begin{center}
+\includegraphics[height=45mm]{fissure2.eps}
+\end{center}
+\caption{Concentration de contraintes autour d'une fissure: plaque mince}\label{fig:fissure2}
+\end{wrapfigure}
 En 1920, Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} considère le cas d'une plaque d'épaisseur~$B$ contenant une fissure de longueur~$2a$ et dont la largeur~$\ell$ est très supérieure aux dimensions de la fissure (i.e.~$\ell\gg 2a$) et à son épaisseur (i.e.~$\ell\gg B$), soumise à une contrainte nominale constante~$\sigma$ (voir figure~\ref{fig:fissure2}).
 \medskipvm
 Sous l'hypothèse de contrainte plane, Griffith\index[aut]{Griffith (Alan Arnold), 1893-1963, Anglais} montre que l'équilibre énergétique est:

@@ -16,7 +16,7 @@ Un système mécanique atteint un \textcolorblue{mode propre de vibration}\index
 On appelle \textcolorblue{résonance}\index{résonance} le phénomène selon lequel certains systèmes physiques sont particulièrement sensibles à certaines fréquences. Un système résonant peut accumuler une énergie, si celle-ci est appliquée sous forme périodique, et proche d'une fréquence propre. Soumis à une telle excitation, le système est alors le siège d'oscillations de plus en plus importantes, jusqu'à atteindre un régime d'équilibre qui dépend des éléments dissipatifs du système, ou bien jusqu'à rupture d'un composant du système.
 
 \medskip
-Si l'on soumet un système résonant à une percussion (pour les systèmes mécaniques) ou à une impulsion (pour les systèmes électriques), et non plus à une excitation périodique, alors le système sera le siège d'oscillations amorties, sur des fréquences proches de ses fréquences propres et retournera progressivement à son état stable. \textcolorgreen{Physiquement, c'est le coup de marteau de choc donné sur une structure pour en déterminer les modes.}
+Si l'on soumet un système résonant à une percussion (pour les systèmes mécaniques) ou à une impulsion (pour les systèmes électriques), et non plus à une excitation périodique, alors le système sera le siège d'oscillations amorties sur des fréquences proches de ses fréquences propres et retournera progressivement à son état stable. \textcolorgreen{Physiquement, c'est le coup de marteau de choc donné sur une structure pour en déterminer les modes.}
 
 \medskip
 Un système susceptible d'entrer en résonance, i.e. susceptible d'être le siège d'oscillations amorties, est un \textcolorblue{oscillateur}\index{oscillateur}. Un tel système a la particularité de pouvoir emmagasiner temporairement de l'énergie sous deux formes: potentielle ou cinétique. L'oscillation est le phénomène par lequel l'énergie du système passe d'une forme à l'autre, de façon périodique.
@@ -128,16 +128,18 @@ Quelques propriétés importantes:
 	à une matrice triangulaire (et même à une matrice de Jordan).
 \end{itemize}
 
-\medskip
+M\medskip
 \colorgris
-\paragraph{Pour aller un peu plus loin}
-Le \textcolorblue{théorème de Cayley-Hamilton}\index[aut]{Cayley (Arthur), 1821-1895, Anglais}\index[aut]{Hamilton (William Rowan, Sir -), 1805-1865, Irlandais}\index{théorème!de Cayley-Hamilton} (dont la première démonstration est due à Frobenius)\index[aut]{Frobenius (Ferdinand Georg), 1849-1917, Allemand} affirme que tout endomorphisme d'un espace vectoriel de dimension finie~$n$ sur un corps commutatif quelconque annule son propre polynôme caractéristique.
+\begin{remarque}[Pour aller un peu plus loin]
+%\paragraph{Pour aller un peu plus loin}
+Le théorème de Cayley-Hamilton\index[aut]{Cayley (Arthur), 1821-1895, Anglais}\index[aut]{Hamilton (William Rowan, Sir -), 1805-1865, Irlandais}\index{théorème!de Cayley-Hamilton} (dont la première démonstration est due à Frobenius)\index[aut]{Frobenius (Ferdinand Georg), 1849-1917, Allemand} affirme que tout endomorphisme d'un espace vectoriel de dimension finie~$n$ sur un corps commutatif quelconque annule son propre polynôme caractéristique.
 
 En termes de matrice, cela signifie que: si~$\MM{A}$ est une matrice carrée d'ordre~$n$ et si $p_A(X)$ est son polynôme caractéristique, alors en remplaçant formellement $X$ par la matrice~$\MM{A}$ dans le polynôme, le résultat est la matrice nulle, i.e.:
 \begin{equation}p_A(\MM{A})= \MM{A}^n + p_{n-1}\MM{A}^{n-1} + \ldots + p_1 \MM{A} + p_0 \MM{I}_n = \MM{\mO}_n \end{equation}
 
 Cela signifie que le polynôme caractéristique\index{polynôme! caractéristique} est un
 polynôme annulateur de~$\MM{A}$. Les applications sont importantes car le polynôme minimal (qui est l'unique polynôme unitaire qui engendre l'idéal annulateur de l'ensemble des polynômes qui annulent l'endomorphisme dont~$\MM{A}$ est la représentation) cache une décomposition en somme directe de sous-espaces stables.
+\end{remarque}
 \colorblack
 
 
@@ -216,7 +218,7 @@ Des méthodes permettant de trouver les premiers zéros d'un polynôme de degré
 \begin{equation} \MM{H}\VV{X}=\lambda\VV{X} \end{equation}
 où~$\MM{H}$ est une matrice définie positive.
 \medskipvm
-On se sert pour cela de la décomposition de Cholesky\index[aut]{Cholesky (André-Louis), 1875-1918, Français} de~$\MM{K}$, i.e. en l'écrivant à partir d'une matrice triangulaire inférieure~$\MM{L}$ sous la forme~$\MM{K}=\MMT{L}\MM{L}$.
+On se sert pour cela de la décomposition de Cholesky\index[aut]{Cholesky (André-Louis), 1875-1918, Français} de~$\MM{K}$, i.e. en l'écrivant à partir d'une matrice triangulaire inférieure~$\MM{L}$ sous la forme~$\MM{K}=\MM{L}\MMT{L}$.
 \medskipvm
 L'équation du déterminant conduit alors à:
 \begin{equation} \MMI{L}\MM{M}\MMIT{L}\MMT{L}\VV{\overline{q}}=\frac1{\omega^2}\MMT{L}\VV{\overline{q}} \end{equation}
@@ -224,12 +226,15 @@ et l'on obtient la forme cherchée en posant~$\lambda=\omega^{-2}$, $\VV{X}=\MMT
 et~$\MM{H}=\MMI{L}\MM{M}\MMIT{L}$, où~$\MM{H}$ est bien symétrique.
 
 \medskip
-\colorgris
+\colorgreen
 Si~$\MM{M}$ et~$\MM{K}$ sont définies positives (ce qui est le cas habituel des problèmes en dynamique des structures), il existe~$n$ valeurs propres réelles positives. Ces solutions sont appelées pulsations propres du système.
 
+\colorgris
+\begin{remarque}
 Si~$\MM{K}$ est singulière (elle ne possède pas d'inverse), alors, afin de pouvoir utiliser les méthodes précédentes, on utilise un artifice qui consiste à introduire un paramètre~$\alpha\in\RR$ du même ordre de grandeur que~$\omega^2$. On doit alors résoudre:
 \begin{equation}\left(\MM{K}+\alpha \MM{M}\right)\VV{\overline{q}} = (\omega^2+\alpha)\MM{M} \VV{\overline{q}}\end{equation}
 La nouvelle matrice~$\MM{K}+\alpha \MM{M}$ est alors inversible et la solution cherchée est~$\omega^2+\alpha$.
+\end{remarque}
 \colorblack
 
 \medskip
@@ -415,7 +420,6 @@ On montre que le problème est découplé en~$y$ seulement si on a la \textcolor
 d'orthogonalité de~$\MM{C}$}: \begin{equation}\LL{\overline{q}}_i\MM{C}\VV{\overline{q}}_i=0\end{equation}
 \medskipvm
 \textcolorred{Or ceci n'est pas vrai en général} car les vecteurs propres assurent uniquement l'orthogonalité de~$\MM{M}$ et~$\MM{K}$.\index{propriété d'orthogonalité}
-\medskipvm
 En revanche, si la matrice d'amortissement~$\MM{C}$ est une combinaison linéaire des matrices~$\MM{M}$ et $\MM{K}$, la propriété d'orthogonalité est alors évidemment satisfaite.\index{propriété d'orthogonalité} C'est l'\textcolorblue{hypothèse de Basile}.
 
 \textcolorblue{Dans la suite on suppose que la propriété d'orthogonalité de~$\MM{C}$ est satisfaite}.\index{propriété d'orthogonalité}

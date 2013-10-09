@@ -1,8 +1,8 @@
 \chapter{Problèmes non stationnaires}\label{Ch-temps}
 \begin{abstract}
-Dans ce chapitre, nous nous intéresserons (brièvement) au cas non stationnaire. Toutefois, nous n'aborderons pas les éléments finis espace-temps, car il s'agit d'une formulation gourmande en ressources, d'où sa très faible utilisation (bien que la méthode soit en elle-même intéressante).
+Dans ce chapitre, nous nous intéresserons au cas non stationnaire. Toutefois, nous n'aborderons pas les éléments finis espace-temps, car il s'agit d'une formulation gourmande en ressources, d'où sa très faible utilisation (bien que la méthode soit en elle-même intéressante).
 
-Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de construire des schémas numériques approchant des dérivées. Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire en regardant comment on résout les équations différentielles et EDP directement... puis numériquement. Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} décrite au paragraphe~\ref{Sec-Newmark}.
+Dans ce chapitre, nous aurons besoin de «dériver numériquement», i.e. de construire des schémas numériques approchant des dérivées. Le chapitre~\ref{Ch-ED} en annexe permettra à certains de se rafraîchir la mémoire en regardant comment on résout les équations différentielles et aux dérivées partielles... puis numériquement. Nous utiliserons en effet la méthode de Newmark\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} décrite au paragraphe~\ref{Sec-Newmark}.
 \end{abstract}
 
 \medskip
@@ -21,7 +21,7 @@ On cherche à obtenir la discrétisation~$\VV{q}$ du champ~$u$ et ses dérivées
 Pour résoudre un tel problème, on se propose de réaliser une \textcolorblue{discrétisation temporelle} qui pourra être explicite ou implicite.
 
 \medskip
-Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} (qui est présenté dans le cas de la résolution des équations différentielles au paragraphe~\ref{Sec-Newmark}, ce complément nous ayant été demandé).
+Le schéma généralement utilisé pour la discrétisation temporelle est celui de Newmark,\index[aut]{Newmark (Nathan Mortimore), 1910-1981, Américain} qui est présenté dans le cas de la résolution des équations différentielles au paragraphe~\ref{Sec-Newmark}.
 Le schéma le plus général est, $\Delta_t$ représentant le pas de temps:
 \begin{equation}
 \begin{aligned}

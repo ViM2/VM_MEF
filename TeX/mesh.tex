@@ -195,39 +195,39 @@ Le domaine d'un maillage de Delaunay\index[aut]{Delaunay (Boris Nikolaïevitch),
 \medskip
 Il existe une propriété qui permet de savoir si un maillage est un maillage de Delaunay.\index[aut]{Delaunay (Boris Nikolaïevitch), 1890-1980, Russe} C'est la propriété de la boule ouverte.
 \begin{theoreme}[Propriété de la boule ouverte]\index{propriété de la boule ouverte}
-Un maillage~$\mathcal{T}_{d,h}$ de Delaunay est tel que: pour tout triangle~$T$ du maillage, le disque ouvert~$D(T)$ correspondant au cercle circonscrit à~$T$ ne contient
+Un maillage~$\mathcal{T}_{d,h}$ est un maillage de Delaunay s'il est tel que pour tout triangle~$T$ du maillage, le disque ouvert~$D(T)$ correspondant au cercle circonscrit à~$T$ ne contient
 aucun sommet:
 \begin{equation}
 D(T) \cap \mathcal{T}_{0,h} = \emptyset
 \end{equation}
 
-Réciproquement, si le maillage~$\mathcal{T}_{d,h}$ d'un domaine convexe vérifie la propriété de la boule vide, alors il est de Delaunay.
+Réciproquement, si le maillage~$\mathcal{T}_{d,h}$ d'un domaine convexe vérifie la propriété de la boule ouverte, alors il est de Delaunay.
 \end{theoreme}
 \begin{figure}[htb]
 \begin{center}
- \includegraphics[height=30mm]{DV4} \hspace{1em} \includegraphics[height=30mm]{DV5}
+ \includegraphics[height=35mm]{DV4} \hspace{1em} \includegraphics[height=35mm]{DV5}
 \end{center}
 \caption{a) Triangulation de Delaunay et b) cercles circonscrits: propriété de la boule ouverte}
 \end{figure}
 
 \medskip
-La propriété de la boule vide peut être appliquée également au cas d'un quadrilatère convexe, puisque celui-ci peut être découpé en deux triangles adjacents. Il suffit alors de vérifier la propriété pour toutes les paires de triangles adjacents formant un quadrilatère convexe.
+La propriété de la boule ouverte peut être appliquée également au cas d'un quadrilatère convexe, puisque celui-ci peut être découpé en deux triangles adjacents. Il suffit alors de vérifier la propriété pour toutes les paires de triangles adjacents formant un quadrilatère convexe.
 
-Si le critère de la boule vide n'est pas vérifié pour un quadrilatère convexe, alors on fera un échange de diagonal pour résoudre le problème.
+Si le critère de la boule ouverte n'est pas vérifié pour un quadrilatère convexe, alors on fera un échange de diagonal pour résoudre le problème.
 
 \medskip
 \subsection{Remarques}
 
 À ce niveau, nous sommes en mesure de générer un maillage... toutefois, celui-ci n'est pas forcément exempt de problèmes:
 \begin{itemize}
-   \item si les seuls points disponibles sont sur la frontière, il va falloir générer des points internes au maillage. En effet, le maillage généré existe, mais peut présenter des distorsions inadmissibles en termes de calcul. Le critère le plus naturel pour distribuer les points internes est d'imposer en tout point~$x$ de~$\RR^2$, le pas de maillage~$h(x)$. En pratique, on ne dispose pas toujours de cette information et il faut la construire à partir des points disponibles, i.e. des points de la frontière. D'autre part, dans de nombreuses applications, on préfère donner le nombre de subdivisions souhaitées entre deux sommets: un peu de géométrie différentiel (longueurs d'arcs) permet de se ramener à donner une valeur à~$h(x)$;
+   \item si les seuls points disponibles sont sur la frontière, il va falloir générer des points internes au maillage. En effet, le maillage généré existe, mais peut présenter des distorsions inadmissibles en termes de calcul. Le critère le plus naturel pour distribuer les points internes est d'imposer en tout point~$x$ de~$\RR^2$, le pas de maillage~$h(x)$. En pratique, on ne dispose pas toujours de cette information et il faut la construire à partir des points disponibles, i.e. des points de la frontière. D'autre part, dans de nombreuses applications, on préfère donner le nombre de subdivisions souhaitées entre deux sommets: un peu de géométrie différentielle (longueurs d'arcs) permet de se ramener à donner une valeur à~$h(x)$;
    \item il existe des cas où le maillage généré peut ne pas respecter la frontière (par exemple pour un domaine en forme de «U» avec peu de points. Il existe une solution de forçage de la frontière par permutation d'un certain nombre de diagonales. Voir figure~\ref{Fig-Mbord};
    \item il faut traiter le cas des trous... mais ce n'est pas réellement difficile.
 \end{itemize}
 Comme il ne s'agit pas ici de donner un cours sur les algorithmes de maillage, nous en resterons là. Les maillages triangulaires sont plutôt bien maîtrisés. Il y a de nombreux cas à traiter pour couvrir toutes les configurations existantes, mais les bases théoriques et les réalisation pratiques existent dans tous les cas.
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[height=20mm]{bord1.eps} \hspace{2em} \includegraphics[height=20mm]{bord2.eps} \hspace{2em} \includegraphics[height=20mm]{bord3.eps}
+\includegraphics[height=22mm]{bord1.eps} \hspace{2em} \includegraphics[height=22mm]{bord2.eps} \hspace{2em} \includegraphics[height=22mm]{bord3.eps}
 \end{center}
 \caption{a) Points et arêtes, b) maillage de Delaunay ne respectant pas la frontière, c) maillage respectant la frontière obtenu en échangeant des diagonales}\label{Fig-Mbord}
 \end{figure}
@@ -236,13 +236,12 @@ Comme il ne s'agit pas ici de donner un cours sur les algorithmes de maillage, n
 \section{Maillage par avancement de fronts}\label{Sec-MeshFront}
 
 Le \textcolorblue{front initial} est constitué de la frontière (ou des frontières, s'il y a des trous), i.e. des nœuds et des arêtes.
-
 L'algorithme est très simple: pour chaque arête représentée par le segment~$[x^i,x^j]$, on crée un nouveau points~$x^{N_p+1}$ tel que le triangle formé des trois points~$x^i$, $x^j$ et~$x^{N_p+1}$ soit équilatéral.
 
 \medskip
 Évidemment il faut quelques règles supplémentaires pour que cela fonctionne bien:
 \begin{itemize}
-   \item on met à jour en permanence le front dés qu'un point est créé, et on ne s'arrête que lorsque toutes les arêtes du front ont été balayées;
+   \item on met à jour en permanence le front dès qu'un point est créé, et on ne s'arrête que lorsque toutes les arêtes du front ont été balayées;
    \item en cours de calcul, de nouveaux fronts peuvent apparaître (cela correspond à plusieurs domaines non encore maillés à l'intérieur du maillage en cours);
    \item on vérifie si des nœuds du front courant ne seraient pas candidats pour être le nouveau point~$x^{N_p+1}$ du triangle: par exemple, en s'assurant qu'un nœud existant n'appartient pas au cercle de centre le point~$x^{N_p+1}$ théorique (triangle équilatéral) et de rayon un certain paramètre fixé;
    \item lorsque plusieurs nœuds existants sont candidats, on sélectionne celui qui fournit le triangle le plus équilatéral possible;
@@ -291,7 +290,7 @@ Une surface de genre zéro sans bord est homéomorphe à la sphère unité~$S^2$
 Le maillage de la sphère n'est pas si simple qu'on le pense.
 On peut là encore appliquer la même technique: définir un homéomorphisme entre la demi-sphère et le disque, mailler le disque. Le maillage de la sphère, obtenu par symétrie de la demi-sphère doit alors «se recoller», du moment que le maillage du bord du cercle est conforme et laissé conforme par l'homéomorphisme. Si l'on procède au maillage du cercle par la méthode de Delaunay\index[aut]{Delaunay (Boris Nikolaïevitch), 1890-1980, Russe} telle que décrite en partant du contour du cercle, on est alors assuré que le maillage du contour sera conforme.
 
-Dans les deux cas: passage du cercle à la demi-sphère et passage de la sphère à~$\Omega_h$, on pourra remarquer que la densité du maillage n'est généralement pas la même. Il s'agit du \textcolorblue{phénomène d'étirement}. Si l'on souhaite que la surface finale~$\Omega_h$ ait une densité de maillage fixée, il faut savoir comment~$\varphi^{-1}$ modifie cette densité pour pouvoir mailler~$S^2$ en conséquence... idem pour le cercle. Cela n'est pas simple, surtout si~$\Omega_h$ est compliqué.
+Dans les deux cas, passage du cercle à la demi-sphère et passage de la sphère à~$\Omega_h$, on pourra remarquer que la densité du maillage n'est généralement pas la même. Il s'agit du \textcolorblue{phénomène d'étirement}. Si l'on souhaite que la surface finale~$\Omega_h$ ait une densité de maillage fixée, il faut savoir comment~$\varphi^{-1}$ modifie cette densité pour pouvoir mailler~$S^2$ en conséquence... idem pour le cercle. Cela n'est pas simple, surtout si~$\Omega_h$ est compliqué.
 
 \medskip\ifVersionDuDocEstVincent\else\newpage\fi
 \section{Remarques sur le maillage quadrangulaire et hexaédrique}\label{Sec-MeshQuad}
@@ -320,6 +319,6 @@ Aucune méthode n'est apte à traiter tous les cas possibles concernant le maill
    \item On peut raisonner comme en CAO en générant des maillages par extrusion ou par révolution.
    \item Le \textcolorblue{paving} est une variante de l'avancée de front. On essaye de faire un maillage de type structuré en reportant un front «parallèle» au front existant, avec le même nombre de nœuds. Il sera nécessaire d'avoir des distorsions  à certains endroits et autour des trous, il faudra faire des coutures.
    \item Le \textcolorblue{Q-morph} se propose de de transformer un maillage triangulaire en maillage quadrangulaire par avancée de front. Cela ne fonctionne pas en 3D.
-   \item Les \textcolorblue{méthodes basées sur un grille} considèrent la surface ou le volume découpé en carrés ou cubes selon une grille prédéfinie. Il suffit alors d'adapter les éléments situés au bord du domaine: ceux-ci seront de moins bonne qualité et parfois même pas totalement conformes au bord théorique.
+   \item Les \textcolorblue{méthodes basées sur une grille} considèrent la surface ou le volume découpé(e) en carrés ou cubes selon une grille prédéfinie. Il suffit alors d'adapter les éléments situés au bord du domaine: ceux-ci seront de moins bonne qualité et parfois même pas totalement conformes au bord théorique.
 \end{itemize}
 Le maillage quadrangulaire et surtout hexaédrique reste un domaine de recherche actif.

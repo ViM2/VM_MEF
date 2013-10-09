@@ -41,20 +41,13 @@ Enfin, d'un point de vue purement numérique, ces méthodes peuvent être utilis
 
 \medskip\colorgreen
 Notons que les techniques d'homogénéisation ne sont pas que des artefacts, des trucs et astuces.
-
 Certaines des grandeurs physiques que nous utilisons tous les jours ne sont que des moyennes. Le meilleur exemple en est la pression. Bien qu'en un point donné d'un gaz on voit passer des particules allant en tous sens, on constate également, à une échelle plus macroscopique, un schéma d'ensemble qui permet de définir par exemple la pression qu'exerce ledit gaz sur une paroi... pourtant rien de «cohérent» ne se dégage à l'échelle microscopique.\colorblack
 
 \medskip
 Le but de ce chapitre est donc d'effectuer le passage du niveau microscopique au niveau macroscopique (historiquement les premières homogénéisations, appelées alors moyennisations, utilisaient les moyennes arithmétique et harmonique) en fournissant la justification de ce passage (existence et unicité) ainsi que la formule (l'algorithme) de calcul des coefficients efficaces.
 
 \medskip
-Les méthodes que nous présenterons seront les \textcolorblue{méthodes de développement régulier, de la couche limite, et de développement asymptotique.}
-
-Le cas des \textcolorblue{milieux poreux} sera ensuite considéré.
-
-%Enfin, nous appliquerons ces méthodes au cas de la \textcolorblue{réduction de dimension}
-%en présentant un passage 2D-1D dans le cas de l'élasticité.
-Enfin, nous mentionnerons une application de ces méthodes pour \textcolorblue{réduire la dimension} de certains problèmes.
+Les méthodes que nous présenterons seront les \textcolorblue{méthodes de développement régulier, de la couche limite, et de développement asymptotique.} Le cas des \textcolorblue{milieux poreux} sera ensuite considéré. Enfin, nous mentionnerons une application de ces méthodes pour \textcolorblue{réduire la dimension} de certains problèmes.
 
 
 \medskip
@@ -185,7 +178,6 @@ Pour le calcul on procède donc comme suit:
 \subsection{Méthode de développement asymptotique infini}\index{méthode de développement asymptotique infini}
 
 À ce niveau du texte, on a dû s'apercevoir que la démarche était la même pour les deux méthodes précédentes, sauf évidemment la forme de l'ansatz.\index{ansatz}
-
 Dans la \textcolorblue{méthode de développement asymptotique infini}, on va encore procéder de la même manière, mais on cherchera une solution sous la forme d'ansatz:\index{ansatz}
 \begin{equation}
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i u_i(x,x\varepsilon)
@@ -227,8 +219,6 @@ Les propriétés effectives du milieu homogène équivalent cherché peuvent êt
 
 \medskip
 Une fois le volume élémentaire déterminé, on le soumet à des sollicitations élémentaires pour déterminer la réponse résultante. \textcolorred{La difficulté réside en fait dans le choix des conditions aux limites à appliquer au volume élémentaire considéré pour imposer une déformation ou contrainte globale moyenne donnée.}
-
-\medskip
 Dans le cas linéaire, on peut prouver l'existence et l'unicité pour les différents cas de conditions aux limites existants.
 
 \medskip
