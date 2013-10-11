@@ -213,7 +213,7 @@ Le phénomène de \textcolorblue{réflexion} sur un obstacle est illustré sur l
 \end{figure}
 La figure~\ref{Fig-reflex}a propose une analogie avec des balles, de ce qui est décrit avec des ondes à la figure~\ref{Fig-reflex}b, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}.
 
-Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a effectivement un phénomène de diffraction qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
+Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a des \textcolorblue{réflexions spéculaires multiples}, ou réflexion diffuse, qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
 
 
 \medskip
@@ -496,10 +496,13 @@ Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 
 \section{Les calculs acoustiques}\label{Sec-AcouMEF}
 
 \medskip
-\subsection{Modèles}
+\subsection{Modèles simplifiés pour valeurs de référence}
+
+Dans ce petit paragraphe, nous donnons quelques formules simples.
+Elles permettent néanmoins d'effectuer un prédimensionnement rapide pour les salles acoustiques et/ou de disposer de quelques valeurs (au moins leur ordre de grandeur) vers lesquelles des calculs plus complexes doivent conduire.
 
 \medskip
-\subsubsection{Modèles simplifiés}
+\subsubsection{Puissance de la source sonore et propagation}
 
 En champ libre, on a la loi de propagation pour le champ direct suivante:
 \begin{equation}
@@ -523,33 +526,58 @@ En terme de modélisation, cela signifie qu'à proximité d'une source (jusqu'à
 
 
 \medskip
+\subsubsection{Modes d'une salle}
+
 Pour les longueurs d'onde de l'ordre des dimensions de la salle, il y a prédominance des modes propres de la salle.
-Pour un salle parallélépipédique de longueurs~$a$, $b$ et~$c$, les fréquences de résonance sont données par:
+Pour un salle parallélépipédique de dimensions~$L$, $l$ et~$h$, les fréquences de résonance sont données par:
 \begin{equation}
-f
+f_{(i,j,k)} = \frac{c}2\sqrt{\left(\frac{i}{L}\right)^2+\left(\frac{j}{l}\right)^2+\left(\frac{k}{h}\right)^2}
 \end{equation}
-Pour une salle non parallélépipédique, on peut, sauf géométrie vraiment très biscornue, on utilisera la relation précédente en considérant le parallélépipède le plus proche de la géométrie réelle.
+Les modes~$(i,0,0)$, $(0,j,0)$ et~$(0,0,k)$ sont des modes longitudinaux dans la directions de~$L$, $l$ et~$h$ respectivement. Les autres modes sont des modes transverses.
 
+La formule de Maa (1939) donne le nombre~$N(f)$ de fréquences propres inférieures ou égales à une fréquence donnée~$f$:
+\begin{equation}
+N(f) = \frac{4\pi}{3}V\left(\frac{f}{c}\right)^3 + \frac{\pi}{4}S\left(\frac{f}{c}\right)^2 + \frac{L_t}{8}V\left(\frac{f}{c}\right)
+\end{equation}
+où~$V=Llh$ est le volume de la salle, $S=2(Ll+Lh+lh)$ est la surface totale des parois de la salle, et~$L_t=4(L+l+h)$ est la longueur totale des arêtes de la salle.
 
+En dérivant la formule de Maa par rapport à la fréquence, on peut déterminer la
+densité de fréquences propres à une fréquence donnée, i.e. le nombre de fréquences propres comprises dans un intervalle de 1~Hz centré sur~$f$:
+\begin{equation}
+\dd N(f) = \frac{4\pi V}{c^3}f^2 + \frac{\pi S}{2c}f + \frac{L_t}{8c}
+\end{equation}
 
-\medskip
-Transmission entre plusieurs salles
-
-\medskip
-Les phénomènes locaux (écrantage...) ne sont pas pris en compte, ou alors globalement.
-Pour descendre dans le détail local de la répartition de la pression acoustique on peut utiliser plusieurs méthodes, dont les éléments finis, que nous allons présenter maintenant.
-
-\medskip
-\subsubsection{Modèle éléments finis sans couplage}
-
-Nous nous intéressons donc au cas général de l'acoustique des salles, où seul le volume intérieur de la salle nous intéresse. C'est ce dernier qu'il nous faut discrétiser.
-
-Pour un calcul assez général, il suffit de définir les bonnes conditions aux limites sur les parois de la salles, d'ajouter la source acoustique... et le tour est joué.
+Pour une salle non parallélépipédique, on peut, sauf géométrie vraiment très biscornue, utiliser les relations précédentes en considérant le parallélépipède le plus proche de la géométrie réelle.
 
 \medskip
-\subsubsection{Modèle éléments finis avec couplage}
+\subsubsection{Remarques}
 
+On n'oubliera pas de prendre en compte les pertes par transmission dans le calcul des coefficients d'absorption.
 
+\medskip
+Dans le cas où l'on s'intéresse à la transmission entre plusieurs salles, il faudrait effectivement ne pas oublier qu'une salle n'a pas que des sources internes, mais également des sources externes correspondant à ce qui a pu s'échapper des autres salles, ou de ce qui rayonne suite à la propagation de vibrations.
+
+\medskip
+C'est une lapalissade, mais dans un calcul global, les phénomènes locaux (écrantage...) ne sont pas pris en compte (ou alors de manière globale)...
+Si l'on s'intéresse au niveau moyen résultant dans un local, prendre en compte la totalité des surfaces absorbantes, qu'elles soient situées au murs, au plafond ou sous formes d'écrans, de fauteuils... fonctionne.
+Par contre, si l'on a besoin de descendre dans le détail local de la répartition de la pression acoustique (par exemple répartition poste à poste), alors il convient d'utiliser des méthodes plus adéquates, dont les éléments finis, que nous allons présenter maintenant.
+
+\medskip
+\subsection{Quelques exemples de modèle éléments finis avec ou sans couplage}
+
+Comme nous l'avons déjà évoqué, un certain nombre de calculs ne nécessitent pas de recourir à un couplage fluide/structure. En voici quelques exemples concrets:
+\begin{itemize}
+   \item Cas solidien/solidien: il s'agit par exemple d'étudier la propagation d'ondes de compression ou de cisaillement au sein d'une structure. Seule la structure sera modélisée.
+   \item Cas aérien/aérien: l'acoustique des salles d'une manière générale peut se passer de couplage. Seul le volume de la salle est à discrétiser. Les zones d'absorption situées en parois seront modélisées par leur impédance, ainsi que les pertes par transmission. Dans le cas d'un locuteur, la source sera ponctuelle.
+   \item Cas aérien/aérien: un silencieux d'automobile peut n'être défini que par le volume d'air qu'il enferme. On appliquera aux parois l'impédance correspondant aux parois: soit réflexion quasiment pure avec un peu de perte, soit présence d'un absorbant en parois. La surface correspondant à l'entrée de l'onde dans le silencieux sera modélisée par la surface soumise à une onde plane. La surface correspondant à la sortie du silencieux sera la surface où les informations (de type onde plane) seront recueillies puis analysées.
+\end{itemize}
+
+\medskip
+Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
+
+Des conditions de couplage devront être mise en place entre ces deux domaines. Certains logiciels les prennent quasiment tout seul en compte, pour les autres il faudra le faire manuellement.
+
+\textcolorred{A COMPLETER EXPLICITEMENT}
 
 \medskip
 \subsection{Convergence}
