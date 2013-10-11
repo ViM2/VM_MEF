@@ -423,35 +423,72 @@ Deux cas extrêmes nous intéressent:
 
 De très nombreuses normes et grandeurs existent dans le domaine de l'acoustique, correspondant à des problématiques différentes. Nous en listons quelques unes ci-dessous, mais cette liste est très loin d'être exhaustive:
 \begin{itemize}
-   \item Une des grandeurs les plus fondamentales pour la caractérisation de locaux, quelque soit leur destination, est le \textcolorblue{temps de réverbération} ou TR.  Il correspond à l'intervalle de temps nécessaire pour que la pression acoustique (d'une salle) diminue à un millième de sa valeur initiale suite à l'arrêt de la source sonore. Cela représente une diminution du niveau sonore de 60~dB. Le temps de réverbération indique la capacité qu'à la salle à réverbérer les sons (donc à être plus ou moins «résonante»). 
+   \item Le \textcolorblue{comportement acoustique} d'une salle diffère selon la zone de fréquence considérée.
    
-En 1898, Sabine\index[aut]{Sabine (Wallace Clement), 1868-1919, Américain} découvrit que le temps de réverbération~$TR$ était proportionnel au volume de la salle~$V$ et inversement proportionnel à la surface équivalente d'absorption~$A$:
+Pour les longueurs d'ondes supérieures au double de la plus grande dimension d'une pièce: le son se comporte de manière équivalente aux changements de pression de l'air statique.
+Pour les longueurs d'onde comparables aux dimensions de la pièce: il y a dominance des modes propres de la salle. Il y a amplification des fréquences, ce qui «colore» le son et création d'ondes stationnaires.
+Pour des longueurs d'ondes inférieures à la moitié des dimensions de la salle: on est dans le cas de réflexions multiples, et on peut faire une équivalence lumineuse et utiliser les méthodes de tir de rayon «raytracing».
+
+   \item L'une des premières grandeurs à connaître est le \textcolorblue{bruit ambiant}. Son niveau maximal est fixé en fonction de la destination du local.
+
+   \item Une seconde grandeur particulièrement fondamentale pour la caractérisation de locaux, quelque soit leur destination, est le \textcolorblue{temps de réverbération} ou TR.  Il correspond à l'intervalle de temps nécessaire pour que la pression acoustique (d'une salle) diminue à un millième de sa valeur initiale suite à l'arrêt de la source sonore. Cela représente une diminution du niveau sonore de 60~dB. Le temps de réverbération indique la capacité qu'à la salle à réverbérer les sons.
+   
+En 1898, Sabine\index[aut]{Sabine (Wallace Clement), 1868-1919, Américain} découvrit que le temps de réverbération~$T_R$ était proportionnel au volume de la salle~$V$ et inversement proportionnel à la surface équivalente d'absorption~$A$:
    \begin{equation}
-    TR = \frac{k V}{A} 
+    T_R = \frac{k V}{A} 
    \end{equation}
 où la constante de proportionnalité~$k$, trouvée initialement égale à 0,161, vaut~$k=(24\ln10)/340 =0,163$~s/m, et où l'aire d'absorption équivalente est calculée par la formule de Sabine~(\ref{Eq-ASabine}) ou d'Eyring~(\ref{Eq-AEyring}).\index[aut]{Eyring (Carl Ferdinand), 1889-1951, Américain}
 
-Selon la destination du local, plusieurs normes existent pour mesurer le TR.
+Selon la destination du local, plusieurs normes existent pour mesurer le TR. De plus, la destination du local joue également sur la valeur acceptable ou non du TR.
 
-   \item la Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psycho-acoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson, puis de Zwicker entre autres, expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
-   \item Indice NR (noise rating) selon la norme ISO R 1996 «assessment of noise with respect of community response».
-   L'Organisation Internationale de Normalisation (ISO) a proposé plusieurs courbes qui correspondent toutes à un certain degré de confort acoustique (ou de gêne) : courbes d'évaluation du bruit, ou courbes NR (Noise Rating). Grâce à ces courbes, il est possible de déterminer au moyen d'un seul chiffre le niveau de pression acoustique maximum autorisé. Les indices N40 et N80 sont souvent pris en référence
-   \item Indice de gêne subjective selon les courbes de WISNER.
-   Wisner a défini trois seuils de bruit :
-   - lorsque le bruit ambiant est en zone 1 le travail intellectuel n'est pas gêné de façon appréciable
-   - lorsque le bruit ambiant est en zone2, le travail intellectuel est pénible, le travail courant n'est pas gêné de façon appréciable
-   - lorsque le bruit ambiant est en zone 3, le travail intellectuel est extrêment pénible, le travail courant est difficile
-   - lorsque le bruit ambiant est situé en zone 4, une exposition prolongée peut conduire à la surdité
-   \item Pré qualification des locaux selon la norme NFS 31080
-   \item calcul de l'intelligibilité de la parole (SI)  
+Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 10 premiers dB. Il est subjectivement plus important, car il se rapproche de l'impression de réverbération alors que le TR fait référence aux propriétés du local.
+
+   On utilise également le \textcolorblue{taux de décroissance spatiale}~$DL$, et plus particulièrement le taux de décroissance par doublement de distance~$DL_2$.
+
+   \item La \textcolorblue{Clarté} dépend de la distribution temporelle de l'énergie précoce, la densité temporelle et du niveau des réflexions et de la nature du message sonore. 
+   L'\textcolorblue{intelligibilité de la parole} est conditionnée par le TR, le rapport signal/bruit, le volume et la géométrie de la pièce, et la répartition des surfaces réfléchissantes et absorbantes.
+   Plus le temps de réverbération est court, meilleure sera la compréhension de la parole, à moins que le bruit de fond ne domine.
+   Plusieurs indicateurs seront à prendre en compte: le \textcolorblue{rapport Signal-Bruit} (S/B), le \textcolorblue{Speech Transmission Index}(STI), le \textcolorblue{Percentage Articulation Loss of Consonants} (\%-Alcons), le \textcolorblue{RApid Speech Transmission Index} (RASTI)...
+   \begin{align*}
+   \text{Clarté sur 80~ms: } & C_{80}=10\log_{10}\dfrac{\int_0^{80}p^2(t)\dd t}{\int_{80}^\infty p^2(t)\dd t}\\
+   \text{Distinctness sur 50~ms: } & D = \dfrac{\int_0^{50}p^2(t)\dd t}{\int_{0}^\infty p^2(t)\dd t}\\
+   \text{Temp central: } & T_c = \dfrac{\int_0^\infty tp(t)\dd t}{\int_0^\infty p(t)\dd t}\\
+   \text{Articulation Loss Consonent: } & ALC=\dfrac{200 r^2T_R^2}{VQ}\\
+   \text{RApid Speech Transmission Index: } & RASTI =
+   \left\{\begin{array}{ll}
+   0 & \text{ si } (S/B)_{app}\le 15\\
+   1 & \text{ si } (S/B)_{app}\ge 15\\
+   \frac{(S/B)_{app}+15}{30}
+   \end{array}
+   \right.\\
+   & \text{ avec } (S/B)_{app}=\frac19\sum_{i=1}^9 (S/B)_i
+   \end{align*}
+   Des relations empiriques sont également utilisées:
+   \begin{align*}
+    ALC &\approx 170,5 e^{-592 STI} \\
+    STI &\approx -0,18 \ln(ALC) + 0,95
+   \end{align*}
+
+   \item De là, on peut définir les \textcolorblue{rayons de discrétion et de confidentialité}...
    
-   \item Recommandations INRS
-   \item norme  NF S31080
-   \item taux de décroissance spatiale $DL_2$
-   \item Intelligibilité
-   \item rayon de discrétion
-   \item rayon de confidentialité
-   \item TR
+   \item D'autres indicateurs existent liés par exemple à la spatialisation (IACC (InterAural Cross Correlation), LE(Lateral Efficienty)...) ou a des critères de sonorisation (clarté locale, homogénéité...).
+   
+   \item Des indicateurs prennent également en compte la \textcolorblue{durée d'exposition} au bruit, surtout évidemment dans le cadre de la législation du travail.
+    Ainsi 80~dBA pendant 8~heures correspondent à 86~dBA pendant 2~heures, 90~dBA pendant 45~min, 95~dBA pendant 15~min, 100~dBA pendant 5~min, 107~dBA pendant 1~min ou 115~dBA pendant 28~s.
+    
+    le $L_{ex,d}$ est le \textcolorblue{niveau d'exposition sonore quotidienne} exprimé en dBA pour des bruits stables ou fluctuants.
+    Le $L_{pc}$ est le \textcolorblue{niveau de pression crête} exprimé en dBC pour une exposition à des bruits impulsionnels.
+    
+%   \item Pré qualification des locaux selon la norme NFS 31080
+%   \item Recommandations INRS
+%   \item norme  NF S31080
+
+   \item L'Organisation Internationale de Normalisation (ISO) a proposé plusieurs courbes qui correspondent toutes à un certain degré de confort acoustique (ou de gêne): courbes d'évaluation du bruit, ou courbes de \textcolorblue{Noise Rating} (NR). Grâce à ces courbes, il est possible de déterminer au moyen d'un seul chiffre le niveau de pression acoustique maximum autorisé. Les indices N40 et N80 sont souvent pris en référence.
+
+   \item Dans \emph{Éléments de physiologie et de pathologie des bruits}, Wisner\index[aut]{Wisner (Alain), 1923-2004, Français} définit trois seuils de bruit correspondant à un indice de gêne subjective: lorsque le bruit ambiant est en zone 1 le travail intellectuel n'est pas gêné de façon appréciable; lorsque le bruit ambiant est en zone 2, le travail intellectuel est pénible, le travail courant n'est pas gêné de façon appréciable; lorsque le bruit ambiant est en zone 3, le travail intellectuel est extrêmement pénible, le travail courant est difficile; et lorsque le bruit ambiant est situé en zone 4, une exposition prolongée peut conduire à la surdité.
+
+   \item La Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psycho-acoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson, puis de Zwicker entre autres, expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
+
    \item Il est toujours possible de construire d'autres métriques pour des problèmes particuliers. Par exemple dans \cite{bib-VM-suav}, on trouvera une métrique adaptée à la mesure de la «beauté» des bruits périodiques.
 \end{itemize}
 
@@ -459,20 +496,11 @@ Selon la destination du local, plusieurs normes existent pour mesurer le TR.
 \section{Les calculs acoustiques}\label{Sec-AcouMEF}
 
 \medskip
-\subsection{Modèle}
+\subsection{Modèles}
 
 \medskip
-\subsubsection{Modèles analytiques d'acoustique des salles}
+\subsubsection{Modèles simplifiés}
 
-Considérons le cas où l'on s'intéresse à une salle pour laquelle on veut connaître, ou améliorer, 
-
-absorption par panneaux flechissants en BF
-
-absorption par résonateurs de Helmholtz 
-
-absorption par matériaux poreux en HF
-
-\medskip
 En champ libre, on a la loi de propagation pour le champ direct suivante:
 \begin{equation}
 L_p=L_w+10\log_{10}\left(\dfrac{Q}{4\pi d}\right)
@@ -489,27 +517,20 @@ où~$L_p$ (en dBA) est le niveau de pression sonore du champ diffus, $L_w$ le ni
 On remarque que~$L_p$ est constant quelle que soit la distance à la source, puisqu'on est en hypothèse de champ diffus, et qu'il ne dépend que de~$A$, i.e. de la capacité d'absorption disponible dans la salle.
 On notera que les parois, surtout si elles sont en placo, présentent une certaine transparence et qu'il est bon, pour ajuster le modèle, d'augmenter l'aire d'absorption de la proportion d'énergie qui quitte la salle par transmission (défaut d'isolation).
 
-L'aire d'absorption équivalent est calculée:
-\begin{equation}
-A = \dsum_{i=1}^n \alpha_iS_i
-\end{equation}
-où~$\alpha_i$ est le coefficient d'absorption de Sabine de chaque paroi~$i$ du local, et~$S_i$ la surface de cette paroi.
+\medskip
+En terme de modélisation, cela signifie qu'à proximité d'une source (jusqu'à environ 30cm), on considérera que l'on est en champ direct. Au-delà, on utilisera la relation correspondant au champ réverbéré.
 
-Le temps de réverbération de la salle (en seconde) est donné par:
-\begin{equation}
-TR = 0,16.\dfrac{V}{A}
-\end{equation}
 
+
+\medskip
 Pour les longueurs d'onde de l'ordre des dimensions de la salle, il y a prédominance des modes propres de la salle.
 Pour un salle parallélépipédique de longueurs~$a$, $b$ et~$c$, les fréquences de résonance sont données par:
 \begin{equation}
 f
 \end{equation}
-Pour une salle non parallélépipédique, on peut, sauf géométrie vraiment très biscornue, utiliser la relation précédente en considérant le parallélépipède le plus proche de la géométrie réelle.
+Pour une salle non parallélépipédique, on peut, sauf géométrie vraiment très biscornue, on utilisera la relation précédente en considérant le parallélépipède le plus proche de la géométrie réelle.
 
-Densité modale,
 
-limite de champ diffus
 
 \medskip
 Transmission entre plusieurs salles
@@ -519,22 +540,19 @@ Les phénomènes locaux (écrantage...) ne sont pas pris en compte, ou alors glo
 Pour descendre dans le détail local de la répartition de la pression acoustique on peut utiliser plusieurs méthodes, dont les éléments finis, que nous allons présenter maintenant.
 
 \medskip
-\subsubsection{Modèle éléments finis d'acoustique des salles}
+\subsubsection{Modèle éléments finis sans couplage}
 
 Nous nous intéressons donc au cas général de l'acoustique des salles, où seul le volume intérieur de la salle nous intéresse. C'est ce dernier qu'il nous faut discrétiser.
 
 Pour un calcul assez général, il suffit de définir les bonnes conditions aux limites sur les parois de la salles, d'ajouter la source acoustique... et le tour est joué.
 
 \medskip
-
+\subsubsection{Modèle éléments finis avec couplage}
 
 
 
 \medskip
-\subsubsection{Interaction fluide-structure}
-
-\medskip
-\subsection{Maillage et convergence}
+\subsection{Convergence}
 
 La vérification de la convergence d'un calcul acoustique se fera en fonction de la taille du maillage, mais également en fonction de la taille du pas de temps.
 
