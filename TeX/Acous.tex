@@ -8,12 +8,13 @@ Nous avons déjà présenté la problématique de l'acoustique à plusieurs repr
 Toutefois, nous souhaitions apporter des éléments supplémentaires sur le sujet: 
 \begin{itemize}
    \item au paragraphe~\ref{Sec-AcouPhy}, nous proposerons une présentation de l'acoustique «sur le terrain»: nous exposerons brièvement l'acoustique à partir des problématiques qui se posent physiquement, et nous présenterons quelques solutions typiquement utilisées pour résoudre ces problèmes d'acoustique. Nous verrons d'ailleurs que les problèmes rencontrés en hautes fréquences sont généralement aisément résolus, et qu'il convient donc de se concentrer sur les fréquences inférieures à quelques~kHz.
+   
    \item au paragraphe suivant~\ref{Sec-AcouMEF} nous reviendrons plus en détails sur la mise en œuvre pratique d'un calcul acoustique par éléments finis.
    
    La motivation principale vient de ce que, dans le paragraphe~\ref{Sec-choc}, nous avons indiqué que la méthode des éléments finis devait se cantonner aux basses fréquences, celles-ci allant jusqu'à 600~Hz environ. Il est vrai qu'au-delà, de nombreuses autres méthodes existent... et nous avions profité de ce paragraphe pour les présenter.
 Néanmoins, l'augmentation rapide des capacités des ordinateurs, fait qu'il est tout à fait raisonnable aujourd'hui de traiter des cas allant jusqu'à quelques milliers de Hz, disons 3000~Hz pour fixer les idées, à l'aide de la méthode des éléments finis. Cela permet de traiter la plupart des cas pratiques qui se posent à nous, puisque nous aurons vu auparavant qu'il est souvent inutile de monter plus haut en fréquence.
    
-   \item Enfin, un exemple de calcul par éléments finis d'un problème acoustique sera donné pour clore ce chapitre d'illustration et de complément.
+   \item Des illustrations sur quelques cas types seront faites au paragraphe~\ref{Sec-AcouIllus}.
 \end{itemize}
 
 \medskip
@@ -29,7 +30,7 @@ La réception quant à elle sera liée à la la perception, qui elle-même sera 
 \medskip
 \subsection{Émission}
 
-Face à une problème vibroacoustique, on est amené à considérer les questions:
+Face à une problème vibroacoustique, on est amené à considérer les questions suivantes:
 \begin{itemize}
    \item \textcolorblue{Localisation:} où est-ce que ça fait du bruit? Il s'agit de trouver, dans un ensemble qui peut être très complexe (par exemple un véhicule, un compresseur...), où sont les sources.
    \item \textcolorblue{Identification/Séparation:} là où ça fait du bruit, qu’est-ce qui fait du bruit exactement? De manière plus détaillée que la localisation, il peut être nécessaire, pour les sources identifiées, de déterminer la contribution de certaines de leurs parties ou sous-ensembles: selon la modélisation souhaitée, on pourra se contenter de dire que la source vibroacoustique dans un véhicule est le moteur, où alors souhaiter s'intéresser plus finement aux injecteurs, au carter, à la boîte de vitesse...
@@ -38,6 +39,7 @@ Face à une problème vibroacoustique, on est amené à considérer les question
 
 \medskip
 La caractérisation des sources peut également déboucher sur des lois phénoménologiques, qui relient les caractéristiques vibro-acoustiques à certains paramètres tels que par exemple: le rapport de boîte, le régime moteur, le régime ventilateur...
+%VM REFS A METTRE
 
 \medskip
 Notons enfin que lorsque l'on parle d'acoustique, la propagation finale se fait forcément dans l'air puisque c'est celle qui arrive jusqu'aux oreilles...
@@ -77,7 +79,7 @@ Dans les deux derniers cas, il s'agit d'un calcul où il faut prendre en compte 
 Dans la «réalité», tous ces cas existent bien:
 \begin{itemize}
   \item solidien/solidien: tout moteur, même monté sur des silenblocs qui filtrent l'excitation, génère dans les supports, puis dans toute la structure porteuse, des vibrations. On est donc bien face à la propagation de vibrations au sein de solides;
-  \item aérien/aérien: si l'on n'entre pas dans le détail de son fonctionnement mécanique, un haut-parleur est une source aérienne (en même une source ponctuelle, si l'on étudie par exemple une salle d'écoute, mais pas une source omnidirectionnelle) qui génère une onde acoustique qui se propage dans un volume d'air contenu, par exemple, dans une salle. Si l'on s'intéresse au niveau de pression acoustique en un point de la salle, on a une modélisation où seul le volume intérieur de la salle est nécessaire (et les bonnes conditions aux limites, mais nous y reviendrons);
+  \item aérien/aérien: si l'on n'entre pas dans le détail de son fonctionnement mécanique, un haut-parleur est une source aérienne qui génère une onde acoustique qui se propage dans un volume d'air contenu, par exemple, dans une salle. Si l'on s'intéresse au niveau de pression acoustique en un point de la salle, on a une modélisation où seul le volume intérieur de la salle est nécessaire (et les bonnes conditions aux limites, mais nous y reviendrons);
     \item solidien/aérien: dans le cas de structures en treillis portant des panneaux, ce qui est le cas pour la conception de cars et bus, le moteur, situé à l'arrière, excite la structure de manière solidienne... et des vibrations se propagent dans tout le bus, où elles trouvent régulièrement, et jusqu'à l'avant, des panneaux qui vont se mettre à rayonner, i.e. à transformer cette vibration mécanique en bruit se propageant dans l'air jusqu'aux oreilles du conducteur et des passagers;
   \item aérien/solidien: dans le cas de structures légères, par exemple pour des véhicules sans permis, le moteur excite la structure non seulement de manière solidienne, mais également de manière aérienne. Le bruit généré par le moteur est tel, au sein du compartiment moteur, que cette sollicitation aérienne est capable de faire vibrer le tablier de séparation moteur/habitacle, qui dans ce cas précis est généralement très peu isolant (typiquement en ABS thermoformé avec une épaisseur avant transformation d'environ 3~mm, donc une épaisseur, dans les endroits les plus déformés, de l'ordre du millimètre). Il suffit pour le mettre en évidence de remplacer le moteur par un haut parleur découplé du châssis et générant une pression acoustique équivalente à celle du moteur.  
 \end{itemize}
@@ -108,9 +110,9 @@ Revenons quelques instants sur l'\textcolorblue{absorption}, et plus particuliè
 \caption{Coefficient d'absorption pour différents types d'absorbants}\label{Fig-mtxalpha}
 \end{figure}
 
-On voit, sur la figure~\ref{Fig-mtxalpha} que l'on peut distinguer deux types de comportements:
+On voit sur la figure~\ref{Fig-mtxalpha} que l'on peut distinguer deux types de comportements:
 \begin{itemize}
-   \item un comportement d'absorption centré sur une fréquence: il s'agit des panneaux fléchissants, des résonateurs de Helmholtz\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} et des panneaux rigides perforés. L'avantage de ces systèmes est qu'ils permettent d'attaquer des fréquences relativement faibles. Leur inconvénient est que face à une source large bande, ils ne traitent qu'une infime partie du problème;
+   \item un comportement d'absorption centré sur une fréquence: il s'agit des panneaux fléchissants, des résonateurs de Helmholtz\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} et des panneaux rigides perforés. L'avantage de ces systèmes est qu'ils permettent d'attaquer des fréquences relativement basses. Leur inconvénient est que face à une source large bande, ils ne traitent qu'une infime partie du problème;
   
    \item et un comportement d'absorption large bande: il s'agit des matériaux poreux et fibreux. Bien que n'apportant qu'une absorption très limitée aux basses fréquences, ils permettent de bien traiter le spectre en hautes fréquences et constituent donc une solution simple et aisée à mettre en œuvre. La figure~\ref{Fig-poro}
 \begin{figure}[h!]
@@ -213,7 +215,7 @@ Le phénomène de \textcolorblue{réflexion} sur un obstacle est illustré sur l
 \end{figure}
 La figure~\ref{Fig-reflex}a propose une analogie avec des balles, de ce qui est décrit avec des ondes à la figure~\ref{Fig-reflex}b, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}.
 
-Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Il reste le cas problématique où~$\lambda=l$: dans ce cas, on a des \textcolorblue{réflexions spéculaires multiples}, ou réflexion diffuse, qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
+Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent: si~$\lambda=l$, on a des \textcolorblue{réflexions spéculaires multiples} (on parle aussi de réflexion diffuse) qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
 
 
 \medskip
@@ -230,7 +232,7 @@ On rappelle par ailleurs qu'une onde voit son intensité décroitre avec la dist
 Dans les conditions de champ libre, l'intensité acoustique est proportionnelle au carré de la pression acoustique. Quand la distance à la source est doublée, la pression est divisée par deux (et l'intensité acoustique est divisée par quatre). Le niveau de pression acoustique diminue alors de 6~dB.
 
 \medskip
-Une question intéressante, dans le cas d'un environnement fermé, est de se demander ce qu'il se passe lorsqu'une source émet à des fréquences qui «n'ont pas la place» de se développer au sein du volume disponible, i.e. \textcolorblue{lorsque les longueurs d'ondes considérées sont supérieures aux dimensions de l'espace dans lequel émet la source}. Ce cas se produit pour les basses fréquences émises par un moteur au sein de son encoffrement, ce dernier étant approximativement un cube de longueur 60~cm.
+Une question intéressante, dans le cas d'un environnement fermé, est de se demander ce qu'il se passe lorsqu'une source émet à des fréquences qui «n'ont pas la place» de se développer au sein du volume disponible, i.e. \textcolorblue{lorsque les longueurs d'ondes considérées sont supérieures aux dimensions de l'espace dans lequel émet la source}. Ce cas se produit pour les basses fréquences émises par un moteur au sein de son encoffrement, ce dernier étant approximativement un cube de 60~cm de côté.
 
 Et bien, dans ce cas, l'énergie injectée «gonfle» en quelque sorte l'encoffrement. Celui-ci est sollicité en pression... et répond évidemment selon ses \textcolorblue{modes propres}.
 Dans de nombreux cas (encoffrement moteur, habitacle de véhicule...), il est nécessaire de prendre en compte la réponse modale du volume dans lequel on définit le problème, car celle-ci influe sur la répartition du champ acoustique, dont notamment d'éventuelles \textcolorblue{résonances}.
@@ -261,7 +263,7 @@ Bell%
 \medskip
 \ImageADroite{%
 Les Laboratoires Bell consultèrent les opérateurs téléphoniques et administrations responsables. Certaines utilisaient des logarithmes népériens, qui présentent certains avantages pour le calcul, avec une unité appelée le néper (symbole Np). Les deux unités ont coexisté, mais le néper n'a pas connu le succès du décibel. 
-La norme ISO 80000-3, page viii, dit d'ailleurs: «L'utilisation du néper est le plus souvent limitée à des calculs théoriques sur des grandeurs de champ, où cette unité est la plus commode, alors que, dans d'autres cas, en particulier pour des grandeurs de puissance, le bel, ou en pratique son sous-multiple, le décibel (dB), est largement utilisé. Il convient de souligner que le fait que le néper soit choisi comme l'unité cohérente n'implique pas qu'il convienne d'éviter d'utiliser le bel. Le bel est accepté par le CIPM et l'OIML pour être utilisé avec le SI. À certains égards, cette situation est similaire au fait que l'unité degré (\degre) est utilisée couramment à la place de l'unité SI cohérente radian (rad) pour les angles plans.»}
+La norme ISO 80000-3, page viii, dit d'ailleurs: «L'utilisation du néper est le plus souvent limitée à des calculs théoriques sur des grandeurs de champ, où cette unité est la plus commode, alors que, dans d'autres cas, en particulier pour des grandeurs de puissance, le bel (B), ou en pratique son sous-multiple, le décibel (dB), est largement utilisé. Il convient de souligner que le fait que le néper soit choisi comme l'unité cohérente n'implique pas qu'il convienne d'éviter d'utiliser le bel. Le bel est accepté par le CIPM et l'OIML pour être utilisé avec le SI. À certains égards, cette situation est similaire au fait que l'unité degré (\degre) est utilisée couramment à la place de l'unité SI cohérente radian (rad) pour les angles plans.»}
 
 L'usage du logarithme décimal était d'autant plus pratique qu'avant la diffusion des calculatrices électroniques, on se servait pour les calculs de tables de logarithmes décimaux. Lorsqu'on se propose de calculer l'atténuation dans une ligne de longueur $l$ et de coefficient d'atténuation $\alpha$, il faut élever $(1-\alpha)$ à la puissance $l$. En pratique, on cherchait $l\log(1-\alpha)$ dans la table avant de reconvertir le logarithme en rapport.
 
@@ -274,7 +276,7 @@ Fechner&Weber&Stevens%
 \end{tabular}}
 \medskip
 \ImageAGauche{%
-Le décibel a connu un grand succès dans le domaine de l'acoustique. Par une coïncidence fortuite, un décibel, en puissance sonore, correspond à peu près à la plus petite variation perceptible. Selon le philosophe et psychologue Gustav Fechner,\index[aut]{Fechner (Gustav Theodor), 1801—1887, Allemand} la sensation ressentie varierait comme le logarithme de l'excitation. Une unité à progression logarithmique semblait particulièrement pertinente dans un domaine où la perception humaine était en jeu. Des recherches ultérieures sont venues contester la loi de Weber-Fechner\index[aut]{Weber (Ernst Heinrich), 1795-1878, Allemand} (comme la loi de puissance de Stevens,\index[aut]{Stevens (Stanley Smith), 1906-1973, Américain} en 1951); mais l'usage du décibel s'était établi, même dans des cas où il complique la compréhension.}
+Le décibel a connu un grand succès dans le domaine de l'acoustique. Par une coïncidence fortuite, un décibel, en puissance sonore, correspond à peu près à la plus petite variation perceptible par l'oreille. Selon le philosophe et psychologue Gustav Fechner,\index[aut]{Fechner (Gustav Theodor), 1801—1887, Allemand} la sensation ressentie varierait comme le logarithme de l'excitation. Une unité à progression logarithmique semblait particulièrement pertinente dans un domaine où la perception humaine était en jeu. Des recherches ultérieures sont venues contester la loi de Weber-Fechner,\index[aut]{Weber (Ernst Heinrich), 1795-1878, Allemand} comme la loi de puissance de Stevens\index[aut]{Stevens (Stanley Smith), 1906-1973, Américain} (1951); mais l'usage du décibel s'était établi, même dans des cas où il complique la compréhension.}
 
 La loi de Weber-Fechner stipule que la sensation perçue, $S$, est proportionnelle au logarithme de l'intensité, $I$, du stimulus:
 \begin{equation}
@@ -330,7 +332,7 @@ I = \frac{p^2}{Z}
 \end{equation}
 où $p$ est la pression acoustique et $Z$ l'\textcolorblue{impédance} (Unité: $Ns/m^3$).
 
-\medskip
+\begin{remarque}
 Dans le cadre de mesures:
 \begin{itemize}
    \item l'intensité acoustique est représentée par la puissance électrique (Watt);
@@ -345,6 +347,7 @@ On définit aussi la \textcolorblue{tension efficace ou tension RMS} (Root Mean 
 \begin{equation}
 V_{eff}=\sqrt{\dfrac{V_1^2+...+V_n^2}{n}}
 \end{equation}
+\end{remarque}
 
 \medskip
 Notons que l'on «parle» souvent, dans le monde des acousticiens, en termes de bandes de fréquence, l'analyse en bandes fines n'étant utilisée que pour des analyses plus poussées.
@@ -365,6 +368,7 @@ la réponse fréquentielle d'une chaîne de reproduction sonore.
 
 La notion d'impédance mérite que nous y passions quelques instants. En effet, elle nous permettra par la suite de définir des conditions aux limites pour nos modèles numériques.
 
+%VM : paragraphe ci-dessous BOF et peut-être mal placé
 L'impédance caractéristique d'un milieu (solide, liquide ou gazeux) est définie comme le rapport de la pression acoustique sur la vitesse de déplacement en milieu ouvert (i.e. en l'absence d'ondes réfléchies). C'est une propriété du matériau considéré qui est égale, dans le cas d'un espace illimité, au produit de la masse volumique du matériau par la vitesse du son dans ce même matériau.
 
 \medskip
@@ -406,6 +410,7 @@ Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, 
 
 \medskip\colorblack
 Deux cas extrêmes nous intéressent:
+%VM illustrer ces 2 cas. Cas2=paroi fixe...
 \begin{itemize}
    \item la \textcolorblue{réflexion à une extrémité libre}: dans ce cas,~$Z_2\approx0$ et la vitesse de l'extrémité est~$v=2v_i$. On assiste à un changement de signe de $v_r$ sans renversement de la forme de l'onde.
    \item la \textcolorblue{réflexion à une extrémité fixe}: dans ce cas,~$Z_2\rightarrow\infty$ et la vitesse de l'extrémité est $v=0$. Il n'y a pas de changement de signe de~$v_r$, mais la forme de l'onde est renversée.
@@ -427,7 +432,7 @@ De très nombreuses normes et grandeurs existent dans le domaine de l'acoustique
    
 Pour les longueurs d'ondes supérieures au double de la plus grande dimension d'une pièce: le son se comporte de manière équivalente aux changements de pression de l'air statique.
 Pour les longueurs d'onde comparables aux dimensions de la pièce: il y a dominance des modes propres de la salle. Il y a amplification des fréquences, ce qui «colore» le son et création d'ondes stationnaires.
-Pour des longueurs d'ondes inférieures à la moitié des dimensions de la salle: on est dans le cas de réflexions multiples, et on peut faire une équivalence lumineuse et utiliser les méthodes de tir de rayon «raytracing».
+Pour des longueurs d'ondes inférieures à la moitié des dimensions de la salle: on est dans le cas de réflexions multiples, et on peut faire une équivalence lumineuse et utiliser les méthodes de tir de rayon de type «raytracing».
 
    \item L'une des premières grandeurs à connaître est le \textcolorblue{bruit ambiant}. Son niveau maximal est fixé en fonction de la destination du local.
 
@@ -445,14 +450,15 @@ Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 
 
    On utilise également le \textcolorblue{taux de décroissance spatiale}~$DL$, et plus particulièrement le taux de décroissance par doublement de distance~$DL_2$.
 
-   \item La \textcolorblue{Clarté} dépend de la distribution temporelle de l'énergie précoce, la densité temporelle et du niveau des réflexions et de la nature du message sonore. 
+   \item La \textcolorblue{Clarté} dépend de la distribution temporelle de l'énergie précoce, de la densité temporelle, du niveau des réflexions et de la nature du message sonore. 
    L'\textcolorblue{intelligibilité de la parole} est conditionnée par le TR, le rapport signal/bruit, le volume et la géométrie de la pièce, et la répartition des surfaces réfléchissantes et absorbantes.
    Plus le temps de réverbération est court, meilleure sera la compréhension de la parole, à moins que le bruit de fond ne domine.
-   Plusieurs indicateurs seront à prendre en compte: le \textcolorblue{rapport Signal-Bruit} (S/B), le \textcolorblue{Speech Transmission Index}(STI), le \textcolorblue{Percentage Articulation Loss of Consonants} (\%-Alcons), le \textcolorblue{RApid Speech Transmission Index} (RASTI)...
+   Plusieurs indicateurs seront à prendre en compte: le \textcolorblue{rapport Signal-Bruit} (S/B), le \textcolorblue{Speech Transmission Index} (STI), le \textcolorblue{Percentage Articulation Loss of Consonants} (\%-Alcons), le \textcolorblue{RApid Speech Transmission Index} (RASTI)...
    \begin{align*}
    \text{Clarté sur 80~ms: } & C_{80}=10\log_{10}\dfrac{\int_0^{80}p^2(t)\dd t}{\int_{80}^\infty p^2(t)\dd t}\\
    \text{Distinctness sur 50~ms: } & D = \dfrac{\int_0^{50}p^2(t)\dd t}{\int_{0}^\infty p^2(t)\dd t}\\
    \text{Temp central: } & T_c = \dfrac{\int_0^\infty tp(t)\dd t}{\int_0^\infty p(t)\dd t}\\
+   %VM Q=???
    \text{Articulation Loss Consonent: } & ALC=\dfrac{200 r^2T_R^2}{VQ}\\
    \text{RApid Speech Transmission Index: } & RASTI =
    \left\{\begin{array}{ll}
@@ -463,6 +469,7 @@ Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 
    \right.\\
    & \text{ avec } (S/B)_{app}=\frac19\sum_{i=1}^9 (S/B)_i
    \end{align*}
+   où~$Q$ est le facteur de directivité.   
    Des relations empiriques sont également utilisées:
    \begin{align*}
     ALC &\approx 170,5 e^{-592 STI} \\
@@ -471,7 +478,7 @@ Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 
 
    \item De là, on peut définir les \textcolorblue{rayons de discrétion et de confidentialité}...
    
-   \item D'autres indicateurs existent liés par exemple à la spatialisation (IACC (InterAural Cross Correlation), LE(Lateral Efficienty)...) ou a des critères de sonorisation (clarté locale, homogénéité...).
+   \item D'autres indicateurs existent liés par exemple à la spatialisation (InterAural Cross Correlation (IACC), Lateral Efficienty (LE)...) ou a des critères de sonorisation (clarté locale, homogénéité...).
    
    \item Des indicateurs prennent également en compte la \textcolorblue{durée d'exposition} au bruit, surtout évidemment dans le cadre de la législation du travail.
     Ainsi 80~dBA pendant 8~heures correspondent à 86~dBA pendant 2~heures, 90~dBA pendant 45~min, 95~dBA pendant 15~min, 100~dBA pendant 5~min, 107~dBA pendant 1~min ou 115~dBA pendant 28~s.
@@ -485,9 +492,10 @@ Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 
 
    \item L'Organisation Internationale de Normalisation (ISO) a proposé plusieurs courbes qui correspondent toutes à un certain degré de confort acoustique (ou de gêne): courbes d'évaluation du bruit, ou courbes de \textcolorblue{Noise Rating} (NR). Grâce à ces courbes, il est possible de déterminer au moyen d'un seul chiffre le niveau de pression acoustique maximum autorisé. Les indices N40 et N80 sont souvent pris en référence.
 
-   \item Dans \emph{Éléments de physiologie et de pathologie des bruits}, Wisner\index[aut]{Wisner (Alain), 1923-2004, Français} définit trois seuils de bruit correspondant à un indice de gêne subjective: lorsque le bruit ambiant est en zone 1 le travail intellectuel n'est pas gêné de façon appréciable; lorsque le bruit ambiant est en zone 2, le travail intellectuel est pénible, le travail courant n'est pas gêné de façon appréciable; lorsque le bruit ambiant est en zone 3, le travail intellectuel est extrêmement pénible, le travail courant est difficile; et lorsque le bruit ambiant est situé en zone 4, une exposition prolongée peut conduire à la surdité.
+   \item Dans \emph{Éléments de physiologie et de pathologie des bruits}, Wisner\index[aut]{Wisner (Alain), 1923-2004, Français} définit trois seuils de bruit correspondant à un indice de gêne subjective: lorsque le bruit ambiant est en zone 1, le travail intellectuel n'est pas gêné de façon appréciable; lorsque le bruit ambiant est en zone 2, le travail intellectuel est pénible, le travail courant n'est pas gêné de façon appréciable; lorsque le bruit ambiant est en zone 3, le travail intellectuel est extrêmement pénible, le travail courant est difficile; et lorsque le bruit ambiant est situé en zone 4, une exposition prolongée peut conduire à la surdité.
 
-   \item La Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psycho-acoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson, puis de Zwicker entre autres, expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
+   \item La Sonie ou bruyance (loudness) est une quantification de la perception du son chez l'être humain. C'est une grandeur psycho-acoustique qui se rattache de façon complexe à la pression acoustique. Les courbes isosoniques issues des travaux de Fletcher et Munson % VM, puis de Zwicker entre autres, 
+   expriment la relation entre la fréquence d'un stimulus sonore continu et la perception de sa sonie. L'ISO a donné un tracé normalisé afin de pouvoir définir le phone, unité de l'expression de la sonie.
 
    \item Il est toujours possible de construire d'autres métriques pour des problèmes particuliers. Par exemple dans \cite{bib-VM-suav}, on trouvera une métrique adaptée à la mesure de la «beauté» des bruits périodiques.
 \end{itemize}
@@ -505,20 +513,20 @@ Elles permettent néanmoins d'effectuer un prédimensionnement rapide pour les s
 \subsubsection{Puissance de la source sonore et propagation}
 
 En champ libre, on a la loi de propagation pour le champ direct suivante:
+%VM Q=??, d=??
 \begin{equation}
 L_p=L_w+10\log_{10}\left(\dfrac{Q}{4\pi d}\right)
 \end{equation}
-où~$L_p$ (en dBA) est le niveau de pression sonore du champ direct, $L_w$ le niveau de puissance de la source et~$d$ la distance à la source.
+où~$L_p$ (en dBA) est le niveau de pression sonore du champ direct, $L_w$ le niveau de puissance de la source, $d$ la distance à la source et~$Q$ le facteur de directivité ($Q=1$ source omnidirectionnelle, $Q=2$ source omnidirectionnelle posée sur le sol...).
 
 \medskip
-Dans une salle (suffisamment réverbérante), on remarque que le champ est diffus. Sous cette hypothèse de champ diffus, on a:
+Dans une salle (suffisamment réverbérante), on constate que le champ est diffus, et alors on a:
 \begin{equation}
 L_p = L_w + 6 - 10\log_{10} A
 \end{equation}
 où~$L_p$ (en dBA) est le niveau de pression sonore du champ diffus, $L_w$ le niveau de puissance de la source et~$A$ l'aire équivalente d'absorption.
-
-On remarque que~$L_p$ est constant quelle que soit la distance à la source, puisqu'on est en hypothèse de champ diffus, et qu'il ne dépend que de~$A$, i.e. de la capacité d'absorption disponible dans la salle.
-On notera que les parois, surtout si elles sont en placo, présentent une certaine transparence et qu'il est bon, pour ajuster le modèle, d'augmenter l'aire d'absorption de la proportion d'énergie qui quitte la salle par transmission (défaut d'isolation).
+On remarque que~$L_p$ est constant quelle que soit la distance à la source (puisqu'on est en hypothèse de champ diffus) et qu'il ne dépend que de~$A$, i.e. de la capacité d'absorption disponible dans la salle.
+On notera que les parois, surtout si elles sont légères, présentent une certaine transparence et qu'il est bon, pour ajuster le modèle, d'augmenter l'aire d'absorption de la proportion d'énergie qui quitte la salle par transmission (défaut d'isolation).
 
 \medskip
 En terme de modélisation, cela signifie qu'à proximité d'une source (jusqu'à environ 30cm), on considérera que l'on est en champ direct. Au-delà, on utilisera la relation correspondant au champ réverbéré.
@@ -528,12 +536,16 @@ En terme de modélisation, cela signifie qu'à proximité d'une source (jusqu'à
 \medskip
 \subsubsection{Modes d'une salle}
 
-Pour les longueurs d'onde de l'ordre des dimensions de la salle, il y a prédominance des modes propres de la salle.
+Pour les longueurs d'onde de l'ordre des dimensions de la salle, il y a prédominance des modes propres de la salle. Il faut donc pouvoir les évaluer.
 Pour un salle parallélépipédique de dimensions~$L$, $l$ et~$h$, les fréquences de résonance sont données par:
 \begin{equation}
 f_{(i,j,k)} = \frac{c}2\sqrt{\left(\frac{i}{L}\right)^2+\left(\frac{j}{l}\right)^2+\left(\frac{k}{h}\right)^2}
 \end{equation}
-Les modes~$(i,0,0)$, $(0,j,0)$ et~$(0,0,k)$ sont des modes longitudinaux dans la directions de~$L$, $l$ et~$h$ respectivement. Les autres modes sont des modes transverses.
+Les modes~$(i,0,0)$, $(0,j,0)$ et~$(0,0,k)$ sont des modes axiaux dans la directions de~$L$, $l$ et~$h$ respectivement, les modes~$(i,j,0)$, $(0,j,k)$ et~$(i,0,k$ les modes tangentiels, et les modes~$(i,j,k)$ les modes obliques.
+La pression acoustique se met sous la forme:
+\begin{equation}
+p(x,y,z) = \dsum_i\dsum_j\dsum_k p_{ijk}\cos\left(\frac{i\pi}{L}x\right)\cos\left(\frac{j\pi}{l}y\right)\cos\left(\frac{k\pi}{h}z\right)
+\end{equation}
 
 La formule de Maa (1939) donne le nombre~$N(f)$ de fréquences propres inférieures ou égales à une fréquence donnée~$f$:
 \begin{equation}
@@ -563,26 +575,71 @@ Si l'on s'intéresse au niveau moyen résultant dans un local, prendre en compte
 Par contre, si l'on a besoin de descendre dans le détail local de la répartition de la pression acoustique (par exemple répartition poste à poste), alors il convient d'utiliser des méthodes plus adéquates, dont les éléments finis, que nous allons présenter maintenant.
 
 \medskip
-\subsection{Quelques exemples de modèle éléments finis avec ou sans couplage}
+\subsection{Constitution d'un modèle éléments finis}
 
-Comme nous l'avons déjà évoqué, un certain nombre de calculs ne nécessitent pas de recourir à un couplage fluide/structure. En voici quelques exemples concrets:
-\begin{itemize}
-   \item Cas solidien/solidien: il s'agit par exemple d'étudier la propagation d'ondes de compression ou de cisaillement au sein d'une structure. Seule la structure sera modélisée.
-   \item Cas aérien/aérien: l'acoustique des salles d'une manière générale peut se passer de couplage. Seul le volume de la salle est à discrétiser. Les zones d'absorption situées en parois seront modélisées par leur impédance, ainsi que les pertes par transmission. Dans le cas d'un locuteur, la source sera ponctuelle.
-   \item Cas aérien/aérien: un silencieux d'automobile peut n'être défini que par le volume d'air qu'il enferme. On appliquera aux parois l'impédance correspondant aux parois: soit réflexion quasiment pure avec un peu de perte, soit présence d'un absorbant en parois. La surface correspondant à l'entrée de l'onde dans le silencieux sera modélisée par la surface soumise à une onde plane. La surface correspondant à la sortie du silencieux sera la surface où les informations (de type onde plane) seront recueillies puis analysées.
-\end{itemize}
+Si l'on ajoute des termes de sources, alors l'équation des ondes~(\ref{Eq-EqOndeAcou}) devient:
+\begin{equation}
+\dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
+\end{equation}
+dont l'inconnue est toujours la pression acoustique et où~$q$ et~$Q$ représentent les termes de sources pour un dipôle et un monopôle respectivement.
+
+Dans le cas harmonique, l'équation précédente devient l'équation d'Helmholtz~(\ref{Eq-Helm})\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} avec termes sources:
+\begin{equation}
+-\dfrac{\omega^2p}{\rho c^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
+\end{equation}
+Si l'on souhaite introduire le d'amortissement dans l'équation, alors les quantités~$c$ et~$\rho$ peuvent être complexes (au sens appartiennent à~$\CC$). Par exemple, pour un modèle d'amortissement de Rayleigh, $c$ est une combinaison linéaire de la masse et de la raideur.
+
 
 \medskip
-Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
+Pour réaliser notre modèle de calcul vibroacoustique par éléments finis, nous devrons disposer de sources et de conditions aux limites:
+\begin{itemize}
+   \item La source est généralement modélisée par un \textcolorblue{monopôle} ou un \textcolorblue{dipôle}. Un monopôle est une source omnidirectionnelle, alors qu'un dipôle représente une source ayant deux directions opposées selon lesquelles le champ est plus fort. Un dipôle peut être vu comme deux monopôles de même puissance séparés par une petite distance et en opposition de phase. On peut également utiliser des quadripôles si besoin.
+   On trouve également parfois des sources ponctuelles, linéaires ou ayant d'autres formes prédéfinies.
+   
+   \item La \textcolorblue{condition de Neumann} correspond à une condition de  \textcolorblue{mur rigide}. Elle définit une frontière sur laquelle la composante normale de l'accélération est nulle (mur immobile parfaitement réfléchissant):
+   \begin{equation}
+   -n.\left(-\frac1{\rho_0}(\nabla p-q)\right)=0
+   \end{equation}
+   Dans certains codes, on peut spécifier la valeur de l'accélération normale, i.e. le second membre n'est plus nul mais vaut~$a_n$ (condition de Neumann relevée), qui représente alors une source externe. Cela permet également de coupler de manière faible l'acoustique à une calcul structural: un premier calcul de structure permet de déterminer le vibrations d'une surface, et cette-ci est introduite ensuite dans le calcul acoustique. Le \textcolorgreen{couplage est donc faible} car dans ce cas on fait l'hypothèse que l'acoustique en retour ne modifie pas (ou peu) la vibration de la structure. De manière inverse, on a également couplage faible si le fluide agit sur le solide et que celui-ci en retour n'agit que peu sur le fluide.
+   
+   \item La \textcolorblue{condition de Dirichlet} correspond à une \textcolorblue{condition d'absorption parfaite}. Elle est telle que la pression acoustique s'annule sur la surface:
+   \begin{equation}
+   p=0
+   \end{equation}
+   En général, dans les codes, une telle condition permet de mettre la pression à zéro, ou à toute autre valeur (condition de Dirichlet relevée) définie par l'utilisateur. Le second membre n'est alors plus nul mais vaut~$\overline{p}$. Cela permet de modéliser une source débitant une pression constante (applicable sur un nœud si besoin).
+   
+   \item La \textcolorblue{condition de Robin} correspond à une \textcolorblue{condition d'impédance}. Elle se situe entre les deux cas précédents:
+   \begin{equation}
+   \begin{array}{rll}
+   -n.\left(-\dfrac1{\rho_0}(\nabla p-q)\right)
+   &=-\dfrac{i\omega p_t}{Z} \text{ en analyse harmonique, ou }\\
+   &=\dfrac{1}{Z}\dfrac{\partial p_t}{\partial t} \text{ en analyse temporelle}   
+   \end{array}
+   \end{equation}
+   Lorsque~$Z\rightarrow\infty$ on retrouve le cas du mur rigide, et lorsque~$Z\rightarrow0$ celui de l'absorption parfaite.
+   
+   Pour les \textcolorgreen{plaques perforées}, on utilisera cette condition pour gérer l'absorption. Certains logiciels calculent l'impédance à notre place en fonction de paramètres physiques tels que: la viscosité dynamique, l'épaisseur et la porosité (diamètre des trous, distance entre trous, ou aire des trous et résistance de passage au fluide) et la réactance du panneau.
+   
+   \item L'absorption peut être gérée par l'impédance, mais certains logiciels incluent des \textcolorgreen{modèles de fluides équivalent} (homogénéisation), dont le plus connu est celui de Biot-Allard.\index[aut]{Biot (Maurice Anthony), 1905-1985, Américain}\index[aut]{Allard (Jean-François), ?-, Français} Il concerne les matériaux poreux et nécessite de connaître leur porosité, résistance au passage de l'air, tortuosité, et longueurs caractéristiques visqueuse et thermique (ces deux derniers paramètres ayant une influence moins importante que les trois premiers sur l'absorption). D'autres modèles existent comme le modèle de Johnson-Champoux-Allard, celui de Johnson-Champoux-Allard-Lafarge...
+   
+   \item Les \textcolorblue{conditions aux limites en rayonnement} permettent de définir les régions par lesquelles les ondes peuvent quitter le modèle. On trouve généralement des conditions de radiation plane, cylindrique et sphérique.
+   \item De la même manière on trouve des \textcolorblue{conditions de rayonnement}, plane ou cylindrique, permettant de modéliser une source, i.e. une onde qui arrive (et non plus une onde qui quitte le modèle).
+   
+   \item Lorsque le couplage faible décrit plus haut n'est pas suffisant, il faut alors intégrer le \textcolorblue{couplage fort} fluide-structure au calcul: le fluide, définit par ses champs de pression et de vitesse exerce des forces de type aérodynamique (de pression) sur la structure. Cette force aérodynamique se met sous la forme $F = \frac12 \rho v^2SC$, où~$v$ est la vitesse, $S$ la «surface de référence» (pour nous cette surface de référence sera la surface mouillée)\footnote{Dans le cas d'étude aérodynamiques et pour les corps bien profilés, la surface de référence sera la projection de la surface dans un plan orthogonal à la direction selon laquelle on veut le résultat.
+   
+   Dans le cas de l'aérodynamique, on décompose la force aérodynamique selon trois axes en une force de traînée~$F_x$ parallèle à la direction moyenne de l'écoulement; une force de dérive~$F_y$ perpendiculaire à la direction moyenne de l'écoulement, dans le plan horizontal; et une force de portance~$F_z$, perpendiculaire à la direction moyenne de l'écoulement, dans le plan vertical.} et~$C$ le coefficient aérodynamique. En retour, le déplacement et/ou la déformation de la structure affecte, au moins localement, le champ de l'écoulement fluide et par conséquent la direction et l'intensité des charges aérodynamiques: ce \textcolorblue{cycle des interactions} entre le fluide et la structure est la caractéristique du couplage fort entre les deux milieux, i.e. \textcolorgreen{chaque milieu influe significativement sur l'autre}.
 
-Des conditions de couplage devront être mise en place entre ces deux domaines. Certains logiciels les prennent quasiment tout seul en compte, pour les autres il faudra le faire manuellement.
+Si l'on ne peut pas découpler les équations de chaque milieu (c'est parfois possible et ça vaut donc le coût d'essayer), alors on essaye généralement de procéder par la méthode dite «décalée»: chaque physique est traitée séparément, et l'on essaye ensuite de faire transiter l'information d'un code à l'autre, ce qui n'est pas toujours simple, engendre des erreurs numériques supplémentaires, et surtout nécessite de développer des algorithmes de couplage. Sinon, la méthode dite «monolithique» est théoriquement la plus optimale puisque le fluide et la structure sont traités par un même code de calcul. Toutefois, lorsque les géométries ou la physique du problème à traiter deviennent complexes ce type de méthode n'est plus envisageable puisque chaque milieu (fluide ou solide) nécessite des procédures de calcul numérique spécifiques.
+Notons que certains codes de calcul gèrent de manière assez simple pour l'utilisateur ce couplage entre différentes physiques.
 
-\textcolorred{A COMPLETER EXPLICITEMENT}
+\end{itemize}
+
+
 
 \medskip
 \subsection{Convergence}
 
-La vérification de la convergence d'un calcul acoustique se fera en fonction de la taille du maillage, mais également en fonction de la taille du pas de temps.
+La convergence d'un calcul acoustique dépend non seulement de la taille du maillage, mais également de la taille du pas de temps.
 
 \medskip
 \subsubsection{Discrétisation en espace}
@@ -597,8 +654,7 @@ où~$h$ est la taille de la maille, et~$k$ le degré de l'approximation utilisé
 \medskip
 \subsubsection{Discrétisation en temps}
 
-La condition de Courant,\index[aut]{Courant (Richard), 1888-1972, Américain} Friedrichs\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} et Lewy\index[aut]{Lewy (Hans), 1904-1988, Américain} (condition CFL), énoncée dans leur article de 1928 \cite{bib-CFL}, 
-est un nombre adimensionnel (utilisé en informatique et en mathématiques et plus particulièrement en calcul par différences finie) qui définit en une condition de convergence pour résoudre certaines équations aux dérivées partielles (notamment les équations aux dérivées partielles hyperboliques). Pratiquement, il sert à donner le seuil dimensionnel sous lequel on observe une instabilité de calcul, erreur d'approximation dans des calculs numériques, grandissant rapidement au fur et à mesure des calculs. Si la dimension de la grille est inférieure à la distance parcourue dans l'intervalle de pas de temps par l'onde la plus rapide que permet l'équation, l'erreur grandit et envahit la solution physique.
+La condition de Courant,\index[aut]{Courant (Richard), 1888-1972, Américain} Friedrichs\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} et Lewy\index[aut]{Lewy (Hans), 1904-1988, Américain} (condition CFL), énoncée dans leur article de 1928 \cite{bib-CFL}, définit, au travers d'un nombre adimensionnel appelée nombre de Courant~$C$, une condition de convergence pour résoudre certaines équations aux dérivées partielles, notamment les équations aux dérivées partielles hyperboliques, utilisant la méthode des différences finies. Pratiquement, il sert à donner le seuil dimensionnel sous lequel on observe une instabilité de calcul, erreur d'approximation dans des calculs numériques, grandissant rapidement au fur et à mesure des calculs. \textcolorgreen{Si la dimension de la grille est inférieure à la distance parcourue dans l'intervalle de pas de temps par l'onde la plus rapide que permet l'équation, l'erreur grandit et envahit la solution physique.}
 
 \medskip
 Le nombre de courant~$C$, pour un problème de dimension~$n$ en espace (et $1$ en temps), est défini par:
@@ -611,9 +667,6 @@ La constante $C_{max}$ prend différentes valeurs en fonction de la méthode uti
 Pour une méthode explicite, on utilisera $C_{max} = 1$, alors que pour une méthode implicite, moins sensible aux instabilités numériques, on pourra prendre une valeur plous grande pour~$C_{max}$.
 On fera en sorte de prendre~$C_{max}$ le plus grand possible pour la méthode considérée, ce qui permettra par conséquent de calculer le pas de temps le plus grand possible (la taille de la discrétisation en espace étant contrainte par les fréquences visées) afin de minimiser les calculs.
 
-
-\medskip
-\subsection{Absorption}
 
 \medskip
 \subsection{Vers l'infini...}
@@ -638,9 +691,42 @@ Vibration de la paroi: pour le prendre en compte, on ne prend plus une paroi rig
 
 
 \medskip
-\section{Exemple de calcul}
+\section{Quelques illustrations}\label{Sec-AcouIllus}
 %http://svn.parisson.org/castax/
 
+\medskip
+\subsection{Un exemple en acoustique des salles}
+
+L'acoustique des salles d'une manière générale peut se passer de couplage. Seul le volume de la salle est à discrétiser. Les zones d'absorption situées en parois seront modélisées par leur impédance, ainsi que les pertes par transmission. Dans le cas d'un locuteur, la source sera ponctuelle.
+
+\medskip
+\subsection{Un silencieux automobile}
+
+Un silencieux d'automobile peut n'être défini que par le volume d'air qu'il enferme. On appliquera aux parois l'impédance correspondant aux parois: soit réflexion quasiment pure avec un peu de perte, soit présence d'un absorbant en parois. La surface correspondant à l'entrée de l'onde dans le silencieux sera modélisée par la surface soumise à une onde plane. La surface correspondant à la sortie du silencieux sera la surface où les informations (de type onde plane) seront recueillies puis analysées.
+
+
+\medskip
+\subsection{Un tablier léger}
+
+Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
+
+\medskip
+\subsection{Propagation à travers plusieurs milieux}
+
+%Pascal: air / plaque / air
+
+\medskip
+\subsection{Interaction fluide-structure forte: une lame dans un écoulement}
+
+
+
+\medskip
+\subsection{Diffraction par un obstacle}
+
+
+\medskip
+\subsection{Ondes dans un solide}
+% Comsol acou p198 : ondes dans un solide
 
 %\medskip
 %\section{Un cas qui ne fonctionne pas}
