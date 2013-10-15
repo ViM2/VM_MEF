@@ -22,7 +22,7 @@ Néanmoins, l'augmentation rapide des capacités des ordinateurs, fait qu'il est
 \medskip
 \section{Introduction à l'acoustique physique}\label{Sec-AcouPhy}
 
-Nous nous proposons d'étudier comment une nuisance vibroacoustique se propage depuis son émission jusqu'à sa réception.
+Nous nous proposons d'étudier comment une nuisance vibro-acoustique se propage depuis son émission jusqu'à sa réception.
 La source pourra être mécanique, aéro- ou hydrodynamique... et pourra couvrir un très large spectre de fréquences, depuis les plus basses (excitation vibratoire, i.e. inférieure à environ 500~Hz), jusqu'aux plus hautes (excitation acoustique, depuis 500 jusqu'à environ 8000~Hz).
 La propagation nécessitera de connaître le ou les modes de transmission (solidien, aérien) ainsi que l'environnement de transmission (champ ouvert ou fermé).
 La réception quant à elle sera liée à la la perception, qui elle-même sera décrite de manière normative (niveau, puissance) ou sensorielle (psycho-acoustique...).
@@ -30,11 +30,11 @@ La réception quant à elle sera liée à la la perception, qui elle-même sera 
 \medskip
 \subsection{Émission}
 
-Face à une problème vibroacoustique, on est amené à considérer les questions suivantes:
+Face à une problème vibro-acoustique, on est amené à considérer les questions suivantes:
 \begin{itemize}
    \item \textcolorblue{Localisation:} où est-ce que ça fait du bruit? Il s'agit de trouver, dans un ensemble qui peut être très complexe (par exemple un véhicule, un compresseur...), où sont les sources.
-   \item \textcolorblue{Identification/Séparation:} là où ça fait du bruit, qu’est-ce qui fait du bruit exactement? De manière plus détaillée que la localisation, il peut être nécessaire, pour les sources identifiées, de déterminer la contribution de certaines de leurs parties ou sous-ensembles: selon la modélisation souhaitée, on pourra se contenter de dire que la source vibroacoustique dans un véhicule est le moteur, où alors souhaiter s'intéresser plus finement aux injecteurs, au carter, à la boîte de vitesse...
-   \item \textcolorblue{Enregistrement/Caractérisation:} quel bruit est émis par chaque source? Il s'agit de réaliser des enregistrements permettant de caractériser la source vibroacoustique considérée. Par exemple, un vibromètre laser permet de récupérer les vibrations (accélérations, vitesses), sans contact. De là, il est possible de re-synthétiser le son d'une seule pièce parmi un ensemble de pièces en fonctionnement. Les enregistrements permettent de caractériser la source en terme de spectre, puissance, directivité... et fournissent également des données utiles pour la restitution de résultats (par exemple données audio binaurales).
+   \item \textcolorblue{Identification/Séparation:} là où ça fait du bruit, qu’est-ce qui fait du bruit exactement? De manière plus détaillée que la localisation, il peut être nécessaire, pour les sources identifiées, de déterminer la contribution de certaines de leurs parties ou sous-ensembles: selon la modélisation souhaitée, on pourra se contenter de dire que la source vibro-acoustique dans un véhicule est le moteur, où alors souhaiter s'intéresser plus finement aux injecteurs, au carter, à la boîte de vitesse...
+   \item \textcolorblue{Enregistrement/Caractérisation:} quel bruit est émis par chaque source? Il s'agit de réaliser des enregistrements permettant de caractériser la source vibro-acoustique considérée. Par exemple, un vibromètre laser permet de récupérer les vibrations (accélérations, vitesses), sans contact. De là, il est possible de re-synthétiser le son d'une seule pièce parmi un ensemble de pièces en fonctionnement. Les enregistrements permettent de caractériser la source en terme de spectre, puissance, directivité... et fournissent également des données utiles pour la restitution de résultats (par exemple données audio binaurales).
 \end{itemize}
 
 \medskip
@@ -387,14 +387,15 @@ Z = \dfrac{p}{v}=\rho c
 \end{equation}
 où cette fois~$p$ est la pression acoustique ($Pa$), les autres grandeurs étant les mêmes qu'auparavant.
 
-\medskip\colorgreen
+\colorgreen
+\begin{remarque}[Quelques valeurs]
 L'impédance de l'air vaut $Z=413,5$ (en~$Pa.s/m$ ou~$N.S/m^3$) à 20\degre C. Elle varie avec la température, tout comme la densité et la célérité du son.
 
 La vitesse du son dans l'air en $m/s$ vaut $c=331,5+0,6\theta$, où~$\theta$ est la température de l'air en \degre C (elle varie également en fonction de la pression atmosphérique et de la température).
 
 L'impédance acoustique de l'eau est d'environ~$1,5.10^6 ~Pa.s/m$.
+\end{remarque}\colorblack
 
-\medskip\colorblack
 Considérons deux milieux d'impédances respectives~$Z_1$ et~$Z_2$, et une onde incidente se propageant dans le milieu 1 jusqu'à arriver à sa frontière avec le milieu 2.
 Si $Z_1=Z_2$, alors l'onde incidente se propage intégralement dans le milieu 2, i.e. elle est intégralement transmise.
 Par contre, si $Z_1\ne Z_2$, alors l'onde incidente se scinde en une onde réfléchie et une onde transmise. L'amplitude de l'onde réfléchie est d'autant plus grande que la discontinuité entre les deux milieux est marquée.
@@ -404,9 +405,9 @@ On définit alors le \textcolorblue{coefficient de réflexion} par:
 \end{equation}
 où les indices~$r$ et~$i$ désignent l'onde réfléchie et l'onde incidente respectivement.
 
-\medskip\colorgreen
+\medskip\colormagenta{\small 
 Supposons qu'une onde se propage dans l'air ($Z_1=413,5$) et rencontre un solide tel que $Z_2=500 000$. Alors le coefficient de réflexion est de 99,8\%.
-Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, le coefficient de réflexion devient négatif.%: «la compression s'est réfléchie en raréfaction».
+Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, le coefficient de réflexion devient négatif.%: «la compression s'est réfléchie en raréfaction».}
 
 \medskip\colorblack
 Deux cas extrêmes nous intéressent:
@@ -432,7 +433,7 @@ De très nombreuses normes et grandeurs existent dans le domaine de l'acoustique
    
 Pour les longueurs d'ondes supérieures au double de la plus grande dimension d'une pièce: le son se comporte de manière équivalente aux changements de pression de l'air statique.
 Pour les longueurs d'onde comparables aux dimensions de la pièce: il y a dominance des modes propres de la salle. Il y a amplification des fréquences, ce qui «colore» le son et création d'ondes stationnaires.
-Pour des longueurs d'ondes inférieures à la moitié des dimensions de la salle: on est dans le cas de réflexions multiples, et on peut faire une équivalence lumineuse et utiliser les méthodes de tir de rayon de type «raytracing».
+Pour des longueurs d'ondes inférieures à la moitié des dimensions de la salle: on est dans le cas de réflexions multiples, et on peut faire une équivalence lumineuse et utiliser les méthodes de tir de rayons.
 
    \item L'une des premières grandeurs à connaître est le \textcolorblue{bruit ambiant}. Son niveau maximal est fixé en fonction de la destination du local.
 
@@ -596,7 +597,7 @@ Si l'on souhaite introduire le d'amortissement dans l'équation, alors les quant
 
 
 \medskip
-Pour réaliser notre modèle de calcul vibroacoustique par éléments finis, nous devrons disposer de sources et de conditions aux limites:
+Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, nous devrons disposer de sources et de conditions aux limites:
 \begin{itemize}
    \item La source est généralement modélisée par un \textcolorblue{monopôle} ou un \textcolorblue{dipôle}. Un monopôle est une source omnidirectionnelle, alors qu'un dipôle représente une source ayant deux directions opposées selon lesquelles le champ est plus fort. Un dipôle peut être vu comme deux monopôles de même puissance séparés par une petite distance et en opposition de phase. On peut également utiliser des quadripôles si besoin.
    On trouve également parfois des sources ponctuelles, linéaires ou ayant d'autres formes prédéfinies.
@@ -664,7 +665,6 @@ Le maillage doit être en mesure de prendre en compte les longueurs d'ondes qui 
 h=\dfrac{k\lambda}{10}
 \end{equation}
 où~$h$ est la taille de la maille, et~$k$ le degré de l'approximation utilisée dans l'élément.
-
 \textcolorgreen{Ainsi $h=\lambda/10$ pour un élément linéaire, et $h=\lambda/5$ pour un élément quadratique.}
 
 \medskip
@@ -721,7 +721,7 @@ Toutefois, il est aisé, à partir de celle-ci, de définir un certain nombre d'
    \item $p_{rms}(x,y,z)=\dfrac{1}{\sqrt{2}}|p(x,y,z)|$;
    \item $SPL(x,y,z)=20\log_{10}\left(\dfrac{p_{rms}(x,y,z)}{p_{ref}}\right)$;
    \item d'autres grandeurs liées au modèle. Souvent on définira, à partir des données et des résultats le facteur de perte. Par exemple, on peut le définir par:
-   \begin{equation}
+   \begin{equation}\label{Eq-FacPerte}
    D_{tl} = 10\log_{10}\left(\dfrac{W_i}{W_t}\right)
    \end{equation}
    où~$W_i$ est la puissance moyenne incidente et~$W_t$ la puissance moyenne transmise.
@@ -737,12 +737,12 @@ Définir toutes ces quantités ne nécessite pas de refaire le calcul éléments
 
 L'acoustique des salles d'une manière générale peut se passer de couplage. Seul le volume de la salle est à discrétiser. Les zones d'absorption situées en parois seront modélisées par leur impédance, ainsi que les pertes par transmission. Dans le cas d'un locuteur, la source sera ponctuelle.
 
-Le figure~\ref{Fig-AcouSalle} présente une salle et sa modélisation.
+La figure~\ref{Fig-AcouSalle} présente une salle et sa modélisation.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=66mm]{AcouSalle1.eps}\hspace{10mm}
 \includegraphics[width=65mm]{AcouSalle2.eps}
-\caption{Acoustique des salles}\label{Fig-AcouSalle}
+\caption{Un problème d'acoustique des salles}\label{Fig-AcouSalle}
 \end{figure}
 La salle est constitué de deux murs épais en béton, de deux murs fins en placo. Elle comporte 3 fenêtres et une porte. Le sol est en carrelage, avec au centre un tapis épais. Le plafond non représenté est en béton. Au mur, à côté de la porte, se trouvent trois panneaux acoustiques.
 
@@ -754,32 +754,82 @@ On maillera le volume d'air intérieur défini par ces surfaces portant les cond
 \medskip
 \subsection{Un silencieux automobile}
 
-Un silencieux d'automobile peut n'être défini que par le volume d'air qu'il enferme. On appliquera aux parois l'impédance correspondant aux parois: soit réflexion quasiment pure avec un peu de perte, soit présence d'un absorbant en parois. La surface correspondant à l'entrée de l'onde dans le silencieux sera modélisée par la surface soumise à une onde plane. La surface correspondant à la sortie du silencieux sera la surface où les informations (de type onde plane) seront recueillies puis analysées.
+La figure~\ref{Fig-AcouSilen} présente un silencieux d'automobile.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=33mm]{AcouSilen0.eps}\hfill
+\includegraphics[width=50mm]{AcouSilen1.eps}\hfill
+\includegraphics[width=50mm]{AcouSilen2.eps}
+\caption{Modélisation d'un silencieux}\label{Fig-AcouSilen}
+\end{figure}
+Ce silencieux ne sera défini que par les surfaces représentées et le volume d'air qu'elles contiennent. On appliquera aux parois en rouge soit une condition de mur rigide (réflexion parfaite), soit une impédance correspondant à l'absorption due à la présence d'un matériau fibreux (laine de verre). Les surfaces grises seront également considérées comme des surfaces parfaitement réfléchissantes. Les deux section en bleu (on n'en voit qu'une, l'autre étant à l'autre bout) correspondront à l'entrée de l'onde (onde plane) dans le silencieux, et à sa sortie.
 
-
-\medskip
-\subsection{Un tablier léger}
-
-Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
-
-ou un haut-parleur.
-
-\medskip
-\subsection{Propagation à travers plusieurs milieux}
-
-%Pascal: air / plaque / air
-
-\medskip
-\subsection{Interaction fluide-structure forte: une lame dans un écoulement}
-
-
+On s'intéressera au facteur de perte, tel que défini par la relation~(\ref{Eq-FacPerte}). Les résultats avec et sans absorbant sont illustrés sur la figure~\ref{Fig-AcouSilenRes}, pour des fréquences allant de 25 à 1500~Hz par pas de 25~Hz.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=140mm]{AcouSilen3.eps}
+\caption{Facteur de perte pour le silencieux}\label{Fig-AcouSilenRes}
+\end{figure}
+L'influence de l'ajout d'un absorbant est très nette sur ce graphique.
 
 \medskip
 \subsection{Diffraction par un obstacle}
 
+Nous nous proposons de retrouver l'illustration~\ref{Fig-diffrac}d à l'aide du script \freefem ci-dessous.
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt]
+// file AcouDiff.edp
+real k=1;
+func g=1;
 
-\medskip
-\subsection{Ondes dans un solide}
+border a1(t=0,1) { x= 2+t; y= 0;}
+border a2(t=0,1) { x= 3; y= 2*t;}
+border a3(t=0,1) { x= 3-3*t; y= 2;}
+border a4(t=0,1) { x= 0; y= 2-t;}
+border a5(t=0,1) { x= 2*t; y= 1;}
+border a6(t=0,1) { x= 2; y= 1-t;}
+
+mesh Th=buildmesh( a1(20) + a2(40) + a3(60) + a4(20) + a5(40) + a6(20));
+fespace Vh(Th,P1);
+Vh u,v;
+
+solve sound(u,v)= int2d(Th)(u*v*k - dx(u)*dx(v) - dy(u)*dy(v))
+ -int1d(Th,a4)(g*v) + on(a1,u=0) + on(a2,u=0)+ on(a3,u=0);
+plot (u, wait=1, ps="AcouDiff.eps");
+\end{Verbatim}
+\colorblack\normalsize
+Le résultat est donné à la figure~\ref{Fig-AcouDiff} pour plusieurs valeurs de la constante~\verb|k|.
+\begin{figure}[h!]
+\centering
+\ifVersionDuDocEstVincent
+   \includegraphics[width=57mm]{AcouDiff1.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff3.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff100.eps}
+\else
+   \includegraphics[width=50mm]{AcouDiff1.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff3.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff100.eps}
+\fi
+\caption{Acoustique au coin de la rue pour $k=1$, $3$ et $100$}\label{Fig-AcouDiff}
+\end{figure}
+
+
+%\medskip
+%\subsection{Un tablier léger}
+%
+%Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
+% ou un haut-parleur.
+
+%\medskip
+%\subsection{Propagation à travers plusieurs milieux}
+%Pascal: air / plaque / air
+
+%\medskip
+%\subsection{Interaction fluide-structure forte: une lame dans un écoulement}
+%
+
+%\medskip
+%\subsection{Ondes dans un solide}
 % Comsol acou p198 : ondes dans un solide
 
 %\medskip
