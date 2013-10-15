@@ -501,7 +501,7 @@ Le \textcolorblue{Early Decay Time} (EDT) est le temps de décroissance sur les 
 \end{itemize}
 
 \medskip
-\section{Les calculs acoustiques}\label{Sec-AcouMEF}
+\section{Calculs acoustiques par éléments finis}\label{Sec-AcouMEF}
 
 \medskip
 \subsection{Modèles simplifiés pour valeurs de référence}
@@ -578,16 +578,21 @@ Par contre, si l'on a besoin de descendre dans le détail local de la répartiti
 \subsection{Constitution d'un modèle éléments finis}
 
 Si l'on ajoute des termes de sources, alors l'équation des ondes~(\ref{Eq-EqOndeAcou}) devient:
-\begin{equation}
+\begin{equation}\label{Eq-OndeSrc}
 \dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
 \end{equation}
 dont l'inconnue est toujours la pression acoustique et où~$q$ et~$Q$ représentent les termes de sources pour un dipôle et un monopôle respectivement.
+Pour les milieux dispersifs, un terme de dissipation supplémentaire peut être introduit dans l'équation des ondes qui devient:
+\begin{equation}
+\dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}-d\dfrac{\partial p}{\partial t}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
+\end{equation}
+Dans la suite, on restera dans le cas~$d=0$.
 
-Dans le cas harmonique, l'équation précédente devient l'équation d'Helmholtz~(\ref{Eq-Helm})\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} avec termes sources:
+Dans le cas harmonique, l'équation~(\ref{Eq-OndeSrc}) devient l'équation d'Helmholtz~(\ref{Eq-Helm})\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} avec termes sources:
 \begin{equation}
 -\dfrac{\omega^2p}{\rho c^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
 \end{equation}
-Si l'on souhaite introduire le d'amortissement dans l'équation, alors les quantités~$c$ et~$\rho$ peuvent être complexes (au sens appartiennent à~$\CC$). Par exemple, pour un modèle d'amortissement de Rayleigh, $c$ est une combinaison linéaire de la masse et de la raideur.
+Si l'on souhaite introduire le d'amortissement dans l'équation, alors les quantités~$c$ et~$\rho$ peuvent être complexes (au sens appartiennent à~$\CC$). Par exemple, pour un modèle d'amortissement de Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais} la célérité $c$ est une combinaison linéaire de la masse et de la raideur.
 
 
 \medskip
@@ -597,10 +602,16 @@ Pour réaliser notre modèle de calcul vibroacoustique par éléments finis, nou
    On trouve également parfois des sources ponctuelles, linéaires ou ayant d'autres formes prédéfinies.
    
    \item La \textcolorblue{condition de Neumann} correspond à une condition de  \textcolorblue{mur rigide}. Elle définit une frontière sur laquelle la composante normale de l'accélération est nulle (mur immobile parfaitement réfléchissant):
-   \begin{equation}
+   \begin{equation}\label{Eq-muracou}
    -n.\left(-\frac1{\rho_0}(\nabla p-q)\right)=0
    \end{equation}
-   Dans certains codes, on peut spécifier la valeur de l'accélération normale, i.e. le second membre n'est plus nul mais vaut~$a_n$ (condition de Neumann relevée), qui représente alors une source externe. Cela permet également de coupler de manière faible l'acoustique à une calcul structural: un premier calcul de structure permet de déterminer le vibrations d'une surface, et cette-ci est introduite ensuite dans le calcul acoustique. Le \textcolorgreen{couplage est donc faible} car dans ce cas on fait l'hypothèse que l'acoustique en retour ne modifie pas (ou peu) la vibration de la structure. De manière inverse, on a également couplage faible si le fluide agit sur le solide et que celui-ci en retour n'agit que peu sur le fluide.
+	S'il n'y a pas de dipôle (i.e. $q=0$) et si la densité du fluide est constante (i.e. $\rho=cte$), alors l'équation précédente devient:
+	\begin{equation}
+	\dfrac{\partial p}{\partial n}=0
+   \end{equation}	   
+   i.e. la dérivée de la pression par rapport à la normale est nulle.
+   
+   Dans certains codes, on peut spécifier la valeur de l'accélération normale, i.e. le second membre de l'équation~(\ref{Eq-muracou}) n'est plus nul mais vaut~$a_n$ (condition de Neumann relevée), qui représente alors une source externe. Cela permet également de coupler de manière faible l'acoustique à une calcul structural: un premier calcul de structure permet de déterminer le vibrations d'une surface, et cette-ci est introduite ensuite dans le calcul acoustique. Le \textcolorgreen{couplage est donc faible} car dans ce cas on fait l'hypothèse que l'acoustique en retour ne modifie pas (ou peu) la vibration de la structure. De manière inverse, on a également couplage faible si le fluide agit sur le solide et que celui-ci en retour n'agit que peu sur le fluide.
    
    \item La \textcolorblue{condition de Dirichlet} correspond à une \textcolorblue{condition d'absorption parfaite}. Elle est telle que la pression acoustique s'annule sur la surface:
    \begin{equation}
@@ -627,11 +638,16 @@ Pour réaliser notre modèle de calcul vibroacoustique par éléments finis, nou
    
    \item Lorsque le couplage faible décrit plus haut n'est pas suffisant, il faut alors intégrer le \textcolorblue{couplage fort} fluide-structure au calcul: le fluide, définit par ses champs de pression et de vitesse exerce des forces de type aérodynamique (de pression) sur la structure. Cette force aérodynamique se met sous la forme $F = \frac12 \rho v^2SC$, où~$v$ est la vitesse, $S$ la «surface de référence» (pour nous cette surface de référence sera la surface mouillée)\footnote{Dans le cas d'étude aérodynamiques et pour les corps bien profilés, la surface de référence sera la projection de la surface dans un plan orthogonal à la direction selon laquelle on veut le résultat.
    
-   Dans le cas de l'aérodynamique, on décompose la force aérodynamique selon trois axes en une force de traînée~$F_x$ parallèle à la direction moyenne de l'écoulement; une force de dérive~$F_y$ perpendiculaire à la direction moyenne de l'écoulement, dans le plan horizontal; et une force de portance~$F_z$, perpendiculaire à la direction moyenne de l'écoulement, dans le plan vertical.} et~$C$ le coefficient aérodynamique. En retour, le déplacement et/ou la déformation de la structure affecte, au moins localement, le champ de l'écoulement fluide et par conséquent la direction et l'intensité des charges aérodynamiques: ce \textcolorblue{cycle des interactions} entre le fluide et la structure est la caractéristique du couplage fort entre les deux milieux, i.e. \textcolorgreen{chaque milieu influe significativement sur l'autre}.
+   Toujours dans ce cas, on décompose la force aérodynamique selon trois axes en une force de traînée~$F_x$ parallèle à la direction moyenne de l'écoulement; une force de dérive~$F_y$ perpendiculaire à la direction moyenne de l'écoulement, dans le plan horizontal; et une force de portance~$F_z$, perpendiculaire à la direction moyenne de l'écoulement, dans le plan vertical.} et~$C$ le coefficient aérodynamique. En retour, le déplacement et/ou la déformation de la structure affecte, au moins localement, le champ de l'écoulement fluide et par conséquent la direction et l'intensité des charges aérodynamiques: ce \textcolorblue{cycle des interactions} entre le fluide et la structure est la caractéristique du couplage fort entre les deux milieux, i.e. \textcolorblue{chaque milieu influe significativement sur l'autre}.
+   \textcolorgreen{Basiquement, on retiendra que l'analyse acoustique fournit un chargement (la pression acoustique) à l'analyse structurelle, et l'analyse structurelle fournit des accélérations à l'analyse acoustique.}
 
 Si l'on ne peut pas découpler les équations de chaque milieu (c'est parfois possible et ça vaut donc le coût d'essayer), alors on essaye généralement de procéder par la méthode dite «décalée»: chaque physique est traitée séparément, et l'on essaye ensuite de faire transiter l'information d'un code à l'autre, ce qui n'est pas toujours simple, engendre des erreurs numériques supplémentaires, et surtout nécessite de développer des algorithmes de couplage. Sinon, la méthode dite «monolithique» est théoriquement la plus optimale puisque le fluide et la structure sont traités par un même code de calcul. Toutefois, lorsque les géométries ou la physique du problème à traiter deviennent complexes ce type de méthode n'est plus envisageable puisque chaque milieu (fluide ou solide) nécessite des procédures de calcul numérique spécifiques.
 Notons que certains codes de calcul gèrent de manière assez simple pour l'utilisateur ce couplage entre différentes physiques.
 
+   \item La \textcolorblue{continuité de la pression} à l'interface entre deux milieux peut être à entrer. Il suffit de spécifier que le saut est nul:
+   \begin{equation}
+   -n.\left[\left(-\dfrac1{\rho}(\nabla p-q)\right)_1 - \left(-\dfrac1{\rho}(\nabla p-q)\right)_2\right] =0
+   \end{equation}
 \end{itemize}
 
 
@@ -671,24 +687,46 @@ On fera en sorte de prendre~$C_{max}$ le plus grand possible pour la méthode co
 \medskip
 \subsection{Vers l'infini...}
 
-Nécessité de CL pour l'infini : PML «Perfectly Matched Layed» (absorption), Impédance de frontière...
+Lorsque l'on fait un calcul en champ ouvert... il faudrait définir le domaine jusqu'à l'infini.
+Généralement, on définit une zone (par exemple sphérique ou hémisphérique) entourant le problème, située à une distance suffisante, et permettant de simuler l'infini: ce qui nous intéresse est donc une condition d'absorption parfaite.
+Nous avons déjà mentionné la condition de Dirichlet.
+Toutefois, elle n'est pas optimale.
+
+Décrite pour la première fois en 1994 par Jean-Pierre Bérenger\index[aut]{Bérenger (Jean-Pierre), ?-, Français} dans \emph{A perfectly matched layer for the absorption of electromagnetic waves}, une \textcolorblue{zone absorbante parfaitement adaptée} (en anglais Perfectly matched layer ou PML) est une zone absorbante artificielle pour les équations d'ondes, couramment utilisée pour tronquer les domaines de calcul dans les méthodes numériques de simulation de problèmes à frontières ouvertes, particulièrement dans les méthodes FDTD et FEM.
+La propriété essentielle d'une PML qui la distingue d'un matériau absorbant ordinaire est le fait qu'elle est conçue de telle sorte que les ondes incidentes l'atteignant depuis un matériau non PML ne se réfléchissent pas à l'interface. Cette propriété permet aux PML d'absorber fortement toutes les ondes sortant d'un domaine de calcul sans les renvoyer dans ce domaine.
+
+Cette approche a été modifiée puis généralisée en ce que l'on appelle la stretched-coordinate PML. Les PML correspondent à une transformation dans laquelle une ou plusieurs coordonnées sont attachées à des nombres complexes; plus techniquement, il s'agit en réalité d'une prolongation analytique de l'équation d'onde dans le domaine complexe, où les ondes propagatives (oscillantes) sont remplacées par des ondes dont l'amplitude décroît exponentiellement. Ce point de vue permet aux PMLs d'être adaptées aux matériaux inhomogènes comme les guides d'ondes, ainsi qu'à d'autre systèmes de coordonnées et d'équations d'ondes.
+
+La PML amortit une certaine longueur d'onde existant dans le système, déduite de la fréquence et d'une célérité de référence des ondes.
+Dans le cas d'un problème uniquement fluide, cette célérité de référence sera prise égale à la vitesse du son. Dans le cas d'ondes se propageant dans un solide, on la prendra égale à la vitesse de compression du son. Pour un modèle couplé fluide-structure, on pourra prendre une valeur moyenne entre les deux précédentes comme estimation initiale. Pour une onde dont le vecteur d'onde fait un angle~$\theta$ avec la direction dans laquelle on veut absorber, il faudrait prendre une valeur de~$1/\cos|\theta|$.
+
 
 \medskip
 \subsection{... et au-delà}
-Si l'on souhaite savoir ce qu'il se passe loin de la source, en dehors du domaine de simulation (sans devoir tout mailler), alors des CL dites de «champ lointain» (Far Field) qui permettent cela.
 
+Si l'on souhaite savoir ce qu'il se passe loin de la source, en dehors du domaine de simulation (sans devoir tout mailler), alors il est possible d'utiliser des techniques dites de \textcolorblue{champ lointain} (Far Field).
 
+L'idée est somme toute assez simple: disposant des informations (pression, directivité) sur la surface d'un volume donné dans lequel est décrit le problème, il est possible d'extrapoler le comportement en dehors de ce volume sous certaines hypothèses, notamment de non réflexion du champ (par exemple champ libre). La mise en œuvre, quant à elle, est loin d'être aussi simple que l'idée.
 
-RQ:
-Près des parois se développent des couches limites thermiques et visqueuses qu'il faudra prendre en compte pour simuler au mieux l'amortissement. Dans certains cas, on pourra simplifier en appliquant des modèles fluides
+Certains logiciels de calcul offrent cette possibilité.
 
-RQ:
-Vibration de la paroi: pour le prendre en compte, on ne prend plus une paroi rigide, mais une autre CL, comme par exemple une impédance.
 
 \medskip
 \subsection{Post-Traitement}
 
-
+La pression~$p(x,y,z)$ calculée est un pression complexe (i.e. appartenant à~$\CC$).
+Toutefois, il est aisé, à partir de celle-ci, de définir un certain nombre d'autres valeurs d'intérêt:
+\begin{itemize}
+   \item $p(x,y,z,t)=\Re\left(p(x,y,z)e^{i\omega t}\right)$;
+   \item $p_{rms}(x,y,z)=\dfrac{1}{\sqrt{2}}|p(x,y,z)|$;
+   \item $SPL(x,y,z)=20\log_{10}\left(\dfrac{p_{rms}(x,y,z)}{p_{ref}}\right)$;
+   \item d'autres grandeurs liées au modèle. Souvent on définira, à partir des données et des résultats le facteur de perte. Par exemple, on peut le définir par:
+   \begin{equation}
+   D_{tl} = 10\log_{10}\left(\dfrac{W_i}{W_t}\right)
+   \end{equation}
+   où~$W_i$ est la puissance moyenne incidente et~$W_t$ la puissance moyenne transmise.
+\end{itemize}
+Définir toutes ces quantités ne nécessite pas de refaire le calcul éléments finis. Elles ont donc un coût de calcul quasiment nul! Il ne faut donc surtout pas se priver de définir les quantités les plus parlantes pour le problèmes considéré.
 
 \medskip
 \section{Quelques illustrations}\label{Sec-AcouIllus}
@@ -698,6 +736,20 @@ Vibration de la paroi: pour le prendre en compte, on ne prend plus une paroi rig
 \subsection{Un exemple en acoustique des salles}
 
 L'acoustique des salles d'une manière générale peut se passer de couplage. Seul le volume de la salle est à discrétiser. Les zones d'absorption situées en parois seront modélisées par leur impédance, ainsi que les pertes par transmission. Dans le cas d'un locuteur, la source sera ponctuelle.
+
+Le figure~\ref{Fig-AcouSalle} présente une salle et sa modélisation.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=66mm]{AcouSalle1.eps}\hspace{10mm}
+\includegraphics[width=65mm]{AcouSalle2.eps}
+\caption{Acoustique des salles}\label{Fig-AcouSalle}
+\end{figure}
+La salle est constitué de deux murs épais en béton, de deux murs fins en placo. Elle comporte 3 fenêtres et une porte. Le sol est en carrelage, avec au centre un tapis épais. Le plafond non représenté est en béton. Au mur, à côté de la porte, se trouvent trois panneaux acoustiques.
+
+Pour effectuer la modélisation, on ne contentera de représenter les surfaces internes de la pièce. Les murs épais (en gris foncé), le sol et le plafond seront considérés comme parfaitement réfléchissants. Pour les murs fins, on entrera une impédance correspondant à la perte par transmission. On fera de même avec les fenêtres et la porte. Les conditions d'absorption des panneaux acoustiques et de la moquettes pourront être modélisées en entrant l'impédance associée ou en utilisant un modèle d'absorption de type Biot-Allard si cela est disponible dans le logiciel.
+
+On maillera le volume d'air intérieur défini par ces surfaces portant les conditions aux limites. On n'oubliera pas d'ajouter la source: ici un locuteur sera représenté par un monopôle, i.e. une source ponctuelle omnidirectionnelle. On lancera l'analyse en fréquences et l'on s'intéressera par exemple à la répartition spatiale de la pression acoustique à différentes fréquences choisies.
+
 
 \medskip
 \subsection{Un silencieux automobile}
@@ -709,6 +761,8 @@ Un silencieux d'automobile peut n'être défini que par le volume d'air qu'il en
 \subsection{Un tablier léger}
 
 Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
+
+ou un haut-parleur.
 
 \medskip
 \subsection{Propagation à travers plusieurs milieux}
