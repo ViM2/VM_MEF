@@ -773,6 +773,33 @@ On s'intéressera au facteur de perte, tel que défini par la relation~(\ref{Eq-
 L'influence de l'ajout d'un absorbant est très nette sur ce graphique.
 
 \medskip
+\subsection{Deux mots de statistiques}
+
+Nous reprenons ici une remarque faite au paragraphe~\ref{Sec-PInv-Stat}.
+Considérons la figure~\ref{Fig-AcouSilenRes}: elle représente la variation d'une réponse~$Y$ (ici le facteur de perte) en fonction d'une entrée~$X$ (ici la fréquence).
+
+Supposons que nous nous intéressions maintenant à ce silencieux sollicité à une fréquence proche de 1000~Hz. On va supposer que la fréquence suit une loi normale centrée sur 1000~Hz et d'écart-type 25~Hz. Évidemment, avec les calculs menés précédemment, nous disposons de peu de points. On va même considérer disposer des points donnés au tableau~\ref{Tab-SilenStat}.
+\begin{table}[h!]
+\centering
+\begin{tabular}{r|ccccc}
+Fréquence      & 950  & 975  & 1000 & 1025 & 1050 \\
+\hline
+Sans absorbant & 11.6 & 12.8 & 13.7 & 13.8 & 13.5 \\
+Avec absorbant & 15.8 & 16.1 & 16.2 & 16.0 & 15.3\\
+poids $1000.p_i$& 2.16 & 9.68 & 15.96 & 9.68 & 2.16
+\end{tabular}
+\caption{Points disponibles pour l'approximation de la moyenne}\label{Tab-SilenStat}
+\end{table}
+L'application de la formule~(\ref{Eq-PInv-Stat}) sur ces quelques points conduit à une première approximation de la moyenne du facteur de perte de~$13.38$ sans absorbant et~$16.06$ avec absorbant.
+
+Évidemment, c'est une première approximation très grossière, qui peut être améliorée. Pour cela, il nous faudrait disposer de plus de points, aussi bien dans le domaine considéré qu'en dehors. Si l'on ne peut relancer de calcul, on peut essayer d'approximer la courbe de la réponse afin de pouvoir interpoler et extrapoler des points.
+
+On peut utiliser tout type d'interpolation (voir chapitre~\ref{chap-interpolation}) comme par exemple un polynôme de Lagrange... ici nous utiliserons une courbe de tendance polynomiale de degré 2. Dans le cas sans absorbant, celle-ci est donnée par l'équation suivante: $y= -0,0004342857x^2 + 0,8877714286x - 439,8628571429$. De là, on peut générer quelques points supplémentaires. Vu la forme de la courbe de réponse, on sait que les valeurs interpolées seront correctes, ce n'est pas le cas pour les valeurs extrapolées, surtout loin de la zone ayant servie à générer cette courbe de tendance. Par exemple on trouve 12.6 pour 1075~Hz au lieu de 12.0, 11.2 pour 1100~Hz au lieu de 10.0. Néanmoins, en fonction de la forme de la courbe, cela peut permettre une amélioration sensible de l'approximation de la moyenne de la réponse.
+
+Pour une analyse plus complète dans le cadre stochastique, c'est au chapitre~\ref{Ch-stocha} que l'on se reportera. Toutes les méthodes décrites sont applicables en fréquence.
+
+
+\medskip
 \subsection{Diffraction par un obstacle}
 
 Nous nous proposons de retrouver l'illustration~\ref{Fig-diffrac}d à l'aide du script \freefem ci-dessous.

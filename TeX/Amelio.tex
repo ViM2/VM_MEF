@@ -398,6 +398,21 @@ On rappelle que l'intérêt de la méthode est qu'une fois une première étape 
 
 Notons qu'il est possible de modifier un peu la forme du système secondaire afin de pouvoir prendre en compte, lors de la seconde étape, des conditions plus complexes, comme des conditions mixtes par exemple...
 
+\medskip
+\subsection{Deux mots de statistiques}\label{Sec-PInv-Stat}
+
+La méthode de réanalyse permet donc, pour un coût de calcul maîtrisé, d'obtenir les réponses à plusieurs problèmes proches.
+Il se peut donc tout à fait que l'on désire faire varier un paramètre afin d'en étudier l'influence. Notons~$X$ ce paramètre variable, et~$Y=\mathcal{F}(X)$ la réponse du système correspondante.
+
+Dans ce cas, si l'on connaît la répartition statistique de~$X$, i.e. sa densité de probabilité (encore appelée fonction de masse), alors on peut réaliser un échantillonnage correct de la plage dans laquelle ce paramètre varie afin de pouvoir obtenir des statistiques sur la réponse~$Y$.
+Comme on raisonne sur un nombre de points finis, on utilisera donc une formulation discrète. Par exemple, une approximation de la moyenne de la réponse sera donnée par une formule de type:
+\begin{equation}\label{Eq-PInv-Stat}
+\E{Y}=\dfrac{\sum p_i\mathcal{F}(X_i)}{\sum p_i}
+\end{equation}
+où~$p_i$ est le poids, ou la pondération, correspondant à la fréquence à laquelle la valeur~$X_i$ du paramètre~$X$ apparaît.
+On pourrait tout aussi bien, suite à l'analyse des réponses~$Y$, approcher celle-ci par une fonction quelconque, i.e. donner une forme analytique à la fonction~$\mathcal{F}$, et raisonner ensuite de manière continue.
+
+Si c'est vraiment la caractérisation d'un système sous sollicitations aléatoires qui nous intéresse, alors on effectuera plutôt une analyse stochastique, et on se reportera au chapitre~\ref{Ch-stocha}.
 
 \medskip
 \section{Dérivées d'ordre supérieur}\index{dérivée!d'ordre supérieur}\label{Sec-Deriv}
