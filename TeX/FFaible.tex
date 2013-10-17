@@ -228,7 +228,7 @@ Pour les problèmes issus de la mécanique des solides déformables, la quantit�
 
 \medskip
 \begin{histoire}
-Nous venons de voir le théorème de Lax-Milgram, fondement de la méthode des éléments finis.
+Nous venons de voir le théorème de Lax-Milgram, fondement de la méthode des éléments finis, publié dans leur article \emph{Parabolic equations} de 1954 {\footnotesize(Contributions to the theory of partial differential equations, Annals of Mathematics Studies, no. 33, Princeton University Press, Princeton, N. J., 1954, pp. 167–190)}.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cccc}%
@@ -241,11 +241,11 @@ Lax&Babuška&Brezzi&Ladyjenskaïa%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Dans le but d'étendre encore la portée de celle-ci, plusieurs cas ont été étudiés.
-En 1971/72, Babuška a cherché, et à réussi, à étendre le théorème de Lax-Milgram aux problèmes non nécessairement coercitifs (i.e. la forme bilinéaire n'est plus supposée coercitive), élargissant le champ d'application de la méthode des éléments finis.\\
+Plusieurs améliorations ont permis d'étendre encore la portée de celle-ci.
+En 1971, dans son article \emph{Error-bounds for finite element method} {\footnotesize(Numerische Mathematik 16: 322–333)}, Babuška a généralisé le théorème de Lax-Milgram aux problèmes non nécessairement coercitifs (i.e. la forme bilinéaire n'est plus supposée coercitive), élargissant le champ d'application de la méthode des éléments finis.\\
 \indent
-Puis, en 1974, Brezzi s'est chargé d'étendre le théorème de Lax-Milgram au cas où le problème n'est plus décrit à l'aide d'une seule variable ($u$ jusqu'à présent), mais à l'aide de plusieurs variables, ouvrant ainsi la porte aux \textcolorblue{formulations mixtes.}
-Ce faisant, il a eu besoin d'imposer des conditions, connues sous le nom de \textcolorblue{conditions inf-sup}, mais également de condition BBL pour Babuška-Brezzi-Ladyjenskaïa.\\
+Puis, en 1974, dans \emph{On the existence, uniqueness and approximation of saddle-point problems arising from lagrangian multipliers}, Brezzi a traité le cas où le problème n'est plus décrit à l'aide d'une seule variable ($u$ jusqu'à présent), mais à l'aide de plusieurs variables, ouvrant ainsi la porte aux \textcolorblue{formulations mixtes.}
+Ce faisant, il a eu besoin d'imposer des conditions, connues sous le nom de \textcolorblue{conditions inf-sup}, ou conditions BBL pour Babuška-Brezzi-Ladyjenskaïa {\footnotesize(voir par exemple: O. A.Ladyženskaya, On integral estimates, convergence, approximate methods, and solution in functionals for elliptic operators. (Russian) Vestnik Leningrad. Univ. 13 1958 no. 7, 60–69)}.\\
 \indent Enfin, Brezzi a remplacé sa condition de $V$-ellipticité par des conditions de Babuška dans son théorème généralisé.
 }
 \end{histoire}
