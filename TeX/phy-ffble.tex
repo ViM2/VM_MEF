@@ -571,17 +571,24 @@ $A_n\cdot Z_n=1$. Physiquement, ce coefficient représente l'\textcolorred{absor
 \medskip
 \subsection{Formulation faible}
 En notant~$H^1_D(\Omega)=\left\{p\in H^1(\Omega), p=\overline{p} \text{ sur } \Gamma_D\right\}$ et $H^0_D(\Omega)=\left\{v\in H^1(\Omega), v=0 \text{ sur } \Gamma_D\right\}$, les espaces qui sont des sous-espaces de~$H^1(\Omega)$, on trouve finalement:
-\begin{equation}a(p,\tilde{w})=b(\tilde{w}), \quad \forall w\in H^0_D(\Omega)\end{equation}
+\begin{equation}
+a(p,\tilde{w})=b(\tilde{w}), \quad \forall w\in H^0_D(\Omega)
+\end{equation}
 avec~$\tilde{\cdot}$ la conjugaison complexe, $a(p,q): H^1_D\times H^1_D \rightarrow \CC$ la forme sesquilinéaire définie par:
-\begin{equation}a(p,q)=\dint_\Omega \partial_{x_i}p\partial_{x_i}\tilde{q}-k^2p\tilde{q} +
+\begin{equation}\label{Eq-Helmacomplex}
+a(p,q)=\dint_\Omega \partial_{x_i}p\partial_{x_i}\tilde{q}-k^2p\tilde{q} +
 \dint_{\Gamma_R} i\rho ckA_n\tilde{q}
 \end{equation}
 et~$b(a): H^1_D\rightarrow\CC$ définie par:
-\begin{equation}b(q)=-\dint_{\Gamma_N} i\rho c k\overline{V}_n q\end{equation}
+\begin{equation}\label{Eq-Helmbcomplex}
+b(q)=-\dint_{\Gamma_N} i\rho c k\overline{V}_n q
+\end{equation}
 
 \medskip
 Et comme on peut vérifier que l'on est dans un cas qui va bien, on définit l'énergie potentielle totale du domaine par:
-\begin{equation}W_p=\frac12 a(p,\tilde{p})-b(\tilde{p})\end{equation}
+\begin{equation}
+W_p=\frac12 a(p,\tilde{p})-b(\tilde{p})
+\end{equation}
 et la résolution du problème devient:
 \begin{equation}
 \text{Trouver } p\in H^1_D(\Omega) \text{ tel que } W_p \text{ soit minimal}

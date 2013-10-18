@@ -798,46 +798,165 @@ Pour une analyse plus complète dans le cadre stochastique, c'est au chapitre~\r
 
 
 \medskip
-\subsection{Diffraction par un obstacle}
+\subsection{Sur les conditions aux limites}
 
-Nous nous proposons de retrouver l'illustration~\ref{Fig-diffrac}d à l'aide du script \freefem ci-dessous.
+\begin{wrapfigure}{l}{65mm}
+\centering
+\includegraphics[width=55mm]{AcouDiff0.eps}
+\caption{Acoustique et obstacle}\label{Fig-AcouDiff0}
+\end{wrapfigure}
+Nous nous proposons de retrouver l'illustration~\ref{Fig-diffrac}d.
+
+Pour cela, nous considérons le modèle décrit à la figure~\ref{Fig-AcouDiff0} constitué de 6 segments~$a_1$ à $a_6$. L'onde acoustique incidente arrive par le segment~$a4$. L'onde est libre de se propager, et notamment elle n'est pas réfléchie sur les côtés~$a_1$ à~$a_3$, l'obstacle ne correspondant qu'aux faces~$a_5$ et~$a_6$.
+
+Pour modéliser l'onde arrivant dans le modèle, on va supposer que la surface~$a_4$ porte une condition de Dirichlet de type~$p=\overline{p}$.
+Nous proposons, dans un premier temps, d'imposer sur les faces~$a_1$ à~$a_3$ une condition de Dirichlet de type~$p=0$.
+Nous utiliserons \freefem pour cet exemple.
+
+Dans un premier temps, nous allons entrer directement la formulation faible définie à l'aide des formes bilinéaire~(\ref{Eq-Helmacomplex}) et linéaire~(\ref{Eq-Helmacomplex}) que nous rappelons:
+\begin{equation}
+a(p,q)=\dint_\Omega \partial_{x_i}p\partial_{x_i}\tilde{q}-k^2p\tilde{q} +
+\dint_{\Gamma_R} i\rho ckA_n\tilde{q}
+\quad \text{ et } \quad
+b(q)=-\dint_{\Gamma_N} i\rho c k\overline{V}_n q
+\end{equation}
+
+\medskip
+La description de la géométrie et le maillage sont donnés par:
 \colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt]
-// file AcouDiff.edp
-real k=1;
-func g=1;
+real freq=200;// fréquence en Hz
+real c=343;// vitesse du son en m/s
+func g=1;// on a p=g sur a4 => onde plane, par condition de Dirichlet
+real k=freq/c;
 
-border a1(t=0,1) { x= 2+t; y= 0;}
-border a2(t=0,1) { x= 3; y= 2*t;}
-border a3(t=0,1) { x= 3-3*t; y= 2;}
-border a4(t=0,1) { x= 0; y= 2-t;}
-border a5(t=0,1) { x= 2*t; y= 1;}
-border a6(t=0,1) { x= 2; y= 1-t;}
+border a1(t=0,1) { x= 2+t; y=0;}
+border a2(t=0,1) { x=3; y= 2*t;}
+border a3(t=0,1) { x= 3-3*t; y=2 ;}
+border a4(t=0,1) { x= 0; y= 2-t ;}
+border a5(t=0,1) { x= 2*t; y= 1 ;}
+border a6(t=0,1) { x= 2; y=1-t ;}
 
 mesh Th=buildmesh( a1(20) + a2(40) + a3(60) + a4(20) + a5(40) + a6(20));
-fespace Vh(Th,P1);
-Vh u,v;
-
-solve sound(u,v)= int2d(Th)(u*v*k - dx(u)*dx(v) - dy(u)*dy(v))
- -int1d(Th,a4)(g*v) + on(a1,u=0) + on(a2,u=0)+ on(a3,u=0);
-plot (u, wait=1, ps="AcouDiff.eps");
 \end{Verbatim}
 \colorblack\normalsize
-Le résultat est donné à la figure~\ref{Fig-AcouDiff} pour plusieurs valeurs de la constante~\verb|k|.
+
+\medskip
+Écrivons maintenant brutalement notre formulation faible:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+fespace Vh(Th, P2);
+Vh<complex> p, q;
+
+solve helmholtz(p,q)= int2d(Th)(dx(p)*dx(conj(q)) + dy(p)*dy(conj(q)) - k*k*p*conj(q) )
+ -int1d(Th,a4)(g*q) + on(a1,p=0) + on(a2,p=0)+ on(a3,p=0);
+plot (p, wait=1, ps="AcouDiff3.eps");
+\end{Verbatim}
+\colorblack\normalsize
+
+\medskip
+Le résultat est donné à la figure~\ref{Fig-AcouDiff3} pour plusieurs valeurs de la fréquence.
 \begin{figure}[h!]
 \centering
 \ifVersionDuDocEstVincent
-   \includegraphics[width=57mm]{AcouDiff1.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff3.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff100.eps}
+   \includegraphics[width=57mm]{AcouDiff1-1.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff1-5.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff1-10.eps}
 \else
-   \includegraphics[width=50mm]{AcouDiff1.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff3.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff100.eps}
+   \includegraphics[width=50mm]{AcouDiff1-1.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff1-5.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff1-10.eps}
 \fi
-\caption{Acoustique au coin de la rue pour $k=1$, $3$ et $100$}\label{Fig-AcouDiff}
+\caption{Acoustique au coin de la rue pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff3}
 \end{figure}
-Nous discuterons du bien fondé de la modélisation, et en particulier des conditions aux limites introduites.
+
+\medskip\noindent
+Y a-t-il un intérêt à demander une approximation P2?
+\flushright
+\textcolorgris{\reflectbox{Yaka essayer... ici non. Valeurs quasiment identiques.}}
+\flushleft
+
+Les conditions aux limites sont-elles satisfaisantes?
+\flushright
+\colorgris{\reflectbox{Pas vraiment!}\\ 
+\reflectbox{Imposer~$p=0$ ne correspond pas à une condition aux limites de type «fuite» à l'infini.}\\
+\reflectbox{On force seulement la pression à être nulle au bord, d'où la forme de la répartition...}\colorblack\flushleft
+
+\medskip
+Modifions le script précédent, et ne passons pas en complexes:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=14]
+fespace Vh(Th,P1);
+Vh p,q;
+
+ solve helmholtz(p,q)= int2d(Th)(dx(p)*dx(q) + dy(p)*dy(q) - k*k*p*q )
+ -int1d(Th,a4)(g*q) + on(a1,p=0) + on(a2,p=0)+ on(a3,p=0);
+
+string legende="frequence = "+freq+" Hz";
+plot (p, wait=true, cmm=legende, fill=1, value=true);
+\end{Verbatim}
+\colorblack\normalsize
+
+\medskip\noindent
+Y a-t-il une différence?
+\flushright
+\textcolorgris{\reflectbox{Yaka essayer... ici non. Valeurs quasiment identiques.}}
+\flushleft
+
+\medskip
+Et si on entrait une condition de Neumann? Là, il est nécessaire d'être en complexe. L'unité complexe sous \freefem est \verb|1i|.
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=14]
+fespace Vh(Th, P2);
+Vh<complex> p, q;
+
+solve helmholtz(p,q)= int2d(Th)(p*q*k*k - dx(p)*dx(q) - dy(p)*dy(q))
+ -int1d(Th,a4)(g*q) -int1d(Th,a1)(1i*c*k*q)-int1d(Th,a2)(1i*c*k*q)-int1d(Th,a3)(1i*c*k*q);
+
+string legende="frequence = "+freq+" Hz";
+plot (p, wait=true, cmm=legende, fill=1, value=true);
+\end{Verbatim}
+\colorblack\normalsize
+
+\medskip
+Cette fois la réponse est nécessairement différente, puisque les conditions aux limites ne sont pas les mêmes... les résultats correspondants sont à la figure~\ref{Fig-AcouDiff2}.
+\begin{figure}[h!]
+\centering
+\ifVersionDuDocEstVincent
+   \includegraphics[width=40mm]{AcouDiff2-1.eps}\hfill
+   \includegraphics[width=40mm]{AcouDiff2-5.eps}\hfill
+   \includegraphics[width=40mm]{AcouDiff2-10.eps}
+\else
+   \includegraphics[width=33mm]{AcouDiff2-1.eps}\hfill
+   \includegraphics[width=33mm]{AcouDiff2-5.eps}\hfill
+   \includegraphics[width=33mm]{AcouDiff2-10.eps}
+\fi
+\caption{Avec confition de Neumann et pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff2}
+\end{figure}
+
+\medskip\noindent
+À quoi correspondent ces résultats?
+\flushright
+\textcolorgris{\reflectbox{Chaque paroi vibre à une vitesse telle que~$\rho \overline{V}_n=1$.}}
+\flushleft
+
+Sauriez-vous introduire des conditions de Robin?
+\flushright
+\colorgris\reflectbox{Évidemment!}\\
+\reflectbox{Il suffit de changer \textrm{1i*c*k*q} en \textrm{1i*c*k*conj(q)/Z} où~$Z$ est l'impédance.}
+\flushleft\colorblack
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=95mm]{AcouDiff4B.eps}
+\caption{Condition aux limites de Robin}\label{Fig-AcouDiff4b}
+\end{figure}
+Permettraient-elles de laisser «fuir» l'onde à l'infini?
+\flushright
+\colorgris\reflectbox{Oui. Pour cela il faut que l'impédance de surface soit égale à celle du milieu, i.e. ici $Z=\rho c$.}\\
+\reflectbox{En terme de codage, cela correspond à \textrm{1i*k*conj(q)}.}
+\flushleft\colorblack
+
 
 
 %\medskip
