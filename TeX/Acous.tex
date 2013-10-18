@@ -931,7 +931,7 @@ Cette fois la réponse est nécessairement différente, puisque les conditions a
    \includegraphics[width=33mm]{AcouDiff2-5.eps}\hfill
    \includegraphics[width=33mm]{AcouDiff2-10.eps}
 \fi
-\caption{Avec confition de Neumann et pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff2}
+\caption{Avec condition de Neumann et pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff2}
 \end{figure}
 
 \medskip\noindent
@@ -946,17 +946,34 @@ Sauriez-vous introduire des conditions de Robin?
 \reflectbox{Il suffit de changer \textrm{1i*c*k*q} en \textrm{1i*c*k*conj(q)/Z} où~$Z$ est l'impédance.}
 \flushleft\colorblack
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=95mm]{AcouDiff4B.eps}
-\caption{Condition aux limites de Robin}\label{Fig-AcouDiff4b}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=95mm]{AcouDiff4B.eps}
+%\caption{Condition aux limites de Robin}\label{Fig-AcouDiff4b}
+%\end{figure}
 Permettraient-elles de laisser «fuir» l'onde à l'infini?
 \flushright
 \colorgris\reflectbox{Oui. Pour cela il faut que l'impédance de surface soit égale à celle du milieu, i.e. ici $Z=\rho c$.}\\
 \reflectbox{En terme de codage, cela correspond à \textrm{1i*k*conj(q)}.}
 \flushleft\colorblack
 
+Est-on assez loin des conditions aux limites?
+\flushright
+\colorgris\reflectbox{Non. Voir figure~\ref{Fig-AcouDiff4Ch}.}
+\flushleft\colorblack
+\begin{figure}[h!]
+\centering
+\ifVersionDuDocEstVincent
+   \includegraphics[width=57mm]{AcouDiff4Ch2.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff4Ch3.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff4ch3l4.eps}
+\else
+   \includegraphics[width=50mm]{AcouDiff4Ch2.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff4Ch3.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff4Ch3l4.eps}
+\fi
+\caption{Distance aux conditions aux limtes}\label{Fig-AcouDiff4Ch}
+\end{figure}
 
 
 %\medskip
