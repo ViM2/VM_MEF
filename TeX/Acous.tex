@@ -145,7 +145,7 @@ Le principe du résonateur de Helmholtz est le principe de base permettant de fa
 En \emph{aéronautique}, pour limiter le bruit des réacteurs civils, les nacelles et entrées d'air sont constituées de panneaux sandwich nid d'abeilles recouverts d'une tôle perforée aluminium ou composite. Le résonateur est ainsi constitué par la bouteille (cellule du nid d'abeilles) et le col (perçage de la tôle).
 En \emph{automobile}, la résonance de Helmholtz peut être utilisée pour améliorer le remplissage en air des moteurs à combustion interne...}
 
-Le résonateur est assimilé à une cavité fermée de volume~$V$ qui communique avec l'extérieur par l'intermédiaire du col de longueur~$l$ et de section~$A$. On fait par ailleurs l'hypothèse que les dimensions du résonateurs sont petites devant la longueur des ondes acoustiques considérées, que l'air se comporte comme un gaz parfait et que l'on peut négliger les effets thermiques ainsi que les effets dissipatifs. Alors la fréquence du résonateur est:
+Le résonateur est assimilé à une cavité fermée de volume~$V$ qui communique avec l'extérieur par l'intermédiaire d'un col de longueur~$l$ et de section~$A$. On fait par ailleurs l'hypothèse que les dimensions du résonateur sont petites devant la longueur des ondes acoustiques considérées, que l'air se comporte comme un gaz parfait et que l'on peut négliger les effets thermiques ainsi que les effets dissipatifs. Alors la fréquence du résonateur est:
 \begin{equation}
 f_0 = \frac{c}{2 \pi} \sqrt{\frac{A}{V l}}
 \end{equation}
@@ -215,7 +215,7 @@ Le phénomène de \textcolorblue{réflexion} sur un obstacle est illustré sur l
 \end{figure}
 La figure~\ref{Fig-reflex}a propose une analogie avec des balles, de ce qui est décrit avec des ondes à la figure~\ref{Fig-reflex}b, i.e. le cas de la \textcolorblue{réflexion contre une surface irrégulière}.
 
-Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent: si~$\lambda=l$, on a des \textcolorblue{réflexions spéculaires multiples} (on parle aussi de réflexion diffuse) qu'il est souvent difficile de prendre en compte, sauf par des formulation particulières. Souvent, ce cas n'est clairement pas pris en compte.
+Si la balle est grosse face à la taille des irrégularités, i.e. si la longueur d'onde est plus grande que «celle des irrégularités» (ici on a un mur «en accordéon» ayant un motif répétitif de longueur~$l$), alors le trajet est insensible aux irrégularités de la surface: la normale prise en compte est celle de la surface sans irrégularités. Si~$\lambda<l$, alors on peut encore utiliser les lois de l'optique géométrique, mais on voit qu'il est alors nécessaire de disposer d'une discrétisation suffisamment fine pour décrire ces irrégularités. Lorsque la dimension de la balle, i.e. la longueur d'onde de l'onde incidente, s'approche de la longueur caractéristique des irrégularités, alors il convient d'être prudent: si~$\lambda=l$, on a des \textcolorblue{réflexions spéculaires multiples} (on parle aussi de réflexion diffuse) qu'il est souvent difficile de prendre en compte, sauf par des formulations particulières. Souvent, ce cas n'est clairement pas pris en compte.
 
 
 \medskip
@@ -301,18 +301,18 @@ La notion de réception sera forcément liée à une échelle de mesure (une mé
    \end{equation}
    où $I_1$ et $I_0$ sont deux intensités.
    
-   \item Dans la formule précédente, si $I_0$ correspond au seuil de perception ($10^{-12}$~Watt/m$^2$), on obtient les \textcolorblue{décibels absolus ou dB lin ou SPL}. C'est lui que l'on utilise dans les calculs et analyses.
+   \item Dans la formule précédente, si $I_0$ correspond au seuil de perception ($10^{-12}$~Watt/m$^2$), on obtient le \textcolorblue{décibel absolu ou dB lin ou SPL}. C'est celui que l'on utilise dans les calculs et analyses.
    \begin{equation}
    n \text{(en dB)} = 10 \log_{10} (I_1/10^{-12})
    \end{equation}
-   Si $I_1 = 10^{-12}$~Watt/m$^2$ (seuil de perception), on obtient 0~dB.
-   Si $I_1 = 1$~Watt/m$^2$ (seuil de douleur), on obtient 120~dB.
+   Si $I_1 = 10^{-12}$~W/m$^2$ (seuil de perception), on obtient 0~dB.
+   Si $I_1 = 1$~W/m$^2$ (seuil de douleur), on obtient 120~dB.
 
    \item Le \textcolorblue{dBA} traduit la perception par l'oreille du phénomène (protection physiologique par filtrage). C'est souvent lui qu'il faut utiliser en lien avec des normes adéquates (fonction du problème considéré) pour savoir s'il y a nuisance sonore ou non.
 
    \item Il existe d'autres pondérations: le dBC est quasiment linéaire sur plusieurs octaves et est utile pour les mesures subjectives avec de fortes pressions acoustiques. Le dBB est entre le dBA et le dBC. Le dBD est appliqué pour tenir compte de la gêne causée par les sifflements (à hautes fréquences) perçus à l'intérieur des avions modernes. Le dBG est adapté aux basses fréquences...
 
-  \item  Notons que pour être tout à fait exact, que ces pondérations devraient varier avec l'âge: en effet, la perception en fonction de la fréquence et de la puissance varie avec l'âge, ainsi que l'étendue de fréquences audibles (qui diminue, phénomène appelé presbyacousie), comme on le voit sur les courbes (ou diagrammes) de Fletcher\index[aut]{Fletcher (Harvey C.), 1884-1981, Américain} et Munson,\index[aut]{Munson (Wilden A.), 1902-1982, Américain} présentées dans leur article \emph{Loudness, its definition, measurement and calculation} paru en 1933 dans le Journal of the Acoustic Society of America, et que l'on appelle également courbes isosoniques. Fletcher et Munson travaillaient tous les deux aux laboratoires Bell. 
+  \item  Notons que, pour être plus précises, ces pondérations devraient varier avec l'âge: en effet, la perception en fonction de la fréquence et de la puissance varie avec l'âge, ainsi que l'étendue de fréquences audibles (qui diminue, phénomène appelé presbyacousie), comme on le voit sur les courbes (ou diagrammes) de Fletcher\index[aut]{Fletcher (Harvey C.), 1884-1981, Américain} et Munson,\index[aut]{Munson (Wilden A.), 1902-1982, Américain} présentées dans leur article \emph{Loudness, its definition, measurement and calculation} paru en 1933 dans le Journal of the Acoustic Society of America, et que l'on appelle également courbes isosoniques. Fletcher et Munson travaillaient tous les deux aux laboratoires Bell. 
 \end{itemize}
 
 \medskip
@@ -320,9 +320,9 @@ La notion de réception sera forcément liée à une échelle de mesure (une mé
 
 À ce niveau, il convient de rappeler quelques définitions:
 \begin{itemize}
-   \item La \textcolorblue{pression acoustique} est l'amplitude des variations de la pression en un point de l'espace, par rapport à la pression atmosphérique, provoquées par le passage d'une onde sonore en ce point. (Unité: $N/m^2$)
-   \item La \textcolorblue{puissance acoustique} est la quantité (ou le flux) d'énergie acoustique qu'émet une source par unité de temps. (Unité: $W$)
-   \item L'\textcolorblue{intensité acoustique} est le flux d'énergie acoustique qui est transmis dans une direction donnée, à travers une unité de surface, pendant une unité de temps. Elle dépend de la puissance de la source, du milieu de propagation, de la distance à la source. (Unité: $W/m^2$)
+   \item La \textcolorblue{pression acoustique} (en N/m$^2$) est l'amplitude des variations de la pression en un point de l'espace, par rapport à la pression atmosphérique, provoquées par le passage d'une onde sonore en ce point. 
+   \item La \textcolorblue{puissance acoustique} (en W) est la quantité (ou le flux) d'énergie acoustique qu'émet une source par unité de temps.
+   \item L'\textcolorblue{intensité acoustique} (en W/m$^2$) est le flux d'énergie acoustique qui est transmis dans une direction donnée, à travers une unité de surface, pendant une unité de temps. Elle dépend de la puissance de la source, du milieu de propagation, de la distance à la source.
 \end{itemize}
 
 \medskip
@@ -330,12 +330,12 @@ L'intensité acoustique s'exprime comme:
 \begin{equation}
 I = \frac{p^2}{Z}
 \end{equation}
-où $p$ est la pression acoustique et $Z$ l'\textcolorblue{impédance} (Unité: $Ns/m^3$).
+où $p$ est la pression acoustique et $Z$ l'\textcolorblue{impédance} (qui s'exprime en Pa.s/m ou en Ns/m$^3$).
 
 \begin{remarque}
 Dans le cadre de mesures:
 \begin{itemize}
-   \item l'intensité acoustique est représentée par la puissance électrique (Watt);
+   \item l'intensité acoustique est représentée par la puissance électrique (W);
    \item la pression acoustique est représentée par la tension électrique (V) \textcolorgris{(la tension électrique fournie par un microphone est proportionnelle à la pression acoustique $p$)};
    \item l'impédance acoustique est représentée par la résistance électrique.
 \end{itemize}
@@ -343,9 +343,9 @@ On peut remplacer $I = p^2/Z$ par $P = V^2/R$ et en déduire la \textcolorblue{p
 \begin{equation}
 P_{moy}=\dfrac{V_1^2+...+V_n^2}{nR}
 \end{equation}
-On définit aussi la \textcolorblue{tension efficace ou tension RMS} (Root Mean Square), qui est la tension continue qui donnerait une puissance continue égale à la puissance moyenne. On a donc $P_{moy}=V_{eff}^2/R$, soit:
+On définit aussi la \textcolorblue{tension efficace ou tension RMS} (Root Mean Square), qui est la tension continue qui donnerait une puissance continue égale à la puissance moyenne. On a donc $P_{moy}=V_{\text{eff}}^2/R$, soit:
 \begin{equation}
-V_{eff}=\sqrt{\dfrac{V_1^2+...+V_n^2}{n}}
+V_{\text{eff}}=\sqrt{\dfrac{V_1^2+...+V_n^2}{n}}
 \end{equation}
 \end{remarque}
 
@@ -376,7 +376,7 @@ L'impédance acoustique dans les solides est définie par:
 \begin{equation}
 Z = \dfrac{F}{v}=\rho c
 \end{equation}
-où~$F$ est la force ($N$), $v$ la vitesse de déplacement ($m/s$), $\rho$ la densité linéique du milieu ($kg/m$) et $c$ la vitesse de propagation ($m/s$).
+où~$F$ est la force (N), $v$ la vitesse de déplacement (m/s), $\rho$ la densité linéique du milieu (kg/m) et $c$ la vitesse de propagation (m/s).
 On remarquera que~$c$ et~$v$ sont inversement proportionnelles.
 Dans les solides, la vitesse de propagation est plus élevée que dans les gaz et l'énergie s'y dissipe moins rapidement: l'onde peut se propager plus loin.
 
@@ -385,19 +385,19 @@ L'impédance acoustique dans les gaz est définie par:
 \begin{equation}
 Z = \dfrac{p}{v}=\rho c
 \end{equation}
-où cette fois~$p$ est la pression acoustique ($Pa$), les autres grandeurs étant les mêmes qu'auparavant.
+où cette fois~$p$ est la pression acoustique (Pa), les autres grandeurs étant les mêmes qu'auparavant.
 
 \colorgreen
 \begin{remarque}[Quelques valeurs]
-L'impédance de l'air vaut $Z=413,5$ (en~$Pa.s/m$ ou~$N.S/m^3$) à 20\degre C. Elle varie avec la température, tout comme la densité et la célérité du son.
+L'impédance de l'air vaut $Z=413,5$ (en~Pa.s/m ou~N.S/m$^3$) à 20\degre C. Elle varie avec la température, tout comme la densité et la célérité du son.
 
-La vitesse du son dans l'air en $m/s$ vaut $c=331,5+0,6\theta$, où~$\theta$ est la température de l'air en \degre C (elle varie également en fonction de la pression atmosphérique et de la température).
+La vitesse du son dans l'air vaut $c=331,5+0,6\theta$~m/s, où~$\theta$ est la température de l'air en \degre C (elle varie également en fonction de la pression atmosphérique et de la température).
 
-L'impédance acoustique de l'eau est d'environ~$1,5.10^6 ~Pa.s/m$.
+L'impédance acoustique de l'eau est d'environ~$1,5.10^6$~Pa.s/m.
 \end{remarque}\colorblack
 
 Considérons deux milieux d'impédances respectives~$Z_1$ et~$Z_2$, et une onde incidente se propageant dans le milieu 1 jusqu'à arriver à sa frontière avec le milieu 2.
-Si $Z_1=Z_2$, alors l'onde incidente se propage intégralement dans le milieu 2, i.e. elle est intégralement transmise.
+\textcolorred{Si $Z_1=Z_2$, alors l'onde incidente se propage intégralement dans le milieu 2, i.e. elle est intégralement transmise.}
 Par contre, si $Z_1\ne Z_2$, alors l'onde incidente se scinde en une onde réfléchie et une onde transmise. L'amplitude de l'onde réfléchie est d'autant plus grande que la discontinuité entre les deux milieux est marquée.
 On définit alors le \textcolorblue{coefficient de réflexion} par:
 \begin{equation}
@@ -407,10 +407,10 @@ où les indices~$r$ et~$i$ désignent l'onde réfléchie et l'onde incidente res
 
 \medskip\colormagenta{\small 
 Supposons qu'une onde se propage dans l'air ($Z_1=413,5$) et rencontre un solide tel que $Z_2=500 000$. Alors le coefficient de réflexion est de 99,8\%.
-Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, le coefficient de réflexion devient négatif.%: «la compression s'est réfléchie en raréfaction».}
+Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, le coefficient de réflexion devient négatif.}%: «la compression s'est réfléchie en raréfaction».}
 
 \medskip\colorblack
-Deux cas extrêmes nous intéressent:
+Notons les deux cas extrêmes suivants:
 %VM illustrer ces 2 cas. Cas2=paroi fixe...
 \begin{itemize}
    \item la \textcolorblue{réflexion à une extrémité libre}: dans ce cas,~$Z_2\approx0$ et la vitesse de l'extrémité est~$v=2v_i$. On assiste à un changement de signe de $v_r$ sans renversement de la forme de l'onde.
@@ -435,7 +435,7 @@ Pour les longueurs d'ondes supérieures au double de la plus grande dimension d'
 Pour les longueurs d'onde comparables aux dimensions de la pièce: il y a dominance des modes propres de la salle. Il y a amplification des fréquences, ce qui «colore» le son et création d'ondes stationnaires.
 Pour des longueurs d'ondes inférieures à la moitié des dimensions de la salle: on est dans le cas de réflexions multiples, et on peut faire une équivalence lumineuse et utiliser les méthodes de tir de rayons.
 
-   \item L'une des premières grandeurs à connaître est le \textcolorblue{bruit ambiant}. Son niveau maximal est fixé en fonction de la destination du local.
+   \item L'une des premières grandeurs à connaître est le \textcolorblue{bruit ambiant}. Son niveau maximal est fixé par des normes en fonction de la destination du local.
 
    \item Une seconde grandeur particulièrement fondamentale pour la caractérisation de locaux, quelque soit leur destination, est le \textcolorblue{temps de réverbération} ou TR.  Il correspond à l'intervalle de temps nécessaire pour que la pression acoustique (d'une salle) diminue à un millième de sa valeur initiale suite à l'arrêt de la source sonore. Cela représente une diminution du niveau sonore de 60~dB. Le temps de réverbération indique la capacité qu'à la salle à réverbérer les sons.
    
@@ -443,7 +443,7 @@ En 1898, Sabine\index[aut]{Sabine (Wallace Clement), 1868-1919, Américain} déc
    \begin{equation}
     T_R = \frac{k V}{A} 
    \end{equation}
-où la constante de proportionnalité~$k$, trouvée initialement égale à 0,161, vaut~$k=(24\ln10)/340 =0,163$~s/m, et où l'aire d'absorption équivalente est calculée par la formule de Sabine~(\ref{Eq-ASabine}) ou d'Eyring~(\ref{Eq-AEyring}).\index[aut]{Eyring (Carl Ferdinand), 1889-1951, Américain}
+où la constante de proportionnalité~$k$, trouvée initialement égale à 0,161, vaut~$k=(24\ln10)/340 =0,163$~s/m, et où l'aire d'absorption équivalente est calculée par les formules de Sabine~(\ref{Eq-ASabine}) ou d'Eyring~(\ref{Eq-AEyring}).\index[aut]{Eyring (Carl Ferdinand), 1889-1951, Américain}
 
 Selon la destination du local, plusieurs normes existent pour mesurer le TR. De plus, la destination du local joue également sur la valeur acceptable ou non du TR.
 
@@ -540,7 +540,7 @@ Pour un salle parallélépipédique de dimensions~$L$, $l$ et~$h$, les fréquenc
 \begin{equation}
 f_{(i,j,k)} = \frac{c}2\sqrt{\left(\frac{i}{L}\right)^2+\left(\frac{j}{l}\right)^2+\left(\frac{k}{h}\right)^2}
 \end{equation}
-Les modes~$(i,0,0)$, $(0,j,0)$ et~$(0,0,k)$ sont des modes axiaux dans la directions de~$L$, $l$ et~$h$ respectivement, les modes~$(i,j,0)$, $(0,j,k)$ et~$(i,0,k$ les modes tangentiels, et les modes~$(i,j,k)$ les modes obliques.
+Les modes~$(i,0,0)$, $(0,j,0)$ et~$(0,0,k)$ sont des modes axiaux dans la directions de~$L$, $l$ et~$h$ respectivement, les modes~$(i,j,0)$, $(0,j,k)$ et~$(i,0,k)$ les modes tangentiels, et les modes~$(i,j,k)$ les modes obliques.
 La pression acoustique se met sous la forme:
 \begin{equation}
 p(x,y,z) = \dsum_i\dsum_j\dsum_k p_{ijk}\cos\left(\frac{i\pi}{L}x\right)\cos\left(\frac{j\pi}{l}y\right)\cos\left(\frac{k\pi}{h}z\right)
@@ -610,7 +610,7 @@ Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, no
    \end{equation}	   
    i.e. la dérivée de la pression par rapport à la normale est nulle.
    
-   Dans certains codes, on peut spécifier la valeur de l'accélération normale, i.e. le second membre de l'équation~(\ref{Eq-muracou}) n'est plus nul mais vaut~$a_n$ (condition de Neumann relevée), qui représente alors une source externe. Cela permet également de coupler de manière faible l'acoustique à une calcul structural: un premier calcul de structure permet de déterminer le vibrations d'une surface, et cette-ci est introduite ensuite dans le calcul acoustique. Le \textcolorgreen{couplage est donc faible} car dans ce cas on fait l'hypothèse que l'acoustique en retour ne modifie pas (ou peu) la vibration de la structure. De manière inverse, on a également couplage faible si le fluide agit sur le solide et que celui-ci en retour n'agit que peu sur le fluide.
+   Dans certains codes, on peut spécifier la valeur de l'accélération normale, i.e. le second membre de l'équation~(\ref{Eq-muracou}) n'est plus nul mais vaut~$a_n$ (condition de Neumann relevée), qui représente alors une source externe. Cela permet également de coupler de manière faible l'acoustique à un calcul structural: un premier calcul de structure permet de déterminer les vibrations d'une surface, et celles-ci sont introduites ensuite dans le calcul acoustique. Le \textcolorgreen{couplage est donc faible} car dans ce cas on fait l'hypothèse que l'acoustique en retour ne modifie pas (ou peu) la vibration de la structure. De manière inverse, on a également couplage faible si le fluide agit sur le solide et que celui-ci en retour n'agit que peu sur le fluide.
    
    \item La \textcolorblue{condition de Dirichlet} correspond à une \textcolorblue{condition d'absorption parfaite}. Elle est telle que la pression acoustique s'annule sur la surface:
    \begin{equation}
@@ -622,8 +622,8 @@ Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, no
    \begin{equation}
    \begin{array}{rll}
    -n.\left(-\dfrac1{\rho}(\nabla p-q)\right)
-   &=-\dfrac{i\omega p_t}{Z} \text{ en analyse harmonique, ou }\\
-   &=\dfrac{1}{Z}\dfrac{\partial p_t}{\partial t} \text{ en analyse temporelle}   
+   &=-\dfrac{i\omega p}{Z} \text{ en analyse harmonique, ou }\\
+   &=\dfrac{1}{Z}\dfrac{\partial p}{\partial t} \text{ en analyse temporelle}   
    \end{array}
    \end{equation}
    Lorsque~$Z\rightarrow\infty$ on retrouve le cas du mur rigide, et lorsque~$Z\rightarrow0$ celui de l'absorption parfaite.
@@ -635,7 +635,7 @@ Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, no
    \item Les \textcolorblue{conditions aux limites en rayonnement} permettent de définir les régions par lesquelles les ondes peuvent quitter le modèle. On trouve généralement des conditions de radiation plane, cylindrique et sphérique.
    \item De la même manière on trouve des \textcolorblue{conditions de rayonnement}, plane ou cylindrique, permettant de modéliser une source, i.e. une onde qui arrive (et non plus une onde qui quitte le modèle).
    
-   \item Lorsque le couplage faible décrit plus haut n'est pas suffisant, il faut alors intégrer le \textcolorblue{couplage fort} fluide-structure au calcul: le fluide, définit par ses champs de pression et de vitesse exerce des forces de type aérodynamique (de pression) sur la structure. Cette force aérodynamique se met sous la forme $F = \frac12 \rho v^2SC$, où~$v$ est la vitesse, $S$ la «surface de référence» (pour nous cette surface de référence sera la surface mouillée)\footnote{Dans le cas d'étude aérodynamiques et pour les corps bien profilés, la surface de référence sera la projection de la surface dans un plan orthogonal à la direction selon laquelle on veut le résultat.
+   \item Lorsque le couplage faible décrit plus haut n'est pas suffisant, il faut alors intégrer le \textcolorblue{couplage fort} fluide-structure au calcul: le fluide, défini par ses champs de pression et de vitesse, exerce des forces de type aérodynamique (de pression) sur la structure. Cette force aérodynamique se met sous la forme $F = \frac12 \rho v^2SC$, où~$v$ est la vitesse, $S$ la «surface de référence» (pour nous cette surface de référence sera la surface mouillée)\footnote{Dans le cas d'étude aérodynamiques et pour les corps bien profilés, la surface de référence sera la projection de la surface dans un plan orthogonal à la direction selon laquelle on veut le résultat.
    
    Toujours dans ce cas, on décompose la force aérodynamique selon trois axes en une force de traînée~$F_x$ parallèle à la direction moyenne de l'écoulement; une force de dérive~$F_y$ perpendiculaire à la direction moyenne de l'écoulement, dans le plan horizontal; et une force de portance~$F_z$, perpendiculaire à la direction moyenne de l'écoulement, dans le plan vertical.} et~$C$ le coefficient aérodynamique. En retour, le déplacement et/ou la déformation de la structure affecte, au moins localement, le champ de l'écoulement fluide et par conséquent la direction et l'intensité des charges aérodynamiques: ce \textcolorblue{cycle des interactions} entre le fluide et la structure est la caractéristique du couplage fort entre les deux milieux, i.e. \textcolorblue{chaque milieu influe significativement sur l'autre}.
    \textcolorgreen{Basiquement, on retiendra que l'analyse acoustique fournit un chargement (la pression acoustique) à l'analyse structurelle, et l'analyse structurelle fournit des accélérations à l'analyse acoustique.}
@@ -678,7 +678,7 @@ C = \Delta t \sum_{i=1}^n\frac{u_{x_i}}{\Delta x_i} \leq C_{max}.
 où~$u$ est la fonction inconnue du problème, $\Delta t$ le pas de temps et $\Delta x_i$ le pas de discrétisation de chaque variable spatiale.
 
 La constante $C_{max}$ prend différentes valeurs en fonction de la méthode utilisée pour résoudre l'équation discrétisée.
-Pour une méthode explicite, on utilisera $C_{max} = 1$, alors que pour une méthode implicite, moins sensible aux instabilités numériques, on pourra prendre une valeur plous grande pour~$C_{max}$.
+Pour une méthode explicite, on utilisera $C_{max} = 1$, alors que pour une méthode implicite, moins sensible aux instabilités numériques, on pourra prendre une valeur plus grande pour~$C_{max}$.
 On fera en sorte de prendre~$C_{max}$ le plus grand possible pour la méthode considérée, ce qui permettra par conséquent de calculer le pas de temps le plus grand possible (la taille de la discrétisation en espace étant contrainte par les fréquences visées) afin de minimiser les calculs.
 
 
@@ -690,10 +690,10 @@ Généralement, on définit une zone (par exemple sphérique ou hémisphérique)
 Nous avons déjà mentionné la condition de Dirichlet.
 Toutefois, elle n'est pas optimale.
 
-Décrite pour la première fois en 1994 par Jean-Pierre Bérenger\index[aut]{Bérenger (Jean-Pierre), ?-, Français} dans \emph{A perfectly matched layer for the absorption of electromagnetic waves}, une \textcolorblue{zone absorbante parfaitement adaptée} (en anglais Perfectly matched layer ou PML) est une zone absorbante artificielle pour les équations d'ondes, couramment utilisée pour tronquer les domaines de calcul dans les méthodes numériques de simulation de problèmes à frontières ouvertes, particulièrement dans les méthodes FDTD et FEM.
+Décrite pour la première fois en 1994 par Jean-Pierre Bérenger\index[aut]{Bérenger (Jean-Pierre), ?-, Français} dans \emph{A perfectly matched layer for the absorption of electromagnetic waves}, une \textcolorblue{zone absorbante parfaitement adaptée} (en anglais Perfectly matched layer ou PML) est une zone absorbante artificielle pour les équations d'ondes, couramment utilisée pour tronquer les domaines de calcul dans les méthodes numériques de simulation de problèmes à frontières ouvertes, particulièrement dans les méthodes de différences finis en temps et d'éléments finis.
 La propriété essentielle d'une PML qui la distingue d'un matériau absorbant ordinaire est le fait qu'elle est conçue de telle sorte que les ondes incidentes l'atteignant depuis un matériau non PML ne se réfléchissent pas à l'interface. Cette propriété permet aux PML d'absorber fortement toutes les ondes sortant d'un domaine de calcul sans les renvoyer dans ce domaine.
 
-Cette approche a été modifiée puis généralisée en ce que l'on appelle la stretched-coordinate PML. Les PML correspondent à une transformation dans laquelle une ou plusieurs coordonnées sont attachées à des nombres complexes; plus techniquement, il s'agit en réalité d'une prolongation analytique de l'équation d'onde dans le domaine complexe, où les ondes propagatives (oscillantes) sont remplacées par des ondes dont l'amplitude décroît exponentiellement. Ce point de vue permet aux PMLs d'être adaptées aux matériaux inhomogènes comme les guides d'ondes, ainsi qu'à d'autre systèmes de coordonnées et d'équations d'ondes.
+Cette approche a été modifiée puis généralisée en ce que l'on appelle la stretched-coordinate PML. Les PML correspondent à une transformation dans laquelle une ou plusieurs coordonnées sont attachées à des nombres complexes; plus techniquement, il s'agit en réalité d'une prolongation analytique de l'équation d'onde dans le domaine complexe, où les ondes propagatives (oscillantes) sont remplacées par des ondes dont l'amplitude décroît exponentiellement. Ce point de vue permet aux PML d'être adaptées aux matériaux inhomogènes comme les guides d'ondes, ainsi qu'à d'autre systèmes de coordonnées et d'équations d'ondes.
 
 La PML amortit une certaine longueur d'onde existant dans le système, déduite de la fréquence et d'une célérité de référence des ondes.
 Dans le cas d'un problème uniquement fluide, cette célérité de référence sera prise égale à la vitesse du son. Dans le cas d'ondes se propageant dans un solide, on la prendra égale à la vitesse de compression du son. Pour un modèle couplé fluide-structure, on pourra prendre une valeur moyenne entre les deux précédentes comme estimation initiale. Pour une onde dont le vecteur d'onde fait un angle~$\theta$ avec la direction dans laquelle on veut absorber, il faudrait prendre une valeur de~$1/\cos|\theta|$.
@@ -742,7 +742,7 @@ La figure~\ref{Fig-AcouSalle} présente une salle et sa modélisation.
 \includegraphics[width=65mm]{AcouSalle2.eps}
 \caption{Un problème d'acoustique des salles}\label{Fig-AcouSalle}
 \end{figure}
-La salle est constitué de deux murs épais en béton, de deux murs fins en placo. Elle comporte 3 fenêtres et une porte. Le sol est en carrelage, avec au centre un tapis épais. Le plafond non représenté est en béton. Au mur, à côté de la porte, se trouvent trois panneaux acoustiques.
+La salle est constitué de deux murs épais en béton et de deux murs fins en placo. Elle comporte trois fenêtres et une porte. Le sol est en carrelage, avec au centre un tapis épais. Le plafond non représenté est en béton. Au mur, à côté de la porte, se trouvent trois panneaux acoustiques.
 
 Pour effectuer la modélisation, on ne contentera de représenter les surfaces internes de la pièce. Les murs épais (en gris foncé), le sol et le plafond seront considérés comme parfaitement réfléchissants. Pour les murs fins, on entrera une impédance correspondant à la perte par transmission. On fera de même avec les fenêtres et la porte. Les conditions d'absorption des panneaux acoustiques et de la moquettes pourront être modélisées en entrant l'impédance associée ou en utilisant un modèle d'absorption de type Biot-Allard si cela est disponible dans le logiciel.
 
@@ -760,7 +760,7 @@ La figure~\ref{Fig-AcouSilen} présente un silencieux d'automobile.
 \includegraphics[width=50mm]{AcouSilen2.eps}
 \caption{Modélisation d'un silencieux}\label{Fig-AcouSilen}
 \end{figure}
-Ce silencieux ne sera défini que par les surfaces représentées et le volume d'air qu'elles contiennent. On appliquera aux parois en rouge soit une condition de mur rigide (réflexion parfaite), soit une impédance correspondant à l'absorption due à la présence d'un matériau fibreux (laine de verre). Les surfaces grises seront également considérées comme des surfaces parfaitement réfléchissantes. Les deux section en bleu (on n'en voit qu'une, l'autre étant à l'autre bout) correspondront à l'entrée de l'onde (onde plane) dans le silencieux, et à sa sortie.
+Ce silencieux ne sera défini que par les surfaces représentées et le volume d'air qu'elles contiennent. On appliquera aux parois en rouge soit une condition de mur rigide (réflexion parfaite), soit une impédance correspondant à l'absorption due à la présence d'un matériau fibreux (laine de verre). Les surfaces grises seront également considérées comme des surfaces parfaitement réfléchissantes. Les deux sections en bleu (on n'en voit qu'une, l'autre étant à l'autre bout) correspondront à l'entrée de l'onde (onde plane) dans le silencieux, et à sa sortie.
 
 On s'intéressera au facteur de perte, tel que défini par la relation~(\ref{Eq-FacPerte}). Les résultats avec et sans absorbant sont illustrés sur la figure~\ref{Fig-AcouSilenRes}, pour des fréquences allant de 25 à 1500~Hz par pas de 25~Hz.
 \begin{figure}[h!]
@@ -792,9 +792,9 @@ L'application de la formule~(\ref{Eq-PInv-Stat}) sur ces quelques points conduit
 
 Évidemment, c'est une première approximation très grossière, qui peut être améliorée. Pour cela, il nous faudrait disposer de plus de points, aussi bien dans le domaine considéré qu'en dehors. Si l'on ne peut relancer de calcul, on peut essayer d'approximer la courbe de la réponse afin de pouvoir interpoler et extrapoler des points.
 
-On peut utiliser tout type d'interpolation (voir chapitre~\ref{chap-interpolation}) comme par exemple un polynôme de Lagrange... ici nous utiliserons une courbe de tendance polynomiale de degré 2. Dans le cas sans absorbant, celle-ci est donnée par l'équation suivante: $y= -0,0004342857x^2 + 0,8877714286x - 439,8628571429$. De là, on peut générer quelques points supplémentaires. Vu la forme de la courbe de réponse, on sait que les valeurs interpolées seront correctes, ce n'est pas le cas pour les valeurs extrapolées, surtout loin de la zone ayant servie à générer cette courbe de tendance. Par exemple on trouve 12.6 pour 1075~Hz au lieu de 12.0, 11.2 pour 1100~Hz au lieu de 10.0. Néanmoins, en fonction de la forme de la courbe, cela peut permettre une amélioration sensible de l'approximation de la moyenne de la réponse.
+On peut utiliser tout type d'interpolation (voir chapitre~\ref{chap-interpolation}) comme par exemple un polynôme de Lagrange... ici nous utiliserons une courbe de tendance polynomiale de degré 2. Dans le cas sans absorbant, celle-ci est donnée par l'équation suivante: $y= -0,0004342857x^2 + 0,8877714286x - 439,8628571429$. De là, on peut générer quelques points supplémentaires. Vu la forme de la courbe de réponse, on sait que les valeurs interpolées seront correctes, ce n'est pas le cas pour les valeurs extrapolées, surtout loin de la zone ayant servi à générer cette courbe de tendance. Par exemple on trouve 12.6 pour 1075~Hz au lieu de 12.0, 11.2 pour 1100~Hz au lieu de 10.0. Néanmoins, en fonction de la forme de la courbe, cela peut permettre une amélioration sensible de l'approximation de la moyenne de la réponse.
 
-Pour une analyse plus complète dans le cadre stochastique, c'est au chapitre~\ref{Ch-stocha} que l'on se reportera. Toutes les méthodes décrites sont applicables en fréquence.
+Pour une analyse plus complète dans le cadre stochastique, c'est au chapitre~\ref{Ch-stocha} que l'on se reportera. Toutes les méthodes qui y sont décrites sont applicables en fréquence.
 
 
 \medskip
