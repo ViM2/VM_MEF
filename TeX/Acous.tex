@@ -850,7 +850,9 @@ Vh<complex> p, q;
 
 solve helmholtz(p,q)= int2d(Th)(dx(p)*dx(conj(q)) + dy(p)*dy(conj(q)) - k*k*p*conj(q) )
  -int1d(Th,a4)(g*q) + on(a1,p=0) + on(a2,p=0)+ on(a3,p=0);
-plot (p, wait=1, ps="AcouDiff3.eps");
+ 
+Vh pR=real(p);
+plot (pR, wait=1, fill=1, ps="AcouDiff3.eps");
 \end{Verbatim}
 \colorblack\normalsize
 
@@ -859,13 +861,13 @@ Le résultat est donné à la figure~\ref{Fig-AcouDiff3} pour plusieurs valeurs 
 \begin{figure}[h!]
 \centering
 \ifVersionDuDocEstVincent
-   \includegraphics[width=57mm]{AcouDiff1-1.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff1-5.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff1-10.eps}
+   \includegraphics[width=57mm]{AcouDiff3-1.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff3-5.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff3-10.eps}
 \else
-   \includegraphics[width=50mm]{AcouDiff1-1.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff1-5.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff1-10.eps}
+   \includegraphics[width=50mm]{AcouDiff3-1.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff3-5.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff3-10.eps}
 \fi
 \caption{Acoustique au coin de la rue pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff3}
 \end{figure}
@@ -914,7 +916,8 @@ solve helmholtz(p,q)= int2d(Th)(p*q*k*k - dx(p)*dx(q) - dy(p)*dy(q))
  -int1d(Th,a4)(g*q) -int1d(Th,a1)(1i*c*k*q)-int1d(Th,a2)(1i*c*k*q)-int1d(Th,a3)(1i*c*k*q);
 
 string legende="frequence = "+freq+" Hz";
-plot (p, wait=true, cmm=legende, fill=1, value=true);
+Vh pR=real(p);
+plot (pR, wait=true, cmm=legende, fill=1, value=true);
 \end{Verbatim}
 \colorblack\normalsize
 
@@ -923,13 +926,13 @@ Cette fois la réponse est nécessairement différente, puisque les conditions a
 \begin{figure}[h!]
 \centering
 \ifVersionDuDocEstVincent
-   \includegraphics[width=40mm]{AcouDiff2-1.eps}\hfill
-   \includegraphics[width=40mm]{AcouDiff2-5.eps}\hfill
-   \includegraphics[width=40mm]{AcouDiff2-10.eps}
+   \includegraphics[width=57mm]{AcouDiff2-1.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff2-5.eps}\hfill
+   \includegraphics[width=57mm]{AcouDiff2-10.eps}
 \else
-   \includegraphics[width=33mm]{AcouDiff2-1.eps}\hfill
-   \includegraphics[width=33mm]{AcouDiff2-5.eps}\hfill
-   \includegraphics[width=33mm]{AcouDiff2-10.eps}
+   \includegraphics[width=50mm]{AcouDiff2-1.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff2-5.eps}\hfill
+   \includegraphics[width=50mm]{AcouDiff2-10.eps}
 \fi
 \caption{Avec condition de Neumann et pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff2}
 \end{figure}
