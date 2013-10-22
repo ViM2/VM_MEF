@@ -962,7 +962,7 @@ Est-on assez loin des conditions aux limites?
 \end{figure}
 
 \medskip
-\subsection{Deux mots sur l'amortissement}
+\subsection{Un petit peu d'amortissement}
 
 Introduisons maintenant un peu d'amortissement sur le cas précédent. L'équation des ondes avec amortissement est donnée par la relation~(\ref{Eq-OndeSrcAmort}). Il suffit donc d'ajouter à la forme bilinéaire~$a(p,q)$ de l'équation~(\ref{Eq-Helmab}) le terme:
 \begin{equation}
@@ -1002,6 +1002,86 @@ La différence entre calcul dans~$\RR$ et calcul dans~$\CC$ prend ici tout son s
 \caption{À 500~Hz avec un amortissement de 0, 1 et 2\%}\label{Fig-AcouDiff5}
 \end{figure}
 On remarque qu'avec seulement 1\% d'amortissement, l'onde arrive péniblement jusqu'au coude. Pour 2\% d'amortissement, elle «s'évanouit» très vite, dès la partie droite.
+
+\medskip
+\subsection{Un obstacle}
+
+Pour le plaisir, introduisons un obstacle. Nous proposons le listing (abondamment commenté) suivant:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=1]
+real freq=50.0;// fréquence en Hz
+real rho=1.;// densité constante
+real c=343.0;// vitesse du son en m/s
+func g=1.0;// on a p=g sur a4 => CL due à Green
+real k=freq/c;// nombre d'onde
+real amort=0.02;// 2% d'amortissement
+
+border a1(t=0,1) { x= 3*t; y=0;}
+border a2(t=0,1) { x=3; y= 2*t;}
+border a3(t=0,1) { x= 3-3*t; y=2 ;}
+border a4(t=0,1) { x= 0; y= 2-2*t ;}
+border b1(t=0,1) { x= 1+t; y= 0.5;}
+border b2(t=0,1) { x= 2-0.5*t; y= 0.5+t;}
+border b3(t=0,1) { x= 1.5; y= 1.5-0.5*t;}
+border b4(t=0,1) { x= 1.5-0.5*t; y= 1-0.5*t;}
+mesh Th=buildmesh( a1(60) + a2(40) + a3(60) + a4(40)+ b1(-5) + b2(-5) + b3(-5) + b4(-5));
+
+fespace Vh(Th, P1);
+Vh<complex> p, q;
+
+solve helmholtz(p,q)= int2d(Th)(-dx(p)*dx(conj(q)) - dy(p)*dy(conj(q)) +k*k*p*conj(q) // forme bilin non amortie
+-amort*1i*freq*rho*p*conj(q) )// terme d'amortissement
+-int1d(Th,a4)(g*conj(q)) // CL paroi rayonnante (th de Green)
+//// la CL de paroi rayonnante devrait pouvoir être remplacée par une CL de Dirichlet relevée:
+// +on (a4, p=1)// CL Dirichlet relevée = paroi rayonnante.
+//// Puis on peut ajouter de l'absorption parfaite
+//  + on(a3, p=0)//CL Dirichlet absorption parfaite
+//// l'impédance du milieu est Z1=rho.c. 
+//// Si l'on que l'onde quite le modèle, il faut Z2=Z1 sur la CL de Robin: 
+/// La CL de Robin: +int1d 1i*rho*c*k*A2*conj(q) devient: +int1d 1i*k*conj(q)
+  -int1d(Th,a2)(1i*k*conj(q)) -int1d(Th,a1)(1i*k*conj(q))-int1d(Th,a3)(1i*k*conj(q))// CL Robin milieu infini
+//// et les CL de Neumann s'écrivent au besoin (il faut définir Vn)
+//  -int1d(Th,a2)(1i*rho*c*Vn*k*conj(q))-int1d(Th,a1)(1i*rho*c*k*Vn*conj(q))-int1d(Th,a3)(1i*rho*c*k*Vn*conj(q))// CL Neumann
+;
+
+Vh pR=real(p), pI=imag(p);
+
+string legende="frequence = "+freq+" Hz, amortissement = "+amort*100+"%";
+plot (pR, wait=true, cmm=legende, fill=1, value=true);
+plot (pI, wait=true, cmm=legende, fill=1, value=true);
+\end{Verbatim}
+\colorblack\normalsize
+\begin{figure}[h!]
+\centering
+   \includegraphics[width=\HauteurDesEPS]{Obstacle2R.eps} \hspace{10mm}
+   \includegraphics[width=\HauteurDesEPS]{Obstacle2I.eps}
+\caption{$\Re(p)$ et $\Im(p)$ à 50~Hz avec un obstacle et 2\% d'amortissement}\label{Fig-Obstacle2}
+\end{figure}
+
+Évidemment, des conditions aux limites peuvent (doivent) être introduites sur l'obstacle.
+On peut ajouter une condition de Robin d'impédance~$Z_n$:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=34]
+-int1d(Th,b3)(1i*rho*c*k/Zn*conj(q))-int1d(Th,b4)(1i*rho*c*k/Zn*conj(q))// CL Robin
+\end{Verbatim}
+\colorblack\normalsize
+ou une condition d'absorption parfaite de Dirichlet:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=34]
++ on(b3, p=0)//CL Dirichlet absorption parfaite
+\end{Verbatim}
+\colorblack\normalsize
+\colorblack\normalsize
+\begin{figure}[h!]
+\centering
+   \includegraphics[width=\HauteurDesEPS]{Obstacle4-Z5.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{Obstacle4-Z5000.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{Obstacle4-Dirich.eps}
+\caption{$\Re(p)$ pour $Z_n=5$, $Z_n=5000$ et pour la condition de Dirichlet $p=0$}\label{Fig-Obstacle4}
+\end{figure}
+
+
+
 
 %\medskip
 %\subsection{Un tablier léger}
