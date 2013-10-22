@@ -2,6 +2,8 @@
 \begin{abstract}
 En complément avec ce qui a été vu aux chapitres précédents~\ref{Ch-temps} et~\ref{Ch-ondes} sur les problèmes non stationnaires et les ondes, nous allons nous focaliser dans ce chapitre sur l'acoustique, et plus particulièrement sur le calcul de problèmes pour lesquels les fréquences restent inférieures à quelques milliers de Hz. Nous en profiterons pour effectuer une présentation pratique de l'acoustique et des solutions qui peuvent être mises en œuvre physiquement.
 \end{abstract}
+\newlength\HauteurDesEPS
+\ifVersionDuDocEstVincent\setlength\HauteurDesEPS{57mm}\else\setlength\HauteurDesEPS{50mm}\fi
 
 Nous avons déjà présenté la problématique de l'acoustique à plusieurs reprises au long de ce document: au paragraphe~\ref{Sec-EqOnde}, l'équation des ondes a été donnée dans le cas de l'acoustique sous forme d'équation différentielle~(\ref{Eq-EqOndeAcou}) dont l'inconnue est la pression acoustique; des remarques plus «physiques» concernant l'acoustique ont été faites au paragraphe~\ref{Sec-EqAcou}, notamment concernant les échelles d'énergies mises en œuvre, ainsi que sur les aspects solidien et aérien; mais c'est surtout au paragraphe~\ref{Sec-EqFblAcou} qu'ont été présentées l'équation d'Helmholtz~(\ref{Eq-Helm})\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} et sa formulation faible. Quant à la formulation éléments finis, elle a été abordée au chapitre~\ref{Ch-ondes}, où ont été décrit les systèmes matriciels à traiter selon les cas (réponse libre, périodique ou transitoire, amortie ou non).
 
@@ -582,7 +584,7 @@ Si l'on ajoute des termes de sources, alors l'équation des ondes~(\ref{Eq-EqOnd
 \end{equation}
 dont l'inconnue est toujours la pression acoustique et où~$q$ et~$Q$ représentent les termes de sources pour un dipôle et un monopôle respectivement.
 Pour les milieux dispersifs, un terme de dissipation supplémentaire peut être introduit dans l'équation des ondes qui devient:
-\begin{equation}
+\begin{equation}\label{Eq-OndeSrcAmort}
 \dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}-d\dfrac{\partial p}{\partial t}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
 \end{equation}
 Dans la suite, on restera dans le cas~$d=0$.
@@ -814,7 +816,7 @@ Nous proposons, dans un premier temps, d'imposer sur les faces~$a_1$ à~$a_3$ un
 Nous utiliserons \freefem pour cet exemple.
 
 Dans un premier temps, nous allons entrer directement la formulation faible définie à l'aide des formes bilinéaire~(\ref{Eq-Helmacomplex}) et linéaire~(\ref{Eq-Helmacomplex}) que nous rappelons:
-\begin{equation}
+\begin{equation}\label{Eq-Helmab}
 a(p,q)=\dint_\Omega \partial_{x_i}p\partial_{x_i}\tilde{q}-k^2p\tilde{q} +
 \dint_{\Gamma_R} i\rho ckA_n\tilde{q}
 \quad \text{ et } \quad
@@ -855,34 +857,27 @@ Vh pR=real(p);
 plot (pR, wait=1, fill=1, ps="AcouDiff3.eps");
 \end{Verbatim}
 \colorblack\normalsize
-
-\medskip
 Le résultat est donné à la figure~\ref{Fig-AcouDiff3} pour plusieurs valeurs de la fréquence.
 \begin{figure}[h!]
 \centering
-\ifVersionDuDocEstVincent
-   \includegraphics[width=57mm]{AcouDiff3-1.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff3-5.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff3-10.eps}
-\else
-   \includegraphics[width=50mm]{AcouDiff3-1.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff3-5.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff3-10.eps}
-\fi
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff3-1.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff3-5.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff3-10.eps}
 \caption{Acoustique au coin de la rue pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff3}
 \end{figure}
 
-\medskip\noindent
+\medskip
 Y a-t-il un intérêt à demander une approximation P2?
-\flushright
+\begin{flushright}
 \textcolorgris{\reflectbox{Yaka essayer... ici non. Valeurs quasiment identiques.}}
-\flushleft
+\end{flushright}
 
 Les conditions aux limites sont-elles satisfaisantes?
-\flushright
-\colorgris{\reflectbox{Pas vraiment!}\\ 
+\begin{flushright}
+\colorgris\reflectbox{Pas vraiment!}\\ 
 \reflectbox{Imposer~$p=0$ ne correspond pas à une condition aux limites de type «fuite» à l'infini.}\\
-\reflectbox{On force seulement la pression à être nulle au bord, d'où la forme de la répartition...}\colorblack\flushleft
+\reflectbox{On force seulement la pression à être nulle au bord, d'où la forme de la répartition...}\colorblack
+\end{flushright}
 
 \medskip
 Modifions le script précédent, et ne passons pas en complexes:
@@ -899,11 +894,11 @@ plot (p, wait=true, cmm=legende, fill=1, value=true);
 \end{Verbatim}
 \colorblack\normalsize
 
-\medskip\noindent
+\medskip
 Y a-t-il une différence?
-\flushright
+\begin{flushright}
 \textcolorgris{\reflectbox{Yaka essayer... ici non. Valeurs quasiment identiques.}}
-\flushleft
+\end{flushright}
 
 \medskip
 Et si on entrait une condition de Neumann? Là, il est nécessaire d'être en complexe. L'unité complexe sous \freefem est \verb|1i|.
@@ -925,29 +920,23 @@ plot (pR, wait=true, cmm=legende, fill=1, value=true);
 Cette fois la réponse est nécessairement différente, puisque les conditions aux limites ne sont pas les mêmes... les résultats correspondants sont à la figure~\ref{Fig-AcouDiff2}.
 \begin{figure}[h!]
 \centering
-\ifVersionDuDocEstVincent
-   \includegraphics[width=57mm]{AcouDiff2-1.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff2-5.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff2-10.eps}
-\else
-   \includegraphics[width=50mm]{AcouDiff2-1.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff2-5.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff2-10.eps}
-\fi
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff2-1.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff2-5.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff2-10.eps}
 \caption{Avec condition de Neumann et pour des fréquences de~$100$, $500$ et $1000$~Hz}\label{Fig-AcouDiff2}
 \end{figure}
 
-\medskip\noindent
+\medskip
 À quoi correspondent ces résultats?
-\flushright
+\begin{flushright}
 \textcolorgris{\reflectbox{Chaque paroi vibre à une vitesse telle que~$\rho \overline{V}_n=1$.}}
-\flushleft
+\end{flushright}
 
 Sauriez-vous introduire des conditions de Robin?
-\flushright
+\begin{flushright}
 \colorgris\reflectbox{Évidemment!}\\
-\reflectbox{Il suffit de changer \textrm{1i*c*k*q} en \textrm{1i*c*k*conj(q)/Z} où~$Z$ est l'impédance.}
-\flushleft\colorblack
+\reflectbox{Il suffit de changer \textrm{1i*c*k*q} en \textrm{1i*c*k*conj(q)/Z} où~$Z$ est l'impédance.}\colorblack
+\end{flushright}
 
 %\begin{figure}[h!]
 %\centering
@@ -955,29 +944,64 @@ Sauriez-vous introduire des conditions de Robin?
 %\caption{Condition aux limites de Robin}\label{Fig-AcouDiff4b}
 %\end{figure}
 Permettraient-elles de laisser «fuir» l'onde à l'infini?
-\flushright
+\begin{flushright}
 \colorgris\reflectbox{Oui. Pour cela il faut que l'impédance de surface soit égale à celle du milieu, i.e. ici $Z=\rho c$.}\\
-\reflectbox{En terme de codage, cela correspond à \textrm{1i*k*conj(q)}.}
-\flushleft\colorblack
+\reflectbox{En terme de codage, cela correspond à \textrm{1i*k*conj(q)}.}\colorblack
+\end{flushright}
 
 Est-on assez loin des conditions aux limites?
-\flushright
-\colorgris\reflectbox{Non. Voir figure~\ref{Fig-AcouDiff4Ch}.}
-\flushleft\colorblack
+\begin{flushright}
+\colorgris\reflectbox{Non. Voir figure~\ref{Fig-AcouDiff4Ch}.}\colorblack
+\end{flushright}
 \begin{figure}[h!]
 \centering
-\ifVersionDuDocEstVincent
-   \includegraphics[width=57mm]{AcouDiff4Ch2.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff4Ch3.eps}\hfill
-   \includegraphics[width=57mm]{AcouDiff4ch3l4.eps}
-\else
-   \includegraphics[width=50mm]{AcouDiff4Ch2.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff4Ch3.eps}\hfill
-   \includegraphics[width=50mm]{AcouDiff4Ch3l4.eps}
-\fi
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff4Ch2.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff4Ch3.eps}\hfill
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff4ch3l4.eps}
 \caption{Distance aux conditions aux limtes}\label{Fig-AcouDiff4Ch}
 \end{figure}
 
+\medskip
+\subsection{Deux mots sur l'amortissement}
+
+Introduisons maintenant un peu d'amortissement sur le cas précédent. L'équation des ondes avec amortissement est donnée par la relation~(\ref{Eq-OndeSrcAmort}). Il suffit donc d'ajouter à la forme bilinéaire~$a(p,q)$ de l'équation~(\ref{Eq-Helmab}) le terme:
+\begin{equation}
++\dint_\Omega id\omega p\tilde{q}
+\end{equation}
+Attention, il ne faut pas que le facteur d'amortissement~$d$ soit trop grand... sous peine que l'onde ne se propage pas bien loin. Cela se traduit par:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=14]
+fespace Vh(Th, P2);
+Vh<complex> p, q;
+real d=0.05;
+
+solve helmholtz(p,q)= int2d(Th)(dx(p)*dx(conj(q)) + dy(p)*dy(conj(q)) - k*k*p*conj(q) 
++amort*1i*freq*p*conj(q) ) -int1d(Th,a4)(g*q);
+
+Vh pR=real(p), pI=imag(p);
+
+string legende="frequence = "+freq+" Hz et amortissement = "+d;
+plot (pR, cmm=legende, wait=true, fill=1);
+plot (pI, cmm=legende, wait=true, fill=1);
+\end{Verbatim}
+\colorblack\normalsize
+
+La différence entre calcul dans~$\RR$ et calcul dans~$\CC$ prend ici tout son sens.  Jusqu'à présent, la partie imaginaire du champ de pression était nulle en tout point, ce qui n'est désormais plus le cas. La fi\-gu\-re~\ref{Fig-AcouDiff5} présente les parties réelle (en haut) et imaginaire (en bas) pour un amortissement de 0, 1 et 2\%.
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c@{\hspace{-5mm}}c@{\hspace{-5mm}}c@{\hspace{-5mm}}c}
+   $\Re(p)$ & 
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff5Rh3l3d0-5.eps}&
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff5Rh3l3d1-5.eps}&
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff5Rh3l3d2-5.eps}\\
+   $\Im(p)$ &
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff5Ih3l3d0-5.eps}&
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff5Ih3l3d1-5.eps}&
+   \includegraphics[width=\HauteurDesEPS]{AcouDiff5Ih3l3d2-5.eps}\\
+\end{tabular}
+\caption{À 500~Hz avec un amortissement de 0, 1 et 2\%}\label{Fig-AcouDiff5}
+\end{figure}
+On remarque qu'avec seulement 1\% d'amortissement, l'onde arrive péniblement jusqu'au coude. Pour 2\% d'amortissement, elle «s'évanouit» très vite, dès la partie droite.
 
 %\medskip
 %\subsection{Un tablier léger}
