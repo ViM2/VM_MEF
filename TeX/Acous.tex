@@ -962,13 +962,13 @@ Est-on assez loin des conditions aux limites?
 \end{figure}
 
 \medskip
-\subsection{Un petit peu d'amortissement}
+\subsection{Un peu d'amortissement}
 
 Introduisons maintenant un peu d'amortissement sur le cas précédent. L'équation des ondes avec amortissement est donnée par la relation~(\ref{Eq-OndeSrcAmort}). Il suffit donc d'ajouter à la forme bilinéaire~$a(p,q)$ de l'équation~(\ref{Eq-Helmab}) le terme:
 \begin{equation}
 +\dint_\Omega id\omega p\tilde{q}
 \end{equation}
-Attention, il ne faut pas que le facteur d'amortissement~$d$ soit trop grand... sous peine que l'onde ne se propage pas bien loin. Cela se traduit par:
+Attention, il ne faut pas que le facteur d'amortissement~$d$ soit trop grand... sous peine que l'onde ne se propage pas bien loin. Cela se traduit par la modification du batch \freefem:
 \colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=14]
 fespace Vh(Th, P2);
@@ -1006,7 +1006,7 @@ On remarque qu'avec seulement 1\% d'amortissement, l'onde arrive péniblement ju
 \medskip
 \subsection{Un obstacle}
 
-Pour le plaisir, introduisons un obstacle. Nous proposons le listing (abondamment commenté) suivant:
+Pour le plaisir, introduisons un obstacle. Nous proposons le listing \freefem (abondamment commenté) suivant:
 \colorgris\scriptsize
 \begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=1]
 real freq=50.0;// fréquence en Hz
@@ -1081,17 +1081,75 @@ ou une condition d'absorption parfaite de Dirichlet:
 \end{figure}
 
 
+\medskip
+\subsection{Transmission entre deux milieux}
 
+Considérons maintenant, toujours pour le plaisir, le cas d'une onde passant d'un milieu dans un autre. Nous proposons un passage d'une onde de l'air dans l'eau, modélisé en utilisant le script \freefem suivant:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=1]
+real freq=50.0;// fréquence en Hz
+real rho1=1.204;// densité de l'air en kg/m3
+real rho2=1000.0;// densité de l'eau en kg/m3
+real c1=343.0;// vitesse du son dans l'air en m/s
+real c2=1500.0;// vitesse du son dans l'eau en m/s
+func g=1.0;// on a p=g sur a6 => onde plane, par condition de Dirichlet
+real amort=0.0005;
+
+border a1(t=0,1){x=t;y=0;};
+border a2(t=1,3){x=t;y=0;};
+border a3(t=0,2){x=3;y=t;};
+border a4(t=3,2){x=t;y=2;};
+border a5(t=2,0){x=t;y=2;};
+border a6(t=2,0){x=0;y=t;};
+border interf(t=0,1){x=1+t;y=2*t;};//  interface interne
+mesh Th = buildmesh (a1(10)+a2(20)+a3(20)+a4(10)+a5(20)+a6(20)+interf(30));
+//plot(Th,wait=1,cmm="maillage");// affichage du maillage
+
+fespace ValRho(Th,P0);// espace d'interpolation valeurs constantes par élément
+ValRho reg=region;
+//plot(reg,fill=1,wait=1,cmm="regions", value=1);// affichage des régions
+int nmil1=reg(0.1,0.1);// valeur prise pour la région 1 = 0
+int nmil2=reg(2.9,0.1);// valeur prise pour la région 2 = 3
+cout << " n milieu 1 = " <<  nmil1 << ", n milieu 2 = " << nmil2<< endl;
+ValRho rho=rho1*(region==nmil1)+rho2*(region==nmil2);
+ValRho c=c1*((region==nmil1)+1)+c2*(region==nmil2);
+//plot(rho,fill=1,wait=1,cmm="rho",value=1);// affichage des valeurs de rho
+//plot(c,fill=1,wait=1,cmm="c",value=1);// affichage des valeurs de c
+
+fespace Vh(Th, P1);
+Vh<complex> p, q;
+
+solve helmholtz(p,q)= int2d(Th)(-dx(p)*dx(conj(q)) - dy(p)*dy(conj(q)) +freq/c*freq/c*p*conj(q) // forme bilin non amortie
+-amort*1i*freq*rho*p*conj(q)) // terme d'amortissement
++int1d(Th,a6)(g*conj(q)) // CL paroi rayonnante (th de Green)
+;
+
+Vh pR=real(p), pI=imag(p), pp, px, py;
+pp=sqrt(pR*pR+pI*pI);
+px=dx(pp);
+py=dy(pp);
+
+string legende="frequence = "+freq+" Hz, amortissement = "+amort*100+"%";
+plot (pR, wait=true, cmm=legende, fill=1, value=true);
+plot (pI, wait=true, cmm=legende, fill=1, value=true);
+\end{Verbatim}
+\colorblack\normalsize
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c@{\hspace{-5mm}}c@{\hspace{-5mm}}c}
+   \includegraphics[width=\HauteurDesEPS]{milieux4R-d05.eps}&
+   \includegraphics[width=\HauteurDesEPS]{milieux4I-d05.eps}&
+   \includegraphics[width=\HauteurDesEPS]{milieux4R-d0.eps}\\
+   $\Re(p)$ &    $\Im(p)$ &    $\Re(p)$ sans amortissement
+\end{tabular}
+\caption{Passage d'une onde de l'air à l'eau avec et sans amortissement}\label{Fig-AcouDiff5}
+\end{figure}
 
 %\medskip
 %\subsection{Un tablier léger}
 %
 %Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
 % ou un haut-parleur.
-
-%\medskip
-%\subsection{Propagation à travers plusieurs milieux}
-%Pascal: air / plaque / air
 
 %\medskip
 %\subsection{Interaction fluide-structure forte: une lame dans un écoulement}
