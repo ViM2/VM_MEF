@@ -1112,9 +1112,13 @@ int nmil1=reg(0.1,0.1);// valeur prise pour la région 1 = 0
 int nmil2=reg(2.9,0.1);// valeur prise pour la région 2 = 3
 cout << " n milieu 1 = " <<  nmil1 << ", n milieu 2 = " << nmil2<< endl;
 ValRho rho=rho1*(region==nmil1)+rho2*(region==nmil2);
-ValRho c=c1*((region==nmil1)+1)+c2*(region==nmil2);
+ValRho c=c1*(region==nmil1)+c2*(region==nmil2);
 //plot(rho,fill=1,wait=1,cmm="rho",value=1);// affichage des valeurs de rho
 //plot(c,fill=1,wait=1,cmm="c",value=1);// affichage des valeurs de c
+//cout << " rho(0.1,0.1)" <<  rho(0.1,0.1) << ", rho(2.9,0.1) = " << rho(2.9,0.1)<< endl;
+//cout << " rho(0.9,0.1)" <<  rho(0.9,0.1) << ", rho(1.9,0.1) = " << rho(1.9,0.1)<< endl;
+//cout << " c(0.1,0.1)" <<  c(0.1,0.1) << ", c(2.9,0.1) = " << c(2.9,0.1)<< endl;
+//cout << " c(0.9,0.1)" <<  c(0.9,0.1) << ", c(1.9,0.1) = " << c(1.9,0.1)<< endl;
 
 fespace Vh(Th, P1);
 Vh<complex> p, q;
@@ -1124,10 +1128,7 @@ solve helmholtz(p,q)= int2d(Th)(-dx(p)*dx(conj(q)) - dy(p)*dy(conj(q)) +freq/c*f
 +int1d(Th,a6)(g*conj(q)) // CL paroi rayonnante (th de Green)
 ;
 
-Vh pR=real(p), pI=imag(p), pp, px, py;
-pp=sqrt(pR*pR+pI*pI);
-px=dx(pp);
-py=dy(pp);
+Vh pR=real(p), pI=imag(p);
 
 string legende="frequence = "+freq+" Hz, amortissement = "+amort*100+"%";
 plot (pR, wait=true, cmm=legende, fill=1, value=true);
