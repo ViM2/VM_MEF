@@ -809,7 +809,7 @@ Pour une analyse plus complète dans le cadre stochastique, c'est au chapitre~\r
 \end{wrapfigure}
 Nous nous proposons de retrouver l'illustration~\ref{Fig-diffrac}d.
 
-Pour cela, nous considérons le modèle décrit à la figure~\ref{Fig-AcouDiff0} constitué de 6 segments~$a_1$ à $a_6$. L'onde acoustique incidente arrive par le segment~$a4$. L'onde est libre de se propager, et notamment elle n'est pas réfléchie sur les côtés~$a_1$ à~$a_3$, l'obstacle ne correspondant qu'aux faces~$a_5$ et~$a_6$.
+Pour cela, nous considérons le modèle décrit à la figure~\ref{Fig-AcouDiff0} constitué de 6 segments~$a_1$ à $a_6$. L'onde acoustique incidente arrive par le segment~$a_4$. L'onde est libre de se propager, et notamment elle n'est pas réfléchie sur les côtés~$a_1$ à~$a_3$, l'obstacle ne correspondant qu'aux faces~$a_5$ et~$a_6$.
 
 Pour modéliser l'onde arrivant dans le modèle, on va supposer que la surface~$a_4$ porte une condition de Dirichlet de type~$p=\overline{p}$.
 Nous proposons, dans un premier temps, d'imposer sur les faces~$a_1$ à~$a_3$ une condition de Dirichlet de type~$p=0$.
@@ -897,7 +897,7 @@ plot (p, wait=true, cmm=legende, fill=1, value=true);
 \medskip
 Y a-t-il une différence?
 \begin{flushright}
-\textcolorgris{\reflectbox{Yaka essayer... ici non. Valeurs quasiment identiques.}}
+\textcolorgris{\reflectbox{Yaka essayer... ici pas de différence car~$\Im(p)=0$, et donc on peut rester dans~$\RR$.}}
 \end{flushright}
 
 \medskip
@@ -1146,23 +1146,16 @@ plot (pI, wait=true, cmm=legende, fill=1, value=true);
 \caption{Passage d'une onde de l'air à l'eau avec et sans amortissement}\label{Fig-AcouDiff5}
 \end{figure}
 
-%\medskip
-%\subsection{Un tablier léger}
+\medskip
+\subsection{Interaction fluide-structure forte: un tablier léger}
 %
-%Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
-% ou un haut-parleur.
+Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
+Nous proposons donc un exemple dans lequel il y a interaction fluide-structure forte entre un domaine fluide (air) et un domaine modélisé par l'élasticité linéaire isotrope. 
 
-%\medskip
-%\subsection{Interaction fluide-structure forte: une lame dans un écoulement}
-%
+\medskip
+Commençons par le solide. Sa formulation variationnelle est donnée à l'équation~(\ref{Eq-StatLinIso}) rappelée ici:
+\begin{equation*}
+\dint_\Omega \lambda \dive(u)\dive(v)+2\mu\varepsilon(u)\cdot\varepsilon(v) = \dint_\Omega fv +
+\dint_{\Gamma_N} g_N v, \quad \forall v\in H^1_D(\Omega)
+\end{equation*}
 
-%\medskip
-%\subsection{Ondes dans un solide}
-% Comsol acou p198 : ondes dans un solide
-
-%\medskip
-%\section{Un cas qui ne fonctionne pas}
-% sous réserve de trouver un cas où une excitation à la fréquence f1
-% conduit à une solution à la fréquence f2:
-% via un composant mécanique: on sait modéliser, donc pas d'intérêt
-% via un milieu très dispersif ? à essayer

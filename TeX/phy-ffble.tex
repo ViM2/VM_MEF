@@ -426,7 +426,7 @@ En se plaçant dans le cas statique, et en écrivant «en déplacements», i.e. 
 
 \medskip
 Si en plus le matériau est isotrope, cette expression se simplifie en:
-\begin{equation}
+\begin{equation}\label{Eq-StatLinIso}
 \dint_\Omega \lambda \dive(u)\dive(v)+2\mu\varepsilon(u)\cdot\varepsilon(v) = \dint_\Omega fv +
 \dint_{\Gamma_N} g_N v, \quad \forall v\in H^1_D(\Omega)
 \end{equation}
@@ -461,7 +461,7 @@ J(\sigma) =
 -\dint_\Omega \sigma(v) S\sigma_0
 + \dint_{\Gamma_D} \overline{u} \sigma(v)\cdot n
 \end{equation}
-où le champ de contrainte doit vérifier les conditions aux limites~$\dive \sigma + f =0$ sur~$\Omega$ et~$\sigma n = g_N$ sur~$\Gamma_N$. $S$ désigne la loi de comportement donnée sous forme inverse (i.e. sous forme de souplesse, i.e.~$S=H^{-1}$).
+où le champ de contrainte doit vérifier les conditions~$\dive \sigma + f =0$ dans~$\Omega$ et~$\sigma n = g_N$ sur~$\Gamma_N$. $S$ désigne la loi de comportement donnée sous forme inverse (i.e. sous forme de souplesse, i.e.~$S=H^{-1}$).
 
 \medskip
 L'utilisation de multiplicateurs de Lagrange permet de construire des fonctionnelles multi-champs. La \textcolorblue{fonctionnelle de l'énergie complémentaire}\index{fonctionnelle!de l'énergie complémentaire} est la suivante:
