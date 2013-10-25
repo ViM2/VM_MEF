@@ -132,7 +132,7 @@ Tout cela justifie la remarque que nous faisons en introduction: la partie diffi
 
 \begin{histoire}
 \emph{Complément sur le résonateur de Helmholtz.}\\
-Les résonateurs de Helmholtz sont une solution très ancienne, puisqu'on utilisait déjà des vases dans les théâtres antiques pour la correction acoustique. Le nom provient d'un dispositif créé dans les années 1850 par Hermann von Helmholtz afin de déterminer la hauteur des différents tons. 
+Les résonateurs de Helmholtz\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} sont une solution très ancienne, puisqu'on utilisait déjà des vases dans les théâtres antiques pour la correction acoustique. Le nom provient d'un dispositif créé dans les années 1850 par Hermann von Helmholtz afin de déterminer la hauteur des différents tons. 
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{c}%
@@ -897,7 +897,9 @@ plot (p, wait=true, cmm=legende, fill=1, value=true);
 \medskip
 Y a-t-il une différence?
 \begin{flushright}
-\textcolorgris{\reflectbox{Yaka essayer... ici pas de différence car~$\Im(p)=0$, et donc on peut rester dans~$\RR$.}}
+\colorgris\reflectbox{Yaka essayer... ici pas de différence car~$\Im(p)=0$, et donc on peut rester dans~$\RR$.}\\
+\reflectbox{Rappel: une telle solution est dite monochromatique, voir fin du paragraphe~\ref{Sec-EqFblAcou}.}
+\colorblack
 \end{flushright}
 
 \medskip
@@ -1071,7 +1073,6 @@ ou une condition d'absorption parfaite de Dirichlet:
 + on(b3, p=0)//CL Dirichlet absorption parfaite
 \end{Verbatim}
 \colorblack\normalsize
-\colorblack\normalsize
 \begin{figure}[h!]
 \centering
    \includegraphics[width=\HauteurDesEPS]{Obstacle4-Z5.eps}\hfill
@@ -1147,15 +1148,197 @@ plot (pI, wait=true, cmm=legende, fill=1, value=true);
 \end{figure}
 
 \medskip
-\subsection{Interaction fluide-structure forte: un tablier léger}
-%
-Dans les cas déjà évoqués tels qu'une source acoustique puissante faisant varier une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il sera effectivement nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
-Nous proposons donc un exemple dans lequel il y a interaction fluide-structure forte entre un domaine fluide (air) et un domaine modélisé par l'élasticité linéaire isotrope. 
+\subsection{Interaction fluide-structure semi-forte}
+
+Dans les cas déjà évoqués tels qu'une source acoustique puissante capable de déformer une plaque mince (tablier fin de véhicule) ou d'une vibration se propageant jusqu'à faire rayonner une surface, alors il est nécessaire de modéliser à la fois le domaine mécanique et le domaine acoustique.
 
 \medskip
-Commençons par le solide. Sa formulation variationnelle est donnée à l'équation~(\ref{Eq-StatLinIso}) rappelée ici:
+Un \textcolorblue{couplage fort} consiste à définir les deux volumes (fluide et solide), chacun avec sa formulation variationnelle, à coupler ces deux «physiques», par exemple par des multiplicateurs de Lagrange (le lecteur aura sans doute découvert mon inclinaison à utiliser lesdits multiplicateurs de Lagrange), et à résoudre le tout de manière simultanée.
+
+\medskip
+Nous proposons une voie médiane, que nous appellerons \textcolorblue{couplage semi-fort}, et dans lequel nous allons résoudre une série de problèmes quasiment découplés.
+Le cas que nous proposons de traiter est celui de l'interaction entre un domaine fluide, modélisé par l'équation d'Helmholtz\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} en pression seule (comme dans les exemples précédents) et une structure ayant un comportement élastique linéaire isotrope.
+Ce calcul «semi-fort» se déroule comme suit:
+\begin{enumerate}
+   \item On calcule la structure seule, soumise à ses efforts mécaniques divers (ici uniquement à son poids propre), en considérant que le fluide n'a pas encore exercé de pression. Cela nous donne une déformation de la structure, et particulièrement de la paroi d'interface avec le fluide;
+   \item Cette déformation est utilisée pour modéliser le domaine fluide, dans lequel se trouve la source acoustique. On calcule la répartition de pression dans le domaine fluide, et on transforme la pression présente sur la paroi d'interface avec la structure en efforts.
+   \item Ces efforts supplémentaires sont introduits dans le calcul de la structure, qui se déforme à nouveau... et on boucle sur l'étape 2. Il convient de définir un critère d'arrêt. On peut considérer l'arrêt si, sur l'interface entre les deux domaines et entre deux pas successifs, la déformation n'évolue que de manière infime, ou dualement si les efforts sont quasiment constants.
+\end{enumerate}
+
+\medskip
+Commençons par un petit rappel de mécanique, et pour cela, considérons tout d'abord le solide seul. Sa formulation variationnelle est donnée à l'équation~(\ref{Eq-StatLinIso}) rappelée ici:
 \begin{equation*}
 \dint_\Omega \lambda \dive(u)\dive(v)+2\mu\varepsilon(u)\cdot\varepsilon(v) = \dint_\Omega fv +
 \dint_{\Gamma_N} g_N v, \quad \forall v\in H^1_D(\Omega)
 \end{equation*}
 
+Le script \freefem ci-dessous résout le problème initial de la structure seule:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt]
+// tablier pour interaction fluide-structure semi-forte
+// au lieu de définir les vecteurs [ux,uy], on définit par composantes
+//
+real E = 21.5;// Module d'Yound
+real nu = 0.29;// coefficient de Poisson
+real gravity = -0.05;
+int nmaille = 2;// au moins 70 pour un résultat assez lisse, 150 c'est mieux mais long
+//
+macro div(u,v) ( dx(u)+dy(v) ) // EOM
+real sqrt2=sqrt(2.);
+macro epsilon(u,v)  [dx(u),dy(v),(dy(u)+dx(v))/sqrt2] // EOM
+//
+border st1(t=0,10) { x=0; y=t;};
+border st2(t=0,-1) { x=t; y=10;};
+border st3(t=10,0) { x=-1; y=t;};
+border st4(t=-1,0) { x=t; y=0;};
+mesh Th = buildmesh( st1(10*nmaille)+st2(nmaille)+st3(10*nmaille)+st4(nmaille));
+//plot(Th);
+//
+real lambda = E*nu/(1+nu)/(1-2*nu);// coefficient de Lamé
+real mu = E/2/(1+nu);// coefficient de Lamé
+//
+fespace Wh(Th,P1);
+Wh ux,uy,w,s;
+//
+// forme faible:
+solve StatiqueIsotrope(ux,uy,w,s)=
+	int2d(Th)( lambda*div(ux,uy)*div(w,s) +2.*mu*(epsilon(ux,uy)'*epsilon(w,s)) )
+  - int2d(Th) (gravity*s)
+  + on(st2,ux=0,uy=0)// tenu en haut
+  + on(st4,ux=0,uy=0)// tenu en bas
+  ;
+\end{Verbatim}
+\colorblack\normalsize
+
+\begin{remarque}
+En complément à ce code, nous fournissons le calcul des déformations et contraintes, dont nous n'aurons pas besoin pour la suite, mais c'est cadeau...
+
+Disposant des déformations et des contraintes, on peut trouver aisément les directions principales (il suffit de diagonaliser une matrice symétrique $2\times2$), puis calculer par exemple la contrainte de von Mises.
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+//
+// POST-TRAITEMENT
+//
+// Déformée :
+mesh Th1 = movemesh(Th, [x+ux, y+uy]);
+//plot(Th1,wait=1);
+
+//DEFORMATIONS
+// Ici j'ai calculé composante par composante plutôt que de générer un vecteur
+// Sur le maillage non déformé: EpsXX, EpsYY, EpsXY
+// Sur le maillage déformé: YEpsXX, YEpsYY, YEpsXY
+fespace Xh(Th,P1);
+Xh EpsXX=dx(ux),EpsYY=dy(uy),EpsXY=(dy(ux)+dx(uy))/sqrt2;
+Xh SigXX=2*mu*EpsXX+lambda*(EpsXX+EpsYY);
+Xh Sigyy=2*mu*EpsYY+lambda*(EpsXX+EpsYY);
+Xh SygXY=2*mu*EpsXX;
+//plot(EpsXX,fill=1,cmm="epsilon xx",wait=1);
+fespace Yh(Th1,P1);
+Yh YEpsXX=dx(ux),YEpsYY=dy(uy),YEpsXY=(dy(ux)+dx(uy))/sqrt2;
+Yh YSigXX=2*mu*EpsXX+lambda*(EpsXX+EpsYY);
+Yh YSigYY=2*mu*EpsYY+lambda*(EpsXX+EpsYY);
+Yh YSigXY=2*mu*EpsXX;
+//plot(YEpsXX,fill=1,cmm="epsilon xx",wait=1);
+//plot(YSigXX,fill=1,cmm="sigma xx",wait=1);
+//plot(YEpsYY,fill=1,cmm="epsilon yy",wait=1);
+//plot(YSigYY,fill=1,cmm="sigma yy",wait=1);
+//plot(YEpsXY,fill=1,cmm="epsilon xy",wait=1);
+//plot(YSigXY,fill=1,cmm="sigma xy",wait=1);
+\end{Verbatim}
+\colorblack\normalsize
+\end{remarque}
+
+\medskip
+Considérons maintenant le calcul du fluide seul. Le listing ressemble à ce qui a déjà été présenté précédemment. Deux points sont à considérer:
+\begin{itemize}
+   \item le maillage à partir d'une donnée issue du calcul:
+   connaissant la solution du problème structurel, on dispose des déplacements~\verb|ux| et~\verb|uy|... dont on se sert pour définir le domaine fluide:
+   \begin{verbatim}
+   border fl4(t=10,0) {x=ux(0,t); y=uy(0,t);};// interface avec la structure
+   \end{verbatim}
+   \item le calcul des efforts dus à la pression.
+   
+   Si l'on résout en vitesse et pression, alors, les efforts sont définis par:
+   \begin{verbatim}
+  sigmaxx([x+ux,y+uy]) = (2*dx(ux)-p);
+  sigmayy([x+ux,y+uy]) = (2*dy(uy)-p);
+  sigmaxy([x+ux,y+uy]) = (dx(ux)+dy(uy));
+   \end{verbatim}
+   et on ajoute la force suivante dans la formulation variationnelle du problème de structure:
+   \begin{verbatim}
+  + int1d(Th,interface)(sigma11*N.x*w + sigma22*N.y*s + sigma12*(N.y*w+N.x*s) ) 
+   \end{verbatim}
+   
+   Si l'on résout en pression uniquement, on peut faire simple, et ajouter la force suivante dans la formulation variationnelle du problème de structure:
+   \begin{verbatim}
+  + int1d(Th,interface)(pR*N.x*w + pR*N.y*s + (dx(ux)+dy(uy))*(N.y*w+N.x*s) )
+   \end{verbatim}
+   où l'on a écrit~\verb|pR| pour rappeler que l'on considère la partie réelle de la pression, qui peut être directement~$p$ si l'on a une solution monochromatique dans la partie fluide.
+\end{itemize}
+
+
+\medskip
+Cela conduit au script:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=33]
+// On modélise le fluide par l'équation de Helmholtz
+//
+include "VM_StrFluid2.edp"// partie structure = statique linéaire isotrope
+//
+real freq=50.0;// fréquence en Hz
+real rho=1.;
+real c=343.0;// vitesse du son en m/s
+func g=1.0;// on a p=g sur a4 => onde plane, par condition de Dirichlet
+real k=freq/c;
+real amort=0.0;//2;
+//
+border fl1(t=0,10) {x=t; y=0;};
+border fl2(t=0,10) {x=10; y=t;};
+border fl3(t=10,0) {x=t; y=10;};
+border fl4(t=10,0) {x=0; y=ux(0,t);};// interface avec la structure
+//
+mesh sh = buildmesh(fl1(10*nmaille)+fl2(10*nmaille)+fl3(10*nmaille)+fl4(10*nmaille));
+//plot(sh,wait=1);
+//
+fespace Ph(sh, P1);
+Ph<complex> p, q;
+//
+problem helmholtz(p,q)= int2d(sh)(-dx(p)*dx(conj(q)) - dy(p)*dy(conj(q)) +k*k*p*conj(q) // forme bilin non amortie
+-amort*1i*freq*rho*p*conj(q) )// terme d'amortissement
+-int1d(sh,fl2)(g*conj(q)) // CL paroi rayonnante (th de Green)
+;
+solve helmholtz(p,q)
+//
+Ph pR=real(p), pI=imag(p);
+plot (pR, wait=true, cmm="Re(p)", fill=1, value=true);
+//plot (pI, wait=true, cmm="Im(p), fill=1, value=true);
+\end{Verbatim}
+\colorblack\normalsize
+
+\medskip
+Il ne reste plus qu'à faire boucler le calcul. Ici nous n'avons pas introduit de critère de convergence et avons simplement effectué une boucle de trois itérations:
+\colorgris\scriptsize
+\begin{Verbatim}[numbers=left,numbersep=3pt,firstnumber=last]
+//
+// boucle
+//
+int i;
+for(i=0;i<3;i++)// boucle plutôt qu'un while avec condition de sortie basée sur convergence
+{
+// Probleme avec efforts transmis:
+problem StatiqueIsotropeCouple(ux,uy,w,s,init=i)=
+	int2d(Th)( lambda*div(ux,uy)*div(w,s) +2.*mu*(epsilon(ux,uy)'*epsilon(w,s)) )
+  - int2d(Th) (gravity*s)
+  + on(st2,ux=0,uy=0)// tenu en haut
+  + on(st4,ux=0,uy=0)// tenu en bas
+  - int1d(Th,interface)(p*N.x*w + p*N.y*s + (dx(ux)+dy(uy))*(N.y*w+N.x*s) )
+;
+Th1 = movemesh(Th, [x+uu, y+vv]);
+//plot(Th1);
+mesh sh = buildmesh(fl1(10*nmaille)+fl2(10*nmaille)+fl3(10*nmaille)+fl4(10*nmaille));
+//plot(sh);
+solve helmholtz(p,q)
+}
+plot(Th1);
+\end{Verbatim}
+\colorblack\normalsize

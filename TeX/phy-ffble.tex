@@ -159,6 +159,31 @@ On obtient la formulation variationnelle:
 \end{equation}
 
 \medskip
+\subsubsection{Laplacien avec conditions mixtes en formulation mixte}\index{ED-EDP!de Laplace}\index{laplacien}\index{ED-EDP!de Poisson}\index{condition aux limites!mêlée}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index{condition aux limites!de Neumann}
+On considère le problème précédent général comportant des conditions de Dirichlet et de Neumann sur les parties~$\Gamma_D$ et~$\Gamma_N$ respectivement. Ce problème est exprimé sous forme mixte, i.e. à l'aide de deux variables~$u$ et~$p$, par:
+\begin{equation}\left\{\begin{aligned}
+\nabla p + u &=0 &&\text{ dans } \Omega\\
+\nabla.u &=u &&\text{ dans } \Omega\\
+p&=g_D &&\text{ sur } \Gamma_D\\
+\dfrac{\partial u}{\partial n} &=g_N.n &&\text{ sur } \Gamma_N
+\end{aligned}
+\right.
+\end{equation}
+
+\medskip
+On obtient la formulation variationnelle: Touver~$u$ et~$p$ tels que:
+\begin{equation}
+\left\{\begin{aligned}
+\forall v\in\XX ,\quad \dint_\Omega p\nabla.v &= \dint_{\Gamma_D} g_D.n\\
+\forall q\in L^2(\Omega), \quad \dint_\Omega q\nabla.u &= \dint_\Omega qf\\
+\dfrac{\partial u}{\partial n} &=g_N.n \text{ sur } \Gamma_n
+\end{aligned}
+\right. 
+\end{equation}
+avec~$\XX=\{v\in H(div,\Omega); v.n=0 \text{ sur } \Gamma_N\}$.
+
+
+\medskip
 \subsection{Équation d'onde}
 Rappelons que l'équation des ondes correspond à un problème d'évolution hyperbolique linéaire. Différentes conditions aux limites peuvent être imposées. Dans le cadre de ce document, nous nous intéresserons plus particulièrement à l'acoustique. Ce paragraphe est donc traité un peu plus loin dans le document.
 
@@ -533,7 +558,7 @@ On s'intéresse à la propagation et à la réflexion d'ondes de pression dans u
 
 \medskip
 On rappelle que l'équation des ondes acoustiques de célérité~$c$ dans un milieu est:
-\begin{equation}
+\begin{equation}\label{Eq-OndesAcou}
 \Delta p' - \dfrac1{c^2} \ddot{p}' = 0
 \end{equation}
 
@@ -558,15 +583,24 @@ On a donc:
   \item Neumann:~$\partial_n p = -i\rho\omega \overline{V}_n$ sur~$\Gamma_N$;\\[-2ex]
   \item Robin:~$\partial_n p=-i\rho\omega A_n p$ sur~$\Gamma_R$.
 \end{itemize}
-\medskipvm\colorgreen
-\paragraph{Condition de Neumann}
+%\colorgreen
+\begin{remarque}[Remarques]~\\
+\textbf{Condition de Dirichlet:}
+La condition est à comprendre comme «la pression a une valeur prescrite sur la frontière». 
+Sa traduction mathématique est alors plutôt:
+\begin{equation*}
+\dfrac{\partial p}{\partial n} = \overline{p} \quad \text{ sur } \Gamma_D
+\end{equation*}
+
+\noindent\textbf{Condition de Neumann:}
 $\overline{V}_n$ est la valeur imposée de la composante normale de la vitesse. Cette condition limite modélise la \textcolorred{vibration} d'un panneau, ce qui en fait la condition la plus souvent utilisée lorsque l'on a un couplage faible entre la structure et le fluide. On effectue alors une étude vibratoire de la structure, puis grâce à celle-ci une étude acoustique du fluide sans se préoccuper des interactions fluide-structure.
 
-\medskip
-\paragraph{Condition de Robin}
+\noindent\textbf{Condition de Robin:}
 $A_n$ est appelé coefficient d'admittance, il vaut l'inverse de l'impédance~$Z_n$:
-$A_n\cdot Z_n=1$. Physiquement, ce coefficient représente l'\textcolorred{absorption} de l'onde par le matériau environnant dont la frontière est modélisée par~$\Gamma_R$.
+$A_n\cdot Z_n=1$. Physiquement, ce coefficient représente l'\textcolorred{absorption} et la \textcolorred{reflexion} de l'onde par le matériau environnant dont la frontière est modélisée par~$\Gamma_R$.
 \colorblack
+\end{remarque}
+Nous aurons l'occasion de reparler de cela au chapitre~\ref{Ch-Acous} qui portera spécifiquement sur l'acoustique.
 
 \medskip
 \subsection{Formulation faible}
@@ -597,3 +631,8 @@ ou de manière équivalente:
 \begin{equation}
 \text{Trouver } p\in H^1_D(\Omega) \text{ tel que } \delta W_p=0,\quad \forall\delta p\in H^1_0(\Omega)
 \end{equation} 
+
+\medskip
+\textcolorgreen{En fonction des conditions aux limites et des conditions initiales du problème, la variation de pression solution du problème peut être réelle, i.e. être de la forme~$p'(x,y,z,t)=\Re(p(x,y,z)e^{i\omega t})$. Une telle solution est appelée \textcolorblue{monochromatique}. On pourra alors résoudre le problème en restant dans~$\RR$ au lieu de passer dans~$\CC$.
+Cela se produit lorsque l'on résout l'équation d'Helmholtz~(\ref{Eq-Helm}) assortie uniquement de conditions aux limites de Dirichlet.}
+
