@@ -366,7 +366,7 @@ Le \textcolorblue{bruit rose} est un bruit dont le niveau par bande d'octave est
 la réponse fréquentielle d'une chaîne de reproduction sonore.
 
 \medskip
-\subsubsection{Impédance}
+\subsubsection{Impédance}\label{Sec-Imp}
 
 La notion d'impédance mérite que nous y passions quelques instants. En effet, elle nous permettra par la suite de définir des conditions aux limites pour nos modèles numériques.
 
@@ -571,6 +571,9 @@ On n'oubliera pas de prendre en compte les pertes par transmission dans le calcu
 Dans le cas où l'on s'intéresse à la transmission entre plusieurs salles, il faudrait effectivement ne pas oublier qu'une salle n'a pas que des sources internes, mais également des sources externes correspondant à ce qui a pu s'échapper des autres salles, ou de ce qui rayonne suite à la propagation de vibrations.
 
 \medskip
+Nous avons présenté quelques formules dans le cas de l'acoustique des salles, mais d'autres formules relatives à d'autre problématiques acoustiques typiques existent: par exemple pour l'encoffrement (ou capotage) de sources acoustiques (machines...).
+
+\medskip
 C'est une lapalissade, mais dans un calcul global, les phénomènes locaux (écrantage...) ne sont pas pris en compte (ou alors de manière globale)...
 Si l'on s'intéresse au niveau moyen résultant dans un local, prendre en compte la totalité des surfaces absorbantes, qu'elles soient situées au murs, au plafond ou sous formes d'écrans, de fauteuils... fonctionne.
 Par contre, si l'on a besoin de descendre dans le détail local de la répartition de la pression acoustique (par exemple répartition poste à poste), alors il convient d'utiliser des méthodes plus adéquates, dont les éléments finis, que nous allons présenter maintenant.
@@ -578,35 +581,95 @@ Par contre, si l'on a besoin de descendre dans le détail local de la répartiti
 \medskip
 \subsection{Constitution d'un modèle éléments finis}
 
+Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, nous devrons disposer de sources et de conditions aux limites. Nous allons aborder ces deux points.
+
+\medskip
+\subsubsection{Sources}
+
 Si l'on ajoute des termes de sources, alors l'équation des ondes~(\ref{Eq-EqOndeAcou}) devient:
 \begin{equation}\label{Eq-OndeSrc}
-\dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
+\dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q_d)\right)=q_m
 \end{equation}
-dont l'inconnue est toujours la pression acoustique et où~$q$ et~$Q$ représentent les termes de sources pour un dipôle et un monopôle respectivement.
+dont l'inconnue est toujours la pression acoustique et où~$q_d$ et~$q_m$ représentent les termes de sources pour un \textcolorblue{dipôle} et un \textcolorblue{monopôle} respectivement.
 Pour les milieux dispersifs, un terme de dissipation supplémentaire peut être introduit dans l'équation des ondes qui devient:
 \begin{equation}\label{Eq-OndeSrcAmort}
-\dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}-d\dfrac{\partial p}{\partial t}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
+\dfrac{1}{\rho c^2}\dfrac{\partial^2p}{\partial t^2}-d\dfrac{\partial p}{\partial t}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q_d)\right)=q_m
 \end{equation}
 Dans la suite, on restera dans le cas~$d=0$.
 
 Dans le cas harmonique, l'équation~(\ref{Eq-OndeSrc}) devient l'équation d'Helmholtz~(\ref{Eq-Helm})\index[aut]{Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand} avec termes sources:
 \begin{equation}
--\dfrac{\omega^2p}{\rho c^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q)\right)=Q
+-\dfrac{\omega^2p}{\rho c^2}+\nabla.\left(-\dfrac{1}{\rho}(\nabla p-q_d)\right)=q_m
 \end{equation}
+\begin{remarque}
 Si l'on souhaite introduire le d'amortissement dans l'équation, alors les quantités~$c$ et~$\rho$ peuvent être complexes (au sens appartiennent à~$\CC$). Par exemple, pour un modèle d'amortissement de Rayleigh,\index[aut]{Rayleigh (John William Strutt, troisième baron -), 1842-1919, Anglais} la célérité $c$ est une combinaison linéaire de la masse et de la raideur.
+\end{remarque}
+
+Dans les codes de calcul, la source est généralement modélisée par un \textcolorblue{monopôle} ou un \textcolorblue{dipôle}. Un monopôle est une source omnidirectionnelle, alors qu'un dipôle représente une source ayant deux directions opposées selon lesquelles le champ est plus fort. Un dipôle peut être vu comme deux monopôles de même puissance séparés par une petite distance et en opposition de phase. On peut également utiliser des quadripôles si besoin.
+   On trouve également parfois des sources ponctuelles, linéaires ou ayant d'autres formes prédéfinies.
+   
+\medskip
+En plus de sources définies ci-dessus, le phénomène de \textcolorblue{rayonnement} peut être à l'origine d'une excitation acoustique. Le rayonnement est par nature un phénomène couplé fluide-structure, puisqu'il s'agit du cas où une structure, en vibrant, génère une onde acoustique. C'est un phénomène complexe, qui fait toujours l'objet de recherches. Nous allons essayer d'en dire deux mots en restant sur le mode de la vulgarisation.
+
+\begin{definition}[Fonction de Green]\index[aut]{Green (George), 1793-1841, Anglais}
+On appelle \textcolorblue{fonction de Green} une solution d'une équation ayant au
+second membre un terme impulsionnel.
+
+Si l'équation considérée est l'équation des ondes, on appelle \textcolorblue{fonction de Green en temps} une solution de l'équation des ondes avec au second membre un terme source de type source ponctuelle en espace et en temps, i.e. source localisée en un point de l'espace~$x_0$ et émettant une impulsion à un instant~$t_0$ localisé dans le temps. On a donc pour second membre de la forme: $\delta(t-t_0)\delta(x-x_0)$ (où~$x$ est un vecteur).
+Elle s'écrit sous la forme:
+\begin{equation}
+G(x,t,x_0,t_0)=\dfrac{1}{4\pi\|x-x_0\|}\delta\left(t-t_0-\dfrac{\|x-x_0\|}{c}\right)
+\end{equation}
+
+Si l'équation considérée est l'équation d'Helmholtz, on appelle \textcolorblue{fonction de Green en fréquence} une solution de l'équation d'Helmholtz avec au second membre un terme source ponctuelle en espace, localisé au point~$x_0$.
+Elle s'écrit sous la forme:
+\begin{equation}
+G(x,x_0)=-\dfrac{1}{4\pi\|x-x_0\|}e^{ik\|x-x_0\|}
+\end{equation}
+\end{definition}
+
+\medskip
+Dans le cas du rayonnement, on s'intéresse à ce qui se passe au niveau de l'interface entre une structure vibrant et un fluide, où l'on doit avoir continuité des vitesses acoustiques et mécaniques normales.
+\begin{theoreme}[Theorème de Kirchhoff en fréquence]\index[aut]{Kirchhoff (Gustav Robert), 1824-1887, Allemand}\index{théorème!de Kirchhoff}
+Le théorème de Kirchhoff dit que le champ de pression, en régime fréquentiel, en un point d'observation~$x$ donné est entièrement déterminé par les valeurs de la pression et de sa dérivée normale sur les bords du domaine et la donnée de la source volumique~$q(x_0)$. Il stipule que le champ de pression au point~$x$ est donné par la relation:
+\begin{equation}
+p(x)=\dint_{\Gamma=\partial\Omega} p(x_0)\dfrac{\partial G(x,x_0)}{\partial n_0} -G(x,x_0)\dfrac{\partial p(x_0)}{\partial n_0}\,\dd\Gamma + \dint_\Omega q(x_0)G(x,x_0)\, \dd\Omega
+\end{equation}
+\end{theoreme}
+
+\medskip
+Si l'on considère une plaque plane, dans le plan~$(x,y)$, vibrant, alors la condition cinématique de continuité des vitesses normales à l'interface surface plane/fluide impose la condition suivante sur la vitesse des particules de fluide en~$z= 0$:
+\[ v(x).z = v_0(x_0) \]
+Et en projetant l'équation d'Euler linéarisée sur l'axe~$z$, on peut alors relier la dérivée normale de la pression à la vitesse normale de la surface~$S$:
+\begin{equation}
+\dfrac{\partial p}{\partial n} = \dfrac{\partial p}{\partial z} = i\omega\rho v_0(x_0)
+\end{equation}
+En l'absence de toute autre source acoustique, le théorème de Kirchhoff ne comporte plus de terme volumique. En introduisant la fonction de Green et la valeur de la pression normale, on obtient le relation suivante, connue sous le nom d'\textcolorblue{intégrale de Rayleigh}, qui \textcolorgreen{permet de calculer le champ de pression acoustique rayonné par une surface plane~$S$ dont on connaît uniquement la vitesse normale}:
+\begin{equation}
+p(x)=\dfrac{i\omega\rho}{2\pi}\dint_S  \dfrac{e^{ik\|x-x_0\|}}{\|x-x_0\|} v_0(x_0)\,\dd S
+\end{equation}
+
+\begin{remarque}
+Le cas du piston circulaire, que l'on trouve dans moult ouvrages, et que nous ne présenterons pas, est intéressant et serait à regarder car il se retrouve dans beaucoup d'applications telles que les haut-parleurs, les transducteurs... Le formalisme de Rayleigh est bien adapté à ce cas qui, s'il est simple d'un point de vue structurel, a un comportement acoustique complexe.
+\end{remarque}
+
+Enfin, on définit l'\textcolorblue{impédance de rayonnement}~$Z_R$ comme le rapport de la pression à la surface divisée par la vitesse vibratoire. C'est un nombre complexe:
+\begin{equation}
+Z_R = \lambda_R + i\omega M_R
+\end{equation}
+où la partie réelle~$\lambda_R$ agit comme un terme d'amortissement, et la partie imaginaire~$M_R$ comme un terme de masse ajoutée. Cela est à ajouter à ce qui a déjà été présenté au sujet de l'impédance au paragraphe~\ref{Sec-Imp}.
 
 
 \medskip
-Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, nous devrons disposer de sources et de conditions aux limites:
+\subsubsection{Conditions aux limites}
+
+Disposant de sources vibro-acoustiques, il nous faut maintenant ajouter des conditions aux limites sur notre modèle. Les conditions aux limites classiques sont:
 \begin{itemize}
-   \item La source est généralement modélisée par un \textcolorblue{monopôle} ou un \textcolorblue{dipôle}. Un monopôle est une source omnidirectionnelle, alors qu'un dipôle représente une source ayant deux directions opposées selon lesquelles le champ est plus fort. Un dipôle peut être vu comme deux monopôles de même puissance séparés par une petite distance et en opposition de phase. On peut également utiliser des quadripôles si besoin.
-   On trouve également parfois des sources ponctuelles, linéaires ou ayant d'autres formes prédéfinies.
-   
    \item La \textcolorblue{condition de Neumann} correspond à une condition de  \textcolorblue{mur rigide}. Elle définit une frontière sur laquelle la composante normale de l'accélération est nulle (mur immobile parfaitement réfléchissant):
    \begin{equation}\label{Eq-muracou}
-   -n.\left(-\frac1{\rho}(\nabla p-q)\right)=0
+   -n.\left(-\frac1{\rho}(\nabla p-q_d)\right)=0
    \end{equation}
-	S'il n'y a pas de dipôle (i.e. $q=0$) et si la densité du fluide est constante (i.e. $\rho=cte$), alors l'équation précédente devient:
+	S'il n'y a pas de dipôle (i.e. $q_d=0$) et si la densité du fluide est constante (i.e. $\rho=cte$), alors l'équation précédente devient:
 	\begin{equation}
 	\dfrac{\partial p}{\partial n}=0
    \end{equation}	   
@@ -623,7 +686,7 @@ Pour réaliser notre modèle de calcul vibro-acoustique par éléments finis, no
    \item La \textcolorblue{condition de Robin} correspond à une \textcolorblue{condition d'impédance}. Elle se situe entre les deux cas précédents:
    \begin{equation}
    \begin{array}{rll}
-   -n.\left(-\dfrac1{\rho}(\nabla p-q)\right)
+   -n.\left(-\dfrac1{\rho}(\nabla p-q_d)\right)
    &=-\dfrac{i\omega p}{Z} \text{ en analyse harmonique, ou }\\
    &=\dfrac{1}{Z}\dfrac{\partial p}{\partial t} \text{ en analyse temporelle}   
    \end{array}
@@ -647,7 +710,7 @@ Notons que certains codes de calcul gèrent de manière assez simple pour l'util
 
    \item La \textcolorblue{continuité de la pression} à l'interface entre deux milieux peut être à entrer. Il suffit de spécifier que le saut est nul:
    \begin{equation}
-   -n.\left[\left(-\dfrac1{\rho}(\nabla p-q)\right)_1 - \left(-\dfrac1{\rho}(\nabla p-q)\right)_2\right] =0
+   -n.\left[\left(-\dfrac1{\rho}(\nabla p-q_d)\right)_1 - \left(-\dfrac1{\rho}(\nabla p-q_d)\right)_2\right] =0
    \end{equation}
 \end{itemize}
 
