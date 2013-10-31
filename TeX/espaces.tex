@@ -587,26 +587,24 @@ Si la mesure~$\mu$ est nulle, toute propriété est vérifiée pp (ainsi que sa 
 Pour cela, on utilise le théorème (ou lemme) de la classe monotone (dû à Wacław Sierpiński\index[aut]{Sierpiński (Wacław Franciszek), 1882-1969, Polonais} et popularisé par Dynkin\index[aut]{Dynkin (Eugène Borisovitch), 1924-, Russe}) pour montrer l'unicité et le théorème de Carathéodory\index[aut]{Carathéodory (Constantin), 1873-1950, Grec} pour montrer l'existence.
 \colorblack
 
-\colorgris
-\begin{remarque}[Pourquoi utiliser des variables Borel-mesurables plutôt que Lebesgue-mesurables?]
-Dans le cadre probabiliste (dont nous nous servirons au chapitre~\ref{Ch-stocha}, les variables aléatoires sont généralement définies comme des fonctions Borel-mesurables plutôt que Lebesgue-mesurables. Pourquoi?
-
-Soient~$(X,\mathcal{B}_X)$ et~$(Y,\mathcal{B}_Y)$ deux espaces mesurables.
-Une fonction mesurable~$f: X\rightarrow Y$ est telle que~$f^{-1}(A)\in\mathcal{B}_X$ pour~$A\in\mathcal{B}_Y$. On dira même plus précisément que~$f$ est~$(\mathcal{B}_X,\mathcal{B}_Y)$-mesurable.
-
-Soit~$\mathcal{B}$ la tribu sur~$\RR$. La tribu de Lebesgue~$\mathcal{L}$ est sa complétion par rapport à la mesure de Lebesgue~$\lambda$. Alors, pour les fonctions~$f: \RR\rightarrow\RR$, être Borel-mesurable c'est être~$(\mathcal{B},\mathcal{B})$-mesurable; et être Lebesgue-mesurable signifie être~$(\mathcal{L},\mathcal{B})$-mesurable: notez l'asymétrie, qui conduit à quelques problèmes: par exemple, si $f$ et $g$ sont Lebesgue-mesurables $f\circ g$ peut ne pas l'être, même si $g$ est continue.% (Voir l'exercice 2.9 dans Real Analysis de Folland.)
-Par ailleurs, les fonctions~$(\mathcal{L},\mathcal{L})$-mesurables ne sont pas très utiles: par exemple, une fonction continue n'est pas nécessairement $(\mathcal{L},\mathcal{L})$-mesurable. Le cas~$(\mathcal{B},\mathcal{L})$ est encore pire.
-
-Étant donné un espace de probabilité~$(\Omega,\mathcal{F},P)$, les variables aléatoires sont les fonctions~$X: \Omega\rightarrow\RR$ qui sont~$(\mathcal{F},\mathcal{B})$-mesurables. La tribu de Lebesgue~$\mathcal{L}$ n'apparaît pas. Il ne serait pas très utile de considérer les fonctions~$(\mathcal{F},\mathcal{L})$-mesurables, car elles peuvent ne pas être suffisamment sympathiques, et notamment elle peuvent ne pas être préservées par la composition des fonctions. Quoi qu'il en soit, une analogie pertinente de «Lebesgue-mesurable» serait d'utiliser la complétion de~$\mathcal{F}$ par rapport à~$P$, et cela est d'ailleurs fait couramment: en effet, de nombreux théorèmes font l'hypothèse à priori que~$\mathcal{F}$ est complète.
-
-Pour les mêmes raisons, on s'attendrait à ce que~$f(X)$ soit une variable aléatoire différente lorsque~$f$ est Borel-mesurable de lorsque~$f$ est Lebesgue-mesurable. Le fait d'utiliser~$(\mathcal{F},\mathcal{L})$ dans notre définition de variable aléatoire n'y changerait rien.
-
-La morale est la suivante:
-afin d'avoir le plus possible de fonctions~$f: X\rightarrow Y$ qui soient $(\mathcal{B}_X,\mathcal{B}_Y)$-mesurables, on veut que~$\mathcal{B}_X$ soit le plus grand possible, de sorte qu'il fait sens d'utiliser une tribu complète. Mais, on souhaite également que ~$\mathcal{B}_Y$ soit le plus petit possible. Lorsque~$Y$ est un espace topologique, on veut généralement pouvoir composer~$f$ avec les fonctions continues~$g: Y\rightarrow Y$, de sorte qu'il serait préférable que~$\mathcal{B}_Y$ contienne les ouverts, et donc la tribu de Borel...
-
-Une dernière remarque en passant, pour enfoncer le clou: même une fonction~$C^\infty$ peut ne pas être~$(\mathcal{L},\mathcal{L})$-mesurable.
-\end{remarque}
-\colorblack
+%\colorgris
+%\begin{remarque}[Pourquoi utiliser des variables Borel-mesurables plutôt que Lebesgue-mesurables?]
+%Dans le cadre probabiliste (dont nous nous servirons au chapitre~\ref{Ch-stocha}, les variables aléatoires sont généralement définies comme des fonctions Borel-mesurables plutôt que Lebesgue-mesurables. Pourquoi?
+%
+%Soient~$(X,\mathcal{B}_X)$ et~$(Y,\mathcal{B}_Y)$ deux espaces mesurables. Une fonction mesurable~$f: X\rightarrow Y$ est telle que~$f^{-1}(A)\in\mathcal{B}_X$ pour~$A\in\mathcal{B}_Y$. On dira même plus précisément que~$f$ est~$(\mathcal{B}_X,\mathcal{B}_Y)$-mesurable.
+%
+%Soit~$\mathcal{B}$ la tribu sur~$\RR$. La tribu de Lebesgue~$\mathcal{L}$ est sa complétion par rapport à la mesure de Lebesgue~$\lambda$. Alors, pour les fonctions~$f: \RR\rightarrow\RR$, être Borel-mesurable c'est être~$(\mathcal{B},\mathcal{B})$-mesurable; et être Lebesgue-mesurable signifie être~$(\mathcal{L},\mathcal{B})$-mesurable: notez l'asymétrie, qui conduit à quelques problèmes: par exemple, si $f$ et $g$ sont Lebesgue-mesurables $f\circ g$ peut ne pas l'être, même si $g$ est continue.% (Voir l'exercice 2.9 dans Real Analysis de Folland.)
+%Par ailleurs, les fonctions~$(\mathcal{L},\mathcal{L})$-mesurables ne sont pas très utiles: par exemple, une fonction continue n'est pas nécessairement $(\mathcal{L},\mathcal{L})$-mesurable. Le cas~$(\mathcal{B},\mathcal{L})$ est encore pire.
+%
+%Étant donné un espace de probabilité~$(\Omega,\mathcal{F},P)$, les variables aléatoires sont les fonctions~$X: \Omega\rightarrow\RR$ qui sont~$(\mathcal{F},\mathcal{B})$-mesurables. La tribu de Lebesgue~$\mathcal{L}$ n'apparaît pas. Il ne serait pas très utile de considérer les fonctions~$(\mathcal{F},\mathcal{L})$-mesurables, car elles peuvent ne pas être suffisamment sympathiques, et notamment elle peuvent ne pas être préservées par la composition des fonctions. Quoi qu'il en soit, une analogie pertinente de «Lebesgue-mesurable» serait d'utiliser la complétion de~$\mathcal{F}$ par rapport à~$P$, et cela est d'ailleurs fait couramment: en effet, de nombreux théorèmes font l'hypothèse à priori que~$\mathcal{F}$ est complète.
+%
+%Pour les mêmes raisons, on s'attendrait à ce que~$f(X)$ soit une variable aléatoire différente lorsque~$f$ est Borel-mesurable de lorsque~$f$ est Lebesgue-mesurable. Le fait d'utiliser~$(\mathcal{F},\mathcal{L})$ dans notre définition de variable aléatoire n'y changerait rien.
+%
+%La morale est la suivante: afin d'avoir le plus possible de fonctions~$f: X\rightarrow Y$ qui soient $(\mathcal{B}_X,\mathcal{B}_Y)$-mesurables, on veut que~$\mathcal{B}_X$ soit le plus grand possible, de sorte qu'il fait sens d'utiliser une tribu complète. Mais, on souhaite également que ~$\mathcal{B}_Y$ soit le plus petit possible. Lorsque~$Y$ est un espace topologique, on veut généralement pouvoir composer~$f$ avec les fonctions continues~$g: Y\rightarrow Y$, de sorte qu'il serait préférable que~$\mathcal{B}_Y$ contienne les ouverts, et donc la tribu de Borel...
+%
+%Une dernière remarque en passant, pour enfoncer le clou: même une fonction~$C^\infty$ peut ne pas être~$(\mathcal{L},\mathcal{L})$-mesurable.
+%\end{remarque}
+%\colorblack
 
 %\medskip
 \section{Propriétés de la mesure de Lebesgue}\index{mesure!de Lebesgue}\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
@@ -650,7 +648,7 @@ Elle est par voie de conséquence régulière, $\RR^n$ étant métrisable, local
 On retiendra de ce théorème que dans~$\RR^n$, les compacts sont les ensembles fermés bornés.
 \end{theoreme}
 
-%\medskipvm\ifVersionDuDocEstVincent\else\newpage\fi
+\medskipvm\ifVersionDuDocEstVincent\else\newpage\fi
 \begin{histoire}%
 En complément à la première note historique de ce chapitre, nous vous proposons une illustration très concrète de l'application de la topologie, que vous avez très certainement rencontrée: la carte du métro.
 

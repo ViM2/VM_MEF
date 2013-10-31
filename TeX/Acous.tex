@@ -40,8 +40,7 @@ Face à une problème vibro-acoustique, on est amené à considérer les questio
 \end{itemize}
 
 \medskip
-La caractérisation des sources peut également déboucher sur des lois phénoménologiques, qui relient les caractéristiques vibro-acoustiques à certains paramètres tels que par exemple: le rapport de boîte, le régime moteur, le régime ventilateur...
-%VM REFS A METTRE
+La caractérisation des sources peut également déboucher sur des lois phénoménologiques, qui relient les caractéristiques vibro-acoustiques à certains paramètres tels que par exemple: le rapport de boîte, le régime moteur, le régime ventilateur \cite{bib-Sandberg,bib-Sandberg2,bib-HametPoster,bib-Hamet,bib-Lucquiaud,bib-Lebrun,bib-Favre,bib-Steven}...
 
 \medskip
 Notons enfin que lorsque l'on parle d'acoustique, la propagation finale se fait forcément dans l'air puisque c'est celle qui arrive jusqu'aux oreilles...
@@ -413,7 +412,6 @@ Dans le cas où une onde passe d'un milieu plus dense à un milieu moins dense, 
 
 \medskip\colorblack
 Notons les deux cas extrêmes suivants:
-%VM illustrer ces 2 cas. Cas2=paroi fixe...
 \begin{itemize}
    \item la \textcolorblue{réflexion à une extrémité libre}: dans ce cas,~$Z_2\approx0$ et la vitesse de l'extrémité est~$v=2v_i$. On assiste à un changement de signe de $v_r$ sans renversement de la forme de l'onde.
    \item la \textcolorblue{réflexion à une extrémité fixe}: dans ce cas,~$Z_2\rightarrow\infty$ et la vitesse de l'extrémité est $v=0$. Il n'y a pas de changement de signe de~$v_r$, mais la forme de l'onde est renversée.
@@ -574,6 +572,9 @@ Dans le cas où l'on s'intéresse à la transmission entre plusieurs salles, il 
 Nous avons présenté quelques formules dans le cas de l'acoustique des salles, mais d'autres formules relatives à d'autre problématiques acoustiques typiques existent: par exemple pour l'encoffrement (ou capotage) de sources acoustiques (machines...).
 
 \medskip
+Toutes ces méthodes «simples» permettent néanmoins de réaliser, à moindre frais, des modèles de calculs (analytiques) pouvant prendre en compte des phénomènes assez complexes. C'est ce que l'on appelle les \textcolorblue{méthodes de composition de sources}. Si elles présentent l'immense intérêt de donner instantanément (ou presque pour des méthodes semi-analytiques) les résultats, elles reposent sur des modèles qui peuvent être compliqués à mettre au point (malgré l'expérience, souvent importante, qu'ils nécessitent). De plus, ces méthodes sont essentiellement interpolatoires et leur utilisation extrapolatoire est plus que délicate, conduisant généralement à des résultats complètement faux. Néanmoins, elles restent pertinentes dans de nombreux cas industriels bien bordés, et si elles sont corrélées à des résultats expérimentaux, conduisent de surcroit à une interprétation aisée de ceux-ci, permettant de trouver des tendances et des liens intéressants. Nous insistons malgré tout encore une fois sur la grande expérience nécessaire à mettre ces modèles au point.
+
+\medskip
 C'est une lapalissade, mais dans un calcul global, les phénomènes locaux (écrantage...) ne sont pas pris en compte (ou alors de manière globale)...
 Si l'on s'intéresse au niveau moyen résultant dans un local, prendre en compte la totalité des surfaces absorbantes, qu'elles soient situées au murs, au plafond ou sous formes d'écrans, de fauteuils... fonctionne.
 Par contre, si l'on a besoin de descendre dans le détail local de la répartition de la pression acoustique (par exemple répartition poste à poste), alors il convient d'utiliser des méthodes plus adéquates, dont les éléments finis, que nous allons présenter maintenant.
@@ -609,7 +610,13 @@ Dans les codes de calcul, la source est généralement modélisée par un \textc
    On trouve également parfois des sources ponctuelles, linéaires ou ayant d'autres formes prédéfinies.
    
 \medskip
+\subsubsection{Rayonnement}
+
 En plus de sources définies ci-dessus, le phénomène de \textcolorblue{rayonnement} peut être à l'origine d'une excitation acoustique. Le rayonnement est par nature un phénomène couplé fluide-structure, puisqu'il s'agit du cas où une structure, en vibrant, génère une onde acoustique. C'est un phénomène complexe, qui fait toujours l'objet de recherches. Nous allons essayer d'en dire deux mots en restant sur le mode de la vulgarisation.
+
+\begin{remarque}[Compléments sur le rayonnement]
+Toute structure vibrant ne génère pas de bruit, ou plus exactement, une structure soumise à un spectre ne rayonne pas l'intégralité du spectre. Certes, l'effet de l'amortissant structurel est sans aucun doute à prendre en compte, mais il n'ai pas suffisant. En fait, seuls certains modes de la structure rayonnent, et ce sont ceux qui correspondent à des projections du nombre d'onde de la vibration à laquelle est soumise la structure. Il appert donc que l'utilisation d'une base modale dans le calcul numérique peut être à même de prendre en compte cette projection, tout en réduisant la taille des calculs. On voit également que la notion de vitesse de vibration, et par suite de vitesse des déformations, est d'importance dans ce phénomène. Elle peut être liée, au moins localement, à des phénomènes de compensation de pression acoustique qui peut ou non se faire pendant le temps de déformation.
+\end{remarque}
 
 \begin{definition}[Fonction de Green]\index[aut]{Green (George), 1793-1841, Anglais}
 On appelle \textcolorblue{fonction de Green} une solution d'une équation ayant au
