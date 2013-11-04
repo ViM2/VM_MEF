@@ -177,9 +177,11 @@ Nelem=
 \color{black}\normalsize
 
 Le programme extérieur \verb|locreiss.exe|, est structuré comme suit:
-
-\color{gris}\scriptsize
-\begin{Verbatim}[numbers=left,numbersep=3pt]
+%
+%\color{gris}\scriptsize
+%\begin{Verbatim}[numbers=left,numbersep=3pt]
+\lstset{language=fortran}
+\begin{lstlisting}
    PROGRAM VM2
 C
    IMPLICIT DOUBLE PRECISION (A-H,O-Z)
@@ -188,7 +190,7 @@ C
 C--------------------------------------------------------------------------
 C
 C  But:
-C   1. on relit les fichiers d'ANSYS generes avec la macro INTERF
+C   1. on relit les fichiers de ANSYS generes avec la macro INTERF
 C   2. on determine les noeuds de post-traitement
 C   3. on effectue un Reissner local aux interfaces
 C
@@ -242,8 +244,9 @@ C---- Average multi-computed nodes
 C
 C---- Last line of VM2
    END
-\end{Verbatim}
-\color{black}\normalsize
+\end{lstlisting}
+%\end{Verbatim}
+%\color{black}\normalsize
 
 \medskip
 La routine \textsc{readans} permet de lire les données. Celles-ci sont stockées dans les matrices \textsc{coord(nodmax,3), disp(nodmax,2), xmat(matmax,3)} et \textsc{nlt(neltmax,9)}.

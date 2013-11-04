@@ -707,3 +707,39 @@
       \renewcommand\tablename{Tableau}
 }
 %\fi
+% listings avec package listings
+\lstset{ frame=Ltb,
+%     inputencoding=utf8,% marche pas !
+%extendedchars=true,
+     framerule=0pt,
+     aboveskip=\medskipamount,
+     belowskip=\medskipamount,
+%     belowskip=0pt,
+%     framextopmargin=3pt,
+%     framexbottommargin=3pt,
+%     framexleftmargin=8mm,
+     xrightmargin=10pt,% pour listings sur 2 colonnes
+     framesep=0pt,
+%     rulesep=.4pt,
+     rulesep=0pt,
+     backgroundcolor=\color{gray!10},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+%     basicstyle=\small\ttfamily,
+     basicstyle=\scriptsize\ttfamily,
+     stringstyle=\color{green!65!purple},
+     commentstyle=\color{blue!80}\rmfamily,
+     identifierstyle=\bfseries,
+     keywordstyle=\bfseries\color{orange!80!black},
+     %
+     numbers=left,
+%     numbersep=15pt,
+     numbersep=5pt,
+%     numberstyle=\tiny,
+     numberstyle=\colorgreen\scriptsize,
+     numberfirstline = false,
+     breaklines=trufe,
+   }
+% EOF
