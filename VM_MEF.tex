@@ -29,7 +29,8 @@
 \usepackage{graphicx,color,epstopdf,rotating}
 \usepackage{amsmath,amsfonts,mathrsfs,amsthm,amstext,mathtools,bbm}
 \usepackage{hyperref,multirow,multicol,xspace}
-\usepackage{cutwin,fancyvrb,titletoc}
+%\usepackage{cutwin,fancyvrb,titletoc}
+\usepackage{cutwin,titletoc}
 \usepackage{microtype}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage[frenchb]{babel}
@@ -46,7 +47,10 @@
 %texindy -L french aut.idx
 %texindy -L french -M mystyle.xdy VM_MEF.idx
 \hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= blue,bookmarks=true,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
+\usepackage{listings,xcolor}
 \usepackage{./tex/freefempp}
+\usepackage{./tex/castem}
+\usepackage{./tex/ansys}
 %
 \ifVersionDuDocEstVincent
    \usepackage{amssymb,bm}

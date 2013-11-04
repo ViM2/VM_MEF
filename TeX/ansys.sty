@@ -1,0 +1,73 @@
+%% VMt
+%% mots clefs castem: http://www-cast3m.cea.fr/html/utilitaires/cast3m.xml
+%% et gibiane: http://www-cast3m.cea.fr/html/utilitaires/gedit/gibiane.lang
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+
+\lstdefinelanguage{ansys}[]{C++}{%
+  morekeywords={
+    TOTOTOTOTOTO,
+    nall,
+    nop,
+    get,
+    dim,
+    cfopen,
+    vwrite,
+    do,
+    enddo,
+    cfclose,
+    sys,
+    vread,
+    vput,
+    node,
+    elem,
+    mat,
+    count,
+    vget,
+    gop,
+    PREP7,
+    ET,
+    PLANE,
+    UIMP,
+    EX,
+    NUXY,
+    EMIS,
+    k,
+    larc,
+    l,
+    amesh,
+    DL,
+    dk,
+    fx,
+    fy,
+    fz,
+    ux,
+    uy,
+    uz,
+    FINISH
+    SOLU,
+    STAT,
+    SOLVE,
+    FINISH,
+    POST1,
+    pldisp,
+    USE,
+    PLANE82,
+    a,
+    fk,
+    symm,
+    % Fourth category of Keywords
+    % Other Reserved Words
+    x, y, z, pi, i,
+    sin, cos, tan, atan, asin, acos,
+    cotan,sinh,cosh,tanh,cotanh,
+    exp, log, log10, sqrt
+    abs, max, min
+  },
+  sensitive=true,
+  morecomment=[l][\colorblue]{!},
+  morestring=[d]’,
+  stringstyle=\color{green!65!purple},
+  commentstyle=\color{blue!80}\rmfamily
+}[keywords, comments, strings, directives]
+

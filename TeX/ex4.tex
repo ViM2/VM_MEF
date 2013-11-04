@@ -36,11 +36,9 @@ La structure de la macro \ansys que nous proposons (et qui peut être également
   \item on réintègre les résultats dans \ansys.
 \end{itemize}
 On peut alors se servir de toutes les fonctions de visualisation disponibles dans \ansys avec les résultats modifiés...
-
-\color{gris}\scriptsize
+\lstset{language=ansys}
 \begin{multicols}{2}
-%\begin{verbatim}
-\begin{Verbatim}[numbers=left,numbersep=3pt]
+\begin{lstlisting}[firstnumber=1]
 /nop
 ! Vincent MANET
 ! ENSM.SE, 1998
@@ -95,8 +93,7 @@ nall
 *vget,E1(1,8),elem,1,node,8
 *vget,E1(1,9),elem,1,attr,mat
 *cfopen,temp,elt
-*vwrite,E1(1,1),E1(1,2),E1(1,3),E1(1,4),E1(1,5),E1(1,6),
-        E1(1,7),E1(1,8),E1(1,9)
+*vwrite,E1(1,1),E1(1,2),E1(1,3),E1(1,4),E1(1,5),E1(1,6),E1(1,7),E1(1,8),E1(1,9)
 (9(E13.7,' '))
 *cfclose
 !
@@ -172,9 +169,8 @@ Nmater=
 Nelem=
 !
 /gop
-\end{Verbatim}
+\end{lstlisting}
 \end{multicols}
-\color{black}\normalsize
 
 Le programme extérieur \verb|locreiss.exe|, est structuré comme suit:
 %
@@ -283,10 +279,9 @@ Les points pour lesquels nous nous intéresserons aux contraintes sont les point
 
 \medskip
 Le listing \ansys est le suivant:
-
-\color{gris}\scriptsize
+\lstset{language=ansys}
 \begin{multicols}{2}
-\begin{Verbatim}[numbers=left,numbersep=3pt]
+\begin{lstlisting}[firstnumber=1]
 !* geom: partie droite
 long=20
 H1=0.2
@@ -386,26 +381,24 @@ FINISH
 pldisp,1
 *USE,INTERF
 ...
-\end{Verbatim}
+\end{lstlisting}
 \end{multicols}
-\color{black}\normalsize
 
 On utilise la macro en tapant \verb|*USE,INTERF|, et les contraintes sont directement modifiées dans \ansys. On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les différentes composantes des contraintes.
 
 
 \medskip
 Le listing Cast3M du même problème est le suivant:
-
-\color{gris}\scriptsize
+\lstset{language=castem}
 \begin{multicols}{2}
-\begin{Verbatim}[numbers=left,numbersep=3pt]
-* geom: partie droite
+\begin{lstlisting}[firstnumber=1]
+** geom: partie droite
 long=20.0;
 H1=0.2;
 H2=1.8;
 H3=2.0;
-*
-* geom coude
+**
+** geom coude
 Rint=10.0;
 Rh1=Rint+H1;
 Rh2=Rint+H2;
@@ -414,14 +407,14 @@ MRint = -1. * Rint;
 MRh1 = -1. * Rh1;
 MRh2 = -1. * Rh2;
 MRh3 = -1. * Rh3;
-*
-* maillage
+**
+** maillage
 NCUTS=40;
 NRCUTS=20;
 NCORE=16;
 NSKIN=2;
 Forc=1.0;
-*
+**
 OPTION DIMENSION 2 ELEMENT QUA4;
 *
 k1 = 0. MRh3;
@@ -437,7 +430,7 @@ k10 = Rh2 long;
 k11 = Rh1 long;
 k12 = Rint long;
 k13 = 0. 0.;
-*
+**
 L1 = CERCLE NRCUTS k1 k13 k2 ;
 L2 = DROITE k2 k3 NSKIN;
 L3 = CERCLE NRCUTS k4 k13 k3 ;
@@ -448,7 +441,7 @@ L7 = CERCLE NRCUTS k5 k13 k6 ;
 L8 = DROITE k5 k8 NSKIN;
 L9 = CERCLE NRCUTS k8 k13 k7 ;
 L10 = DROITE k6 k7 NSKIN;
-*
+**
 L11 = DROITE k2 k9 NCUTS;
 L12 = DROITE k9 k10 NSKIN;
 L13 = DROITE k10 k3 NCUTS;
@@ -456,55 +449,54 @@ L14 = DROITE k10 k11 NCORE;
 L15 = DROITE k11 k6 NCUTS;
 L16 = DROITE k11 k12 NSKIN;
 L17 = DROITE k12 k7 NCUTS;
-*
+**
 SURF1 = DALLER L1 L2 L3 L4;
 SURF2 = DALLER L2 L11 L12 L13;
 PEAUEXT = SURF1 ET SURF2;
-* ELIMINE PEAUEXT;
+** ELIMINE PEAUEXT;
 SURF1 = DALLER L3 L6 L7 L5;
 SURF2 = DALLER L6 L13 L14 L15;
 AME = SURF1 ET SURF2;
-* ELIMINE AME;
+** ELIMINE AME;
 SURF1 = DALLER L8 L7 L10 L9;
 SURF2 = DALLER L10 L15 L16 L17;
 PEAUINT = SURF1 ET SURF2;
-* ELIMINE PEAUINT;
+** ELIMINE PEAUINT;
 PoutU = PEAUEXT ET AME ET PEAUINT;
-*
+**
 Model1 = MODL peauext MECANIQUE ELASTIQUE ISOTROPE QUA4;
 Model2 = MODL ame MECANIQUE ELASTIQUE ISOTROPE QUA4;
 Model3 = MODL peauint MECANIQUE ELASTIQUE ISOTROPE QUA4;
 ModelTot = Model1 ET Model2 ET Model3;
-*
+**
 Mater1=MATERIAU Model1 YOUNG 70000.0 NU 0.3 RHO 2700.0;
 Mater2=MATERIAU Model2 YOUNG 3400.0 NU 0.34 RHO 1000.0;
 Mater3=MATERIAU Model3 YOUNG 70000.0 NU 0.3 RHO 2700.0;
-*
+**
 MR1 = RIGIDITE Model1 Mater1;
 MR2 = RIGIDITE Model2 Mater2;
 MR3 = RIGIDITE Model3 Mater3;
 Mrigid = MR1 ET MR2 ET MR3;
-*
+**
 CondL2 = BLOQUER UX (L4 ET L5 ET L8);
 CondL1 = BLOQUER UY k8;
 CondLtot = CondL1 ET CondL2;
 FOR1 = FORCE(Forc 0.) k9;
 Mrigid = Mrigid ET CondLtot;
-*
+**
 Depl1 = RESOUD Mrigid For1 ;
-*
+**
 UX1 = EXCO 'UX' depl1;
 UY1 = EXCO 'UY' depl1;
-Trace UX1 PoutU;
-Trace UY1 PoutU;
+TRACE UX1 PoutU;
+TRACE UY1 PoutU;
 *
 def0 = DEFORMEE poutU Depl1 0.0 BLEU;
-def1 = DEFORMEE poutU Depl1 ROUGE;
-trace (def0 ET def1);
+def1 = DEFORMEE poutU Depl1 ROUG;
+TRACE (def0 ET def1);
 * ...
-\end{Verbatim}
+\end{lstlisting}
 \end{multicols}
-\color{black}\normalsize
 Il reste maintenant à avoir les résultats dans les repères locaux élémentaires,
 et voir ce qui se passe aux interfaces...
 
