@@ -16,21 +16,21 @@ Dans ce premier exemple, nous proposons d'étudier un carré soumis sur sa face 
 \begin{lstlisting}
 OPTION ECHO 0 ;
 OPTION DIME 2 ELEM QUA4 MODE PLAN CONT;
-**
-** Donnees
+*
+* Donnees
 long1=10.;
 nlong1=7;
 uy0=-0.5;
 haut1=long1;
 nhaut1=nlong1;
 jeu1=0.0;
-**
-** droite sur laquelle le carre viendra buter:
+*
+* droite sur laquelle le carre viendra buter:
 k1 = (-1.*long1) 0.;
 k2 = long1 0.;
 l1 = DROI (nlong1-2) k2 k1;
-**
-** carre:
+*
+* carre:
 k3 = (-0.5*long1) jeu1;
 k4 = (0.5*long1) jeu1;
 l2 = DROI nlong1 k3 k4;
@@ -46,30 +46,30 @@ On remarquera les choses suivantes:
 \end{itemize}
 \begin{multicols}{2}
 \begin{lstlisting}[firstnumber=last]
-** Modele:
+* Modele:
 ModM1 = MODEL s1 MECANIQUE ELASTIQUE;
 MatM1 = MATER ModM1 'YOUN' 1.E3 'NU' 0.3 ;
-**
-** CL en deplacements (Rigidites):
-** 1) il faut une condition selon UX: 
-**        on prend le point (0,0)
+*
+* CL en deplacements (Rigidites):
+* 1) il faut une condition selon UX: 
+*        on prend le point (0,0)
 k5 = s1 POIN PROC (0. jeu1);
 CLk5 = BLOQ k5 UX;
-** 2) ligne de contact: rigidites
+* 2) ligne de contact: rigidites
 Depl1 Rigid1 = IMPO l2 l1;
 Rigid2 = BLOQ DEPL l1;
-** 3) ligne sur laquelle on va imposer le deplacement
+* 3) ligne sur laquelle on va imposer le deplacement
 l3 = s1 'COTE' 3;
 CLl3 = BLOQ l3 UY ;
 DCLl3 = DEPI CLl3 UY0;
-** Totalite des conditions aux limites
+* Totalite des conditions aux limites
 CL0 = CLk5 ET CLl3 ET Rigid1 ET Rigid2;
 \end{lstlisting}
 \end{multicols}
 
 Nous sommes en élasticité linéaire... forces et déplacements sont proportionnels et il n'y a aucun problème de convergence. La résolution se fait le plus simplement du monde.
 \begin{lstlisting}[firstnumber=last]
-** RESOLUTION
+* RESOLUTION
 MR1=RIGID ModM1 MatM1;
 dep1 = RESO (MR1 ET CL0) DCLl3;
 \end{lstlisting}
@@ -77,25 +77,25 @@ dep1 = RESO (MR1 ET CL0) DCLl3;
 Puis on fait un peu d'affichage des résultats... ce qui est illustré \fig{Fig-Cont1}.
 \begin{multicols}{2}
 \begin{lstlisting}[firstnumber=last]
-** Post-Traitement
-**
-** deformee:
+* Post-Traitement
+*
+* deformee:
 defo0 = DEFO (s1 ET l1) dep1 0. 'BLEU' ;
 defo1 = DEFO (s1 ET l1) dep1 1. 'ROUG' ;
 TITR 'Maillages non deforme (bleu) et deforme (rouge)' ;
 TRAC (defo0 ET defo1) ;
-**
-** Deplacement selon Uy
+*
+* Deplacement selon Uy
 TITR 'Champ de deplacements.' ;
 DeplY1 = EXCO Dep1 UY;
 TRAC DeplY1 s1;
-**TRAC DeplY1 defo1;
-**
-** Contraintes:
+*TRAC DeplY1 defo1;
+*
+* Contraintes:
 Sig1 = SIGM ModM1 MatM1 Dep1;
 TITR 'Champ de contraintes' ;
 TRAC sig1 ModM1;
-**
+*
 fin;
 \end{lstlisting}
 \end{multicols}
@@ -126,71 +126,71 @@ Nous n'allons évidemment pas procéder ainsi et laisser \castem tout calculer p
 \begin{lstlisting}[firstnumber=1]
 OPTION ECHO 0 ;
 OPTION DIME 2 ELEM QUA4 MODE PLAN CONT;
-**
-** Donnees
+*
+* Donnees
 long1=10.;
 nlong1=7;
 uy0=-0.5;
 haut1=long1;
 nhaut1=nlong1;
 jeu1=1.0;
-**
-** pave sur lequel le carre viendra buter:
+*
+* pave sur lequel le carre viendra buter:
 k1 = (-1.*long1) 0.;
 k2 = long1 0.;
 l1 = DROI (2*nlong1-1) k2 k1;
 s2 = l1 TRAN nhaut1 (0. (-1.0*haut1));
-**
-** carre
+*
+* carre
 k3 = (-0.5*long1) jeu1;
 k4 = (0.5*long1) jeu1;
 l2 = DROI nlong1 k3 k4;
 s1 = l2 TRAN nhaut1 (0. haut1);
 trac (s1 et s2);
-**
-** Modele
+*
+* Modele
 ModM1 = MODEL s1 MECANIQUE ELASTIQUE;
 MatM1 = MATER ModM1 'YOUN' 1.E3 'NU' 0.3 ;
 ModM2 = MODEL s2 MECANIQUE ELASTIQUE;
 MatM2 = MATER ModM2 'YOUN' 5.E3 'NU' 0.3 ;
-**
-** CL (Rigidites)
-** 1) il faut une condition selon UX
+*
+* CL (Rigidites)
+* 1) il faut une condition selon UX
 k5 = s1 POIN PROC (0. jeu1);
 CLk5 = BLOQ k5 UX;
-** 2) ligne sur laquelle on impose le deplacement
+* 2) ligne sur laquelle on impose le deplacement
 l3 = s1 'COTE' 3;
 CLl3 = BLOQ l3 UY ;
 DCLl3  = DEPI CLl3 UY0;
-** 3) encastrement sous la partie basse
+* 3) encastrement sous la partie basse
 l4 = s2 'COTE' 3;
 CLl4 = BLOQ L4 DEPL;
-** Totalite des conditions aux limites
+* Totalite des conditions aux limites
 CL0 = CLk5 ET CLl3 ET CLl4;
-**
-** RESOLUTION
+*
+* RESOLUTION
 Depl1 Rigid1 = IMPO l2 l1;
 MR1 = RIGID ModM1 MatM1;
 MR2 = RIGID ModM2 MatM2;
 dep1 = RESO (MR1 ET MR2 ET CL0 ET Rigid1) DCLl3;
-**
-** Post-Traitement
-**
-** deformee:
+*
+* Post-Traitement
+*
+* deformee:
 defo0 = DEFO (s1 ET s2) dep1 0. 'BLEU' ;
 defo1 = DEFO (s1 ET s2) dep1 1. 'ROUG' ;
 TITR 'Maillages non deforme (bleu) et deforme (rouge)' ;
 TRAC (defo0 ET defo1) ;
-**
+*
 TITR 'Champ de deplacements.' ;
 DeplY1 = EXCO Dep1 UY;
 TRAC DeplY1 (s1 et s2);
-**
-** Comparaison des champs de contraintes:
+*
+* Comparaison des champs de contraintes:
 Sig1 = SIGM (ModM1 ET ModM2) (MatM1 ET MatM2) Dep1;
 TITR 'Champ de contraintes.' ;
 TRAC sig1 (ModM1 ET ModM2);
-**
+*
 fin;
 \end{lstlisting}
 \end{multicols}
@@ -243,97 +243,97 @@ Afin de définir le chargement dans le temps, nous commençons par construire la
 \begin{lstlisting}[firstnumber=1]
 OPTION ECHO 0 ;
 OPTION DIME 2 ELEM QUA4 MODE PLAN CONT;
-**
-** Donnees
+*
+* Donnees
 long1=10.;
 nlong1=7;
 uy0=-0.5;
 haut1=long1;
 nhaut1=nlong1;
 jeu1=0.0;
-**
-** pave sur lequel le carre viendra buter:
+*
+* pave sur lequel le carre viendra buter:
 k1 = (-1.*long1) 0.;
 k2 = long1 0.;
 l1 = DROI (2*nlong1-1) k2 k1;
 s2 = l1 TRAN nhaut1 (0. (-1.0*haut1));
-**
-** carre
+*
+* carre
 k3 = (-0.5*long1) jeu1;
 k4 = (0.5*long1) jeu1;
 l2 = DROI nlong1 k3 k4;
 s1 = l2 TRAN nhaut1 (0. haut1);
 TRAC (s1 ET s2);
-**
-**
-** Modele
+*
+*
+* Modele
 ModM1 = MODEL s1 MECANIQUE ELASTIQUE;
 MatM1 = MATER ModM1 'YOUN' 1.E3 'NU' 0.3 ;
 ModM2 = MODEL s2 MECANIQUE ELASTIQUE;
 MatM2 = MATER ModM2 'YOUN' 5.E3 'NU' 0.3 ;
-**ModM1 = ModM1 ET ModM2;
-**
-** CL (Rigidites)
-** 1) il faut une condition selon UX, on prend le point (0,0)
+*ModM1 = ModM1 ET ModM2;
+*
+* CL (Rigidites)
+* 1) il faut une condition selon UX, on prend le point (0,0)
 k5 = s1 POIN PROC (0. jeu1);
 CLk5 = BLOQ k5 UX;
-** 2) ligne sur laquelle on va imposer le deplacement
+* 2) ligne sur laquelle on va imposer le deplacement
 l3 = s1 'COTE' 3;
 CLl3 = BLOQ l3 UY ;
 DCLl3  = DEPI CLl3 UY0;
-** 3) encastrement sous la partie basse
+* 3) encastrement sous la partie basse
 l4 = s2 'COTE' 3;
 CLl4 = BLOQ L4 DEPL;
-** 4) ligne de contact:
+* 4) ligne de contact:
 Depl1 Rigid1 = IMPO l2 l1;
-**
-** Totalite des conditions aux limites
+*
+* Totalite des conditions aux limites
 CL0 = CLk5 ET CLl3 ET CLl4 ET Rigid1;
-**
-** Chargement
+*
+* Chargement
 Ltemps1 = PROG 0. 1.;
 evo1 = EVOL 'MANU' 'TEMPS' Ltemps1 (PROG 0. 1.) ;
 CharU1 = CHAR DIMP DCLl3 evo1 ;
 Char0 = CharU1 ;
-**
-** RESOLUTION
-**
-** Construction de la table PASAPAS:
+*
+* RESOLUTION
+*
+* Construction de la table PASAPAS:
 TAB1            = TABL;
 TAB1.'TEMPS_CALCULES'   = Ltemps1;
 TAB1.'MODELE'       = (ModM1 ET ModM2);
 TAB1.'CARACTERISTIQUES'  = (MatM1 ET MatM2);
 TAB1.'BLOCAGES_MECANIQUES' = CL0;
 TAB1.'CHARGEMENT'     = Char0;
-**
-** Resolution:
+*
+* Resolution:
 TAB2 = PASAPAS TAB1 ;
-**
-** Post-Traitement
-**
+*
+* Post-Traitement
+*
 dep1 = TAB2 . 'DEPLACEMENTS' . 1;
-**
-** deformee:
+*
+* deformee:
 defo0 = DEFO (s1 ET s2) dep1 0. 'BLEU' ;
 defo1 = DEFO (s1 ET s2) dep1 1. 'ROUG' ;
 TITR 'Maillages non deforme (bleu) et deforme (rouge).' ;
 TRAC (defo0 ET defo1) ;
-**
+*
 TITR 'Champ de deplacements.' ;
 DeplY1 = EXCO Dep1 UY;
 TRAC DeplY1 (s1 et s2);
-**
-** Comparaison des champs de contraintes:
+*
+* Comparaison des champs de contraintes:
 sig1 = TAB2 . 'CONTRAINTES' . 1 ;
 TITR 'Champ de contraintes.' ;
 TRAC sig1 (ModM1 ET ModM2);
-**
-** Visualisations des reactions:
+*
+* Visualisations des reactions:
 reac1 = TAB2 . 'REACTIONS' . 1 ;
 vr1 = VECT reac1 0.8E-2 'FX' 'FY' 'ROUG' ;
 TITR 'Forces de reaction.' ;
 TRAC vr1 (s1 ET s2) ;
-**
+*
 fin;
 \end{lstlisting}
 \end{multicols}

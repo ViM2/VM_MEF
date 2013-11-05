@@ -4,59 +4,15 @@
 \RequirePackage{listings}
 \RequirePackage{xcolor}
 
-\lstdefinelanguage{ansys}[]{C++}{%
-  morekeywords={
-    TOTOTOTOTOTO,
-    nall,
-    nop,
-    get,
-    dim,
-    cfopen,
-    vwrite,
-    do,
-    enddo,
-    cfclose,
-    sys,
-    vread,
-    vput,
-    node,
-    elem,
-    mat,
-    count,
-    vget,
-    gop,
-    ET,
-    PLANE,
-    UIMP,
-    EX,
-    NUXY,
-    EMIS,
-    k,
-    larc,
-    l,
-    amesh,
-    DL,
-    dk,
-    fx,
-    fy,
-    fz,
-    ux,
-    uy,
-    uz,
-    FINISH
-    SOLU,
-    PREP7,
-    STAT,
-    SOLVE,
-    FINISH,
-    POST1,
-    pldisp,
-    USE,
-    PLANE82,
-    a,
-    fk,
-    symm,
-    % Fourth category of Keywords
+\lstdefinelanguage{ansys}{%[]{C++}{%
+  alsoletter={*/},
+  morekeywords=[2]{/nop,/sys,/gop,/PREP7,/STAT,/POST1,/SOLU,
+    *get,*dim,*cfopen,*vwrite,*do,*enddo,*cfclose,*vread,*vput,*vget,*USE},
+  morekeywords={nall,nsel,esel,lsel,asel,node,elem,mat,count,pldisp,
+    ET,PLANE,UIMP,EX,NUXY,EMIS,k,larc,l,amesh,PLANE82,
+    DL,dk,fx,fy,fz,ux,uy,uz,a,fk,symm,
+    SOLU,SOLVE,FINISH,    
+        % Fourth category of Keywords
     % Other Reserved Words
     x, y, z, pi, i,
     sin, cos, tan, atan, asin, acos,
@@ -65,13 +21,8 @@
     abs, max, min
   },
   sensitive=true,
-  morecomment=[l][\colorblue]{!},
-  morestring=[d]’,
+  morecomment=[l]{!},
   morestring=[b]",%
   morestring=[b]',%
-  moredirectives={define,elif,else,endif,error,if,ifdef,ifndef,line,%
-      include,pragma,undef,warning}%
-  stringstyle=\color{green!65!purple},
-  commentstyle=\color{blue!80}\rmfamily
 }[keywords, comments, strings, directives]
 

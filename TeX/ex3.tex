@@ -7,15 +7,15 @@ Nous allons reprendre pour partie l'exemple de la poutre encastrée traitée au 
 Nous commençons par définir les données du problème: longueur, largeur, épaisseur, nombre d'éléments selon chacune de ces directions, et force appliquée:
 \lstset{language=castem}
 \begin{lstlisting}[firstnumber=1]
-** DONNEES
-** geometrie
+* DONNEES
+* geometrie
 long1=22.0;
 larg1=8.;
 ep1=4;
-** maillage
+* maillage
 nlong1=22;
 nlarg1=8;
-** effort
+* effort
 Forc1=-41.;
 \end{lstlisting}
 
@@ -30,12 +30,12 @@ k1 = 0. 0. 0.;
 k2 = long1 0. 0.;
 k3 = long1 larg1 0.;
 k4 = 0. larg1 0.;
-**
+*
 L1 = DROI nlong1 k1 k2;
 L2 = DROI nlarg1 k2 k3;
 L3 = DROI nlong1 k3 k4;
 L4 = DROI nlarg1 k4 k1;
-**
+*
 S1 = DALLER L1 L2 L3 L4;
 \end{lstlisting}
 
@@ -75,25 +75,25 @@ Les composantes de~$Eps_1$ dans le repère LOCAL sont:
   \item les courbures: RTSS, RTTT, RTST.
 \end{itemize}
 \begin{lstlisting}[firstnumber=last]
-** DEPLACEMENTS
+* DEPLACEMENTS
 UZ1 = EXCO 'UZ' depl1;
-**TRAC UZ1 S1;
-**
-** DEFORMEE
+*TRAC UZ1 S1;
+*
+* DEFORMEE
 def0 = DEFO S1 Depl1 0.0 BLEU;
 def1 = DEFO S1 Depl1;
-**TRAC (def0 ET def1);
-**
-** CONTRAINTES: 
+*TRAC (def0 ET def1);
+*
+* CONTRAINTES: 
 Sig1 = SIGM Model1 Mater1 Depl1;
 Siigg1 = EXCO M11 Sig1;
 TRAC Siigg1 Model1 def1;
-**
-** DEFORMATIONS
+*
+* DEFORMATIONS
 Eps1 = EPSI Model1 Mater1 Depl1;
 Eppss1 = EXCO RTSS Eps1;
-**TRAC Eppss1 Model1;
-**
+*TRAC Eppss1 Model1;
+*
 fin;
 \end{lstlisting}
 
@@ -102,33 +102,33 @@ fin;
 
 Nous allons maintenant construire le modèle tridimensionnel. Comme nous voulons travailler à l'économie, nous repartons du fichier précédent que nous adaptons.
 \begin{lstlisting}[firstnumber=1]
-** DONNEES
-** geometrie
+* DONNEES
+* geometrie
 long1=22.0;
 larg1=8.;
 ep1=2;
-** maillage
+* maillage
 nlong1=22;
 nlarg1=8;
 nep1=3;
-** effort
+* effort
 Forc1=-41.;
 \end{lstlisting}
 
 Cette fois, nous nous servons de l'élément volumique CUB8 au lieu de l'élément surfacique QUA4.
 \begin{lstlisting}[firstnumber=last]
 OPTION DIME 3 ELEM CUB8;
-**
+*
 k1 = 0. 0. 0.;
 k2 = long1 0. 0.;
 k3 = long1 larg1 0.;
 k4 = 0. larg1 0.;
-**
+*
 L1 = DROI nlong1 k1 k2;
 L2 = DROI nlarg1 k2 k3;
 L3 = DROI nlong1 k3 k4;
 L4 = DROI nlarg1 k4 k1;
-**
+*
 S1 = DALLER L1 L2 L3 L4;
 \end{lstlisting}
 
@@ -156,25 +156,25 @@ CL2 = BLOQ ROTA Face1;
 FOR1 = FORC(0. 0. Forc1) k3;
 MR1 = MR1 ET CL1 ET CL2;
 Depl1 = RESO MR1 FOR1 ;
-**
-** DEPLACEMENTS
+*
+* DEPLACEMENTS
 UZ1 = EXCO 'UZ' depl1;
-**TRAC CACH UZ1 V1;
-** DEFORMEE
+*TRAC CACH UZ1 V1;
+* DEFORMEE
 def0 = DEFO V1 Depl1 0.0 BLEU;
 def1 = DEFO V1 Depl1;
 *TRAC CACH (def0 ET def1);
-**
-** CONTRAINTES: 
+*
+* CONTRAINTES: 
 Sig1 = SIGM Model1 Mater1 Depl1;
-** Les composantes de Sig1 sont: VONMISES, SMXX, SMYY, SMZZ, SMXY, SMXZ, SMYZ
+* Les composantes de Sig1 sont: VONMISES, SMXX, SMYY, SMZZ, SMXY, SMXZ, SMYZ
 Siigg1 = EXCO SMXX Sig1;
-** on trace sur la geometrie deformee, c'est plus beau
+* on trace sur la geometrie deformee, c'est plus beau
 TRAC CACH Siigg1 Model1 def1;
-**
-** DEFORMATIONS
-**Eps1 = EPSI Model1 Mater1 Depl1;
-**TRAC CACH Eps1 Model1;
-
+*
+* DEFORMATIONS
+*Eps1 = EPSI Model1 Mater1 Depl1;
+*TRAC CACH Eps1 Model1;
+*
 fin;
 \end{lstlisting}
