@@ -1,3 +1,6 @@
+%% Modif VMt: 
+%%  - ajout fill, conj, cmm, value
+%%  - correction code
 %% Author: J. Rafael Rodríguez Galván, 2011
 %% License: Creative Commons By or compatible
 %% LaTeX listings package for the language FreeFem++
@@ -7,71 +10,19 @@
 \RequirePackage{xcolor}
 
 \lstdefinelanguage{freefem++}[]{C++}{%
-  morekeywords={
-    adaptmesh,
-    Cmatrix,
-    R3,
-    bool,
-    border,
-    break,
-    buildmesh,
-    catch,
-    cin,
-    complex,
-    continue,
-    cout,
-    element,
-    else,
-    end,
-    fespace,
-    for,
-    func,
-    if,
-    ifstream,
-    include,
-    int,
-    intalledge,
-    load,
-    macro,
-    matrix,
-    mesh,
-    movemesh,
-    ofstream,
-    plot,
-    problem,
-    real,
-    return,
-    savemesh,
-    solve,
-    string,
-    try,
-    throw,
-    vertex,
-    varf,
-    while
-  }
-  morekeywords2={
+  morekeywords={adaptmesh,Cmatrix,R3,bool,border,break,buildmesh,catch,
+    cin,complex,continue,cout,element,else,end,fespace,for,
+    func,if,ifstream,include,int,intalledge,load,macro,matrix,
+    mesh,movemesh,ofstream,plot,problem,real,return,savemesh,
+    solve,string,try,throw,vertex,varf,while
+  },
+  morekeywords=[2]{
     % Second category of Keywords
-    int1d,
-    int2d,
-    on,
-    square,
+    int1d,int2d,on,square,conj,
     % Third category of Keywords
-    dx,
-    dy,
-    convect,
-    jump,
-    mean,
+    dx,dy,convect,jump,mean,
     % Fourth category of Keywords
-    wait,
-    ps,
-    solver,
-    CG,
-    LU,
-    UMFPACK,
-    factorize,
-    init,
-    endl,
+    wait,ps,solver,CG,LU,UMFPACK,factorize,init,endl,fill,cmm,value,
     % Other Reserved Words
     x, y, z, pi, i,
     sin, cos, tan, atan, asin, acos,
