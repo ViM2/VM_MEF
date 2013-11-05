@@ -571,10 +571,18 @@ Dans le cas où l'on s'intéresse à la transmission entre plusieurs salles, il 
 \medskip
 Nous avons présenté quelques formules dans le cas de l'acoustique des salles, mais d'autres formules relatives à d'autre problématiques acoustiques typiques existent: par exemple pour l'encoffrement (ou capotage) de sources acoustiques (machines...).
 
-\medskip
-Toutes ces méthodes «simples» permettent néanmoins de réaliser, à moindre frais, des modèles de calculs (analytiques) pouvant prendre en compte des phénomènes assez complexes. C'est ce que l'on appelle les \textcolorblue{méthodes de composition de sources}. Si elles présentent l'immense intérêt de donner instantanément (ou presque pour des méthodes semi-analytiques) les résultats, elles reposent sur des modèles qui peuvent être compliqués à mettre au point (malgré l'expérience, souvent importante, qu'ils nécessitent). De plus, ces méthodes sont essentiellement interpolatoires et leur utilisation extrapolatoire est plus que délicate, conduisant généralement à des résultats complètement faux. Néanmoins, elles restent pertinentes dans de nombreux cas industriels bien bordés, et si elles sont corrélées à des résultats expérimentaux, conduisent de surcroit à une interprétation aisée de ceux-ci, permettant de trouver des tendances et des liens intéressants. Nous insistons malgré tout encore une fois sur la grande expérience nécessaire à mettre ces modèles au point.
+\begin{remarque}[Méthodes de composition de source]
+Toutes ces méthodes «simples» permettent néanmoins de réaliser, à moindre frais, des modèles de calculs (analytiques) pouvant prendre en compte des phénomènes assez complexes. C'est ce que l'on appelle les \textcolorblue{méthodes de composition de sources}.
 
-\medskip
+Dans ces méthodes, on commence par identifier toutes les sources d'un problème: non seulement les sources physiques comme un moteur, mais également les sources induites comme le bruit de contact pneu/chaussée, le bruit aérodynamique, le rayonnement de surfaces...
+Ces sources sont fonction des données du problème telles que la vitesse du véhicule, le rapport de boîte, etc.
+Les sources sont positionnées dans l'espace, et chacune est prise en compte «indépendamment» des autres. L'introduction de couplages est possible, mais peut être délicate (notamment pour les phénomènes tels que l'amortissement).
+Ensuite, on introduit divers «facteurs de perte» entre les sources et le point d'écoute: matrices de transfert diverses dues à la distance à la source, l'absorption et l'isolation de divers éléments, l'amortissement et le filtrage...
+On voit bien que la mise au point d'un tel modèle peut se révéler particulièrement compliquée, même pour quelqu'un ayant une grande expérience dans le domaine de l'acoustique.
+
+Toutefois, ces méthodes présentent l'immense intérêt de fournir les résultats instantanément (ou presque pour des méthodes semi-analytiques), et valables dans toutes les gammes de fréquences (aux hypothèses faites près, ce qui peut être restrictif). On voit également que, de par leur nature, ces méthodes sont essentiellement interpolatoires et leur utilisation extrapolatoire est plus que délicate, conduisant généralement à des résultats complètement faux. Néanmoins, elles restent pertinentes dans de nombreux cas industriels bien bordés, et si elles sont corrélées à des résultats expérimentaux, conduisent de surcroit à une interprétation aisée de ceux-ci, permettant de trouver des tendances et des liens intéressants. Nous insistons malgré tout encore une fois sur la grande expérience (de l'acoustique) nécessaire pour mettre ces modèles au point.
+\end{remarque}
+
 C'est une lapalissade, mais dans un calcul global, les phénomènes locaux (écrantage...) ne sont pas pris en compte (ou alors de manière globale)...
 Si l'on s'intéresse au niveau moyen résultant dans un local, prendre en compte la totalité des surfaces absorbantes, qu'elles soient situées au murs, au plafond ou sous formes d'écrans, de fauteuils... fonctionne.
 Par contre, si l'on a besoin de descendre dans le détail local de la répartition de la pression acoustique (par exemple répartition poste à poste), alors il convient d'utiliser des méthodes plus adéquates, dont les éléments finis, que nous allons présenter maintenant.
@@ -1300,26 +1308,28 @@ Considérons maintenant le calcul du fluide seul. Le listing ressemble à ce qui
 \begin{itemize}
    \item le maillage à partir d'une donnée issue du calcul:
    connaissant la solution du problème structurel, on dispose des déplacements~\verb|ux| et~\verb|uy|... dont on se sert pour définir le domaine fluide:
-   \begin{verbatim}
+  \begin{lstlisting}[numbers=none]
    border fl4(t=10,0) {x=ux(0,t); y=uy(0,t);};// interface avec la structure
-   \end{verbatim}
+  \end{lstlisting}
+
    \item le calcul des efforts dus à la pression.
    
    Si l'on résout en vitesse et pression, alors, les efforts sont définis par:
-   \begin{verbatim}
+  \begin{lstlisting}[numbers=none]
   sigmaxx([x+ux,y+uy]) = (2*dx(ux)-p);
   sigmayy([x+ux,y+uy]) = (2*dy(uy)-p);
   sigmaxy([x+ux,y+uy]) = (dx(ux)+dy(uy));
-   \end{verbatim}
+  \end{lstlisting}
    et on ajoute la force suivante dans la formulation variationnelle du problème de structure:
-   \begin{verbatim}
+  \begin{lstlisting}[numbers=none]
   + int1d(Th,interface)(sigma11*N.x*w + sigma22*N.y*s + sigma12*(N.y*w+N.x*s) ) 
-   \end{verbatim}
+  \end{lstlisting}
    
    Si l'on résout en pression uniquement, on peut faire simple, et ajouter la force suivante dans la formulation variationnelle du problème de structure:
-   \begin{verbatim}
+  \begin{lstlisting}[numbers=none]
   + int1d(Th,interface)(pR*N.x*w + pR*N.y*s + (dx(ux)+dy(uy))*(N.y*w+N.x*s) )
-   \end{verbatim}
+  \end{lstlisting}
+
    où l'on a écrit~\verb|pR| pour rappeler que l'on considère la partie réelle de la pression, qui peut être directement~$p$ si l'on a une solution monochromatique dans la partie fluide.
 \end{itemize}
 

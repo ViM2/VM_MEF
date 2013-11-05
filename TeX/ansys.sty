@@ -25,7 +25,6 @@
     count,
     vget,
     gop,
-    PREP7,
     ET,
     PLANE,
     UIMP,
@@ -46,6 +45,7 @@
     uz,
     FINISH
     SOLU,
+    PREP7,
     STAT,
     SOLVE,
     FINISH,
@@ -67,6 +67,10 @@
   sensitive=true,
   morecomment=[l][\colorblue]{!},
   morestring=[d]’,
+  morestring=[b]",%
+  morestring=[b]',%
+  moredirectives={define,elif,else,endif,error,if,ifdef,ifndef,line,%
+      include,pragma,undef,warning}%
   stringstyle=\color{green!65!purple},
   commentstyle=\color{blue!80}\rmfamily
 }[keywords, comments, strings, directives]

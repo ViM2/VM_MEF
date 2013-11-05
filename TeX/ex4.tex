@@ -176,7 +176,7 @@ Le programme extérieur \verb|locreiss.exe|, est structuré comme suit:
 %
 %\color{gris}\scriptsize
 %\begin{Verbatim}[numbers=left,numbersep=3pt]
-\lstset{language=fortran}
+\lstset{language={[77]Fortran}}
 \begin{lstlisting}
    PROGRAM VM2
 C
@@ -384,7 +384,9 @@ pldisp,1
 \end{lstlisting}
 \end{multicols}
 
-On utilise la macro en tapant \verb|*USE,INTERF|, et les contraintes sont directement modifiées dans \ansys. On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les différentes composantes des contraintes.
+On utilise la macro en tapant %\verb|*USE,INTERF|, 
+\lstinline!*USE,INTERF!, 
+et les contraintes sont directement modifiées dans \ansys. On peut alors utiliser les mêmes fonctions qu'habituellement pour visualiser les différentes composantes des contraintes.
 
 
 \medskip
