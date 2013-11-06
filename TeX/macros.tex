@@ -672,6 +672,7 @@
    \newcommand{\colorblue}{\relax\ifmmode\else\em\fi}
    \newcommand{\colormagenta}{\relax\ifmmode\else\em\fi}
    \newcommand{\colorgris}{\relax\ifmmode\else\fi}
+%
    \newcommand{\textbff}{}
    \renewcommand{\medskip}{}
    \renewcommand{\bigskip}{}
@@ -707,36 +708,49 @@
       \renewcommand\tablename{Tableau}
 }
 %\fi
-% listings avec package listings
-\lstset{ frame=Ltb,
-%     inputencoding=utf8,% marche pas !
-%extendedchars=true,
-     framerule=0pt,
-     aboveskip=\medskipamount,
-     belowskip=\medskipamount,
-%     belowskip=0pt,
-%     framextopmargin=3pt,
-%     framexbottommargin=3pt,
-%     framexleftmargin=8mm,
-     xrightmargin=10pt,% pour listings sur 2 colonnes
-     framesep=0pt,
-     rulesep=0pt,
-     backgroundcolor=\color{gray!10},
-     rulesepcolor=\colorblack,
-     %
-     stringstyle=\ttfamily,
-     showstringspaces = false,
-%     basicstyle=\small\ttfamily,
-     basicstyle=\scriptsize\ttfamily,
-     stringstyle=\colorgreen,
-     commentstyle=\colorblue\rmfamily,
-     identifierstyle=\bfseries,
-     keywordstyle=\bfseries\color{orange!80!black},
-     keywordstyle=[2]\bfseries\colormagenta,
-     %
-     numbers=left,
-     numbersep=5pt,
-     numberstyle=\colorgreen\scriptsize,
-     numberfirstline = false,
-     breaklines=trufe,
-   }
+%
+%
+% listings avec package listings (au lieu de fancyvrb)
+%
+\ifVersionDuDocEstVincent
+  \definecolor{colorfondansys}{RGB}{255,255,240}% ansys: jaune clair
+  \definecolor{colorfondcastem}{RGB}{240,240,255}% castem: bleu clair
+  \definecolor{colorfondfortran}{RGB}{240,255,240}% fortran: vert clair
+  \definecolor{colorfondfreefem}{gray}{0.95}% freefem: gris clair
+  \newcommand{\colororange}{\color{orange!80!black}}
+\else
+  \definecolor{colorfondansys}{gray}{0.95}% ansys: jaune clair
+  \definecolor{colorfondcastem}{gray}{0.95}% castem: bleu clair
+  \definecolor{colorfondfortran}{gray}{0.95}% fortran: vert clair
+  \definecolor{colorfondfreefem}{gray}{0.95}% freefem: gris clair
+   \newcommand{\colororange}{\bfseries}
+\fi
+%
+\lstset{%
+  frame=Ltb,
+  framerule=0pt,
+  belowskip=\medskipamount,
+  aboveskip=\smallskipamount,
+  xrightmargin=10pt,% pour listings sur 2 colonnes
+  framesep=0pt,
+  rulesep=0pt,
+  backgroundcolor=\color{gray!10},% pour avoir qqch par défaut, mais redéfinit pas les langages utilisés
+  rulesepcolor=\colorblack,
+  showstringspaces = false,
+  basicstyle=\scriptsize\ttfamily,
+  stringstyle=\colorgreen\ttfamily,
+  commentstyle=\colorblue\rmfamily\itshape,
+  identifierstyle=\bfseries,
+  keywordstyle=\bfseries\colororange,
+  keywordstyle=[2]\bfseries\colormagenta,
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\colorgreen\scriptsize,
+  numberfirstline = false,
+  breaklines=trufe,
+%  inputencoding=utf8,% marche pas !
+%  extendedchars=true,
+%  framextopmargin=3pt,
+%  framexbottommargin=3pt,
+%  framexleftmargin=8mm,
+}

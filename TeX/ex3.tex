@@ -39,7 +39,7 @@ L4 = DROI nlarg1 k4 k1;
 S1 = DALLER L1 L2 L3 L4;
 \end{lstlisting}
 
-Le modèle est un modèle de mécanique élastique isotrope utilisant l'élément de coque COQ4 pour le maillage~$S_1$:
+Le modèle est un modèle de mécanique élastique isotrope utilisant l'élément de coque~\lstinline!COQ4! pour le maillage~$S_1$:
 \begin{lstlisting}[firstnumber=last]
 Model1 = MODL S1 MECANIQUE ELASTIQUE ISOTROPE COQ4;
 \end{lstlisting}
@@ -115,7 +115,7 @@ nep1=3;
 Forc1=-41.;
 \end{lstlisting}
 
-Cette fois, nous nous servons de l'élément volumique CUB8 au lieu de l'élément surfacique QUA4.
+Cette fois, nous nous servons de l'élément volumique~\lstinline!CUB8! au lieu de l'élément surfacique~\lstinline!QUA4!.
 \begin{lstlisting}[firstnumber=last]
 OPTION DIME 3 ELEM CUB8;
 *
@@ -134,7 +134,7 @@ S1 = DALLER L1 L2 L3 L4;
 
 À partir de la surface~$S_1$, qui est la même que précédemment, nous allons créer le volume~$V_1$ par translation selon le vecteur~$Vect_1$.
 
-Nous en profitons également pour créer~$Face_1$ sur laquelle porterons les conditions aux limites. Notons par exemple que la ligne~$L_4$ appartient bien au maillage~$V_1$, puisque ce dernier est construit dessus. Par contre, la surface~$face_1$ n'appartient pas à~$V_1$, il est donc nécessaire de la lier à~$V_1$ en utilisant la commande ELIM.
+Nous en profitons également pour créer~$Face_1$ sur laquelle porterons les conditions aux limites. Notons par exemple que la ligne~$L_4$ appartient bien au maillage~$V_1$, puisque ce dernier est construit dessus. Par contre, la surface~$face_1$ n'appartient pas à~$V_1$, il est donc nécessaire de la lier à~$V_1$ en utilisant la commande~\lstinline!ELIM!.
 \begin{lstlisting}[firstnumber=last]
 Vec1=0. 0. (-1.0*ep1);
 V1=S1 VOLU nep1 TRAN Vec1;
@@ -142,7 +142,7 @@ Face1 = L4 TRAN nep1 Vec1;
 ELIM 0.0000001 V1 Face1;
 \end{lstlisting}
 
-Cette fois, le modèle correspond au maillage~$V_1$ et utilise l'élément CUB8.
+Cette fois, le modèle correspond au maillage~$V_1$ et utilise l'élément~\lstinline!CUB8!.
 \begin{lstlisting}[firstnumber=last]
 Model1 = MODL V1 MECANIQUE ELASTIQUE ISOTROPE CUB8;
 \end{lstlisting}
