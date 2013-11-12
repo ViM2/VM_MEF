@@ -85,7 +85,7 @@ L'idée est évidemment de se ramener au cas précédent en réalisant un \textc
 
 Pour cela, on considère la fonction~$v = u - \overline{u}$ où $\overline{u}\in H^1(\Omega)$ est un relèvement de la condition au bord, i.e. tel que~$\overline{u}=g$ sur~$\Gamma$.
 
-On utilise ensuite la surjectivité de l'application trace, $\gamma_0$ (ce qui devrait malgré tout rester compréhensible bien que la trace ait été définie de manière «un peu légère» au chapitre sur les espaces de Sobolev).
+On utilise ensuite la surjectivité de l'application trace, $\gamma_0$ (ce qui devrait malgré tout rester compréhensible bien que la trace ait été définie de manière «un peu légère» au paragraphe~\ref{Sec-SoboTrace}).
 
 \medskip
 La formulation variationnelle du problème est:
@@ -139,7 +139,7 @@ En utilisant l'inégalité de Poincaré-Wirtinger, on montre que le problème es
 Remarquons que si la condition de compatibilité n'est pas vérifiée, alors la solution de la dernière formulation résout bien le problème initial avec un~$f$ ou un~$g$ modifié d'une constante additive, de manière à vérifier la condition de compatibilité.
 
 \medskip
-Il y aurait lieu à quelques discussions sur l'interprétation des résultats, mais celle-ci serait beaucoup plus abstraite que dans le cas du Laplacien de Dirichlet. Le lecteur désireux de rentrer (à raison) dans ce genre de détail trouvera aisément un cours de M2 sur le sujet. Cela dépasse le cadre que nous nous sommes fixé dans ce document.
+Il y aurait lieu à quelques discussions sur l'interprétation des résultats, mais celle-ci serait beaucoup plus abstraite que dans le cas du Laplacien de Dirichlet. Le lecteur désireux de rentrer (à raison) dans ce genre de détails trouvera aisément un cours de M2 sur le sujet. Cela dépasse le cadre que nous nous sommes fixé dans ce document.
 
 \medskip
 \subsubsection{Laplacien avec conditions mixtes}\index{ED-EDP!de Laplace}\index{laplacien}\index{ED-EDP!de Poisson}\index{condition aux limites!mêlée}\index[aut]{Laplace (Pierre Simon de -), 1749-1827, Français}\index[aut]{Poisson (Siméon Denis), 1781-1840, Français}
@@ -180,7 +180,7 @@ On obtient la formulation variationnelle: Touver~$u$ et~$p$ tels que:
 \end{aligned}
 \right. 
 \end{equation}
-avec~$\XX=\{v\in H(div,\Omega); v.n=0 \text{ sur } \Gamma_N\}$.
+avec~$\XX=\{v\in H(\dive,\Omega); v.n=0 \text{ sur } \Gamma_N\}$.
 
 
 \medskip
@@ -200,7 +200,6 @@ Trouver~$u(x,t)$ tel que:
 \end{aligned}
 \right.
 \end{equation}
-\medskip
 On opère comme précédemment. Toutefois, nous faisons jouer à la variable de temps~$t$ et la variable d'espace~$x$ des rôles différents: on considère la fonction~$u(t, x)$ comme une fonction du temps, à valeur dans un espace fonctionnel en~$x$, et on prend comme fonctions tests des fonctions qui dépendent seulement de la variable~$x$. On obtient alors facilement la formulation variationnelle suivante:
 \begin{equation}
 \text{Trouver } u \text{ tel que } \forall v\in H^1_0(\Omega),\quad
@@ -211,7 +210,7 @@ Pour donner un sens à cette formulation variationnelle, une certaine régularit
 u\in V = C^0\left(0,T;L^2(\Omega)\right)\cap L^2\left(0,T;H^1_0(\Omega)\right)
 \end{equation}
 L'espace~$C^0\left(0,T;L^2(\Omega)\right)$ est l'espace des fonctions~$v(t,x)$ telles que pour tout~$t$, $v(t,\cdot)$ est une fonction de~$L^2(\Omega)$; l'espace~$L^2\left(0,T;H^1_0(\Omega)\right)$ est l'espace des fonctions~$v(t,x)$ telles
-que pour presque tout~$t$, $v(t,\cdot)$ est une fonction de~$H^1_0(\Omega)$ et $\int_0^T \|v\|^2_{H^1_0(\Omega)}<\infty$. Le premier est un Banach, le second, un Hilbert.
+que pour presque tout~$t$, $v(t,\cdot)$ est une fonction de~$H^1_0(\Omega)$ et $\int_0^T \|v\|^2_{H^1_0(\Omega)}<\infty$. Le premier est un espace de Banach, le second, un espace de Hilbert.
 
 \medskip
 La formulation variationnelle est donc:
@@ -370,7 +369,7 @@ La formulation la plus générale du problème est:\index{ED-EDP!relation fondam
 \left\{
 \begin{aligned}
 &\dive\sigma + f = \rho \ddot{u} + \mu \dot{u} && \text{ dans } \Omega && \text{ équation de la dynamique}\\
-&\sigma=D(\varepsilon-\varepsilon_{th}) && \text{ dans } \Omega && \text{ loi de comportement}\\
+&\sigma=H(\varepsilon-\varepsilon_{th}) && \text{ dans } \Omega && \text{ loi de comportement}\\
 \end{aligned}\right.
 \end{equation}
 à laquelle il est nécessaire d'ajouter les conditions aux limites suivantes:
@@ -575,7 +574,7 @@ k=\dfrac\omega{c}=\dfrac{2\pi}\lambda
 
 \medskip
 \subsection{Conditions aux limites en acoustique}\index{condition aux limites!de Dirichlet}\index{condition aux limites!de Neumann}\index{condition aux limites!de Robin}\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand}\index[aut]{Neumann (Carl Gottfried), 1832-1925, Allemand}\index[aut]{Robin (Victor Gustave), 1855-1897, Français}
-Soit~$\Gamma=\partial\Omega$ la frontière du domaine concerné. On considère que~$\Gamma$ est \textcolorblue{partitionné} en trois zones (i.e. dont l'union vaut~$\Gamma$ et dont aucune n'intersecte les autres) qui portent chacune une condition aux limites différente:~$\Gamma_D$ de Dirichlet, $\Gamma_N$ de Neumann et~$\Gamma_R$ de Robin.
+Soit~$\Gamma=\partial\Omega$ la frontière du domaine concerné. On considère que~$\Gamma$ est \textcolorblue{partitionnée} en trois zones (i.e. dont l'union vaut~$\Gamma$ et dont aucune n'intersecte les autres) qui portent chacune une condition aux limites différente:~$\Gamma_D$ de Dirichlet, $\Gamma_N$ de Neumann et~$\Gamma_R$ de Robin.
 \medskipvm
 On a donc:
 \begin{itemize}

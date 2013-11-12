@@ -21,7 +21,7 @@ Quand on cherche la solution d'une équation aux dérivées partielles, on peut 
 On va donc essayer de donner un sens plus faible à la notion de solution, sans perdre de vue si possible les notions les plus naturelles. Donner un sens faible à une équation aux dérivées partielles signifie:
 \begin{enumerate}
   \item Chercher une solution dans un espace de régularité plus faible que souhaité;
-  \item Établir, en général à l'aide de fonction tests et d'intégrations par parties «formelles», une série d'équations que doit vérifier cette solution. Cette série  d'équations doit être construite (si possible) de telle sorte que les éventuelles 	solutions régulières soient aussi solutions faibles et, a contrario, que des solutions faibles qui seraient régulières soient aussi solutions classiques du problème initial.
+  \item Établir, en général à l'aide de fonction tests et d'intégrations par parties «formelles», une série d'équations que doit vérifier cette solution. Cette série  d'équations doit être construite (si possible) de telle sorte que les éventuelles 	solutions régulières soient aussi solutions faibles et, \emph{a contrario}, que des solutions faibles qui seraient régulières soient aussi solutions classiques du problème initial.
 \end{enumerate}
 
 
@@ -42,16 +42,19 @@ Dans le cas des équations elliptiques, celles-ci ont pour propriété, en gén�
 \medskip
 \begin{definition}[Formulations forte et faible]
 Étant donné un opérateur différentiel~$A(\cdot)$ et une fonction~$f$ définie sur un domaine ouvert~$\Omega$, la \textcolorblue{formulation forte} du problème est la suivante:
-\begin{center}
-  Trouver la \textcolorblue{fonction}~$u$ définie sur~$\Omega$ vérifiant~$A(u)=f$ en tout point de~$\Omega$.
-\end{center}
+\begin{equation}\label{Eq-FormulationForte}
+  \text{Trouver la \textcolorblue{fonction}~} u, \text{ définie sur~} \Omega, 
+  \text{ vérifiant~} A(u)=f \text{ en tout point de~} \Omega.
+\end{equation}
 
 \medskip
 Une solution~$u$ du problème précédent est alors également solution du problème suivant
 appelé \textcolorblue{formulation faible} (On appelle~$v$ une fonction test):
-\begin{center}
-  Trouver une fonction~$u$ définie sur~$\Omega$ vérifiant~$\dint_\Omega A(u)v = \int_\Omega f\ v \quad \forall v$ définie sur~$\Omega$.
-\end{center}
+\begin{equation}\label{Eq-FormulationFaible}
+  \text{Trouver une fonction~} u, \text{ définie sur~} \Omega,  
+  \text{vérifiant~} \dint_\Omega A(u)v = \int_\Omega f\ v \quad \forall v
+  \text{ définie sur~}\Omega.
+\end{equation}
 \end{definition}
 
 \colorgreen
@@ -79,7 +82,7 @@ Toutes ces méthodes sont «équivalentes» à celle exposée ici, mais souvent 
 \end{remarque}
 %
 \paragraph{Principe des puissances virtuelles}\index{principe!des puissances virtuelles}\index{principe!des travaux virtuels}
-Le Principe des travaux virtuels est un principe fondamental en mécanique, qui postule un équilibre de puissance dans un mouvement virtuel, il s'agit d'une formulation duale du principe fondamental de la dynamique. On raisonne comme suit: si un solide est à l'équilibre (statique du solide), la somme des efforts est nulle. Donc si l'on fait faire un déplacement fictif (virtuel) à l'objet, la somme des puissances des forces et moments est nulle. Ce principe constitue la base d'une démarche de modélisation pour les milieux continus (théorie du premier gradient, théorie du second gradient). On parle parfois du principe des travaux virtuels qui est sensiblement identique.
+Le Principe des travaux virtuels est un principe fondamental en mécanique, qui postule un équilibre de puissance dans un mouvement virtuel. Il s'agit d'une formulation duale du principe fondamental de la dynamique. On raisonne comme suit: si un solide est à l'équilibre (statique du solide), la somme des efforts est nulle. Donc si l'on fait faire un déplacement fictif (virtuel) à l'objet, la somme des puissances des forces et moments est nulle. Ce principe constitue la base d'une démarche de modélisation pour les milieux continus (théorie du premier gradient, théorie du second gradient). On parle parfois du principe des travaux virtuels qui est sensiblement identique.
 
 \ifVersionDuDocEstVincent\medskip\fi
 \begin{histoire}%
@@ -117,16 +120,16 @@ Selon les fonctions de pondération on retrouve les méthodes de collocation par
 \colorblack
 
 \medskip
-Selon la nature du problème (donc selon la nature de l'opérateur~$A$), l'égalité précédente (la formulation faible) peut être transformée (par exemple par intégration par parties), ce qui permet de faire apparaître une forme symétrique ayant la nature d'un produit scalaire (ou d'un produit hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} dans le cas de fonctions complexes). Les deux fonctions~$u$ et~$v$ appartiennent alors à un même espace fonctionnel.
+Selon la nature du problème (donc selon la nature de l'opérateur~$A$), la formulation faible~(\ref{Eq-FormulationFaible}) peut être transformée (par exemple par intégration par parties), ce qui permet de faire apparaître une forme symétrique ayant la nature d'un produit scalaire (ou d'un produit hermitien\index[aut]{Hermite (Charles), 1822-1901, Français} dans le cas de fonctions complexes). Les deux fonctions~$u$ et~$v$ appartiennent alors à un même espace fonctionnel.
 
 \medskip
 La \textcolorblue{formulation variationnelle} d'un problème régi par des équations aux dérivées partielles correspond à une formulation faible de ces équations qui s'exprime en termes d'algèbre linéaire dans le cadre d'un espace de Hilbert.
 
-Il n'y a donc fondamentalement \textcolorred{pas de différence entre formulation faible et formulation variationnelle}, sauf que cette dernière appellation est généralement réservée à des cas «qui vont bien»... et de manière très pragmatique aux cas où la formulation faible peut être transformée en un problème de minimisation: on dit alors qu'il existe une \textcolorblue{fonctionnelle}~$\Pi$ dont la \textcolorgreen{variation}~$\delta\Pi$ correspond au problème faible, d'où le terme de formulation variationnelle \textcolorgreen{(d'un point de vue physique, la fonctionnelle représente l'énergie du système, et le lieu où sa variation est nulle $\delta\Pi=0$ l'état recherché)}.
+Il n'y a donc fondamentalement \textcolorred{pas de différence entre formulation faible et formulation variationnelle}, sauf que cette dernière appellation est généralement réservée à des cas «qui vont bien»... et de manière très pragmatique aux cas où la formulation faible peut être transformée en un problème de minimisation: on dit alors qu'il existe une \textcolorblue{fonctionnelle}~$\Pi$ dont la \textcolorblue{variation}~$\delta\Pi$ correspond au problème faible, d'où le terme de formulation variationnelle \textcolorgreen{(d'un point de vue physique, la fonctionnelle représente l'énergie du système, et le lieu où sa variation est nulle $\delta\Pi=0$ l'état recherché)}.
 
 \medskip
 Par ailleurs, d'autres contraintes sur la frontière de~$\Omega$ peuvent (doivent) être imposées à~$u$ (et à~$v$). Ce sont les \textcolorblue{conditions aux limites}.
-Les conditions aux limites types ont été présentées au chapitre~\ref{Ch-EDPphy}.
+Les conditions aux limites types ont été présentées au paragraphe~\ref{Sec-CL}.
 
 \medskip
 \section{Théorème de représentation de Riesz-Fréchet}\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}

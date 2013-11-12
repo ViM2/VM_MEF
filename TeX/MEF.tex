@@ -55,6 +55,9 @@ dérivées, c'est plutôt dans les endroits où la solution \textcolorblue{va va
 sera nécessaire de «resserrer» le maillage.
 
 \medskip
+On veillera également à ce que les éléments ne soient pas trop \textcolorblue{distordus}. Des critères dits «de forme» existent. Néanmoins, dans certains cas il est possible de violer allègrement ces critères tout en obtenant une très bonne approximation de la solution.
+
+\medskip
 \begin{histoire}%
 C'est l'ingénieur américain Ray William Clough\index[aut]{Clough (Ray William), 1920-?, Américain} qui, semble-t-il, a utilisé le terme de méthode des éléments finis le premier dans un article de 1960 intitulé \emph{The Finite Element Method in Plane Stress Analysis}. Le mot rigidité (Stiffness) apparaissait dans le titre de son article \emph{Stiffness and Deflection Analysis of Complex Structures} datant de 1956 (et coécrit avec M. Turner, H. C. Martin et L. J. Topp).
 
@@ -110,8 +113,6 @@ La base mathématique rigoureuse de la méthode des éléments finis a été con
 \end{histoire}
 \colorblack
 
-On veillera également à ce que les éléments ne soient pas trop \textcolorblue{distordus}. Des critères dits «de forme» existent. Néanmoins, dans certains cas il est possible de violer allègrement ces critères tout en obtenant une très bonne approximation de la solution.
-
 \medskip
 Bien que la méthode des éléments finis soit théoriquement généralisable à toutes les dimensions d'espace et à tous les ordres de dérivation, dans la pratique, l'augmentation de ces paramètres accroît de manière dramatique la difficulté et on se contente de résoudre des problèmes limités à \textcolorred{trois dimensions en espace et deux ordres de dérivation}.
 
@@ -144,7 +145,6 @@ Jusqu'à présent, nous avons supposé que le domaine $\Omega$ dans lequel le pr
 \medskip
 \subsection{Problèmes d'échelle}
 La formulation d'un problème peut dépendre de l'échelle à laquelle on regarde ce problème, comme cela a été mentionné précédemment. Mais il se peut également que différentes échelles interagissent...
-
 Quelques problèmes classiques d'échelle sont:
 \begin{itemize}
   \item Nous avons déjà évoqué un peu cela en mécanique des fluides:
@@ -163,9 +163,9 @@ Quelques problèmes classiques d'échelle sont:
 
 \medskip
 \subsection{Couplage géométrique}
-De nombreux problèmes impliquent la prise en compte de plusieurs modèles selon le point considéré.
+De nombreux problèmes impliquent la prise en compte de plusieurs modèles (on dit parfois également «plusieurs physiques»).
 
-C'est le cas de l'\textcolorblue{interaction d'un fluide et d'une structure} (l'écoulement d'un fluide par exemple peut faire vibrer une structure qui en retour fait vibrer le fluide). Une des difficultés vient de ce que les inconnues utilisées dans la modélisation de chacun des milieux sont de natures différentes: les déplacements dans le solide et les vitesses dans le fluide.
+C'est le cas de l'\textcolorblue{interaction d'un fluide et d'une structure}: l'écoulement d'un fluide par exemple peut faire vibrer une structure qui en retour fait vibrer le fluide. Une des difficultés vient de ce que les inconnues utilisées dans la modélisation de chacun des milieux sont de natures différentes: les déplacements dans le solide et les vitesses dans le fluide.
 
 Comme illustration de ce couplage, nous proposons le cas d'un poisson, issu de l'intéressante étude de San Mart\'in et al.\index[aut]{San Mart\'in (Jorge), ?- , Chilien} \cite{bib-Fish}. Le déplacement d'un poisson dans son millieu, illustré à la \fig{Fig-fish}.a, n'est pas imposé mais résulte de l'interaction entre la déformation propre du poisson (donnée à la \fig{Fig-fish}.b, et qui elle est imposée) et le fluide.
 \begin{figure}[htb]
@@ -429,21 +429,20 @@ Lorsque les formes bilinéaires et linéaires définissant le problèmes doivent
 $V_h\subset V$ ou $V_h\not\subset V$.
 
 \medskip
-\subsection{Cas $V_h\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
+\subsection{Approximation interne}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 
 Le problème est donc:
 \begin{equation}
 \text{Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h), \forall v_h\in V_h
 \end{equation}
-où $V_h\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations
-de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ respectivement. \textcolorgreen{Dans le pratique, $a_h$ et $f_h$ sont définies sur un espace plus grand que $V_h$, mais pas sur $V$.}
+où~\textcolorblue{$V_h\subset V$} est de dimension finie, et~$a_h$ et~$f_h$ sont des approximations de~$a$ et~$f$ définies sur~$V_h\times V_h$ et~$V_h$ respectivement. \textcolorgreen{Dans le pratique, $a_h$ et~$f_h$ sont définies sur un espace plus grand que $V_h$, mais pas sur $V$.}
 
 \begin{remarque}[Motivation]
 Considérons la forme:
 \begin{equation}a(u,v)=\dint_\Omega (a\nabla u,\nabla v)(x)\dd x\end{equation}
-Comme $a=a(x)$, le problème est: comment intégrer ?
+Comme~$a=a(x)$, le problème est: comment intégrer ?
 On prend des formules d'intégrations, donc on ne calcule pas $a(\cdot,\cdot)$,
-mais $a_h(\cdot,\cdot)$ et $f_h(\cdot)$.
+mais~$a_h(\cdot,\cdot)$ et~$f_h(\cdot)$.
 \end{remarque}
 
 Une majoration de l'erreur est donnée par le lemme 1 de Strang.
@@ -462,33 +461,37 @@ alors il existe une constante $C$ indépendante de $h$ telle que:
 \right]
 \end{aligned}
 \end{equation}
-Le premier terme $ \|u-v_h\|$ est appelé \textcolorblue{erreur d'approximation},
+Le premier terme~$\|u-v_h\|$ est appelé \textcolorblue{erreur d'approximation},
 le reste \textcolorblue{erreur de consistance}.
 \end{lemme}
 
 \medskip
-\subsection{Cas $V_h\not\subset V$}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
+\subsection{Approximation externe}\index[aut]{Strang (William Gilbert), 1934-, Américain}\index{approximation! non conforme}\index{lemme de! Strang}
 
 Le problème est encore:
 \begin{equation}
 \text{Trouver } u_h\in V_h \text{ tel que } a_h(u_h,v_h) = f_h(v_h),\quad \forall v_h\in V_h
 \end{equation}
-mais $V_h\not\subset V$ est de dimension finie, et $a_h$ et $f_h$ sont des approximations de $a$ et $f$ définies sur $V_h\times V_h$ et $V_h$ respectivement.
+mais~\textcolorblue{$V_h\not\subset V$} est de dimension finie, et~$a_h$ et~$f_h$ sont des approximations de~$a$ et~$f$ définies sur~$V_h\times V_h$ et~$V_h$ respectivement.
 
 \begin{remarque}[Motivation]
-Considérons le problème du Laplacien de Dirichlet. L'espace $V$ est $H^1_0(\Omega)$.
+Considérons le problème du Laplacien de Dirichlet. L'espace~$V$ est~$H^1_0(\Omega)$.
 
-On considère l'espace des éléments finis triangulaires engendrés par l'élément ayant une pression constante par élément et les nœuds au centre des arêtes du triangle. Nous notons cet espace $V_h$; alors $V_h\not\subset H^1(\Omega)$. Nous prenons maintenant l'espace $V_{h,0}$ qui tient compte des conditions aux limites de Dirichlet. Si on prend:
-\begin{equation}a(u,v)=\dint_\Omega \nabla u\cdot \nabla v\end{equation} alors, dans $\Omega$, il y a
-des sauts et l'intégrale n'a pas de sens. Par contre, si l'on considère:
-\begin{equation} a_h(u_h,v_h)=\dsum_{K\in\mathcal{T}_h}\dint_K \nabla u_h\cdot\nabla v_h\end{equation}
+On considère l'espace des éléments finis triangulaires engendrés par l'élément ayant une pression constante par élément et les nœuds au centre des arêtes du triangle. Nous notons cet espace~$V_h$; alors~$V_h\not\subset H^1(\Omega)$. Nous prenons maintenant l'espace $V_{h,0}$ qui tient compte des conditions aux limites de Dirichlet. Si on prend:
+\begin{equation}
+a(u,v)=\dint_\Omega \nabla u\cdot \nabla v
+\end{equation}
+alors, dans~$\Omega$, il y a des sauts et l'intégrale n'a pas de sens. Par contre, si l'on considère:
+\begin{equation} 
+a_h(u_h,v_h)=\dsum_{K\in\mathcal{T}_h}\dint_K \nabla u_h\cdot\nabla v_h
+\end{equation}
 l'intégrale sur chaque élément a un sens.
 \end{remarque}
 
 \medskip
 Une majoration de l'erreur est donnée par le lemme 2 de Strang.
 \begin{lemme}[Lemme 2 de Strang]
-Si la norme $\|\cdot\|_h$ est définie sur $V_h+V$, et s'il existe deux constantes indépendantes de $h$, $\alpha^*>0$ et $M^*>0$ telles que:
+Si la norme~$\|\cdot\|_h$ est définie sur $V_h+V$, et s'il existe deux constantes indépendantes de $h$, $\alpha^*>0$ et $M^*>0$ telles que:
 \[\left\{
 \begin{array}{rl}
 a_h(v,v)\ge\alpha^*\|v\|^2_h, \qquad &\forall v\in V_h \\[+2mm]
@@ -510,12 +513,12 @@ le second \textcolorblue{erreur de consistance}.
 
 
 \medskip
-\section[Convergence de la méthode des éléments finis en approximation conforme]{Convergence de la méthode des éléments finis en approximation conforme lorsque $V_h\subset V$}\index{approximation! non conforme}\index{approximation! conforme}
+\section{Convergence de la méthode des éléments finis en approximation conforme interne}\index{approximation! non conforme}\index{approximation! conforme}
 
-Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine de $\RR^n$, et notre problème que nous résolvons de manière approchée par la méthode des éléments finis. Il s'agit maintenant de fournir une estimation de l'erreur $\|u-u_h\|_m$ dans $H^m$ (souvent $m = 0$, $1$ ou $2$). La régularité de $u$ et de $u_h$ (et donc les valeurs possibles pour $m$) dépendent du problème continu considéré ainsi que du type d'éléments finis choisis pour sa résolution.
+Reprenons un cadre général, i.e. considérons $\Omega$ notre domaine de $\RR^n$, et notre problème que nous résolvons de manière approchée par la méthode des éléments finis, lorsque~\textcolorblue{$V_h\subset V$}. Il s'agit maintenant de fournir une estimation de l'erreur~$\|u-u_h\|_m$ dans~$H^m$ (souvent~$m = 0$, $1$ ou~$2$). La régularité de~$u$ et de~$u_h$ (et donc les valeurs possibles pour $m$) dépendent du problème continu considéré ainsi que du type d'éléments finis choisis pour sa résolution.
 
 \medskip
-On rappelle que $\mathcal{T}_h$ est le maillage de $\Omega$ considéré. On supposera de plus le domaine $\Omega$ \textcolorred{polygonal}, ce qui permet de le recouvrir exactement par le maillage. Si ce n'est pas le cas, il faut prendre en compte \textcolorred{l'écart} entre le domaine couvert par le maillage et le domaine réel.
+On rappelle que~$\mathcal{T}_h$ est le maillage de~$\Omega$ considéré. On supposera de plus le domaine~$\Omega$ \textcolorred{polygonal}, ce qui permet de le recouvrir exactement par le maillage. Si ce n'est pas le cas, il faut prendre en compte \textcolorred{l'écart} entre le domaine couvert par le maillage et le domaine réel.
 
 
 \medskip
