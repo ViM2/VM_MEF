@@ -18,7 +18,7 @@ utilité.
 \section{Panorama non exhaustif des espaces}
 
 \begin{histoire}%
-Le mot «topologie» vient de la contraction des noms grecs «topos» (lieu) et «logos» (étude), c'est donc l'étude du lieu. On a d'ailleurs commencé par l'appeler \emph{Analysis Situs}, le terme «topologie» n'étant introduit qu'en 1847, en allemand, par Johann Benedict Listing dans Vorstudien zur Topologie.\index[aut]{Listing (Johann Benedict), 1808-1882, Allemand}
+Le mot «topologie» vient de la contraction des noms grecs «topos» (lieu) et «logos» (étude), c'est donc l'étude du lieu. On a d'ailleurs commencé par l'appeler \emph{Analysis Situs}, le terme «topologie» n'étant introduit qu'en 1847, en allemand, par Johann Benedict Listing dans \emph{Vorstudien zur Topologie}.\index[aut]{Listing (Johann Benedict), 1808-1882, Allemand}
 
 La topologie vise à définir ce qu'est un lieu (i.e. un espace) et quelles peuvent être ses propriétés (je dirais uniquement en tant que tel, sans autre ajout). Elle s'intéresse plus précisément à ce que l'on appelle aujourd'hui espaces topologiques et aux applications, dites continues, qui les lient, ainsi qu'à leurs déformations (``\emph{A topologist is one who doesn't know the difference between a doughnut and a coffee cup}'').
 
@@ -374,7 +374,7 @@ Alors~$E$ est isomorphe, en tant qu'espace vectoriel, et isométrique à un sous
 Cet espace de Banach~$\overline{E}$ est unique à un isomorphisme isométrique près.
 \end{theoreme}
 
-Ce théorème de complétion répond par l'affirmative à la question: si l'espace normé~$E$ n'est pas complet, existe-t-il un Banach minimal~$\overline{E}$ le
+Ce théorème de complétion répond par l'affirmative à la question: si l'espace normé~$E$ n'est pas complet, existe-t-il un espace de Banach minimal~$\overline{E}$ le
 contenant ?
 
 \medskip
@@ -386,7 +386,7 @@ Soit~$F$ un sous-espace vectoriel fermé d'un espace de Hilbert~$H$ (il est alor
 \end{itemize}
 
 \medskip
-Ainsi, $F^\bot$ est l'orthogonal et le supplémentaire de $F$, et ces deux sous-espaces sont donc en sommes directe. On a donc=~$H=F\oplus F^\bot$ (on utilise parfois le terme de «somme hilbertienne»).
+Ainsi, $F^\bot$ est l'orthogonal et le supplémentaire de $F$, et ces deux sous-espaces sont donc en sommes directe. On a donc~$H=F\oplus F^\bot$ (on utilise parfois le terme de «somme hilbertienne»).
 \end{theoreme}
 
 \textcolorgris{Ce résultat subsiste si l'on suppose seulement que $H$ est un espace préhilbertien et que $F$ est un sous-espace vectoriel complet de $H$.}
@@ -400,7 +400,7 @@ En complément à l'aspect métrique (Fréchet 1906),\index[aut]{Fréchet (Mauri
 \textcolorgreen{Le but, à travers la notion de mesure}, est d'étendre la notion usuelle de longueur pour les ensembles de~$\RR$, ou de volume pour ceux de~$\RR^n$, et ceci de deux manières:
 \begin{itemize}
 \item on veut d'une part pouvoir considérer des espaces de base plus généraux (plus «abstraits»: espaces de dimension infinie, espaces sur lesquels on définit les probabilités...); 
-\item et d'autre part on veut englober dans le même cadre mathématique les notions de longueurs, surface, volume, mais aussi de masses ou charges ponctuelles issues de la mécanique, de l'électricité... car toutes ces quantités possèdent une même propriété évidente: l'\textcolorblue{additivité} (i.e. si l'on désigne par~$\mu(A)$ le volume, la masse, la charge électrique... d'une partie «raisonnable»~$A$, alors~$\mu(A\cap B)=\mu(A)+\mu(B)$ dès que~$A$ et~$B$ sont disjoints).
+\item et d'autre part on veut englober dans le même cadre mathématique les notions de longueurs, surface, volume, mais aussi de masses ou charges ponctuelles issues de la mécanique, de l'électricité... car toutes ces quantités possèdent une même propriété évidente: l'\textcolorblue{additivité} (i.e. si l'on désigne par~$\mu(A)$ le volume, la masse, la charge électrique... d'une partie «raisonnable»~$A$, alors~$\mu(A\cap B)=\mu(A)+\mu(B)$ dès que les parties~$A$ et~$B$ sont disjointes).
 \end{itemize}
 
 \medskip
@@ -499,7 +499,7 @@ $X$ et~$\mu$ une mesure sur~$\mathcal{A}$.
 \colorgris
 \begin{remarque}[Complément sur le produit d'espaces mesurables]
 Soient~$(X,T)$ et~$(Y,U)$ deux espaces mesurables.
-On appelle rectangle mesurable du produit~$\Omega=X\times Y$, toute partie de~$\Omega$ de la forme~$A\times B$ où~$A$ et~$B$ sont des éléments respectivement de~$T$ et~$U$-mesurables.
+On appelle rectangle mesurable du produit~$\Omega=X\times Y$, toute partie de~$\Omega$ de la forme~$A\times B$ où~$A$ et~$B$ sont des éléments respectivement~$T$ et~$U$-mesurables.
 
 On appelle produit tensoriel des deux tribus~$T$ et~$U$, la tribu engendrée par l'ensemble des rectangles mesurables.
 Cette tribu est notée~$T \otimes U$, et est la plus petite tribu de~$\Omega$ qui contient toutes les parties de la forme~$A\times B$, $A\in T$, $B\in U$.
@@ -516,7 +516,7 @@ Le produit des espaces mesurables est~$(X\times Y, T \otimes U)$ et est un espac
 
 \begin{definition}[Tribu borélienne]
 On appelle \textcolorblue{tribu borélienne}\index{tribu!borélienne} sur un espace topologique donné la tribu engendrée par les ensembles ouverts.
-Dans le cas simple et fondamental de l'espace usuel à~$n$ dimensions, la tribu borélienne de~$\RR^n$ est engendrée par une famille dénombrable de parties, les pavés dont les sommets sont à coordonnées rationnelles.
+Dans le cas simple et fondamental de l'espace usuel à~$n$ dimensions, la tribu borélienne de~$\RR^n$ est engendrée par une famille dénombrable de parties, les pavés, dont les sommets sont à coordonnées rationnelles.
 \end{definition}
 
 %\medskip

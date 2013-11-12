@@ -10,7 +10,7 @@ Cette deuxième partie va donc présenter des problèmes physiques, sous leur fo
 Une \textcolorblue{équation différentielle} est une relation entre une ou plusieurs fonctions inconnues et leurs dérivées. 
 \textcolorblue{L'ordre d'une équation différentielle} correspond au degré maximal de dérivation auquel l'une des fonctions inconnues a été soumise.
 
-Pour les méthodes explicites de résolution des équations différentielles, on ira voir en annexes.
+Pour les méthodes explicites de résolution des équations différentielles, on ira voir au chapitre~\ref{Ch-ED}.
 
 \medskip
 \begin{histoire}%
@@ -55,12 +55,10 @@ D'Alembert\index[aut]{d'Alembert (Jean le Rond), 1717-1783, Français} remarque 
 
 \medskip
 Clairaut, D'Alembert, Euler, Lagrange et Laplace consacrent de nombreux mémoires au problème des~$n$ corps. Le premier exemple du problème de Sturm-Liouville\index[aut]{Sturm (Jacques Charles François), 1803-1855, Français}\index[aut]{Liouville (Joseph), 1809-1882, Français} est donné par D'Alembert\index[aut]{d'Alembert (Jean le Rond), 1717-1783, Français} à propos de la vibration d'une corde non homogène.
-\end{histoire}
 
 \medskip
 Les mathématiciens du \textsc{xviii}\fup{e} siècle admettent sans discussion l'existence de solutions des équations différentielles et des équations aux dérivées partielles sans chercher le domaine d'existence de ces solutions. Il faut attendre Cauchy,\index[aut]{Cauchy (Augustin Louis, baron -), 1789-1857, Français} vers 1820, pour que soit abordée l'existence d'une solution à l'équation différentielle~$y' = f(x,y)$, où~$f$ est supposée continument différentiable en chaque variable. Sans connaître les travaux de Cauchy, Lipschitz,\index[aut]{Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand} en 1868, retrouve le résultat de Cauchy mais s'affranchit de l'hypothèse de différentiabilité de~$f$ au profit de la condition dite aujourd'hui de Lipschitz. En 1837, Liouville\index[aut]{Liouville (Joseph), 1809-1882, Français} utilise, pour le cas particulier d'une équation linéaire du second ordre une méthode d'approximation successive: on construit une suite de fonctions convergeant vers la solution.
-\colorblack
-
+\end{histoire}\colorblack
 
 \medskip
 Si l'on considère une fonction~$f$, sa dérivée~$f'$ exprime sa variation: positive~$f$ est croissante (et plus sa value est grande, plus la croissance est rapide), négative~$f$ est décroissante...
@@ -163,8 +161,7 @@ La forme générale d'une équation aux dérivées partielles linéaire, scalair
 au + c \nabla u + \dive (A\nabla u) = f
 \end{equation}
 où~$a: \Omega\rightarrow\RR$, $c: \Omega\rightarrow\RR^n$, 
-$A: \Omega\rightarrow\RR^{n\times n}$ et~$f: \Omega\rightarrow\RR$ sont les coefficients de l'équation aux dérivées partielles linéaires.
-%%%%%%%%%%%%%%%%%%%%
+$A: \Omega\rightarrow\RR^{n\times n}$ sont les coefficients de l'équation aux dérivées partielles linéaire.
 \medskipvm
 Dans le cas où~$u$ est scalaire ($n = 1$) et les coefficients sont constants, on obtient:
 \begin{equation}
@@ -184,9 +181,9 @@ Cette équation est dite:
 \colorgreen
 On peut dire que:
 \begin{itemize}
-  \item les problèmes elliptiques vont concerner les problèmes stationnaires tels que ceux de la mécanique, la thermique,l'électrostatique, les membranes élastiques,l'écoulement potentiel;
-  \item les problèmes paraboliques vont concerner les modèles instationnaires tels que la diffusion thermique (équation de la chaleur), chimique, neutronique, les fluide visqueux incompressible. On parlera d'irréversibilité, de décroissance, de principe du maximum, de propagation à vitesse infinie; 
-  \item les problèmes hyperboliques vont concerner les modèles  instationnaires tels que la propagation des ondes, l'électromagnétisme, l'élastodynamique. On parlera de réversibilité, de conservation de l'énergie, de propagation à vitesse finie.
+  \item les problèmes elliptiques vont concerner les problèmes stationnaires tels que ceux de la mécanique, la thermique, l'électrostatique, les membranes élastiques, l'écoulement potentiel;
+  \item les problèmes paraboliques vont concerner les modèles instationnaires tels que la diffusion thermique (équation de la chaleur), chimique, neutronique, les fluide visqueux incompressibles (on parlera d'irréversibilité, de décroissance, de principe du maximum, de propagation à vitesse infinie); 
+  \item les problèmes hyperboliques vont concerner les modèles  instationnaires tels que la propagation des ondes, l'électromagnétisme, l'élastodynamique (on parlera de réversibilité, de conservation de l'énergie, de propagation à vitesse finie).
 \end{itemize}
 \colorblack
 
@@ -194,7 +191,6 @@ On peut dire que:
 \section{Phénomènes de propagation et de diffusion}
 
 Dans ce paragraphe, nous avons regroupé les notions de propagation et de diffusion.
-\medskipvm
 La propagation et la diffusion sont liées. La diffusion, c'est en quelque sorte l'homogénéisation d'une grandeur dans un milieu et dans le temps. Or pour qu'il y ait diffusion, il faut bien que ledit phénomène se propage.
 
 \medskip
@@ -253,7 +249,6 @@ En gravitation universelle, le potentiel gravitationnel~$\Phi$ est relié à la 
 \medskip
 \subsection{Équation d'onde, phénomènes vibratoires}\label{Sec-EqOnde}
 Il s'agit encore d'une extension de l'équation de Laplace.
-\medskipvm
 L'\textcolorblue{équation d'onde} est l'équation générale qui décrit la propagation d'une onde (sonore ou électromagnétique dont la lumière), qui peut être représentée par une grandeur scalaire ou vectorielle.
 \medskipvm
 Dans le cas vectoriel, en espace libre, dans un milieu homogène, linéaire et isotrope, l'équation d'onde s'écrit:\index{ED-EDP!des ondes}
@@ -296,7 +291,7 @@ L'\textcolorblue{équation de la chaleur} est une équation aux dérivées parti
 
 \medskip
 \begin{histoire}%
-En dépit des railleries de Hugo\index[aut]{Hugo (Victor), 1802-1885, Français} et Stendhal\index[aut]{Beyle (Henri), dit Stendhal, 1783-1842, Français} à son encontre, Joseph Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} laissera son nom à la postérité à plus d'un titre:\\[-2.5mm]
+En dépit des railleries de Hugo\index[aut]{Hugo (Victor), 1802-1885, Français} et Stendhal\index[aut]{Beyle (Henri), dit Stendhal, 1783-1842, Français} Joseph Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} laissera son nom à la postérité à plus d'un titre:\\[-2.5mm]
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}
 \includegraphics[height=\the\HauteurDesPhotos]{Fourier2}&
@@ -312,7 +307,7 @@ En 1808, son mémoire est accepté par l'Académie des Sciences en dépit de sé
 En 1822 a lieu la publication du \emph{Traité analytique de la chaleur}, version remaniée et augmentée de son mémoire, qui s'imposera comme l'un des ouvrages scientifiques majeurs du dix-neuvième siècle.
 
 \medskip
-La lecture du \emph{Traité analytique} est toujours profitable. La première phrase sonne comme une profession de foi: «Les causes primordiales ne nous sont point connues; mais elles sont assujetties à des lois simples et constantes, que l'on peut découvrir par l'observation, et dont l'étude est l'objet de la philosophie naturelle». Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} confesse donc son ambition de décrire des phénomènes physiques jusque là jugés inaccessibles, par le moyen des mathématiques; il le confirme dans le choix d'une devise en latin (attribuée par Fourier à Aristote,\index[aut]{Aristote (dit le Stagirite), -384-- -322, Grec} mais probablement inventée par lui-même) : \emph{Et ignem regunt numeri} (Même le feu est régi par les nombres).
+La lecture du \emph{Traité analytique} est toujours profitable. La première phrase sonne comme une profession de foi: «Les causes primordiales ne nous sont point connues; mais elles sont assujetties à des lois simples et constantes, que l'on peut découvrir par l'observation, et dont l'étude est l'objet de la philosophie naturelle». Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} confesse donc son ambition de décrire des phénomènes physiques, jusque là jugés inaccessibles, par le moyen des mathématiques; il le confirme dans le choix d'une devise en latin (attribuée par Fourier à Aristote,\index[aut]{Aristote (dit le Stagirite), -384-- -322, Grec} mais probablement inventée par lui-même) : \emph{Et ignem regunt numeri} (Même le feu est régi par les nombres).
 
 \medskip
 L'idée maîtresse de Fourier,\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} celle que l'on lui attribue le plus naturellement, consiste à décomposer une fonction périodique arbitraire sous forme de série trigonométrique déjà mentionnée à l'équation~(\ref{Eq-FourierTrigo}). Des décompositions de ce style ne sont pas à proprement parler nouvelles: elles faisaient partie du répertoire des analystes de la fin du \textsc{xviii}\fup{e} siècle, à commencer par le plus impressionnant d'entre eux, le Suisse Euler.\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} Mais Fourier est le premier à avoir l'intuition du caractère universel et particulièrement commode de cette décomposition trigonométrique.
@@ -348,7 +343,7 @@ du Bois-Reymond&Gibbs%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Jusqu'en 1873 les spécialistes pensaient que l'hypothèse de continuité $C^1$ de part et d'autre était superflue; mais dans son article \emph{Eine neue Theorie der Convergenz und Divergenz von Reihen mit positiven Gliedern}, du Bois-Reymond,\index[aut]{du Bois-Reymond (Paul David Gustave), 1831-1889, Allemand} donna un contre-exemple sous la forme d'une fonction continue périodique dont la série de Fourier diverge en un point. Si l'on veut avoir la propriété de reconstruction ponctuelle, on doit supposer une certaine régularité; tout au mieux on peut relaxer l'hypothèse~$C^1$.\\
+Jusqu'en 1873 les spécialistes pensaient que l'hypothèse de continuité $C^1$ de part et d'autre était superflue; mais dans son article \emph{Eine neue Theorie der Convergenz und Divergenz von Reihen mit positiven Gliedern}, du Bois-Reymond\index[aut]{du Bois-Reymond (Paul David Gustave), 1831-1889, Allemand} donna un contre-exemple sous la forme d'une fonction continue périodique dont la série de Fourier diverge en un point. Si l'on veut avoir la propriété de reconstruction ponctuelle, on doit supposer une certaine régularité; tout au mieux on peut relaxer l'hypothèse~$C^1$.\\
 \indent
 Même quand elle est vraie, la convergence ponctuelle des séries de Fourier peut être médiocre. Un exemple bien connu est le phénomène de Gibbs,\index[aut]{Gibbs (Josiah Willard), 1839-1903, Américain} qui pose des problèmes pratiques: la série de Fourier d'une fonction créneau présente des oscillations près des points de discontinuité, dont l'ampleur ne s'atténue pas quand le nombre de fréquences tend vers l'infini.}
 \end{histoire}
@@ -363,10 +358,10 @@ En présence d'une source thermique dans le domaine, et en l'absence de convecti
 où:
 \begin{itemize}
   \item~$\Delta$ est l'opérateur Laplacien;
-  \item~$D$ est le coefficient de diffusivité thermique (en~$m^2/s$);
-  \item~$f$ une éventuelle production volumique de chaleur (en~$W/m^3$);
-  \item~$\rho$ est la masse volumique du matériau (en~$kg/m^3$);
-  \item~$c$ la chaleur spécifique massique du matériau (en~$J/kg·K$).
+  \item~$D$ est le coefficient de diffusivité thermique (en~m$^2$/s);
+  \item~$f$ une éventuelle production volumique de chaleur (en~W/m$^3$);
+  \item~$\rho$ est la masse volumique du matériau (en~kg/m$^3$);
+  \item~$c$ la chaleur spécifique massique du matériau (en~J/kg·K).
 \end{itemize}
 \medskipvm\colorgris
 L'équation de la chaleur est donc une équation de la forme:
@@ -386,12 +381,9 @@ Pour que le problème soit bien posé, il faut spécifier:
   \item de Neumann:\begin{equation}\forall x\in\partial \Omega, \quad \frac{\partial T (x,t)}{\partial n} = n(x) \cdot \nabla T(x,t) = 0\end{equation} où~$n(x)$ est le vecteur normal unitaire au point~$x$.
 	\end{itemize}
 \end{itemize}
-%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
-L'équation de la chaleur, introduite initialement pour décrire la conduction thermique, permet de décrire le phénomène de diffusion.
-
+L'équation de la chaleur, introduite initialement pour décrire la conduction thermique, permet de décrire le \textcolorblue{phénomène de diffusion}.
 La diffusion est un phénomène de transport irréversible qui se traduit à terme par une homogénéisation de la grandeur considérée (par exemple la température dans un domaine, la concentration en produits chimiques dans une solution...).
-
 D'un point de vue phénoménologique, et au premier ordre, ce phénomène est régi par une \textcolorblue{loi de Fick} (par exemple sorption d'eau dans les matériaux composites, diffusion d'actifs au travers de la peau).\index[aut]{Fick (Adolf Eugene), 1829-1901, Allemand} Dans l'équation précédente, $T$ représente alors la répartition de la grandeur considérée (eau dans un composite, concentration d'un constituant chimique...) et le terme source dans~$\Omega$ est souvent nul (i.e.~$f=0$).
 
 \begin{histoire}%
@@ -408,7 +400,7 @@ Nirenberg&Nash&De Giorgi%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-En 1956, Louis Nirenberg\index[aut]{Nirenberg (Louis), 1925- , Américain} propose un nouveau problème à John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} (qui est «aussi pressé que X, aussi exaspérant que Y, quels que soient X et Y» selon Warren Ambrose): la continuité des solutions de l'équation de la chaleur dans les milieux discontinus, i.e. lorsque le coefficient de conductivité est quelconque, et peut même varier brutalement d'un point à l'autre et que l'on a seulement des bornes inférieure et supérieure sur la conductivité.\\ \indent
+En 1956, Louis Nirenberg\index[aut]{Nirenberg (Louis), 1925- , Américain} propose un nouveau problème à John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} (qui est, selon Warren Ambrose,\index[aut]{Ambrose (Warren Arthur), 1914-1995, Américain} «aussi pressé que X, aussi exaspérant que Y, quels que soient X et Y»): la continuité des solutions de l'équation de la chaleur dans les milieux discontinus, i.e. lorsque le coefficient de conductivité est quelconque, et peut même varier brutalement d'un point à l'autre et que l'on ne dispose seulement que des bornes inférieure et supérieure sur la conductivité.\\ \indent
 John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} résout le problème, notamment à l'aide du concept d'entropie de Boltzmann,\index[aut]{Boltzmann (Ludwig), 1944-1906, Autrichien} mais n'obtiendra pas le triomphe escompté, le problème ayant été résolu, en même temps, mais par une autre méthode, par l'italien De Giorgi,\index[aut]{De Giorgi (Ennio), 1928-1996, Italien} qui lui deviendra célèbre.}
 Mais John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} est célèbre pour bien d'autres travaux... dont l'un d'eux lui a valu le prix Nobel d'économie en 1994. On pourra regarder le film «un homme d'exception» (\emph{A Beautiful Mind}) de Ron Howard\index[aut]{Howard (Ronald William), 1954- , Américain} en 2001 sur John Nash.
 \end{histoire}
@@ -419,10 +411,6 @@ Mais John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} est célèbre 
 \medskip
 \section{Mécanique des fluides}
 La mécanique des fluides est l'une des deux composantes de la mécanique des milieux continus; l'autre composante étant la mécanique des solides qui sera traitée un peu plus loin.
-
-
-
-
 
 \medskip
 \subsection{Équation de Navier-Stokes}\label{Sec-NavierStokes}
@@ -514,8 +502,7 @@ J'ajoute une dernière remarque prise dans le chapitre~\textsc{viii} <<La géom�
 \subsection{Équation de Stokes}
 
 Il s'agit d'un cas particulier de l'équation de Navier-Stokes (termes inertiels absents ou négligés).
-
-Lorsqu'un fluide visqueux s'écoule lentement en un lieu étroit ou autour d'un petit objet, les effets visqueux dominent sur les effets inertiels. Son écoulement est alors appelé écoulement de Stokes. On parle aussi d'écoulement à faible nombre de Reynolds (le nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} mesure le poids relatif des termes visqueux et inertiel dans l'équation de Navier-Stokes). Ce nombre de Reynolds est alors beaucoup plus petit que~$1$.
+Lorsqu'un fluide visqueux s'écoule lentement en un lieu étroit ou autour d'un petit objet, les effets visqueux dominent sur les effets inertiels. Son écoulement est alors appelé écoulement de Stokes. On parle aussi d'écoulement à faible \textcolorblue{nombre de Reynolds} \textcolorgris{(le nombre de Reynolds\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} mesure le poids relatif des termes visqueux et inertiel dans l'équation de Navier-Stokes)}. Ce nombre de Reynolds est alors beaucoup plus petit que~$1$.
 
 \medskip
 L'équation de Stokes, qui décrit l'écoulement d'un fluide newtonien incompressible en régime permanent et à faible nombre de Reynolds,\index[aut]{Reynolds (Osborne), 1842-1912, Irlandais} s'écrit dans~$\Omega$:\index{ED-EDP!de Stokes}\index[aut]{Stokes (George Gabriel), 1819-1903, Anglais}
@@ -552,7 +539,6 @@ Contrairement à l'équation de Navier-Stokes, l'équation de Stokes est linéai
 
 
 L'équation d'Euler établie en 1755 en appliquant le principe fondamental de la dynamique à une particule fluide (i.e. sous forme locale), s'applique dans le cas d'un fluide parfait, i.e. un fluide non visqueux et sans conductivité thermique. Le fluide peut être incompressible ou compressible (à condition, dans ce dernier cas, de se placer dans l'hypothèse de vitesses faibles). 
-
 Il s'agit d'un cas particulier de l'équation de Navier-Stokes.
 
 \medskip
@@ -750,7 +736,7 @@ Dans le cas des petits déplacements (termes d'ordre 2 négligés), elle devient
 \end{equation}
 
 \colorgris
-Dans le cas de \textcolorred{grandes déformations}, on décompose les différentes grandeurs en deux parties: l'une symétrique, l'autre antisymétrique. On ne parle plus de contraintes de Cauchy (qui est l'application linéaire reliant le vecteur contrainte à la normale unitaire au point considéré), mais de contraintes nominales et de contraintes de Piola-Kirchhoff de seconde espèce (plus de contrainte corotationnelle pour les poutres ou les coques). Pour les déformations, on remarque qu'elles sont le produit d'une rotation pure par une déformation pure...\colorblack 
+Dans le cas de \textcolorred{grandes déformations}, on décompose les différentes grandeurs en deux parties: l'une symétrique, l'autre antisymétrique. On ne parle plus de contraintes de Cauchy (qui est l'application linéaire reliant le vecteur contrainte à la normale unitaire au point considéré), mais de contraintes nominales et de contraintes de Piola-Kirchhoff de seconde espèce (plus de contrainte corotationnelle pour les poutres ou les coques). Pour les déformations, on remarque qu'elles sont le produit d'une rotation pure par une déformation pure... \colorblack 
 Ces tenseurs sont présentés au paragraphe~\ref{Sec-TensS}, quant aux grandes déformation, elles sont exposées au paragraphe~\ref{Sec-NLg}.
 
 \medskip
@@ -790,7 +776,7 @@ Le cas~$\nu=0,5$ correspond au cas d'un matériau \textcolorred{incompressible},
   \caption{Déformation et coefficient de Poisson}
 \end{wrapfigure}
 \colorgreen
-La signification physique du coefficent de Poisson est simple: $2\nu$ traduit le pourcentage de déformation dans le sens transverse à l'effort. En restant dans le cas plan, quand on fait subit à une pièce un effort de compression telle qu'elle subit une déformation (de compression) de 1, alors elle s'élargit de~$2\nu$ dans la direction transverse ($\nu$ de chaque côté par symétrie).
+La signification physique du coefficent de Poisson est simple: $2\nu$ traduit le pourcentage de déformation dans le sens transverse à l'effort. En restant dans le cas plan, quand on fait subir à une pièce un effort de compression telle qu'elle subit une déformation (de compression) de 1, alors elle s'élargit de~$2\nu$ dans la direction transverse ($\nu$ de chaque côté par symétrie).
 
 Ainsi, il devient évident qu'un matériau incompressible\index{loi de comportement!incompressible} est caractérisé par~$2\nu=1$, i.e. lorsqu'il perd un volume~$1$ selon une direction, il reprend un volume~$1$ dans la direction transverse: en d'autres termes, il ne varie pas de volume, il est donc incompressible [ce qui ne veut pas dire «incomprimable»!].
 
@@ -856,7 +842,7 @@ Il est clair qu'il sera nécessaire d'étudier chaque aspect:
 Les deux derniers cas sont typiquement des cas dits de couplage fluide/structure.
 
 \medskip
-D'un point de vue de la formulation de ce problème sous forme d'équation aux dérivées partielles, tout à été dit précédemment. Nous verrons plus loin comment prendre en compte tous ces aspects de manière plus appliquée.
+D'un point de vue de la formulation de ce problème sous forme d'équation aux dérivées partielles, tout à été dit précédemment. Nous verrons plus loin, aux chapitres~\ref{Ch-ondes} et surtout~\ref{Ch-Acous}, comment prendre en compte tous ces aspects de manière plus appliquée.
 
 \medskip
 \section{Multiplicateurs de Lagrange}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}

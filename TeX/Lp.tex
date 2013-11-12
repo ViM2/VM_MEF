@@ -10,7 +10,7 @@ Regardons toutefois d'un peu plus près d'où tout cela provient.
 
 \medskip
 \begin{histoire}%
-Dans le chapitre VI, «Développement d'une fonction arbitraire en séries trigonométriques» de sa \emph{Théorie analytique}, Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} considère une fonction~$f$ définie dans~$]-\pi/2,+\pi/2[$ dont le développement en série trigonométrique est de la forme:
+Dans le chapitre \textsc{vi} «Développement d'une fonction arbitraire en séries trigonométriques» de sa \emph{Théorie analytique}, Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} considère une fonction~$f$ définie dans~$]-\pi/2,+\pi/2[$ dont le développement en série trigonométrique est de la forme:
 \begin{equation}\label{Eq-FourierTrigo} f(x)=a_1\sin x+a_2\sin 2x +\ldots+a_k\sin kx +\ldots\end{equation}
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{c}%
@@ -32,7 +32,7 @@ Or les fonctions considérées en l'occurrence «vont bien» pour l'intégrale d
 \index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand}
 \begin{definition}[Intégrale de Riemann]
 Soit~$f$ une fonction réelle définie sur un intervalle~$\intff{a}{b}$.
-On considère une suite~$(x_i)$, $0\le i\le n$ de subdivisions de cet intervalle:
+On considère une suite~$(x_i)$, $0\le i\le n$, de subdivisions de cet intervalle:
 $a=x_0 < x_1 <\ldots < x_{n-1} <x_n=b$.
 Notons~$\delta_i=x_i-x_{i-1}$ et~$S=\delta_1f(a+\varepsilon_1\delta_1) +
 \delta_2 f(x_1+\varepsilon_2\delta_2)+ \ldots + \delta_nf(x_{n-1}+\varepsilon_n\delta_n)$,
@@ -58,7 +58,7 @@ Riemann&Dirichlet&Lebesgue%
 \end{tabular}}
 \medskip
 \ImageADroite{%
-Les conditions énoncées au paragraphe précédent peuvent sembler faibles, mais, dès la fin de son mémoire de 1829, \emph{Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données}, Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} donne l'exemple, d'une nature toute nouvelle, discontinue en tous ces points: la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre constante~$d$ si~$x$ est irrationnel (on appelle une telle fonction, «fonction de Dirichlet», bien que celui-ci l'ai toujours exhibée comme un monstre, existant, mais non représentatif de ce que devrait être une fonction. Lorsque $c=1$ et $d=0$, on parle alors plutôt de l'indicatrice de~$\QQ$). On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.}
+Les conditions énoncées au paragraphe précédent peuvent sembler faibles, mais, dès la fin de son mémoire de 1829 \emph{Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données}, Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} donne l'exemple, d'une nature toute nouvelle, discontinue en tous ces points: la fonction~$f(x)$ qui vaut une constante~$c$ si~$x$ est un rationnel et qui vaut une autre constante~$d$ si~$x$ est irrationnel (on appelle une telle fonction, «fonction de Dirichlet», bien que celui-ci l'ai toujours exhibée comme un monstre, existant, mais non représentatif de ce que devrait être une fonction. Lorsque $c=1$ et $d=0$, on parle alors plutôt de l'indicatrice de~$\QQ$). On voit alors directement que la Riemann-intégrabilité est mise à mal.\index[aut]{Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand} Le travail consistera alors à définir précisément ce que l'on peut négliger, i.e. les parties de mesure nulle.}
 
 \medskip
 Dans la théorie de Lebesgue, on va élargir la classe des fonctions intégrables (par exemple, toute fonction bornée «raisonnable», disons qui peut être décrite par un énoncé mathématique, est Lebesgue-intégrable).
@@ -100,9 +100,9 @@ La théorie de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français}
 De plus, toute cette évolution s'est accompagnée de l'idée qu'on doit manipuler les fonctions comme des objets mathématiques en soi, des points de nouveaux espaces, les \emph{espaces fonctionnels}. Avec l'extension du langage ensembliste, il devient naturel d'employer un langage géométrique à propos de ces espaces.
 
 \medskip
-\colorgris Malgré tout ce qui vient d'être dit, rendons quand même hommage à cette belle (et malgré tout puissante) intégrale de Riemann, qui a de plus le bon goût d'être souvent très bien comprise des élèves.\\ \indent
+\colorgreen Malgré tout ce qui vient d'être dit, rendons quand même hommage à cette belle (et malgré tout puissante) intégrale de Riemann, qui a de plus le bon goût d'être souvent très bien comprise des élèves.\\ \indent
 L'intégrale de Riemann nous apprend à nous poser la question «où se passent les choses importantes?», question qui n'a pas de sens pour l'intégrale de Lebesgue qui ne connaît pas la question «où?», mais seulement «combien souvent?».\\ \indent
-De plus, les techniques riemanniennes consistant à localiser les problèmes et à découper l'intégrale sur plusieurs intervalles restent des outils indispensables pour aborder bien des problèmes.\colorblack\ifVersionDuDocEstVincent\else\\[-1mm]\fi
+De plus, les techniques riemanniennes consistant à localiser les problèmes et à découper l'intégrale sur plusieurs intervalles restent des outils indispensables pour aborder bien des problèmes.\colorgris\ifVersionDuDocEstVincent\else\\[-1mm]\fi
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}%
@@ -113,7 +113,7 @@ Kurzweil&Henstock%
 \medskip
 \ImageAGauche{%
 \colorgris Dans les années 50 a été mise au point l'intégrale de Kurzweil-Henstock\index[aut]{Kurzweil (Jaroslav), 1926-, Tchèque}\index[aut]{Henstock (Ralph), 1923-2007, Anglais} (ou KH-intégrale, ou intégrale de jauge) à partir de celle de Riemann. On retravaille un peu les sous-intervalles et les points de calcul de la fonction: chaque point est appelé «marque» et l'on parle de «subdivision marquée» (pour plus de détails, il suffit faire une recherche avec «lemme de Cousin». Ce lemme est dû à Pierre Cousin\index[aut]{Cousin (Pierre), 1867-1933, Français} qui fut un étudiant de Henri Poincaré).\index[aut]{Poincaré (Henri), 1854-1912, Français}\\ 
-\indent Sans faire appel à la théorie de la mesure, on dispose alors d'une intégrale aussi puissance que celle de Lebesgue (mais moins générale, car définie uniquement sur~$\RR$). Et on dispose même d'un très beau résultat: toute fonction dérivée est intégrable, et il n'est pas nécessaire d'introduire la notion d'intégrale impropre. L'intégrale de Lebesgue sur~$\RR$ peut alors être introduite comme un cas particulier de cette intégrale.\colorblack}
+\indent Sans faire appel à la théorie de la mesure, on dispose alors d'une intégrale aussi puissance que celle de Lebesgue (mais moins générale, car définie uniquement sur~$\RR$). Et l'on dispose même d'un très beau résultat: toute fonction dérivée est intégrable, et il n'est pas nécessaire d'introduire la notion d'intégrale impropre. L'intégrale de Lebesgue sur~$\RR$ peut alors être introduite comme un cas particulier de cette intégrale.\colorblack}
 
 \medskip
 Pour puissante qu'elle soit, la théorie de Lebesgue est impuissante à traiter la «semi-convergence» des intégrales, i.e. les situations où une fonction se trouve être intégrable du fait de compensations entre valeurs positives et négatives, alors que sa valeur absolue n'est pas intégrable. D'autres théories sont plus habiles à tirer parti des compensations: ainsi les intégrales de Denjoy\index[aut]{Denjoy (Arnaud), 1884-1974, Français} ou de Perron.\index[aut]{Perron (Oskar), 1880-1975, Allemand}

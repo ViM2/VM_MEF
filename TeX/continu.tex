@@ -196,8 +196,7 @@ Archimède&Oresme%
 \ImageAGauche{%
 Avant Newton et Leibniz, Descartes\index[aut]{Descartes (René), 1596-1650, Français} s'était intéressé au problème des tangentes à une courbe et Fermat\index[aut]{Fermat (Pierre, de -), ?-1665, Français} avait introduit une notion assez proche de la dérivée lors d'une recherche d'extremum.
 En remontant encore plus dans l'Histoire, on peut dire que la méthode d'exhaustion, telle qu'elle a été développée et utilisée par Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec} (i.e. avec toute la rigueur nécessaire, en usant du procédé d'encadrement évitant le recourt aux~$\varepsilon$) est réellement la première utilisation des infinitésimaux.
-Malgré, ou peut-être à cause de, la grande originalité de ses travaux, Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec} n'a été que peu suivi dans le monde grec et n'a pas eu de disciple direct.\\
-\indent
+Malgré, ou peut-être à cause de, la grande originalité de ses travaux, Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec} n'a été que peu suivi dans le monde grec et n'a pas eu de disciple direct.
 Les savants arabes commenceront d'ailleurs dès le \textsc{ix}\fup{e} siècle à s'intéresser aux procédés infinitésimaux mis en œuvre par le génial Alexandrin.}
 
 \medskip
@@ -205,7 +204,7 @@ Notons également que le plus grand progrès théorique réalisé au Moyen-Âge 
 Éveillé par la diffusion des méthodes infinitésimales des Anciens, et d'Archimède\index[aut]{Archimède de Syracuse, -287-- -212, Grec} en particulier, nourri par les spéculations scolastiques sur l'infini, le goût des mathématiciens pour les considérations infinitésimales se développe peu à peu. Ils s'appliquent d'abord à imiter le modèle archimédien, puis s'émancipent et essaient de trouver des substituts pour la méthode d'exhaustion, jugée trop lourde.
 
 \medskip
-En 1748, Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} définit les deux nouvelles opérations que sont la différentiation et l'intégration dans \emph{Introductio in analysin infinitorum}, puis dans \emph{Calculi differentialis} (1755) et \emph{Institutiones calculi integralis} (1770) essaie de mettre au point les règles d'utilisation des infiniment petits et développe des méthodes d'intégration et de résolution d'équations différentielles.
+En 1748, Euler\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse} définit les deux nouvelles opérations que sont la différentiation et l'intégration dans \emph{Introductio in analysin infinitorum}; puis dans \emph{Calculi differentialis} (1755) et \emph{Institutiones calculi integralis} (1770) il essaie de mettre au point les règles d'utilisation des infiniment petits et développe des méthodes d'intégration et de résolution d'équations différentielles.
 
 \medskip
 Enfin, dans la seconde moitié du \textsc{xix}\fup{e} siècle, on s'intéressera aux propriétés des fonctions dérivées, et de nombreux contre-exemples défiant l'intuition seront introduits, qui conduiront à bien cerner cette délicate notion.
@@ -232,7 +231,7 @@ Toutes les fonctions polynomiales sont~$C^\infty$, car à partir d'un certain ra
 \medskip
 \section{Différentielle}\label{Sec-Differentielle}%\index{dérivée!partielle}
 
-Il s'agit de généraliser la formule~\ref{Eq-derivee} à des applications de~$\RR^n$ dans~$\RR^p$. La variable étant maintenant un vecteur de~$\RR^n $, il n'est plus question de diviser par~$h$... il faut donc modifier la définition pour supprimer le dénominateur. Et cela est très facile: il suffit d'approcher l'accroissement de la fonction par une application linéaire.
+Il s'agit de généraliser la formule~(\ref{Eq-derivee}) à des applications de~$\RR^n$ dans~$\RR^p$. La variable étant maintenant un vecteur de~$\RR^n $, il n'est plus question de diviser par~$h$... il faut donc modifier la définition pour supprimer le dénominateur. Et cela est très facile: il suffit d'approcher l'accroissement de la fonction par une application linéaire.
 \begin{definition}[Différentielle]
 Soient $E$ et $F$ deux espaces normés sur le corps $\KK=\RR$ ou $\CC$, et $U$ un ouvert de $E$. Une application $f: U\rightarrow F$ est dite \textcolorblue{différentiable au point $a\in U$} s'il existe une application linéaire $L\in\mathcal{L}(E,F)$ telle que:
 \begin{equation}
@@ -244,7 +243,7 @@ où le reste $R(h)$ est un $o(\|h\|)$ lorsque $h$ tend vers $0$ dans $E$.
 Si elle existe, l'application $L$ est unique et on l'appelle la \textcolorblue{différentielle} de $f$ en $a$.
 On la note $L=Df(a)$, ou $f'(a)$ ou $df(a)$ ou $D_af$ ou $df_a$, selon les auteurs et les circonstances.
 \end{definition}
-Cela signifie qu'au voisinage de~$a$, l'application~$f$ se comporte à peu près comme l'application affine $x\mapsto f(a)+Df(a)(x-a)$, pour laquelle on pourra utiliser les outils de l'algèbre linéaire. Géométriquement, on retrouve l'idée qu'une courbe est, au voisinage d'un point, à peu près confondues avec sa tangente\footnote{tangente, du latin «tangerer»: toucher} (droite tangente, plan tangent...). C'est pourquoi l'application linéaire~$Df(a)$ est également appelée application linéaire tangente à~$f$ en~$a$.
+\colorgreen Cela signifie qu'au voisinage de~$a$, l'application~$f$ se comporte à peu près comme l'application affine $x\mapsto f(a)+Df(a)(x-a)$, pour laquelle on pourra utiliser les outils de l'algèbre linéaire. Géométriquement, on retrouve l'idée qu'une courbe est, au voisinage d'un point, à peu près confondues avec sa tangente\footnote{tangente, du latin «tangerer»: toucher} (droite tangente, plan tangent...). C'est pourquoi l'application linéaire~$Df(a)$ est également appelée application linéaire tangente à~$f$ en~$a$.\colorblack
 
 \medskip
 Évidemment, dans le cas où~$E=\RR$ et~$F=\RR$, tout ce qui a été dit coïncide avec ce que nous avions vu avec la dérivée classique.
