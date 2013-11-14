@@ -81,7 +81,6 @@ fespace Wh(Th,P1dc);
 
 Vh w, wa, wd, wda, wdd, wdda, fi ; 
 Wh sxz, syz ; 
-\end{Verbatim}
 \end{lstlisting}
 
 Il s'agit d'un exemple non stationnaire, nous allons donc faire une boucle sur le temps. Dans \freefem, nous entrons directement la formulation variationnelle du problème sous forme «mathématique»... le lien entre pratique des éléments finis et théorie est beaucoup plus clair. La boucle de temps est basée sur un schéma de Newmark implicite. Le temps «courant» est le temps~$t+\Delta_t$ et le temps précédent est le temps~$t$ pour rester cohérent avec les notations du chapitre~\ref{Ch-temps}.
@@ -167,7 +166,6 @@ for (n=0;n<Ntemps;n++){
 
 // Energie 
 //plot([tt,Ec], [tt,Ep],[tt,Et], ps="energie.eps"); 
-\end{Verbatim}
 \end{lstlisting}
 
 À la \fig{Fig-Exo6} se trouve une illustration de ce que nous venons de calculer.
