@@ -317,16 +317,16 @@
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\footnotesize\thesection\hspace{5pt}#1}{}}%
 \fancyhf{}%
 \ifVersionDuDocEstVincent
-   \ifVersionDuDocEstPourHAL% (alors bandeau HAL)
+   \ifVersionDuDocEstPourHAL% (alors bandeau HAL pour Vincent)
 %      \setlength\debordement{\paperwidth-3\ecartb+8.5mm-\largeurBandeauHAL}%
       \setlength\debordement{\paperwidth-3\ecartb-\largeurBandeauHAL+6.5mm}% larg boîte centre
-      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
+      \fancyfoot[CE]{\vskip1em\hspace{4mm}\makebox[0cm]{%
       \colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}%
      \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
       \colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
       \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
       \color{black!5}\vphantom{Élp}\thepart}}}}%
-      \fancyfoot[CE]{\vskip1em\hspace{4mm}\makebox[0cm]{%
+      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
       \colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}%
       \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
       \color{black!5}\vphantom{Élp}\thepart}}%
@@ -335,23 +335,19 @@
       }}%
    \else% Pour Vincent et pas pour HAL
       \setlength\debordement{\paperwidth-2\ecartb-4mm}% larg boîte centre
-      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
+      
+      \fancyfoot[CE]{\vskip1em\hspace{3mm}\makebox[0cm]{%
      \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
       \colorbox{black!5}{\makebox[\debordement]{\footnotesize%
       \sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
       \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
       \color{black!5}\vphantom{Élp}\thepart}}}}%
-      \fancyfoot[CE]{\vskip1em\hspace{3mm}\makebox[0cm]{%
+      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
       \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
       \color{black!5}\vphantom{Élp}\thepart}}%
       \colorbox{black!5}{\makebox[\debordement]{\footnotesize\vphantom{Élp} \MakeUppercase{\;\parttitle}\hfill\sffamily{\ifCeChapitreEstEtoile\else\rightmark\;\fi}}}%
      \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
       }}%
-
-%      \setlength\debordement{\paperwidth-3\ecartb+5.1mm}
-% qui n'est plus un débordement, mais pourquoi créer une dimension de plus...
-%      \fancyfoot[CO]{\vskip1em\makebox[0cm]{\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}}%
-%      \fancyfoot[CE]{\vskip1em\makebox[0cm]{\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}\hspace*{10.1mm}}%
    \fi
 \else% Version Mathias
    \ifVersionDuDocEstPourHAL% (alors bandeau HAL) A AJOUTER
