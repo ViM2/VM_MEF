@@ -61,7 +61,7 @@ Par définition de l'infimum de~$J$ sur~$K$, une telle suite existe toujours.
 \begin{theoreme}[Optimisation en dimension finie~$V=\RR^N$]
 Soit~$K$ un ensemble fermé non vide de~$\RR^N$, et~$J$ une fonction continue sur~$K$ à valeurs dans~$\RR$ vérifiant la propriété \textcolorblue{infinie à l'infini} suivante:
 \begin{equation}\label{Eq-infinieinfini}\colorblue
-\text{Quelque soit la suite } (u^n)_{n\in\NN} \text{ dans }K,
+\text{Quelle que soit la suite } (u^n)_{n\in\NN} \text{ dans }K,
 \quad \lim_{n\rightarrow\infty}\|u^n\|=+\infty \Rightarrow \lim_{n\rightarrow\infty}J(u^n)=+\infty
 \end{equation}
 alors il existe au moins un point de minimisation de~$J$ sur~$K$.
@@ -75,18 +75,18 @@ Le théorème précédent n'est pas toujours vérifié en dimension infinie: une
 \medskip
 Afin d'obtenir des résultats d'existence, on rajoute une hypothèse de convexité.
 \begin{definition}[Convexité]
-Un ensemble~$k\subset V$ est dit \textcolorblue{convexe} si:
+Un ensemble~$K\subset V$ est dit \textcolorblue{convexe} si:
 \begin{equation}
 \forall x,y\in K, \forall \theta\in \intff01, \text{ l'élément }
 (\theta x+(1-\theta)y) \in K
 \end{equation}
 
-Une fonction~$J$ définie sur un ensemble convexe non vide~$K$ et à valeurs dans~$\RR$ dite \textcolorblue{convexe} sur~$K$ si et seulement si:
+Une fonction~$J$ définie sur un ensemble convexe non vide~$K$ et à valeurs dans~$\RR$ est dite \textcolorblue{convexe} sur~$K$ si et seulement si:
 \begin{equation}
-J(\theta x+(1-\theta)y) \le \theta J(x)+(1-\theta)J(y), \quad \forall x,y\in K, \forall \theta\in \intoo01
+J(\theta x+(1-\theta)y) \le \theta J(x)+(1-\theta)J(y), \quad \forall x,y\in K, \forall \theta\in \intff01
 \end{equation}
 
-Si de plus l'inégalité précédente est stricte lorsque~$x\ne y$ et~$\theta\in]0;1[$, alors la fonction~$J$ est dite \textcolorblue{strictement convexe}.
+Si de plus l'inégalité précédente est stricte lorsque~$x\ne y$ et~$\theta\in \intoo01$, alors la fonction~$J$ est dite \textcolorblue{strictement convexe}.
 \end{definition}
 On dispose alors du résultat suivant d'existence:
 \begin{theoreme}[Existence du minimum]
@@ -121,9 +121,9 @@ J(u+v) = J(u) + L(v) + o(v), \quad \text{ avec } \lim_{v\rightarrow0} \dfrac{|o(
 On appelle~$L$ la différentielle (ou la dérivée, ou le gradient) de~$J$ en~$u$ que l'on note~$L=J'(u)$, ou encore~$L(v)=\langle J'(u),v\rangle_{V',V}$.
 \end{definition}
 \begin{remarque}[Remarques]
-Si~$V$ est un espace de Hilbert, alors le théorème de représentation de Riesz-Fréchet\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}, donné par l'équation~(\ref{Th-RF}), permet d'identifier~$V$ à son dual~$V'$. Il existe donc un unique~$p\in V$ tel que~$\langle p,v\rangle = L(v)$. On note~$p=J'(u)$.
+Si~$V$ est un espace de Hilbert, alors le théorème de représentation de Riesz-Fréchet\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}, donné par l'équation~(\ref{Eq-Th-RF}), permet d'identifier~$V$ à son dual~$V'$. Il existe donc un unique~$p\in V$ tel que~$\langle p,v\rangle = L(v)$. On note~$p=J'(u)$.
 \par\noindent
-Cette identification~$V=V'$ estutilisée si $V=\RR^N$ ou~$V=L^2(\Omega)$.
+Cette identification~$V=V'$ est utilisée si $V=\RR^N$ ou~$V=L^2(\Omega)$.
 \par\noindent\colorgreen
 En pratique, il est plus simple de calculer la \textcolorblue{dérivée directionnelle}\index{dérivée!directionnelle}:
 \begin{equation}
@@ -210,7 +210,7 @@ Il s'agit de même problème que précédemment, mais la relation~(\ref{Eq-LagEq
 \begin{equation}\label{Eq-LagIneq}
 \inf_{v\in V, F(v)\le0} J(v)
 \end{equation}
-où~$F(v)\le0$ signifie que pour tout~$1\le i\le M$, $F-i(v)\le0$
+où~$F(v)\le0$ signifie que pour tout~$1\le i\le M$, $F_i(v)\le0$
 
 \begin{definition}
 Soit~$u$ tel que~$F(u)\le0$.
@@ -253,7 +253,7 @@ En plus de la stationnarité du Lagrangien, notons que la condition~$\lambda\ge0
 \end{theoreme}
 
 D'un point de vue pratique, $\lambda$ donne la dérivée (sans la calculer) du minimum par rapport à la contrainte.
-\begin{demonstration}%[Démonstra
+\begin{demonstration}[Illustration]
 Considérons le cas de la minimisation de~$J(u)$ sous la contrainte~$F(u)=c$.
 Le Lagrangien est:
 \[ \mathcal{L}(v,\mu,c)=J(v)+\mu.(F(v)-c) \]
@@ -290,7 +290,7 @@ et \textcolorblue{problème dual}:
 
 Pour faire le lien avec ce qui précède, plaçons nous dans le cas où~$U=V$, $P=\RR^M$, et~$\mathcal{L}(v,q)=J(v)+q.F(v)$.
 Il vient alors: $\mathcal{J}(v)=J(v)$ si~$F(v)=0$ et~$\mathcal{J}(v)=+\infty$ sinon.
-Par contre, il n'y a pas de contrainte pour le problème dual, si ce n'est~$a\in P=\RR^M$.
+Par contre, il n'y a pas de contrainte pour le problème dual, si ce n'est~$q\in P=\RR^M$.
 
 \textcolorgreen{Comme annoncé, le problème dual est plus simple que le problème primal, car il n'a pas de contrainte.}
 
@@ -334,7 +334,7 @@ Toutefois, remarquons qu'avec cette manière de procéder~$J'(x)$ n'est pas expl
 Pour calculer (explicitement) l'expression du gradient, on utilise l'\textcolorblue{état adjoint~$p$}, qui nécessite de résoudre deux problèmes aux limites ($u$ et $p$).
 Cette méthode est très efficace en pratique, c'est la meilleure possible.
 
-On commence comme ci-dessus par écrire les relations vérifiées par~$\tilde{u}(y)$ (équation d'état et conditions aux limites). Dans ces équations, on remplace~$\tilde{u}(y)$ par~$p$ et~$y$ par~$u-u_0$. On multiplie l'équation de~$\tilde{u}(y)$ par $p$ et réciproquement, puis o intègre par partie. La comparaison des égalités obtenues permet d'obtenir l'expression du~$J'$.
+On commence comme ci-dessus par écrire les relations vérifiées par~$\tilde{u}(y)$ (équation d'état et conditions aux limites). Dans ces équations, on remplace~$\tilde{u}(y)$ par~$p$ et~$y$ par~$u-u_0$. On multiplie l'équation de~$\tilde{u}(y)$ par $p$ et réciproquement, puis on intègre par parties. La comparaison des égalités obtenues permet d'obtenir l'expression du~$J'$.
 
 D'une manière générale, on peut dire que l'état adjoint est obtenu comme stationnarité d'un lagrangien dont $p$ est le multiplicateur de Lagrange et l'équation d'état la contrainte.
 De même, $J'$ est obtenu comme stationnarité de ce même Lagrangien par rapport à la variable de contrôle optimal.
