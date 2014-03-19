@@ -1,7 +1,7 @@
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
 \VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
-\VersionDuDocEstPourHALtrue%
+%\VersionDuDocEstPourHALtrue%
 %
 % Mise en page des figures dans l'ex4.tex du Ch Amelio.tex
 \newif\ifVMSurLaMemePage% si la dernière fig et 1e 1er tableau sur la même page: true
@@ -47,7 +47,8 @@
 %texindy -L french aut.idx
 %texindy -L french -M mystyle.xdy VM_MEF.idx
 \hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= blue,bookmarks=true,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
-\usepackage{listings,xcolor}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{./tex/freefempp}
 \usepackage{./tex/castem}
 \usepackage{./tex/ansys}
@@ -262,6 +263,7 @@ Notre collaboration a permis une très nette amélioration de la qualité typogr
  \include{./tex/Amelio}
  \include{./tex/Mesh}% v3
  \include{./tex/Homog}
+ \include{./tex/Optim}
  \include{./tex/temps}% ajouter dynamique rapide ?
  \include{./tex/ondes}% ajouter propagation des modes et interaction fluide/structure ?
  \include{./tex/acous}

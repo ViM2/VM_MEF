@@ -229,12 +229,12 @@ Pour être très clair, \textcolorred{une fonction est de classe~$C^k$ signifie 
 Toutes les fonctions polynomiales sont~$C^\infty$, car à partir d'un certain rang leur dérivée est identiquement nulle.
 
 \medskip
-\section{Différentielle}\label{Sec-Differentielle}%\index{dérivée!partielle}
+\section{Différentielle}\label{Sec-Differentielle}\index{différentielle}
 
 Il s'agit de généraliser la formule~(\ref{Eq-derivee}) à des applications de~$\RR^n$ dans~$\RR^p$. La variable étant maintenant un vecteur de~$\RR^n $, il n'est plus question de diviser par~$h$... il faut donc modifier la définition pour supprimer le dénominateur. Et cela est très facile: il suffit d'approcher l'accroissement de la fonction par une application linéaire.
-\begin{definition}[Différentielle]
+\begin{definition}[Différentielle]\index{différentielle}
 Soient $E$ et $F$ deux espaces normés sur le corps $\KK=\RR$ ou $\CC$, et $U$ un ouvert de $E$. Une application $f: U\rightarrow F$ est dite \textcolorblue{différentiable au point $a\in U$} s'il existe une application linéaire $L\in\mathcal{L}(E,F)$ telle que:
-\begin{equation}
+\begin{equation}\label{Eq-Differentielle}
 f(a+h)-f(a)=L(h)+R(h)
 \end{equation}
 où le reste $R(h)$ est un $o(\|h\|)$ lorsque $h$ tend vers $0$ dans $E$.

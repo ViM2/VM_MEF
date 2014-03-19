@@ -1,0 +1,366 @@
+\chapter{Optimisation}\label{Ch-Optim}\index{optimisation}
+\begin{abstract}
+Ce chapitre va essentiellement s'intéresser à l'utilisation, déjà abordée par ailleurs, des multiplicateurs de Lagrange. Ceux-ci seront utilisés pour formuler des problèmes d'optimisation, i.e. pour prendre en compte la fonction objectif visée au sein de la formulation variationnelle: c'est le lagrangien (que nous avons présenté au paragraphe~\ref{Sec-MultLag}).
+
+Nous nous intéresserons aussi bien au cas où la fonction objectif est définie par des paramètres, qu'au cas de l'optimisation géométrique.
+
+Enfin, nous reviendrons un tout petit peu sur l'homogénéisation qui sera formulée comme problème d'optimisation.
+\end{abstract}
+
+\medskip
+\section{Méthodes d'optimisation}
+
+Un problème d'optimisation nécessite de fournir:
+\begin{itemize}
+   \item un \textcolorblue{modèle} décrivant le problème: il s'agit généralement d'une équation aux dérivées partielles;
+   \item un \textcolorblue{critère} (ou des critères) que l'on cherche à minimiser ou à maximiser (c'est la fonction objectif, ou fonction coût);
+   \item un \textcolorblue{ensemble admissible} de variables d'optimisation. Cet ensemble prend en compte les éventuelles \textcolorblue{contraintes} que l'on impose aux variables.
+\end{itemize}
+
+\medskip
+Dans ce document, visant un public plutôt mécanicien, nous nous intéresserons essentiellement à de l'optimisation de «structures», et nous envisagerons les cas suivants:
+\begin{itemize}
+   \item l'optimisation \textcolorblue{paramétrique} où l'on dispose d'un nombre réduit de variables qui paramètrent la structure (par exemple l'épaisseur d'une plaque, l'orientation des plis d'un composite...). Nous verrons que des problèmes d'\textcolorblue{homogénéisation} entrent dans ce cadre;
+   \item l'optimisation \textcolorblue{géométrique}: il s'agit du cas où l'on souhaite faire varier tout ou partie de la forme des frontières, mais \textcolorred{sans} changer la topologie de la pièce, i.e. sans ajouter ou supprimer de «trous»;
+   \item l'optimisation \textcolorblue{topologique}: c'est le cas le plus général d'optimisation de forme d'une structure. On cherche à trouver la meilleure forme possible sans restriction, i.e. quitte à modifier la topologie.
+
+   Si l'on s'en sort en 2D en remarquant qu'une topologie est caractérisée par le nombre de composantes connexes des bords, cela est plus compliqué en 3D où il faut en plus tenir compte du nombre d'anses ou de boucles de la structure.
+\end{itemize}
+
+Nous présenterons une approche continue de l'optimisation de formes (paramétrique, géométrique et topologique), l'approche discrète quant à elle sera présentée dans le cadre de l'homogénéisation.
+
+
+\medskip
+\subsection{Existence et unicité d'un minimum}
+\begin{definition}[Minima]
+Soient~$V$ un espace de Banach et~$K\subset V$ un sous-ensemble non vide. Soit~$J: V\rightarrow\RR$ le critère (i.e. la fonction objectif). On considère le problème:
+\begin{equation}
+\inf_{v\in K} J(v)
+\end{equation}
+
+On dit que~$u$ est un \textcolorblue{minimum local} de~$J$ sur~$K$ si:
+\begin{equation}
+u\in K \quad\text{ et }\quad \exists\delta>0, \forall v\in K, 
+\|v-u\|<\delta \Rightarrow J(v)\ge J(u)
+\end{equation}
+
+On dit que~$u$ est un \textcolorblue{minimum global} de~$J$ sur~$K$ si:
+\begin{equation}
+u\in K \quad\text{ et }\quad J(v)\ge J(u), \forall v\in K
+\end{equation}
+\end{definition}
+
+\begin{definition}[Suite minimisante]
+Une \textcolorblue{suite minimisante} du critère~$J$ sur~$K$ est une suite~$(u^n)_{n\in\NN}$ telle que:
+\begin{equation}
+u^n\in K, \forall n \quad\text{ et }\quad \lim_{n\rightarrow\infty} J(u^n)=\inf_{v\in K} J(v)
+\end{equation}
+Par définition de l'infimum de~$J$ sur~$K$, une telle suite existe toujours.
+\end{definition}
+Évidemment, nous allons nous intéresser à l'optimisation en dimension finie, et pour cela, nous nous servirons du résultats suivant:
+\begin{theoreme}[Optimisation en dimension finie~$V=\RR^N$]
+Soit~$K$ un ensemble fermé non vide de~$\RR^N$, et~$J$ une fonction continue sur~$K$ à valeurs dans~$\RR$ vérifiant la propriété \textcolorblue{infinie à l'infini} suivante:
+\begin{equation}\label{Eq-infinieinfini}\colorblue
+\text{Quelque soit la suite } (u^n)_{n\in\NN} \text{ dans }K,
+\quad \lim_{n\rightarrow\infty}\|u^n\|=+\infty \Rightarrow \lim_{n\rightarrow\infty}J(u^n)=+\infty
+\end{equation}
+alors il existe au moins un point de minimisation de~$J$ sur~$K$.
+
+De plus, on peut extraire de toute suite minimisante de~$J$ sur~$K$ une sous-suite convergeant vers un point de minimum sur~$K$.
+\end{theoreme}
+\begin{remarque}
+Le théorème précédent n'est pas toujours vérifié en dimension infinie: une fonction continue sur un fermé borné n'atteint pas toujours son minimum.
+\end{remarque}
+
+\medskip
+Afin d'obtenir des résultats d'existence, on rajoute une hypothèse de convexité.
+\begin{definition}[Convexité]
+Un ensemble~$k\subset V$ est dit \textcolorblue{convexe} si:
+\begin{equation}
+\forall x,y\in K, \forall \theta\in \intff01, \text{ l'élément }
+(\theta x+(1-\theta)y) \in K
+\end{equation}
+
+Une fonction~$J$ définie sur un ensemble convexe non vide~$K$ et à valeurs dans~$\RR$ dite \textcolorblue{convexe} sur~$K$ si et seulement si:
+\begin{equation}
+J(\theta x+(1-\theta)y) \le \theta J(x)+(1-\theta)J(y), \quad \forall x,y\in K, \forall \theta\in \intoo01
+\end{equation}
+
+Si de plus l'inégalité précédente est stricte lorsque~$x\ne y$ et~$\theta\in]0;1[$, alors la fonction~$J$ est dite \textcolorblue{strictement convexe}.
+\end{definition}
+On dispose alors du résultat suivant d'existence:
+\begin{theoreme}[Existence du minimum]
+Soient~$K$ un convexe fermé non vide d'un espace de Banach réflexif~$V$, et~$J$ une fonction convexe continue sur~$K$ qui est infinie à l'infini dans~$K$, i.e. qui vérifie l'équation~(\ref{Eq-infinieinfini}), alors il existe un minimum de~$J$ sur~$K$.
+\end{theoreme}
+\begin{remarque}[Remarques]
+\textcolorgris{En toute généralité, ce théorème reste valable si~$V$ est le dual d'un espace de Banach séparable.}
+\par\noindent
+\textcolorgris{Le fait que~$V$ soit un espace de Banach réflexif correspond au fait que~$(V')'=V$ (avec~$V'$ le dual de~$V$).}
+\par\noindent
+\textcolorgreen{Enfin et surtout, ce théorème est vrai dans tous les espaces que l'on rencontre habituellement dans nos problématiques, en particulier pour les espace~$L^p(\Omega)$ pour~$1<p\le\infty$.}
+\end{remarque}
+\begin{theoreme}[Unicité du minimum]
+Si de plus la fonction~$J$ est strictement convexe, alors il existe au plus un point de minimum.
+\end{theoreme}
+\begin{theoreme}
+Si la fonction~$J$ est convexe sur un ensemble convexe~$K$, alors tout point de minimum local de~$J$ sur~$K$ est un minimum global.
+\end{theoreme}
+On voit donc tout l'intérêt de vérifier que notre fonction objectif est convexe. Un exemple d'un tel problème en mécanique est la minimisation de l'énergie.
+
+\medskip
+\subsection{Différentiabilité et optimalité}
+
+Nous avons déjà présenté au paragraphe~\ref{Sec-Differentielle}, à l'équation~(\ref{Eq-Differentielle}), la différentielle.\index{différentielle} Si une fonction peut être approchée par une forme linéaire (la différentielle), alors on dit également qu'elle est \textcolorblue{différentiable au sens de Fréchet}.\index{dérivée!au sens de Fréchet}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
+
+Reprenons donc la définition de la différentielle pour l'appliquer à la fonction objectif~$J$.
+\begin{definition}[Différentiabilité au sens de Fréchet]
+Soit~$V$ un espace de Banach. On dit que la fonction~$J$, définie au voisinage de~$u\in V$ et à valeurs dans~$\RR$, est \textcolorblue{différentiable au sens de Fréchet} en~$u$ s'il existe une forme linéaire~$L\in V'$, continue sur~$V$, telle que:
+\begin{equation}
+J(u+v) = J(u) + L(v) + o(v), \quad \text{ avec } \lim_{v\rightarrow0} \dfrac{|o(v)|}{\|v\|}=0
+\end{equation}
+On appelle~$L$ la différentielle (ou la dérivée, ou le gradient) de~$J$ en~$u$ que l'on note~$L=J'(u)$, ou encore~$L(v)=\langle J'(u),v\rangle_{V',V}$.
+\end{definition}
+\begin{remarque}[Remarques]
+Si~$V$ est un espace de Hilbert, alors le théorème de représentation de Riesz-Fréchet\index{théorème!de représentation de Riesz-Fréchet}\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}, donné par l'équation~(\ref{Th-RF}), permet d'identifier~$V$ à son dual~$V'$. Il existe donc un unique~$p\in V$ tel que~$\langle p,v\rangle = L(v)$. On note~$p=J'(u)$.
+\par\noindent
+Cette identification~$V=V'$ estutilisée si $V=\RR^N$ ou~$V=L^2(\Omega)$.
+\par\noindent\colorgreen
+En pratique, il est plus simple de calculer la \textcolorblue{dérivée directionnelle}\index{dérivée!directionnelle}:
+\begin{equation}
+j'(0) = \langle J'(u),v\rangle_{V',V}
+\end{equation}
+avec~$j(t)=J(u+tv)$.\colorblack
+\end{remarque}
+
+\begin{remarque}[\normalsize Lien entre minimisation et formulation variationnelle]
+\normalsize Nous nous proposons de retrouver les résultats du paragraphe~\ref{Sec-MultLag}.
+
+Soient~$a$ une forme bilinéaire symétrique (continue coercitive) et~$f$ une forme linéaire continue.
+On considère la fonction~$J(u)=\frac12a(u,u)-f(u)$.
+On pose, comme ci-dessus, $j(t)=J(u+tv)$. On a donc:
+\[ j(t)=\frac{t^2}2a(v,v)+t\left(a(u,v)-f(v)\right)+J(u) \]
+On dérive~$j$ par rapport à~$t$, ce qui donne:
+\[ j'(t)=ta(v,v)+a(u,v)-f(v) \]
+Par définition, on a~$j'(0)=\langle J'(u),v\rangle_{V',V}$, donc:
+\[ \langle J'(u),v\rangle_{V',V} = a(u,v)-f(v) \]
+
+La condition~$J'(u)=0$ est une formulation variationnelle.
+On peut ainsi démontrer l'\textcolorblue{équivalence entre la minimisation de l'énergie~$J(u)$ et la résolution de la formulation variationnelle.}
+
+Ce résultat est fondamental (et souvent utilisé, donc à connaître). La question que l'on est en droit de se poser est alors de savoir si une telle équivalence tient toujours dans le cas général. La réponse est oui, et nous allons maintenant présenter ces résultats.
+\end{remarque}
+
+\begin{theoreme}[Inéquation d'Euler]\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}
+Soient~$K$ un ensemble connexe et~$u$ un point de~$K$. On suppose que la fonction~$J$ est différentiable en~$u$. Si~$u$ est un point de minimum \textcolorblue{local} de~$J$ sur~$K$, alors:
+\begin{equation}
+\langle J(u),v-u\rangle \ge 0, \quad \forall v\in K
+\end{equation}
+
+Si~$u$ vérifie cette inéquation et si~$J$ est convexe, alors~$u$ est un minimum \textcolorblue{global} de~$J$ sur~$K$.
+\end{theoreme}
+
+Si~$u$ est \textcolorblue{intérieur} à~$K$, on obtient l'\textcolorblue{équation d'Euler}:\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index{équation!d'Euler}
+\begin{equation}
+J'(u)=0
+\end{equation}
+
+Dans le cas général, l'inéquation d'Euler est une condition nécessaire.
+Pour les fonctions convexes, elle est \textcolorblue{nécessaire et suffisante}.
+
+
+\medskip
+\subsection{Lagrangien}\index{lagrangien}
+
+Dans un premier temps, nous allons nous intéresser au problème de minimisation avec contraintes d'égalité. Le cas des contraintes d'inégalités sera traiter juste à la suite.
+
+\medskip
+\begin{definition}[Lagrangien (du problème de minimisation avec contraintes d'égalité)]
+Nous travaillons toujours dans notre espace~$V$.
+Soit~$F(v)$ une application dérivable de~$V$ dans~$\RR^M$ ($F(v)$ a pour composantes~$F_1(v)$, ..., $F_M(v)$).
+Nous cherchons à trouver le minimum de la fonction objectif~$J(v)$ où~$v$ satisfait aux conditions (ou contraintes)~$F(v)=0$, i.e.:
+\begin{equation}\label{Eq-LagEq}
+\inf_{v\in V, F(v)=0} J(v)
+\end{equation}
+
+On appelle \textcolorblue{Lagrangien} du problème, la fonction:
+\begin{equation}
+\mathcal{L}(v,\mu) = J(v)+\mu.F(v) = J(v) + \dsum_{i=1}^M \mu_iF_i(v), 
+\quad \forall (v,\mu)\in V\times\RR^M
+\end{equation}
+La variable~$\mu\in\RR^M$ est appelée \textcolorblue{multiplicateur de Lagrange}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} pour la contrainte~$F(v)=0$.
+\end{definition}
+
+Un premier résultat est que le problème de minimisation précédent est équivalent à:
+\begin{equation}
+\inf_{v\in V, F(v)=0} J(v) = \inf_{v\in V} \sup_{\mu\in\RR^M} \mathcal{L}(v,\mu)
+\end{equation}
+et l'on dispose du théorème suivant:
+\begin{theoreme}[Stationnarité du Lagrangien]
+On suppose que~$J$ et~$F$ sont continûment dérivables au voisinage de~$u\in V$ tel que~$F(u)=0$. Si~$u$ est un minimum local, et si les vecteurs~$(F'_i(u))_{1\le i\le M}$ sont linéairement indépendants, alors il existe des multiplicateurs de Lagrange~$\lambda_1$, ..., $\lambda_M\in\RR$ tels que:
+\begin{equation}
+\dfrac{\partial\mathcal{L}}{\partial v}(u,\lambda) = J'(u)+\lambda.F'(u)=0
+\quad \text{ et }\quad
+\dfrac{\partial\mathcal{L}}{\partial \mu}(u,\lambda) = F(u)=0
+\end{equation}
+\end{theoreme}
+
+\medskip
+Intéressons-nous maintenant au problème de \textcolorblue{minimisation avec contraintes d'inégalité}.
+Il s'agit de même problème que précédemment, mais la relation~(\ref{Eq-LagEq}) est remplacée par la relation:
+\begin{equation}\label{Eq-LagIneq}
+\inf_{v\in V, F(v)\le0} J(v)
+\end{equation}
+où~$F(v)\le0$ signifie que pour tout~$1\le i\le M$, $F-i(v)\le0$
+
+\begin{definition}
+Soit~$u$ tel que~$F(u)\le0$.
+L'ensemble~$I(u)=\{i\in\{1, ..., M\}, F_i(u)=0\}$ est appelé \textcolorblue{ensemble des contraintes actives} en~$u$.
+On dit que les contraintes d'inégalité sont \textcolorblue{qualifiées} en~$u\in K$ si la famille~$(F'_i(u))_{i\in I(u)}$ est libre.
+\end{definition}
+
+\begin{definition}[Lagrangien (du problème de minimisation avec contraintes d'inégalité)]
+On appelle \textcolorblue{Lagrangien} du problème, la fonction:
+\begin{equation}
+\mathcal{L}(v,\mu) = J(v)+\mu.F(v) = J(v) + \dsum_{i=1}^M \mu_iF_i(v), 
+\quad \forall (v,\mu)\in V\times(\RR^+)^M
+\end{equation}
+La variable \textcolorred{positive}~$\mu\in(\RR^+)^M$ est appelée \textcolorblue{multiplicateur de Lagrange}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} pour la contrainte~$F(v)\le0$.
+\end{definition}
+
+\colorgreen
+\noindent\textbf{Synthèse méthodologique:} Le lagrangien (pour le problème de minimisation avec contraintes d'égalité, comme d'inégalité) est la somme de la fonction objectif et de la formulation variationnelle de l'équation d'état du problème considérée comme une contrainte.
+\colorblack
+
+\medskip
+Un premier résultat est que le problème de minimisation précédent est équivalent à:
+\begin{equation}
+\inf_{v\in V, F(v)\le0} J(v) = \inf_{v\in V} \sup_{\mu\in(\RR^+)^M} \mathcal{L}(v,\mu)
+\end{equation}
+et l'on dispose du théorème suivant:
+\begin{theoreme}[Stationnarité du Lagrangien]
+On suppose que les contraintes sont qualifiées en~$u$ tel que~$F(u)\le0$. Si~$u$ est un minimum local, alors il existe des multiplicateurs de Lagrange~$\lambda_1$, ..., $\lambda_M\in\RR^+$ tels que:
+\begin{equation}
+\dfrac{\partial\mathcal{L}}{\partial v}(u,\lambda) = J'(u)+\lambda.F'(u)
+= J'(u)+\dsum_{i=1}^M\lambda_iF_i'(u) =0, \quad \lambda_i\ge0, 
+\quad \forall i\in\{1, ..., M\}
+\end{equation}
+Notons que~$\lambda_i=0$ si~$F_i(u)<0$.
+
+En plus de la stationnarité du Lagrangien, notons que la condition~$\lambda\ge0$, $F(u)\le 0$, $\lambda.F(u)=0$ est équivalente à l'inéquation d'Euler pour la \textcolorblue{maximisation} par rapport à~$\mu$ dans le convexe fermé qu'est~$(\RR^+)^M$:
+\begin{equation}
+\dfrac{\partial\mathcal{L}}{\partial \mu}(u,\lambda).(\mu-\lambda)=F(u).(\mu-\lambda)\le0, \quad \forall\mu\in(\RR^+)^M
+\end{equation}
+\end{theoreme}
+
+D'un point de vue pratique, $\lambda$ donne la dérivée (sans la calculer) du minimum par rapport à la contrainte.
+\begin{demonstration}%[Démonstra
+Considérons le cas de la minimisation de~$J(u)$ sous la contrainte~$F(u)=c$.
+Le Lagrangien est:
+\[ \mathcal{L}(v,\mu,c)=J(v)+\mu.(F(v)-c) \]
+et on se propose d'étudier la sensibilité du Lagrangien par rapport à~$c$.
+
+Notons~$u(c)$ et~$\lambda(c)$ le point de minimum et le multiplicateur de Lagrange correspondant. On supposera évidemment qu'ils sont dérivables par rapport à~$c$. Il vient alors:
+\[ \nabla_c\left(J(u(c))\right)=-\lambda(c) \]
+et ainsi~$\lambda$ donne bien la dérivée (sans la calculer) du minimum par rapport à~$c$.
+\end{demonstration}
+
+
+\medskip
+\subsection{Dualité et point selle}
+
+Dans ce paragraphe, on va regarder comment supprimer les contraintes portant sur le problème. Pour cela, on va adjoindre au problème dit primal, un problème dual. Ce dernier est souvent plus simple que le problème primal, notamment parce qu'il ne comporte pas de contraintes. Évidemment, connaissant la solution du problème dual, on devra être en mesure de remonter à celle du problème primal.
+
+\begin{definition}
+Soit un Lagrangien~$\mathcal{L}(v,q)$.
+On dit que~$(u,p)\in U\times P$ est un \textcolorblue{point selle} de~$\mathcal{L}$ sur~$U\times P$ si:
+\begin{equation}
+\forall q\in P, \quad \mathcal{L}(u,q) \le \mathcal{L}(u,p) \le \mathcal{L}(v,p), \forall v\in U
+\end{equation}
+
+Pour $v\in U$ et~$q\in P$, posons~$\mathcal{J}(v)=\sup_{q\in P}\mathcal{L}(v,q)$ et~$\mathcal{G}(q)=\inf_{v\in U}\mathcal{L}(v,q)$.
+On appelle \textcolorblue{problème primal}:
+\begin{equation}
+\inf_{v\in U} \mathcal{J}(v)
+\end{equation}
+et \textcolorblue{problème dual}:
+\begin{equation}
+\sup_{q\in P} \mathcal{G}(q)
+\end{equation}
+\end{definition}
+
+Pour faire le lien avec ce qui précède, plaçons nous dans le cas où~$U=V$, $P=\RR^M$, et~$\mathcal{L}(v,q)=J(v)+q.F(v)$.
+Il vient alors: $\mathcal{J}(v)=J(v)$ si~$F(v)=0$ et~$\mathcal{J}(v)=+\infty$ sinon.
+Par contre, il n'y a pas de contrainte pour le problème dual, si ce n'est~$a\in P=\RR^M$.
+
+\textcolorgreen{Comme annoncé, le problème dual est plus simple que le problème primal, car il n'a pas de contrainte.}
+
+\begin{theoreme}[Dualité forte]
+Le couple~$(u,p)$ est un point selle de~$\mathcal{L}$ sur~$U\times P$ si et seulement si:
+\begin{equation}
+\mathcal{J}(u)=\min_{v\in U}\mathcal{J}(v) = \max_{q\in P}\mathcal{G}(q)=\mathcal{G}(p)
+\end{equation}
+\end{theoreme}
+
+\textcolorgreen{Ainsi, si l'on sait résoudre le problème dual, alors on obtient la solution du problème primal grâce à une minimisation \textcolorred{sans} contrainte.}
+
+
+\medskip
+\subsection{Mise en œuvre numérique - Gradient - État adjoint}
+
+\colorgreen
+Tout d'abord un remarque générale sur ce qui précède:
+jusqu'à présent, nous n'avons parlé que de problème de minimisation.
+Si l'on a à traiter un problème de maximisation, il suffit alors de le transformer en problème de minimisation:
+\begin{equation}
+\sup_{v\in V} J(v)=-\inf_{v\in V} (-J(v))
+\end{equation}
+\colorblack
+
+\medskip
+Des méthodes dites «stochastiques» telles que Monte-Carlo, recuit simulé ou des algorithmes génétiques sont envisageables. Elles sont coûteuses en CPU et nous ne les aborderons pas.
+
+Nous allons dire deux mots sur les méthodes déterministes, telles que les méthodes de gradient (gradient optimal, gradient à pas fixe, gradient projeté) ou de Newton. Notons qu'elles fournissent un minimum local, et que, pour fonctionner, il faut disposer du gradient. Ainsi, nous devrons pouvoir calculer~$J'$.
+
+\medskip
+La méthode la plus simple (et la plus sûre) pour calculer le gradient est:
+\begin{equation}
+\lim_{\varepsilon\rightarrow0} \dfrac{J(x+\varepsilon y)-J(x)}{\varepsilon}
+=\langle J'(x),y\rangle =\dint_\Omega J'(x)y
+\end{equation}
+Par linéarité on écrit: $u(x+\varepsilon y)=u(x)+\varepsilon \tilde{u}(y)$, les relations satisfaites par~$\tilde{u}(y)$ dépendant du problème considéré.
+Toutefois, remarquons qu'avec cette manière de procéder~$J'(x)$ n'est pas explicite.
+
+\medskip
+Pour calculer (explicitement) l'expression du gradient, on utilise l'\textcolorblue{état adjoint~$p$}, qui nécessite de résoudre deux problèmes aux limites ($u$ et $p$).
+Cette méthode est très efficace en pratique, c'est la meilleure possible.
+
+On commence comme ci-dessus par écrire les relations vérifiées par~$\tilde{u}(y)$ (équation d'état et conditions aux limites). Dans ces équations, on remplace~$\tilde{u}(y)$ par~$p$ et~$y$ par~$u-u_0$. On multiplie l'équation de~$\tilde{u}(y)$ par $p$ et réciproquement, puis o intègre par partie. La comparaison des égalités obtenues permet d'obtenir l'expression du~$J'$.
+
+D'une manière générale, on peut dire que l'état adjoint est obtenu comme stationnarité d'un lagrangien dont $p$ est le multiplicateur de Lagrange et l'équation d'état la contrainte.
+De même, $J'$ est obtenu comme stationnarité de ce même Lagrangien par rapport à la variable de contrôle optimal.
+
+Si l'équation d'état est non-autoadjointe (i.e. si la forme bilinéaire du problème n'est pas symétrique), alors l'opérateur principal de l'équation adjointe est le transposé ou l'adjoint de celui de l'équation d'état.
+Par contre, même si l'équation d'état est non linéaire, l'équation adjointe est linéaire (c'est assez normal, puisque finalement, on ne s'intéresse qu'aux fluctuations en somme).
+
+Nous n'en dirons pas plus ici, quelques exemples plus bas permettrons de voir le calcul effectif de~$J'$.
+
+
+\medskip
+\section{Optimisation paramétrique}
+
+
+
+
+
+
+\medskip
+\section{Optimisation géométrique}
+
+\medskip
+\section{Optimisation topologique}
+
+\medskip
+\section{Exemples d'optimisation d'une plaque}
+
+\medskip
+\section{Homogénéisation}

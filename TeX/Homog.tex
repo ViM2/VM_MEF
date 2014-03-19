@@ -180,7 +180,7 @@ Pour le calcul on procède donc comme suit:
 À ce niveau du texte, on a dû s'apercevoir que la démarche était la même pour les deux méthodes précédentes, sauf évidemment la forme de l'ansatz.\index{ansatz}
 Dans la \textcolorblue{méthode de développement asymptotique infini}, on va encore procéder de la même manière, mais on cherchera une solution sous la forme d'ansatz:\index{ansatz}
 \begin{equation}
-u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i u_i(x,x\varepsilon)
+u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i u_i(x,x/\varepsilon)
 \end{equation}
 où chaque~$u_i(x,x/\varepsilon)$ est de la forme~$u_i(x,x/\varepsilon)=N_i(x/\varepsilon)v_\varepsilon^{(i)}(x),
 \forall i>0$ et~$u_0(x,x/\varepsilon)=v_\varepsilon(x)$, i.e.:
@@ -188,6 +188,9 @@ où chaque~$u_i(x,x/\varepsilon)$ est de la forme~$u_i(x,x/\varepsilon)=N_i(x/\v
 u^{(\infty)} \sim \dsum_{i=0}^\infty \varepsilon^i N_i(x/\varepsilon)v_\varepsilon^{(i)}(x)
 \end{equation}
 et où les~$N_i(x/\varepsilon)$ sont 1-périodiques et~$N_0=1$.
+
+\medskip
+Pour un détail plus mathématique, on pourra se référer par example à~\cite{bib-Allaire2scale} qui présente la notion de convergence à deux échelles («Two-scale convergence»). Cet article, bien qu'un peu technique, reste relativement abordable.
 
 \medskip
 \subsection{Cas des coefficients discontinus}
@@ -233,7 +236,8 @@ Principalement pour les composites stratifiés ou sandwichs, il y a deux niveaux
 		 Cette fois, il s'agit d'une homogénéisation dans l'épaisseur du stratifié.
 \end{itemize}
 
-
+\medskip
+On pourra par exemple se reporter à~\cite{bib-Corrugated} pour voir comment cela est utilisé pour développer un modèle de plaque homogénéisée équivalente à un matériau fait de carton ondulé entre deux peaux de carton.
 
 \medskip
 \subsection{Loi des mélanges, bornes de Voigt et de Reuss}\index{loi!des mélanges}\index{borne!de Voigt}\index{borne!de Reuss}\index[aut]{Voigt (Woldemar), 1850-1919, Allemand}
