@@ -149,6 +149,11 @@ Une propriété fondamentales est que \textcolorblue{toute fonction localement i
   \langle T_f,\varphi\rangle=\int_{\mathbb{R}}f(x)\varphi(x)\,\dd x, \quad \forall \varphi\in\mathcal{D}(\Omega)
 \end{equation}
 
+\medskip
+\begin{remarque}[Commentaire sur le choix de l'espace~$\mathcal{D}$]\colorgreen
+Pourquoi ce choix, qui semble assez restrictif?
+Notons tout d'abord que plus on restreint la classe des fonctions-tests, plus l'espace des distributions définies sur ces fonctions sera grand. De plus, le fait que les fonctions-tests soient de classe~$C^\infty$ n'est pas très restrictif en fait, car toute fonction continue à support borné est limite uniforme de telles fonctions. Le fait qu'elles soient de support borné est levé si l'on considère l'espace de Schwartz~$\mathcal{S}$ des fonctions-tests lisses, i.e. de classe~$C^\infty$, et à décroissance rapide ainsi que toutes leurs dérivées. Dans ce cas, l'espace dual~$\mathcal{S}'$ qui en résulte est plus petit que~$\mathcal{D}$. Pour plus de détails sur ce sujet, on consultera un cours sur la transformée de Fourier, par exemple un cours de traitement du signal.
+\end{remarque}
 
 \medskip
 \section{Dérivées au sens des distributions}\index{dérivée!au sens des distributions}
@@ -181,8 +186,8 @@ Lorsque la distribution~$S$ modélise un phénomène physique, la fonction test~
 \medskip
 \textcolorgris{Nous définirons dans un autre cours (sur le traitement du signal) les notions de distribution à support compact, les distributions tempérées et la décroissance rapide utiles en analyse de Fourier ainsi que les espaces de Schwartz.}
 
-\colorgris
-\begin{remarque}[Complément au sujet des opérations sur des distributions]
+\colorblack
+\begin{remarque}[Complément au sujet des opérations sur des distributions]\colorgris
 L'addition, la soustraction et la multiplication par un scalaire sont telles qu'on les imagine.
 
 Le cas de la dérivation (pour lequel les distributions ont été inventées) a été traité ci-dessus à la définition~\ref{Def-DerivDistrib}.
@@ -199,7 +204,7 @@ infinie) d'ouverts de~$\RR^n$, et~$\Omega$ la réunion des~$\Omega_i$. Pour chaq
 La multiplication des distributions pose des problèmes considérables et ne se résout que partiellement.
 \end{remarque}
 
-\begin{remarque}[Exemples de calculs avec les distributions]
+\begin{remarque}[Exemples de calculs avec les distributions]\colorgris
 Considérons la fonction~$f(x) =|x|$ sur~$\RR$. Alors~$f'$ est la fonction «signe», $f'' = 2\delta_0$, $f'''$ vaut 2 fois l'application «évaluation de la dérivée en 0». Attention donc à ne pas confondre ces dérivées au sens des distributions avec les dérivées presque partout, qui sont nulles à partir du rang 2.
 
 \medskip

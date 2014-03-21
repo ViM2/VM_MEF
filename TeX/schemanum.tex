@@ -76,6 +76,18 @@ La différence entre l'équation discrétisée et l'équation réelle est appel�
 \medskip
 \textcolorgris{La consistance d'une discrétisation s'analyse en effectuant un développement en série de Taylor de l'équation discrétisée et en vérifiant que celle-ci tend vers l'équation originale lorsque le pas de discrétisation tend vers 0.}
 
+\begin{remarque}[Sur le calcul de l'erreur de troncature]\colorgris
+Le calcul de l'erreur de troncature d'un schéma est souvent délicat à mener. Si on ne procède pas de manière soignée et méthodique, on peut aisément se retrouver englué dans un calcul inextricable, dont le coût croît exponentiellement en fonction de l'ordre à déterminer. 
+Quelques règles simples permettent en général d'éviter ce travers. 
+
+L'erreur de troncature se calcule en développant tous les termes du schéma au même point à l'aide des formules de Taylor. Le point choisi n'a évidemment aucune influence sur le résultat obtenu (l'ordre du schéma ne dépend pas du point considéré). Par contre, ce choix influe sur la taille du calcul qui en résulte.
+
+Il est recommandé de diviser le calcul en plusieurs étapes. Les développements calculés lors d'une étape pouvant être réutilisés à une autre. Il faut absolument utiliser l'équation vérifiée par la solution (par exemple remplacer les dérivées en temps par des dérivées en espace). Cela simplifie considérablement les calculs, et nous permet de déterminer l'ordre optimal du schéma.
+Il faut éviter à tout prix d'effectuer des calculs inutiles et ne pas manipuler des termes d'ordre non significatifs. 
+
+Enfin, un petit truc classique consiste à utiliser les symétries du schéma, qui peuvent impliquer que les termes non nuls du développement sont nécessairement soit pairs, soit impairs.
+\end{remarque}
+
 \medskip
 \subsection{Convergence}
 Contrairement à la consistance, qui est une propriété locale, la convergence est de portée globale.
