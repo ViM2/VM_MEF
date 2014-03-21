@@ -1,15 +1,13 @@
 \chapter{Optimisation}\label{Ch-Optim}\index{optimisation}
 \begin{abstract}
-Ce chapitre va essentiellement s'intéresser à l'utilisation, déjà abordée par ailleurs, des multiplicateurs de Lagrange. Ceux-ci seront utilisés pour formuler des problèmes d'optimisation, i.e. pour prendre en compte la fonction objectif visée au sein de la formulation variationnelle: c'est le lagrangien (que nous avons présenté au paragraphe~\ref{Sec-MultLag}).
+Ce chapitre va nous permettre de revenir sur les multiplicateurs de Lagrange dont nous avons déjà eu l'occasion de parler en plusieurs endroits de ce document, et dont l'intérêt doit être assez clair pour le lecteur à ce niveau du document.
 
-Nous nous intéresserons aussi bien au cas où la fonction objectif est définie par des paramètres, qu'au cas de l'optimisation géométrique.
+Nous allons donc prendre un peu de temps pour mieux détailler leur utilisation, en particulier pour transformer une formulation variationnelle assortie d'un critère objectif à atteindre (le tout soumis à un certain nombre de contraintes) à l'aide de ce que l'on appelle le lagrangien, et que nous avions très brièvement évoqué au paragraphe~\ref{Sec-MultLag}).
 
-Enfin, nous reviendrons un tout petit peu sur l'homogénéisation qui sera formulée comme problème d'optimisation.
+Nous nous intéresserons aussi bien au cas où la fonction objectif est définie par des paramètres, qu'au cas de l'optimisation de forme.
 \end{abstract}
 
 \medskip
-\section{Méthodes d'optimisation}
-
 Un problème d'optimisation nécessite de fournir:
 \begin{itemize}
    \item un \textcolorblue{modèle} décrivant le problème: il s'agit généralement d'une équation aux dérivées partielles;
@@ -27,11 +25,58 @@ Dans ce document, visant un public plutôt mécanicien, nous nous intéresserons
    Si l'on s'en sort en 2D en remarquant qu'une topologie est caractérisée par le nombre de composantes connexes des bords, cela est plus compliqué en 3D où il faut en plus tenir compte du nombre d'anses ou de boucles de la structure.
 \end{itemize}
 
-Nous présenterons une approche continue de l'optimisation de formes (paramétrique, géométrique et topologique), l'approche discrète quant à elle sera présentée dans le cadre de l'homogénéisation.
-
+Notre présentation de l'optimisation se concentrera sur l'\textcolorblue{approche continue}, l'approche discrète n'étant que très brièvement mentionnée au paragraphe~\ref{Sec-OptDisc} afin de justifier notre choix de l'optimisation continue.
 
 \medskip
-\subsection{Existence et unicité d'un minimum}
+\begin{histoire}%
+Le mot «optimiser» a pour origine latine «optimum» qui signifie le meilleur.
+Il s'agit donc de faire les choses de la meilleure façon qui soit, ou encore de concevoir la meilleure des solutions possibles en terme d'objectif prescrit (minimisation ou maximisation) et répondant à un ensemble de contraintes.
+L'optimisation commence avec le calcul des variations, même si des exemples plus anciens peuvent être trouvés.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Didon}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Heron}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Fermat}\\%
+Didon&Héron d'Alexandrie&Fermat%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Lié à la mythologie de la création de Carthage, résolu élégamment par la reine Didon\index[aut]{Didon, ?, Carthaginoise}, ce problème d’isopérimétrie, connu sous le nom de \textcolorblue{«Problème de Didon»}, est sans doute l'un des plus ancien problème d'optimisation dont on trouve trace.\\ \indent
+%Dans \emph{Optica}, Euclide\index[aut]{Euclide, -325-- -265, Grec} se pose le problème du trajet des rayons lumineux et arrive à la conclusion qu'ils suivent un trajet optimal: les rayons incident et réfléchi sont dans le même plan, et l'angle incident et égale à l'angle réfléchi.
+Dans \emph{Catoptrica}, Héron d'Alexandrie\index[aut]{Héron d'Alexandrie, 1er siècle après JC, Grec} étudie la lumière et ses réflexions. Il énonce ainsi les principes de réflexion de la lumière, principes guidés par la règle selon laquelle la nature choisit toujours le chemin le plus court.\\ \indent
+Cette étude de la propagation de la lumière s'est poursuivie par l'énoncé des principes variationnels par Pierre de Fermat\index[aut]{Fermat (Pierre, de -), ?-1665, Français} et Christian Huygens\index[aut]{Huygens [ou Huyghens] (Christian), 1629-1695, Néerlandais}. Le français énonce une règle fondamentale dans la recherche d'optimum: «Lorsqu’une grandeur, par exemple l'ordonnée d'une courbe, est parvenue à son maximum ou son minimum, dans une situation infiniment voisine, son accroissement ou sa diminution est nulle.»}
+
+\medskip
+En juin 1696 dans \emph{Acta Eruditorum}, Jean Bernoulli\index[aut]{Bernoulli (Jean), 1667-1748, Suisse} reprend un problème initialement posé par Galilée.\index[aut]{Galilée (Galileo Galilei), 1564-1642, Italien}
+Il s'agit du problème de la \textcolorblue{courbe brachistochrone} que l'on peut formuler comme suit: quelle est la forme de courbe joignant deux points donnés dans un plan vertical, telle qu'un point matériel, soumis uniquement à la pesanteur et initialement sans vitesse, la parcourt en un temps minimal? [Galilée pensait avoir résolu le problème et que la solution était un arc de cercle] Très rapidement, Leibniz\index[aut]{Leibniz (Gottfried Wilhelm), 1646-1716, Allemand} propose une solution à Jean Bernoulli, mais sans qu'il reconnaisse la courbe en question. C'est Jean Bernoulli, qui dispose de deux solutions, qui reconnaît un arc de cycloïde commençant avec une tangente verticale. Tous deux décident de différer la publication de leurs solutions pour laisser à d'autres la possibilité d'aborder le problème. Celui-ci fut également résolu par Jacques Bernoulli,\index[aut]{Bernoulli (Jacques), 1654-1705, Suisse} Newton,\index[aut]{Newton (Isaac, Sir -), 1643-1727, Anglais} L'Hôpital\index[aut]{Hopital@L'Hôpital (Guillaume François Antoine de -), 1661-1704, Français} et Tschirnhaus.\index[aut]{Tschirnhaus (Ehrenfried Walther von -), 1651-1708, Allemand}
+Les méthodes imaginées pour sa résolution amenèrent à développer la branche des mathématiques qu'on appelle le \textcolorblue{calcul des variations}.
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{ccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Bernoulli_Jean}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Euler6}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Lagrange2}\\%
+Jean Bernouilli&Euler&Lagrange%
+\end{tabular}}
+\medskip
+\ImageAGauche{%
+La solution de Jean Bernoulli était fondée sur une analogie avec la propagation de la lumière et le principe de Fermat, ainsi que la loi de Descartes.\index[aut]{Descartes (René), 1596-1650, Français} Celle de Leibniz, était fondée sur l'approximation de la courbe par des lignes brisées et était le premier pas vers l'équation d'Euler-Lagrange.\index[aut]{Euler (Leonhard Paul), 1707-1783, Suisse}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} Le second pas a été accompli par Euler qui a ébauché, à partir de considérations géométriques, la méthode des «petites variations»; vers le milieu du dix-huitième siècle Joseph-Louis Lagrange a donné sa forme actuelle à la solution d'Euler. Legendre\index[aut]{Legendre (Adrien-Marie), 1752-1833, Français} a complété l'équation d'Euler-Lagrange, qui est une condition du premier ordre, par la condition du second ordre qui porte son nom.\\ \indent
+Ces résultats ont été rassemblés par Lagrange dans sa \emph{Théorie des fonctions analytiques}, parue en 1797, et dans laquelle on lit:
+«On peut les réduire à ce principe général. Lorsqu'une fonction de plusieurs variables doit être un maximum ou minimum, et qu'il y a entre ces variables une ou plusieurs équations, il suffira d'ajouter à la fonction proposée les fonctions, qui doivent être nulles, multipliées chacune par une quantité indéterminée, et de chercher ensuite le maximum ou minimum comme si les variables étaient indépendantes; les équations que l'on trouvera combinées avec les équations données, serviront à déterminer toutes les inconnues». \textcolorgris{La démarche est on ne peut plus claire, et c'est celle que nous suivrons Ces «quantités indéterminées» sont bien les multiplicateurs de Lagrange. Tout est dit!}}
+Il revenait à Weierstrass,\index[aut]{Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand} en 1879, de définir la notion d'extremum fort et d'établir la condition qui porte son nom. Les travaux de Jacobi\index[aut]{Jacobi (Carl Gustav Jakob), 1804-1851, Allemand} et Hamilton,\index[aut]{Hamilton (William Rowan, Sir -), 1805-1865, Irlandais} contemporains de ceux de Weierstrass, ont permis de donner sa forme définitive à la solution de Jacques Bernoulli déjà mentionnée. Les principaux résultats du calcul des variations classique avaient dès lors été obtenus.
+
+\medskip
+La formulation intégrale quant à elle a été peaufinée à la fin du \textsc{xix}\fup{e} siècle et au début du \textsc{xx}\fup{e} siècle.
+Les économistes s'intéresseront également à ces théories.
+En 1939, Leonid Kantorovich\index[aut]{Kantorovitch (Leonid Vitalievitch), 1912-1986, Russe} invente la programmation linéaire. La formulation générale des problèmes de programmation linéaire quant à elle sera finalisée en 1947 par George Dantzig\index[aut]{Dantzig (George Bernard), 1914-2005, Américain}, qui invente par ailleurs la méthode du simplexe. On parle aussi de «recherche opérationelle» pendant la seconde guerre mondiale, puis de programmation linéaire, et enfin de programmation non-linéaire.
+Le calcul des variations a connu un profond renouveau dans les années 1950 avec le développement de la théorie de la \textcolorblue{commande optimale}, sous l'impulsion de Lev Pontriaguine\index[aut]{Pontriaguine (Lev Semionovitch), 1908-1988, Russe} et Richard Bellman\index[aut]{Bellman (Richard Ernest), 1920-1984, Américain}. 
+
+Le calcul des variations reste en mathématiques un domaine fort actif, et les mathématiciens qui ont contribué à son développement sont extrêmement nombreux.
+\end{histoire}
+
+\medskip
+\section{Existence et unicité d'un minimum}
 \begin{definition}[Minima]
 Soient~$V$ un espace de Banach et~$K\subset V$ un sous-ensemble non vide. Soit~$J: V\rightarrow\RR$ le critère (i.e. la fonction objectif). On considère le problème:
 \begin{equation}
@@ -108,11 +153,11 @@ Si la fonction~$J$ est convexe sur un ensemble convexe~$K$, alors tout point de 
 On voit donc tout l'intérêt de vérifier que notre fonction objectif est convexe. Un exemple d'un tel problème en mécanique est la minimisation de l'énergie.
 
 \medskip
-\subsection{Différentiabilité et optimalité}
+\section{Différentiabilité et optimalité}
 
 Nous avons déjà présenté au paragraphe~\ref{Sec-Differentielle}, à l'équation~(\ref{Eq-Differentielle}), la différentielle.\index{différentielle} Si une fonction peut être approchée par une forme linéaire (la différentielle), alors on dit également qu'elle est \textcolorblue{différentiable au sens de Fréchet}.\index{dérivée!au sens de Fréchet}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
 
-Reprenons donc la définition de la différentielle pour l'appliquer à la fonction objectif~$J$.
+Réécrivons la définition de la différentielle dans le cas de la fonction objectif~$J$.
 \begin{definition}[Différentiabilité au sens de Fréchet]
 Soit~$V$ un espace de Banach. On dit que la fonction~$J$, définie au voisinage de~$u\in V$ et à valeurs dans~$\RR$, est \textcolorblue{différentiable au sens de Fréchet} en~$u$ s'il existe une forme linéaire~$L\in V'$, continue sur~$V$, telle que:
 \begin{equation}
@@ -135,7 +180,7 @@ avec~$j(t)=J(u+tv)$.\colorblack
 \begin{remarque}[\normalsize Lien entre minimisation et formulation variationnelle]
 \normalsize Nous nous proposons de retrouver les résultats du paragraphe~\ref{Sec-MultLag}.
 
-Soient~$a$ une forme bilinéaire symétrique (continue coercitive) et~$f$ une forme linéaire continue.
+Soient~$a(.,.)$ une forme bilinéaire symétrique (continue coercitive) et~$f(.)$ une forme linéaire continue.
 On considère la fonction~$J(u)=\frac12a(u,u)-f(u)$.
 On pose, comme ci-dessus, $j(t)=J(u+tv)$. On a donc:
 \[ j(t)=\frac{t^2}2a(v,v)+t\left(a(u,v)-f(v)\right)+J(u) \]
@@ -169,15 +214,15 @@ Pour les fonctions convexes, elle est \textcolorblue{nécessaire et suffisante}.
 
 
 \medskip
-\subsection{Lagrangien}\index{lagrangien}
+\section{Lagrangien}\index{lagrangien}
 
 Dans un premier temps, nous allons nous intéresser au problème de minimisation avec contraintes d'égalité. Le cas des contraintes d'inégalités sera traiter juste à la suite.
 
 \medskip
 \begin{definition}[Lagrangien (du problème de minimisation avec contraintes d'égalité)]
 Nous travaillons toujours dans notre espace~$V$.
-Soit~$F(v)$ une application dérivable de~$V$ dans~$\RR^M$ ($F(v)$ a pour composantes~$F_1(v)$, ..., $F_M(v)$).
-Nous cherchons à trouver le minimum de la fonction objectif~$J(v)$ où~$v$ satisfait aux conditions (ou contraintes)~$F(v)=0$, i.e.:
+Soit~$F(v)$ une application dérivable de~$V$ dans~$\RR^M$ \textcolorgris{(i.e. $F(v)$ est un vecteur dont les composantes sont~$F_1(v)$, ..., $F_M(v)$)}.
+Nous cherchons à trouver le minimum de la fonction objectif~$J(v)$ où~$v$ satisfait aux contraintes~$F(v)=0$, i.e.:
 \begin{equation}\label{Eq-LagEq}
 \inf_{v\in V, F(v)=0} J(v)
 \end{equation}
@@ -206,7 +251,7 @@ On suppose que~$J$ et~$F$ sont continûment dérivables au voisinage de~$u\in V$
 
 \medskip
 Intéressons-nous maintenant au problème de \textcolorblue{minimisation avec contraintes d'inégalité}.
-Il s'agit de même problème que précédemment, mais la relation~(\ref{Eq-LagEq}) est remplacée par la relation:
+Il s'agit du même problème que précédemment, mais la relation~(\ref{Eq-LagEq}) est remplacée par la relation:
 \begin{equation}\label{Eq-LagIneq}
 \inf_{v\in V, F(v)\le0} J(v)
 \end{equation}
@@ -228,7 +273,7 @@ La variable \textcolorred{positive}~$\mu\in(\RR^+)^M$ est appelée \textcolorblu
 \end{definition}
 
 \colorgreen
-\noindent\textbf{Synthèse méthodologique:} Le lagrangien (pour le problème de minimisation avec contraintes d'égalité, comme d'inégalité) est la somme de la fonction objectif et de la formulation variationnelle de l'équation d'état du problème considérée comme une contrainte.
+\noindent\textbf{Synthèse méthodologique:} Le lagrangien (pour le problème de minimisation avec contraintes d'égalité, comme d'inégalité) est la somme de la fonction objectif et de la formulation variationnelle de l'équation d'état du problème considérée comme une contrainte \textcolorgris{(i.e. nous avons suivi à la lettre la méthode décrite par Lagrange lui-même)}.
 \colorblack
 
 \medskip
@@ -266,7 +311,7 @@ et ainsi~$\lambda$ donne bien la dérivée (sans la calculer) du minimum par rap
 
 
 \medskip
-\subsection{Dualité et point selle}
+\section{Dualité et point selle}
 
 Dans ce paragraphe, on va regarder comment supprimer les contraintes portant sur le problème. Pour cela, on va adjoindre au problème dit primal, un problème dual. Ce dernier est souvent plus simple que le problème primal, notamment parce qu'il ne comporte pas de contraintes. Évidemment, connaissant la solution du problème dual, on devra être en mesure de remonter à celle du problème primal.
 
@@ -303,20 +348,84 @@ Le couple~$(u,p)$ est un point selle de~$\mathcal{L}$ sur~$U\times P$ si et seul
 
 \textcolorgreen{Ainsi, si l'on sait résoudre le problème dual, alors on obtient la solution du problème primal grâce à une minimisation \textcolorred{sans} contrainte.}
 
+\section{Maximisation}
 
-\medskip
-\subsection{Mise en œuvre numérique - Gradient - État adjoint}
-
-\colorgreen
-Tout d'abord un remarque générale sur ce qui précède:
-jusqu'à présent, nous n'avons parlé que de problème de minimisation.
+Jusqu'à présent, nous n'avons parlé que de problème de minimisation.
 Si l'on a à traiter un problème de maximisation, il suffit alors de le transformer en problème de minimisation:
 \begin{equation}
 \sup_{v\in V} J(v)=-\inf_{v\in V} (-J(v))
 \end{equation}
-\colorblack
 
 \medskip
+\section{Ensemble admissible}
+
+Nous avons été assez vagues sur le domaine dans lequel peuvent varier les variables d'optimisation. Nous avons parlé d'espace, d'ensemble connexe...
+
+D'un point de vue pratique, les variables (ou paramètres) ne peuvent varier qu'à l'intérieur d'un domaine admissible. Cet \textcolorblue{ensemble admissible} sera noté~$\mathcal{U}_{ad}$.
+
+\medskip
+Cet ensemble peut aussi bien comprendre:
+\begin{itemize}
+   \item des domaines \textcolorblue{discrets}: par exemple, 1) le nombre de plis dans un stratifié doit être un entier compris entre~$1$ et~$n$, où~$n$ est le nombre de plis maximum au-delà duquel on estime que le processus de fabrication ne sera plus performant (techniquement et/ou économiquement), 2) l'épaisseur d'une tôle peut n'avoir qu'un nombre fini de valeurs discrètes correspondant à ce qui existe en stock ou dans le commerce;
+   \item que des domaines \textcolorblue{continus}: par exemple, 1) l'angle d'orientation des plis dans un stratifié est une variable continue sur~$\intff{-\pi}{\pi}$, 2) l'épaisseur d'une structure peut être vue comme une variable continue allant d'une valeur min à une valeur max données.
+\end{itemize}
+
+Lorsque nous parlerons d'optimisation géométrique (ou optimisation de forme), alors nous aurons à manipuler des contraintes du type: telle partie de la frontière peut bouger, mais sa longueur doit être constante, ou le volume total délimité doit respecter telle ou telle condition.
+
+Nous pourrons également avoir des critères lié à l'état des contraintes ou des déformations de la structure, des critères de moindre carrés (pour atteindre par exemple un déplacement cible), une rigidité, un déplacement maximal...
+
+\medskip
+Pour prendre en compte des variables ayant des \textcolorblue{valeurs discrètes}, on peut se servir de fonctions caractéristiques.
+Par  exemple: si une variable~$v$ ne peut prendre que la valeur~$\alpha$ dans un sous-domaine~$\omega\subset\Omega$ et la valeur~$\beta$ ailleurs, alors on pourra écrire:
+\begin{equation}
+v = \alpha \chi(x) + \beta(1-\chi(x))
+\end{equation}
+où~$x$ est la position du point considéré et~$\chi(x)$ la fonction caractéristique qui vaut~$1$ si~$x\in\omega$ et~$0$ sinon.
+
+\medskip
+On peut également faire varier le critère en fonction de la zone de la structure considérée.
+Pour cela, notre domaine~$\Omega$ peut être décomposé en une \textcolorblue{partition}~$(\omega_i)_{1\le i\le n}$, et l'on est amené à considérer l'ensemble admissible:
+\begin{equation}
+\mathcal{U}^n_{ad}=\{ x\in \mathcal{U}_{ad}, x \textbf{ vérifie la condition } i \textbf{ dans } \omega_i, 1\le i\le n\}
+\end{equation}
+
+\medskip
+On peut également avoir des \textcolorblue{contraintes de régularité}. C'est par exemple ce que l'on peut imposer à une épaisseur variable: non seulement celle-ci doit être comprises entre une valeur mini et une valeur maxi, mais on peut également vouloir que sa variation soit bornée, i.e. qu'elle ne varie pas trop vite, ce qui correspond à une contrainte pratique du processus de fabrication.
+Ainsi, on se fixe une constante positive~$R$, et l'on travaille sur l'ensemble admissible:
+\begin{equation}
+\mathcal{U}^{reg}_{ad}=\{ x\in \mathcal{U}_{ad} \cap W^{1,\infty}(\Omega), \|x\|_{W^{1,\infty}(\Omega)}\le R\}
+\end{equation}
+Le problème reste de choisir la valeur de~$R$. En général, il n'y a d'ailleurs pas convergence quand~$R$ tend vers l'infini.
+Numériquement, on préfère la contrainte de régularité:
+\begin{equation}
+\|x\|_{H^1(\Omega)}\le R
+\end{equation}
+
+\medskip
+\section{L'optimisation discrète}\label{Sec-OptDisc}
+
+On peut également discrétiser des contraintes d'optimisation. L'ensemble admissible devient alors:
+\begin{equation}
+\begin{split} 
+\mathcal{U}^{disc}_{ad} = &\Bigg\{ \text{contraintes sur } x \textbf{ idem celles sur } \mathcal{U}_{ad}; ...\\  
+& \left. \quad ... \text{ contraintes sur } \int x...=... \text{ remplacées par } \dsum_{i=1}^n c_ix_i = ... \right\}
+\end{split}
+\end{equation}
+où~$\sum_{i=1}^n c_ix_i$ est une approximation de~$\int x...$.
+
+Le problème est de calculer le gradient de~$J^{disc}$. Si l'on procède de manière directe, cela est impraticable numériquement. On passe alors par l'état adjoint.
+
+\medskip
+Il n'y a pas de simplification à utiliser une approche discrète plutôt que continue:
+\begin{itemize}
+   \item certes «discrétiser d'abord puis optimiser» garantit une parfait compatibilité, mais cela nécessite une parfaite connaissance du solveur numérique;
+   \item alors qu'«optimiser en continu puis discrétiser», tel que présenté dans ce chapitre, est beaucoup plus simple et ne nuit pas en précision numérique si l'on choisit bien les espaces d'éléments finis.
+\end{itemize}
+
+
+\medskip
+\section{Remarques sur la mise en œuvre}
+
 Des méthodes dites «stochastiques» telles que Monte-Carlo, recuit simulé ou des algorithmes génétiques sont envisageables. Elles sont coûteuses en CPU et nous ne les aborderons pas.
 
 Nous allons dire deux mots sur les méthodes déterministes, telles que les méthodes de gradient (gradient optimal, gradient à pas fixe, gradient projeté) ou de Newton. Notons qu'elles fournissent un minimum local, et que, pour fonctionner, il faut disposer du gradient. Ainsi, nous devrons pouvoir calculer~$J'$.
@@ -325,7 +434,7 @@ Nous allons dire deux mots sur les méthodes déterministes, telles que les mét
 La méthode la plus simple (et la plus sûre) pour calculer le gradient est:
 \begin{equation}
 \lim_{\varepsilon\rightarrow0} \dfrac{J(x+\varepsilon y)-J(x)}{\varepsilon}
-=\langle J'(x),y\rangle =\dint_\Omega J'(x)y
+=\langle J'(x),y\rangle %=\dint_\Omega J'(x)y
 \end{equation}
 Par linéarité on écrit: $u(x+\varepsilon y)=u(x)+\varepsilon \tilde{u}(y)$, les relations satisfaites par~$\tilde{u}(y)$ dépendant du problème considéré.
 Toutefois, remarquons qu'avec cette manière de procéder~$J'(x)$ n'est pas explicite.
@@ -346,21 +455,196 @@ Nous n'en dirons pas plus ici, quelques exemples plus bas permettrons de voir le
 
 
 \medskip
-\section{Optimisation paramétrique}
+\section{Optimisation de forme}
 
+Maintenant que nous avons présenté la théorie de l'\textcolorblue{optimisation continue}, nous nous proposons de dire quelques mots sur sa mise en œuvre dans le cadre de l'optimisation de forme. D'un point de vue vraiment pratique, c'est au paragraphe suivant que se trouveront les exemples, traités dans le cas d'une plaque.
 
+\medskip
+Le problème principal qui se pose est de savoir comment poser le problème, i.e. comment représenter des formes, et par suite comment définir le calcul des variations sur les formes.
 
+\medskip
+\subsection{Optimisation paramétrique}
 
+On est dans le cas le plus simple. La géométrie ne peut pas «vraiment» varier: elle est paramétrée par des variables. L'ensemble~$\mathcal{U}_{ad}$ est donc celui défini par l'ensemble de ces variables munies de leur domaine de variation (valeur mini et maxi).
+
+En somme, ce cas a déjà été traité auparavant, et il n'y a pas de différence dans le traitement d'un paramètre, que celui-ci représente un élément de la géométrie ou un autre type de variable.
+
+\medskip
+\subsection{Optimisation géométrique}
+
+On rappelle que dans ce cas, la géométrie peut varier mais pas la topologie. On n'est donc pas autorisé à ajouter ou supprimer des trous.
+
+\medskip
+\subsubsection{Approche «libre»}
+
+Généralement, le contour~$\Gamma=\partial\Omega$ est partitionné comme suit:
+\begin{equation}
+\Gamma = \Gamma_D \cup \Gamma_N \cup \Gamma_R
+\end{equation}
+où~$\Gamma_D$ est la partie où les déplacements sont imposés, considérée comme immuable; $\Gamma_N$ est la partie où les efforts extérieurs sont prescrits, également considérée comme fixe; et~$\Gamma_R$ est le reste du contour, seule partie qui peut varier (tout ou partie, auquel cas on partitionne encore en une partie fixe et une partie mobile).
+On commence donc par imposer que~$\Gamma_D$ et~$\Gamma_N$ sont fixes:
+\begin{equation}
+\mathcal{U}_{ad}=\{ \Gamma_D \cup \Gamma_N \subset \Gamma\}
+\end{equation}
+
+Ne rien imposer de plus ne permet pas de résoudre le problème. Il nous faut des critères d'optimisation.
+On veut trouver la forme optimale qui permet, par exemple, de maximiser la rigidité, ou d'obtenir un déplacement cible.
+Mais cela ne suffit pas encore. Si toutes les formes sont admissibles, alors on va arriver à des solutions où l'on a des volumes nuls ou infinis, car cela répondra au mieux...
+Il est donc nécessaire de contraindre la forme: 
+tout d'abord, on va restreindre la géométrie à ne varier que dans un domaine~$D_0$ borné défini, ce qui se traduit pas l'ajout de la condition:
+\begin{equation}
+\mathcal{U}_{ad}=\{ \Omega\subset D_0 \}
+\end{equation}
+Ensuite, par exemple, on peut décider de travailler à volume fixé~$V_0$, ce qui se traduit par:
+\begin{equation}
+\mathcal{U}_{ad}=\{ |\Omega|=V_0\}
+\end{equation}
+
+Nous en sommes donc à un ensemble admissible qui se présente sous la forme:
+\begin{equation}
+\mathcal{U}_{ad}=\{ \Omega\subset D_0 /\quad 
+\Gamma_D \cup \Gamma_N \subset \Gamma \text{ et } |\Omega|=V_0 \}
+\end{equation}
+
+Mais cela n'est pas encore suffisant pour obtenir une solution.
+Il est nécessaire d'ajouter que~$\Omega$ vérifie la \textcolorblue{propriété du cône uniforme}. Cette condition impose à la fois une condition sur le rayon de courbure du bord (c'est une condition pour le bord varie de manière assez lisse) et empêche la formation de petits trous.
+
+\begin{theoreme}[D. Chenais]
+Si l'ensemble admissible est:
+\begin{equation}
+\mathcal{U}_{ad}=\left\{ \Omega\subset D_0 \text{ tq: }
+\begin{array}{l}
+(i)\quad \Omega \text{ vérifie la propriété du cône uniforme}\\
+(ii)\quad \Gamma_D \cup \Gamma_N \subset \Gamma \text{ et } |\Omega|=V_0 
+\end{array}
+\right\}
+\end{equation}
+alors le problème d'optimisation:
+\[ \inf_{\Omega\in\mathcal{U}_{ad}} J(\Omega) \]
+admet au moins une solution optimale.
+\end{theoreme}
+
+\medskip
+\subsubsection{Approche «régulière»}
+
+Une autre voie est possible pour réaliser une optimisation géométrique: c'est celle où l'on déforme progressivement le domaine initial pour arriver jusqu'au domaine final. Nous avons déjà mentionné cette manière de faire à propos des maillages au chapitre~\ref{Ch-mesh}. Nous allons pour cela utiliser la notion de \textcolorblue{transformation par difféomorphisme} du domaine initial~$\Omega_0$ de~$\RR^N$.
+\textcolorgreen{Une telle approche a pour avantage d'assurer qu'au cours de la transformation le domaine reste bien topologiquement identique au domaine initial. Elle a également le gros avantage de permettre de calculer un gradient.}
+
+\medskip
+\begin{definition}[Espace des difféomorphismes]
+L'espace des difféomorphismes~$\mathcal{T}$ (ou espace des bijections régulières) sur~$\RR^N$ est défini par:
+\begin{equation}
+\mathcal{T}=\left\{ T \text{ tel que } (T-Id) \text{ et } (T+Id)\in W^{1,\infty}(\RR^N;\RR^N)\right\}
+\end{equation}
+L'espace de Sobolev~$W^{1,\infty}(\RR^N;\RR^N)$ est également appelé espace des vecteurs Lipschitziens. Il est muni de:
+\begin{equation}
+\|\varphi\|_{W^{1,\infty}(\RR^N;\RR^N)}=\sup_{x\in\RR^N} \left(|\varphi(x)|_{\RR^N}
++|\nabla\varphi(x)|_{\RR^{N\times N}}\right) <\infty
+\end{equation}
+Ainsi, $\varphi$ est continue mais ses dérivées sont seulement bornées.
+\end{definition}
+
+L'\textcolorblue{espace des formes admissibles} est alors:
+\begin{equation}
+\mathcal{C}(\Omega_0)=\left\{ \Omega \text{ tel que: } \exists T\in\mathcal{T}, \Omega=T(\Omega_0) \right\}
+\end{equation}
+Attention, chaque domaine~$\Omega$ est bien paramétré par un difféomorphisme~$T$, mais celui-ci n'est pas unique.
+
+On définit la pseudo-distance:
+\begin{equation}
+d(\Omega_1,\Omega_2) = \inf_{T\in\mathcal{T}/ T(\Omega_1)=\Omega_2}
+\left( \|T-Id\|+\|T^{-1}-Id\|\right)_{W^{1,\infty}(\RR^N;\RR^N)}
+\end{equation}
+
+Si~$\Omega_0$ est borné, alors on peut utiliser~$C^1(\RR^N;\RR^N)$ au lieu de~$W^{1,\infty}(\RR^N;\RR^N)$.
+
+\medskip
+L'ensemble admissible est finalement:
+\begin{equation}
+\mathcal{U}_{ad} = \{ \Omega\in\mathcal{C}(\Omega_0) / \quad
+\Gamma_D \cup \Gamma_N \subset \Gamma \text{ et } |\Omega|=V_0 \}
+\end{equation}
+Comme précédemment, on fixe une constante positive~$R$ (contrainte de faisabilité), et on introduit le sous-espace régulier:
+\begin{equation}
+\mathcal{U}_{ad}^{reg} = \{ \Omega\in\mathcal{U}_{ad}) / \quad
+d(\Omega,\Omega_0)\le R \}
+\end{equation}
+On dispose alors du résultat suivant:
+\begin{theoreme}
+Si l'ensemble admissible est~$\mathcal{U}_{ad}^{reg}$ défini juste avant, alors le problème d'optimisation:
+\[ \inf_{\Omega\in\mathcal{U}_{ad}^{reg}} J(\Omega) \]
+admet au moins une solution optimale.
+\end{theoreme}
+
+Notons que les bords dans~$\mathcal{U}_{ad}^{reg}$ ne peuvent pas trop osciller.
+
+\medskip
+Comme~$J(\Omega)$ est paramétré par le difféomorphisme~$T$, il est possible de calculer sa dérivée.
+
+En se limitant aux difféomorphismes de la forme~$T=Id+\theta$, avec~$\theta\in W^{1,\infty}(\RR^N;\RR^N)$, on peut dériver $\theta \rightarrow J((Id+\theta)\Omega_0)$ en~$0$, qui est strictement contractante. Ainsi, $T=Id+\theta$ est une bijection de~$\RR^N$. Il suffit d'appliquer la définition de la dérivée au sens de Fréchet. La forme linéaire est cette fois-ci appelée \textcolorblue{dérivée de forme}.
+
+De la même manière, il est possible de définir la dérivée d'une fonction dépendant du domaine, que ce soit la dérivée eulérienne ou la dérivée lagrangienne.
+Dans la mesure où la dérivée eulérienne est délicate à manipuler, on préfèrera utiliser la dérivée lagrangienne, quitte à exprimer les résultats de la dérivation eulérienne à partir de la dérivation lagrangienne.
+Enfin, on peut également dériver une équation par rapport au domaine, ou une formulation variationnelle... mais nous en resterons là pour l'instant.
+
+De toutes façons, ce n'est pas cette méthode (calculatoire) qui est utilisée en pratique, mais la \textcolorblue{méthode du Lagrangien}... dont nous avons déjà parlé auparavant.
+En effet, la dérivée du Lagrangien par rapport au domaine, dans la direction~$\theta$, évaluée sur le domaine~$\Omega_0$, est égale à la dérivée directionnelle~$J'(\Omega_0)(\theta)$.
+Ainsi, grâce à ce calcul, on peut obtenir de bons résultats pour~$J'(\Omega_0)$ sans passer par les dérivées de forme ou matérielle. Ce calcul nécessite toutefois que l'on connaisse la dérivabilité de~$u$ par rapport au domaine.
+
+\medskip
+Un problème implicite non évoqué est que \textcolorred{pour changer de forme, il faut pouvoir remailler ou déformer le maillage à chaque itération}.
+Comme un remaillage est beaucoup plus coûteux qu'une déformation de maillage, on procède par déformation de maillage (avec toutes les précautions nécessaires sur le respect des formes d'éléments, sur le croisement des bords...) avec de temps en temps un remaillage (on ne peut pas y couper...). C'est pourquoi la mise en œuvre informatique de l'optimisation géométrique reste compliquée (surtout en 3D).
+
+Une «Boite à outils \freefem pour l'optimisation de formes (géométrique et topologique)» est disponible sur le site de Grégoire Allaire du CMAP~\cite{bib-AllaireOptimFF}.
 
 
 \medskip
-\section{Optimisation géométrique}
+\subsection{Optimisation topologique par homogénéisation}
+
+La restriction majeur de l'optimisation géométrique dont nous venons de parler est que l'on ne modifie pas la topologie de la structure, ce qui limite considérablement les formes possibles.
+Nous allons voir maintenant comment s'affranchir de cette limitation, en présentant une méthode d'homogénéisation. Nous ne présenterons pas d'approche évolutionnaire.
 
 \medskip
-\section{Optimisation topologique}
+La \textcolorblue{méthode d'homogénéisation} est une méthode qui permet de rendre les problèmes bien posés en élargissant l'espace des formes admissibles.
+Ces \textcolorblue{formes généralisées} seront les limites de suites minimisantes de formes classiques (ce qui augmente les possibilités, mais sans trop d'excentricité).
+Ainsi, la méthode d'homogénéisation autorise comme formes admissibles des matériaux composites obtenus par perforation (macroscopique ou microscopique) de la matière: c'est ainsi que sont introduits les «trous» dans la structure.
+
+\medskip
+Ainsi, au lieu de représenter un trou par une fonction caractéristique (qui vaut~$1$ dans la matière et~$0$ dans les trous), on va considérer que les trous peuvent être non seulement macroscopiques que microscopiques. Dans une \textcolorblue{forme généralisée}, on ne représente donc plus les trous, mais on modélise une \textcolorblue{densité de matière}, i.e. un paramètre continu~$\theta$ variant dans~$\intff01$, ainsi qu'une microstructure, i.e. la forme des trous.
+En effet, la forme des trous est importante car elle influe directement sur le \textcolorblue{comportement effectif} du matériau composite, déterminé par homogénéisation selon les techniques présentées au chapitre~\ref{Ch-Homog}.
+
+Nous disposerons donc de deux variables d'optimisation: $\theta$ la densité de matière et~$A(x)$ le comportement effectif.
+
+\medskip
+D'un point de vue pratique, les trous, avec bords libres, sont soumis à une condition de Neumann. Ils sont remplacés par un matériau ayant une rigidité très faible au regard de celle du reste du domaine.
+Par exemple, le module d'Young sera représenté par: 
+\begin{equation}\label{Eq-EcvOpt}
+E = E_{fort} \chi(x) + E_{faible}(1-\chi(x))
+\end{equation}
+où~$E_{fort}$ et~${E_faible}$ sont le module d'Young du matériau constituant la structure, et celui, choisi beaucoup plus faible, représentant les trous. La fonction~$\chi(x)$ étant la fonction caractéristique associée.
+L'ensemble admissible s'écrit alors:
+\begin{equation}
+\mathcal{U}_{ad}=\left\{ \chi\in L^\infty(\Omega;\{0,1\}),
+\dint_\Omega \chi(x) = V \right\}
+\end{equation}
+
+Le problème d'optimisation de forme de la structure s'écrit:
+\begin{equation}
+\inf_{\chi\in\mathcal{U}_{ad}} J(\chi)
+\end{equation}
+avec par exemple~$J(\chi)=\dint_\Omega fu_\chi$ pour un chargement~$f\in\L^2(\Omega)$, ou~$J(\chi)=\dint_\Omega|u_\chi-u_0|^2$ pour un déplacement~$u_0$ prescrit.
+
+\medskip
+Notons, en complément du chapitre~\ref{Ch-Homog}, que \textcolorred{les méthodes d'homogénéisation fonctionnent également pour les milieux non périodiques}.
+
+En effet, on montre que, si dans l'équation (\ref{Eq-EcvOpt}), la fonction~$\chi(x)$ est remplacée par une suite~$\chi_\epsilon(x)$ ($\epsilon$ n'est pas la période), alors il existe une sous-suite, une densité~$0\le\theta\le1$, et un tenseur homogénéisé~$A^*(x)$ tels que~$\chi_\epsilon$ converge en moyenne faiblement vers~$\theta$, $A_\epsilon$ converge au sens de l'homogénéisation vers~$A^*$, i.e. que~$u_\epsilon$ converge dans~$L^2(\Omega)$ vers la solution~$u$ du problème homogénéisé.
+
+\medskip
+C'est ce résultat qui sert à la théorie mathématique de l'optimisation topologique par la méthode d'homogénéisation.
+Il reste évidemment encore un peu de travail mathématique pour tout justifier jusqu'au bout, mais ce n'est pas le but de ce document. Les quelques indications données permettent de comprendre comment la méthode fonctionne et sur quoi elle repose.
+Des simplifications, des conditions d'optimalité, la vérification de convexité... permettent d'aboutir à des algorithmes efficaces. Nous renvoyons une fois encore à la «Boite à outils \freefem pour l'optimisation de formes (géométrique et topologique)» disponible sur le site de Grégoire Allaire du CMAP~\cite{bib-AllaireOptimFF}.
+
 
 \medskip
 \section{Exemples d'optimisation d'une plaque}
 
-\medskip
-\section{Homogénéisation}
