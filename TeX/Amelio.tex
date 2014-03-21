@@ -192,7 +192,7 @@ Une simulation par décomposition de domaine\index{décomposition de domaine} co
 \textcolorgris{Cependant, à plus long terme, la simulation multi-échelles\index{multi-échelles} suscite un intérêt considérable dans l'industrie: en rendant accessibles à la simulation des phénomènes qui ne peuvent actuellement être étudiés qu'expérimentalement,
 elle constitue un pas important en direction du «virtual testing». Pour cette raison, elle fait toujours l'objet de nombreux projets de recherche. Ceux-ci concernent aussi bien la modélisation, avec notamment la mise au point de «matériaux virtuels» (qui ne sont rien d'autre que des modèles multi-échelles, notamment pour les matériaux composites), que les solveurs qui sont en constante évolution.}
 
-\medskip
+\ifVersionDuDocEstVincent\newpage\else\medskip\fi
 \section{Super-éléments}\index{super-élément}
 
 \begin{histoire}
@@ -336,14 +336,14 @@ Certaines formules existent pour des modification mineures de la matrice~$\MM{K}
 \subsection{Modification des conditions cinématiques}
 
 Nous ne considérons ici que des modifications des conditions cinématiques. Généralement, les conditions cinématiques sont prises en compte en supprimant ou en modifiant les équations de l'équilibre avant résolution, ce qui rend le système régulier. Nous avons vu que le système à résoudre (incluant les conditions cinématiques) revient à chercher le minimum de la forme quadratique:
-\begin{equation}M=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F}\end{equation}
+\begin{equation}\mathcal{L}=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F}\end{equation}
 Notons que l'on peut écrire les~$p$ conditions cinématiques sous la forme:
 $\MM{C}\VV{q} = \VV{\delta}$
 avec~$\MM{C}$ une matrice~$p\times n$, et~$\VV{q}$ et~$\VV{\delta}$ des vecteurs.
 
 Nous avons également déjà vu que ces conditions peuvent être prises en compte par l'intermédiaire de~$p$ multiplicateurs de Lagrange\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien}~$\VV{\lambda}$ dans la fonctionnelle précédente qui devient alors:
 \begin{equation}
-M^*=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F} - \LL{\lambda}\PP{\MM{C}\VV{q} - \VV{\delta}}
+\mathcal{L}^*=\frac12 \LL{q}\MM{K}\VV{q} -\LL{q}\VV{F} - \LL{\lambda}\PP{\MM{C}\VV{q} - \VV{\delta}}
 \end{equation}
 Le système à résoudre est symétrique, régulier, mais non défini-positif.
 

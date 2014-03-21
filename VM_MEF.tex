@@ -52,9 +52,13 @@
 \usepackage{./tex/freefempp}
 \usepackage{./tex/castem}
 \usepackage{./tex/ansys}
+\usepackage{times}
+\gdef\ttdefault{cmtt}%
+\usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
+
 %
 \ifVersionDuDocEstVincent
-   \usepackage{amssymb,bm}
+%   \usepackage{amssymb,bm}% pas compatible avec fontes MLg
    \usepackage[a4paper,top=15mm,left=2cm,right=16.5mm,bottom=22mm]{geometry}
    \usepackage[%
      sorting=none,%
@@ -72,9 +76,6 @@
    \defbibheading{bibliography}[\bibname]{\section*{#1}}
 %
 \else
-   \usepackage{times}
-   \gdef\ttdefault{cmtt}%
-   \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
    \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
    \setlist{nolistsep} 
    \pagestyle{fancy}
@@ -129,7 +130,7 @@
 \vspace*{2cm}
 
 \vfill\normalsize\selectfont
-\noindent Vincent Manet --- 2013 (Ceci est la version \ifVersionDuDocEstVincent \textcolorblue{«cours»} \else \textcolorblue{«livre»} \fi de ce document)\\
+\noindent Vincent Manet --- 2014 (Ceci est la version \ifVersionDuDocEstVincent \textcolorblue{«cours»} \else \textcolorblue{«livre»} \fi de ce document)\\
 Ce document est sous licence Creative Commons 3.0 France:
 \begin{itemize}
 \item paternité;
@@ -234,6 +235,27 @@ Nous remercions Mathias Legrand\index[aut]{Legrand (Mathias), ?- , Français} po
 
 Notre collaboration a permis une très nette amélioration de la qualité typographique générale du document, et a conduit à la coexistence de deux versions, issues du même code source: l'une que nous appelons «version cours» correspond à ce que nous proposons en cours (couleurs, notations); l'autre que nous nommons «version livre», plus classique et sage dans sa forme, est plus proche d'un ouvrage.
 
+\ifVersionDuDocEstVincent
+\newpage
+\section*{Notations}
+\markboth{Notations}{}
+\addcontentsline{toc}{section}{Notations}
+
+Dans la «version cours», nous utiliserons deux types de notations.
+
+\medskip
+D'une manière générale, lorsque nous parlons «maths», alors la variable sera~$u$, et celle-ci sera aussi bien un scalaire, qu'un vecteur. De même, la forme bilinéaire sera principalement~$a(.,.)$ et la forme linéaire~$f(.)$.
+
+\medskip
+En revanche, lorsque nous serons plus proche de la programmation, alors nous utiliserons les notations suivantes:
+$\MM{K}$ sera une matrice, $\VV{q}$ sera un vecteur (colonne donc), $\LL{q}$ sera un vecteur transposé (une ligne donc).
+
+Cela nous permettra d'écrire~$\LL{x}=\LL{x_1, ..., x_n}$ pour définir le vecteur~$x$, plutôt que d'écrire~$\VV{x}=\VV*{x_1\\ \vdots\\x_n}$, ce qui rend le texte beaucoup plus lisible. \textcolorgris{Par ailleurs, on trouve souvent des écritures du type $x=(x_1, ..., x_n)$, qui se comprennent, mais que nous n'aimons pas: un vecteur, c'est une colonne; une ligne, c'est un vecteur transposé!}
+
+\medskip
+$\langle X\rangle$ désignera quelquefois la valeur moyenne de la variable~$X$, mais nous la noterons le plus souvent~$\E{X}$.
+Quant à~$\langle.,.\rangle$, cela désignera, comme habituellement, le produit de dualité.
+\fi
 
 \colorblack
 \cleardoublepage

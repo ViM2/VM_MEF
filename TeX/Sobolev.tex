@@ -75,8 +75,6 @@ Dans la théorie de Schwartz\index[aut]{Schwartz (Laurent), 1915-2002, Français
 
 \medskip
 \noindent\emph{Extension des espaces de solutions acceptables:}\\[+2.5mm]
-Leray\index[aut]{Leray (Jean), 1906-1998, Français} en 1934 et Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} en 1936 introduisent de nouvelles notions de solutions d'équations aux dérivées partielles, appelées solutions faibles ou solutions généralisées, qui permettent de formuler des équations aux dérivées partielles sans supposer nécessairement l'existence de dérivées au sens classique. Leur approche préfigure très bien la théorie des distributions, qui ne sera mise au point qu'une quinzaine d'années plus tard. Les contributions de Leray et Sobolev ne constituent pas les seuls travaux précurseurs de la théorie des distributions. Dans les années 30 et 40, de nombreux chercheurs vont utiliser les concepts de solutions généralisées pour étudier les solutions de diverses équations aux dérivées partielles: Courant\index[aut]{Courant (Richard), 1888-1972, Américain} et Hilbert,\index[aut]{Hilbert (David), 1862-1943, Allemand} Bochner,\index[aut]{Bochner (Salomon), 1899-1982, Américain} Friedrichs,\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} Krylov...\index[aut]{Krylov (Aleksey Nikolaevich), 1863-1945, Russe}
-
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}
 \includegraphics[height=\the\HauteurDesPhotos]{Leray}&
@@ -84,7 +82,9 @@ Leray\index[aut]{Leray (Jean), 1906-1998, Français} en 1934 et Sobolev\index[au
 Leray&Sobolev%
 \end{tabular}}
 \ImageADroite{%
-Nous arrivons maintenant à l'idée majeure de la théorie des distributions, déjà présente dans les travaux de Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} et Leray.\index[aut]{Leray (Jean), 1906-1998, Français} Du point de vue physique, on peut la motiver comme suit. Le résultat ou l'interprétation d'une expérience physique faisant intervenir une certaine grandeur, qui varie en fonction du temps ou de l'espace, ne dépend que très rarement des valeurs ponctuelles de cette grandeur, mais plus souvent de sa valeur moyenne (ou intégrale) prise contre une fonction du temps ou de l'espace, plus ou moins localisée. En d'autres termes, plutôt qu'une fonction $u$, c'est plutôt une «moyenne» de la forme $\int u\varphi$ qui sera accessible en pratique. Ainsi, un signal électrique oscillant avec une période très élevée fournira, de manière apparemment paradoxale, un signal plat quand on l'utilisera pour alimenter un oscilloscope: dans le processus de moyenne inhérent à la mesure, les valeurs positives et négatives se compenseront.}
+Leray\index[aut]{Leray (Jean), 1906-1998, Français} en 1934 et Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} en 1936 introduisent de nouvelles notions de solutions d'équations aux dérivées partielles, appelées solutions faibles ou solutions généralisées, qui permettent de formuler des équations aux dérivées partielles sans supposer nécessairement l'existence de dérivées au sens classique. Leur approche préfigure très bien la théorie des distributions, qui ne sera mise au point qu'une quinzaine d'années plus tard. Les contributions de Leray et Sobolev ne constituent pas les seuls travaux précurseurs de la théorie des distributions. Dans les années 30 et 40, de nombreux chercheurs vont utiliser les concepts de solutions généralisées pour étudier les solutions de diverses équations aux dérivées partielles: Courant\index[aut]{Courant (Richard), 1888-1972, Américain} et Hilbert,\index[aut]{Hilbert (David), 1862-1943, Allemand} Bochner,\index[aut]{Bochner (Salomon), 1899-1982, Américain} Friedrichs,\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand} Krylov...\index[aut]{Krylov (Aleksey Nikolaevich), 1863-1945, Russe}}
+
+Nous arrivons maintenant à l'idée majeure de la théorie des distributions, déjà présente dans les travaux de Sobolev\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe} et Leray.\index[aut]{Leray (Jean), 1906-1998, Français} Du point de vue physique, on peut la motiver comme suit. Le résultat ou l'interprétation d'une expérience physique faisant intervenir une certaine grandeur, qui varie en fonction du temps ou de l'espace, ne dépend que très rarement des valeurs ponctuelles de cette grandeur, mais plus souvent de sa valeur moyenne (ou intégrale) prise contre une fonction du temps ou de l'espace, plus ou moins localisée. En d'autres termes, plutôt qu'une fonction~$u$, c'est plutôt une «moyenne» de la forme~$\int u\varphi$ qui sera accessible en pratique. Ainsi, un signal électrique oscillant avec une période très élevée fournira, de manière apparemment paradoxale, un signal plat quand on l'utilisera pour alimenter un oscilloscope: dans le processus de moyenne inhérent à la mesure, les valeurs positives et négatives se compenseront.
 
 Dans le cas de l'équation des ondes aussi bien que dans celui des équations de transport avec données singulières, on résout ainsi le dilemme qui nous est proposé, en reformulant l'équation par son action sur les fonctions-test.
 
@@ -261,7 +261,7 @@ où~$D^\alpha u$ est une dérivée partielle de~$u$ au sens classique ($u \in C^
 \colorblack
 
 
-\medskip
+\ifVersionDuDocEstVincent\newpage\else\medskip\fi
 \section{Espaces~$H^m(\Omega)$, $H^m_0(\Omega)$ et~$H^{-m}(\Omega)$}\index{espace!de Sobolev!$H^m(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}\index{espace!de Sobolev!$H_0^m(\Omega$}\index{espace!de Sobolev!$H^{-m}(\Omega)$}
 
 \begin{definition}[Espace~$H^m(\Omega)$]\label{Th-Hm}\index{espace!de Sobolev!$H^m(\Omega)$}

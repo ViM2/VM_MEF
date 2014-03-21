@@ -136,7 +136,11 @@ V^i=\left\{x\in\RR^2/ \|x-x^i\|\le\|x-x^j\|, \forall j\in\{1, ..., N_p\}\right\}
 \textcolorgreen{Chaque point~$x^i$ (point générateur) étant considéré comme une île d'où partent des bateaux, la région de Voronoï du point~$x^i$ est la région où un bateau issu de l'île~$x^i$ arrive avant tout bateau issu d'une autre île.}
 Notons qu'il est possible de jouer avec la métrique pour définir des diagrammes de Voronoï sur d'autres géométries que la géométrie euclidienne, et qu'il est possible également d'étendre la définition au cas où «les bateaux ne vont pas tous à la même vitesse». Dans ce dernier cas, on parle de \textcolorblue{diagramme de Voronoï pondéré}, que nous n'utiliserons pas dans ce document.
 
-\medskip\ifVersionDuDocEstVincent\else\newpage\fi
+\medskip
+Les diagrammes de Voronoï\index{diagramme de Voronoï} sont des polygones obtenus comme intersections finies de demi-espaces et sont donc convexes. 
+De plus, les sommets~$v^k$ de ces polygones sont à égale distance des points~$\{x^{i^k_j}, j = 1, ..., n_k\}$ de~$\mathcal{S}$, où le nombre $n_k$ est généralement égal ou supérieur à 3. À chacun de ces sommets~$v^k$, nous pouvons associer le polygone convexe construit avec les points~$\{x^{i^k_j}, j=1, ..., n_k\}$ en tournant dans le sens trigonométrique. Ce maillage est généralement formé de triangles, sauf si il y a des points cocycliques.
+
+\medskip%\ifVersionDuDocEstVincent\else\newpage\fi
 \begin{histoire}
 L'usage informel des diagrammes de Voronoï\index[aut]{Voronoï (Gueorgui Feodossievitch), 1868-1908, Russe} remonte à Descartes\index[aut]{Descartes (René), 1596-1650, Français} en 1644. Dirichlet\index[aut]{Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand} a utilisé des diagrammes de Voronoï en dimension 2 ou 3 dans son étude des formes quadratiques en 1850.
 Le médecin britannique John Snow\index[aut]{Snow (John), 1813-1858, Anglais} a utilisé un diagramme de Voronoï en 1854 pour montrer que la majorité des personnes mortes dans l'épidémie de choléra de Soho (à Londres) vivait plus près de la pompe infectée de Broad Street que de n'importe quelle autre pompe.
@@ -174,9 +178,7 @@ On parle souvent de la triangulation de Delaunay\index[aut]{Delaunay (Boris Niko
 \end{itemize}
 \end{histoire}
 
-\medskip
-Les diagrammes de Voronoï\index{diagramme de Voronoï} sont des polygones obtenus comme intersections finies de demi-espaces et sont donc convexes. 
-De plus, les sommets~$v^k$ de ces polygones sont à égale distance des points~$\{x^{i^k_j}, j = 1, ..., n_k\}$ de~$\mathcal{S}$, où le nombre $n_k$ est généralement égal ou supérieur à 3. À chacun de ces sommets~$v^k$, nous pouvons associer le polygone convexe construit avec les points~$\{x^{i^k_j}, j=1, ..., n_k\}$ en tournant dans le sens trigonométrique. Ce maillage est généralement formé de triangles, sauf si il y a des points cocycliques.
+
 
 \begin{definition}[Maillage de Delaunay]\index{maillage de Delaunay-Voronoï}
 On appelle \textcolorblue{maillage de Delaunay strict}, le maillage dual des diagrammes de Voronoï, construit en reliant deux points~$x^i$ et~$x^j$, si les diagrammes~$V^i$ et~$V^j$ ont un segment en commun.
@@ -260,7 +262,7 @@ Le principe est on ne peut plus simple. Il s'agit de mettre en bijection deux do
 Pour faire simple, on peut imaginer mailler une ellipse à partir du maillage d'un disque, un rectangle à partir du maillage d'un carré... on peut dire que l'\textcolorgreen{on fait du morphing sur un maillage}.
 Dans la pratique, on part de la surface d'un domaine tridimensionnel complexe. On transforme cette surface en une surface plane par une certaine transformation. On maille cette nouvelle surface dans le plan. Puis on effectue la transformation inverse afin de disposer d'un maillage de la surface dans~$\RR^3$.
 
-\medskip
+\ifVersionDuDocEstVincent\medskip\else\newpage\fi
 \begin{wrapfigure}{l}{60mm}
 \begin{center}
 \includegraphics[width=60mm]{atlas.eps}
