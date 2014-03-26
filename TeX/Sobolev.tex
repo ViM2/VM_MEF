@@ -129,7 +129,7 @@ L'espace des distributions est extrêmement grand, et contient tous les espaces 
 \begin{remarque}[Complément topologique]
 L'espace~$\mathcal{D}$ n'est pas métrisable. Définir sa topologie n'est pas équivalent à définir la convergence des suites. Cependant, dans la pratique c'est presque la seule notion de convergence que l'on utilise.
 
-\medskip
+\medskip\noindent
 Soit~$\Omega$ un ouvert de~$\RR^n$. On muni~$\mathcal{D}'(\Omega)$ de la topologie faible-* induite par~$\mathcal{D}(\Omega)$. Alors:\\
 -- $\mathcal{D}'(\Omega)$ est un espace topologique complet (et un espace de Montel);\index[aut]{Montel (Paul Antoine Aristide Montel), 1876-1975, Français}\\
 -- Le dual topologique de~$\mathcal{D}'(\Omega)$ s'identifie à~$\mathcal{D}(\Omega)$, qui est donc réflexif;\\
@@ -154,7 +154,20 @@ Une propriété fondamentales est que \textcolorblue{toute fonction localement i
 \medskip
 \begin{remarque}[Commentaire sur le choix de l'espace~$\mathcal{D}$]\colorgreen
 Pourquoi ce choix, qui semble assez restrictif?
-Notons tout d'abord que plus on restreint la classe des fonctions-tests, plus l'espace des distributions définies sur ces fonctions sera grand. De plus, le fait que les fonctions-tests soient de classe~$C^\infty$ n'est pas très restrictif en fait, car toute fonction continue à support borné est limite uniforme de telles fonctions. Le fait qu'elles soient de support borné est levé si l'on considère l'espace de Schwartz~$\mathcal{S}$ des fonctions-tests lisses, i.e. de classe~$C^\infty$, et à décroissance rapide ainsi que toutes leurs dérivées. Dans ce cas, l'espace dual~$\mathcal{S}'$ qui en résulte est plus petit que~$\mathcal{D}$. Pour plus de détails sur ce sujet, on consultera un cours sur la transformée de Fourier, par exemple un cours de traitement du signal.
+Notons tout d'abord que plus on restreint la classe des fonctions-tests, plus l'espace des distributions définies sur ces fonctions sera grand. De plus, le fait que les fonctions-tests soient de classe~$C^\infty$ n'est pas très restrictif en fait, car toute fonction continue à support borné est limite uniforme de telles fonctions. 
+
+\colorgris
+Si l'on considère un espace de fonctions tests plus grand que $\mathcal{D}$, alors les fonctionnelles linéaires continues sur ce nouvel espace forment un sous-espace vectoriel de $\mathcal{D}'$. Deux espaces de fonctions tests couramment utilisés sont:
+\begin{itemize}
+   \item L'espace $\mathcal{E}$ des fonctions indéfiniment dérivables quelconques;
+   \item L'espace $\mathcal{S}$ des fonctions indéfiniment dérivables et qui décroissent, ainsi que leurs dérivées, plus vite que toute puissance de $1/x$ à l'infini, i.e. que pour tout~$k>0$ et pour tout~$h>0$, $x^kf^{(h)}(x)$ est bornée.
+\end{itemize}
+On obtient alors l'espace~$\mathcal{E}'$ des distributions à support compact et l'espace~$\mathcal{S}'$ des distributions dites tempérées (ou à croissance lente).
+\[ \begin{array}{ll}
+\text{Espaces de fonctions tests: } & \mathcal{D} \subset \mathcal{S} \subset \mathcal{E} \\
+\text{Espaces de distributions: } &  \mathcal{D}' \supset \mathcal{S}' \supset \mathcal{E}'
+\end{array} \]
+Pour plus de détails sur ce sujet, on consultera un cours sur la transformée de Fourier, ou un cours de traitement du signal.
 \end{remarque}
 
 \medskip
@@ -549,12 +562,12 @@ Cependant en pratique, on n'identifie pas~$H^{-1}(\Omega)$ et~$H^1_0(\Omega)$.
 En effet, ayant défini~$H^1_0(\Omega)$ comme un sous-espace strict mais dense de~$L^2(\Omega)$, et ayant déjà identifié~$L^2(\Omega)$ à son dual (muni du produit scalaire usuel, voir chapitre précédent), on ne peut pas en plus identifier~$H^{-1}(\Omega)$ et~$H^1_0(\Omega)$ (avec un autre produit scalaire). On a donc les inclusions strictes suivantes:
 \begin{equation} H^1_0(\Omega)\subset L^2(\Omega)\equiv \left(L^2(\Omega)\right)'\subset H^{-1}(\Omega)
 \end{equation}}
-\medskipvm
+%\medskipvm
 \textcolormagenta{%
 Grâce à~$H^{-1}(\Omega)$, on pourrait définir une nouvelle notion de dérivation pour les fonctions de~$L^2(\Omega)$, plus faible encore que la dérivée faible.
 Devant l'afflux de notions de dérivations, rassurons le lecteur en disant qu'elles sont toutes des avatars de la dérivation au sens des distributions (c'est l'intérêt de la théorie des distribution que d'avoir unifié ces divers types de dérivation).}
 
-\bigskip
+\medskip
 L'exemple le plus simple à retenir, et le plus utile pour la suite, est que tout élément~$f$ de~$H^{-1}(\Omega)$ s'écrit, au sens des distributions, sous la forme:
 \begin{equation}\colorred
 f = u + \dive G

@@ -79,7 +79,9 @@ Le calcul des variations reste en mathématiques un domaine fort actif, et les m
 \end{histoire}
 
 \ifVersionDuDocEstVincent\newpage\else\medskip\fi
-\section{Existence et unicité d'un minimum}
+\section{Théorie de l'optimisation}
+
+\subsection{Existence et unicité d'un minimum}
 \begin{definition}[Minima]
 Soient~$V$ un espace de Banach et~$K\subset V$ un sous-ensemble non vide. Soit~$J: V\rightarrow\RR$ le critère (i.e. la fonction objectif). On considère le problème:
 \begin{equation}
@@ -156,7 +158,7 @@ Si la fonction~$J$ est convexe sur un ensemble convexe~$K$, alors tout point de 
 On voit donc tout l'intérêt de vérifier que notre fonction objectif est convexe. Un exemple d'un tel problème en mécanique est la minimisation de l'énergie.
 
 \medskip
-\section{Différentiabilité et optimalité}
+\subsection{Différentiabilité et optimalité}
 
 Nous avons déjà présenté au paragraphe~\ref{Sec-Differentielle}, à l'équation~(\ref{Eq-Differentielle}), la différentielle.\index{différentielle} Si une fonction peut être approchée par une forme linéaire (la différentielle), alors on dit également qu'elle est \textcolorblue{différentiable au sens de Fréchet}.\index{dérivée!au sens de Fréchet}\index[aut]{Fréchet (Maurice René), 1878-1973, Français}
 
@@ -217,7 +219,7 @@ Pour les fonctions convexes, elle est \textcolorblue{nécessaire et suffisante}.
 
 
 \medskip
-\section{Lagrangien}\index{lagrangien}
+\subsection{Lagrangien}\index{lagrangien}
 
 Dans un premier temps, nous allons nous intéresser au problème de minimisation avec contraintes d'égalité. Le cas des contraintes d'inégalités sera traiter juste à la suite.
 
@@ -314,7 +316,7 @@ et ainsi~$\lambda$ donne bien la dérivée (sans la calculer) du minimum par rap
 
 
 \medskip
-\section{Dualité et point selle}
+\subsection{Dualité et point selle}
 
 Dans ce paragraphe, on va regarder comment supprimer les contraintes portant sur le problème. Pour cela, on va adjoindre au problème dit primal, un problème dual. Ce dernier est souvent plus simple que le problème primal, notamment parce qu'il ne comporte pas de contraintes. Évidemment, connaissant la solution du problème dual, on devra être en mesure de remonter à celle du problème primal.
 
@@ -351,7 +353,7 @@ Le couple~$(u,p)$ est un point selle de~$\mathcal{L}$ sur~$U\times P$ si et seul
 
 \textcolorgreen{Ainsi, si l'on sait résoudre le problème dual, alors on obtient la solution du problème primal grâce à une minimisation \textcolorred{sans} contrainte.}
 
-\section{Maximisation}
+\subsection{Maximisation}
 
 Jusqu'à présent, nous n'avons parlé que de problème de minimisation.
 Si l'on a à traiter un problème de maximisation, il suffit alors de le transformer en problème de minimisation:
@@ -360,7 +362,7 @@ Si l'on a à traiter un problème de maximisation, il suffit alors de le transfo
 \end{equation}
 
 \medskip
-\section{Ensemble admissible}
+\subsection{Ensemble admissible}
 
 Nous avons été assez vagues sur le domaine dans lequel peuvent varier les variables d'optimisation. Nous avons parlé d'espace, d'ensemble connexe...
 
@@ -405,7 +407,7 @@ Numériquement, on préfère la contrainte de régularité:
 \end{equation}
 
 \medskip
-\section{L'optimisation discrète}\label{Sec-OptDisc}
+\subsection{L'optimisation discrète}\label{Sec-OptDisc}
 
 On peut également discrétiser des contraintes d'optimisation. L'ensemble admissible devient alors:
 \begin{equation}
@@ -427,7 +429,7 @@ Il n'y a pas de simplification à utiliser une approche discrète plutôt que co
 
 
 \medskip
-\section{Remarques sur la mise en œuvre}
+\subsection{Remarques sur la mise en œuvre}
 
 Des méthodes dites «stochastiques» telles que Monte-Carlo, recuit simulé ou des algorithmes génétiques sont envisageables. Elles sont coûteuses en CPU et nous ne les aborderons pas.
 
@@ -649,10 +651,10 @@ Des simplifications, des conditions d'optimalité, la vérification de convexit�
 
 
 \medskip
-\section{Exemples d'optimisation d'une plaque}
+\section{Exemples d'optimisation d'une membrane}
 
 Dans ce paragraphe, nous considèrerons une membrane élastique occupant au repos un domaine plan~$\Omega$, ouvert borné régulier de~$\RR^2$, et nous nous intéresserons au déplacement vertical de la membrane~$u(x)$ solution de l'équation:
-\begin{equation}
+\begin{equation}\label{Eq-PbMembrane}
 -\dive(K(x)\nabla u) = f \text{ dans }\Omega
 \end{equation}
 avec~$f\in L^2(\Omega)$ les forces appliquées.
@@ -720,4 +722,251 @@ avec~$C(x)$ une fonction régulière donnée.
 Un condition nécessaire d'optimalité pour~$\theta$ est que la dérivée~$J'(\theta)$ s'annule.
 Calculons donc le gradient de la fonction objectif dans la direction~$\eta\in L^\infty(\Omega)$. Elle est donnée par:
 \[ \langle J'(\theta),\eta\rangle = \lim_{t\rightarrow0} \dfrac{J(\theta+t\eta)-J(\theta)}{t} \]
+
+Soit~$u(\theta+t\eta)$ la solution de l'équation d'état pour l'angle~$\theta+t\eta$. En notant~$v=\langle u'(\theta),\eta\rangle$ la dérivée en~$t=0$ de la fonction~$t \mapsto u(\theta+t\eta)$, on obtient:
+\[ \langle J'(\theta),\eta\rangle = 2\dint_\Omega C(x)(u(x)-u_0(x))v(x) \]
+
+En dérivant l'équation d'état par rapport à~$t$, on obtient l'équation vérifiée par~$v$:
+\[\left\{\begin{array}{ll} -\dive(K\nabla v)=\dive(K'(\theta)\eta\nabla u) &\text{ dans }\Omega \\ v=0 &\text{ sur }\partial\Omega \end{array}\right. \]
+avec~$K'$ la dérivée de la fonction~$\theta \mapsto K(\theta)$.
+
+Pour éliminer~$v$, on introduit l'état adjoint~$p$, solution unique de:
+\[\left\{\begin{array}{ll} -\dive(K\nabla p)=2C(u-u_0) &\text{ dans }\Omega \\ p=0 &\text{ sur }\partial\Omega \end{array}\right. \]
+puis, comme indiqué plus haut, on multiplie l'équation en~$v$ par~$p$ et vice versa. En intégrant, il vient:
+\[ \dint_\Omega K\nabla p.\nabla v = 2\dint_\Omega C(u-u_0)v = -\dint_\Omega K'(\theta)\eta\nabla u.\nabla p \]
+d'où l'on déduit que:
+\[ \langle J'(\theta),\eta\rangle =  -\dint_\Omega K'(\theta)\eta\nabla u.\nabla p \]
+
+Comme~$K'(\theta)\eta\nabla u.\nabla p$ est dans~$L^1(\Omega)$, qui lui-même est un sous-espace des formes linéaires continues sur~$L^\infty(\Omega)$, on peut conclure que:
+\[ J'(\theta) =  K'(\theta)\eta\nabla u.\nabla p \]
+
+\medskip
+Revenons à notre problème d'optimisation. Nous avons déjà mentionné qu'une condition nécessaire d'optimalité pour~$\theta$ est que~$J'(\theta)=0$. Autrement dit, en fixant les vecteurs~$\nabla u$ et~$\nabla p$, l'application~$\theta \mapsto K(\theta)\nabla u.\nabla p$ admet un extremum en tout point~$x$. Si soit~$\nabla u$ soit~$\nabla p$ est nul, alors on ne peut rien dire de l'angle~$\theta$. Sinon, on introduit deux vecteurs orthogonaux:
+\[ a=\dfrac{\nabla u}{|\nabla u|}+\dfrac{\nabla p}{|\nabla p|} \quad \text{ et}\quad
+b=\dfrac{\nabla u}{|\nabla u|}-\dfrac{\nabla p}{|\nabla p|} \]
+et on réécrit:
+\[\begin{array}{ll}
+K(\theta)\nabla u.\nabla p &= \dfrac{|\nabla u||\nabla p|}{4}(K(\theta)a.a -K(\theta)b.b)\\
+&= \dfrac{|\nabla u||\nabla p|}{4}(K_0(Ra).(Ra)-K_0(Rb).(Rb))
+\end{array}\]
+dont les extrema sont des minima ou des maxima (pas de point selle) qui s'obtiennent en alignant les vecteurs~$Ra$ et~$Rb$ avec les vecteurs propres du tenseur~$K_0$, que nous noterons~$e_1$ et~$e_2$ (i.e.~$Ra$ aligné avec~$e_1$ ou~$e_2$, et donc~$Rb$ aligné avec l'autre).
+On a donc obtenu les angles minimisant le problème.
+
+\medskip
+\subsection{Optimisation de l'épaisseur en rigidité}
+
+On s'intéresse toujours au déplacement vertical~$u$ de la membrane, solution de l'équation~(\ref{Eq-PbMembrane}), dans le cas où~$K(x)=h(x)$, avec conditions de Dirichlet sur le bord:
+\[\left\{\begin{array}{ll} -\dive (h(x)\nabla u)=f &\text{ dans }\Omega\\ u=0 &\text{ sur }\partial\Omega \end{array} \right. \]
+avec~$f\in L^2(\Omega)$.
+
+L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
+\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+et l'on s'intéresse à la fonction objectif:
+\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dint_\Omega g(x)u(x) \]
+où~$g(x)\in L^2(\Omega)$ est une fonction donnée.
+
+\medskip
+La formulation variationnelle du problème est: trouver~$u\in H^1_0(\Omega)$ tel que:
+\[ \dint_\Omega h\nabla u.\nabla v=\dint_\Omega fv, \quad \forall v\in H^1_0(\Omega) \]
+
+Le \textcolorblue{Lagrangien} (qui rappelons le est la somme de la fonction objectif et de la formulation variationnelle considérée comme une contrainte) est:
+\[ \mathcal{L}(h,v,q) = \dint_\Omega gv + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
+où~$(h,v,q)\in \mathcal{U}_{ad}\times H^1_0(\Omega)\times H^1_0(\Omega)$.
+
+\medskip
+La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par:
+\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in H^1_0(\Omega) \]
+i.e.:
+\[ \dint_\Omega h\nabla p.\nabla\varphi + \dint_\Omega g\varphi =0, \quad \forall\varphi\in H^1_0(\Omega) \]
+
+Par conséquent, \textcolorblue{l'état adjoint}~$p\in H^1_0(\Omega)$ est solution de:
+\[\left\{\begin{array}{ll}
+-\dive(h\nabla p) = -g &\text{ dans }\Omega\\
+p=0 &\text{ sur }\partial\Omega
+\end{array}\right.\]
+
+\medskip
+La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,u,p),k\rangle =\dint_\Omega k\nabla u.\nabla p \]
+soit: $J'(h)=\nabla u.\nabla p$.
+
+
+\medskip
+\subsection{Optimisation de l'épaisseur pour un déplacement cible}
+
+On s'intéresse au même problème qu'au paragraphe précédent:
+\[\left\{\begin{array}{ll} -\dive (h(x)\nabla u)=f &\text{ dans }\Omega\\ u=0 &\text{ sur }\partial\Omega \end{array} \right. \]
+avec~$f\in L^2(\Omega)$.
+
+L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
+\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+et l'on s'intéresse à la fonction objectif:
+\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dint_\Omega |\nabla u(x)-\nabla u_0(x)|^2 \]
+où~$u_0(x)\in H^1(\Omega)$ est un déplacement cible donné.
+
+\medskip
+La formulation variationnelle a été donnée au paragraphe précédent, et le \textcolorblue{Lagrangien} est défini par:
+\[ \mathcal{L}(h,v,q) = \dint_\Omega |\nabla v-\nabla u_0|^2 + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
+où~$(h,v,q)\in \mathcal{U}_{ad}\times H^1_0(\Omega)\times H^1_0(\Omega)$.
+
+\medskip
+La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par: 
+\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in H^1_0(\Omega) \]
+i.e.:
+\[ \dint_\Omega h\nabla p.\nabla\varphi + 2 \dint_\Omega \nabla(u-u_0).\nabla\varphi =0, \quad \forall\varphi\in H^1_0(\Omega) \]
+
+Par conséquent, \textcolorblue{l'état adjoint}~$p\in H^1_0(\Omega)$ est solution de:
+\[\left\{\begin{array}{ll}
+-\dive(h\nabla p) = 2\Delta(u-u_0) &\text{ dans }\Omega\\
+p=0 &\text{ sur }\partial\Omega
+\end{array}\right.\]
+
+\medskip
+La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,u,p),k\rangle =\dint_\Omega k\nabla u.\nabla p \]
+soit: $J'(h)=\nabla u.\nabla p$. Compte-tenu du paragraphe précédent, ne pouvait-on se douter du résultat?
+
+\medskip
+\subsection{Optimisation de l'épaisseur pour une contrainte cible}
+
+On va maintenant considérer que le bord du domaine est partitionné en deux parties de mesures non nulles~$\partial\Omega=\Gamma_D\cup\Gamma_N$. Le problème à résoudre est donc:
+\[\left\{\begin{array}{ll} -\dive (h(x)\nabla u)=f &\text{ dans }\Omega\\ 
+u=0 &\text{ sur }\Gamma_D\\ h\dfrac{\partial u}{\partial n} =0 &\text{ sur }\Gamma_N \end{array} \right. \]
+avec~$f\in L^2(\Omega)$.
+
+L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
+\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+et l'on s'intéresse à la fonction objectif:
+\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dfrac12\dint_\Omega |\sigma(x)-\sigma_0(x)|^2 \]
+où~$\sigma=h\nabla u$ est le vecteur des contraintes, et~$\sigma_0(x)\in L^2(\Omega)^N$  une contraintes cible donnée.
+
+\medskip
+Pour écrire la formulation variationnelle du problème est, on introduit l'espace de Hilbert~$V=\{u\in H^1(\Omega)/ u=0 \text{ sur }\Gamma_D\}$. Il s'agit donc de trouver~$u\in V$ tel que:
+\[ \dint_\Omega h\nabla u.\nabla v=\dint_\Omega fv, \quad \forall v\in V \]
+
+Le \textcolorblue{Lagrangien} est:
+\[ \mathcal{L}(h,v,q) = \frac12\dint_\Omega |\sigma-\sigma_0|^2 + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
+où~$(h,v,q)\in \mathcal{U}_{ad}\times V\times V$.
+
+\medskip
+La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par:
+\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in V \]
+i.e.:
+\[ \dint_\Omega h\nabla p.\nabla\varphi + \dint_\Omega (\sigma-\sigma_0).h\nabla\varphi =0, \quad \forall\varphi\in V \]
+
+Par conséquent, \textcolorblue{l'état adjoint}~$p\in V$ est solution de:
+\[\left\{\begin{array}{ll}
+-\dive(h\nabla p) = \dive(h(\sigma-\sigma_0)) &\text{ dans }\Omega\\
+p=0 &\text{ sur }\Gamma_D\\
+h\dfrac{\partial p}{\partial n}=-h(\sigma-\sigma_0) &\text{ sur }\Gamma_N
+\end{array}\right.\]
+Cette dernière condition pouvant de réécrire:
+\[ h\dfrac{\partial p}{\partial n}=h\sigma_0.n \quad\text{ sur }\Gamma_N \]
+car~$\partial u/\partial n=0$ sur~$\Gamma_N$.
+
+\medskip
+La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,u,p),k\rangle = \dint_\Omega (\sigma-\sigma_0).k\nabla u+\dint_\Omega k\nabla u.\nabla p  \]
+soit: $J'(h)=(\sigma-\sigma_0).\nabla u + \nabla u.\nabla p$.
+
+
+\medskip
+\subsection{Optimisation géométrique en rigidité sous tension prescrite}
+
+On reprend le cas précédent, mais on impose cette fois la contrainte normale sur~$\Gamma_N$:
+On considère une membrane dont le bord est partitionné en deux parties de mesures non nulles~$\partial\Omega=\Gamma_D\cup\Gamma_N$. Cette membrane est d'épaisseur constante non variable (et donc on pourra la faire disparaître des équations), et n'est soumises à aucune force dans~$\Omega$. Elle est fixée sur~$\Gamma_D$ et est soumise à une contrainte normale prescrite sur le bord~$\Gamma_N$. Le problème à résoudre est donc:
+\[\left\{\begin{array}{ll} -\Delta u =0 &\text{ dans }\Omega\\ 
+u=0 &\text{ sur }\Gamma_D\\ 
+\dfrac{\partial u}{\partial n} =g.n &\text{ sur }\Gamma_N 
+\end{array} \right. \]
+avec~$g\in C^1(\RR^2)^2$ est un champ de vecteur donné.
+
+Le bord~$\Gamma_D$ est fixe, mais le bord~$\Gamma_N$ peut varier. L'ensemble des formes admissibles à volume constant est:
+\[ \mathcal{U}_{ad} = \{ \Omega\in\RR^2/ \Gamma_D\subset\partial\Omega, |\Omega|=V_0 \} \]
+et l'on optimise la rigidité de la membrane en minimisant sa compliance:
+\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dint_{\Gamma_N} ug.n \]
+
+\medskip
+Pour écrire la formulation variationnelle du problème est, on introduit l'espace de Hilbert~$V=\{u\in H^1(\Omega)/ u=0 \text{ sur }\Gamma_D\}$. Il s'agit donc de trouver~$u\in V$ tel que:
+\[ \dint_\Omega \nabla u.\nabla v=\dint_{\Gamma_N} g.nv, \quad \forall v\in V \]
+
+Le \textcolorblue{Lagrangien} est:
+\[ \mathcal{L}(\Omega,v,q) = \dint_{\Gamma_N} g.nv + \dint_\Omega \nabla v.\nabla q - \dint_{\Gamma_N} g.nq \]
+où les paramètres~$v$ et~$q$ sont dans~$X=\{\varphi\in H^1(\RR^2)/ \varphi=0 \text{ sur }\Gamma_D \}$.
+On remarquera que les trois variables~$(\Omega,v,q)$ sont bien indépendantes.
+
+\medskip
+La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par:
+\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(\Omega,u,p),\varphi\rangle=0, \quad \forall\varphi\in X \]
+i.e.:
+\[ \dint_\Omega \nabla\varphi.\nabla p + \dint_{\Gamma_N} g.n\varphi =0, \quad \forall\varphi\in X \]
+
+Par conséquent, \textcolorblue{l'état adjoint}~$p\in H^1(\RR^2)$ est solution de:
+\[\left\{\begin{array}{ll}
+-\Delta p =0 &\text{ dans }\Omega\\
+p=0 &\text{ sur }\Gamma_D\\
+\dfrac{\partial p}{\partial n}=-g.n &\text{ sur }\Gamma_N
+\end{array}\right.\]
+Cela implique que~$p=-u$ (le problème est auto-adjoint).
+
+\medskip
+La dérivée de la fonction objectif~$J(\Omega)$ va faire intervenir la normale~$n$ qui dépend de~$\Omega$, on élimine cela en réécrivant le Lagrangien sous la forme:
+\[ \mathcal{L}(\Omega,v,q)=\dint_\Omega \dive(vg) + \dint_\Omega\nabla u.\nabla q-\dint_\Omega \dive(qg) \]
+La \textcolorblue{dérivée de forme} s'obtient donc formellement par:
+\[ \langle J'(\Omega),\theta\rangle = \dint_\Omega J'(h)\theta = \langle\dfrac{\partial\mathcal{L}}{\partial \Omega}(\Omega,u,p),\theta\rangle = \langle\dfrac{\partial\mathcal{L}}{\partial \Omega}(\Omega,u,-u),\theta\rangle  \]
+En n'oubliant pas que~$\Gamma_D$ est fixe, et que seul~$\Gamma_N$ peut varier, on obtient:
+\[ J'(\Omega)(\theta)= -\dint_{\Gamma_N} \theta.n(|\nabla u|^2-2\dive(ug)) \]
+
+
+\medskip
+\subsection{Optimisation de l'épaisseur pour la première fréquence propre}
+
+On s'intéresse toujours au déplacement vertical~$u$ de la membrane d'épaisseur variable~$h(x)$ avec conditions de Dirichlet sur le bord, mais on va chercher cette fois à ce que ce déplacement vertical~$u\in H^1_0(\Omega)$ soit une fonction propre non nulle associée à la valeur propre~$\lambda(h)\in\RR$. Notre problème est donc:
+\[\left\{\begin{array}{ll} -\dive (h\nabla u)=\lambda(h)u &\text{ dans }\Omega\\ u=0 &\text{ sur }\partial\Omega \end{array} \right. \]
+
+On s'intéresse au mode fondamental de la membrane, i.e. au cas où~$\lambda(h)$ est la plus petite valeur propre. Or celle-ci est donnée par:
+\[ \lambda(h) = \min_{v\in H^1_0(\Omega), v\ne 0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2} \]
+
+L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
+\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+et l'on veut maximiser la première fréquence propre de vibration. On s'intéresse à la fonction objectif:
+\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = -\lambda(h)+\ell \dint_\Omega h(x) \]
+où~$\ell\ge0$ est le multiplicateur de Lagrange fixé pour une contrainte sur l'aire de la membrane.
+
+\medskip
+Intéressons nous d'abord au cas où~$\ell=0$. Dans ce cas, la fonction objectif peut se réécrire:
+\[ -\sup_{h\in\mathcal{U}_{ad}} \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2} \]
+que l'on transforme en problème de minimisation (en sortant le signe~$-$).
+
+De plus, comme~$h\le h_{max}$, on a:
+\[ \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2}
+\le \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h_{max}|\nabla v|^2}{\int_\Omega v^2} \]
+pour toute épaisseur~$h\in\mathcal{U}_{ad}$. Autrement dit, la fonction constante~$h=h_{max}$ minimise la fonction objectif. Cela signifie simplement qu'en l'absence de contrainte de volume ou de poids, la membrane qui maximise la première fréquence propre est la plus épaisse.
+
+\medskip
+Revenons maintenant au cas où~$\ell\ne0$. Le \textcolorblue{Lagrangien} est:
+\[ \mathcal{L}(h,\mu,v,q) = -\mu +\ell\dint_\Omega f(x)
++\dint_\Omega (h\nabla v.\nabla q -\mu vq)\]
+avec~$(h,\mu,v,q)\in\mathcal{U}_{ad}\times\RR\times H^1_0(\Omega)\times H^1_0(\Omega)$.
+
+Comme on le faisait remarquer, l'équation d'état se retrouve en dérivant le Lagrangien par rapport à~$q$. La formulation variationnelle associée s'écrit:
+\[ \langle\dfrac{\partial\mathcal{L}}{\partial q}(h,\lambda,u,p),\varphi\rangle=0,
+\quad \forall \varphi\in H^1_0(\Omega) \]
+
+Le Lagrangien étant symétrique en~$v$ et~$q$, donc sa dérivée par rapport à~$v$ est identique à celle par rapport à~$q$. L'équation d'état pour l'état adjoint est la même que pour l'équation d'état (le problème est auto-adjoint). Néanmoins, la fonction propre n'étant définie qu'à une constante multiplicative près, on peut simplement dire que~$p$ et~$u$ sont proportionnels. Pour connaître cette constante de proportionnalité, on dérive le Lagrangien par rapport à~$\mu$ et, à l'optimum, cette dérivée étant nulle, on obtient:
+\[ -1-\dint_\Omega up =0 \]
+d'où:
+\[ p=-\dfrac{u}{\dint_\Omega u^2} \]
+
+\medskip
+La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,\lambda,u,p),k\rangle = \dint_\Omega k(\ell+\nabla u.\nabla p) \]
+soit: $J'(h)=\ell - \dfrac{|\nabla u|^2}{\int_\Omega u^2}$.
+
+
+
+
+
+
+
 
