@@ -453,7 +453,7 @@ En se plaçant dans le cas statique, et en écrivant «en déplacements», i.e. 
 \textcolorgris{Notons que pour prouver la coercitivité de la forme bilinéaire, il faut recourir à l'inégalité de Korn.}
 
 \medskip
-Si en plus le matériau est isotrope, cette expression se simplifie en:
+Si en plus le matériau est isotrope, cette expression se simplifie ($\lambda$ et~$\mu$ sont les coefficients de Lamé) en:
 \begin{equation}\label{Eq-StatLinIso}
 \dint_\Omega \lambda \dive(u)\dive(v)+2\mu\varepsilon(u)\cdot\varepsilon(v) = \dint_\Omega fv +
 \dint_{\Gamma_N} g_N v, \quad \forall v\in H^1_D(\Omega)
@@ -554,6 +554,98 @@ a l'avantage de \textcolorred{ne pas comporter de dérivée}.
 
 \medskip
 Au paragraphe~\ref{Sec-champs}, nous reprendrons ces formulations pour les exprimer, peut-être de manière plus «explicite» pour le lecteur sous forme matricielle.
+
+\medskip
+\subsection{Équation des plaques}
+
+Soit~$\Omega$ un ouvert borné régulier de~$\RR^n$, l'équation des plaques est:
+\begin{equation}\label{Eq-Plaques}
+\Delta(\Delta u) = f \text{ dans } \Omega
+\end{equation}
+
+Nous considérons les conditions aux limites suivantes:
+\begin{equation}
+\left\{\begin{array}{ll}
+u=0 & \text{ sur } \Gamma=\partial\Omega\\
+\dfrac{\partial u}{\partial n} = 0 & \text{ sur } \Gamma
+\end{array}\right.
+\end{equation}
+
+La formulation variationnelle correspondante est:
+\begin{equation}\label{Eq-Plaques-var}
+\dint_\Omega \Delta u\Delta v = \dint_\Omega fv, \qquad \forall v\in V
+\end{equation}
+où~$V$ est l'espace des fonction~$C^2(\overline{\Omega})$ vérifiant les conditions aux limites, i.e. telles que~$v=0$ et $\partial v/\partial n = 0$ sur~$\Gamma$ (démonstration 1 ci-dessous), ou~$V$ est l'espace~$H^2_0(\Omega)$ (démonstration 2 ci-dessous).
+
+\begin{demonstration}\footnotesize\colorgris
+Nous allons faire l'effort ici d'écrire la démonstration.
+
+À priori, une solution~$u$ de l'équation des plaques est une fonction de~$C^4(\overline{\Omega})$.
+
+Soit~$u$ une solution régulière de l'équation des plaques~(\ref{Eq-Plaques}). Pour toute fonction$v\in V$, on a:
+\[ \dint_\Omega \Delta(\Delta u) v = \dint_\Omega fv \]
+Par intégration par parties, il vient:
+\[  \dint_\Omega \Delta(\Delta u) v = -\dint_\Omega \nabla (\Delta u).\nabla v +
+\dint_\Gamma \dfrac{\partial(\Delta u}{\partial n} v \]
+or~$v=0$ sur~$\Gamma$, d'où:
+\[  \dint_\Omega \Delta(\Delta u) v = -\dint_\Omega \nabla (\Delta u).\nabla v \]
+Une seconde intégration par parties conduit à:
+\[  \dint_\Omega \Delta(\Delta u) v = \dint_\Omega \Delta u\Delta v -
+\dint_\Gamma \Delta u \dfrac{\partial v}{\partial n} \]
+et comme~$\partial v/\partial n=0$, il reste:
+\[  \dint_\Omega \Delta(\Delta u) v = \dint_\Omega \Delta u\Delta v \]
+
+Finalement, on obtient bien:
+\[ \dint_\Omega \Delta u\Delta v = \dint_\Omega fv, \qquad \forall v\in V \]
+
+\medskip
+Vérifions la réciproque.
+Supposons donc maintenant que~$u$ est une solution du problème~(\ref{Eq-Plaques-var}).
+En effectuant deux intégration par parties successives, il vient:
+\[ \dint_\Omega \left( \Delta(\Delta u) -f\right) v =0 \]
+pour toute fonction~$v\in V$.
+Or~$V$ est un sous-espace dense de~$L^2(\Omega)$, et donc:
+\[ \Delta(\Delta u) - f =0 \]~$\square$\colorblack
+\end{demonstration}
+
+\begin{demonstration}[Autre démonstration par application du théorème de Lax-Milgram]\footnotesize\colorgris
+La formulation variationnelle associée à l'équation des plaques consiste à déterminer~$u\in H^2_0(\Omega)$ tel que:
+\[ a(u,v) = b(v) \qquad \forall v\in H^2_0(\Omega)\]
+avec:
+\[ a(u,v)= \dint_\Omega \Delta u \Delta v \quad \text{ et } \quad
+b(v) = \dint_\Omega fv \]
+
+La seule hypothèse non triviale à vérifier afin de pouvoir appliquer le théorème de Lax-Milgram est la coercitivité de la forme bilinéaire~$a(.,.)$.
+Pour tout~$u\in H^2_0(\Omega)$, deux intégrations par parties successives conduisent à:
+\[ a(u,u) = \dsum_{i,j} \dint_\Omega \left| \dfrac{\partial^2 u}{\partial x_i\partial x_j}\right|^2 = \|\nabla^2 u\|_{L^2(\Omega)} \]
+L'application de l'inégalité de Poincaré deux fois permet de conclure à l'existence de deux constantes positives~$C$ et~$C'$ telles que, $\forall u\in H^2_0(\Omega)$ on ait:
+\[ \|u\|^2_{L^2(\Omega)} \le C \|\nabla u\|^2_{L^2(\Omega)} \le 
+C' \|\nabla^2 u\|_{L^2(\Omega)} = C' a(u,u) \]
+et donc, il existe une constante positive~$C$ telle que $\forall u\in H^1_0(\Omega)$:
+\[ \|u\|^2_{H^2(\Omega)} \le C a(u,u) \]
+
+La coercitivité de~$a(.,.)$ est établie, et le théorème de Lax-Milgram nous permet de conclure à l'existence et à l'unicité de la solution.
+
+\medskip
+Vérifions maintenant que, réciproquement, la solution du problème variationnel est solution du problème avec conditions aux limites.
+
+Pour cela, considérons~$\omega$ un ouvert inclus dans le compact~$\Omega$. Il existe une fonction~$\chi\in C_c^\infty(\Omega)$ telle que~$\chi=1$ sur~$\omega$. Pour toute fonction~$v\in C_c^\infty(\Omega)$ de support inclus dans~$\omega$:
+\[ \dint_\Omega \chi \Delta u\Delta v = \dint_\Omega \Delta u\Delta v = \dint_\Omega fv \]
+
+Or on sait (enfin dira-ton, sinon on admettra) que:
+si~$w$ et~$f$ sont des fonctions de~$L^2(\Omega)$ vérifiant pour toute fonction~$v\in C_c^\infty(\Omega)$:
+\[ -\dint_\Omega w\Delta v =\dint_\Omega fv \]
+alors~$(\chi w)\in H^2(\Omega)$ quelle que soit la fonction~$\chi\in C_c^\infty(\Omega)$.
+
+D'où, l'on déduit que~$\chi\Delta u\in H^2(\Omega)$. Il est par conséquent licite d'effectuer deux intégrations par parties successives, et l'on obtient:
+\[ \dint_\Omega \Delta(\chi\Delta u) v = \dint_\Omega fv \]
+pour toute fonction~$v\in C_c^\infty(\Omega)$ de support inclus dans~$\omega$. On en déduit que pour presque tout~$x\in\omega$:
+\[ \Delta(\Delta u)(x) = f(x) \]
+
+En considérant une suite~$\omega_n$ de compacts dont l'union est~$\Omega$, on en déduit que cette relation reste valable pour presque tout~$x\in\Omega$.
+
+Enfin, comme~$u\in H^2_0(\Omega)$, la solution du problème variationnel vérifie automatiquement les conditions aux limites.~$\square$\colorblack
+\end{demonstration}
 
 \medskip
 \section{Équations de l'acoustique}\label{Sec-EqFblAcou}\index{ED-EDP!de l'acoustique}

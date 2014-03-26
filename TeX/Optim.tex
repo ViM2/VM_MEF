@@ -29,6 +29,7 @@ Notre présentation de l'optimisation se concentrera sur l'\textcolorblue{approc
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Le mot «optimiser» a pour origine latine «optimum» qui signifie le meilleur.
 Il s'agit donc de faire les choses de la meilleure façon qui soit, ou encore de concevoir la meilleure des solutions possibles en terme d'objectif prescrit (minimisation ou maximisation) et répondant à un ensemble de contraintes.
 L'optimisation commence avec le calcul des variations, même si des exemples plus anciens peuvent être trouvés.
@@ -649,4 +650,74 @@ Des simplifications, des conditions d'optimalité, la vérification de convexit�
 
 \medskip
 \section{Exemples d'optimisation d'une plaque}
+
+Dans ce paragraphe, nous considèrerons une membrane élastique occupant au repos un domaine plan~$\Omega$, ouvert borné régulier de~$\RR^2$, et nous nous intéresserons au déplacement vertical de la membrane~$u(x)$ solution de l'équation:
+\begin{equation}
+-\dive(K(x)\nabla u) = f \text{ dans }\Omega
+\end{equation}
+avec~$f\in L^2(\Omega)$ les forces appliquées.
+Les conditions aux limites dépendront des cas traités et seront donc spécifiées pour chacun des exemples traités.
+
+\medskip
+\subsection{Optimisation du matériau élastique anisotrope en rigidité}
+
+La membrane est soumise aux conditions aux limites:
+\[ u=0 \text{ sur }\partial\Omega \]
+
+Elle est par ailleurs constituée d'un matériau élastique anisotrope dont le tenseur, dans un repère adapté, est:
+\[ K_0 = \MM*{\alpha & 0\\0 &\beta} \]
+avec~$0<\alpha<\beta$ les rigidités dans chacune des directions principales de ce matériau. Le tenseur d'élasticité~$K(x)$ est obtenu par rotation du matériau anisotrope, en fonction du point courant~$x$, par:
+\[ K(x)=R^*(x)K_0R(x), \quad \text{ avec } R(x)=\MM*{\cos\theta(x) &-\sin\theta(x)\\ \sin\theta(x) & \cos\theta(x)} \]
+
+\textcolorblue{Le but est d'optimiser la membrane en faisant varier la rotation du matériau anisotrope, paramétrée par~$\theta$.}
+
+L'ensemble admissible des rotations est:
+\[ \mathcal{U}_{ad}=\{\theta\in L^\infty(\Omega;\intff0\pi) \} \]
+
+\medskip
+La fonction objectif est la compliance (la rigidité). On cherche à obtenir:
+\[ \colorblue \inf_{\theta\in\mathcal{U}_{ad}} J(\theta)=\dint_\Omega f(x)u(x) \]
+
+\medskip
+En écrivant la compliance comme le minimum de l'énergie complémentaire, on obtient:
+\[ \dint_\Omega f(x)u(x) = \min_{\substack{\tau\in L^2(\Omega)^2\\ -\dive\tau=f \text{ dans }\Omega}} K^{-1}(x)\tau(x).\tau(x) \]
+i.e. on est ramené au problème de double minimisation:
+\[ \min_{\theta\in\mathcal{U}_{ad}} \min_{\substack{\tau\in L^2(\Omega)^2\\ -\dive\tau=f \text{ dans }\Omega}} K^{-1}(x)\tau(x).\tau(x)
+\]
+Si~$(\theta,\tau)\in\mathcal{U}_{ad}\times L^2(\Omega)^2$ est un minimum, alors~$\tau=K\nabla u$ et en tout point l'angle~$\theta(x)$ minimise~$K^-{-1}\tau.\tau$.
+
+Considérons donc la fonction: $\theta \mapsto R^*K_0^{-1}R\tau.\tau=K_0(R\tau).(R\tau)$.
+Si~$\tau=0$ alors n'importe quel angle~$\theta$ réalise le minimum.
+Si~$\tau\ne0$, alors, en notant~$e_2=(0,1)$ le vecteur propre correspondant à la valeur propre~$\beta^{-1}$ de~$K_0^{-1}$, le minimum est atteint pour un angle~$\theta$ tel que~$R\tau$ soit parallèle à $e_2$. Dans ce cas, il existe un unique minimum~$\theta\in\intfo0\pi$ caractérisé par~$\tan\theta=\tau_1/\tau_2$.
+
+Cette valeur de~$\theta$ est optimale aussi bien pour la fonction introduite que pour notre problème d'optimisation.
+
+\medskip
+D'après la condition d'optimalisé, on a~$R\tau=\pm|\tau|e_2$ si~$(\theta,\tau)$ est optimal, ce qui se traduit par:
+\[ K^{-1}\tau.\tau = |\tau|^2K_0^{-1}e_2.e_2=\beta^{-1}|\tau|^2 \]
+i.e. le matériau anisotrope optimal s'aligne en permanence avec le vecteur des contraintes~$\tau$ qui ne voit donc que la rigidité~$\beta$.
+
+De même, $R\nabla u$ est toujours parallèle à~$e_2$, ce qui implique que~$K\nabla u=\beta\nabla u$ dans~$\Omega$.
+
+La solution du problème de minimisation s'obtient en résolvant le système:
+\[\left\{\begin{array}{ll} -\dive(\beta\nabla u)=f &\text{ dans }\Omega\\ u=0&\text{ sur }\partial\Omega \end{array}\right. \]
+puis en calculant, pout tout point~$x$, l'angle~$\theta(x)$ tel que~$\tan\theta(x)=\tau_1/\tau_2$ si~$\tau\ne0$ (si $\tau=0$, n'importe quel angle convient).
+
+
+\medskip
+\subsection{Optimisation du matériau élastique anisotrope pour un déplacement cible}
+
+On reprend le cas précédent, i.e. on a les conditions aux limites:
+\[ u=0 \text{ sur }\partial\Omega \]
+\textcolorblue{et on cherche encore à optimiser la membrane en faisant varier la rotation du matériau anisotrope, paramétrée par~$\theta$.}
+\[ \mathcal{U}_{ad}=\{\theta\in L^\infty(\Omega;\intff0\pi) \} \]
+
+La fonction objectif est un déplacement cible~$u_0(x)\in L^2(\Omega)$. On utilise la méthode des moindre carrés, et on cherche donc à obtenir:
+\[ \colorblue \inf_{\theta\in\mathcal{U}_{ad}} J(\theta)=\dint_\Omega C(x)|u(x)-u_0(x)|^2 \]
+avec~$C(x)$ une fonction régulière donnée.
+
+\medskip
+Un condition nécessaire d'optimalité pour~$\theta$ est que la dérivée~$J'(\theta)$ s'annule.
+Calculons donc le gradient de la fonction objectif dans la direction~$\eta\in L^\infty(\Omega)$. Elle est donnée par:
+\[ \langle J'(\theta),\eta\rangle = \lim_{t\rightarrow0} \dfrac{J(\theta+t\eta)-J(\theta)}{t} \]
 

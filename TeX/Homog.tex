@@ -15,6 +15,7 @@ Nous allons présenter les méthodes d'homogénéisation ainsi que leurs applica
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Les \emph{théories des milieux effectifs}\index{effectif} visent à estimer les propriétés \emph{effectives}\index{effectif} (i.e. macroscopiques)\index{modèle macroscopique} d'un milieu en fonction des propriétés locales de chacun des constituants ainsi que d'un certain nombre d'informations sur la microstructure.\index{modèle microscopique}\ifVersionDuDocEstVincent\else\\[-2.5mm]\fi
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -48,6 +49,9 @@ Le but de ce chapitre est donc d'effectuer le passage du niveau microscopique au
 
 \medskip
 Les méthodes que nous présenterons seront les \textcolorblue{méthodes de développement régulier, de la couche limite, et de développement asymptotique.} Le cas des \textcolorblue{milieux poreux} sera ensuite considéré. Enfin, nous mentionnerons une application de ces méthodes pour \textcolorblue{réduire la dimension} de certains problèmes.
+
+\medskip
+Une dernière remarque avant d'enter dans le vif du sujet, car elle correspond à des interrogations de nombreux étudiants: \textcolorred{il n'est pas nécessaire qu'un problème soit périodique pour pouvoir recourir aux techniques d'homogénéisation.} En effet, l'homogénéisation consiste à remplacer un problème «compliqué» par un «plus simple» selon une certaine «mesure»: il s'agit donc généralement de montrer que l'intégrale d'un truc compliqué peut s'écrire comme une autre intégrale d'un truc plus simple... et c'est l'égalité de ces deux intégrales qui fait que l'on dit que les problèmes sont équivalents (conduisent à la même solution), et donc que le second problème correspond à l'homogénéisation du premier. Dans le même ordre d'idée, et pour enfoncer le clou, \textcolorred{un matériau homogénéisé n'est par forcément isotrope.} En effet, on peut remplacer un matériau fortement anisotrope par un matériau homogénéisé isotrope, mais cela n'est pas forcément le plus adapté: il peut être préférable de l'homogénéiser en un matériau lui-même anisotrope mais «plus simple». Un matériau composite composé de plusieurs plis ayant des orientation différentes pourrait être remplacé par exemple par un matériau composite homogénéisé n'ayant qu'une couche (donc plus simple), mais restant anisotrope (qui serait, en quelque sorte, orienté selon la «direction moyenne» des directions, et il est alors plus «facile» de raisonner avec cette orientation «principale» lorsque l'on souhaite physiquement comprendre le comportement du matériau).
 
 
 \medskip

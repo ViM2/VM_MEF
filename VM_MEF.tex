@@ -52,10 +52,9 @@
 \usepackage{./tex/freefempp}
 \usepackage{./tex/castem}
 \usepackage{./tex/ansys}
-\usepackage{times}
+\usepackage{times}% normalement obsolete et remplacé par \usepackage{mathptmx}
 \gdef\ttdefault{cmtt}%
 \usepackage[amsbb,compatiblegreek,subscriptcorrection,nofontinfo,mtpscr]{mtpro2}
-
 %
 \ifVersionDuDocEstVincent
 %   \usepackage{amssymb,bm}% pas compatible avec fontes MLg
@@ -255,6 +254,10 @@ Cela nous permettra d'écrire~$\LL{x}=\LL{x_1, ..., x_n}$ pour définir le vecte
 \medskip
 $\langle X\rangle$ désignera quelquefois la valeur moyenne de la variable~$X$, mais nous la noterons le plus souvent~$\E{X}$.
 Quant à~$\langle.,.\rangle$, cela désignera, comme habituellement, le produit de dualité.
+
+\medskip
+La lettre~$J$ désignera plusieurs choses en fonction des chapitres: ce pourra être la jacobienne ou le jacobien; la critère d'optimisation (fonction objectif); ou le taux de restitution d'énergie. Il semble difficile de les confondre...
+
 \fi
 
 \colorblack

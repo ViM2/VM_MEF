@@ -14,6 +14,7 @@ Pour les méthodes explicites de résolution des équations différentielles, on
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Les problèmes posés ou menant à des équations différentielles sont aussi vieux que l'analyse elle-même (\textsc{xvii}\fup{e}-\textsc{xviii}\fup{e}, voir notes précédentes sur les fonctions et sur la continuité et la dérivabilité). Avant même qu'on ait complètement élucidé la question des infiniment petits l'on se préoccupe déjà de résoudre des problèmes de tangente, qui mènent invariablement à une équation différentielle. Dès les débuts de la mécanique classique, dite newtonienne, on est confronté à l'intégration de systèmes d'équations différentielles du second ordre (voir exemples ci-dessous).
 
 \medskip
@@ -95,6 +96,7 @@ Comme on le voit sur les exemples ci-dessus, et comme on s'en souvient sans dout
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Concernant les équations aux dérivées partielles, elles sont initialement résolues par des méthodes ad-hoc, le plus souvent géométriques. On n'écrit pas l'équation aux dérivées partielles linéaires. On ne s'étonnera donc pas que la première équation aux dérivées partielles  n'apparaisse qu'assez tard.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -200,6 +202,7 @@ L'analogie de formulation mathématique nous fera également considérer les cas
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Le déplacement des atomes, ions ou molécules dans un milieu, que celui-ci soit solide (cristallin ou amorphe), liquide ou gazeux, est appelé de manière générale «migration». 
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -291,6 +294,7 @@ L'\textcolorblue{équation de la chaleur} est une équation aux dérivées parti
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 En dépit des railleries de Hugo\index[aut]{Hugo (Victor), 1802-1885, Français} et Stendhal\index[aut]{Beyle (Henri), dit Stendhal, 1783-1842, Français} Joseph Fourier\index[aut]{Fourier (Jean Baptiste Joseph), 1768-1830, Français} laissera son nom à la postérité à plus d'un titre:\\[-2.5mm]
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{cc}
@@ -353,7 +357,7 @@ Même quand elle est vraie, la convergence ponctuelle des séries de Fourier peu
 \medskip
 Soit~$\Omega$ un domaine de~$\RR^3$ de frontière~$\Gamma=\partial \Omega$ et~$T(x,t)$ un champ de température sur ce domaine (champ de scalaires). 
 En présence d'une source thermique dans le domaine, et en l'absence de convection, i.e. de transport de chaleur (i.e. on s'intéresse à la propagation de la température au sein d'un milieu «stable», \textcolorgreen{i.e. qui ne bouge pas; on ne s'intéresse pas à la propagation de chaleur due par exemple à l'existence d'un courant d'air, d'un courant de convection. La convection est plutôt un problème de mécanique des fluides.)}, l'équation de la chaleur s'écrit:
-\begin{equation}
+\begin{equation}\label{Eq-Chaleur}
 \forall x \in\Omega, \quad \frac{\partial T (x,t)}{\partial t} = D \, \Delta T(x,t) + \frac{f}{\rho c}
 \end{equation}
 où:
@@ -370,7 +374,6 @@ L'équation de la chaleur est donc une équation de la forme:
 \dot{u}-\Delta u=f
 \end{equation}
 Elle est parabolique.\colorblack
-%%%%%%%%%%%%%%%%%%%%%
 \medskipvm
 Pour que le problème soit bien posé, il faut spécifier:
 \begin{itemize}
@@ -388,6 +391,7 @@ La diffusion est un phénomène de transport irréversible qui se traduit à ter
 D'un point de vue phénoménologique, et au premier ordre, ce phénomène est régi par une \textcolorblue{loi de Fick} (par exemple sorption d'eau dans les matériaux composites, diffusion d'actifs au travers de la peau).\index[aut]{Fick (Adolf Eugene), 1829-1901, Allemand} Dans l'équation précédente, $T$ représente alors la répartition de la grandeur considérée (eau dans un composite, concentration d'un constituant chimique...) et le terme source dans~$\Omega$ est souvent nul (i.e.~$f=0$).
 
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 \textbf{À propos de l'effet régularisant de la chaleur:}
 
 L'équation de la chaleur a un «effet régularisant»: quelque soit la distribution initiale de la température pour un problème donné, même discontinue, on aboutit rapidement à une distribution continue et même lisse de la température.
@@ -407,6 +411,23 @@ Mais John Nash\index[aut]{Nash (John Forbes), 1928- , Américain} est célèbre 
 \end{histoire}
 \colorblack
 
+\begin{remarque}[L'effet régularisant]\colorgris
+Considérons l'équation de la chaleur~(\ref{Eq-Chaleur}) avec condition initiale~$T_0(x)$ et~$f=0$, que nous réécrivons:
+\[\left\{
+\begin{array}{ll}
+\dfrac{\partial T}{\partial t} -\Delta T = 0 & \text{ dans } \intoo0\infty\times\RR^N\\
+T(x,0) = T_0(x) & \text{ dans } \RR^N
+\end{array}\right.
+\]
+Nous nous proposons de montrer que la solution~$T$ appartient en fait à~$C^\infty(\RR^N\times\RR_*^+)$.
+
+\medskip
+Soit~$\hat{T}(\xi,t)=\hat{T}_0(\xi)e^{-|\xi|^2t}$ la transformée de Fourier de~$T$.
+Pour tout multi-indice~$\alpha$ et pour tout~$t>0$, la fonction~$(\xi,t) \mapsto |\xi|^\alpha\hat{T}(\xi,t)$ est continue en temps et à valeurs dans~$L^2(\RR^N)$.
+Par transformation de Fourier inverse, $\partial^\alpha T$ est donc un élément de~$C(\RR^+_*,L^2(\RR^N))$, i.e. pour tout entier~$m$, $T$ est dans~$C(\RR^+_*,H^m(\RR^N))$.
+Les injections de Sobolev nous permettent donc de dire que~$T(t)$ appartient à~$C(\RR^+_*,C^\infty(\RR^N))$.
+La même analyse tient pour~$\partial^n T/\partial t^n$, et donc, on en déduit que~$T\in C^\infty(\RR^+_*,C^\infty(\RR^N))=C^\infty(R^N\times\RR_*^+)$.
+\end{remarque}
 
 
 \medskip
@@ -442,6 +463,7 @@ et l'équation se simplifie:
 = \rho f - \nabla p
 \end{equation}
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Des 23 problèmes de Hilbert\index[aut]{Hilbert (David), 1862-1943, Allemand} énoncés en 1900, la moitié est aujourd'hui complètement résolue, l'un a été démontré indécidable, cinq ne le sont pas du tout, les autres étant partiellement traités.
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%

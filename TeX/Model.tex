@@ -8,6 +8,7 @@ Avant de présenter plus en détail la formulation d'éléments finis, nous teni
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 La mécanique est sans doute aussi vieille que l'homme. Aussi bien pour des aspects pratiques (faire des outils pour chasser...), que pour des aspects plus philosophiques et spirituels visant notamment à expliquer les mouvements des astres...
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -315,6 +316,7 @@ Dans ce paragraphe, nous nous proposons d'étudier un exemple où \textcolorred{
 
 \bigskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 La paternité de la théorie des poutres est attribuée à Galilée,\index[aut]{Galilée (Galileo Galilei), 1564-1642, Italien} mais des études récentes indiquent que Léonard de Vinci\index[aut]{Vinci (Léonard, de-), 1452-1519, Italien} l'aurait précédé. De Vinci\index[aut]{Vinci (Léonard, de-), 1452-1519, Italien} avait supposé que la déformation variait de manière linéaire en s'éloignant de la surface neutre, le coefficient de proportionnalité étant la courbure, mais il ne put finaliser ses calculs car il n'avait pas imaginé la loi de Hooke$\,^a$. %\footnotemark donne 1, car env dans env
 De son côté, Galilée\index[aut]{Galilée (Galileo Galilei), 1564-1642, Italien} était parti sur une hypothèse incorrecte (il supposait que la contrainte était répartie uniformément en flexion), et c'est Antoine Parent\index[aut]{Parent (Antoine), 1660-1726, Français} qui obtint la distribution correcte.\ifVersionDuDocEstVincent\else\\[-2.5mm]\fi
 
@@ -437,7 +439,7 @@ Il est essentiel de noter que toutes les théories ne permettent pas d'accéder 
 
 De plus, si certains logiciels peuvent avoir des «limitations techniques», ils peuvent également disposer de \textcolorred{méthodes de post-traitement} susceptibles d'améliorer ou de permettre d'accéder à certaines composantes (sous certaines hypothèses). Cela aussi doit être pris en compte.
 
-\ifVersionDuDocEstVincent\newpage\fi
+\medskip%\ifVersionDuDocEstVincent\newpage\fi
 \input{./tex/ex3}% poutre Ch 10 sous Cast3M
 %  \input{./tex/ex5}% efforts équivalents sur une poutre
 

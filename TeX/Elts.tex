@@ -246,6 +246,36 @@ On voit donc que la fonction de base globale~$\varphi_i$ est construite comme r�
 \caption{Maillage non conforme: situations interdites}\label{maillageNC}
 \end{figure}
 
+
+\medskip
+\subsection{Exemple: éléments finis~$\Pol_k$ en élasticité linéaire}
+
+La formulation faible du problème d'élasticité linéaire est donnée par la relation~(\ref{Eq-StatLinIso}) que nous considérerons ici dans le cas de la condition de Dirichlet sur tout~$\partial\Omega$, i.e. sous la forme: trouver~$u\in H^1_0(\Omega)^N$ tel que:
+\[
+\dint_\Omega \lambda \dive(u)\dive(v)+2\mu\varepsilon(u)\cdot\varepsilon(v) = \dint_\Omega fv, \quad \forall v\in H^1_0(\Omega)
+\]
+
+Soit~$\mathcal{T}_h$ un maillage régulier de~$\Omega$. On introduit les espaces discrets:
+\[ V_h=\left\{ u\in C(\Omega;\RR)^N/ u_i|_K\in\Pol_k \text{ pour tout }K\in\mathcal{T}_h \right\} \]
+et:
+\[ V_{0h} = \left\{ u\in V_h/ u=0 \text{ sur }\partial\Omega\right\} \]
+
+Soient~$(\varphi_i)_{i=1,n_{ddl}}$ les fonctions de base associées aux degrés de liberté du treillis d'ordre~$k$ du maillage~$\mathcal{T}_h$ ($n_{ddl}$ est le nombre de nœuds de degrés de liberté). L'approximation variationnelle du problème par la méthode des éléments finis~$\Pol_k$ consiste à déterminer~$u\in V_{0h}$ tel que:
+\[
+\dint_\Omega \lambda \dive(u)\dive(v)+2\mu\varepsilon(u)\cdot\varepsilon(v) = \dint_\Omega fv, \quad \forall v\in V_{0h}
+\]
+i.e. à résoudre le système:
+\[ \MM{K}\VV{q}=\VV{b} \]
+avec:
+\[ \MM{K}_{ij} = \dint_\Omega \lambda \dive(\varphi_i)\dive(\varphi_j)+2\mu\varepsilon(\varphi_i)\cdot\varepsilon(\varphi_j) \]
+et:
+\[ \VV{b}_i = \dint_\Omega f\varphi_i \]
+
+L'existence d'un solution à ce problème découle de l'application du théorème de Lax-Milgram.
+
+Chaque élément de l'espace~$V_{0h}$ est défini de manière unique par ses valeurs dans~$\RR^N$ aux nœuds de degrés de liberté du treillis d'ordre~$k$, ce qui prouve que la dimension de l'espace~$V_{0h}$ est égale à~$N.n_{ddl}$.
+
+
 \medskip
 \section{Éléments d'Hermite}\index{élément fini!d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}
 
@@ -363,6 +393,127 @@ Régularité &~$C^1$\\
 \caption{Élément bidimensionnel rectangulaire d'Hermite~$Q_3$}\label{tab:ElemH:bibi}
 \end{table}
 \end{itemize}
+
+
+\medskip
+\subsection{Exemple: éléments finis d'Hermite pour l'équation des plaques}
+
+On se propose donc de résoudre la formulation variationnelle des plaques, donnée par l'équation~(\ref{Eq-Plaques-var}):
+\[
+\dint_\Omega \Delta u\Delta v = \dint_\Omega fv, \qquad \forall v\in H^2_0(\Omega)
+\]
+en dimension~$2$ par une méthode d'éléments finis de type Hermite~$\Pol_5$.
+
+Pour un maillage~$\mathcal{T}_h$, on introduit l'espace discret:
+\[ V_h = \left\{ v\in C^1(\overline{\Omega}) \text{ tel que } v|_{K_i} \in\Pol_5 \text{ pour tout }K_i\in\mathcal{T}_h\right\} \]
+
+\medskip
+Nous allons vérifier l'unisolvance et le raccord au niveau des mailles pour les polynômes~$\Pol_5$.
+
+\medskip
+L'unisolvance consiste donc à montrer que tout polynôme~$p\in\Pol_5$ est caractérisé de manière unique sur un triangle~$K$ par les 21 valeurs réelles suivantes:
+\begin{equation}\label{Eq-Pnul}
+p(a_i), \quad \nabla p(a_i), \quad \nabla\nabla p(a_i), \quad \dfrac{\partial p(b_i)}{\partial n}
+\end{equation}
+avec~$i=1, 2, 3$, $(a_1, a_2, a_3)$ les sommets de~$K$, $(b_1, b_2, b_3)$ les milieux des côtés de~$K$, et~$\partial p(b_i)/\partial n$ la dérivée normal au côté de~$b_i$.
+
+Comme~$\Pol_5$ est un espace de dimension 21, il suffit donc de montrer que l'application qui a un élément de~$\Pol_5$ associe les 21 valeurs définies ci-dessus est injective (et donc bijective). Quitte à effectuer un changement de variables, on se ramène au cas du triangle équilatéral défini par~$a_1=(-1,0)$, $a_2=(1,0)$. 
+
+\medskip
+Soit~$p\in\Pol_5$ un polynôme annulant les 21 valeurs, montrons qu'alors il est nul. Posons~$q_1(x)=p(x,0)$ et~$q_2(x)=\partial p/\partial x_2(x,0)$. Par hypothèse on a:
+\[ q_1(\pm1)=q'_1(\pm1)=q_1''(\pm1)=0 \]
+Comme~$q_1$ est de degré au plus 5, $q_1=0$. Ainsi, $p$ est divisible par~$x_2$, et donc il existe un polynôme~$q(x_1,x_2)$ tel que~$p(x_1,x_2)=x_2q(x_1,x_2)$.
+
+De même, comme~$\partial p/\partial x_2=\partial p/\partial n$ sur le segment~$[a_1,a_2]$, on a donc par hypothèse que:
+\[ q_2(\pm1)=q_2'(\pm1)=q_2(0)=0 \]
+et comme~$q_2$ est de degré au plus 4, $q_2=0$.
+
+Or~$q_2(x)=q(x,0)$, et donc~$q$ est divisible par~$x_2$.
+Et donc~$p$ est divisibles par~$x_2^2$.
+
+Par invariance par changement de côté, on en déduit de la même manière que~$p$ est divisible par~$(1+x_1-x_2/\sqrt3)^2$ et~$(1-x_1-x_2/\sqrt3)^2$.
+Le polynôme~$p$, qui est de degré au plus 5, est donc divisible par un polynôme de degré 6, c'est donc qu'il est nul.
+
+\medskip
+Le raccordement au niveau des maille revient à prouver le lemme suivant:
+
+Soient~$K$ et~$K'$ deux triangles ayant une arête commune~$\Gamma=(a_1,a_2)$. Soient~$p_K$ et~$p_{K'}$ deux éléments de~$\Pol_5$. Alors la fonction~$v$ définie sur~$K\cup K'$ par:
+\[v(x)=\left\{\begin{array}{ll} p_K(x) &\text{ si }x\in K\\ p_{K'}(x) &\text{ si }x\in K'\\
+\end{array}\right. \]
+est de classe~$C^1$ si et seulement si, pour~$i=1,2$:
+\begin{equation}\label{Eq-Pcont}
+p_K(a_i)=p_{K'}(a_i), \quad \nabla p_K(a_i)=\nabla p_{K'}(a_i), \quad 
+\nabla\nabla p_K(a_i)=\nabla\nabla p_{K'}(a_i), 
+\quad \dfrac{\partial p_K(b_i)}{\partial n}=\dfrac{\partial p_{K'}(b_i)}{\partial n}
+\end{equation}
+avec les mêmes notations que pour l'équation~(\ref{Eq-Pnul}).
+
+L'application~$v$ est de classe~$C^1$ si et seulement si les restrictions de~$p_K$ et~$p_{K'}$ coïncident sur l'arête commune~$\Gamma$, ainsi que les polynômes~$\partial p_K/\partial n$ et~$\partial p_{K'}/\partial n$.
+
+Les polynômes~$p_K$ et~$p_{K'}$, de degré au plus 5, coïncident sur~$\Gamma$ si et seulement si pour~$i=1,2$:
+\[ p_K(a_i)=p_{K'}(a_i), \quad
+\dfrac{\partial p_K}{\partial\tau}(a_i)=\dfrac{\partial p_{K'}}{\partial\tau}(a_i), \quad
+\dfrac{\partial^2 p_K}{\partial\tau^2}(a_i)=\dfrac{\partial^2 p_{K'}}{\partial \tau^2}(a_i)
+\]
+avec~$\tau$ le vecteur unitaire tangent à l'arête.
+
+Les polynômes~$\partial p_K/\partial n$ et~$\partial p_{K'}/\partial n$, de degré au plus 4, coïncident sur~$\Gamma$ si et seulement si pour~$i=1,2$:
+\[ 
+\dfrac{\partial p_K}{\partial n}(a_i)=\dfrac{\partial p_{K'}}{\partial n}(a_i), \quad
+\dfrac{\partial^2 p_K}{\partial n^2}(a_i)=\dfrac{\partial^2 p_{K'}}{\partial n^2}(a_i), \quad
+\dfrac{\partial p_K}{\partial n}(b)=\dfrac{\partial p_{K'}}{\partial n}(b)\]
+
+On a donc prouvé que si les relations~(\ref{Eq-Pcont}) sont vérifiées, alors~$v$ est de classe~$C^1$.
+Réciproquement, si~$v$ est de classe~$C^1$, les restrictions de~$\partial p_K/\partial n$ et~$\partial p_{K'}/\partial n$ à l'arête commune~$\Gamma$ coïncident, et pour~$i=1,2$, on a~$\partial^2 p_K=\partial n\partial\tau (a_i)=\partial^2 p_{K'}=\partial n\partial\tau (a_i)$. Les autres conditions étant satisfaites, le lemme est démontré.
+
+\medskip
+Profitons-en pour exposer la \textcolorblue{méthode d'Argyris}.
+
+Notons tout d'abord que l'espace~$V_h$ est inclus dans~$H^2(\Omega)$.
+
+Ensuite, d'après le point précédent, un élément~$v$ de~$V_h$ est entièrement déterminé par les valeurs de~$v$, $\nabla v$ et~$\nabla \nabla v$ aux nœuds du maillage, ainsi que par le flux~$\partial v/\partial n(b_k)$, $b_k$ parcourant les milieux des arêtes~$k$ du maillage.
+
+On peut donc construire une base de~$V_h$ formée des éléments~$(\varphi_{i,\alpha})_{(i,\alpha)}$ et~$(\psi_k)$ où~$i\in\{1, ..., n_s\}$, $\alpha\in\NN^2$ le multi-indice tel que~$|\alpha|\le2$ et~$k\in\{1, ..., n_c\}$ définis par:
+\[ \partial^\beta\varphi_{i,\alpha}(a_j)=\delta^i_j\delta^\beta_\alpha, \quad
+\dfrac{\partial\varphi_{i,\alpha}}{\partial n}(b_l)=0, \quad
+\partial^\beta\psi_k(a_j)=0, \quad
+\dfrac{\partial\psi_k}{\partial n}(b_l)=\delta^k_l \]
+pour tout~$j\in\{1, ..., n_s\}$, $l\in\{1, ..., n_c\}$, $\beta\in\NN^2$ le multi-indice tel que~$|\beta|\le2$, $n_s$ le nombre d'arêtes (side), et~$n_c$ le nombre de sommets (corner).
+
+Afin de résoudre l'équation des plaques, on introduit le sous-espace de~$V_h$:
+\[ V_{0h}=V_h\cap H^2_0(\Omega) \]
+qui est l'ensemble des fonctions de~$V_h$ qui s'annulent, ainsi que leurs dérivées partielles, sur le bord~$\partial\Omega$. Cet espace est engendré par les éléments~$(\varphi_{i,\alpha})$ et~$(\psi_k)$ où~$i\in\{1, ..., n_{s0}\}$ et~$k\in\{1, ..., n_{c0}\}$ parcourent respectivement les arêtes et sommets n'appartenant pas au bord de~$\Omega$.
+L'approximation variationnelle consiste à trouver~$u_h\in V_{0h}$ tel que:
+\[ \dint_\Omega \Delta u_h\Delta v_h = \dint_\Omega fv_h, \quad \forall v\in V_{0h} \]
+qui, d'après le théorème de Lax-Milgram, admet une solution unique. Il est équivalent au système matriciel:
+\[ \MM{K_h}\VV{q_h}=\VV{F_h} \]
+où la matrice de rigidité, de taille $6n_{s0}+n_{c0}$, est définie par blocs de la manière suivante:
+\[ \MM{K_h} = \MM*{D_h & F_h\\ F_h^T & H_h} \]
+
+La matrice~$D_h$ est également définie par blocs. Elle est constituée de~$6\times6$ blocs de taille~$n_{s0}\times n_{s0}$:
+\[ D_h=\MM{E_h^{ij}}_{(i,j)\in\{1, ..., 6\}^2}, \text{ avec }
+ \MM{E_h^{ij}}_{kl} = \dint_\Omega \Delta\varphi_{k,s_i}\Delta\varphi_{l,s_i}, \text{ où } (k,l)\in\{1, ..., n_{s0}\}^2 \]
+avec~$s_i$ parcourant les multi-indices~$\NN^2$ de degré~$\le2$.
+
+La matrice~$F_h$ est également définie par blocs. Elle est un «vecteur» colonne constitué de~$6$ blocs de taille~$n_{s0}\times n_{c0}$:
+\[ F_h=\MM{G_h^i}_{i\in\{1, ..., 6\}}, \text{ avec }
+ \MM{G_h^i}_{kl} = \dint_\Omega \Delta\varphi_{k,s_i}\Delta\psi_j, \text{ où } (k,l)\in\{1, ..., n_{s0}\}\times\{1, ..., n_{c0}\} \]
+
+La matrice~$H_h$, de taille~$n_{c0}\times n_{c0}$ est définie par:
+\[ \MM{H_h}_{kl} = \dint_\Omega \Delta\psi_k\Delta\psi_l, \text{ où } (k,l)\in\{1, ..., n_{c0}\}^2 \]
+
+Le vecteur~$\VV{F_h}$ comporte~$6n_{s0}+n_{c0}$ composantes et est défini par:
+\[ \LL{F_h} = \LL{c_h^1, ..., c_h^6, d_h}\]
+avec~$c_h^i\in\RR^{n_{s0}}$ et~$d_h\in\RR^{n_{c0}}$ les vecteurs:
+\[ (c_h^i)_k = \dint_\Omega f_h\varphi_{k,s_i}, k\in\{1, ..., n_{s0}\}, i\in\{1, ..., 6\}\]
+\[ (d_h)_k = \dint_\Omega f_h\psi_k, k\in\{1, ..., n_{s0}\}\]
+
+La solution~$u_h$ de l'approximation variationnelle est telle que:
+\[ u_h\dsum_{i=0}^5\dsum_{k=1}^{n_{s0}} q_h^{in_{s0}+k}\varphi_{k,s_{i+1}}
++\dsum_{k=1}^{n_{c0}} q_h^{6n_{s0}+k}\psi_k \]
+avec~$\VV{q_h}$ la solution du système matriciel.
+
+
 
 \medskip
 \section{Traitement de plusieurs champs}\label{Sec-interf}

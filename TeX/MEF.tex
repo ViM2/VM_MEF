@@ -59,6 +59,7 @@ On veillera également à ce que les éléments ne soient pas trop \textcolorblu
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 C'est l'ingénieur américain Ray William Clough\index[aut]{Clough (Ray William), 1920-?, Américain} qui, semble-t-il, a utilisé le terme de méthode des éléments finis le premier dans un article de 1960 intitulé \emph{The Finite Element Method in Plane Stress Analysis}. Le mot rigidité (Stiffness) apparaissait dans le titre de son article \emph{Stiffness and Deflection Analysis of Complex Structures} datant de 1956 (et coécrit avec M. Turner, H. C. Martin et L. J. Topp).
 
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
@@ -308,7 +309,7 @@ Notons que la matrice $\MM{K}$ est appelée \textcolorblue{matrice de rigidité}
 Si la forme bilinéaire $a$ est coercive, alors $\MM{K}$ est symétrique, définie positive donc inversible. On obtient donc l'existence et l'unicité de $\VV{q} = \MMI{K}\VV{F}$.
 
 De nombreuses méthodes permettent de résoudre le système matriciel (d'inverser la matrice de rigidité): Gauß,\index[aut]{Gauß (Johann Carl Friedrich), 1777-1855, Allemand} mais également toutes sortes de décomposition de la matrice de rigidité comme LU, LDLT, LLT (Cholesky).\index[aut]{Cholesky (André-Louis), 1875-1918, Français} Lorsque $K$ est symétrique définie-positive, la méthode de Cholesky\index[aut]{Cholesky (André-Louis), 1875-1918, Français} est la meilleure. Elle consiste à décomposer la matrice $\MM{K}$ en le produit $\MM{L}\MMT{L}$, où la matrice $\MM{L}$ est une matrice triangulaire inférieure. \textcolorgreen{Les factorisations LU et de Cholesky conservent la structure
-bande des matrices.}
+bande des matrices.} \textcolorgris{De plus, pour une matrice bande d'ordre~$n$ et de demie largeur de bande~$p$, la factorisation LU demande de l'ordre de~$\mathcal{O}(np^2/3)$ opérations, alors que celle de Cholesky n'en demande que~$\mathcal{O}(np^2/6)$.}
 
 
 \medskip

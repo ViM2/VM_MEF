@@ -12,6 +12,7 @@ Les espaces de Sobolev sont un outil très important et très adapté à l'étud
 
 \medskip
 \begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 Le \textsc{xx}\fup{e} siècle avait commencé par la thèse de Lebesgue\index[aut]{Lebesgue (Henri-Léon), 1875-1941, Français} \emph{intégrale, longueur, aire}, qui constitue vraiment le début de la théorie de la mesure.
 La théorie de Lebesgue mène à l'étude des espaces~$L^p$, qui permettront, sur les traces de Hilbert,\index[aut]{Hilbert (David), 1862-1943, Allemand} Riesz\index[aut]{Riesz (Frigyes), 1880-1956, Hongrois} et Banach,\index[aut]{Banach (Stephan), 1892-1945, Polonais} l'étude des opérateurs différentiels.
 
@@ -48,6 +49,7 @@ Pour autant, la théorie des distributions fournit un formalisme commode et él�
 Une distribution (également appelée fonction généralisée) est un objet qui généralise la notion de fonction et de mesure. La théorie des distributions étend la notion de dérivée à toutes les fonctions localement intégrables et au-delà.
 
 \begin{histoire}
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
 \noindent\emph{Généralisation de la notion de fonction:}\\
 \sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
 \begin{tabular}{c}
@@ -261,7 +263,7 @@ où~$D^\alpha u$ est une dérivée partielle de~$u$ au sens classique ($u \in C^
 \colorblack
 
 
-\ifVersionDuDocEstVincent\newpage\else\medskip\fi
+\medskip
 \section{Espaces~$H^m(\Omega)$, $H^m_0(\Omega)$ et~$H^{-m}(\Omega)$}\index{espace!de Sobolev!$H^m(\Omega)$}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}\index{espace!de Sobolev!$H_0^m(\Omega$}\index{espace!de Sobolev!$H^{-m}(\Omega)$}
 
 \begin{definition}[Espace~$H^m(\Omega)$]\label{Th-Hm}\index{espace!de Sobolev!$H^m(\Omega)$}
@@ -403,6 +405,31 @@ On pose alors:
 Cette application continue~$\gamma_1$ de~$H^2(\Omega)$ dans~$L^2(\partial\Omega)$) permet donc bien de prolonger la définition usuelle de la dérivée normale.
 Dans le cas où~$u$ est une fonction de~$H^2(\Omega)$ qui soit en même temps dans~$C^1(\overline{\Omega})$, la dérivée normale au sens usuel de~$u$ existe, et~$\gamma_1(u)$ lui est évidemment égale.
 \textcolorred{C'est pourquoi on note souvent, par abus, $\partial_n u$ plutôt que~$\gamma_1(u)$.}
+
+\begin{remarque}[Exemple: traitement d'une interface - divergence faible]\colorgris
+Soit~$\Omega$ un ouvert borné constitué de deux ouverts~$\Omega_1$ et~$\Omega_2$ séparés par une interface~$\Gamma=\partial\Omega_1\cap\partial\Omega_2$. Montrons qu'une fonction vectorielle de classe~$C^1$ sur chaque morceau~$\Omega_1$ et~$\Omega_2$ admet une divergence faible dans~$L^2(\Omega)$ si et seulement si sa composante normale est continue à travers l'interface (la surface)~$\Gamma$.
+
+\medskip
+Soit~$f$ une fonction de~$\Omega$ à valeurs vectorielles. On note~$f_1$ et~$f_2$ ses restrictions à~$\Omega_1$ et~$\Omega_2$ respectivement. On note également~$n_1$ et~$n_2$ les normales extérieures à~$\Omega_1$ et~$\Omega_2$ respectivement.
+
+Soit~$\varphi\in C_c^\infty(\Omega)$. La formule de Stokes nous permet d'écrire:
+\[
+\begin{array}{ll}
+\dint_\Omega f.\nabla\varphi & =\dint_{\Omega_1} f_1.\nabla\varphi +\dint_{\Omega_2} f_2.\nabla\varphi \\
+& = \dint_\Gamma f_1.n_1\varphi - \dint_{\Omega_1} \dive(f_1)\varphi
+- \dint_\Gamma f_2.n_2\varphi + \dint_{\Omega_2} \dive(f_2)\varphi
+\end{array}
+\]
+
+Si la composante normale de~$f$ est continue à l'interface, on en déduit que:
+\[ \dint_\Omega f.\nabla\varphi = -\dint_\Omega \psi\varphi \]
+avec~$\psi=\dive(f_i)$ sur chaque~$\Omega_i$ ($i=1,2$).
+La fonction à valeurs vectorielles~$f$ admet donc une \textcolorblue{divergence faible} et~$\dive(f)=\psi$.
+
+Réciproquement, si~$f$ possède une divergence faible, alors il existe une fonction~$v\in L^2(\Omega)$ telle que:
+\[ \dint_\Gamma (f_1-f_2).n_1\varphi = \dint_\Omega v\varphi \]
+et on en déduit que~$(f_1-f_2).n_1=0$ sur~$\Gamma$.
+\end{remarque}
 
 \medskip
 \subsection{Espace trace}\index{espace!trace}\index[aut]{Sobolev (Sergueï Lvovitch), 1908-1989, Russe}
@@ -598,7 +625,7 @@ En fait, il est possible de définir de nombreux espaces de Sobolev en fonction 
 \medskip
 \section{Inégalités utiles}
 Dans ce paragraphe, nous présentons quelques inégalités utilisées pour borner une fonction à partir d'une estimation sur ses dérivées et de la géométrie de son domaine de définition. Nous en aurons besoin pour les formulations faibles ainsi que pour les problèmes d'homogénéisation.
-%%%
+%
 \begin{definition}[Exposant conjugué de Sobolev]\index{exposant conjugué!de Sobolev}
 On s'intéresse à~$\Omega$ un ouvert de~$\RR^n$ (qui peut être~$\RR^n$ tout entier), ainsi qu'aux espaces de type~$W^{m,p}(\Omega)$.
 
@@ -618,6 +645,7 @@ Soit~$\Omega$ un ouvert de~$\RR^n$. Si~$\Omega$ est borné et a une frontière L
 \end{equation}
 \end{theoreme}
 
+\medskipvm
 \begin{theoreme}[Inégalité de Poincaré]\index{inégalité!de Poincaré}\index[aut]{Poincaré (Henri), 1854-1912, Français}
 Soit~$p$, tel que~$1 \le p <\infty$, et~$\Omega$ un ouvert de largeur finie
 (i.e. borné dans une direction).
@@ -627,6 +655,7 @@ Alors il existe une constante~$C$, dépendant uniquement de~$\Omega$ et~$p$, tel
 \end{equation}
 \end{theoreme}
 
+\medskipvm
 \begin{theoreme}[Inégalité de Poincaré-Friedrichs]\index{inégalité!de Poincaré-Friedrichs}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Friedrichs (Kurt Otto), 1901-1982, Allemand}
 Si~$\Omega$ est borné de diamètre~$d$, alors la constante de Poincaré précédente s'exprime en fonction de ce diamètre. On a, pour toute fonction~$u\in W_0^{k,p}(\Omega)$:
 \begin{equation}
@@ -638,6 +667,7 @@ En particulier pour~$p=2$:
 \begin{equation} \colorred\forall u\in H^1_0(\Omega),\quad \|u\|^2_{L^2(\Omega)} \le d^2
 \|\nabla u\|^2_{L^2(\Omega)} \end{equation}
 
+\medskipvm
 \begin{theoreme}[Inégalité de Poincaré-Wirtinger]\index{inégalité!de Poincaré-Wirtinger}\index[aut]{Poincaré (Henri), 1854-1912, Français}\index[aut]{Wirtinger (Wilhelm), 1865-1945, Autrichien}
 Soit~$p$, tel que~$1 \le p <\infty$ et~$\Omega$ un domaine (i.e. un ouvert connexe) lipschitzien (i.e. borné et «à frontière lipschitzienne») de l'espace euclidien\index[aut]{Euclide, -325-- -265, Grec} $\RR^n$.
 Alors il existe une constante~$C$, dépendant uniquement de~$\Omega$ et~$p$, telle que, pour toute fonction~$u\in W^{1,p}(\Omega)$, on ait:
@@ -647,6 +677,24 @@ Alors il existe une constante~$C$, dépendant uniquement de~$\Omega$ et~$p$, tel
 où~$u_\Omega=\frac1{|\Omega|}\int_\Omega u(y)\dd y$ est la valeur moyenne de~$u$ sur~$\Omega$, $|\Omega|$ désignant la mesure de Lebesgue du domaine~$\Omega$.
 \end{theoreme}
 
+\medskip
+\begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
+Arthur Korn\index[aut]{Korn (Arthur), 1870-1945, Allemand} a été un étudiant de Henri Poincaré.\index[aut]{Poincaré (Henri), 1854-1912, Français}\\
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cccc}
+\includegraphics[height=\the\HauteurDesPhotos]{Poincare2}&
+\includegraphics[height=\the\HauteurDesPhotos]{Friedrichs}&
+\includegraphics[height=\the\HauteurDesPhotos]{Wirtinger}&
+\includegraphics[height=\the\HauteurDesPhotos]{Korn}\\
+Poincaré&Friedrichs&Wirtinger&Korn%
+\end{tabular}}
+\ImageADroite{%
+Il est plus connu comme pionnier des télécommunications, plus précisément comme l'inventeur de la téléphotographie. Il met au point un téléautographe, un système de transmission des images fixes à distance, par le biais du fil télégraphique, en recourant aux propriétés photoélectriques du sélénium.}
+\end{histoire}
+
+\medskipvm
 \begin{theoreme}[Inégalité de Korn]\index{inégalité!de Korn}\index[aut]{Korn (Arthur), 1870-1945, Allemand}
 Soit~$\Omega$ un ouvert borné de~$\RR^n$ de la frontière est «suffisamment» régulière (par exemple~$C^1$ par morceaux).
 Notons~$\varepsilon(v)=\frac{1}{2}\left(\nabla v + (\nabla v)^T \right)$ le linéarisé du tenseur des déformations défini pour tout~$v\in V=\left(H^1(\Omega)\right)^n$ ou $\left(H^1_0(\Omega)\right)^n$.
@@ -663,23 +711,9 @@ Cette inégalité est assez puissante puisqu'elle contient, dans son membre de g
 L'inégalité inverse de l'inégalité de Korn étant évidente, on en déduit que les deux membres définissent des \textcolorred{normes équivalentes.}
 
 \medskip
-\begin{histoire}%
-Arthur Korn\index[aut]{Korn (Arthur), 1870-1945, Allemand} a été un étudiant de Henri Poincaré.\index[aut]{Poincaré (Henri), 1854-1912, Français}\\
-
-\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
-\begin{tabular}{cccc}
-\includegraphics[height=\the\HauteurDesPhotos]{Poincare2}&
-\includegraphics[height=\the\HauteurDesPhotos]{Friedrichs}&
-\includegraphics[height=\the\HauteurDesPhotos]{Wirtinger}&
-\includegraphics[height=\the\HauteurDesPhotos]{Korn}\\
-Poincaré&Friedrichs&Wirtinger&Korn%
-\end{tabular}}
-\ImageADroite{%
-Il est plus connu comme pionnier des télécommunications, plus précisément comme l'inventeur de la téléphotographie. Il met au point un téléautographe, un système de transmission des images fixes à distance, par le biais du fil télégraphique, en recourant aux propriétés photoélectriques du sélénium.}
-\end{histoire}
-
-\medskip
 \textcolorgreen{%
 En mécanique, l'inégalité de Korn\index[aut]{Korn (Arthur), 1870-1945, Allemand} dit que l'énergie élastique (qui est proportionnelle à la norme du tenseur des déformations dans~$L^2(\Omega)$) contrôle (i.e. est supérieure à) la norme du déplacement dans~$H^1(\Omega)$ à l'addition près de la norme du déplacement dans~$L^2(\Omega)$.
 Ce dernier point permet de prendre en compte les «mouvements de corps rigides», i.e. les déplacements~$u$ non nuls mais d'énergie élastique nulle.}
+
+
 
