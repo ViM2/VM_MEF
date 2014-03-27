@@ -433,7 +433,7 @@ Il n'y a pas de simplification à utiliser une approche discrète plutôt que co
 
 Des méthodes dites «stochastiques» telles que Monte-Carlo, recuit simulé ou des algorithmes génétiques sont envisageables. Elles sont coûteuses en CPU et nous ne les aborderons pas.
 
-Nous allons dire deux mots sur les méthodes déterministes, telles que les méthodes de gradient (gradient optimal, gradient à pas fixe, gradient projeté) ou de Newton. Notons qu'elles fournissent un minimum local, et que, pour fonctionner, il faut disposer du gradient. Ainsi, nous devrons pouvoir calculer~$J'$.
+Nous allons dire deux mots sur les méthodes déterministes, telles que les \textcolorblue{méthodes de gradient} (gradient optimal, gradient à pas fixe, gradient projeté) ou de Newton. Notons qu'elles fournissent un minimum local, et que, pour fonctionner, il faut disposer du gradient. \textcolorred{Ainsi, nous devrons pouvoir calculer~$J'$}. C'est d'ailleurs sur le calcul de~$J'$ que nous insisterons dans les exemples traités.
 
 \medskip
 La méthode la plus simple (et la plus sûre) pour calculer le gradient est:
@@ -445,10 +445,8 @@ Par linéarité on écrit: $u(x+\varepsilon y)=u(x)+\varepsilon \tilde{u}(y)$, l
 Toutefois, remarquons qu'avec cette manière de procéder~$J'(x)$ n'est pas explicite.
 
 \medskip
-Pour calculer (explicitement) l'expression du gradient, on utilise l'\textcolorblue{état adjoint~$p$}, qui nécessite de résoudre deux problèmes aux limites ($u$ et $p$).
+Pour calculer (explicitement) l'expression du gradient, on utilise l'\textcolorblue{état adjoint}~$p$, qui nécessite de résoudre deux problèmes aux limites ($u$ et $p$).
 Cette méthode est très efficace en pratique, c'est la meilleure possible.
-
-On commence comme ci-dessus par écrire les relations vérifiées par~$\tilde{u}(y)$ (équation d'état et conditions aux limites). Dans ces équations, on remplace~$\tilde{u}(y)$ par~$p$ et~$y$ par~$u-u_0$. On multiplie l'équation de~$\tilde{u}(y)$ par $p$ et réciproquement, puis on intègre par parties. La comparaison des égalités obtenues permet d'obtenir l'expression du~$J'$.
 
 D'une manière générale, on peut dire que l'état adjoint est obtenu comme stationnarité d'un lagrangien dont $p$ est le multiplicateur de Lagrange et l'équation d'état la contrainte.
 De même, $J'$ est obtenu comme stationnarité de ce même Lagrangien par rapport à la variable de contrôle optimal.
@@ -456,7 +454,7 @@ De même, $J'$ est obtenu comme stationnarité de ce même Lagrangien par rappor
 Si l'équation d'état est non-autoadjointe (i.e. si la forme bilinéaire du problème n'est pas symétrique), alors l'opérateur principal de l'équation adjointe est le transposé ou l'adjoint de celui de l'équation d'état.
 Par contre, même si l'équation d'état est non linéaire, l'équation adjointe est linéaire (c'est assez normal, puisque finalement, on ne s'intéresse qu'aux fluctuations en somme).
 
-Nous n'en dirons pas plus ici, quelques exemples plus bas permettrons de voir le calcul effectif de~$J'$.
+Nous n'en dirons pas plus ici, quelques exemples plus bas permettrons de voir le calcul effectif de l'état adjoint et de~$J'$.
 
 
 \medskip
@@ -649,6 +647,15 @@ C'est ce résultat qui sert à la théorie mathématique de l'optimisation topol
 Il reste évidemment encore un peu de travail mathématique pour tout justifier jusqu'au bout, mais ce n'est pas le but de ce document. Les quelques indications données permettent de comprendre comment la méthode fonctionne et sur quoi elle repose.
 Des simplifications, des conditions d'optimalité, la vérification de convexité... permettent d'aboutir à des algorithmes efficaces. Nous renvoyons une fois encore à la «Boite à outils \freefem pour l'optimisation de formes (géométrique et topologique)» disponible sur le site de Grégoire Allaire du CMAP~\cite{bib-AllaireOptimFF}.
 
+\begin{remarque}[Remarque sur la mise en œuvre de l'optimisation topologique]
+Des codes de calculs permettent aujourd'hui de réaliser de l'optimisation topologique, mais tous ne le permettent pas.
+
+Il existe une manière simple, mais moins élégante et surtout moins performante que ce qui a été présenté, de s'en sortir avec un code classique non prévu pour cela (c'est par exemple ce que je fais avec mon propre code éléments finis qui n'est pas du tout prévu 
+pour cela à la base).
+1) On commence à mailler le domaine maximal dans lequel la structure optimale peut se trouver, 2) puis on effectue le calcul éléments finis, 3) en fonction d'un critère prédéfini (par exemple un critère portant sur une contrainte équivalente inférieure à un seuil), on supprime les éléments négligeables (si le code dispose de méthodes de type «birth and death») ou on remplace le matériau lié à ces éléments par un matériau très faible (on est plus proche de l'approche par homogénéisation), 4) puis on reboucle le processus à partir du deuxième pas. 
+
+Évidemment, il est possible d'améliorer cette stratégie rudimentaire: par exemple ne supprimer/modifier que les éléments dont tous les points vérifient la condition, sinon diviser l'élément (et alors comment le diviser au mieux). On peut être amené à rajouter des éléments. On doit veiller à ne pas introduire de singularité artificielle qui nuirait à l'évaluation de la condition...
+\end{remarque}
 
 \medskip
 \section{Exemples d'optimisation d'une membrane}
