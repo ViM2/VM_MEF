@@ -60,7 +60,7 @@ Les méthodes imaginées pour sa résolution amenèrent à développer la branch
 \includegraphics[height=\the\HauteurDesPhotos]{Bernoulli_Jean}&%
 \includegraphics[height=\the\HauteurDesPhotos]{Euler6}&%
 \includegraphics[height=\the\HauteurDesPhotos]{Lagrange2}\\%
-Jean Bernouilli&Euler&Lagrange%
+J. Bernouilli&Euler&Lagrange%
 \end{tabular}}
 \medskip
 \ImageAGauche{%
@@ -391,7 +391,7 @@ où~$x$ est la position du point considéré et~$\chi(x)$ la fonction caractéri
 On peut également faire varier le critère en fonction de la zone de la structure considérée.
 Pour cela, notre domaine~$\Omega$ peut être décomposé en une \textcolorblue{partition}~$(\omega_i)_{1\le i\le n}$, et l'on est amené à considérer l'ensemble admissible:
 \begin{equation}
-\mathcal{U}^n_{ad}=\{ x\in \mathcal{U}_{ad}, x \textbf{ vérifie la condition } i \textbf{ dans } \omega_i, 1\le i\le n\}
+\mathcal{U}^n_{ad}=\{ x\in \mathcal{U}_{ad}, x \text{ vérifie la condition } i \text{ dans } \omega_i, 1\le i\le n\}
 \end{equation}
 
 \medskip
@@ -412,16 +412,16 @@ Numériquement, on préfère la contrainte de régularité:
 On peut également discrétiser des contraintes d'optimisation. L'ensemble admissible devient alors:
 \begin{equation}
 \begin{split} 
-\mathcal{U}^{disc}_{ad} = &\Bigg\{ \text{contraintes sur } x \textbf{ idem celles sur } \mathcal{U}_{ad}; ...\\  
+\mathcal{U}^{disc}_{ad} = &\Bigg\{ \text{contraintes sur } x \text{ idem celles sur } \mathcal{U}_{ad}; ...\\  
 & \left. \quad ... \text{ contraintes sur } \int x...=... \text{ remplacées par } \dsum_{i=1}^n c_ix_i = ... \right\}
 \end{split}
 \end{equation}
 où~$\sum_{i=1}^n c_ix_i$ est une approximation de~$\int x...$.
 
-Le problème est de calculer le gradient de~$J^{disc}$. Si l'on procède de manière directe, cela est impraticable numériquement. On passe alors par l'état adjoint.
+Le problème est de calculer le gradient de~$J^{disc}$. Si l'on procède de manière directe, cela est impraticable numériquement. On passe alors par l'état adjoint (voir exemples plus bas).
 
 \medskip
-Il n'y a pas de simplification à utiliser une approche discrète plutôt que continue:
+\textcolorgreen{Il n'y a pas de simplification à utiliser une approche discrète plutôt que continue:}
 \begin{itemize}
    \item certes «discrétiser d'abord puis optimiser» garantit une parfait compatibilité, mais cela nécessite une parfaite connaissance du solveur numérique;
    \item alors qu'«optimiser en continu puis discrétiser», tel que présenté dans ce chapitre, est beaucoup plus simple et ne nuit pas en précision numérique si l'on choisit bien les espaces d'éléments finis.
@@ -494,7 +494,7 @@ Ne rien imposer de plus ne permet pas de résoudre le problème. Il nous faut de
 On veut trouver la forme optimale qui permet, par exemple, de maximiser la rigidité, ou d'obtenir un déplacement cible.
 Mais cela ne suffit pas encore. Si toutes les formes sont admissibles, alors on va arriver à des solutions où l'on a des volumes nuls ou infinis, car cela répondra au mieux...
 Il est donc nécessaire de contraindre la forme: 
-tout d'abord, on va restreindre la géométrie à ne varier que dans un domaine~$D_0$ borné défini, ce qui se traduit pas l'ajout de la condition:
+tout d'abord, on va restreindre la géométrie à ne varier que dans un domaine~$D_0$ borné défini, ce qui se traduit par l'ajout de la condition:
 \begin{equation}
 \mathcal{U}_{ad}=\{ \Omega\subset D_0 \}
 \end{equation}
@@ -652,7 +652,7 @@ Des codes de calculs permettent aujourd'hui de réaliser de l'optimisation topol
 
 Il existe une manière simple, mais moins élégante et surtout moins performante que ce qui a été présenté, de s'en sortir avec un code classique non prévu pour cela (c'est par exemple ce que je fais avec mon propre code éléments finis qui n'est pas du tout prévu 
 pour cela à la base).
-1) On commence à mailler le domaine maximal dans lequel la structure optimale peut se trouver, 2) puis on effectue le calcul éléments finis, 3) en fonction d'un critère prédéfini (par exemple un critère portant sur une contrainte équivalente inférieure à un seuil), on supprime les éléments négligeables (si le code dispose de méthodes de type «birth and death») ou on remplace le matériau lié à ces éléments par un matériau très faible (on est plus proche de l'approche par homogénéisation), 4) puis on reboucle le processus à partir du deuxième pas. 
+1) On commence par mailler le domaine maximal dans lequel la structure optimale peut se trouver, 2) puis on effectue le calcul éléments finis, 3) en fonction d'un critère prédéfini (par exemple un critère portant sur une contrainte équivalente inférieure à un seuil), on supprime les éléments négligeables (si le code dispose de méthodes de type «birth and death») ou on remplace le matériau lié à ces éléments par un matériau très faible (on est plus proche de l'approche par homogénéisation), 4) puis on reboucle le processus à partir du deuxième pas. 
 
 Évidemment, il est possible d'améliorer cette stratégie rudimentaire: par exemple ne supprimer/modifier que les éléments dont tous les points vérifient la condition, sinon diviser l'élément (et alors comment le diviser au mieux). On peut être amené à rajouter des éléments. On doit veiller à ne pas introduire de singularité artificielle qui nuirait à l'évaluation de la condition...
 \end{remarque}
