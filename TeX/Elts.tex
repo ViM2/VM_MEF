@@ -473,12 +473,13 @@ Notons tout d'abord que l'espace~$V_h$ est inclus dans~$H^2(\Omega)$.
 
 Ensuite, d'après le point précédent, un élément~$v$ de~$V_h$ est entièrement déterminé par les valeurs de~$v$, $\nabla v$ et~$\nabla \nabla v$ aux nœuds du maillage, ainsi que par le flux~$\partial v/\partial n(b_k)$, $b_k$ parcourant les milieux des arêtes~$k$ du maillage.
 
+Notons~$n_s$ le nombre d'arêtes (side), et~$n_c$ le nombre de sommets (corner).
 On peut donc construire une base de~$V_h$ formée des éléments~$(\varphi_{i,\alpha})_{(i,\alpha)}$ et~$(\psi_k)$ où~$i\in\{1, ..., n_s\}$, $\alpha\in\NN^2$ le multi-indice tel que~$|\alpha|\le2$ et~$k\in\{1, ..., n_c\}$ définis par:
 \[ \partial^\beta\varphi_{i,\alpha}(a_j)=\delta^i_j\delta^\beta_\alpha, \quad
 \dfrac{\partial\varphi_{i,\alpha}}{\partial n}(b_l)=0, \quad
 \partial^\beta\psi_k(a_j)=0, \quad
 \dfrac{\partial\psi_k}{\partial n}(b_l)=\delta^k_l \]
-pour tout~$j\in\{1, ..., n_s\}$, $l\in\{1, ..., n_c\}$, $\beta\in\NN^2$ le multi-indice tel que~$|\beta|\le2$, $n_s$ le nombre d'arêtes (side), et~$n_c$ le nombre de sommets (corner).
+pour tout~$j\in\{1, ..., n_s\}$, $l\in\{1, ..., n_c\}$, $\beta\in\NN^2$ le multi-indice tel que~$|\beta|\le2$.
 
 Afin de résoudre l'équation des plaques, on introduit le sous-espace de~$V_h$:
 \[ V_{0h}=V_h\cap H^2_0(\Omega) \]

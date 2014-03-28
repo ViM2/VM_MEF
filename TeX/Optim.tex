@@ -19,7 +19,7 @@ Un problème d'optimisation nécessite de fournir:
 Dans ce document, visant un public plutôt mécanicien, nous nous intéresserons essentiellement à de l'optimisation de «structures», et nous envisagerons les cas suivants:
 \begin{itemize}
    \item l'optimisation \textcolorblue{paramétrique} où l'on dispose d'un nombre réduit de variables qui paramètrent la structure (par exemple l'épaisseur d'une plaque, l'orientation des plis d'un composite...). Nous verrons que des problèmes d'\textcolorblue{homogénéisation} entrent dans ce cadre;
-   \item l'optimisation \textcolorblue{géométrique}: il s'agit du cas où l'on souhaite faire varier tout ou partie de la forme des frontières, mais \textcolorred{sans} changer la topologie de la pièce, i.e. sans ajouter ou supprimer de «trous»;
+   \item l'optimisation \textcolorblue{géométrique}: il s'agit du cas où l'on souhaite faire varier toute ou partie de la forme des frontières, mais \textcolorred{sans} changer la topologie de la pièce, i.e. sans ajouter ou supprimer de «trous»;
    \item l'optimisation \textcolorblue{topologique}: c'est le cas le plus général d'optimisation de forme d'une structure. On cherche à trouver la meilleure forme possible sans restriction, i.e. quitte à modifier la topologie.
 
    Si l'on s'en sort en 2D en remarquant qu'une topologie est caractérisée par le nombre de composantes connexes des bords, cela est plus compliqué en 3D où il faut en plus tenir compte du nombre d'anses ou de boucles de la structure.
@@ -234,7 +234,7 @@ Nous cherchons à trouver le minimum de la fonction objectif~$J(v)$ où~$v$ sati
 
 On appelle \textcolorblue{Lagrangien} du problème, la fonction:
 \begin{equation}
-\mathcal{L}(v,\mu) = J(v)+\mu.F(v) = J(v) + \dsum_{i=1}^M \mu_iF_i(v), 
+\mathscr{L}(v,\mu) = J(v)+\mu.F(v) = J(v) + \dsum_{i=1}^M \mu_iF_i(v), 
 \quad \forall (v,\mu)\in V\times\RR^M
 \end{equation}
 La variable~$\mu\in\RR^M$ est appelée \textcolorblue{multiplicateur de Lagrange}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} pour la contrainte~$F(v)=0$.
@@ -242,15 +242,15 @@ La variable~$\mu\in\RR^M$ est appelée \textcolorblue{multiplicateur de Lagrange
 
 Un premier résultat est que le problème de minimisation précédent est équivalent à:
 \begin{equation}
-\inf_{v\in V, F(v)=0} J(v) = \inf_{v\in V} \sup_{\mu\in\RR^M} \mathcal{L}(v,\mu)
+\inf_{v\in V, F(v)=0} J(v) = \inf_{v\in V} \sup_{\mu\in\RR^M} \mathscr{L}(v,\mu)
 \end{equation}
 et l'on dispose du théorème suivant:
 \begin{theoreme}[Stationnarité du Lagrangien]
 On suppose que~$J$ et~$F$ sont continûment dérivables au voisinage de~$u\in V$ tel que~$F(u)=0$. Si~$u$ est un minimum local, et si les vecteurs~$(F'_i(u))_{1\le i\le M}$ sont linéairement indépendants, alors il existe des multiplicateurs de Lagrange~$\lambda_1$, ..., $\lambda_M\in\RR$ tels que:
 \begin{equation}
-\dfrac{\partial\mathcal{L}}{\partial v}(u,\lambda) = J'(u)+\lambda.F'(u)=0
+\dfrac{\partial\mathscr{L}}{\partial v}(u,\lambda) = J'(u)+\lambda.F'(u)=0
 \quad \text{ et }\quad
-\dfrac{\partial\mathcal{L}}{\partial \mu}(u,\lambda) = F(u)=0
+\dfrac{\partial\mathscr{L}}{\partial \mu}(u,\lambda) = F(u)=0
 \end{equation}
 \end{theoreme}
 
@@ -271,7 +271,7 @@ On dit que les contraintes d'inégalité sont \textcolorblue{qualifiées} en~$u\
 \begin{definition}[Lagrangien (du problème de minimisation avec contraintes d'inégalité)]
 On appelle \textcolorblue{Lagrangien} du problème, la fonction:
 \begin{equation}
-\mathcal{L}(v,\mu) = J(v)+\mu.F(v) = J(v) + \dsum_{i=1}^M \mu_iF_i(v), 
+\mathscr{L}(v,\mu) = J(v)+\mu.F(v) = J(v) + \dsum_{i=1}^M \mu_iF_i(v), 
 \quad \forall (v,\mu)\in V\times(\RR^+)^M
 \end{equation}
 La variable \textcolorred{positive}~$\mu\in(\RR^+)^M$ est appelée \textcolorblue{multiplicateur de Lagrange}\index{multiplicateurs de Lagrange}\index[aut]{Lagrange (Joseph Louis, comte de -), 1736-1813, Italien} pour la contrainte~$F(v)\le0$.
@@ -284,13 +284,13 @@ La variable \textcolorred{positive}~$\mu\in(\RR^+)^M$ est appelée \textcolorblu
 \medskip
 Un premier résultat est que le problème de minimisation précédent est équivalent à:
 \begin{equation}
-\inf_{v\in V, F(v)\le0} J(v) = \inf_{v\in V} \sup_{\mu\in(\RR^+)^M} \mathcal{L}(v,\mu)
+\inf_{v\in V, F(v)\le0} J(v) = \inf_{v\in V} \sup_{\mu\in(\RR^+)^M} \mathscr{L}(v,\mu)
 \end{equation}
 et l'on dispose du théorème suivant:
 \begin{theoreme}[Stationnarité du Lagrangien]
 On suppose que les contraintes sont qualifiées en~$u$ tel que~$F(u)\le0$. Si~$u$ est un minimum local, alors il existe des multiplicateurs de Lagrange~$\lambda_1$, ..., $\lambda_M\in\RR^+$ tels que:
 \begin{equation}
-\dfrac{\partial\mathcal{L}}{\partial v}(u,\lambda) = J'(u)+\lambda.F'(u)
+\dfrac{\partial\mathscr{L}}{\partial v}(u,\lambda) = J'(u)+\lambda.F'(u)
 = J'(u)+\dsum_{i=1}^M\lambda_iF_i'(u) =0, \quad \lambda_i\ge0, 
 \quad \forall i\in\{1, ..., M\}
 \end{equation}
@@ -298,7 +298,7 @@ Notons que~$\lambda_i=0$ si~$F_i(u)<0$.
 
 En plus de la stationnarité du Lagrangien, notons que la condition~$\lambda\ge0$, $F(u)\le 0$, $\lambda.F(u)=0$ est équivalente à l'inéquation d'Euler pour la \textcolorblue{maximisation} par rapport à~$\mu$ dans le convexe fermé qu'est~$(\RR^+)^M$:
 \begin{equation}
-\dfrac{\partial\mathcal{L}}{\partial \mu}(u,\lambda).(\mu-\lambda)=F(u).(\mu-\lambda)\le0, \quad \forall\mu\in(\RR^+)^M
+\dfrac{\partial\mathscr{L}}{\partial \mu}(u,\lambda).(\mu-\lambda)=F(u).(\mu-\lambda)\le0, \quad \forall\mu\in(\RR^+)^M
 \end{equation}
 \end{theoreme}
 
@@ -306,7 +306,7 @@ D'un point de vue pratique, $\lambda$ donne la dérivée (sans la calculer) du m
 \begin{demonstration}[Illustration]
 Considérons le cas de la minimisation de~$J(u)$ sous la contrainte~$F(u)=c$.
 Le Lagrangien est:
-\[ \mathcal{L}(v,\mu,c)=J(v)+\mu.(F(v)-c) \]
+\[ \mathscr{L}(v,\mu,c)=J(v)+\mu.(F(v)-c) \]
 et on se propose d'étudier la sensibilité du Lagrangien par rapport à~$c$.
 
 Notons~$u(c)$ et~$\lambda(c)$ le point de minimum et le multiplicateur de Lagrange correspondant. On supposera évidemment qu'ils sont dérivables par rapport à~$c$. Il vient alors:
@@ -321,13 +321,13 @@ et ainsi~$\lambda$ donne bien la dérivée (sans la calculer) du minimum par rap
 Dans ce paragraphe, on va regarder comment supprimer les contraintes portant sur le problème. Pour cela, on va adjoindre au problème dit primal, un problème dual. Ce dernier est souvent plus simple que le problème primal, notamment parce qu'il ne comporte pas de contraintes. Évidemment, connaissant la solution du problème dual, on devra être en mesure de remonter à celle du problème primal.
 
 \begin{definition}
-Soit un Lagrangien~$\mathcal{L}(v,q)$.
-On dit que~$(u,p)\in U\times P$ est un \textcolorblue{point selle} de~$\mathcal{L}$ sur~$U\times P$ si:
+Soit un Lagrangien~$\mathscr{L}(v,q)$.
+On dit que~$(u,p)\in U\times P$ est un \textcolorblue{point selle} de~$\mathscr{L}$ sur~$U\times P$ si:
 \begin{equation}
-\forall q\in P, \quad \mathcal{L}(u,q) \le \mathcal{L}(u,p) \le \mathcal{L}(v,p), \forall v\in U
+\forall q\in P, \quad \mathscr{L}(u,q) \le \mathscr{L}(u,p) \le \mathscr{L}(v,p), \forall v\in U
 \end{equation}
 
-Pour $v\in U$ et~$q\in P$, posons~$\mathcal{J}(v)=\sup_{q\in P}\mathcal{L}(v,q)$ et~$\mathcal{G}(q)=\inf_{v\in U}\mathcal{L}(v,q)$.
+Pour $v\in U$ et~$q\in P$, posons~$\mathcal{J}(v)=\sup_{q\in P}\mathscr{L}(v,q)$ et~$\mathcal{G}(q)=\inf_{v\in U}\mathscr{L}(v,q)$.
 On appelle \textcolorblue{problème primal}:
 \begin{equation}
 \inf_{v\in U} \mathcal{J}(v)
@@ -338,14 +338,14 @@ et \textcolorblue{problème dual}:
 \end{equation}
 \end{definition}
 
-Pour faire le lien avec ce qui précède, plaçons nous dans le cas où~$U=V$, $P=\RR^M$, et~$\mathcal{L}(v,q)=J(v)+q.F(v)$.
+Pour faire le lien avec ce qui précède, plaçons nous dans le cas où~$U=V$, $P=\RR^M$, et~$\mathscr{L}(v,q)=J(v)+q.F(v)$.
 Il vient alors: $\mathcal{J}(v)=J(v)$ si~$F(v)=0$ et~$\mathcal{J}(v)=+\infty$ sinon.
 Par contre, il n'y a pas de contrainte pour le problème dual, si ce n'est~$q\in P=\RR^M$.
 
 \textcolorgreen{Comme annoncé, le problème dual est plus simple que le problème primal, car il n'a pas de contrainte.}
 
 \begin{theoreme}[Dualité forte]
-Le couple~$(u,p)$ est un point selle de~$\mathcal{L}$ sur~$U\times P$ si et seulement si:
+Le couple~$(u,p)$ est un point selle de~$\mathscr{L}$ sur~$U\times P$ si et seulement si:
 \begin{equation}
 \mathcal{J}(u)=\min_{v\in U}\mathcal{J}(v) = \max_{q\in P}\mathcal{G}(q)=\mathcal{G}(p)
 \end{equation}
@@ -366,7 +366,7 @@ Si l'on a à traiter un problème de maximisation, il suffit alors de le transfo
 
 Nous avons été assez vagues sur le domaine dans lequel peuvent varier les variables d'optimisation. Nous avons parlé d'espace, d'ensemble connexe...
 
-D'un point de vue pratique, les variables (ou paramètres) ne peuvent varier qu'à l'intérieur d'un domaine admissible. Cet \textcolorblue{ensemble admissible} sera noté~$\mathcal{U}_{ad}$.
+D'un point de vue pratique, les variables (ou paramètres) ne peuvent varier qu'à l'intérieur d'un domaine admissible. Cet \textcolorblue{ensemble admissible} sera noté~$\mathscr{U}_{\text{ad}}$.
 
 \medskip
 Cet ensemble peut aussi bien comprendre:
@@ -391,14 +391,14 @@ où~$x$ est la position du point considéré et~$\chi(x)$ la fonction caractéri
 On peut également faire varier le critère en fonction de la zone de la structure considérée.
 Pour cela, notre domaine~$\Omega$ peut être décomposé en une \textcolorblue{partition}~$(\omega_i)_{1\le i\le n}$, et l'on est amené à considérer l'ensemble admissible:
 \begin{equation}
-\mathcal{U}^n_{ad}=\{ x\in \mathcal{U}_{ad}, x \text{ vérifie la condition } i \text{ dans } \omega_i, 1\le i\le n\}
+\mathscr{U}^n_{\text{ad}}=\{ x\in \mathscr{U}_{\text{ad}}, x \text{ vérifie la condition } i \text{ dans } \omega_i, 1\le i\le n\}
 \end{equation}
 
 \medskip
 On peut également avoir des \textcolorblue{contraintes de régularité}. C'est par exemple ce que l'on peut imposer à une épaisseur variable: non seulement celle-ci doit être comprises entre une valeur mini et une valeur maxi, mais on peut également vouloir que sa variation soit bornée, i.e. qu'elle ne varie pas trop vite, ce qui correspond à une contrainte pratique du processus de fabrication.
 Ainsi, on se fixe une constante positive~$R$, et l'on travaille sur l'ensemble admissible:
 \begin{equation}
-\mathcal{U}^{reg}_{ad}=\{ x\in \mathcal{U}_{ad} \cap W^{1,\infty}(\Omega), \|x\|_{W^{1,\infty}(\Omega)}\le R\}
+\mathscr{U}^{\text{reg}}_{\text{ad}}=\{ x\in \mathscr{U}_{\text{ad}} \cap W^{1,\infty}(\Omega), \|x\|_{W^{1,\infty}(\Omega)}\le R\}
 \end{equation}
 Le problème reste de choisir la valeur de~$R$. En général, il n'y a d'ailleurs pas convergence quand~$R$ tend vers l'infini.
 Numériquement, on préfère la contrainte de régularité:
@@ -412,13 +412,13 @@ Numériquement, on préfère la contrainte de régularité:
 On peut également discrétiser des contraintes d'optimisation. L'ensemble admissible devient alors:
 \begin{equation}
 \begin{split} 
-\mathcal{U}^{disc}_{ad} = &\Bigg\{ \text{contraintes sur } x \text{ idem celles sur } \mathcal{U}_{ad}; ...\\  
+\mathscr{U}^{\text{disc}}_{\text{ad}} = &\Bigg\{ \text{contraintes sur } x \text{ idem celles sur } \mathscr{U}_{\text{ad}}; ...\\  
 & \left. \quad ... \text{ contraintes sur } \int x...=... \text{ remplacées par } \dsum_{i=1}^n c_ix_i = ... \right\}
 \end{split}
 \end{equation}
 où~$\sum_{i=1}^n c_ix_i$ est une approximation de~$\int x...$.
 
-Le problème est de calculer le gradient de~$J^{disc}$. Si l'on procède de manière directe, cela est impraticable numériquement. On passe alors par l'état adjoint (voir exemples plus bas).
+Le problème est de calculer le gradient de~$J^{\text{disc}}$. Si l'on procède de manière directe, cela est impraticable numériquement. On passe alors par l'état adjoint (voir exemples plus bas).
 
 \medskip
 \textcolorgreen{Il n'y a pas de simplification à utiliser une approche discrète plutôt que continue:}
@@ -445,7 +445,7 @@ Par linéarité on écrit: $u(x+\varepsilon y)=u(x)+\varepsilon \tilde{u}(y)$, l
 Toutefois, remarquons qu'avec cette manière de procéder~$J'(x)$ n'est pas explicite.
 
 \medskip
-Pour calculer (explicitement) l'expression du gradient, on utilise l'\textcolorblue{état adjoint}~$p$, qui nécessite de résoudre deux problèmes aux limites ($u$ et $p$).
+Pour calculer explicitement l'expression du gradient, on utilise l'\textcolorblue{état adjoint}~$p$, qui nécessite de résoudre deux problèmes aux limites ($u$ et $p$).
 Cette méthode est très efficace en pratique, c'est la meilleure possible.
 
 D'une manière générale, on peut dire que l'état adjoint est obtenu comme stationnarité d'un lagrangien dont $p$ est le multiplicateur de Lagrange et l'équation d'état la contrainte.
@@ -468,7 +468,7 @@ Le problème principal qui se pose est de savoir comment poser le problème, i.e
 \medskip
 \subsection{Optimisation paramétrique}
 
-On est dans le cas le plus simple. La géométrie ne peut pas «vraiment» varier: elle est paramétrée par des variables. L'ensemble~$\mathcal{U}_{ad}$ est donc celui défini par l'ensemble de ces variables munies de leur domaine de variation (valeur mini et maxi).
+On est dans le cas le plus simple. La géométrie ne peut pas «vraiment» varier: elle est paramétrée par des variables. L'ensemble~$\mathscr{U}_{\text{ad}}$ est donc celui défini par l'ensemble de ces variables munies de leur domaine de variation (valeur mini et maxi).
 
 En somme, ce cas a déjà été traité auparavant, et il n'y a pas de différence dans le traitement d'un paramètre, que celui-ci représente un élément de la géométrie ou un autre type de variable.
 
@@ -487,7 +487,7 @@ Généralement, le contour~$\Gamma=\partial\Omega$ est partitionné comme suit:
 où~$\Gamma_D$ est la partie où les déplacements sont imposés, considérée comme immuable; $\Gamma_N$ est la partie où les efforts extérieurs sont prescrits, également considérée comme fixe; et~$\Gamma_R$ est le reste du contour, seule partie qui peut varier (tout ou partie, auquel cas on partitionne encore en une partie fixe et une partie mobile).
 On commence donc par imposer que~$\Gamma_D$ et~$\Gamma_N$ sont fixes:
 \begin{equation}
-\mathcal{U}_{ad}=\{ \Gamma_D \cup \Gamma_N \subset \Gamma\}
+\mathscr{U}_{\text{ad}}=\{ \Gamma_D \cup \Gamma_N \subset \Gamma\}
 \end{equation}
 
 Ne rien imposer de plus ne permet pas de résoudre le problème. Il nous faut des critères d'optimisation.
@@ -496,16 +496,16 @@ Mais cela ne suffit pas encore. Si toutes les formes sont admissibles, alors on 
 Il est donc nécessaire de contraindre la forme: 
 tout d'abord, on va restreindre la géométrie à ne varier que dans un domaine~$D_0$ borné défini, ce qui se traduit par l'ajout de la condition:
 \begin{equation}
-\mathcal{U}_{ad}=\{ \Omega\subset D_0 \}
+\mathscr{U}_{\text{ad}}=\{ \Omega\subset D_0 \}
 \end{equation}
 Ensuite, par exemple, on peut décider de travailler à volume fixé~$V_0$, ce qui se traduit par:
 \begin{equation}
-\mathcal{U}_{ad}=\{ |\Omega|=V_0\}
+\mathscr{U}_{\text{ad}}=\{ |\Omega|=V_0\}
 \end{equation}
 
 Nous en sommes donc à un ensemble admissible qui se présente sous la forme:
 \begin{equation}
-\mathcal{U}_{ad}=\{ \Omega\subset D_0 /\quad 
+\mathscr{U}_{\text{ad}}=\{ \Omega\subset D_0 /\quad 
 \Gamma_D \cup \Gamma_N \subset \Gamma \text{ et } |\Omega|=V_0 \}
 \end{equation}
 
@@ -515,7 +515,7 @@ Il est nécessaire d'ajouter que~$\Omega$ vérifie la \textcolorblue{propriété
 \begin{theoreme}[D. Chenais]
 Si l'ensemble admissible est:
 \begin{equation}
-\mathcal{U}_{ad}=\left\{ \Omega\subset D_0 \text{ tq: }
+\mathscr{U}_{\text{ad}}=\left\{ \Omega\subset D_0 \text{ tq: }
 \begin{array}{l}
 (i)\quad \Omega \text{ vérifie la propriété du cône uniforme}\\
 (ii)\quad \Gamma_D \cup \Gamma_N \subset \Gamma \text{ et } |\Omega|=V_0 
@@ -523,7 +523,7 @@ Si l'ensemble admissible est:
 \right\}
 \end{equation}
 alors le problème d'optimisation:
-\[ \inf_{\Omega\in\mathcal{U}_{ad}} J(\Omega) \]
+\[ \inf_{\Omega\in\mathscr{U}_{\text{ad}}} J(\Omega) \]
 admet au moins une solution optimale.
 \end{theoreme}
 
@@ -535,9 +535,9 @@ Une autre voie est possible pour réaliser une optimisation géométrique: c'est
 
 \medskip
 \begin{definition}[Espace des difféomorphismes]
-L'espace des difféomorphismes~$\mathcal{T}$ (ou espace des bijections régulières) sur~$\RR^N$ est défini par:
+L'espace des difféomorphismes~$\mathscr{T}$ (ou espace des bijections régulières) sur~$\RR^N$ est défini par:
 \begin{equation}
-\mathcal{T}=\left\{ T \text{ tel que } (T-Id) \text{ et } (T+Id)\in W^{1,\infty}(\RR^N;\RR^N)\right\}
+\mathscr{T}=\left\{ T \text{ tel que } (T-Id) \text{ et } (T+Id)\in W^{1,\infty}(\RR^N;\RR^N)\right\}
 \end{equation}
 L'espace de Sobolev~$W^{1,\infty}(\RR^N;\RR^N)$ est également appelé espace des vecteurs Lipschitziens. Il est muni de:
 \begin{equation}
@@ -549,13 +549,13 @@ Ainsi, $\varphi$ est continue mais ses dérivées sont seulement bornées.
 
 L'\textcolorblue{espace des formes admissibles} est alors:
 \begin{equation}
-\mathcal{C}(\Omega_0)=\left\{ \Omega \text{ tel que: } \exists T\in\mathcal{T}, \Omega=T(\Omega_0) \right\}
+\mathcal{C}(\Omega_0)=\left\{ \Omega \text{ tel que: } \exists T\in\mathscr{T}, \Omega=T(\Omega_0) \right\}
 \end{equation}
 Attention, chaque domaine~$\Omega$ est bien paramétré par un difféomorphisme~$T$, mais celui-ci n'est pas unique.
 
 On définit la pseudo-distance:
 \begin{equation}
-d(\Omega_1,\Omega_2) = \inf_{T\in\mathcal{T}/ T(\Omega_1)=\Omega_2}
+d(\Omega_1,\Omega_2) = \inf_{T\in\mathscr{T}/ T(\Omega_1)=\Omega_2}
 \left( \|T-Id\|+\|T^{-1}-Id\|\right)_{W^{1,\infty}(\RR^N;\RR^N)}
 \end{equation}
 
@@ -564,22 +564,22 @@ Si~$\Omega_0$ est borné, alors on peut utiliser~$C^1(\RR^N;\RR^N)$ au lieu de~$
 \medskip
 L'ensemble admissible est finalement:
 \begin{equation}
-\mathcal{U}_{ad} = \{ \Omega\in\mathcal{C}(\Omega_0) / \quad
+\mathscr{U}_{\text{ad}} = \{ \Omega\in\mathcal{C}(\Omega_0) / \quad
 \Gamma_D \cup \Gamma_N \subset \Gamma \text{ et } |\Omega|=V_0 \}
 \end{equation}
 Comme précédemment, on fixe une constante positive~$R$ (contrainte de faisabilité), et on introduit le sous-espace régulier:
 \begin{equation}
-\mathcal{U}_{ad}^{reg} = \{ \Omega\in\mathcal{U}_{ad}) / \quad
+\mathscr{U}_{\text{ad}}^{\text{reg}} = \{ \Omega\in\mathscr{U}_{\text{ad}}) / \quad
 d(\Omega,\Omega_0)\le R \}
 \end{equation}
 On dispose alors du résultat suivant:
 \begin{theoreme}
-Si l'ensemble admissible est~$\mathcal{U}_{ad}^{reg}$ défini juste avant, alors le problème d'optimisation:
-\[ \inf_{\Omega\in\mathcal{U}_{ad}^{reg}} J(\Omega) \]
+Si l'ensemble admissible est~$\mathscr{U}_{\text{ad}}^{\text{reg}}$ défini juste avant, alors le problème d'optimisation:
+\[ \inf_{\Omega\in\mathscr{U}_{\text{ad}}^{\text{reg}}} J(\Omega) \]
 admet au moins une solution optimale.
 \end{theoreme}
 
-Notons que les bords dans~$\mathcal{U}_{ad}^{reg}$ ne peuvent pas trop osciller.
+Notons que les bords dans~$\mathscr{U}_{\text{ad}}^{\text{reg}}$ ne peuvent pas trop osciller.
 
 \medskip
 Comme~$J(\Omega)$ est paramétré par le difféomorphisme~$T$, il est possible de calculer sa dérivée.
@@ -613,34 +613,34 @@ Ces \textcolorblue{formes généralisées} seront les limites de suites minimisa
 Ainsi, la méthode d'homogénéisation autorise comme formes admissibles des matériaux composites obtenus par perforation (macroscopique ou microscopique) de la matière: c'est ainsi que sont introduits les «trous» dans la structure.
 
 \medskip
-Ainsi, au lieu de représenter un trou par une fonction caractéristique (qui vaut~$1$ dans la matière et~$0$ dans les trous), on va considérer que les trous peuvent être non seulement macroscopiques que microscopiques. Dans une \textcolorblue{forme généralisée}, on ne représente donc plus les trous, mais on modélise une \textcolorblue{densité de matière}, i.e. un paramètre continu~$\theta$ variant dans~$\intff01$, ainsi qu'une microstructure, i.e. la forme des trous.
+Ainsi, au lieu de représenter un trou par une fonction caractéristique (qui vaut~$1$ dans la matière et~$0$ dans les trous), on va considérer que les trous peuvent être aussi bien macroscopiques que microscopiques. Dans une \textcolorblue{forme généralisée}, on ne représente donc plus les trous, mais on modélise une \textcolorblue{densité de matière}, i.e. un paramètre continu~$\theta$ variant dans~$\intff01$, ainsi qu'une microstructure, i.e. la forme des trous.
 En effet, la forme des trous est importante car elle influe directement sur le \textcolorblue{comportement effectif} du matériau composite, déterminé par homogénéisation selon les techniques présentées au chapitre~\ref{Ch-Homog}.
 
-Nous disposerons donc de deux variables d'optimisation: $\theta$ la densité de matière et~$A(x)$ le comportement effectif.
+Nous disposerons donc de deux variables d'optimisation: $\theta$ la densité de matière et~$\hat{A}(x)$ le comportement effectif.
 
 \medskip
 D'un point de vue pratique, les trous, avec bords libres, sont soumis à une condition de Neumann. Ils sont remplacés par un matériau ayant une rigidité très faible au regard de celle du reste du domaine.
 Par exemple, le module d'Young sera représenté par: 
 \begin{equation}\label{Eq-EcvOpt}
-E = E_{fort} \chi(x) + E_{faible}(1-\chi(x))
+E = E_{\text{fort}} \chi(x) + E_{\text{faible}}(1-\chi(x))
 \end{equation}
-où~$E_{fort}$ et~${E_faible}$ sont le module d'Young du matériau constituant la structure, et celui, choisi beaucoup plus faible, représentant les trous. La fonction~$\chi(x)$ étant la fonction caractéristique associée.
+où~$E_{\text{fort}}$ et~$E_{\text{faible}}$ sont le module d'Young du matériau constituant la structure, et celui, choisi beaucoup plus faible, représentant les trous; la fonction~$\chi(x)$ étant la fonction caractéristique associée.
 L'ensemble admissible s'écrit alors:
 \begin{equation}
-\mathcal{U}_{ad}=\left\{ \chi\in L^\infty(\Omega;\{0,1\}),
+\mathscr{U}_{\text{ad}}=\left\{ \chi\in L^\infty(\Omega;\{0,1\}),
 \dint_\Omega \chi(x) = V \right\}
 \end{equation}
 
 Le problème d'optimisation de forme de la structure s'écrit:
 \begin{equation}
-\inf_{\chi\in\mathcal{U}_{ad}} J(\chi)
+\inf_{\chi\in\mathscr{U}_{\text{ad}}} J(\chi)
 \end{equation}
-avec par exemple~$J(\chi)=\dint_\Omega fu_\chi$ pour un chargement~$f\in\L^2(\Omega)$, ou~$J(\chi)=\dint_\Omega|u_\chi-u_0|^2$ pour un déplacement~$u_0$ prescrit.
+avec par exemple~$J(\chi)=\dint_\Omega fu_\chi$ pour un chargement~$f\in L^2(\Omega)$, ou~$J(\chi)=\dint_\Omega|u_\chi-u_0|^2$ pour un déplacement~$u_0$ prescrit (moindres carrés).
 
 \medskip
 Notons, en complément du chapitre~\ref{Ch-Homog}, que \textcolorred{les méthodes d'homogénéisation fonctionnent également pour les milieux non périodiques}.
 
-En effet, on montre que, si dans l'équation (\ref{Eq-EcvOpt}), la fonction~$\chi(x)$ est remplacée par une suite~$\chi_\epsilon(x)$ ($\epsilon$ n'est pas la période), alors il existe une sous-suite, une densité~$0\le\theta\le1$, et un tenseur homogénéisé~$A^*(x)$ tels que~$\chi_\epsilon$ converge en moyenne faiblement vers~$\theta$, $A_\epsilon$ converge au sens de l'homogénéisation vers~$A^*$, i.e. que~$u_\epsilon$ converge dans~$L^2(\Omega)$ vers la solution~$u$ du problème homogénéisé.
+En effet, on montre que, si dans l'équation (\ref{Eq-EcvOpt}), la fonction~$\chi(x)$ est remplacée par une suite~$\chi_\epsilon(x)$ ($\epsilon$ n'est pas la période), alors il existe une sous-suite, une densité~$0\le\theta\le1$, et un tenseur homogénéisé~$A^*(x)$ tels que~$\chi_\epsilon$ converge en moyenne faiblement vers~$\theta$, $\hat{A}_\epsilon$ converge au sens de l'homogénéisation vers~$A^*$, i.e. que~$u_\epsilon$ converge dans~$L^2(\Omega)$ vers la solution~$u$ du problème homogénéisé.
 
 \medskip
 C'est ce résultat qui sert à la théorie mathématique de l'optimisation topologique par la méthode d'homogénéisation.
@@ -652,7 +652,7 @@ Des codes de calculs permettent aujourd'hui de réaliser de l'optimisation topol
 
 Il existe une manière simple, mais moins élégante et surtout moins performante que ce qui a été présenté, de s'en sortir avec un code classique non prévu pour cela (c'est par exemple ce que je fais avec mon propre code éléments finis qui n'est pas du tout prévu 
 pour cela à la base).
-1) On commence par mailler le domaine maximal dans lequel la structure optimale peut se trouver, 2) puis on effectue le calcul éléments finis, 3) en fonction d'un critère prédéfini (par exemple un critère portant sur une contrainte équivalente inférieure à un seuil), on supprime les éléments négligeables (si le code dispose de méthodes de type «birth and death») ou on remplace le matériau lié à ces éléments par un matériau très faible (on est plus proche de l'approche par homogénéisation), 4) puis on reboucle le processus à partir du deuxième pas. 
+1) On commence par mailler le domaine maximal dans lequel la structure optimale doit se trouver, 2) puis on effectue le calcul éléments finis, 3) en fonction d'un critère prédéfini (par exemple un critère portant sur une contrainte équivalente inférieure à un seuil), on supprime les éléments négligeables (si le code dispose de méthodes de type «birth and death») ou on remplace le matériau lié à ces éléments par un matériau très faible (on est plus proche de l'approche par homogénéisation), 4) puis on reboucle le processus à partir du deuxième pas. 
 
 Évidemment, il est possible d'améliorer cette stratégie rudimentaire: par exemple ne supprimer/modifier que les éléments dont tous les points vérifient la condition, sinon diviser l'élément (et alors comment le diviser au mieux). On peut être amené à rajouter des éléments. On doit veiller à ne pas introduire de singularité artificielle qui nuirait à l'évaluation de la condition...
 \end{remarque}
@@ -681,19 +681,19 @@ avec~$0<\alpha<\beta$ les rigidités dans chacune des directions principales de 
 \textcolorblue{Le but est d'optimiser la membrane en faisant varier la rotation du matériau anisotrope, paramétrée par~$\theta$.}
 
 L'ensemble admissible des rotations est:
-\[ \mathcal{U}_{ad}=\{\theta\in L^\infty(\Omega;\intff0\pi) \} \]
+\[ \mathscr{U}_{\text{ad}}=\{\theta\in L^\infty(\Omega;\intff0\pi) \} \]
 
 \medskip
 La fonction objectif est la compliance (la rigidité). On cherche à obtenir:
-\[ \colorblue \inf_{\theta\in\mathcal{U}_{ad}} J(\theta)=\dint_\Omega f(x)u(x) \]
+\[ \colorblue \inf_{\theta\in\mathscr{U}_{\text{ad}}} J(\theta)=\dint_\Omega f(x)u(x) \]
 
 \medskip
-En écrivant la compliance comme le minimum de l'énergie complémentaire, on obtient:
+En écrivant la compliance comme le minimum de l'énergie complémentaire (i.e. en contraintes~$\tau$), on obtient:
 \[ \dint_\Omega f(x)u(x) = \min_{\substack{\tau\in L^2(\Omega)^2\\ -\dive\tau=f \text{ dans }\Omega}} K^{-1}(x)\tau(x).\tau(x) \]
 i.e. on est ramené au problème de double minimisation:
-\[ \min_{\theta\in\mathcal{U}_{ad}} \min_{\substack{\tau\in L^2(\Omega)^2\\ -\dive\tau=f \text{ dans }\Omega}} K^{-1}(x)\tau(x).\tau(x)
+\[ \min_{\theta\in\mathscr{U}_{\text{ad}}} \min_{\substack{\tau\in L^2(\Omega)^2\\ -\dive\tau=f \text{ dans }\Omega}} K^{-1}(x)\tau(x).\tau(x)
 \]
-Si~$(\theta,\tau)\in\mathcal{U}_{ad}\times L^2(\Omega)^2$ est un minimum, alors~$\tau=K\nabla u$ et en tout point l'angle~$\theta(x)$ minimise~$K^-{-1}\tau.\tau$.
+Si~$(\theta,\tau)\in\mathscr{U}_{\text{ad}}\times L^2(\Omega)^2$ est un minimum, alors~$\tau=K\nabla u$ et en tout point l'angle~$\theta(x)$ minimise~$K^{-1}\tau.\tau$.
 
 Considérons donc la fonction: $\theta \mapsto R^*K_0^{-1}R\tau.\tau=K_0(R\tau).(R\tau)$.
 Si~$\tau=0$ alors n'importe quel angle~$\theta$ réalise le minimum.
@@ -719,10 +719,10 @@ puis en calculant, pout tout point~$x$, l'angle~$\theta(x)$ tel que~$\tan\theta(
 On reprend le cas précédent, i.e. on a les conditions aux limites:
 \[ u=0 \text{ sur }\partial\Omega \]
 \textcolorblue{et on cherche encore à optimiser la membrane en faisant varier la rotation du matériau anisotrope, paramétrée par~$\theta$.}
-\[ \mathcal{U}_{ad}=\{\theta\in L^\infty(\Omega;\intff0\pi) \} \]
+\[ \mathscr{U}_{\text{ad}}=\{\theta\in L^\infty(\Omega;\intff0\pi) \} \]
 
 La fonction objectif est un déplacement cible~$u_0(x)\in L^2(\Omega)$. On utilise la méthode des moindre carrés, et on cherche donc à obtenir:
-\[ \colorblue \inf_{\theta\in\mathcal{U}_{ad}} J(\theta)=\dint_\Omega C(x)|u(x)-u_0(x)|^2 \]
+\[ \colorblue \inf_{\theta\in\mathscr{U}_{\text{ad}}} J(\theta)=\dint_\Omega C(x)|u(x)-u_0(x)|^2 \]
 avec~$C(x)$ une fonction régulière donnée.
 
 \medskip
@@ -737,7 +737,7 @@ En dérivant l'équation d'état par rapport à~$t$, on obtient l'équation vér
 \[\left\{\begin{array}{ll} -\dive(K\nabla v)=\dive(K'(\theta)\eta\nabla u) &\text{ dans }\Omega \\ v=0 &\text{ sur }\partial\Omega \end{array}\right. \]
 avec~$K'$ la dérivée de la fonction~$\theta \mapsto K(\theta)$.
 
-Pour éliminer~$v$, on introduit l'état adjoint~$p$, solution unique de:
+Pour éliminer~$v$, on introduit l'\textcolorblue{état adjoint}~$p$, solution unique de:
 \[\left\{\begin{array}{ll} -\dive(K\nabla p)=2C(u-u_0) &\text{ dans }\Omega \\ p=0 &\text{ sur }\partial\Omega \end{array}\right. \]
 puis, comme indiqué plus haut, on multiplie l'équation en~$v$ par~$p$ et vice versa. En intégrant, il vient:
 \[ \dint_\Omega K\nabla p.\nabla v = 2\dint_\Omega C(u-u_0)v = -\dint_\Omega K'(\theta)\eta\nabla u.\nabla p \]
@@ -767,9 +767,9 @@ On s'intéresse toujours au déplacement vertical~$u$ de la membrane, solution d
 avec~$f\in L^2(\Omega)$.
 
 L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
-\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+\[ \mathscr{U}_{\text{ad}} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
 et l'on s'intéresse à la fonction objectif:
-\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dint_\Omega g(x)u(x) \]
+\[\colorblue \inf_{h\in\mathscr{U}_{\text{ad}}} J(h) = \dint_\Omega g(x)u(x) \]
 où~$g(x)\in L^2(\Omega)$ est une fonction donnée.
 
 \medskip
@@ -777,12 +777,12 @@ La formulation variationnelle du problème est: trouver~$u\in H^1_0(\Omega)$ tel
 \[ \dint_\Omega h\nabla u.\nabla v=\dint_\Omega fv, \quad \forall v\in H^1_0(\Omega) \]
 
 Le \textcolorblue{Lagrangien} (qui rappelons le est la somme de la fonction objectif et de la formulation variationnelle considérée comme une contrainte) est:
-\[ \mathcal{L}(h,v,q) = \dint_\Omega gv + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
-où~$(h,v,q)\in \mathcal{U}_{ad}\times H^1_0(\Omega)\times H^1_0(\Omega)$.
+\[ \mathscr{L}(h,v,q) = \dint_\Omega gv + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
+où~$(h,v,q)\in \mathscr{U}_{\text{ad}}\times H^1_0(\Omega)\times H^1_0(\Omega)$.
 
 \medskip
 La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par:
-\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in H^1_0(\Omega) \]
+\[ \langle \dfrac{\partial \mathscr{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in H^1_0(\Omega) \]
 i.e.:
 \[ \dint_\Omega h\nabla p.\nabla\varphi + \dint_\Omega g\varphi =0, \quad \forall\varphi\in H^1_0(\Omega) \]
 
@@ -794,7 +794,7 @@ p=0 &\text{ sur }\partial\Omega
 
 \medskip
 La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
-\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,u,p),k\rangle =\dint_\Omega k\nabla u.\nabla p \]
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathscr{L}}{\partial h}(h,u,p),k\rangle =\dint_\Omega k\nabla u.\nabla p \]
 soit: $J'(h)=\nabla u.\nabla p$.
 
 
@@ -806,19 +806,19 @@ On s'intéresse au même problème qu'au paragraphe précédent:
 avec~$f\in L^2(\Omega)$.
 
 L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
-\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+\[ \mathscr{U}_{\text{ad}} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
 et l'on s'intéresse à la fonction objectif:
-\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dint_\Omega |\nabla u(x)-\nabla u_0(x)|^2 \]
+\[\colorblue \inf_{h\in\mathscr{U}_{\text{ad}}} J(h) = \dint_\Omega |\nabla u(x)-\nabla u_0(x)|^2 \]
 où~$u_0(x)\in H^1(\Omega)$ est un déplacement cible donné.
 
 \medskip
 La formulation variationnelle a été donnée au paragraphe précédent, et le \textcolorblue{Lagrangien} est défini par:
-\[ \mathcal{L}(h,v,q) = \dint_\Omega |\nabla v-\nabla u_0|^2 + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
-où~$(h,v,q)\in \mathcal{U}_{ad}\times H^1_0(\Omega)\times H^1_0(\Omega)$.
+\[ \mathscr{L}(h,v,q) = \dint_\Omega |\nabla v-\nabla u_0|^2 + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
+où~$(h,v,q)\in \mathscr{U}_{\text{ad}}\times H^1_0(\Omega)\times H^1_0(\Omega)$.
 
 \medskip
 La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par: 
-\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in H^1_0(\Omega) \]
+\[ \langle \dfrac{\partial \mathscr{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in H^1_0(\Omega) \]
 i.e.:
 \[ \dint_\Omega h\nabla p.\nabla\varphi + 2 \dint_\Omega \nabla(u-u_0).\nabla\varphi =0, \quad \forall\varphi\in H^1_0(\Omega) \]
 
@@ -830,7 +830,7 @@ p=0 &\text{ sur }\partial\Omega
 
 \medskip
 La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
-\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,u,p),k\rangle =\dint_\Omega k\nabla u.\nabla p \]
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathscr{L}}{\partial h}(h,u,p),k\rangle =\dint_\Omega k\nabla u.\nabla p \]
 soit: $J'(h)=\nabla u.\nabla p$. Compte-tenu du paragraphe précédent, ne pouvait-on se douter du résultat?
 
 \medskip
@@ -842,22 +842,22 @@ u=0 &\text{ sur }\Gamma_D\\ h\dfrac{\partial u}{\partial n} =0 &\text{ sur }\Gam
 avec~$f\in L^2(\Omega)$.
 
 L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
-\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+\[ \mathscr{U}_{\text{ad}} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
 et l'on s'intéresse à la fonction objectif:
-\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dfrac12\dint_\Omega |\sigma(x)-\sigma_0(x)|^2 \]
-où~$\sigma=h\nabla u$ est le vecteur des contraintes, et~$\sigma_0(x)\in L^2(\Omega)^N$  une contraintes cible donnée.
+\[\colorblue \inf_{h\in\mathscr{U}_{\text{ad}}} J(h) = \dfrac12\dint_\Omega |\sigma(x)-\sigma_0(x)|^2 \]
+où~$\sigma=h\nabla u$ est le vecteur des contraintes, et~$\sigma_0(x)\in L^2(\Omega)^N$  une contrainte cible donnée.
 
 \medskip
-Pour écrire la formulation variationnelle du problème est, on introduit l'espace de Hilbert~$V=\{u\in H^1(\Omega)/ u=0 \text{ sur }\Gamma_D\}$. Il s'agit donc de trouver~$u\in V$ tel que:
+Pour écrire la formulation variationnelle du problème, on introduit l'espace de Hilbert~$V=\{u\in H^1(\Omega)/ u=0 \text{ sur }\Gamma_D\}$. Il s'agit donc de trouver~$u\in V$ tel que:
 \[ \dint_\Omega h\nabla u.\nabla v=\dint_\Omega fv, \quad \forall v\in V \]
 
 Le \textcolorblue{Lagrangien} est:
-\[ \mathcal{L}(h,v,q) = \frac12\dint_\Omega |\sigma-\sigma_0|^2 + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
-où~$(h,v,q)\in \mathcal{U}_{ad}\times V\times V$.
+\[ \mathscr{L}(h,v,q) = \frac12\dint_\Omega |\sigma-\sigma_0|^2 + \dint_\Omega h\nabla v.\nabla q - \dint_\Omega fq \]
+où~$(h,v,q)\in \mathscr{U}_{\text{ad}}\times V\times V$.
 
 \medskip
 La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par:
-\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in V \]
+\[ \langle \dfrac{\partial \mathscr{L}}{\partial v}(h,u,p),\varphi\rangle=0, \quad \forall\varphi\in V \]
 i.e.:
 \[ \dint_\Omega h\nabla p.\nabla\varphi + \dint_\Omega (\sigma-\sigma_0).h\nabla\varphi =0, \quad \forall\varphi\in V \]
 
@@ -873,7 +873,7 @@ car~$\partial u/\partial n=0$ sur~$\Gamma_N$.
 
 \medskip
 La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
-\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,u,p),k\rangle = \dint_\Omega (\sigma-\sigma_0).k\nabla u+\dint_\Omega k\nabla u.\nabla p  \]
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathscr{L}}{\partial h}(h,u,p),k\rangle = \dint_\Omega (\sigma-\sigma_0).k\nabla u+\dint_\Omega k\nabla u.\nabla p  \]
 soit: $J'(h)=(\sigma-\sigma_0).\nabla u + \nabla u.\nabla p$.
 
 
@@ -881,30 +881,30 @@ soit: $J'(h)=(\sigma-\sigma_0).\nabla u + \nabla u.\nabla p$.
 \subsection{Optimisation géométrique en rigidité sous tension prescrite}
 
 On reprend le cas précédent, mais on impose cette fois la contrainte normale sur~$\Gamma_N$:
-On considère une membrane dont le bord est partitionné en deux parties de mesures non nulles~$\partial\Omega=\Gamma_D\cup\Gamma_N$. Cette membrane est d'épaisseur constante non variable (et donc on pourra la faire disparaître des équations), et n'est soumises à aucune force dans~$\Omega$. Elle est fixée sur~$\Gamma_D$ et est soumise à une contrainte normale prescrite sur le bord~$\Gamma_N$. Le problème à résoudre est donc:
+On considère une membrane dont le bord est partitionné en deux parties de mesures non nulles~$\partial\Omega=\Gamma_D\cup\Gamma_N$. Cette membrane est d'épaisseur constante non variable (et donc on pourra la faire disparaître des équations), et n'est soumise à aucune force dans~$\Omega$. Elle est fixée sur~$\Gamma_D$ et est soumise à une contrainte normale prescrite sur le bord~$\Gamma_N$. Le problème à résoudre est donc:
 \[\left\{\begin{array}{ll} -\Delta u =0 &\text{ dans }\Omega\\ 
 u=0 &\text{ sur }\Gamma_D\\ 
 \dfrac{\partial u}{\partial n} =g.n &\text{ sur }\Gamma_N 
 \end{array} \right. \]
-avec~$g\in C^1(\RR^2)^2$ est un champ de vecteur donné.
+avec~$g\in C^1(\RR^2)^2$ un champ de vecteur donné.
 
 Le bord~$\Gamma_D$ est fixe, mais le bord~$\Gamma_N$ peut varier. L'ensemble des formes admissibles à volume constant est:
-\[ \mathcal{U}_{ad} = \{ \Omega\in\RR^2/ \Gamma_D\subset\partial\Omega, |\Omega|=V_0 \} \]
+\[ \mathscr{U}_{\text{ad}} = \{ \Omega\in\RR^2/ \Gamma_D\subset\partial\Omega, |\Omega|=V_0 \} \]
 et l'on optimise la rigidité de la membrane en minimisant sa compliance:
-\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = \dint_{\Gamma_N} ug.n \]
+\[\colorblue \inf_{h\in\mathscr{U}_{\text{ad}}} J(h) = \dint_{\Gamma_N} ug.n \]
 
 \medskip
-Pour écrire la formulation variationnelle du problème est, on introduit l'espace de Hilbert~$V=\{u\in H^1(\Omega)/ u=0 \text{ sur }\Gamma_D\}$. Il s'agit donc de trouver~$u\in V$ tel que:
+Pour écrire la formulation variationnelle du problème, on introduit l'espace de Hilbert~$V=\{u\in H^1(\Omega)/ u=0 \text{ sur }\Gamma_D\}$. Il s'agit donc de trouver~$u\in V$ tel que:
 \[ \dint_\Omega \nabla u.\nabla v=\dint_{\Gamma_N} g.nv, \quad \forall v\in V \]
 
 Le \textcolorblue{Lagrangien} est:
-\[ \mathcal{L}(\Omega,v,q) = \dint_{\Gamma_N} g.nv + \dint_\Omega \nabla v.\nabla q - \dint_{\Gamma_N} g.nq \]
+\[ \mathscr{L}(\Omega,v,q) = \dint_{\Gamma_N} g.nv + \dint_\Omega \nabla v.\nabla q - \dint_{\Gamma_N} g.nq \]
 où les paramètres~$v$ et~$q$ sont dans~$X=\{\varphi\in H^1(\RR^2)/ \varphi=0 \text{ sur }\Gamma_D \}$.
 On remarquera que les trois variables~$(\Omega,v,q)$ sont bien indépendantes.
 
 \medskip
 La \textcolorblue{formulation variationnelle de l'équation adjointe} est donnée, par définition, par:
-\[ \langle \dfrac{\partial \mathcal{L}}{\partial v}(\Omega,u,p),\varphi\rangle=0, \quad \forall\varphi\in X \]
+\[ \langle \dfrac{\partial \mathscr{L}}{\partial v}(\Omega,u,p),\varphi\rangle=0, \quad \forall\varphi\in X \]
 i.e.:
 \[ \dint_\Omega \nabla\varphi.\nabla p + \dint_{\Gamma_N} g.n\varphi =0, \quad \forall\varphi\in X \]
 
@@ -918,9 +918,9 @@ Cela implique que~$p=-u$ (le problème est auto-adjoint).
 
 \medskip
 La dérivée de la fonction objectif~$J(\Omega)$ va faire intervenir la normale~$n$ qui dépend de~$\Omega$, on élimine cela en réécrivant le Lagrangien sous la forme:
-\[ \mathcal{L}(\Omega,v,q)=\dint_\Omega \dive(vg) + \dint_\Omega\nabla u.\nabla q-\dint_\Omega \dive(qg) \]
+\[ \mathscr{L}(\Omega,v,q)=\dint_\Omega \dive(vg) + \dint_\Omega\nabla u.\nabla q-\dint_\Omega \dive(qg) \]
 La \textcolorblue{dérivée de forme} s'obtient donc formellement par:
-\[ \langle J'(\Omega),\theta\rangle = \dint_\Omega J'(h)\theta = \langle\dfrac{\partial\mathcal{L}}{\partial \Omega}(\Omega,u,p),\theta\rangle = \langle\dfrac{\partial\mathcal{L}}{\partial \Omega}(\Omega,u,-u),\theta\rangle  \]
+\[ \langle J'(\Omega),\theta\rangle = \dint_\Omega J'(h)\theta = \langle\dfrac{\partial\mathscr{L}}{\partial \Omega}(\Omega,u,p),\theta\rangle = \langle\dfrac{\partial\mathscr{L}}{\partial \Omega}(\Omega,u,-u),\theta\rangle  \]
 En n'oubliant pas que~$\Gamma_D$ est fixe, et que seul~$\Gamma_N$ peut varier, on obtient:
 \[ J'(\Omega)(\theta)= -\dint_{\Gamma_N} \theta.n(|\nabla u|^2-2\dive(ug)) \]
 
@@ -935,39 +935,39 @@ On s'intéresse au mode fondamental de la membrane, i.e. au cas où~$\lambda(h)$
 \[ \lambda(h) = \min_{v\in H^1_0(\Omega), v\ne 0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2} \]
 
 L'épaisseur~$h(x)$ appartient à l'ensemble admissible:
-\[ \mathcal{U}_{ad} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
+\[ \mathscr{U}_{\text{ad}} = \{ h\in L^\infty(\Omega), 0< h_{min}\le h(x)\le h_{max} \text{ dans }\Omega \} \]
 et l'on veut maximiser la première fréquence propre de vibration. On s'intéresse à la fonction objectif:
-\[\colorblue \inf_{h\in\mathcal{U}_{ad}} J(h) = -\lambda(h)+\ell \dint_\Omega h(x) \]
+\[\colorblue \inf_{h\in\mathscr{U}_{\text{ad}}} J(h) = -\lambda(h)+\ell \dint_\Omega h(x) \]
 où~$\ell\ge0$ est le multiplicateur de Lagrange fixé pour une contrainte sur l'aire de la membrane.
 
 \medskip
 Intéressons nous d'abord au cas où~$\ell=0$. Dans ce cas, la fonction objectif peut se réécrire:
-\[ -\sup_{h\in\mathcal{U}_{ad}} \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2} \]
+\[ -\sup_{h\in\mathscr{U}_{\text{ad}}} \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2} \]
 que l'on transforme en problème de minimisation (en sortant le signe~$-$).
 
 De plus, comme~$h\le h_{max}$, on a:
 \[ \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h|\nabla v|^2}{\int_\Omega v^2}
 \le \min_{v\in H^1_0(\Omega), v\ne0} \dfrac{\int_\Omega h_{max}|\nabla v|^2}{\int_\Omega v^2} \]
-pour toute épaisseur~$h\in\mathcal{U}_{ad}$. Autrement dit, la fonction constante~$h=h_{max}$ minimise la fonction objectif. Cela signifie simplement qu'en l'absence de contrainte de volume ou de poids, la membrane qui maximise la première fréquence propre est la plus épaisse.
+pour toute épaisseur~$h\in\mathscr{U}_{\text{ad}}$. Autrement dit, la fonction constante~$h=h_{max}$ minimise la fonction objectif. Cela signifie simplement qu'en l'absence de contrainte de volume ou de poids, la membrane qui maximise la première fréquence propre est la plus épaisse.
 
 \medskip
 Revenons maintenant au cas où~$\ell\ne0$. Le \textcolorblue{Lagrangien} est:
-\[ \mathcal{L}(h,\mu,v,q) = -\mu +\ell\dint_\Omega f(x)
+\[ \mathscr{L}(h,\mu,v,q) = -\mu +\ell\dint_\Omega f(x)
 +\dint_\Omega (h\nabla v.\nabla q -\mu vq)\]
-avec~$(h,\mu,v,q)\in\mathcal{U}_{ad}\times\RR\times H^1_0(\Omega)\times H^1_0(\Omega)$.
+avec~$(h,\mu,v,q)\in\mathscr{U}_{\text{ad}}\times\RR\times H^1_0(\Omega)\times H^1_0(\Omega)$.
 
 Comme on le faisait remarquer, l'équation d'état se retrouve en dérivant le Lagrangien par rapport à~$q$. La formulation variationnelle associée s'écrit:
-\[ \langle\dfrac{\partial\mathcal{L}}{\partial q}(h,\lambda,u,p),\varphi\rangle=0,
+\[ \langle\dfrac{\partial\mathscr{L}}{\partial q}(h,\lambda,u,p),\varphi\rangle=0,
 \quad \forall \varphi\in H^1_0(\Omega) \]
 
-Le Lagrangien étant symétrique en~$v$ et~$q$, donc sa dérivée par rapport à~$v$ est identique à celle par rapport à~$q$. L'équation d'état pour l'état adjoint est la même que pour l'équation d'état (le problème est auto-adjoint). Néanmoins, la fonction propre n'étant définie qu'à une constante multiplicative près, on peut simplement dire que~$p$ et~$u$ sont proportionnels. Pour connaître cette constante de proportionnalité, on dérive le Lagrangien par rapport à~$\mu$ et, à l'optimum, cette dérivée étant nulle, on obtient:
+Le Lagrangien étant symétrique en~$v$ et~$q$, sa dérivée par rapport à~$v$ est identique à celle par rapport à~$q$. L'équation d'état pour l'état adjoint est la même que pour l'équation d'état (le problème est auto-adjoint). Néanmoins, la fonction propre n'étant définie qu'à une constante multiplicative près, on peut simplement dire que~$p$ et~$u$ sont proportionnels. Pour connaître cette constante de proportionnalité, on dérive le Lagrangien par rapport à~$\mu$ et, à l'optimum, cette dérivée étant nulle, on obtient:
 \[ -1-\dint_\Omega up =0 \]
 d'où:
-\[ p=-\dfrac{u}{\dint_\Omega u^2} \]
+\[ p=-\dfrac{u}{\int_\Omega u^2} \]
 
 \medskip
 La dérivée de la fonction objectif~$J(h)$ est donnée, pour tout~$k\in L^\infty(\Omega)$, par:
-\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathcal{L}}{\partial h}(h,\lambda,u,p),k\rangle = \dint_\Omega k(\ell+\nabla u.\nabla p) \]
+\[ \langle J'(h),k\rangle = \dint_\Omega J'(h)k = \langle\dfrac{\partial\mathscr{L}}{\partial h}(h,\lambda,u,p),k\rangle = \dint_\Omega k(\ell+\nabla u.\nabla p) \]
 soit: $J'(h)=\ell - \dfrac{|\nabla u|^2}{\int_\Omega u^2}$.
 
 
