@@ -387,6 +387,7 @@
 % INDEX
 %
 \makeatletter
+\ifVersionDuDocEstVincent\else
 \renewenvironment{theindex}
                {\if@twocolumn
                   \@restonecolfalse
@@ -404,6 +405,7 @@
                 \columnsep 35\p@
                 \let\item\@idxitem}
                {\if@restonecol\onecolumn\else\clearpage\fi}
+\fi
 \makeatother
 %--------------------------------------------------------------------------
 %

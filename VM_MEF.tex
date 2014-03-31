@@ -1,7 +1,7 @@
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
-\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
+%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
 \newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
-%\VersionDuDocEstPourHALtrue%
+\VersionDuDocEstPourHALtrue%
 %
 % Mise en page des figures dans l'ex4.tex du Ch Amelio.tex
 \newif\ifVMSurLaMemePage% si la dernière fig et 1e 1er tableau sur la même page: true
@@ -73,6 +73,7 @@
    \addbibresource{VM_MEF0.bib}\addbibresource{VM_MEF1.bib}\addbibresource{VM_MEF2.bib}
    \addbibresource{VM_MEF3.bib}\addbibresource{VM_MEFA.bib}
    \defbibheading{bibliography}[\bibname]{\section*{#1}}
+   \indexsetup{level=\chapter*}
 %
 \else
    \usepackage[top=2.2cm,bottom=3cm,left=3cm,right=3cm,a4paper,headsep=35pt]{geometry}
