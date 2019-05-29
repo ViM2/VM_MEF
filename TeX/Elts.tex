@@ -275,6 +275,219 @@ L'existence d'un solution à ce problème découle de l'application du théorèm
 
 Chaque élément de l'espace~$V_{0h}$ est défini de manière unique par ses valeurs dans~$\RR^N$ aux nœuds de degrés de liberté du treillis d'ordre~$k$, ce qui prouve que la dimension de l'espace~$V_{0h}$ est égale à~$N.n_{ddl}$.
 
+\medskip
+\subsection{Exemple: construction automatique des fonctions de forme du pavé}
+
+On se propose de construire les fonctions de forme $\LL{p}$ de l'élément de référence qui sera ici un pavé de $\RR^n=[-1;1]^n$.
+Nous décidons de travailler sur~$[-1;1]^n$, et non sur $[0;1]^n$ qui correspond aux illustrations fournies plus haut. Cela ne change rien au problème et à son traitement et permet de voir que l'on dispose finalement d'une certaine liberté dans la définition des éléments finis. Par contre, la bijection entre l'élément fini de référence et l'élément dans l'espace réel en sera modifiée.
+
+\medskip
+\subsubsection{Algorithme général}
+
+Pour construire les fonction de forme $\LL{p}$, on réalise les opérations suivantes:
+\begin{enumerate}
+%   \item Choix de la base polynomiale $\LL{P(\xi)}$ en fonction du degré d'interpolation voulu et possible à l'aide des $N$ variables nodales dont on dispose;
+%   \item Calcul de la matrice nodale $\MM{P_n}=\MM{P_j(x_i)}$; $i,j=1, 2, ... N$;
+%   \item Calcul de $\MMI{P_n}$;
+%   \item Calcul de $\LL{p}=\LL{P(\xi)}\MMI{P_n}$ aux points $\xi$ désirés
+   \item Choix de la base polynomiale $\LL{P}$ en fonction du degré d'interpolation voulu et possible à l'aide des $N$ variables nodales associées aux sommets $a_i$ dont on dispose;
+   \item Calcul de la matrice nodale $\MM{P_n}=\MM{P_j(a_i)}$; $i,j=1, 2, ... N$;
+   \item Calcul de $\MMI{P_n}$ (dans certains cas, $\MM{P_n}$ étant orthogonale, alors $\MMI{P_n}=\MMT{P_n}$);
+   \item Calcul de $\LL{p}=\LL{P}\MMI{P_n}$.
+\end{enumerate}
+On rappelle que ces opérations ne sont réalisées qu'une seule fois car elles permettent de définir l'élément de référence. C'est uniquement la bijection entre élément de référence et élément réel qui change à chaque élément.
+
+\medskip
+Considérons le cas le plus simple: on dispose d'un nœud à chaque extrémité de l'hypercube qui est à la fois nœud géométrique et d'interpolation, donc on se place dans le cas d'un élément isoparamétrique à $2^n$ nœuds.
+Dans un tel cas, on ne peut pas utiliser un polynôme complet et, par symétrie et continuité du champ entre les éléments, il est naturel d'opter pour une base $n$-linéaire.
+
+\medskip
+\subsubsection{Cas du segment}
+
+On traite ici le cas $n=1$.
+On doit retrouver l'élément linéaire~$P_1$ donné au tableau~\ref{tab:Elem:uni}, i.e. défini par~$K= \intff{a}{b}$, $\Sigma=\{a,b\}$ et~$P= P_1$.
+
+\medskip
+Nous disposons donc de $N=2$ nœuds: $a$ de coordonnée $(-1)$ et $b$ de coordonnée $(+1)$.\\
+La base polynomiale est $P_1$, i.e. $\LL{P}=\LL{1, X}$.\\
+La matrice modale vaut donc:
+$\MM{P_n}=\MM{P_j(a_i)}=\MM*{+1 & -1\\+1 & +1}$.\\
+Elle est orthogonale et chaque colonne a pour norme $2^1$, son inverse est obtenue à partir de sa transposée soit $\MMI{P_n}=\frac12\MM*{+1 & +1\\-1 & +1}$.\\
+Les fonctions de forme $\LL{p}=\LL{P}\MMI{P_n}$ sont donc:
+\begin{equation}
+\left\{
+\begin{array}{lr}
+p_1= & \frac12(1-X)\\
+p_2= & \frac12(1+X)
+\end{array}
+\right.
+\end{equation}
+pour~$X$ variant de~$-1$ à~$+1$ au sein de l'élément de référence.
+
+\medskip
+\subsubsection{Cas du carré}
+On traite ici le cas $n=2$.
+On doit retrouver l'élément linéaire~$Q_1$ donné au tableau~\ref{tab:Elem:bibi}, i.e. défini par~$K =$ rectangle de sommets~$\{a_1, a_2, a_3, a_4\}$ de côtés parallèles aux axes, $\Sigma = \{a_1, a_2, a_3, a_4\}$ et~$P =Q_1$.
+
+\medskip
+Nous disposons donc de $N=4$ nœuds: $a_1=(-1,-1)$,  $a_2=(+1,-1)$, $a_3=(+1,+1)$ et~$a_4=(-1,+1)$.\\
+La base polynomiale est $Q_1$, i.e. $\LL{P}=\LL{1, X, Y, XY}$.\\
+La matrice modale vaut donc:
+$\MM{P_n}=\MM{P_j(a_i)}=\MM*{+1 & -1 & -1 & +1\\
+                             +1 & +1 & -1 & -1\\
+                             +1 & +1 & +1 & +1\\
+                             +1 & -1 & +1 & -1}$.\\
+Elle est orthogonale et chaque colonne a pour norme $2^2$, son inverse est obtenue à partir de sa transposée soit
+$\MMI{P_n}=\frac14\MM*{+1 & +1 & +1 & +1\\
+                       -1 & +1 & +1 & -1\\
+                       -1 & -1 & +1 & +1\\
+                       +1 & -1 & +1 & -1}$.\\
+Les fonctions de forme $\LL{p}=\LL{P}\MMI{P_n}$ sont donc:
+\begin{equation}
+\left\{
+\begin{array}{lr}
+p_1= & \frac14(1-X)(1-Y)\\
+p_2= & \frac14(1+X)(1-Y)\\
+p_3= & \frac14(1+X)(1+Y)\\
+p_4= & \frac14(1-X)(1+Y)
+\end{array}
+\right.
+\end{equation}
+pour~$X$ et~$Y$ variant de~$-1$ à~$+1$ au sein de l'élément de référence.
+
+
+\medskip
+\subsubsection{Cas du cube}
+On traite ici le cas $n=3$.
+On doit retrouver l'élément parallélépipédique linéaire~$Q_1$ donné au tableau~\ref{tab:Elem:para}, i.e. défini par~$K =$ parallélépipède de sommets~$\{a_1,\ldots, a_8\}$ de côtés parallèles aux axes, $\Sigma = \{a_i\}_{1\le i\le8}$ et~$P=Q_1$.
+
+\medskip
+Nous disposons donc de $N=8$ nœuds: $a_1=(-1,-1,-1)$,  $a_2=(+1,-1,-1)$, $a_3=(+1,+1,-1)$, $a_4=(-1,+1,-1)$,
+$a_5=(-1,-1,+1)$,  $a_6=(+1,-1,+1)$, $a_7=(+1,+1,+1)$ et~$a_8=(-1,+1,+1)$.\\
+La base polynomiale est $Q_1$, i.e. $\LL{P}=\LL{1, X, Y, Z, XY, XZ, YZ, XYZ}$.\\
+La matrice modale vaut donc:
+$\MM{P_n}=\MM{P_j(a_i)}$.\\
+Elle est orthogonale et chaque colonne a pour norme $2^3$, son inverse est obtenue à partir de sa transposée soit~$\MMI{P_n}=\frac18\MMT{P_n}$.\\
+Les fonctions de forme $\LL{p}=\LL{P}\MMI{P_n}$ sont donc:
+\begin{equation}
+\left\{
+\begin{array}{lr}
+p_1= & \frac14(1-X)(1-Y)(1-Z)\\
+p_2= & \frac14(1+X)(1-Y)(1-Z)\\
+p_3= & \frac14(1+X)(1+Y)(1-Z)\\
+p_4= & \frac14(1-X)(1+Y)(1-Z)\\
+p_5= & \frac14(1-X)(1-Y)(1+Z)\\
+p_6= & \frac14(1+X)(1-Y)(1+Z)\\
+p_7= & \frac14(1+X)(1+Y)(1+Z)\\
+p_8= & \frac14(1-X)(1+Y)(1+Z)
+\end{array}
+\right.
+\end{equation}
+pour~$X$, $Y$ et~$Z$ variant de~$-1$ à~$+1$ au sein de l'élément de référence.
+
+
+\medskip
+\subsubsection{Cas du tesseract}
+
+On traite ici le cas $n=4$. L'hypercube porte alors le doux nom de Tesseract.
+
+\medskip
+Les coordonnées des sommets $a_i$ sont données ci-après dans l'élément de référence. \textcolorred{Attention, c'est ici que l'on définit le sens de numérotation des nœuds de l'élément de référence...} on peut donc tout à fait intervertir des sommets $a_i$ entre eux dans la liste données ici, si l'on préfère un autre ordre de numérotation (qui doit quand même permettre aisément d'accoler des éléments).
+Nous partons des sommets:\\
+$a_1=(-1,-1,-1,-1)$, $a_2=(+1,-1,-1,-1)$, $a_3=(+1,+1,-1,-1)$, $a_4=(-1,+1,-1,-1)$,\\
+$a_5=(-1,-1,+1,-1)$, $a_6=(+1,-1,+1,-1)$, $a_7=(+1,+1,+1,-1)$, $a_8=(-1,+1,+1,-1)$,\\
+$a_9=(-1,-1,-1,+1)$, $a_{10}=(+1,-1,-1,+1)$, $a_{11}=(+1,+1,-1,+1)$, $a_{12}=(-1,+1,-1,+1)$,\\
+$a_{13}=(-1,-1,+1,+1)$, $a_{14}=(+1,-1,+1,+1)$, $a_{15}=(+1,+1,+1,+1)$, $a_{16}=(-1,+1,+1,+1)$.
+
+\medskip
+On dispose donc de 16 nœuds et la base polynomiale 4-linéaire est la base~$Q_1$ de dimension $4$ qui est:
+%\begin{equation}
+\[
+\LL{P} = \LL{1, x_1, x_2, x_3, x_4, 
+             x_1x_2, x_1x_3, x_1x_4, x_2x_3, x_2x_4, x_3x_4,
+             x_1x_2x_3, x_1x_2x_4, x_1x_3x_4, x_2x_3x_4,
+             x_1x_2x_3x_4}
+\]
+%\end{equation}
+
+\medskip
+La matrice modale vaut donc:
+%\begin{equation}
+\[
+\MM{P_n} = \MM{\begin{array}{cccccccccccccccc}
+%+1&x1  x2  x3  x4 x12 x13 x14 x23 x24 x34 x123 x124 x134 x234 x1234
++1 &-1 &-1 &-1 &-1 &+1 &+1 &+1 &+1 &+1 &+1 &-1  &-1  &-1  &-1  &+1\\
++1 &+1 &-1 &-1 &-1 &-1 &-1 &-1 &+1 &+1 &+1 &+1  &+1  &+1  &-1  &-1\\
++1 &+1 &+1 &-1 &-1 &+1 &-1 &-1 &-1 &-1 &+1 &-1  &-1  &+1  &+1  &+1\\
++1 &-1 &+1 &-1 &-1 &-1 &+1 &+1 &-1 &-1 &+1 &+1  &+1  &-1  &+1  &-1\\
++1 &-1 &-1 &+1 &-1 &+1 &-1 &+1 &-1 &+1 &-1 &+1  &-1  &+1  &+1  &-1\\
++1 &+1 &-1 &+1 &-1 &-1 &+1 &-1 &-1 &+1 &-1 &-1  &+1  &-1  &+1  &+1\\
++1 &+1 &+1 &+1 &-1 &+1 &+1 &-1 &+1 &-1 &-1 &+1  &-1  &-1  &-1  &-1\\
++1 &-1 &+1 &+1 &-1 &-1 &-1 &+1 &+1 &-1 &-1 &-1  &+1  &+1  &-1  &+1\\
++1 &-1 &-1 &-1 &+1 &+1 &+1 &-1 &+1 &-1 &-1 &-1  &+1  &+1  &+1  &-1\\
++1 &+1 &-1 &-1 &+1 &-1 &-1 &+1 &+1 &-1 &-1 &+1  &-1  &-1  &+1  &+1\\
++1 &+1 &+1 &-1 &+1 &+1 &-1 &+1 &-1 &+1 &-1 &-1  &+1  &-1  &-1  &-1\\
++1 &-1 &+1 &-1 &+1 &-1 &+1 &-1 &-1 &+1 &-1 &+1  &-1  &+1  &-1  &+1\\
++1 &-1 &-1 &+1 &+1 &+1 &-1 &-1 &-1 &-1 &+1 &+1  &+1  &-1  &-1  &+1\\
++1 &+1 &-1 &+1 &+1 &-1 &+1 &+1 &-1 &-1 &+1 &-1  &-1  &+1  &-1  &-1\\
++1 &+1 &+1 &+1 &+1 &+1 &+1 &+1 &+1 &+1 &+1 &+1  &+1  &+1  &+1  &+1\\
++1 &-1 &+1 &+1 &+1 &-1 &-1 &-1 &+1 &+1 &+1 &-1  &-1  &-1  &+1  &-1
+\end{array}}
+\]
+%\end{equation}
+
+Elle est orthogonale et chaque colonne a pour norme $2^4$, son inverse est obtenue à partir de sa transposée soit~$\MMI{P_n}=\frac1{16}\MMT{P_n}$.\\
+Les fonctions de forme $\LL{p}=\LL{P}\MMI{P_n}$ sont donc:
+\begin{equation}
+\left\{
+\begin{array}{lr}
+p_1 = \frac{1}{16}(1-x_1)(1-x_2)(1-x_3)(1-x_4)\\
+p_2 = \frac{1}{16}(1+x_1)(1-x_2)(1-x_3)(1-x_4)\\
+p_3 = \frac{1}{16}(1+x_1)(1+x_2)(1-x_3)(1-x_4)\\
+p_4 = \frac{1}{16}(1-x_1)(1+x_2)(1-x_3)(1-x_4)\\
+p_5 = \frac{1}{16}(1-x_1)(1-x_2)(1+x_3)(1-x_4)\\
+p_6 = \frac{1}{16}(1+x_1)(1-x_2)(1+x_3)(1-x_4)\\
+p_7 = \frac{1}{16}(1+x_1)(1+x_2)(1+x_3)(1-x_4)\\
+p_8 = \frac{1}{16}(1-x_1)(1+x_2)(1+x_3)(1-x_4)\\
+p_9 = \frac{1}{16}(1-x_1)(1-x_2)(1-x_3)(1+x_4)\\
+p_{10} = \frac{1}{16}(1+x_1)(1-x_2)(1-x_3)(1+x_4)\\
+p_{11} = \frac{1}{16}(1+x_1)(1+x_2)(1-x_3)(1+x_4)\\
+p_{12} = \frac{1}{16}(1-x_1)(1+x_2)(1-x_3)(1+x_4)\\
+p_{13} = \frac{1}{16}(1-x_1)(1-x_2)(1+x_3)(1+x_4)\\
+p_{14} = \frac{1}{16}(1+x_1)(1-x_2)(1+x_3)(1+x_4)\\
+p_{15} = \frac{1}{16}(1+x_1)(1+x_2)(1+x_3)(1+x_4)\\
+p_{16} = \frac{1}{16}(1-x_1)(1+x_2)(1+x_3)(1+x_4)\\
+\end{array}
+\right.
+\end{equation}
+les~$x_i$ variant de~$-1$ à~$+1$ au sein de l'élément de référence.
+
+\begin{remarque}[Généralisation]
+On voit ici sans effort comment généraliser cela à une dimensions $n$ quelconque.
+
+Pour être bref et pragmatique, les fonctions de forme sont données par la relation suivante:
+\begin{equation}
+p_i = \frac1{2^n}\prod_{k=1}^{n}(1\pm x_k) = \frac1{2^n}\prod_{k=1}^{n}(1+a_{ik} x_k)
+\end{equation}
+où~$n$ est la dimension d'espace, et $a_{ik}$ la valeur de la $k^{\text{ième}}$ coordonnée du sommet~$a_i$. Cette valeur vaut $+1$ ou $-1$. On rappelle que l'on dispose de $2^n$ sommets $a_i$.
+\end{remarque}
+
+\begin{remarque}[Utilité]
+Évidemment, on se demande immédiatement l'intérêt que peut avoir un élément fini de dimension 4 (ici le tesseract) ou plus.
+
+Et bien, de manière toute aussi évidente, l'intérêt consiste à modéliser un champ ayant plus de 3 composantes.
+Comme on se représente le maillage comme une discrétisation du problème physique que l'on souhaite simuler (fluide ou structure), alors la dimension 3 en est naturellement la borne supérieure... mais il n'en est rien!
+Le domaine~$\Omega$ considéré peut tout à fait avoir plus de 3 dimensions.
+
+C'est typiquement le cas pour une formulation dans laquelle le temps est discrétisé comme une autre variable: on dispose alors des 3 variables d'espace auxquelles s'ajoute 1 variable de temps, soit 4 variables au total. De tels éléments sont appelés éléments finis espace-temps.
+
+D'autres applications conduisent à des éléments d'ordre encore supérieur.
+Considérons par exemple un problème de mécanique des structures en dimension 3. Supposons maintenant que nous fassions dépendre notre formulation du problème d'un certain nombre de paramètres. Alors on peut également décider d'ajouter ces paramètres aux variables et ainsi augmenter la dimension d'espace du problème. Cela se produit dans certains types de calculs... pour lesquels on utilise ensuite des méthodes de réduction de modèles (mais le but et bien alors d'obtenir la solution du problème et les valeurs des paramètres intégrés). Nous n'aborderons pas ces problématiques dans ce document.
+\end{remarque}
+
+\medskip
+
+
 
 \medskip
 \section{Éléments d'Hermite}\index{élément fini!d'Hermite}\index[aut]{Hermite (Charles), 1822-1901, Français}

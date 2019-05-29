@@ -1,6 +1,6 @@
 \chapter{Calcul efficient: qualité des résultats et efforts de calcul}\label{Ch-Amelio}
 
-
+\ifVersionDuDocEstVincent\vspace{10mm}\fi
 \medskip
 \section{Amélioration d'un modèle: méthodes~$r$, $h$ et~$p$}\label{Sec-rhp}
 
@@ -11,37 +11,93 @@ Les indicateurs locaux nous permettent notamment de faire des modifications uniq
 \medskip
 Globalement, il existe trois stratégies pour améliorer la précision de la solution obtenue:
 \begin{description}
-\item[\textcolorblue{Méthode~$r$:}]\index{méthode~$r$} Pour un maillage et un type d'élément donné, il s'agit de déplacer les nœuds, en fonctions des indicateurs d'erreur, et donc sans impacter le nombre de degrés de liberté du système. Ainsi, la taille des éléments peut augmenter (maillage plus grossier) dans les zones les moins sollicitées et diminuer (maillage plus fin) dans les zones les plus sollicitées. On voit que la restriction de la méthode est qu'elle ne joue pas sur le nombre de nœuds, et que par conséquent, sans violer les contraintes de distorsion, elle est limitée.
+\item[\textcolorblue{Méthode~$r$:}]\index{méthode~$r$} Pour un maillage et un type d'élément donné, il s'agit de déplacer les nœuds, en fonctions des indicateurs d'erreur, et donc sans impacter le nombre de degrés de liberté du système. Ainsi, la taille des éléments peut augmenter (maillage plus grossier) dans les zones les moins sollicitées et diminuer (maillage plus fin) dans les zones les plus sollicitées. On voit que la restriction de la méthode est qu'elle ne joue pas sur le nombre de n??uds, et que par conséquent, sans violer les contraintes de distorsion, elle est limitée.
 \item[\textcolorblue{Méthode~$h$:}]\index{méthode~$h$} En conservant le même type d'élément, on les subdivise dans les zones les plus sollicitées selon le ou les indicateurs d'erreur choisis. Dans cette méthode, on augmente le nombre de nœuds afin de contrôler les erreurs et la précision du modèle. Il est nécessaire de se fixer une limite dans la précision recherchée afin de ne pas trop raffiner le maillage.
 \item[\textcolorblue{Méthode~$p$:}]\index{méthode~$p$} À nombre d'éléments constant, dans les zones les plus sollicitées, on va modifier les éléments en introduisant des fonctions de formes polynomiales d'ordre plus élevé, dites hiérarchiques. La complexité du système est cette fois encore accrue.
 \end{description}
 
 \medskip
-Évidemment, ces méthodes peuvent être combinées. La \textcolorblue{méthode -$hp$-}\index{méthode~$hp$} propose de modifier à la fois le maillage et
-les fonctions d'interpolation. Elle semble aujourd'hui être la méthode optimale en terme
-d'efficacité et de vitesse de convergence.
+Évidemment, ces méthodes peuvent être combinées. La \textcolorblue{méthode -$hp$-}\index{méthode~$hp$} propose de modifier à la fois le maillage et les fonctions d'interpolation. Elle semble aujourd'hui être la méthode optimale en terme d'efficacité et de vitesse de convergence.
 
 Notons que les méthodes -$r$- et -$h$- dépendent des capacités du mailleur automatique implémenté. De nombreux travaux existent sur le maillage automatique, nous n'entrerons pas dans ce détail.
 
-\medskip
+\medskip%\medskipvm
 \section{Post-traitement}\index{post-traitement}\label{Sec-PT}
 
-Une manière d'améliorer les résultats est de recourir à des méthodes dites de post-traitement, i.e. des méthodes qui, à partir des données issues de la résolution du système matriciel correspondant au problème, fournissent des données complémentaires ou améliorent toute ou partie des données déjà disponibles.
+Une manière d'améliorer les résultats est de recourir à des méthodes dites de post-traitement, i.e. des méthodes qui, \textcolorgreen{à partir des données issues de la résolution du système matriciel} correspondant au problème, \textcolorgreen{fournissent des données complémentaires ou améliorent} toute ou partie des données déjà disponibles.
 
 En fonction des problèmes (donc des données disponibles et des données souhaitées) de nombreuses méthodes existent. Elles sont généralement dédiées à un problème donné.
 
 \medskip
-Un exemple déjà abordé dans ce document est celui où, à partir des déplacement nodaux obtenus par un calcul éléments finis d'une structure mécanique composée de deux matériaux différents dans une discrétisation classique «en déplacements», on souhaite remonter aux contraintes à l'interface entre lesdits matériaux.
+Nous nous proposons ici de donner quelques exemples:
+\begin{itemize}
+   \item Nous avons déjà abordé dans ce document le cas où, à partir des déplacement nodaux obtenus par un calcul éléments finis d'une structure mécanique composée de deux matériaux différents dans une discrétisation classique «en déplacements», on souhaite remonter aux contraintes à l'interface entre lesdits matériaux.
 
-Une méthode déjà mentionnée est la méthode dite de «Reissner local»\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} qui consiste à intégrer les équations d'équilibre sous la forme mixte de Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} mais uniquement sur des paires d'éléments ayant des propriété matérielles différentes et possédant une face commune.
+Une méthode mentionnée est la méthode dite de «Reissner local»\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} qui consiste à intégrer les équations d'équilibre sous la forme mixte de Reissner,\index[aut]{Reissner (Max Erich, dit Eric), 1913-1996, Américain} mais uniquement sur des paires d'éléments ayant des propriété matérielles différentes et possédant une face commune.
 
 On obtient alors un champ de contrainte complètement continu dont on ne retient que les composantes correspondant à la trace\index{trace} des contraintes, les autres étant calculées comme dans la méthode classique. On montre que l'on améliore grandement la qualité de l'approximation des contraintes aux interfaces, mêmes avec un maillage grossier.
 
-\medskip
-Un autre exemple serait, disposant d'un point de pression constant par élément, de calculer la pression en un point quelconque comme interpolation (linéaire ou non) à partir des points disponibles.
+\item Disposant d'un point de pression constant par élément, on peut calculer la pression en un point quelconque comme interpolation (linéaire ou non) à partir des points disponibles.
+
+\item \`A partir des données nodales dans un modèle unidimensionnel (poutre ou barre selon le cas), il est possible de remonter à la répartition des contraintes en un points quelconque de la structure via les hypothèses faites dans le modèle sur la répartition des contraintes dans une section + via une interpolation lorsque l'on se trouve dans une section ne passant pas par un nœud.
+
+\item Dans de nombreux cas industriels, une condition de la conception est que la contrainte reste en tout point  en-deçà de la limite élastique du matériau. Un calcul linéaire est donc tout à fait licite, et l'on en est fort aise... Néanmoins, il se peut que dans certaines zones locales, ce critère ne soit pas respecté. Comment faire alors pour obtenir des contraintes «améliorées» dans cette zone, i.e. des contraintes plus proches de ce qu'aurait donné un calcul non-linéaire (mais coûteux)?
+
+Il existe plusieurs méthodes. L'une d'elle est de procéder à une \textcolorgreen{correction plastique}. Nous présentons ici sommairement la méthode de Neuber,\index[aut]{Neuber (Heinz), 1906-1989, Allemand} initialement proposée en 1961~\cite{bib-Neuber}, et aujourd'hui couramment utilisée. D'autres méthodes existent, telle que celle de Molski-Glinka~\cite{bib-Molski}, ou encore d'autres plus ou moins raffinées~\cite{bib-Herbland}.
 
 \medskip
-Un troisième exemple serait à partir des données nodales dans un modèle unidimensionnel (poutre ou barre selon le cas), de remonter à la répartition des contraintes en un points quelconque de la structure (donc via les hypothèses faites dans le modèle sur la répartition des contraintes dans une section + via une interpolation lorsque l'on se trouve dans une section ne passant pas par un nœud)...
+Dans le cas d'un chargement uniaxial, Neuber\index[aut]{Neuber (Heinz), 1906-1989, Allemand} postule que le produit de la contrainte par la déformation ne dépend pas de l'écoulement plastique. Cette solution ne permet pas de prendre en compte la contrainte moyenne. C'est pourquoi d'autres auteurs, comme par exemple Chaudonneret et Culié~\cite{bib-Chaudonneret,bib-ThChau}, ont proposé une autre méthode basée sur un changement de repère à chaque extremum du chargement.
+Pour un état de contrainte multiaxial, Plusieurs généralisations des travaux de Neuber ont été faites. Les meilleurs résultats sont obtenus en considérant les invariants de von Mises des tenseurs. C'est la forme qui a été adoptée dans la majorité des postulats de type Neuber\index[aut]{Neuber (Heinz), 1906-1989, Allemand} pour des états de contrainte multiaxiaux. On pourra se reporter à la thèse de Herbland~\cite{bib-Herbland} paragraphe~III.2 pour plus de détails.
+
+\medskip
+Sous l’hypothèse que la zone plastifiée reste confinée, le chemin d'effort global de la pièce considérée n'est pas perturbé. On écrit alors, comme annoncé plus haut, que le produit de la contrainte par la déformation ne dépend pas de l'écoulement plastique, i.e. qu'il est constant, ce qui s'écrit :
+\[ \sigma.\varepsilon = K \]
+où~$K$ est une constante calculée pour la contrainte linéaire max calculée.
+
+Si l'on ajoute à l'équation précédente la loi de comportement de Hooke:\index[aut]{Hooke (Robert), 1635-1703, Anglais} $\sigma = E\varepsilon$, alors on en déduit que:
+\[ K = \dfrac{\sigma^2}{E} \]
+
+\medskip
+En revenant à notre calcul par éléments finis, cela se traduit par l'équation de \textcolorgreen{l'hyperbole de Neuber}\index[aut]{Neuber (Heinz), 1906-1989, Allemand} sous la forme:
+\[ \sigma.\varepsilon = \dfrac{\sigma_{FEM}^2}{E_{FEM}} \]
+
+Les valeurs corrigées de la contrainte et de la déformation sont obtenues de l'intersection de l'hyperbole de Neuber\index[aut]{Neuber (Heinz), 1906-1989, Allemand} avec la courbe d'écrouissage du matériau. Elles sont donc solution du système:
+\begin{equation}
+\left\{
+\begin{array}{ll}
+\sigma.\varepsilon &= \dfrac{\sigma_{FEM}^2}{E_{FEM}}\\
+\sigma &= R_e + \dfrac{(\varepsilon-\varepsilon_y)(R_m-R_e)}{\varepsilon_u-\varepsilon_y}
+\end{array}
+\right.
+\quad \text{ soit } \quad
+\left\{
+\begin{array}{ll}
+\sigma.\varepsilon &= \dfrac{\sigma_{FEM}^2}{E_{FEM}}\\
+\sigma &= R_e + \dfrac{(\varepsilon-\frac{R_e}{E_{FEM}})(R_m-R_e)}{\varepsilon_u-\varepsilon_y}
+\end{array}
+\right.
+\end{equation}
+où~$\varepsilon_u$ est la déformation à rupture \textcolorgris{(u = ultimate)} et~$\varepsilon_y$ la déformation élastique \textcolorgris{(y = yield)}. Cette méthode est illustrée à la figure~\ref{Fig-Neuber}.
+\begin{figure}[ht]
+\centering\includegraphics[height=70mm]{Methneuber.eps}
+%\centering\includegraphics[height=60mm]{Methneuber.jpg}
+\caption{Méthode de Neuber}\label{Fig-Neuber}
+\end{figure}
+
+\medskip
+De plus, afin de se rassurer sur la validé de la méthode, on vérifie que la déformation plastique n'est pas excessive. En pratique, on demande généralement à ce qu'elle soit inférieure à 0.2\%.
+
+\item Dans certains cas, on peut être amené à prendre en compte l'effet de la température de manière simpliste dans un calcul mécanique.
+
+On remarque qu'un certain nombre de matériaux voient leurs propriétés élastiques varier relativement peu pour une plage raisonnable de température. Disposant d'un calcul «sans température» (i.e. avec les propriétés considérées à une température donnée, généralement l'ambiante), on peut ne faire varier que «l'admissible» du matériau pour la nouvelle température considérée. Les valeurs des contraintes sont donc comparées à ces nouveaux admissibles pour déterminer s'il y a un risque ou non.
+
+Ces admissibles à la température~$T$ sont calculés par proportionnalité par rapport à la contrainte à rupture en traction à la température ambiante~$T_0$ (aussi appelée contrainte ultime en traction, ou simplement~$R_m$ en français et $F_{tu}$ en anglais):
+\begin{equation}
+\text{Admissible}_T = \dfrac{R_{m_T}}{R_{m_{T_0}}} .\text{Admissible}_{T_0} 
+\end{equation}
+
+\end{itemize}
+
 
 \input{./tex/ex4}% macro Ansys et poutre en U
 
@@ -52,7 +108,7 @@ Un troisième exemple serait à partir des données nodales dans un modèle unid
 Le fonctionnement des produits industriels met en jeu des phénomènes physiques à des échelles très différentes. La prise en compte de tous ces phénomènes dans les simulations numériques demanderait d'utiliser des modèles extrêmement détaillés, entraînant des coûts d'identification et/ou de calcul prohibitifs. La simulation multi-échelles\index{multi-échelles} est une réponse à cette problématique. Elle consiste à simuler chaque phénomène à l'échelle la plus pertinente, i.e. en utilisant plusieurs modèles de tailles et de finesses différentes; cela permet, grâce à des solveurs adaptés, de réaliser des simulations qui seraient inaccessibles par des approches plus directes.
 
 \medskip
-Imaginons que nous souhaitions calculer un avion, mais que, pour des raisons évidente de sécurité, nous ayons besoin d'obtenir une precision «boulon par boulon». On se doute bien que l'on ne peut mailler tout l'avion avec un tel niveau de détail... On recourt alors à une cascade de modèles de dimensions et de finesses différentes, allant de l'avion tout entier (mais modélisé relativement grossièrement) à des détails structuraux modélisés très finement (mais limités à de petites zones), comme montré sur la \fig{Fig-avion}.
+Imaginons que nous souhaitions calculer un avion, mais que, pour des raisons évidentes de sécurité, nous ayons besoin d'obtenir une précision «boulon par boulon». On se doute bien que l'on ne peut mailler tout l'avion avec un tel niveau de détail... On recourt alors à une cascade de modèles de dimensions et de finesses différentes, allant de l'avion tout entier (mais modélisé relativement grossièrement) à des détails structuraux modélisés très finement (mais limités à de petites zones), comme montré sur la \fig{Fig-avion}.
 \begin{figure}[ht]
 \centering\includegraphics[height=60mm]{avion.eps}
 \caption{Sous-structuration en aéronautique}\label{Fig-avion}
@@ -192,7 +248,8 @@ Une simulation par décomposition de domaine\index{décomposition de domaine} co
 \textcolorgris{Cependant, à plus long terme, la simulation multi-échelles\index{multi-échelles} suscite un intérêt considérable dans l'industrie: en rendant accessibles à la simulation des phénomènes qui ne peuvent actuellement être étudiés qu'expérimentalement,
 elle constitue un pas important en direction du «virtual testing». Pour cette raison, elle fait toujours l'objet de nombreux projets de recherche. Ceux-ci concernent aussi bien la modélisation, avec notamment la mise au point de «matériaux virtuels» (qui ne sont rien d'autre que des modèles multi-échelles, notamment pour les matériaux composites), que les solveurs qui sont en constante évolution.}
 
-\ifVersionDuDocEstVincent\newpage\else\medskip\fi
+%\ifVersionDuDocEstVincent\newpage\else\medskip\fi
+\medskip
 \section{Super-éléments}\index{super-élément}
 
 \begin{histoire}
