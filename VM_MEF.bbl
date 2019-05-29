@@ -1,0 +1,2377 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{none}
+    \entry{bib-WikiBiblio}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Toutes les notes bibliograhiques et historiques de ce document}
+      \field{title}{Toutes les notes bibliograhiques et historiques de ce document}
+      \keyw{0}
+    \endentry
+    \entry{bib-WikiMath}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Histoire des mathématiques}
+      \field{title}{Histoire des mathématiques}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Histoire_des_math%C3%A9matiques
+      \endverb
+      \keyw{0}
+    \endentry
+    \entry{bib-Jolu}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=b51d3d8d8260ebae37a4b78befa0858a}{Joly}{J\bibinitperiod}{Patrick}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=b51d3d8d8260ebae37a4b78befa0858a}{Joly}{J\bibinitperiod}{Patrick}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {{\textsc{Inria}}-Rocquencourt}%
+      }
+      \strng{namehash}{b51d3d8d8260ebae37a4b78befa0858a}
+      \strng{fullhash}{b51d3d8d8260ebae37a4b78befa0858a}
+      \field{sortinit}{0}
+      \field{labeltitle}{Introduction au calcul scientifique pour les EDP de la physique}
+      \field{title}{Introduction au calcul scientifique pour les EDP de la physique}
+      \verb{url}
+      \verb http://pages.saclay.inria.fr/houssem.haddar/Cours/ENSTA/ma201-cours-01.pdf
+      \endverb
+      \keyw{0}
+    \endentry
+    \entry{bib-Schwartz1}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=a8295dae54368d8862b1e1701d5c25d9}{Schwartz}{S\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=a8295dae54368d8862b1e1701d5c25d9}{Schwartz}{S\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Hermann}%
+      }
+      \strng{namehash}{a8295dae54368d8862b1e1701d5c25d9}
+      \strng{fullhash}{a8295dae54368d8862b1e1701d5c25d9}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse I: Théorie des ensembles et Topologie}
+      \field{title}{Analyse I: Théorie des ensembles et Topologie}
+      \field{year}{1992}
+      \keyw{1}
+    \endentry
+    \entry{bib-Schwartz2}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=a8295dae54368d8862b1e1701d5c25d9}{Schwartz}{S\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=a8295dae54368d8862b1e1701d5c25d9}{Schwartz}{S\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Hermann}%
+      }
+      \strng{namehash}{a8295dae54368d8862b1e1701d5c25d9}
+      \strng{fullhash}{a8295dae54368d8862b1e1701d5c25d9}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse II: Calcul différentiel et équations différentielles}
+      \field{title}{Analyse II: Calcul différentiel et équations différentielles}
+      \field{year}{1992}
+      \keyw{1}
+    \endentry
+    \entry{bib-Schwartz3}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=a8295dae54368d8862b1e1701d5c25d9}{Schwartz}{S\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=a8295dae54368d8862b1e1701d5c25d9}{Schwartz}{S\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Hermann}%
+      }
+      \strng{namehash}{a8295dae54368d8862b1e1701d5c25d9}
+      \strng{fullhash}{a8295dae54368d8862b1e1701d5c25d9}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse III: Calcul intégral}
+      \field{title}{Analyse III: Calcul intégral}
+      \field{year}{1992}
+      \keyw{1}
+    \endentry
+    \entry{bib-Kato}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=de2df565ad24725681a931fe6bd95efd}{Kato}{K\bibinitperiod}{Tosio}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=de2df565ad24725681a931fe6bd95efd}{Kato}{K\bibinitperiod}{Tosio}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Classics in Mathematics, Springer}%
+      }
+      \strng{namehash}{de2df565ad24725681a931fe6bd95efd}
+      \strng{fullhash}{de2df565ad24725681a931fe6bd95efd}
+      \field{sortinit}{0}
+      \field{labeltitle}{Perturbation Theory for Linear Operators}
+      \field{title}{Perturbation Theory for Linear Operators}
+      \field{year}{1995 (reprint de 1980)}
+      \keyw{1}
+    \endentry
+    \entry{bib-PopierEFonc}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=b9cd80b735f13a6b2fe5a4b62addfd03}{Popier}{P\bibinitperiod}{Alexandre}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=b9cd80b735f13a6b2fe5a4b62addfd03}{Popier}{P\bibinitperiod}{Alexandre}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Université du Maine, Le Mans}%
+      }
+      \strng{namehash}{b9cd80b735f13a6b2fe5a4b62addfd03}
+      \strng{fullhash}{b9cd80b735f13a6b2fe5a4b62addfd03}
+      \field{sortinit}{0}
+      \field{labeltitle}{Espaces fonctionnels: un peu de topologie}
+      \field{title}{Espaces fonctionnels: un peu de topologie}
+      \verb{url}
+      \verb http://perso.univ-lemans.fr/~apopier/enseignement/M1_Maths_EDP/slides_espaces_fonct.pdf
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{bib-WikiLp}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Espace $L^p$}
+      \field{title}{Espace $L^p$}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Espace_Lp
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{bib-LiLp}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=4ef9f067fa7dd881ebe6076d3c1d1c5f}{Li}{L\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4ef9f067fa7dd881ebe6076d3c1d1c5f}{Li}{L\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Université d'Artois; Faculté des Sciences Jean Perrin; L3 Mathématiques-Informatique}%
+      }
+      \strng{namehash}{4ef9f067fa7dd881ebe6076d3c1d1c5f}
+      \strng{fullhash}{4ef9f067fa7dd881ebe6076d3c1d1c5f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Mesure et Intégration: Ch6 Espaces $L^p$}
+      \field{title}{Mesure et Intégration: Ch6 Espaces $L^p$}
+      \field{year}{2011}
+      \verb{url}
+      \verb http://li.perso.math.cnrs.fr/textes/Integration/espaceLp.pdf
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{bib-Blayo}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=790376fc334ea28cfc3c8b7635351f32}{Blayo}{B\bibinitperiod}{{Éric}}{É\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=790376fc334ea28cfc3c8b7635351f32}{Blayo}{B\bibinitperiod}{{Éric}}{É\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {M1 Mathématiques Appliquées et Industrielles, Laboratoire Jean Kuntzmann, {\textsc{Inria}}}%
+      }
+      \strng{namehash}{790376fc334ea28cfc3c8b7635351f32}
+      \strng{fullhash}{790376fc334ea28cfc3c8b7635351f32}
+      \field{sortinit}{0}
+      \field{labeltitle}{Notes de cours sur la méthode des éléments finis}
+      \field{title}{Notes de cours sur la méthode des éléments finis}
+      \field{year}{2010}
+      \verb{url}
+      \verb http://www-ljk.imag.fr/membres/Eric.Blayo/Documents/Poly-EF.pdf
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{bib-AllaireAN}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Eds de l'École Polytechnique}%
+      }
+      \strng{namehash}{e689b43ac5d3242f4613a353518abfb7}
+      \strng{fullhash}{e689b43ac5d3242f4613a353518abfb7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse numérique et optilisation}
+      \field{title}{Analyse numérique et optilisation}
+      \field{year}{2007}
+      \keyw{1}
+    \endentry
+    \entry{bib-Hist}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=ce75baf3464718919c188001cd17947d}{Dahan-Dalmedico}{D\bibinithyphendelim D\bibinitperiod}{Amy}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=9a9186019e70d34b8a4f9cd3c49bd7fe}{Peiffer}{P\bibinitperiod}{Jeanne}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=ce75baf3464718919c188001cd17947d}{Dahan-Dalmedico}{D\bibinithyphendelim D\bibinitperiod}{Amy}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=9a9186019e70d34b8a4f9cd3c49bd7fe}{Peiffer}{P\bibinitperiod}{Jeanne}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Eds du Seuil}%
+      }
+      \strng{namehash}{c3c212875bd3f81eba5277d815fbaae1}
+      \strng{fullhash}{c3c212875bd3f81eba5277d815fbaae1}
+      \field{sortinit}{0}
+      \field{labeltitle}{Une histoire des mathématiques. Routes et dédales}
+      \field{title}{Une histoire des mathématiques. Routes et dédales}
+      \field{year}{1986}
+      \keyw{1}
+    \endentry
+    \entry{Lit-Jacod}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=067e88e2d67cc866cae6b4379030e6c9}{Jacod}{J\bibinitperiod}{Jean}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=067e88e2d67cc866cae6b4379030e6c9}{Jacod}{J\bibinitperiod}{Jean}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Université Pierre et Marie Curie (Paris 6), L3 Maths}%
+      }
+      \strng{namehash}{067e88e2d67cc866cae6b4379030e6c9}
+      \strng{fullhash}{067e88e2d67cc866cae6b4379030e6c9}
+      \field{sortinit}{0}
+      \field{labeltitle}{Théorie de la mesure et intégration (LM365)}
+      \field{title}{Théorie de la mesure et intégration (LM365)}
+      \field{year}{2010-11}
+      \verb{url}
+      \verb http://www.proba.jussieu.fr/pageperso/amaury/LM364/jacod.pdf
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{bib-Hauche}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=d39d5411d272d8f20a76a718fd0e6e14}{Hauchecorne}{H\bibinitperiod}{Bertrand}{B\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=d39d5411d272d8f20a76a718fd0e6e14}{Hauchecorne}{H\bibinitperiod}{Bertrand}{B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Ellipses}%
+      }
+      \strng{namehash}{d39d5411d272d8f20a76a718fd0e6e14}
+      \strng{fullhash}{d39d5411d272d8f20a76a718fd0e6e14}
+      \field{sortinit}{0}
+      \field{labeltitle}{Les contre-exemples en mathematiques : 522 Contre-exemples (2ème Ed)}
+      \field{title}{Les contre-exemples en mathematiques : 522 Contre-exemples (2ème Ed)}
+      \field{year}{2007}
+      \keyw{1}
+    \endentry
+    \entry{bib-Rouv}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=7c4190dc6dee03e72fbea7557236cbca}{Rouvière}{R\bibinitperiod}{François}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=7c4190dc6dee03e72fbea7557236cbca}{Rouvière}{R\bibinitperiod}{François}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Cassini}%
+      }
+      \strng{namehash}{7c4190dc6dee03e72fbea7557236cbca}
+      \strng{fullhash}{7c4190dc6dee03e72fbea7557236cbca}
+      \field{sortinit}{0}
+      \field{labeltitle}{Petit guide de calcul différentiel à l'usage de la licence et de l'agrégation (2ème	Ed)}
+      \field{title}{Petit guide de calcul différentiel à l'usage de la licence et de l'agrégation (2ème	Ed)}
+      \field{year}{2003}
+      \keyw{1}
+    \endentry
+    \entry{Lit-Vil1}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=9a5829eabef68d560b86bf71527fd874}{Villani}{V\bibinitperiod}{Cédric}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9a5829eabef68d560b86bf71527fd874}{Villani}{V\bibinitperiod}{Cédric}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENS Lyon}%
+      }
+      \strng{namehash}{9a5829eabef68d560b86bf71527fd874}
+      \strng{fullhash}{9a5829eabef68d560b86bf71527fd874}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse II}
+      \field{title}{Analyse II}
+      \field{year}{2003-04}
+      \verb{url}
+      \verb http://cedricvillani.org/wp-content/uploads/2013/03/ana2.pdf
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{Lit-Vil2}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=9a5829eabef68d560b86bf71527fd874}{Villani}{V\bibinitperiod}{Cédric}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9a5829eabef68d560b86bf71527fd874}{Villani}{V\bibinitperiod}{Cédric}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENS Lyon}%
+      }
+      \strng{namehash}{9a5829eabef68d560b86bf71527fd874}
+      \strng{fullhash}{9a5829eabef68d560b86bf71527fd874}
+      \field{sortinit}{0}
+      \field{labeltitle}{Intégration et Analyse de Fourier}
+      \field{title}{Intégration et Analyse de Fourier}
+      \field{year}{2005-06}
+      \verb{url}
+      \verb http://cedricvillani.org/wp-content/uploads/2013/03/IAF.pdf
+      \endverb
+      \keyw{1}
+    \endentry
+    \entry{bib-WikiEDP}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Équations aux dérivées partielles}
+      \field{title}{Équations aux dérivées partielles}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/%C3%A9quation_aux_d%C3%A9riv%C3%A9es_partielles
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-WikiFFaible}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Formulation faible}
+      \field{title}{Formulation faible}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Formulation_faible
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-WikiFVaria}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Formulation variationnelle}
+      \field{title}{Formulation variationnelle}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Formulation_variationnelle
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-Scheid}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=26189c3b2a85088c077823cf056ecd4d}{Scheid}{S\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=26189c3b2a85088c077823cf056ecd4d}{Scheid}{S\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Institut E.Cartan U.M.R. 7502, Univ. H. Poincaré Nancy 1}%
+      }
+      \strng{namehash}{26189c3b2a85088c077823cf056ecd4d}
+      \strng{fullhash}{26189c3b2a85088c077823cf056ecd4d}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse numérique des équations de Navier-Stokes}
+      \field{title}{Analyse numérique des équations de Navier-Stokes}
+      \field{year}{Cours de Master 2 Mathématiques (Recherche) 2005-2006}
+      \verb{url}
+      \verb http://www.iecn.u-nancy.fr/~scheid/Enseignement/ns_main.pdf
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-Scheid2}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=26189c3b2a85088c077823cf056ecd4d}{Scheid}{S\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=26189c3b2a85088c077823cf056ecd4d}{Scheid}{S\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Institut E.Cartan U.M.R. 7502, Univ. H. Poincaré Nancy 1}%
+      }
+      \strng{namehash}{26189c3b2a85088c077823cf056ecd4d}
+      \strng{fullhash}{26189c3b2a85088c077823cf056ecd4d}
+      \field{sortinit}{0}
+      \field{labeltitle}{méthodes numériques pour la dynamique des fluides}
+      \field{title}{méthodes numériques pour la dynamique des fluides}
+      \field{year}{Cours de Master 2 IMOI option calculs scientifique 2011-2012}
+      \verb{url}
+      \verb http://www.iecn.u-nancy.fr/~scheid/Enseignement/polyM2IMOI.pdf
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-Washizu}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=8b14cf29d9ec6be76a2d3d576bd3db9f}{Washizu}{W\bibinitperiod}{Kyuichiro}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=8b14cf29d9ec6be76a2d3d576bd3db9f}{Washizu}{W\bibinitperiod}{Kyuichiro}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon Press}%
+      }
+      \strng{namehash}{8b14cf29d9ec6be76a2d3d576bd3db9f}
+      \strng{fullhash}{8b14cf29d9ec6be76a2d3d576bd3db9f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Variational methods in elasticity and plasticity}
+      \field{title}{Variational methods in elasticity and plasticity}
+      \field{year}{1982}
+      \keyw{2}
+    \endentry
+    \entry{bib-Maitre}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=80a97e009627e6f90459b98ddb308b6a}{Maitre}{M\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=80a97e009627e6f90459b98ddb308b6a}{Maitre}{M\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{80a97e009627e6f90459b98ddb308b6a}
+      \strng{fullhash}{80a97e009627e6f90459b98ddb308b6a}
+      \field{sortinit}{0}
+      \field{labeltitle}{Cours d'éléments finis}
+      \field{journaltitle}{DEA Analyse numérique, EDP et calcul scientifique; Univ Lyon 1 et St-Étienne, ECL, ENS Lyon}
+      \field{title}{Cours d'éléments finis}
+      \field{year}{1996}
+      \keyw{2}
+    \endentry
+    \entry{Lit-Vil2b}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=9a5829eabef68d560b86bf71527fd874}{Villani}{V\bibinitperiod}{Cédric}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9a5829eabef68d560b86bf71527fd874}{Villani}{V\bibinitperiod}{Cédric}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENS Lyon}%
+      }
+      \strng{namehash}{9a5829eabef68d560b86bf71527fd874}
+      \strng{fullhash}{9a5829eabef68d560b86bf71527fd874}
+      \field{sortinit}{0}
+      \field{labeltitle}{Intégration et Analyse de Fourier}
+      \field{title}{Intégration et Analyse de Fourier}
+      \field{year}{2005-06}
+      \verb{url}
+      \verb http://cedricvillani.org/wp-content/uploads/2013/03/IAF.pdf
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-WH}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=327fd38e8999eb1eef023e2becb9127c}{Meyers}{M\bibinitperiod}{Norman\bibnamedelima G.}{N\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+        {{hash=013dc640736ae541ed53321cf37faf1e}{Serrin}{S\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=327fd38e8999eb1eef023e2becb9127c}{Meyers}{M\bibinitperiod}{Norman\bibnamedelima G.}{N\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+        {{hash=013dc640736ae541ed53321cf37faf1e}{Serrin}{S\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{6d87c953a2195860f6e21f92bad89483}
+      \strng{fullhash}{6d87c953a2195860f6e21f92bad89483}
+      \field{sortinit}{0}
+      \field{labeltitle}{$H=W$}
+      \field{journaltitle}{Proc. Nat. Acad. Sci USA}
+      \field{title}{$H=W$}
+      \field{volume}{51}
+      \field{year}{1964}
+      \field{pages}{1055\bibrangedash 1056}
+      \verb{url}
+      \verb http://www.ncbi.nlm.nih.gov/pmc/articles/PMC300210/pdf/pnas00180-0073.pdf
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-Brezzi}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=875b6d6b626d6f9332b23d46ba15625c}{Brezzi}{B\bibinitperiod}{Franco}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=875b6d6b626d6f9332b23d46ba15625c}{Brezzi}{B\bibinitperiod}{Franco}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{875b6d6b626d6f9332b23d46ba15625c}
+      \strng{fullhash}{875b6d6b626d6f9332b23d46ba15625c}
+      \field{sortinit}{0}
+      \field{labeltitle}{On the existence, uniqueness and approximation of saddle-point problems arising from lagrangian multipliers}
+      \field{journaltitle}{RAIRO}
+      \field{title}{On the existence, uniqueness and approximation of saddle-point problems arising from lagrangian multipliers}
+      \field{volume}{2}
+      \field{year}{1974}
+      \field{pages}{129\bibrangedash 151}
+      \verb{url}
+      \verb http://archive.numdam.org/ARCHIVE/M2AN/M2AN_1974__8_2/M2AN_1974__8_2_129_0/M2AN_1974__8_2_129_0.pdf
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-Naumann}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=c0490a63e08caaaed0286325f6ac4680}{Naumann}{N\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=c0490a63e08caaaed0286325f6ac4680}{Naumann}{N\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Humboldt Universität}%
+      }
+      \strng{namehash}{c0490a63e08caaaed0286325f6ac4680}
+      \strng{fullhash}{c0490a63e08caaaed0286325f6ac4680}
+      \field{sortinit}{0}
+      \field{labeltitle}{Remarks on the Prehistory of Sobolev Spaces}
+      \field{title}{Remarks on the Prehistory of Sobolev Spaces}
+      \field{year}{25 mars 2002}
+      \verb{url}
+      \verb http://edoc.hu-berlin.de/series/mathematik-preprints/2002-2/PDF/2.pdf
+      \endverb
+      \keyw{2}
+    \endentry
+    \entry{bib-WikiMEF}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthode des éléments finis}
+      \field{title}{Méthode des éléments finis}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/M%C3%A9thode_des_%C3%A9l%C3%A9ments_finis
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Blayo3}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=790376fc334ea28cfc3c8b7635351f32}{Blayo}{B\bibinitperiod}{Éric}{É\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=790376fc334ea28cfc3c8b7635351f32}{Blayo}{B\bibinitperiod}{Éric}{É\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {M1 Mathématiques Appliquées et Industrielles, Laboratoire Jean Kuntzmann, {\textsc{Inria}}}%
+      }
+      \strng{namehash}{790376fc334ea28cfc3c8b7635351f32}
+      \strng{fullhash}{790376fc334ea28cfc3c8b7635351f32}
+      \field{sortinit}{0}
+      \field{labeltitle}{Notes de cours sur la méthode des éléments finis}
+      \field{title}{Notes de cours sur la méthode des éléments finis}
+      \field{year}{2010}
+      \verb{url}
+      \verb http://www-ljk.imag.fr/membres/Eric.Blayo/Documents/Poly-EF.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-BoyerAN}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=4bece6b6f4b549eaaa860e14a5c83534}{Boyer}{B\bibinitperiod}{Franck}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4bece6b6f4b549eaaa860e14a5c83534}{Boyer}{B\bibinitperiod}{Franck}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Aix-Marseille universités, M2 Mathématiques et Applications}%
+      }
+      \strng{namehash}{4bece6b6f4b549eaaa860e14a5c83534}
+      \strng{fullhash}{4bece6b6f4b549eaaa860e14a5c83534}
+      \field{sortinit}{0}
+      \field{labeltitle}{Analyse numérique des EDP elliptiques}
+      \field{title}{Analyse numérique des EDP elliptiques}
+      \field{year}{2011}
+      \verb{url}
+      \verb http://www.cmi.univ-mrs.fr/~fboyer/_media/enseignements/cours_m2_anedp_fboyer.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{Lit-vm-these}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=8e9db9ff0bfafb4ca00e4ebb440b42f0}{Manet}{M\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=8e9db9ff0bfafb4ca00e4ebb440b42f0}{Manet}{M\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Univ. Blaise Pascal - Clermont II}%
+      }
+      \strng{namehash}{8e9db9ff0bfafb4ca00e4ebb440b42f0}
+      \strng{fullhash}{8e9db9ff0bfafb4ca00e4ebb440b42f0}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthodes d'analyse par éléments finis des contraintes aux interfaces dans les structures sandwich}
+      \field{month}{17 juillet}
+      \field{title}{Méthodes d'analyse par éléments finis des contraintes aux interfaces dans les structures sandwich}
+      \field{type}{phdthesis}
+      \field{year}{1998}
+      \verb{url}
+      \verb http://tel.archives-ouvertes.fr/docs/00/66/30/78/PDF/THESE.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-BatozDhatt}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=0a67cf7a3e7f5efe5c27f67fc581f57d}{Batoz}{B\bibinitperiod}{{Jean-Louis}}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=3f8ae473854b9d88779906df5daa780b}{Dhatt}{D\bibinitperiod}{Gouri}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=0a67cf7a3e7f5efe5c27f67fc581f57d}{Batoz}{B\bibinitperiod}{{Jean-Louis}}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=3f8ae473854b9d88779906df5daa780b}{Dhatt}{D\bibinitperiod}{Gouri}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Hermes}%
+      }
+      \strng{namehash}{4d7c7ea438a59c580166856d6600f076}
+      \strng{fullhash}{4d7c7ea438a59c580166856d6600f076}
+      \field{sortinit}{0}
+      \field{labeltitle}{Modélisation des structures par éléments finis. Vol. 1 -- solides élastiques}
+      \field{title}{Modélisation des structures par éléments finis. Vol. 1 -- solides élastiques}
+      \field{year}{1995}
+      \keyw{3}
+    \endentry
+    \entry{bib-Pousin}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=75f7d14160406c7191c373396d2bce59}{Pousin}{P\bibinitperiod}{Jérôme}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=75f7d14160406c7191c373396d2bce59}{Pousin}{P\bibinitperiod}{Jérôme}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{75f7d14160406c7191c373396d2bce59}
+      \strng{fullhash}{75f7d14160406c7191c373396d2bce59}
+      \field{sortinit}{0}
+      \field{labeltitle}{Cours estimateurs d'erreurs et remaillage}
+      \field{journaltitle}{DEA Analyse numérique, EDP et calcul scientifique; Univ Lyon 1 et St-Étienne, ECL, ENS Lyon}
+      \field{title}{Cours estimateurs d'erreurs et remaillage}
+      \field{year}{1996}
+      \keyw{3}
+    \endentry
+    \entry{bib-ChampanayModel}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=061414f46ce5996d972fbd0cc00a62d8}{Champaney}{C\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=061414f46ce5996d972fbd0cc00a62d8}{Champaney}{C\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENS Cachan; Département de génie mécanique, Laboratoire de mécanique et technologie}%
+      }
+      \strng{namehash}{061414f46ce5996d972fbd0cc00a62d8}
+      \strng{fullhash}{061414f46ce5996d972fbd0cc00a62d8}
+      \field{sortinit}{0}
+      \field{labeltitle}{Les éléments finis par l'exemple: modèles 1D, 2D ou 3D?}
+      \field{title}{Les éléments finis par l'exemple: modèles 1D, 2D ou 3D?}
+      \verb{url}
+      \verb http://www.si.ens-cachan.fr/accueil_V2.php?page=affiche_ressource&id=173
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Wikihom}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Théories des milieux effectifs}
+      \field{title}{Théories des milieux effectifs}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Th%C3%A9ories_des_milieux_effectifs
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Pana}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=4db207e920c7bb78dec9758f1fc2335f}{Panasenko}{P\bibinitperiod}{Grigory}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4db207e920c7bb78dec9758f1fc2335f}{Panasenko}{P\bibinitperiod}{Grigory}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{4db207e920c7bb78dec9758f1fc2335f}
+      \strng{fullhash}{4db207e920c7bb78dec9758f1fc2335f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Cours d'homogénéisation}
+      \field{journaltitle}{DEA Analyse numérique, EDP et calcul scientifique; Univ Lyon 1 et St-Étienne, ECL, ENS Lyon}
+      \field{title}{Cours d'homogénéisation}
+      \field{year}{1996}
+      \keyw{3}
+    \endentry
+    \entry{bib-MultEch}{online}{}
+      \list{organization}{1}{%
+        {ENS Cachan}%
+      }
+      \field{sortinit}{0}
+      \field{labeltitle}{La simulation multi-échelles}
+      \field{title}{La simulation multi-échelles}
+      \verb{url}
+      \verb http://www.si.ens-cachan.fr/accueil_V2.php?page=affiche_ressource&id=164
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Naceur}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=50770a9eb18ce45ee233e988edbe7a29}{Naceur}{N\bibinitperiod}{Hakim}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=50770a9eb18ce45ee233e988edbe7a29}{Naceur}{N\bibinitperiod}{Hakim}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENSIAME - Univ. de Valenciennes et du Hainaut Cambrésis}%
+      }
+      \strng{namehash}{50770a9eb18ce45ee233e988edbe7a29}
+      \strng{fullhash}{50770a9eb18ce45ee233e988edbe7a29}
+      \field{sortinit}{0}
+      \field{labeltitle}{Mécanique de la rupture}
+      \field{title}{Mécanique de la rupture}
+      \field{year}{2011}
+      \keyw{3}
+    \endentry
+    \entry{bib-Bassville}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=4efa4e3e1737b75d62b273405c466004}{Basseville}{B\bibinitperiod}{Stéphanie}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4efa4e3e1737b75d62b273405c466004}{Basseville}{B\bibinitperiod}{Stéphanie}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Nationale Supérieure des Mines de Paris, Enseignement spécialisé «Éléments finis» S3733-S3735}%
+      }
+      \strng{namehash}{4efa4e3e1737b75d62b273405c466004}
+      \strng{fullhash}{4efa4e3e1737b75d62b273405c466004}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthodes de résolutions en éléments finis}
+      \field{title}{Méthodes de résolutions en éléments finis}
+      \field{year}{2005-2006}
+      \verb{url}
+      \verb http://mms2.ensmp.fr/ef_paris/technologie/polycop/f_coursMR.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Chaussedent}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=e1bb994f10c3f551ae93d807f427d559}{Chaussedent}{C\bibinitperiod}{Stéphane}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e1bb994f10c3f551ae93d807f427d559}{Chaussedent}{C\bibinitperiod}{Stéphane}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {NUMEPhy, Univ. du Maine, Le mans}%
+      }
+      \strng{namehash}{e1bb994f10c3f551ae93d807f427d559}
+      \strng{fullhash}{e1bb994f10c3f551ae93d807f427d559}
+      \field{sortinit}{0}
+      \field{labeltitle}{Mécanique des milieux continus}
+      \field{title}{Mécanique des milieux continus}
+      \verb{url}
+      \verb http://res-nlp.univ-lemans.fr/NLP_C_M03_G01/co/NLP_C_M03_G01_web.html
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Feng}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=1e8e11d99c4a0ff5ff8aba58ed64ebbe}{Feng}{F\bibinitperiod}{{Zhi-Qiang}}{Z\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=1e8e11d99c4a0ff5ff8aba58ed64ebbe}{Feng}{F\bibinitperiod}{{Zhi-Qiang}}{Z\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {UFR Science et Technologies, Univ. d'Evry Val d'Essonne}%
+      }
+      \strng{namehash}{1e8e11d99c4a0ff5ff8aba58ed64ebbe}
+      \strng{fullhash}{1e8e11d99c4a0ff5ff8aba58ed64ebbe}
+      \field{sortinit}{0}
+      \field{labeltitle}{Mécanique non linéaire M2-MN91}
+      \field{title}{Mécanique non linéaire M2-MN91}
+      \verb{url}
+      \verb http://lmee.univ-evry.fr/~feng/MN91.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-ChampSing}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=061414f46ce5996d972fbd0cc00a62d8}{Champaney}{C\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=061414f46ce5996d972fbd0cc00a62d8}{Champaney}{C\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENS Cachan}%
+      }
+      \strng{namehash}{061414f46ce5996d972fbd0cc00a62d8}
+      \strng{fullhash}{061414f46ce5996d972fbd0cc00a62d8}
+      \field{sortinit}{0}
+      \field{labeltitle}{Simulation par éléments finis - attention aux singularités}
+      \field{title}{Simulation par éléments finis - attention aux singularités}
+      \verb{url}
+      \verb http://www.si.ens-cachan.fr/accueil_V2.php?page=affiche_ressource&id=175
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-LosA}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=2af8af9ddb27d1fbb827b4f9306ed10f}{Chen}{C\bibinitperiod}{Shiyi}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=b8cbbd180613e22dc496d2ce5b23f958}{Doolen}{D\bibinitperiod}{Gary\bibnamedelima D.}{G\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=930bb112a8504103e71feeb330fd42a4}{Eggert}{E\bibinitperiod}{Kenneth\bibnamedelima G.}{K\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=2af8af9ddb27d1fbb827b4f9306ed10f}{Chen}{C\bibinitperiod}{Shiyi}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=b8cbbd180613e22dc496d2ce5b23f958}{Doolen}{D\bibinitperiod}{Gary\bibnamedelima D.}{G\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=930bb112a8504103e71feeb330fd42a4}{Eggert}{E\bibinitperiod}{Kenneth\bibnamedelima G.}{K\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{83c8a053efb5069a08c2d10d35a033cd}
+      \strng{fullhash}{83c8a053efb5069a08c2d10d35a033cd}
+      \field{sortinit}{0}
+      \field{labeltitle}{Lattice-Boltzmann Fluid Dynamics: a versatile tool for multiphase and other complicated flows}
+      \field{journaltitle}{Los Alamos Science Number 22}
+      \field{title}{Lattice-Boltzmann Fluid Dynamics: a versatile tool for multiphase and other complicated flows}
+      \field{year}{1994}
+      \verb{url}
+      \verb http://www.fas.org/sgp/othergov/doe/lanl/pubs/00285550.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-CMAP}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=b87b8532f596f7c82f78dc67b0ac1687}{(CMAP)}{(\bibinitperiod}{{Centre\bibnamedelimb de\bibnamedelimb Mathématiques\bibnamedelimb Appliquées}}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=b87b8532f596f7c82f78dc67b0ac1687}{(CMAP)}{(\bibinitperiod}{{Centre\bibnamedelimb de\bibnamedelimb Mathématiques\bibnamedelimb Appliquées}}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Polytechnique}%
+      }
+      \strng{namehash}{b87b8532f596f7c82f78dc67b0ac1687}
+      \strng{fullhash}{b87b8532f596f7c82f78dc67b0ac1687}
+      \field{sortinit}{0}
+      \field{labeltitle}{Exemples avec Freefem++}
+      \field{title}{Exemples avec Freefem++}
+      \verb{url}
+      \verb http://www.cmap.polytechnique.fr/
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Bahlouli}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=622d686eb4839f651cb71b92d4a0f4a5}{Bahlouli}{B\bibinitperiod}{Nadia}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=622d686eb4839f651cb71b92d4a0f4a5}{Bahlouli}{B\bibinitperiod}{Nadia}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Univ. Strasbourg}%
+      }
+      \strng{namehash}{622d686eb4839f651cb71b92d4a0f4a5}
+      \strng{fullhash}{622d686eb4839f651cb71b92d4a0f4a5}
+      \field{sortinit}{0}
+      \field{labeltitle}{Cours Matériaux Composites}
+      \field{title}{Cours Matériaux Composites}
+      \verb{url}
+      \verb http://www-ipst.u-strasbg.fr/cours/materiaux-composites/tdm.htm
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{Lit-Chevreuil}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=451b3572c9e0dc2e1f46b470eabbe9d7}{Chevreuil}{C\bibinitperiod}{Mathilde}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=451b3572c9e0dc2e1f46b470eabbe9d7}{Chevreuil}{C\bibinitperiod}{Mathilde}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {ENS Cachan}%
+      }
+      \strng{namehash}{451b3572c9e0dc2e1f46b470eabbe9d7}
+      \strng{fullhash}{451b3572c9e0dc2e1f46b470eabbe9d7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Sur une nouvelle approche en calcul dynamique transitoire, incluant les basses et les moyennes fréquences}
+      \field{title}{Sur une nouvelle approche en calcul dynamique transitoire, incluant les basses et les moyennes fréquences}
+      \field{type}{phdthesis}
+      \field{year}{2005}
+      \verb{url}
+      \verb http://hal.archives-ouvertes.fr/docs/00/05/24/41/PDF/Chevreuil.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Lad96}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=63bf77caa9ac8ef3a3c854e98701b193}{Ladevèze}{L\bibinitperiod}{Pierre}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=63bf77caa9ac8ef3a3c854e98701b193}{Ladevèze}{L\bibinitperiod}{Pierre}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{63bf77caa9ac8ef3a3c854e98701b193}
+      \strng{fullhash}{63bf77caa9ac8ef3a3c854e98701b193}
+      \field{sortinit}{0}
+      \field{labeltitle}{A new computational approach for structure vibrations in the medium frequency range}
+      \field{journaltitle}{C. R. Acad. Sci. Paris, Série II}
+      \field{title}{A new computational approach for structure vibrations in the medium frequency range}
+      \field{volume}{322, no 12}
+      \field{year}{1996}
+      \field{pages}{849\bibrangedash 856}
+      \keyw{3}
+    \endentry
+    \entry{bib-Combescure}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=5f51bb63ee55281ee9532d97087fb512}{Combescure}{C\bibinitperiod}{Didier}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=5f51bb63ee55281ee9532d97087fb512}{Combescure}{C\bibinitperiod}{Didier}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Site de Cast3M}%
+      }
+      \strng{namehash}{5f51bb63ee55281ee9532d97087fb512}
+      \strng{fullhash}{5f51bb63ee55281ee9532d97087fb512}
+      \field{sortinit}{0}
+      \field{labeltitle}{Éléments de dynamique des structures. Illustrations à l'aide de CAST3M}
+      \field{title}{Éléments de dynamique des structures. Illustrations à l'aide de CAST3M}
+      \field{year}{septembre 2006}
+      \verb{url}
+      \verb http://www-cast3m.cea.fr/html/Combescure/DynamiqueCAST3MSeptembre2006.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Fish}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=5a0b6caa0d30e401aba496e33d07a08f}{Martin}{M\bibinitperiod}{J.S.\bibnamedelimi San}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=dab836698c055dc2db8507576d1f1b1d}{Scheid}{S\bibinitperiod}{J.-F.}{J\bibinithyphendelim F\bibinitperiod}{}{}{}{}}%
+        {{hash=453965449a56393641af9052bd34f026}{Takahashi}{T\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=399a424381ab0bf2b720b6ed5981edf2}{Tucsnak}{T\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=5a0b6caa0d30e401aba496e33d07a08f}{Martin}{M\bibinitperiod}{J.S.\bibnamedelimi San}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=dab836698c055dc2db8507576d1f1b1d}{Scheid}{S\bibinitperiod}{J.-F.}{J\bibinithyphendelim F\bibinitperiod}{}{}{}{}}%
+        {{hash=453965449a56393641af9052bd34f026}{Takahashi}{T\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=399a424381ab0bf2b720b6ed5981edf2}{Tucsnak}{T\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e5d694bbcf2ddf864ad57647df53317c}
+      \strng{fullhash}{98eead812e80a268c87702a9eeeda1e3}
+      \field{sortinit}{0}
+      \field{labeltitle}{An initial and boundary value problem modeling fish-like swimming}
+      \field{journaltitle}{Arch. Ration. Mech. Anal.}
+      \field{number}{3}
+      \field{title}{An initial and boundary value problem modeling fish-like swimming}
+      \field{volume}{188}
+      \field{year}{2008}
+      \field{pages}{429\bibrangedash 455}
+      \verb{url}
+      \verb http://www.iecn.u-nancy.fr/~scheid/Publication/fish.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Naceur2}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=50770a9eb18ce45ee233e988edbe7a29}{Naceur}{N\bibinitperiod}{Hakim}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=50770a9eb18ce45ee233e988edbe7a29}{Naceur}{N\bibinitperiod}{Hakim}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Univ. de Valenciennes et du Hainaut Cambrésis}%
+      }
+      \strng{namehash}{50770a9eb18ce45ee233e988edbe7a29}
+      \strng{fullhash}{50770a9eb18ce45ee233e988edbe7a29}
+      \field{sortinit}{0}
+      \field{labeltitle}{Modélisation de la rupture en dynamique rapide}
+      \field{title}{Modélisation de la rupture en dynamique rapide}
+      \field{year}{2012}
+      \keyw{3}
+    \endentry
+    \entry{Lit-Rethore}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=f25511e6d7ed7a8533299e0c2ac2b74b}{Réthoré}{R\bibinitperiod}{Julien}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=f25511e6d7ed7a8533299e0c2ac2b74b}{Réthoré}{R\bibinitperiod}{Julien}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {INSA Lyon}%
+      }
+      \strng{namehash}{f25511e6d7ed7a8533299e0c2ac2b74b}
+      \strng{fullhash}{f25511e6d7ed7a8533299e0c2ac2b74b}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthode éléments finis étendus en espace et en temps: application à la propagation dynamique des fissures}
+      \field{title}{Méthode éléments finis étendus en espace et en temps: application à la propagation dynamique des fissures}
+      \field{type}{phdthesis}
+      \field{year}{2005}
+      \verb{url}
+      \verb http://tel.archives-ouvertes.fr/docs/00/12/11/72/PDF/these.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Dureisseix}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=a437c4a60a5c8c274fb9c2000006dfad}{Dureisseix}{D\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=a437c4a60a5c8c274fb9c2000006dfad}{Dureisseix}{D\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a437c4a60a5c8c274fb9c2000006dfad}
+      \strng{fullhash}{a437c4a60a5c8c274fb9c2000006dfad}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthodes numériques appliquées à la conception par éléments finis}
+      \field{howpublished}{Archive CEL: cel-00351713}
+      \field{title}{Méthodes numériques appliquées à la conception par éléments finis}
+      \field{year}{10 janvier 2009}
+      \verb{url}
+      \verb http://hal.archives-ouvertes.fr/docs/00/35/17/13/PDF/polyMNb.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{Lit-Saad}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=e8f3afcf82add150d0b520473d0c48eb}{Saad}{S\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e8f3afcf82add150d0b520473d0c48eb}{Saad}{S\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {École Centrale de Lyon}%
+      }
+      \strng{namehash}{e8f3afcf82add150d0b520473d0c48eb}
+      \strng{fullhash}{e8f3afcf82add150d0b520473d0c48eb}
+      \field{sortinit}{0}
+      \field{labeltitle}{Modélisation et identification du comportement non linéaire des cales en caoutchouc}
+      \field{title}{Modélisation et identification du comportement non linéaire des cales en caoutchouc}
+      \field{type}{phdthesis}
+      \field{year}{2003}
+      \verb{url}
+      \verb http://bibli.ec-lyon.fr/exl-doc/psaad.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Tai}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=690a9402410b0f65ecd50fd3109b9744}{Tai}{T\bibinitperiod}{N.H.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=ba811456b02c0eb7e5ed3ef435ddfb5b}{Ma}{M\bibinitperiod}{C.C.M.}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=a11027e4932d3b03524cf0950ef6018d}{Lin}{L\bibinitperiod}{J.M.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=1c86fd98c5d1d8831c9e637a7dbf8128}{Wu}{W\bibinitperiod}{G.Y.}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=690a9402410b0f65ecd50fd3109b9744}{Tai}{T\bibinitperiod}{N.H.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=ba811456b02c0eb7e5ed3ef435ddfb5b}{Ma}{M\bibinitperiod}{C.C.M.}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=a11027e4932d3b03524cf0950ef6018d}{Lin}{L\bibinitperiod}{J.M.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=1c86fd98c5d1d8831c9e637a7dbf8128}{Wu}{W\bibinitperiod}{G.Y.}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{6d1110141ef48978387daf75d4572b98}
+      \strng{fullhash}{027d3cbd00f493b06243e2f0837c86d3}
+      \field{sortinit}{0}
+      \field{labeltitle}{Effects of thickness on the fatigue behavior of quasi-isotropic carbon/epoxy composites before and after low-energy impacts,}
+      \field{journaltitle}{Composites Science and Technologie}
+      \field{title}{Effects of thickness on the fatigue behavior of quasi-isotropic carbon/epoxy composites before and after low-energy impacts,}
+      \field{volume}{59}
+      \field{year}{1999}
+      \field{pages}{1753\bibrangedash 1762}
+      \keyw{3}
+    \endentry
+    \entry{bib-Tsotsis}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=1e804d784e78862cc809cd1be2395cab}{Tsotsis}{T\bibinitperiod}{T.K.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=db56350a490c83d3b1f6c98d30ebf867}{Lee}{L\bibinitperiod}{S.M.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=1e804d784e78862cc809cd1be2395cab}{Tsotsis}{T\bibinitperiod}{T.K.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=db56350a490c83d3b1f6c98d30ebf867}{Lee}{L\bibinitperiod}{S.M.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a20b62c03ee281767582ddbcecb2c9fb}
+      \strng{fullhash}{a20b62c03ee281767582ddbcecb2c9fb}
+      \field{sortinit}{0}
+      \field{labeltitle}{Long-term thermo-oxidative aging in composite materials: failure mechanisms}
+      \field{journaltitle}{Composites Science and Technologie}
+      \field{title}{Long-term thermo-oxidative aging in composite materials: failure mechanisms}
+      \field{volume}{58}
+      \field{year}{1998}
+      \field{pages}{355\bibrangedash 368}
+      \keyw{3}
+    \endentry
+    \entry{bib-Soize98}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=63540a2c0e96888ef8f70e71b043dd78}{Soize}{S\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=63540a2c0e96888ef8f70e71b043dd78}{Soize}{S\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{63540a2c0e96888ef8f70e71b043dd78}
+      \strng{fullhash}{63540a2c0e96888ef8f70e71b043dd78}
+      \field{sortinit}{0}
+      \field{labeltitle}{Estimation of the fuzzy substructure model parameters using the mean power flow equation of the fuzzy structure}
+      \field{journaltitle}{Journal of Vibration and Acoustics}
+      \field{title}{Estimation of the fuzzy substructure model parameters using the mean power flow equation of the fuzzy structure}
+      \field{volume}{120}
+      \field{year}{1998}
+      \field{pages}{279\bibrangedash 286}
+      \keyw{3}
+    \endentry
+    \entry{bib-Soize86}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=63540a2c0e96888ef8f70e71b043dd78}{Soize}{S\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=63540a2c0e96888ef8f70e71b043dd78}{Soize}{S\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{63540a2c0e96888ef8f70e71b043dd78}
+      \strng{fullhash}{63540a2c0e96888ef8f70e71b043dd78}
+      \field{sortinit}{0}
+      \field{labeltitle}{Modélisation probabiliste du flou structural en dynamique linéaire des système mécaniques complexes - Éléments théoriques.}
+      \field{journaltitle}{La Recherche Aérospatiale}
+      \field{title}{Modélisation probabiliste du flou structural en dynamique linéaire des système mécaniques complexes - Éléments théoriques.}
+      \field{volume}{5}
+      \field{year}{1986}
+      \field{pages}{23\bibrangedash 48}
+      \keyw{3}
+    \endentry
+    \entry{bib-berveiller}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=822c07089ac515d4c10b6f0513fdedf4}{Berveiller}{B\bibinitperiod}{Marc}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=822c07089ac515d4c10b6f0513fdedf4}{Berveiller}{B\bibinitperiod}{Marc}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Univ. Blaise Pascal - Clermont II}%
+      }
+      \strng{namehash}{822c07089ac515d4c10b6f0513fdedf4}
+      \strng{fullhash}{822c07089ac515d4c10b6f0513fdedf4}
+      \field{sortinit}{0}
+      \field{labeltitle}{Éléments finis stochastiques: approches intrusive et non intrusive pour des analyses de fiabilité}
+      \field{title}{Éléments finis stochastiques: approches intrusive et non intrusive pour des analyses de fiabilité}
+      \field{type}{phdthesis}
+      \field{year}{2005}
+      \verb{url}
+      \verb http://tel.archives-ouvertes.fr/docs/00/36/62/25/PDF/Berveiller.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-GhaSpa}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=a242fa4cfa6a8ae562a79358097c67f9}{Ghanem}{G\bibinitperiod}{Roger\bibnamedelima R.}{R\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=bab30cd77d9891c7d9214d3ea1fcc900}{Spanos}{S\bibinitperiod}{Pol\bibnamedelima D.}{P\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=a242fa4cfa6a8ae562a79358097c67f9}{Ghanem}{G\bibinitperiod}{Roger\bibnamedelima R.}{R\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=bab30cd77d9891c7d9214d3ea1fcc900}{Spanos}{S\bibinitperiod}{Pol\bibnamedelima D.}{P\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Dover}%
+      }
+      \strng{namehash}{6ff83df35eb882bc1ff1b805d8dc0fe3}
+      \strng{fullhash}{6ff83df35eb882bc1ff1b805d8dc0fe3}
+      \field{sortinit}{0}
+      \field{labeltitle}{Stochastic Finite Elements. A spectral approach}
+      \field{title}{Stochastic Finite Elements. A spectral approach}
+      \field{year}{2005}
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiPolHom}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Polynôme homogène}
+      \field{title}{Polynôme homogène}
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/Polyn%C3%B4me_homog%C3%A8ne
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Wikimonte}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthode de Monte-Carlo}
+      \field{title}{Méthode de Monte-Carlo}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/M%C3%A9thode_de_Monte-Carlo
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Krikorian}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=4b0864cbb5615cca4229078da3dc1866}{Krikorian}{K\bibinitperiod}{Raphaël}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4b0864cbb5615cca4229078da3dc1866}{Krikorian}{K\bibinitperiod}{Raphaël}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Université Pierre et Marie Curie (Paris 6), L3 Maths}%
+      }
+      \strng{namehash}{4b0864cbb5615cca4229078da3dc1866}
+      \strng{fullhash}{4b0864cbb5615cca4229078da3dc1866}
+      \field{sortinit}{0}
+      \field{labeltitle}{Simulations des phénomènes aléatoires (LM346)}
+      \field{title}{Simulations des phénomènes aléatoires (LM346)}
+      \verb{url}
+      \verb http://www.proba.jussieu.fr/dw/lib/exe/fetch.php?media=users:laruelle:lm346poly.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-FreyHecht}{online}{}
+      \name{labelname}{2}{}{%
+        {{hash=429e32e9fe3fefd64937fbbca6cac09e}{Frey}{F\bibinitperiod}{Pascal}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=e3adfb4041bc9dfc814a400746d762bf}{Hecht}{H\bibinitperiod}{Frédéric}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=429e32e9fe3fefd64937fbbca6cac09e}{Frey}{F\bibinitperiod}{Pascal}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=e3adfb4041bc9dfc814a400746d762bf}{Hecht}{H\bibinitperiod}{Frédéric}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Université Pierre et Marie Curie (Paris 6)}%
+      }
+      \strng{namehash}{6f8fd74dcd2e776f20d774907cb2357d}
+      \strng{fullhash}{6f8fd74dcd2e776f20d774907cb2357d}
+      \field{sortinit}{0}
+      \field{labeltitle}{Cours Maillage 2D, surfacique et 3D}
+      \field{title}{Cours Maillage 2D, surfacique et 3D}
+      \verb{url}
+      \verb https://www.ljll.math.upmc.fr/~hecht/ftp/old/IST/NoteCours-v1.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiVoro}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Diagramme de Voronoï}
+      \field{title}{Diagramme de Voronoï}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Diagramme_de_Vorono%C3%AF
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiDelau}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Triangulation de Delaunay}
+      \field{title}{Triangulation de Delaunay}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Triangulation_de_Delaunay
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Heshung}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=29fc3e3c79f1c792557e87812f540998}{Heschung}{H\bibinitperiod}{Frédéric}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=29fc3e3c79f1c792557e87812f540998}{Heschung}{H\bibinitperiod}{Frédéric}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Université de Reims Champagne Ardenne}%
+      }
+      \strng{namehash}{29fc3e3c79f1c792557e87812f540998}
+      \strng{fullhash}{29fc3e3c79f1c792557e87812f540998}
+      \field{sortinit}{0}
+      \field{labeltitle}{Vers une construction et une adaptation automatiques des maillages}
+      \field{month}{26 mai}
+      \field{title}{Vers une construction et une adaptation automatiques des maillages}
+      \field{type}{phdthesis}
+      \field{year}{2005}
+      \verb{url}
+      \verb http://ebureau.univ-reims.fr/slide/files/quotas/SCD/theses/exl-doc/GED00000155.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Hetroy}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=9ad12ee8228910d99d088cec56519ce2}{Hetroy}{H\bibinitperiod}{Franck}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9ad12ee8228910d99d088cec56519ce2}{Hetroy}{H\bibinitperiod}{Franck}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Université de Grenoble}%
+      }
+      \strng{namehash}{9ad12ee8228910d99d088cec56519ce2}
+      \strng{fullhash}{9ad12ee8228910d99d088cec56519ce2}
+      \field{sortinit}{0}
+      \field{labeltitle}{Paramétrisation de maillages}
+      \field{title}{Paramétrisation de maillages}
+      \verb{url}
+      \verb https://www.ljll.math.upmc.fr/~hecht/ftp/old/IST/NoteCours-v1.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Oudot}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=f0013896254c7da2273202eb956740a2}{Oudot}{O\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=f0013896254c7da2273202eb956740a2}{Oudot}{O\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Polytechnique}%
+      }
+      \strng{namehash}{f0013896254c7da2273202eb956740a2}
+      \strng{fullhash}{f0013896254c7da2273202eb956740a2}
+      \field{sortinit}{0}
+      \field{labeltitle}{Maillage de surfaces de genre zéro sans bord}
+      \field{title}{Maillage de surfaces de genre zéro sans bord}
+      \verb{url}
+      \verb http://www.enseignement.polytechnique.fr/informatique/ARCHIVES/IF/projets/oudot/sujet.html
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Alliez}{online}{}
+      \name{labelname}{5}{}{%
+        {{hash=5a41513f72cfe8224163441d30854e41}{Alliez}{A\bibinitperiod}{Pierre}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=4412c7eaa756bb325544230d2ba79440}{Cohen-Steiner}{C\bibinithyphendelim S\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=bf4dc3b05cefa2681322868db6cc1394}{Devillers}{D\bibinitperiod}{Olivier}{O\bibinitperiod}{}{}{}{}}%
+        {{hash=326ff12222ca439a5666f727ce90e535}{Lévy}{L\bibinitperiod}{Bruno}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=9e47369dae07290555d7bd0a8b0bfd22}{Desbrun}{D\bibinitperiod}{Mathieu}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=5a41513f72cfe8224163441d30854e41}{Alliez}{A\bibinitperiod}{Pierre}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=4412c7eaa756bb325544230d2ba79440}{Cohen-Steiner}{C\bibinithyphendelim S\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=bf4dc3b05cefa2681322868db6cc1394}{Devillers}{D\bibinitperiod}{Olivier}{O\bibinitperiod}{}{}{}{}}%
+        {{hash=326ff12222ca439a5666f727ce90e535}{Lévy}{L\bibinitperiod}{Bruno}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=9e47369dae07290555d7bd0a8b0bfd22}{Desbrun}{D\bibinitperiod}{Mathieu}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {\textsc{Inria}}%
+      }
+      \strng{namehash}{4b6022435c2282b7357b846ff8f15e72}
+      \strng{fullhash}{8d5fac13f37544946ad1bef69761936f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Anisotropic Polygonal Remeshing}
+      \field{title}{Anisotropic Polygonal Remeshing}
+      \verb{url}
+      \verb http://hal.inria.fr/docs/00/07/17/78/PDF/RR-4808.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-LemW}{inproceedings}{}
+      \name{labelname}{2}{}{%
+        {{hash=9057c9ab50f99c7868fe70a54558bb41}{Lemaire}{L\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=b05cf8e1d65873f2fa9513f8bb4d98a2}{Weill}{W\bibinitperiod}{Jean-Christophe}{J\bibinithyphendelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=9057c9ab50f99c7868fe70a54558bb41}{Lemaire}{L\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=b05cf8e1d65873f2fa9513f8bb4d98a2}{Weill}{W\bibinitperiod}{Jean-Christophe}{J\bibinithyphendelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{288f47f445af079b6400d405d34f55f4}
+      \strng{fullhash}{288f47f445af079b6400d405d34f55f4}
+      \field{sortinit}{0}
+      \field{labeltitle}{Partitioning the sphere with constant area quadrangles}
+      \field{booktitle}{12th Canadian Conference on Computational Geometry}
+      \field{title}{Partitioning the sphere with constant area quadrangles}
+      \field{year}{2000}
+      \field{pages}{227\bibrangedash 232}
+      \keyw{3}
+    \endentry
+    \entry{bib-TC}{inproceedings}{}
+      \name{labelname}{1}{}{%
+        {{hash=d1457b72c3fb323a2671125aef3eab5d}{?}{?\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=d1457b72c3fb323a2671125aef3eab5d}{?}{?\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=da1230be43b5d333facc3f799b93b7d9}{Christensen}{C\bibinitperiod}{P.T.}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=b15e798fcb7fa2c493c04aab3d31fbfe}{Bygningsteknik}{B\bibinitperiod}{Ålborg\bibnamedelimb Universitetscenter.\bibnamedelimi Instituttet}{Å\bibinitperiod\bibinitdelim U\bibinitperiod\bibinitdelim I\bibinitperiod}{for}{f\bibinitperiod}{}{}}%
+        {{hash=e5c3c53013ed473c7971be0671cf6680}{AUC.}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Building Technology}%
+        {Structural Engineering, Aalborg University Centre, AUC: Conference on Structural Reliability 1980}%
+      }
+      \strng{namehash}{d1457b72c3fb323a2671125aef3eab5d}
+      \strng{fullhash}{d1457b72c3fb323a2671125aef3eab5d}
+      \field{sortinit}{0}
+      \field{labeltitle}{Chapter 9: Fundamentals of Structural Reliability}
+      \field{booktitle}{Lectures on Structural Reliability 1980. One-day Conference on Structural Reliability, Aalborg University Centre 1980. Proceedings.}
+      \field{title}{Chapter 9: Fundamentals of Structural Reliability}
+      \field{year}{1980}
+      \verb{url}
+      \verb http://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&ved=0CDEQFjAA&url=http://vbn.aau.dk/files/17204972/Chapter_9_Fundamentals_of_Structural_Reliability&ei=_40EUvb0KI6T0QWLt4HICA&usg=AFQjCNF_pNM7iDYWfoi8jrD0SNQEEZ0mJg&sig2=4vorKeIJfiErvHef5QhJgw&bvm=bv.50500085,d.d2k
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-VM-EMSE}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=8e9db9ff0bfafb4ca00e4ebb440b42f0}{Manet}{M\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=8e9db9ff0bfafb4ca00e4ebb440b42f0}{Manet}{M\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{8e9db9ff0bfafb4ca00e4ebb440b42f0}
+      \strng{fullhash}{8e9db9ff0bfafb4ca00e4ebb440b42f0}
+      \field{sortinit}{0}
+      \field{labeltitle}{Cours d'option Choix des matériaux - Application à la vibro-acoustique}
+      \field{journaltitle}{École Nationale SUpérieure des Mines de St-Étienne}
+      \field{title}{Cours d'option Choix des matériaux - Application à la vibro-acoustique}
+      \field{year}{2009}
+      \keyw{3}
+    \endentry
+    \entry{bib-VM-suav}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=8e9db9ff0bfafb4ca00e4ebb440b42f0}{Manet}{M\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=8e9db9ff0bfafb4ca00e4ebb440b42f0}{Manet}{M\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {marmonier}%
+      }
+      \strng{namehash}{8e9db9ff0bfafb4ca00e4ebb440b42f0}
+      \strng{fullhash}{8e9db9ff0bfafb4ca00e4ebb440b42f0}
+      \field{sortinit}{0}
+      \field{labeltitle}{Mesure de la beauté des bruits périodiques}
+      \field{title}{Mesure de la beauté des bruits périodiques}
+      \verb{url}
+      \verb http://hal.archives-ouvertes.fr/docs/00/72/26/81/PDF/VM_suavity-fr.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Arnold06}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=630284ba6980b7b4409c8ea87efed7d8}{Arnold}{A\bibinitperiod}{Douglas\bibnamedelima N.}{D\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=a38deb813bc1b2c6bf97ded731061229}{Falk}{F\bibinitperiod}{Richard\bibnamedelima S.}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=94a4fd4da337a1d51e2e55b3ddb54002}{Winther}{W\bibinitperiod}{Ragnar}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=630284ba6980b7b4409c8ea87efed7d8}{Arnold}{A\bibinitperiod}{Douglas\bibnamedelima N.}{D\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=a38deb813bc1b2c6bf97ded731061229}{Falk}{F\bibinitperiod}{Richard\bibnamedelima S.}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=94a4fd4da337a1d51e2e55b3ddb54002}{Winther}{W\bibinitperiod}{Ragnar}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e462f9b1c4f638b32e9bd5dcfd0aae3c}
+      \strng{fullhash}{e462f9b1c4f638b32e9bd5dcfd0aae3c}
+      \field{sortinit}{0}
+      \field{labeltitle}{Finite element exterior calculus, homological techniques, and applications}
+      \field{journaltitle}{Acta Numerica}
+      \field{title}{Finite element exterior calculus, homological techniques, and applications}
+      \field{year}{2006}
+      \field{pages}{1\bibrangedash 155}
+      \verb{url}
+      \verb http://www.ima.umn.edu/~arnold//papers/acta.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Arnold10}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=630284ba6980b7b4409c8ea87efed7d8}{Arnold}{A\bibinitperiod}{Douglas\bibnamedelima N.}{D\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=a38deb813bc1b2c6bf97ded731061229}{Falk}{F\bibinitperiod}{Richard\bibnamedelima S.}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=94a4fd4da337a1d51e2e55b3ddb54002}{Winther}{W\bibinitperiod}{Ragnar}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=630284ba6980b7b4409c8ea87efed7d8}{Arnold}{A\bibinitperiod}{Douglas\bibnamedelima N.}{D\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=a38deb813bc1b2c6bf97ded731061229}{Falk}{F\bibinitperiod}{Richard\bibnamedelima S.}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=94a4fd4da337a1d51e2e55b3ddb54002}{Winther}{W\bibinitperiod}{Ragnar}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e462f9b1c4f638b32e9bd5dcfd0aae3c}
+      \strng{fullhash}{e462f9b1c4f638b32e9bd5dcfd0aae3c}
+      \field{sortinit}{0}
+      \field{labeltitle}{Finite element exterior calculus: from Hodge theory to numerical stability}
+      \field{journaltitle}{Bulletin of AMS}
+      \field{number}{2}
+      \field{title}{Finite element exterior calculus: from Hodge theory to numerical stability}
+      \field{volume}{47}
+      \field{year}{2010}
+      \field{pages}{281\bibrangedash 354}
+      \verb{url}
+      \verb http://www.ima.umn.edu/~arnold//papers/bulletin.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiCFL}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Courant–Friedrichs–Lewy condition}
+      \field{title}{Courant–Friedrichs–Lewy condition}
+      \verb{url}
+      \verb http://en.wikipedia.org/wiki/Courant%E2%80%93Friedrichs%E2%80%93Lewy_condition
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-CFL}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=cbd386a8e82953321d78271e8559b24b}{Courant}{C\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=3b5f5fb8dcd7532fd228d992995a4dff}{Friedrichs}{F\bibinitperiod}{Kurt}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=eab4abdf3e3868bc16de871c08569a76}{Lewy}{L\bibinitperiod}{Hans}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=cbd386a8e82953321d78271e8559b24b}{Courant}{C\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=3b5f5fb8dcd7532fd228d992995a4dff}{Friedrichs}{F\bibinitperiod}{Kurt}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=eab4abdf3e3868bc16de871c08569a76}{Lewy}{L\bibinitperiod}{Hans}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{2e11fde0d80bd757acf2dc15b431b85b}
+      \strng{fullhash}{2e11fde0d80bd757acf2dc15b431b85b}
+      \field{sortinit}{0}
+      \field{labeltitle}{Über die partiellen Differenzengleichungen der mathematischen Physik}
+      \field{journaltitle}{Mathematische Annalen}
+      \field{number}{1}
+      \field{title}{Über die partiellen Differenzengleichungen der mathematischen Physik}
+      \field{volume}{100}
+      \field{year}{1928}
+      \field{pages}{32\bibrangedash 74}
+      \verb{url}
+      \verb http://www.digizeitschriften.de/dms/img/?PPN=PPN235181684_0100&DMDID=dmdlog5&LOGID=log5&PHYSID=phys38#navi
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-FEMHist}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=8bc010373c08a680b7a43eab4dc18c42}{Gupta}{G\bibinitperiod}{K.K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=6a0be7e0904428ab6521ac57ba86358c}{Meek}{M\bibinitperiod}{J.L.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=8bc010373c08a680b7a43eab4dc18c42}{Gupta}{G\bibinitperiod}{K.K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=6a0be7e0904428ab6521ac57ba86358c}{Meek}{M\bibinitperiod}{J.L.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{5dac9ab4e7dc8cc4e9452774c1b315d6}
+      \strng{fullhash}{5dac9ab4e7dc8cc4e9452774c1b315d6}
+      \field{sortinit}{0}
+      \field{labeltitle}{A bried history of the beginning of the Finite Element Method}
+      \field{journaltitle}{Int. J. Num Meth in Eng.}
+      \field{title}{A bried history of the beginning of the Finite Element Method}
+      \field{volume}{39}
+      \field{year}{1996}
+      \field{pages}{3761\bibrangedash 3774}
+      \verb{url}
+      \verb http://people.sc.fsu.edu/~jpeterson/history_fem.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-FEMHist2}{online}{}
+      \name{labelname}{2}{}{%
+        {{hash=d981ad37222f67f1af92e3d3f9e919c1}{Clough}{C\bibinitperiod}{Ray\bibnamedelima W.}{R\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
+        {{hash=e49b7075e19b9bac89f25d9a4db64691}{Wilson}{W\bibinitperiod}{Edward\bibnamedelima L.}{E\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=d981ad37222f67f1af92e3d3f9e919c1}{Clough}{C\bibinitperiod}{Ray\bibnamedelima W.}{R\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
+        {{hash=e49b7075e19b9bac89f25d9a4db64691}{Wilson}{W\bibinitperiod}{Edward\bibnamedelima L.}{E\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b5b162f1b00e32ef5b24b704ee048036}
+      \strng{fullhash}{b5b162f1b00e32ef5b24b704ee048036}
+      \field{sortinit}{0}
+      \field{labeltitle}{Early Finite Element Research at Berkeley}
+      \field{title}{Early Finite Element Research at Berkeley}
+      \verb{url}
+      \verb http://www.ce.memphis.edu/7111/notes/class_notes/papers/fe-history.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiHelm}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Résonance de Helmholtz}
+      \field{title}{Résonance de Helmholtz}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/R%C3%A9sonance_de_Helmholtz
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiPML}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Zone absorbante parfaitement adaptée}
+      \field{title}{Zone absorbante parfaitement adaptée}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Zone_absorbante_parfaitement_adapt%C3%A9e
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-JPML}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=da3ea0d9b9e4bf7657ef880b388693f8}{Johnson}{J\bibinitperiod}{Steven\bibnamedelima G.}{S\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=da3ea0d9b9e4bf7657ef880b388693f8}{Johnson}{J\bibinitperiod}{Steven\bibnamedelima G.}{S\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{da3ea0d9b9e4bf7657ef880b388693f8}
+      \strng{fullhash}{da3ea0d9b9e4bf7657ef880b388693f8}
+      \field{sortinit}{0}
+      \field{labeltitle}{Notes on Perfectly Matched Layers (PMLs)}
+      \field{title}{Notes on Perfectly Matched Layers (PMLs)}
+      \verb{url}
+      \verb http://math.mit.edu/~stevenj/18.369/pml.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Monolith}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=82d66dd7fef43ae38efeab1a3f328e5e}{Sy}{S\bibinitperiod}{Soyibou}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=c3b33e9fb759cc766fc9a97302dba3b8}{Murea}{M\bibinitperiod}{Cornel\bibnamedelima Marius}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=82d66dd7fef43ae38efeab1a3f328e5e}{Sy}{S\bibinitperiod}{Soyibou}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=c3b33e9fb759cc766fc9a97302dba3b8}{Murea}{M\bibinitperiod}{Cornel\bibnamedelima Marius}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{d6de8315cff89998cf076c6f5cc01023}
+      \strng{fullhash}{d6de8315cff89998cf076c6f5cc01023}
+      \field{sortinit}{0}
+      \field{labeltitle}{Algorithm for solving fluid-structure interaction problem on a global moving mesh}
+      \field{journaltitle}{Coupled Systems Mechanics}
+      \field{title}{Algorithm for solving fluid-structure interaction problem on a global moving mesh}
+      \field{volume}{1}
+      \field{year}{2012}
+      \field{pages}{99\bibrangedash 113}
+      \verb{url}
+      \verb http://www.edp.lmia.uha.fr/sy/ps/Sy_Murea_CSM_2012.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{MR3043640}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=e3adfb4041bc9dfc814a400746d762bf}{Hecht}{H\bibinitperiod}{Frédéric}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e3adfb4041bc9dfc814a400746d762bf}{Hecht}{H\bibinitperiod}{Frédéric}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e3adfb4041bc9dfc814a400746d762bf}
+      \strng{fullhash}{e3adfb4041bc9dfc814a400746d762bf}
+      \field{sortinit}{0}
+      \field{labeltitle}{New development in freefem++}
+      \field{issn}{1570-2820}
+      \field{journaltitle}{J. Numer. Math.}
+      \field{number}{3-4}
+      \field{title}{New development in freefem++}
+      \field{volume}{20}
+      \field{year}{2012}
+      \field{pages}{251\bibrangedash 265}
+      \keyw{3}
+    \endentry
+    \entry{bib-Marchiano}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=fe26e87293be72a1b2060f792d6dddab}{Marchiano}{M\bibinitperiod}{Régis}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=fe26e87293be72a1b2060f792d6dddab}{Marchiano}{M\bibinitperiod}{Régis}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{fe26e87293be72a1b2060f792d6dddab}
+      \strng{fullhash}{fe26e87293be72a1b2060f792d6dddab}
+      \field{sortinit}{0}
+      \field{labeltitle}{Rayonnement Acoustique des Structures}
+      \field{title}{Rayonnement Acoustique des Structures}
+      \verb{url}
+      \verb http://www.dalembert.upmc.fr/home/marchiano/images/stories/rasnb.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Sandberg}{inproceedings}{}
+      \name{labelname}{1}{}{%
+        {{hash=021ae4714871a3b7daa4d39f0d6e7c6b}{Sandberg}{S\bibinitperiod}{Ulf}{U\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=021ae4714871a3b7daa4d39f0d6e7c6b}{Sandberg}{S\bibinitperiod}{Ulf}{U\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{021ae4714871a3b7daa4d39f0d6e7c6b}
+      \strng{fullhash}{021ae4714871a3b7daa4d39f0d6e7c6b}
+      \field{sortinit}{0}
+      \field{labeltitle}{Tyre/road noise: myths and realities}
+      \field{booktitle}{Plenary paper published in the Proceedings of The 2001 International Congress and Exhibition on Noise Control Engineering}
+      \field{title}{Tyre/road noise: myths and realities}
+      \field{year}{The Hague, The Netherlands, 2001, August 27-30}
+      \verb{url}
+      \verb http://www.vti.se/sv/publikationer/pdf/tyreroad-noise--myths-and-realities.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Sandberg2}{inproceedings}{}
+      \name{labelname}{1}{}{%
+        {{hash=021ae4714871a3b7daa4d39f0d6e7c6b}{Sandberg}{S\bibinitperiod}{Ulf}{U\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=021ae4714871a3b7daa4d39f0d6e7c6b}{Sandberg}{S\bibinitperiod}{Ulf}{U\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{021ae4714871a3b7daa4d39f0d6e7c6b}
+      \strng{fullhash}{021ae4714871a3b7daa4d39f0d6e7c6b}
+      \field{sortinit}{0}
+      \field{labeltitle}{Low noise road surfaces. A state-of-the-art review}
+      \field{booktitle}{Eurosymposium Maîtrise du bruit routier en milieu urbain}
+      \field{title}{Low noise road surfaces. A state-of-the-art review}
+      \field{year}{1992}
+      \verb{url}
+      \verb http://www.asphaltrubber.org/ARTIC/International/RPA_A1177.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-HametPoster}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=3d8eeef68570b72362525ce64e8eae4e}{Hamet}{H\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=3d8eeef68570b72362525ce64e8eae4e}{Hamet}{H\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{3d8eeef68570b72362525ce64e8eae4e}
+      \strng{fullhash}{3d8eeef68570b72362525ce64e8eae4e}
+      \field{sortinit}{0}
+      \field{labeltitle}{Modélisation du bruit de contact pneu / chaussée. Quels sont les facteurs clés d’une réduction des nuisances sonores ?}
+      \field{title}{Modélisation du bruit de contact pneu / chaussée. Quels sont les facteurs clés d’une réduction des nuisances sonores ?}
+      \verb{url}
+      \verb http://www.inrets.fr/ur/lte/publi-autresactions/lesposters/contactpneuchauss.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Hamet}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=3d8eeef68570b72362525ce64e8eae4e}{Hamet}{H\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=3d8eeef68570b72362525ce64e8eae4e}{Hamet}{H\bibinitperiod}{{Jean-François}}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{3d8eeef68570b72362525ce64e8eae4e}
+      \strng{fullhash}{3d8eeef68570b72362525ce64e8eae4e}
+      \field{sortinit}{0}
+      \field{labeltitle}{Les mécanismes de génération du bruit de roulement et l’influence des caractéristiques de chaussée}
+      \field{title}{Les mécanismes de génération du bruit de roulement et l’influence des caractéristiques de chaussée}
+      \verb{url}
+      \verb http://www.infobruit.com/revues/78_09956.PDF
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Lucquiaud}{report}{}
+      \name{labelname}{1}{}{%
+        {{hash=66f4fc6ece7629e777ad9b217914dfb4}{Lucquiaud}{L\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=66f4fc6ece7629e777ad9b217914dfb4}{Lucquiaud}{L\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Union Technique de l’Automobile du Motocycle et du Cycle (UTAC)}%
+      }
+      \strng{namehash}{66f4fc6ece7629e777ad9b217914dfb4}
+      \strng{fullhash}{66f4fc6ece7629e777ad9b217914dfb4}
+      \field{sortinit}{0}
+      \field{labeltitle}{Évaluation de niveaux de bruit de poids lourds, Rapport no 90.15.73.801/1967}
+      \field{title}{Évaluation de niveaux de bruit de poids lourds, Rapport no 90.15.73.801/1967}
+      \field{type}{techreport}
+      \field{year}{1967}
+      \keyw{3}
+    \endentry
+    \entry{bib-Lebrun}{report}{}
+      \name{labelname}{1}{}{%
+        {{hash=51e66105f4ed77fb3728a253d0086bf1}{Lebrun}{L\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=51e66105f4ed77fb3728a253d0086bf1}{Lebrun}{L\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Rapport Insavalor}%
+      }
+      \strng{namehash}{51e66105f4ed77fb3728a253d0086bf1}
+      \strng{fullhash}{51e66105f4ed77fb3728a253d0086bf1}
+      \field{sortinit}{0}
+      \field{labeltitle}{Encapsulage acoustique du compartiment GMP}
+      \field{title}{Encapsulage acoustique du compartiment GMP}
+      \field{type}{techreport}
+      \field{year}{1998}
+      \keyw{3}
+    \endentry
+    \entry{bib-Favre}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=28405c31929f478f1cda79ca0cc57ca0}{Favre}{F\bibinitperiod}{Bernard}{B\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=28405c31929f478f1cda79ca0cc57ca0}{Favre}{F\bibinitperiod}{Bernard}{B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Université Claude Bernard Lyon I}%
+      }
+      \strng{namehash}{28405c31929f478f1cda79ca0cc57ca0}
+      \strng{fullhash}{28405c31929f478f1cda79ca0cc57ca0}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthode pour établir la relation entre le bruit émis par les véhicules routiers et l’impact de ce bruit sur les populations exposées}
+      \field{title}{Méthode pour établir la relation entre le bruit émis par les véhicules routiers et l’impact de ce bruit sur les populations exposées}
+      \field{type}{phdthesis}
+      \field{year}{1984}
+      \keyw{3}
+    \endentry
+    \entry{bib-Steven}{report}{}
+      \name{labelname}{1}{}{%
+        {{hash=b26fb3e86ce537a6ed3119b9c09a7fb2}{Steven}{S\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=b26fb3e86ce537a6ed3119b9c09a7fb2}{Steven}{S\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Report no 104.05.316 - FiGE}%
+      }
+      \strng{namehash}{b26fb3e86ce537a6ed3119b9c09a7fb2}
+      \strng{fullhash}{b26fb3e86ce537a6ed3119b9c09a7fb2}
+      \field{sortinit}{0}
+      \field{labeltitle}{Engine Torque and Speed Distribution of Commercial Vehicules in real traffic and its Consideration in Emission Measurement According to EC Directive 88/77/EEC resp. ECE regulation R49}
+      \field{title}{Engine Torque and Speed Distribution of Commercial Vehicules in real traffic and its Consideration in Emission Measurement According to EC Directive 88/77/EEC resp. ECE regulation R49}
+      \field{type}{techreport}
+      \field{year}{1994}
+      \keyw{3}
+    \endentry
+    \entry{bib-ZwickerFeld}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=a31106724477c6c5ef14111fd3d53eb6}{Zwicker}{Z\bibinitperiod}{Eberhard}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=4d553068c94c1eb3d5c1b2beeaf6e16e}{Feldtkeller}{F\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=a31106724477c6c5ef14111fd3d53eb6}{Zwicker}{Z\bibinitperiod}{Eberhard}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=4d553068c94c1eb3d5c1b2beeaf6e16e}{Feldtkeller}{F\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Masson}%
+      }
+      \strng{namehash}{f48f56548ec838505f56cc93b5c4d847}
+      \strng{fullhash}{f48f56548ec838505f56cc93b5c4d847}
+      \field{sortinit}{0}
+      \field{labeltitle}{Psychoacoustique. L’oreille récepteur d’information}
+      \field{title}{Psychoacoustique. L’oreille récepteur d’information}
+      \field{year}{1981}
+      \keyw{3}
+    \endentry
+    \entry{bib-Corrugated}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=011d2e7a1098bd86ab49a215dbb4d7d5}{Ye}{Y\bibinitperiod}{Zheng}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=51319b404d74d9ceebb9a77fb4d23e02}{Berdichevskyb}{B\bibinitperiod}{Victor\bibnamedelima L.}{V\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=4d374ee36335c6d4b53fb4ebddec5119}{Yu}{Y\bibinitperiod}{Wenbin}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=011d2e7a1098bd86ab49a215dbb4d7d5}{Ye}{Y\bibinitperiod}{Zheng}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=51319b404d74d9ceebb9a77fb4d23e02}{Berdichevskyb}{B\bibinitperiod}{Victor\bibnamedelima L.}{V\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=4d374ee36335c6d4b53fb4ebddec5119}{Yu}{Y\bibinitperiod}{Wenbin}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{fa28c63b2b45a35d093b69f80ca6cd28}
+      \strng{fullhash}{fa28c63b2b45a35d093b69f80ca6cd28}
+      \field{sortinit}{0}
+      \field{labeltitle}{An Equivalent Classical Plate Model of Corrugated Structures}
+      \field{journaltitle}{International Journal of Solids and Structures}
+      \field{title}{An Equivalent Classical Plate Model of Corrugated Structures}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://dx.doi.org/10.1016/j.ijsolstr.2014.02.025
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Allaire2scale}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e689b43ac5d3242f4613a353518abfb7}
+      \strng{fullhash}{e689b43ac5d3242f4613a353518abfb7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Homogeneization and two-scale convergence}
+      \field{journaltitle}{SIAM J. Math. Anal.}
+      \field{title}{Homogeneization and two-scale convergence}
+      \field{volume}{23}
+      \field{year}{1992}
+      \field{pages}{1482\bibrangedash 1518}
+      \verb{url}
+      \verb http://www.cmap.polytechnique.fr/~allaire/two-scale.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-AllaireOptim}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Polytechnique, Cours MAP 562}%
+      }
+      \strng{namehash}{e689b43ac5d3242f4613a353518abfb7}
+      \strng{fullhash}{e689b43ac5d3242f4613a353518abfb7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Optimal design of structures}
+      \field{title}{Optimal design of structures}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://www.cmap.polytechnique.fr/~allaire/course_map562.html
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiOptim}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Optimisation (mathématiques)}
+      \field{title}{Optimisation (mathématiques)}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Optimisation_(math%C3%A9matique)
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Xhonneux}{inproceedings}{}
+      \name{labelname}{1}{}{%
+        {{hash=1cc5d569c81a945ea44f5a51028a4b4d}{Xhonneux}{X\bibinitperiod}{Sebastian}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=1cc5d569c81a945ea44f5a51028a4b4d}{Xhonneux}{X\bibinitperiod}{Sebastian}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{1cc5d569c81a945ea44f5a51028a4b4d}
+      \strng{fullhash}{1cc5d569c81a945ea44f5a51028a4b4d}
+      \field{sortinit}{0}
+      \field{labeltitle}{Perception de l’optimisation en mathématiques et en économie au fil des siècles et l’enseignement du théorème de Lagrange}
+      \field{booktitle}{Journées Nationales de l’APMEP, La Rochelle}
+      \field{title}{Perception de l’optimisation en mathématiques et en économie au fil des siècles et l’enseignement du théorème de Lagrange}
+      \field{year}{27 octobre 2008}
+      \verb{url}
+      \verb http://www.apmep.asso.fr/IMG/pdf/Lu-33-Xhonneux-LaRochelle.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Canu}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=3be0bd5cea8f25e9c8e3733f611871b0}{Canu}{C\bibinitperiod}{Stéphane}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=3be0bd5cea8f25e9c8e3733f611871b0}{Canu}{C\bibinitperiod}{Stéphane}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {INSA de Rouen, Cours ASI 4}%
+      }
+      \strng{namehash}{3be0bd5cea8f25e9c8e3733f611871b0}
+      \strng{fullhash}{3be0bd5cea8f25e9c8e3733f611871b0}
+      \field{sortinit}{0}
+      \field{labeltitle}{Introduction à l’optimisation}
+      \field{title}{Introduction à l’optimisation}
+      \field{year}{5 novembre 2013}
+      \verb{url}
+      \verb https://moodle.insa-rouen.fr/pluginfile.php/18601/mod_resource/content/3/Canu/Slides_01_intro.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiCalculVar}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Calcul des variations}
+      \field{title}{Calcul des variations}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/Calcul_des_variations
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-AllaireOptimFF}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Polytechnique, CMAP}%
+      }
+      \strng{namehash}{e689b43ac5d3242f4613a353518abfb7}
+      \strng{fullhash}{e689b43ac5d3242f4613a353518abfb7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Boite à outils FreeFem++ pour l'optimisation de formes (géométrique et topologique)}
+      \field{title}{Boite à outils FreeFem++ pour l'optimisation de formes (géométrique et topologique)}
+      \field{year}{Janvier 2008}
+      \verb{url}
+      \verb http://www.cmap.polytechnique.fr/~allaire/freefem.html
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-AllaireExAna}{online}{}
+      \name{labelname}{3}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=244b75eea383ffd94ca64f4b3b1537ee}{Gaubert}{G\bibinitperiod}{Stéphane}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=45959b2759662f3fce2fb7bafd950559}{Pantz}{P\bibinitperiod}{Olivier}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=e689b43ac5d3242f4613a353518abfb7}{Allaire}{A\bibinitperiod}{Grégoire}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=244b75eea383ffd94ca64f4b3b1537ee}{Gaubert}{G\bibinitperiod}{Stéphane}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=45959b2759662f3fce2fb7bafd950559}{Pantz}{P\bibinitperiod}{Olivier}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Polytechnique, CMAP}%
+      }
+      \strng{namehash}{c1d39a50cc493f62cab885d857615597}
+      \strng{fullhash}{c1d39a50cc493f62cab885d857615597}
+      \field{sortinit}{0}
+      \field{labeltitle}{Exercices corrigés - Analyse numérique et optimisation - Une introduction à la modélisation mathématique et à la simulation numérique 2011}
+      \field{title}{Exercices corrigés - Analyse numérique et optimisation - Une introduction à la modélisation mathématique et à la simulation numérique 2011}
+      \field{year}{2011}
+      \verb{url}
+      \verb http://www.cmap.polytechnique.fr/~allaire/map431/corrections.pdf
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-DocuLag}{online}{}
+      \list{organization}{1}{%
+        {Institut Henri Poincaré}%
+      }
+      \field{sortinit}{0}
+      \field{labeltitle}{Lagrange (documentaire)}
+      \field{title}{Lagrange (documentaire)}
+      \field{year}{décembre 2013}
+      \verb{url}
+      \verb http://www.youtube.com/watch?v=K_tAygfZnAE
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Neuber}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=b6fbb9576702ebd4b8dc8ee040c0e601}{Neuber}{N\bibinitperiod}{Heinz}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=b6fbb9576702ebd4b8dc8ee040c0e601}{Neuber}{N\bibinitperiod}{Heinz}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b6fbb9576702ebd4b8dc8ee040c0e601}
+      \strng{fullhash}{b6fbb9576702ebd4b8dc8ee040c0e601}
+      \field{sortinit}{0}
+      \field{labeltitle}{Theory of stress concentration for shear-strained prismatic bodies with arbitrary non-linear stress-strain law}
+      \field{journaltitle}{J. of Applied Mechanics}
+      \field{title}{Theory of stress concentration for shear-strained prismatic bodies with arbitrary non-linear stress-strain law}
+      \field{volume}{28}
+      \field{year}{1961}
+      \field{pages}{544\bibrangedash 551}
+      \verb{url}
+      \verb http://appliedmechanics.asmedigitalcollection.asme.org/article.aspx?articleid=1394813
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Molski}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=6993bb01300f12e8219b4047f3816e88}{Molski}{M\bibinitperiod}{Krzysztof}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=ba11e1047ac7d1e1b626cd2f85c990f9}{Glinka}{G\bibinitperiod}{Grzegorz}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=6993bb01300f12e8219b4047f3816e88}{Molski}{M\bibinitperiod}{Krzysztof}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=ba11e1047ac7d1e1b626cd2f85c990f9}{Glinka}{G\bibinitperiod}{Grzegorz}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{49626b0bad24647b1f68e22cfc601660}
+      \strng{fullhash}{49626b0bad24647b1f68e22cfc601660}
+      \field{sortinit}{0}
+      \field{labeltitle}{A method of elastic-plastic stress and strain calculation at a notch root}
+      \field{journaltitle}{Material Material Science and Engineeting}
+      \field{title}{A method of elastic-plastic stress and strain calculation at a notch root}
+      \field{volume}{50}
+      \field{year}{1981}
+      \field{pages}{93\bibrangedash 100}
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/0025541681900896
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Herbland}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=2c6a412fa500e4e56f443c5d4d1646ca}{Herbland}{H\bibinitperiod}{Thibault}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=2c6a412fa500e4e56f443c5d4d1646ca}{Herbland}{H\bibinitperiod}{Thibault}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {École des Mines de Paris}%
+      }
+      \strng{namehash}{2c6a412fa500e4e56f443c5d4d1646ca}
+      \strng{fullhash}{2c6a412fa500e4e56f443c5d4d1646ca}
+      \field{sortinit}{0}
+      \field{labeltitle}{Une méthode de correction élasto-plastique pour le calcul en fatigue des zones de concentration de contraintes sous chargement cyclique multiaxial non proportionnel}
+      \field{title}{Une méthode de correction élasto-plastique pour le calcul en fatigue des zones de concentration de contraintes sous chargement cyclique multiaxial non proportionnel}
+      \field{type}{phdthesis}
+      \field{year}{2009}
+      \verb{url}
+      \verb https://tel.archives-ouvertes.fr/tel-00479991/document
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Chaudonneret}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=80927f83a4bb5d0d5451ef0a5ce798a1}{J.-P.\bibnamedelimi Culié}{J\bibinithyphendelim P\bibinitperiod\bibinitdelim C\bibinitperiod}{M.\bibnamedelimi Chaudonneret}{M\bibinitperiod\bibinitdelim C\bibinitperiod}{et}{e\bibinitperiod}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=80927f83a4bb5d0d5451ef0a5ce798a1}{J.-P.\bibnamedelimi Culié}{J\bibinithyphendelim P\bibinitperiod\bibinitdelim C\bibinitperiod}{M.\bibnamedelimi Chaudonneret}{M\bibinitperiod\bibinitdelim C\bibinitperiod}{et}{e\bibinitperiod}{}{}}%
+      }
+      \strng{namehash}{80927f83a4bb5d0d5451ef0a5ce798a1}
+      \strng{fullhash}{80927f83a4bb5d0d5451ef0a5ce798a1}
+      \field{sortinit}{0}
+      \field{labeltitle}{Adaptation of Neuber's theory to stress concentration in viscoplasticity}
+      \field{journaltitle}{Rech Aerospatiale (English Edition)}
+      \field{title}{Adaptation of Neuber's theory to stress concentration in viscoplasticity}
+      \field{volume}{4}
+      \field{year}{1985}
+      \field{pages}{33\bibrangedash 40}
+      \keyw{3}
+    \endentry
+    \entry{bib-ThChau}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=9e4e0d4bb7dcbce5fd7cc8589cdddef1}{Chaudonneret}{C\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9e4e0d4bb7dcbce5fd7cc8589cdddef1}{Chaudonneret}{C\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {ONERA, Chatillon, France}%
+      }
+      \strng{namehash}{9e4e0d4bb7dcbce5fd7cc8589cdddef1}
+      \strng{fullhash}{9e4e0d4bb7dcbce5fd7cc8589cdddef1}
+      \field{sortinit}{0}
+      \field{labeltitle}{Calcul de concentrations de contrainte en élastoviscoplasticité}
+      \field{title}{Calcul de concentrations de contrainte en élastoviscoplasticité}
+      \field{type}{phdthesis}
+      \field{year}{1978}
+      \verb{url}
+      \verb https://trid.trb.org/view.aspx?id=1053356
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-Goodman}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=852a3bb75bf0473ff8dacb936268a614}{Goodman}{G\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=852a3bb75bf0473ff8dacb936268a614}{Goodman}{G\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{2}{%
+        {Logmans, Green}%
+        {Company, London}%
+      }
+      \strng{namehash}{852a3bb75bf0473ff8dacb936268a614}
+      \strng{fullhash}{852a3bb75bf0473ff8dacb936268a614}
+      \field{sortinit}{0}
+      \field{labeltitle}{Mecanics applied to Engineering}
+      \field{title}{Mecanics applied to Engineering}
+      \field{year}{1899}
+      \verb{url}
+      \verb https://babel.hathitrust.org/cgi/pt?id=wu.89080439763;view=1up;seq=3
+      \endverb
+      \keyw{3}
+    \endentry
+    \entry{bib-DangVan}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{hash=7bcfa04c74db7da0be7f0eb6ea2364a1}{{Dang\bibnamedelimb Van}}{D\bibinitperiod}{Ky}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=1e4132ab4f09be209cd8c8d7a7f74d5e}{Griveau}{G\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=06234bb0a269928357ca41efe6b4a8d6}{Message}{M\bibinitperiod}{O.}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=7bcfa04c74db7da0be7f0eb6ea2364a1}{{Dang\bibnamedelimb Van}}{D\bibinitperiod}{Ky}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=1e4132ab4f09be209cd8c8d7a7f74d5e}{Griveau}{G\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=06234bb0a269928357ca41efe6b4a8d6}{Message}{M\bibinitperiod}{O.}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Mechanical Engineering Publications}%
+      }
+      \strng{namehash}{330b1f1bface3ce1db7b38ce6a5df316}
+      \strng{fullhash}{330b1f1bface3ce1db7b38ce6a5df316}
+      \field{sortinit}{0}
+      \field{labeltitle}{On a new multiaxial fatigue limit criterion: theory and applications}
+      \field{booktitle}{Biaxial and Multiaxial Fatigue, EGF 3 (Edited by M.W. Brown and K.J. Miller)}
+      \field{title}{On a new multiaxial fatigue limit criterion: theory and applications}
+      \field{year}{1989}
+      \field{pages}{479\bibrangedash 496}
+      \keyw{3}
+    \endentry
+    \entry{bib-WikiNCotes}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Formule de Newton-Cotes}
+      \field{title}{Formule de Newton-Cotes}
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/Formule_de_Newton-Cotes
+      \endverb
+      \keyw{A}
+    \endentry
+    \entry{bib-WikiGauss}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=030bd0fa2faebea3a5543e5242f1569f}{Wikipédia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{030bd0fa2faebea3a5543e5242f1569f}
+      \strng{fullhash}{030bd0fa2faebea3a5543e5242f1569f}
+      \field{sortinit}{0}
+      \field{labeltitle}{Méthodes de quadrature de Gauss}
+      \field{title}{Méthodes de quadrature de Gauss}
+      \verb{url}
+      \verb http://fr.wikipedia.org/wiki/M%C3%A9thodes_de_quadrature_de_Gauss
+      \endverb
+      \keyw{A}
+    \endentry
+    \entry{bib-Dysli}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=4c3c512a7bf385949e410fe9eef8c70a}{Dysli}{D\bibinitperiod}{Michel}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4c3c512a7bf385949e410fe9eef8c70a}{Dysli}{D\bibinitperiod}{Michel}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {École Polytechnique Fédérale de Lausanne; cycle postgrade: géologie appliquée à l'ingénierie et à l'environnement}%
+      }
+      \strng{namehash}{4c3c512a7bf385949e410fe9eef8c70a}
+      \strng{fullhash}{4c3c512a7bf385949e410fe9eef8c70a}
+      \field{sortinit}{0}
+      \field{labeltitle}{B3-5 Introduction aux éléments finis}
+      \field{title}{B3-5 Introduction aux éléments finis}
+      \verb{url}
+      \verb http://lms.epfl.ch/files/content/sites/lms/files/shared/Publications/Soil%20and%20Rock/Intro_aux_elements_finis_GAIE.pdf
+      \endverb
+      \keyw{A}
+    \endentry
+    \entry{bib-Champ2}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=061414f46ce5996d972fbd0cc00a62d8}{Champaney}{C\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=061414f46ce5996d972fbd0cc00a62d8}{Champaney}{C\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {ENS Cachan; Département génie mécanique, Laboratoire de mécanique et technologie}%
+      }
+      \strng{namehash}{061414f46ce5996d972fbd0cc00a62d8}
+      \strng{fullhash}{061414f46ce5996d972fbd0cc00a62d8}
+      \field{sortinit}{0}
+      \field{labeltitle}{Problèmes spécifiques à la méthode des éléments finis}
+      \field{title}{Problèmes spécifiques à la méthode des éléments finis}
+      \verb{url}
+      \verb http://laurent.champaney.free.fr/perso/cours/EF-PbSpecifiques-Champaney.pdf
+      \endverb
+      \keyw{A}
+    \endentry
+    \entry{bib-BlayoA}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=790376fc334ea28cfc3c8b7635351f32}{Blayo}{B\bibinitperiod}{{Éric}}{É\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=790376fc334ea28cfc3c8b7635351f32}{Blayo}{B\bibinitperiod}{{Éric}}{É\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {M1 Mathématiques Appliquées et Industrielles, Laboratoire Jean Kuntzmann, {\textsc{Inria}}}%
+      }
+      \strng{namehash}{790376fc334ea28cfc3c8b7635351f32}
+      \strng{fullhash}{790376fc334ea28cfc3c8b7635351f32}
+      \field{sortinit}{0}
+      \field{labeltitle}{Notes de cours sur la méthode des éléments finis}
+      \field{title}{Notes de cours sur la méthode des éléments finis}
+      \field{year}{2010}
+      \verb{url}
+      \verb http://www-ljk.imag.fr/membres/Eric.Blayo/Documents/Poly-EF.pdf
+      \endverb
+      \keyw{A}
+    \endentry
+    \entry{bib-Golub}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=debec563d04ca2133df14f10170caa6d}{Golub}{G\bibinitperiod}{{Gene\bibnamedelimb H.}}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=3123e54d71a1c52a8065896186b40f5c}{Loan}{L\bibinitperiod}{{Charles\bibnamedelimb F.}}{C\bibinitperiod}{van}{v\bibinitperiod}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=debec563d04ca2133df14f10170caa6d}{Golub}{G\bibinitperiod}{{Gene\bibnamedelimb H.}}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=3123e54d71a1c52a8065896186b40f5c}{Loan}{L\bibinitperiod}{{Charles\bibnamedelimb F.}}{C\bibinitperiod}{van}{v\bibinitperiod}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Johns Hopkins University Press}%
+      }
+      \strng{namehash}{5ae477c44989174e53170d7c3019be8a}
+      \strng{fullhash}{5ae477c44989174e53170d7c3019be8a}
+      \field{sortinit}{0}
+      \field{labeltitle}{Matrix Computations, 3e Ed}
+      \field{title}{Matrix Computations, 3e Ed}
+      \field{year}{1996}
+      \keyw{A}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

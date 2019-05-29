@@ -1,0 +1,473 @@
+\begin{theindex}
+  \providecommand*\lettergroupDefault[1]{}
+  \providecommand*\lettergroup[1]{%
+      \par\textbf{#1}\par
+      \nopagebreak
+  }
+
+  \lettergroup{A}
+  \item analyse ondulatoire de l'\IeC {\'e}nergie\dotfill256
+  \item ansatz\dotfill207, 208, 211
+  \item application\dotfill23, 30
+  \item approche ascendante\dotfill188
+  \item approche descendante\dotfill188
+  \item approximation
+    \subitem  conforme\dotfill127, 129, 132
+    \subitem  non conforme\dotfill127, 130--132
+
+  \indexspace
+
+  \lettergroup{B}
+  \item bijection\dotfill30
+  \item borne
+    \subitem de Reuss\dotfill209, 210
+    \subitem de Voigt\dotfill209, 210
+
+  \indexspace
+
+  \lettergroup{C}
+  \item chaos polynomial\dotfill336
+  \item coefficients de Lam\IeC {\'e}\dotfill89, 295
+  \item coefficients de Poisson\dotfill89, 210, 295
+  \item compacit\IeC {\'e}\dotfill20
+  \item compl\IeC {\'e}ment de Schur\dotfill168, 253
+  \item Component Modal Synthesis\dotfill255
+  \item condensation statique\dotfill191, 192
+  \item condition aux limites\dotfill77
+    \subitem de Dirichlet\dotfill64, 77, 101, 102, 104, 105, 107, 108, 112, 206, 211
+    \subitem de Neumann\dotfill64, 77, 102, 103, 107, 108, 112, 211
+    \subitem de Robin\dotfill77, 112
+    \subitem dynamique\dotfill78
+    \subitem essentielle\dotfill103
+    \subitem m\IeC {\^e}l\IeC {\'e}e\dotfill78, 103
+    \subitem naturelle\dotfill103
+  \item condition BBL\dotfill98
+  \item condition de p\IeC {\'e}riodicit\IeC {\'e}\dotfill189
+  \item condition inf-sup\dotfill98, 116
+  \item continuit\IeC {\'e}
+    \subitem $C^0$\dotfill35
+    \subitem $C^k$\dotfill38
+    \subitem H\IeC {\"o}lder\dotfill36
+    \subitem Lipschitz\dotfill36
+  \item contrainte de von Mises\dotfill291
+  \item contrainte effective\dotfill291
+  \item couplage des cellules microscopiques\dotfill189, 190
+  \item courbe de W\IeC {\"o}hler (ou S-N)\dotfill324, 325, 327, 328
+  \item crit\IeC {\`e}re de Cauchy\dotfill21
+  \item crit\IeC {\`e}re de plasticit\IeC {\'e}
+    \subitem Drucker-Prager\dotfill300
+    \subitem Hill\dotfill300
+    \subitem Mohr-Coulomb\dotfill300
+    \subitem Tresca\dotfill299, 300
+    \subitem Tsa\IeC {\"\i }\dotfill300
+    \subitem von Mises\dotfill299, 300
+  \item crochet de dualit\IeC {\'e}\dotfill32
+
+  \indexspace
+
+  \lettergroup{D}
+  \item d'Alembertien\dotfill42
+  \item d\IeC {\'e}composition de domaine\dotfill190
+  \item d\IeC {\'e}composition modale\dotfill238, 248, 249
+  \item densit\IeC {\'e} spectrale\dotfill242
+  \item d\IeC {\'e}riv\IeC {\'e}e
+    \subitem au sens de Fr\IeC {\'e}chet\dotfill216
+    \subitem au sens des distributions\dotfill58
+    \subitem classique\dotfill37
+    \subitem directionnelle\dotfill216
+    \subitem d'ordre sup\IeC {\'e}rieur\dotfill195
+    \subitem g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}e\dotfill70
+    \subitem normale\dotfill43, 61
+    \subitem par rapport \IeC {\`a} la g\IeC {\'e}om\IeC {\'e}trie\dotfill195
+    \subitem partielle\dotfill39
+  \item diagramme de Vorono\IeC {\"\i }\dotfill199
+  \item diff\IeC {\'e}rentielle\dotfill39, 216
+  \item distance\dotfill21
+    \subitem issue d'une norme\dotfill22, 69
+  \item distribution\dotfill56
+    \subitem de Dirac\dotfill58
+  \item divergence\dotfill42, 45
+  \item domaine
+    \subitem  fr\IeC {\'e}quentiel\dotfill252, 254
+    \subitem  temporel\dotfill253
+  \item dual d'un espace vectoriel\dotfill32
+  \item dual topologique d'un espace vectoriel\dotfill32, 57, 61
+
+  \indexspace
+
+  \lettergroup{E}
+  \item ED-EDP
+    \subitem de Faraday\dotfill88
+    \subitem de Helmholtz\dotfill111
+    \subitem de la chaleur\dotfill80, 88, 104, 242, 245
+    \subitem de la d\IeC {\'e}formation d'une membrane\dotfill80
+    \subitem de la diffusion mol\IeC {\'e}culaire\dotfill88
+    \subitem de l'acoustique\dotfill80, 90, 111
+    \subitem de Laplace\dotfill79, 101--103
+    \subitem de l'\IeC {\'e}lasticit\IeC {\'e} plane\dotfill88
+    \subitem de Navier-Stokes\dotfill83, 105
+    \subitem de Poisson\dotfill79, 101--103, 206, 211
+    \subitem de Stokes\dotfill84, 105
+    \subitem des ondes\dotfill80
+    \subitem d'Euler\dotfill85, 106
+    \subitem d'Ohm\dotfill88
+    \subitem dynamique de population\dotfill76
+    \subitem Lotka-Volterra\dotfill76
+    \subitem relation fondamentale de la dynamique\dotfill76, 88, 107, 108, 233, 244--248
+    \subitem syst\IeC {\`e}me proie-pr\IeC {\'e}dateur\dotfill76
+  \item effectif\dotfill205, 209
+  \item \IeC {\'e}l\IeC {\'e}ment fini
+    \subitem de Lagrange\dotfill145, 146, 154
+    \subitem de r\IeC {\'e}f\IeC {\'e}rence\dotfill148
+    \subitem d'Hermite\dotfill153, 165
+    \subitem diam\IeC {\`e}tre d'un\dotfill127, 198
+    \subitem enrichi\dotfill255
+    \subitem famille affine d'\dotfill148
+    \subitem fronti\IeC {\`e}re\dotfill255, 347
+    \subitem hi\IeC {\'e}rarchique\dotfill255
+    \subitem rondeur d'un\dotfill127, 198
+    \subitem singulier\dotfill322
+    \subitem stochastique\dotfill337, 340
+  \item \IeC {\'e}nergie potentielle\dotfill94
+  \item ensemble mesurable\dotfill25
+  \item \IeC {\'e}quation
+    \subitem d'Euler\dotfill217
+  \item \IeC {\'e}quations
+    \subitem de Laguerre\dotfill367
+    \subitem de Legendre\dotfill365
+    \subitem de Navier-Stokes\dotfill350
+  \item espace
+    \subitem compact\dotfill20
+    \subitem de Banach\dotfill22, 59, 69, 70
+    \subitem de Hausdorff\dotfill20
+    \subitem de Hilbert\dotfill22, 60, 61, 64, 65, 69, 363, 364
+    \subitem de Lebesgue\dotfill49, 70, 364
+    \subitem de Sobolev
+      \subsubitem $H(\dive)$\dotfill65
+      \subsubitem $H^1(\Omega)$\dotfill63
+      \subsubitem $H^{-1}(\Omega)$\dotfill63
+      \subsubitem $H^m(\Omega)$\dotfill60, 71
+      \subsubitem $H^{-m}(\Omega)$\dotfill60, 61
+      \subsubitem $H_0^1(\Omega)$\dotfill63, 71
+      \subsubitem $H_0^m(\Omega$\dotfill60
+      \subsubitem $W^{m,p}(\Omega)$\dotfill59
+    \subitem d'\IeC {\'e}nergie\dotfill64
+    \subitem euclidien\dotfill69
+    \subitem mesurable (probabilisable)\dotfill24
+    \subitem mesur\IeC {\'e}\dotfill25, 26
+    \subitem m\IeC {\'e}trique\dotfill21
+      \subsubitem complet\dotfill21, 69
+    \subitem pr\IeC {\'e}hilbertien\dotfill69
+    \subitem propre\dotfill242, 254
+    \subitem r\IeC {\'e}gulier\dotfill20
+    \subitem s\IeC {\'e}par\IeC {\'e}\dotfill20
+    \subitem topologique\dotfill20
+    \subitem trace\dotfill61, 62, 71
+    \subitem vectoriel
+      \subsubitem norm\IeC {\'e}\dotfill22, 69
+      \subsubitem topologique\dotfill22, 61
+  \item exposant conjugu\IeC {\'e}
+    \subitem de Lebesgue\dotfill50
+    \subitem de Sobolev\dotfill66
+
+  \indexspace
+
+  \lettergroup{F}
+  \item facteur de forme du maillage\dotfill127, 198
+  \item facteur d'intensit\IeC {\'e} de contrainte~$K$\dotfill317
+  \item fonction test\dotfill70
+  \item fonctionnelle
+    \subitem de Hu-Washizu\dotfill108
+    \subitem de l'\IeC {\'e}nergie compl\IeC {\'e}mentaire\dotfill109
+    \subitem de l'\IeC {\'e}nergie potentielle totale\dotfill108
+    \subitem de Pian et Tong\dotfill109
+    \subitem d'Hellinger-Reissner\dotfill109, 137, 158, 166, 175, 178
+    \subitem duale\dotfill108
+    \subitem hybride\dotfill109, 138
+    \subitem mixte\dotfill109, 137, 166, 175, 178
+    \subitem primale\dotfill108
+  \item forme
+    \subitem bilin\IeC {\'e}aire\dotfill23, 69
+    \subitem lin\IeC {\'e}aire\dotfill31, 57
+  \item formulation faible\dotfill93
+  \item fr\IeC {\'e}quence propre\dotfill241--246, 248, 249, 254
+  \item FRF\dotfill254
+
+  \indexspace
+
+  \lettergroup{G}
+  \item G-FEM\dotfill255
+  \item gradient\dotfill42, 44
+
+  \indexspace
+
+  \lettergroup{H}
+  \item homog\IeC {\'e}n\IeC {\'e}isation\dotfill189, 205, 206, 209
+
+  \indexspace
+
+  \lettergroup{I}
+  \item image\dotfill33
+  \item in\IeC {\'e}galit\IeC {\'e}
+    \subitem de Cauchy-Schwarz\dotfill69
+    \subitem de Korn\dotfill67
+    \subitem de Poincar\IeC {\'e}\dotfill66, 71
+    \subitem de Poincar\IeC {\'e}-Friedrichs\dotfill66
+    \subitem de Poincar\IeC {\'e}-Wirtinger\dotfill66
+  \item injection\dotfill30
+  \item int\IeC {\'e}grale~$J$\dotfill319, 320
+  \item int\IeC {\'e}gration
+    \subitem Newton-Cotes\dotfill373, 374
+    \subitem quadrature de Gau\IeC {\ss }\dotfill375
+    \subitem rectangles\dotfill373
+    \subitem Simpson\dotfill374
+    \subitem trap\IeC {\`e}zes\dotfill373
+
+  \indexspace
+
+  \lettergroup{J}
+  \item jacobien\dotfill161, 162
+  \item jacobienne\dotfill161, 162
+
+  \indexspace
+
+  \lettergroup{L}
+  \item lagrangien\dotfill217
+  \item laplacien\dotfill42, 79, 101--103
+  \item lemme de
+    \subitem  C\IeC {\'e}a\dotfill129, 130
+    \subitem  Strang\dotfill130, 131
+  \item loi
+    \subitem de Paris\dotfill328
+    \subitem de Weibull\dotfill328
+    \subitem des m\IeC {\'e}langes\dotfill209, 210
+  \item loi de comportement\dotfill88, 107, 108
+    \subitem anisotrope\dotfill304
+    \subitem aux\IeC {\'e}tique\dotfill90
+    \subitem Bingham-Norton\dotfill296
+    \subitem \IeC {\'e}lastom\IeC {\`e}res\dotfill300
+    \subitem Hooke\dotfill88, 108, 158, 294--297
+    \subitem hyper\IeC {\'e}lasticit\IeC {\'e}\dotfill302
+    \subitem incompressible\dotfill89, 90, 158
+    \subitem Kelvin-Voigt\dotfill298
+    \subitem Maxwell\dotfill296--298
+    \subitem Newton\dotfill297
+    \subitem Norton-Hoff\dotfill296
+    \subitem plasticit\IeC {\'e}\dotfill298
+    \subitem Rivlin g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}\dotfill302
+    \subitem Saint-Venant\dotfill296
+    \subitem visco\IeC {\'e}lasticit\IeC {\'e}\dotfill297
+    \subitem viscoplasticit\IeC {\'e}\dotfill297
+    \subitem Voigt\dotfill296, 297
+
+  \indexspace
+
+  \lettergroup{M}
+  \item macro-\IeC {\'e}l\IeC {\'e}ment\dotfill191
+  \item maillage de Delaunay-Vorono\IeC {\"\i }\dotfill199, 200
+  \item mesure\dotfill25
+    \subitem compl\IeC {\`e}te\dotfill26
+    \subitem de Dirac\dotfill26
+    \subitem de Lebesgue\dotfill26, 27
+    \subitem r\IeC {\'e}guli\IeC {\`e}re\dotfill27
+  \item m\IeC {\'e}thode de d\IeC {\'e}veloppement asymptotique infini\dotfill208
+  \item m\IeC {\'e}thode de d\IeC {\'e}veloppement r\IeC {\'e}gulier\dotfill207
+  \item m\IeC {\'e}thode de diffusion d'\IeC {\'e}nergie\dotfill256
+  \item m\IeC {\'e}thode de Galerkine
+    \subitem  discontinue\dotfill254
+      \subsubitem avec multiplicateurs de Lagrange\dotfill255
+    \subitem  Gradient Least Squares\dotfill255
+    \subitem  Least Squares\dotfill255
+    \subitem sans maillage\dotfill255
+  \item m\IeC {\'e}thode de la couche limite\dotfill208
+  \item m\IeC {\'e}thode de Lattice-Boltzmann\dotfill350
+  \item m\IeC {\'e}thode de Monte-Carlo\dotfill341, 345
+  \item m\IeC {\'e}thode de Newton-Raphson\dotfill294, 307, 387--389
+  \item m\IeC {\'e}thode de Runge-Kutta
+    \subitem  ordre 1\dotfill383, 384
+    \subitem  ordre 2\dotfill384
+    \subitem  ordre 4\dotfill384
+  \item m\IeC {\'e}thode de Trefftz\dotfill256
+  \item m\IeC {\'e}thode d'enrichissement discontinu\dotfill255
+  \item m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments discontinus\dotfill255
+  \item m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue\dotfill255, 324, 349
+  \item m\IeC {\'e}thode des rayons\dotfill256
+  \item m\IeC {\'e}thode d'Euler\dotfill383, 384
+  \item m\IeC {\'e}thode~$h$\dotfill173, 255
+  \item m\IeC {\'e}thode~$hp$\dotfill173
+  \item m\IeC {\'e}thode~$p$\dotfill173, 255
+  \item m\IeC {\'e}thode particulaire\dotfill348
+  \item m\IeC {\'e}thode~$r$\dotfill173
+  \item m\IeC {\'e}thode sans maillage\dotfill255, 323, 348
+  \item m\IeC {\'e}thode spectrale\dotfill244
+  \item m\IeC {\'e}thodes \IeC {\'E}nerg\IeC {\'e}tiques Simplifi\IeC {\'e}es\dotfill256
+  \item m\IeC {\'e}trique\dotfill21
+  \item mode propre\dotfill241--244, 249, 254--256
+  \item mod\IeC {\`e}le macroscopique\dotfill188--190, 205
+  \item mod\IeC {\`e}le microscopique\dotfill188, 190, 205
+  \item module de Coulomb\dotfill295, 301
+  \item module d'Young\dotfill89, 163, 295, 301
+  \item morphisme\dotfill31
+    \subitem automorphisme\dotfill32
+    \subitem endomorphisme\dotfill32
+    \subitem isomorphisme\dotfill32
+  \item multi-\IeC {\'e}chelles\dotfill187, 188, 190, 191
+  \item multi-niveaux\dotfill189, 190
+  \item multiplicateurs de Lagrange\dotfill91, 99, 100, 109, 157, 158, 168, 169, 171, 193, 217, 218, 253, 305
+
+  \indexspace
+
+  \lettergroup{N}
+  \item normale\dotfill43
+  \item norme\dotfill22, 69, 70
+    \subitem induite par un produit scalaire\dotfill69, 71, 365
+    \subitem sur~$H(\rot)$\dotfill65
+    \subitem sur~$H^m(\Omega)$\dotfill71
+    \subitem sur~$H^{-m}(\Omega)$\dotfill61
+    \subitem sur~$W^{m,p}(\Omega)$\dotfill59
+  \item notation de Voigt\dotfill290
+  \item noyau\dotfill33
+
+  \indexspace
+
+  \lettergroup{O}
+  \item op\IeC {\'e}rateur\dotfill34
+  \item optimisation\dotfill213
+  \item oscillateur\dotfill241
+
+  \indexspace
+
+  \lettergroup{P}
+  \item partition de l'unit\IeC {\'e}\dotfill255, 349
+  \item patch-test\dotfill159, 160
+  \item perturbation\dotfill193, 195
+  \item polyn\IeC {\^o}me
+    \subitem  caract\IeC {\'e}ristique\dotfill243
+    \subitem  de Bernstein\dotfill368, 370
+    \subitem  de Lagrange\dotfill363, 369
+    \subitem  de Laguerre\dotfill367, 368, 375
+    \subitem  de Legendre\dotfill365, 375
+    \subitem de Tchebychev\dotfill366, 367, 375
+    \subitem d'Hermite\dotfill334, 336, 340, 364, 368, 369, 375
+    \subitem orthogonalit\IeC {\'e}\dotfill334, 363--367, 375
+  \item post-traitement\dotfill158, 159, 173
+  \item principe
+    \subitem  de d'Alembert\dotfill94
+    \subitem  de Saint-Venant\dotfill140, 189
+    \subitem des puissances virtuelles\dotfill94
+    \subitem des travaux virtuels\dotfill94
+  \item produit scalaire\dotfill22, 23, 69, 363--367
+    \subitem de~$H(\dive)$\dotfill65
+    \subitem de~$H^1(\Omega)$\dotfill64
+    \subitem de~$H^m(\Omega)$\dotfill60, 71
+    \subitem de~$L^2$\dotfill52, 70, 364, 365
+  \item propri\IeC {\'e}t\IeC {\'e} de la boule ouverte\dotfill201
+  \item propri\IeC {\'e}t\IeC {\'e} d'orthogonalit\IeC {\'e}\dotfill248, 249
+  \item pseudo-inversion\dotfill192, 194
+
+  \indexspace
+
+  \lettergroup{Q}
+  \item quotient de Rayleigh\dotfill249, 250
+
+  \indexspace
+
+  \lettergroup{R}
+  \item repr\IeC {\'e}sentation modale\dotfill242
+  \item r\IeC {\'e}sidus pond\IeC {\'e}r\IeC {\'e}s\dotfill95
+  \item r\IeC {\'e}sonance\dotfill241
+  \item rotationnel\dotfill42, 45
+
+  \indexspace
+
+  \lettergroup{S}
+  \item sch\IeC {\'e}ma
+    \subitem  de Newmark\dotfill234, 235, 254, 385
+    \subitem  des diff\IeC {\'e}rences finies centr\IeC {\'e}es\dotfill234, 235, 254, 385
+  \item SEA\dotfill252, 256
+  \item s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve\dotfill335, 336, 338--340
+  \item s\IeC {\'e}rie de von Neumann\dotfill338, 339
+  \item sous-structuration\dotfill187, 191
+  \item sous-structure\dotfill191
+  \item super-\IeC {\'e}l\IeC {\'e}ment\dotfill191, 192
+  \item support\dotfill26, 31
+  \item surjection\dotfill30
+  \item synchronisation\dotfill242
+
+  \indexspace
+
+  \lettergroup{T}
+  \item taux de restitution d'\IeC {\'e}nergie~$G$\dotfill316, 317, 319, 320
+  \item tenseur
+    \subitem  des contraintes de Cauchy\dotfill290
+    \subitem  des contraintes de Kirchhoff\dotfill292
+    \subitem  des contraintes de Piola-Kirchhoff\dotfill291, 292, 294
+    \subitem  des d\IeC {\'e}formations de Green-Lagrange\dotfill292, 294
+    \subitem  gradient de d\IeC {\'e}formation\dotfill292
+    \subitem  lin\IeC {\'e}aris\IeC {\'e} des d\IeC {\'e}formations\dotfill293
+  \item th\IeC {\'e}or\IeC {\`e}me
+    \subitem de Babu\IeC {\v s}ka\dotfill97, 129
+    \subitem de Borel-Lebesgue\dotfill27
+    \subitem de Brezzi\dotfill98, 115, 117, 130
+      \subsubitem g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}\dotfill98
+    \subitem de Cauchy\dotfill290
+    \subitem de Cayley-Hamilton\dotfill243
+    \subitem de changement de variables dans les int\IeC {\'e}grales multiples\dotfill162
+    \subitem de compl\IeC {\'e}tion (sur un Banach)\dotfill23
+    \subitem de densit\IeC {\'e}\dotfill64
+    \subitem de d\IeC {\'e}rivation des fonctions compos\IeC {\'e}es dans les espaces de Sobolev\dotfill64
+    \subitem de Dirichlet\dotfill81
+    \subitem de Green-Ostrogradsky\dotfill45
+    \subitem de Green--Riemann\dotfill45
+    \subitem de Kirchhoff\dotfill273
+    \subitem  de Lax\dotfill393
+    \subitem de Lax-Milgram\dotfill96, 114, 129, 206
+    \subitem  de Lax-Wendroff\dotfill393
+    \subitem de Meyers-Serrin\dotfill60
+    \subitem de projection (dans un Hilbert)\dotfill23, 52
+    \subitem de repr\IeC {\'e}sentation de Riesz-Fr\IeC {\'e}chet\dotfill95, 206, 216
+    \subitem de Stone-Weierstrass\dotfill363
+    \subitem de Taylor\dotfill362
+    \subitem de Weierstrass\dotfill363
+    \subitem d'injections continues de Sobolev\dotfill66
+    \subitem d'inversion locale\dotfill162
+    \subitem du flux-divergence\dotfill45
+    \subitem du gradient\dotfill44
+    \subitem du rang\dotfill33
+    \subitem du rotationnel\dotfill45
+  \item th\IeC {\'e}orie des structures floues\dotfill255
+  \item Th\IeC {\'e}orie Variationnelle des Rayons Complexes\dotfill253
+  \item topologie\dotfill20, 33
+  \item trace\dotfill174, 190
+  \item transform\IeC {\'e}e de Fourier\dotfill252, 254, 257
+  \item tribu\dotfill24
+    \subitem bor\IeC {\'e}lienne\dotfill25
+  \item TXFEM\dotfill254
+
+  \indexspace
+
+  \lettergroup{U}
+  \item unisolvance\dotfill145
+
+  \indexspace
+
+  \lettergroup{V}
+  \item valeur propre\dotfill\see{fr\IeC {\'e}quence propre}{}
+  \item vecteur propre\dotfill\see{mode propre}{}
+  \item vibration
+    \subitem  libre\dotfill244, 245
+    \subitem  p\IeC {\'e}riodique\dotfill244, 247
+    \subitem  transitoire\dotfill244, 248
+  \item volume \IeC {\'e}l\IeC {\'e}mentaire repr\IeC {\'e}sentatif\dotfill205, 209
+
+  \indexspace
+
+  \lettergroup{W}
+  \item WBT\dotfill256
+
+  \indexspace
+
+  \lettergroup{X}
+  \item X-FEM\dotfill255, 324, 349
+
+\end{theindex}

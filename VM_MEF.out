@@ -1,0 +1,347 @@
+\BOOKMARK [0][-]{Doc-Start}{ocre Introduction}{}% 1
+\BOOKMARK [1][-]{section*.1}{But du document}{Doc-Start}% 2
+\BOOKMARK [1][-]{section*.2}{D\351marche de l'ing\351nieur num\351ricien}{Doc-Start}% 3
+\BOOKMARK [0][-]{section*.2}{ocre Table des mati\350res}{}% 4
+\BOOKMARK [-1][-]{part.1}{Survol math\351matique}{}% 5
+\BOOKMARK [0][-]{chapter.1}{Les espaces de base}{part.1}% 6
+\BOOKMARK [1][-]{section.1.1}{Panorama non exhaustif des espaces}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.1}{Point de vue topologique}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.2}{Point de vue m\351trique}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.3}{Point de vue alg\351brique}{section.1.1}% 10
+\BOOKMARK [1][-]{section.1.2}{Tribu, mesure, espaces mesurable et mesur\351}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Tribu bor\351lienne, mesures de Dirac et Lebesgue}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{Propri\351t\351s de la mesure de Lebesgue}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.5}{Petit exemple amusant d'injection dans un Hilbert}{chapter.1}% 14
+\BOOKMARK [0][-]{chapter.2}{Applications et morphismes}{part.1}% 15
+\BOOKMARK [1][-]{section.2.1}{Fonction, application, injection, surjection, bijection}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.2}{Morphismes}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.1}{Pr\351sentation}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.2}{Cas des espaces vectoriels: application et forme lin\351aires}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.3}{Endo, iso, auto -morphismes}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.4}{Espace dual d'un espace vectoriel}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.5}{Noyau et image}{section.2.2}% 22
+\BOOKMARK [1][-]{section.2.3}{Op\351rateur}{chapter.2}% 23
+\BOOKMARK [0][-]{chapter.3}{Continuit\351 et d\351rivabilit\351}{part.1}% 24
+\BOOKMARK [1][-]{section.3.1}{Continuit\351 et classe C0}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Continuit\351 de H\366lder et Lipschitz}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{D\351riv\351e}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.4}{Fonctions de classe Ck}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.5}{D\351riv\351es partielles}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.6}{Retour sur les classes Ck pour une fonction de plusieurs variables}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.7}{Nabla et comparses}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.7.1}{Champs de vecteurs et de scalaires}{section.3.7}% 32
+\BOOKMARK [2][-]{subsection.3.7.2}{Gradient, divergence, rotationnel, Laplacien et D'Alembertien}{section.3.7}% 33
+\BOOKMARK [2][-]{subsection.3.7.3}{Normale et d\351riv\351e normale}{section.3.7}% 34
+\BOOKMARK [2][-]{subsection.3.7.4}{Potentiel d'un champ vectoriel}{section.3.7}% 35
+\BOOKMARK [2][-]{subsection.3.7.5}{Signification "physique"}{section.3.7}% 36
+\BOOKMARK [1][-]{section.3.8}{Quelques th\351or\350mes sur les int\351grales}{chapter.3}% 37
+\BOOKMARK [0][-]{chapter.4}{Espaces de Lebesgue}{part.1}% 38
+\BOOKMARK [1][-]{section.4.1}{Pr\351sentation des espaces de Lebesgue Lp}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.2}{Construction de Lp}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.3}{Espace L0}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.4}{Espace L et dualit\351 avec L1}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.5}{Espace L2}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.6}{Compl\351ments}{chapter.4}% 44
+\BOOKMARK [0][-]{chapter.5}{Espaces de Sobolev}{part.1}% 45
+\BOOKMARK [1][-]{section.5.1}{Distributions}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.2}{D\351riv\351es au sens des distributions}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.3}{Espaces Wm,p\(\)}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.4}{Espaces Hm\(\), Hm0\(\) et H-m\(\)}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.5}{Prise en compte du contour du domaine}{chapter.5}% 50
+\BOOKMARK [2][-]{subsection.5.5.1}{Trace}{section.5.5}% 51
+\BOOKMARK [2][-]{subsection.5.5.2}{Espace trace}{section.5.5}% 52
+\BOOKMARK [1][-]{section.5.6}{Espaces H1\(\), H10\(\) et H-1\(\)}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.7}{Espaces H\(`39`42`"613A``45`47`"603Adiv\) et H\(`39`42`"613A``45`47`"603Arot\)}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.8}{In\351galit\351s utiles}{chapter.5}% 55
+\BOOKMARK [0][-]{histoire.12}{ocre R\351sum\351 des outils d'analyse fonctionnelle}{part.1}% 56
+\BOOKMARK [-1][-]{part.2}{Probl\350me continu}{}% 57
+\BOOKMARK [0][-]{chapter.6}{Probl\350mes physiques: \351quations diff\351rentielles et aux d\351riv\351es partielles}{part.2}% 58
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 59
+\BOOKMARK [1][-]{section.6.2}{Conditions aux limites}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.2.1}{Dirichlet \205 valeurs aux bords}{section.6.2}% 61
+\BOOKMARK [2][-]{subsection.6.2.2}{Neumann \205 gradients aux bords}{section.6.2}% 62
+\BOOKMARK [2][-]{subsection.6.2.3}{Robin \205 relation gradient/valeurs sur le bord}{section.6.2}% 63
+\BOOKMARK [2][-]{subsection.6.2.4}{Condition aux limites dynamique}{section.6.2}% 64
+\BOOKMARK [2][-]{subsection.6.2.5}{Condition aux limites m\352l\351e}{section.6.2}% 65
+\BOOKMARK [1][-]{section.6.3}{Types d'\351quation aux d\351riv\351es partielles}{chapter.6}% 66
+\BOOKMARK [1][-]{section.6.4}{Ph\351nom\350nes de propagation et de diffusion}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.4.1}{\311quations de Laplace et Poisson}{section.6.4}% 68
+\BOOKMARK [2][-]{subsection.6.4.2}{\311quation d'onde, ph\351nom\350nes vibratoires}{section.6.4}% 69
+\BOOKMARK [2][-]{subsection.6.4.3}{\311quation de la chaleur}{section.6.4}% 70
+\BOOKMARK [1][-]{section.6.5}{M\351canique des fluides}{chapter.6}% 71
+\BOOKMARK [2][-]{subsection.6.5.1}{\311quation de Navier-Stokes}{section.6.5}% 72
+\BOOKMARK [2][-]{subsection.6.5.2}{\311quation de Stokes}{section.6.5}% 73
+\BOOKMARK [2][-]{subsection.6.5.3}{\311quation d'Euler}{section.6.5}% 74
+\BOOKMARK [1][-]{section.6.6}{\311quations de la m\351canique des milieux continus des solides}{chapter.6}% 75
+\BOOKMARK [2][-]{subsection.6.6.1}{Notions g\351n\351rales conduisant aux \351quations de la m\351canique}{section.6.6}% 76
+\BOOKMARK [2][-]{subsection.6.6.2}{Formulation g\351n\351rale}{section.6.6}% 77
+\BOOKMARK [2][-]{subsection.6.6.3}{Dynamique / statique}{section.6.6}% 78
+\BOOKMARK [2][-]{subsection.6.6.4}{Grands / petits d\351placements}{section.6.6}% 79
+\BOOKMARK [2][-]{subsection.6.6.5}{Loi de comportement}{section.6.6}% 80
+\BOOKMARK [1][-]{section.6.7}{\311quations de l'acoustique}{chapter.6}% 81
+\BOOKMARK [1][-]{section.6.8}{Multiplicateurs de Lagrange}{chapter.6}% 82
+\BOOKMARK [0][-]{chapter.7}{Formulations faible et variationnelle}{part.2}% 83
+\BOOKMARK [1][-]{section.7.1}{Principe des formulations faible et variationnelle}{chapter.7}% 84
+\BOOKMARK [1][-]{section.7.2}{Th\351or\350me de repr\351sentation de Riesz-Fr\351chet}{chapter.7}% 85
+\BOOKMARK [2][-]{subsection.7.2.1}{Cas des formes lin\351aires}{section.7.2}% 86
+\BOOKMARK [2][-]{subsection.7.2.2}{Extension aux formes bilin\351aires}{section.7.2}% 87
+\BOOKMARK [1][-]{section.7.3}{Th\351or\350me de Lax-Milgram}{chapter.7}% 88
+\BOOKMARK [1][-]{section.7.4}{Th\351or\350me de Babu\235ka et condition inf-sup}{chapter.7}% 89
+\BOOKMARK [1][-]{section.7.5}{Th\351or\350mes de Brezzi et condition BBL}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.6}{Multiplicateurs de Lagrange}{chapter.7}% 91
+\BOOKMARK [0][-]{chapter.8}{Probl\350mes physiques: formulations faibles et variationnelles}{part.2}% 92
+\BOOKMARK [1][-]{section.8.1}{Ph\351nom\350nes de propagation et de diffusion}{chapter.8}% 93
+\BOOKMARK [2][-]{subsection.8.1.1}{\311quations de Laplace et Poisson}{section.8.1}% 94
+\BOOKMARK [2][-]{subsection.8.1.2}{\311quation d'onde}{section.8.1}% 95
+\BOOKMARK [2][-]{subsection.8.1.3}{\311quation de la chaleur}{section.8.1}% 96
+\BOOKMARK [1][-]{section.8.2}{M\351canique des fluides}{chapter.8}% 97
+\BOOKMARK [2][-]{subsection.8.2.1}{\311quation de Stokes}{section.8.2}% 98
+\BOOKMARK [2][-]{subsection.8.2.2}{\311quation de Navier-Stokes}{section.8.2}% 99
+\BOOKMARK [2][-]{subsection.8.2.3}{\311quation d'Euler}{section.8.2}% 100
+\BOOKMARK [1][-]{section.8.3}{\311quations de la m\351canique des milieux continus des solides}{chapter.8}% 101
+\BOOKMARK [2][-]{subsection.8.3.1}{Formulation g\351n\351rale}{section.8.3}% 102
+\BOOKMARK [2][-]{subsection.8.3.2}{Choix des variables}{section.8.3}% 103
+\BOOKMARK [1][-]{section.8.4}{\311quations de l'acoustique}{chapter.8}% 104
+\BOOKMARK [2][-]{subsection.8.4.1}{\311quation de Helmholtz}{section.8.4}% 105
+\BOOKMARK [2][-]{subsection.8.4.2}{Conditions aux limites en acoustique}{section.8.4}% 106
+\BOOKMARK [2][-]{subsection.8.4.3}{Formulation faible}{section.8.4}% 107
+\BOOKMARK [0][-]{chapter.9}{Exemple de formulation variationnelle d'un probl\350me de Neumann}{part.2}% 108
+\BOOKMARK [1][-]{section.9.1}{\311tude directe de l'existence et l'unicit\351 de la solution}{chapter.9}% 109
+\BOOKMARK [1][-]{section.9.2}{Formulation variationnelle}{chapter.9}% 110
+\BOOKMARK [1][-]{section.9.3}{Formulation mixte duale}{chapter.9}% 111
+\BOOKMARK [-1][-]{part.3}{\311l\351ments finis}{}% 112
+\BOOKMARK [0][-]{section*.45}{ocre Introduction}{part.3}% 113
+\BOOKMARK [0][-]{chapter.10}{La m\351thode des \351l\351ments finis}{part.3}% 114
+\BOOKMARK [1][-]{section.10.1}{Introduction}{chapter.10}% 115
+\BOOKMARK [1][-]{section.10.2}{Probl\350mes de la mod\351lisation "r\351elle"}{chapter.10}% 116
+\BOOKMARK [2][-]{subsection.10.2.1}{Probl\350mes g\351om\351triques}{section.10.2}% 117
+\BOOKMARK [2][-]{subsection.10.2.2}{Probl\350mes d'\351chelle}{section.10.2}% 118
+\BOOKMARK [2][-]{subsection.10.2.3}{Couplage g\351om\351trique}{section.10.2}% 119
+\BOOKMARK [2][-]{subsection.10.2.4}{Couplage intrins\350que}{section.10.2}% 120
+\BOOKMARK [1][-]{section.10.3}{Principe de la m\351thode: r\351solution d'un syst\350me matriciel}{chapter.10}% 121
+\BOOKMARK [1][-]{section.10.4}{Approximation conforme et lemme de C\351a}{chapter.10}% 122
+\BOOKMARK [2][-]{subsection.10.4.1}{Cas Lax-Milgram}{section.10.4}% 123
+\BOOKMARK [2][-]{subsection.10.4.2}{Cas Babu\235ka}{section.10.4}% 124
+\BOOKMARK [2][-]{subsection.10.4.3}{Cas Brezzi}{section.10.4}% 125
+\BOOKMARK [1][-]{section.10.5}{Approximations non conformes et lemmes de Strang}{chapter.10}% 126
+\BOOKMARK [2][-]{subsection.10.5.1}{Cas VhV}{section.10.5}% 127
+\BOOKMARK [2][-]{subsection.10.5.2}{Cas VhV}{section.10.5}% 128
+\BOOKMARK [1][-]{section.10.6}{Convergence de la m\351thode des \351l\351ments finis en approximation conforme}{chapter.10}% 129
+\BOOKMARK [2][-]{subsection.10.6.1}{Calcul de la majoration d'erreur}{section.10.6}% 130
+\BOOKMARK [2][-]{subsection.10.6.2}{Majoration de l'erreur}{section.10.6}% 131
+\BOOKMARK [0][-]{chapter.11}{Choix d'un Mod\350le}{part.3}% 132
+\BOOKMARK [1][-]{section.11.1}{La m\351canique, un probl\350me \340 plusieurs champs}{chapter.11}% 133
+\BOOKMARK [1][-]{section.11.2}{Plusieurs mod\351lisations d'un m\352me probl\350me}{chapter.11}% 134
+\BOOKMARK [1][-]{section.11.3}{Exemple: retour sur le calcul de poutre du paragraphe 11.1 avec Cast3M}{chapter.11}% 135
+\BOOKMARK [2][-]{subsection.11.3.1}{Mod\351lisation 2D}{section.11.3}% 136
+\BOOKMARK [2][-]{subsection.11.3.2}{Mod\350le 3D}{section.11.3}% 137
+\BOOKMARK [1][-]{section.11.4}{Interpolation des champs et de la g\351om\351trie}{chapter.11}% 138
+\BOOKMARK [0][-]{chapter.12}{Formulation pratique d'\351l\351ments finis}{part.3}% 139
+\BOOKMARK [1][-]{section.12.1}{\311l\351ments de Lagrange}{chapter.12}% 140
+\BOOKMARK [2][-]{subsection.12.1.1}{Unisolvance}{section.12.1}% 141
+\BOOKMARK [2][-]{subsection.12.1.2}{\311l\351ments finis de Lagrange}{section.12.1}% 142
+\BOOKMARK [2][-]{subsection.12.1.3}{Famille affine d'\351l\351ments finis et \351l\351ment de r\351f\351rence}{section.12.1}% 143
+\BOOKMARK [2][-]{subsection.12.1.4}{Construction de la base globale}{section.12.1}% 144
+\BOOKMARK [1][-]{section.12.2}{\311l\351ments d'Hermite}{chapter.12}% 145
+\BOOKMARK [2][-]{subsection.12.2.1}{Classe d'un \351l\351ment fini}{section.12.2}% 146
+\BOOKMARK [2][-]{subsection.12.2.2}{\311l\351ments finis d'Hermite}{section.12.2}% 147
+\BOOKMARK [2][-]{subsection.12.2.3}{\311l\351ments uni- et bidimensionnels}{section.12.2}% 148
+\BOOKMARK [1][-]{section.12.3}{Traitement de plusieurs champs}{chapter.12}% 149
+\BOOKMARK [1][-]{section.12.4}{Validation pratique et indicateurs d'erreur}{chapter.12}% 150
+\BOOKMARK [2][-]{subsection.12.4.1}{Modes rigides et parasites}{section.12.4}% 151
+\BOOKMARK [2][-]{subsection.12.4.2}{Modes associ\351s aux d\351formations constantes}{section.12.4}% 152
+\BOOKMARK [2][-]{subsection.12.4.3}{Patch-tests}{section.12.4}% 153
+\BOOKMARK [2][-]{subsection.12.4.4}{Test de pr\351cision d'un \351l\351ment}{section.12.4}% 154
+\BOOKMARK [1][-]{section.12.5}{Exemple: quelques variations sur le th\350me des \351l\351ments unidimensionnels}{chapter.12}% 155
+\BOOKMARK [2][-]{subsection.12.5.1}{\311l\351ment de r\351f\351rence unidimensionnels lin\351aire \340 deux n\234uds}{section.12.5}% 156
+\BOOKMARK [2][-]{subsection.12.5.2}{Rappels sur la jacobienne et le jacobien d'une transformation}{section.12.5}% 157
+\BOOKMARK [2][-]{subsection.12.5.3}{\311l\351ments de r\351f\351rence unidimensionnels lin\351aires \340 n n\234uds}{section.12.5}% 158
+\BOOKMARK [2][-]{subsection.12.5.4}{\311l\351ment de r\351f\351rence unidimensionnel infini}{section.12.5}% 159
+\BOOKMARK [2][-]{subsection.12.5.5}{\311l\351ment fini de barre unidimensionnel}{section.12.5}% 160
+\BOOKMARK [2][-]{subsection.12.5.6}{Assemblage de trois \351l\351ments unidimensionnels lin\351aires \340 deux n\234uds}{section.12.5}% 161
+\BOOKMARK [2][-]{subsection.12.5.7}{\311l\351ment de barre unidimensionnel de type Hermite \(\351l\351ment subparam\351trique\)}{section.12.5}% 162
+\BOOKMARK [2][-]{subsection.12.5.8}{\311l\351ment mixte unidimensionnel}{section.12.5}% 163
+\BOOKMARK [1][-]{section.12.6}{Sur les d\351placements impos\351s}{chapter.12}% 164
+\BOOKMARK [2][-]{subsection.12.6.1}{Probl\350me consid\351r\351}{section.12.6}% 165
+\BOOKMARK [2][-]{subsection.12.6.2}{Retour sur la r\351solution de syst\350mes lin\351aires}{section.12.6}% 166
+\BOOKMARK [2][-]{subsection.12.6.3}{Compl\351ment de Schur et d\351placements impos\351s}{section.12.6}% 167
+\BOOKMARK [2][-]{subsection.12.6.4}{Multiplicateurs de Lagrange et d\351placements impos\351s}{section.12.6}% 168
+\BOOKMARK [2][-]{subsection.12.6.5}{Actions ext\351rieures et d\351placements impos\351s}{section.12.6}% 169
+\BOOKMARK [2][-]{subsection.12.6.6}{Retour sur notre exemple}{section.12.6}% 170
+\BOOKMARK [2][-]{subsection.12.6.7}{Relations lin\351aires entre ddl}{section.12.6}% 171
+\BOOKMARK [0][-]{chapter.13}{Calcul efficient: qualit\351 des r\351sultats et efforts de calcul}{part.3}% 172
+\BOOKMARK [1][-]{section.13.1}{Am\351lioration d'un mod\350le: m\351thodes r, h et p}{chapter.13}% 173
+\BOOKMARK [1][-]{section.13.2}{Post-traitement}{chapter.13}% 174
+\BOOKMARK [1][-]{section.13.3}{Exemple d'impl\351mentation d'un post-traitement dans Ansys}{chapter.13}% 175
+\BOOKMARK [2][-]{subsection.13.3.1}{Macro dans Ansys}{section.13.3}% 176
+\BOOKMARK [2][-]{subsection.13.3.2}{Poutre en U}{section.13.3}% 177
+\BOOKMARK [2][-]{subsection.13.3.3}{R\351sultats}{section.13.3}% 178
+\BOOKMARK [1][-]{section.13.4}{Sous-structuration et simulation multi-\351chelles}{chapter.13}% 179
+\BOOKMARK [2][-]{subsection.13.4.1}{Condition de p\351riodicit\351 \205 m\351thodes multi-niveaux}{section.13.4}% 180
+\BOOKMARK [2][-]{subsection.13.4.2}{Couplage des cellules micro \205 m\351thodes de d\351composition de domaine}{section.13.4}% 181
+\BOOKMARK [1][-]{section.13.5}{Super-\351l\351ments}{chapter.13}% 182
+\BOOKMARK [2][-]{subsection.13.5.1}{Condensation statique}{section.13.5}% 183
+\BOOKMARK [2][-]{subsection.13.5.2}{Remonter aux degr\351s de libert\351 internes}{section.13.5}% 184
+\BOOKMARK [1][-]{section.13.6}{Pseudo-inversion et r\351analyse}{chapter.13}% 185
+\BOOKMARK [2][-]{subsection.13.6.1}{Modification du chargement uniquement}{section.13.6}% 186
+\BOOKMARK [2][-]{subsection.13.6.2}{Modification de la matrice}{section.13.6}% 187
+\BOOKMARK [2][-]{subsection.13.6.3}{Modification des conditions cin\351matiques}{section.13.6}% 188
+\BOOKMARK [1][-]{section.13.7}{D\351riv\351es d'ordre sup\351rieur}{chapter.13}% 189
+\BOOKMARK [2][-]{subsection.13.7.1}{D\351riv\351es par rapport \340 la g\351om\351trie}{section.13.7}% 190
+\BOOKMARK [2][-]{subsection.13.7.2}{Calcul des d\351riv\351es}{section.13.7}% 191
+\BOOKMARK [0][-]{chapter.14}{Le maillage}{part.3}% 192
+\BOOKMARK [1][-]{section.14.1}{Introduction}{chapter.14}% 193
+\BOOKMARK [1][-]{section.14.2}{Maillage simplexial}{chapter.14}% 194
+\BOOKMARK [1][-]{section.14.3}{Diagramme de Vorono\357}{chapter.14}% 195
+\BOOKMARK [1][-]{section.14.4}{Maillage par projection}{chapter.14}% 196
+\BOOKMARK [0][-]{chapter.15}{Homog\351n\351isation}{part.3}% 197
+\BOOKMARK [1][-]{section.15.1}{M\351thodes d'homog\351n\351isation}{chapter.15}% 198
+\BOOKMARK [2][-]{subsection.15.1.1}{M\351thode de d\351veloppement r\351gulier}{section.15.1}% 199
+\BOOKMARK [2][-]{subsection.15.1.2}{M\351thode de la couche limite}{section.15.1}% 200
+\BOOKMARK [2][-]{subsection.15.1.3}{M\351thode de d\351veloppement asymptotique infini}{section.15.1}% 201
+\BOOKMARK [2][-]{subsection.15.1.4}{Cas des coefficients discontinus}{section.15.1}% 202
+\BOOKMARK [1][-]{section.15.2}{Homog\351n\351isation simplifi\351e pour les mat\351riaux composites}{chapter.15}% 203
+\BOOKMARK [2][-]{subsection.15.2.1}{Introduction}{section.15.2}% 204
+\BOOKMARK [2][-]{subsection.15.2.2}{Loi des m\351langes, bornes de Voigt et de Reuss}{section.15.2}% 205
+\BOOKMARK [1][-]{section.15.3}{Homog\351n\351isation des mat\351riaux poreux}{chapter.15}% 206
+\BOOKMARK [1][-]{section.15.4}{Homog\351n\351isation des probl\350mes non stationnaires}{chapter.15}% 207
+\BOOKMARK [1][-]{section.15.5}{Changement de dimension et raccord de maillage}{chapter.15}% 208
+\BOOKMARK [0][-]{chapter.16}{Probl\350mes non stationnaires}{part.3}% 209
+\BOOKMARK [1][-]{section.16.1}{\311quation non stationnaire de la dynamique}{chapter.16}% 210
+\BOOKMARK [1][-]{section.16.2}{Sch\351ma explicite: diff\351rences finies centr\351es}{chapter.16}% 211
+\BOOKMARK [1][-]{section.16.3}{Sch\351ma implicite: sch\351ma de Newmark classique}{chapter.16}% 212
+\BOOKMARK [1][-]{section.16.4}{Comparaison des m\351thodes explicite et implicite}{chapter.16}% 213
+\BOOKMARK [1][-]{section.16.5}{Exemple: un calcul de propagation avec FreeFem++}{chapter.16}% 214
+\BOOKMARK [1][-]{section.16.6}{D\351composition modale}{chapter.16}% 215
+\BOOKMARK [0][-]{chapter.17}{Les ondes}{part.3}% 216
+\BOOKMARK [1][-]{section.17.1}{Introduction}{chapter.17}% 217
+\BOOKMARK [1][-]{section.17.2}{Notions de valeur, vecteur, mode et fr\351quence propres}{chapter.17}% 218
+\BOOKMARK [1][-]{section.17.3}{Vibration des structures}{chapter.17}% 219
+\BOOKMARK [2][-]{subsection.17.3.1}{Vibrations libres non amorties}{section.17.3}% 220
+\BOOKMARK [2][-]{subsection.17.3.2}{Vibrations libres amorties}{section.17.3}% 221
+\BOOKMARK [2][-]{subsection.17.3.3}{Vibrations p\351riodiques forc\351es}{section.17.3}% 222
+\BOOKMARK [2][-]{subsection.17.3.4}{R\351gimes transitoires}{section.17.3}% 223
+\BOOKMARK [2][-]{subsection.17.3.5}{Calcul des modes propres et m\351thodes de r\351duction modale}{section.17.3}% 224
+\BOOKMARK [1][-]{section.17.4}{Remarques sur l'amortissement}{chapter.17}% 225
+\BOOKMARK [1][-]{section.17.5}{Pour aller plus loin: cas des chocs large bande}{chapter.17}% 226
+\BOOKMARK [2][-]{subsection.17.5.1}{Approches temporelles}{section.17.5}% 227
+\BOOKMARK [2][-]{subsection.17.5.2}{Approches fr\351quentielles}{section.17.5}% 228
+\BOOKMARK [2][-]{subsection.17.5.3}{Remarques}{section.17.5}% 229
+\BOOKMARK [0][-]{chapter.18}{Les non lin\351arit\351s}{part.3}% 230
+\BOOKMARK [1][-]{section.18.1}{Tenseurs, d\351composition des tenseurs}{chapter.18}% 231
+\BOOKMARK [2][-]{subsection.18.1.1}{Tenseur des contraintes}{section.18.1}% 232
+\BOOKMARK [2][-]{subsection.18.1.2}{Tenseur des d\351formations}{section.18.1}% 233
+\BOOKMARK [1][-]{section.18.2}{Non lin\351arit\351 g\351om\351trique}{chapter.18}% 234
+\BOOKMARK [1][-]{section.18.3}{Non lin\351arit\351 mat\351rielle}{chapter.18}% 235
+\BOOKMARK [2][-]{subsection.18.3.1}{Mod\350les rh\351ologiques}{section.18.3}% 236
+\BOOKMARK [2][-]{subsection.18.3.2}{Viso\351lasticit\351}{section.18.3}% 237
+\BOOKMARK [2][-]{subsection.18.3.3}{Visoplasticit\351}{section.18.3}% 238
+\BOOKMARK [2][-]{subsection.18.3.4}{Plasticit\351}{section.18.3}% 239
+\BOOKMARK [2][-]{subsection.18.3.5}{Les \351lastom\350res}{section.18.3}% 240
+\BOOKMARK [2][-]{subsection.18.3.6}{Les composites, l'anisotropie}{section.18.3}% 241
+\BOOKMARK [1][-]{section.18.4}{Le contact}{chapter.18}% 242
+\BOOKMARK [2][-]{subsection.18.4.1}{Lois de contact et de frottement}{section.18.4}% 243
+\BOOKMARK [2][-]{subsection.18.4.2}{Algorithme local}{section.18.4}% 244
+\BOOKMARK [2][-]{subsection.18.4.3}{Algorithme global}{section.18.4}% 245
+\BOOKMARK [1][-]{section.18.5}{Exemple: une toute premi\350re approche du contact avec Cast3M}{chapter.18}% 246
+\BOOKMARK [2][-]{subsection.18.5.1}{Contact sur une surface infiniment rigide}{section.18.5}% 247
+\BOOKMARK [2][-]{subsection.18.5.2}{Contact entre deux solides}{section.18.5}% 248
+\BOOKMARK [2][-]{subsection.18.5.3}{R\351solution pas \340 pas}{section.18.5}% 249
+\BOOKMARK [0][-]{chapter.19}{La rupture en m\351canique}{part.3}% 250
+\BOOKMARK [1][-]{section.19.1}{Approches globale et locale}{chapter.19}% 251
+\BOOKMARK [1][-]{section.19.2}{M\351canique lin\351aire de la rupture}{chapter.19}% 252
+\BOOKMARK [2][-]{subsection.19.2.1}{Concentrations de contraintes des d\351fauts}{section.19.2}% 253
+\BOOKMARK [2][-]{subsection.19.2.2}{\311quilibre \351nerg\351tique}{section.19.2}% 254
+\BOOKMARK [2][-]{subsection.19.2.3}{Taux d'\351nergie libre G}{section.19.2}% 255
+\BOOKMARK [2][-]{subsection.19.2.4}{Facteur d'intensit\351 de contrainte K}{section.19.2}% 256
+\BOOKMARK [2][-]{subsection.19.2.5}{Int\351grale J}{section.19.2}% 257
+\BOOKMARK [1][-]{section.19.3}{M\351canique \351lastoplastique de la rupture}{chapter.19}% 258
+\BOOKMARK [2][-]{subsection.19.3.1}{D\351termination de la zone plastique}{section.19.3}% 259
+\BOOKMARK [2][-]{subsection.19.3.2}{Mod\350le d'Irwin}{section.19.3}% 260
+\BOOKMARK [2][-]{subsection.19.3.3}{Autres mod\350les}{section.19.3}% 261
+\BOOKMARK [1][-]{section.19.4}{Mod\351lisation num\351rique de la rupture}{chapter.19}% 262
+\BOOKMARK [2][-]{subsection.19.4.1}{Par la m\351thode des \351l\351ments finis}{section.19.4}% 263
+\BOOKMARK [2][-]{subsection.19.4.2}{Par les m\351thodes sans maillage}{section.19.4}% 264
+\BOOKMARK [2][-]{subsection.19.4.3}{Par les \351l\351ments \351tendus}{section.19.4}% 265
+\BOOKMARK [1][-]{section.19.5}{Fatigue et dur\351e de vie}{chapter.19}% 266
+\BOOKMARK [2][-]{subsection.19.5.1}{Courbe et limite de fatigue}{section.19.5}% 267
+\BOOKMARK [2][-]{subsection.19.5.2}{Cumul des dommages: principes de Miner}{section.19.5}% 268
+\BOOKMARK [2][-]{subsection.19.5.3}{Propagation: loi de Paris}{section.19.5}% 269
+\BOOKMARK [2][-]{subsection.19.5.4}{Pr\351diction de la dur\351e de vie}{section.19.5}% 270
+\BOOKMARK [2][-]{subsection.19.5.5}{Sur la fatigue des composites}{section.19.5}% 271
+\BOOKMARK [0][-]{chapter.20}{La stochastique: prise en compte de la variabilit\351}{part.3}% 272
+\BOOKMARK [1][-]{section.20.1}{Repr\351sentation des processus stochastiques}{chapter.20}% 273
+\BOOKMARK [2][-]{subsection.20.1.1}{Variable al\351atoire}{section.20.1}% 274
+\BOOKMARK [2][-]{subsection.20.1.2}{Espace de probabilit\351}{section.20.1}% 275
+\BOOKMARK [2][-]{subsection.20.1.3}{Processus ou champ al\351atoire}{section.20.1}% 276
+\BOOKMARK [2][-]{subsection.20.1.4}{Discr\351tisation de champs al\351atoires}{section.20.1}% 277
+\BOOKMARK [2][-]{subsection.20.1.5}{D\351veloppement en s\351rie de Karhunen-Lo\350ve}{section.20.1}% 278
+\BOOKMARK [2][-]{subsection.20.1.6}{Chaos polynomial}{section.20.1}% 279
+\BOOKMARK [1][-]{section.20.2}{\311l\351ments finis stochastiques}{chapter.20}% 280
+\BOOKMARK [0][-]{chapter.21}{Quelques m\351thodes d\351riv\351es}{part.3}% 281
+\BOOKMARK [1][-]{section.21.1}{M\351thode des \351l\351ments fronti\350res}{chapter.21}% 282
+\BOOKMARK [1][-]{section.21.2}{M\351thodes particulaires ou sans maillage}{chapter.21}% 283
+\BOOKMARK [1][-]{section.21.3}{Partition de l'unit\351}{chapter.21}% 284
+\BOOKMARK [1][-]{section.21.4}{M\351thode des \351l\351ments finis \351tendue}{chapter.21}% 285
+\BOOKMARK [1][-]{section.21.5}{M\351thodes de treillis de Boltzmann}{chapter.21}% 286
+\BOOKMARK [1][-]{section.21.6}{FEEC}{chapter.21}% 287
+\BOOKMARK [1][-]{section.21.7}{Syst\350mes multi-corps}{chapter.21}% 288
+\BOOKMARK [0][-]{chapter.22}{Quelques mots sur les singularit\351s}{part.3}% 289
+\BOOKMARK [1][-]{section.22.1}{Qu'est-ce qu'une singularit\351 ?}{chapter.22}% 290
+\BOOKMARK [1][-]{section.22.2}{Singularit\351s et \351l\351ments finis}{chapter.22}% 291
+\BOOKMARK [1][-]{section.22.3}{Quand les singularit\351s se produisent-elles ?}{chapter.22}% 292
+\BOOKMARK [1][-]{section.22.4}{Comment \351viter les singularit\351s}{chapter.22}% 293
+\BOOKMARK [1][-]{section.22.5}{Singularit\351s et pertinence d'un r\351sultat}{chapter.22}% 294
+\BOOKMARK [1][-]{section.22.6}{Conclusion}{chapter.22}% 295
+\BOOKMARK [0][-]{section.22.6}{ocre Conclusion}{part.3}% 296
+\BOOKMARK [1][-]{section*.167}{Sur la fiabilit\351 des r\351sultats}{section.22.6}% 297
+\BOOKMARK [1][-]{section*.168}{Quelques perspectives}{section.22.6}% 298
+\BOOKMARK [-1][-]{part.4}{Annexes}{}% 299
+\BOOKMARK [0][-]{appendix.A}{Interpolation et approximation}{part.4}% 300
+\BOOKMARK [1][-]{section.A.1}{Quelques bases polynomiales}{appendix.A}% 301
+\BOOKMARK [2][-]{subsection.A.1.1}{Motivation}{section.A.1}% 302
+\BOOKMARK [2][-]{subsection.A.1.2}{Orthogonalit\351}{section.A.1}% 303
+\BOOKMARK [2][-]{subsection.A.1.3}{Base naturelle}{section.A.1}% 304
+\BOOKMARK [2][-]{subsection.A.1.4}{Polyn\364mes de Lagrange}{section.A.1}% 305
+\BOOKMARK [2][-]{subsection.A.1.5}{Polyn\364mes d'Hermite}{section.A.1}% 306
+\BOOKMARK [2][-]{subsection.A.1.6}{Polyn\364mes de Legendre}{section.A.1}% 307
+\BOOKMARK [2][-]{subsection.A.1.7}{Polyn\364mes de Tchebychev}{section.A.1}% 308
+\BOOKMARK [2][-]{subsection.A.1.8}{Polyn\364mes de Laguerre}{section.A.1}% 309
+\BOOKMARK [2][-]{subsection.A.1.9}{Polyn\364mes de Bernstein}{section.A.1}% 310
+\BOOKMARK [1][-]{section.A.2}{Interpolation polynomiale}{appendix.A}% 311
+\BOOKMARK [2][-]{subsection.A.2.1}{Interpolation de Lagrange}{section.A.2}% 312
+\BOOKMARK [2][-]{subsection.A.2.2}{Interpolation par Spline}{section.A.2}% 313
+\BOOKMARK [2][-]{subsection.A.2.3}{Interpolation d'Hermite}{section.A.2}% 314
+\BOOKMARK [1][-]{section.A.3}{M\351thodes d'approximation}{appendix.A}% 315
+\BOOKMARK [2][-]{subsection.A.3.1}{Courbe de B\351zier}{section.A.3}% 316
+\BOOKMARK [2][-]{subsection.A.3.2}{B-Spline}{section.A.3}% 317
+\BOOKMARK [2][-]{subsection.A.3.3}{B-splines rationnelles non uniformes}{section.A.3}% 318
+\BOOKMARK [0][-]{appendix.B}{Int\351gration num\351rique}{part.4}% 319
+\BOOKMARK [1][-]{section.B.1}{M\351thodes de Newton-Cotes}{appendix.B}% 320
+\BOOKMARK [1][-]{section.B.2}{M\351thodes de quadrature de Gau\337}{appendix.B}% 321
+\BOOKMARK [0][-]{appendix.C}{R\351solution des \351quations diff\351rentielles ordinaires}{part.4}% 322
+\BOOKMARK [1][-]{section.C.1}{R\351solution exacte des \351quations diff\351rentielles lin\351aires}{appendix.C}% 323
+\BOOKMARK [2][-]{subsection.C.1.1}{\311quation diff\351rentielle lin\351aire scalaire d'ordre 1}{section.C.1}% 324
+\BOOKMARK [2][-]{subsection.C.1.2}{\311quation diff\351rentielle du premier ordre \340 variables s\351par\351es}{section.C.1}% 325
+\BOOKMARK [2][-]{subsection.C.1.3}{\311quation diff\351rentielle lin\351aire d'ordre deux}{section.C.1}% 326
+\BOOKMARK [1][-]{section.C.2}{R\351solution num\351rique}{appendix.C}% 327
+\BOOKMARK [2][-]{subsection.C.2.1}{M\351thode d'Euler, Runge-Kutta ordre 1}{section.C.2}% 328
+\BOOKMARK [2][-]{subsection.C.2.2}{M\351thode de Runge-Kutta d'ordre 2}{section.C.2}% 329
+\BOOKMARK [2][-]{subsection.C.2.3}{M\351thode de Runge-Kutta d'ordre 4}{section.C.2}% 330
+\BOOKMARK [2][-]{subsection.C.2.4}{M\351thode de Crank-Nicolson}{section.C.2}% 331
+\BOOKMARK [2][-]{subsection.C.2.5}{M\351thode de Newmark}{section.C.2}% 332
+\BOOKMARK [0][-]{appendix.D}{M\351thode de Newton Raphson}{part.4}% 333
+\BOOKMARK [1][-]{section.D.1}{Pr\351sentation}{appendix.D}% 334
+\BOOKMARK [1][-]{section.D.2}{Algorithme}{appendix.D}% 335
+\BOOKMARK [0][-]{appendix.E}{Sch\351mas num\351riques}{part.4}% 336
+\BOOKMARK [1][-]{section.E.1}{Les propri\351t\351s d'un sch\351ma num\351rique}{appendix.E}% 337
+\BOOKMARK [2][-]{subsection.E.1.1}{Probl\350me bien pos\351}{section.E.1}% 338
+\BOOKMARK [2][-]{subsection.E.1.2}{Conditionnement}{section.E.1}% 339
+\BOOKMARK [2][-]{subsection.E.1.3}{Stabilit\351 ou robustesse}{section.E.1}% 340
+\BOOKMARK [2][-]{subsection.E.1.4}{Consistance}{section.E.1}% 341
+\BOOKMARK [2][-]{subsection.E.1.5}{Convergence}{section.E.1}% 342
+\BOOKMARK [1][-]{section.E.2}{Th\351or\350mes de convergence}{appendix.E}% 343
+\BOOKMARK [0][-]{theoreme.52}{ocre Bibliographie}{part.4}% 344
+\BOOKMARK [0][-]{section*.191}{Index des noms propres}{part.4}% 345
+\BOOKMARK [0][-]{section*.192}{Index des concepts}{part.4}% 346
+\BOOKMARK [0][-]{section*.192}{ocre Galerie}{part.4}% 347

@@ -1,0 +1,853 @@
+\indexentry{topologie}{20}
+\indexentry{espace!topologique}{20}
+\indexentry{espace!s\IeC {\'e}par\IeC {\'e}}{20}
+\indexentry{espace!de Hausdorff}{20}
+\indexentry{espace!r\IeC {\'e}gulier}{20}
+\indexentry{compacit\IeC {\'e}}{20}
+\indexentry{espace!compact}{20}
+\indexentry{distance}{21}
+\indexentry{m\IeC {\'e}trique}{21}
+\indexentry{espace!m\IeC {\'e}trique}{21}
+\indexentry{crit\IeC {\`e}re de Cauchy}{21}
+\indexentry{espace!m\IeC {\'e}trique!complet}{21}
+\indexentry{espace!vectoriel!topologique}{22}
+\indexentry{norme}{22}
+\indexentry{espace!vectoriel!norm\IeC {\'e}}{22}
+\indexentry{distance!issue d'une norme}{22}
+\indexentry{espace!de Banach}{22}
+\indexentry{produit scalaire}{22}
+\indexentry{espace!de Hilbert}{22}
+\indexentry{produit scalaire}{23}
+\indexentry{forme!bilin\IeC {\'e}aire}{23}
+\indexentry{application}{23}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de compl\IeC {\'e}tion (sur un Banach)}{23}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de projection (dans un Hilbert)}{23}
+\indexentry{tribu}{24}
+\indexentry{espace!mesurable (probabilisable)}{24}
+\indexentry{ensemble mesurable}{25}
+\indexentry{mesure}{25}
+\indexentry{espace!mesur\IeC {\'e}}{25}
+\indexentry{tribu!bor\IeC {\'e}lienne}{25}
+\indexentry{mesure!de Dirac}{26}
+\indexentry{support}{26}
+\indexentry{espace!mesur\IeC {\'e}}{26}
+\indexentry{mesure!compl\IeC {\`e}te}{26}
+\indexentry{mesure!de Lebesgue}{26}
+\indexentry{mesure!de Lebesgue}{27}
+\indexentry{mesure!r\IeC {\'e}guli\IeC {\`e}re}{27}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Borel-Lebesgue}{27}
+\indexentry{application}{30}
+\indexentry{injection}{30}
+\indexentry{surjection}{30}
+\indexentry{bijection}{30}
+\indexentry{support}{31}
+\indexentry{morphisme}{31}
+\indexentry{forme!lin\IeC {\'e}aire}{31}
+\indexentry{morphisme!endomorphisme}{32}
+\indexentry{morphisme!isomorphisme}{32}
+\indexentry{morphisme!automorphisme}{32}
+\indexentry{dual d'un espace vectoriel}{32}
+\indexentry{crochet de dualit\IeC {\'e}}{32}
+\indexentry{dual topologique d'un espace vectoriel}{32}
+\indexentry{topologie}{33}
+\indexentry{noyau}{33}
+\indexentry{image}{33}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!du rang}{33}
+\indexentry{op\IeC {\'e}rateur}{34}
+\indexentry{continuit\IeC {\'e}!$C^0$}{35}
+\indexentry{continuit\IeC {\'e}!H\IeC {\"o}lder}{36}
+\indexentry{continuit\IeC {\'e}!Lipschitz}{36}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!classique}{37}
+\indexentry{continuit\IeC {\'e}!$C^k$}{38}
+\indexentry{diff\IeC {\'e}rentielle}{39}
+\indexentry{diff\IeC {\'e}rentielle}{39}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!partielle}{39}
+\indexentry{gradient}{42}
+\indexentry{divergence}{42}
+\indexentry{rotationnel}{42}
+\indexentry{laplacien}{42}
+\indexentry{d'Alembertien}{42}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!normale}{43}
+\indexentry{normale}{43}
+\indexentry{gradient}{44}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!du gradient}{44}
+\indexentry{rotationnel}{45}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!du rotationnel}{45}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Green--Riemann}{45}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Green-Ostrogradsky}{45}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!du flux-divergence}{45}
+\indexentry{divergence}{45}
+\indexentry{espace!de Lebesgue}{49}
+\indexentry{exposant conjugu\IeC {\'e}!de Lebesgue}{50}
+\indexentry{produit scalaire!de~$L^2$}{52}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de projection (dans un Hilbert)}{52}
+\indexentry{distribution}{56}
+\indexentry{forme!lin\IeC {\'e}aire}{57}
+\indexentry{dual topologique d'un espace vectoriel}{57}
+\indexentry{distribution!de Dirac}{58}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!au sens des distributions}{58}
+\indexentry{espace!de Sobolev!$W^{m,p}(\Omega)$}{59}
+\indexentry{norme!sur~$W^{m,p}(\Omega)$}{59}
+\indexentry{espace!de Banach}{59}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Meyers-Serrin}{60}
+\indexentry{espace!de Sobolev!$H^m(\Omega)$}{60}
+\indexentry{espace!de Sobolev!$H_0^m(\Omega$}{60}
+\indexentry{espace!de Sobolev!$H^{-m}(\Omega)$}{60}
+\indexentry{espace!de Sobolev!$H^m(\Omega)$}{60}
+\indexentry{espace!de Hilbert}{60}
+\indexentry{produit scalaire!de~$H^m(\Omega)$}{60}
+\indexentry{espace!de Sobolev!$H_0^m(\Omega$}{60}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!normale}{61}
+\indexentry{espace!trace}{61}
+\indexentry{espace!de Hilbert}{61}
+\indexentry{espace!de Sobolev!$H^{-m}(\Omega)$}{61}
+\indexentry{espace!vectoriel!topologique}{61}
+\indexentry{norme!sur~$H^{-m}(\Omega)$}{61}
+\indexentry{dual topologique d'un espace vectoriel}{61}
+\indexentry{espace!trace}{61}
+\indexentry{espace!trace}{62}
+\indexentry{espace!de Sobolev!$H_0^1(\Omega)$}{63}
+\indexentry{espace!de Sobolev!$H^1(\Omega)$}{63}
+\indexentry{espace!de Sobolev!$H^{-1}(\Omega)$}{63}
+\indexentry{produit scalaire!de~$H^1(\Omega)$}{64}
+\indexentry{espace!de Hilbert}{64}
+\indexentry{espace!d'\IeC {\'e}nergie}{64}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de densit\IeC {\'e}}{64}
+\indexentry{condition aux limites!de Dirichlet}{64}
+\indexentry{condition aux limites!de Neumann}{64}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de d\IeC {\'e}rivation des fonctions compos\IeC {\'e}es dans les espaces de Sobolev}{64}
+\indexentry{espace!de Sobolev!$H(\dive)$}{65}
+\indexentry{produit scalaire!de~$H(\dive)$}{65}
+\indexentry{espace!de Hilbert}{65}
+\indexentry{espace!de Sobolev!$H(\rot)$}{65}
+\indexentry{espace!de Hilbert}{65}
+\indexentry{norme!sur~$H(\rot)$}{65}
+\indexentry{exposant conjugu\IeC {\'e}!de Sobolev}{66}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!d'injections continues de Sobolev}{66}
+\indexentry{in\IeC {\'e}galit\IeC {\'e}!de Poincar\IeC {\'e}}{66}
+\indexentry{in\IeC {\'e}galit\IeC {\'e}!de Poincar\IeC {\'e}-Friedrichs}{66}
+\indexentry{in\IeC {\'e}galit\IeC {\'e}!de Poincar\IeC {\'e}-Wirtinger}{66}
+\indexentry{in\IeC {\'e}galit\IeC {\'e}!de Korn}{67}
+\indexentry{norme}{69}
+\indexentry{distance!issue d'une norme}{69}
+\indexentry{forme!bilin\IeC {\'e}aire}{69}
+\indexentry{produit scalaire}{69}
+\indexentry{norme!induite par un produit scalaire}{69}
+\indexentry{in\IeC {\'e}galit\IeC {\'e}!de Cauchy-Schwarz}{69}
+\indexentry{espace!vectoriel!norm\IeC {\'e}}{69}
+\indexentry{espace!pr\IeC {\'e}hilbertien}{69}
+\indexentry{espace!m\IeC {\'e}trique!complet}{69}
+\indexentry{espace!de Banach}{69}
+\indexentry{espace!de Hilbert}{69}
+\indexentry{espace!euclidien}{69}
+\indexentry{espace!de Lebesgue}{70}
+\indexentry{norme}{70}
+\indexentry{espace!de Banach}{70}
+\indexentry{produit scalaire!de~$L^2$}{70}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}e}{70}
+\indexentry{fonction test}{70}
+\indexentry{espace!de Sobolev!$H^m(\Omega)$}{71}
+\indexentry{norme!sur~$H^m(\Omega)$}{71}
+\indexentry{norme!induite par un produit scalaire}{71}
+\indexentry{produit scalaire!de~$H^m(\Omega)$}{71}
+\indexentry{espace!trace}{71}
+\indexentry{espace!trace}{71}
+\indexentry{espace!de Sobolev!$H_0^1(\Omega)$}{71}
+\indexentry{in\IeC {\'e}galit\IeC {\'e}!de Poincar\IeC {\'e}}{71}
+\indexentry{ED-EDP!dynamique de population}{76}
+\indexentry{ED-EDP!Lotka-Volterra}{76}
+\indexentry{ED-EDP!syst\IeC {\`e}me proie-pr\IeC {\'e}dateur}{76}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{76}
+\indexentry{condition aux limites}{77}
+\indexentry{condition aux limites!de Dirichlet}{77}
+\indexentry{condition aux limites!de Neumann}{77}
+\indexentry{condition aux limites!de Robin}{77}
+\indexentry{condition aux limites!dynamique}{78}
+\indexentry{condition aux limites!m\IeC {\^e}l\IeC {\'e}e}{78}
+\indexentry{ED-EDP!de Laplace}{79}
+\indexentry{laplacien}{79}
+\indexentry{ED-EDP!de Poisson}{79}
+\indexentry{ED-EDP!des ondes}{80}
+\indexentry{ED-EDP!de l'acoustique}{80}
+\indexentry{ED-EDP!de la d\IeC {\'e}formation d'une membrane}{80}
+\indexentry{ED-EDP!de la chaleur}{80}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Dirichlet}{81}
+\indexentry{ED-EDP!de Navier-Stokes}{83}
+\indexentry{ED-EDP!de Stokes}{84}
+\indexentry{ED-EDP!d'Euler}{85}
+\indexentry{ED-EDP!de la chaleur}{88}
+\indexentry{ED-EDP!de Faraday}{88}
+\indexentry{ED-EDP!d'Ohm}{88}
+\indexentry{ED-EDP!de la diffusion mol\IeC {\'e}culaire}{88}
+\indexentry{ED-EDP!de l'\IeC {\'e}lasticit\IeC {\'e} plane}{88}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{88}
+\indexentry{loi de comportement}{88}
+\indexentry{loi de comportement!Hooke}{88}
+\indexentry{coefficients de Lam\IeC {\'e}}{89}
+\indexentry{coefficients de Poisson}{89}
+\indexentry{module d'Young}{89}
+\indexentry{loi de comportement!incompressible}{89}
+\indexentry{loi de comportement!incompressible}{90}
+\indexentry{loi de comportement!aux\IeC {\'e}tique}{90}
+\indexentry{ED-EDP!de l'acoustique}{90}
+\indexentry{multiplicateurs de Lagrange}{91}
+\indexentry{formulation faible}{93}
+\indexentry{principe!des puissances virtuelles}{94}
+\indexentry{principe!des travaux virtuels}{94}
+\indexentry{principe! de d'Alembert}{94}
+\indexentry{\IeC {\'e}nergie potentielle}{94}
+\indexentry{r\IeC {\'e}sidus pond\IeC {\'e}r\IeC {\'e}s}{95}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de repr\IeC {\'e}sentation de Riesz-Fr\IeC {\'e}chet}{95}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Lax-Milgram}{96}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Babu\IeC {\v s}ka}{97}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{98}
+\indexentry{condition BBL}{98}
+\indexentry{condition inf-sup}{98}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi!g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{98}
+\indexentry{multiplicateurs de Lagrange}{99}
+\indexentry{multiplicateurs de Lagrange}{100}
+\indexentry{ED-EDP!de Laplace}{101}
+\indexentry{ED-EDP!de Poisson}{101}
+\indexentry{laplacien}{101}
+\indexentry{ED-EDP!de Laplace}{101}
+\indexentry{laplacien}{101}
+\indexentry{ED-EDP!de Poisson}{101}
+\indexentry{condition aux limites!de Dirichlet}{101}
+\indexentry{ED-EDP!de Laplace}{102}
+\indexentry{laplacien}{102}
+\indexentry{ED-EDP!de Poisson}{102}
+\indexentry{condition aux limites!de Dirichlet}{102}
+\indexentry{ED-EDP!de Laplace}{102}
+\indexentry{laplacien}{102}
+\indexentry{ED-EDP!de Poisson}{102}
+\indexentry{condition aux limites!de Neumann}{102}
+\indexentry{condition aux limites!essentielle}{103}
+\indexentry{condition aux limites!naturelle}{103}
+\indexentry{ED-EDP!de Laplace}{103}
+\indexentry{laplacien}{103}
+\indexentry{ED-EDP!de Poisson}{103}
+\indexentry{condition aux limites!m\IeC {\^e}l\IeC {\'e}e}{103}
+\indexentry{ED-EDP!de Laplace}{103}
+\indexentry{laplacien}{103}
+\indexentry{ED-EDP!de Poisson}{103}
+\indexentry{condition aux limites!m\IeC {\^e}l\IeC {\'e}e}{103}
+\indexentry{condition aux limites!de Neumann}{103}
+\indexentry{ED-EDP!de la chaleur}{104}
+\indexentry{condition aux limites!de Dirichlet}{104}
+\indexentry{condition aux limites!de Dirichlet}{105}
+\indexentry{ED-EDP!de Stokes}{105}
+\indexentry{condition aux limites!de Dirichlet}{105}
+\indexentry{ED-EDP!de Navier-Stokes}{105}
+\indexentry{ED-EDP!d'Euler}{106}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{107}
+\indexentry{loi de comportement}{107}
+\indexentry{condition aux limites!de Dirichlet}{107}
+\indexentry{condition aux limites!de Neumann}{107}
+\indexentry{fonctionnelle!de l'\IeC {\'e}nergie potentielle totale}{108}
+\indexentry{fonctionnelle!primale}{108}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{108}
+\indexentry{loi de comportement}{108}
+\indexentry{condition aux limites!de Dirichlet}{108}
+\indexentry{condition aux limites!de Neumann}{108}
+\indexentry{loi de comportement!Hooke}{108}
+\indexentry{fonctionnelle!de Hu-Washizu}{108}
+\indexentry{fonctionnelle!duale}{108}
+\indexentry{fonctionnelle!de l'\IeC {\'e}nergie compl\IeC {\'e}mentaire}{109}
+\indexentry{multiplicateurs de Lagrange}{109}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{109}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{109}
+\indexentry{fonctionnelle!mixte}{109}
+\indexentry{fonctionnelle!hybride}{109}
+\indexentry{fonctionnelle!de Pian et Tong}{109}
+\indexentry{ED-EDP!de l'acoustique}{111}
+\indexentry{ED-EDP!de Helmholtz}{111}
+\indexentry{condition aux limites!de Dirichlet}{112}
+\indexentry{condition aux limites!de Neumann}{112}
+\indexentry{condition aux limites!de Robin}{112}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Lax-Milgram}{114}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Lax-Milgram}{114}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{115}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{115}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{115}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{115}
+\indexentry{condition inf-sup}{116}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{117}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!diam\IeC {\`e}tre d'un}{127}
+\indexentry{facteur de forme du maillage}{127}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!diam\IeC {\`e}tre d'un}{127}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!rondeur d'un}{127}
+\indexentry{approximation! conforme}{127}
+\indexentry{approximation! non conforme}{127}
+\indexentry{approximation! conforme}{129}
+\indexentry{lemme de! C\IeC {\'e}a}{129}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Lax-Milgram}{129}
+\indexentry{lemme de! C\IeC {\'e}a}{129}
+\indexentry{lemme de! C\IeC {\'e}a}{129}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Babu\IeC {\v s}ka}{129}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Brezzi}{130}
+\indexentry{lemme de! C\IeC {\'e}a}{130}
+\indexentry{approximation! non conforme}{130}
+\indexentry{lemme de! Strang}{130}
+\indexentry{approximation! non conforme}{130}
+\indexentry{lemme de! Strang}{130}
+\indexentry{approximation! non conforme}{131}
+\indexentry{lemme de! Strang}{131}
+\indexentry{approximation! non conforme}{132}
+\indexentry{approximation! conforme}{132}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{137}
+\indexentry{fonctionnelle!mixte}{137}
+\indexentry{fonctionnelle!hybride}{138}
+\indexentry{principe! de Saint-Venant}{140}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!de Lagrange}{145}
+\indexentry{unisolvance}{145}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!de Lagrange}{146}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!de r\IeC {\'e}f\IeC {\'e}rence}{148}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!famille affine d'}{148}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!d'Hermite}{153}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!d'Hermite}{153}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!de Lagrange}{154}
+\indexentry{multiplicateurs de Lagrange}{157}
+\indexentry{post-traitement}{158}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{158}
+\indexentry{loi de comportement!Hooke}{158}
+\indexentry{loi de comportement!incompressible}{158}
+\indexentry{multiplicateurs de Lagrange}{158}
+\indexentry{post-traitement}{159}
+\indexentry{patch-test}{159}
+\indexentry{patch-test}{159}
+\indexentry{patch-test}{160}
+\indexentry{jacobien}{161}
+\indexentry{jacobienne}{161}
+\indexentry{jacobienne}{161}
+\indexentry{jacobien}{162}
+\indexentry{jacobien}{162}
+\indexentry{jacobienne}{162}
+\indexentry{jacobien}{162}
+\indexentry{jacobien}{162}
+\indexentry{jacobien}{162}
+\indexentry{jacobien}{162}
+\indexentry{jacobienne}{162}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!d'inversion locale}{162}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de changement de variables dans les int\IeC {\'e}grales multiples}{162}
+\indexentry{jacobien}{162}
+\indexentry{module d'Young}{163}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!d'Hermite}{165}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{166}
+\indexentry{fonctionnelle!mixte}{166}
+\indexentry{compl\IeC {\'e}ment de Schur}{168}
+\indexentry{compl\IeC {\'e}ment de Schur}{168}
+\indexentry{multiplicateurs de Lagrange}{168}
+\indexentry{multiplicateurs de Lagrange}{168}
+\indexentry{multiplicateurs de Lagrange}{168}
+\indexentry{multiplicateurs de Lagrange}{169}
+\indexentry{multiplicateurs de Lagrange}{171}
+\indexentry{m\IeC {\'e}thode~$r$}{173}
+\indexentry{m\IeC {\'e}thode~$h$}{173}
+\indexentry{m\IeC {\'e}thode~$p$}{173}
+\indexentry{m\IeC {\'e}thode~$hp$}{173}
+\indexentry{post-traitement}{173}
+\indexentry{trace}{174}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{175}
+\indexentry{fonctionnelle!mixte}{175}
+\indexentry{fonctionnelle!d'Hellinger-Reissner}{178}
+\indexentry{fonctionnelle!mixte}{178}
+\indexentry{sous-structuration}{187}
+\indexentry{multi-\IeC {\'e}chelles}{187}
+\indexentry{multi-\IeC {\'e}chelles}{187}
+\indexentry{approche descendante}{188}
+\indexentry{approche ascendante}{188}
+\indexentry{mod\IeC {\`e}le macroscopique}{188}
+\indexentry{mod\IeC {\`e}le microscopique}{188}
+\indexentry{multi-\IeC {\'e}chelles}{188}
+\indexentry{mod\IeC {\`e}le macroscopique}{188}
+\indexentry{mod\IeC {\`e}le microscopique}{188}
+\indexentry{mod\IeC {\`e}le macroscopique}{189}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{189}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{189}
+\indexentry{condition de p\IeC {\'e}riodicit\IeC {\'e}}{189}
+\indexentry{couplage des cellules microscopiques}{189}
+\indexentry{condition de p\IeC {\'e}riodicit\IeC {\'e}}{189}
+\indexentry{multi-niveaux}{189}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{189}
+\indexentry{principe! de Saint-Venant}{189}
+\indexentry{multi-niveaux}{189}
+\indexentry{mod\IeC {\`e}le macroscopique}{189}
+\indexentry{mod\IeC {\`e}le microscopique}{190}
+\indexentry{mod\IeC {\`e}le macroscopique}{190}
+\indexentry{mod\IeC {\`e}le microscopique}{190}
+\indexentry{multi-niveaux}{190}
+\indexentry{couplage des cellules microscopiques}{190}
+\indexentry{d\IeC {\'e}composition de domaine}{190}
+\indexentry{d\IeC {\'e}composition de domaine}{190}
+\indexentry{mod\IeC {\`e}le microscopique}{190}
+\indexentry{trace}{190}
+\indexentry{couplage des cellules microscopiques}{190}
+\indexentry{d\IeC {\'e}composition de domaine}{190}
+\indexentry{multi-\IeC {\'e}chelles}{190}
+\indexentry{mod\IeC {\`e}le microscopique}{190}
+\indexentry{d\IeC {\'e}composition de domaine}{190}
+\indexentry{d\IeC {\'e}composition de domaine}{190}
+\indexentry{multi-\IeC {\'e}chelles}{190}
+\indexentry{multi-\IeC {\'e}chelles}{191}
+\indexentry{multi-\IeC {\'e}chelles}{191}
+\indexentry{super-\IeC {\'e}l\IeC {\'e}ment}{191}
+\indexentry{sous-structuration}{191}
+\indexentry{sous-structure}{191}
+\indexentry{super-\IeC {\'e}l\IeC {\'e}ment}{191}
+\indexentry{super-\IeC {\'e}l\IeC {\'e}ment}{191}
+\indexentry{macro-\IeC {\'e}l\IeC {\'e}ment}{191}
+\indexentry{sous-structure}{191}
+\indexentry{sous-structuration}{191}
+\indexentry{macro-\IeC {\'e}l\IeC {\'e}ment}{191}
+\indexentry{sous-structure}{191}
+\indexentry{sous-structuration}{191}
+\indexentry{condensation statique}{191}
+\indexentry{super-\IeC {\'e}l\IeC {\'e}ment}{191}
+\indexentry{condensation statique}{191}
+\indexentry{condensation statique}{192}
+\indexentry{super-\IeC {\'e}l\IeC {\'e}ment}{192}
+\indexentry{condensation statique}{192}
+\indexentry{pseudo-inversion}{192}
+\indexentry{pseudo-inversion}{192}
+\indexentry{pseudo-inversion}{192}
+\indexentry{perturbation}{193}
+\indexentry{multiplicateurs de Lagrange}{193}
+\indexentry{pseudo-inversion}{194}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!d'ordre sup\IeC {\'e}rieur}{195}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!d'ordre sup\IeC {\'e}rieur}{195}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!par rapport \IeC {\`a} la g\IeC {\'e}om\IeC {\'e}trie}{195}
+\indexentry{perturbation}{195}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!diam\IeC {\`e}tre d'un}{198}
+\indexentry{facteur de forme du maillage}{198}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!diam\IeC {\`e}tre d'un}{198}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!rondeur d'un}{198}
+\indexentry{maillage de Delaunay-Vorono\IeC {\"\i }}{199}
+\indexentry{diagramme de Vorono\IeC {\"\i }}{199}
+\indexentry{diagramme de Vorono\IeC {\"\i }}{199}
+\indexentry{maillage de Delaunay-Vorono\IeC {\"\i }}{200}
+\indexentry{propri\IeC {\'e}t\IeC {\'e} de la boule ouverte}{201}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{205}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{205}
+\indexentry{effectif}{205}
+\indexentry{effectif}{205}
+\indexentry{mod\IeC {\`e}le macroscopique}{205}
+\indexentry{mod\IeC {\`e}le microscopique}{205}
+\indexentry{effectif}{205}
+\indexentry{volume \IeC {\'e}l\IeC {\'e}mentaire repr\IeC {\'e}sentatif}{205}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{206}
+\indexentry{ED-EDP!de Poisson}{206}
+\indexentry{condition aux limites!de Dirichlet}{206}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Lax-Milgram}{206}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de repr\IeC {\'e}sentation de Riesz-Fr\IeC {\'e}chet}{206}
+\indexentry{m\IeC {\'e}thode de d\IeC {\'e}veloppement r\IeC {\'e}gulier}{207}
+\indexentry{m\IeC {\'e}thode de d\IeC {\'e}veloppement r\IeC {\'e}gulier}{207}
+\indexentry{ansatz}{207}
+\indexentry{m\IeC {\'e}thode de la couche limite}{208}
+\indexentry{ansatz}{208}
+\indexentry{ansatz}{208}
+\indexentry{m\IeC {\'e}thode de d\IeC {\'e}veloppement asymptotique infini}{208}
+\indexentry{ansatz}{208}
+\indexentry{ansatz}{208}
+\indexentry{homog\IeC {\'e}n\IeC {\'e}isation}{209}
+\indexentry{effectif}{209}
+\indexentry{volume \IeC {\'e}l\IeC {\'e}mentaire repr\IeC {\'e}sentatif}{209}
+\indexentry{loi!des m\IeC {\'e}langes}{209}
+\indexentry{borne!de Voigt}{209}
+\indexentry{borne!de Reuss}{209}
+\indexentry{loi!des m\IeC {\'e}langes}{210}
+\indexentry{borne!de Voigt}{210}
+\indexentry{loi!des m\IeC {\'e}langes}{210}
+\indexentry{borne!de Reuss}{210}
+\indexentry{coefficients de Poisson}{210}
+\indexentry{loi!des m\IeC {\'e}langes}{210}
+\indexentry{borne!de Voigt}{210}
+\indexentry{borne!de Reuss}{210}
+\indexentry{borne!de Reuss}{210}
+\indexentry{loi!des m\IeC {\'e}langes}{210}
+\indexentry{borne!de Voigt}{210}
+\indexentry{ED-EDP!de Poisson}{211}
+\indexentry{condition aux limites!de Dirichlet}{211}
+\indexentry{condition aux limites!de Neumann}{211}
+\indexentry{condition aux limites!de Neumann}{211}
+\indexentry{ansatz}{211}
+\indexentry{condition aux limites!de Neumann}{211}
+\indexentry{ansatz}{211}
+\indexentry{ansatz}{211}
+\indexentry{optimisation}{213}
+\indexentry{diff\IeC {\'e}rentielle}{216}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!au sens de Fr\IeC {\'e}chet}{216}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de repr\IeC {\'e}sentation de Riesz-Fr\IeC {\'e}chet}{216}
+\indexentry{d\IeC {\'e}riv\IeC {\'e}e!directionnelle}{216}
+\indexentry{\IeC {\'e}quation!d'Euler}{217}
+\indexentry{lagrangien}{217}
+\indexentry{multiplicateurs de Lagrange}{217}
+\indexentry{multiplicateurs de Lagrange}{218}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{233}
+\indexentry{sch\IeC {\'e}ma! des diff\IeC {\'e}rences finies centr\IeC {\'e}es}{234}
+\indexentry{sch\IeC {\'e}ma! des diff\IeC {\'e}rences finies centr\IeC {\'e}es}{234}
+\indexentry{sch\IeC {\'e}ma! de Newmark}{234}
+\indexentry{sch\IeC {\'e}ma! de Newmark}{234}
+\indexentry{sch\IeC {\'e}ma! de Newmark}{235}
+\indexentry{sch\IeC {\'e}ma! des diff\IeC {\'e}rences finies centr\IeC {\'e}es}{235}
+\indexentry{d\IeC {\'e}composition modale}{238}
+\indexentry{mode propre}{241}
+\indexentry{fr\IeC {\'e}quence propre}{241}
+\indexentry{r\IeC {\'e}sonance}{241}
+\indexentry{oscillateur}{241}
+\indexentry{r\IeC {\'e}sonance}{241}
+\indexentry{repr\IeC {\'e}sentation modale}{242}
+\indexentry{mode propre}{242}
+\indexentry{densit\IeC {\'e} spectrale}{242}
+\indexentry{densit\IeC {\'e} spectrale}{242}
+\indexentry{fr\IeC {\'e}quence propre}{242}
+\indexentry{mode propre}{242}
+\indexentry{densit\IeC {\'e} spectrale}{242}
+\indexentry{repr\IeC {\'e}sentation modale}{242}
+\indexentry{mode propre}{242}
+\indexentry{synchronisation}{242}
+\indexentry{mode propre}{242}
+\indexentry{synchronisation}{242}
+\indexentry{synchronisation}{242}
+\indexentry{vecteur propre|see{mode propre}}{242}
+\indexentry{mode propre}{242}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{242}
+\indexentry{fr\IeC {\'e}quence propre}{242}
+\indexentry{espace!propre}{242}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{242}
+\indexentry{fr\IeC {\'e}quence propre}{242}
+\indexentry{ED-EDP!de la chaleur}{242}
+\indexentry{vecteur propre|see{mode propre}}{242}
+\indexentry{mode propre}{242}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{242}
+\indexentry{fr\IeC {\'e}quence propre}{242}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{243}
+\indexentry{fr\IeC {\'e}quence propre}{243}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{243}
+\indexentry{fr\IeC {\'e}quence propre}{243}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{243}
+\indexentry{fr\IeC {\'e}quence propre}{243}
+\indexentry{vecteur propre|see{mode propre}}{243}
+\indexentry{mode propre}{243}
+\indexentry{mode propre}{243}
+\indexentry{fr\IeC {\'e}quence propre}{243}
+\indexentry{polyn\IeC {\^o}me! caract\IeC {\'e}ristique}{243}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{243}
+\indexentry{fr\IeC {\'e}quence propre}{243}
+\indexentry{vecteur propre|see{mode propre}}{243}
+\indexentry{mode propre}{243}
+\indexentry{polyn\IeC {\^o}me! caract\IeC {\'e}ristique}{243}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{243}
+\indexentry{fr\IeC {\'e}quence propre}{243}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Cayley-Hamilton}{243}
+\indexentry{polyn\IeC {\^o}me! caract\IeC {\'e}ristique}{243}
+\indexentry{vibration! libre}{244}
+\indexentry{vibration! p\IeC {\'e}riodique}{244}
+\indexentry{vibration! transitoire}{244}
+\indexentry{m\IeC {\'e}thode spectrale}{244}
+\indexentry{vibration!libre}{244}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{244}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{244}
+\indexentry{fr\IeC {\'e}quence propre}{244}
+\indexentry{mode propre}{244}
+\indexentry{vibration!libre}{245}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{245}
+\indexentry{ED-EDP!de la chaleur}{245}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{245}
+\indexentry{fr\IeC {\'e}quence propre}{245}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{246}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{246}
+\indexentry{fr\IeC {\'e}quence propre}{246}
+\indexentry{vibration! p\IeC {\'e}riodique}{247}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{247}
+\indexentry{vibration! transitoire}{248}
+\indexentry{d\IeC {\'e}composition modale}{248}
+\indexentry{ED-EDP!relation fondamentale de la dynamique}{248}
+\indexentry{propri\IeC {\'e}t\IeC {\'e} d'orthogonalit\IeC {\'e}}{248}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{248}
+\indexentry{fr\IeC {\'e}quence propre}{248}
+\indexentry{propri\IeC {\'e}t\IeC {\'e} d'orthogonalit\IeC {\'e}}{249}
+\indexentry{propri\IeC {\'e}t\IeC {\'e} d'orthogonalit\IeC {\'e}}{249}
+\indexentry{propri\IeC {\'e}t\IeC {\'e} d'orthogonalit\IeC {\'e}}{249}
+\indexentry{d\IeC {\'e}composition modale}{249}
+\indexentry{valeur propre|see{fr\IeC {\'e}quence propre}}{249}
+\indexentry{fr\IeC {\'e}quence propre}{249}
+\indexentry{mode propre}{249}
+\indexentry{quotient de Rayleigh}{249}
+\indexentry{quotient de Rayleigh}{250}
+\indexentry{domaine! fr\IeC {\'e}quentiel}{252}
+\indexentry{transform\IeC {\'e}e de Fourier}{252}
+\indexentry{transform\IeC {\'e}e de Fourier}{252}
+\indexentry{SEA}{252}
+\indexentry{Th\IeC {\'e}orie Variationnelle des Rayons Complexes}{253}
+\indexentry{domaine! temporel}{253}
+\indexentry{multiplicateurs de Lagrange}{253}
+\indexentry{compl\IeC {\'e}ment de Schur}{253}
+\indexentry{sch\IeC {\'e}ma! de Newmark}{254}
+\indexentry{sch\IeC {\'e}ma! des diff\IeC {\'e}rences finies centr\IeC {\'e}es}{254}
+\indexentry{m\IeC {\'e}thode de Galerkine! discontinue}{254}
+\indexentry{TXFEM}{254}
+\indexentry{domaine! fr\IeC {\'e}quentiel}{254}
+\indexentry{transform\IeC {\'e}e de Fourier}{254}
+\indexentry{domaine! fr\IeC {\'e}quentiel}{254}
+\indexentry{transform\IeC {\'e}e de Fourier}{254}
+\indexentry{FRF}{254}
+\indexentry{mode propre}{254}
+\indexentry{fr\IeC {\'e}quence propre}{254}
+\indexentry{espace!propre}{254}
+\indexentry{m\IeC {\'e}thode de Galerkine! Least Squares}{255}
+\indexentry{m\IeC {\'e}thode de Galerkine! Gradient Least Squares}{255}
+\indexentry{th\IeC {\'e}orie des structures floues}{255}
+\indexentry{Component Modal Synthesis}{255}
+\indexentry{mode propre}{255}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!enrichi}{255}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!hi\IeC {\'e}rarchique}{255}
+\indexentry{m\IeC {\'e}thode~$p$}{255}
+\indexentry{m\IeC {\'e}thode~$h$}{255}
+\indexentry{m\IeC {\'e}thode~$p$}{255}
+\indexentry{partition de l'unit\IeC {\'e}}{255}
+\indexentry{G-FEM}{255}
+\indexentry{X-FEM}{255}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{255}
+\indexentry{m\IeC {\'e}thode d'enrichissement discontinu}{255}
+\indexentry{m\IeC {\'e}thode de Galerkine!discontinue!avec multiplicateurs de Lagrange}{255}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!fronti\IeC {\`e}re}{255}
+\indexentry{m\IeC {\'e}thode sans maillage}{255}
+\indexentry{m\IeC {\'e}thode de Galerkine!sans maillage}{255}
+\indexentry{partition de l'unit\IeC {\'e}}{255}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments discontinus}{255}
+\indexentry{m\IeC {\'e}thode de Trefftz}{256}
+\indexentry{WBT}{256}
+\indexentry{SEA}{256}
+\indexentry{SEA}{256}
+\indexentry{mode propre}{256}
+\indexentry{SEA}{256}
+\indexentry{SEA}{256}
+\indexentry{m\IeC {\'e}thode de diffusion d'\IeC {\'e}nergie}{256}
+\indexentry{SEA}{256}
+\indexentry{analyse ondulatoire de l'\IeC {\'e}nergie}{256}
+\indexentry{SEA}{256}
+\indexentry{m\IeC {\'e}thodes \IeC {\'E}nerg\IeC {\'e}tiques Simplifi\IeC {\'e}es}{256}
+\indexentry{m\IeC {\'e}thode des rayons}{256}
+\indexentry{transform\IeC {\'e}e de Fourier}{257}
+\indexentry{transform\IeC {\'e}e de Fourier}{257}
+\indexentry{transform\IeC {\'e}e de Fourier}{257}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Kirchhoff}{273}
+\indexentry{tenseur! des contraintes de Cauchy}{290}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Cauchy}{290}
+\indexentry{tenseur! des contraintes de Cauchy}{290}
+\indexentry{tenseur! des contraintes de Cauchy}{290}
+\indexentry{notation de Voigt}{290}
+\indexentry{contrainte effective}{291}
+\indexentry{contrainte de von Mises}{291}
+\indexentry{tenseur! des contraintes de Piola-Kirchhoff}{291}
+\indexentry{tenseur! des contraintes de Piola-Kirchhoff}{292}
+\indexentry{tenseur! des contraintes de Piola-Kirchhoff}{292}
+\indexentry{tenseur! des contraintes de Kirchhoff}{292}
+\indexentry{tenseur! des contraintes de Piola-Kirchhoff}{292}
+\indexentry{tenseur! gradient de d\IeC {\'e}formation}{292}
+\indexentry{tenseur! des d\IeC {\'e}formations de Green-Lagrange}{292}
+\indexentry{tenseur! lin\IeC {\'e}aris\IeC {\'e} des d\IeC {\'e}formations}{293}
+\indexentry{tenseur! des contraintes de Piola-Kirchhoff}{294}
+\indexentry{tenseur! des d\IeC {\'e}formations de Green-Lagrange}{294}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{294}
+\indexentry{loi de comportement!Hooke}{294}
+\indexentry{module d'Young}{295}
+\indexentry{module de Coulomb}{295}
+\indexentry{loi de comportement!Hooke}{295}
+\indexentry{module d'Young}{295}
+\indexentry{coefficients de Poisson}{295}
+\indexentry{coefficients de Lam\IeC {\'e}}{295}
+\indexentry{coefficients de Lam\IeC {\'e}}{295}
+\indexentry{loi de comportement!Hooke}{296}
+\indexentry{loi de comportement!Voigt}{296}
+\indexentry{loi de comportement!Saint-Venant}{296}
+\indexentry{loi de comportement!Norton-Hoff}{296}
+\indexentry{loi de comportement!Bingham-Norton}{296}
+\indexentry{loi de comportement!Maxwell}{296}
+\indexentry{loi de comportement!visco\IeC {\'e}lasticit\IeC {\'e}}{297}
+\indexentry{loi de comportement!Hooke}{297}
+\indexentry{loi de comportement!Newton}{297}
+\indexentry{loi de comportement!viscoplasticit\IeC {\'e}}{297}
+\indexentry{loi de comportement!Maxwell}{297}
+\indexentry{loi de comportement!Voigt}{297}
+\indexentry{loi de comportement!Kelvin-Voigt}{298}
+\indexentry{loi de comportement!Maxwell}{298}
+\indexentry{loi de comportement!plasticit\IeC {\'e}}{298}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!von Mises}{299}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!Tresca}{299}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!Drucker-Prager}{300}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!von Mises}{300}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!Mohr-Coulomb}{300}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!Tresca}{300}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!Hill}{300}
+\indexentry{crit\IeC {\`e}re de plasticit\IeC {\'e}!Tsa\IeC {\"\i }}{300}
+\indexentry{loi de comportement!\IeC {\'e}lastom\IeC {\`e}res}{300}
+\indexentry{module d'Young}{301}
+\indexentry{module de Coulomb}{301}
+\indexentry{loi de comportement!hyper\IeC {\'e}lasticit\IeC {\'e}}{302}
+\indexentry{loi de comportement!Rivlin g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{302}
+\indexentry{loi de comportement!anisotrope}{304}
+\indexentry{multiplicateurs de Lagrange}{305}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{307}
+\indexentry{taux de restitution d'\IeC {\'e}nergie~$G$}{316}
+\indexentry{taux de restitution d'\IeC {\'e}nergie~$G$}{317}
+\indexentry{facteur d'intensit\IeC {\'e} de contrainte~$K$}{317}
+\indexentry{facteur d'intensit\IeC {\'e} de contrainte~$K$}{317}
+\indexentry{int\IeC {\'e}grale~$J$}{319}
+\indexentry{taux de restitution d'\IeC {\'e}nergie~$G$}{319}
+\indexentry{int\IeC {\'e}grale~$J$}{319}
+\indexentry{int\IeC {\'e}grale~$J$}{319}
+\indexentry{taux de restitution d'\IeC {\'e}nergie~$G$}{319}
+\indexentry{int\IeC {\'e}grale~$J$}{320}
+\indexentry{int\IeC {\'e}grale~$J$}{320}
+\indexentry{taux de restitution d'\IeC {\'e}nergie~$G$}{320}
+\indexentry{int\IeC {\'e}grale~$J$}{320}
+\indexentry{taux de restitution d'\IeC {\'e}nergie~$G$}{320}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!singulier}{322}
+\indexentry{m\IeC {\'e}thode sans maillage}{323}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{324}
+\indexentry{X-FEM}{324}
+\indexentry{courbe de W\IeC {\"o}hler (ou S-N)}{324}
+\indexentry{courbe de W\IeC {\"o}hler (ou S-N)}{325}
+\indexentry{courbe de W\IeC {\"o}hler (ou S-N)}{325}
+\indexentry{courbe de W\IeC {\"o}hler (ou S-N)}{325}
+\indexentry{courbe de W\IeC {\"o}hler (ou S-N)}{327}
+\indexentry{loi!de Paris}{328}
+\indexentry{courbe de W\IeC {\"o}hler (ou S-N)}{328}
+\indexentry{loi!de Weibull}{328}
+\indexentry{loi!de Weibull}{328}
+\indexentry{polyn\IeC {\^o}me!d'Hermite}{334}
+\indexentry{polyn\IeC {\^o}me!d'Hermite}{334}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{334}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{335}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{336}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{336}
+\indexentry{chaos polynomial}{336}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{336}
+\indexentry{chaos polynomial}{336}
+\indexentry{polyn\IeC {\^o}me!d'Hermite}{336}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!stochastique}{337}
+\indexentry{s\IeC {\'e}rie de von Neumann}{338}
+\indexentry{s\IeC {\'e}rie de von Neumann}{338}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{338}
+\indexentry{s\IeC {\'e}rie de von Neumann}{339}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{339}
+\indexentry{s\IeC {\'e}rie de von Neumann}{339}
+\indexentry{s\IeC {\'e}rie de von Neumann}{339}
+\indexentry{s\IeC {\'e}rie de von Neumann}{339}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{339}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{339}
+\indexentry{polyn\IeC {\^o}me!d'Hermite}{340}
+\indexentry{polyn\IeC {\^o}me!d'Hermite}{340}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!stochastique}{340}
+\indexentry{s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{340}
+\indexentry{m\IeC {\'e}thode de Monte-Carlo}{341}
+\indexentry{m\IeC {\'e}thode de Monte-Carlo}{345}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!fronti\IeC {\`e}re}{347}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!fronti\IeC {\`e}re}{347}
+\indexentry{\IeC {\'e}l\IeC {\'e}ment fini!fronti\IeC {\`e}re}{347}
+\indexentry{m\IeC {\'e}thode sans maillage}{348}
+\indexentry{m\IeC {\'e}thode particulaire}{348}
+\indexentry{m\IeC {\'e}thode sans maillage}{348}
+\indexentry{partition de l'unit\IeC {\'e}}{349}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{349}
+\indexentry{X-FEM}{349}
+\indexentry{partition de l'unit\IeC {\'e}}{349}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{349}
+\indexentry{X-FEM}{349}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{349}
+\indexentry{X-FEM}{349}
+\indexentry{m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{349}
+\indexentry{X-FEM}{349}
+\indexentry{m\IeC {\'e}thode de Lattice-Boltzmann}{350}
+\indexentry{m\IeC {\'e}thode de Lattice-Boltzmann}{350}
+\indexentry{\IeC {\'e}quations!de Navier-Stokes}{350}
+\indexentry{\IeC {\'e}quations!de Navier-Stokes}{350}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Taylor}{362}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Weierstrass}{363}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me!de Stone-Weierstrass}{363}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{363}
+\indexentry{produit scalaire}{363}
+\indexentry{produit scalaire}{363}
+\indexentry{produit scalaire}{363}
+\indexentry{espace!de Hilbert}{363}
+\indexentry{polyn\IeC {\^o}me! de Lagrange}{363}
+\indexentry{polyn\IeC {\^o}me! de Lagrange}{363}
+\indexentry{polyn\IeC {\^o}me! de Lagrange}{363}
+\indexentry{polyn\IeC {\^o}me! d'Hermite}{364}
+\indexentry{polyn\IeC {\^o}me! d'Hermite}{364}
+\indexentry{polyn\IeC {\^o}me! d'Hermite}{364}
+\indexentry{espace!de Hilbert}{364}
+\indexentry{produit scalaire!de~$L^2$}{364}
+\indexentry{espace!de Lebesgue}{364}
+\indexentry{produit scalaire}{364}
+\indexentry{polyn\IeC {\^o}me! orthogonalit\IeC {\'e}}{364}
+\indexentry{polyn\IeC {\^o}me! de Legendre}{365}
+\indexentry{\IeC {\'e}quations!de Legendre}{365}
+\indexentry{polyn\IeC {\^o}me! de Legendre}{365}
+\indexentry{polyn\IeC {\^o}me! de Legendre}{365}
+\indexentry{polyn\IeC {\^o}me! de Legendre}{365}
+\indexentry{polyn\IeC {\^o}me! orthogonalit\IeC {\'e}}{365}
+\indexentry{produit scalaire}{365}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{365}
+\indexentry{produit scalaire!de~$L^2$}{365}
+\indexentry{norme!induite par un produit scalaire}{365}
+\indexentry{polyn\IeC {\^o}me!de Tchebychev}{366}
+\indexentry{polyn\IeC {\^o}me!de Tchebychev}{366}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{366}
+\indexentry{produit scalaire}{366}
+\indexentry{polyn\IeC {\^o}me! de Tchebychev}{366}
+\indexentry{produit scalaire}{366}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{366}
+\indexentry{polyn\IeC {\^o}me! de Tchebychev}{366}
+\indexentry{polyn\IeC {\^o}me! de Tchebychev}{367}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{367}
+\indexentry{produit scalaire}{367}
+\indexentry{polyn\IeC {\^o}me! de Tchebychev}{367}
+\indexentry{polyn\IeC {\^o}me! de Laguerre}{367}
+\indexentry{polyn\IeC {\^o}me! de Laguerre}{367}
+\indexentry{\IeC {\'e}quations!de Laguerre}{367}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{367}
+\indexentry{produit scalaire}{367}
+\indexentry{polyn\IeC {\^o}me! de Laguerre}{368}
+\indexentry{polyn\IeC {\^o}me! d'Hermite}{368}
+\indexentry{polyn\IeC {\^o}me! de Bernstein}{368}
+\indexentry{polyn\IeC {\^o}me! de Bernstein}{368}
+\indexentry{polyn\IeC {\^o}me!de Lagrange}{369}
+\indexentry{polyn\IeC {\^o}me! d'Hermite}{369}
+\indexentry{polyn\IeC {\^o}me! de Lagrange}{369}
+\indexentry{polyn\IeC {\^o}me!de Bernstein}{370}
+\indexentry{int\IeC {\'e}gration!Newton-Cotes}{373}
+\indexentry{int\IeC {\'e}gration!rectangles}{373}
+\indexentry{int\IeC {\'e}gration!trap\IeC {\`e}zes}{373}
+\indexentry{int\IeC {\'e}gration!Newton-Cotes}{374}
+\indexentry{int\IeC {\'e}gration!Simpson}{374}
+\indexentry{int\IeC {\'e}gration!Newton-Cotes}{374}
+\indexentry{int\IeC {\'e}gration!Newton-Cotes}{374}
+\indexentry{int\IeC {\'e}gration!quadrature de Gau\IeC {\ss }}{375}
+\indexentry{polyn\IeC {\^o}me!orthogonalit\IeC {\'e}}{375}
+\indexentry{polyn\IeC {\^o}me!de Legendre}{375}
+\indexentry{polyn\IeC {\^o}me! de Tchebychev}{375}
+\indexentry{polyn\IeC {\^o}me!d'Hermite}{375}
+\indexentry{polyn\IeC {\^o}me!de Laguerre}{375}
+\indexentry{int\IeC {\'e}gration!quadrature de Gau\IeC {\ss }}{375}
+\indexentry{m\IeC {\'e}thode de Runge-Kutta! ordre 1}{383}
+\indexentry{m\IeC {\'e}thode d'Euler}{383}
+\indexentry{m\IeC {\'e}thode de Runge-Kutta! ordre 1}{384}
+\indexentry{m\IeC {\'e}thode d'Euler}{384}
+\indexentry{m\IeC {\'e}thode de Runge-Kutta! ordre 2}{384}
+\indexentry{m\IeC {\'e}thode de Runge-Kutta! ordre 4}{384}
+\indexentry{sch\IeC {\'e}ma!de Newmark}{385}
+\indexentry{sch\IeC {\'e}ma! de Newmark}{385}
+\indexentry{sch\IeC {\'e}ma!des diff\IeC {\'e}rences finies centr\IeC {\'e}es}{385}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{387}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{387}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{387}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{387}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{388}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{388}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{388}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{389}
+\indexentry{m\IeC {\'e}thode de Newton-Raphson}{389}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me! de Lax}{393}
+\indexentry{th\IeC {\'e}or\IeC {\`e}me! de Lax-Wendroff}{393}

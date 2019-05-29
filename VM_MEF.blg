@@ -1,0 +1,29 @@
+[0] Config.pm:425> INFO - This is Biber 1.7
+[0] Config.pm:428> INFO - Logfile is 'VM_MEF.blg'
+[266] biber-MSWIN:249> INFO - === %a %b %e, %Y, %H:%M:%S
+[267] Biber.pm:333> INFO - Reading 'VM_MEF.bcf'
+[374] Biber.pm:607> INFO - Using all citekeys in bib section 0
+[546] Biber.pm:2997> INFO - Processing section 0
+[718] Biber.pm:3134> INFO - Looking for bibtex format file 'VM_MEF0.bib' for section 0
+[729] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[735] bibtex.pm:786> INFO - Found BibTeX data source 'VM_MEF0.bib'
+[962] Biber.pm:3134> INFO - Looking for bibtex format file 'VM_MEF1.bib' for section 0
+[984] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[990] bibtex.pm:786> INFO - Found BibTeX data source 'VM_MEF1.bib'
+[1076] Biber.pm:3134> INFO - Looking for bibtex format file 'VM_MEF2.bib' for section 0
+[1088] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[1092] bibtex.pm:786> INFO - Found BibTeX data source 'VM_MEF2.bib'
+[1111] Biber.pm:3134> INFO - Looking for bibtex format file 'VM_MEF3.bib' for section 0
+[1133] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[1144] bibtex.pm:786> INFO - Found BibTeX data source 'VM_MEF3.bib'
+[1244] Biber.pm:3134> INFO - Looking for bibtex format file 'VM_MEFA.bib' for section 0
+[1264] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[1268] bibtex.pm:786> INFO - Found BibTeX data source 'VM_MEFA.bib'
+[1411] Utils.pm:169> WARN - The field 'url' in entry 'bib-Chaudonneret' cannot be null, deleting it
+[1412] Utils.pm:169> WARN - The field 'url' in entry 'bib-DangVan' cannot be null, deleting it
+[1966] Biber.pm:2883> INFO - Overriding locale 'English_United States.1252' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[1966] Biber.pm:2889> INFO - Sorting 'entry' list 'none' keys
+[1966] Biber.pm:2893> INFO - No sort tailoring available for locale 'English_United States.1252'
+[2933] bbl.pm:479> INFO - Writing 'VM_MEF.bbl' with encoding 'UTF-8'
+[2956] bbl.pm:552> INFO - Output to VM_MEF.bbl
+[2959] Biber.pm:105> INFO - WARNINGS: 2
