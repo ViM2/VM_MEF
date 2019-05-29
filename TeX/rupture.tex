@@ -102,7 +102,7 @@ Mais le facteur de concentration des contraintes devenait infini dans le cas d'u
 
 \begin{wrapfigure}{l}{70mm}
 \begin{center}
-\includegraphics[height=45mm]{fissure.eps}\label{fig:fissure}
+\includegraphics[height=45mm]{fissure.eps}
 \end{center}
 \caption{Concentration de contraintes autour d'une fissure: cas plan}\label{fig:fissure}
 \end{wrapfigure}
@@ -535,8 +535,7 @@ Les éléments finis classiques ayant du mal avec les fortes discontinuités, on
 \section{Fatigue et durée de vie}
 
 \medskip
-\textcolorred{Dans ce paragraphe, nous nous placerons dans le cas des matériaux composites}, même si les démarches présentées sont pour beaucoup applicables à tous types
-de matériaux.
+Les démarches présentées dans ce paragraphe sont applicables à de nombreux matériaux, mais nous nous placerons souvent dans le \textcolorred{cas des matériaux composites} qui est un peu plus complexe.
 
 \medskip
 À l'heure actuelle, \textcolorblue{la question des critères de propagation en dynamique de la rupture restent un sujet ouvert.} Bien que de nombreux essais de propagation dynamique de fissure aient été effectués ces dernières décennies, on se heurte à l'absence de méthodes numériques suffisamment fiables pour identifier les paramètres d'éventuels critères et comparer leur pertinence. Par ailleurs, de tels essais sont difficiles à mettre en œuvre.
@@ -549,8 +548,136 @@ Tant que les fissures restent suffisamment petites, il n'y à a pas de risque de
 \medskip
 \subsection{Courbe et limite de fatigue}\index{courbe de Wöhler (ou S-N)}
 
-La courbe de Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand}\index{courbe de Wöhler (ou S-N)} ou courbe S-N (pour Stress vs Number of cycles) de beaucoup de CFRP et
-GFRP \textcolorgris{(CFRP = Carbon Fiber Reinforced Polymer = polymère à renfort fibre de carbone; GFRP = Glass Fiber Reinforced Polymer = polymère à renfort fibre de verre)} peut être décrite (entre~$10^3$ et~$10^6$ cycles) par une équation de la forme: \begin{equation}  \dfrac{\sigma_a}{\sigma_u}=1-b\log N \end{equation} 
+\begin{histoire}%
+\ifVersionDuDocEstVincent\fontfamily{cmr}\selectfont\fi
+Fidèles à l'image industrielle que l'on a d'eux, les allemands se sont intéressés très tôt à la fatigue des matériaux et particulièrement des métaux..
+
+\sbox{\MaBoiteAvecPhotos}{\setlength{\tabcolsep}{0pt}\scriptsize%
+\begin{tabular}{cccc}%
+\includegraphics[height=\the\HauteurDesPhotos]{Albert}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Poncelet}&%
+\includegraphics[height=\the\HauteurDesPhotos]{Rankine}&
+\includegraphics[height=\the\HauteurDesPhotos]{Woehler2}\\%
+Albert&Poncelet&Rankine&Wöhler%
+\end{tabular}}
+\medskip
+\ImageADroite{%
+Les premiers essais de fatigue répertoriés ont été réalisés par Wilhelm Albert\index[aut]{Albert (Wilhelm August Julius), 1787-1846, Allemand} en 1829, et concernaient les chaînes de puits de mine. Il est d'ailleurs connu pour avoir mis au point le câble toronné moderne. En effet, se rendant compte des faiblesses du métal et des cordages utilisés pour tracter les wagons de mine, il imagine un câble toronné plus résistant, le câble d’Albert: constitué d'une âme en chanvre faite de fils torsadés autour de laquelle six brins étaient ensuite toronnés autour d'une autre base de corde de chanvre dans des directions alternées pour plus de stabilité. Ce câble est utilisé dès 1834 est alors toronné à la main. Il faudra attendre 1837 pour que l'autrichien Wurm invente la machine à toronner.}
+
+\medskip
+Le terme «fatigue» est utilisé pour la première fois en 1839 par Jean-Victor Poncelet\index[aut]{Poncelet (Jean-Victor), 1788-1867, Français}.
+
+En 1842, la rupture en fatigue d'un essieu provoque la catastrophe ferroviaire de Meudon, comme le montreront les travaux de William Rankine\index[aut]{Rankine (William John Macquorn), 1820-1872, Écossais} (il s'agit bien du même Rankine que vous avez rencontré dans vos cours de thermodynamique).
+
+En 1852, August Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand} est chargé par le ministre prussien du commerce de travailler sur les ruptures d'axes d'essieux de trains. Ces derniers étaient calculés alors avec les formules de RdM classiques (en statique), ce qui n'était visiblement pas adapté aux vues du nombre d'accidents de chemin de fer. Il expose ses travaux à l'exposition universelle de 1867 à Paris.
+
+\medskip
+La fatigue oligocyclique (domaine à faible nombre de cycles dans lequel il y a interaction entre deux modes de ruine: la fatigue et l'instabilité ductile. Elle inclue donc la fatigue plastique) n'a été étudiée que plus récemment. On citera notamment les travaux de S.S. Manson et L.F. Coffin en 1954 dans lesquels ils expliquent la propagation de fissure en fatigue en termes de déformation plastique en pointe de fissure.
+\end{histoire}
+\colorblack
+
+\medskip
+La courbe de Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand}\index{courbe de Wöhler (ou S-N)} ou courbe S-N \textcolorgris{(pour Stress vs Number of cycles)} présente l'évolution de la contrainte appliquée en fonction du nombre de cycles à rupture. Elle nécessite donc de faire les essais jusqu'à la rupture et demande donc un grand nombre d'éprouvettes. De plus, chaque essai peut être très long (puisque la rupture ne survient qu'après un grand nombre de cycles pour une contrainte faible: et même, en-deçà d'une certaine contrainte, la rupture ne peut survenir dans un temps raisonnable et l'on parle de durée de vie infinie).
+
+Les essais réalisés sont généralement des essais simples consistant à soumettre chaque éprouvette à des cycles d'efforts périodiques. Ces cycles ont une amplitude de chargement constante qui fluctue autour d'une valeur moyenne fixée. La fin de l'essai correspond au nombre de cycles au bout duquel l'amorçage d'une fissure est observé. On représente le nombre de cycles en échelle logarithmique.
+
+Le rapport entre de la contrainte minimum à la contrainte maximum du cycle périodique est noté~$R$. Un rapport~$R=-1$ correspond à un cycle symétrique alterné, $R=0$ à un cycle répété et~$R>0$ à des contraintes ondulés.
+
+\medskip
+Classiquement, une courbe de Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand}\index{courbe de Wöhler (ou S-N)} est tracée à partir d'essais de traction-compression purement alternées, à~$R=-1$. Sur une telle courbe, on remarque 3 zones:
+\begin{itemize}
+   \item une zone à bas nombre de cycles (<1000 cycles), à laquelle on ne s'intéresse guère en fatigue;
+   \item une zone dite de vie finie entre $10^3$ et $10^6$ cycles;
+   \item une zone dite de vie infinie au-delà de $10^6$ cycles (ou plus selon les matériaux).
+\end{itemize}
+On n'hésitera pas, lorsque cela est possible, à réaliser ces courbes de fatigue pour différents ratios~$R$ (souvent~$R=0$ ou~$R=0,1$), voire même pour différentes températures. Cela permet de vérifier ou d'affiner d'éventuelles inter/extra-polations.
+
+Dans la suite, on note~$\sigma_a$ l'amplitude de la contrainte, et~$\sigma_m$ sa valeur moyenne. On rappelle que~$R_e$ \textcolorgris{($F_{ty}$ en anglais)} est la limite d'élasticité et~$R_m$ \textcolorgris{($F_{tu}$ en anglais)} la résistance à la traction. On appelle \textcolorblue{limite d'endurance}, $\sigma_D$, la valeur de~$\sigma_a$ en dessous de laquelle la durée de vie vis-à-vis de la fatigue est réputée «infinie»,
+
+\medskip
+Trois modèles sont classiquement utilisés pour représenter une courbe de Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand}\index{courbe de Wöhler (ou S-N)}, $\sigma_a = f(N)$, de manière analytique:
+\begin{itemize}
+   \item le \textcolorblue{modèle de Basquin}: en 1910, O.H. Basuin propose de décrire la partie centrale de la courbe de Wöhler comme une droite dans un diagramme log-log, i.e.:
+   \begin{equation}
+      N\sigma_a^m = C \quad \text{ ou } \quad
+      \sigma_a = \left(\frac{C}{N}\right)^{1/m} \quad \text{ ou } \quad
+      \log(N) = \log(C) - m\log(\sigma)
+   \end{equation}
+où~$C$ et~$m$ sont des paramètres déterminés par régression linéaire dans l'échelle log-log.
+   \item le \textcolorblue{modèle de Strohmeyer}, qui décrit la partie centrale ainsi que l'asymptote finale (prise en compte possible de la limite de fatigue des matériaux) qui correspond à la zone d'endurance illimitée (zone de sécurité) de la courbe de Wöhler:
+   \begin{equation}
+      N =\dfrac{C}{(\sigma_a-\sigma_D)^m}
+      \quad \text{ ou } \quad
+      \sigma_a = \sigma_D + \left(\dfrac{C}{N}\right)^{1/m}
+   \end{equation}
+   \item le \textcolorblue{modèle de Bastenaire} qui décrit également le comportement oligocyclique (zone de
+fatigue plastique du matériau), associé à des amplitudes de contrainte élevées, supérieures à la limite d'élasticité du matériau:
+   \begin{equation}
+      N =\dfrac{A}{\sigma_a-\sigma_D}\exp\left(-\left(\dfrac{\sigma_a-\sigma_D}{B}\right)^{c}\right)
+   \end{equation}
+\end{itemize}
+
+\medskip
+Dans la pratique, on ne dispose pas de toutes les courbes de fatigue, notamment parce que l'on en a besoin à différentes températures, avec une contrainte moyenne définie, et pour un ratio~$R$ donné. On procède alors à des inter/extra-polations.
+
+Certains \textcolorblue{facteurs de correction} peuvent être pris en compte:
+\begin{itemize}
+   \item $k_a$: fini de surface. Un matériau plus résistant, moins ductile a plus de sensibilité à des défauts laissés en surface par le procédé de mise en forme.
+   \item $k_b$: influence de la grosseur de la pièce. Statistiquement, un plus grand volume de matériau sous contrainte contient un plus grand nombre d'imperfections. Ces imperfections peuvent engendrer une microfissure et initier une rupture par fatigue. Pour les sections non-circulaires, il faut calculer un diamètre équivalent.
+   \item $k_c$: fiabilité. Modifier la valeur moyenne de la contrainte pour l'adapter à la fiabilité que l'on veut accorder au calcul de la pièce. Fiabilité = 50\%  avec $k_c =1$, à 90\% avec $k_c=0,897$, à 99\% avec $k_c=0.814$...
+   \item $k_d$: effet de la température. L'effet de la température est très complexe. Les conséquences des températures élevées sont nombreuses (fluage, perte de rigidité à cause d'une chute du module d’Young, perte de dureté par réarrangement du réseau cristallin, perte de résistance ultime...
+   \item $k_e$: effet des concentrations de contraintes. On définit le coefficient de concentration de contrainte~$K_f$ par:
+   \[ K_f = \dfrac{\text{limite d'endurance sans concentration}}{\text{limite d'endurance avec concentration}} \]
+   Ainsi, contrairement au cas statique où le coefficient de concentration de contrainte, noté~$Kt$ multiplie la contrainte, $K_f$ divise la résistance.
+   De plus, ce facteur~$K_f$ est corrigé par un facteur~$q$ appelé sensibilité à l'entaille.
+   Finalement, on obtient:
+   \begin{equation}
+   k_e = \dfrac{1}{K_f} = \dfrac{1}{q(K_t-1)+1}
+   \end{equation}
+   \item $k_f$: effets divers. Ils comprennent notamment les contraintes résiduelles...
+\end{itemize}
+\textcolorblue{La limite d'endurance est donc corrigée en la multipliant par l'ensemble de ces facteurs.}
+
+\medskip
+Tout ce qui a été dit correspond au cas d'un chargement renversé.
+Dans le cas d'un chargement non renversé, on utilise \textcolorblue{la méthode (le critère) de Goodman}.\index[aut]{Goodman (John), 1862-?, ?} Notons que ce diagramme de Goodman est modifié lorsque la contrainte alternée est faible et la contrainte moyenne élevée, car alors le critère d'écoulement doit être vérifié.
+
+\medskip
+Dans un diagramme de Haigh, au lieu d'utiliser la droite de Goodman:\index[aut]{Goodman (John), 1862-?, ?}
+\begin{equation}
+\dfrac{\sigma_a}{\sigma_D} + \dfrac{\sigma_m}{R_m} = 1
+\quad \text{ soit } \quad
+\sigma_a = \sigma_D \left(1 - \dfrac{\sigma_m}{R_m} \right)
+\end{equation}
+on peut utiliser la droite de Soderberg (plus sévère car on se limite à~$R_e$):
+\begin{equation}
+\dfrac{\sigma_a}{\sigma_D} + \dfrac{\sigma_m}{R_e} = 1
+\quad \text{ soit } \quad
+\sigma_a = \sigma_D \left(1 - \dfrac{\sigma_m}{R_e} \right)
+\end{equation}
+ou encore la parabole de Gerber:
+\begin{equation}
+\dfrac{\sigma_a}{\sigma_D} + \left(\dfrac{\sigma_m}{R_m}\right)^2 = 1
+\quad \text{ soit } \quad
+\sigma_a = \sigma_D \left( 1- \left(\dfrac{\sigma_m}{R_m}\right)^2 \right)
+\end{equation}
+Pour les aciers, la droite de Goodman est utilisée si $R_m>1300$~MPa, alors que la parabole de Gerber est préférée si~$R_m<1200$~MPa.
+\begin{figure}[h]
+\centering\includegraphics[height=60mm]{GSG.eps}
+\caption{Comparaison des méthodes de Soderberg, Goodman et Gerber}\label{fig-GSG}
+\end{figure}
+
+
+\medskip
+De plus, pour un chargement combiné, il convient de prendre en compte une contrainte équivalente. Celle de von Mises (éventuellement signée) peut faire l'affaire dans certains cas, mais pas toujours.
+On peut également utiliser un critère multiaxial comme celui de Dang Van\cite{bib-DangVan}... mais nous n'entrerons pas plus avant dans ces détails.
+
+
+\medskip
+La courbe de Wöhler\index[aut]{Woehler@Wöhler (August), 1819-1914, Allemand}\index{courbe de Wöhler (ou S-N)} de beaucoup de CFRP et GFRP \textcolorgris{(CFRP = Carbon Fiber Reinforced Polymer = polymère à renfort fibre de carbone; GFRP = Glass Fiber Reinforced Polymer = polymère à renfort fibre de verre)} peut être décrite (entre~$10^3$ et~$10^6$ cycles) par une équation de la forme:
+\begin{equation}  
+\dfrac{\sigma_a}{\sigma_u}=1-b\log N 
+\end{equation} 
 où~$\sigma_a$ et~$\sigma_u$ sont la contrainte appliquée et la résistance ultime, $N$, le nombre de cycle et~$b$, une constante.
 
 \medskip
@@ -560,12 +687,12 @@ D'après Talreja, il existe une limite de déformation en fatigue des composites
 
 
 \medskip
-\subsection{Cumul des dommages: principes de Miner}\index[aut]{Miner}
+\subsection{Cumul des dommages: principes de Miner}\index[aut]{Miner (M. A.), Américain}
 
 \medskip
 Les essais de fatigue en laboratoire consistent généralement à répéter une même sollicitation un grand nombre de fois. Dans ce cas, il est facile de définir un dommage: c'est le nombre de répétitions de l'événement endommageant depuis le début de l'essai.
 
-Dans le cas général, il y a plusieurs événements endommageants, qui diffèrent les uns des autres par la grandeur des contraintes subies et par d'autres paramètres. Miner a proposé deux principes qui permettent de cumuler les dommages:
+Dans le cas général, il y a plusieurs événements endommageants, qui diffèrent les uns des autres par la grandeur des contraintes subies et par d'autres paramètres. En 1945 Miner\index[aut]{Miner (M. A.), Américain} a popularisé deux principes, initialement proposés par Palmgren\index[aut]{Palmgren (Nils Arvid), 1890-1971, Suédois} en 1924, qui permettent de cumuler les dommages:
 \begin{itemize}
   \item le dommage causé par une occurrence d'un événement est mesuré par l'inverse $1/N$ du nombre~$N$ de fois qu'il faut répéter cet événement pour mener la pièce de l'état neuf jusqu'à la défaillance;
   \item le dommage causé par une succession d'événements est la somme des dommages causés par chacun d'eux.
@@ -574,26 +701,28 @@ Dans le cas général, il y a plusieurs événements endommageants, qui diffère
 \medskip
 Remarquons que ces deux principes sont cohérents. Si l'on suppose qu'un même événement cause toujours le même dommage, et si l'on impose comme unité de dommage le dommage qui conduit le système jusqu'à la défaillance, alors le premier principe est une conséquence du second.
 
-Si~$1 / N_A$ est le dommage de l'événement A et si~$n_A$ est le nombre d'occurrences de cet événement au cours d'un essai ou d'une utilisation du système alors le dommage total~$D$ causé par tous les événements A, relativement à une défaillance, est défini par l'équation de Miner:\index[aut]{Miner}
+Si~$1 / N_A$ est le dommage de l'événement A et si~$n_A$ est le nombre d'occurrences de cet événement au cours d'un essai ou d'une utilisation du système alors le dommage total~$D$ causé par tous les événements A, relativement à une défaillance, est défini par l'équation de Miner:\index[aut]{Miner (M. A.), Américain}
 \begin{equation} D = \frac{n_A}{N_A} \end{equation}
 \medskipvm
 \textcolorblue{Avec cette définition, le dommage cumulé est égal à 1 au moment où la pièce se rompt.} Il faut nuancer cette affirmation: des pièces apparemment identiques soumises aux mêmes sollicitations se rompent en général au bout de nombres de cycles différents. \textcolorred{La dispersion des durées de vie peut être très importante.}
 
-On trouve par expérience que les durées de vie peuvent varier d'un facteur 5 ou 10 pour des pièces issues d'un même lot de production. Il faut donc préciser davantage la formulation de la règle de Miner:\index[aut]{Miner} s'il faut en moyenne~$N_A$ répétitions de l'événement A pour qu'une défaillance survienne, alors le dommage causé par une occurrence de A est mesuré par~$1 / N_A$.
+On trouve par expérience que les durées de vie peuvent varier d'un facteur 5 ou 10 pour des pièces issues d'un même lot de production. Il faut donc préciser davantage la formulation de la règle de Miner:\index[aut]{Miner (M. A.), Américain} s'il faut en moyenne~$N_A$ répétitions de l'événement A pour qu'une défaillance survienne, alors le dommage causé par une occurrence de A est mesuré par~$1 / N_A$.
 
 \medskip
-Les principes de Miner\index[aut]{Miner} permettent de définir le dommage causé par un événement et affirment que pour cumuler les dommages, il suffit de les additionner. Ils imposent en outre le choix de l'unité de dommage. Remarquons qu'il est toujours possible de changer d'unité. Par exemple, lorsqu'il n'y a un seul événement endommageant, il est naturel de choisir comme unité de dommage le dommage causé par une occurrence de cet événement.
+Les principes de Miner\index[aut]{Miner (M. A.), Américain} permettent de définir le dommage causé par un événement et affirment que pour cumuler les dommages, il suffit de les additionner. Ils imposent en outre le choix de l'unité de dommage. Remarquons qu'il est toujours possible de changer d'unité. Par exemple, lorsqu'il n'y a un seul événement endommageant, il est naturel de choisir comme unité de dommage le dommage causé par une occurrence de cet événement.
 
 \medskip
-\textcolorblue{Les principes de Miner\index[aut]{Miner} permettent d'établir l'égalité des endommagements produits par des événements de natures différentes.} En particulier, ils permettent de préciser quand un petit nombre d'événements de grande amplitude produit un endommagement égal à un grand nombre d'événements de faible amplitude. Cela revêt une grande importance lorsqu'il faut définir un essai aussi court que possible.
+\textcolorblue{Les principes de Miner\index[aut]{Miner (M. A.), Américain} permettent d'établir l'égalité des endommagements produits par des événements de natures différentes.} En particulier, ils permettent de préciser quand un petit nombre d'événements de grande amplitude produit un endommagement égal à un grand nombre d'événements de faible amplitude. Cela revêt une grande importance lorsqu'il faut définir un essai aussi court que possible.
 
 
 \medskip
-\subsection{Propagation: loi de Paris}\index[aut]{Paris}\index{loi!de Paris}
+\subsection{Propagation: loi de Paris}\index[aut]{Paris (Paul C.), ?- , Américain}\index{loi!de Paris}
 
 \medskip
 Pour une singularité caractérisée par sa dimension~$a$ et sa forme, on étudie les courbes
-\begin{equation}\frac{\dd a}{\dd N - \Delta K}\end{equation} 
+\begin{equation}
+\frac{\dd a}{\dd N - \Delta K}
+\end{equation} 
 où~$N$ est le nombre de cycles et~$\Delta K$ la variation du facteur d'intensité de contrainte sur un cycle.
 
 \medskip
@@ -601,11 +730,15 @@ où~$N$ est le nombre de cycles et~$\Delta K$ la variation du facteur d'intensit
 
 \medskip
 \textcolorblue{Concernant la partie linéaire de ces courbes dans un diagramme log-log}, cela permet de les modéliser par la loi de Paris (la plus simple des lois de propagation) qui définit la vitesse de propagation par cycle comme une fonction puissance de l'amplitude du facteur d'intensité de contrainte:
-\begin{equation} \dfrac{\dd a}{\dd N} = C\,\Delta K^m \end{equation}
+\begin{equation} 
+\dfrac{\dd a}{\dd N} = C\,\Delta K^m 
+\end{equation}
 où~$C$ et~$m$ sont des coefficients dépendant du matériau.
 
 La dimension critique de la singularité~$a_c$ est liée à la caractéristique du matériau~$K_{IC}$, la ténacité, elle entraîne la rupture fragile de la structure: 
-\begin{equation} K_{IC} = F \sigma \sqrt{\pi a_c} \end{equation}
+\begin{equation} 
+K_{IC} = F \sigma \sqrt{\pi a_c} 
+\end{equation}
 où~$\sigma$ est une contrainte effective dans une direction normale à la fissure et~$F$ un facteur de forme.
 
 
