@@ -16,11 +16,11 @@
   {}
   {}
   {}
-\titlecontents{chapter}[1.2cm]%left
-{\addvspace{10pt}\large\sffamily\bfseries}%\llap{\chaptername\ }% abobe code
-{\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.2cm}\color{ocre}}%numbered entry format
-{\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.2cm}\color{ocre}}% numberless entry format
-{\color{ocre!60}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage}% filler page format
+\titlecontents{chapter}[1.2cm]
+{\addvspace{10pt}\large\sffamily\bfseries}%\llap{\chaptername\ }
+{\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.2cm}\color{ocre}}
+{}
+{\color{ocre!60}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage}%
 
 \titlecontents{section}[1.2cm]
   {\addvspace{3pt}\bfseries}
@@ -41,7 +41,39 @@
 \newlength\ecart
 \newlength\ecarttoto
 \newlength\separab
-\setlength\ecart{1.2cm}
+\ifVersionDuDocEstPourHAL% (alors bandeau HAL)
+   \setlength\ecart{1.2cm}
+   \ifVersionDuDocEstVincent\addtolength\ecart{4pt}\fi
+   \newcommand{\parttitle}{}
+   \setlength\ecarttoto{.965\paperwidth}
+   \setlength\separab{3cm}
+   \makeatletter
+   \def\@part[#1]#2{%
+   \renewcommand{\parttitle}{#1}%
+   \ifnum \c@secnumdepth >-2\relax%
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\texorpdfstring{%
+      \setlength\fboxsep{2pt}%
+      \noindent\protect\colorbox{ocre}{\protect\vphantom{Ép}\protect\makebox[\ecart-2\fboxsep-2\fboxrule]{\color{black!5}\bfseries\thepart}}\;\colorbox{black!5}{\protect\vphantom{Ép}\protect\makebox[\linewidth-4\fboxsep-4\fboxrule-\ecart]{\MakeUppercase{#1}}}}{#1}}%
+   \else%
+      \addcontentsline{toc}{part}{#1}%
+   \fi%
+   {\centering%
+   \interlinepenalty \@M%
+   \normalfont%
+   \ifVersionDuDocEstVincent\hspace*{-23.3mm}\else\hspace*{-\separab}\fi%
+   \markboth{}{}
+%   \thispagestyle{empty}
+   \addtolength\ecarttoto{-\fboxsep}\addtolength\ecarttoto{-\fboxsep}
+   \addtolength\ecarttoto{-\separab}\addtolength\ecarttoto{-\separab}
+   \addtolength\ecarttoto{-\largeurBandeauHAL}
+  \begin{minipage}[c][\largeurBandeauHAL][c]{\largeurBandeauHAL} ~\end{minipage}
+   \colorbox{ocre}{\begin{minipage}[c][\separab][c]{\separab}\color{white}\Huge\sffamily\bfseries\centering\thepart\end{minipage}}\;\;\colorbox{black!5}{\begin{minipage}[c][\separab][c]{\ecarttoto}\Huge\centering\sffamily\bfseries\MakeUppercase{#2}\end{minipage}}\;\;\colorbox{black!30}{\begin{minipage}[c][\separab][c]{\separab}\mbox{}\end{minipage}}}%
+   \@endpart}%
+   \makeatother
+%
+\else% doc pas pour HAL
+   \setlength\ecart{1.2cm}
    \ifVersionDuDocEstVincent\addtolength\ecart{4pt}\fi
    \newcommand{\parttitle}{}
    \setlength\ecarttoto{.965\paperwidth}
@@ -67,7 +99,8 @@
    \addtolength\ecarttoto{-\separab}\addtolength\ecarttoto{-\separab}%
    \colorbox{ocre}{\begin{minipage}[c][\separab][c]{\separab}\color{white}\Huge\sffamily\bfseries\centering\thepart\end{minipage}}\;\;\colorbox{black!5}{\begin{minipage}[c][\separab][c]{\ecarttoto}\Huge\centering\sffamily\bfseries\MakeUppercase{#2}\end{minipage}}\;\;\colorbox{black!30}{\begin{minipage}[c][\separab][c]{\separab}\mbox{}\end{minipage}}}%
    \@endpart}%
-\makeatother
+   \makeatother
+\fi
 %
 %--------------------------------------------------------------------------
 %
@@ -265,7 +298,7 @@
                    \@makeschapterhead{#1}%
                    \@afterheading
                  \fi
-   \ifVersionDuDocEstVincent\phantomsection\addcontentsline{toc}{chapter}{#1}\fi
+   \ifVersionDuDocEstVincent\addcontentsline{toc}{chapter}{\color{ocre} #1}\fi
    \CeChapitreEstEtoiletrue
 }
 \makeatother
@@ -284,25 +317,52 @@
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\footnotesize\thesection\hspace{5pt}#1}{}}%
 \fancyhf{}%
 \ifVersionDuDocEstVincent
-   \setlength\debordement{\paperwidth-2\ecartb-4mm}% larg boîte centre
-   \fancyfoot[CE]{\vskip1em\hspace{3mm}\makebox[0cm]{%
-   \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
-   \colorbox{black!5}{\makebox[\debordement]{\footnotesize%
-   \sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
-   \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
-   \color{black!5}\vphantom{Élp}\thepart}}}}%
-   \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
-   \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
-   \color{black!5}\vphantom{Élp}\thepart}}%
-   \colorbox{black!5}{\makebox[\debordement]{\footnotesize\vphantom{Élp} \MakeUppercase{\;\parttitle}\hfill\sffamily{\ifCeChapitreEstEtoile\else\rightmark\;\fi}}}%
-  \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+   \ifVersionDuDocEstPourHAL% (alors bandeau HAL pour Vincent)
+%      \setlength\debordement{\paperwidth-3\ecartb+8.5mm-\largeurBandeauHAL}%
+      \setlength\debordement{\paperwidth-3\ecartb-\largeurBandeauHAL+6.5mm}% larg boîte centre
+      \fancyfoot[CE]{\vskip1em\hspace{4mm}\makebox[0cm]{%
+      \colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}}}%
+      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
+      \colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}~}}%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize\vphantom{Élp} \MakeUppercase{\;\parttitle}\hfill\sffamily{\ifCeChapitreEstEtoile\else\rightmark\;\fi}}}%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
       }}%
+   \else% Pour Vincent et pas pour HAL
+      \setlength\debordement{\paperwidth-2\ecartb-4mm}% larg boîte centre
+      
+      \fancyfoot[CE]{\vskip1em\hspace{3mm}\makebox[0cm]{%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize%
+      \sffamily{\ifCeChapitreEstEtoile\else\;\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle\;}}}%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}}}%
+      \fancyfoot[CO]{\vskip1em\hspace{-4mm}\makebox[0cm]{%
+      \colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries%
+      \color{black!5}\vphantom{Élp}\thepart}}%
+      \colorbox{black!5}{\makebox[\debordement]{\footnotesize\vphantom{Élp} \MakeUppercase{\;\parttitle}\hfill\sffamily{\ifCeChapitreEstEtoile\else\rightmark\;\fi}}}%
+     \colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}%
+      }}%
+   \fi
 \else% Version Mathias
-   \setlength\debordement{86pt}
-   \fancyheadoffset{\debordement}%
-   \fancyfootoffset{\debordement}%
-   \fancyfoot[LO]{\vskip30pt\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\linewidth-9\fboxsep-2\ecartb]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}%
-   \fancyfoot[RE]{\vskip30pt\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\linewidth-9\fboxsep-2\ecartb]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}%
+   \ifVersionDuDocEstPourHAL% (alors bandeau HAL) A AJOUTER
+      \setlength\debordement{86pt}%
+      \fancyheadoffset{\debordement}%
+      \fancyfootoffset{\debordement}%
+      \fancyfoot[LO]{\vskip30pt\colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\linewidth-12\fboxsep-2\ecartb-\largeurBandeauHAL]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}%
+      \fancyfoot[RE]{\vskip30pt\colorbox{black!5}{\makebox[\largeurBandeauHAL]{\sffamily\footnotesize\vphantom{Élp}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\linewidth-12\fboxsep-2\ecartb-\largeurBandeauHAL]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}%
+   \else
+      \setlength\debordement{86pt}
+      \fancyheadoffset{\debordement}%
+      \fancyfootoffset{\debordement}%
+      \fancyfoot[LO]{\vskip30pt\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}\;\colorbox{black!5}{\makebox[\linewidth-9\fboxsep-2\ecartb]{\footnotesize\sffamily{\ifCeChapitreEstEtoile\else\thechapter.\fi}\ \leftmark\hfill\vphantom{Élp} \MakeUppercase{\parttitle}}}\;\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}}%
+      \fancyfoot[RE]{\vskip30pt\colorbox{ocre}{\makebox[\ecartb]{\footnotesize\sffamily\bfseries\color{black!5}\vphantom{Élp}\thepart}}\;\colorbox{black!5}{\makebox[\linewidth-9\fboxsep-2\ecartb]{\footnotesize\sffamily\vphantom{Élp}\MakeUppercase{\parttitle} \hfill\rightmark\mbox{}}}\;\colorbox{black!30}{\makebox[\ecartb]{\sffamily\footnotesize\vphantom{Élp}\thepage}}}%
+   \fi
 \fi
 \renewcommand{\headrulewidth}{0pt}%
 \addtolength{\headheight}{2.5pt}%
@@ -482,8 +542,6 @@
 %
 \renewcommand{\le}{\leqslant}
 \renewcommand{\ge}{\geqslant}
-%\renewcommand{\le}{\leq}
-%\renewcommand{\ge}{\geq}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\dive}{div}

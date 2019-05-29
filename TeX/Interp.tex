@@ -477,7 +477,7 @@ Les principales propriétés des courbes de Bézier sont les suivantes:
 \item une courbe de Bézier est~$C^{\infty}$;
 \item la courbe de Bézier est un segment si et seulement si les points de contrôle sont alignés;
 \item chaque restriction d'une courbe de Bézier est aussi une courbe de Bézier;
-\item un arc de cercle, ni même aucun arc de courbe conique (en dehors du segment de droite) ne peut être décrit par une courbe de Bézier, quel que soit son degré;
+\item si un arc de parabole et un segment de droite peuvent être décrits, ni un arc de cercle, ni un arc d'ellipse ou d'hyperbole ne peut être décrit par une courbe de Bézier. Pour une description exacte, il est nécessaire d'utiliser une courbe de Bézier rationnelle (Les courbes de Bézier rationnelles sont des courbes de Bézier définies dans l'espace homogène (avec une coordonnée supplémentaire appelée poids). L'espace homogène est intimement lié à la projection centrale et donc aux coniques. C'est son utilisation qui permet de convertir une parabole (représentable exactement par une courbe de Bézier) en arcs d'ellipses ou en sections d'hyperboles);
 \item \textcolorred{le contrôle de la courbe est global: modifier un point de contrôle modifie toute la courbe, et non pas un voisinage du point de contrôle;}
 \item pour effectuer une transformation affine de la courbe, il suffit d'effectuer la transformation sur tous les points de contrôle. 
 \end{itemize}
