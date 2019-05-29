@@ -1,0 +1,453 @@
+\begin{theindex}
+  \providecommand*\lettergroupDefault[1]{}
+  \providecommand*\lettergroup[1]{%
+      \par\textbf{#1}\par
+      \nopagebreak
+  }
+
+  \lettergroup{A}
+  \item Abel (Niels Henrik), 1802-1829, Norv\IeC {\'e}gien, 29, 31
+  \item Adrain (Robert), 1775-1843, Am\IeC {\'e}ricain, 361
+  \item Airy (George Biddell, Sir -), 1801-1892, Anglais, 383
+  \item Alart (Pierre), ?-, Fran\IeC {\c c}ais, 306
+  \item Albert (Wilhelm August Julius), 1787-1846, Allemand, 324
+  \item Allaire (Gr\IeC {\'e}goire), ?-, Fran\IeC {\c c}ais, 206, 223, 224
+  \item Allard (Jean-Fran\IeC {\c c}ois), ?-, Fran\IeC {\c c}ais, 275
+  \item Ambrose (Warren Arthur), 1914-1995, Am\IeC {\'e}ricain, 82
+  \item Archim\IeC {\`e}de de Syracuse, -287-- -212, Grec, 38, 135
+  \item Argyris (John Hadji), 1913-2004, Grec, 124
+  \item Aristote (dit le Stagirite), -384-- -322, Grec, 80, 135
+  \item Arnold (Douglas Norman), ?-, Am\IeC {\'e}ricain, 351, 391
+  \item Arnold (Vladimir Igorevitch), 1937-2010, Russe, 332
+  \item Ascoli (Giulio), 1843-1896, Italien, 19
+
+  \indexspace
+
+  \lettergroup{B}
+  \item Babu\IeC {\v s}ka (Ivo Milan), 1926-, Tch\IeC {\`e}que, 97, 98, 129, 349, 391
+  \item Bachet (Claude-Gaspard, dit - de M\IeC {\'e}rizac), 1581-1638, Fran\IeC {\c c}ais, 100
+  \item Bakhvalov (Nikolai Sergeevich), 1934-2005, Russe, 206
+  \item Bampton (Mervyn Cyril Charles), ?, Am\IeC {\'e}ricain, 249, 250
+  \item Banach (Stephan), 1892-1945, Polonais, 22, 55, 69, 70
+  \item Beck (Henry Charles, dit Harry), 1902-1974, Anglais, 27
+  \item Bell (Alexander Graham), 1847-1922, Britannique, 265
+  \item Bellman (Richard Ernest), 1920-1984, Am\IeC {\'e}ricain, 214
+  \item B\IeC {\'e}renger (Jean-Pierre), ?-, Fran\IeC {\c c}ais, 276
+  \item Bernoulli (Daniel), 1700-1782, Suisse, 139
+  \item Bernoulli (Jacques), 1654-1705, Suisse, 139, 214
+  \item Bernoulli (Jean), 1667-1748, Suisse, 35, 94, 139, 214
+  \item Bernstein (Serge\IeC {\"\i }{} Natanovich), 1880-1968, Russe, 368, 370
+  \item Bessel (Friedrich Wilhelm), 1784-1846, Allemand, 383
+  \item Beyle (Henri), dit Stendhal, 1783-1842, Fran\IeC {\c c}ais, 80
+  \item B\IeC {\'e}zier (Pierre), 1910-1999, Fran\IeC {\c c}ais, 368, 370, 371
+  \item Bhatnagar (Prabhu Lal), 1912-1976, Indien, 350
+  \item Bingham (Eugene Cook), 1878-1945, Am\IeC {\'e}ricain, 296
+  \item Biot (Maurice Anthony), 1905-1985, Am\IeC {\'e}ricain, 275
+  \item Bochner (Salomon), 1899-1982, Am\IeC {\'e}ricain, 56
+  \item Bolotin (Vladimir V.), 1926-2008, Russe, 343
+  \item Boltzmann (Ludwig), 1944-1906, Autrichien, 82, 84, 297, 332, 350
+  \item Bolzano (Bernard Placidus Johann Nepomuk), 1781-1848, Allemand, 35
+  \item Bonaparte (Napol\IeC {\'e}on), 1769-1821, Fran\IeC {\c c}ais, 80
+  \item Bonnet (Pierre-Ossian), 1819-1892, Fran\IeC {\c c}ais, 365
+  \item Boole (George), 1815-1864, Anglais, 24
+  \item Borel (F\IeC {\'e}lix \IeC {\'E}douard Justin \IeC {\'E}mile), 1871-1956, Fran\IeC {\c c}ais, 25, 27
+  \item Boussinesq (Joseph Valentin), 1842-1929, Fran\IeC {\c c}ais, 305
+  \item Brezzi (Franco), 1945-, Italien, 98, 107, 115, 117, 130, 137, 157, 391
+  \item Brown (Robert), 1773-1859, \IeC {\'E}cossais, 79
+
+  \indexspace
+
+  \lettergroup{C}
+  \item Cameron (Robert Horton), 1908-1989, Am\IeC {\'e}ricain, 336
+  \item Cantor (Georg Ferdinand Ludwig Philip), 1845-1918, Allemand, 19, 26, 242
+  \item Carath\IeC {\'e}odory (Constantin), 1873-1950, Grec, 26
+  \item Castigliano (Carlo Alberto), 1847-1884, Italien, 124
+  \item Cauchy (Augustin Louis, baron -), 1789-1857, Fran\IeC {\c c}ais, 21, 29, 55, 69, 76, 243, 290, 362, 383
+  \item Cayley (Arthur), 1821-1895, Anglais, 243, 387
+  \item C\IeC {\'e}a (Jean), ?- , Fran\IeC {\c c}ais, 129, 130, 391
+  \item Champollion (Jean-Fran\IeC {\c c}ois), 1790-1832, Fran\IeC {\c c}ais, 80
+  \item Charpit de Villecourt (Paul), ?-1784, Fran\IeC {\c c}ais, 77
+  \item Chasles (Michel), 1793-1880, Fran\IeC {\c c}ais, 299
+  \item Cherepanov (Genady P.), 1937-, Am\IeC {\'e}ricain, 319
+  \item Chevreuil (Mathilde), ?- , Fran\IeC {\c c}aise, 253
+  \item Chladni (Ernst Florens Friedrich), 1756-1827, Allemand, 251
+  \item Cholesky (Andr\IeC {\'e}-Louis), 1875-1918, Fran\IeC {\c c}ais, 129, 245, 340
+  \item Clairaut (Alexis Claude), 1713-1765, Fran\IeC {\c c}ais, 75
+  \item Clough (Ray William), 1920-?, Am\IeC {\'e}ricain, 124
+  \item Colson (John), 1680-1760, Anglais, 387
+  \item Cornell (Carl Allin), 1938-2007, Am\IeC {\'e}ricain, 343, 344
+  \item Cotes (Roger), 1682-1716, Anglais, 373, 374
+  \item Cottrell (Alan Howard, Sir -), 1919-2012, Anglais, 322
+  \item Coulomb (Charles-Augustin), 1736-1806, Fran\IeC {\c c}ais, 295, 300, 301, 305--307
+  \item Courant (Richard), 1888-1972, Am\IeC {\'e}ricain, 56, 124, 254, 276
+  \item Cousin (Pierre), 1867-1933, Fran\IeC {\c c}ais, 49
+  \item Cox (Gertrude Mary), 1900-1978, Am\IeC {\'e}ricaine, 372
+  \item Craig (Roy R. Jr), ?, Am\IeC {\'e}ricain, 249, 250
+  \item Crank (John), 1916-2006, Am\IeC {\'e}ricain, 385
+  \item Curnier (Alain), 1948-, Suisse, 306
+
+  \indexspace
+
+  \lettergroup{D}
+  \item d'Alembert (Jean le Rond), 1717-1783, Fran\IeC {\c c}ais, 31, 75, 76, 94
+  \item Dantzig (George Bernard), 1914-2005, Am\IeC {\'e}ricain, 214
+  \item de Boor (Carl-Wilhelm Reinhold), 1937-, Am\IeC {\'e}ricain, 372
+  \item De Giorgi (Ennio), 1928-1996, Italien, 82
+  \item De Sax\IeC {\'e} (G\IeC {\'e}ry), 1955-, Fran\IeC {\c c}ais, 306
+  \item Delaunay (Boris Nikola\IeC {\"\i }evitch), 1890-1980, Russe, 197, 200, 203
+  \item Denjoy (Arnaud), 1884-1974, Fran\IeC {\c c}ais, 49
+  \item Der Kiureghian (Armen), 1947-, Arm\IeC {\'e}nien, 344
+  \item Descartes (Ren\IeC {\'e}), 1596-1650, Fran\IeC {\c c}ais, 38, 199, 214, 256
+  \item Desvillettes (Laurent), 1966- , Fran\IeC {\c c}ais, 84
+  \item Didon, ?, Carthaginoise, 213
+  \item Dirac (Paul Adrien Maurice), 1902-1984, Anglais, 26, 55, 56, 58
+  \item Dirichlet (Johann Peter Gustav Lejeune), 1805-1859, Allemand, 47, 48, 64, 77, 81, 101, 102, 105, 107, 108, 112, 199, 206, 211
+  \item Ditlevsen (Ove Dalager), 1935-, Danois, 343, 344
+  \item Drucker (Daniel Charles), 1918-2001, Am\IeC {\'e}ricain, 300
+  \item du Bois-Reymond (Paul David Gustave), 1831-1889, Allemand, 81
+  \item Dugdale (Donald Stephen), 321
+  \item Dynkin (Eug\IeC {\`e}ne Borisovitch), 1924-, Russe, 26
+
+  \indexspace
+
+  \lettergroup{E}
+  \item Eiffel (Gustave), 1832-1923, Fran\IeC {\c c}ais, 139, 299
+  \item Einstein (Albert), 1879-1955, Suisse-am\IeC {\'e}ricain, 79
+  \item Esteva (Luis), 1935-2012, Mexicain, 343, 344
+  \item Euclide, -325-- -265, Grec, 21--23, 27, 41, 66, 69, 127
+  \item Euler (Leonhard Paul), 1707-1783, Suisse, 19, 29, 35, 38, 75--77, 81, 85, 100, 106, 139, 203, 214, 217, 362, 383, 384
+  \item Eyring (Carl Ferdinand), 1889-1951, Am\IeC {\'e}ricain, 264, 269
+
+  \indexspace
+
+  \lettergroup{F}
+  \item Falk (Richard S.), ?-, Am\IeC {\'e}ricain, 351
+  \item Fechner (Gustav Theodor), 1801\IeC {\textemdash }1887, Allemand, 266
+  \item Feng (Zhi-Qiang), 1963-, Fran\IeC {\c c}ais, 306
+  \item Fermat (Pierre, de -), ?-1665, Fran\IeC {\c c}ais, 38, 214
+  \item Fick (Adolf Eugene), 1829-1901, Allemand, 79, 82
+  \item Fix (George J. III), 1939-2002, Am\IeC {\'e}ricain, 124
+  \item Fletcher (Harvey C.), 1884-1981, Am\IeC {\'e}ricain, 267
+  \item Fourier (Jean Baptiste Joseph), 1768-1830, Fran\IeC {\c c}ais, 47, 79, 80, 242, 252, 254, 336
+  \item Fr\IeC {\'e}chet (Maurice Ren\IeC {\'e}), 1878-1973, Fran\IeC {\c c}ais, 19, 21, 24, 95, 206, 216
+  \item Fredholm (Ivar), 1866-1927, Su\IeC {\'e}dois, 335
+  \item Freudenthal (Alfred Martin), 1906-1977, Am\IeC {\'e}ricain, 343
+  \item Friedrichs (Kurt Otto), 1901-1982, Allemand, 56, 66, 276
+  \item Frobenius (Ferdinand Georg), 1849-1917, Allemand, 243
+
+  \indexspace
+
+  \lettergroup{G}
+  \item Galerkine (Boris), 1871-1945, Russe, 95, 124, 129, 254
+  \item Galil\IeC {\'e}e (Galileo Galilei), 1564-1642, Italien, 135, 139, 214
+  \item Galois (\IeC {\'E}variste), 1811-1832, Fran\IeC {\c c}ais, 31
+  \item Gau\IeC {\ss } (Johann Carl Friedrich), 1777-1855, Allemand, 129, 169, 242, 323, 361, 365, 375, 376
+  \item Geschke (Charles M.), 1939-, Am\IeC {\'e}ricain, 370
+  \item Ghanem (Roger G.), ?-, Libanais, 340
+  \item Gibbs (Josiah Willard), 1839-1903, Am\IeC {\'e}ricain, 81
+  \item Goodman (John), 1862-?, ?, 326
+  \item Goodyear (Charles), 1800-1860, Am\IeC {\'e}ricain, 300
+  \item Grassmann (Hermann G\IeC {\"u}nther), 1809-1877, Allemand, 243
+  \item Green (George), 1793-1841, Anglais, 45, 257, 273, 292, 294, 347
+  \item Griffith (Alan Arnold), 1893-1963, Anglais, 315--317, 319, 323
+  \item Gross (Eug\IeC {\`e}ne P.), 1926-1991, Am\IeC {\'e}ricain, 350
+  \item Guest, 299
+  \item Gumbel (Emil Julius), 1891-1966, Allemand, 343
+
+  \indexspace
+
+  \lettergroup{H}
+  \item Haar (Alfr\IeC {\'e}d), 1885-1933, Hongrois, 27
+  \item Hadamard (Jacques Salomon), 1865-1963, Fran\IeC {\c c}ais, 19, 55, 391
+  \item Halley (Edmond), 1656-1742, Anglais, 135
+  \item Hamilton (Richard Streit), 1943-, Am\IeC {\'e}ricain, 83
+  \item Hamilton (William Rowan, Sir -), 1805-1865, Irlandais, 136, 214, 242, 243
+  \item Hasofer (A. M.),, 343, 344
+  \item Hausdorff (Felix), 1868-1942, Allemand, 19, 20
+  \item Heine (Eduard), 1821-1881, Allemand, 35
+  \item Hellinger (Ernst David), 1883-1950, Allemand, 109, 137, 158, 166, 175, 178
+  \item Helmholtz (Hermann Ludwig Ferdinand von -), 1821-1894, Allemand, 111, 259, 262, 263, 273, 285
+  \item Hencky (Heinrich), 1885-1951, Allemand, 299
+  \item Henstock (Ralph), 1923-2007, Anglais, 49
+  \item Hermite (Charles), 1822-1901, Fran\IeC {\c c}ais, 22, 23, 60, 95, 145, 153, 165, 336, 364, 368, 369, 375
+  \item H\IeC {\'e}ron d'Alexandrie, 1er si\IeC {\`e}cle apr\IeC {\`e}s JC, Grec, 214
+  \item Hertz (Heinrich Rudolf), 1857-1894, Allemand, 305
+  \item Hilbert (David), 1862-1943, Allemand, 22, 23, 55, 56, 60, 61, 64, 65, 69, 83, 114, 243, 363, 364
+  \item Hill (Rodney), 1921-2011, Anglais, 160, 300
+  \item H\IeC {\"o}lder (Otto Ludwig), 1859-1937, Allemand, 36, 53
+  \item Hoff (Nicholas J.), 1906-1997, Hongrois, 296
+  \item Hofmann (Friedrich Carl Albert dit Fritz), 1866-1956, Allemand, 300
+  \item Hooke (Robert), 1635-1703, Anglais, 88, 108, 137, 140, 158, 174, 290, 294--297
+  \item L'H\IeC {\^o}pital (Guillaume Fran\IeC {\c c}ois Antoine de -), 1661-1704, Fran\IeC {\c c}ais, 214
+  \item Howard (Ronald William), 1954- , Am\IeC {\'e}ricain, 82
+  \item Hrennikoff (Alexander), 1896-1984, Russe, 124
+  \item Hu (Haichang), 1928-2011, Chinois, 108
+  \item Huber (Tytus Maksymilian), 1872-1950, Polonais, 299
+  \item Hugo (Victor), 1802-1885, Fran\IeC {\c c}ais, 80
+  \item Huygens [ou Huyghens] (Christian), 1629-1695, N\IeC {\'e}erlandais, 214, 242, 256
+
+  \indexspace
+
+  \lettergroup{I}
+  \item Inglis (Charles), 1875-1952, Anglais, 315
+  \item Irwin (George Rankine), 1907-1998, Am\IeC {\'e}ricain, 316--318, 321, 322
+  \item It$\overline  {\text  {o}}$ (Kiyoshi), 1915-2008, Japonais, 336
+
+  \indexspace
+
+  \lettergroup{J}
+  \item Jacobi (Carl Gustav Jakob), 1804-1851, Allemand, 161, 214
+  \item Johnson (A.I.), ?, Su\IeC {\'e}dois, 343
+  \item Jones (William, Sir -), 1675-1749, Gallois, 387
+  \item Jordan (Marie Ennemond Camille), 1838-1922, Fran\IeC {\c c}ais, 243
+
+  \indexspace
+
+  \lettergroup{K}
+  \item Kac (Mark ou Marek), 1914-1984, Am\IeC {\'e}ricain, 335
+  \item Kantorovitch (Leonid Vitalievitch), 1912-1986, Russe, 214
+  \item Karadeniz (Halil), 1946-, Turque, 344
+  \item Karhunen (Kari), 1915-1992, Finlandais, 335, 336, 338, 339
+  \item Kelvin (William Thomson, connu sous le nom de Lord -), 1924-1907, Anglais, 298
+  \item Kepler (Johannes), 1571-1630, Allemand, 361
+  \item Kirchhoff (Gustav Robert), 1824-1887, Allemand, 139, 273, 291, 292, 294
+  \item Kirsch, 315
+  \item Kjellman (Walter), 1905-1955, Su\IeC {\'e}dois, 343
+  \item Kolmogorov (Andre\IeC {\"\i } Nikola\IeC {\"\i }evitch), 1903-1987, Russe, 25, 332
+  \item Korn (Arthur), 1870-1945, Allemand, 66, 67
+  \item Krook (Max), 1913-1985, Am\IeC {\'e}ricain, 350
+  \item Krylov (Aleksey Nikolaevich), 1863-1945, Russe, 56
+  \item Kuratowski (Kazimierz), 1896-1980, Polonais, 19
+  \item Kurzweil (Jaroslav), 1926-, Tch\IeC {\`e}que, 49
+  \item Kutta (Martin Wilhelm), 1867-1944, Allemand, 383, 384
+
+  \indexspace
+
+  \lettergroup{L}
+  \item Ladev\IeC {\`e}ze (Pierre), ?- , Fran\IeC {\c c}ais, 253
+  \item Ladyjenska\IeC {\"\i }a (Olga Aleksandrovna), 1922-2007, Russe, 98
+  \item Lagrange (Joseph Louis, comte de -), 1736-1813, Italien, 29, 31, 75--77, 91, 94, 99, 100, 109, 136, 138, 145, 154, 157, 158, 168, 169, 171, 193, 214, 217, 218, 253, 292, 294, 299, 305, 332, 362, 363, 366, 369, 374
+  \item Laguerre (Edmond Nicolas), 1834-1886, Fran\IeC {\c c}ais, 367, 368, 375
+  \item Lambert (Johann Heinrich), 1728-1777, Suisse, 362
+  \item Lam\IeC {\'e} (Gabriel), 1795-1870, Fran\IeC {\c c}ais, 89, 295
+  \item Landau (Lev Davidovitch), 1908-1968, Russe, 84
+  \item Laplace (Pierre Simon de -), 1749-1827, Fran\IeC {\c c}ais, 79, 101--103, 299
+  \item Laursen (Tod A), ?-, Am\IeC {\'e}ricain, 306
+  \item Lax (Peter), 1926-, Am\IeC {\'e}ricain, 96, 114, 129, 206, 391, 393
+  \item Lebesgue (Henri-L\IeC {\'e}on), 1875-1941, Fran\IeC {\c c}ais, 25--27, 48, 49, 55, 70, 242
+  \item Lee (Shaw M.), ?- , Am\IeC {\'e}ricain, 330
+  \item Legendre (Adrien-Marie), 1752-1833, Fran\IeC {\c c}ais, 214, 299, 361, 365, 375
+  \item Legrand (Mathias), ?- , Fran\IeC {\c c}ais, 4
+  \item Leibniz (Gottfried Wilhelm), 1646-1716, Allemand, 29, 35, 37, 75, 214
+  \item Leissa (Arthur W.), 1932-, Am\IeC {\'e}ricain, 251
+  \item Lemaire (Christophe), ?-, Fran\IeC {\c c}ais, 203
+  \item Lemaire (Maurice), ?-, Fran\IeC {\c c}ais, 344
+  \item Leray (Jean), 1906-1998, Fran\IeC {\c c}ais, 56, 57
+  \item L\IeC {\'e}vy (Paul Pierre), 1886-1971, Fran\IeC {\c c}ais, 336
+  \item Lewy (Hans), 1904-1988, Am\IeC {\'e}ricain, 276
+  \item Lind (Niels Christian),, 344
+  \item Lind (Niels Christian), 1930-, Canadien, 343
+  \item Liouville (Joseph), 1809-1882, Fran\IeC {\c c}ais, 76
+  \item Lipschitz (Rudolph Otto Sigismund), 1832-1903, Allemand, 36, 76, 383
+  \item Listing (Johann Benedict), 1808-1882, Allemand, 19
+  \item Lo\IeC {\`e}ve (Michel), 1907-1979, Fran\IeC {\c c}ais, 335, 336, 338, 339
+  \item Lorentz (Hendrik Antoon), 1853-1928, N\IeC {\'e}erlandais, 205
+  \item Lotka (Alfred James), 1880-1949, Am\IeC {\'e}ricain, 76
+  \item Love (Augustus Edward Hough), 1863-1940, Anglais, 139
+
+  \indexspace
+
+  \lettergroup{M}
+  \item Markov (Andre\IeC {\"\i } Andre\IeC {\"\i }evitch), 1856-1922, Russe, 361
+  \item Martin (William T.), 1911-2004, Am\IeC {\'e}ricain, 336
+  \item Maxwell (James Clerk), 1831-1879, \IeC {\'E}cossais, 124, 205, 296--299
+  \item Mayer (Max), ?, Allemand, 343
+  \item Melenk (Jens Markus), ?- , Autrichien, 349
+  \item Metropolis (Nicholas Constantine), 1915-1999, Am\IeC {\'e}ricain, 341
+  \item Meyers (Norman George), 1930-, Am\IeC {\'e}ricain, 60
+  \item Milgram (Arthur Norton), 1912-1961, Am\IeC {\'e}ricain, 96, 114, 129, 206, 391
+  \item Mindlin (Raymond David), 1906-1987, Am\IeC {\'e}ricain, 139, 140
+  \item Miner (M. A.), Am\IeC {\'e}ricain, 327
+  \item Minkowski (Hermann), 1864-1909, Allemand, 53
+  \item Mises (Richard Edler, von -), 1883-1953, Autrichien, 160, 291, 299, 300
+  \item M\IeC {\"o}bius (August (us) Ferdinand), 1790-1868, Allemand, 371
+  \item Mohr (Christian Otto), 1835-1918, Allemand, 124, 300
+  \item Montel (Paul Antoine Aristide Montel), 1876-1975, Fran\IeC {\c c}ais, 57
+  \item Mooney (Melvin), 1893-1968, Am\IeC {\'e}ricain, 302
+  \item Moser (J\IeC {\"u}rgen Kurt), 1928-1999, Allemand, 332
+  \item Moses (Fred), ?-, Am\IeC {\'e}ricain, 344
+  \item Mossotti (Ottaviano-Fabrizio), 1791-1863, Italien, 205
+  \item Mullins (Leonard), 1918-1997, Anglais, 301
+  \item Munson (Wilden A.), 1902-1982, Am\IeC {\'e}ricain, 267
+
+  \indexspace
+
+  \lettergroup{N}
+  \item Nash (John Forbes), 1928- , Am\IeC {\'e}ricain, 82
+  \item Nataf (Andr\IeC {\'e}), ?, Fran\IeC {\c c}ais, 345
+  \item Navier (Claude Louis Marie Henri), 1785-1836, Fran\IeC {\c c}ais, 57, 83, 105, 299, 350
+  \item Neper [ou Napier] (John, Baron de Merchiston), 1550-1617, \IeC {\'E}cossais, 256
+  \item Neuber (Heinz), 1906-1989, Allemand, 174, 175, 295
+  \item Neumann (Carl Gottfried), 1832-1925, Allemand, 64, 77, 102, 103, 107, 108, 112, 113, 135, 211
+  \item Neumann (John, von -), 1903-1957, Hongrois, 22, 250, 338, 339
+  \item Newmark (Nathan Mortimore), 1910-1981, Am\IeC {\'e}ricain, 124, 233--235, 254, 379, 383, 385
+  \item Newton (Isaac, Sir -), 1643-1727, Anglais, 37, 76, 135, 214, 294, 297, 307, 362, 369, 373, 374, 387--389
+  \item Nguetseng (Gabriel), ?-, Camerounais, 206
+  \item Nicolson (Phyllis), 1917-1968, Anglaise, 385
+  \item Nirenberg (Louis), 1925- , Am\IeC {\'e}ricain, 82
+  \item Norton (Frederick H.), 296
+
+  \indexspace
+
+  \lettergroup{O}
+  \item Ogden (Ray W.), ?-, \IeC {\'E}cossais, 302
+  \item Oresme (Nicole), 1325-1382, Allemand, 38
+  \item Ostrogradsky (Mikha\IeC {\"\i }l Vassilievitch), 1801-1862, Ukainien, 45
+
+  \indexspace
+
+  \lettergroup{P}
+  \item Pad\IeC {\'e} (Henri Eug\IeC {\`e}ne), 1863-1953, Fran\IeC {\c c}ais, 362
+  \item P\'aez (A.), ?, Espagnol, 343
+  \item Palmgren (Nils Arvid), 1890-1971, Su\IeC {\'e}dois, 327
+  \item Panasenko (Grigory), ?-, Russe, 206
+  \item Parent (Antoine), 1660-1726, Fran\IeC {\c c}ais, 139
+  \item Paris (Paul C.), ?- , Am\IeC {\'e}ricain, 328
+  \item Perelman (Grigori Iakovlevitch), 1966- , Russe, 83
+  \item Perron (Oskar), 1880-1975, Allemand, 49
+  \item Pian (Theodore H.H.), 1919-2009, Am\IeC {\'e}ricain, 109, 138, 158
+  \item Piazzi (Giuseppe), 1746-1826, Italien, 361
+  \item Piola (Gabrio), 1794-1850, Italien, 291, 292, 294
+  \item Poincar\IeC {\'e} (Henri), 1854-1912, Fran\IeC {\c c}ais, 19, 22, 49, 66, 71, 83, 203, 332
+  \item Poisson (Sim\IeC {\'e}on Denis), 1781-1840, Fran\IeC {\c c}ais, 79, 80, 89, 101--103, 205, 206, 210, 211, 295
+  \item Poncelet (Jean-Victor), 1788-1867, Fran\IeC {\c c}ais, 324
+  \item Pontriaguine (Lev Semionovitch), 1908-1988, Russe, 214
+  \item Poritsky (H.),, 305
+  \item Prager (William), 1903-1980, Am\IeC {\'e}ricain, 300
+  \item Prandtl (Ludwig), 1875-1953, Allemand, 299
+
+  \indexspace
+
+  \lettergroup{R}
+  \item Rackwitz (R\IeC {\"u}diger), 1941-2012, Allemand, 344
+  \item Rankine (William John Macquorn), 1820-1872, \IeC {\'E}cossais, 324
+  \item Raphson (Joseph), 1648-1715, Anglais, 294, 307, 387--389
+  \item Rayleigh (John William Strutt, troisi\IeC {\`e}me baron -), 1842-1919, Anglais, 124, 139, 249--251, 273
+  \item Reissner (Max Erich, dit Eric), 1913-1996, Am\IeC {\'e}ricain, 109, 137, 139, 140, 158, 166, 174, 175, 178
+  \item Reuss, 299
+  \item Reynolds (Osborne), 1842-1912, Irlandais, 84, 85, 106
+  \item Riccati (Jacopo Francesco), 1676-1754, Italien, 75
+  \item Ricci-Curbastro (Gregorio), 1853-1925, Italien, 83
+  \item Rice (James R.), 1940-, Am\IeC {\'e}ricain, 319, 320
+  \item Richtmyer (Robert Davis), 1910-2003, Am\IeC {\'e}ricain, 393
+  \item Riemann (Georg Friedrich Bernhard), 1826-1866, Allemand, 45, 47--49
+  \item Riesz (Frigyes), 1880-1956, Hongrois, 55, 95, 206, 216
+  \item Ritz (Walther), 1878-1909, Suisse, 124, 251, 347
+  \item Rivlin (Ronald Samuel), 1915-2005, Am\IeC {\'e}ricain, 302
+  \item Robin (Victor Gustave), 1855-1897, Fran\IeC {\c c}ais, 77, 112
+  \item Rodrigues (Benjamin-Olinde), 1795-1851, Fran\IeC {\c c}ais, 367
+  \item Rosenblatt (Murray), 1926-, Am\IeC {\'e}ricain, 345
+  \item Rosenblueth (Emilio), 1926-1994, Mexicain, 343, 344
+  \item Runge (Carl David Tolm\IeC {\'e}), 1856-1927, Allemand, 362, 369, 375, 383, 384
+
+  \indexspace
+
+  \lettergroup{S}
+  \item Sabine (Wallace Clement), 1868-1919, Am\IeC {\'e}ricain, 263, 264, 269
+  \item Saint-Venant (Adh\IeC {\'e}mar Jean Claude Barr\IeC {\'e} de -), 1797-1886, Fran\IeC {\c c}ais, 140, 189, 296
+  \item San Mart\'in (Jorge), ?- , Chilien, 126
+  \item Schr\IeC {\"o}dinger (Erwin Rudolf Josef Alexander), 1887-1961, Autrichien, 367
+  \item Schur (Issai), 1875-1941, Russe, 168, 253
+  \item Schwartz (Laurent), 1915-2002, Fran\IeC {\c c}ais, 55, 56
+  \item Schwarz (Hermann Amandus), 1843-1921, Allemand, 40, 69
+  \item Serrin (James Burton), 1926-2012, Am\IeC {\'e}ricain, 60
+  \item Sezawa (Katsutada), 1895-1944, Japonais, 251
+  \item Shinozuka (Masanobu), 1930-, Japonais, 344
+  \item Siegert (Arnold John Frederick), 1911-1995, Am\IeC {\'e}ricain, 335
+  \item Sierpi\IeC {\'n}ski (Wac\IeC {\l }aw Franciszek), 1882-1969, Polonais, 26
+  \item Signorini (Antonio), 1888-1963, Italien, 306
+  \item Simo (Juan-Carlos), 1952-1994, Espagnol, 306
+  \item Simpson (Thomas), 1710-1761, Anglais, 374, 387
+  \item Snell (Snell van Royen (Willebrord), dit Villebrordus Snellius ), 1581-1626, N\IeC {\'e}erlandais, 256
+  \item Snow (John), 1813-1858, Anglais, 199
+  \item Sobolev (Sergue\IeC {\"\i } Lvovitch), 1908-1989, Russe, 55--57, 59, 60, 62, 63, 65
+  \item Soize (Christian), 1948- , Fran\IeC {\c c}ais, 255
+  \item Sommerfeld (Arnold Johannes Wilhelm), 1868-1951, Allemand, 347
+  \item Spanos (Pol D.), ?-, Grec, 340
+  \item Stevens (Stanley Smith), 1906-1973, Am\IeC {\'e}ricain, 266
+  \item Stokes (George Gabriel), 1819-1903, Anglais, 57, 83, 84, 105, 299, 350
+  \item Stone (Marshall Harvey), 1903-1989, Am\IeC {\'e}ricain, 363
+  \item Strang (William Gilbert), 1934-, Am\IeC {\'e}ricain, 124, 130, 131, 391
+  \item Sturm (Jacques Charles Fran\IeC {\c c}ois), 1803-1855, Fran\IeC {\c c}ais, 76
+  \item Sylvester (James Joseph), 1814-1897, Anglais, 243
+
+  \indexspace
+
+  \lettergroup{T}
+  \item Taylor (Brook), 1685-1731, Anglais, 332, 335, 362, 369, 385, 388
+  \item Tchebychev (Pafnouti Lvovitch), 1821-1894, Russe, 366, 367, 369, 375
+  \item Thiessen (Alfred H.), 1872-1956, Am\IeC {\'e}ricain, 200
+  \item Timoshenko (Stephen), 1878-1972, Russe, 139
+  \item Tisserand (Fran\IeC {\c c}ois F\IeC {\'e}lix), 1845-1896, Fran\IeC {\c c}ais, 332
+  \item Tong (Pin), ? , Chinois, 109, 138, 158
+  \item Torroja (Eduardo), ?, Espagnol, 343
+  \item Toscani (Giuseppe), ?- , Italien, 84
+  \item Trefftz (Erich Immanuel), 1888-1937, Allemand, 256, 347
+  \item Tresca (Henri \IeC {\'E}douard), 1814-1885, Fran\IeC {\c c}ais, 299, 300, 321
+  \item Tsa\IeC {\"\i } (Stephen W), ?-, Am\IeC {\'e}ricain, 160, 300
+  \item Tschirnhaus (Ehrenfried Walther von -), 1651-1708, Allemand, 214
+  \item Tsotsis (Thomas K.), ?- , Am\IeC {\'e}ricain, 330
+
+  \indexspace
+
+  \lettergroup{U}
+  \item Uflyand (Yakov Solomonovic), ,Russe, 139
+  \item Ulam (Stanis\IeC {\l }aw Marcin), 1909-1984, Am\IeC {\'e}ricain, 341
+  \item Uzawa (Hirofumi), 1928-, Japonais, 307
+
+  \indexspace
+
+  \lettergroup{V}
+  \item Villani (C\IeC {\'e}dric), 1973- , Fran\IeC {\c c}ais, 84
+  \item Vinci (L\IeC {\'e}onard, de-), 1452-1519, Italien, 139
+  \item Voigt (Woldemar), 1850-1919, Allemand, 209, 210, 290, 296--298
+  \item Volterra (Vito), 1860-1940, Italien, 76, 336
+  \item Vorono\IeC {\"\i } (Gueorgui Feodossievitch), 1868-1908, Russe, 197, 199, 200
+
+  \indexspace
+
+  \lettergroup{W}
+  \item Wallis (John), 1616-1703, Anglais, 387
+  \item Warburton (Geoffrey Barratt), 1924-2009, Anglais, 251
+  \item Waring (Edward), 1736-1798, Anglais, 362
+  \item Warnock (John Edward), 1940- , Am\IeC {\'e}ricain, 370
+  \item Washizu (Kyuichiro), 1921-1981, Japonais, 108
+  \item W\IeC {\"a}stlund (Karl Georg), 1905-1980, Su\IeC {\'e}dois, 343
+  \item Weber (Ernst Heinrich), 1795-1878, Allemand, 266
+  \item Weibull (Ernst Hjalmar Waloddi), 1887-1979, Su\IeC {\'e}dois, 328, 343
+  \item Weierstrass (Karl Theodor Wilhelm), 1815-1897, Allemand, 214, 363
+  \item Weill (Jean-Christophe), ?-, Fran\IeC {\c c}ais, 203
+  \item Wells (Alan Arthur), 1924-2005, Anglais, 322
+  \item Wendroff (Burton), 1930-, Am\IeC {\'e}ricain, 393
+  \item Wheatstone (Charles), 1802-1875, Anglais, 251
+  \item Wiener (Norbert), 1894-1964, Am\IeC {\'e}ricain, 336
+  \item Wilson (John), 1741-1793, Anglais, 100
+  \item Winther (Ragnar), 1949-, Norv\IeC {\'e}gien, 351
+  \item Wirtinger (Wilhelm), 1865-1945, Autrichien, 66
+  \item Wisner (Alain), 1923-2004, Fran\IeC {\c c}ais, 270
+  \item W\IeC {\"o}hler (August), 1819-1914, Allemand, 324, 325, 327
+  \item Wu (Edward Ming-Chi), 1938-2009, Am\IeC {\'e}ricain, 160
+
+  \indexspace
+
+  \lettergroup{Y}
+  \item Young (Thomas), 1773-1829, Anglais, 89, 163, 295, 301
+  \item Young (William Henry), 1863-1942, Anglais, 362, 369
+
+  \indexspace
+
+  \lettergroup{Z}
+  \item Zach (Franz Xaver, Baron von -), 1754-1832, Allemand, 361
+  \item Zienkiewicz (Olgierd Cecil), 1921-2009, Anglais, 124
+
+\end{theindex}
