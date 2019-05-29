@@ -1,0 +1,1022 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {french}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Introduction}{3}{section*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{But du document}{3}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{D\IeC {\'e}marche de l'ing\IeC {\'e}nieur num\IeC {\'e}ricien}{4}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Notations}{5}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Table des mati{\`e}res\markboth {\MakeUppercase {Table des mati{\`e}res}}{\MakeUppercase {Table des mati{\`e}res}}}{7}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\setlength \fboxsep {2pt}\noindent \colorbox {ocre}{\vphantom {\IeC {\'E}p}\makebox [\ecart -2\fboxsep -2\fboxrule ]{\color {black!5}\bfseries I}}\tmspace +\thickmuskip {.2777em}\color@box {}{black!5}{\vphantom {\IeC {\'E}p}\makebox [\linewidth -4\fboxsep -4\fboxrule -\ecart ]{\MakeUppercase {Survol math\IeC {\'e}matique}}}}{17}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Les espaces de base}{19}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Panorama non exhaustif des espaces}{19}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}Point de vue topologique}{20}{subsection.1.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Point de vue m\IeC {\'e}trique}{21}{subsection.1.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.3}Point de vue alg\IeC {\'e}brique}{21}{subsection.1.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Tribu, mesure, espaces mesurable et mesur\IeC {\'e}}{24}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Tribu bor\IeC {\'e}lienne, mesures de Dirac et Lebesgue}{25}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Propri\IeC {\'e}t\IeC {\'e}s de la mesure de Lebesgue}{27}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Petit exemple amusant d'injection dans un Hilbert}{28}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Applications et morphismes}{29}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Fonction, application, injection, surjection, bijection}{29}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Morphismes}{31}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Pr\IeC {\'e}sentation}{31}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Cas des espaces vectoriels: application et forme lin\IeC {\'e}aires}{31}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Endo, iso, auto -morphismes}{32}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Espace dual d'un espace vectoriel}{32}{subsection.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.5}Noyau et image}{33}{subsection.2.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Op\IeC {\'e}rateur}{34}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Continuit\IeC {\'e} et d\IeC {\'e}rivabilit\IeC {\'e}}{35}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Continuit\IeC {\'e} et classe~$C^0$}{35}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Continuit\IeC {\'e} de H\IeC {\"o}lder et Lipschitz}{36}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}D\IeC {\'e}riv\IeC {\'e}e}{37}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Fonctions de classe~$C^k$}{38}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Diff\IeC {\'e}rentielle}{39}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}D\IeC {\'e}riv\IeC {\'e}es partielles}{39}{section.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}Retour sur les classes~$C^k$ pour une fonction de plusieurs variables}{40}{section.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.8}Nabla et comparses}{41}{section.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.8.1}Champs de vecteurs et de scalaires}{41}{subsection.3.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.8.2}Gradient, divergence, rotationnel, Laplacien et D'Alembertien}{42}{subsection.3.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.8.3}Normale et d\IeC {\'e}riv\IeC {\'e}e normale}{43}{subsection.3.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.8.4}Potentiel d'un champ vectoriel}{43}{subsection.3.8.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.8.5}Signification \csqQQ {194.171}physique\csqQQ {194.187}}{44}{subsection.3.8.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.9}Quelques th\IeC {\'e}or\IeC {\`e}mes sur les int\IeC {\'e}grales}{44}{section.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Espaces de Lebesgue}{47}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Pr\IeC {\'e}sentation des espaces de Lebesgue~$L^p$}{49}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Construction de~$L^p$}{50}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Espace~$L^0$}{51}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Espace~$L^\infty $ et dualit\IeC {\'e} avec~$L^1$}{52}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Espace~$L^2$}{52}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Compl\IeC {\'e}ments et retour sur les fonctions continues et diff\IeC {\'e}rentiables}{52}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Espaces de Sobolev}{55}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Distributions}{56}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}D\IeC {\'e}riv\IeC {\'e}es au sens des distributions}{58}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Espaces~$W^{m,p}(\Omega )$}{59}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Espaces~$H^m(\Omega )$, $H^m_0(\Omega )$ et~$H^{-m}(\Omega )$}{60}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Prise en compte du contour du domaine}{61}{section.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5.1}Trace}{61}{subsection.5.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5.2}Espace trace}{62}{subsection.5.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas~$p=2$ et~$\Omega =\ensuremath {\mathbb R}^{n}$}{62}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas~$p=2$ et~$\Omega \subset \ensuremath {\mathbb R}^{n}$ quelconque}{63}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas~$p\neq 2$ et~$\Omega = \mathopen {]}0\tmspace +\thinmuskip {.1667em};1\mathclose {[}$}{63}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas g\IeC {\'e}n\IeC {\'e}ral des espaces~$H^s$}{63}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas g\IeC {\'e}n\IeC {\'e}ral des espaces~$W^{s,p}$}{63}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}Espaces~$H^1(\Omega )$, $H^1_0(\Omega )$ et~$H^{-1}(\Omega )$}{63}{section.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Espaces~$H(\dive )$ et~$H(\rot )$}{65}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}In\IeC {\'e}galit\IeC {\'e}s utiles}{65}{section.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{R\IeC {\'e}sum\IeC {\'e} des outils d'analyse fonctionnelle}{69}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\setlength \fboxsep {2pt}\noindent \colorbox {ocre}{\vphantom {\IeC {\'E}p}\makebox [\ecart -2\fboxsep -2\fboxrule ]{\color {black!5}\bfseries II}}\tmspace +\thickmuskip {.2777em}\color@box {}{black!5}{\vphantom {\IeC {\'E}p}\makebox [\linewidth -4\fboxsep -4\fboxrule -\ecart ]{\MakeUppercase {Probl\IeC {\`e}me continu}}}}{73}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Probl\IeC {\`e}mes physiques: \IeC {\'e}quations diff\IeC {\'e}rentielles et aux d\IeC {\'e}riv\IeC {\'e}es partielles}{75}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Introduction}{75}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Conditions aux limites}{77}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Dirichlet -- valeurs aux bords}{77}{subsection.6.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Neumann -- gradients aux bords}{77}{subsection.6.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.3}Robin -- relation gradient/valeurs sur le bord}{77}{subsection.6.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.4}Condition aux limites dynamique}{78}{subsection.6.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.5}Condition aux limites m\IeC {\^e}l\IeC {\'e}e}{78}{subsection.6.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Types d'\IeC {\'e}quation aux d\IeC {\'e}riv\IeC {\'e}es partielles}{78}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Ph\IeC {\'e}nom\IeC {\`e}nes de propagation et de diffusion}{78}{section.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.1}\IeC {\'E}quations de Laplace et Poisson}{79}{subsection.6.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.2}\IeC {\'E}quation d'onde, ph\IeC {\'e}nom\IeC {\`e}nes vibratoires}{79}{subsection.6.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.3}\IeC {\'E}quation de la chaleur}{80}{subsection.6.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}M\IeC {\'e}canique des fluides}{83}{section.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5.1}\IeC {\'E}quation de Navier-Stokes}{83}{subsection.6.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5.2}\IeC {\'E}quation de Stokes}{84}{subsection.6.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5.3}\IeC {\'E}quation d'Euler}{85}{subsection.6.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.6}\IeC {\'E}quations de la m\IeC {\'e}canique des milieux continus des solides}{85}{section.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6.1}Notions g\IeC {\'e}n\IeC {\'e}rales conduisant aux \IeC {\'e}quations de la m\IeC {\'e}canique}{85}{subsection.6.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}quation aux d\IeC {\'e}riv\IeC {\'e}es partielles elliptique lin\IeC {\'e}aire}{86}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Flux conservatif}{86}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}quilibre des lois de conservation en comportement lin\IeC {\'e}aire}{86}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Lois de conservation}{87}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Hypoth\IeC {\`e}se de milieu immobile et de r\IeC {\'e}gime stationnaire}{87}{section*.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Hypoth\IeC {\`e}se de loi de comportement lin\IeC {\'e}aire}{87}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}quilibre g\IeC {\'e}n\IeC {\'e}ral}{87}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Retour sur les exemples pr\IeC {\'e}c\IeC {\'e}dents}{88}{section*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6.2}Formulation g\IeC {\'e}n\IeC {\'e}rale}{88}{subsection.6.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6.3}Dynamique / statique}{88}{subsection.6.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6.4}Grands / petits d\IeC {\'e}placements}{89}{subsection.6.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6.5}Loi de comportement}{89}{subsection.6.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.7}\IeC {\'E}quations de l'acoustique}{90}{section.6.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.8}Multiplicateurs de Lagrange}{91}{section.6.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Formulations faible et variationnelle}{93}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Principe des formulations faible et variationnelle}{93}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Principe des puissances virtuelles}{94}{section*.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Minimisation de l'\IeC {\'e}nergie potentielle}{94}{section*.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{M\IeC {\'e}thode des r\IeC {\'e}sidus pond\IeC {\'e}r\IeC {\'e}s}{95}{section*.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Th\IeC {\'e}or\IeC {\`e}me de repr\IeC {\'e}sentation de Riesz-Fr\IeC {\'e}chet}{95}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}Cas des formes lin\IeC {\'e}aires}{95}{subsection.7.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}Extension aux formes bilin\IeC {\'e}aires}{96}{subsection.7.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Th\IeC {\'e}or\IeC {\`e}me de Lax-Milgram}{96}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Th\IeC {\'e}or\IeC {\`e}me de Babu\IeC {\v s}ka et condition inf-sup}{97}{section.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.5}Th\IeC {\'e}or\IeC {\`e}mes de Brezzi et condition BBL}{98}{section.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.6}Multiplicateurs de Lagrange}{99}{section.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Probl\IeC {\`e}mes physiques: formulations faibles et variationnelles}{101}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Ph\IeC {\'e}nom\IeC {\`e}nes de propagation et de diffusion}{101}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.1}\IeC {\'E}quations de Laplace et Poisson}{101}{subsection.8.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Laplacien de Dirichlet}{101}{section*.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\IeC {\'E}quivalence des solutions}{102}{section*.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Laplacien de Dirichlet relev\IeC {\'e}}{102}{section*.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Laplacien de Neumann}{102}{section*.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Laplacien avec conditions mixtes}{103}{section*.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Laplacien avec conditions mixtes en formulation mixte}{103}{section*.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.2}\IeC {\'E}quation d'onde}{104}{subsection.8.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.3}\IeC {\'E}quation de la chaleur}{104}{subsection.8.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}M\IeC {\'e}canique des fluides}{104}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.1}\IeC {\'E}quation de Stokes}{105}{subsection.8.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.2}\IeC {\'E}quation de Navier-Stokes}{105}{subsection.8.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.3}\IeC {\'E}quation d'Euler}{106}{subsection.8.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}\IeC {\'E}quations de la m\IeC {\'e}canique des milieux continus des solides}{107}{section.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.1}Formulation g\IeC {\'e}n\IeC {\'e}rale}{107}{subsection.8.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.2}Choix des variables}{107}{subsection.8.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Formulation classique en d\IeC {\'e}placements}{107}{section*.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Illustration: formulation en d\IeC {\'e}placements de la statique des mat\IeC {\'e}riaux isotropes}{108}{section*.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Formulations mixte et hybride}{108}{section*.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.3}\IeC {\'E}quation des plaques}{109}{subsection.8.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.4}\IeC {\'E}quations de l'acoustique}{111}{section.8.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.1}\IeC {\'E}quation de Helmholtz}{111}{subsection.8.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.2}Conditions aux limites en acoustique}{112}{subsection.8.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.3}Formulation faible}{112}{subsection.8.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Exemple de formulation variationnelle d'un probl\IeC {\`e}me de Neumann}{113}{chapter.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}\IeC {\'E}tude directe de l'existence et l'unicit\IeC {\'e} de la solution}{113}{section.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.2}Formulation variationnelle}{113}{section.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.3}Formulation mixte duale}{114}{section.9.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\setlength \fboxsep {2pt}\noindent \colorbox {ocre}{\vphantom {\IeC {\'E}p}\makebox [\ecart -2\fboxsep -2\fboxrule ]{\color {black!5}\bfseries III}}\tmspace +\thickmuskip {.2777em}\color@box {}{black!5}{\vphantom {\IeC {\'E}p}\makebox [\linewidth -4\fboxsep -4\fboxrule -\ecart ]{\MakeUppercase {\IeC {\'E}l\IeC {\'e}ments finis}}}}{119}{part.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Introduction}{121}{section*.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}La m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis}{123}{chapter.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.1}Introduction}{123}{section.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.2}Probl\IeC {\`e}mes de la mod\IeC {\'e}lisation \csqQQ {194.171}r\IeC {\'e}elle\csqQQ {194.187}}{125}{section.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.2.1}Probl\IeC {\`e}mes g\IeC {\'e}om\IeC {\'e}triques}{125}{subsection.10.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.2.2}Probl\IeC {\`e}mes d'\IeC {\'e}chelle}{125}{subsection.10.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.2.3}Couplage g\IeC {\'e}om\IeC {\'e}trique}{126}{subsection.10.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.2.4}Couplage intrins\IeC {\`e}que}{126}{subsection.10.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.3}Principe de la m\IeC {\'e}thode: r\IeC {\'e}solution d'un syst\IeC {\`e}me matriciel}{127}{section.10.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.4}Approximation conforme et lemme de C\IeC {\'e}a}{129}{section.10.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.4.1}Cas Lax-Milgram}{129}{subsection.10.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.4.2}Cas Babu\IeC {\v s}ka}{129}{subsection.10.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.4.3}Cas Brezzi}{130}{subsection.10.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.5}Approximations non conformes et lemmes de Strang}{130}{section.10.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.5.1}Approximation interne}{130}{subsection.10.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.5.2}Approximation externe}{131}{subsection.10.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.6}Convergence de la m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis en approximation conforme interne}{132}{section.10.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.6.1}Calcul de la majoration d'erreur}{132}{subsection.10.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Majoration par l'erreur d'interpolation}{132}{section*.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{D\IeC {\'e}composition en majorations locales sur chaque \IeC {\'e}l\IeC {\'e}ment}{132}{section*.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Passage \IeC {\`a} l'\IeC {\'e}l\IeC {\'e}ment de r\IeC {\'e}f\IeC {\'e}rence}{132}{section*.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Majoration sur l'\IeC {\'e}l\IeC {\'e}ment de r\IeC {\'e}f\IeC {\'e}rence}{133}{section*.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Majoration sur un \IeC {\'e}l\IeC {\'e}ment quelconque}{133}{section*.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Assemblage des majorations locales}{133}{section*.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.6.2}Majoration de l'erreur}{133}{subsection.10.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {11}Choix d'un Mod\IeC {\`e}le}{135}{chapter.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.1}La m\IeC {\'e}canique, un probl\IeC {\`e}me \IeC {\`a} plusieurs champs}{136}{section.11.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.2}Plusieurs mod\IeC {\'e}lisations d'un m\IeC {\^e}me probl\IeC {\`e}me}{139}{section.11.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.3}Exemple: retour sur le calcul de poutre du paragraphe~\ref {Sec-champs} avec \textsc {Cast3M}\xspace }{142}{section.11.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.3.1}Mod\IeC {\'e}lisation 2D}{142}{subsection.11.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.3.2}Mod\IeC {\`e}le 3D}{143}{subsection.11.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11.4}Interpolation des champs et de la g\IeC {\'e}om\IeC {\'e}trie}{144}{section.11.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {12}Formulation pratique d'\IeC {\'e}l\IeC {\'e}ments finis}{145}{chapter.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12.1}\IeC {\'E}l\IeC {\'e}ments de Lagrange}{145}{section.12.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1.1}Unisolvance}{145}{subsection.12.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1.2}\IeC {\'E}l\IeC {\'e}ments finis de Lagrange}{146}{subsection.12.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1.3}Famille affine d'\IeC {\'e}l\IeC {\'e}ments finis et \IeC {\'e}l\IeC {\'e}ment de r\IeC {\'e}f\IeC {\'e}rence}{148}{subsection.12.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1.4}Construction de la base globale}{149}{subsection.12.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1.5}Exemple: \IeC {\'e}l\IeC {\'e}ments finis~$\ensuremath {\mathbb P}_k$ en \IeC {\'e}lasticit\IeC {\'e} lin\IeC {\'e}aire}{149}{subsection.12.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1.6}Exemple: construction automatique des fonctions de forme du pav\IeC {\'e}}{150}{subsection.12.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Algorithme g\IeC {\'e}n\IeC {\'e}ral}{150}{section*.77}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas du segment}{150}{section*.78}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas du carr\IeC {\'e}}{151}{section*.79}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas du cube}{151}{section*.80}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas du tesseract}{152}{section*.81}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12.2}\IeC {\'E}l\IeC {\'e}ments d'Hermite}{153}{section.12.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2.1}Classe d'un \IeC {\'e}l\IeC {\'e}ment fini}{153}{subsection.12.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2.2}\IeC {\'E}l\IeC {\'e}ments finis d'Hermite}{153}{subsection.12.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2.3}\IeC {\'E}l\IeC {\'e}ments uni- et bidimensionnels}{154}{subsection.12.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2.4}Exemple: \IeC {\'e}l\IeC {\'e}ments finis d'Hermite pour l'\IeC {\'e}quation des plaques}{155}{subsection.12.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12.3}Traitement de plusieurs champs}{157}{section.12.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12.4}Validation pratique et indicateurs d'erreur}{159}{section.12.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.4.1}Modes rigides et parasites}{159}{subsection.12.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.4.2}Modes associ\IeC {\'e}s aux d\IeC {\'e}formations constantes}{160}{subsection.12.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.4.3}Patch-tests}{160}{subsection.12.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.4.4}Test de pr\IeC {\'e}cision d'un \IeC {\'e}l\IeC {\'e}ment}{160}{subsection.12.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12.5}Exemple: quelques variations sur le th\IeC {\`e}me des \IeC {\'e}l\IeC {\'e}ments unidimensionnels}{160}{section.12.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.1}\IeC {\'E}l\IeC {\'e}ment de r\IeC {\'e}f\IeC {\'e}rence unidimensionnel lin\IeC {\'e}aire \IeC {\`a} deux n\IeC {\oe }uds}{160}{subsection.12.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.2}Rappels sur la jacobienne et le jacobien d'une transformation}{161}{subsection.12.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.3}\IeC {\'E}l\IeC {\'e}ments de r\IeC {\'e}f\IeC {\'e}rence unidimensionnels lin\IeC {\'e}aires \IeC {\`a}~$n$ n\IeC {\oe }uds}{162}{subsection.12.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.4}\IeC {\'E}l\IeC {\'e}ment de r\IeC {\'e}f\IeC {\'e}rence unidimensionnel infini}{163}{subsection.12.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.5}\IeC {\'E}l\IeC {\'e}ment fini de barre unidimensionnel}{163}{subsection.12.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.6}Assemblage de trois \IeC {\'e}l\IeC {\'e}ments unidimensionnels lin\IeC {\'e}aires \IeC {\`a} deux n\IeC {\oe }uds}{165}{subsection.12.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.7}\IeC {\'E}l\IeC {\'e}ment de barre unidimensionnel de type Hermite (\IeC {\'e}l\IeC {\'e}ment subparam\IeC {\'e}trique)}{165}{subsection.12.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5.8}\IeC {\'E}l\IeC {\'e}ment mixte unidimensionnel}{166}{subsection.12.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12.6}Sur les d\IeC {\'e}placements impos\IeC {\'e}s}{167}{section.12.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.1}Probl\IeC {\`e}me consid\IeC {\'e}r\IeC {\'e}}{167}{subsection.12.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.2}Retour sur la r\IeC {\'e}solution de syst\IeC {\`e}mes lin\IeC {\'e}aires}{167}{subsection.12.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.3}Compl\IeC {\'e}ment de Schur et d\IeC {\'e}placements impos\IeC {\'e}s}{168}{subsection.12.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.4}Multiplicateurs de Lagrange et d\IeC {\'e}placements impos\IeC {\'e}s}{168}{subsection.12.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.5}Actions ext\IeC {\'e}rieures et d\IeC {\'e}placements impos\IeC {\'e}s}{169}{subsection.12.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.6}Retour sur notre exemple}{169}{subsection.12.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6.7}Relations lin\IeC {\'e}aires entre degr\IeC {\'e}s de libert\IeC {\'e}}{170}{subsection.12.6.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {13}Calcul efficient: qualit\IeC {\'e} des r\IeC {\'e}sultats et efforts de calcul}{173}{chapter.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.1}Am\IeC {\'e}lioration d'un mod\IeC {\`e}le: m\IeC {\'e}thodes~$r$, $h$ et~$p$}{173}{section.13.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.2}Post-traitement}{173}{section.13.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.3}Exemple d'impl\IeC {\'e}mentation d'un post-traitement dans \textsc {Ansys}\xspace }{175}{section.13.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.3.1}Macro dans \textsc {Ansys}\xspace }{176}{subsection.13.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.3.2}Poutre en U}{178}{subsection.13.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.3.3}R\IeC {\'e}sultats}{180}{subsection.13.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.4}Sous-structuration et simulation multi-\IeC {\'e}chelles}{187}{section.13.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.4.1}Condition de p\IeC {\'e}riodicit\IeC {\'e} -- m\IeC {\'e}thodes multi-niveaux}{189}{subsection.13.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.4.2}Couplage des cellules microscopiques -- m\IeC {\'e}thodes de d\IeC {\'e}composition de domaine}{190}{subsection.13.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.5}Super-\IeC {\'e}l\IeC {\'e}ments}{191}{section.13.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.5.1}Condensation statique}{191}{subsection.13.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.5.2}Remonter aux degr\IeC {\'e}s de libert\IeC {\'e} internes}{192}{subsection.13.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.6}Pseudo-inversion et r\IeC {\'e}analyse}{192}{section.13.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.6.1}Modification du chargement uniquement}{193}{subsection.13.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.6.2}Modification de la matrice}{193}{subsection.13.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.6.3}Modification des conditions cin\IeC {\'e}matiques}{193}{subsection.13.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.6.4}Deux mots de statistiques}{194}{subsection.13.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {13.7}D\IeC {\'e}riv\IeC {\'e}es d'ordre sup\IeC {\'e}rieur}{195}{section.13.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.7.1}D\IeC {\'e}riv\IeC {\'e}es par rapport \IeC {\`a} la g\IeC {\'e}om\IeC {\'e}trie}{195}{subsection.13.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {13.7.2}Calcul des d\IeC {\'e}riv\IeC {\'e}es}{196}{subsection.13.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {14}Le maillage}{197}{chapter.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14.1}Maillage de Delaunay}{198}{section.14.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {14.1.1}Maillage simplexial}{198}{subsection.14.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {14.1.2}Maillage de Delaunay-Vorono\IeC {\"\i }}{199}{subsection.14.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {14.1.3}Remarques}{201}{subsection.14.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14.2}Maillage par avancement de fronts}{202}{section.14.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14.3}Maillage par transformation}{202}{section.14.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {14.4}Remarques sur le maillage quadrangulaire et hexa\IeC {\'e}drique}{203}{section.14.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {15}Homog\IeC {\'e}n\IeC {\'e}isation}{205}{chapter.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {15.1}M\IeC {\'e}thodes d'homog\IeC {\'e}n\IeC {\'e}isation}{206}{section.15.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {15.1.1}M\IeC {\'e}thode de d\IeC {\'e}veloppement r\IeC {\'e}gulier}{207}{subsection.15.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {15.1.2}M\IeC {\'e}thode de la couche limite}{208}{subsection.15.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {15.1.3}M\IeC {\'e}thode de d\IeC {\'e}veloppement asymptotique infini}{208}{subsection.15.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {15.1.4}Cas des coefficients discontinus}{209}{subsection.15.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {15.2}Homog\IeC {\'e}n\IeC {\'e}isation simplifi\IeC {\'e}e pour les mat\IeC {\'e}riaux composites}{209}{section.15.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {15.2.1}Introduction}{209}{subsection.15.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {15.2.2}Loi des m\IeC {\'e}langes, bornes de Voigt et de Reuss}{209}{subsection.15.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {15.3}Homog\IeC {\'e}n\IeC {\'e}isation des mat\IeC {\'e}riaux poreux}{211}{section.15.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {15.4}Homog\IeC {\'e}n\IeC {\'e}isation des probl\IeC {\`e}mes non stationnaires}{211}{section.15.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {15.5}Changement de dimension et raccord de maillage}{212}{section.15.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {16}Optimisation}{213}{chapter.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.1}Th\IeC {\'e}orie de l'optimisation}{215}{section.16.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.1}Existence et unicit\IeC {\'e} d'un minimum}{215}{subsection.16.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.2}Diff\IeC {\'e}rentiabilit\IeC {\'e} et optimalit\IeC {\'e}}{216}{subsection.16.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.3}Lagrangien}{217}{subsection.16.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.4}Dualit\IeC {\'e} et point selle}{218}{subsection.16.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.5}Maximisation}{219}{subsection.16.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.6}Ensemble admissible}{219}{subsection.16.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.7}L'optimisation discr\IeC {\`e}te}{220}{subsection.16.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.1.8}Remarques sur la mise en \IeC {\oe }uvre}{220}{subsection.16.1.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.2}Optimisation de forme}{221}{section.16.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.2.1}Optimisation param\IeC {\'e}trique}{221}{subsection.16.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.2.2}Optimisation g\IeC {\'e}om\IeC {\'e}trique}{221}{subsection.16.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Approche \csqQQ {194.171}libre\csqQQ {194.187}}{221}{section*.124}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Approche \csqQQ {194.171}r\IeC {\'e}guli\IeC {\`e}re\csqQQ {194.187}}{222}{section*.125}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.2.3}Optimisation topologique par homog\IeC {\'e}n\IeC {\'e}isation}{223}{subsection.16.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {16.3}Exemples d'optimisation d'une membrane}{224}{section.16.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.1}Optimisation du mat\IeC {\'e}riau \IeC {\'e}lastique anisotrope en rigidit\IeC {\'e}}{225}{subsection.16.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.2}Optimisation du mat\IeC {\'e}riau \IeC {\'e}lastique anisotrope pour un d\IeC {\'e}placement cible}{226}{subsection.16.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.3}Optimisation de l'\IeC {\'e}paisseur en rigidit\IeC {\'e}}{227}{subsection.16.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.4}Optimisation de l'\IeC {\'e}paisseur pour un d\IeC {\'e}placement cible}{228}{subsection.16.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.5}Optimisation de l'\IeC {\'e}paisseur pour une contrainte cible}{228}{subsection.16.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.6}Optimisation g\IeC {\'e}om\IeC {\'e}trique en rigidit\IeC {\'e} sous tension prescrite}{229}{subsection.16.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {16.3.7}Optimisation de l'\IeC {\'e}paisseur pour la premi\IeC {\`e}re fr\IeC {\'e}quence propre}{231}{subsection.16.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {17}Probl\IeC {\`e}mes non stationnaires}{233}{chapter.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17.1}\IeC {\'E}quation non stationnaire de la dynamique}{233}{section.17.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17.2}Sch\IeC {\'e}ma explicite: diff\IeC {\'e}rences finies centr\IeC {\'e}es}{234}{section.17.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17.3}Sch\IeC {\'e}ma implicite: sch\IeC {\'e}ma de Newmark classique}{234}{section.17.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17.4}Comparaison des m\IeC {\'e}thodes explicite et implicite}{235}{section.17.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17.5}Exemple: un calcul de propagation avec \textsc {FreeFem++}\xspace }{236}{section.17.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17.6}D\IeC {\'e}composition modale}{238}{section.17.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {18}Les ondes}{241}{chapter.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {18.1}Introduction}{241}{section.18.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {18.2}Notions de valeur, vecteur, mode et fr\IeC {\'e}quence propres}{243}{section.18.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {18.3}Vibration des structures}{243}{section.18.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.3.1}Vibrations libres non amorties}{244}{subsection.18.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Rappel du cas unidimensionnel}{245}{section*.128}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.3.2}Vibrations libres amorties}{245}{subsection.18.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Probl\IeC {\`e}mes du premier ordre}{245}{section*.129}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Probl\IeC {\`e}mes du second ordre}{246}{section*.130}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Rappel du cas unidimensionnel}{246}{section*.131}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.3.3}Vibrations p\IeC {\'e}riodiques forc\IeC {\'e}es}{247}{subsection.18.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Rappel du cas unidimensionnel}{247}{section*.132}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.3.4}R\IeC {\'e}gimes transitoires}{248}{subsection.18.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{D\IeC {\'e}composition modale}{248}{section*.133}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.3.5}Calcul des modes propres et m\IeC {\'e}thodes de r\IeC {\'e}duction modale}{249}{subsection.18.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Quotient de Rayleigh}{249}{section*.134}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{M\IeC {\'e}thode it\IeC {\'e}rative de Rayleigh}{250}{section*.135}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{It\IeC {\'e}rations des sous-espaces}{250}{section*.136}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Sous-structuration: m\IeC {\'e}thode de Craig et Bampton}{250}{section*.137}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {18.4}Remarques sur l'amortissement}{251}{section.18.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {18.5}Pour aller plus loin: cas des chocs large bande}{252}{section.18.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.5.1}Approches temporelles}{253}{subsection.18.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Discr\IeC {\'e}tisation spatiale}{253}{section*.138}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{D\IeC {\'e}composition de domaine en dynamique transitoire}{253}{section*.139}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Discr\IeC {\'e}tisation temporelle}{254}{section*.140}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.5.2}Approches fr\IeC {\'e}quentielles}{254}{subsection.18.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas des basses fr\IeC {\'e}quences}{254}{section*.141}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas des moyennes fr\IeC {\'e}quences}{255}{section*.142}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cas de hautes fr\IeC {\'e}quences}{256}{section*.143}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.5.3}Remarques}{257}{subsection.18.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {19}L'acoustique}{259}{chapter.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {19.1}Introduction \IeC {\`a} l'acoustique physique}{259}{section.19.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.1.1}\IeC {\'E}mission}{260}{subsection.19.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.1.2}Transmission}{260}{subsection.19.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Modes de propagation}{261}{section*.145}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Fonctionnement des solutions acoustiques}{261}{section*.146}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Compl\IeC {\'e}ments sur l'absorption}{262}{section*.147}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Diffraction et r\IeC {\'e}flexion}{264}{section*.150}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Environnement ouvert ou ferm\IeC {\'e}}{265}{section*.153}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.1.3}R\IeC {\'e}ception}{265}{subsection.19.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{D\IeC {\'e}cibels}{266}{section*.155}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Grandeurs acoustiques}{267}{section*.156}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Imp\IeC {\'e}dance}{268}{section*.157}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Normes, indices et psycho-acoustique}{269}{section*.158}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {19.2}Calculs acoustiques par \IeC {\'e}l\IeC {\'e}ments finis}{271}{section.19.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.2.1}Mod\IeC {\`e}les simplifi\IeC {\'e}s pour valeurs de r\IeC {\'e}f\IeC {\'e}rence}{271}{subsection.19.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Puissance de la source sonore et propagation}{271}{section*.159}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Modes d'une salle}{271}{section*.160}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Remarques}{272}{section*.161}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.2.2}Constitution d'un mod\IeC {\`e}le \IeC {\'e}l\IeC {\'e}ments finis}{272}{subsection.19.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Sources}{272}{section*.162}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Rayonnement}{273}{section*.163}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Conditions aux limites}{274}{section*.164}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.2.3}Convergence}{276}{subsection.19.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Discr\IeC {\'e}tisation en espace}{276}{section*.165}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Discr\IeC {\'e}tisation en temps}{276}{section*.166}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.2.4}Vers l'infini...}{276}{subsection.19.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.2.5}... et au-del\IeC {\`a}}{277}{subsection.19.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.2.6}Post-Traitement}{277}{subsection.19.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {19.3}Quelques illustrations avec \textsc {FreeFem++}\xspace }{277}{section.19.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.1}Un exemple en acoustique des salles}{277}{subsection.19.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.2}Un silencieux automobile}{278}{subsection.19.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.3}Deux mots de statistiques}{279}{subsection.19.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.4}Sur les conditions aux limites}{280}{subsection.19.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.5}Un peu d'amortissement}{282}{subsection.19.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.6}Un obstacle}{283}{subsection.19.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.7}Transmission entre deux milieux}{284}{subsection.19.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {19.3.8}Interaction fluide-structure semi-forte}{284}{subsection.19.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {20}Les non lin\IeC {\'e}arit\IeC {\'e}s}{289}{chapter.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {20.1}Tenseurs, d\IeC {\'e}composition des tenseurs}{289}{section.20.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.1.1}Tenseur des contraintes}{290}{subsection.20.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.1.2}Tenseur des d\IeC {\'e}formations}{292}{subsection.20.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {20.2}Non lin\IeC {\'e}arit\IeC {\'e} g\IeC {\'e}om\IeC {\'e}trique}{294}{section.20.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {20.3}Non lin\IeC {\'e}arit\IeC {\'e} mat\IeC {\'e}rielle}{294}{section.20.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.3.1}Mod\IeC {\`e}les rh\IeC {\'e}ologiques}{295}{subsection.20.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.3.2}Viso\IeC {\'e}lasticit\IeC {\'e}}{297}{subsection.20.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.3.3}Visoplasticit\IeC {\'e}}{297}{subsection.20.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.3.4}Plasticit\IeC {\'e}}{298}{subsection.20.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Crit\IeC {\`e}re de von Mises}{299}{section*.180}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Crit\IeC {\`e}re de Tresca}{299}{section*.181}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Crit\IeC {\`e}re de Drucker-Prager}{299}{section*.182}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Crit\IeC {\`e}re de Mohr-Coulomb}{300}{section*.183}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Crit\IeC {\`e}res anisotropes}{300}{section*.184}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.3.5}Les \IeC {\'e}lastom\IeC {\`e}res}{300}{subsection.20.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Grandes d\IeC {\'e}formations}{301}{section*.185}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Incompressibilit\IeC {\'e}}{301}{section*.186}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Hyper\IeC {\'e}lasticit\IeC {\'e}}{302}{section*.187}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Approximation num\IeC {\'e}rique}{302}{section*.188}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.3.6}Les composites, l'anisotropie}{302}{subsection.20.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Composants}{303}{section*.189}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Les mat\IeC {\'e}riaux composites structuraux}{303}{section*.190}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Approximation num\IeC {\'e}rique}{304}{section*.191}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {20.4}Le contact}{305}{section.20.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.4.1}Lois de contact et de frottement}{306}{subsection.20.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.4.2}Algorithme local}{307}{subsection.20.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.4.3}Algorithme global}{307}{subsection.20.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {20.5}Exemple: une toute premi\IeC {\`e}re approche du contact avec \textsc {Cast3M}\xspace }{308}{section.20.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.5.1}Contact sur une surface infiniment rigide}{308}{subsection.20.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.5.2}Contact entre deux solides}{309}{subsection.20.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {20.5.3}R\IeC {\'e}solution pas \IeC {\`a} pas}{311}{subsection.20.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {21}La rupture en m\IeC {\'e}canique}{313}{chapter.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {21.1}Approches globale et locale}{313}{section.21.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Approches num\IeC {\'e}riques des fissures}{314}{section*.198}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {21.2}M\IeC {\'e}canique lin\IeC {\'e}aire de la rupture}{315}{section.21.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.2.1}Concentrations de contraintes des d\IeC {\'e}fauts}{315}{subsection.21.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.2.2}\IeC {\'E}quilibre \IeC {\'e}nerg\IeC {\'e}tique}{315}{subsection.21.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.2.3}Taux d'\IeC {\'e}nergie libre~$G$}{316}{subsection.21.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.2.4}Facteur d'intensit\IeC {\'e} de contrainte~$K$}{317}{subsection.21.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.2.5}Int\IeC {\'e}grale~$J$}{319}{subsection.21.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {21.3}M\IeC {\'e}canique \IeC {\'e}lastoplastique de la rupture}{320}{section.21.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.3.1}D\IeC {\'e}termination de la zone plastique}{320}{subsection.21.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.3.2}Mod\IeC {\`e}le d'Irwin}{321}{subsection.21.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.3.3}Autres mod\IeC {\`e}les}{321}{subsection.21.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mod\IeC {\`e}le de Dugdale}{321}{section*.205}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Crit\IeC {\`e}re de rupture bas\IeC {\'e} sur l'ouverture de fissure}{322}{section*.206}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {21.4}Mod\IeC {\'e}lisation num\IeC {\'e}rique de la rupture}{322}{section.21.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.4.1}Par la m\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis}{322}{subsection.21.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}l\IeC {\'e}ments finis singuliers}{322}{section*.207}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Techniques num\IeC {\'e}riques de calcul de~$K$, $G$ et $J$}{323}{section*.209}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.4.2}Par les m\IeC {\'e}thodes sans maillage}{323}{subsection.21.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.4.3}Par les \IeC {\'e}l\IeC {\'e}ments \IeC {\'e}tendus}{324}{subsection.21.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {21.5}Fatigue et dur\IeC {\'e}e de vie}{324}{section.21.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.5.1}Courbe et limite de fatigue}{324}{subsection.21.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.5.2}Cumul des dommages: principes de Miner}{327}{subsection.21.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.5.3}Propagation: loi de Paris}{328}{subsection.21.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.5.4}Pr\IeC {\'e}diction de la dur\IeC {\'e}e de vie}{328}{subsection.21.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {21.5.5}Sur la fatigue des composites}{329}{subsection.21.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {22}Stochastique: prise en compte de la variabilit\IeC {\'e}}{331}{chapter.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {22.1}Introduction}{331}{section.22.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {22.2}Repr\IeC {\'e}sentation des processus stochastiques}{333}{section.22.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.2.1}Variable al\IeC {\'e}atoire}{333}{subsection.22.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.2.2}Espace de probabilit\IeC {\'e}}{333}{subsection.22.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.2.3}Processus ou champ al\IeC {\'e}atoire}{334}{subsection.22.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.2.4}Discr\IeC {\'e}tisation de champs al\IeC {\'e}atoires}{335}{subsection.22.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.2.5}D\IeC {\'e}veloppement en s\IeC {\'e}rie de Karhunen-Lo\IeC {\`e}ve}{335}{subsection.22.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.2.6}Chaos polynomial}{336}{subsection.22.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {22.3}\IeC {\'E}l\IeC {\'e}ments finis stochastiques}{337}{section.22.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.3.1}D\IeC {\'e}veloppement en s\IeC {\'e}ries de von Neumann}{338}{subsection.22.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.3.2}Un exemple en statique lin\IeC {\'e}aire}{338}{subsection.22.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.3.3}Projection sur la base du chaos polynomial}{339}{subsection.22.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.3.4}Obtention des coefficients du syst\IeC {\`e}me matriciel \IeC {\`a} r\IeC {\'e}soudre}{339}{subsection.22.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.3.5}Synth\IeC {\`e}se et remarques}{340}{subsection.22.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {22.4}Post-traitement: moments statistiques}{341}{section.22.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {22.5}Fiabilit\IeC {\'e} des structures}{342}{section.22.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.5.1}D\IeC {\'e}finitions}{342}{subsection.22.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.5.2}M\IeC {\'e}thodes FORM/SORM}{345}{subsection.22.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {22.5.3}Tirages d'importance}{345}{subsection.22.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {23}Quelques m\IeC {\'e}thodes d\IeC {\'e}riv\IeC {\'e}es}{347}{chapter.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.1}M\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments fronti\IeC {\`e}res}{347}{section.23.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.2}M\IeC {\'e}thodes particulaires ou sans maillage}{348}{section.23.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.3}Partition de l'unit\IeC {\'e}}{349}{section.23.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.4}M\IeC {\'e}thode des \IeC {\'e}l\IeC {\'e}ments finis \IeC {\'e}tendue}{349}{section.23.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.5}M\IeC {\'e}thodes de treillis de Boltzmann}{350}{section.23.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.6}FEEC}{351}{section.23.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23.7}Syst\IeC {\`e}mes multi-corps}{351}{section.23.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {24}Quelques mots sur les singularit\IeC {\'e}s}{353}{chapter.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24.1}Qu'est-ce qu'une singularit\IeC {\'e} ?}{353}{section.24.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24.2}Singularit\IeC {\'e}s et \IeC {\'e}l\IeC {\'e}ments finis}{353}{section.24.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24.3}Quand les singularit\IeC {\'e}s se produisent-elles ?}{354}{section.24.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24.4}Comment \IeC {\'e}viter les singularit\IeC {\'e}s}{354}{section.24.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24.5}Singularit\IeC {\'e}s et pertinence d'un r\IeC {\'e}sultat}{354}{section.24.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24.6}Conclusion}{355}{section.24.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Conclusion}{357}{section*.214}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Sur la fiabilit\IeC {\'e} des r\IeC {\'e}sultats}{357}{section*.215}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Quelques perspectives}{357}{section*.216}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\setlength \fboxsep {2pt}\noindent \colorbox {ocre}{\vphantom {\IeC {\'E}p}\makebox [\ecart -2\fboxsep -2\fboxrule ]{\color {black!5}\bfseries IV}}\tmspace +\thickmuskip {.2777em}\color@box {}{black!5}{\vphantom {\IeC {\'E}p}\makebox [\linewidth -4\fboxsep -4\fboxrule -\ecart ]{\MakeUppercase {Annexes}}}}{359}{part.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Interpolation et approximation}{361}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Quelques bases polynomiales}{362}{section.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.1}Motivation}{362}{subsection.A.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.2}Orthogonalit\IeC {\'e}}{363}{subsection.A.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.3}Base naturelle}{363}{subsection.A.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.4}Polyn\IeC {\^o}mes de Lagrange}{363}{subsection.A.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.5}Polyn\IeC {\^o}mes d'Hermite}{364}{subsection.A.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.6}Polyn\IeC {\^o}mes de Legendre}{365}{subsection.A.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.7}Polyn\IeC {\^o}mes de Tchebychev}{366}{subsection.A.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Propri\IeC {\'e}t\IeC {\'e}s des polyn\IeC {\^o}mes de Tchebychev de premi\IeC {\`e}re esp\IeC {\`e}ce}{366}{section*.217}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Propri\IeC {\'e}t\IeC {\'e}s des polyn\IeC {\^o}mes de Tchebychev de seconde esp\IeC {\`e}ce}{367}{section*.218}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.8}Polyn\IeC {\^o}mes de Laguerre}{367}{subsection.A.1.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.9}Polyn\IeC {\^o}mes de Bernstein}{368}{subsection.A.1.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Interpolation polynomiale}{369}{section.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2.1}Interpolation de Lagrange}{369}{subsection.A.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2.2}Interpolation par Spline}{369}{subsection.A.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2.3}Interpolation d'Hermite}{369}{subsection.A.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.3}M\IeC {\'e}thodes d'approximation}{370}{section.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.1}Courbe de B\IeC {\'e}zier}{370}{subsection.A.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.2}B-Spline}{371}{subsection.A.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.3}B-splines rationnelles non uniformes}{371}{subsection.A.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Int\IeC {\'e}gration num\IeC {\'e}rique}{373}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.1}M\IeC {\'e}thodes de Newton-Cotes}{373}{section.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.2}M\IeC {\'e}thodes de quadrature de Gau\IeC {\ss }}{375}{section.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {C}R\IeC {\'e}solution des \IeC {\'e}quations diff\IeC {\'e}rentielles ordinaires}{379}{appendix.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.1}R\IeC {\'e}solution exacte des \IeC {\'e}quations diff\IeC {\'e}rentielles lin\IeC {\'e}aires}{379}{section.C.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.1.1}\IeC {\'E}quation diff\IeC {\'e}rentielle lin\IeC {\'e}aire scalaire d'ordre 1}{379}{subsection.C.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Coefficients constants}{379}{section*.230}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Coefficients non constants}{380}{section*.231}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{1. Traitement de l'\IeC {\'e}quation homog\IeC {\`e}ne}{380}{section*.232}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{2. Solution particuli\IeC {\`e}re}{380}{section*.233}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.1.2}\IeC {\'E}quation diff\IeC {\'e}rentielle du premier ordre \IeC {\`a} variables s\IeC {\'e}par\IeC {\'e}es}{381}{subsection.C.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.1.3}\IeC {\'E}quation diff\IeC {\'e}rentielle lin\IeC {\'e}aire d'ordre deux}{381}{subsection.C.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}quation diff\IeC {\'e}rentielle homog\IeC {\`e}ne}{382}{section*.234}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}quation diff\IeC {\'e}rentielle homog\IeC {\`e}ne \IeC {\`a} coefficients constants}{382}{section*.235}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\IeC {\'E}quation diff\IeC {\'e}rentielle homog\IeC {\`e}ne \IeC {\`a} coefficients non constants}{383}{section*.236}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Solution particuli\IeC {\`e}re et traitement du second membre}{383}{section*.237}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.2}R\IeC {\'e}solution num\IeC {\'e}rique}{383}{section.C.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.2.1}M\IeC {\'e}thode d'Euler, Runge-Kutta d'ordre 1}{383}{subsection.C.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.2.2}M\IeC {\'e}thode de Runge-Kutta d'ordre 2}{384}{subsection.C.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.2.3}M\IeC {\'e}thode de Runge-Kutta d'ordre 4}{384}{subsection.C.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.2.4}M\IeC {\'e}thode de Crank-Nicolson}{385}{subsection.C.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {C.2.5}M\IeC {\'e}thode de Newmark}{385}{subsection.C.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {D}M\IeC {\'e}thode de Newton Raphson}{387}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.1}Pr\IeC {\'e}sentation}{387}{section.D.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.2}Algorithme}{388}{section.D.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {E}Sch\IeC {\'e}mas num\IeC {\'e}riques}{391}{appendix.E}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {E.1}Les propri\IeC {\'e}t\IeC {\'e}s d'un sch\IeC {\'e}ma num\IeC {\'e}rique}{391}{section.E.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {E.1.1}Probl\IeC {\`e}me bien pos\IeC {\'e}}{391}{subsection.E.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {E.1.2}Conditionnement}{392}{subsection.E.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {E.1.3}Stabilit\IeC {\'e} ou robustesse}{392}{subsection.E.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {E.1.4}Consistance}{392}{subsection.E.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {E.1.5}Convergence}{393}{subsection.E.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {E.2}Th\IeC {\'e}or\IeC {\`e}mes de convergence}{393}{section.E.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliographie}{395}{section*.238}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index des noms propres}{403}{section*.245}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index des concepts}{409}{section*.246}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Galerie}{413}{section*.247}
+\contentsfinish 

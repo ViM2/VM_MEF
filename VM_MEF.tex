@@ -1,7 +1,5 @@
 \newif\ifVersionDuDocEstVincent% par défaut vaut false, donc version livre (Mathias), sinon version cours (Vincent)
-%\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
-\newif\ifVersionDuDocEstPourHAL% HAL (CEL...) ajoute un bandeau de largeur env 11mm...
-\VersionDuDocEstPourHALtrue%
+\VersionDuDocEstVincenttrue% à commenter pour compilation de la version livre (Mathias)
 %
 % Mise en page des figures dans l'ex4.tex du Ch Amelio.tex
 \newif\ifVMSurLaMemePage% si la dernière fig et 1e 1er tableau sur la même page: true
@@ -13,11 +11,13 @@
 \newif\ifAuteursDansGallerie% ne sert qu'en version cours
 %
 \ifVersionDuDocEstVincent
-   \VMSurLaMemePagetrue
+%   \VMSurLaMemePagetrue
+   \VMSurLaMemePagefalse
    \documentclass[11pt,pdflatex]{book}
    \AuteursDansGalleriefalse%
 \else
-   \VMSurLaMemePagefalse
+%   \VMSurLaMemePagefalse
+   \VMSurLaMemePagetrue
    \documentclass[fleqn,11pt,pdflatex]{book}
 \fi
 %
@@ -46,7 +46,7 @@
 \makeindex[program=texindy,columns=2,name=aut,title=Index des noms propres]
 %texindy -L french aut.idx
 %texindy -L french -M mystyle.xdy VM_MEF.idx
-\hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= blue,bookmarks=true,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
+\hypersetup{hidelinks,backref=true, pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= cyan,bookmarks=true,bookmarksopen=false,pdftitle={Méthode des Éléments Finis},pdfauthor={Vincent Manet}, pdfsubject={Aspects mathématiques et illustrations pour l'ingénieur}}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{./tex/freefempp}
@@ -107,30 +107,23 @@
 \author{Vincent Manet}
 
 % Recto de la page de titre
-\ifVersionDuDocEstVincent
-   \thispagestyle{empty}\mbox{}%
-   \AddToShipoutPicture*{\includegraphics{Front}}%
-%
+\thispagestyle{empty}\mbox{}%
+   \pagecolor[rgb]{0.9,0.9,0.9}% gris clair
+%\pagecolor[rgb]{0.8,0.8,0.8}% correspond au gris de VM_MEF v1 à 7
+%\afterpage{\nopagecolor}% nécessite le package afterpage
    \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
    \setlength{\belowdisplayskip}{\abovedisplayskip}
 %   ~\\[+15cm]\centerline{Version 4 du \today}
-   \title
-\else
-   \thispagestyle{empty}\mbox{}%
-   \AddToShipoutPicture*{\includegraphics{Front}}%
-%
-   \setlength{\abovedisplayskip}{6pt plus 2pt minus 1pt}
-   \setlength{\belowdisplayskip}{\abovedisplayskip}
-%   \setlength{\abovecaptionskip}{3pt}
-%   \setlength{\belowcaptionskip}{0pt}
-   \title
-\fi
+   ~\\[+1.2cm]
+   \centerline{\scalefont{3.3}\selectfont\textbf{Vincent Manet}}\\[+70mm]
+   \centerline{\scalefont{4.5}\color{ocre}\fontfamily{phv}\selectfont\textbf{Méthode des}}\\[+3.5mm]
+   \centerline{\scalefont{4.5}\color{ocre}\fontfamily{phv}\selectfont\textbf{éléments finis}}\\[+90mm]
+   \begin{flushright} \scalefont{2}\selectfont\emph{Vulgarisation des aspects mathématiques\\et illustration de la méthode} \end{flushright}
 % Verso de la page de titre
-\newpage\mbox{}\thispagestyle{empty}%
+\newpage\nopagecolor\mbox{}\thispagestyle{empty}%
 \vspace*{2cm}
-
 \vfill\normalsize\selectfont
-\noindent Vincent Manet --- 2014 (Ceci est la version \ifVersionDuDocEstVincent \textcolorblue{«cours»} \else \textcolorblue{«livre»} \fi de ce document)\\
+\noindent Vincent Manet --- 2012--2018 (Ceci est la version \ifVersionDuDocEstVincent \textcolorblue{«cours»} \else \textcolorblue{«livre»} \fi de ce document)\\
 Ce document est sous licence Creative Commons 3.0 France:
 \begin{itemize}
 \item paternité;
