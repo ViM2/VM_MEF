@@ -1,10 +1,8 @@
 \section{Exemple: calcul des effort équivalents pour une poutre}
 
-  Dans ce paragraphe, et pour poursuivre notre illustration des différentes modélisation d'un même problème, nous présentons 
-  un petit calcul de RdM traité selon l'approche mécanicienne.
+Dans ce paragraphe, et pour poursuivre notre illustration des différentes modélisation d'un même problème, nous présentons un petit calcul de RdM traité selon l'approche mécanicienne.
 
-  Il permet de montrer comment sont calculés les efforts équivalents, dans un cas général, sur une poutre, mais le
-  même type de calcul resterait valable pour tout type d'élément.
+Il permet de montrer comment sont calculés les efforts équivalents, dans un cas général, sur une poutre, mais le même type de calcul resterait valable pour tout type d'élément.
 
 \medskip
 \subsection{Problème}
@@ -70,21 +68,16 @@ ci-dessous:
 % \caption{Considered beam and its local coordinates system}
 %\end{figure}
 
-La première extrémité est~$\left( 0,0,0\right)~$ et la seconde~$\left( l,0,0\right)~$, 
-où~$l$ est la longueur de la poutre.
+La première extrémité est~$\left( 0,0,0\right)~$ et la seconde~$\left( l,0,0\right)~$, où~$l$ est la longueur de la poutre.
 
-Nous supposerons la poutre encastrées aux deux bouts, et soumise à une charge
-distribuée définie par la fonction~$P(x)$.
+Nous supposerons la poutre encastrées aux deux bouts, et soumise à une charge distribuée définie par la fonction~$P(x)$.
 
-Le problème est plan de sorte que~$\overrightarrow{P(x)}
-=P(x)\overrightarrow{y}$
+Le problème est plan de sorte que~$\overrightarrow{P(x)} =P(x)\overrightarrow{y}$
 
-Nous souhaitons déterminer les forces et moments équivalents~$F_1$, $F_2$ et
-$C_1$, $C_2$ aux deux extrémités également appelées nœuds 1 et 2.
+Nous souhaitons déterminer les forces et moments équivalents~$F_1$, $F_2$ et $C_1$, $C_2$ aux deux extrémités également appelées nœuds 1 et 2.
 
 \medskip
 Une analyse statique conduit à:
-
 \begin{quotation}
 \begin{equation}
   \label{staticF}
@@ -100,7 +93,6 @@ Une analyse statique conduit à:
 
 \medskip
 Le moment de flexion s'exprime:
-
 \begin{quotation}
 $M_z(x)=C_1-F_1x-\dint_0^x x P(x)dx$, ou
 
@@ -108,9 +100,8 @@ $M_z(x)=-C_2-F_2(l-x)-\dint_x^l(v-x) P(x)dv$
 \end{quotation}
 
 \medskip
-L'énergie interne de la poutre s'esprime:
+L'énergie interne de la poutre s'exprime:
 %The beam's internal energy can be explained as follows~:
-
 %\begin{quote}
 \[
 \delta J=\frac 12\dint_0^l\dfrac{M_z^2(x)}{EI}dx
@@ -121,7 +112,6 @@ L'énergie interne de la poutre s'esprime:
 \subsection{Théorème de Menabrea}\index[aut]{Menabrea (Luigi Federico; général comte -; premier marquis de Valdora), 1867-1869, Italien}\index{théorème!de Menabrea}
 
 Le théorème de Menabrea permet d'écrire:
-
 \begin{quotation}
  ~$\dfrac{\partial \delta J}{\partial C_1} =
   \dfrac{\partial \delta J}{\partial C_2} =
@@ -198,10 +188,9 @@ $C_2=\dfrac 2l\left( \dint_0^lI_1(0,x)dx-\dfrac
 \medskip
 \subsection{Conclusion}
 
-Ces forces et moments correspondent à des éléments finisforts de réactions.
+%Ces forces et moments correspondent à des éléments finis forts de réactions.
 Les forces équivalentes utilisées en MEF correspondent aux efforts internes
 développés dans la poutre. Ce sont:
-
 \begin{tabbing}
   at node iiiiii\=Forceqqq\= \kill
        \>Force \>Moment\\
@@ -210,7 +199,6 @@ développés dans la poutre. Ce sont:
 \end{tabbing}
 
 Analytiquement:
-
 \begin{equation}\colorblue
 \label{Feq}\left\{
 \begin{array}{l}
@@ -223,7 +211,6 @@ Analytiquement:
 \right.
 \end{equation}\colorblack
 et sous forme vectorielle:
-
 \begin{quotation}
 $\left\{
 \begin{array}{l}
